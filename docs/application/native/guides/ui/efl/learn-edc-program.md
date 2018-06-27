@@ -81,13 +81,16 @@ program {
   - `DRAG_VAL_STEP`: Set a step for the `draggable` part (x, y values)
   - `DRAG_VAL_PAGE`: Set a page for the `draggable` part (x, y values)
   - `FOCUS_SET`: Set the focus to the target group
-  - `PLAY_SAMPLE "sample name" speed (channel)`: Play a music sample clip`PLAY_SAMPLE`'s (optional) channel can be one of:
+  - `PLAY_SAMPLE "sample name" speed (channel)`: Play a music sample clip
+
+    `PLAY_SAMPLE`'s (optional) channel can be one of:
     - `EFFECT/FX`
     - `BACKGROUND/BG`
     - `MUSIC/MUS`
     - `FOREGROUND/FG`
     - `INTERFACE/UI`
-    - `INPUT``ALERT`
+    - `INPUT`
+    - `ALERT`
   - `PLAY_TONE "tone name" duration_in_seconds (Range 0.1 to 10.0)`: Play a predefined tone of a specific duration
   - `PLAY_VIBRATION "sample name" repeat (repeat count)`
 
@@ -97,9 +100,9 @@ program {
 
   - `LIN` or `LINEAR`
   - `SIN` or `SINUSOIDAL`
-  - ``ACCEL` or `ACCELERATE`
+  - `ACCEL` or `ACCELERATE`
   - `DECEL` or `DECELERATE`
-  - ``ACCEL_FAC` or `ACCELERATE_FACTOR`
+  - `ACCEL_FAC` or `ACCELERATE_FACTOR`
   - `DECEL_FAC` or `DECELERATE_FACTOR`
   - `SIN_FAC` or `SINUSOIDAL_FACTOR`
   - `DIVIS` or `DIVISOR_INTERP`
@@ -124,7 +127,8 @@ program {
 
   Determines the program that is run after the current program completes. The source and signal parameters of a program run as an `after` are ignored. Multiple `after` statements can be specified per program.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

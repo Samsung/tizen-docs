@@ -37,7 +37,8 @@ The `ecore_animator_timeline_add()` function allows you to define an animator th
 
 - The third parameter is the data passed to the callback function. This is usually the Evas object to animate.
 
-> **Note**  
+> **Note**
+>
 > The function returns a pointer to an `Ecore_Animator` object, which you can use to control the animation execution.
 
 The following example performs a linear horizontal move of 500 pixels (from 0 to 500 on the X axis) in 8 seconds, while keeping the Y axis position unchanged:
@@ -59,8 +60,9 @@ _my_animation(void *data, double pos)
 ecore_animator_timeline_add(8, _my_animation, my_evas_object);
 ```
 
-> **Note**  
-> The callback function can return `ECORE_CALLBACK_RENEW` to keep the animator running, or `ECORE_CALLBACK_CANCEL` to stop the animator and delete it automatically at any time. If the callback returns `ECORE_CALLBACK_CANCEL` (or `0`), the animator is automatically deleted from the list of pointers to free up the allocated memory.  
+> **Note**
+>
+> The callback function can return `ECORE_CALLBACK_RENEW` to keep the animator running, or `ECORE_CALLBACK_CANCEL` to stop the animator and delete it automatically at any time. If the callback returns `ECORE_CALLBACK_CANCEL` (or `0`), the animator is automatically deleted from the list of pointers to free up the allocated memory.
 >
 > The callback function receives a timeline position (second parameter) with a value between 0.0 (start) to 1.0 (end) to indicate where along the timeline the animator is running.
 
@@ -73,8 +75,9 @@ To create an animation that runs for an unspecified amount of time, use the `eco
 
 This function works the same way as the `ecore_animation_timeline_add()` function, except that its interval is based on the frame rate. Using the frame rate as a basis benefits performance, especially in the case of multiple animations, since it enables you to use a different timer for each callback function.
 
-> **Note**  
-> The function returns a pointer to an `Ecore_Animator` object, which you can use to control the animation execution.
+> **Note**
+>
+> The function returns a pointer to an Ecore_Animator object, which you can use to control the animation execution.
 
 The following example creates a rectangle sliding from left to right and back again. When the rectangle hits the edge of the screen, it changes direction.
 
@@ -103,8 +106,9 @@ if (anim != NULL)
     ecore_animator_del(anim);
 ```
 
-> **Note**  
-> The callback function can return `ECORE_CALLBACK_RENEW` or `EINA_TRUE` to keep the animator running, or `ECORE_CALLBACK_CANCEL` or `EINA_FALSE` to stop the animator and delete it automatically at any time.  
+> **Note**
+>
+> The callback function can return `ECORE_CALLBACK_RENEW` or `EINA_TRUE` to keep the animator running, or `ECORE_CALLBACK_CANCEL` or `EINA_FALSE` to stop the animator and delete it automatically at any time.
 >
 > If the callback returns `ECORE_CALLBACK_RENEW` or `EINA_TRUE`, you must delete the animator manually when it is no longer needed. Use the `ecore_animator_del()` function, which frees the memory allocated to the `Ecore_Animator` object by deleting the pointer.
 
@@ -194,18 +198,119 @@ The following table lists the supported position mappings, and describes how the
 <a name="table_position_mappings"></a>
 **Table: Position mappings**
 
-| Position mapping type(`_Ecore_Pos_Map` enumerator value) | Description                              | Parameters                               |
-|----------------------------------------|----------------------------------------|----------------------------------------|
-| `ECORE_POS_MAP_LINEAR`                   | Linear 0.0 - 1.0![Position mappings](./media/pos_map_linear.png) | `v1`: Not used<br>`v2`: Not used         |
-| `ECORE_POS_MAP_ACCELERATE`               | Start slow, then speed up![Position mappings](./media/pos_map_accelerate.png) | `v1`: Not used<br>`v2`: Not used         |
-| `ECORE_POS_MAP_DECELERATE`               | Start fast, then slow down![Position mappings](./media/pos_map_decelerate.png) | `v1`: Not used<br>`v2`: Not used         |
-| `ECORE_POS_MAP_SINUSOIDAL`               | Start slow, speed up, then slow down at the end![Position mappings](./media/pos_map_sinusoidal.png) | `v1`: Not used<br>`v2`: Not used         |
-| `ECORE_POS_MAP_BOUNCE`                   | Start at 0.0, then drop like a ball bouncing to the ground at 1.0, and bounce `v2` times, with a decay factor of `v1`![Position mappings](./media/pos_map_bounce.png) | `v1`: Bounce decay factor<br>`v2`: Number of bounces |
-| `ECORE_POS_MAP_SPRING`                   | Start at 0.0, then wobble like a spring until rest position at 1.0, and wobble `v2` times, with a decay factor of `v1`![Position mappings](./media/pos_map_spring.png) | `v1`: Wobble decay factor<br>`v2`: Number of wobbles |
-| `ECORE_POS_MAP_ACCELERATE_FACTOR`        | Start slow, then speed up                | `v1`: Power factor:0.0 is linear1.0 is standard acceleration2.0 is a much more pronounced acceleration (squared)4.0 is cubed<br>`v2`: Not used |
-| `ECORE_POS_MAP_DECELERATE_FACTOR`        | Start fast, then slow down               | `v1`: Power factor:0.0 is linear1.0 is standard deceleration2.0 is a much more pronounced deceleration (squared)3.0 is cubed<br>`v2`: Not used |
-| `ECORE_POS_MAP_SINUSOIDAL_FACTOR`        | Start slow, speed up, then slow down at the end | `v1`: Power factor:0.0 is linear1.0 is a standard sinusoidal2.1 is a much more pronounced sinusoidal (squared)3.0 is cubed<br>`v2`: Not used |
-| `ECORE_POS_MAP_DIVISOR_INTERP`           | Start at gradient * `v1`, interpolated using the power of the `v2` curve | `v1`: Multiplication factor for the gradient<br>`v2`: Curve value |
+<table id="position_mappings">
+	<thead>
+		<tr>
+			<th>Position mapping type
+			<p>(<code>_Ecore_Pos_Map</code> enumerator value)</p>
+			</th>
+			<th>Description</th>
+			<th>Parameters</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>ECORE_POS_MAP_LINEAR</code></td>
+			<td>Linear 0.0 - 1.0
+			<p><img alt="Position mappings" src="media/pos_map_linear.png" /></p>
+			</td>
+			<td><code>v1</code>: Not used
+			<p><code>v2</code>: Not used</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_ACCELERATE</code></td>
+			<td>Start slow, then speed up
+			<p><img alt="Position mappings" src="media/pos_map_accelerate.png" /></p>
+			</td>
+			<td><code>v1</code>: Not used
+			<p><code>v2</code>: Not used</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_DECELERATE</code></td>
+			<td>Start fast, then slow down
+			<p><img alt="Position mappings" src="media/pos_map_decelerate.png" /></p>
+			</td>
+			<td><code>v1</code>: Not used
+			<p><code>v2</code>: Not used</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_SINUSOIDAL</code></td>
+			<td>Start slow, speed up, then slow down at the end
+			<p><img alt="Position mappings" src="media/pos_map_sinusoidal.png" /></p>
+			</td>
+			<td><code>v1</code>: Not used
+			<p><code>v2</code>: Not used</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_BOUNCE</code></td>
+			<td>Start at 0.0, then drop like a ball bouncing to the ground at 1.0, and bounce <code>v2</code> times, with a decay factor of <code>v1</code>
+			<p><img alt="Position mappings" src="media/pos_map_bounce.png" /></p>
+			</td>
+			<td><code>v1</code>: Bounce decay factor
+			<p><code>v2</code>: Number of bounces</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_SPRING</code></td>
+			<td>Start at 0.0, then wobble like a spring until rest position at 1.0, and wobble <code>v2</code> times, with a decay factor of <code>v1</code>
+			<p><img alt="Position mappings" src="media/pos_map_spring.png" /></p>
+			</td>
+			<td><code>v1</code>: Wobble decay factor
+			<p><code>v2</code>: Number of wobbles</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_ACCELERATE_FACTOR</code></td>
+			<td>Start slow, then speed up</td>
+			<td><code>v1</code>: Power factor:
+			<ul>
+				<li>0.0 is linear</li>
+				<li>1.0 is standard acceleration</li>
+				<li>2.0 is a much more pronounced acceleration (squared)</li>
+				<li>4.0 is cubed</li>
+			</ul>
+			<p><code>v2</code>: Not used</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_DECELERATE_FACTOR</code></td>
+			<td>Start fast, then slow down</td>
+			<td><code>v1</code>: Power factor:
+			<ul>
+				<li>0.0 is linear</li>
+				<li>1.0 is standard deceleration</li>
+				<li>2.0 is a much more pronounced deceleration (squared)</li>
+				<li>3.0 is cubed</li>
+			</ul>
+			<p><code>v2</code>: Not used</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_SINUSOIDAL_FACTOR</code></td>
+			<td>Start slow, speed up, then slow down at the end</td>
+			<td><code>v1</code>: Power factor:
+			<ul>
+				<li>0.0 is linear</li>
+				<li>1.0 is a standard sinusoidal</li>
+				<li>2.1 is a much more pronounced sinusoidal (squared)</li>
+				<li>3.0 is cubed</li>
+			</ul>
+			<p><code>v2</code>: Not used</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>ECORE_POS_MAP_DIVISOR_INTERP</code></td>
+			<td>Start at gradient <code>v1</code>, interpolated using the power of the <code>v2</code> curve</td>
+			<td><code>v1</code>: Multiplication factor for the gradient
+			<p><code>v2</code>: Curve value</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 The following example performs an animation where the `my_evas_object` object is moved 600 pixels downwards, bouncing back 7 times over 5 seconds, each bounce diminishing by a factor of 1.8:
 
@@ -248,7 +353,8 @@ Tizen supports default and custom timer sources:
 
   To tweak the performance, change the frametime value using the `ecore_animator_frametime_set()` function with the new frametime as the parameter.
 
-  > **Note**  
+  > **Note**
+  >
   > If the value is too small, it can cause performance issues, whereas a too high value can cause the animation to seem jerky.
 
   To get the current frametime value, use the `ecore_animator_frametime_get()` function.
@@ -277,7 +383,8 @@ Tizen supports default and custom timer sources:
 
   To drive the timer based on an input tick source (such as another application using the IPC or a vertical blanking interrupt), you can use the `ecore_animator_custom_source_tick_begin_callback_set()` and `ecore_animator_custom_source_tick_end_callback_set()` functions. These functions define callbacks that are called when the tick starts and ends, allowing you to set the functions to start and stop the ticking source.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -16,9 +16,16 @@ To use a circle slider component in your application:
    slider = eext_circle_object_slider_add(ad->nf, ad->circle_surface);
    ```
 
-2. Configure the circle slider [features](#features).The following configurations are optional. Unless you configure them, the slider adopts the default styles.Set the range of the slider.Set the color of the slider.
+2. Configure the circle slider [features](#features).
 
-3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `value,changed` signal:
+   The following configurations are optional. Unless you configure them, the slider adopts the default styles.
+
+   - Set the range of the slider.
+   - Set the color of the slider.
+
+3. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `value,changed` signal:
 
    ```
    evas_object_smart_callback_add(slider, "value,changed", _value_changed_cb, NULL);
@@ -71,7 +78,7 @@ You can modify the circle slider properties using the following functions.
 **Table: Circle slider properties**
 
 | Functions                                | Description                              |
-|--------------------------|----------------------------------|
+|------------------------------------------|------------------------------------------|
 | `eext_circle_object_value_set()`<br>`eext_circle_object_value_get()` | Set and get the value of the circle object. |
 | `eext_circle_object_angle_min_max_set()`<br>`eext_circle_object_angle_min_max_get()` | Set and get the minimum and maximum angle for the item of the circle object. |
 | `eext_circle_object_angle_offset_set()`<br>`eext_circle_object_angle_offset_get()` | Set and get the angle offset of the circle object. |
@@ -85,10 +92,14 @@ The circle slider consists of 2 parts, introduced in the following table.
 
 **Table: Circle slider items**
 <table>
+<thead>
 <tr><th>Sample</th><th>Items</th></tr>
+</thead>
+<tbody>
 <tr><td rowspan="2"> <img alt="elm/slider/horizontal/warning" src="./media/circle_slider3.png" /></td>
 <td> <code>default</code>: Default circle item, which draws a slider bar.<br>This item represents the value of the circle slider, which is a red circular area in the left example.</td></tr>
 <tr><td> <code>bg</code>: Background circle item, which is a dark circular area in the left example. </td></tr>
+</tbody>
 </table>
 
 The following example shows how to manipulate the items.
@@ -135,10 +146,11 @@ You can register callback functions connected to the following signals for a cir
 **Table: Circle slider callback signals**
 
 | Signal          | Description                           | `event_info` |
-|---------------|-----------------------------------|------------|
+|-----------------|---------------------------------------|--------------|
 | `value,changed` | The value of a circle slider changes. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 ## Related Information

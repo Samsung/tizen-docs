@@ -66,7 +66,7 @@ The `constants` section contains string constants that can be used by any string
 | `APPLICATION_RESOURCE_PATH` | This points to the application-specific resource path returned by the `app_get_resource_path()` function. |
 | `PACKAGE_PATH`              | This points to the DALi toolkit resource path. |
 
-Constants can also be set programmatically by using the `StyleManager::SetStyleConstant()` function. However, the function only works after the `Application::New()` function has been called, so it does not affect stylesheets loaded in the `Application::New()`function.
+Constants can also be set programmatically by using the `StyleManager::SetStyleConstant()` function. However, the function only works after the `Application::New()` function has been called, so it does not affect stylesheets loaded in the `Application::New()` function.
 
 The constants can be used in any string value in the JSON files, delimited by '{' and '}' characters. In the following example, the `IMAGE_DIR` constant is defined within the stylesheet, and is used to access the `unselectedStateImage` image path in the `Dali::Toolkit::PushButton` control:
 

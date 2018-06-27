@@ -36,7 +36,9 @@ To add an item:
        Eext_Object_Item *item = eext_more_option_item_append(parent);
    ```
 
-2. Configure the item (for more information, see [Configuring the More Option and Items](#configure)).In the following example, the main and sub text are set for the item, and an icon is added as the item content:
+2. Configure the item (for more information, see [Configuring the More Option and Items](#configure)).
+
+   In the following example, the main and sub text are set for the item, and an icon is added as the item content:
 
    ```
        /* Set the text in the rotary_selector */
@@ -53,7 +55,7 @@ To add an item:
 
 To configure the more option cue button direction, and the text and content of various more option parts:
 
-- Configure the direction of the cue button with the `eext_more_option_direction_set()` function. The second parameter defines the cue button direction, which can be one of the following values:  
+- Configure the direction of the cue button with the `eext_more_option_direction_set()` function. The second parameter defines the cue button direction, which can be one of the following values:
   - `EEXT_MORE_OPTION_DIRECTION_TOP`: Cue button is at the top.
   - `EEXT_MORE_OPTION_DIRECTION_BOTTOM`: Cue button is at the bottom.
   - `EEXT_MORE_OPTION_DIRECTION_LEFT`: Cue button is on the left.
@@ -72,7 +74,7 @@ To configure the more option cue button direction, and the text and content of v
   **Table: Configurable more option parts**
 
   | Part                 | Setting function                         | View                                     |
-  |--------------------|-----------------------|--------------------------------|
+  |----------------------|------------------------------------------|------------------------------------------|
   | `selector,main_text` | `eext_more_option_item_part_text_set()`<br> `eext_more_option_item_domain_translatable_part_text_set()` | ![main_text](./media/more_option_main.png) |
   | `selector,sub_text`  | `eext_more_option_item_part_text_set()`<br> `eext_more_option_item_domain_translatable_part_text_set()` | ![sub_text](./media/more_option_sub.png) |
   | `item,icon`          | `eext_more_option_item_part_content_set()` | ![Item content](./media/more_option_item.png) |
@@ -86,9 +88,11 @@ To receive notifications about the more option events, listen for the following 
 - `more,option,opened`: The layout with the rotary selector is shown.
 - `more,option,closed`: The layout with the rotary selector is hidden.
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-> In all these signals, the `event_info` callback parameter is `NULL`.
+
+In all these signals, the `event_info` callback parameter is `NULL`.
 
 To register and define a callback for the `more,option,opened` signal:
 

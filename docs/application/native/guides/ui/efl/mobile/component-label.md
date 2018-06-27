@@ -22,7 +22,9 @@ To use a label component in your application:
    elm_object_text_set(label, "This is a label.");
    ```
 
-3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `slide,end` signal:
+3. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `slide,end` signal:
 
    ```
    evas_object_smart_callback_add(label, "slide,end", slide_end_cb, data);
@@ -76,7 +78,7 @@ The following table lists the available component styles.
 **Table: Label styles**
 
 | Style          | Description                              |
-|--------------|----------------------------------------|
+|----------------|------------------------------------------|
 | `default`      | No animation is used.                    |
 | `marker`       | The text is centered and bolded.         |
 | `slide_long`   | The text appears from the right of the screen and slides until it disappears in the left of the screen (reappearing on the right again). |
@@ -90,17 +92,19 @@ You can register callback functions connected to the following signals for a lab
 **Table: Label callback signals**
 
 | Signal              | Description                          | `event_info`                   |
-|-------------------|------------------------------------|------------------------------|
+|---------------------|--------------------------------------|--------------------------------|
 | `language,changed`  | The program language changes.        | `NULL`                         |
 | `slide,end`         | The slide reaches the end.           | `NULL`                         |
 | `anchor,clicked`    | The anchor is clicked.               | `Elm_Label_Anchor_Info` object |
 | `anchor,mouse,down` | The anchor is pressed by mouse down. | `Elm_Label_Anchor_Info` object |
 | `anchor,mouse,up`   | The anchor is released by mouse up.  | `Elm_Label_Anchor_Info` object |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

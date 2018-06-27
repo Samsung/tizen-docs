@@ -33,7 +33,8 @@ If the second parameter is `EINA_TRUE`, the rotary selector can receive rotary e
 
 ## Adding Rotary Selector Items
 
-> **Note**  
+> **Note**
+>
 > A maximum of 11 items can be displayed on one page of the rotary selector. Any excess items are arranged on the next page.
 
 To add an item:
@@ -48,7 +49,9 @@ To add an item:
    item = eext_rotary_selector_item_append(rotary_selector);
    ```
 
-2. Configure the item (for more information, see [Configuring the Selector and Items](#configuring-the-selector-and-items)).In the following example, 2 icons are set for the item and selector:
+2. Configure the item (for more information, see [Configuring the Selector and Items](#configuring-the-selector-and-items)).
+
+   In the following example, 2 icons are set for the item and selector:
 
    ```
    /* Set item icon */
@@ -79,7 +82,7 @@ To add an item:
    **Table: Item texts**
 
    | Text                 | Setting function                         | View                                     |
-   |--------------------|----------------------------------------|----------------------------------------|
+   |----------------------|------------------------------------------|------------------------------------------|
    | `selector,main_text` | `eext_rotary_selector_item_part_text_set()`<br> `eext_rotary_selector_item_domain_translatable_part_text_set()` | ![main_text](./media/rotary_selector_main_text.png) |
    | `selector,sub_text`  | `eext_rotary_selector_item_part_text_set()`<br> `eext_rotary_selector_item_domain_translatable_part_text_set()` | ![sub_text](./media/rotary_selector_sub_text.png) |
 
@@ -92,11 +95,11 @@ The following table shows the configurable rotary selector parts.
 **Table: Configurable rotary selector parts**
 
 | Part                                     | Setting function                         | View                                     |
-|----------------------------------------|----------------------------------------|----------------------------------------|
+|------------------------------------------|------------------------------------------|------------------------------------------|
 | `selector,main_text`                     | `eext_rotary_selector_item_part_color_set()` | ![main_text](./media/rotary_selector_main.png) |
 | `selector,sub_text`                      | `eext_rotary_selector_item_part_color_set()` | ![sub_text](./media/rotary_selector_sub.png) |
-| `item,icon``item,bg_image`               | `eext_rotary_selector_item_part_content_set()`<br> `eext_rotary_selector_item_part_color_set()` | ![Item content](./media/rotary_selector_item.png) |
-| `selector,icon``selector,content``selector,bg_image` | `eext_rotary_selector_part_content_set()`<br> `eext_rotary_selector_part_color_set()`<br> `eext_rotary_selector_part_content_get()` | ![Selector content](./media/rotary_selector_selector.png) |
+| `item,icon`<br> `item,bg_image`               | `eext_rotary_selector_item_part_content_set()`<br> `eext_rotary_selector_item_part_color_set()` | ![Item content](./media/rotary_selector_item.png) |
+| `selector,icon`<br> `selector,content`<br> `selector,bg_image` | `eext_rotary_selector_part_content_set()`<br> `eext_rotary_selector_part_color_set()`<br> `eext_rotary_selector_part_content_get()` | ![Selector content](./media/rotary_selector_selector.png) |
 
 You can also configure the selector and item appearance based on their current state:
 
@@ -133,7 +136,8 @@ To receive notifications about the rotary selector events, listen for the follow
 - `item,selected`: The item is selected.
 - `item,clicked`: The item is clicked.
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 In both these signals, the `event_info` callback parameter is `NULL`.

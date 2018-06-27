@@ -78,7 +78,9 @@ The hoversel component can contain items that have a label. Even though paramete
 
 To manage items:
 
-1. Add an item using the `elm_hoversel_item_add()` function. To add an item with a "test" label and the `_hoversel_item_cb` clicked callback:
+1. Add an item using the `elm_hoversel_item_add()` function.
+
+   To add an item with a "test" label and the `_hoversel_item_cb` clicked callback:
 
    ```
    Elm_Object_Item *it;
@@ -131,7 +133,8 @@ You can register callback functions connected to the following signals for a hov
 | `expanded`         | The hoversel is activated by clicking the hoversel or by a function. | `NULL`            |
 | `language,changed` | The program language changes.            | `NULL`            |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
 The following example shows how to define and register a callback for the `dismissed` signal:
@@ -148,7 +151,8 @@ dismissed_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

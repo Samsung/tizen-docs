@@ -27,7 +27,9 @@ To create a circle spinner component:
    elm_object_style_set(spinner, "circle");
    ```
 
-3. Create an `eext_spinner` object using the `eext_circle_object_spinner_add()` function. Pass a [circle surface](component-circle-surface.md) as the second parameter.
+3. Create an `eext_spinner` object using the `eext_circle_object_spinner_add()` function.
+
+   Pass a [circle surface](component-circle-surface.md) as the second parameter.
 
    ```
    circle_spinner = eext_circle_object_spinner_add(spinner, surface);
@@ -43,7 +45,9 @@ To handle the circle spinner value, use the `elm_spinner` functions. They are au
 
 To customize the angle offset of the marker to not to follow the internally-calculated system value:
 
-1. Set the custom circle spinner angle value using the `eext_circle_object_spinner_angle_set()` function.In the following example, the circle spinner angle value is set to 2.0:
+1. Set the custom circle spinner angle value using the `eext_circle_object_spinner_angle_set()` function.
+
+   In the following example, the circle spinner angle value is set to 2.0:
 
    ```
    eext_circle_object_spinner_angle_set(circle_spinner, 2.0);

@@ -18,35 +18,35 @@ EFL is aimed at not only desktop computers but also touch-screen and embedded de
 
 The key characteristics of EFL include:
 
-- **Fast performance**  
+- **Fast performance**
 
   The main reason Tizen adopted EFL as its native toolkit is its speed. EFL is highly optimized by using a scene graph and retained-mode rendering. EFL is fast even in software rendering.
 
-- **Small memory footprint**  
+- **Small memory footprint**
 
   Despite its fast performance, EFL's memory footprint is smaller than that of other toolkits with similar features. A small memory footprint is useful in the embedded world, since embedded devices do not normally have much memory.
 
-- **Backend engine support**  
+- **Backend engine support**
 
   EFL supports several backend engines, such as X11 (OpenGL&reg;, Xlib, Xcb), Wayland (OpenGL&reg;, SHM), Direct Framebuffer, DRM, memory buffers, PS3 native, Windows&reg;, and macOS. Applications do not need to deal with each backend engine separately.
 
-- **GUI and logic separation**  
+- **GUI and logic separation**
 
   EFL supports a GUI layout ([EDC](./learn-edc-intro.md)) and logic separation by having the layout description in a plain text file and the logic code in the C or C++ source files.
 
-- **Themeable**  
+- **Themeable**
 
   An EFL theme can be changed at runtime without restarting the application. UI components are customizable so that each application can create its own customized theme to overlay above the default theme, adding customized versions of UI components to achieve a specific look and feel.
 
-- **Scalable**  
+- **Scalable**
 
   EFL supports a scale factor that affects the size of objects in the application at runtime. By configuring the scale factor, applications can scale up and down as needed. The scale factor also supports a default setting that allows applications to scale nicely out-of-the-box.
 
-- **Animations**  
+- **Animations**
 
   EFL supports different types of animations. Evas supports Evas maps with low-level APIs for performing 2D, 2.5D, and 3D object transformations. Edje supports predefined transitions and wrapping of Evas maps. Elementary supports transit APIs for various types of animations, which can be combined.
 
-- **Hardware acceleration**  
+- **Hardware acceleration**
 
   EFL supports OpenGL&reg; and OpenGL&reg; ES acceleration.
 
@@ -65,7 +65,7 @@ EFL is a collection of libraries. They cover a range of functionality from manag
 | Elementary | Elementary ([UI Components](./ui-components.md)) is the topmost library with which you create your EFL application. It provides all the functions you need to create a window, create simple and complex layouts, manage the life-cycle of a view, and add UI components. The full list of UI components that can be used in Tizen can be found in [Mobile UI Components](./mobile/ui-components.md) and [Wearable UI Components](./wearable/ui-components.md). |
 | Edje       | Edje is the library used by Elementary to provide a powerful theme. You can also use Edje to create your own objects and use them in your application, or even extend the default theme. For more information on Edje and the EDC format, see [Layouting with EDC](./learn-edc-intro.md) and [Customizing UI Components](./component-custom.md). |
 | Ecore      | Ecore ([Core loop and OS Interfacing](./core-loop.md)) is the library that manages the main loop of your application. The main loop is one of the most important concepts you need to know about to develop an application. The main loop is where events are handled, and where you interact with the user through the callback mechanism. The main loop mechanisms are explained in [Handling the Main Loop](./main-loop.md). |
-| Evas       | Evas ([Primitive Graphical Objects](./graphical-objects.md)) is the canvas engine. Evas is responsible for managing the drawing of your content. All graphical objects that you create are Evas objects.		 Evas handles the entire state of the window by filling the canvas with objects and manipulating their states. In contrast to other canvas libraries, such as Cairo, OpenGL&reg;, and XRender, Evas is not a drawing library but a scene graph library that retains the state of all objects. The Evas concept is explained in [Evas Rendering Concept and Method](./evas-rendering.md).		 Evas objects are created and then manipulated until they are no longer needed, at which point they are deleted. This allows you to work in the same terms that a designer thinks in: it is a direct mapping, as opposed to having to convert the concepts into drawing commands in the right order, and calculate minimum drawing calls needed to get the job done. |
+| Evas       | Evas ([Primitive Graphical Objects](./graphical-objects.md)) is the canvas engine. Evas is responsible for managing the drawing of your content. All graphical objects that you create are Evas objects.<br>  Evas handles the entire state of the window by filling the canvas with objects and manipulating their states. In contrast to other canvas libraries, such as Cairo, OpenGL&reg;, and XRender, Evas is not a drawing library but a scene graph library that retains the state of all objects. The Evas concept is explained in [Evas Rendering Concept and Method](./evas-rendering.md).<br>	 Evas objects are created and then manipulated until they are no longer needed, at which point they are deleted. This allows you to work in the same terms that a designer thinks in: it is a direct mapping, as opposed to having to convert the concepts into drawing commands in the right order, and calculate minimum drawing calls needed to get the job done. |
 | Eina       | Eina is the basis of all the EFL libraries. Eina is a toolbox that implements an API for data types in an efficient way. It contains all the functions needed to create lists and hashes, manage shared strings, open shared libraries, and manage errors and memory pools. Eina concepts are explained in [Data Types and Tools](./data-types-tools.md). |
 
 In addition to the most important libraries explained above, the EFL includes other libraries, such as Eet, Embryo, and Emotion. Support for those libraries is planned in the future Tizen releases.

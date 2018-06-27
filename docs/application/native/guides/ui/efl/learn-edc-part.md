@@ -317,14 +317,16 @@ part {
 
   Copies all properties except part name from the referenced part into the current part. All existing properties, except part name, are overwritten.
 
-  > **Note**  
+  > **Note**
+  >
   > When inheriting any parts, descriptions without state names are not allowed.
 
 - `program_remove [program name] (program name) (program name) ...`
 
   Removes the listed programs from an inherited group. Removing non-existing programs is not allowed.
 
-	> **Note**  
+	> **Note**
+    >
 	> This breaks program sequences if a program in the middle of the sequence is removed.
 
 - `part_remove [part name] (part name) (part name) ...`
@@ -452,8 +454,8 @@ part {
 
   **Table: Effects**
 
-| Effect                | Example                                  |
-  |---------------------|----------------------------------------|
+  | Effect                | Example                                  |
+  |-----------------------|------------------------------------------|
   | `PLAIN`               | ![PLAIN](./media/PLAIN.png) |
   | `OUTLINE`             | ![OUTLINE](./media/OUTLINE.png) |
   | `SOFT_OUTLINE`        | ![SOFT_OUTLINE](./media/SOFT_OUTLINE.png) |
@@ -465,20 +467,19 @@ part {
   | `FAR_SOFT_SHADOW`     | ![FAR_SOFT_SHADOW](./media/FAR_SOFT_SHADOW.png) |
   | `GLOW`                | ![GLOW](./media/GLOW.png) |
 
-   The available shadow direction definitions are:  
-    - `BOTTOM_RIGHT` (default)
-    - `BOTTOM`
-    - `BOTTOM_LEFT`
-    - `LEFT`
-    - `TOP_LEFT`
-    - `TOP`
-    - `TOP_RIGHT`
-    - `RIGHT`
+  The available shadow direction definitions are:
+  - `BOTTOM_RIGHT` (default)
+  - `BOTTOM`
+  - `BOTTOM_LEFT`
+  - `LEFT`
+  - `TOP_LEFT`
+  - `TOP`
+  - `TOP_RIGHT`
+  - `RIGHT`
 
 - `entry_mode [mode]`
 
   Sets the edit mode for a textblock part. The available modes are:
-
   - `NONE`: Textblock is non-editable
   - `PLAIN`: Textblock is non-editable, but selectable
   - `EDITABLE`: Textblock is editable
@@ -572,7 +573,8 @@ part {
 
       - `type [item type]`
 
-        Sets the type of the object this item holds. The supported type is:		
+        Sets the type of the object this item holds. The supported type is:
+
         - `GROUP` (default)
 
       - `name [name for the object]`
@@ -587,7 +589,8 @@ part {
 
         Sets the minimum size hints for this object.
 
-		> **Note**  
+		> **Note**
+        >
 		> The minimum size hint must be -1 to get the expand behavior.
 
       - `spread [width] [height]`
@@ -616,12 +619,11 @@ part {
 
       - `aspect [w] [h]`
 
-        Sets the aspect width and height hints for this object
+        Sets the aspect width and height hints for this object.
 
-      - .`aspect_mode [mode]`
+      - `aspect_mode [mode]`
 
         Sets the aspect control hints for this object. The available hints are:
-
         - `NONE`
         - `NEITHER`
         - `HORIZONTAL`
@@ -693,35 +695,35 @@ part {
 
   - `align [X axis] [Y axis]`
 
-   When the displayed object's size is smaller or bigger than its container, this property moves it relatively along both axes inside its container. 0.0 means left/top edges of the object touching container's respective ones, and 1.0 stands for right/bottom edges of the object (on horizontal/vertical axis, respectively). The default value is `0.5 0.5`. For more information, see [Size Hints](./ui-layouts.md#size-hints).
+    When the displayed object's size is smaller or bigger than its container, this property moves it relatively along both axes inside its container. 0.0 means left/top edges of the object touching container's respective ones, and 1.0 stands for right/bottom edges of the object (on horizontal/vertical axis, respectively). The default value is `0.5 0.5`. For more information, see [Size Hints](./ui-layouts.md#size-hints).
 
   - `fixed [width, 0 or 1] [height, 0 or 1]`
 
-   Sets the minimum size calculation. See the `edje_object_size_min_calc()` and `edje_object_size_min_restricted_calc()` functions of the Edje Object Geometry API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Geometry__Group.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Geometry__Group.html) applications). The value tells the min size calculation routine where this part does not change size in width or height (1 for it does not, 0 for it does), so the routine does not try to expand or contract the part.
+    Sets the minimum size calculation. See the `edje_object_size_min_calc()` and `edje_object_size_min_restricted_calc()` functions of the Edje Object Geometry API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Geometry__Group.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Geometry__Group.html) applications). The value tells the min size calculation routine where this part does not change size in width or height (1 for it does not, 0 for it does), so the routine does not try to expand or contract the part.
 
   - `min [width] [height] or SOURCE`
 
-   Sets the minimum size of the state. When the property is set to `SOURCE`, it looks at the original image size and enforces its minimal size to match at least the original one. The part must be an `image` or a `group` part.
+    Sets the minimum size of the state. When the property is set to `SOURCE`, it looks at the original image size and enforces its minimal size to match at least the original one. The part must be an `image` or a `group` part.
 
   - `minmul [width multiplier] [height multiplier]`
 
-   Sets the multiplier forcibly applied to whatever minimum size is only during minimum size calculation.
+    Sets the multiplier forcibly applied to whatever minimum size is only during minimum size calculation.
 
   - `max [width] [height] or SOURCE`
 
-   Sets the maximum size of the state. A size of -1.0 means that it is ignored in one direction. When the property is set to `SOURCE`, Edje enforces the part to be not more than the original image size. The part must be an `image` part.
+    Sets the maximum size of the state. A size of -1.0 means that it is ignored in one direction. When the property is set to `SOURCE`, Edje enforces the part to be not more than the original image size. The part must be an `image` part.
 
   - `step [width] [height]`
 
-   Restricts resizing of each dimension to values divisible by its value. This causes the part to jump from value to value while resizing. The default value is `0 0`, which disables stepping.
+    Restricts resizing of each dimension to values divisible by its value. This causes the part to jump from value to value while resizing. The default value is `0 0`, which disables stepping.
 
   - `aspect [min] [max]`
 
-   Forces the width to height ratio to be kept between the minimum and maximum set. For example, `1.0 1.0` increases the width a pixel for every pixel added to height. The default value is `0.0 0.0`, which disables aspect. For more information, see [Size Hints](./ui-layouts.md#size-hints). Normally the width and height can be resized to any values independently.
+    Forces the width to height ratio to be kept between the minimum and maximum set. For example, `1.0 1.0` increases the width a pixel for every pixel added to height. The default value is `0.0 0.0`, which disables aspect. For more information, see [Size Hints](./ui-layouts.md#size-hints). Normally the width and height can be resized to any values independently.
 
   - `aspect_preference [DIMENSION]`
 
-   Sets the dimensions to which the `aspect` property applies. The available options are:
+    Sets the dimensions to which the `aspect` property applies. The available options are:
 
     - `BOTH`
     - `VERTICAL`
@@ -729,26 +731,27 @@ part {
     - `SOURCE`
     - `NONE`
 
-      For more information, see [Size Hints](./ui-layouts.md#size-hints).
+    For more information, see [Size Hints](./ui-layouts.md#size-hints).
 
   - `color_class [color class name]`
 
-   Sets the part to use the color values of the named `color_class`. These values can be overridden by the `color`, `color2`, and `color3` properties.
+    Sets the part to use the color values of the named `color_class`. These values can be overridden by the `color`, `color2`, and `color3` properties.
 
   - `color [red] [green] [blue] [alpha]`
 
-   Sets the main color to the specified values (between 0 and 255).
+    Sets the main color to the specified values (between 0 and 255).
 
-	> **Note**  
+	> **Note**
+    >
 	> The textblock part is not affected by the color description. Set the color in the text style.
 
   - `color2 [red] [green] [blue] [alpha]`
 
-   Sets the text shadow color to the specified values (0 to 255).
+    Sets the text shadow color to the specified values (0 to 255).
 
   - `color3 [red] [green] [blue] [alpha]`
 
-   Sets the text outline color to the specified values (0 to 255).
+    Sets the text outline color to the specified values (0 to 255).
 
   - `description.rel1` or `description.rel2` block
 
@@ -769,15 +772,15 @@ part {
 
     - `relative [X axis] [Y axis]`
 
-     Moves the corner to a relative position inside the container of the relative `to` part. Values from 0.0 (0%, beginning) to 1.0 (100%, end) on each axis.
+      Moves the corner to a relative position inside the container of the relative `to` part. Values from 0.0 (0%, beginning) to 1.0 (100%, end) on each axis.
 
     - `offset [X axis] [Y axis]`
 
-     Affects the corner position a fixed number of pixels along each axis.
+      Affects the corner position a fixed number of pixels along each axis.
 
     - `to [another part's name]`
 
-     Positions the corner relative to another part's container. Setting to `""` resets this value for inherited parts.
+      Positions the corner relative to another part's container. Setting to `""` resets this value for inherited parts.
 
     - `to_x [another part's name]`
 
@@ -828,7 +831,7 @@ part {
 
       If border scaling is enabled, normally the output border sizes scale accordingly. For example, if 3 pixels on the left edge are set as a border, then normally at scale 1.0, those 3 columns are always exactly 3 columns of output, or at scale 2.0 they are 6 columns, or 0.33 they merge into a single column. This property multiplies the input scale factor by this multiplier, allowing the creation of supersampled borders to make higher resolution outputs possible by always using the highest resolution artwork and then at runtime scaling it down. The value can be: 0.0 or bigger (0.0 or 1.0 to switch it off)
 
-    - `border_scale [0/1]`  
+    - `border_scale [0/1]`
 
       Tells Edje whether the border is scaled by the object or global Edje scale factors.
 
@@ -883,11 +886,11 @@ part {
 
           The `origin` block is used to place the starting point inside the displayed element that is used to render the tile. By default, the origin is set at the element's top-left corner.
 
-          - `relative [X axis][Y axis]`
+          - `relative [X axis] [Y axis]`
 
             Sets the starting point relative to the displayed element's content.
 
-          - `offset [X axis][Y axis]`
+          - `offset [X axis] [Y axis]`
 
             Affects the starting point a fixed number of pixels along each axis.
 
@@ -906,11 +909,11 @@ part {
 
           The `size` block defines the tile size of the content that is displayed.
 
-          - `relative [width][height]`
+          - `relative [width] [height]`
 
             Takes a pair of decimal values that represent the percentage of the original size of the element. For example, `0.5 0.5` represents half the size, while `2.0 2.0` represents double. The default value is `1.0 1.0`.
 
-          - `offset [X axis][Y axis]`
+          - `offset [X axis] [Y axis]`
 
             Affects the size of the tile a fixed number of pixels along each axis.
 
@@ -958,23 +961,23 @@ part {
 
       Sets the default font size for the text part. This can be overridden by the application settings.
 
-    - `size_range [font min size in points (pt)][font max size in points (pt)]`
+    - `size_range [font min size in points (pt)] [font max size in points (pt)]`
 
       Sets the allowed font size for the text part. Setting min and max to 0 means that sizing is not restricted. This is also the default value.
 
-    - `fit [horizontal][vertical]`
+    - `fit [horizontal] [vertical]`
 
       When any of the parameters is set to 1, Edje resizes the text for it to fit in its container. Both are disabled by default.
 
-    - `min [horizontal][vertical]`
+    - `min [horizontal] [vertical]`
 
       When any of the parameters is enabled (1), it forces the minimum size of the container to be equal to the minimum size of the text. The default value is `0 0`.
 
-    - `max [horizontal][vertical]`
+    - `max [horizontal] [vertical]`
 
       When any of the parameters is enabled (1), it forces the maximum size of the container to be equal to the maximum size of the text. The default value is `0 0`.
 
-    - `align [horizontal][vertical]`
+    - `align [horizontal] [vertical]`
 
       Changes the position of the point of balance inside the container. The default value is `0.5 0.5`.
 
@@ -1019,15 +1022,15 @@ part {
 
         Set a custom layout as a fallback. For more information, see the `edje_box_layout_register()` function in the Edje Box Part API (in [mobile](../../../api/mobile/latest/group__Edje__Part__Box.html) and [wearable](../../../api/wearable/latest/group__Edje__Part__Box.html) applications). If an unregistered layout is used, it defaults to `horizontal`.
 
-    - `align [horizontal][vertical]`
+    - `align [horizontal] [vertical]`
 
       Changes the position of the point of balance inside the container. The default value is 0.5 0.5.
 
-    - `padding [horizontal][vertical]`
+    - `padding [horizontal] [vertical]`
 
       Sets the space between cells in pixels. The default value is `0 0`.
 
-    - `min [horizontal][vertical]`
+    - `min [horizontal] [vertical]`
 
       When any of the parameters is enabled (1), it forces the minimum size of the box to be equal to the minimum size of the items. The default value is `0 0`.
 
@@ -1046,20 +1049,20 @@ part {
 
     - `homogeneous [homogeneous mode]`
 
-     Sets the homogeneous mode for the table:`
+     Sets the homogeneous mode for the table:
       - `NONE`: Default
       - `TABLE`: Available space is evenly divided between children (the space overflows onto other children if too little space is available)
       - `ITEM`: Size of each item is the largest minimum size of all the items
 
-    - `align [horizontal][vertical]`
+    - `align [horizontal] [vertical]`
 
       Changes the position of the point of balance inside the container. The default value is `0.5 0.5`.
 
-    - `padding [horizontal][vertical]`
+    - `padding [horizontal] [vertical]`
 
       Sets the space between cells in pixels. The default value is `0 0`.
 
-    - `min [horizontal][vertical]`
+    - `min [horizontal] [vertical]`
 
       When any of the parameters is enabled (1), it forces the minimum size of the table to be equal to the minimum size of the items. The default value is `0 0`.
 
@@ -1109,7 +1112,7 @@ part {
 
       Enables perspective when rotating even without a perspective point object. This uses a perspective set for the object itself or for the canvas as a whole as the global perspective with the `edje_perspective_set()` and `edje_perspective_global_set()` functions of the Edje Perspective API (in [mobile](../../../api/mobile/latest/group__Edje__Perspective.html) and [wearable](../../../api/wearable/latest/group__Edje__Perspective.html) applications).
 
-    - `color [point][red] [green][blue] [alpha]`
+    - `color [point] [red] [green] [blue] [alpha]`
 
       Sets the color of a vertex in the map. The colors are linearly interpolated between vertex points through the map. The default color of a vertex in a map is white solid (255, 255, 255, 255), which means it has no affect on modifying the part pixels. Currently only 4 points are supported:
 
@@ -1185,14 +1188,15 @@ part {
       source: "edje";
       ```
 
-      - `base [signal][source]`
+      - `base [signal] [source]`
 
-       Sets the signal and source which triggers the transition to this state. The source parameter is optional, and it is filled with the current group's default value if it is not provided.
+        Sets the signal and source which triggers the transition to this state. The source parameter is optional, and it is filled with the current group's default value if it is not provided.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this Content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information
-- Dependencies  
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
