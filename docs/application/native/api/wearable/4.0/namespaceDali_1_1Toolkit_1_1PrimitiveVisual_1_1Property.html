@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -135,15 +135,15 @@ Applies to ALL shapes. </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a6eb3628267b81eb917daccc3c52b3e0ba88f2518f576543bb478505a154b7588a"></a><!-- doxytag: member="SLICES" ref="a6eb3628267b81eb917daccc3c52b3e0ba88f2518f576543bb478505a154b7588a" args="" -->SLICES</em>&nbsp;</td><td>
 <p>The number of slices as you go around the shape. </p>
-<p>Name "slices", type <a class="el" href="structDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759cac3c145c2e414f3ec168a6f4fb8968c5b" title="An integer type.">Property::INTEGER</a>. For spheres and conical frustrums, this determines how many divisions there are as you go around the object. </p>
+<p>Name "slices", type <a class="el" href="structDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759cac3c145c2e414f3ec168a6f4fb8968c5b" title="An integer type.">Property::INTEGER</a>. For spheres and conical frustums, this determines how many divisions there are as you go around the object. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.45 </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Optional. If not specified, the default is 128. </dd>
 <dd>
 Applies to:<ul>
 <li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a9eeb7e8493d5ea1eba17bc9bfa6bb2f3" title="A perfectly round geometrical object in three-dimensional space.">Shape::SPHERE</a></li>
 <li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a79d11577d6d510a5056bb2a081fddce4" title="The area bound between two circles, i.e. a cone with the tip removed.">Shape::CONICAL_FRUSTRUM</a></li>
-<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a867ae05b505798a419e7c59ebdc825fc" title="Equivalent to a conical frustrum with top radius of zero.">Shape::CONE</a></li>
-<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a4f3e35f4a9198d75058cdfeba90c7b0c" title="Equivalent to a conical frustrum with equal radii for the top and bottom circles.">Shape::CYLINDER</a> </li>
+<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a867ae05b505798a419e7c59ebdc825fc" title="Equivalent to a conical frustum with top radius of zero.">Shape::CONE</a></li>
+<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a4f3e35f4a9198d75058cdfeba90c7b0c" title="Equivalent to a conical frustum with equal radii for the top and bottom circles.">Shape::CYLINDER</a> </li>
 </ul>
 </dd>
 <dd>
@@ -163,7 +163,7 @@ Applies to:<ul>
 The range is from 1 to 255. </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a6eb3628267b81eb917daccc3c52b3e0ba930c151cc67c43c0bfca9ad7e4c493df"></a><!-- doxytag: member="SCALE_TOP_RADIUS" ref="a6eb3628267b81eb917daccc3c52b3e0ba930c151cc67c43c0bfca9ad7e4c493df" args="" -->SCALE_TOP_RADIUS</em>&nbsp;</td><td>
-<p>The scale of the radius of the top circle of a conical frustrum. </p>
+<p>The scale of the radius of the top circle of a conical frustum. </p>
 <p>Name "scaleTopRadius", type <a class="el" href="structDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759caec08fcd8f68e1cfaa91a533f434d50d1" title="A float type.">Property::FLOAT</a>. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.45 </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Optional. If not specified, the default is 1.0f. </dd>
@@ -176,14 +176,14 @@ Applies to:<ul>
 Only values greater than or equal to 0.0f are accepted. </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a6eb3628267b81eb917daccc3c52b3e0bac10955204f734be58f5b0a476fbc3319"></a><!-- doxytag: member="SCALE_BOTTOM_RADIUS" ref="a6eb3628267b81eb917daccc3c52b3e0bac10955204f734be58f5b0a476fbc3319" args="" -->SCALE_BOTTOM_RADIUS</em>&nbsp;</td><td>
-<p>The scale of the radius of the bottom circle of a conical frustrum. </p>
+<p>The scale of the radius of the bottom circle of a conical frustum. </p>
 <p>Name "scaleBottomRadius", type <a class="el" href="structDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759caec08fcd8f68e1cfaa91a533f434d50d1" title="A float type.">Property::FLOAT</a>. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.45 </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Optional. If not specified, the default is 1.5f. </dd>
 <dd>
 Applies to:<ul>
 <li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a79d11577d6d510a5056bb2a081fddce4" title="The area bound between two circles, i.e. a cone with the tip removed.">Shape::CONICAL_FRUSTRUM</a></li>
-<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a867ae05b505798a419e7c59ebdc825fc" title="Equivalent to a conical frustrum with top radius of zero.">Shape::CONE</a> </li>
+<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a867ae05b505798a419e7c59ebdc825fc" title="Equivalent to a conical frustum with top radius of zero.">Shape::CONE</a> </li>
 </ul>
 </dd>
 <dd>
@@ -197,8 +197,8 @@ Only values greater than or equal to 0.0f are accepted. </dd></dl>
 <dd>
 Applies to:<ul>
 <li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a79d11577d6d510a5056bb2a081fddce4" title="The area bound between two circles, i.e. a cone with the tip removed.">Shape::CONICAL_FRUSTRUM</a></li>
-<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a867ae05b505798a419e7c59ebdc825fc" title="Equivalent to a conical frustrum with top radius of zero.">Shape::CONE</a></li>
-<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a4f3e35f4a9198d75058cdfeba90c7b0c" title="Equivalent to a conical frustrum with equal radii for the top and bottom circles.">Shape::CYLINDER</a> </li>
+<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a867ae05b505798a419e7c59ebdc825fc" title="Equivalent to a conical frustum with top radius of zero.">Shape::CONE</a></li>
+<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a4f3e35f4a9198d75058cdfeba90c7b0c" title="Equivalent to a conical frustum with equal radii for the top and bottom circles.">Shape::CYLINDER</a> </li>
 </ul>
 </dd>
 <dd>
@@ -211,7 +211,7 @@ Only values greater than or equal to 0.0f are accepted. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Optional. If not specified, the default is 1.0f. </dd>
 <dd>
 Applies to:<ul>
-<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a4f3e35f4a9198d75058cdfeba90c7b0c" title="Equivalent to a conical frustrum with equal radii for the top and bottom circles.">Shape::CYLINDER</a> </li>
+<li><a class="el" href="namespaceDali_1_1Toolkit_1_1PrimitiveVisual_1_1Shape.html#a951a89cb3ce26ff9d67a71c31cc96ec9a4f3e35f4a9198d75058cdfeba90c7b0c" title="Equivalent to a conical frustum with equal radii for the top and bottom circles.">Shape::CYLINDER</a> </li>
 </ul>
 </dd>
 <dd>

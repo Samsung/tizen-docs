@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -100,7 +100,7 @@ Required Header</h2>
 <h2><a class="anchor" id="CAPI_MEDIA_AUDIO_IO_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The Audio I/O API provides a set of functions to directly manage the system audio devices. It gives easy access to the hardware layer of the sound card with a professional multichannel audio interface. It should be used for activities requiring raw audio data buffers(PCM format).</p>
-<p>Programming the interface requires first obtaining a handle to the device, via the <a class="el" href="group__CAPI__MEDIA__AUDIO__IN__MODULE.html#ga9875de9415ecaa4d41a10b87e7b48ca1" title="Creates an audio device instance and returns an input handle to record PCM (pulse-code modulation) da...">audio_in_create()</a> or <a class="el" href="group__CAPI__MEDIA__AUDIO__OUT__MODULE.html#ga2744236b0fab3899c5a13789505c3e95" title="Creates an audio device instance and returns an output handle to play PCM (pulse-code modulation) dat...">audio_out_create()</a> function.</p>
+<p>Programming the interface requires first obtaining a handle to the device, via the <a class="el" href="group__CAPI__MEDIA__AUDIO__IN__MODULE.html#ga9875de9415ecaa4d41a10b87e7b48ca1" title="Creates an audio device instance and returns an input handle to record PCM (pulse-code modulation) da...">audio_in_create()</a> or <a class="el" href="group__CAPI__MEDIA__AUDIO__OUT__MODULE.html#ga57c9d208a13752f289b73a58ed55f601" title="Creates an audio device instance and returns an output handle to play PCM (pulse-code modulation) dat...">audio_out_create_new()</a> function.</p>
 <p>The input and output devices both have an available set of queries, to find the suggested buffer size, sampling rate, channel type, and sample type. For output, there is an additional query, to get the sound type (these types are defined in the <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html">Sound Manager</a> API).</p>
 <p>Reading from input device is done by <a class="el" href="group__CAPI__MEDIA__AUDIO__IN__MODULE.html#ga1dbf1cc5bd79c2f6374e0ef3b7162bc9" title="Reads audio data from the audio input buffer.">audio_in_read()</a> with allocated buffer after <a class="el" href="group__CAPI__MEDIA__AUDIO__IN__MODULE.html#ga4192740b08e4c7d97059ee3497c84e29" title="Prepares the audio input for reading audio data by starting buffering of audio data from the device...">audio_in_prepare()</a>. Similarly, writing to output device is done by <a class="el" href="group__CAPI__MEDIA__AUDIO__OUT__MODULE.html#ga3ff5c7461278fbbab80cc0f00c1bb6e1" title="Starts writing the audio data to the device.">audio_out_write()</a> with allocated buffer after <a class="el" href="group__CAPI__MEDIA__AUDIO__OUT__MODULE.html#ga5670195c69022860d9365c32ac7c872f" title="Prepares the audio output for playback, this must be called before audio_out_write().">audio_out_prepare()</a>. </p>
 <table class="memberdecls">
@@ -122,7 +122,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when audio input or output is interrupted. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000257">Deprecated:</a></b></dt><dd>Deprecated since 3.0. Use sound_stream_focus_state_changed_cb instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000406">Deprecated:</a></b></dt><dd>Deprecated since 3.0. Use sound_stream_focus_state_changed_cb instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -239,7 +239,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for audio IO interrupted messages. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000256">Deprecated:</a></b></dt><dd>Deprecated since 3.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000405">Deprecated:</a></b></dt><dd>Deprecated since 3.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga7bba635edcca6a4a88e8c72474952489a49f3f38cc345cbcbde5e20a98c4d327c"></a><!-- doxytag: member="AUDIO_IO_INTERRUPTED_COMPLETED" ref="gga7bba635edcca6a4a88e8c72474952489a49f3f38cc345cbcbde5e20a98c4d327c" args="" -->AUDIO_IO_INTERRUPTED_COMPLETED</em>&nbsp;</td><td>

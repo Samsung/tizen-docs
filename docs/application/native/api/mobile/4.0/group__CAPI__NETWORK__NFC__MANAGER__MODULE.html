@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -130,7 +130,7 @@ Related Features</h2>
 </ul>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
 </p>
-<p>You can check if a devrice supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+<p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
@@ -179,7 +179,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gaaed2a9d6e75179f0acd46076ec963cc8">nfc_manager_enable_transaction_fg_dispatch</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">give the priority to the foreground application when dispatching transaction event.  <a href="#gaaed2a9d6e75179f0acd46076ec963cc8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga6603360d1aad10353b4681010d5b8591">nfc_manager_disable_transaction_fg_dispatch</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">disable foreground dispatch for "EVT_TRANSACTION" to the givin application.  <a href="#ga6603360d1aad10353b4681010d5b8591"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">disable foreground dispatch for "EVT_TRANSACTION" to the given application.  <a href="#ga6603360d1aad10353b4681010d5b8591"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga6ec3e34fc9af64ae9434cb79e1547bee">nfc_manager_get_cached_message</a> (<a class="el" href="group__CAPI__NETWORK__NFC__NDEF__MESSAGE__MODULE.html#ga9753333a7e53714b5cb17b7014727bf7">nfc_ndef_message_h</a> *ndef_message)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets NDEF message cached when the tag is detected or when data received from NFC peer-to-peer target.  <a href="#ga6ec3e34fc9af64ae9434cb79e1547bee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga2f40a55702e6a7472b77f7928c356cba">nfc_manager_set_tag_filter</a> (int filter)</td></tr>
@@ -358,7 +358,7 @@ Typedefs</h2></td></tr>
 
 <p>Called when receiving Secure Element(SIM/UICC(Universal Integrated Circuit Card)) transaction event data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This event notifies , external reader trys to access secure element.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This event notifies , external reader tries to access secure element.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">se</td><td>type </td></tr>
@@ -570,7 +570,7 @@ Typedefs</h2></td></tr>
 <p>This event notifies the terminal host that current transaction in process was ended. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac55c60d7a39c86fee1920ff9947803f7a810c8f63c2b4eaf0696de0bd23e226e1"></a><!-- doxytag: member="NFC_SE_EVENT_CONNECTIVITY" ref="ggac55c60d7a39c86fee1920ff9947803f7a810c8f63c2b4eaf0696de0bd23e226e1" args="" -->NFC_SE_EVENT_CONNECTIVITY</em>&nbsp;</td><td>
-<p>It's ready signal to communicate UICC(Universal Integrated Circuit Card) with terminal host. UICC(Universal Integrated Circuit Card) create pipe and open the pipe chanel. Then it sends the signal to terminal host or host controller. </p>
+<p>It's ready signal to communicate UICC(Universal Integrated Circuit Card) with terminal host. UICC(Universal Integrated Circuit Card) create pipe and open the pipe channel. Then it sends the signal to terminal host or host controller. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac55c60d7a39c86fee1920ff9947803f7aed5e8579abf65deb88c13d7a7670d2a5"></a><!-- doxytag: member="NFC_SE_EVENT_FIELD_ON" ref="ggac55c60d7a39c86fee1920ff9947803f7aed5e8579abf65deb88c13d7a7670d2a5" args="" -->NFC_SE_EVENT_FIELD_ON</em>&nbsp;</td><td>
 <p>When the CLF(Contactless Front-end) detects a RF field, the card RF gate sends the event <a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ggac55c60d7a39c86fee1920ff9947803f7aed5e8579abf65deb88c13d7a7670d2a5">NFC_SE_EVENT_FIELD_ON</a> to the card application gate. When there are multiple open card RF gates the CLF shall send the <a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ggac55c60d7a39c86fee1920ff9947803f7aed5e8579abf65deb88c13d7a7670d2a5">NFC_SE_EVENT_FIELD_ON</a> on all open pipes to these gates.Next the CLF starts the initialization and anti-collision process as defined in ISO/IEC 14443-3 [6] </p>
@@ -579,7 +579,7 @@ Typedefs</h2></td></tr>
 <p>When the CLF(Contactless Front-end) detects that the RF field is off, the card RF gate shall send <a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ggac55c60d7a39c86fee1920ff9947803f7a6cc76cca875a88faf1b6f11487785354">NFC_SE_EVENT_FIELD_OFF</a> to the card application gate. When there are multiple open card RF gates the CLF shall send the <a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ggac55c60d7a39c86fee1920ff9947803f7a6cc76cca875a88faf1b6f11487785354">NFC_SE_EVENT_FIELD_OFF</a> to one gate only. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac55c60d7a39c86fee1920ff9947803f7a33143dc0064b0cadd4e158d7ead84c22"></a><!-- doxytag: member="NFC_SE_EVENT_TRANSACTION" ref="ggac55c60d7a39c86fee1920ff9947803f7a33143dc0064b0cadd4e158d7ead84c22" args="" -->NFC_SE_EVENT_TRANSACTION</em>&nbsp;</td><td>
-<p>This event notifies , external reader trys to access secure element </p>
+<p>This event notifies , external reader tries to access secure element </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac55c60d7a39c86fee1920ff9947803f7a76bbcd7579fb50dab6821d3e18cd44dc"></a><!-- doxytag: member="NFC_SE_EVENT_SE_TYPE_CHANGED" ref="ggac55c60d7a39c86fee1920ff9947803f7a76bbcd7579fb50dab6821d3e18cd44dc" args="" -->NFC_SE_EVENT_SE_TYPE_CHANGED</em>&nbsp;</td><td>
 <p>This event notifies, changing the emulated secure element type </p>
@@ -718,11 +718,11 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>disable foreground dispatch for "EVT_TRANSACTION" to the givin application. </p>
+<p>disable foreground dispatch for "EVT_TRANSACTION" to the given application. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/nfc.cardemulation</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>After calling "nfc_manager_enable_transaction_fg_dispatch", an application must call this api when it go out from foureground. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>After calling "nfc_manager_enable_transaction_fg_dispatch", an application must call this api when it goes out from foreground. <br/>
 <br/>
  </dd>
 <dd>
@@ -794,7 +794,7 @@ Security level can be determined by the manufacturer usage.<br/>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga6603360d1aad10353b4681010d5b8591" title="disable foreground dispatch for &quot;EVT_TRANSACTION&quot; to the givin application.">nfc_manager_disable_transaction_fg_dispatch()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga6603360d1aad10353b4681010d5b8591" title="disable foreground dispatch for &quot;EVT_TRANSACTION&quot; to the given application.">nfc_manager_disable_transaction_fg_dispatch()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#ga9f5959b00752780b59aecf180a457f3e" title="Initializes NFC Manager.">nfc_manager_initialize()</a> </dd></dl>
 
