@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -100,7 +100,7 @@ Required Header</h2>
 <p>#include &lt;bluetooth.h&gt;</p>
 <h2><a class="anchor" id="CAPI_NETWORK_BLUETOOTH_IPSP_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>Two roles are defined for devices that implement IPSP. The <em>Router</em> is used for devices that can route IPv6 packets. The <em>Node</em> is used for devices that can originate or consume IPv6 appllication packets.</p>
+<p>Two roles are defined for devices that implement IPSP. The <em>Router</em> is used for devices that can route IPv6 packets. The <em>Node</em> is used for devices that can originate or consume IPv6 application packets.</p>
 <h2><a class="anchor" id="CAPI_NETWORK_BLUETOOTH_IPSP_MODULE_FEATURE"></a>
 Related Features</h2>
 <p>This API is related with the following features:<br/>
@@ -126,7 +126,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#ga9991219c7fc55c4fe107364781b8e65e">bt_ipsp_connect</a> (const char *remote_address)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects to a remote device's IPSP service over LE, asynchronously.  <a href="#ga9991219c7fc55c4fe107364781b8e65e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#gafc79e0dcb5e95493dda2aeebe1b670d8">bt_ipsp_disconnect</a> (const char *remote_address)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disonneicts from a remote device's IPSP service, asynchronously.  <a href="#gafc79e0dcb5e95493dda2aeebe1b670d8"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects from a remote device's IPSP service, asynchronously.  <a href="#gafc79e0dcb5e95493dda2aeebe1b670d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#gaf561bb1cb97aa4c273c50a23a934a7ea">bt_ipsp_set_connection_state_changed_cb</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#ga8f937cfbd66d2e535965ba3058b98267">bt_ipsp_connection_state_changed_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function that will be invoked when the connection state changes.  <a href="#gaf561bb1cb97aa4c273c50a23a934a7ea"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#ga041a0c58aa4be1c11763f86e0be85616">bt_ipsp_unset_connection_state_changed_cb</a> (void)</td></tr>
@@ -164,7 +164,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#ga9991219c7fc55c4fe107364781b8e65e" title="Connects to a remote device&#39;s IPSP service over LE, asynchronously.">bt_ipsp_connect()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#gafc79e0dcb5e95493dda2aeebe1b670d8" title="Disonneicts from a remote device&#39;s IPSP service, asynchronously.">bt_ipsp_disconnect()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html#gafc79e0dcb5e95493dda2aeebe1b670d8" title="Disconnects from a remote device&#39;s IPSP service, asynchronously.">bt_ipsp_disconnect()</a> </dd></dl>
 
 </div>
 </div>
@@ -286,7 +286,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Disonneicts from a remote device's IPSP service, asynchronously. </p>
+<p>Disconnects from a remote device's IPSP service, asynchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>

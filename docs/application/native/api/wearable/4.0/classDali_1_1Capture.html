@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -129,8 +129,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Start capture and save the image as a file.  <a href="#ab8fb39f8f6f0a0c0560f31e6f7b69c1d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Capture.html#a4625c0601640016ff00dba31ef6fe54a">CaptureFinishedSignalType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Capture.html#a81c4ab4856be0df8f91ac785c5d9b058">FinishedSignal</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get finished signal.  <a href="#a81c4ab4856be0df8f91ac785c5d9b058"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Capture.html#ad261a12b78ab3127cd30cf60f6ad4b63">Capture</a> (Internal::Adaptor::Capture *internal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor is used by <a class="el" href="classDali_1_1Capture.html#af3194baad4bcf12f733db4dd6dfa1b23" title="Create an initialized Capture.">New()</a> methods.  <a href="#ad261a12b78ab3127cd30cf60f6ad4b63"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDali_1_1Capture.html">Capture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Capture.html#af3194baad4bcf12f733db4dd6dfa1b23">New</a> ()</td></tr>
@@ -270,32 +268,6 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad261a12b78ab3127cd30cf60f6ad4b63"></a><!-- doxytag: member="Dali::Capture::Capture" ref="ad261a12b78ab3127cd30cf60f6ad4b63" args="(Internal::Adaptor::Capture *internal)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classDali_1_1Capture.html#a411b8d93c297db25d0ed94d94d89f534">Dali::Capture::Capture</a> </td>
-          <td>(</td>
-          <td class="paramtype">Internal::Adaptor::Capture *&#160;</td>
-          <td class="paramname"><em>internal</em></td><td>)</td>
-          <td><code> [explicit]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>This constructor is used by <a class="el" href="classDali_1_1Capture.html#af3194baad4bcf12f733db4dd6dfa1b23" title="Create an initialized Capture.">New()</a> methods. </p>
-<dl class="user"><dt><b>Since:</b></dt><dd>4.0, DALi version 1.3.4</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">internal</td><td>A pointer to a newly allocated <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> resource. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a80cda378c9e62b17427ccd7594d52510"></a><!-- doxytag: member="Dali::Capture::DownCast" ref="a80cda378c9e62b17427ccd7594d52510" args="(BaseHandle handle)" -->
 <div class="memitem">
@@ -360,12 +332,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Create an initialized <a class="el" href="classDali_1_1Capture.html" title="Capture snapshots the current scene and save as a file.">Capture</a>. </p>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
-<dl class="user"><dt><b>Since:</b></dt><dd>4.0, DALi version 1.3.4 </dd></dl>
+<dl class="user"><dt><b>Since:</b></dt><dd>4.0, DALi version 1.3.4</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to a newly allocated <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> resource. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Projection mode of default cameraActor is <a class="el" href="namespaceDali_1_1Camera.html#ab60dfeb376fbe88b2d3b0b0211af2cb0a22246cc9833744682ef897a6d15a0da2" title="Distance causes foreshortening; objects further from the camera appear smaller.">Dali::Camera::PERSPECTIVE_PROJECTION</a> </dd>
-<dd>
-If permission denied by privilege occurs, a uninitialized handle is returned </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Projection mode of default cameraActor is <a class="el" href="namespaceDali_1_1Camera.html#ab60dfeb376fbe88b2d3b0b0211af2cb0a22246cc9833744682ef897a6d15a0da2" title="Distance causes foreshortening; objects further from the camera appear smaller.">Dali::Camera::PERSPECTIVE_PROJECTION</a> </dd></dl>
 
 </div>
 </div>
@@ -385,8 +354,7 @@ If permission denied by privilege occurs, a uninitialized handle is returned </d
 <div class="memdoc">
 
 <p>Create an initialized <a class="el" href="classDali_1_1Capture.html" title="Capture snapshots the current scene and save as a file.">Capture</a>. </p>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
-<dl class="user"><dt><b>Since:</b></dt><dd>4.0, DALi version 1.3.4 </dd></dl>
+<dl class="user"><dt><b>Since:</b></dt><dd>4.0, DALi version 1.3.4</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cameraActor</td><td>An initialized <a class="el" href="classDali_1_1CameraActor.html" title="CameraActor controls a camera.">CameraActor</a>. </td></tr>
@@ -394,7 +362,6 @@ If permission denied by privilege occurs, a uninitialized handle is returned </d
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to a newly allocated <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> resource. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If permission denied by privilege occurs, a uninitialized handle is returned </dd></dl>
 
 </div>
 </div>

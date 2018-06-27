@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -159,7 +159,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga98aafa6d7be373ee91e3b41022f2b81a">video_util_cancel_transcoding</a> (<a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga2ba78dbbae98c0e7a0bfbe11830c3710">video_util_h</a> handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels transcoding the video for given video util handle.  <a href="#ga98aafa6d7be373ee91e3b41022f2b81a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga481e85368f5118c16fb66df718b14fc3">video_util_get_progress_transcoding</a> (<a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga2ba78dbbae98c0e7a0bfbe11830c3710">video_util_h</a> handle, unsigned long *current_position, unsigned long *duration)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retreives the current position and duration of the video transcoding.  <a href="#ga481e85368f5118c16fb66df718b14fc3"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current position and duration of the video transcoding.  <a href="#ga481e85368f5118c16fb66df718b14fc3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga9e14c73adac316fbfa834ec2ed386634">video_util_foreach_supported_file_format</a> (<a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga2ba78dbbae98c0e7a0bfbe11830c3710">video_util_h</a> handle, <a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga7b1d14131a1bcfdb5ac147e050c7551e">video_util_supported_file_format_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all supported media formats by invoking a specific callback for each supported media format.  <a href="#ga9e14c73adac316fbfa834ec2ed386634"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga92fe49ff1647e0b75ed86bcbd0a7c308">video_util_foreach_supported_video_codec</a> (<a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga2ba78dbbae98c0e7a0bfbe11830c3710">video_util_h</a> handle, <a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga1ec2f292e36c08a68d9949eb13ce3241">video_util_supported_video_encoder_cb</a> callback, void *user_data)</td></tr>
@@ -805,7 +805,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Retreives the current position and duration of the video transcoding. </p>
+<p>Retrieves the current position and duration of the video transcoding. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed if input or output path are relevant to media storage.<br/>
  <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is needed if input or output path are relevant to external storage.<br/>
@@ -1323,7 +1323,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#gaa6dfd115b79ef833e372ac5d9039867e" title="Called when transcoding is finished just before storing in the file.">video_util_transcoding_completed_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga481e85368f5118c16fb66df718b14fc3" title="Retreives the current position and duration of the video transcoding.">video_util_get_progress_transcoding()</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga481e85368f5118c16fb66df718b14fc3" title="Retrieves the current position and duration of the video transcoding.">video_util_get_progress_transcoding()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__VIDEO__UTIL__MODULE.html#ga98aafa6d7be373ee91e3b41022f2b81a" title="Cancels transcoding the video for given video util handle.">video_util_cancel_transcoding()</a> </dd></dl>
 

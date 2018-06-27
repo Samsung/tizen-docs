@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -109,6 +109,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister a interface. Note: This doesn't unregister the object path if interface count reaches 0. Use <a class="el" href="group__Eldbus__Service.html#gad93bc27e856d7747d76873edff991a3a" title="Unregister all interfaces of the object path that this interface belongs and the object path...">eldbus_service_object_unregister()</a> to unregister the object.  <a href="#ga16f7215afc4c9432c2bf639e437f193c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#gad93bc27e856d7747d76873edff991a3a">eldbus_service_object_unregister</a> (Eldbus_Service_Interface *iface)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister all interfaces of the object path that this interface belongs and the object path.  <a href="#gad93bc27e856d7747d76873edff991a3a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eldbus__Core.html#ga5f0557a7e65ed263fcc1678874b8f7e7">Eldbus_Connection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#gada16a04bbabc219123cbac90f1aad793">eldbus_service_connection_get</a> (const Eldbus_Service_Interface *iface)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#ga3633101a16cfe7d80b8649d7bf3e3884">eldbus_service_object_path_get</a> (const Eldbus_Service_Interface *iface)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#ga710a0428a3bb8d0f436a030272c9f82b">eldbus_service_signal_emit</a> (const Eldbus_Service_Interface *iface, unsigned int signal_id,...)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit a signal handler of the interface with non-complex types. Each signal handler have a internal id, the first signal handler of interface is = 0 the second = 1 and go on.  <a href="#ga710a0428a3bb8d0f436a030272c9f82b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eldbus__Core.html#ga14e8c4d4b96af5fb8bb5c66dc315593a">Eldbus_Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#ga6448c01e341163b5ce9593416e4e75f3">eldbus_service_signal_new</a> (const Eldbus_Service_Interface *iface, unsigned int signal_id)</td></tr>
@@ -123,6 +125,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Del data stored in object path.  <a href="#gacfd59221d57aedf3b90a63dc206f09f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#ga51cfeabdb75e0f0413bb398f12769f67">eldbus_service_property_changed</a> (const Eldbus_Service_Interface *iface, const char *name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add property to list of changed properties A DBus.PropertiesChanged signal will be sent in an idler with all properties that have changed.  <a href="#ga51cfeabdb75e0f0413bb398f12769f67"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#ga7b22ea92cdc94d4927d2be757a3f0718">eldbus_service_property_invalidate_set</a> (const Eldbus_Service_Interface *iface, const char *name, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> is_invalidate)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#ga9ebf1302c3be4a23011477b6a2f1ae65">eldbus_service_object_manager_attach</a> (Eldbus_Service_Interface *iface)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Service.html#gafb7c735cafee5049992283526168a108">eldbus_service_object_manager_detach</a> (Eldbus_Service_Interface *iface)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -206,6 +209,24 @@ Defines</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gada16a04bbabc219123cbac90f1aad793"></a><!-- doxytag: member="eldbus_service.h::eldbus_service_connection_get" ref="gada16a04bbabc219123cbac90f1aad793" args="(const Eldbus_Service_Interface *iface)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eldbus__Core.html#ga5f0557a7e65ed263fcc1678874b8f7e7">Eldbus_Connection</a>* <a class="el" href="group__Eldbus__Service.html#gada16a04bbabc219123cbac90f1aad793">eldbus_service_connection_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eldbus_Service_Interface *&#160;</td>
+          <td class="paramname"><em>iface</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000318">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gadd42330ff9b149f153dc0be70fcaad81"></a><!-- doxytag: member="eldbus_service.h::eldbus_service_interface_fallback_register" ref="gadd42330ff9b149f153dc0be70fcaad81" args="(Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc *desc)" -->
 <div class="memitem">
 <div class="memproto">
@@ -238,6 +259,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Register a fallback interface handler for a given subsection of the object hierarchy. Note: Use <a class="el" href="group__Eldbus__Service.html#ga16f7215afc4c9432c2bf639e437f193c" title="Unregister a interface. Note: This doesn&#39;t unregister the object path if interface count reaches 0...">eldbus_service_interface_unregister()</a> to unregister a interface. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000313">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>where the interface should listen </td></tr>
@@ -285,6 +307,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Register a fallback interface handler for a given subsection of the object hierarchy. This extended register function allows the registration of stateful methods, with void* data. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000315">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <p>Note: Use <a class="el" href="group__Eldbus__Service.html#ga16f7215afc4c9432c2bf639e437f193c" title="Unregister a interface. Note: This doesn&#39;t unregister the object path if interface count reaches 0...">eldbus_service_interface_unregister()</a> to unregister a interface.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -333,6 +356,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Register an interface in the given path and connection. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000312">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>where the interface should listen </td></tr>
@@ -378,6 +402,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Register an interface in the given path and connection. This extended register function allows the registration of stateful methods, with void* data. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000314">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <p>Note: Use <a class="el" href="group__Eldbus__Service.html#ga16f7215afc4c9432c2bf639e437f193c" title="Unregister a interface. Note: This doesn&#39;t unregister the object path if interface count reaches 0...">eldbus_service_interface_unregister()</a> to unregister a interface.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -409,6 +434,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Unregister a interface. Note: This doesn't unregister the object path if interface count reaches 0. Use <a class="el" href="group__Eldbus__Service.html#gad93bc27e856d7747d76873edff991a3a" title="Unregister all interfaces of the object path that this interface belongs and the object path...">eldbus_service_object_unregister()</a> to unregister the object. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000316">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -439,6 +465,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Del data stored in object path. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000325">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>interface that belongs to the object path where data are stored </td></tr>
@@ -477,6 +504,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Get data stored in object path. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000324">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>interface that belongs to the object path where data are stored </td></tr>
@@ -521,6 +549,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Store data at object path, this data can be obtained from all interfaces of the same object. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000323">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>interface that belong to the object path where data will be stored </td></tr>
@@ -547,7 +576,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Attach ObjectManager interface.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000328">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Attach ObjectManager interface.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>ObjectManager will be attach in object path of this interface. </td></tr>
@@ -573,7 +602,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Detach ObjectManager interface.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000329">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Detach ObjectManager interface.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>ObjectManager of object path of this interface will be detach. </td></tr>
@@ -582,6 +611,24 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if success</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3633101a16cfe7d80b8649d7bf3e3884"></a><!-- doxytag: member="eldbus_service.h::eldbus_service_object_path_get" ref="ga3633101a16cfe7d80b8649d7bf3e3884" args="(const Eldbus_Service_Interface *iface)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Eldbus__Service.html#ga3633101a16cfe7d80b8649d7bf3e3884">eldbus_service_object_path_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eldbus_Service_Interface *&#160;</td>
+          <td class="paramname"><em>iface</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000319">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 
 </div>
 </div>
@@ -601,6 +648,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Unregister all interfaces of the object path that this interface belongs and the object path. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000317">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -631,6 +679,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Add property to list of changed properties A DBus.PropertiesChanged signal will be sent in an idler with all properties that have changed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000326">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>Interface containing the changed property </td></tr>
@@ -639,6 +688,40 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7b22ea92cdc94d4927d2be757a3f0718"></a><!-- doxytag: member="eldbus_service.h::eldbus_service_property_invalidate_set" ref="ga7b22ea92cdc94d4927d2be757a3f0718" args="(const Eldbus_Service_Interface *iface, const char *name, Eina_Bool is_invalidate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Eldbus__Service.html#ga7b22ea92cdc94d4927d2be757a3f0718">eldbus_service_property_invalidate_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eldbus_Service_Interface *&#160;</td>
+          <td class="paramname"><em>iface</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>is_invalidate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000327">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 
 </div>
 </div>
@@ -674,6 +757,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Emit a signal handler of the interface with non-complex types. Each signal handler have a internal id, the first signal handler of interface is = 0 the second = 1 and go on. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000320">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>interface of the signal </td></tr>
@@ -712,6 +796,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Create signal message. Each signal handler have a internal id, the first signal handler of interface is = 0 the second = 1 and go on. This function is used when the signal has complex types. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>interface of the signal </td></tr>
@@ -749,6 +834,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Send a signal message. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000322">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <p>On success this will call <a class="el" href="group__Eldbus__Message.html#ga25e968b4f10dc8ee3ab31cbb66a0b8af" title="Decrease message reference.">eldbus_message_unref()</a> on the </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

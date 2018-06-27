@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -195,7 +195,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__WEBVIEW.html#gaf6e0b8432d5eb67142bd623ca35d89b3">Ewk_Cache_Model</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga9325c70b423bedd8dc16fa390748f1ef">ewk_context_cache_model_get</a> (const <a class="el" href="group__WEBVIEW.html#gaac6ffb270458510e11804e9b1ec2e448">Ewk_Context</a> *context)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cache model type.  <a href="#ga9325c70b423bedd8dc16fa390748f1ef"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#gac3559ff2bfa0a06d694612d78df2eb66">ewk_context_form_autofill_profile_add</a> (<a class="el" href="group__WEBVIEW.html#gaac6ffb270458510e11804e9b1ec2e448">Ewk_Context</a> *context, <a class="el" href="group__WEBVIEW.html#ga08d789d69bf93b3655cd26c8a17582d6">Ewk_Autofill_Profile</a> *profile)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the created profile into permenant storage.  <a href="#gac3559ff2bfa0a06d694612d78df2eb66"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the created profile into permanent storage.  <a href="#gac3559ff2bfa0a06d694612d78df2eb66"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__WEBVIEW.html#ga08d789d69bf93b3655cd26c8a17582d6">Ewk_Autofill_Profile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#gab92689cc66cbbcaded6fb7fdd63bb79a">ewk_context_form_autofill_profile_get</a> (<a class="el" href="group__WEBVIEW.html#gaac6ffb270458510e11804e9b1ec2e448">Ewk_Context</a> *context, unsigned id)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the existing profile for given index.  <a href="#gab92689cc66cbbcaded6fb7fdd63bb79a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga7d49ff7a542e1a4a35d666f7e7028180">ewk_context_form_autofill_profile_get_all</a> (<a class="el" href="group__WEBVIEW.html#gaac6ffb270458510e11804e9b1ec2e448">Ewk_Context</a> *context)</td></tr>
@@ -805,7 +805,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">policy</td><td>A <a class="el" href="group__WEBVIEW.html#ga51b3ecbf32b6a2171c3f86c25b5096aa" title="Enumeration that creates a type name for the Ewk_Cookie_Accept_Policy.">Ewk_Cookie_Accept_Policy</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event_info</td><td>The user data that will be passsed when <a class="el" href="group__WEBVIEW.html#ga2d53447a6f44d758a5494d7e1f156224" title="Gets the cookie acceptance policy of manager asynchronously.">ewk_cookie_manager_accept_policy_async_get()</a> is called </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_info</td><td>The user data that will be passed when <a class="el" href="group__WEBVIEW.html#ga2d53447a6f44d758a5494d7e1f156224" title="Gets the cookie acceptance policy of manager asynchronously.">ewk_cookie_manager_accept_policy_async_get()</a> is called </td></tr>
   </table>
   </dd>
 </dl>
@@ -1080,7 +1080,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
     <tr><td class="paramdir">[in]</td><td class="paramname">result_value</td><td>The value returned by the script<br/>
  If executed script returns a value, it would be <em>result_value</em>,<br/>
  otherwise <code>NULL</code> if there is no value returned by the script </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user_data will be passsed when <a class="el" href="group__WEBVIEW.html#ga0b6cc39a80fbbb7440ace5a406ee6eb9" title="Requests the execution of the given script.">ewk_view_script_execute()</a> is called </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user_data will be passed when <a class="el" href="group__WEBVIEW.html#ga0b6cc39a80fbbb7440ace5a406ee6eb9" title="Requests the execution of the given script.">ewk_view_script_execute()</a> is called </td></tr>
   </table>
   </dd>
 </dl>
@@ -1104,7 +1104,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">o</td><td>The view object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>The ScriptMessage returned by the script. <br/>
- It will be passsed when <a class="el" href="group__WEBVIEW.html#ga812cf5d2b00a805397a9f5e5b7ad63d1" title="Injects the supplied javascript message handler into webview.">ewk_view_javascript_message_handler_add()</a> is called. </td></tr>
+ It will be passed when <a class="el" href="group__WEBVIEW.html#ga812cf5d2b00a805397a9f5e5b7ad63d1" title="Injects the supplied javascript message handler into webview.">ewk_view_javascript_message_handler_add()</a> is called. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1266,7 +1266,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Translate </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggae50ea13a5be4fea13d9d04d13e81f522aeb1993fc22ac7738b7a8be8049b1af43"></a><!-- doxytag: member="EWK_CONTEXT_MENU_ITEM_TAG_COPY_LINK_DATA" ref="ggae50ea13a5be4fea13d9d04d13e81f522aeb1993fc22ac7738b7a8be8049b1af43" args="" -->EWK_CONTEXT_MENU_ITEM_TAG_COPY_LINK_DATA</em>&nbsp;</td><td>
-<p>Copy lnk data </p>
+<p>Copy link data </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggae50ea13a5be4fea13d9d04d13e81f522abe26bc329bba9641fa5f98fb73ccd189"></a><!-- doxytag: member="EWK_CONTEXT_MENU_ITEM_BASE_APPLICATION_TAG" ref="ggae50ea13a5be4fea13d9d04d13e81f522abe26bc329bba9641fa5f98fb73ccd189" args="" -->EWK_CONTEXT_MENU_ITEM_BASE_APPLICATION_TAG</em>&nbsp;</td><td>
 <p>If app want to add customized item, use enum value after <a class="el" href="group__WEBVIEW.html#ggae50ea13a5be4fea13d9d04d13e81f522abe26bc329bba9641fa5f98fb73ccd189">EWK_CONTEXT_MENU_ITEM_BASE_APPLICATION_TAG</a> </p>
@@ -1723,7 +1723,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dd>
 <a class="el" href="group__WEBVIEW.html#gac5ca03ae58086a43683cd9f011ec2ca5" title="Enumeration that creates a type name for the Ewk_Autofill_Profile_Data_Type.">Ewk_Autofill_Profile_Data_Type</a> </dd>
 <dd>
-<a class="el" href="group__WEBVIEW.html#gac3559ff2bfa0a06d694612d78df2eb66" title="Saves the created profile into permenant storage.">ewk_context_form_autofill_profile_add</a> </dd></dl>
+<a class="el" href="group__WEBVIEW.html#gac3559ff2bfa0a06d694612d78df2eb66" title="Saves the created profile into permanent storage.">ewk_context_form_autofill_profile_add</a> </dd></dl>
 
 </div>
 </div>
@@ -1743,7 +1743,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <div class="memdoc">
 
 <p>Deletes a given profile. </p>
-<p>The API will delete the a particular profile only from the memory. To remove the profile permenantly use ewk_context_form_autofill_profile_remove</p>
+<p>The API will delete the a particular profile only from the memory. To remove the profile permanently use ewk_context_form_autofill_profile_remove</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2484,7 +2484,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 </div>
 <div class="memdoc">
 
-<p>Saves the created profile into permenant storage. </p>
+<p>Saves the created profile into permanent storage. </p>
 <p>The profile used to save must be created by ewk_autofill_profile_new. Data can be added to the created profile by ewk_autofill_profile_data_set.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2651,7 +2651,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the profile data is set successfully, otherwise <code>EINA_FALSE</code> </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__WEBVIEW.html#ga64539b9674c262ec6a2452340d19d330" title="Creates a new profile.">ewk_autofill_profile_new</a> </dd>
 <dd>
-<a class="el" href="group__WEBVIEW.html#gac3559ff2bfa0a06d694612d78df2eb66" title="Saves the created profile into permenant storage.">ewk_context_form_autofill_profile_add</a> </dd></dl>
+<a class="el" href="group__WEBVIEW.html#gac3559ff2bfa0a06d694612d78df2eb66" title="Saves the created profile into permanent storage.">ewk_context_form_autofill_profile_add</a> </dd></dl>
 
 </div>
 </div>
@@ -3522,7 +3522,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <div class="memdoc">
 
 <p>Sets the <em>path</em> where non-session cookies are stored persistently using <em>storage</em> as the format to read/write the cookies. </p>
-<p>Cookies are initially read from <em>path/Cookies</em> to create an initial set of cookies. Then, non-session cookies will be written to <em>path/Cookies</em>. By default, <em>manager</em> doesn't store the cookies persistenly, so you need to call this method to keep cookies saved across sessions. If <em>path</em> does not exist it will be created.</p>
+<p>Cookies are initially read from <em>path/Cookies</em> to create an initial set of cookies. Then, non-session cookies will be written to <em>path/Cookies</em>. By default, <em>manager</em> doesn't store the cookies persistently, so you need to call this method to keep cookies saved across sessions. If <em>path</em> does not exist it will be created.</p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed if input or output path is relevant to media storage.<br/>
  <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is needed if input or output path is relevant to external storage.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
@@ -4082,7 +4082,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 
 <p>Writes a part of response body. </p>
 <p>This function can be used to write response body in chunks. Application doesn't have to prepare full response body before calling this function, it can be used as soon as a part of response is ready.</p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If this function returns EINA_FALSE, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior. User should always check return value, because response to this request might not be needed anymore, and function can retrun EINA_FALSE even though user still has data to write.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If this function returns EINA_FALSE, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior. User should always check return value, because response to this request might not be needed anymore, and function can return EINA_FALSE even though user still has data to write.</dd></dl>
 <p>It is only allowed to use this function *outside* of the Ewk_Context_Intercept_Request_Callback.</p>
 <p>If a part of response body has been written with this function, you can't use the following functions anymore:</p>
 <ul>
@@ -7170,7 +7170,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, othetwise <code>EINA_FALSE</code> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, otherwise <code>EINA_FALSE</code> </dd></dl>
 
 </div>
 </div>
