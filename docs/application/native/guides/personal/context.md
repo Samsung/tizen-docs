@@ -137,14 +137,68 @@ To enumerate the list:
 Through contextual history, you can mainly retrieve statistics for 3 categories of usage logs, including application usage, media playback, and communications. The following table summarizes the available history data types and required privileges.
 
 **Table: History data types and required privileges**
+<table>
+	<thead>
+		<tr>
+			<th>History type</th>
+			<th>Description and privilege</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Application usage history:
+			<p><code>CONTEXT_HISTORY_RECENTLY_USED_APP</code></p>
+			<p><code>CONTEXT_HISTORY_FREQUENTLY_USED_APP</code></p>
+			<p><code>CONTEXT_HISTORY_RARELY_USED_APP</code></p>
+			<p><code>CONTEXT_HISTORY_PEAK_TIME_FOR_APP</code></p>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_APP</code></p>
+			<p><code>CONTEXT_HISTORY_BATTERY_USAGE</code></p>
+			<p><code>CONTEXT_HISTORY_RECENT_BATTERY_USAGE</code></p>
+			</td>
+			<td>The contextual history contains data on which applications are used on the foreground. From this data, the following statistics are provided:
+			<ul>
+				<li>Most recently or frequently used applications, in a descending order of the application use counts.</li>
+				<li>Most rarely used applications in removable applications, in an ascending order of the application use counts.</li>
+				<li>Peak time for applications, or the time period when the user most frequently uses an application during the day.
+				<p>The result is a sorted list of hours of the day, in a descending order of the application use count in each one-hour time slot.</p>
+				</li>
+				<li>Common settings for applications, or the most common setting values regarding an application or any applications.</li>
+				<li>Most battery consuming applications, in a descending order of the battery consumption.</li>
+			</ul>
+			The required privilege is <code>http://tizen.org/privilege/apphistory.read</code>.</td>
+		</tr>
+		<tr>
+			<td>Media playback history:
+			<p><code>CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC</code></p>
+			<p><code>CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO</code></p>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC</code></p>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO</code></p>
+			</td>
+			<td>Media playback events, including music and video playback, can be logged. From this data, the following statistics are provided:
+			<ul>
+				<li>Peak time for music or video playback, or the time period when the user most frequently listens to music or watches videos during the day.
+				<p>The result is a sorted list of hours of the day, in a descending order of the playback count in each one-hour time slot.</p>
+				</li>
+				<li>Common settings for music or video playback, or the most common setting values when listening to music or watching videos.</li>
+			</ul>
+			<p>The required privilege is <code>http://tizen.org/privilege/mediahistory.read</code>.</p>
+			<p>For more information on other media content metadata, such as when or how many times media content is played, see the <a href="https://developer.tizen.org/development/guides/native-application/media-and-camera/media-content-and-metadata/media-content">Media Content and Metadata</a> guide.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>Communication history:
+			<p><code>CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS</code></p>
+			</td>
+			<td>Applications can retrieve the contacts the user has called or messaged most frequently.
+			<p>The required privilege is <code>http://tizen.org/privilege/callhistory.read</code>.</p>
+			<p>For more information on the communication history, see the <a href="https://developer.tizen.org/development/guides/native-application/personal-data/contacts">Contacts</a> guide.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
-| History type                             | Description and privilege                |
-|------------------------------------------|------------------------------------------|
-| Application usage history:<br> `CONTEXT_HISTORY_RECENTLY_USED_APP`<br>`CONTEXT_HISTORY_FREQUENTLY_USED_APP`<br>`CONTEXT_HISTORY_RARELY_USED_APP`<br>`CONTEXT_HISTORY_PEAK_TIME_FOR_APP`<br>`CONTEXT_HISTORY_COMMON_SETTING_FOR_APP`<br>`CONTEXT_HISTORY_BATTERY_USAGE`<br>`CONTEXT_HISTORY_RECENT_BATTERY_USAGE` | The contextual history contains data on which applications are used on the foreground. From this data, the following statistics are provided:<br><br> - Most recently or frequently used applications, in a descending order of the application use counts.<br> - Most rarely used applications in removable applications, in an ascending order of the application use counts.<br> - Peak time for applications, or the time period when the user most frequently uses an application during the day.The result is a sorted list of hours of the day, in a descending order of the application use count in each one-hour time slot.<br> - Common settings for applications, or the most common setting values regarding an application or any applications.<br>- Most battery consuming applications, in a descending order of the battery consumption.<br><br> The required privilege is `http://tizen.org/privilege/apphistory.read`. |
-| Media playback history:<br> `CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC`<br>`CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO`<br>`CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC`<br>`CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO` | Media playback events, including music and video playback, can be logged. From this data, the following statistics are provided:<br><br>- Peak time for music or video playback, or the time period when the user most frequently listens to music or watches videos during the day.The result is a sorted list of hours of the day, in a descending order of the playback count in each one-hour time slot.<br>- Common settings for music or video playback, or the most common setting values when listening to music or watching videos.<br><br>The required privilege is `http://tizen.org/privilege/mediahistory.read`.For more information on other media content metadata, such as when or how many times media content is played, see the [Media Content and Metadata](../multimedia/media-content.md) guide. |
-| Communication history:`CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS` | Applications can retrieve the contacts the user has called or messaged most frequently.The required privilege is `http://tizen.org/privilege/callhistory.read`.<br>For more information on the communication history, see the [Contacts](contacts.md) guide. |
-
-> **Note**  
+> **Note**
+>
 > To compute the above usage history statistics, it is necessary to store and aggregate contextual events. In many cases, immediately reflecting the contextual events to the statistics costs more than applying the events in a batch later. For this reason, the above history statistics may not show up-to-date results all the time.
 
 <a name="filters"></a>
@@ -153,39 +207,202 @@ Through contextual history, you can mainly retrieve statistics for 3 categories 
 Regarding each history data type, 1 or more filters can be set to specify the necessary statistics. For example, applications can get information about the 3 most frequently used applications from the last 30 days by setting the filters of the result size and time span. The supported filters for the history data types are summarized in the following table.
 
 **Table: Supported filters for history data**
-
-| History  type                            | Supported  filter                        | Type    | Description                              |
-|------------------------------------------|------------------------------------------|---------|------------------------------------------|
-| All  types, except:<br>    CONTEXT_HISTORY_RECENT_BATTERY_USAGE | CONTEXT_HISTORY_FILTER_TIME_SPAN         | Integer | This filter  specifies in days the time span of the data to be aggregated. For example, if  the value is set to 10, the application gets the statistics from the data  logged in the last 10 days.<br>    Only positive filter values are allowed. Because of the system resources  available, the maximum time span can be limited implicitly. If the value is  not set, the default value of 30 days is used. |
-| All  types, except:<br>    CONTEXT_HISTORY_RECENT_BATTERY_USAGE | CONTEXT_HISTORY_FILTER_START_TIME<br>    CONTEXT_HISTORY_FILTER_END_TIME | Integer | If an  application requires more fine-grained controls than the time span filter,  the start and end time of the period can be set as Unix epoch time in seconds  using these filters. It is also possible to set the start time or the end  time only. |
-| All  types, except:<br>    CONTEXT_HISTORY_COMMON_SETTING_FOR_APP<br>        CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC<br>        CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO<br> | CONTEXT_HISTORY_FILTER_RESULT_SIZE       | Integer | This filter  limits the number of data records to be retrieved. It accepts positive  integers as the filter values, but if not set, it is set to 10 by default. It  is possible that the aggregated result contains a smaller number of records  than the filter value.    <br><br>    Note that this value may have no effect for some history types. For  example, the common setting history types return one record for one request,  thus the result size is ignored while aggregating the logs. |
-| CONTEXT_HISTORY_RECENTLY_USED_APP<br>    CONTEXT_HISTORY_FREQUENTLY_USED_APP | CONTEXT_HISTORY_FILTER_WIFI_BSSID        | String  | Applications  can get the statistics of the data logged while a specific Wi-Fi is  connected, by setting the BSSID string of the target Wi-Fi  AP.<br><br>        The currently connected Wi-Fi AP's BSSID can be retrieved through the Wi-Fi  Manager APIs. For more information, see the [Wi-Fi](../connectivity/wifi.md)  guide. |
-| CONTEXT_HISTORY_RECENTLY_USED_APP<br>    CONTEXT_HISTORY_FREQUENTLY_USED_APP | CONTEXT_HISTORY_FILTER_AUDIO_JACK        | Integer | Applications  can get the statistics of the data logged while the headphone is connected or  disconnected. The audio jack status can be either <br> CONTEXT_HISTORY_FILTER_AUDIO_JACK_NOT_CONNECTED or<br> CONTEXT_HISTORY_FILTER_AUDIO_JACK_CONNECTED. |
-| CONTEXT_HISTORY_PEAK_TIME_FOR_APP  <br>    CONTEXT_HISTORY_COMMON_SETTING_FOR_APP | CONTEXT_HISTORY_FILTER_APP_ID            | String  | Use  this filter to compute the peak time (or the common settings) for a specific  application. Without this filter, the peak time (or the common setting) is  computed from the usage history of all applications.<br>    For more information on the application IDs, see [Package ID and Application ID](../../index.md#packageID) |
-| CONTEXT_HISTORY_PEAK_TIME_FOR_APP<br>    CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC<br>    CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO | CONTEXT_HISTORY_FILTER_DAY_OF_WEEK       | Integer | Use this filter  to get usage patterns on weekdays or weekends. The filter value can be either  <br> CONTEXT_HISTORY_FILTER_DAY_OF_WEEK_WEEKDAYS, <br> CONTEXT_HISTORY_FILTER_DAY_OF_WEEK_WEEKENDS, or <br> CONTEXT_HISTORY_FILTER_DAY_OF_WEEK_ALL.<br> Without this filter, data from both weekdays and  weekends are used. |
-| CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS | CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE | Integer | By default,  communication frequency is computed from the call and message logs.  Applications can narrow down the target data to one type of communication,  call or messaging, using this filter.<br><br>    The filter value can be either<br>  CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE_CALL, <br>  CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE_MESSAGE, or <br>  CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE_ALL. |
+<table>
+	<thead>
+		<tr>
+			<th>History type</th>
+			<th>Supported filter</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2">All types, <strong>except</strong>:
+			<p><code>CONTEXT_HISTORY_RECENT_BATTERY_USAGE</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_FILTER_TIME_SPAN</code></td>
+			<td>Integer</td>
+			<td>This filter specifies in days the time span of the data to be aggregated. For example, if the value is set to 10, the application gets the statistics from the data logged in the last 10 days.
+			<p>Only positive filter values are allowed. Because of the system resources available, the maximum time span can be limited implicitly. If the value is not set, the default value of 30 days is used.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_FILTER_START_TIME</code>
+			<p><code>CONTEXT_HISTORY_FILTER_END_TIME</code></p>
+			</td>
+			<td>Integer</td>
+			<td>If an application requires more fine-grained controls than the time span filter, the start and end time of the period can be set as Unix epoch time in seconds using these filters. It is also possible to set the start time or the end time only.</td>
+		</tr>
+		<tr>
+			<td>All types, <strong>except</strong>:
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_APP</code></p>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC</code></p>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_FILTER_RESULT_SIZE</code></td>
+			<td>Integer</td>
+			<td>This filter limits the number of data records to be retrieved. It accepts positive integers as the filter values, but if not set, it is set to 10 by default. It is possible that the aggregated result contains a smaller number of records than the filter value.
+			<p>Note that this value may have no effect for some history types. For example, the common setting history types return one record for one request, thus the result size is ignored while aggregating the logs.</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2"><code>CONTEXT_HISTORY_RECENTLY_USED_APP</code>
+			<p><code>CONTEXT_HISTORY_FREQUENTLY_USED_APP</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_FILTER_WIFI_BSSID</code></td>
+			<td>String</td>
+			<td>Applications can get the statistics of the data logged while a specific Wi-Fi is connected, by setting the BSSID string of the target Wi-Fi AP.
+			<p>The currently connected Wi-Fi AP's BSSID can be retrieved through the Wi-Fi Manager APIs. For more information, see the <a href="https://developer.tizen.org/development/guides/native-application/connectivity-and-wireless/wi-fi">Wi-Fi</a> guide.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_FILTER_AUDIO_JACK</code></td>
+			<td>Integer</td>
+			<td>Applications can get the statistics of the data logged while the headphone is connected or disconnected. The audio jack status can be either <code>CONTEXT_HISTORY_FILTER_AUDIO_JACK_NOT_CONNECTED</code> or <code>CONTEXT_HISTORY_FILTER_AUDIO_JACK_CONNECTED</code>.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_PEAK_TIME_FOR_APP</code>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_APP</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_FILTER_APP_ID</code></td>
+			<td>String</td>
+			<td>Use this filter to compute the peak time (or the common settings) for a specific application. Without this filter, the peak time (or the common setting) is computed from the usage history of all applications.
+			<p>For more information on the application IDs, see <a href="https://developer.tizen.org/development/training/native-application/tizen-application-model#packageID">Package ID and Application ID</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_PEAK_TIME_FOR_APP</code>
+			<p><code>CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC</code></p>
+			<p><code>CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_FILTER_DAY_OF_WEEK</code></td>
+			<td>Integer</td>
+			<td>Use this filter to get usage patterns on weekdays or weekends. The filter value can be either <code>CONTEXT_HISTORY_FILTER_DAY_OF_WEEK_WEEKDAYS</code>, <code>CONTEXT_HISTORY_FILTER_DAY_OF_WEEK_WEEKENDS</code>, or <code>CONTEXT_HISTORY_FILTER_DAY_OF_WEEK_ALL</code>. Without this filter, data from both weekdays and weekends are used.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS </code></td>
+			<td><code>CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE</code></td>
+			<td>Integer</td>
+			<td>By default, communication frequency is computed from the call and message logs. Applications can narrow down the target data to one type of communication, call or messaging, using this filter.
+			<p>The filter value can be either <code>CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE_CALL</code>, <code>CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE_MESSAGE</code>, or <code>CONTEXT_HISTORY_FILTER_COMMUNICATION_TYPE_ALL</code>.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 The history data records retrieved through the contextual history API contain the following data attributes.
 
 **Table: Attributes provided by history data**
-
-| History type                             | Provided attribute            | Type                                     | Description                              |
-|------------------------------------------|-------------------------------|------------------------------------------|------------------------------------------|
-| `CONTEXT_HISTORY_RECENTLY_USED_APP`<br> `CONTEXT_HISTORY_FREQUENTLY_USED_APP`<br> `CONTEXT_HISTORY_RARELY_USED_APP` | `CONTEXT_HISTORY_APP_ID`      | String                                   | This attribute denotes the application ID.For more information on the application IDs, see [Package ID and Application ID](../../index.md#packageID). |
-|`CONTEXT_HISTORY_RECENTLY_USED_APP`<br> `CONTEXT_HISTORY_FREQUENTLY_USED_APP`<br> `CONTEXT_HISTORY_RARELY_USED_APP` | `CONTEXT_HISTORY_TOTAL_COUNT`            | Integer                       | This attribute denotes how many times the application is used on the foreground. |                    
-| `CONTEXT_HISTORY_RECENTLY_USED_APP`<br> `CONTEXT_HISTORY_FREQUENTLY_USED_APP`<br> `CONTEXT_HISTORY_RARELY_USED_APP` |`CONTEXT_HISTORY_TOTAL_DURATION`         | Integer                       | This attribute denotes the time the application is being displayed on the foreground in seconds. If the application is used multiple times, it denotes the accumulated time of use. |                                          
-| `CONTEXT_HISTORY_RECENTLY_USED_APP`<br> `CONTEXT_HISTORY_FREQUENTLY_USED_APP`<br> `CONTEXT_HISTORY_RARELY_USED_APP` |`CONTEXT_HISTORY_LAST_TIME`              | Integer                       | This attribute denotes when the application has been used (moved to the foreground) the last time, in Unix epoch in seconds. |                                          
-| `CONTEXT_HISTORY_PEAK_TIME_FOR_APP`<br> `CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC`<br> `CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO` | `CONTEXT_HISTORY_HOUR_OF_DAY` | Integer                                  | This attribute denotes the hour of the day. Its value is an integer from 0 to 23. |
-| `CONTEXT_HISTORY_PEAK_TIME_FOR_APP`<br> `CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC`<br> `CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO`| `CONTEXT_HISTORY_TOTAL_COUNT`            | Integer                       | This attribute denotes the aggregated count of the application uses or media playbacks within the hour of the day defined with `CONTEXT_HISTORY_HOUR_OF_DAY`. |                    
-| `CONTEXT_HISTORY_COMMON_SETTING_FOR_APP`<br> `CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC`<br> `CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO` | `CONTEXT_HISTORY_AUDIO_JACK`  | Integer                                  | This attribute denotes the most common audio jack status. The value is either `CONTEXT_HISTORY_FILTER_AUDIO_JACK_NOT_CONNECTED` or `CONTEXT_HISTORY_FILTER_AUDIO_JACK_CONNECTED`. |
-| `CONTEXT_HISTORY_COMMON_SETTING_FOR_APP`<br> `CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC`<br> `CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO` |`CONTEXT_HISTORY_SYSTEM_VOLUME`          | Integer                       | This attribute denotes the most common system volume level. |                                          
-| `CONTEXT_HISTORY_COMMON_SETTING_FOR_APP`<br> `CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC`<br> `CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO` |`CONTEXT_HISTORY_MEDIA_VOLUME`           | Integer                       | This attribute denotes the most common media volume level.For more information on the system and media volume settings, see the [Sound Manager](../multimedia/sound.md) guide. |                                          
-| `CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS` | `CONTEXT_HISTORY_ADDRESS`     | String                                   | This attribute denotes the contact address or a phone number. |
-|  `CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS` |`CONTEXT_HISTORY_TOTAL_COUNT`            | Integer                       | This attribute denotes the total number of communications with the address defined with `CONTEXT_HISTORY_ADDRESS`. |                                        
-|  `CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS` |`CONTEXT_HISTORY_TOTAL_DURATION`         | Integer                       | This attribute denotes the accumulated duration of calls in seconds with the address defined with `CONTEXT_HISTORY_ADDRESS`. |                                        
-|  `CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS` |`CONTEXT_HISTORY_LAST_TIME`              | Integer                       | This attribute denotes when a call is connected or a message is received or sent last in Unix epoch in seconds, to or from the address defined with `CONTEXT_HISTORY_ADDRESS`. |                                       
-| `CONTEXT_HISTORY_BATTERY_USAGE`<br> `CONTEXT_HISTORY_RECENT_BATTERY_USAGE` | `CONTEXT_HISTORY_APP_ID`      | String                                   | This attribute denotes the application ID.For more information on the application IDs, see [Package ID and Application ID](../../index.md#packageID). |
-| `CONTEXT_HISTORY_BATTERY_USAGE`<br> `CONTEXT_HISTORY_RECENT_BATTERY_USAGE` |`CONTEXT_HISTORY_TOTAL_AMOUNT`           | Double                        | This attribute denotes the accumulated battery consumption of the application. |                                          
+<table>
+	<thead>
+		<tr>
+			<th>History type</th>
+			<th>Provided attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="4"><code>CONTEXT_HISTORY_RECENTLY_USED_APP</code>
+			<p><code>CONTEXT_HISTORY_FREQUENTLY_USED_APP</code></p>
+			<p><code>CONTEXT_HISTORY_RARELY_USED_APP</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_APP_ID</code></td>
+			<td>String</td>
+			<td>This attribute denotes the application ID.
+			<p>For more information on the application IDs, see <a href="https://developer.tizen.org/development/training/native-application/tizen-application-model#packageID">Package ID and Application ID</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_TOTAL_COUNT</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes how many times the application is used on the foreground.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_TOTAL_DURATION</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the time the application is being displayed on the foreground in seconds. If the application is used multiple times, it denotes the accumulated time of use.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_LAST_TIME</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes when the application has been used (moved to the foreground) the last time, in Unix epoch in seconds.</td>
+		</tr>
+		<tr>
+			<td rowspan="2"><code>CONTEXT_HISTORY_PEAK_TIME_FOR_APP</code>
+			<p><code>CONTEXT_HISTORY_PEAK_TIME_FOR_MUSIC</code></p>
+			<p><code>CONTEXT_HISTORY_PEAK_TIME_FOR_VIDEO</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_HOUR_OF_DAY</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the hour of the day. Its value is an integer from 0 to 23.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_TOTAL_COUNT</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the aggregated count of the application uses or media playbacks within the hour of the day defined with <code>CONTEXT_HISTORY_HOUR_OF_DAY</code>.</td>
+		</tr>
+		<tr>
+			<td rowspan="3"><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_APP</code>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_MUSIC</code></p>
+			<p><code>CONTEXT_HISTORY_COMMON_SETTING_FOR_VIDEO</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_AUDIO_JACK</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the most common audio jack status. The value is either <code>CONTEXT_HISTORY_FILTER_AUDIO_JACK_NOT_CONNECTED</code> or <code>CONTEXT_HISTORY_FILTER_AUDIO_JACK_CONNECTED</code>.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_SYSTEM_VOLUME</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the most common system volume level.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_MEDIA_VOLUME</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the most common media volume level.
+			<p>For more information on the system and media volume settings, see the <a href="https://developer.tizen.org/development/guides/native-application/media-and-camera/audio-management/sound-manager">Sound Manager</a> guide.</p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="4"><code>CONTEXT_HISTORY_FREQUENTLY_COMMUNICATED_ADDRESS</code></td>
+			<td><code>CONTEXT_HISTORY_ADDRESS</code></td>
+			<td>String</td>
+			<td>This attribute denotes the contact address or a phone number.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_TOTAL_COUNT</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the total number of communications with the address defined with <code>CONTEXT_HISTORY_ADDRESS</code>.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_TOTAL_DURATION</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes the accumulated duration of calls in seconds with the address defined with <code>CONTEXT_HISTORY_ADDRESS</code>.</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_LAST_TIME</code></td>
+			<td>Integer</td>
+			<td>This attribute denotes when a call is connected or a message is received or sent last in Unix epoch in seconds, to or from the address defined with <code>CONTEXT_HISTORY_ADDRESS</code>.</td>
+		</tr>
+		<tr>
+			<td rowspan="2"><code>CONTEXT_HISTORY_BATTERY_USAGE</code>
+			<p><code>CONTEXT_HISTORY_RECENT_BATTERY_USAGE</code></p>
+			</td>
+			<td><code>CONTEXT_HISTORY_APP_ID</code></td>
+			<td>String</td>
+			<td>This attribute denotes the application ID.
+			<p>For more information on the application IDs, see <a href="https://developer.tizen.org/development/training/native-application/tizen-application-model#packageID">Package ID and Application ID</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><code>CONTEXT_HISTORY_TOTAL_AMOUNT</code></td>
+			<td>Double</td>
+			<td>This attribute denotes the accumulated battery consumption of the application.</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Related Information
 - Dependencies

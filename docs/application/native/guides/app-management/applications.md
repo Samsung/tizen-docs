@@ -8,19 +8,9 @@ Tizen provides various application models to allow you to create applications ta
 
 - [UI Applications](ui-app/index.md)
 
-  The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.The UI application is the most common Tizen application model.
+  The UI application has a graphical user interface. You can create diverse applications with a variety of features, and design versatile applications and intriguing user interfaces with text and graphics while taking advantage of many device functionalities, such as sensors and call operations. In addition, you can, for example, manage content and media files, use network and social services, and provide messaging and embedded Web browsing functionality.
 
-  When creating a native UI application, you can select between EFL and DALi UI frameworks:
-
-  - [EFL Applications](ui-app/efl-app.md).
-
-    The EFL application is based on the Enlightenment Foundation Library. With EFL and streamlined graphic core libraries, you can create powerful 2D-based Tizen native applications. EFL needs relatively low memory but provides high performance, and supports a retained mode graphics system and user-centric features, such as themes, 2D/3D effects, and accessibility. In addition, EFL supports various resolutions with the same layout, fast and small file systems, a variety of programming language bindings, and a separate UI and logic.
-
-
-  - [DALi Applications](ui-app/dali-app.md).
-
-    The DALi application is based on the Dynamic Animation Library. DALi internally defines a virtual 3D world (space) and maintains hierarchical objects in the 3D world. The hierarchical object tree is known as the scene graph. A node in the scene graph can have several children but often only a single parent, with the effect of a parent applied to all its child nodes; an operation performed on a group automatically propagates its effect to all of its members.
-
+  The UI application is the most common Tizen application model.
 
 - [Service Applications](service-app.md)
 

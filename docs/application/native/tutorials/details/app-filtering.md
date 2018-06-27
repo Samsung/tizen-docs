@@ -135,8 +135,8 @@ for the application `tizen-manifest.xml` file:
     `tizen-manifest.xml` file in the **Project Explorer** view.
 2. Select the features you need, one at a time:
 
-    a.  In the **Features** tab, click **+**.  
-    b.  Select a feature.  
+    a.  In the **Features** tab, click **+**.
+    b.  Select a feature.
     c.  Click **OK**.
 
     The manifest file (`tizen-manifest.xml`) is updated automatically.
@@ -230,11 +230,11 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
-| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
-| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
@@ -288,7 +288,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.temperature` | Specify this key, if the application requires a temperature sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.tiltmeter` | Specify this key, if the application requires a tilt sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.tiltmeter.wakeup` | Specify this key, if the application requires the tilt sensor wake-up feature. | 2.2.1 |
-| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires an ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/shortcut`      | Specify this key, if the application requires the shortcut feature. | 4.0   |
@@ -308,7 +308,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 **Table: Available wearable native requirements**
 
 | Feature key                              | Description                              | Since |
-|----------------------------------------|----------------------------------------|-----|
+|------------------------------------------|------------------------------------------|-------|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
@@ -381,9 +381,9 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
@@ -436,7 +436,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.temperature` | Specify this key, if the application requires a temperature sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.tiltmeter` | Specify this key, if the application requires a tilt sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.tiltmeter.wakeup` | Specify this key, if the application requires the tilt sensor wake-up feature. | 2.2.1 |
-| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires an ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |

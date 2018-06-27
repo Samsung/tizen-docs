@@ -200,7 +200,10 @@ To monitor package events, such as installation, uninstallation, and updates:
    package_manager_create(package_manager_h *manager);
    ```
 
-2. Set the package event to monitor by calling the `package_manager_set_event_status()` function. The second parameter defines the package status that you want to monitor. The possible values are listed in the `package_manager_status_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) applications):
+2. Set the package event to monitor by calling the `package_manager_set_event_status()` function.
+
+   The second parameter defines the package status that you want to monitor. The possible values are listed in the `package_manager_status_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) and [wearable](../../api/wearable/latest/group__CAPI__PACKAGE__MANAGER__MODULE.html#ga405444ebd6254b9cfbaedec829558882) applications):
+
     ```
     package_manager_set_event_status(manager, PACKAGE_MANAGER_STATUS_TYPE_ALL);
     ```

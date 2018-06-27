@@ -99,11 +99,25 @@ A status message type notification can be used like a pop-up. It is displayed fo
 
 The following notification layouts are provided:
 
-- `NOTIFICATION_LY_NOTI_EVENT_SINGLE`Layout for a single event notification.
-- `NOTIFICATION_LY_NOTI_EVENT_MULTIPLE`Layout for a multiple event notification.
-- `NOTIFICATION_LY_NOTI_THUMBNAIL`Layout for a notification displaying images.
-- `NOTIFICATION_LY_ONGOING_PROGRESS`Layout for an ongoing notification displaying progress.
-- `NOTIFICATION_LY_EXTENSION`Layout for an [extended notification](#extended_noti).
+- `NOTIFICATION_LY_NOTI_EVENT_SINGLE`
+
+   Layout for a single event notification.
+
+- `NOTIFICATION_LY_NOTI_EVENT_MULTIPLE`
+
+   Layout for a multiple event notification.
+
+- `NOTIFICATION_LY_NOTI_THUMBNAIL`
+
+   Layout for a notification displaying images.
+
+- `NOTIFICATION_LY_ONGOING_PROGRESS`
+
+   Layout for an ongoing notification displaying progress.
+
+- `NOTIFICATION_LY_EXTENSION`
+
+   Layout for an [extended notification](#extended_noti).
 
 **Figure: Notification layouts**
 
@@ -246,7 +260,7 @@ You can set the following attributes for a notification:
 
   - The `notification_add_button()` adds the button. The second parameter defines the button index, whose possible values are listed in the `_notification_button_index` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga2b8eaa47c666ec055def59c32eab419b) applications).
 
-  - The `notification_set_event_handler()` function defines the application control that launches the application at the button click. The third parameter defines the app control handle, whose possible values are listed in the `_notification_event_type`enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) applications).
+  - The `notification_set_event_handler()` function defines the application control that launches the application at the button click. The third parameter defines the app control handle, whose possible values are listed in the `_notification_event_type` enumeration (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html#ga38d5cdc16c56dbe88d821995f82b0799) applications).
 
     ```
     noti_err = notification_add_button(noti, NOTIFICATION_BUTTON_1);
@@ -378,7 +392,9 @@ To display the progress bar and update the progress data:
 
 To create an active notification and an input text field, with which the user can directly reply to the notification:
 
-1. To create an active notification, add the `NOTIFICATION_DISPLAY_APP_ACTIVE` type to the display application list.You can create up to 3 buttons, and each button must have an application control that can handle the event.
+1. To create an active notification, add the `NOTIFICATION_DISPLAY_APP_ACTIVE` type to the display application list.
+
+    You can create up to 3 buttons, and each button must have an application control that can handle the event.
 
     ```
     notification_h notification = NULL;

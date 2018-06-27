@@ -37,7 +37,7 @@ In the figure, the texture is depicted as a grid of dotted lines, where a texel 
 
 ### Filtering for Magnification
 
-For magnification, you have 2 options. The first is **nearest point sampling**. Then, as you can see in the left example below, a block of fragments can be mapped to a single texel. Consequently, a blocky image is often produced. The second option is **bilinear interpolation**illustrated in the right example below. In general, bilinear interpolation is preferred to nearest point sampling.
+For magnification, you have 2 options. The first is **nearest point sampling**. Then, as you can see in the left example below, a block of fragments can be mapped to a single texel. Consequently, a blocky image is often produced. The second option is **bilinear interpolation** illustrated in the right example below. In general, bilinear interpolation is preferred to nearest point sampling.
 
 **Figure: Nearest point sampling (left) vs. bilinear interpolation (right)**
 
@@ -109,7 +109,7 @@ In order to generate a texture in OpenGL&reg; ES, you usually have to decode the
 
 ```
 /*
-   Create OpenGL&reg; ES Texture object from image file path
+   Create OpenGL ES Texture object from image file path
    @param[in] parent Evas object
    @param[in] filename image file path
    @return texture id

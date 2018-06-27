@@ -107,7 +107,7 @@ To initialize the barcode detection and generation engines for use:
           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
       ```
 
-      For example, to define the detection target, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_DETECT_ATTR_TARGET` attribute. The possible values are defined in the `mv_barcode_detect_attr_target_e`enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) applications). The default value is `MV_BARCODE_DETECT_ATTR_TARGET_ALL`.
+      For example, to define the detection target, use the `mv_engine_config_set_int_attribute()` function with the `MV_BARCODE_DETECT_ATTR_TARGET` attribute. The possible values are defined in the `mv_barcode_detect_attr_target_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ga47aaef5d40653352c5bee73b227062a6) applications). The default value is `MV_BARCODE_DETECT_ATTR_TARGET_ALL`.
 
    4. To provide camera preview images, create the camera handle, set the camera display and the camera preview callback, and start the camera preview:
 
@@ -196,29 +196,26 @@ To detect barcodes:
 
       The image is now stored in the source, and you can access the image through the source handle.
 
-   ```
-   static void
-   _camera_media_packet_preview_cb(media_packet_h pkt, void *user_data)
-   {
-       mv_point_s mv_point = {0, 0};
-       mv_rectangle_s mv_roi = {mv_point, bardetdata.width, bardetdata.height};
+      ```
+      static void
+      _camera_media_packet_preview_cb(media_packet_h pkt, void *user_data)
+      {
+          mv_point_s mv_point = {0, 0};
+          mv_rectangle_s mv_roi = {mv_point, bardetdata.width, bardetdata.height};
 
-       if (pkt == NULL)
-           return;
+          if (pkt == NULL)
+              return;
 
-       error_code = mv_source_fill_by_media_packet(bardetdata.g_source, pkt);
-       if (error_code != MEDIA_VISION_ERROR_NONE)
-           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error code);
+          error_code = mv_source_fill_by_media_packet(bardetdata.g_source, pkt);
+          if (error_code != MEDIA_VISION_ERROR_NONE)
+              dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error code);
 
-       if (pkt) {
-           error_code = media_packet_destroy(pkt);
-           pkt = NULL;
-       }
-
-    ~~~
-
-   }
-   ```
+          if (pkt) {
+              error_code = media_packet_destroy(pkt);
+              pkt = NULL;
+          }
+      }
+      ```
 
 2. In the `_camera_media_packet_preview_cb()` callback, detect barcodes in the image using the `mv_barcode_detect()` function:
 
@@ -226,8 +223,6 @@ To detect barcodes:
    static void
    _camera_media_packet_preview_cb(media_packet_h pkt, void *user_data)
    {
-      ~~~
-
        error_code = mv_barcode_detect(bardetdata.g_source, bardetdata.g_engine_cfg,
                                       mv_roi, _barcode_detected_cb, NULL);
        if (error_code != MEDIA_VISION_ERROR_NONE)
@@ -413,30 +408,30 @@ The following tables provide more information on the barcode generation specific
 <a name="barcode"></a>
 **Table: Supported barcode types**
 
-| 1D or 2D           | Type                                     | Description                              | Example                                  |
-|--------------------|------------------------------------------|------------------------------------------|------------------------------------------|
-| 1-D                | UPC-A                                    | Universal product code with numeric 12-digit | ![UPC-A](./media/mediavision_upc_a.png) |
-|  1-D |UPC-E              | Universal product code with numeric 6-digit | ![UPC-E](./media/mediavision_upc_e.png) |                                          
-|  1-D | EAN-8              | International article number with numeric 8-digit | ![EAN-8](./media/mediavision_ean_8.png) |                                          
-|   1-D | EAN-13             | International article number with numeric 13-digit | ![EAN-13](./media/mediavision_ean_13.png) |                                         
-|   1-D | CODE-128           | Code 128; supports alphanumeric or numeric-only | ![CODE-128](./media/mediavision_code_128.png) |                                          |
-|   1-D | CODE-39            | Code 39; supports 34 characters consisting of uppercase letters (A to Z), numeric digits (0 to 9), and special characters(-, ., $, /, %, space) | ![CODE-39](./media/mediavision_code_39.png) |                                          |
-|   1-D | INTERLEAVED 2 of 5 | Interleaved 2 of 5 with numeric digits   | ![UPC-A](./media/mediavision_interleaved_2_5.png) |                                          |
-| 2-D                | QR code                                  | Quick Response code                      | ![UPC-A](./media/mediavision_qr.png) |
+| 1D or 2D | Type                                     | Description                              | Example                                  |
+|----------|------------------------------------------|------------------------------------------|------------------------------------------|
+| 1-D      | UPC-A                                    | Universal product code with numeric 12-digit | ![UPC-A](./media/mediavision_upc_a.png) |
+| 1-D      | UPC-E              | Universal product code with numeric 6-digit | ![UPC-E](./media/mediavision_upc_e.png) |
+| 1-D      | EAN-8              | International article number with numeric 8-digit | ![EAN-8](./media/mediavision_ean_8.png) |
+| 1-D      | EAN-13             | International article number with numeric 13-digit | ![EAN-13](./media/mediavision_ean_13.png) |
+| 1-D      | CODE-128           | Code 128; supports alphanumeric or numeric-only | ![CODE-128](./media/mediavision_code_128.png) |                                          |
+| 1-D      | CODE-39            | Code 39; supports 34 characters consisting of uppercase letters (A to Z), numeric digits (0 to 9), and special characters(-, ., $, /, %, space) | ![CODE-39](./media/mediavision_code_39.png) |                                          |
+| 1-D      | INTERLEAVED 2 of 5 | Interleaved 2 of 5 with numeric digits   | ![UPC-A](./media/mediavision_interleaved_2_5.png) |                                          |
+| 2-D      | QR code                                  | Quick Response code                      | ![UPC-A](./media/mediavision_qr.png) |
 
 <a name="qrcode"></a>
 **Table: Supported QR code specifications**
 
-| Specification                     | Support type                             | Description                         |
-|-----------------------------------|------------------------------------------|-------------------------------------|
-| Error Correction Code (ECC) Level | ECC Low                                  | Recovery up to 7% damage            |
-| Error Correction Code (ECC) Level|  ECC Medium                        | Recovery up to 15% damage                                                     |
-| Error Correction Code (ECC) Level | ECC Quartile                      | Recovery up 25% damage                                                        |
-| Error Correction Code (ECC) Level| ECC High                          | Recovery up to 30% damage                                                     |
-| Encoding mode                     | Numeric                                  | Numeric digits ('0', '1', ..., '9') |
-| Encoding mode| Alphanumeric                      | Alphanumeric characters: numeric (0, 1, ..., 9), characters (A, B, ..., Z), and punctuation (' ', $, %, *, +, -, '.', /, ':') |                                     
-|Encoding mode | Byte 8-bit                        | Raw 8-bit bytes                          |                                     
-|Encoding mode | UTF-8                             | Universal character set and Transformation Format 8-bit, encoding characters |                                     
+| Specification                     | Support type      | Description                         |
+|-----------------------------------|-------------------|-------------------------------------|
+| Error Correction Code (ECC) Level | ECC Low           | Recovery up to 7% damage            |
+| Error Correction Code (ECC) Level | ECC Medium        | Recovery up to 15% damage           |
+| Error Correction Code (ECC) Level | ECC Quartile      | Recovery up 25% damage              |
+| Error Correction Code (ECC) Level | ECC High          | Recovery up to 30% damage           |
+| Encoding mode                     | Numeric           | Numeric digits ('0', '1', ..., '9') |
+| Encoding mode                     | Alphanumeric      | Alphanumeric characters: numeric (0, 1, ..., 9), characters (A, B, ..., Z), and punctuation (' ', $, %, *, +, -, '.', /, ':') |
+| Encoding mode                     | Byte 8-bit        | Raw 8-bit bytes                     |
+| Encoding mode                     | UTF-8             | Universal character set and Transformation Format 8-bit, encoding characters |
 
 ## Related Information
 - Dependencies
