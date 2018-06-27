@@ -119,7 +119,8 @@ animation.AnimatePath(view, path, Vector3.XAxis, 0, 5000, new AlphaFunction(Alph
 animation.Play();
 ```
 
-> **Note**  
+> **Note**
+>
 > `AnimatePath()` invokes `Animate`.
 
 ## Related Information

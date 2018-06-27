@@ -21,14 +21,14 @@ The main features of the Tizen.Network.WiFi namespace include:
 
         **Table: Access point EAP information**
 
-          | Information         | Description                              |
-          |---------------------|------------------------------------------|
-          | Authentication type | Wi-Fi EAP phase2 authentication type     |
-          | EAP type            | Wi-Fi EAP type                           |
-          | CA certificate      | EAP CA certificate (valid only if the EAP type is TLS) |
-          | Client certificate  | EAP client certificate (valid only if the EAP type is TLS) |
-          | Passphrase          | EAP passphrase (valid if the EAP type is PEAP or TTLS) |
-          | Private key file    | EAP private key file (valid only if the EAP type is TLS) |  
+        | Information         | Description                              |
+        |---------------------|------------------------------------------|
+        | Authentication type | Wi-Fi EAP phase2 authentication type     |
+        | EAP type            | Wi-Fi EAP type                           |
+        | CA certificate      | EAP CA certificate (valid only if the EAP type is TLS) |
+        | Client certificate  | EAP client certificate (valid only if the EAP type is TLS) |
+        | Passphrase          | EAP passphrase (valid if the EAP type is PEAP or TTLS) |
+        | Private key file    | EAP private key file (valid only if the EAP type is TLS) |  
 
     To create a `Tizen.Network.WiFi.WiFiAP` instance, use its constructor with the ESSID, or retrieve the instance from the `GetFoundAPs()` method of the `Tizen.Network.WiFi.WiFiManager` class.
 

@@ -314,7 +314,7 @@ You set the display parameters of a video file with the `DisplaySettings` proper
         ```
         if (player.DisplaySettings.IsVisible == false)
         {
-          player.DisplaySettings.IsVisible = true;
+            player.DisplaySettings.IsVisible = true;
         }
         ```
 

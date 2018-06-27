@@ -252,8 +252,8 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Conductor            | Conductor of the content               | `Metadata.Conductor`                     |
 | Unsync lyrics        | Asynchronous lyrics of the content     | `Metadata.UnsyncLyrics`                  |
 | Sync lyrics          | Synchronous lyrics of the content      | `Metadata.SyncLyricsCount`<br>`MetadataExtractor.GetSyncLyrics()`<br>`SyncLyrics.Lyrics`<br>`SyncLyrics.Timestamp` |
-| Recorded date        | Description                            | `Metadata.DateRecorded`                  |
-| Duration             | Duration of the content                | `Metadata.Rotation`                      |
+| Recorded date        | Recorded date of the content           | `Metadata.DateRecorded`                  |
+| Duration             | Orientation of the content             | `Metadata.Rotation`                      |
 
 
 ## Related Information
