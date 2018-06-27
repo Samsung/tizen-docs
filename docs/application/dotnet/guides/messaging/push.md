@@ -284,11 +284,11 @@ To register with the push server:
     }
     ```
 
-  >**Note**
-  >
-	>The `PushServiceUnregister()` method is not used if the application is intended to receive push notifications continuously while it is installed on the device. When the application is uninstalled, the push service detects the event and deregisters the application automatically.  
-  >
-  >On the other hand, if the application wants to receive push notifications only when a user logs in, the `PushServiceUnregister()` method must be called whenever the user logs out.
+    >**Note**
+    >
+    >The `PushServiceUnregister()` method is not used if the application is intended to receive push notifications continuously while it is installed on the device. When the application is uninstalled, the push service detects the event and deregisters the application automatically.  
+    >
+    >On the other hand, if the application wants to receive push notifications only when a user logs in, the `PushServiceUnregister()` method must be called whenever the user logs out.
 
 
 <a name="security"></a>
