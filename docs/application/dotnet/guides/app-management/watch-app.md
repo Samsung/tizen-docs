@@ -201,6 +201,7 @@ protected override void OnCreate()
 ```
 
 > **Note**
+>
 > To draw the UI, use a single window that is initialized in the `Tizen.Applications.WatchApplication` class. Do not create additional windows. A stack of watch application windows gets corrupted, because the platform handles the watch application window in a special way.
 
 <a name="current"></a>

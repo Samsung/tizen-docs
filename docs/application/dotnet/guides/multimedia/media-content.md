@@ -674,7 +674,7 @@ The following tables list the available media file information.
 |----------------|----------------------------------------|
 | `Album`          | Album information for the audio content  |
 | `Artist`         | Artist of the audio content              |
-| `Album Artist`   | Album artist of the audio contentThe artist and album artist can be the same. |
+| `Album Artist`   | Album artist of the audio content<br>The artist and album artist can be the same. |
 | `Genre`          | Genre of the audio content               |
 | `Composer`       | Composer of the audio content            |
 | `Year`           | Year the audio content was recorded      |
@@ -682,7 +682,7 @@ The following tables list the available media file information.
 | `Copyright`      | Copyright information for the audio content |
 | `Track number`   | Track number of the audio content        |
 | `Bit rate`       | Bit rate of the audio content            |
-| `Bit per sample` | Bit per sample of the audio contentThe bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
+| `Bit per sample` | Bit per sample of the audio content<br>The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
 | `Sample rate`    | Sample rate of the audio content         |
 | `Channels`       | Channel information for the audio content |
 | `Duration`       | Duration of the audio content            |
@@ -698,7 +698,7 @@ The following tables list the available media file information.
 | `ISO`           | ISO of the image                         |
 | `Model`         | Model name of the camera that created the image |
 | `Orientation`   | Orientation of the image                 |
-| `Date taken`    | Time the image was createdYou can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
+| `Date taken`    | Time the image was created<br>You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
 
 **Table: Video metadata (only for video files)**
 

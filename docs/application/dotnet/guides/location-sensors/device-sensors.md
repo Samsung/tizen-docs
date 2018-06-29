@@ -2,7 +2,9 @@
 
 You can manage the sensors in the device and receive data from them.
 
-Using the Tizen.Sensor namespace, you can [create sensor instances](#sensor), which correspond to physical or software-defined sensor devices. The sensor instance is used to check the availability of and control the corresponding sensor. After you have created a sensor instance for a specific sensor and [subscribed to sensor events](#subscribe), you can monitor the device's internal sensors for sensor value changes. The application can receive the sensor data only when the data is modified.
+Using the Tizen.Sensor namespace, you can [create sensor instances](#sensor), which correspond to physical or software-defined sensor devices. The sensor instance is used to check the availability of and control the corresponding sensor.  
+
+After you have created a sensor instance for a specific sensor and [subscribed to sensor events](#subscribe), you can monitor the device's internal sensors for sensor value changes. The application can receive the sensor data only when the data is modified.
 
 When running an application on the emulator, you can use the Emulator Control Panel to simulate sensor data for the application.
 
@@ -76,7 +78,7 @@ If an application wants to observe data from a specific sensor, you must create 
     }
     catch (NotSupportedException)
     {
-        /// Accelerometer is not supported in the current device
+        /// Accelerometer is not supported in the current device.
     }
     ```
 
@@ -155,7 +157,7 @@ The accelerometer provides 3 components of acceleration (X, Y, and Z), as the fo
 
 ![Accelerometer vector and axes](./media/sensor_types_accelerometer_vector.png)
 
-The accelerometer outputs 4 values: 3 Cartesian axis values and a timestamp. The accelerometer sensor measures and returns the axes' values in "m/s<sup>2</sup>" (meters per second squared). When a device is moved in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
+The accelerometer outputs 4 values: 3 Cartesian axis values and a timespan. The accelerometer sensor measures and returns the axes' values in "m/s<sup>2</sup>" (meters per second squared). When a device is moved in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
 
 The following table lists the measurement data that the accelerometer provides.
 
@@ -210,7 +212,7 @@ The gravity sensor is a virtual sensor derived from the 3-axis acceleration sens
 
 ![Gravity sensor vector and axes](./media/sensor_types_gravity_frame.png)
 
-The gravity sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The gravity sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is rotated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
+The gravity sensor outputs 4 values: 3 Cartesian axis values and a timespan. The gravity sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is rotated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-).
 
 The following table lists the measurement data that the gravity sensor provides.
 
@@ -320,7 +322,7 @@ The linear acceleration sensor provides 3 components of acceleration (X, Y, and 
 
 ![User-acceleration sensor vector and axes](./media/sensor_types_useracceleration_vector.png)
 
-The linear acceleration sensor outputs 4 values: 3 Cartesian axis values and a timestamp. The linear acceleration sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is accelerated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-). The acceleration output is shown in the same direction as the user-driven force.
+The linear acceleration sensor outputs 4 values: 3 Cartesian axis values and a timespan. The linear acceleration sensor measures and returns axes values in "m/s<sup>2</sup>" (meters per second squared). When a device is accelerated in the ±X, ±Y, or ±Z direction, the corresponding output increases (+) or decreases (-). The acceleration output is shown in the same direction as the user-driven force.
 
 The following table lists the measurement data that the linear acceleration sensor provides.
 

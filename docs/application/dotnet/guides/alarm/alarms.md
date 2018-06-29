@@ -25,7 +25,7 @@ The main features of the `Tizen.Applications.Alarm` and `Tizen.Applications.Alar
     You can [list all scheduled alarms and cancel them](#scenario_4).
 
 
-Prerequisites
+## Prerequisites
 
 To enable your application to use the alarm functionality:
 
@@ -66,8 +66,7 @@ You can set an alarm which, when it expires, either launches an application or s
         1.  To identify which application to start when the alarm expires, the [Tizen.Applications.AlarmManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AlarmManager.html) class needs an application control instance.
 
             Create a new instance of the [Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html) class, and set the `Operation` and `ApplicationID` properties for it. The `Operation` property identifies the operation to be performed, and the `ApplicationID` property identifies the `appid` of the target application to be launched. You can get the `appid` of the target application from its `tizen-manifest.xml` file.
-
-            ​```
+            ```
             int DELAY = 2;
             int PERIOD = 1;
 
@@ -75,7 +74,7 @@ You can set an alarm which, when it expires, either launches an application or s
 
             appControl.Operation = AppControlOperations.Default;
             appControl.ApplicationId = "org.tizen.alarmslave";
-            ​```
+            ```
 
         2.  To schedule an alarm after a delay, use the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, with the initial delay, interval for subsequent alarms, and instance of the `Tizen.Applications.AppControl` class as parameters.
 
@@ -151,7 +150,7 @@ Alarm myAlarm = AlarmManager.CreateAlarm(DateTime.New.AddSecond(10),
 ```
 
 <a name="scenario_4"></a>
-Listing All Scheduled Alarms and Canceling an Alarm
+## Listing All Scheduled Alarms and Canceling an Alarm
 
 You can list all scheduled alarms, and cancel alarms either one by one or all at once:
 

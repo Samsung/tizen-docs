@@ -2,7 +2,7 @@
 # FIDO Universal Authentication Framework
 
 
-The FIDO (Fast IDentity Online) Alliance is a organization formed to address the lack of interoperability among strong authentication devices as well as the problems users face with creating and remembering multiple usernames and passwords.
+The FIDO (Fast IDentity Online) Alliance is an organization formed to address the lack of interoperability among strong authentication devices as well as the problems users face with creating and remembering multiple usernames and passwords.
 
 FIDO covers both password-less authentications (through [FIDO UAF components](#fido_uaf_components)), such as fingerprint, iris, voice, and multi-factor authentication, such as OTP and USB dongle. Tizen currently does not support multi-factor authentication.
 
