@@ -128,7 +128,7 @@ To manage the entry component content:
     elm_entry_markup_filter_append(entry, elm_entry_filter_limit_size, &limit_size);
     ```
 
-  - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.  
+  - To define a list of accepted or rejected characters, append the filter with the `Elm_Entry_Filter_Accept_Set` structure.
 
    The following example shows how to reject the '+', '-', '*', and '/' characters:
 
@@ -222,7 +222,8 @@ To configure the entry functionality:
   elm_entry_editable_set(entry, EINA_FALSE);
   ```
 
-  > **Note**  
+  > **Note**
+  >
   > Even when the entry component is set to be uneditable by the user, you can still use the `elm_entry_entry_append()` and `elm_entry_entry_insert()` functions to modify its text programmatically.
 
 - Set the password mode.
@@ -271,10 +272,10 @@ You can format the entry text in many ways:
 
 - Add special markups within the entry text:
 
-  - Anchors: `<a href = ..>...</a>`  
+  - Anchors: `<a href = ..>...</a>`
   The anchors generate an `anchor,clicked` signal when the user clicks them. The `href` attribute is used to identify the anchor. The anchor also reacts to the `anchor,in` (mouse in), `anchor,out` (mouse out), `anchor,down` (mouse down), and `anchor,up` (mouse up) events.
 
-  - Items: `<item size = .. vsize = .. href = ..>...</item>`  
+  - Items: `<item size = .. vsize = .. href = ..>...</item>`
   The items provide a way to insert any `Evas_Object` in the text. The `Evas_Object` name must be specified in the `href` attribute.
 
 - Override the textblock object style.
@@ -283,7 +284,9 @@ You can format the entry text in many ways:
 
 - Modify the content and text parts of the default theme:
 
-  - You can modify 2 content parts of the default theme: `icon` and `end`.The following example shows how to set an icon in the `end` content part:
+  - You can modify 2 content parts of the default theme: `icon` and `end`.
+
+    The following example shows how to set an icon in the `end` content part:
 
     ```
     Evas_Object *icon;
@@ -293,7 +296,9 @@ You can format the entry text in many ways:
     elm_object_part_content_set(entry, "end", icon);
     ```
 
-  - You can modify 2 text parts of the default theme: `elm.text` (entry text) and `elm.guide` (entry placeholder).The following example shows how to set the placeholder text to `Hello World`:
+  - You can modify 2 text parts of the default theme: `elm.text` (entry text) and `elm.guide` (entry placeholder).
+
+    The following example shows how to set the placeholder text to `Hello World`:
 
     ```
     elm_object_part_text_set(entry, "elm.guide", "Hello World");
@@ -305,27 +310,27 @@ To receive notifications about the entry events, listen for the following signal
 
 - `aborted`: The **Escape** key is pressed on a single line entry.
 - `activated`: The **Enter** key is pressed on a single line entry.
-- `anchor,clicked`: An anchor is clicked.  
+- `anchor,clicked`: An anchor is clicked.
   The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,down`: The mouse button is pressed on an anchor.  
+- `anchor,down`: The mouse button is pressed on an anchor.
   The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,hover,opened`: The anchor is clicked.  
+- `anchor,hover,opened`: The anchor is clicked.
   The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,in`: The mouse cursor is moved into an anchor.  
+- `anchor,in`: The mouse cursor is moved into an anchor.
   The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,out`: The mouse cursor is moved out of an anchor.  
+- `anchor,out`: The mouse cursor is moved out of an anchor.
   The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
-- `anchor,up`: The mouse button is released on an anchor.  
+- `anchor,up`: The mouse button is released on an anchor.
   The `event_info` callback parameter points to an `Elm_Entry_Anchor_Info` object.
 - `changed`: The text within the entry is changed.
-- `changed,user`: The text within the entry is changed because of user interaction.  
+- `changed,user`: The text within the entry is changed because of user interaction.
   The `event_info` callback parameter points to an `Edje_Entry_Change_Info` object.
 - `clicked`: The entry is clicked (mouse press and release).
 - `clicked,double`: The entry is double-clicked.
 - `clicked,triple`: The entry is triple-clicked.
 - `cursor,changed`: The cursor position is changed.
 - `cursor,changed,manual`: The cursor position is changed manually.
-- `focused`: The entry receives focus.  
+- `focused`: The entry receives focus.
   The `event_info` callback parameter points to an `Elm_Focus_Info` object.
 - `unfocused`: The entry loses focus.
 - `language,changed`: The program language is changed.
@@ -344,9 +349,11 @@ To receive notifications about the entry events, listen for the following signal
 - `theme,changed`: The theme is changed.
 - `undo,request`: The request is undone.
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
-> If not mentioned separately, the `event_info` callback parameter in all signals is `NULL`.
+
+If not mentioned separately, the `event_info` callback parameter in all signals is `NULL`.
 
 To register and define a callback for the `focused` signal:
 
@@ -364,7 +371,8 @@ focused_cb(void *data, Evas_Object *obj, void *event_info)
 }
 ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

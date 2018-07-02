@@ -427,7 +427,7 @@ To manage image objects in Evas:
 
 ### Setting Raw Data to Image Object
 
-You can set raw data to the image object manually using the `evas_object_image_data_set()` function instead of setting an image file as the data source. The image data must be in raw data form. For a 200x200 sized image with alpha channel enabled (32 bits per pixel), the size of the image data is 14000 (=200*200*4) bytes.
+You can set raw data to the image object manually using the `evas_object_image_data_set()` function instead of setting an image file as the data source. The image data must be in raw data form. For a 200x200 sized image with alpha channel enabled (32 bits per pixel), the size of the image data is 14000 (=200\*200\*4) bytes.
 
 Image objects fetch metadata such as width or height from the header of the image files. Since the raw data does not have the metadata, you must set the size of the image using the `evas_object_image_size_set()` function.
 
@@ -779,7 +779,8 @@ To add lighting for the objects, which is useful with 3D transforms, use the `ev
 - `lightr`, `lightg` and `lightb` are the local light source colors;
 - `ambientr`, `ambientg` and `ambientb` are the ambient light colors. Evas sets the color of each point based on the distance to the light source, the angle with which the object is facing the light and the ambient light. The orientation of each point is important. If the map is defined counter-clockwise, the object faces away from you and becomes obscured, since no light does not reflect from it.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

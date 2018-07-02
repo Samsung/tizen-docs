@@ -73,9 +73,13 @@ To resolve the initial root for other filesystem operations:
       requestFileSystem(TEMPORARY, 1024*1024, successCallback, errorCallback);
       ```
 
-    The following output is shown in the system log:`File system name temporary`    
+    The following output is shown in the system log:
+    ```
+    File system name temporary
+    ```
 
-- Use the `resolveLocalFileSystemURL()` global async method.This method is used to retrieve a `DirectoryEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#DirectoryEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#DirectoryEntry), or [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileEntry), or [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
+- Use the `resolveLocalFileSystemURL()` global async method.  
+   This method is used to retrieve `DirectoryEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#DirectoryEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#DirectoryEntry), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileEntry), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
 
     - Define the callbacks:
 
@@ -116,7 +120,8 @@ To create directories and files, delete directories, and read entries within dir
   });
   ```
 
-  If the third parameter is `{create:false}` or `NULL`, the entry of the existing directory is returned in the success callback.The following output is shown in the system log:
+  If the third parameter is `{create:false}` or `NULL`, the entry of the existing directory is returned in the success callback.  
+  The following output is shown in the system log:
 
   ```
   Created dir: ert
@@ -132,13 +137,14 @@ To create directories and files, delete directories, and read entries within dir
   });
   ```
 
-  Similarly as when creating a directory, if the third parameter is `{create:false}` or `NULL`, the entry of the existing file is returned in the success callback.The following output is shown in the system log:
+  Similarly as when creating a directory, if the third parameter is `{create:false}` or `NULL`, the entry of the existing file is returned in the success callback.  
+  The following output is shown in the system log:
 
   ```
   Created file: qa.txt
   ```
 
-- To delete a directory and all of its content, you can use the `removeRecursively()` method:
+- To delete a directory and its entire content, you can use the `removeRecursively()` method:
 
   ```
   requestFileSystem(TEMPORARY, 100, function(fs) {
@@ -250,19 +256,20 @@ To move, copy, and delete entries, or access entry metadata, parent information,
 
 - To look up the parent directory entry containing the current entry, you can use the `getParent()` method:
 
- ```
- requestFileSystem(TEMPORARY, 100, function(fs) {
-     fs.root.getParent(function(entry) {
-         console.log('success');
-     });
- });
- ```
+  ```
+  requestFileSystem(TEMPORARY, 100, function(fs) {
+      fs.root.getParent(function(entry) {
+          console.log('success');
+      });
+  });
+  ```
 
- If the entry is the root of its filesystem, its parent is itself.The following output is shown in the system log:
+  If the entry is the root of its filesystem, its parent is itself.  
+  The following output is shown in the system log:
 
- ```
- success
- ```
+  ```
+  success
+  ```
 
 - To delete a file or directory, you can use the `remove()` method:
 
@@ -276,8 +283,8 @@ To move, copy, and delete entries, or access entry metadata, parent information,
   });
   ```
 
-> **Note**  
-> You cannot delete a non-empty directory or the filesystem root directory.
+  > **Note**  
+  > You cannot delete a non-empty directory or the filesystem root directory.
 
   The following output is shown in the system log:
 
@@ -315,7 +322,7 @@ To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entrie
   });
   ```
 
-- The following output is shown in the system log:
+  The following output is shown in the system log:
 
   ```
   created fileWriter object for testFile.txt
@@ -484,7 +491,7 @@ To read and write file content:
   };
 
   /* Entry is a FileEntry object retrieved by getFile() of the DirectoryEntry interface */
-  entry.createWriter(successCallback, errorCallback);`
+  entry.createWriter(successCallback, errorCallback);
   ```
 
   The following output is shown in the system log:

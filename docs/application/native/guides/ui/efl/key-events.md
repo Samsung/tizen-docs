@@ -111,7 +111,9 @@ To manage hardware key events:
 
 5. In the **Back** key callbacks:
 
-   - The `eext_popup_back_cb()` callback is a macro function that removes the popup.To use a hide effect in dismissing the popup, use the `elm_popup_dismiss()` function in the callback:
+   - The `eext_popup_back_cb()` callback is a macro function that removes the popup.
+
+     To use a hide effect in dismissing the popup, use the `elm_popup_dismiss()` function in the callback:
 
      ```
      static void
@@ -135,5 +137,5 @@ To manage hardware key events:
      ```
 
 ## Related Information
-- Dependencies     
+- Dependencies
     - Tizen 2.4 and Higher for Mobile

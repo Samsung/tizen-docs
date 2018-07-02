@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -118,7 +118,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageSource.html#a5e6d86c99a7bde6efbdbd7ce30715d33">GetPixels</a> (std::vector&lt; unsigned char &gt; &amp;pixbuf, unsigned int &amp;width, unsigned int &amp;height, <a class="el" href="namespaceDali_1_1Pixel.html#aca82caf380d934981f77a83211a63902">Pixel::Format</a> &amp;pixelFormat) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a copy of the pixels used by <a class="el" href="classDali_1_1NativeImageSource.html" title="Used for displaying native images.">NativeImageSource</a>.  <a href="#a5e6d86c99a7bde6efbdbd7ce30715d33"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageSource.html#ab3338d0daae8dafc6b6534a966c92efb">EncodeToFile</a> (const std::string &amp;filename) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the current pixel contents to either a JPEG or PNG format and write that to the filesytem.  <a href="#ab3338d0daae8dafc6b6534a966c92efb"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the current pixel contents to either a JPEG or PNG format and write that to the filesystem.  <a href="#ab3338d0daae8dafc6b6534a966c92efb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageSource.html#a393659669334ef6a02a4764120fdcf22">SetSource</a> (<a class="el" href="classDali_1_1Any.html">Any</a> source)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an existing source.  <a href="#a393659669334ef6a02a4764120fdcf22"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageSource.html#a527a3f1ed3f7f474ab690ab9488f54e5">IsColorDepthSupported</a> (<a class="el" href="classDali_1_1NativeImageSource.html#aab8475bf3448ed4621f0256ba686a11b">ColorDepth</a> colorDepth)</td></tr>
@@ -192,11 +192,11 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Converts the current pixel contents to either a JPEG or PNG format and write that to the filesytem. </p>
+<p>Converts the current pixel contents to either a JPEG or PNG format and write that to the filesystem. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Identify the filesytem location at which to write the encoded image. The extension determines the encoding used. The two valid encoding are (".jpeg"|".jpg") and ".png". </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Identify the filesystem location at which to write the encoded image. The extension determines the encoding used. The two valid encoding are (".jpeg"|".jpg") and ".png". </td></tr>
   </table>
   </dd>
 </dl>

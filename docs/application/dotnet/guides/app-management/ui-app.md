@@ -224,7 +224,7 @@ categories that allow an application to run in the background.
 
 **Table: Allowed background application policy**
 
-| Background category            | Description                              | Related namespaces                       | Manifest file <background-category> element value |
+| Background category            | Description                              | Related namespaces                       | Manifest file \<background-category\> element value |
 |------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
 | Media                          | Playing audio, recording, and outputting streaming video in the background | [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) | `media`                                  |
 | Download                       | Downloading data with the classes and methods of the Tizen.Content.Download namespace | [Tizen.Content.Download](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.Download.html) | `download`                               |

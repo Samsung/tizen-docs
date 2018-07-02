@@ -331,7 +331,7 @@ The following UI layouts with code examples are common use cases in widgets on w
 
   ![Vertical split layout](./media/webwidget_vertical_split_layout.png)
 
-> **Note**
+> **Note**  
 > The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.
 > ```
 > #more {   

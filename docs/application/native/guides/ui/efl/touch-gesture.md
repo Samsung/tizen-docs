@@ -450,8 +450,7 @@ The default value is defined in the system policy. In Tizen, it is 250 ms.
 
 ```
 /* Get or set the gesture layer flick time limit (in milliseconds) of an object */
-void elm_gesture_layer_flick_time_limit_ms_set(Evas_Object *obj,
-   unsigned int flick_time_limit_ms);
+void elm_gesture_layer_flick_time_limit_ms_set(Evas_Object *obj, unsigned int flick_time_limit_ms);
 unsigned int elm_gesture_layer_flick_time_limit_ms_get(const Evas_Object *obj);
 ```
 
@@ -557,8 +556,8 @@ To create a zoom gesture:
 
    The normal zoom gesture detecting logic:
 
-   1. The gesture layer remembers the gap of each touched geometry.  
-   2. When the user moves each touched point, the gesture layer calculates the gap of each touched geometry for each move event.  
+   1. The gesture layer remembers the gap of each touched geometry.
+   2. When the user moves each touched point, the gesture layer calculates the gap of each touched geometry for each move event.
    3. If the values (gap + `zoom_distance_tolerance`, gap – `zoom_distance_tolerance`) are bigger or smaller than the first calculated gap values, the gesture layer calls the `zoom_move()` callback function with the calculated result.
 
    ```
@@ -707,6 +706,6 @@ To create a rotate gesture:
    ```
 
 ## Related Information
-- Dependencies   
+- Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable

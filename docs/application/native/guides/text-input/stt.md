@@ -83,8 +83,9 @@ To enable your application to use the STT functionality:
 
    The STT handle is used in other STT functions as a parameter. After the handle creation, the STT state changes to `STT_STATE_CREATED`.
 
-   **Note**  
-   STT is not thread-safe and depends on the Ecore main loop. Implement STT within the Ecore main loop and do not use it in a thread.
+   > **Note**
+   >
+   > STT is not thread-safe and depends on the Ecore main loop. Implement STT within the Ecore main loop and do not use it in a thread.
 
    ```
    void
@@ -111,7 +112,9 @@ To enable your application to use the STT functionality:
    }
    ```
 
-   **Note**  Do not use the `stt_destroy()` function in a callback. Within a callback, the `stt_destroy()` function fails and returns `STT_ERROR_OPERATION_FAILED`.
+   > **Note**
+   >
+   >  Do not use the `stt_destroy()` function in a callback. Within a callback, the `stt_destroy()` function fails and returns `STT_ERROR_OPERATION_FAILED`.
 
 <a name="set"></a>
 ## Setting and Unsetting Callbacks
@@ -314,7 +317,9 @@ To set and unset callbacks:
 
 To obtain the current STT state, the list of supported languages, and the current language:
 
-- Get the current state using the `stt_get_state()` function.The STT state is changed by various STT functions, and it is applied as a precondition for each function.
+- Get the current state using the `stt_get_state()` function.
+
+    The STT state is changed by various STT functions, and it is applied as a precondition for each function.
 
     ```
     void
@@ -328,7 +333,9 @@ To obtain the current STT state, the list of supported languages, and the curren
     }
     ```
 
-- Obtain a list of languages supported by the STT using the `stt_foreach_supported_languages()` function.The foreach function triggers a separate callback for each supported language. As long as the callback returns `true`, the foreach function continues to loop over the supported languages.
+- Obtain a list of languages supported by the STT using the `stt_foreach_supported_languages()` function.
+
+    The foreach function triggers a separate callback for each supported language. As long as the callback returns `true`, the foreach function continues to loop over the supported languages.
 
     ```
     bool
@@ -349,7 +356,9 @@ To obtain the current STT state, the list of supported languages, and the curren
     }
     ```
 
-- Get the default language using the `stt_get_default_language()` function.The STT recognition process works for this default language, if you do not set the language as a parameter of the `stt_start()` function.
+- Get the default language using the `stt_get_default_language()` function.
+
+    The STT recognition process works for this default language, if you do not set the language as a parameter of the `stt_start()` function.
 
     ```
     void
@@ -365,7 +374,9 @@ To obtain the current STT state, the list of supported languages, and the curren
 
 You can get a notification about the default language changes by setting a default language changed callback.
 
-- Obtain a list of engines supported by the STT using the `stt_foreach_supported_engines()` function.The foreach function triggers a separate callback for each supported engine. As long as the callback returns `true`, the foreach function continues to loop over the supported engines.
+- Obtain a list of engines supported by the STT using the `stt_foreach_supported_engines()` function.
+
+   The foreach function triggers a separate callback for each supported engine. As long as the callback returns `true`, the foreach function continues to loop over the supported engines.
 
     ```
     bool
@@ -387,7 +398,9 @@ You can get a notification about the default language changes by setting a defau
     }
     ```
 
-- Get or set the current engine for the STT recognition using the `stt_set_engine()` and `stt_get_engine()` functions.The supported language, silence detection, and supported recognition types depend on the STT engine.
+- Get or set the current engine for the STT recognition using the `stt_set_engine()` and `stt_get_engine()` functions.
+
+    The supported language, silence detection, and supported recognition types depend on the STT engine.
 
     ```
     /* Get the engine */
@@ -412,7 +425,9 @@ You can get a notification about the default language changes by setting a defau
     }
     ```
 
-- Check whether a recognition type defined in the `<stt.h>` header file is supported by the current engine.The normal recognition type, `STT_RECOGNITION_TYPE_FREE`, means that the whole recognition result is sent at the end of the recognition process. The `STT_RECOGNITION_TYPE_FREE_PARTIAL` recognition type is used to get a partial recognition result.
+- Check whether a recognition type defined in the `<stt.h>` header file is supported by the current engine.
+
+    The normal recognition type, `STT_RECOGNITION_TYPE_FREE`, means that the whole recognition result is sent at the end of the recognition process. The `STT_RECOGNITION_TYPE_FREE_PARTIAL` recognition type is used to get a partial recognition result.
 
     ```
     void
@@ -430,33 +445,33 @@ You can get a notification about the default language changes by setting a defau
 
 - Get the error message.
 
-  Call this function during the STT error callback. If not, the error as an operation failure is returned. If the function succeeds, the error message must be released using the `free()` function, when it is no longer required.
+    Call this function during the STT error callback. If not, the error as an operation failure is returned. If the function succeeds, the error message must be released using the `free()` function, when it is no longer required.
 
-  ```
-  void
-  error_cb(stt_h stt, stt_error_e reason, void *user_data)
-  {
-      int ret;
-      char * err_msg = NULL;
-      ret = stt_get_error_message(stt, &err_msg);
-      if (STT_ERROR_NONE != ret)
-          /* Error handling */
-      if (NULL != err_msg) {
-          /* Memory release */
-          free(err_msg);
-          err_msg = NULL;
-      }
-  }
+    ```
+    void
+    error_cb(stt_h stt, stt_error_e reason, void *user_data)
+    {
+        int ret;
+        char * err_msg = NULL;
+        ret = stt_get_error_message(stt, &err_msg);
+        if (STT_ERROR_NONE != ret)
+            /* Error handling */
+        if (NULL != err_msg) {
+            /* Memory release */
+            free(err_msg);
+            err_msg = NULL;
+        }
+    }
 
-  void
-  get_error_message(stt_h stt)
-  {
-      int ret;
-      ret = stt_set_error_cb(stt, error_cb, NULL);
-      if (STT_ERROR_NONE != ret)
-          /* Error handling */
-  }
-  ```
+    void
+    get_error_message(stt_h stt)
+    {
+        int ret;
+        ret = stt_set_error_cb(stt, error_cb, NULL);
+        if (STT_ERROR_NONE != ret)
+            /* Error handling */
+    }
+    ```
 
 <a name="prepare"></a>
 ## Connecting and Disconnecting the STT
@@ -478,8 +493,9 @@ To operate the STT:
    }
    ```
 
-   **Note**  
-   If you get the error callback after calling the `stt_prepare()` function, STT is not available.
+   > **Note**
+   >
+   > If you get the error callback after calling the `stt_prepare()` function, STT is not available.
 
 2. When the connection is no longer needed, use the `stt_unprepare()` function to disconnect the STT, and change the state to `STT_STATE_CREATED`:
 
@@ -517,7 +533,9 @@ To set and get the options about the STT engine:
 
   The private data is a setting parameter for applying keys provided by the STT engine. Using the `stt_set_private_data()` function, you can set the private data and use the corresponding key of the engine. To get the private data which corresponds to a specific key from the engine, use the `stt_get_private_data()` function.
 
-  **Note**  The key and data are determined by the STT engine. To set and get the private data, see the engine instructions.
+  > **Note**
+  >
+  >  The key and data are determined by the STT engine. To set and get the private data, see the engine instructions.
 
   ```
   void
@@ -566,8 +584,9 @@ To set the STT options and control recording:
 
   To play a sound before the STT recognition starts, call the `stt_set_start_sound()` function in the `STT_STATE_READY` state.
 
-  **Note**  
-  The sound file path must be a full path. Only WAV format sound files are supported.
+  > **Note**
+  >
+  > The sound file path must be a full path. Only WAV format sound files are supported.
 
   ```
   void
@@ -593,8 +612,9 @@ To set the STT options and control recording:
 
   To play a sound when the STT recognition stops, use the `stt_set_stop_sound()` function in the `STT_STATE_READY` state:
 
-  **Note**  
-  The sound file path must be a full path. Only WAV format sound files are supported.
+  > **Note**
+  >
+  > The sound file path must be a full path. Only WAV format sound files are supported.
 
   ```
   void
@@ -622,8 +642,9 @@ To set the STT options and control recording:
 
     The connected STT daemon starts recording, and the state is changed to `STT_STATE_RECORDING`.
 
-    **Note**  
-    If the `stt_start()` function fails, check the error code and take appropriate action.
+    > **Note**
+    >
+    > If the `stt_start()` function fails, check the error code and take appropriate action.
 
     The language and recognition type must be supported by the current STT engine. If you set `NULL` as the language parameter, the STT default language is used based on the `stt_get_default_language()` function.
 

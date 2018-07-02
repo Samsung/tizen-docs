@@ -243,12 +243,13 @@ After the `media_packet` is allocated with corresponding codec MIME types, fill 
        }
    }
    ```
-<a name="management></a>
+<a name="management"></a>
 ## Running the Media Codec
 
 After [preparing the medic codec](#prepare) and [filling the `media_packet` with data](#packet), run the media codec in the following loop:
 
 1. When an input buffer is ready, read a chunk of input and copy it into the buffer to be encoded or decoded.
+
 2. When an output buffer is ready, copy the encoded or decoded output from the buffer.
 
 To run the media codec loop:
@@ -275,7 +276,8 @@ To run the media codec loop:
 
      The eos callback is invoked if the eos packet is decoded or encoded and the eos callback is registered with the `mediacodec_set_eos_cb()` function.
 
-   > **Note**  
+   > **Note**
+   >
    > You must set the flags before calling the `mediacodec_process_input()` function.
 
 3. Start the media codec loop using the `mediacodec_process_input()` and `mediacodec_get_output()` functions:
@@ -413,8 +415,9 @@ To manage and monitor the transcoding process:
 
    The function destroys the handle of a completed transcoding. If the function is called during the transcoding process, the function also cancels the transcoding.
 
-   **Note**  
-   If you do not call the destroy function after the transcoding is complete, you cannot start a new transcoding process, and a memory crash can occur.
+   > **Note**
+   >
+   > If you do not call the destroy function after the transcoding is complete, you cannot start a new transcoding process, and a memory crash can occur.
 
 <a name="set"></a>
 ## Setting Parameters in Mobile Applications

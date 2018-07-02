@@ -52,11 +52,16 @@ DALi has a concept of a camera to display its virtual 3D world to a 2D screen. T
 DALi consists of the following modules:
 
 - **DALi Core**
-This module provides core functionalities, such as scene graph-based rendering, animation, and event handling. It is a base module and forms the biggest part of DALi.
+
+  This module provides core functionalities, such as scene graph-based rendering, animation, and event handling. It is a base module and forms the biggest part of DALi.
+
 - **DALi Adaptor**
-This module is a platform adaptation layer. It initializes and sets up DALi appropriately and provides many platform-related services with its internal module, platform abstraction. Several signals can be connected to it to keep you informed when certain platform-related activities occur.
+
+  This module is a platform adaptation layer. It initializes and sets up DALi appropriately and provides many platform-related services with its internal module, platform abstraction. Several signals can be connected to it to keep you informed when certain platform-related activities occur.
+
 - **DALi Toolkit**
-This module provides UI components and various effects on top of the DALi core.
+
+  This module provides UI components and various effects on top of the DALi core.
 
 **Figure: Layer diagram for DALi modules**
 

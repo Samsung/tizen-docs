@@ -31,9 +31,11 @@ The [Tizen.Location](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Locat
     You can create [virtual perimeters](#bound) and monitor when a device enters or leaves them.
 
 
-> **Note**   
-> To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using the Emulator Control Panel.
-Since satellite data is not supported on the emulator, GPS status data is available on a target device only.
+> **Note**
+>
+> To test the Tizen location-based services on the emulator, provide location data (longitude and latitude) using the Emulator Control Panel.  
+>
+> Since satellite data is not supported on the emulator, GPS status data is available on a target device only.
 
 
 Asynchronous location-related updates and region monitoring notifications are implemented with events. Location-related events are called only if the location service has been started

@@ -30,6 +30,8 @@ To enhance the user interaction with the device, learn to manage vibrations:
          <title>Tizen Vibration API Example code</title>
 
          <script>
+   ```
+   ```
              function singleVibration() {
                  /* Vibrate for 2 seconds */
                  navigator.vibrate(2000);

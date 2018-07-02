@@ -140,7 +140,8 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
    query['endTime'] = (new Date(2016, 7, 31)).getTime() / 1000;
    ```
 
-4. To get the data sliced by an interval, you can use a combination of the `anchorTime` and `interval` options in the `HumanActivityRecorderQuery` interface.  Some human activity recorder types do not allow slicing the data by an interval.
+4. To get the data sliced by an interval, you can use a combination of the `anchorTime` and `interval` options in the `HumanActivityRecorderQuery` interface.  
+   Some human activity recorder types do not allow slicing the data by an interval.
 
    ```
    /* To retrieve data everyday at midnight */
@@ -149,7 +150,8 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
    query['interval'] = 1440; /* Day */
    ```
 
-5. To read the human activity recorder data from the database, use the `readRecorderData()` method of the `HumanActivityMonitorManager` interface with the query. Even if your application never recorded any data, you can access any data that has been recorded in the database by other applications.
+5. To read the human activity recorder data from the database, use the `readRecorderData()` method of the `HumanActivityMonitorManager` interface with the query.  
+  Even if your application never recorded any data, you can access any data that has been recorded in the database by other applications.
 
    ```
    function onerror(error) {
@@ -319,10 +321,10 @@ The following table introduces the available monitor types and lists the monitor
 
 | Monitor                              | Capability                               | Notes                                    |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
-| Pedometer and accumulative pedometer | `http://tizen.org/feature/sensor.pedometer` | When the pedometer sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data.	 The accumulative pedometer sensor does not have to be started by your application as long as step counting is enabled by any other application or the system. Listener registered with the `setAccumulativePedometerListener()` method is called when accumulative counters are changed. |
+| Pedometer and accumulative pedometer | `http://tizen.org/feature/sensor.pedometer` | When the pedometer sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data.<br> The accumulative pedometer sensor does not have to be started by your application as long as step counting is enabled by any other application or the system. Listener registered with the `setAccumulativePedometerListener()` method is called when accumulative counters are changed. |
 | Wrist up                             | `http://tizen.org/feature/sensor.wrist_up` | The wrist up sensor is notified when the relevant gesture is performed. The sensor must be enabled using the `start()` method. An event listener invoked when the gesture is detected. This sensor does not provide any data. |
 | Heart rate monitor                   | `http://tizen.org/feature/sensor.heart_rate_monitor` | When the heart rate monitor (HRM) sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
-| GPS                                  | `http://tizen.org/feature/location.batch` | When the GPS sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data.	 The GPS sensor provides both the current value and a short history of last recorded GPS positions. The sensor supports sampling intervals, which can be used to create more power-efficient applications. |
+| GPS                                  | `http://tizen.org/feature/location.batch` | When the GPS sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data.<br> The GPS sensor provides both the current value and a short history of last recorded GPS positions. The sensor supports sampling intervals, which can be used to create more power-efficient applications. |
 | Sleep monitor                        | `http://tizen.org/feature/sensor.sleep_monitor` | When the sleep sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
 | Activity recognition                 | `http://tizen.org/feature/sensor.activity_recognition` | To recognize an activity, start listening for it using the `addActivityRecognitionListener()` method.  The following activity types can be recognized:<br> - `STATIONARY`<br> - `WALKING`<br> - `RUNNING`<br> - `IN_VEHICLE` |
 

@@ -17,13 +17,13 @@ When designing the application layout to be scalable, you must pay attention to 
 
   **Figure: Relative position**
 
-   ![Relative position](./media/scale_relative.png)
+  ![Relative position](./media/scale_relative.png)
 
   In the **fixed position**, the size is determined by a value set for the object. For example, the orange rectangle set to the size of 10. If the green rectangle is expanded, the orange rectangle does not change. However, if the scaling value is, for example, doubled, the size of the orange rectangle grows to 20.
 
   **Figure: Fixed position**
 
-   ![Fixed position](./media/scale_fixed.png)
+  ![Fixed position](./media/scale_fixed.png)
 
 - Use the relative position
 
@@ -31,7 +31,7 @@ When designing the application layout to be scalable, you must pay attention to 
 
   **Figure: Scaling relative position**
 
-   ![Scaling relative position](./media/scale_relative_scaled.png)
+  ![Scaling relative position](./media/scale_relative_scaled.png)
 
 - If you use the fixed size, make the object scalable
 
@@ -61,19 +61,20 @@ When designing the application layout to be scalable, you must pay attention to 
 
   **Figure: Height filled with a fixed size**
 
-   ![Height filled with a fixed size](./media/scale_fixed_height.png)
+  ![Height filled with a fixed size](./media/scale_fixed_height.png)
 
   If you set a partial width or height with a fixed size and leave the remaining area flexible, the layout does not expand outside the screen.
 
   **Figure: Height with a flexible area**
 
-   ![Height with a flexible area](./media/scale_flexible_height.png)
+  ![Height with a flexible area](./media/scale_flexible_height.png)
 
 ## Scalability Using Elementary UI Components
 
 The Tizen platform provides a UI component toolkit library, called Elementary, that includes an extensive set of UI components. You can use the Elementary UI components to compose your application user interface (UI). While creating the UI, you can set specific properties for the UI components to control the scalable behavior of the UI. Before you try to create a scalable UI using Elementary UI components, make sure you understand some core concepts, such as how to create effective layouts with containers, and how to use the weight and align properties.
 
-> **Note**  
+> **Note**
+>
 > The Elementary library provides 3 groups of APIs:
 > - Infrastructure: Control of the behavior of Elementary objects.
 > - Container: UI component that can contain other UI components.
@@ -92,7 +93,7 @@ The Elementary library provides several containers to display UI components in a
 
   **Figure: Box layout**
 
-   ![Box layout](./media/scale_box.png)
+  ![Box layout](./media/scale_box.png)
 
   The box-based linear layout is the best solution to ensure a minimum size for the child UI components on any device or any orientation.
 
@@ -102,7 +103,7 @@ The Elementary library provides several containers to display UI components in a
 
   **Figure: Grid layout**
 
-   ![Grid layout](./media/scale_grid.png)
+  ![Grid layout](./media/scale_grid.png)
 
   The grid-based relative layout can always fill the full screen on any device or any orientation. However, the size of the child UI components is changed based on the screen size.
 
@@ -156,7 +157,7 @@ You can set the horizontal and vertical align property with the `evas_object_siz
 
 **Figure: Alignment hint**
 
- ![Alignment hint](./media/scale_align_hint.png)
+![Alignment hint](./media/scale_align_hint.png)
 
 <a name="edje"></a>
 ## Scalability Using the EDC File
@@ -173,7 +174,11 @@ Parts are used to represent the most basic layout elements, such as a line in a 
 
 The part blocks in the EDC file can have the following property related to scalability:
 
-- `scale`: 0-1Specifies whether the part scales its size according to the scaling factor (Tizen has a scaling factor to resize the application layout and object). This property is used to scale object properties, such as font size or min/max size of the part.The default value is 0 (off) and the default scaling factor is 1.0. To make a part scalable, set the property to 1 (on).
+- `scale`: 0-1
+
+  Specifies whether the part scales its size according to the scaling factor (Tizen has a scaling factor to resize the application layout and object). This property is used to scale object properties, such as font size or min/max size of the part.
+
+  The default value is 0 (off) and the default scaling factor is 1.0. To make a part scalable, set the property to 1 (on).
 
 ### Description
 
@@ -218,7 +223,8 @@ The description blocks in the EDC file can have the following properties related
     By default, the corners of a part are placed to cover whole interface.
 
   **Example: EDC file part block and its properties**
-  ![Part example](./media/scale_example_part.png)  	
+
+  ![Part example](./media/scale_example_part.png)
 
   ```
   collections {
@@ -291,10 +297,11 @@ The description blocks in the EDC file can have the following properties related
 
   Specifies the scope of the `aspect` property to a given dimension.
 
-  The possible values are`BOTH`, `VERTICAL`, `HORIZONTAL`, and `NONE`. The default is `NONE`.
+  The possible values are `BOTH`, `VERTICAL`, `HORIZONTAL`, and `NONE`. The default is `NONE`.
 
-  **Example: EDC file aspect property**  
-  ![Part aspect example](./media/scale_example_part_aspect.png)  	   
+  **Example: EDC file aspect property**
+
+  ![Part aspect example](./media/scale_example_part_aspect.png)
 
 ```
 collections {
@@ -347,8 +354,9 @@ The text blocks in the EDC file can have the following properties related to sca
 
    The default value is `0 0`.
 
-   **Example: EDC file text block and its properties**  
-   ![Text example](./media/scale_example_text.png)     
+   **Example: EDC file text block and its properties**
+
+   ![Text example](./media/scale_example_text.png)
 
   ```
   collections {
@@ -383,14 +391,15 @@ The text blocks in the EDC file can have the following properties related to sca
   }
   ```
 
--   `fit`: horizontal vertical
+- `fit`: horizontal vertical
 
   Specifies a pair of values that define whether the text is scaled to fill its container horizontally or vertically.
 
   The default value is `0 0`.
 
-  **Example: EDC file fit property**  
-  ![Text fit example](./media/scale_example_text_fit.png)   
+  **Example: EDC file fit property**
+
+  ![Text fit example](./media/scale_example_text_fit.png)
 
     ```
     collections {
@@ -434,8 +443,9 @@ The image blocks in the EDC file can have the following properties related to sc
 
   The default value is 0 (off). To make the border scalable, the value must be set to 1 (on).
 
-  **Example: EDC file image block and its properties**  
-  ![Image example](./media/scale_example_image.png)     
+  **Example: EDC file image block and its properties**
+
+  ![Image example](./media/scale_example_image.png)
 
    ```
    collections {
@@ -487,8 +497,9 @@ The images.set blocks in the EDC file can have the following properties related 
 
   Specifies the minimum and maximum size that causes a specified image to be selected and shown.
 
-  **Example: EDC file images.set block and its properties**  
-  ![Image set example](./media/scale_example_image_set.png)     
+  **Example: EDC file images.set block and its properties**
+
+  ![Image set example](./media/scale_example_image_set.png)
 
    ```
    collections {
@@ -572,7 +583,7 @@ You can use fixed and flexible parts:
 
 **Figure: Fixed and flexible parts**
 
- ![Fixed and flexible parts](./media/scale_fixed_flexible.png)
+![Fixed and flexible parts](./media/scale_fixed_flexible.png)
 
 ## Aspect Ratio
 
@@ -584,32 +595,36 @@ For example, the following table illustrates what happens to the parts marked wi
 
 **Figure: Original image [1920x1280 (8:5)]**
 
- ![Original image [1920x1280 (8:5)]](./media/scale_original_image.png)
+![Original image [1920x1280 (8:5)]](./media/scale_original_image.png)
 
-> **Note**  
+> **Note**
+>
 > To set the required aspect ratio, use the `evas_object_size_hint_aspect_set()` function or the `aspect_preference` property in the EDC file.
 
 **Table: Image resizing effects with a specific aspect ratio**
-
 <table>
+<thead>
 <tr><th rowspan="2">Aspect</th><th colspan="2">Container area</th></tr>
 <tr><th>720x384 (15:8)</th><th>720x640 (9:8)</th></tr>
+</thead>
+<tbody>
 <tr>
-  <td> HORIZONTAL<br>Resizing based on the container width while keeping the image aspect ratio.Extra height goes outside the image area and is clipped. </td>
+  <td> HORIZONTAL<br>Resizing based on the container width while keeping the image aspect ratio.<br> Extra height goes outside the image area and is clipped. </td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_1.png" /> </td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_2.png" /> </td></tr>
 <tr>
-  <td>  VERTICAL<br>Resizing based on the container height while keeping the image aspect ratio.Extra width goes outside the image area and is clipped. </td>
+  <td>  VERTICAL<br>Resizing based on the container height while keeping the image aspect ratio.<br> Extra width goes outside the image area and is clipped. </td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_3.png" /> </td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_4.png" /> </td></tr>
 <tr>
-  <td> BOTH<br>Resizing based on the container area while keeping the image aspect ratio.No extra width or height goes outside the image area, so the entire image is always shown.</td>
+  <td> BOTH<br>Resizing based on the container area while keeping the image aspect ratio.<br> No extra width or height goes outside the image area, so the entire image is always shown.</td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_5.png" /> </td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_6.png" /> </td></tr>
 <tr>
-  <td> NONE<br>Resizing to fill the available area while keeping the image aspect ratio.Extra width or height goes outside the image area and is clipped. </td>
+  <td> NONE<br>Resizing to fill the available area while keeping the image aspect ratio.<br> Extra width or height goes outside the image area and is clipped. </td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_7.png" /> </td>
   <td> <img alt="Scaling effect" src="./media/scale_effect_8.png" /> </td></tr>
+</tbody>
 </table>
 
 ### Setting the Image Aspect Ratio
@@ -627,15 +642,19 @@ You can set the aspect ratio of an image object with additional functions:
   The following table shows how, to fit in, the image in the 720x384 container area is flattened vertically while the image in the 720x640 container area is flattened horizontally.
 
   **Table: Image resizing without keeping the aspect ratio**
-<table>
-<tr><th colspan="2">Container area</th></tr>
-<tr><th>720x384 (15:8)</th><th> 720x640 (9:8)</th></tr>
-<tr>
-  <td> <img alt="Scaling effect" src="./media/scale_effect_9.png" /></td>
-  <td> <img alt="Scaling effect" src="./media/scale_effect_10.png" /></td></tr>
-</table>
+  <table>
+  <thead>
+  <tr><th colspan="2">Container area</th></tr>
+  <tr><th>720x384 (15:8)</th><th> 720x640 (9:8)</th></tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td> <img alt="Scaling effect" src="./media/scale_effect_9.png" /></td>
+    <td> <img alt="Scaling effect" src="./media/scale_effect_10.png" /></td></tr>
+  </tbody>
+  </table>
 
 ## Related Information
-- Dependencies    
+- Dependencies
     - Tizen 2.4 and Higher for Mobile
     - Tizen 2.3.1 and Higher for Wearable

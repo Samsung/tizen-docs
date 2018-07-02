@@ -66,7 +66,7 @@ To start the IME application life-cycle:
     ```
     internal static void Create() {}
     internal static void Terminate() {}
-    internal static void Show(InputMethodEditor.ContextId id, InputMethodContext id) {}
+    internal static void Show(InputMethodEditor.ContextId id, InputMethodContext ctx) {}
     internal static void Hide(InputMethodEditor.ContextId id) {}
     ```
 

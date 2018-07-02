@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -1332,7 +1332,7 @@ You must release <em>noti</em> using <a class="el" href="group__CAPI__MESSAGING_
 
 <p>Requests unread notification messages to the push server. </p>
 <p>When the app wants to receive messages that arrived before it launched, this <br/>
- method should be called. Upon receiving ths request, the daemon sends messages<br/>
+ method should be called. Upon receiving this request, the daemon sends messages<br/>
  stored in its DB to the app. The notify_callback() method assigned in <a class="el" href="group__CAPI__MESSAGING__PUSH__PUBLIC__MODULE.html#ga69cace259c78c1998d58f3348390ba21" title="Connects to the push service and sets callback functions.">push_service_connect()</a><br/>
  will be called when these messages arrive. No need to call this method multiple<br/>
  times to receive multiple messages. This method does NOT guarantee order and<br/>

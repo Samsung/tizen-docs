@@ -62,17 +62,17 @@ To use a popup component in your application:
 
 5. Register the [callback](#callbacks) functions.
 
-  The following example shows how to define and register a callback for the `dismissed` signal:
+   The following example shows how to define and register a callback for the `dismissed` signal:
 
-   ```
-   evas_object_smart_callback_add(popup, "dismissed", dismissed_cb, data);
+    ```
+    evas_object_smart_callback_add(popup, "dismissed", dismissed_cb, data);
 
-   void
-   dismissed_cb(void *data, Evas_Object *obj, void *event_info)
-   {
-       evas_object_del(obj);
-   }
-   ```
+    void
+    dismissed_cb(void *data, Evas_Object *obj, void *event_info)
+    {
+        evas_object_del(obj);
+    }
+    ```
 
 The following example shows a simple use case of the popup component.
 
@@ -144,7 +144,7 @@ The following table lists the available component styles.
 **Table: Popup styles**
 
 | Style      | Sample                                   | Text part                            | Swallow part                             |
-|----------|----------------------------------------|------------------------------------|----------------------------------------|
+|------------|------------------------------------------|--------------------------------------|------------------------------------------|
 | `default`  | ![elm/button/base/default](./media/popup_default.png) | `default`<br>`title,text`<br>`subtitle,text` | `elm.swallow.content`<br>`button1`<br>`button2`<br>`button3` |
 | `toast`    | ![elm/button/base/default](./media/popup_toast.png) | `default`                            | `elm.swallow.content`                    |
 | `theme_bg` | ![elm/button/base/default](./media/popup_theme_bg.png) | `default`<br>`title,text`<br>`subtitle,text` | `elm.swallow.content`<br>`button1`<br>`button2`<br>`button3` |
@@ -158,15 +158,17 @@ You can register callback functions connected to the following signals for a pop
 **Table: Popup callback signals**
 
 | Signal          | Description                              | `event_info` |
-|---------------|----------------------------------------|------------|
+|-----------------|------------------------------------------|--------------|
 | `timeout`       | The popup is closed as a result of the timeout. | `NULL`       |
 | `block,clicked` | The user clicks on the blocked event area. The blocked event area is the translucent region around the visible popup region. | `NULL`       |
 | `dismissed`     | The popup is dismissed with a hide effect. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

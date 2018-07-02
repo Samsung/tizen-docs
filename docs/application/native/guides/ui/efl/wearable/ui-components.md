@@ -11,7 +11,7 @@ The wearable UI components are designed to allow the user to interact with small
 **Table: Available UI components**
 
 | Category              | Component name                           | Description                              |
-|---------------------|----------------------------------------|----------------------------------------|
+|-----------------------|------------------------------------------|------------------------------------------|
 | Navigation elements   | [Index](./component-index.md) | The  index component provides an index for quick access to another group of UI  items. |
 | Presentation views    | [Win](./component-win.md) | The  win component is the root window component often used in an application. It  allows you to create some content in it, and it is handled by the window  manager. |
 | Presentation  views   | [Background](./component-background.md) | The  background component can be used to set a solid background decoration to a  window or a container object. It works like an image, but has some  background-specific properties, such as setting it to a tiled, centered,  scaled, or stretched mode. |
@@ -39,10 +39,10 @@ The following UI components are designed for specific circular wearable devices 
 **Table: Available circular UI components**
 
 | Component name                           | Description                              |
-|----------------------------------------|----------------------------------------|
-| [Circle Datetime](./component-circle-datetime.md) | The circle datetime extends the basic datetime component (`elm-datetime`) by visualizing the selected field. |
+|------------------------------------------|------------------------------------------|
+| [Circle Datetime](./component-circle-datetime.md) | The circle datetime extends the basic datetime component (`elm_datetime`) by visualizing the selected field. |
 | [Circle Genlist](./component-circle-genlist.md) | The circle genlist provides a scrollbar with circular movement. It can also use rotary events to move to the next or previous item. |
-| [Circle Object](./component-circle-object.md) | The circle object extends Elementary components in a form of circular design. Sometimes, a circle object merely provides additional UI features for the Elementary component, and sometimes it works as an independent component with its own UI and functionalities.	 Circular components can usually be added with the `eext_circle_object_[component_name]_add()` function, which returns a circle object handle. Circular components are shown in a form of an arch with radius, line width, and color. These properties can be set with the `eext_circle_object_item_XXX()` functions. The circle object can also take a rotary event. Generally, a clockwise rotary event increases the value of the rotary event activated by the circle object, and a counter-clockwise rotary event decreases the value. |
+| [Circle Object](./component-circle-object.md) | The circle object extends Elementary components in a form of circular design. Sometimes, a circle object merely provides additional UI features for the Elementary component, and sometimes it works as an independent component with its own UI and functionalities.<br>	Circular components can usually be added with the `eext_circle_object_[component_name]_add()` function, which returns a circle object handle. Circular components are shown in a form of an arch with radius, line width, and color. These properties can be set with the `eext_circle_object_item_XXX()` functions. The circle object can also take a rotary event. Generally, a clockwise rotary event increases the value of the rotary event activated by the circle object, and a counter-clockwise rotary event decreases the value. |
 | [Circle Progressbar](./component-circle-progressbar.md) | The circle progressbar shows the progress status of a given task with a circular design. It visualizes the progress status within a range. |
 | [Circle Scroller](./component-circle-scroller.md) | The circle scroller changes based on rotary events. It shows the whole scrollable area with a circular scroll bar. |
 | [Circle Slider](./component-circle-slider.md) | The circle slider changes based on rotary events. The circle slider not only extends the UI feature of the basic slider component (`elm_slider`), but also replaces the functionalities of the `elm_slider` in a circular design. |
@@ -60,17 +60,17 @@ The following tables list the styles for each UI component, including the names 
 **Table: Button styles**
 
 | Style                | Sample                                   | Text part  | Swallow part          |
-|--------------------|----------------------------------------|----------|---------------------|
+|----------------------|------------------------------------------|------------|-----------------------|
 | `default`            | ![default](./media/button_default_wn.png) | `elm.text` | `elm.swallow.content` |
 | `bottom`             | ![bottom](./media/button_bottom_o_wn.png) | `elm.text` | `elm.swallow.content` |
 | `popup/circle`       | ![popup/circle](./media/button_popupcircle_wn.png) | `elm.text` | `elm.swallow.content` |
-| `popup/circle/left`  | ![popup/circle/left](./media/button_popupcircleleft_wn.png) |            | `elm.swallow.content` |
-| `popup/circle/right` | ![popup/circle/right](./media/button_popupcircleright_wn.png) |            | `elm.swallow.content` |
+| `popup/circle/left`  | ![popup/circle/left](./media/button_popupcircleleft_wn.png) | -          | `elm.swallow.content` |
+| `popup/circle/right` | ![popup/circle/right](./media/button_popupcircleright_wn.png) | -            | `elm.swallow.content` |
 
 **Table: Check styles**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![default](./media/check_default_o_wn.png) |
 | `small`   | ![small](./media/check_small_o_wn.png) |
 | `on&off`  | ![on_off](./media/check_onoff_o_wn.png) |
@@ -78,7 +78,7 @@ The following tables list the styles for each UI component, including the names 
 **Table: Contextual popup (Ctxpopup) styles**
 
 | Style                | Sample                                   | Notes                                    |
-|--------------------|----------------------------------------|----------------------------------------|
+|----------------------|------------------------------------------|------------------------------------------|
 | `select_mode`        | ![select_mode](./media/contextual_select_o_wn.png) |                 -                         |
 | `select_mode/top`    | ![select_mode/top](./media/contextual_top_o_wn.png) | Pair this style with the `select_mode/bottom` style. |
 | `select_mode/bottom` | ![select_mode/bottom](./media/contextual_bottom_o_wn.png) | Pair this style with the `select_mode/top` style. |
@@ -86,20 +86,20 @@ The following tables list the styles for each UI component, including the names 
 **Table: Datetime styles**
 
 | Style               | Sample                                   |
-|-------------------|----------------------------------------|
+|---------------------|------------------------------------------|
 | `datepicker/circle` | ![datepicker/circle](./media/datetime_date_o_wn.png) |
 | `timepicker/circle` | ![timepicker/circle](./media/datetime_time_o_wn.png) |
 
 **Table: Entry styles**
 
 | Style     | Sample                                   | Text part                                | Notes                                    |
-|---------|----------------------------------------|----------------------------------------|----------------------------------------|
+|-----------|------------------------------------------|------------------------------------------|----------------------------------------|
 | `default` | ![default](./media/entry_default_wn.png) | `elm.guide`: for the guide text. `elm.text`: for the main text. | The guide text is automatically erased when the main text is entered. |
 
 **Table: Genlist styles**
 
 | Style                 | Sample                                   | Text part                                | Swallow part                             |
-|---------------------|----------------------------------------|----------------------------------------|----------------------------------------|
+|-----------------------|------------------------------------------|------------------------------------------|------------------------------------------|
 | `default`             | ![default](./media/genlist_def_o_wn.png) | `elm.text`                               | `elm.swallow.icon`: for the icon on the left.<br> `elm.swallow.end`: for the icon on the right. |
 | `title`               | ![title](./media/genlist_title_o_wn.png) | `elm.text`                               |          -                                |
 | `group_index`         | ![group_index](./media/genlist_group_o_wn.png) | `elm.text`                               |           -                               |
@@ -107,31 +107,31 @@ The following tables list the styles for each UI component, including the names 
 | `1text.1icon`         | ![1text.1icon](./media/genlist_1text1icon_o_wn.png) | `elm.text`                               | `elm.icon`                               |
 | `1text.1icon.1`       | ![1text.1icon.1](./media/genlist_1text1icon1_o_wn.png) | `elm.text`                               | `elm.icon`                               |
 | `1text.1icon.divider` | ![1text.1icon.divider](./media/genlist_1text1icondivider_o_wn.png) | `elm.text`                               | `elm.icon`: for the icon.<br> `elm.divider`: for the icon divider. |
-| `2text`               | ![2text](./media/genlist_2text_o_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the sub text. |                   -                       |
-| `2text.1icon`         | ![2text.1icon.1](./media/genlist_2text1icon_o_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the sub text. | `elm.icon`                               |
-| `2text.1icon.1`       | ![2text.1icon.1](./media/genlist_2text1icon1_o_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the sub text. | `elm.icon`                               |
-| `2text.1icon.divider` | ![1text.1icon.divider](./media/genlist_2text1icondivider_o_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the sub text. | `elm.icon`: for the icon.<br> `elm.divider`: for the icon divider. |
+| `2text`               | ![2text](./media/genlist_2text_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. |                   -                       |
+| `2text.1icon`         | ![2text.1icon.1](./media/genlist_2text1icon_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`                               |
+| `2text.1icon.1`       | ![2text.1icon.1](./media/genlist_2text1icon1_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`                               |
+| `2text.1icon.divider` | ![1text.1icon.divider](./media/genlist_2text1icondivider_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`: for the icon.<br> `elm.divider`: for the icon divider. |
 | `editfield`           | ![editfield](./media/genlist_edit_o_wn.png) | `elm.text`                               |                   -                       |
 | `multiline`           | ![multiline](./media/genlist_multiline_o_wn.png) | `elm.text`                               |        -                                  |
 
 **Table: Index styles**
 
 | Style       | Sample                                   |
-|-----------|----------------------------------------|
+|-------------|------------------------------------------|
 | `thumbnail` | ![thumbnail](./media/index_thumb_o_wn.png) |
 | `circle`    | ![circle](./media/index_circle_o_wn.png) |
 
 **Table: Popup styles**
 
 | Style          | Sample                                   | Text part                        | Swallow part |
-|--------------|----------------------------------------|--------------------------------|------------|
+|----------------|------------------------------------------|----------------------------------|--------------|
 | `circle`       | ![circle](./media/popup_circle_o_wn.png) | -         | `button1`<br> `button2` |
 | `toast/circle` | ![toast/circle](./media/popup_toast_o_wn.png) | `elm.text`                       | `toast,icon` |
 
 **Table: Progressbar styles**
 
 | Style                 | Sample                                   |
-|--------------------|----------------------------------------|
+|-----------------------|------------------------------------------|
 | `process`             | ![process](./media/progressbar_process_o_wn.png) |
 | `process/small`       | ![process/small](./media/progressbar_small_o_wn.png) |
 | `process/popup/small` | ![process/popup/small](./media/progressbar_popupsmall_o_wn.png) |
@@ -139,13 +139,13 @@ The following tables list the styles for each UI component, including the names 
 **Table: Radio styles**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![default](./media/radio_default_o_wn.png) |
 
 **Table: Slider styles**
 
 | Style                | Sample                                   | Swallow part       |
-|--------------------|----------------------------------------|------------------|
+|----------------------|------------------------------------------|--------------------|
 | `horizontal/default` | ![horizontal/default](./media/slider_hor_wn.png) | `elm.swallow.icon` |
 
 ## Wearable Rectangular UI Component Styles
@@ -157,7 +157,7 @@ The following tables list the styles for each UI component, including the names 
 **Table: Button styles**
 
 | Style                  | Sample                                   | Text part  | Swallow part          | Notes                                    |
-|----------------------|----------------------------------------|----------|---------------------|----------------------------------------|
+|------------------------|------------------------------------------|------------|-----------------------|------------------------------------------|
 | `default`              | ![default](./media/button_default_wn.png) | `elm.text` | `elm.swallow.content` |          -                                |
 | `green`                | ![green](./media/button_green_wn.png) | `elm.text` | `elm.swallow.content` |                                -          |
 | `orange`               | ![orange](./media/button_orange_wn.png) | `elm.text` | `elm.swallow.content` |                                 -         |
@@ -168,63 +168,63 @@ The following tables list the styles for each UI component, including the names 
 **Table: Check styles**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![default](./media/check_default_wn.png) |
 | `on&off`  | ![on_off](./media/check_onoff_wn.png) |
 
 **Table: Contextual popup (Ctxpopup) styles**
 
 | Style     | Sample                                   | Notes                                    |
-|---------|----------------------------------------|----------------------------------------|
+|-----------|------------------------------------------|----------------------------------------|
 | `default` | ![default](./media/contextual_wn.png) | Use the `elm_ctxpopup_item_append()` function to add both text and an icon to the list. |
 
 **Table: Datetime styles**
 
 | Style               | Sample                                   |
-|-------------------|----------------------------------------|
+|---------------------|------------------------------------------|
 | `datepicker_layout` | ![datepicker_layout](./media/datetime_date_wn.png) |
 | `timepicker_layout` | ![timepicker_layout](./media/datetime_time_wn.png) |
 
 **Table: Entry styles**
 
 | Style     | Sample                                   | Text part                                | Notes                                    |
-|---------|----------------------------------------|----------------------------------------|----------------------------------------|
-| `default` | ![default](./media/entry_default_wn.png) | `elm.guide`: for the guide text. `elm.text`: for the main text. | The guide text is automatically erased when the main text is entered. |
+|-----------|------------------------------------------|------------------------------------------|------------------------------------------|
+| `default` | ![default](./media/entry_default_wn.png) | `elm.guide`: for the guide text.<br> `elm.text`: for the main text. | The guide text is automatically erased when the main text is entered. |
 
 **Table: Genlist styles**
 
 | Style                 | Sample                                   | Text part                                | Swallow part                             |
-|---------------------|----------------------------------------|----------------------------------------|----------------------------------------|
+|-----------------------|------------------------------------------|------------------------------------------|------------------------------------------|
 | `default`             | ![default](./media/genlist_def_wn.png) | `elm.text`                               | `elm.swallow.icon`: for the icon on the left.<br> `elm.swallow.end`: for the icon on the right. |
-| `group_index`         | ![group_index](./media/genlist_group_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the sub text. | `elm.icon`                               |
+| `group_index`         | ![group_index](./media/genlist_group_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`                               |
 | `1text`               | ![1text](./media/genlist_1text_wn.png) | `elm.text`                               |                 -                         |
 | `1text.1icon`         | ![1text.1icon](./media/genlist_1text1icon_wn.png) | `elm.text`                               | `elm.icon`                               |
-| `2text`               | ![2text](./media/genlist_2text_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the sub text. |                -                          |
-| `2text.1`             | ![2text.1](./media/genlist_2text1_wn.png) | `elm.text`: for the main text.  `elm.text.1`: for the sub text. |             -                             |
+| `2text`               | ![2text](./media/genlist_2text_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. |                -                          |
+| `2text.1`             | ![2text.1](./media/genlist_2text1_wn.png) | `elm.text`: for the main text.<br>  `elm.text.1`: for the sub text. |             -                             |
 | `1text.1icon.divider` | ![1text.1icon.divider](./media/genlist_1text1icondivider_wn.png) | `elm.text`                               | `elm.icon`: for the icon.<br> `elm.divider`: for the icon divider. |
 | `1text.1icon.1`       | ![1text.1icon.1](./media/genlist_1text1icon1_wn.png) | `elm.text`                               | `elm.icon`                               |
-| `2text.1icon.1`       | ![2text.1icon.1](./media/genlist_2text1icon1_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the sub text. | `elm.icon`                               |
+| `2text.1icon.1`       | ![2text.1icon.1](./media/genlist_2text1icon1_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`                               |
 | `multiline/1text`     | ![multiline/1text](./media/genlist_multi1_wn.png) | `elm.text`: for the multi-line text.     |                     -                     |
-| `multiline/2text`     | ![multiline/2text](./media/genlist_multi2_wn.png) | `elm.text`: for the main text. `elm.text.1`: for the multi-line sub text. |                -                          |
+| `multiline/2text`     | ![multiline/2text](./media/genlist_multi2_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the multi-line sub text. |                -                          |
 
 **Table: Index styles**
 
 | Style       | Sample                                   |
-|-----------|----------------------------------------|
+|-------------|------------------------------------------|
 | `thumbnail` | ![thumbnail](./media/index_thumb_wn.png) |
 | `tab`       | ![tab](./media/index_tab_wn.png) |
 
 **Table: Popup styles**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![default](./media/popup_default_wn.png) |
 | `toast`   | ![toast](./media/popup_toast_wn.png) |
 
 **Table: Progressbar styles**
 
 | Style                | Sample                                   |
-|--------------------|----------------------------------------|
+|----------------------|------------------------------------------|
 | `default`            | ![default](./media/progressbar_default_wn.png) |
 | `pending_list`       | ![pending_list](./media/progressbar_pending_wn.png) |
 | `process`            | ![process](./media/progressbar_process_wn.png) |
@@ -233,16 +233,17 @@ The following tables list the styles for each UI component, including the names 
 **Table: Radio styles**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![default](./media/radio_default_wn.png) |
 
 **Table: Slider styles**
 
 | Style                | Sample                                   | Swallow part       |
-|--------------------|----------------------------------------|------------------|
+|----------------------|------------------------------------------|--------------------|
 | `horizontal/default` | ![horizontal/default](./media/slider_hor_wn.png) | `elm.swallow.icon` |
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

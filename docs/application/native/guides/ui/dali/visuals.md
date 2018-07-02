@@ -106,7 +106,7 @@ The following table lists the supported properties. The visual type is `Visual::
 | `GradientVisual::Property::UNITS`        | `units`         | INTEGER or STRING | No              | The coordinate system.                   |
 | `GradientVisual::Property::SPREAD_METHOD`| `spreadMethod`  | INTEGER or STRING | No              | Indicates what happens if a gradient starts or ends inside bounds. |
 
-- If the `GradientVisual::Property::STOP_OFFSET` and `GradientVisual::Property::STOP_COLOR` arrays do not have the same number of elements, the minimum of the 2 is used as the stop points.
+If the `GradientVisual::Property::STOP_OFFSET` and `GradientVisual::Property::STOP_COLOR` arrays do not have the same number of elements, the minimum of the 2 is used as the stop points.
 
 ### Units
 The `GradientVisual::Property::UNITS` are used to define the coordinate system for the attributes:

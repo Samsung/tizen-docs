@@ -33,7 +33,8 @@ To enable your application to use the privacy-related privileges functionality:
 
    It means that the functions can be employed in any UI event callback (such as button callbacks, timer callbacks, handlers for system events, and application state change event callbacks). If you want to resolve privileges during application startup, call these functions from the resume event callback (`app_resume_cb()`).
 
-   > **Note**  
+   > **Note**
+   >
    > The Privacy Privilege Manager functions are not thread-safe.
 
 <a name="req"></a>
@@ -69,27 +70,29 @@ To check whether an application has permission to use a privilege, and to reques
 
    - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API function that involves the privilege results in an error.
 
-    ```
-                case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY:
-                    /* Show a message and terminate the application */
-                    break;
-    ```
+     ```
+                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY:
+                     /* Show a message and terminate the application */
+                     break;
+     ```
 
-   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK`, the application must request permission from the user with the `ppm_request_permission()` function, which displays a dialog box. You can pass user data as the third parameter of the function, as a pointer to an application context instance. When the user makes a decision, a callback defined as the second parameter is invoked.The dialog box asking for user permission is shown only if the `ppm_request_permission()` function returns without an error.
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK`, the application must request permission from the user with the `ppm_request_permission()` function, which displays a dialog box. You can pass user data as the third parameter of the function, as a pointer to an application context instance. When the user makes a decision, a callback defined as the second parameter is invoked.
 
-    ```
-                case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK:
-                    ret = ppm_request_permission(privilege, app_request_response_cb, NULL);
-                    /* Log and handle errors */
-                    break;
-            }
-        }
-        else {
-            /* ret != PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE */
-            /* Handle errors */
-        }
-    }
-    ```
+     The dialog box asking for user permission is shown only if the `ppm_request_permission()` function returns without an error.
+
+     ```
+                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK:
+                     ret = ppm_request_permission(privilege, app_request_response_cb, NULL);
+                     /* Log and handle errors */
+                     break;
+             }
+         }
+         else {
+             /* ret != PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE */
+             /* Handle errors */
+         }
+     }
+     ```
 
 3. If you need to request user permission, handle the user decision within the callback.
 
@@ -125,7 +128,8 @@ To check whether an application has permission to use a privilege, and to reques
 
    If the decision is definitive, any subsequent `ppm_request_permission()` calls result in an immediate response with an appropriate result: `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
-> **Note**  
+> **Note**
+>
 > Since the privileges are grouped, the user's decision regarding one privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only one of them, the above rule does not apply.
 
 ## Related Information

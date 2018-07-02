@@ -81,7 +81,7 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 
 You can enable or disable the local Bluetooth adapter, and set the device name using the system-provided service through the `ApplicationControl` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl) and [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl) applications).
 
-To use the Bluetooth functionality of the device, you must switch the Bluetooth adapter on. The Bluetooth API does not provide a method to enable or disable the Bluetooth adapter of the device directly. Whenever Bluetooth is required, request a built-in Settings application to present the relevant switch to the user so that they can enable or disable the Bluetooth.
+To use the Bluetooth functionality of the device, you must switch the Bluetooth adapter on. The Bluetooth API does not provide a method to enable or disable the Bluetooth adapter of the device directly. When Bluetooth is required, you must request the built-in Settings application on the device to let the user enable or disable Bluetooth.
 
 **Figure: Bluetooth setting screen**
 
@@ -124,7 +124,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
    };
    ```
 
-4. If necessary, request launching the Bluetooth Settings with the prepared
+4. If necessary, request launching the Bluetooth Settings with the prepared `bluetoothSwitchAppControl`:
 
    ```
    if (adapter.powered) {
@@ -172,7 +172,11 @@ You can also retrieve the known devices which were bonded or found in a prior di
 
 To search for remote devices and get the known devices:
 
-1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:`var adapter = tizen.bluetooth.getDefaultAdapter();`
+1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
+
+   ```
+   var adapter = tizen.bluetooth.getDefaultAdapter();
+   ```
 
 2. To search for remote devices, use the `discoverDevices()` method.
 
@@ -190,8 +194,8 @@ To search for remote devices and get the known devices:
    adapter.discoverDevices(discoverDevicesSuccessCallback, null);
    ```
 
-> **Note**
-> To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
+   > **Note**  
+   > To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
 3. To retrieve known devices (which have been previously paired or searched for), use the `getKnownDevices()` method.
 
@@ -211,7 +215,11 @@ To search for remote devices and get the known devices:
 
 To create a bond with a Bluetooth device:
 
-1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:`var adapter = tizen.bluetooth.getDefaultAdapter();`
+1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
+
+   ```
+   var adapter = tizen.bluetooth.getDefaultAdapter();
+   ```
 
 2. To create a bond with another device, use the `createBonding()` method:
 
@@ -227,8 +235,8 @@ To create a bond with a Bluetooth device:
    adapter.createBonding('35:F4:59:D1:7A:03', onBondingSuccessCallback, onErrorCallback);
    ```
 
-> **Note**
-> The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
+   > **Note**  
+   > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
 
 3. To end the bond with a remote device, use the `destroyBonding()` method:
 
@@ -254,8 +262,8 @@ To connect to services provided by a server device to the client devices:
    adapter.registerRFCOMMServiceByUUID(serviceUUID, 'My service');
    ```
 
-> **Note**
-> For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
+   > **Note**  
+   > For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
 
    When the service has been successfully registered, the `BluetoothServiceSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceSuccessCallback) applications) is triggered.
 
@@ -354,7 +362,8 @@ To increase the communication capabilities of your application, you must learn t
 
 To search for remote Bluetooth devices:
 
-1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback) applications).    The callback is invoked when a remote device has been detected.
+1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback) applications).  
+    The callback is invoked when a remote device has been detected.
 
    ```
    function successcallback(device) {
@@ -362,8 +371,8 @@ To search for remote Bluetooth devices:
    }
    ```
 
-> **Note**
-> To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
+   > **Note**  
+   > To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
 2. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) applications):
 
@@ -411,8 +420,8 @@ To control what information is advertised by the device:
    }, 'LOW_LATENCY', connectable);
    ```
 
-> **Note**
-> To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](#managing-the-local-bluetooth-adapter).
+   > **Note**  
+   > To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](#managing-the-local-bluetooth-adapter).
 
 3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
 

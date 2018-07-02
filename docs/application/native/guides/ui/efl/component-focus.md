@@ -43,7 +43,9 @@ To manage focusable objects:
 - To determine whether a specific object is focused, use the `elm_object_focus_get()` function.
 - To set the focus to an object:
   1. Show the object on the screen with the `evas_object_show()` function.
-  2. Set the focus with the `elm_object_focus_set()` function.The second parameter is a Boolean value: if it is set to `EINA_TRUE`, the focus is set to the given object; if it is set to `EINA_FALSE`, the focus is unset and passed back to the previous element in the focus chain.
+  2. Set the focus with the `elm_object_focus_set()` function.
+
+     The second parameter is a Boolean value: if it is set to `EINA_TRUE`, the focus is set to the given object; if it is set to `EINA_FALSE`, the focus is unset and passed back to the previous element in the focus chain.
 - When a focused UI component is hidden, deleted, or disabled, it becomes unfocusable, and the focus is automatically moved to another object.
 - To monitor when the object receives or loses focus, register the `focused` or `unfocused` smart event and define a callback.
 
@@ -51,7 +53,8 @@ To manage focusable objects:
 
 The order in which the focus moves from one UI component to another is called the focus chain. The default focus chain is the order in which the UI components have been added to the canvas.
 
-> **Note**  
+> **Note**
+>
 > If the components are added programmatically in a different order than they appear on the screen, the default focus chain can be quite confusing. In that case, you must customize the focus chain to make it work as expected.
 
 When the user wants to switch the focus to the next object, Elementary searches for the first focusable object in the focus chain. If there is a disabled or read-only object in the focus chain, the focus skips over it to the next object in the requested direction.
@@ -109,8 +112,11 @@ To customize the focus chain:
 
   This applies to any container. It is possible to set the focus chain of a box, for example.
 
-> **Note**  
-> The object-specific focus exit overrides the application's focus chain. This means that if an object is part of a focus chain and, in addition, has the next focused object defined, the next object takes precedence over the focus chain.Consider the above focus chain example: if `obj4` has `obj5` defined as its next object, the actual focus chain is `obj5, obj3, obj4, obj5` (the chain loops back to `obj5` after `obj4` instead of moving on the `obj1`, as defined in the application focus chain).
+> **Note**
+>
+> The object-specific focus exit overrides the application's focus chain. This means that if an object is part of a focus chain and, in addition, has the next focused object defined, the next object takes precedence over the focus chain.
+>
+> Consider the above focus chain example: if `obj4` has `obj5` defined as its next object, the actual focus chain is `obj5, obj3, obj4, obj5` (the chain loops back to `obj5` after `obj4` instead of moving on the `obj1`, as defined in the application focus chain).
 
 If an Evas object has several sub-objects, set its focus chain using the same functions as for the application. Elementary first follows the main focus chain, and then the focus chain of each UI component, as applicable.
 

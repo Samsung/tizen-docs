@@ -22,8 +22,8 @@ The main features of the Contact API include:
 
   You can also [create](#adding-multiple-contacts-in-the-batch-mode) and [manage](#managing-multiple-contacts-in-the-batch-mode) multiple contacts simultaneously using the batch mode. The batch mode provides faster, optimized processing of multiple contacts.
 
-> **Note**  
-> The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Additionally, breaking down a batch operation helps you avoid blocking other database operations, such as add or remove.
+   > **Note**  
+   > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Additionally, breaking down a batch operation helps you avoid blocking other database operations, such as add or remove.
 
   If you want to receive notifications for batch mode operations, note that each requested batch operation generates only a single event.
 
@@ -75,7 +75,8 @@ To create a new address book:
    var myAddressBook = null;
    ```
 
-2. Define a success callback for the `getAccounts()` method. The callback receives a list of `Account` objects (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#Account) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#Account) applications). Use the first account ID to construct a new `AddressBook` object (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications).   Add the new address book to the system using the `addAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications):
+2. Define a success callback for the `getAccounts()` method. The callback receives a list of `Account` objects (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#Account) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#Account) applications). Use the first account ID to construct a new `AddressBook` object (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications).   
+  Add the new address book to the system using the `addAddressBook()` method of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications):
 
    ```
    function getAccountsSuccess(accounts) {
@@ -161,7 +162,8 @@ You can manage a contact by using the applicable methods of the `AddressBook` in
 
 To manage a contact in your address book:
 
-1. To retrieve a single contact, use the `get()` method of the `AddressBook` interface with the `ContactID` as a parameter:   The following example uses the object of the `ContactRef` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactRef) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactRef) applications). The `ContactRef` object contains both `AddressBook` ID and `Contact` ID (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#Contact) applications).
+1. To retrieve a single contact, use the `get()` method of the `AddressBook` interface with the `ContactID` as a parameter:  
+   The following example uses the object of the `ContactRef` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactRef) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactRef) applications). The `ContactRef` object contains both `AddressBook` ID and `Contact` ID (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#Contact) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#Contact) applications).
 
    ```
    /* contactRef is retrieved by other APIs */
@@ -327,7 +329,7 @@ To manage multiple contacts in your address books in the batch mode:
    }
    ```
 
-   When searching for contacts, you can you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#contact-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, contacts whose first name contains "Chris" are retrieved and sorted in the ascending order based on their last name.
+   When searching for contacts, you can create [attribute filters](../data/data-filter.md#creating-attribute-filters), [attribute range filters](../data/data-filter.md#creating-attribute-range-filters), and [composite filters](../data/data-filter.md#creating-composite-filters) based on [specific filter attributes](../data/data-filter.md#contact-filter-attributes). You can also [sort the search results](../data/data-filter.md#using-sorting-modes). In this example, contacts whose first name contains "Chris" are retrieved and sorted in the ascending order based on their last name.
 
 3. To update contacts:      
 
@@ -482,7 +484,7 @@ To manage persons in your contact database:
      }
      ```
 
-- To get and reset the number of person's calls, messages, and emails:   
+- To get or reset the number of person's calls, messages, and emails:   
 
   You can get the total number of each person's calls, messages, and emails by using the `getUsageCount()` method. You can also reset the usage count of a person using the `resetUsageCount()` method of the `Person` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#Person) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#Person) applications), which works in a synchronous mode. To reset the usage count for multiple persons, use the `resetUsageCountBatch()` method, which works in an asynchronous mode.
 

@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -124,7 +124,7 @@ Related Features</h2>
 </ul>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
 </p>
-<p>You can check if a devrice supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+<p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
@@ -387,7 +387,7 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132aa3bafa846ff0168d6a80ff0d34fe4eea">NFC_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a58b935ae4a2e062e044dfc4dcd4070f3">NFC_ERROR_NOT_SUPPORTED</a></td><td>Not supported NFC </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a6184f745d5ead91410e991f7ee8f71f6">NFC_ERROR_NOT_INITIALIZED</a></td><td>Not intialized NFC </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a6184f745d5ead91410e991f7ee8f71f6">NFC_ERROR_NOT_INITIALIZED</a></td><td>Not initialized NFC </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a1ae9ba3f4b1271e7ef43d62503a0976f">NFC_ERROR_NOT_ACTIVATED</a></td><td>NFC is not activated </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a8f15c645df31c50094e0c9821ed579e9">NFC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a98f9ec7a55f0a17bf18e3c52c2b37b18">NFC_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -432,7 +432,7 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132aa3bafa846ff0168d6a80ff0d34fe4eea">NFC_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a58b935ae4a2e062e044dfc4dcd4070f3">NFC_ERROR_NOT_SUPPORTED</a></td><td>Not supported NFC </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a6184f745d5ead91410e991f7ee8f71f6">NFC_ERROR_NOT_INITIALIZED</a></td><td>Not intialized NFC </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a6184f745d5ead91410e991f7ee8f71f6">NFC_ERROR_NOT_INITIALIZED</a></td><td>Not initialized NFC </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a1ae9ba3f4b1271e7ef43d62503a0976f">NFC_ERROR_NOT_ACTIVATED</a></td><td>NFC is not activated </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a8f15c645df31c50094e0c9821ed579e9">NFC_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a98f9ec7a55f0a17bf18e3c52c2b37b18">NFC_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -487,7 +487,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Retrieves all registered AID. </p>
-<p>You can retrives aid only you registered. If you try to retrives the aid what you are not registered, then the api return error. </p>
+<p>You can retrives aid only you registered. If you try to retrieves the aid what you are not registered, then the api return error. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/nfc.cardemulation</dd></dl>
@@ -546,7 +546,7 @@ Typedefs</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132aa3bafa846ff0168d6a80ff0d34fe4eea">NFC_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a58b935ae4a2e062e044dfc4dcd4070f3">NFC_ERROR_NOT_SUPPORTED</a></td><td>Not supported NFC </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a6184f745d5ead91410e991f7ee8f71f6">NFC_ERROR_NOT_INITIALIZED</a></td><td>Not intialized NFC </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a6184f745d5ead91410e991f7ee8f71f6">NFC_ERROR_NOT_INITIALIZED</a></td><td>Not initialized NFC </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a1ae9ba3f4b1271e7ef43d62503a0976f">NFC_ERROR_NOT_ACTIVATED</a></td><td>NFC is not activated </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132a98f9ec7a55f0a17bf18e3c52c2b37b18">NFC_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__NFC__MANAGER__MODULE.html#gga32702c7145a8871aec23069f95c7d132abdb850ef6a3c5d863e72d65f10d17592">NFC_ERROR_PERMISSION_DENIED</a></td><td>Security Restricted by SMACK </td></tr>

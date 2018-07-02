@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__CAPI__MEDIA__FRAMEWORK.html">Multimedia</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>The <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html">Media Codec</a> APIs provides functions for encodinging and decoding using media data. </p>
+<p>The <a class="el" href="group__CAPI__MEDIA__CODEC__MODULE.html">Media Codec</a> APIs provides functions for encoding and decoding using media data. </p>
 <h2><a class="anchor" id="CAPI_MEDIA_CODEC_MODULE_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;media_codec.h&gt;</p>
@@ -105,7 +105,7 @@ Related Features</h2>
 <p>This API is related with the following features:<br/>
 </p>
 <ul>
-<li>http://tizen.org/feature/multimedia.media_codec:<br/>
+<li>http://tizen.org/feature/multimedia.media_codec<br/>
 </li>
 </ul>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
@@ -936,7 +936,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the media packet pool allocated for recycling media packets. </p>
 <p>The user can get the pool allocated with the number of packets are required to be used in codecs.<br/>
- It is recomended to use media packet pool for better stability and performance. </p>
+ It is recommended to use media packet pool for better stability and performance. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>pool</em> should be released using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga2ca291f83df8a9eeb8fc17d80626996a" title="Deallocates all the media packets.">media_packet_pool_deallocate()</a> and destroyed using <a class="el" href="group__CAPI__MEDIA__TOOL__MODULE.html#ga34f557621c8179d76c62ee5db849968e" title="Destroys the media packet pool.">media_packet_pool_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

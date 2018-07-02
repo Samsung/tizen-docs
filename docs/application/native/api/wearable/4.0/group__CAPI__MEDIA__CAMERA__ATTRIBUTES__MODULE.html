@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -264,6 +264,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the contrast level.  <a href="#ga938d256c734fb145bcf48c6d682a344c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga790fa7c6993916fc2741cdf0d79a2aa3">camera_attr_get_contrast_range</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, int *min, int *max)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the available contrast level.  <a href="#ga790fa7c6993916fc2741cdf0d79a2aa3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga1f83a1a6ed7c8e1b017cd2ff38ead4e3">camera_attr_set_hue</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, int level)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the hue level.  <a href="#ga1f83a1a6ed7c8e1b017cd2ff38ead4e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga178ce5d6c20ccad0ef0db98b2b75ebb5">camera_attr_get_hue</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, int *level)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue level.  <a href="#ga178ce5d6c20ccad0ef0db98b2b75ebb5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gad1f569cde89740e813ae28892d24dfdc">camera_attr_get_hue_range</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, int *min, int *max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the available hue level.  <a href="#gad1f569cde89740e813ae28892d24dfdc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gaa59803ce17d10b1b28ad7fe487daa579">camera_attr_set_whitebalance</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga832409b1d17f120681f60bdbc8a809db">camera_attr_whitebalance_e</a> whitebalance)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the white balance mode.  <a href="#gaa59803ce17d10b1b28ad7fe487daa579"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gae6b7b937001d70ce7415c26914f17b98">camera_attr_get_whitebalance</a> (<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a> camera, <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga832409b1d17f120681f60bdbc8a809db">camera_attr_whitebalance_e</a> *whitebalance)</td></tr>
@@ -2102,6 +2108,112 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga178ce5d6c20ccad0ef0db98b2b75ebb5"></a><!-- doxytag: member="camera.h::camera_attr_get_hue" ref="ga178ce5d6c20ccad0ef0db98b2b75ebb5" args="(camera_h camera, int *level)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga178ce5d6c20ccad0ef0db98b2b75ebb5">camera_attr_get_hue</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a>&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the hue level. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">level</td><td>The hue level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga1f83a1a6ed7c8e1b017cd2ff38ead4e3" title="Sets the hue level.">camera_attr_set_hue()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gad1f569cde89740e813ae28892d24dfdc" title="Gets the available hue level.">camera_attr_get_hue_range()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad1f569cde89740e813ae28892d24dfdc"></a><!-- doxytag: member="camera.h::camera_attr_get_hue_range" ref="gad1f569cde89740e813ae28892d24dfdc" args="(camera_h camera, int *min, int *max)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gad1f569cde89740e813ae28892d24dfdc">camera_attr_get_hue_range</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a>&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the available hue level. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the min value is greater than the max value, it means that this feature is not supported. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">min</td><td>The minimum hue level </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">max</td><td>The maximum hue level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga1f83a1a6ed7c8e1b017cd2ff38ead4e3" title="Sets the hue level.">camera_attr_set_hue()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga178ce5d6c20ccad0ef0db98b2b75ebb5" title="Gets the hue level.">camera_attr_get_hue()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga41a3c8f91fa779980f48592517a78e1f"></a><!-- doxytag: member="camera.h::camera_attr_get_image_quality" ref="ga41a3c8f91fa779980f48592517a78e1f" args="(camera_h camera, int *quality)" -->
 <div class="memitem">
 <div class="memproto">
@@ -3545,7 +3657,11 @@ Typedefs</h2></td></tr>
 
 <p>Sets the ROI(Region Of Interest) area of display. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Before set display ROI area, <a class="el" href="group__CAPI__MEDIA__CAMERA__DISPLAY__MODULE.html#gga71edc372af5a498b5dd8dda1e9f649aaa1b2720318098f2a3f7ebd1f30e33d48a">CAMERA_DISPLAY_MODE_CUSTOM_ROI</a> should be set with <a class="el" href="group__CAPI__MEDIA__CAMERA__DISPLAY__MODULE.html#ga7e64200c3d673de1383966e9fd455fcc" title="Sets the display mode.">camera_set_display_mode()</a>. The minimum value of width and height are 1. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If no display is set, no operation is performed and the ROI area is valid only in <a class="el" href="group__CAPI__MEDIA__CAMERA__DISPLAY__MODULE.html#gga71edc372af5a498b5dd8dda1e9f649aaa1b2720318098f2a3f7ebd1f30e33d48a">CAMERA_DISPLAY_MODE_CUSTOM_ROI</a> display mode. </dd>
+<dd>
+The minimum value of width and height are 1. </dd>
+<dd>
+ROI area can be set before setting ROI display mode. (since 4.0) </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
@@ -4067,6 +4183,55 @@ Typedefs</h2></td></tr>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gab2788d31d0acce913eca0bda45dd3fe1" title="Unregisters the callback function.">camera_attr_unset_hdr_capture_progress_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CAMERA__CAPABILITY__MODULE.html#ga9e6a0c7d722680e8dcc6b00ef33d67da" title="Gets the support state of HDR capture.">camera_attr_is_supported_hdr_capture()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1f83a1a6ed7c8e1b017cd2ff38ead4e3"></a><!-- doxytag: member="camera.h::camera_attr_set_hue" ref="ga1f83a1a6ed7c8e1b017cd2ff38ead4e3" args="(camera_h camera, int level)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga1f83a1a6ed7c8e1b017cd2ff38ead4e3">camera_attr_set_hue</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga8cb6d67dafc49d4856d2f7c5193c8892">camera_h</a>&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the hue level. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>The hue level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga178ce5d6c20ccad0ef0db98b2b75ebb5" title="Gets the hue level.">camera_attr_get_hue()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gad1f569cde89740e813ae28892d24dfdc" title="Gets the available hue level.">camera_attr_get_hue_range()</a> </dd></dl>
 
 </div>
 </div>

@@ -41,7 +41,7 @@ NFC provides the following advantages over short-range communication technologie
 
 An **NFC tag** is a chip which can securely store personal information, such as debit card numbers or contact details. The methods of the `NFCTag` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCTag) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCTag) applications) are used to access an NFC tag for reading or writing information. NFC tag types are identified using the `type` attribute of the `NFCTagType` type definition (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCTagType) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCTagType) applications).
 
-> **Note**
+> **Note**  
 > Tizen supports the following NFC tag types: `GENERIC_TARGET`, `ISO14443_A`, `ISO14443_4A`, `ISO14443_3A`, `MIFARE_MINI`, `MIFARE_1K`, `MIFARE_4K`, `MIFARE_ULTRA`, `MIFARE_DESFIRE`, `ISO14443_B`, `ISO14443_4B`, `ISO14443_BPRIME`, `FELICA`, `JEWEL`, `ISO15693`, and `UNKNOWN_TARGET`.
 
 The NFC forum defines the NFC data exchange format (NDEF) for encapsulating the data exchanged between 2 NFC-enabled devices or an NFC-enabled device and an NFC tag. An **NDEF message** can store data in various formats, such as text, Multipurpose Internet Mail Extension (MIME) type object, or ultra-short RagTime Document (RTD). The NFC tags use NDEF for exchanging messages. Tizen provides the `NDEFMessage` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFMessage) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFMessage) applications) to define an NDEF message.
@@ -88,7 +88,7 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 
 To use NFC, retrieve the default NFC adapter using the `getDefaultAdapter()` method of the `NFCAdapter` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCAdapter) applications).
 
-> **Note**
+> **Note**  
 > The NFC API does not provide methods to directly enable or disable the NFC adapter of the device. When NFC is required, you must request the built-in Settings application to let the user enable or disable NFC.
 
 To enable or disable the NFC service:
@@ -246,8 +246,8 @@ To exchange NDEF messages:
    Peer.sendNDEF(newMessage);
    ```
 
-	> **Note**
-	> If an application is in the background and uses the `sendNDEF()` method, an error callback is launched. This method can only be used on the foreground.
+> **Note**  
+> If an application is in the background and uses the `sendNDEF()` method, an error callback is launched. This method can only be used on the foreground.
 
 ## Exchanging NDEF Data with Tags
 
@@ -286,8 +286,8 @@ To exchange NDEF data with tags:
 
    You can use the `transceive()` method to transfer raw data as a byte array to an NFC tag without knowing the underlying details of the tag.
 
-	> **Note**
-	> If an application is in the background and uses the `writeNDEF()` or `transceive()` method, an error callback is launched. These methods can only be used on the foreground.
+> **Note**  
+> If an application is in the background and uses the `writeNDEF()` or `transceive()` method, an error callback is launched. These methods can only be used on the foreground.
 
 ## Using NFC Card Emulation
 
@@ -374,8 +374,14 @@ To detect NFC HCE events and manage AID (Application ID):
       </widget>
       ```
 
-      - The `tizen:app-control` element must contain the `tizen:src` and `tizen:operation`  and `tizen:uri` elements:The `tizen:src` element must contain the `name` attribute that defines the page to be handled. The `reload` attribute is optional.The `tizen:operation` element must be `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service`.The `tizen:uri` element must be `nfc://secure/HCE/aid/<specific AID>`.
-      - The `tizen:metadata` element must contain the `key` and `value` attributes:The `key` attribute must be `http://tizen.org/metadata/nfc_cardemulation`.The `value` attribute must contain the AID XML file path.The `value` attribute is a relative path starting from the application root path.
+      - The `tizen:app-control` element must contain the `tizen:src` and `tizen:operation`  and `tizen:uri` elements:
+         - The `tizen:src` element must contain the `name` attribute that defines the page to be handled. The `reload` attribute is optional.
+         - The `tizen:operation` element must be `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service`.
+         - The `tizen:uri` element must be `nfc://secure/HCE/aid/<specific AID>`.
+      - The `tizen:metadata` element must contain the `key` and `value` attributes:
+         - The `key` attribute must be `http://tizen.org/metadata/nfc_cardemulation`.
+         - The `value` attribute must contain the AID XML file path.  
+           The `value` attribute is a relative path starting from the application root path.
 
    2. The metadata element points to an AID XML file. The following is an example of the file with an AID declaration:
 
@@ -399,8 +405,13 @@ To detect NFC HCE events and manage AID (Application ID):
       - Each `aid-group` element must contain 1 or more `aid` elements, each of which contains a single AID. The `aid-group` can have as many `aid` elements as you want.
       - The `aid` element must contain the `aid`, `se_type`, `unlock`, and `power` attributes.
       - The `se_type` attribute must contain `hce`, `ese`, or `uicc`. The `se_type` value can be added later.
-      - The `unlock` attribute must contain one of the following:`true`: The card cannot work when the device is locked.`false`: The card can work when the device is locked.
-      - The `power` must contain one of the following:`on`: The card can work when the device is on.`off`: The card can work when the device is off.`sleep`: The card can work when the device is in the sleep mode.
+      - The `unlock` attribute must contain one of the following:
+         - `true`: The card cannot work when the device is locked.
+         - `false`: The card can work when the device is locked.
+      - The `power` must contain one of the following:
+         - `on`: The card can work when the device is on.
+         - `off`: The card can work when the device is off.
+         - `sleep`: The card can work when the device is in the sleep mode.
 
 2. Declare the required variables and obtain the `NFCAdapter` object using the `getDefaultAdapter()` method of the `NFCManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCManager) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCManager) applications).
 
@@ -507,18 +518,82 @@ The following table lists the NFC operations, URI scheme and MIME.
 
 **Table: NFC operations**
 
-| Operation                                | URI scheme                               | MIME                                     |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `http://tizen.org/appcontrol/operation/nfc/empty` | `NULL`                                   | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/wellknown` | `<scheme>:<host>/<path>` URL, for example:             `http`       `http://tizen.org/`       `http://tizen.org/about/devices`       `http://tizen.org/about/*`       URN, for example:             `tel`       `mailto`       `mailto:tommy@tizen.org` | `U/<protocol_code>` For example: `U/0x03, U/0x05, U/*` |
-| `NULL`                                   | `<type_string>/*` For example: `T/*, sp/*, */*` |                                          |
-| `http://tizen.org/appcontrol/operation/nfc/mime` | `NULL`                                   | `<type_string>/<subtype_string>` (case-insensitive) For example: `text/x-vard, text/*, */*` |
-| `http://tizen.org/appcontrol/operation/nfc/uri` | `<uri>` For example: `http://tizen.org/about/devices` | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/external` | `<scheme>:<string>` (case-insensitive) For example: `nfc:ext.tizen.org.ABC` | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/transaction` | `nfc://secure/<SE name>/aid/<aid>`For example:          `nfc://secure/SIM1/aid/123456789`     `nfc://secure/SIM1/aid/1234*`     `nfc://secure/SIM1/aid/*` | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service` | `NULL`                                   | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service` | `NULL`                                   | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/card_emulation/default_changed` | `NULL`                                   | `NULL`                                   |
+<table border="1">
+	<tbody>
+		<tr>
+			<th>Operation</th>
+			<th>URI scheme</th>
+			<th>MIME</th>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/empty</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td rowspan="2"><code>http://tizen.org/appcontrol/operation/nfc/wellknown</code></td>
+			<td><code>&lt;scheme&gt;:&lt;host&gt;/&lt;path&gt;</code> <p>URL, for example:</p>
+				<ul>
+					<li><code>http</code></li>
+					<li><code>http://tizen.org/</code></li>
+					<li><code>http://tizen.org/about/devices</code></li>
+					<li><code>http://tizen.org/about/*</code></li>
+				</ul> <p>URN, for example:</p>
+				<ul>
+					<li><code>tel</code></li>
+					<li><code>mailto</code></li>
+					<li><code>mailto:tommy@tizen.org</code></li>
+				</ul>
+			</td>
+			<td><code>U/&lt;protocol_code&gt;</code> <p>For example: <code>U/0x03, U/0x05, U/*</code></p> </td>
+		</tr>
+		<tr>
+			<td><code>NULL</code></td>
+			<td><code>&lt;type_string&gt;/*</code> <p>For example: <code>T/*, sp/*, */*</code></p> </td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/mime</code></td>
+			<td><code>NULL</code></td>
+			<td><code>&lt;type_string&gt;/&lt;subtype_string&gt;</code> (case-insensitive) <p>For example: <code>text/x-vard, text/*, */*</code></p> </td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/uri</code></td>
+			<td><code>&lt;uri&gt;</code> <p>For example: <code>http://tizen.org/about/devices</code></p> </td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/external</code></td>
+			<td><code>&lt;scheme&gt;:&lt;string&gt;</code> (case-insensitive) <p>For example: <code>nfc:ext.tizen.org.ABC</code></p> </td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/transaction</code></td>
+			<td><code>nfc://secure/&lt;SE name&gt;/aid/&lt;aid&gt;</code><p>For example:</p>
+				<ul>
+					<li><code>nfc://secure/SIM1/aid/123456789</code></li>
+					<li><code>nfc://secure/SIM1/aid/1234*</code></li>
+					<li><code>nfc://secure/SIM1/aid/*</code></li>
+				</ul>
+			</td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/card_emulation/default_changed</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+	</tbody>
+</table>
 
 \* The `<protocol_code>` and `<scheme>` must be in sync. See [NFCForum-TS-RTD_URI_1.0](http://members.nfc-forum.org/apps/group_public/document.php?document_id=5078) and NFC RTD (Record Type Definition) documentation on the NFC forum.
 

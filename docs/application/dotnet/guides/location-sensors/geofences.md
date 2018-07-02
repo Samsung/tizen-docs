@@ -58,7 +58,7 @@ Tizen provides the user a way of managing geofence places and fences through the
 
 ![My places](./media/geofence_setting.png)
 
-My places controls the adding, removing, and updating of places and fences. **Home**, **Office**, and **Car** are the default places, and **Map**, **Wi-Fi**, and **Bluetooth** are the supported fence methods. **Car** supports only Wi-Fi and Bluetooth as fence methods.
+My places controls the adding, removing, and updating of places and fences. **Home**, **Office**, and **Car** are the default places. **Map**, **Wi-Fi**, and **Bluetooth** are the supported fence methods. **Car** supports only Wi-Fi and Bluetooth as fence methods.
 
 
 ## Prerequisites

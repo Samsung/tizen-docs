@@ -32,7 +32,8 @@ To use the [Network Bearer Selection](../../api/latest/device_api/mobile/tizen/n
 
 
 <a name="request"></a>
-##Requesting a Route
+
+## Requesting a Route
 
 To request a preferred route for Internet connection with the "www.tizen.org" host:
 

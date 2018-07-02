@@ -57,7 +57,7 @@ To send push notifications:
         }
         ```
 
-    - If you have data to send to the application but no need to notify the user, use the action field on the same level as the messages field, instead of within the messages field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
+    - If you have data to send to the application but no need to notify the user, use the action field on the same level as the message field, instead of within the message field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
 
         ```
         {
@@ -107,7 +107,7 @@ To send push notifications:
 
         - Description: Request a notification push from the push server to the push service
 
-        - Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chuned message data" is returned. The system default value can be changed as needed.
+        - Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chunked message data" is returned. The system default value can be changed as needed.
 
         - Header
 
@@ -117,21 +117,21 @@ To send push notifications:
 
         - Arguments
 
-            ****Table: Arguments**
+            **Table: Arguments**
 
             | Key              | Description                              | Additional information                   |
             |----------------|----------------------------------------|----------------------------------------|
-            | `encoding`       | Encoding defines how the `regId` is encoded.<br>For most cases, the push server issues the `regId` as a hex string by default, but if third-party providers state that they use the base64 encoding for the `regId` at the application registration time, the `regId` is base64-encoded.<br>If the `regId` is base64-encoded, use the `"base64"` value for this field. Otherwise, leave this field blank to allow the push server to handle the `regId` as a hex string. | OptionalType: stringDefault: `NULL`      |
-            | `regID`          | Distinguish a recipient from other recipients by assigning a unique registration ID to each recipient.The registration ID is assigned when the application is installed on a device and marked to use an application service.The current registration ID passing policy is as follows (it can change in the future):<br>a. The preloaded push service connects to the push server and registers the application.<br>b. The push server returns the registration ID to the push service.<br>c. The push service passes the ID to the application.<br>d. The push server passes the registration ID to an application server.In other applications, the application passes the registration ID to the application server. | RequiredType: string                     |
-            | `requestID`      | An application server needs to assign a request ID to each request. It enables you to distinguish one request from the others. | RequiredType: string                     |
-            | `sender`         | Information on the user who sends the notification. | OptionalType: stringDefault: `NULL`      |
-            | `action`         | This message is delivered along with another urgent message, when the action value is `"backgroundLaunch"` and message field is `NULL`. | OptionalType: stringDefault: `NULL`      |
-            | `message`        | The message the sender wants to deliver. It can be a multibyte character.The message goes from an application server through the push server and push service to the application, which can handle the message.Maximum message length must be less than 2 kb. Make sure that if there is no message and `appData`, the push server rejects the message and returns an error. | Conditionally mandatory (if `appData` is `NULL`, this field is required)Type: stringDefault: `NULL` |
-            | `appData`        | Applications can use this field to carry their own data. The handling of this data depends on the type defined with the `type` key.Make sure that if there is no message and no `appData`, the push server rejects the message and returns an error. | Conditionally mandatory (if message is `NULL`, this field is required)Type: stringDefault: `NULL` |
-            | `reliableOption` | The push server guarantees reliable message delivery if the `reliableOption` is set. The possible options are:<br><br>`NoReliable`: Do not send any acknowledgment back to an application server and do not store the notification in the push server if the push service did not receive the notification.<br>`Transport`: Send an acknowledgment back to the application server when the push service receives the notification.<br><br>This is an optional field, and if it does not exist, the server applies its default value (`Transport`). An acknowledgment at this point does not mean a response to the notification request, but an acknowledgment that the push service has received the notification. When the push service receives the notification, the push server sends this acknowledgment to the application server in a JSON format through HTTP. | OptionalType: stringDefault: transport   |
-            | `sessionInfo`    | Connection information for an application. Third-party applications can define this field by themselves. | OptionalType: stringDefault: `NULL`      |
+            | `encoding`       | Encoding defines how the `regId` is encoded.<br>For most cases, the push server issues the `regId` as a hex string by default, but if third-party providers state that they use the base64 encoding for the `regId` at the application registration time, the `regId` is base64-encoded.<br>If the `regId` is base64-encoded, use the `"base64"` value for this field. Otherwise, leave this field blank to allow the push server to handle the `regId` as a hex string. | Optional<br>Type: string<br>Default: `NULL`      |
+            | `regID`          | Distinguish a recipient from other recipients by assigning a unique registration ID to each recipient.<br>The registration ID is assigned when the application is installed on a device and marked to use an application service.<br>The current registration ID passing policy is as follows (it can change in the future):<br>a. The preloaded push service connects to the push server and registers the application.<br>b. The push server returns the registration ID to the push service.<br>c. The push service passes the ID to the application.<br>d. The push server passes the registration ID to an application server.<br>In other applications, the application passes the registration ID to the application server. | Required<br>Type: string                     |
+            | `requestID`      | An application server needs to assign a request ID to each request. It enables you to distinguish one request from the others. | Required<br>Type: string                     |
+            | `sender`         | Information on the user who sends the notification. | Optional<br>Type: string<br>Default: `NULL`      |
+            | `action`         | This message is delivered along with another urgent message, when the action value is `"backgroundLaunch"` and message field is `NULL`. | Optional<br>Type: string<br>Default: `NULL`      |
+            | `message`        | The message the sender wants to deliver. It can be a multibyte character.<br>The message goes from an application server through the push server and push service to the application, which can handle the message.<br>Maximum message length must be less than 2 kb. Make sure that if there is no message and `appData`, the push server rejects the message and returns an error. | Conditionally mandatory (if `appData` is `NULL`, this field is required)<br>Type: string<br>Default: `NULL` |
+            | `appData`        | Applications can use this field to carry their own data. The handling of this data depends on the type defined with the `type` key.<br>Make sure that if there is no message and no `appData`, the push server rejects the message and returns an error. | Conditionally mandatory (if message is `NULL`, this field is required)<br>Type: string<br>Default: `NULL` |
+            | `reliableOption` | The push server guarantees reliable message delivery if the `reliableOption` is set. The possible options are:<br><br>`NoReliable`: Do not send any acknowledgment back to an application server and do not store the notification in the push server if the push service did not receive the notification.<br>`Transport`: Send an acknowledgment back to the application server when the push service receives the notification.<br><br>This is an optional field, and if it does not exist, the server applies its default value (`Transport`). An acknowledgment at this point does not mean a response to the notification request, but an acknowledgment that the push service has received the notification. When the push service receives the notification, the push server sends this acknowledgment to the application server in a JSON format through HTTP. | Optional<br>Type: string<br>Default: transport   |
+            | `sessionInfo`    | Connection information for an application. Third-party applications can define this field by themselves. | Optional<br>Type: string<br>Default: `NULL`      |
             | `timeStamp`      | Server time in milliseconds when a notification request has been made. | OptionalType: longDefault: `NULL`        |
-            | `expiryDate`     | Time period, in minutes, for storing the request in the push server if the delivery fails:<br><br>- If the value set to 0, the push server stores the request for 1440 minutes (24 hours).<br>- If the value is 1 - 2800, the push server stores the request for that number of minutes.If the push server default setting is less than the defined value, the push server stores the request according to its own setting.<br>- If the value is greater than 2880, the push server stores the request for 2880 minutes (48 hours).<br><br>This is an optional field, and if it does not exist, the server applies its default value (0). If `reliableOption` is set at `NoReliable`, this field is meaningless. | OptionalType: intDefault: 0              |
+            | `expiryDate`     | Time period, in minutes, for storing the request in the push server if the delivery fails:<br><br>- If the value set to 0, the push server stores the request for 1440 minutes (24 hours).<br>- If the value is 1 - 2800, the push server stores the request for that number of minutes.If the push server default setting is less than the defined value, the push server stores the request according to its own setting.<br>- If the value is greater than 2880, the push server stores the request for 2880 minutes (48 hours).<br><br>This is an optional field, and if it does not exist, the server applies its default value (0). If `reliableOption` is set at `NoReliable`, this field is meaningless. | Optional<br>Type: int<br>Default: 0              |
 
         The following examples illustrate the notification:
 
@@ -220,7 +220,7 @@ To send push notifications:
         -   Data: JSON
         -   Description: Request a notification push from the push server to the push service
         -   Argument: See the [single request](#single_req)
-        -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chuned message data" is returned. The system default value can be changed as needed.
+        -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chunked message data" is returned. The system default value can be changed as needed.
         -   Example header:
 
             ```
@@ -326,7 +326,7 @@ To send push notifications:
         -   Data: JSON
         -   Description: Request a notification push from the push server to the push service
         -   Argument: See the [single request](#single_req)
-        -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chuned message data" is returned. The system default value can be changed as needed.
+        -   Note: The total request message body must be less than the system default value, 200 kb. If not, "3035 – error of too long chunked message data" is returned. The system default value can be changed as needed.
         -   Example header:
 
             ```
@@ -469,7 +469,7 @@ The following table lists all possible error codes for push notifications, helpi
 | 3032        | Error of not supporting chunked request body |
 | 3033        | Error of illegal expiry date             |
 | 3034        | Error of illegal delay date              |
-| 3035        | Error of too long chuned message data    |
+| 3035        | Error of too long chunked message data    |
 | 3036        | Error of empty multiple request          |
 | 3037        | Error of notification key generation     |
 | 3038        | Error of create application              |

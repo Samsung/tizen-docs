@@ -10,7 +10,7 @@ The main features of the Web Workers API include:
 
 - [Messaging between workers](#sending-messages-between-web-workers)
 
-  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#messaging) or [wearable](../../../api/latest/w3c_api/w3c_api_w.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.
+  A subworker can communicate with the host worker using the `postMessage()` method of the HTML5 Web Messaging API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#messaging), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#messaging), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#messaging) applications). This process is normally used to give work orders to workers or subworkers, or deliver an operation result.
   
   If a worker triggers a message event, the `onmessage()` event handler can be used to check the sent message.
 
@@ -27,7 +27,7 @@ Web workers are not DOM-dependent. They handle pure data, which makes them espec
 
 Learning how to create Web workers is a useful resource management skill:
 
-1. To create and execute a Web worker:		
+1. To create and execute a Web worker:
 
    1. Create JavaScript code for a simple Boolean operation:
 
@@ -72,12 +72,12 @@ Learning how to create Web workers is a useful resource management skill:
 
    ```
    importScripts('worker1.js');
-   importScripts('worker1.js', 'worker2.js');		
+   importScripts('worker1.js', 'worker2.js');
    ```
 
    The subworker creates its own independent thread, and is activated in it, so it has the same restrictions as a host worker. This means that communication between subworkers is impossible, but a host worker can communicate with subworkers within the same object.		
 
-3. To handle errors:			
+3. To handle errors:
 
    - If an error occurs when the worker is being executed, the `onerror()` event is triggered. It takes `filename`, `lineno`, and `message` attributes, and displays an error message:
 
@@ -101,7 +101,7 @@ Learning how to create Web workers is a useful resource management skill:
 
 Learning how to send messages between Web workers is a useful resource management skill:
 
-1. Send a message in one of the following ways:		
+1. Send a message in one of the following ways:
 
    - Use the `postMessage()` method to send a "Hello" message to a Web worker:
 

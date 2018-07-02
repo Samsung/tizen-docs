@@ -23,8 +23,11 @@ The main features of the Widget Application API include:
 
   The widget application can [draw a UI on the home screen](#get_window).
 
-  > **Note**  
-  > The widget application UI has a limitation with the scroll action to provide a better user experience. Design the widget UI to display all the information within the given area of the screen points.To draw the UI, use a single window that is returned by the `widget_app_get_elm_win()` function. Do not create additional windows. A stack of widget application windows gets corrupted, because the platform handles the widget application window in a special way.
+  > **Note**
+  >
+  > The widget application UI has a limitation with the scroll action to provide a better user experience. Design the widget UI to display all the information within the given area of the screen points.
+  >
+  > To draw the UI, use a single window that is returned by the `widget_app_get_elm_win()` function. Do not create additional windows. A stack of widget application windows gets corrupted, because the platform handles the widget application window in a special way.
 
 <a name="app_instance"></a>
 ## Widget Application and Widget Instance
@@ -117,10 +120,10 @@ When the widget launch is requested for the first time, the widget application i
 To enable your application to use the widget functionality:
 
 1. To use the functions and data types of the Widget Application API (in [mobile](../../api/mobile/latest/group__CAPI__WIDGET__APP__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__WIDGET__APP__MODULE.html) applications), include the `<widget_app.h>` and `<widget_app_efl.h>` header files in your application:
-```
-#include <widget_app.h>
-#include <widget_app_efl.h>
-```
+   ```
+   #include <widget_app.h>
+   #include <widget_app_efl.h>
+   ```
 
 2. Edit the widget application settings in the [manifest](../../../tizen-studio/native_tools/manifest-text-editor.md#widget_app) file.
 
@@ -324,24 +327,24 @@ To manage the widget instance life-cycle:
      ```
 
 2. Register the callbacks in the `widget_instance_lifecycle_callback_s` structure during the widget application initialization:
-```
-widget_class_h
-widget_app_create(void *user_data)
-{
-    widget_instance_lifecycle_callback_s obj_callback = {0,};
-    /* Register the callback functions */
-    obj_callback.create = widget_instance_create;
-    obj_callback.destroy = widget_instance_destroy;
-    obj_callback.pause = widget_instance_pause;
-    obj_callback.resume = widget_instance_resume;
-    obj_callback.resize = widget_instance_resize;
-    obj_callback.update = widget_instance_update;
+   ```
+   widget_class_h
+   widget_app_create(void *user_data)
+   {
+       widget_instance_lifecycle_callback_s obj_callback = {0,};
+       /* Register the callback functions */
+       obj_callback.create = widget_instance_create;
+       obj_callback.destroy = widget_instance_destroy;
+       obj_callback.pause = widget_instance_pause;
+       obj_callback.resume = widget_instance_resume;
+       obj_callback.resize = widget_instance_resize;
+       obj_callback.update = widget_instance_update;
 
-    /* Register system-related callbacks */
+       /* Register system-related callbacks */
 
-    return widget_app_class_create(obj_callback, user_data);
-}
-```
+       return widget_app_class_create(obj_callback, user_data);
+   }
+   ```
 
 <a name="get_window"></a>
 ## Drawing the Widget UI
@@ -497,8 +500,11 @@ For example, a music-player-service service application is needed to control the
 
 ![Sharing through data control](./media/widget_data_control_share.png)
 
-> **Note**  
-> For user convenience, a STANDALONE widget application package is not allowed in the Tizen Store.You can make a STANDALONE widget application in the Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process//app-dev-process.md#develop).
+> **Note**
+>
+> For user convenience, a STANDALONE widget application package is not allowed in the Tizen Store.
+>
+> You can make a STANDALONE widget application in the Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process//app-dev-process.md#develop).
 
 
 ## Related Information

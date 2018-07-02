@@ -43,6 +43,8 @@ To use pseudo-class selectors:
 
 2. To control the state of the HTML5 Web Forms (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#forms), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#forms), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#forms) applications), use the `:in-range` and `:out-of-range` pseudo-classes.
 
+   They check for any values that have exceeded the inserted range. (The following figure applies to mobile applications only.)
+   
    ```
    <!--HTML-->
    <input type="number" step="10" min="10" max="100"/>

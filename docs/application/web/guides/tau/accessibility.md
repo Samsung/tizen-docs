@@ -34,7 +34,8 @@ The following examples show how WAI-ARIA code is read using the text-to-speech f
 
 When creating applications that use the Tizen screen reader, keep in mind the following exceptions:
 
-- If the `aria-hidden` attribute of an element is set to `true`, the screen reader does not read the content of the element or its child elements.		In the following snippet, the screen reader reads "on", but not "off" or "child".
+- If the `aria-hidden` attribute of an element is set to `true`, the screen reader does not read the content of the element or its child elements.  
+  In the following snippet, the screen reader reads "on", but not "off" or "child".
 
   ```
   <div tabindex="0">
@@ -46,7 +47,8 @@ When creating applications that use the Tizen screen reader, keep in mind the fo
   </div>
   ```
 
-- If the `role` attribute is not defined, it is not read.		In the following snippet, the screen reader reads "test", but not "link".
+- If the `role` attribute is not defined, it is not read.  
+  In the following snippet, the screen reader reads "test", but not "link".
 
   ```
   <a role="" href="test.html">test</a>

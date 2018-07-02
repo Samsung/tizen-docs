@@ -537,9 +537,9 @@ To start, pause, and stop the playback:
 
     If there is no text in the queue, TTS waits in the `Playing` state for text to be added. In that case, when you add text, TTS starts synthesizing and playing it immediately. The TTS state need not change to `Ready` before using the `Stop()` method.
 
-   > **Note**   
-   > If the TTS state changed event handler is invoked in the `Playing` state without a TTS method call, prepare the TTS state. The state can change if other applications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
-
+    > **Note**
+    >
+    > If the TTS state changed event handler is invoked in the `Playing` state without a TTS method call, prepare the TTS state. The state can change if other applications request TTS play, the audio session requests TTS pause, or the TTS engine changes.
 
     ```
     void Start()
@@ -554,6 +554,7 @@ To start, pause, and stop the playback:
         }
     }
     ```
+
 
 -   To pause the playback, use the `Pause()` method.
 

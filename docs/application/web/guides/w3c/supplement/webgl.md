@@ -2,7 +2,7 @@
 
 WebGL - Khronos is a graphics library for creating 3D visual elements in Web applications without separate plug-ins.
 
-WebGL&trade; is designed as a rendering context of the [HTML5  element](../graphics/canvas.md). The WebGL&trade; context is still being developed and has not been standardized. WebGL&trade; uses 3D rendering APIs derived from [OpenGL&reg; ES 2.0](http://www.opengl.org/documentation/specs/version2.0/glspec20.pdf), and is realized by binding shaders and [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.00.pdf) (GLSL ES) as JavaScript.
+WebGL&trade; is designed as a rendering context of the [HTML5 &lt;canvas&gt; element](../graphics/canvas.md). The WebGL&trade; context is still being developed and has not been standardized. WebGL&trade; uses 3D rendering APIs derived from [OpenGL&reg; ES 2.0](http://www.opengl.org/documentation/specs/version2.0/glspec20.pdf), and is realized by binding shaders and [OpenGL&reg; ES Shading Language](http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.00.pdf) (GLSL ES) as JavaScript.
 
 The main features of WebGL&trade; include:
 
@@ -12,7 +12,7 @@ The main features of WebGL&trade; include:
 
 - Using programs and shaders
 
-  You can use shaders, such as the vertex shader and fragment shader, to convert shape data to display it on the screen as pixels. [Shaders must be initialized](#initializing-programs-and-shaders) and attached to programs.The vertex shader sets the final position of a vertex, and the fragment shader sets the final colors of each pixel.
+  You can use shaders, such as the vertex shader and fragment shader, to convert shape data to display it on the screen as pixels. [Shaders must be initialized](#initializing-programs-and-shaders) and attached to programs. The vertex shader sets the final position of a vertex, and the fragment shader sets the final colors of each pixel.
 
 - Using buffers
 
@@ -222,7 +222,7 @@ To create buffers, bind them, and store data in them:
 4. Import the `bufferData()` method to store data to the VBO:
 
    ```
-       /* Convert to Float32Array format that allows the array to be used in WebGL&trade; */
+       /* Convert to Float32Array format that allows the array to be used in WebGL */
        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
    </script>
    ```
@@ -241,7 +241,7 @@ For the complete source code related to this use case, see the following file:
 
 ## Drawing Shapes on the Screen
 
-To enhance the user experience of your application with WebGL&trade; features, you must learn to display shapes on the screen using attribute array data and a drawing buffer:
+To display shapes on the screen using attribute array data and a drawing buffer:
 
 1. Import the `getAttribLocation()` method to bring the attribute location from the WebGL&trade; program:
 
@@ -280,9 +280,10 @@ To enhance the user experience of your application with WebGL&trade; features, y
      The point type renders 1 point at a time.<br>![Points](media/drawing_points.png)
      ```
      var vertices = [1.0,  1.0,
-                    -1.0, 1.0,
-                    1.0,  -1.0,
-                    -1.0, -1.0];
+                     -1.0, 1.0,
+                     1.0,  -1.0,
+                     -1.0, -1.0];
+
      gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
      gl.drawArrays(gl.POINTS, 0, 4);
      ```
@@ -294,10 +295,13 @@ To enhance the user experience of your application with WebGL&trade; features, y
      ```
      var vertices = [-1.0, 1.0,
                      1.0,  1.0,
+
                      1.0,  1.0,
                      1.0,  0.0,
+
                      1.0,  -1.0,
                      -1.0, -1.0];
+
      gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
      gl.drawArrays(gl.LINES, 0, 6);
      ```
@@ -309,8 +313,9 @@ To enhance the user experience of your application with WebGL&trade; features, y
      ```
      var vertices = [-1.0, 1.0,
                      1.0,  1.0,
-                    1.0,  -1.0,
-                    -1.0, -1.0];
+                     1.0,  -1.0,
+                     -1.0, -1.0];
+
      gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
      gl.drawArrays(gl. LINE_STRIP, 0, 4);
      ```
@@ -324,10 +329,12 @@ To enhance the user experience of your application with WebGL&trade; features, y
                      1.0,  1.0,
                      1.0,  -1.0,
                      -1.0, -1.0];
+
      gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
      gl.drawArrays(gl. LINE_LOOP, 0, 4);
      ```
    - `TRIANGLES`
+
      In the triangles type, 2 triangles consist of 3 vertices each. In the example, 6 vertices are needed.
 
      ![Triangles](media/drawing_triangles.png)
@@ -335,9 +342,11 @@ To enhance the user experience of your application with WebGL&trade; features, y
      var vertices = [-1.0, 1.0,
                      1.0,  1.0,
                      0.0,  0.0,
+
                      0.0,  0.0,
                      -1.0, -1.0,
                      -1.0, 0.0];
+
      gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
      gl.drawArrays(gl. TRIANGLES, 0, 6);
      ```
@@ -354,7 +363,9 @@ To enhance the user experience of your application with WebGL&trade; features, y
                      0.0, 0.0, /* p4 */
                      1.0, -1.0, /* p5 */
                      0.0, -1.0]; /* p6 */
-     gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);gl.drawArrays(gl. TRIANGLE_STRIP, 0, 6);
+
+     gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
+     gl.drawArrays(gl. TRIANGLE_STRIP, 0, 6);
      ```
    - `TRIANGLE_FAN`
 
@@ -368,6 +379,7 @@ To enhance the user experience of your application with WebGL&trade; features, y
                      -0.8, 0.2, /* p3 */
                      -1.0, -1.0, /* p4 */
                      1.0,  -1.0]; /* p5 */
+
      gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
      gl.drawArrays(gl. TRIANGLE_FAN, 0, 6);
       ```
@@ -549,6 +561,7 @@ To apply an image from a file to a surface as a texture:
            gl.enableVertexAttribArray(vertexPositionAttribute);
            gl.bindBuffer(gl.ARRAY_BUFFER, triangleVerticesBuffer);
            gl.vertexAttribPointer(vertexPositionAttribute, 2, gl.FLOAT, false, 0, 0);
+
            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
        }
     </script>
@@ -612,7 +625,7 @@ To create an animation by adjusting and moving object coordinates:
            vertices = vertices.concat(circumVertices);
    ```
 
-3. Change the value of the variable in order to calculate the central point. Render the circle with the central point and vertex location, using the `TRIANGLE_FAN` argument that allows all triangles to share a central point to make a circle.`
+3. Change the value of the variable in order to calculate the central point. Render the circle with the central point and vertex location, using the `TRIANGLE_FAN` argument that allows all triangles to share a central point to make a circle.
    ```
            /* Change the angle value to change the central point coordinates */
            angle += 0.01;
@@ -631,7 +644,7 @@ To create an animation by adjusting and moving object coordinates:
 4. Use the `setInterval()` method to set the rendering interval of the circle:
    ```
        window.setInterval(function() {draw();}, 10);
-   </script>`
+   </script>
    ```
    > **Note**  
    > Instead of the `setInterval()` method, you can also use the script-based W3C `requestAnimationFrame()` method.
@@ -803,7 +816,7 @@ You can apply a texture and 3D perspective with touch events by using the [glMat
        attribute vec3 attVertexPos; /* Vertex coordinate attribute */
        attribute vec2 attTextureCoord; /* Texture coordinate attribute */
 
-       uniform mat4 unifMVMatrix; /* Model–view uniform */
+       uniform mat4 unifMVMatrix; /* Model-view uniform */
        uniform mat4 unifPMatrix; /* Projection matrix uniform */
 
        /* Texture coordinate storing variable used in the fragment shader */
@@ -919,8 +932,8 @@ You can apply a texture and 3D perspective with touch events by using the [glMat
 
 5. To send the loaded texture image to the shader program, and add a reference to the shader program `unifSampler` location:
    ```
-        program.samplerUniform = gl.getUniformLocation(program, 'unifSampler');
-    }
+           program.samplerUniform = gl.getUniformLocation(program, 'unifSampler');
+       }
    ```
 
 6. Initialize the buffer:
@@ -1265,7 +1278,7 @@ To use the three.js framework for your WebGL&trade; application:
 
    ```
        function animate() {
-           var speed= 0.2;
+           var speed = 0.2;
            var lastTime = 0;
            var angle = 0.0;
 

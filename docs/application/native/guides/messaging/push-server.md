@@ -84,9 +84,9 @@ To send push notifications:
 
    | Key            | Value                                    | Description                              |
    |----------------|------------------------------------------|------------------------------------------|
-   | `action`       | `ALERT`: Store the message and alert the user.`SILENT`: Store the message without alerting the user.`DISCARD`: Discard the message, if the application is not up and running.`LAUNCH`: Forcibly launch the application and deliver the notification.`BACKGROUNDLAUNCH`: Launch the application in the background and deliver the notification (supported since Tizen 3.0). | Action to be performed if the application is not running. If no action is defined, the default behavior is `SILENT`. |
+   | `action`       | `ALERT`: Store the message and alert the user.<br> `SILENT`: Store the message without alerting the user.<br> `DISCARD`: Discard the message, if the application is not up and running.<br> `LAUNCH`: Forcibly launch the application and deliver the notification.<br> `BACKGROUNDLAUNCH`: Launch the application in the background and deliver the notification (supported since Tizen 3.0). | Action to be performed if the application is not running. If no action is defined, the default behavior is `SILENT`. |
    | `alertMessage` | Up to 127 bytes                          | Alert message shown to the user in the quick panel. If the action is not set as `ALERT`, this value is meaningless. |
-   | `badgeOption`  | `INCREASE`: Increase the badge number by the given value.`DECREASE`: Decrease the badge number by the given value.`SET`: Set badge number to the given value. | Option for updating the icon badge number. If the action is set as `DISCARD`, the `badgeOption` is ignored. If the badge option is not included, the icon badge number remains unchanged. |
+   | `badgeOption`  | `INCREASE`: Increase the badge number by the given value.<br> `DECREASE`: Decrease the badge number by the given value.<br> `SET`: Set badge number to the given value. | Option for updating the icon badge number. If the action is set as `DISCARD`, the `badgeOption` is ignored. If the badge option is not included, the icon badge number remains unchanged. |
    | `badgeNumber`  | 0-999                                    | -                                        |
 
    For example, to show a "Hi" message in the quick panel and increase the badge count by 1 when the notification arrives at the device, the message field of the notification must be the following:
@@ -99,7 +99,8 @@ To send push notifications:
 
    Since Tizen 3.0, the `BACKGROUNDLAUNCH` option is supported. When you send a notification to the device with the `BACKGROUNDLAUNCH` action value, the push service launches the application in the background (if it is not already running), and delivers the appData field to the application. The user cannot see that a notification is received, but they find out when they use the application the next time.
 
-   > **Note**  
+   > **Note**
+   >
    > For the `BACKGROUNDLAUNCH` notification, the `app_create()` and `app_control()` life-cycle callbacks are called, but the `app_resume()` callback is not called. However, the next time the user runs the application, the `app_resume()` callback is invoked normally. For more information on the life-cycle, see the [Applications](../app-management/applications.md) guide.
 
 4. Use the Rest APIs for sending push notifications.
@@ -128,19 +129,173 @@ To send push notifications:
 
        **Table: Arguments**
 
-       | Key                       | Description                              | Additional information                   |
-       |---------------------------|------------------------------------------|------------------------------------------|
-       | `encoding`                | Encoding defines how the `regId` is encoded.For most cases, the push server issues the `regId` as a hex string by default, but if third-party providers state that they use the base64 encoding for the `regId` at the application registration time, the `regId` is base64-encoded.If the `regId` is base64-encoded, use the `"base64"` value for this field. Otherwise, leave this field blank to allow the push server to handle the `regId` as a hex string. | OptionalType: stringDefault: `NULL`      |
-       | `regID`                   | Distinguish a recipient from other recipients by assigning a unique registration ID to each recipient.The registration ID is assigned when the application is installed on a device and marked to use an application service.The current registration ID passing policy is as follows (it can change in the future):The preloaded push service connects to the push server and registers the application.The push server returns the registration ID to the push service.The push service passes the ID to the application.The push server passes the registration ID to an application server.In other applications, the application passes the registration ID to the application server. | RequiredType: string                     |
-       | `requestID`               | An application server needs to assign a request ID to each request. It enables you to distinguish one request from the others. | RequiredType: string                     |
-       | `sender`                  | Information on the user who sends the notification. | OptionalType: stringDefault: `NULL`      |
-       | `action`(since Tizen 3.0) | This message is delivered along with another urgent message, when the action value is `"backgroundLaunch"` and message field is `NULL`. | OptionalType: stringDefault: `NULL`      |
-       | `message`                 | The message the sender wants to deliver. It can be a multibyte character.The message goes from an application server through the push server and push service to the application, which can handle the message.Maximum message length must be less than 2 kb. Make sure that if there is no message and `appData`, the push server rejects the message and returns an error. | Conditionally mandatory (if `appData` is `NULL`, this field is required)Type: stringDefault: `NULL` |
-       | `appData`                 | Applications can use this field to carry their own data. The handling of this data depends on the type defined with the `type` key.Make sure that if there is no message and no `appData`, the push server rejects the message and returns an error. | Conditionally mandatory (if message is `NULL`, this field is required)Type: stringDefault: `NULL` |
-       | `reliableOption`          | The push server guarantees reliable message delivery if the `reliableOption` is set. The possible options are:`NoReliable`: Do not send any acknowledgment back to an application server and do not store the notification in the push server if the push service did not receive the notification.`Transport`: Send an acknowledgment back to the application server when the push service receives the notification.This is an optional field, and if it does not exist, the server applies its default value (`Transport`). An acknowledgment at this point does not mean a response to the notification request, but an acknowledgment that the push service has received the notification. When the push service receives the notification, the push server sends this acknowledgment to the application server in a JSON format through HTTP. | OptionalType: stringDefault: transport   |
-       | `sessionInfo`             | Connection information for an application. Third-party applications can define this field by themselves. | OptionalType: stringDefault: `NULL`      |
-       | `timeStamp`               | Server time in milliseconds when a notification request has been made. | OptionalType: longDefault: `NULL`        |
-       | `expiryDate`              | Time period, in minutes, for storing the request in the push server if the delivery fails:If the value set to 0, the push server stores the request for 1440 minutes (24 hours).If the value is 1 - 2800, the push server stores the request for that number of minutes.If the push server default setting is less than the defined value, the push server stores the request according to its own setting.If the value is greater than 2880, the push server stores the request for 2880 minutes (48 hours).This is an optional field, and if it does not exist, the server applies its default value (0). If `reliableOption` is set at `NoReliable`, this field is meaningless. | OptionalType: intDefault: 0              |
+		<table>
+				<thead>
+					<tr>
+						<th>Key</th>
+						<th>Description</th>
+						<th>Additional information</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>encoding</code></td>
+						<td>Encoding defines how the <code>regId</code> is encoded.
+						<p>For most cases, the push server issues the <code>regId</code> as a hex string by default, but if third-party providers state that they use the base64 encoding for the <code>regId</code> at the application registration time, the <code>regId</code> is base64-encoded.</p>
+						<p>If the <code>regId</code> is base64-encoded, use the <code>"base64"</code> value for this field. Otherwise, leave this field blank to allow the push server to handle the <code>regId</code> as a hex string.</p>
+						</td>
+						<td>
+						<ul>
+							<li>Optional</li>
+							<li>Type: string</li>
+							<li>Default: <code>NULL</code></li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>regID</code></td>
+						<td>Distinguish a recipient from other recipients by assigning a unique registration ID to each recipient.
+						<p>The registration ID is assigned when the application is installed on a device and marked to use an application service.</p>
+						<p>The current registration ID passing policy is as follows (it can change in the future):</p>
+						<ol type="a">
+							<li>The preloaded push service connects to the push server and registers the application.</li>
+							<li>The push server returns the registration ID to the push service.</li>
+							<li>The push service passes the ID to the application.</li>
+							<li>The push server passes the registration ID to an application server.
+							<p>In other applications, the application passes the registration ID to the application server.</p>
+							</li>
+						</ol>
+						</td>
+						<td>
+						<ul>
+							<li>Required</li>
+							<li>Type: string</li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>requestID</code></td>
+						<td>An application server needs to assign a request ID to each request. It enables you to distinguish one request from the others.</td>
+						<td>
+						<ul>
+							<li>Required</li>
+							<li>Type: string</li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>sender</code></td>
+						<td>Information on the user who sends the notification.</td>
+						<td>
+						<ul>
+							<li>Optional</li>
+							<li>Type: string</li>
+							<li>Default: <code>NULL</code></li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>action</code>
+						<p>(since Tizen 3.0)</p>
+						</td>
+						<td>This message is delivered along with another urgent message, when the action value is <code>"backgroundLaunch"</code> and message field is <code>NULL</code>.</td>
+						<td>
+						<ul>
+							<li>Optional</li>
+							<li>Type: string</li>
+							<li>Default: <code>NULL</code></li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>message</code></td>
+						<td>The message the sender wants to deliver. It can be a multibyte character.
+						<p>The message goes from an application server through the push server and push service to the application, which can handle the message.</p>
+						<p>Maximum message length must be less than 2 kb. Make sure that if there is no message and <code>appData</code>, the push server rejects the message and returns an error.</p>
+						</td>
+						<td>
+						<ul>
+							<li>Conditionally mandatory (if <code>appData</code> is <code>NULL</code>, this field is required)</li>
+							<li>Type: string</li>
+							<li>Default: <code>NULL</code></li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>appData</code></td>
+						<td>Applications can use this field to carry their own data. The handling of this data depends on the type defined with the <code>type</code> key.
+						<p>Make sure that if there is no message and no <code>appData</code>, the push server rejects the message and returns an error.</p>
+						</td>
+						<td>
+						<ul>
+							<li>Conditionally mandatory (if message is <code>NULL</code>, this field is required)</li>
+							<li>Type: string</li>
+							<li>Default: <code>NULL</code></li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>reliableOption</code></td>
+						<td>The push server guarantees reliable message delivery if the <code>reliableOption</code> is set. The possible options are:
+						<ul>
+							<li><code>NoReliable</code>: Do not send any acknowledgment back to an application server and do not store the notification in the push server if the push service did not receive the notification.</li>
+							<li><code>Transport</code>: Send an acknowledgment back to the application server when the push service receives the notification.</li>
+						</ul>
+						<p>This is an optional field, and if it does not exist, the server applies its default value (<code>Transport</code>). An acknowledgment at this point does not mean a response to the notification request, but an acknowledgment that the push service has received the notification. When the push service receives the notification, the push server sends this acknowledgment to the application server in a JSON format through HTTP.</p>
+						</td>
+						<td>
+						<ul>
+							<li>Optional</li>
+							<li>Type: string</li>
+							<li>Default: transport</li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>sessionInfo</code></td>
+						<td>Connection information for an application. Third-party applications can define this field by themselves.</td>
+						<td>
+						<ul>
+							<li>Optional</li>
+							<li>Type: string</li>
+							<li>Default: <code>NULL</code></li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>timeStamp</code></td>
+						<td>Server time in milliseconds when a notification request has been made.</td>
+						<td>
+						<ul>
+							<li>Optional</li>
+							<li>Type: long</li>
+							<li>Default: <code>NULL</code></li>
+						</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><code>expiryDate</code></td>
+						<td>Time period, in minutes, for storing the request in the push server if the delivery fails:
+						<ul>
+							<li>If the value set to 0, the push server stores the request for 1440 minutes (24 hours).</li>
+							<li>If the value is 1 - 2800, the push server stores the request for that number of minutes.
+							<p>If the push server default setting is less than the defined value, the push server stores the request according to its own setting.</p>
+							</li>
+							<li>If the value is greater than 2880, the push server stores the request for 2880 minutes (48 hours).</li>
+						</ul>
+						<p>This is an optional field, and if it does not exist, the server applies its default value (0). If <code>reliableOption</code> is set at <code>NoReliable</code>, this field is meaningless.</p>
+						<p>&nbsp;</p>
+						</td>
+						<td>
+						<ul>
+							<li>Optional</li>
+							<li>Type: int</li>
+							<li>Default: 0</li>
+						</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
      The following examples illustrate the notification:
 
@@ -215,7 +370,8 @@ To send push notifications:
          }
          ```
 
-         > **Note**  
+         > **Note**
+         >
          > In the above example, the 3008 error code means that the `regID` does not exist in the push server. It happens when your application of that particular `regID` was uninstalled or disabled by the user, and consequently the `regID` must be removed from your application server. When the application is reinstalled or enabled, it must repeat the [registration process](push.md#registration) and send a new `regID` to your application server.
 
    - Multiple request
@@ -448,7 +604,7 @@ To send push notifications:
 
 Since Tizen 3.0, you can decorate push notifications you send from the application server to Tizen devices. For example, you can add images and sounds to the notifications. The push service creates a notification using the resources from the application and notifies the user. You can compose the push message using a set of REST APIs.
 
-To decorate push notifications, you have to understand the notification functions. In addition to the existing `message` field, more fields are provided. For more information on the functions to use to create a notification, see the Notification API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html)applications). When you include a key and value in the message field, the push service creates a notification as the application creates a notification using the Notification API.
+To decorate push notifications, you have to understand the notification functions. In addition to the existing `message` field, more fields are provided. For more information on the functions to use to create a notification, see the Notification API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__MODULE.html) applications). When you include a key and value in the message field, the push service creates a notification as the application creates a notification using the Notification API.
 
 Prepare all the resource files under the `/shared/res` folder in your application, and you can directly address the resource files. For example, `imageTypeIcon=image.png` means that the `/share/res/image.png` image is displayed as an icon in the notification panel. You can perform the same action by calling the `notification_set_image(noti, NOTIFICATION_IMAGE_TYPE_ICON, "image.png")` function.
 
@@ -509,11 +665,11 @@ The following table lists the additional key and value pairs for the message fie
 | `eventTypeClickOnButton6`                | [key,value]                              | `notification_set_eventhandler()`, `NOTIFICATION_EVENT_TYPE_CLICK_ON_BUTTON_6` |
 | `eventTypeClickOnIcon`                   | [key,value]                              | `notification_set_eventhandler()`, `NOTIFICATION_EVENT_TYPE_CLICK_ON_ICON` |
 | `eventTypeClickOnThumbnail`              | [key,value]                              | `notification_set_eventhandler()`, `NOTIFICATION_EVENT_TYPE_CLICK_ON_THUMBNAIL` |
-| `setProperty`                            | `displayOnlySimmode|``disableAppLaunch\|``disableAutoDelete|``disableUpdateOnInsert\|``disableUpdateOnDelete|``volatileDisplay` | `notification_set_property()`, `NOTIFICATION_PROP_DISPLAY_ONLY_SIMMODE|``NOTIFICATION_PROP_DISABLE_APP_LAUNCH\|``NOTIFICATION_PROP_DISABLE_AUTO_DELETE|``NOTIFICATION_PROP_DISABLE_UPDATE_ON_INSERT\|``NOTIFICATION_PROP_DISABLE_UPDATE_ON_DELETE|``NOTIFICATION_PROP_VOLATILE_DISPLAY` |
+| `setProperty`                            | `displayOnlySimmode|`<br> `disableAppLaunch|`<br> `disableAutoDelete|`<br> `disableUpdateOnInsert|`<br> `disableUpdateOnDelete|`<br> `volatileDisplay` | `notification_set_property()`, `NOTIFICATION_PROP_DISPLAY_ONLY_SIMMODE|`<br> `NOTIFICATION_PROP_DISABLE_APP_LAUNCH|`<br> `NOTIFICATION_PROP_DISABLE_AUTO_DELETE|`<br> `NOTIFICATION_PROP_DISABLE_UPDATE_ON_INSERT|`<br> `NOTIFICATION_PROP_DISABLE_UPDATE_ON_DELETE|`<br> `NOTIFICATION_PROP_VOLATILE_DISPLAY` |
 | `lyNotiEventSingle`                      | `TRUE`                                   | `notification_set_layout()`, `NOTIFICATION_LY_NOTI_EVENT_SINGLE` |
 | `lyNotiEventMultiple`                    | `TRUE`                                   | `notification_set_layout()`, `NOTIFICATION_LY_NOTI_EVENT_MULTIPLE` |
 | `lyNotiThumbnail`                        | `TRUE`                                   | `notification_set_layout()`, `NOTIFICATION_LY_NOTI_THUMBNAIL` |
-| `setDisplayApplist`                      | `notificationTray|``ticker\|``lock|``indicator\|``active|``all` | `notification_set_display_applist()`, `NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY|``NOTIFICATION_DISPLAY_APP_TICKER\|``NOTIFICATION_DISPLAY_APP_LOCK|``NOTIFICATION_DISPLAY_APP_INDICATOR\|``NOTIFICATION_DISPLAY_APP_ACTIVE|``NOTIFICATION_DISPLAY_APP_ALL` |
+| `setDisplayApplist`                      | `notificationTray|`<br> `ticker|`<br> `lock|`<br> `indicator|`<br> `active|`<br> `all` | `notification_set_display_applist()`, `NOTIFICATION_DISPLAY_APP_NOTIFICATION_TRAY|`<br> `NOTIFICATION_DISPLAY_APP_TICKER|`<br> `NOTIFICATION_DISPLAY_APP_LOCK|`<br> `NOTIFICATION_DISPLAY_APP_INDICATOR|`<br> `NOTIFICATION_DISPLAY_APP_ACTIVE|`<br> `NOTIFICATION_DISPLAY_APP_ALL` |
 | `setAutoRemove`                          | `TRUE`                                   | `notification_set_auto_remove()`, `TRUE` |
 
 The following example shows the message field for an active notification with 3 buttons:

@@ -104,7 +104,7 @@ To make the layout correct, define the position property as fixed and set the bo
 .footer {position: fixed; bottom: 0px;}
 ```
 
-The following figure shows the same Web application running on the unexpected device after the footer properties are defined properly. With the correct values, the Web application is usable even on a new target, not planned during the development phase. Note that if a [relative layout](./w3c/ui/ui-layout.md#relative) is also applied to the content area, the result is an even better layout and further improved usability.
+The following figure shows the same Web application running on the unexpected device after the footer properties are defined properly. With the correct values, the Web application is usable even on a new target, not planned during the development phase. Note that if a [relative layout](#relative-layout) is also applied to the content area, the result is an even better layout and further improved usability.
 
 **Figure: Usable layout on 360x480**
 
@@ -320,8 +320,8 @@ The following table lists the CSS media features, which you can use to specify t
 | grid                | integer                    | no      | Set to true for a grid-based  device     |
 | height              | length                     | yes     | Rendering surface height                 |
 | monochrome          | integer                    | yes     | Number of bits per pixel in a  monochrome frame buffer |
-| resolution          | resolution (dpi or dpcm)   | yes     | Resolution                               |
-| scan                | progressive  or interlaced | no      | Scanning process of the tv media types   |
+| resolution          | resolution (`dpi` or `dpcm`)   | yes     | Resolution                               |
+| scan                | `progressive` or `interlaced` | no      | Scanning process of the `tv` media types   |
 | width               | length                     | yes     | Rendering surface width                  |
 
 
@@ -335,9 +335,9 @@ Tizen supports a special media query feature for a circular device shape. The fo
 
 **Table: Tizen specialized media feature**
 
-| Feature                  | Value         | Min/Max    | Description |
-| ------------------------ | ------------- | ---------- | ----------- |
-| `-tizen-geometric-shape` | `"rectangle"` | `"circle"` | No          |
+| Feature                  | Value                    | Min/Max    | Description  |
+| ------------------------ | ------------------------ | ---------- | ------------ |
+| `-tizen-geometric-shape` | `"rectangle" | "circle"` | No         | Device shape |
 
 You can combine this media query feature with the W3C type in your code. The final view shows the layout inside `{...}` to the end user:
 

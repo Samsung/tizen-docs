@@ -28,7 +28,8 @@ With the geofence service, you can:
 - [Get the current state](#status)
 
 - Get [in and out alerts](#track) and [proximity alerts](#proximity)
-You can get notifications when the user approaches or crosses any geofences they have defined.
+
+  You can get notifications when the user approaches or crosses any geofences they have defined.
 
 - [Retrieve information about created geofences](#info)
 

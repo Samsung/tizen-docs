@@ -55,7 +55,7 @@ Tizen .NET consists of the following main components:
 
 - **Xamarin.Forms as a UI framework**
 
-  Xamarin.Forms is a cross-platform UI toolkit that allows you to efficiently create native user interface layouts that can be shared across iOS, Android&trade; Windows Phone, and Universal Windows Platform applications.
+  Xamarin.Forms is a cross-platform UI toolkit that allows you to efficiently create native user interface layouts that can be shared across iOS, Android&trade;, Windows Phone, and Universal Windows Platform applications.
 
 - **TizenFX API**
 

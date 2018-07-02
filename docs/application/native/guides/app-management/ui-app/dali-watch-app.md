@@ -9,7 +9,8 @@ To create a DALi watch application, you must:
 
 - Use the [Dali::WatchApplication class](#api).
 
-	> **Note**  
+	> **Note**
+    >
 	> A DALi watch application is implemented similarly to a [DALi basic UI application](dali-basic-app.md), since the [Dali::WatchApplication](../../../api/wearable/latest/classDali_1_1WatchApplication.html) class inherits from the [Dali::Application](../../../api/wearable/latest/classDali_1_1Application.html) class. Consequently, make sure you are familiar with the basic UI application details before tackling a watch application.
 
 - Make sure you [start the event loop](#mainloop).
@@ -73,41 +74,43 @@ To create a DALi watch application, set the time, and draw the UI:
 1. Initialize the application:
 
    1. To use the functions and data types of the DALi watch application, include the `<dali/public-api/dali-wearable.h>` header file in your application:
-   ```
-   #include <dali/public-api/dali-wearable.h>
-   ```
+      ```
+      #include <dali/public-api/dali-wearable.h>
+      ```
    2. Like in a basic UI application, use the following 2 `using` directives for convenience, because all DALi APIs are contained in either `Dali` or `Dali::Toolkit` namespace:
-   ```
-   using namespace Dali;
-   using namespace Dali::Toolkit;
-   ```
+      ```
+      using namespace Dali;
+      using namespace Dali::Toolkit;
+      ```
 2. Create the `Dali::WatchApplication` class instance to initialize and set up DALi for a watch application:
-```
-WatchApplication application = WatchApplication::New( &argc, &argv );
-```
+   ```
+   WatchApplication application = WatchApplication::New( &argc, &argv );
+   ```
 
 3. Connect signals to keep yourself informed when certain system events occur.
 
-   1. To manage signal connection safely, DALi provides the [Dali::ConnectionTracker](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) class. A typical way to start a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals.When the application receives the `InitSignal()`, it can create UI components. Connect the `WatchExample::Create()` callback to the `Dali::WatchApplication::InitSignal()` function:
-   ```
-    class WatchExample : public ConnectionTracker
-    {
-      public:
-        WatchExample( WatchApplication& application )
-          : mApplication( application )
-        {
-          mApplication.InitSignal().Connect( this, &WatchExample::Create );
-        }
+   1. To manage signal connection safely, DALi provides the [Dali::ConnectionTracker](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) class. A typical way to start a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals.
 
-        void Create( Application& application )
-        {
-          // Create a DALi UI component
-        }
+      When the application receives the `InitSignal()`, it can create UI components. Connect the `WatchExample::Create()` callback to the `Dali::WatchApplication::InitSignal()` function:
+      ```
+      class WatchExample : public ConnectionTracker
+      {
+        public:
+          WatchExample( WatchApplication& application )
+            : mApplication( application )
+          {
+            mApplication.InitSignal().Connect( this, &WatchExample::Create );
+          }
 
-      private:
-        WatchApplication& mApplication;
-    }
-   ```
+          void Create( Application& application )
+          {
+            // Create a DALi UI component
+          }
+
+        private:
+          WatchApplication& mApplication;
+      }
+      ```
 
    2. Handle the tick signals.
 

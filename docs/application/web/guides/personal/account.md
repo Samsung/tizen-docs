@@ -34,7 +34,7 @@ To understand account management, you must be familiar with the following basic 
 
 - Account
 
-  An entity that collects all the data (such as user name, credentials, settings) needed for connecting to services. An account is always bound to a single provider and has a list of service instances bound to the account. The services can be individually enabled and disabled on the given account. For instance, "Laccount1@gmail.com" can identify a Google account, giving access to services, such as Gmail, Picasa, and Youtube, with each service having a separate service instance bound to the account.
+  An entity that collects all the data (such as user name, credentials, settings) needed for connecting to services. An account is always bound to a single provider and has a list of service instances bound to the account. The services can be individually enabled and disabled on the given account. For instance, "`Laccount1@gmail.com`" can identify a Google account, giving access to services, such as Gmail, Picasa, and Youtube, with each service having a separate service instance bound to the account.
 
 ## Prerequisites
 
@@ -107,7 +107,8 @@ Learning how to retrieve account information enables you to include account supp
 
 To create accounts, you must learn how to get access to account providers:
 
-- Get a specific account provider with the given application ID using the `getProviders()` method of the `ApplicationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationManager) and [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationManager) applications).If the current application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_account) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), you can use the current application ID.  Otherwise, get the ID of the current application using the `getCurrentApplication()` method of the `ApplicationManager` interface:
+- Get a specific account provider with the given application ID using the `getProviders()` method of the `ApplicationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationManager) and [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationManager) applications).  
+  If the current application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_account) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), you can use the current application ID.  Otherwise, get the ID of the current application using the `getCurrentApplication()` method of the `ApplicationManager` interface:
 
   ```
   var appId = tizen.application.getCurrentApplication().appInfo.id;
@@ -165,7 +166,7 @@ Creating, adding, updating, and deleting accounts is a basic account management 
    tizen.account.update(account);
    ```
 
-6. To remove the account from the system, use the `remove()` method of  the `AccountManager` interface, providing the account ID
+6. To remove the account from the system, use the `remove()` method of  the `AccountManager` interface, providing the account ID:
 
    ```
    tizen.account.remove(account.id);
@@ -229,7 +230,11 @@ Learning how to manage extended data for an account enables you to include accou
 
    - To get extended data:
 
-     - To retrieve extended data value for a specific key, use the `getExtendedData()` method:`var key = 'accessToken';var value = account.getExtendedData(key);`
+     - To retrieve extended data value for a specific key, use the `getExtendedData()` method:
+       ```
+       var key = 'accessToken';
+       var value = account.getExtendedData(key);
+       ```
 
      - To retrieve all extended data for an account, use the asynchronous version of the `getExtendedData()` method. The success callback contains an array of the extended data key-value pairs.
 

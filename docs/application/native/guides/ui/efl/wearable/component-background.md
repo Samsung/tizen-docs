@@ -30,7 +30,9 @@ To use a background component in your application:
      elm_bg_file_set(bg, "/path/to/the/edje", "group name");
      ```
 
-   - Set an image file as a background using the `elm_bg_file_set()` function.For an image background, you can set additional [options](#options).
+   - Set an image file as a background using the `elm_bg_file_set()` function.
+
+     For an image background, you can set additional [options](#options).
 
      ```
      elm_bg_file_set(bg, "/path/to/the/image", NULL);
@@ -90,7 +92,7 @@ The following modes are available:
 **Table: Background options**
 
 | `ELM_BG_OPTION_CENTER`                   | `ELM_BG_OPTION_SCALE`                    |
-|----------------------------------------|----------------------------------------|
+|------------------------------------------|------------------------------------------|
 | ![Center](./media/rect_bg_option_center.png) | ![Scale](./media/rect_bg_option_scale.png) |
 | `ELM_BG_OPTION_STRETCH`                  | `ELM_BG_OPTION_TILE`                     |
 | ![Stretch](./media/rect_bg_option_stretch.png) | ![Tile](./media/rect_bg_option_tile.png) |
@@ -102,10 +104,11 @@ The following table lists the available component styles.
 **Table: Background styles**
 
 | Style     | Swallow part                           | Description                              |
-|---------|--------------------------------------|----------------------------------------|
-| `default` | `elm.swallow.content``(alias:overlay)` | Default background style with an overlay swallow part on the top. |
+|-----------|----------------------------------------|------------------------------------------|
+| `default` | `elm.swallow.content`<br> `(alias:overlay)` | Default background style with an overlay swallow part on the top. |
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -199,7 +199,7 @@ To retrieve storage space information:
 
 The following table lists the supported virtual roots.
 
-**Table: Filesystem virtual roots**  
+**Table: Filesystem virtual roots**
 
 | Virtual root | Description                              |
 |--------------|------------------------------------------|
