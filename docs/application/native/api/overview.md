@@ -46,9 +46,9 @@ Figure:Privilege
 <ul>
 <li>Mobile
   <ul>
-    <li><a href="mobile/4.0/launch.md">4.0</a></li>
-    <li><a href="mobile/3.0/launch.md">3.0</a></li>
-    <li><a href="mobile/2.4/launch.md">2.4</a></li>
+    <li><a href="mobile-4.0">4.0</a></li>
+    <li><a href="mobile-3.0">3.0</a></li>
+    <li><a href="mobile-2.4">2.4</a></li>
     <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.mobile.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
     <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.mobile.apireference/index.html" target="api">2.3</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
   </ul>
@@ -56,9 +56,9 @@ Figure:Privilege
 
 <li>Wearable
   <ul>
-    <li><a href="wearable/4.0/launch.md">4.0</a></li>
-    <li><a href="wearable/3.0/launch.md">3.0</a></li>
-    <li><a href="wearable/2.3.2/launch.md">2.3.2</a></li>
+    <li><a href="wearable-4.0">4.0</a></li>
+    <li><a href="wearable-3.0">3.0</a></li>
+    <li><a href="wearable-2.3.2">2.3.2</a></li>
     <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.wearable.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen developer site(https://developer.tizen.org).</strong></li>
     <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.wearable.apireference/index.html" target="api">2.3</a><strong>  You can see 2.3 on Tizen developer site(https://developer.tizen.org).</strong></li>
   </ul>
