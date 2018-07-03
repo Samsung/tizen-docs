@@ -952,6 +952,18 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Media Controller Metadata</Name>
+              <Path>group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Media Controller Playlist</Name>
+              <Path>group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Media Controller Server</Name>
               <Path>group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html</Path>
               <Subnodes>

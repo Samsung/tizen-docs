@@ -365,6 +365,10 @@
 								<topic label="Package Manager Request" href="group__CAPI__PACKAGE__REQUEST__MODULE.html">
 								</topic>
 							</topic>
+							<topic label="RPC Port" href="group__CAPI__RPC__PORT__MODULE.html">
+								<topic label="RPC Port Parcel" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html">
+								</topic>
+							</topic>
 							<topic label="Service Application" href="group__CAPI__SERVICE__APP__MODULE.html">
 							</topic>
 							<topic label="Shortcut" href="group__SHORTCUT__MODULE.html">
@@ -613,6 +617,10 @@
 							</topic>
 							<topic label="Media Controller" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html">
 								<topic label="Media Controller Client" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html">
+								</topic>
+								<topic label="Media Controller Metadata" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html">
+								</topic>
+								<topic label="Media Controller Playlist" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html">
 								</topic>
 								<topic label="Media Controller Server" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html">
 								</topic>
@@ -1832,6 +1840,8 @@
 							</topic>
 							<topic label="Voice control elementary" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html">
 							</topic>
+							<topic label="Voice control engine" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html">
+							</topic>
 						</topic>
 						<topic label="Web" href="group__CAPI__WEB__FRAMEWORK.html">
 							<topic label="Json-Glib" href="group__OPENSRC__JSONGLIB__FRAMEWORK.html">
@@ -2153,6 +2163,10 @@
 								<topic label="Package Manager Request" href="group__CAPI__PACKAGE__REQUEST__MODULE.html">
 								</topic>
 							</topic>
+							<topic label="RPC Port" href="group__CAPI__RPC__PORT__MODULE.html">
+								<topic label="RPC Port Parcel" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html">
+								</topic>
+							</topic>
 							<topic label="Service Application" href="group__CAPI__SERVICE__APP__MODULE.html">
 							</topic>
 							<topic label="Watch Application" href="group__CAPI__WATCH__APP__MODULE.html">
@@ -2393,6 +2407,10 @@
 							</topic>
 							<topic label="Media Controller" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html">
 								<topic label="Media Controller Client" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html">
+								</topic>
+								<topic label="Media Controller Metadata" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html">
+								</topic>
+								<topic label="Media Controller Playlist" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html">
 								</topic>
 								<topic label="Media Controller Server" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html">
 								</topic>
@@ -3557,6 +3575,8 @@
 								</topic>
 							</topic>
 							<topic label="Voice control elementary" href="group__VOICE__CONTROL__ELEMENTARY__MODULE.html">
+							</topic>
+							<topic label="Voice control engine" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html">
 							</topic>
 						</topic>
 						<topic label="Web" href="group__CAPI__WEB__FRAMEWORK.html">
