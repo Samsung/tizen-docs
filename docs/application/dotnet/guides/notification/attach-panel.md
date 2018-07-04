@@ -68,6 +68,8 @@ To enable your application to use the attach panel functionality:
        <privilege>http://tizen.org/privilege/mediastorage</privilege>
        <!--To add the camera UI gadget in the attach panel-->
        <privilege>http://tizen.org/privilege/camera</privilege>
+       <!--To add the camera UI gadget in the attach panel-->
+       <privilege>http://tizen.org/privilege/telephony</privilege>
        <!--To add the voice recorder UI gadget in the attach panel-->
        <privilege>http://tizen.org/privilege/recorder</privilege>
        <!--To launch apps from the More tab-->
