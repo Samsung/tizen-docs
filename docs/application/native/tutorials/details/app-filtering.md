@@ -167,6 +167,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
 | `http://tizen.org/feature/email`         | Specify this key, if the application requires the email feature. | 3.0   |
+| `http://tizen.org/feature/feedback.vibration` | Specify this key, if the application requires the vibration feedback feature. | 5.0   |
 | `http://tizen.org/feature/fido.uaf`      | Specify this key, if the application requires the FIDO (Fast Identity Online) UAF (Universal Authentication Framework) client API. | 3.0   |
 | `http://tizen.org/feature/fmradio`       | Specify this key, if the application requires an FM radio. | 2.2.1 |
 | `http://tizen.org/feature/graphics.acceleration` | Specify this key, if the application requires hardware acceleration for both 2D and 3D graphics. | 2.2.1 |
@@ -331,6 +332,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
+| `http://tizen.org/feature/feedback.vibration` | Specify this key, if the application requires the vibration feedback feature. | 5.0   |
 | `http://tizen.org/feature/fido.uaf`      | Specify this key, if the application requires the FIDO (Fast Identity Online) UAF (Universal Authentication Framework) client API. | 3.0   |
 | `http://tizen.org/feature/fmradio`       | Specify this key, if the application requires an FM radio. | 2.2.1 |
 | `http://tizen.org/feature/graphics.acceleration` | Specify this key, if the application requires hardware acceleration for both 2D and 3D graphics. | 2.2.1 |

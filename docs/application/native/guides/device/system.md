@@ -36,7 +36,7 @@ To obtain the information, query a feature or system key.
 | [Download](#download)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Vision](#vision)                |
 | [FIDO](#fido)                      | [Media](#media)                | [Screen](#screen)                | [Web](#web)                      |
 | [System keys](#system)             |                                |                                  |                                  |
-| [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | -                                |
+| [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | [Vibration](#vibration)          |
 | [Manufacturer](#manufacturer)      | [Platform](#platformsys)       | [TizenID](#tizenid)              | -                                |
 
 > **Note**  
@@ -196,6 +196,15 @@ The following table lists the download feature keys.
 | `http://tizen.org/feature/download` | `bool` | The platform returns `true` for this key, if the device supports the Download API. |
 
 The following table lists the FIDO feature keys.
+
+<a name="vibration"></a>
+**Table: Vibration feedback feature keys**  
+
+| Key                                 | Type   | Description                              |
+|-------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/feedback.vibration` | `bool` | The platform returns `true` for this key, if the device supports the Vibration feedback API. |
+
+The following table lists the vibration feedback feature keys.
 
 <a name="fido"></a>
 **Table: FIDO feature keys**  
