@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Stream Information</div>  </div>
 <div class="ingroups"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html">Player</a></div></div><!--header-->
@@ -122,7 +123,46 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the album art in the media resource.  <a href="#ga20f2defad1bcda566ed60b1162fea4de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga14061edd38d3dfbecaaa146e2a9d95a7">player_get_duration</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int *duration)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total running time of the associated media.  <a href="#ga14061edd38d3dfbecaaa146e2a9d95a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gaeaba41bdfad5269790e9ab17648cddd3">player_set_video_stream_changed_cb</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gae3781dd0f53b7e94e7440097739ad622">player_video_stream_changed_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be invoked when video stream is changed.  <a href="#gaeaba41bdfad5269790e9ab17648cddd3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga37cb553fe5044b2ab635809d27ae5922">player_unset_video_stream_changed_cb</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the video stream changed callback function.  <a href="#ga37cb553fe5044b2ab635809d27ae5922"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gae3781dd0f53b7e94e7440097739ad622">player_video_stream_changed_cb</a> )(int width, int height, int fps, int bit_rate, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to notify the video stream changed.  <a href="#gae3781dd0f53b7e94e7440097739ad622"></a><br/></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="gae3781dd0f53b7e94e7440097739ad622"></a><!-- doxytag: member="player.h::player_video_stream_changed_cb" ref="gae3781dd0f53b7e94e7440097739ad622" args=")(int width, int height, int fps, int bit_rate, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gae3781dd0f53b7e94e7440097739ad622">player_video_stream_changed_cb</a>)(int width, int height, int fps, int bit_rate, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called to notify the video stream changed. </p>
+<p>The video stream changing is detected just before rendering operation. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>The width of the captured image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>The height of the captured image </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fps</td><td>The frame per second of the video <br/>
+ It can be <code>0</code> if there is no video stream information. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit_rate</td><td>The video bit rate [Hz] <br/>
+ It can be an invalid value if there is no video stream information. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gaeaba41bdfad5269790e9ab17648cddd3" title="Sets a callback function to be invoked when video stream is changed.">player_set_video_stream_changed_cb()</a> </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="ga2d25f300270965c3ea302b7a7e845f12"></a><!-- doxytag: member="player.h::player_content_info_e" ref="ga2d25f300270965c3ea302b7a7e845f12" args="" -->
 <div class="memitem">
@@ -196,7 +236,7 @@ Functions</h2></td></tr>
 
 <p>Gets the album art in the media resource. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must not release <em>album_art</em>. It will be released by framework when the player is destroyed. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must not release <em>album_art</em>. The <em>album_art</em> is managed by the platform and will be released when the player is unprepared or destroyed by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga93c2c8ac38f639649f318f5e0b57663b" title="Resets the media player.">player_unprepare()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7294e92f021738f1544c38ce64cf7df6" title="Destroys the media player handle and releases all its resources.">player_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
@@ -572,6 +612,105 @@ The playback type should be local playback or HTTP streaming playback. </dd></dl
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaeaba41bdfad5269790e9ab17648cddd3"></a><!-- doxytag: member="player.h::player_set_video_stream_changed_cb" ref="gaeaba41bdfad5269790e9ab17648cddd3" args="(player_h player, player_video_stream_changed_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gaeaba41bdfad5269790e9ab17648cddd3">player_set_video_stream_changed_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gae3781dd0f53b7e94e7440097739ad622">player_video_stream_changed_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a callback function to be invoked when video stream is changed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The stream changing is detected just before rendering operation. </dd>
+<dd>
+The callback is called in a separate thread (not in the main loop). </dd>
+<dd>
+This function must be called before calling the <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga89584f75ceabc7fbb3499105b779d644" title="Prepares the media player for playback, asynchronously.">player_prepare_async()</a> to reflect the requirement when the player is building. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The stream changed callback function to register </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be set to <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a> by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gadf887679f1f25035ce811e8b2274a74b" title="Creates a player handle for playing multimedia content.">player_create()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga93c2c8ac38f639649f318f5e0b57663b" title="Resets the media player.">player_unprepare()</a>. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gae3781dd0f53b7e94e7440097739ad622" title="Called to notify the video stream changed.">player_video_stream_changed_cb()</a> will be invoked. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga37cb553fe5044b2ab635809d27ae5922" title="Unsets the video stream changed callback function.">player_unset_video_stream_changed_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gae3781dd0f53b7e94e7440097739ad622" title="Called to notify the video stream changed.">player_video_stream_changed_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga37cb553fe5044b2ab635809d27ae5922"></a><!-- doxytag: member="player.h::player_unset_video_stream_changed_cb" ref="ga37cb553fe5044b2ab635809d27ae5922" args="(player_h player)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga37cb553fe5044b2ab635809d27ae5922">player_unset_video_stream_changed_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets the video stream changed callback function. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gaeaba41bdfad5269790e9ab17648cddd3" title="Sets a callback function to be invoked when video stream is changed.">player_set_video_stream_changed_cb()</a> </dd></dl>
 
 </div>
 </div>

@@ -5,7 +5,7 @@ A button is a NUI control that you can press in order to operate it. You can cre
 A button can be selectable, disabled, and togglable. These states can be set with the `Toggable` and `Selected` properties of the `Tizen.NUI.UIComponents.Button` class and the `Disabled` property of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class.
 
 <a name="creation"></a>
-## Creating buttons
+## Creating Buttons
 
 To create various button controls:
 

@@ -88,8 +88,8 @@ You can build various sliders by combining styles and options:
 
   **Table: Slider indicator**
 
-| `EINA_TRUE`                              | `EINA_FALSE`                             |
-  |----------------------------------------|----------------------------------------|
+  | `EINA_TRUE`                              | `EINA_FALSE`                             |
+  |------------------------------------------|------------------------------------------|
   | ![Slider indicator](./media/mobile_slider_various_1_T.png) | ![Slider indicator](./media/mobile_slider_various_1_F.png) |
 
   ```
@@ -121,8 +121,8 @@ You can build various sliders by combining styles and options:
 
   **Table: Slider orientation**
 
-| `EINA_TRUE`                              | `EINA_FALSE`                             |
-  |----------------------------------------|----------------------------------------|
+  | `EINA_TRUE`                              | `EINA_FALSE`                             |
+  |------------------------------------------|------------------------------------------|
   | ![Slider orientation](./media/mobile_slider_various_2_T.png) | ![Slider orientation](./media/mobile_slider_various_2_F.png) |
 
   ```
@@ -149,8 +149,8 @@ You can build various sliders by combining styles and options:
 
   **Table: Inverted slider**
 
-| `EINA_TRUE`                              | `EINA_FALSE`                             |
-  |----------------------------------------|----------------------------------------|
+  | `EINA_TRUE`                              | `EINA_FALSE`                             |
+  |------------------------------------------|------------------------------------------|
   | ![Inverted slider](./media/mobile_slider_various_3_T.png) | ![Inverted slider](./media/mobile_slider_various_3_F.png) |
 
 ```
@@ -175,7 +175,7 @@ The following table lists the available component styles.
 **Table: Slider styles**
 
 | Style          | Horizontal                               | Vertical                                 |
-|-------------|----------------------------------------|----------------------------------------|
+|----------------|------------------------------------------|------------------------------------------|
 | `default`      | ![elm/slider/horizontal/default](./media/slider_hor.png) | ![elm/slider/vertical/default](./media/slider_ver.png) |
 | `center_point` | ![elm/slider/horizontal/center_point](./media/slider_hor_center.png) | ![elm/slider/vertical/center_point](./media/slider_ver_center.png) |
 | `warning`      | ![elm/slider/horizontal/warning](./media/slider_hor_warning.png) | ![elm/slider/vertical/warning](./media/slider_ver_warning.png) |
@@ -193,10 +193,12 @@ You can register callback functions connected to the following signals for a sli
 | `slider,drag,start` | Dragging the slider indicator around has started. | `NULL`       |
 | `slider,drag,stop`  | Dragging the slider indicator around has stopped. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

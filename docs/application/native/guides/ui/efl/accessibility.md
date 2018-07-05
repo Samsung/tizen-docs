@@ -41,6 +41,6 @@ Adding accessibility features in your application brings various benefits:
   Some organizations can be required by law or internal policies to make their products accessible. One of the examples  is Section 508 of the Rehabilitation Act of 1973 which obliges federal agencies in the United States to make their electronic and information technology accessible to disabled users.
 
 ## Related Information
-- Dependencies  
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable

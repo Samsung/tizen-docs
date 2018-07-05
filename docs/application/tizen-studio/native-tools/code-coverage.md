@@ -7,11 +7,18 @@ The Code Coverage tool is based on the llvm-cov tool. With it, you can detect pa
 ## Using Code Coverage
 
 > **Note**  
-> Before you run the Code Coverage:Make sure that you have an emulator or a connected target device running.If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating Your First Tizen Mobile Native Application](../../native/getting-started/mobile/first-app.md).
+> Before you run the Code Coverage:
+>
+> - Make sure that you have an emulator or a connected target device running.
+> - If you want to try out the tool and do not have an applicable project to test, create a test project with the Project Wizard using a template or sample. For more information on creating a project, see [Creating Your First Tizen Mobile Native Application](../../native/getting-started/mobile/first-app.md).
 
 To use the Code Coverage tool:
+ 
+1. In the **Project Explorer** view, right-click the project and select **Profile As > Profile for Code Coverage**.
 
-1. In the **Project Explorer** view, right-click the project and select **Profile As > Profile for Code Coverage**.The profiling instruments the code and compiles the project for Code Coverage. Finally, it launches the application on the connected target or emulator.![Profiling the application](./media/code_coverage_profile.png)
+   The profiling instruments the code and compiles the project for Code Coverage. Finally, it launches the application on the connected target or emulator.
+
+   ![Profiling the application](./media/code_coverage_profile.png)
 
 2. After the application is launched, run the application scenario you want to test.
 
@@ -21,7 +28,16 @@ To use the Code Coverage tool:
 
    ![Stop/Cancel Operation button](./media/code_coverage_end.png)
 
-4. The Tizen Studio shows the code coverage information in the editor after the application has closed. A **Code Coverage** view also opens to give a summary of the code coverage percentage for each file.The code covered during the scenario has a green highlight and the uncovered code has a red highlight.![Code Coverage result](./media/code_coverage_result.png)Each row of the **Code Coverage** view can be expanded to show the function level coverage information.![Code Coverage result on a function level](./media/code_coverage_result2.png)
+4. The Tizen Studio shows the code coverage information in the editor after the application has closed. A **Code Coverage** view also opens to give a summary of the code coverage percentage for each file.
+
+   The code covered during the scenario has a green highlight and the uncovered code has a red highlight.
+
+   ![Code Coverage result](./media/code_coverage_result.png)
+
+   Each row of the **Code Coverage** view can be expanded to show the function level coverage information.
+
+   ![Code Coverage result on a function level](./media/code_coverage_result2.png)
+
 
 ## Related Information
 * Dependencies

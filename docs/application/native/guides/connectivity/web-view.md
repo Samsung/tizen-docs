@@ -8,15 +8,20 @@ The WebView API implements the EFL WebKit (EWK), which covers various features f
 Use the Web features to create a simple Web browser:
 
 1. [Create a window object](#window), and [set the window layout and view](#layout).
-Later, you can use various helper functions to [find the created window](#helper).
-2. [Show the window and set the focus](#show).You can [handle key and mouse events](#keymouse) in the window.
+
+   Later, you can use various helper functions to [find the created window](#helper).
+
+2. [Show the window and set the focus](#show).
+
+   You can [handle key and mouse events](#keymouse) in the window.
+
 3. When no longer needed, [terminate the window](#finalize).
 
 ## Prerequisites
 
 To enable your application to use the Web view functionality:
 
-1. To use the Web API (in [mobile](../../api/mobile/latest/group__CAPI__WEB__FRAMEWORK.html) and [wearable](../../api/Wearable/latest/group__CAPI__WEB__FRAMEWORK.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the Web API (in [mobile](../../api/mobile/latest/group__CAPI__WEB__FRAMEWORK.html) and [wearable](../../api/wearable/latest/group__CAPI__WEB__FRAMEWORK.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -145,8 +150,14 @@ Create the layout for the browser window. The layout contains 2 boxes:
 1. Create new boxes:
 
    1. Add the boxes using the `elm_box_add()` function.
-   2. Set the hints for the object weight using the `evas_object_size_hint_weight_set()` function.The `EVAS_HINT_EXPAND` and `EVAS_HINT_FILL` are macro definitions for the values 1.0 and -1.0.
-   3. Add the `vertical_layout` box as a resize subobject of the window using the `elm_win_resize_object_add()` function.The resize subobject size and position are controlled by the window directly.
+   2. Set the hints for the object weight using the `evas_object_size_hint_weight_set()` function.
+
+      The `EVAS_HINT_EXPAND` and `EVAS_HINT_FILL` are macro definitions for the values 1.0 and -1.0.
+
+   3. Add the `vertical_layout` box as a resize subobject of the window using the `elm_win_resize_object_add()` function.
+
+      The resize subobject size and position are controlled by the window directly.
+
    4. Add a subobject at the end of the pack list using the `elm_box_pack_end()` function.
    5. Make the object visible using the `evas_object_show()` function.
 

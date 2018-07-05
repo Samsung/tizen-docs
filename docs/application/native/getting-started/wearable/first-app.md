@@ -8,7 +8,7 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2.  [Create a wearable native project](#create) using the Tizen Studio.
 
@@ -103,7 +103,8 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_wn.png)
 
-> **Note**  
+> **Note**
+>
 > You can [view and modify the application configuration](#configuration) in the manifest editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
@@ -131,7 +132,9 @@ To view and modify the application configuration:
 
     -   **Source**: View and edit the source code of the `tizen-manifest.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-        > **Note**  
+        > **Note**
+        >
+
 		> The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3.  To save any changes, in the Tizen Studio menu, select **File &gt; Save All**.
@@ -274,7 +277,8 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_wn.png)
 
-        > **Note**  
+        > **Note**
+        >
 		> If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
         While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window &gt; Show View &gt; Log**.
@@ -350,9 +354,10 @@ To run the application on a target device:
 
         ![Selecting the device to use](media/app_run_multiple_emulators.png)
 
-    c.  Confirm that the application launches on the target device.
+    3.  Confirm that the application launches on the target device.
 
-    > **Note**  
+    > **Note**
+    >
 	> The application is launched using the default debug run configuration. To create and use another configuration:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.

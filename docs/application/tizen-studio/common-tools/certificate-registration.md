@@ -43,6 +43,7 @@ You can create a new certificate profile with the Certificate Manager:
 
    3. Click **Finish**.
 
+
 ## Managing Certificate Profiles
 
 You can view, edit, and remove the certificate profiles you have created.
@@ -74,6 +75,24 @@ To manage a certificate profile:
   **Figure: Removing the certificate profile or setting it active**
 
   ![Removing the certificate profile](./media/cert_reg_remove_cert.png)
+
+
+## Migrating Certificate Profiles
+
+You can migrate existing certificate profiles by importing a `profiles.xml` file.
+
+To migrate a certificate profile:
+
+1. Click the migrate button (![Migrate](media/cert_reg_migrate.png)) in the Certificate Manager.
+
+2. Select the profile file you want to import and click **OK**.
+
+   ![Migrating certificate profiles](media/cert_reg_migrate_cert.png)
+
+3. If the certificate profile being imported has the same name as one already in use, you can select 1 of 3 ways of resolving the situation: overwrite the existing profile with the imported one, preserve the existing profile, or keep both profiles. Select the option you want and click **OK**.
+
+   ![Migrating certificate profiles](media/cert_reg_migrate_duplicate.png)
+
 
 ## Related Informatioin
 - Dependencies  

@@ -24,8 +24,8 @@ Learning how to manage the session history enhances the user browsing experience
    </script>
    ```
 
-	> **Note**
-	> The `pushState()` method accepts the `data`, `title`, and `url` (optional) parameters. The `title` parameter refers to the key value used to search for entries saved in the session history, and is currently ignored in all browsers.
+   > **Note**  
+   > The `pushState()` method accepts the `data`, `title`, and `url` (optional) parameters. The `title` parameter refers to the key value used to search for entries saved in the session history, and is currently ignored in all browsers.
 
 2. To update the entry details, use the `replaceState()` method:
 
@@ -39,7 +39,7 @@ Learning how to manage the session history enhances the user browsing experience
 
 3. To use the session history information:
 
-   a. Implement a page with the **Prev** and **Next** buttons:
+   1. Implement a page with the **Prev** and **Next** buttons:
 
       ```
       <nav class="paging">
@@ -51,7 +51,7 @@ Learning how to manage the session history enhances the user browsing experience
       <a href="http://tizen.org/">Tizen.org</a>
       ```
 
-   b. When the user clicks the buttons, the current index value (representing page numbers) is changed and stored in the `state` object (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#state-object), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) of the `history` interface:
+   2. When the user clicks the buttons, the current index value (representing page numbers) is changed and stored in the `state` object (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#state-object), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#state-object) applications) of the `history` interface:
 
       ```
       var currentIndex = 0;
@@ -75,7 +75,7 @@ Learning how to manage the session history enhances the user browsing experience
       };
       ```
 
-   c. If the `state` object has data in it, use the `replaceState()` method to change the previously stored information. Otherwise, add new info with the `pushState()` method.
+   3. If the `state` object has data in it, use the `replaceState()` method to change the previously stored information. Otherwise, add new info with the `pushState()` method.
 
       ```
       function setState(currentIndex) {
@@ -99,6 +99,8 @@ For the complete source code related to this use case, see the following file:
 Learning how to track session history changes enhances the user browsing experience in your application:
 
 1. A page with data stored in the session history fires a `popstate` event (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate), [wearable](http://www.w3.org/TR/2014/CR-html5-20140429/browsers.html#event-popstate), and [TV](http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#event-popstate) applications) when the page is loaded (for example, because it is refreshed or moved to from the previous page).
+
+   Register the event listener:
 
    ```
    window.addEventListener('popstate', foo, false);

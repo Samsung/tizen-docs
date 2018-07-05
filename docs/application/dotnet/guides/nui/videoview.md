@@ -2,14 +2,14 @@
 
 The `VideoView` class is a control for video playback and display. It provides minimum functions for playback (play, pause, stop, forward, and backward). Some options, such as volume, can be controlled through the control properties.
 
- > **Note**
+ > **Note**  
  > You must install a video plugin to enable `VideoView`.
 
 **Figure: VideoView**
 
 ![VideoView](./media/dali_videoview.png)
 
- > **Note**
+ > **Note**  
  > The VideoView control does not use any privileges APIs on its own. However, if you use video files in a specific device storage, the application requires privileges to access the storage.
 
 In this tutorial, the following subjects are covered:

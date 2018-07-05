@@ -27,12 +27,9 @@
 			<p><img alt="" height="360" src="media/w3securerepository.png" width="360" /></p>
 			</td>
 			<td>
-			<p><strong>SecureRepository</strong></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SecureRepository" target="_blank"><strong>SecureRepository</strong></a></p>
 			<p>SecureRepository is simple application that allows you to securely store data, certificates and cryptographic keys using C# Tizen.Security.SecureRepository API.</p>
-			<p>Comming soon</p>
 			</td>
-		</tr>
-		<tr>
 		</tr>
 	</tbody>
 </table>
@@ -85,9 +82,8 @@
 			<p><img alt="" height="225" src="media/tv5textsample.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>Text Sample</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextSample" target="_blank"><strong>Text Sample</strong></a></p>
 			<p>This sample application demonstrates each of the text controls and a few common text entry scenarios.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -104,9 +100,8 @@
 			<p><img alt="" height="225" src="media/tv7flexcontainersample.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>FlexContainer Sample</strong></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/FlexContainerSample" target="_blank"><strong>FlexContainer Sample</strong></a></p>
 			<p>The FlexContainer sample application demonstrates how to use FlexContainer and shows results of applied properties.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -126,18 +121,8 @@
 			<p><img alt="" height="225" src="media/tv9visualsample.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>Visual Sample</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/VisualSample" target="_blank"><strong>Visual Sample</strong></a></p>
 			<p>This sample application demonstrates many kinds of visuals.</p>
-			<p>Comming soon</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv10firstscreen.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/FirstScreen" target="_blank"><strong>First Screen</strong></a></p>
-			<p>This sample application demonstrates the first screen on TV.</p>
 			</td>
 		</tr>
 		<tr>
@@ -155,9 +140,8 @@
 			<p><img alt="" height="225" src="media/tv12securerepository.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>SecureRepository</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/SecureRepository" target="_blank"><strong>SecureRepository</strong></a></p>
 			<p>SecureRepository is simple application that allows you to securely store data, certificates and cryptographic keys using C# <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.html" target="_blank">Tizen SecureRepository API</a>.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -174,9 +158,8 @@
 			<p><img alt="" height="225" src="media/tv14textreader.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>TextReader</strong></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextReader" target="_blank"><strong>TextReader</strong></a></p>
 			<p>Text Reader is a sample application which demonstrates how to synthesize voice from text using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.html">Tizen TTS API</a>.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -203,9 +186,8 @@
 			<p><img alt="" height="225" src="media/tv18appinfo.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>AppInfo</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>AppInfo</strong></a></p>
 			<p>AppInfo is a sample application that demonstrates how to obtain information about installed applications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen Applications API</a>.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -213,9 +195,8 @@
 			<p><img alt="" height="225" src="media/tv19basiccalculator.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>BasicCalculator</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/BasicCalculator" target="_blank"><strong>BasicCalculator</strong></a></p>
 			<p>BasicCalculator is a sample application which demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -242,12 +223,37 @@
 			<p><img alt="" height="225" src="media/tv22mediacontent.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>MediaContent</strong></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaContent" target="_blank"><strong>MediaContent</strong></a></p>
 			<p>MediaContent is a sample application that demonstrates how to obtain and filter media content information from internal and external storages using Media Content API.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv22ChannelList.png" width="400" /></p>
+			</td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/ChannelList" target="_blank"><strong>ChannelList</strong></a></p>
+			<p>ChannelList is a sample application that demonstrates how to obtain and filter TV channel information.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv23mediahubsample.png" width="400" /></p>
+			</td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaHubSample" target="_blank"><strong>MediaHubSample</strong></a></p>
+			<p>MediaHubSample is a sample application that demonstrates how to obtain and filter media content information from internal storages.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv24firstscreen.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>FirstScreen</strong></p>
+                        <p>FirstScreen is a sample application that demonstrates how to launch the apps on the TV.</p>
+			<p>Comming soon</p>
+			</td>
 		</tr>
 	</tbody>
 </table>
@@ -461,9 +467,8 @@
 		<tr>
 			<td><img alt="" height="267" src="media/m29textreader.png" width="150" /></td>
 			<td>
-			<p><strong>TextReader</strong></p>
+            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/TextReader" target="_blank"><strong>TextReader</strong></a></p>
 			<p>Text Reader is a sample application which demonstrates how to synthesize voice from text using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.html" target="_blank">Tizen TTS API</a>.</p>
-			<p>Comming soon</p>
 			</td>
 		</tr>
 		<tr>
@@ -640,6 +645,37 @@
 			<td>
 			<p><strong>ImageUtilSample</strong></p>
 			<p>ImageUtilSample is a sample application that demonstrates how to transform an image using Multimedia API.</p>
+			<p>Comming soon</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m53feedback.png" width="150" /></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/FeedbackApp" target="_blank"><strong>FeedbackApp</strong></a></p>
+			<p>FeedbackApp is a sample application that demonstrates how to play feedback using Feedback API.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m54audioiosample.png" width="150" /></td>
+			<td>
+			<p><strong>AudioIOSample</strong></p>
+			<p>AudioIOSample is a sample application that demonstrates how to capture audio and play.</p>
+			<p>Comming soon</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m55recordersample.png" width="150" /></td>
+			<td>
+			<p><strong>RecorderSample</strong></p>
+			<p>RecorderSample is a sample application that demonstrates how to record audio and video.</p>
+			<p>Comming soon</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m56screenmirrioringsample.png" width="150" /></td>
+			<td>
+			<p><strong>ScreenMirroringSample</strong></p>
+			<p>ScreenMirroringSample is a sample application that demonstrates how to use 'SINK' function of Tizen mobile.</p>
 			<p>Comming soon</p>
 			</td>
 		</tr>

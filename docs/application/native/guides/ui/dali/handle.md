@@ -7,8 +7,13 @@ The `Dali::BaseHandle` class (in [mobile](../../../api/mobile/latest/classDali_1
 
 The handle/body pattern structure is beneficial for both DALi users and developers:
 
-- **Easier memory management**Each internal implementation class (body class) contains a single reference count object, which can be initialized with the static "New" functions in the DALi public API. This means that C++ new/delete operators do not have to be used in your code. (The internal body classes inherit from the `Dali::BaseObject` class, but you do not need to use this class directly.)
-- **Better encapsulation**The danger of API/ABI breaks is reduced, since the implementation of a class can be changed without modifying the public API, thus without recompiling code using the public API. This can also reduce the build time.
+- **Easier memory management**
+
+  Each internal implementation class (body class) contains a single reference count object, which can be initialized with the static "New" functions in the DALi public API. This means that C++ new/delete operators do not have to be used in your code. (The internal body classes inherit from the `Dali::BaseObject` class, but you do not need to use this class directly.)
+
+- **Better encapsulation**
+
+  The danger of API/ABI breaks is reduced, since the implementation of a class can be changed without modifying the public API, thus without recompiling code using the public API. This can also reduce the build time.
 
 The following examples show how to use the handles:
 

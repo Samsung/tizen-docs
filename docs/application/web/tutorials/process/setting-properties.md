@@ -35,7 +35,7 @@ The Web application configuration consists of application information, such as v
 
 **Figure: Setting the application configuration**
 
-![Setting the application configuration](./media/tizen_project_explorer_w.png) 
+![Setting the application configuration](./media/tizen_project_explorer_w.png)
 
 You can [edit the application properties using the form tabs of the Web application configuration editor](../../../tizen-studio/web-tools/config-editor.md#edit).
 
@@ -70,9 +70,9 @@ You can perform the following tasks using the **Overview** tab:
 
     **Table: Icon format and size**
 
-  | Format | Size [Xhigh (HD)]  |  
-  |------|-----------------|  
-  | 32-bit PNG with alpha | 117 x 117 pixels  |
+    | Format | Size [Xhigh (HD)]  |  
+    |------|-----------------|  
+    | 32-bit PNG with alpha | 117 x 117 pixels  |
 
 -   Define the application author, license, and description in the **Managing the Application** section:
     -   **Author** field represents the person or organization that created the Web application.
@@ -96,8 +96,7 @@ You can declare any device software or hardware features that your application r
 To enable filtering for your Web application:
 
 1.  In the **Features** tab, click **+**.
-2.  Select the needed features from the [predefined list of features
-    available for filtering](../details/app-filtering.md).
+2.  Select the needed features from the [predefined list of features available for filtering](../app-filtering.md).
 3.  Click **Finish**.
 4.  Upload and publish the application package on the Tizen Store.
 
@@ -117,7 +116,7 @@ To add a privilege:
 
 1.  In the **Privileges** tab, click **+**.
 2.  In the **Add privilege** window, select an option:
-    -   **Internal**: Select the needed privileges from the [predefined list of API privileges](../details/sec-privileges.md).
+    -   **Internal**: Select the needed privileges from the [predefined list of API privileges](../sec-privileges.md).
     -   **Privilege name**: Manually enter the URL containing a privilege definition.
     -   **File**: Click **Browse** and select a privilege file (with the `.xml` or `.widlprocxml` extension).
 
@@ -210,7 +209,7 @@ To add a localized name, description, or license:
     The following example shows the setting in the `config.xml` file code:  
     ```xml
     <license xml:lang="en-gb" href=" http://www.apache.org/licenses/LICENSE-2.0.html">
-Apache License, Version 2.0
+       Apache License, Version 2.0
     </license>
     ```
 
@@ -219,7 +218,7 @@ You can localize a Web application to adapt to various languages and cultural en
 <a name="preferences"></a>
 ### Declaring Name-value Pairs in the Preferences Tab
 
-You can declare name-value pairs which can be set and retrieved using the Widget Interface API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#widget), [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#widget), and [TV](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#widget) applications) in the **Preferences** tab of the Web application configuration editor. These name-value pairs, or preferences, are used by the Web application during execution.
+You can declare name-value pairs which can be set and retrieved using the Widget Interface API (in [mobile](../../api/latest/w3c_api/w3c_api_m.html#widget), [wearable](../../api/latest/w3c_api/w3c_api_w.html#widget), and [TV](../../api/latest/w3c_api/w3c_api_tv.html#widget) applications) in the **Preferences** tab of the Web application configuration editor. These name-value pairs, or preferences, are used by the Web application during execution.
 
 
 To add preferences, click **+**. A new row appears in the table. Enter values in the **Name** and **Value** columns. You can set a preference as read-only by setting the **Read-only** column value as **true**.
@@ -374,14 +373,16 @@ The following table describes the schema extension properties that you can edit.
 
   The **operation**, **uri**, and **mime** fields describe the functionalities that other applications can request and the **src** field describes the application page that handles the request.<br>
 
-  The following example shows the setting in the `config.xml` file code:<br><br>
+  The following example shows the setting in the `config.xml` file code:<br>
+```
+<tizen:app-control>
+   <tizen:src name="edit.html"/>
+   <tizen:operation name="http://tizen.org/appcontrol/operation/edit"/>
+   <tizen:uri name="file"/>
+   <tizen:mime name="image/jpeg"/>
+</tizen:app-control>
+```  
 
-`  <tizen:app-control>`<br>
-`     <tizen:src name="edit.html"/>` <br>
-`     <tizen:operation name="http://tizen.org/appcontrol/operation/edit"/>` <br>
-`     <tizen:uri name="file"/>` <br>
-`     <tizen:mime name="image/jpeg"/>` <br>
-`  </tizen:app-control>`
  </td>
 </tr>
 <tr>
@@ -481,13 +482,15 @@ The following table describes the schema extension properties that you can edit.
   **Meta Data**</td>
   <td>
 
-  Defines key-value pairs that can be accessed (read-only) through the Application API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) applications).
+  Defines key-value pairs that can be accessed (read-only) through the Application API (in [mobile](../../api/latest/device_api/mobile/tizen/application.html) and [wearable](../../api/latest/device_api/wearable/tizen/application.html) applications).<br>
   To add a key-value pair, click **+** in the **Meta Data** section, define a key (unique string) and value (string), and click **OK**. This attribute is optional.
 
   The following example shows the setting in the `config.xml` file code:
-<br><br>
-`  <tizen:metadata key="key1"/>`<br>
-`  <tizen:metadata key="key2" value="value"/>` <br>
+<br>
+```
+<tizen:metadata key="key1"/>
+<tizen:metadata key="key2" value="value"/>
+```
   </td>
 </tr>
 <tr>

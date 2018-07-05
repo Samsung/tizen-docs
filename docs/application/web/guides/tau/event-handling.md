@@ -14,11 +14,11 @@ The following figures show the hardware keys for mobile (on the left) and wearab
 
 ![Hardware keys](./media/hwkey_phone_wearable.png)
 
-** Table: Hardware key events**
+**Table: Hardware key events**
 
 | Type         | Description                              | Attribute                                |
 | ------------ | ---------------------------------------- | ---------------------------------------- |
-| `tizenhwkey` | Event is triggered when a device detects the user interaction through a special point of hardware. | `event.keyName`						`back` for wearable			`back` or `menu` for mobile |
+| `tizenhwkey` | Event is triggered when a device detects the user interaction through a special point of hardware. | `event.keyName`<br> - `back` for wearable<br> - `back` or `menu` for mobile |
 
 To bind an event callback on the `tizenhwkey` events, use the following code:
 
@@ -68,11 +68,11 @@ The Tizen platform supports rotary events for user interaction on a wearable rot
 
 Rotary events are used to deliver the rotary device or sensor data to the application. The following table describes the rotary events.
 
-** Table: Rotary events**
+**Table: Rotary events**
 
 | Type           | Description                              | Attribute                                |
 | -------------- | ---------------------------------------- | ---------------------------------------- |
-| `rotarydetent` | Event is triggered when a device detects the detent point. | `detail.direction`: rotation direction			`CW` for clockwise rotation direction			`CCW` for counter-clockwise rotation direction |
+| `rotarydetent` | Event is triggered when a device detects the detent point. | `detail.direction`: rotation direction<br> - `CW` for clockwise rotation direction<br> - `CCW` for counter-clockwise rotation direction |
 
 To bind an event callback on rotary events, use the following code:
 

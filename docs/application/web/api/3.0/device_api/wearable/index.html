@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link media="screen" href="./tizen/tizen.css" type="text/css" rel="stylesheet">
+        <title>Tizen Web Device API Reference</title>
+        <style>
+          table.api-list { width: 90%; margin-left: 2%; }
+          table.api-list tr > td:nth-child(1) { width: 13%; }
+          table.api-list tr > td:nth-child(3) { width: 3em; padding-left: 1em; }
+          table.api-list tr > td:nth-child(4) { width: 5em; }
+          table.api-list tr > td:nth-child(5) { width: 9em; text-align: center; }
+          table.api-list tr > td:nth-child(6) { width: 5em; }
+          table.api-list tr > td:nth-child(7) { width: 9em; text-align: center; }
+          table.api-list tr > td:nth-child(4) .optional { font-style: normal; }
+          table.api-list span.emulated, table.api-list span.partially-emulated { font-weight: bold }
+          /*.emulator-partial { background-color: #ffd0d0; }*/
+          table.api-list .partial-support { font-size: 75%; }
+          table.api-list span.mandatory::after { content: "*"; font-weight: normal; }
+        </style>
+    </head>
+    <body id="content">
+        <div id="title" class="api">
+
+            <h1>Tizen Wearable Web Device API Reference</h1>
+                    <div class="brief">
+                            <p>The Tizen Web Device API, based on JavaScript, provides you advanced access to the device's platform capabilities.</p>
+                            <p>You can develop rich Web applications using the Tizen Web Device APIs. You can, for example, control the application life-cycle, manage your schedules, exchange data, or make payments using NFC.</p>
+                            <p>The APIs listed in this category are created by the Tizen platform to expose device capabilities to Web Applications.</p>
+
+            <h4 id="Base">Base</h4>
+            <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead><tbody><tr><td><a href="tizen/archive.html" data-origin="tizen" data-domain="filesystem" data-category="core" data-status="D" data-version="">
+                        Archive</a></td>
+                <td>This API provides interfaces and methods to create an archive file as well as various other kinds of manipulation (e.g. extract files, add a file to an archive file).</td>
+                <td>2.3.1</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/filesystem.html" data-origin="tizen" data-domain="filesystem" data-category="core" data-status="D" data-version="">
+                        Filesystem</a></td>
+                <td>This API provides access to the file system of a device. This API might be obsolete in the future when W3C File APIs are extended to access system-sensitive files by Web applications. </td>
+                <td>1.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/tizen.html" data-origin="tizen" data-domain="system" data-category="core" data-status="S" data-version="">
+                        Tizen </a></td>
+                <td>The base object for accessing the Tizen Web Device API.</td>
+                <td>1.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr></tbody></table><h4 id="Application">Application Framework</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead><tbody><tr><td><a href="tizen/alarm.html" data-origin="tizen" data-domain="system" data-category="core" data-status="S" data-version="">
+                        Alarm</a></td>
+                <td>This API provides functionality for setting and unsetting alarms.</td>
+                <td>1.0</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/application.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Application</a></td>
+                <td>This API provides information about running and installed applications and controls them.</td>
+                <td>1.0</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/badge.html" data-origin="tizen" data-domain="ui" data-category="core" data-status="S" data-version="">
+                        Badge</a></td>
+                <td>This API provides a way to display the count of notifications (badge) on home screen.</td>
+                <td>2.3</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/datacontrol.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Data Control</a></td>
+                <td>This API provides interfaces and methods for accessing specific data exported by other applications. </td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/inputdevice.html" data-origin="tizen" data-domain="ui" data-category="core" data-status="D" data-version="">
+                        Input Device</a></td>
+                <td>This API provides interfaces and methods to manage input keys in application.</td>
+                <td>3.0</td>
+                <td>Optional</td>
+                <td>No</td>
+                </tr><tr><td><a href="tizen/messageport.html" data-origin="tizen" data-domain="filesystem" data-category="core" data-status="D" data-version="">
+                        Message Port</a></td>
+                <td>This API provides the functionality for communication with other applications. </td>
+                <td>2.1</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/notification.html" data-origin="tizen" data-domain="ui" data-category="core" data-status="D" data-version="">
+                        Notification</a></td>
+                <td>This API provides a way to notify the user of events that happen in the application.</td>
+                <td>2.3.1</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/package.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Package</a></td>
+                <td>This API provides functionality to install/uninstall package and get information about installed packages.</td>
+                <td>2.1</td>
+
+                </tr><tr><td><a href="tizen/preference.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Preference</a></td>
+                <td>This API provides the functionality to store and retrieve small pieces of data which can be for application preferences.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/widgetservice.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        WidgetService</a></td>
+                <td>This API provides information of installed widgets.</td>
+                <td>3.0</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr></tbody></table><h4 id="Contents">Content</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead><tbody><tr><td><a href="tizen/content.html" data-origin="tizen" data-domain="content" data-category="core" data-status="D" data-version="">
+                        Content</a></td>
+                <td>This API provides functionality to discover multimedia content (such as images, videos or music).</td>
+                <td>2.0</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/download.html" data-origin="tizen" data-domain="content" data-category="core" data-status="D" data-version="">
+                        Download</a></td>
+                <td>This API provides interfaces and methods for downloading remote objects by HTTP request.</td>
+                <td>2.0</td>
+
+                <td>Optional</td>
+                <td>Yes</td>
+                </tr></tbody></table><h4 id="Messaging">Messaging</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead><tbody>
+                <tr><td><a href="tizen/push.html" data-origin="tizen" data-domain="push" data-category="core" data-status="D" data-version="">
+                        Push</a></td>
+                <td>This API provides the functionality for receiving push notifications. </td>
+                <td>2.3.1</td>
+
+                <td>Optional</td>
+                <td>Yes</td>
+                </tr></tbody></table><h4 id="Multimedia">Multimedia</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead><tbody>
+                <tr><td><a href="tizen/exif.html" data-origin="tizen" data-domain="content" data-category="core" data-status="D" data-version="">
+                        Exif</a></td>
+                <td>This API provides interfaces and methods for manipulating Exif data from JPEG file.</td>
+                <td>2.3.1</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/mediacontroller.html" data-origin="tizen" data-domain="media" data-category="core" data-status="S" data-version="">
+                        Media Controller</a></td>
+                <td>This API provides functions for communication between the media controller server and the media controller client. </td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/playerutil.html" data-origin="tizen" data-domain="media" data-category="core" data-status="S" data-version="">
+                        Player Util</a></td>
+                <td>This API provides functionality for managing W3C player latency. </td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/sound.html" data-origin="tizen" data-domain="media" data-category="core" data-status="S" data-version="">
+                        Sound</a></td>
+                <td>This API provides a way to control the volume level for several sound types and to check whether a specified sound device type is connected. </td>
+                <td>2.3</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr></tbody></table><h4 id="Network">Network</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead><tbody><tr><td><a href="tizen/bluetooth.html" data-origin="tizen" data-domain="networking" data-category="core" data-status="D" data-version="">
+                        Bluetooth</a></td>
+                <td>This API enables control over Bluetooth.</td>
+                <td>2.3.1</td>
+
+                <td>Optional</td>
+                <td>No</td>
+
+                </tr><tr><td><a href="tizen/iotcon.html" data-origin="tizen" data-domain="networking" data-category="core" data-status="D" data-version="">
+                        Iotcon</a></td>
+                <td>This API provides functions for IoT (Internet of Things) connectivity.</td>
+                <td>3.0</td>
+
+                <td>Optional</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/nfc.html" data-origin="tizen" data-domain="networking" data-category="core" data-status="D" data-version="">
+                        NFC</a></td>
+                <td>This API allows access to NFC device(s).</td>
+                <td>2.3.1</td>
+
+                <td>Optional</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/se.html" data-origin="tizen" data-domain="push" data-category="core" data-status="D" data-version="">
+                        Secure Element</a></td>
+                <td>This API provides interfaces and methods for access to Secure Elements. </td>
+                <td>2.3.1</td>
+
+                <td>Optional</td>
+                <td>No</td>
+
+                </tr></tbody></table><h4 id="Security">Security</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead><tbody><tr><td><a href="tizen/keymanager.html" data-origin="tizen" data-domain="pim" data-category="core" data-status="S" data-version="">
+                        Keymanager</a></td>
+                <td>This API provides interfaces and methods for a secure repository for storing, retrieving and removing the sensitive data of users and their applications </td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr></tbody></table><h4 id="System">System</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+               </thead><tbody>
+                <tr>
+                <td><a href="tizen/feedback.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Feedback</a></td>
+                    <td>This API provides  functions to play sound or vibration associated with action.</td>
+                    <td>3.0</td>
+                    <td>Optional</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                <td><a href="tizen/humanactivitymonitor.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Human Activity Monitor</a></td>
+                <td>This API provides interfaces and methods for retrieving human activity data from the various sensors on the device.</td>
+                <td>2.3</td>
+
+                <td>Optional</td>
+                <td>Yes<div class="partial-support">Only HRM</div></td>
+                </tr>
+                <tr><td><a href="tizen/mediakey.html" data-origin="tizen" data-domain="media" data-category="core" data-status="S" data-version="">
+                        Media Key</a></td>
+                <td>This API provides a way to get notified when a media key has been pressed or released.</td>
+                <td>2.3</td>
+
+                <td>Optional</td>
+                <td>No</td>
+                </tr><tr><td><a href="tizen/power.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Power</a></td>
+                <td>This API provides interfaces and methods for controlling power resources.</td>
+                <td>2.0</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/sensor.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        Sensor</a></td>
+                <td>This API provides interfaces and methods for getting sensor data from the various sensors on the device.</td>
+                <td>2.3</td>
+
+                <td>Optional</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/systeminfo.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        System Information</a></td>
+                <td>This API provides information about the device's display, network, storage and other capabilities.</td>
+                <td>1.0</td>
+
+                <td>Mandatory</td>
+                <td>Yes</td>
+                </tr><tr><td><a href="tizen/systemsetting.html" data-origin="tizen" data-domain="system" data-category="core" data-status="D" data-version="">
+                        System Setting</a></td>
+                <td>This API provides system setting functionality.</td>
+                <td>2.0</td>
+                <td>Mandatory</td>
+                <td>Yes<div class="partial-support">Only HOME_SCREEN, INCOMING_CALL</div></td>
+                </tr><tr><td><a href="tizen/time.html" data-origin="tizen" data-domain="system" data-category="core" data-status="S" data-version="">
+                        Time</a></td>
+                <td>This API exposes information about date, time and time zones.</td>
+                <td>1.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr></tbody></table><h4 id="Cordova">Cordova</h4>
+             <table class="api-list"><thead><tr><th>API</th><th>Description</th><th>Version (Since)</th><th>Mobile</th><th>Supported on<br>Mobile Emulator</th></tr>
+       </thead><tbody><tr><td><a href="tizen/cordova/console.html">
+                        Console</a></td>
+                <td>The Console module provides function to access the console.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/cordova.html">
+                        Cordova</a></td>
+                <td>This API provides common Cordova functionality.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/device.html">
+                        Device</a></td>
+                <td>This plugin defines a global device object, which describes the device's hardware and software.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/device-motion.html">
+                        Device Motion</a></td>
+                <td>This plugin provides access to the device's accelerometer.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/dialogs.html">
+                        Dialogs</a></td>
+                <td>This plugin provides the ability to make different types of notifications to the user.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/events.html">
+                        Events</a></td>
+                <td>This plugin provides information about events defined in cordova.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/file.html">
+                        File</a></td>
+                <td>This plugin implements a File API allowing read/write access to files residing on the device.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/filetransfer.html">
+                        File Transfer</a></td>
+                <td>This module allows you to upload and download files.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/globalization.html">
+                        Globalization</a></td>
+                <td>This plugin obtains information and performs operations specific to the user's locale, language, and timezone.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/media.html">
+                        Media</a></td>
+                <td>This plugin provides the ability to record and play back audio files on a device.</td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr><tr><td><a href="tizen/cordova/networkInformation.html">
+                        Network Information</a></td>
+                <td>This plugin provides information about the device's cellular and wifi connection, and whether the device has an internet connection. </td>
+                <td>3.0</td>
+                <td>Mandatory</td>
+                <td>Yes</td>
+
+                </tr></tbody></table><div id="footer">
+            <div class="copyright" align="center">
+ Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+
+        <!--start-->
+            <script type="text/javascript">
+            var _gaq = _gaq || [];
+           _gaq.push(['_setAccount', 'UA-25976949-1']);
+	        _gaq.push(['_trackPageview']);
+	 		  (function() {
+ 					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+     		</script><!--end--></div>
+
+    </div>
+    </div>
+  </body>
+</html>

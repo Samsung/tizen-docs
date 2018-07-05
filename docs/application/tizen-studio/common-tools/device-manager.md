@@ -9,7 +9,7 @@ The Device Manager provides a graphical user interface that is more convenient t
 To use the Device Manager with a specific device, you must connect the device over SDB (Smart Development Bridge). Physical devices can be connected with a USB cable, and emulators can be connected through the Emulator Manager. When the device is connected over SDB, it is automatically displayed in the Device Manager and its directory structure and logs are shown in the **File Explorer** and **Log** views, respectively.
 
 > **Note**  
-> If you do not have the Device Manager installed, open the [Package Manager](../setup/updating-sdk.md), go to the **Main SDK** tab, and locate the **Device Manager** under **Tizen SDK Tools > Baseline SDK**. To install the tool, click **Install**.
+> If you do not have the Device Manager installed, open the [Package Manager](../setup/update-sdk.md), go to the **Main SDK** tab, and locate the **Device Manager** under **Tizen SDK Tools > Baseline SDK**. To install the tool, click **Install**.
 
 <a name="access"></a>
 ## Accessing Device Manager
@@ -171,7 +171,8 @@ You can perform a variety of actions in the **Log** view:
 
     To export logs to a file, click the **Export Logs** button (![Export Logs](./media/device_manager_export_logs_icon.png)), select the file storage location and file name for the exported log, and click **OK**.
 
-    *Note** If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
+   > **Note**  
+   > If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
 
 <a name="settings"></a>
 ## Configuring Device Manager

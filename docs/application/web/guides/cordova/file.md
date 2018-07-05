@@ -8,7 +8,7 @@ The main features of the File API include:
 
 - Resolving the filesystem
 
-  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileSystem), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileSystem), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
+  A basic step necessary to perform other file actions is to [resolve a filesystem](#resolving-filesystem-entries), which results in a `FileSystem` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileSystem), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileSystem), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileSystem) applications) being retrieved. You can use the `root` member to perform other actions on this filesystem.
 
 - Operating on directories
 
@@ -40,7 +40,7 @@ To enable your application to use the file functionality:
    }
    ```
 
-2. To use the File API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+2. To use the File API (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
    ```
    <!--To read from files-->
@@ -73,9 +73,13 @@ To resolve the initial root for other filesystem operations:
       requestFileSystem(TEMPORARY, 1024*1024, successCallback, errorCallback);
       ```
 
-    The following output is shown in the system log:`File system name temporary`    
+    The following output is shown in the system log:
+    ```
+    File system name temporary
+    ```
 
-- Use the `resolveLocalFileSystemURL()` global async method.This method is used to retrieve a `DirectoryEntry` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#DirectoryEntry), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#DirectoryEntry), or [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileEntry), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileEntry), or [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
+- Use the `resolveLocalFileSystemURL()` global async method.  
+   This method is used to retrieve `DirectoryEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#DirectoryEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#DirectoryEntry), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#DirectoryEntry) applications) or `FileEntry` objects (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileEntry), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileEntry), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileEntry) applications) using a local URI.
 
     - Define the callbacks:
 
@@ -116,7 +120,8 @@ To create directories and files, delete directories, and read entries within dir
   });
   ```
 
-  If the third parameter is `{create:false}` or `NULL`, the entry of the existing directory is returned in the success callback.The following output is shown in the system log:
+  If the third parameter is `{create:false}` or `NULL`, the entry of the existing directory is returned in the success callback.  
+  The following output is shown in the system log:
 
   ```
   Created dir: ert
@@ -132,13 +137,14 @@ To create directories and files, delete directories, and read entries within dir
   });
   ```
 
-  Similarly as when creating a directory, if the third parameter is `{create:false}` or `NULL`, the entry of the existing file is returned in the success callback.The following output is shown in the system log:
+  Similarly as when creating a directory, if the third parameter is `{create:false}` or `NULL`, the entry of the existing file is returned in the success callback.  
+  The following output is shown in the system log:
 
   ```
   Created file: qa.txt
   ```
 
-- To delete a directory and all of its content, you can use the `removeRecursively()` method:
+- To delete a directory and its entire content, you can use the `removeRecursively()` method:
 
   ```
   requestFileSystem(TEMPORARY, 100, function(fs) {
@@ -250,19 +256,20 @@ To move, copy, and delete entries, or access entry metadata, parent information,
 
 - To look up the parent directory entry containing the current entry, you can use the `getParent()` method:
 
- ```
- requestFileSystem(TEMPORARY, 100, function(fs) {
-     fs.root.getParent(function(entry) {
-         console.log('success');
-     });
- });
- ```
+  ```
+  requestFileSystem(TEMPORARY, 100, function(fs) {
+      fs.root.getParent(function(entry) {
+          console.log('success');
+      });
+  });
+  ```
 
- If the entry is the root of its filesystem, its parent is itself.The following output is shown in the system log:
+  If the entry is the root of its filesystem, its parent is itself.  
+  The following output is shown in the system log:
 
- ```
- success
- ```
+  ```
+  success
+  ```
 
 - To delete a file or directory, you can use the `remove()` method:
 
@@ -276,8 +283,8 @@ To move, copy, and delete entries, or access entry metadata, parent information,
   });
   ```
 
-> **Note**  
-> You cannot delete a non-empty directory or the filesystem root directory.
+  > **Note**  
+  > You cannot delete a non-empty directory or the filesystem root directory.
 
   The following output is shown in the system log:
 
@@ -306,7 +313,7 @@ To move, copy, and delete entries, or access entry metadata, parent information,
 
 To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entries). To create a writer for a file and access file details:
 
-- To create a `FileWriter` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#FileWriter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#FileWriter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
+- To create a `FileWriter` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#FileWriter), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#FileWriter), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#FileWriter) applications), use the `createWriter()` method:
 
   ```
   var f; /* Must be a FileEntry object resolved using the methods presented before */
@@ -315,13 +322,13 @@ To create files, see [Resolving Filesystem Entries](#resolving-filesystem-entrie
   });
   ```
 
-- The following output is shown in the system log:
+  The following output is shown in the system log:
 
   ```
   created fileWriter object for testFile.txt
   ```
 
-- To access a `File` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/file.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/file.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file.
+- To access a `File` object (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/file.html#File), [wearable](../../api/latest/device_api/wearable/tizen/cordova/file.html#File), and [TV](../../api/latest/device_api/tv/tizen/cordova/file.html#File) applications), use the `file()` method. The object represents the current state of the file.
 
   ```
   var f; /* Must be a FileEntry object resolved using methods presented before */
@@ -484,7 +491,7 @@ To read and write file content:
   };
 
   /* Entry is a FileEntry object retrieved by getFile() of the DirectoryEntry interface */
-  entry.createWriter(successCallback, errorCallback);`
+  entry.createWriter(successCallback, errorCallback);
   ```
 
   The following output is shown in the system log:

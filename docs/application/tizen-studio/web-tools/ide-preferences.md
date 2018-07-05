@@ -142,8 +142,9 @@ Go to **Tizen Studio > Web > Live Editing**.
 
 The following preview preference options are available:
 
-- **Enable live-editing as default when emulator is launched**: Check to enable live editing by default whenever running an application. You can select only 1 synchronization option, which is whether file content or editor content is shown in the application:
+- **Enable live-editing as default when emulator is launched**: Check to enable live editing by default whenever running an application. 
 
+  You can select only 1 synchronization option, which is whether file content or editor content is shown in the application:
   - Select **None** to perform no synchronization.
   - Select **File** (default) to change the application when a file is saved.
   - Select **Editor** to change the application when the editor content changes. This means that your changes are reflected without saving the changes.

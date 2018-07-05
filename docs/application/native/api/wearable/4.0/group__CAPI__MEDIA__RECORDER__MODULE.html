@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -115,20 +115,20 @@ State Transitions</h3>
 <th><b>FUNCTION</b> </th><th><b>PRE-STATE</b> </th><th><b>POST-STATE</b> </th><th><b>SYNC TYPE</b>  </th></tr>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#ga94ca2f6d2ab515e674a0f995a530db5f" title="Creates a recorder handle to record a video.">recorder_create_videorecorder()</a><br/>
-<a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gaccea4ef4998d1f984a596b4464e4c26a" title="Creates a recorder handle to record an audio.">recorder_create_audiorecorder()</a>  </td><td>NONE  </td><td>CREATED  </td><td>ASYNC   </td></tr>
+<a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gaccea4ef4998d1f984a596b4464e4c26a" title="Creates a recorder handle to record an audio.">recorder_create_audiorecorder()</a>  </td><td>NONE  </td><td>CREATED  </td><td>SYNC   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#ga362768d033c4726cc121e1d58405558e" title="Destroys the recorder handle.">recorder_destroy()</a>  </td><td>CREATED  </td><td>NONE  </td><td>ASYNC   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#ga362768d033c4726cc121e1d58405558e" title="Destroys the recorder handle.">recorder_destroy()</a>  </td><td>CREATED  </td><td>NONE  </td><td>SYNC   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gaa4c5be75dcb5b7606d62b3f6817f4163" title="Prepares the media recorder for recording.">recorder_prepare()</a>  </td><td>CREATED  </td><td>READY </td><td>ASYNC   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gaa4c5be75dcb5b7606d62b3f6817f4163" title="Prepares the media recorder for recording.">recorder_prepare()</a>  </td><td>CREATED  </td><td>READY </td><td>SYNC   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#ga1e42fdef54bab61a6953b224448fc020" title="Resets the media recorder.">recorder_unprepare()</a>  </td><td>READY  </td><td>CREATED  </td><td>ASYNC   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#ga1e42fdef54bab61a6953b224448fc020" title="Resets the media recorder.">recorder_unprepare()</a>  </td><td>READY  </td><td>CREATED  </td><td>SYNC   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gae3133306cb469d2c8f8d8408047f67a4" title="Starts the recording.">recorder_start()</a>  </td><td>READY / PAUSED  </td><td>RECORDING  </td><td>ASYNC   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gae3133306cb469d2c8f8d8408047f67a4" title="Starts the recording.">recorder_start()</a>  </td><td>READY / PAUSED  </td><td>RECORDING  </td><td>SYNC   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#ga5bcd6e4fdb95adeef17cbc5cc8453195" title="Pauses the recording.">recorder_pause()</a>  </td><td>RECORDING  </td><td>PAUSED  </td><td>ASYNC   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#ga5bcd6e4fdb95adeef17cbc5cc8453195" title="Pauses the recording.">recorder_pause()</a>  </td><td>RECORDING  </td><td>PAUSED  </td><td>SYNC   </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gacdc1af9e179cfb272bb89a8c87d04891" title="Cancels the recording.">recorder_cancel()</a> <br/>
-<a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gaf5361505237ecb2e1c6a9d565bcaeb20" title="Stops recording and saves the result.">recorder_commit()</a>  </td><td>RECORDING / PAUSED  </td><td>READY  </td><td>ASYNC   </td></tr>
+<a class="el" href="group__CAPI__MEDIA__RECORDER__MODULE.html#gaf5361505237ecb2e1c6a9d565bcaeb20" title="Stops recording and saves the result.">recorder_commit()</a>  </td><td>RECORDING / PAUSED  </td><td>READY  </td><td>SYNC   </td></tr>
 </table>
 </div><h3><a class="anchor" id="CAPI_MEDIA_RECORDER_MODULE_LIFE_CYCLE_CALLBACK_OPERATIONS"></a>
 Callback(Event) Operations</h3>

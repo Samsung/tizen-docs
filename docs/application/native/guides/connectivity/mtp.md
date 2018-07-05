@@ -41,8 +41,11 @@ The MTP API can be used in other profiles, but it is most popular in the TV prof
 
 The internal implementation of the MTP references the [MTP specification](http://www.usb.org/developers/docs/devclass_docs/MTPv1_1.zip) and uses [LIBMTP](http://libmtp.sourceforge.net/).
 
-> **Note**  
-> Currently, the MTP API has the following limitations in Tizen 3.0:Only the PTP subset of the MTP is supported.The transportation layer is possible only through USB.
+> **Note**
+>
+> Currently, the MTP API has the following limitations in Tizen 3.0:
+> - Only the PTP subset of the MTP is supported.
+> - The transportation layer is possible only through USB.
 
 ## Prerequisites
 
@@ -285,8 +288,11 @@ manager_test_get_object_handles(void)
 }
 ```
 
-> **Note**  
-> Depending on how you use this API, the performance of the application varies greatly. Typically, MTP transfer through the USB layer is not fast. In addition, larger files on the MTP device take a longer time for the function to handle.Rather than getting the object handles inside the device all at once, consider gradually obtaining them through user input. (It is easier to understand the MTP device when it is plugged into the computer.)
+> **Note**
+>
+> Depending on how you use this API, the performance of the application varies greatly. Typically, MTP transfer through the USB layer is not fast. In addition, larger files on the MTP device take a longer time for the function to handle.
+>
+> Rather than getting the object handles inside the device all at once, consider gradually obtaining them through user input. (It is easier to understand the MTP device when it is plugged into the computer.)
 
 <a name="object_info"></a>
 ## Getting MTP Object Information

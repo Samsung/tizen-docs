@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Tizen Native API Reference</title>
+</head>
+
+<script type="text/javascript">
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function newWindow(profile, version)
+{
+	//var base = "/application/native/api/";
+	var base = "./";
+	var profile = getParameterByName("profile");
+	var version = getParameterByName("version");
+	var toc = getParameterByName("toc");
+
+	window.open(base + version+"/index.htm", "api", true);
+
+	if (toc == "1") {
+		window.open(window.history.back(), "_self", "");
+	}
+}
+</script>
+
+<body onload="newWindow()">
+Launching Web API Reference...
+</body>
+</html>

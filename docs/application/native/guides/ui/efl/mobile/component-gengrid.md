@@ -89,7 +89,9 @@ To use a gengrid component in your application:
                            (void *)i); /* Callback data */
    ```
 
-4. Register the [callback](#callbacks) functions for the gengrid and its items.The following example shows how to define a callback for when the gengrid item is selected:
+4. Register the [callback](#callbacks) functions for the gengrid and its items.
+
+   The following example shows how to define a callback for when the gengrid item is selected:
 
    ```
    static void
@@ -153,8 +155,12 @@ A gengrid item can have 0 or more texts, 0 or more contents, and 0 or more boole
 
 The following gengrid styles and related item styles are supported:
 
-- `default``default``type1` (identical to the `default` style in Tizen 2.4)`type2`
-- `popup``default`
+- `default`
+  - `default`
+  - `type1` (identical to the `default` style in Tizen 2.4)
+  - `type2`
+- `popup`
+  - `default`
 
 To use the `popup` gengrid style with the `default` item style:
 
@@ -172,7 +178,7 @@ The following table provides more information on the available gengrid item styl
 **Table: Gengrid item styles**
 
 | Style                                    | Sample                                   | Text part  | Swallow part                        |
-|----------------------------------------|----------------------------------------|----------|-----------------------------------|
+|------------------------------------------|------------------------------------------|------------|-------------------------------------|
 | `elm/gengrid/item/default/default`<br> `elm/gengrid/item/type1/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
 | `elm/gengrid/item/type2/default`         | ![elm/gengrid/item/type2/default](./media/gengrid_default_type2.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
 | `elm/gengrid/item/default/popup`         | ![elm/gengrid/item/default/popup](./media/gengrid_popup.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
@@ -184,7 +190,7 @@ You can register callback functions connected to the following signals for a gen
 **Table: Gengrid callback signals**
 
 | Signal                    | Description                              | `event_info`                             |
-|-------------------------|----------------------------------------|----------------------------------------|
+|---------------------------|------------------------------------------|------------------------------------------|
 | `activated`               | The item is double-clicked or pressed (enter &verbar; return &verbar; spacebar). | `Elm_Object_Item`                        |
 | `clicked,double`          | The item is double-clicked.              | `Elm_Object_Item`                        |
 | `selected`                | The item is selected.                    | `Elm_Object_Item`                        |
@@ -216,10 +222,12 @@ You can register callback functions connected to the following signals for a gen
 | `item,reorder,anim,start` | The reorder animation starts.            |        -                                  |
 | `item,reorder,anim,stop`  | The reorder animation stops.             |   -                                       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

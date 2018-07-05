@@ -44,7 +44,9 @@ You can manage the following types of content:
 
   You can attach a voice recording.
 
-- **More** tabThe **More** tab shows the icons of the applications, for example, video, audio, calendar, contact, myfiles, and video recorder, that can be launched by clicking the applicable icon.
+- **More** tab
+
+  The **More** tab shows the icons of the applications, for example, video, audio, calendar, contact, myfiles, and video recorder, that can be launched by clicking the applicable icon.
 
 The following figure illustrates the content types. From left to right: images, camera, voice, and **More** tab.
 
@@ -110,7 +112,9 @@ To enable your application to use the attach panel functionality:
 
 To create an attach panel:
 
-1. Create the attach panel using the `attach_panel_create()` function.When the attach panel is created, its state is hidden by default. To show the created panel, use the `attach_panel_show()` function.
+1. Create the attach panel using the `attach_panel_create()` function.
+
+    When the attach panel is created, its state is hidden by default. To show the created panel, use the `attach_panel_show()` function.
 
     ```
     attach_panel_h attach_panel = NULL;
@@ -123,7 +127,11 @@ To create an attach panel:
     s_info.attach_panel = attach_panel;
     ```
 
-2. Based on the type of content you want the user to be able to select for the attach panel, add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b)enumerator.The content categories in the **More** tab are shown in the frequency, recently used, and alphabetical sequence.To deliver more information to the UI gadget or called application, add the data with a bundle.
+2. Based on the type of content you want the user to be able to select for the attach panel, add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b)enumerator.
+
+    The content categories in the **More** tab are shown in the frequency, recently used, and alphabetical sequence.
+
+    To deliver more information to the UI gadget or called application, add the data with a bundle.
 
     ```
     bundle *extra_data = NULL;
@@ -202,7 +210,9 @@ To create an attach panel:
    }
    ```
 
-4. When no longer needed, destroy the attach panel with the `attach_panel_destroy()` function. If the attach panel is shown when you destroy it, the panel is first hidden and then destroyed.If you only need to remove a specific content category, use the `attach_panel_remove_content_category()` function.
+4. When no longer needed, destroy the attach panel with the `attach_panel_destroy()` function. If the attach panel is shown when you destroy it, the panel is first hidden and then destroyed.
+
+    If you only need to remove a specific content category, use the `attach_panel_remove_content_category()` function.
 
     ```
     bool visible = false;

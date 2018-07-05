@@ -25,8 +25,18 @@ To localize a Tizen Web application:
 
    Define a global JS object in the resource file. In the following example, the JS object is `LANG_JSON_DATA`. This object defines the key-value pairs for localized strings.
 
-   - `en/language.js`:`LANG_JSON_DATA = {   'hello': 'hello'}`
-   - `ko/language.js`:`LANG_JSON_DATA = {   'hello': '안녕'}`
+   - `en/language.js`:
+      ```
+      LANG_JSON_DATA = {
+         'hello': 'hello'
+      }
+      ```
+   - `ko/language.js`:
+      ```
+      LANG_JSON_DATA = {
+         'hello': '안녕'
+      }
+      ```
 
    "hello" is the key for the localized string, to be replaced by the value from the appropriate language.
 
@@ -38,14 +48,16 @@ To localize a Tizen Web application:
    <script src="language.js"></script>
    ```
 
-   ​            The Web Runtime loads the `language.js` file for the current locale and  you can use the defined string element to display localized content. For example:
+   The Web Runtime loads the `language.js` file for the current locale and  you can use the defined string element to display localized content. For example:
 
    ```
    log('hello=' + LANG_JSON_DATA['hello']);
    ```
 
-> **Note**
-> When the Web Runtime fails to find a file in a local folder, it searches for the file according to the procedure in the [W3C specification](https://www.w3.org/TR/widgets/#folder-based-localization-0).If the Web Runtime still fails to find a file in a local folder, it retrieves the folders that match the parent subtag, and prioritizes the files in the subfolders over the files in the local folders closer to the root of the widget package. If after all this, the Web Runtime still cannot find the file, an unexpected problem can occur.To avoid problems, leave a default file in the root folder.
+   > **Note**  
+   > When the Web Runtime fails to find a file in a local folder, it searches for the file according to the procedure in the [W3C specification](https://www.w3.org/TR/widgets/#folder-based-localization-0).  
+   > If the Web Runtime still fails to find a file in a local folder, it retrieves the folders that match the parent subtag, and prioritizes the files in the subfolders over the files in the local folders closer to the root of the widget package. If after all this, the Web Runtime still cannot find the file, an unexpected problem can occur.  
+   > To avoid problems, leave a default file in the root folder.
 
    The following table lists the acceptable locale folder names.
 

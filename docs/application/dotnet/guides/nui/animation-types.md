@@ -120,6 +120,7 @@ animation.Play();
 ```
 
 > **Note**
+>
 > `AnimatePath()` invokes `Animate`.
 
 ## Related Information

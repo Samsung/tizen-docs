@@ -1,6 +1,25 @@
-# [Application Management](/application/native/guides/app-management/index.md)
+# Application Management
+## [Overview](/application/native/guides/app-management/applications.md)
+## [UI Applications](/application/native/guides/app-management/ui-app/index.md)
+## [Service Applications](/application/native/guides/app-management/service-app.md)
+## Application Information and Controls
+### [Application Resources](/application/native/guides/app-management/app-resources.md)
+### [Application Preferences](/application/native/guides/app-management/app-preferences.md)
+### [Application Icons](/application/native/guides/app-management/app-icons.md)
+### [Application Controls](/application/native/guides/app-management/app-controls.md)
+### [Common Application Controls](/application/native/guides/app-management/common-appcontrol.md)
+### [Application Manager](/application/native/guides/app-management/app-manager.md)
+### [Package Manager](/application/native/guides/app-management/package-manager.md)
+### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
+## Application Data Exchange
+### [Message Port](/application/native/guides/app-management/message-port.md)
+### [Data Control](/application/native/guides/app-management/data-control.md)
+### [Data Bundle](/application/native/guides/app-management/data-bundles.md)
 
-# [User Interface](/application/native/guides/ui/index.md)
+# User Interface
+## [Overview](/application/native/guides/ui/overview.md)
+## [EFL](/application/native/guides/ui/efl/index.md)
+## [DALi](/application/native/guides/ui/dali/index.md)
 
 # Internationalization
 ## [Overview](/application/native/guides/internationalization/overview.md)

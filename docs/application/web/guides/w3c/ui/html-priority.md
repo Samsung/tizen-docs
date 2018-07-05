@@ -1,6 +1,6 @@
 # HTML Priorities
 
-The HTML markup is not as important as before, because JavaScript APIs can be used to create various functionalities. For example, graphics APIs (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#graphics) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#graphics) applications) can be used for making games, media APIs (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#media) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#media) applications) for creating video chats, and communication APIs (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#communication) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#communication) applications) for various types of messaging. However, HTML remains the basis of Web applications, and it is useful to be familiar with its behavior.
+The HTML markup is not as important as before, because JavaScript APIs can be used to create various functionalities. For example, graphics APIs (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#graphics), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#graphics), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#graphics) applications) can be used for making games, media APIs (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#media), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#media), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#media) applications) for creating video chats, and communication APIs (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#communication), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#communication), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#communication) applications) for various types of messaging. However, HTML remains the basis of Web applications, and it is useful to be familiar with its behavior.
 
 The structure of the HTML document can be classified into DOCTYPE and HTML DOM (Document Object Model). When an HTML document is loaded, the browser renders the contents in its screen as follows:
 
@@ -64,8 +64,8 @@ The `<head>` contains the following subelements:
 
 - `<title>`: Defines the title of the document.
 - `<meta>`: Defines information, such as encoding, creator, and keywords of the document.
-> **Note**
-> The [viewport element](http://www.w3.org/TR/css-device-adapt/#the-viewport-rule), which sets the screen area, is included in the meta information.
+  > **Note**  
+  > The [viewport element](http://www.w3.org/TR/css-device-adapt/#the-viewport-rule), which sets the screen area, is included in the meta information.
 - `<style>`, `<link>`: Sets the styles of the document.
 - `<script>`, `<noscript>`: Adds functions to the document.
 
@@ -139,7 +139,21 @@ When creating a CSS document, the following rules apply:
   <!--Red color is applied-->
   ```
 
-- When the `!important` attribute is used, it has the highest priority:`<body>   <p id="target" class="target">Hello World</p></body><style>   p#target {color: black !important}   p#target {color: red}   p.target {color: blue}   p {color: tomato}</style><!--Black color is applied-->`
+- When the `!important` attribute is used, it has the highest priority:
+
+  ```
+  <body>
+     <p id="target" class="target">Hello World</p>
+  </body>
+ 
+  <style>
+     p#target {color: black !important}
+     p#target {color: red}
+     p.target {color: blue}
+     p {color: tomato}
+  </style>
+  <!--Black color is applied-->
+  ```
 
 Keeping these rules in mind, you can use any of the following ways to achieve the expected result illustrated in the figure above:
 
@@ -202,7 +216,7 @@ Using the order above, if all other color styles are applied to `<p>` elements, 
 
 Generally, when the `@import` attribute is used, connect to the top of CSS file that has been linked externally, as illustrated in the following figure. If the attribute is applied in the middle of the CSS file, it is difficult to know the point where CSS has been applied, and to find the file connected to the source in the future. Therefore, group the CSS file at the top.
 
-> **Note**
+> **Note**  
 > Using the `@import` attribute gives the same result as connecting an external file, but it does not function correctly in older browsers (IE 5.5 and below).
 
 **Figure: Using the @import attribute**
@@ -219,13 +233,25 @@ The markup in the corresponding files is as follows:
   </head>
   ```
 
-- In the `style.css` file:`@import url("priorities1.css");p: after {content: " : linked in head"}`  
-**Figure: Result of linking the @import attribute**  
-![Result of linking the @import attribute](./media/import_linked_in_head.png)
+- In the `style.css` file:
 
-- In the `priorities1.css` file:`p: after {content: " : Using @import in CSS area"}`  
-**Figure: Result of using the @import attribute in the CSS area**  
-![Result of using the @import attribute in the CSS area](./media/import_css_area.png)
+  ```
+  @import url("priorities1.css");
+ 
+  p: after {content: " : linked in head"}
+  ```
+
+  **Figure: Result of linking the @import attribute**  
+  ![Result of linking the @import attribute](./media/import_linked_in_head.png)
+
+- In the `priorities1.css` file:
+
+  ```
+  p: after {content: " : Using @import in CSS area"}
+  ```
+  
+  **Figure: Result of using the @import attribute in the CSS area**  
+  ![Result of using the @import attribute in the CSS area](./media/import_css_area.png)
 
 ## JavaScript Behavior
 

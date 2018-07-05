@@ -309,14 +309,14 @@ You set the display parameters of a video file with the `DisplaySettings` proper
         Tizen.Log.Info(LogTag, $"Display visible = {player.DisplaySettings.IsVisible}");
         ​```
 
-    2.  If the display is not visible, make it visible by setting the `IsVisible` property to `true`:
+    2.  If the display is not visible, make it visible by setting the `IsVisible` property to `true`:  
 
-        ​```
+        ```
         if (player.DisplaySettings.IsVisible == false)
         {
             player.DisplaySettings.IsVisible = true;
         }
-        ​```
+        ```
 
 3. Set the display mode using the `Mode` property, which takes the display mode as a value of the [Tizen.Multimedia.PlayerDisplayMode](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.PlayerDisplayMode.html) enumeration:
 

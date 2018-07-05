@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -701,7 +701,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">policy</td><td>A <a class="el" href="group__WEBVIEW.html#ga51b3ecbf32b6a2171c3f86c25b5096aa" title="Enumeration that creates a type name for the Ewk_Cookie_Accept_Policy.">Ewk_Cookie_Accept_Policy</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event_info</td><td>The user data that will be passsed when <a class="el" href="group__WEBVIEW.html#ga2d53447a6f44d758a5494d7e1f156224" title="Gets the cookie acceptance policy of manager asynchronously.">ewk_cookie_manager_accept_policy_async_get()</a> is called </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_info</td><td>The user data that will be passed when <a class="el" href="group__WEBVIEW.html#ga2d53447a6f44d758a5494d7e1f156224" title="Gets the cookie acceptance policy of manager asynchronously.">ewk_cookie_manager_accept_policy_async_get()</a> is called </td></tr>
   </table>
   </dd>
 </dl>
@@ -960,7 +960,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
     <tr><td class="paramdir">[in]</td><td class="paramname">result_value</td><td>The value returned by the script<br/>
  If executed script returns a value, it would be <em>result_value</em>,<br/>
  otherwise <code>NULL</code> if there is no value returned by the script </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user_data will be passsed when <a class="el" href="group__WEBVIEW.html#ga0b6cc39a80fbbb7440ace5a406ee6eb9" title="Requests the execution of the given script.">ewk_view_script_execute()</a> is called </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user_data will be passed when <a class="el" href="group__WEBVIEW.html#ga0b6cc39a80fbbb7440ace5a406ee6eb9" title="Requests the execution of the given script.">ewk_view_script_execute()</a> is called </td></tr>
   </table>
   </dd>
 </dl>
@@ -984,7 +984,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">o</td><td>The view object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>The ScriptMessage returned by the script. <br/>
- It will be passsed when <a class="el" href="group__WEBVIEW.html#ga812cf5d2b00a805397a9f5e5b7ad63d1" title="Injects the supplied javascript message handler into webview.">ewk_view_javascript_message_handler_add()</a> is called. </td></tr>
+ It will be passed when <a class="el" href="group__WEBVIEW.html#ga812cf5d2b00a805397a9f5e5b7ad63d1" title="Injects the supplied javascript message handler into webview.">ewk_view_javascript_message_handler_add()</a> is called. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1008,6 +1008,59 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="ga648d5873a556f0cb0e8a0c15bfe0a728"></a><!-- doxytag: member="ewk_autofill_profile.h::_Ewk_Autofill_Profile_Data_Type" ref="ga648d5873a556f0cb0e8a0c15bfe0a728" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__WEBVIEW.html#ga648d5873a556f0cb0e8a0c15bfe0a728">_Ewk_Autofill_Profile_Data_Type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a628677bb1c22ef23bf88fe12af803a8c"></a><!-- doxytag: member="EWK_PROFILE_ID" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a628677bb1c22ef23bf88fe12af803a8c" args="" -->EWK_PROFILE_ID</em>&nbsp;</td><td>
+<p>Id </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a474a37f4a4cef2600b73e24b1da039cf"></a><!-- doxytag: member="EWK_PROFILE_NAME" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a474a37f4a4cef2600b73e24b1da039cf" args="" -->EWK_PROFILE_NAME</em>&nbsp;</td><td>
+<p>Name </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a005eaa5e2e53891a0b8f07e7542b2ced"></a><!-- doxytag: member="EWK_PROFILE_COMPANY" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a005eaa5e2e53891a0b8f07e7542b2ced" args="" -->EWK_PROFILE_COMPANY</em>&nbsp;</td><td>
+<p>Company </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a9905c452d41bea3a66fdb5a617f5982b"></a><!-- doxytag: member="EWK_PROFILE_ADDRESS1" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a9905c452d41bea3a66fdb5a617f5982b" args="" -->EWK_PROFILE_ADDRESS1</em>&nbsp;</td><td>
+<p>Address1 </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a9a4761b4d133eb17cf7637b6bf3b1dfc"></a><!-- doxytag: member="EWK_PROFILE_ADDRESS2" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a9a4761b4d133eb17cf7637b6bf3b1dfc" args="" -->EWK_PROFILE_ADDRESS2</em>&nbsp;</td><td>
+<p>Address2 </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a50d9a038ecf7f54d3bd9580456659f44"></a><!-- doxytag: member="EWK_PROFILE_CITY_TOWN" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a50d9a038ecf7f54d3bd9580456659f44" args="" -->EWK_PROFILE_CITY_TOWN</em>&nbsp;</td><td>
+<p>City Town </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a88b4f8abd7288ca558aaacd30df3f077"></a><!-- doxytag: member="EWK_PROFILE_STATE_PROVINCE_REGION" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a88b4f8abd7288ca558aaacd30df3f077" args="" -->EWK_PROFILE_STATE_PROVINCE_REGION</em>&nbsp;</td><td>
+<p>State Province Region </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a6708030af0b6aef1ef4434576445cf1c"></a><!-- doxytag: member="EWK_PROFILE_ZIPCODE" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a6708030af0b6aef1ef4434576445cf1c" args="" -->EWK_PROFILE_ZIPCODE</em>&nbsp;</td><td>
+<p>Zipcode </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728ae8237a222b8f40002c050966a2e5550f"></a><!-- doxytag: member="EWK_PROFILE_COUNTRY" ref="gga648d5873a556f0cb0e8a0c15bfe0a728ae8237a222b8f40002c050966a2e5550f" args="" -->EWK_PROFILE_COUNTRY</em>&nbsp;</td><td>
+<p>Country </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a15354bb61767527e3b0060a75c0e0940"></a><!-- doxytag: member="EWK_PROFILE_PHONE" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a15354bb61767527e3b0060a75c0e0940" args="" -->EWK_PROFILE_PHONE</em>&nbsp;</td><td>
+<p>Phone </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a990ebb1117bbc075a103c4544796d2c7"></a><!-- doxytag: member="EWK_PROFILE_EMAIL" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a990ebb1117bbc075a103c4544796d2c7" args="" -->EWK_PROFILE_EMAIL</em>&nbsp;</td><td>
+<p>Email </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga648d5873a556f0cb0e8a0c15bfe0a728a5f05a365c3222300c4e6bfda8d3a66dc"></a><!-- doxytag: member="EWK_MAX_AUTOFILL" ref="gga648d5873a556f0cb0e8a0c15bfe0a728a5f05a365c3222300c4e6bfda8d3a66dc" args="" -->EWK_MAX_AUTOFILL</em>&nbsp;</td><td>
+<p>Max Autofill </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gaade8fd95d6925241dd65e843f4103f0c"></a><!-- doxytag: member="ewk_context.h::_Ewk_Cache_Model" ref="gaade8fd95d6925241dd65e843f4103f0c" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1090,7 +1143,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Translate </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggae50ea13a5be4fea13d9d04d13e81f522aeb1993fc22ac7738b7a8be8049b1af43"></a><!-- doxytag: member="EWK_CONTEXT_MENU_ITEM_TAG_COPY_LINK_DATA" ref="ggae50ea13a5be4fea13d9d04d13e81f522aeb1993fc22ac7738b7a8be8049b1af43" args="" -->EWK_CONTEXT_MENU_ITEM_TAG_COPY_LINK_DATA</em>&nbsp;</td><td>
-<p>Copy lnk data </p>
+<p>Copy link data </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggae50ea13a5be4fea13d9d04d13e81f522abe26bc329bba9641fa5f98fb73ccd189"></a><!-- doxytag: member="EWK_CONTEXT_MENU_ITEM_BASE_APPLICATION_TAG" ref="ggae50ea13a5be4fea13d9d04d13e81f522abe26bc329bba9641fa5f98fb73ccd189" args="" -->EWK_CONTEXT_MENU_ITEM_BASE_APPLICATION_TAG</em>&nbsp;</td><td>
 <p>If app want to add customized item, use enum value after <a class="el" href="group__WEBVIEW.html#ggae50ea13a5be4fea13d9d04d13e81f522abe26bc329bba9641fa5f98fb73ccd189">EWK_CONTEXT_MENU_ITEM_BASE_APPLICATION_TAG</a> </p>
@@ -1300,6 +1353,68 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga5b342d34de4ae801cce0559da2589a7faaa40485f0c5b53d4a3cd5bc6561cd3a8"></a><!-- doxytag: member="EWK_COOKIE_PERSISTENT_STORAGE_SQLITE" ref="gga5b342d34de4ae801cce0559da2589a7faaa40485f0c5b53d4a3cd5bc6561cd3a8" args="" -->EWK_COOKIE_PERSISTENT_STORAGE_SQLITE</em>&nbsp;</td><td>
 <p>Cookies are stored in a SQLite file in the current Mozilla format. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaef481eb28b7f5e351e69041c83981db2"></a><!-- doxytag: member="ewk_error.h::Ewk_Error_Code" ref="gaef481eb28b7f5e351e69041c83981db2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__WEBVIEW.html#gaef481eb28b7f5e351e69041c83981db2">Ewk_Error_Code</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a332d2cd5f17a4a5b28fa02f07fe165b7"></a><!-- doxytag: member="EWK_ERROR_CODE_UNKNOWN" ref="ggaef481eb28b7f5e351e69041c83981db2a332d2cd5f17a4a5b28fa02f07fe165b7" args="" -->EWK_ERROR_CODE_UNKNOWN</em>&nbsp;</td><td>
+<p>Unknown </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2aa1946d72180a351244c857607b807ee9"></a><!-- doxytag: member="EWK_ERROR_CODE_CANCELED" ref="ggaef481eb28b7f5e351e69041c83981db2aa1946d72180a351244c857607b807ee9" args="" -->EWK_ERROR_CODE_CANCELED</em>&nbsp;</td><td>
+<p>User canceled </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a5df04c49909d5de55742051b1aa7d93e"></a><!-- doxytag: member="EWK_ERROR_CODE_CANT_SUPPORT_MIMETYPE" ref="ggaef481eb28b7f5e351e69041c83981db2a5df04c49909d5de55742051b1aa7d93e" args="" -->EWK_ERROR_CODE_CANT_SUPPORT_MIMETYPE</em>&nbsp;</td><td>
+<p>Can't show page for this MIME Type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a4b47a68ba638374335f6bdc115976bb6"></a><!-- doxytag: member="EWK_ERROR_CODE_FAILED_FILE_IO" ref="ggaef481eb28b7f5e351e69041c83981db2a4b47a68ba638374335f6bdc115976bb6" args="" -->EWK_ERROR_CODE_FAILED_FILE_IO</em>&nbsp;</td><td>
+<p>Error </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a8dc4f41478ab454ce462ab0beaac2384"></a><!-- doxytag: member="EWK_ERROR_CODE_CANT_CONNECT" ref="ggaef481eb28b7f5e351e69041c83981db2a8dc4f41478ab454ce462ab0beaac2384" args="" -->EWK_ERROR_CODE_CANT_CONNECT</em>&nbsp;</td><td>
+<p>Cannot connect to Network </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a7715117b7e12b716ae1d8ae6353bebef"></a><!-- doxytag: member="EWK_ERROR_CODE_CANT_LOOKUP_HOST" ref="ggaef481eb28b7f5e351e69041c83981db2a7715117b7e12b716ae1d8ae6353bebef" args="" -->EWK_ERROR_CODE_CANT_LOOKUP_HOST</em>&nbsp;</td><td>
+<p>Fail to look up host from DNS </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2af23278a25991d0fee508cece6816b2a0"></a><!-- doxytag: member="EWK_ERROR_CODE_FAILED_TLS_HANDSHAKE" ref="ggaef481eb28b7f5e351e69041c83981db2af23278a25991d0fee508cece6816b2a0" args="" -->EWK_ERROR_CODE_FAILED_TLS_HANDSHAKE</em>&nbsp;</td><td>
+<p>Fail to SSL/TLS handshake </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a80a7946f31c1afaab8509df46d48cf39"></a><!-- doxytag: member="EWK_ERROR_CODE_INVALID_CERTIFICATE" ref="ggaef481eb28b7f5e351e69041c83981db2a80a7946f31c1afaab8509df46d48cf39" args="" -->EWK_ERROR_CODE_INVALID_CERTIFICATE</em>&nbsp;</td><td>
+<p>Received certificate is invalid </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2af2578c683721cdce67f19a856d5be34b"></a><!-- doxytag: member="EWK_ERROR_CODE_REQUEST_TIMEOUT" ref="ggaef481eb28b7f5e351e69041c83981db2af2578c683721cdce67f19a856d5be34b" args="" -->EWK_ERROR_CODE_REQUEST_TIMEOUT</em>&nbsp;</td><td>
+<p>Connection timeout </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a0660b6e3cc8b378ebbe87f556659a5b6"></a><!-- doxytag: member="EWK_ERROR_CODE_TOO_MANY_REDIRECTS" ref="ggaef481eb28b7f5e351e69041c83981db2a0660b6e3cc8b378ebbe87f556659a5b6" args="" -->EWK_ERROR_CODE_TOO_MANY_REDIRECTS</em>&nbsp;</td><td>
+<p>Too many redirects </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2aacf4319f524a9788e95c0bacda70334f"></a><!-- doxytag: member="EWK_ERROR_CODE_TOO_MANY_REQUESTS" ref="ggaef481eb28b7f5e351e69041c83981db2aacf4319f524a9788e95c0bacda70334f" args="" -->EWK_ERROR_CODE_TOO_MANY_REQUESTS</em>&nbsp;</td><td>
+<p>Too many requests during this load </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a147a5b837a486bafc8e496daa727333c"></a><!-- doxytag: member="EWK_ERROR_CODE_BAD_URL" ref="ggaef481eb28b7f5e351e69041c83981db2a147a5b837a486bafc8e496daa727333c" args="" -->EWK_ERROR_CODE_BAD_URL</em>&nbsp;</td><td>
+<p>Malformed url </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a0e6d069ee863dbcfd761587c5d567cf8"></a><!-- doxytag: member="EWK_ERROR_CODE_UNSUPPORTED_SCHEME" ref="ggaef481eb28b7f5e351e69041c83981db2a0e6d069ee863dbcfd761587c5d567cf8" args="" -->EWK_ERROR_CODE_UNSUPPORTED_SCHEME</em>&nbsp;</td><td>
+<p>Unsupported scheme </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a2e1f0753c0fff53b15212b5b89300999"></a><!-- doxytag: member="EWK_ERROR_CODE_AUTHENTICATION" ref="ggaef481eb28b7f5e351e69041c83981db2a2e1f0753c0fff53b15212b5b89300999" args="" -->EWK_ERROR_CODE_AUTHENTICATION</em>&nbsp;</td><td>
+<p>User authentication failed on server </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaef481eb28b7f5e351e69041c83981db2a3ca69e675e13ac03fc3929246b41e85b"></a><!-- doxytag: member="EWK_ERROR_CODE_INTERNAL_SERVER" ref="ggaef481eb28b7f5e351e69041c83981db2a3ca69e675e13ac03fc3929246b41e85b" args="" -->EWK_ERROR_CODE_INTERNAL_SERVER</em>&nbsp;</td><td>
+<p>Web server has internal server error </p>
 </td></tr>
 </table>
 </dd>
@@ -2551,7 +2666,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <div class="memdoc">
 
 <p>Sets the <em>path</em> where non-session cookies are stored persistently using <em>storage</em> as the format to read/write the cookies. </p>
-<p>Cookies are initially read from <em>path/Cookies</em> to create an initial set of cookies. Then, non-session cookies will be written to <em>path/Cookies</em>. By default, <em>manager</em> doesn't store the cookies persistenly, so you need to call this method to keep cookies saved across sessions. If <em>path</em> does not exist it will be created.</p>
+<p>Cookies are initially read from <em>path/Cookies</em> to create an initial set of cookies. Then, non-session cookies will be written to <em>path/Cookies</em>. By default, <em>manager</em> doesn't store the cookies persistently, so you need to call this method to keep cookies saved across sessions. If <em>path</em> does not exist it will be created.</p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed if input or output path is relevant to media storage.<br/>
  <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is needed if input or output path is relevant to external storage.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
@@ -2993,7 +3108,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 
 <p>Writes a part of response body. </p>
 <p>This function can be used to write response body in chunks. Application doesn't have to prepare full response body before calling this function, it can be used as soon as a part of response is ready.</p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If this function returns EINA_FALSE, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior. User should always check return value, because response to this request might not be needed anymore, and function can retrun EINA_FALSE even though user still has data to write.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If this function returns EINA_FALSE, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior. User should always check return value, because response to this request might not be needed anymore, and function can return EINA_FALSE even though user still has data to write.</dd></dl>
 <p>It is only allowed to use this function *outside* of the Ewk_Context_Intercept_Request_Callback.</p>
 <p>If a part of response body has been written with this function, you can't use the following functions anymore:</p>
 <ul>
@@ -5776,7 +5891,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, othetwise <code>EINA_FALSE</code> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, otherwise <code>EINA_FALSE</code> </dd></dl>
 
 </div>
 </div>

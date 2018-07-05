@@ -1,8 +1,6 @@
 # HTML5 Canvas
 
-The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#canvas2d) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
-
-This feature is supported in mobile and wearable applications only.
+The HTML5 canvas allows you to use graphics on the screen, and draw and manage various shapes. The HTML Canvas 2D Context API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas2d), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas2d), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#canvas2d) applications) defines a special canvas element that expresses images or shapes with JavaScript.
 
 The main features of the Canvas Element API include:
 
@@ -26,16 +24,18 @@ The main features of the Canvas Element API include:
 
 For all canvas objects (images, shapes, text, and lines), you can define colors (the `fillStyle` and `strokeStyle` attributes), shadows (the `shadowColor` and `shadowBlur` attributes), and gradation (the `createLinearGradient()` method). You can also use the transformation methods, such as `scale()`, `translate()`, `transform()`, and `rotate()`, to implement, for example, transparency or shape gradient transformations.
 
-In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./svg.md).
+In mobile applications only, in HTML5, the [Scalable Vector Graphics (SVG) 2](../../../api/latest/w3c_api/w3c_api_m.html#svg) API provides similar features as the canvas. Their difference is that SVG expresses graphics using vectors, while the canvas is based on pixels. To express complex graphics, use the canvas, and to express graphics with a liberal expansion or reduction, use [SVG](./svg.md).
 
 > **Note**  
-> The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL™](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL™ in mobile applications, see [Performance Comparison of Canvas 2D and WebGL™](#comparison).
+> The canvas currently supports 2D graphics only, since the 3D graphics specification is still in progress. The [WebGL&trade;](https://www.khronos.org/registry/webgl/specs/1.0/) API is currently called 3D Canvas, and is used to express 3D graphics. For more information on the performance differences between Canvas 2D and WebGL&trade; in mobile applications, see [Performance Comparison of Canvas 2D and WebGL&trade;](#comparison).
 
 ## Using a Canvas
 
 To create a canvas in your application:
 
-1. Create a `<canvas>` element with the HTML5 Canvas Element API.The canvas assigns the region (canvas context) where images are drawn with JavaScript.
+1. Create a `<canvas>` element with the HTML5 Canvas Element API.
+
+   The canvas assigns the region (canvas context) where images are drawn with JavaScript.
 
    ```
    <canvas width="300" height="300" id="canvas">
@@ -47,7 +47,7 @@ To create a canvas in your application:
 
 2. To check the information on the image connected to the canvas, use the `toDataURL([Optional], [Variadic])` method to restore the URL of the image used on the canvas. To create a blob object of the image file, use the `getContext(contextId)` method.
 
-3. Use the `CanvasRenderingContext2D` interface (in [mobile](http://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d) and [wearable](http://www.w3.org/TR/2012/CR-2dcontext-20121217/#canvasrenderingcontext2d) applications) to connect to the canvas and get the canvas context:
+3. Use the `CanvasRenderingContext2D` interface (in [mobile](http://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d), [wearable](http://www.w3.org/TR/2012/CR-2dcontext-20121217/#canvasrenderingcontext2d), and [TV](https://www.w3.org/TR/2015/REC-2dcontext-20151119/#canvasrenderingcontext2d) applications) to connect to the canvas and get the canvas context:
 
    ```
    var canvas = document.querySelector('canvas'),
@@ -152,7 +152,9 @@ With the HTML Canvas 2D Context API, you can draw various shapes, such as rectan
 
 To create and draw shapes on a canvas:
 
-1. Use the `rect()` method to create a rectangle.Use the canvas context to assign the rectangle attributes, such as position and size. (The following figure applies to mobile applications only.)
+1. Use the `rect()` method to create a rectangle.
+
+   Use the canvas context to assign the rectangle attributes, such as position and size. (The following figure applies to mobile applications only.)
 
    ```
    /* Rectangle fill style */
@@ -169,7 +171,9 @@ To create and draw shapes on a canvas:
 
    ![Assign rectangle attributes (in mobile applications only)](./media/canvas_drawing_shapes1.png)
 
-2. Use the `arc()` method to create a circle.Use the canvas context to assign the circle attributes, such as position and radius. (The following figure applies to mobile applications only.)
+2. Use the `arc()` method to create a circle.
+
+   Use the canvas context to assign the circle attributes, such as position and radius. (The following figure applies to mobile applications only.)
 
    ```
    /* Create a circle */
@@ -266,7 +270,9 @@ To draw masks on a canvas:
    };
    ```
 
-5. Draw an image on the canvas using the `drawImage()` method. The user is able to replace the image with another using a brush.Create a new `Image` object, including the path of the image file. Define the line width to be based on the brush size selected by the user.
+5. Draw an image on the canvas using the `drawImage()` method. The user is able to replace the image with another using a brush.
+
+   Create a new `Image` object, including the path of the image file. Define the line width to be based on the brush size selected by the user.
 
    ```
    var img = new Image();
@@ -338,12 +344,12 @@ To draw masks on a canvas:
 10. While the user is drawing, the `touchmove` and `mousemove` events are handled with the `drawStep()` method based on the button state retrieved from the `mouseBtn` variable. The `drawStep()` method calls the `updateLastPos()` method only when the mouse or finger is being moved. Use the `stroke()` method to make the drawn line visible.
 
     ```
-    function startDraw(e) {
-        updateLastPos(e);
-        context.globalCompositeOperation = 'destination-out';
-        context.beginPath();
-        context.moveTo(lastX, lastY);
-        mouseBtn = true;
+    function drawStep(e) {
+        if (mouseBtn) {
+            updateLastPos(e);
+            context.lineTo(lastX, lastY);
+            context.stroke();
+        }
     }
     ```
 
@@ -415,7 +421,7 @@ For the complete source code related to this use case, see the following files:
 - [Text_Styles_4.html](http://download.tizen.org/misc/examples/w3c_html5/graphics/html5_the_canvas_element_and_html_canvas_2d_context)
 
 <a name="comparison"></a>
-## Performance Comparison of Canvas 2D and WebGL™ in Mobile Applications
+## Performance Comparison of Canvas 2D and WebGL&trade; in Mobile Applications
 
 In Web documents prior to HTML5, only simple image loading was supported. To create graphic animations, you had to use a separate plug-in. However, as the graphic-related APIs have become more standardized, you can now express graphics by using only JavaScript, without a separate plug-in.
 
@@ -426,10 +432,10 @@ To compare the performance, 2 simple Web applications must be created, using the
 1. Create the applications with the following logic:
    1. Load an image.
    2. Render the loaded image in the random location of the canvas.
-   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [mobile](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#timing) or [wearable](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#timing) applications) to change the color of the loaded image, based on different times.
+   3. Use the `requestAnimationFrame()` method of the Timing control for script-based animations API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#timing), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#timing), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#timing) applications) to change the color of the loaded image, based on different times.
    4. Create a logic that measures FPS (frames per second) in order to check the performance.
 2. Execute the applications and measure the FPS.
-3. Increase only the number of objects so that the same 1~N images, under the same conditions, are shown repeatedly based on 1~N.
+3. Increase only the number of objects so that the same 1\~N images, under the same conditions, are shown repeatedly based on 1\~N.
 4. Measure the FPS as the number of repeatedly shown objects increase.
 
 The following figure shows the result of the test: As the number of objects increase, the performance of the Canvas 2D Context API rapidly decreases compared to WebGL&trade; (the result is subject to change according to the complexity of the application logic). As such, when expressing many graphic objects all differently, it is much more efficient to use WebGL&trade; than the Canvas 2D Context API.

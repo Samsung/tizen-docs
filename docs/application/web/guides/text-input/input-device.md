@@ -1,6 +1,6 @@
 # Input Device
 
-You can manage input device keys.
+You can manage input device keys and monitor key events.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -24,7 +24,7 @@ The key names are listed in the [DOM Level 3 KeyboardEvent key Values](http://ww
 
 To get a list of all supported keys:
 
-1. To get a supported key list, use the `getSupportedKeys()` method of the `InputDeviceManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications):
+1. To get a supported key list, use the `getSupportedKeys()` method of the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications):
 
    ```
    var keyCodes = {};
@@ -43,7 +43,7 @@ To get a list of all supported keys:
 
 To gather information about the key by its name:
 
-1. Create a list of keys for which you want the information by using the `InputDeviceKey` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/inputdevice.html#InputDeviceKey) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/inputdevice.html#InputDeviceKey) applications).
+1. Create a list of keys for which you want the information by using the `InputDeviceKey` object (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceKey) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceKey) applications).
 
    If you do not want to gather information about all supported keys, create a separate list of keys for information gathering. If you want information about all supported keys, use the list retrieved in the previous use case.
 
@@ -52,7 +52,7 @@ To gather information about the key by its name:
    var keyCodes = {};
    ```
 
-2. Check each key separately using the `getKey()` method of the `InputDeviceManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications).
+2. Check each key separately using the `getKey()` method of the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications).
 
    If the result of the `getKey()` method is not `null`, you can access the key information. If the result is `null`, the key is not supported.
 
@@ -74,7 +74,7 @@ To gather information about the key by its name:
 
 ## Registering and Deregistering Keys
 
-When you want to react to input device key presses, register the applicable key using the `InputDeviceManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications). After registering the input device key, the application receives a DOM keyboard event when the key is pressed or released. When the events are no longer needed, deregister the key.
+When you want to react to input device key presses, register the applicable key using the `InputDeviceManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/inputdevice.html#InputDeviceManager) and [wearable](../../api/latest/device_api/wearable/tizen/inputdevice.html#InputDeviceManager) applications). After registering the input device key, the application receives a DOM keyboard event when the key is pressed or released. When the events are no longer needed, deregister the key.
 
 > **Note**  
 > The application cannot register the mandatory keys (**ArrowLeft**, **ArrowRight**, **ArrowUp**, **ArrowDown**, **Enter**, and **Back**).

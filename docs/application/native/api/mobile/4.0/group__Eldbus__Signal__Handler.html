@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -111,6 +111,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a callback function to be called when signal handler will be freed.  <a href="#ga5ae76aa29a76889636bec918245232b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Signal__Handler.html#gaa93015868f155013c5a740a82c79989d">eldbus_signal_handler_free_cb_del</a> (<a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *handler, <a class="el" href="group__Eldbus__Core.html#ga5877d06a497dd7ba16c343c0beff2629">Eldbus_Free_Cb</a> cb, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove callback registered in <a class="el" href="group__Eldbus__Signal__Handler.html#ga5ae76aa29a76889636bec918245232b5" title="Add a callback function to be called when signal handler will be freed.">eldbus_signal_handler_free_cb_add()</a>.  <a href="#gaa93015868f155013c5a740a82c79989d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Signal__Handler.html#ga7d7e397a771cad1b3b499d0788fa4ccd">eldbus_signal_handler_sender_get</a> (const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *handler)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Signal__Handler.html#gaa65902f8ab4f2a868cb947f333c80cb3">eldbus_signal_handler_path_get</a> (const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *handler)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Signal__Handler.html#gaa2447cfb1c1294c3b6d4d08edd19a8db">eldbus_signal_handler_interface_get</a> (const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *handler)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Signal__Handler.html#ga238a511139f4ca64547284657048f808">eldbus_signal_handler_member_get</a> (const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *handler)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Signal__Handler.html#ga7c415992e7a90b5c7ee452c21fb2420f">eldbus_signal_handler_match_get</a> (const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *handler)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eldbus__Core.html#ga5f0557a7e65ed263fcc1678874b8f7e7">Eldbus_Connection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eldbus__Signal__Handler.html#ga34ce52332ea61025e2c290b2541df4e2">eldbus_signal_handler_connection_get</a> (const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *handler)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga6613bf801b1bbc92708bedc57e64014c"></a><!-- doxytag: member="eldbus_signal_handler.h::eldbus_signal_handler_add" ref="ga6613bf801b1bbc92708bedc57e64014c" args="(Eldbus_Connection *conn, const char *sender, const char *path, const char *interface, const char *member, Eldbus_Signal_Cb cb, const void *cb_data)" -->
@@ -169,6 +175,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Add a signal handler. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000355">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">conn</td><td>connection where the signal is emitted </td></tr>
@@ -182,6 +189,24 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga34ce52332ea61025e2c290b2541df4e2"></a><!-- doxytag: member="eldbus_signal_handler.h::eldbus_signal_handler_connection_get" ref="ga34ce52332ea61025e2c290b2541df4e2" args="(const Eldbus_Signal_Handler *handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eldbus__Core.html#ga5f0557a7e65ed263fcc1678874b8f7e7">Eldbus_Connection</a>* <a class="el" href="group__Eldbus__Signal__Handler.html#ga34ce52332ea61025e2c290b2541df4e2">eldbus_signal_handler_connection_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>eldbus_signal_handler_connection_get </p>
 
 </div>
 </div>
@@ -201,6 +226,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Decrease signal handler reference like <a class="el" href="group__Eldbus__Signal__Handler.html#ga1b39e54fb712220f3e699d1ca9c6c919" title="Decrease signal handler reference. If reference == 0 signal handler will be freed.">eldbus_signal_handler_unref()</a> but if reference &gt; 0 this signal handler will stop listening to signals. In other words it will be canceled but memory will not be freed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000358">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -237,6 +263,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Add a callback function to be called when signal handler will be freed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000361">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -273,7 +300,26 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Remove callback registered in <a class="el" href="group__Eldbus__Signal__Handler.html#ga5ae76aa29a76889636bec918245232b5" title="Add a callback function to be called when signal handler will be freed.">eldbus_signal_handler_free_cb_add()</a>. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000362">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa2447cfb1c1294c3b6d4d08edd19a8db"></a><!-- doxytag: member="eldbus_signal_handler.h::eldbus_signal_handler_interface_get" ref="gaa2447cfb1c1294c3b6d4d08edd19a8db" args="(const Eldbus_Signal_Handler *handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Eldbus__Signal__Handler.html#gaa2447cfb1c1294c3b6d4d08edd19a8db">eldbus_signal_handler_interface_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000365">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 
 </div>
 </div>
@@ -303,6 +349,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Add extra argument in match of signal handler to obtain specifics signals. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000359">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <p>Example: eldbus_signal_handler_match_extra_set(sh, "arg0", "org.bansheeproject.Banshee", "arg1", "", NULL); With this extra arguments this signal handler callback only will be called when Banshee is started.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>For now only argX is supported.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -343,6 +390,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Add extra argument in match of signal handler to obtain specifics signals. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000360">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <p>Example: eldbus_signal_handler_match_extra_set(sh, "arg0", "org.bansheeproject.Banshee", "arg1", "", NULL); With this extra arguments this signal handler callback only will be called when Banshee is started.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>For now is only supported argX.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -354,6 +402,60 @@ Functions</h2></td></tr>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>To information: <a href="http://dbus.freedesktop.org/doc/dbus-specification.html#message-bus-routing-match-rules">http://dbus.freedesktop.org/doc/dbus-specification.html#message-bus-routing-match-rules</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7c415992e7a90b5c7ee452c21fb2420f"></a><!-- doxytag: member="eldbus_signal_handler.h::eldbus_signal_handler_match_get" ref="ga7c415992e7a90b5c7ee452c21fb2420f" args="(const Eldbus_Signal_Handler *handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Eldbus__Signal__Handler.html#ga7c415992e7a90b5c7ee452c21fb2420f">eldbus_signal_handler_match_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000367">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga238a511139f4ca64547284657048f808"></a><!-- doxytag: member="eldbus_signal_handler.h::eldbus_signal_handler_member_get" ref="ga238a511139f4ca64547284657048f808" args="(const Eldbus_Signal_Handler *handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Eldbus__Signal__Handler.html#ga238a511139f4ca64547284657048f808">eldbus_signal_handler_member_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000366">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa65902f8ab4f2a868cb947f333c80cb3"></a><!-- doxytag: member="eldbus_signal_handler.h::eldbus_signal_handler_path_get" ref="gaa65902f8ab4f2a868cb947f333c80cb3" args="(const Eldbus_Signal_Handler *handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Eldbus__Signal__Handler.html#gaa65902f8ab4f2a868cb947f333c80cb3">eldbus_signal_handler_path_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000364">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 
 </div>
 </div>
@@ -373,7 +475,26 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Increase signal handler reference. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000356">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7d7e397a771cad1b3b499d0788fa4ccd"></a><!-- doxytag: member="eldbus_signal_handler.h::eldbus_signal_handler_sender_get" ref="ga7d7e397a771cad1b3b499d0788fa4ccd" args="(const Eldbus_Signal_Handler *handler)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Eldbus__Signal__Handler.html#ga7d7e397a771cad1b3b499d0788fa4ccd">eldbus_signal_handler_sender_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eldbus__Core.html#ga0f4385f3952b6ad56f1966a3ed1b744c">Eldbus_Signal_Handler</a> *&#160;</td>
+          <td class="paramname"><em>handler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000363">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 
 </div>
 </div>
@@ -393,6 +514,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Decrease signal handler reference. If reference == 0 signal handler will be freed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000357">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>

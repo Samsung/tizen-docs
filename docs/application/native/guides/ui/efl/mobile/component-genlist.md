@@ -84,7 +84,9 @@ To use a genlist component in your application:
                            _item_selected_cb, (void *)i);
    ```
 
-4. Register the [callback](#callbacks) functions for the genlist and its items.The following example shows how to define a callback for when the genlist item is selected:
+4. Register the [callback](#callbacks) functions for the genlist and its items.
+
+   The following example shows how to define a callback for when the genlist item is selected:
 
    ```
    static void
@@ -327,16 +329,16 @@ You can retrieve the parent of an item with the `elm_genlist_item_parent_get()` 
 
 The genlist and item size can be managed through the mode set by the `elm_genlist_mode_set()` function:
 
-- `ELM_LIST_COMPRESS`  
+- `ELM_LIST_COMPRESS`
 The genlist respects its container's geometry. Even if there are items exceeding the genlist in the transverse axis, the genlist is not scrollable in that direction.
 
-- `ELM_LIST_SCROLL`  
+- `ELM_LIST_SCROLL`
 Same as `ELM_LIST_COMPRESS`, but if there are items exceeding the genlist in the transverse axis, the genlist is scrollable in that direction.
 
-- `ELM_LIST_LIMIT`  
+- `ELM_LIST_LIMIT`
 Sets a minimum size hint on the list object, so that containers can respect it. A minimum size hint is set for its transverse axis, so that the largest item in that direction fits well.
 
-- `ELM_LIST_EXPAND`  
+- `ELM_LIST_EXPAND`
 Besides setting a minimum size on the transverse axis, like `ELM_LIST_LIMIT`, the list sets a minimum size on the longitudinal axis, trying to reverse space to all its children to be visible at a time.
 
 ### Item Selection
@@ -351,7 +353,8 @@ To manage the item selection, use the following functions:
 - `elm_genlist_selected_item_get()`: Retrieve the selected item.
 - `elm_genlist_selected_items_get()`: Retrieve the list of the currently selected items.
 
-> **Note**  
+> **Note**
+>
 > The item selection comes with a highlight effect. If the user wants to cancel the highlight by touch off, you must cancel the select operation in the `select()` callback:
 
 ```
@@ -371,7 +374,7 @@ Calling this function does not show or hide any child of an item (if it is a par
 You can update the items using the following functions:
 
 - `elm_genlist_item_update()`: Update an item
-- `elm_genlist_item_fields_update()`: Update only specific parts:  
+- `elm_genlist_item_fields_update()`: Update only specific parts:
   - `ELM_GENLIST_ITEM_FIELD_TEXT`
   - `ELM_GENLIST_ITEM_FIELD_CONTENT`
 
@@ -470,10 +473,10 @@ You can register callback functions connected to the following signals for a gen
 | `pressed`              | The item is pressed by mouse down.       | `Elm_Object_Item` object that contains the pressed item |
 | `released`             | The item is released by mouse up.        | `Elm_Object_Item` object that contains the released item |
 
-> **Note**  
+> **Note**
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

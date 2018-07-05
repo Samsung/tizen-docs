@@ -45,8 +45,8 @@ Depending on the touch type, different touch events occur:
 **Figure: Canceling touch with a long press (in mobile applications only)**  
 ![Canceling touch with a long press (in mobile applications only)](./media/touch3.png)
 
-> **Note**
-> In Tizen, the `touchcancel` event occurs when a context menu is activated by a long press of a DOM element, such as text or image.
+  > **Note**  
+  > In Tizen, the `touchcancel` event occurs when a context menu is activated by a long press of a DOM element, such as text or image.
 
 Learning how to handle touch events improves the user interaction of your application:
 
@@ -89,19 +89,20 @@ Learning how to handle touch events improves the user interaction of your applic
    </script>
    ```
 
-	> **Note**  	
-    > Since the device input takes place by touching the screen, sometimes the features of your application and the browser can respond simultaneously to the same touch event. To prevent the unintended effects (for example, the customized gesture and the browser scroll operating simultaneously), use the `preventDefault()` method to prevent the basic browser events:
+> **Note**  
+> Since the device input takes place by touching the screen, sometimes the features of your application and the browser can respond simultaneously to the same touch event. To prevent the unintended effects (for example, the customized gesture and the browser scroll operating simultaneously), use the `preventDefault()` method to prevent the basic browser events:
+>
+>```
+><script>
+>    touchable.addEventListener('touchmove', function(e) {
+>        if (event.touches.length >= 1) {
+>            log.innerHTML += '<p>Touch Event: touchmove</p>';
+>            e.preventDefault(); /* Prevent default scroll action */
+>        }
+>    }, false);
+></script>
+>```
 
-```
-<script>
-    touchable.addEventListener('touchmove', function(e) {
-        if (event.touches.length >= 1) {
-            log.innerHTML += '<p>Touch Event: touchmove</p>';
-            e.preventDefault(); /* Prevent default scroll action */
-        }
-    }, false);
-</script>
-```
 
 ### Source Code
 
@@ -197,7 +198,8 @@ Learning how to control multiple concurrent touch events improves the user inter
    </script>
    ```
 
-   When a touch events is triggered, its details, such as the event coordinates, identification number, and the subject of the touch, are stored in the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch) interface instance. To access the details, the `touches.item()` method can be used in an array format.A multi-point touch event refers to additional instances being pushed to the `touches.item(index)` array. For example, the first touch event is pushed to `touches.item(0)`, and if a second touch event is triggered without removing the first finger from the screen, the second event is pushed to `touches.item(1)`.
+   When a touch events is triggered, its details, such as the event coordinates, identification number, and the subject of the touch, are stored in the [Touch](http://www.w3.org/TR/2013/REC-touch-events-20131010/#idl-def-Touch) interface instance. To access the details, the `touches.item()` method can be used in an array format.  
+   A multi-point touch event refers to additional instances being pushed to the `touches.item(index)` array. For example, the first touch event is pushed to `touches.item(0)`, and if a second touch event is triggered without removing the first finger from the screen, the second event is pushed to `touches.item(1)`.
 
 ### Source Code
 
@@ -223,7 +225,7 @@ To avoid having a delay in the single tap gesture, you can make the page unscala
 
   A touch event occurs immediately when the touched point is released, making it faster than the tap event. However, the touch event occurs even though the touched point is moved before releasing.
 
-  -  To avoid processing the gesture when the touched point is moved, check whether the touched point is moved by setting a flag in the `touchmove()` event handler:
+  - To avoid processing the gesture when the touched point is moved, check whether the touched point is moved by setting a flag in the `touchmove()` event handler:
 
     ```
     <a id="test" href="#">Click test using touch event</a>
@@ -250,7 +252,7 @@ To avoid having a delay in the single tap gesture, you can make the page unscala
 
     To avoid activating the click event after the touch event, set the return type to `false`.
 
-  -  You can also use the `vclick` event provided by jQuery Mobile. The `vclick` event is based on the touch event and generated only if the touched point is not moved.
+  - You can also use the `vclick` event provided by jQuery Mobile. The `vclick` event is based on the touch event and generated only if the touched point is not moved.
 
     ```
     <a id="test" href="#">Click test using touch event</a>

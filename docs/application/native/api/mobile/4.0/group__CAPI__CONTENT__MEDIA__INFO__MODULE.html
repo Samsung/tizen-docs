@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -438,7 +438,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the burst shot is inserted completely. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000355">Deprecated:</a></b></dt><dd>Deprecated since 4.0.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000513">Deprecated:</a></b></dt><dd>Deprecated since 4.0.</dd></dl>
 <p>The following error codes can be received: <br/>
  <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gga7021a96fec7bb8becfe524c95af347baa1b1d20531f99bbf6774d4da18ee5abaa">MEDIA_CONTENT_ERROR_NONE</a> : Success <br/>
  <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gga7021a96fec7bb8becfe524c95af347baab19f79eb1bded6ce4d2dd2583656e837">MEDIA_CONTENT_ERROR_INVALID_PARAMETER</a> : Invalid parameter <br/>
@@ -713,7 +713,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates the media info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000418">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga88ebad54141d3e44bd8622116a9c3545" title="Inserts the content file into the media database.">media_info_insert_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000576">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga88ebad54141d3e44bd8622116a9c3545" title="Inserts the content file into the media database.">media_info_insert_to_db()</a> instead. </dd></dl>
 <p>If the information about the file that is already known, you can use this function to generate empty handler. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediastorage <br/>
@@ -828,7 +828,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Deletes media information that meets the conditions of the filter from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000389">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000547">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <p>This function can delete multiple media information from the media database.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -1287,7 +1287,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the age_rating of content file which User set. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000396">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000554">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>age_rating</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1429,7 +1429,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the author of content file. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000391">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000549">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>author</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1536,7 +1536,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the category of content file which User set. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000394">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000552">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>category</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1584,7 +1584,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the content name of content file which User set. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000393">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Redundant, use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga84939ad441dc327e70b35f86d1c40461" title="Gets the file name including the extension of the content file.">media_info_get_display_name()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000551">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Redundant, use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga84939ad441dc327e70b35f86d1c40461" title="Gets the file name including the extension of the content file.">media_info_get_display_name()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>content_name</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1928,7 +1928,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the keyword of content file which User set. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000397">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html#gad60cf2afae460374ea4d65129727f7fb" title="Inserts a new tag in the media database.">media_tag_insert_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000555">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html#gad60cf2afae460374ea4d65129727f7fb" title="Inserts a new tag in the media database.">media_tag_insert_to_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>keyword</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2021,7 +2021,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the location tag of content file which User set. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000395">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000553">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>location_tag</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2406,7 +2406,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets number which represents how many times given content has been played. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000398">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000556">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee independence of the played count value between applications. It is recommended that the value is managed by the application. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2453,7 +2453,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the content's played time parameter. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000399">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000557">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee independence of the played time value between applications. It is recommended that the value is managed by the application. </dd></dl>
 <p>Function returns content's elapsed playback time parameter as period starting from the beginning of the track. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
@@ -2501,7 +2501,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the provider of content file which User set. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000392">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000550">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>provider</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2984,7 +2984,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Gets the weather of content file. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000390">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000548">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>weather</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -3022,7 +3022,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Increments the played count to content meta handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000400">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000558">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee independence of the played count value between applications. It is recommended that the value is managed by the application. </dd></dl>
 <p>You can increase the played(opened) count of the content file. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
@@ -3091,11 +3091,13 @@ If you want to access only internal storage with this function, you should add p
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must add privilege <a href="http://tizen.org/privilege/content.write">http://tizen.org/privilege/content.write</a>. And You add more privilege depending on your choice of contents path. <br/>
  If you want to access only internal storage by using this function, you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>. <br/>
  Or if you want to access only external storage by using this function, you should add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>. <br/>
- If you can access both storage, you must add all privilege. </dd>
+ If you can access both storage, you must add all privilege. <br/>
+ Since 4.0, This function does not allow a symbolic link. <br/>
+ </dd>
 <dd>
 Since 4.0, this function is related to the following feature:<br/>
  http://tizen.org/feature/content.scanning.others<br/>
- If this feature is not suppported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned.</dd></dl>
+ If this feature is not supported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">path_array</td><td>The path array of the content files to add </td></tr>
@@ -3165,7 +3167,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Inserts the burst shot images into the media database, asynchronously. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000388">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000546">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <p>This function inserts burst images into the media database. <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga740f91f0bed71ca6b35b620b719a288d" title="Called when the burst shot is inserted completely.">media_insert_burst_shot_completed_cb()</a> will be called when insertion to media database is finished.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -3175,7 +3177,9 @@ Since 4.0, this function is related to the following feature:<br/>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must add privilege <a href="http://tizen.org/privilege/content.write">http://tizen.org/privilege/content.write</a>. And You add more privilege depending on your choice of contents path. <br/>
  If you want to access only internal storage with this function, you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>. <br/>
  Or if you want to access only external storage with this function, you should add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>. <br/>
- If you can access both storage, you must add all privilege.</dd></dl>
+ If you can access both storage, you must add all privilege. <br/>
+ Since 4.0, This function does not allow a symbolic link. <br/>
+</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">path_array</td><td>The path array of the burst shot images to add </td></tr>
@@ -3243,11 +3247,13 @@ Since 4.0, this function is related to the following feature:<br/>
  You must add privilege <a href="http://tizen.org/privilege/content.write">http://tizen.org/privilege/content.write</a>. And You add more privilege depending on your choice of contents path. <br/>
  If you want to access only internal storage by using this function, you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>. <br/>
  Or if you want to access only external storage by using this function, you should add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>. <br/>
- If you can access both storage, you must add all privilege. </dd>
+ If you can access both storage, you must add all privilege. <br/>
+ Since 4.0, This function does not allow a symbolic link. <br/>
+ </dd>
 <dd>
 Since 4.0, this function is related to the following feature:<br/>
  http://tizen.org/feature/content.scanning.others<br/>
- If this feature is not suppported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned.</dd></dl>
+ If this feature is not supported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The path of the content file to add </td></tr>
@@ -3295,7 +3301,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Inserts media info to database with media info data. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000419">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga88ebad54141d3e44bd8622116a9c3545" title="Inserts the content file into the media database.">media_info_insert_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000577">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga88ebad54141d3e44bd8622116a9c3545" title="Inserts the content file into the media database.">media_info_insert_to_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
@@ -3446,7 +3452,8 @@ Since 4.0, this function is related to the following feature:<br/>
  If you want to access only internal storage by using this function, you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>. <br/>
  Or if you want to access only external storage by using this function, you should add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>. <br/>
  If you can access both storage, you should add all privilege. <br/>
- This function does not support USB storage.</dd></dl>
+ This function does not support USB storage. <br/>
+ Since 4.0, This function does not allow a symbolic link.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>The handle to the media info </td></tr>
@@ -3491,7 +3498,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Refreshes the media metadata to the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000416">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaced287d6a578eaeddfb184a9556aac2d" title="Requests to scan a media file.">media_content_scan_file()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000574">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaced287d6a578eaeddfb184a9556aac2d" title="Requests to scan a media file.">media_content_scan_file()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write <br/>
@@ -3552,7 +3559,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the added time of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000417">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000575">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3600,7 +3607,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the age rating of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000414">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000572">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3648,7 +3655,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the album of media info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000421">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000579">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3695,7 +3702,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the altitude of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000406">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000564">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3742,7 +3749,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the artist of media info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000422">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000580">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3789,7 +3796,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the author of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000409">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000567">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3836,7 +3843,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the category of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000412">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000570">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3884,7 +3891,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the content name of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000411">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Redundant, use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000569">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Redundant, use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3932,7 +3939,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the description of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000403">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000561">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3980,7 +3987,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the file name including the extension of the content file. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000402">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Redundant, use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000560">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Redundant, use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4028,7 +4035,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the favorite of media info. </p>
-<p>This function can mark favorite of the media. If set to <code>true</code>, this fuction record the time of the change moment. <br/>
+<p>This function can mark favorite of the media. If set to <code>true</code>, this function record the time of the change moment. <br/>
  So, If you use it in order parameter, you can sort the order of the time was a favorite. <br/>
  Or, if you use it in condition parameter, you can get the result of the favorite media.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
@@ -4076,7 +4083,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the genre of media info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000423">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000581">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4123,7 +4130,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the keyword of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000415">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html#gad60cf2afae460374ea4d65129727f7fb" title="Inserts a new tag in the media database.">media_tag_insert_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000573">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html#gad60cf2afae460374ea4d65129727f7fb" title="Inserts a new tag in the media database.">media_tag_insert_to_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4171,7 +4178,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the latitude of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000405">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000563">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4218,7 +4225,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the location tag of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000413">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000571">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4266,7 +4273,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the longitude of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000404">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000562">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4303,7 +4310,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the played time to content meta handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000401">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000559">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee independence of the played time value between applications. It is recommended that the value is managed by the application. </dd></dl>
 <p>You can set the latest played(opened) time of the content file. the latest played time to be set the current time on the system. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
@@ -4351,7 +4358,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the provider of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000410">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000568">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4398,7 +4405,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the rating of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000408">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000566">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4445,7 +4452,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the recorded date of media info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000424">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000582">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4492,7 +4499,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the title of media info handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000420">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000578">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -4539,7 +4546,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Sets the weather of media info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000407">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000565">Deprecated:</a></b></dt><dd>Deprecated since 4.0. This data cannot be saved to the file. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

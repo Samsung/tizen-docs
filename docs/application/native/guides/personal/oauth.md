@@ -157,7 +157,10 @@ To make a request with the OAuth 2.0 manager:
    ret = oauth2_request_get_password(request, &password);
    ```
 
-3. When you no longer need it, free the request handle with the `oauth2_request_destroy()` function:`ret = oauth2_request_destroy(request);`
+3. When you no longer need it, free the request handle with the `oauth2_request_destroy()` function:
+   ```
+   ret = oauth2_request_destroy(request);
+   ```
 
 <a name="token"></a>
 ## Requesting the Server for a Grant or Token

@@ -1,59 +1,32 @@
 
 # Best Practices for Location
 
-If you want to create applications that offer reduced battery drain
-features to the user, Tizen provides various options for you.
+If you want to create applications that offer reduced battery drain features to the user, Tizen provides various options for you.
 
-Reducing the battery drain due to location services can remarkably save
-battery life on the device.
+Reducing the battery drain due to location services can remarkably save battery life on the device.
 
-When creating applications with reduced battery drain, you can implement
-the following features:
+When creating applications with reduced battery drain, you can implement the following features:
 
 -   [Managing life-cycles](#app_battery_lifecycle)
-    -   To handle location information, you must understand the location
-        service state change logic.
-    -   To save battery life, you must know about the application
-        life-cycle and how to synchronize it with the location service.
+    -   To handle location information, you must understand the location service state change logic.
+    -   To save battery life, you must know about the application life-cycle and how to synchronize it with the location service.
 -   [Optimizing power consumption](#app_battery_power)
-    -   You can select the optimal location method to reduce
-        power consumption.
-    -   You can start and stop a location service instance according to
-        the application life-cycle changes, and destroy it when it is no
-        longer needed.
-    -   You can use a timeout or an alarm to stop the location service
-        to save battery life when the location service is not available.
-    -   You can use a callback to stop the location service when the
-        battery is low.
+    -   You can select the optimal location method to reduce power consumption.
+    -   You can start and stop a location service instance according to the application life-cycle changes, and destroy it when it is no longer needed.
+    -   You can use a timeout or an alarm to stop the location service to save battery life when the location service is not available.
+    -   You can use a callback to stop the location service when the battery is low.
 
 
 <a name="app_battery_lifecycle"></a>
 ## Managing Life-cycles
 
-Using the location received from GPS is potentially one of your
-application's most significant causes of battery drain. To minimize the
-battery drain associated with location service activities, it is
-critical that you understand the life-cycles of your application and
-location service, and synchronize the states between the 2 processes:
-location server and location application.
+Using the location received from GPS is potentially one of your application's most significant causes of battery drain. To minimize the battery drain associated with location service activities, it is critical that you understand the life-cycles of your application and location service, and synchronize the states between the 2 processes: location server and location application.
 
 ### Application Life-cycle
 
-The Tizen native application can be in one of several different states.
-Typically, the application is launched by the user from the Launcher, or
-by another application. As the application is starting, the
-`app_create_cb()` callback is executed and the main event loop starts.
-The application now normally becomes the frontmost window, with focus.
-When the application loses the frontmost or focus status, the
-`app_pause_cb()` callback is invoked and the application goes into a
-pause state. The pause state means that the application is not
-terminated, but is running in the background. When your application
-becomes visible again, the `app_resume_cb()` callback is invoked. When
-your application starts exiting, the `app_terminate_cb()` callback is
-invoked.
+The Tizen native application can be in one of several different states.  Typically, the application is launched by the user from the Launcher, or by another application. As the application is starting, the `app_create_cb()` callback is executed and the main event loop starts. The application now normally becomes the frontmost window, with focus.  When the application loses the frontmost or focus status, the `app_pause_cb()` callback is invoked and the application goes into a pause state. The pause state means that the application is not terminated, but is running in the background. When your application becomes visible again, the `app_resume_cb()` callback is invoked. When your application starts exiting, the `app_terminate_cb()` callback is invoked.
 
-The application state changes are managed by the underlying framework.
-The following figure illustrates the application states.
+The application state changes are managed by the underlying framework. The following figure illustrates the application states.
 
 **Figure: Application states**
 
@@ -64,41 +37,27 @@ The application states are described in the following table.
 **Table: Application states**
 
 | State        | Description                              |
-|------------|----------------------------------------|
+|--------------|------------------------------------------|
 | `READY`      | The application is launched.             |
 | `CREATED`    | The application starts the main loop.    |
 | `RUNNING`    | The application is running and visible to the user. |
 | `PAUSED`     | The application is running but invisible to the user. |
 | `TERMINATED` | The application is terminated.           |
 
-Application state changes are managed by the underlying framework. For
-more information on application state transitions, see [Application States and Transitions](../../guides/app-management/efl-ui-app.md#application-states-and-transitions).
+Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](../../guides/app-management/efl-ui-app.md#application-states-and-transitions).
 
 ### Location Service Life-cycle
 
-The location service is composed of a location daemon, known as the
-location server, that provides geographical location information
-received from the GPS chip, Wi-Fi location service, and mobile network
-cell tower information and the client API called by the applications.
+The location service is composed of a location daemon, known as the location server, that provides geographical location information received from the GPS chip, Wi-Fi location service, and mobile network cell tower information and the client API called by the applications.
 
-The location server is alive while the device is turned on and working
-on the best effort basis to find the current location with various
-positioning sources by the location method requested by the client. The
-positioning sources fixing the current location are based on GNSS
-(Global Navigation Satellite System). GNSS includes systems, such as GPS
-(Global Positioning System) of USA, GLONASS (Global Orbiting Navigation
-Satellite System) of Russia, Galileo of Europe, Beidou of China, and
-QZSS (Quasi-Zenith Satellite System) of Japan, as well as Wi-Fi and
-mobile network cell tower information. Moreover, various sensors, such
-as the accelerometer, gyroscope, and compass, are used to determine the
-location.
+The location server is alive while the device is turned on and working on the best effort basis to find the current location with various positioning sources by the location method requested by the client. The positioning sources fixing the current location are based on GNSS (Global Navigation Satellite System). GNSS includes systems, such as GPS (Global Positioning System) of USA, GLONASS (Global Orbiting Navigation Satellite System) of Russia, Galileo of Europe, Beidou of China, and QZSS (Quasi-Zenith Satellite System) of Japan, as well as Wi-Fi and mobile network cell tower information. Moreover, various sensors, such as the accelerometer, gyroscope, and compass, are used to determine the location.
 
 The location server has several states according to the client requests.
 
 **Table: Location states**
 
 | State       | Description                              |
-|-----------|----------------------------------------|
+|-------------|------------------------------------------|
 | Idle        | The location service daemon is waiting for requesting location. |
 | Started     | The location service daemon is started to fix the location using GPS or WPS. |
 | Unavailable | The location service temporarily unavailable. |
@@ -106,10 +65,7 @@ The location server has several states according to the client requests.
 | Stopped     | The location service is stopped. There are no clients requesting location. |
 | Terminated  | The location service daemon is terminated. |
 
-The running state is defined as all states except idle and terminated.
-In the running state, power consumption is higher than in the other
-states because the server is working to find the location using various
-positioning sources.
+The running state is defined as all states except idle and terminated.  In the running state, power consumption is higher than in the other states because the server is working to find the location using various positioning sources.
 
 The following figure illustrates the location service state changes.
 
@@ -117,31 +73,18 @@ The following figure illustrates the location service state changes.
 
 ![Location state changes](./media/location_states.png)
 
-The location service can lose the current position temporarily although
-it provides continuous location information, for example, when the
-device goes through a tunnel or across an area where there are many
-buildings and skyscrapers. The device encounters the multipath
-phenomenon, which is when the signals coming from the positioning
-satellites bounce back and forth off building walls, making it difficult
-to fix the current location. The device can also lose the current
-location when it goes underground, where there are no Wi-Fi access
-points or mobile network cell tower information available. In this
-situation, the location state changes to unavailable.
+The location service can lose the current position temporarily although it provides continuous location information, for example, when the device goes through a tunnel or across an area where there are many buildings and skyscrapers. The device encounters the multipath phenomenon, which is when the signals coming from the positioning satellites bounce back and forth off building walls, making it difficult to fix the current location. The device can also lose the current location when it goes underground, where there are no Wi-Fi access points or mobile network cell tower information available. In this situation, the location state changes to unavailable.
 
 ### Life-cycle Synchronization
 
-One good approach to optimizing power consumption is to synchronize the
-life-cycles of the application and the location service. When the
-application is paused, make sure that the location service is paused
-too. When the application is resumed, also resume the location service.
+One good approach to optimizing power consumption is to synchronize the life-cycles of the application and the location service. When the application is paused, make sure that the location service is paused too. When the application is resumed, also resume the location service.
 
-The following table shows how to synchronize the states between an
-application and location service.
+The following table shows how to synchronize the states between an application and location service.
 
 **Table: State synchronization**
 
 | Application state | Location state | Location state description            |
-|-----------------|--------------|-------------------------------------|
+|-------------------|----------------|---------------------------------------|
 | `READY`           | Idle           | Location handle has been initialized. |
 | `CREATED`         | Idle           | Location handle has been created.     |
 | `RUNNING`         | Started        | Location service is started.          |
@@ -153,75 +96,49 @@ application and location service.
 <a name="app_battery_power"></a>
 ## Optimizing Power Consumption
 
-To reduce power consumption, you must select the optimal location method
-for the location service to determine the device location. You must also
-carefully synchronize the application and location service states to
-ensure that the location service is only running when the application is
-on the foreground.
+To reduce power consumption, you must select the optimal location method for the location service to determine the device location. You must also carefully synchronize the application and location service states to ensure that the location service is only running when the application is on the foreground.
 
-It is hard for the device to detect the location when the device is
-underground or there are no Wi-Fi APs or mobile network cell towers near
-the device. In those situations, it is better to stop the location
-service to save battery life. Otherwise, the life time of the device is
-dramatically reduced by consuming power in the hybrid or GPS mode.
+It is hard for the device to detect the location when the device is underground or there are no Wi-Fi APs or mobile network cell towers near the device. In those situations, it is better to stop the location service to save battery life. Otherwise, the life time of the device is dramatically reduced by consuming power in the hybrid or GPS mode.
 
 ### Selecting the Location Method
 
-The power consumption and location accuracy vary depending on the
-location source. It is important for you to select the location method,
-as the location method decides which location sources are used to
-determine the device location.
-The location service provides different methods for determining the
-location, as illustrated in the following table.
+The power consumption and location accuracy vary depending on the location source. It is important for you to select the location method, as the location method decides which location sources are used to determine the device location.
+
+The location service provides different methods for determining the location, as illustrated in the following table.
 
 **Table: Location service methods**
 
 | Method                    | Location source                 | Description                              |
-|-------------------------|-------------------------------|----------------------------------------|
+|---------------------------|---------------------------------|------------------------------------------|
 | `LOCATIONS_METHOD_HYBRID` | GPS, Wi-Fi AP, cell information | This method allows the device to use all location sources. It provides the best effort with the highest power consumption. |
 | `LOCATIONS_METHOD_GPS`    | GPS                             | This method is used by navigation applications requiring high accuracy. The power consumption is lower than in the hybrid method but higher than in the WPS method. |
 | `LOCATIONS_METHOD_WPS`    | Wi-Fi AP, cell information      | This method receives location information from an external positioning server that computes the approximate location based on the Wi-Fi AP or mobile network cell tower. It provides the lowest power consumption, and the weakest location accuracy. |
 
-The following table shows approximately how much power is consumed by
-GPS in standalone mode, in the condition of no assistant GPS, such as a
+The following table shows approximately how much power is consumed by GPS in standalone mode, in the condition of no assistant GPS, such as a
 SUPL (Secure User Plane Location) server.
 
 **Table: GPS power consumption**
 
 | Operation          | Power consumption | Description                              |
-|-----------------|-----------------|----------------------------------------|
+|--------------------|-------------------|------------------------------------------|
 | Full acquisition   | 32~40 mA          | For the first fix, after 2 or 3 days have passed. |
 | Tracking           | 13~16 mA          | For the first fix, while continuously tracking the location where the satellite signals are very strong. |
 | Low power tracking | 3~5 mA            | GPS chipset supported in a low power mode. |
 
-You must decide which method your application uses, based on the
-advantages and disadvantages:
+You must decide which method your application uses, based on the advantages and disadvantages:
 
--   Balance your need for accuracy with the amount of power you are
-    willing to consume, and select the optimal location source for
-    your application.
--   An application requiring high accuracy, such as navigation, must use
-    a continuous location coming from GPS. In this case, the battery
-    consumption is higher, but still recommended to achieve the
-    best accuracy.
+-   Balance your need for accuracy with the amount of power you are willing to consume, and select the optimal location source for your application.
+-   An application requiring high accuracy, such as navigation, must use a continuous location coming from GPS. In this case, the battery consumption is higher, but still recommended to achieve the best accuracy.
 
 ### Synchronizing Life-cycles
 
-When using location services with your application, you can reduce power
-consumption by synchronizing the life-cycle of the location service to
-that of the application. Basically, create or destroy the location
-service at the same time as the application, and stop or restart the
-location service when the application is paused or resumed.
+When using location services with your application, you can reduce power consumption by synchronizing the life-cycle of the location service to that of the application. Basically, create or destroy the location service at the same time as the application, and stop or restart the location service when the application is paused or resumed.
 
 #### Required Privileges
 
-To use the location service, the application must declare the required
-privileges in the `tizen-manifest.xml` file. For more information on the
-Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges.md).
+To use the location service, the application must declare the required privileges in the `tizen-manifest.xml` file. For more information on the Tizen privileges, see [Security and API Privileges](../details/sec-privileges.md).
 
-For this example, the application manifest must include the following
-privileges:
+For this example, the application manifest must include the following privileges:
 
 ```xml
 <privileges>
@@ -234,10 +151,9 @@ privileges:
 
 #### Creating and Destroying the Location Service
 
-Create the location service after creating the application. When the
-application is terminated, destroy the location service.
+Create the location service after creating the application. When the application is terminated, destroy the location service.
 
-```c++
+```cpp
 #include <locations.h>
 #include <tizen.h>
 #include <locations.h>
@@ -400,11 +316,9 @@ main(int argc, char *argv[])
 
 #### Starting and Stopping the Location Service
 
-If you want to continuously track the location, stop the location
-service when the application is paused and restart it when the
-application is resumed.
+If you want to continuously track the location, stop the location service when the application is paused and restart it when the application is resumed.
 
-```c++
+```cpp
 /* Start the location service */
 static void
 start_location_service(void *data)
@@ -470,22 +384,15 @@ app_resume(void *data)
 
 ### Handling the Location Unavailable State
 
-You can save power by stopping the location service while the service is
-not available. You can do this by using a timeout, an alarm, or the low
-battery callback.
+You can save power by stopping the location service while the service is not available. You can do this by using a timeout, an alarm, or the low battery callback.
 
 #### Using a Timeout
 
-If you create a service application, you can stop the location service
-with an alarm and then restart the service after a specific time
-interval, because there are no pause and resume states for the service
-application. Finally, you can stop the location service when the current
-position is fixed after some seconds or minutes.
+If you create a service application, you can stop the location service with an alarm and then restart the service after a specific time interval, because there are no pause and resume states for the service application. Finally, you can stop the location service when the current position is fixed after some seconds or minutes.
 
-The following example demonstrates how you can stop the location service
-using the timer with the `ecore_timer_add()` function:
+The following example demonstrates how you can stop the location service using the timer with the `ecore_timer_add()` function:
 
-```c++
+```cpp
 #include <tizen.h>
 #include <service_app.h>
 #include "service.h" /* Auto-generated header file by the Tizen Studio */
@@ -636,22 +543,16 @@ main(int argc, char* argv[])
 
 #### Using an Alarm
 
-Tizen provides the Alarm API to trigger events whenever you want to. You
-can increase the life time of the device by stopping the location
-service with an alarm when you have no further need for the location
-information, or when the device cannot fix the current location for a
-long time because its location only has weak GPS satellite, Wi-Fi, and
-mobile network signals.
+Tizen provides the Alarm API to trigger events whenever you want to. You can increase the life time of the device by stopping the location service with an alarm when you have no further need for the location information, or when the device cannot fix the current location for a long time because its location only has weak GPS satellite, Wi-Fi, and mobile network signals.
 
-> **Note**  
-> The application control is supported in UI applications only,
-so the following example cannot be reused in service applications.
+> **Note**
+>
+> The application control is supported in UI applications only, so the following example cannot be reused in service applications.
 
 
-The following example demonstrates how you can stop the location service
-using an alarm:
+The following example demonstrates how you can stop the location service using an alarm:
 
-```c++
+```cpp
 #include <tizen.h>
 #include <service_app.h>
 #include "service.h" /* Auto-generated header file by the Tizen Studio */
@@ -823,15 +724,11 @@ main(int argc, char *argv[])
 
 #### Using the Low Battery Callback
 
-If you stop the location service when the device battery level becomes
-low, you can increase the life time of the device. You can stop the
-location service when the low battery callback is triggered. This is the
-best method for handling the location service in service applications.
+If you stop the location service when the device battery level becomes low, you can increase the life time of the device. You can stop the location service when the low battery callback is triggered. This is the best method for handling the location service in service applications.
 
-The following example demonstrates how you can stop the location service
-when the device battery is low:
+The following example demonstrates how you can stop the location service when the device battery is low:
 
-```c++
+```cpp
 /* Callback invoked by low battery event */
 static void
 service_app_low_battery(app_event_info_h event_info, void *user_data)

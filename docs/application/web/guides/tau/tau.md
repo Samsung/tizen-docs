@@ -22,7 +22,8 @@ With TAU, you can take advantage of the following benefits in your code:
 - TAU supports various profiles (mobile, wearable, and TV).
 
 > **Note**  
-> TAU (Tizen Advanced UI) is the new name of the `tizen-web-ui-fw`. In all documents and source code, TAU is used instead of `tizen-web-ui-fw`.Since 2.3, `tizen-web-ui-fw` has been deprecated (including `tizen-web-ui-fw.js`, `tizen-web-ui-fw-libs.js`, and `tizen-web-ui-fw.css`). Since 2.4, `tizen-web-ui-fw` is fully deleted and not supported anymore.
+> TAU (Tizen Advanced UI) is the new name of the `tizen-web-ui-fw`. In all documents and source code, TAU is used instead of `tizen-web-ui-fw`.  
+> Since 2.3, `tizen-web-ui-fw` has been deprecated (including `tizen-web-ui-fw.js`, `tizen-web-ui-fw-libs.js`, and `tizen-web-ui-fw.css`). Since 2.4, `tizen-web-ui-fw` is fully deleted and not supported anymore.
 
 To learn to use the TAU features in your application UI, see the following topics:
 

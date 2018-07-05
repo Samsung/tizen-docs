@@ -1,4 +1,5 @@
 # Getting Started
+## [Overview](/application/native/getting-started/overview.md)
 ## [Creating Your First Tizen Mobile Native Application](/application/native/getting-started/mobile/first-app.md)
 ## [Creating Your First Tizen Wearable Native Application](/application/native/getting-started/wearable/first-app.md)
 ## [Creating Your First Tizen Wearable Native Watch Application](/application/native/getting-started/wearable-watch/first-app-watch.md)
@@ -70,6 +71,15 @@
 
 # [Guides](/application/native/guides/index.md)
 
-# [API Reference](/application/native/api/index.md)
+# API Reference
+## [Overview](/application/native/api/overview.md)
+## Mobile
+### [4.0](/application/native/api/mobile-4.0.md)
+### [3.0](/application/native/api/mobile-3.0.md)
+### [2.4](/application/native/api/mobile-2.4.md)
+## Wearable
+### [4.0](/application/native/api/wearable-4.0.md)
+### [3.0](/application/native/api/wearable-3.0.md)
+### [2.3.2](/application/native/api/wearable-2.3.2.md)
 
-# [Samples](/application/native/https://developer.tizen.org/development/sample/native)
+# [Samples](https://developer.tizen.org/development/sample/native)

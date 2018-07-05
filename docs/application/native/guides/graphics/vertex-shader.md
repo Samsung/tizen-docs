@@ -230,11 +230,11 @@ glDrawElements(GL_TRIANGLES, /* Mode */
 The following example code presents how to use OpenGL&reg; ES APIs in the callbacks of the GLView. In the `init_glview()` callback function, compile and link the shaders, and create VBOs.
 
 ```
-/* OpenGL&reg; ES initialization callback */
+/* OpenGL ES initialization callback */
 static void
 init_glview(Evas_Object *glview)
 {
-    /* Set OpenGL&reg; ES state color to black */
+    /* Set OpenGL ES state color to black */
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     appdata_s *ad = (appdata_s *)evas_object_data_get(glview, "ad");
@@ -313,7 +313,7 @@ create_vbo(appdata_s *ad)
 In the `draw_glview()` callback, calculate the world, view, and projection matrices and then pass the combined matrix to the vertex shader through the `glUniformXXX()` function. When all uniforms are passed to the shader, the OpenGL&reg; ES drawcall is made.
 
 ```
-/* OpenGL&reg; ES drawing callback */
+/* OpenGL ES drawing callback */
 static void
 draw_glview(Evas_Object *glview)
 {

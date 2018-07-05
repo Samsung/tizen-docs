@@ -222,6 +222,18 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>RPC Port</Name>
+            <Path>group__CAPI__RPC__PORT__MODULE.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>RPC Port Parcel</Name>
+              <Path>group__CAPI__RPC__PORT__PARCEL__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>Service Application</Name>
             <Path>group__CAPI__SERVICE__APP__MODULE.html</Path>
             <Subnodes>
@@ -1642,12 +1654,6 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>STC Restriction</Name>
-              <Path>group__CAPI__NETWORK__STC__RESTRICTION__MODULE.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
               <Name>STC Statistics</Name>
               <Path>group__CAPI__NETWORK__STC__STATISTICS__MODULE.html</Path>
               <Subnodes>
@@ -2480,6 +2486,12 @@
                  <Node>
                   <Name>Image View</Name>
                   <Path>group__dali__toolkit__controls__image__view.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Model3dView</Name>
+                  <Path>group__dali__toolkit__controls__model3d__view.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4621,6 +4633,12 @@
            <Node>
             <Name>Voice control elementary</Name>
             <Path>group__VOICE__CONTROL__ELEMENTARY__MODULE.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Voice control engine</Name>
+            <Path>group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html</Path>
             <Subnodes>
             </Subnodes>
            </Node>

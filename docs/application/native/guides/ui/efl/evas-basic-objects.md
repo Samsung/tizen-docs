@@ -17,7 +17,6 @@ To start working with Evas:
 
    /* Get the canvas */
    Evas *evas = evas_object_evas_get(ad->win);
-
    ```
 
 2. When you have an instance of the Evas object and the Evas canvas, you can create basic Evas objects as child objects for the parent Evas canvas.
@@ -30,7 +29,6 @@ To start working with Evas:
    evas_object_resize(ad->bg, 480, 800);
    evas_object_move(ad->bg, 0, 0);
    evas_object_show(ad->bg);
-
    ```
 
    **Figure: White background object**
@@ -65,7 +63,6 @@ evas_object_resize(ad->clipper, w / 2, h / 2);
 /* Set the clipper object to clip the image object */
 evas_object_clip_set(ad->img, ad->clipper);
 evas_object_show(ad->clipper);
-
 ```
 
 **Figure: Clipping an image**
@@ -93,7 +90,6 @@ _clipper_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
         evas_object_clip_set(ad->img, ad->clipper);
     }
 }
-
 ```
 
 **Figure: Disabling the clipping**
@@ -131,7 +127,6 @@ To manage the object color and visibility:
       /* Set the new color */
       evas_object_color_set(ad->clipper, r, g, b, alpha);
   }
-
   ```
 
   **Figure: Applying a color**
@@ -164,7 +159,6 @@ To manage the object color and visibility:
       /* Set the new color and opacity */
       evas_object_color_set(ad->clipper, r, g, b, alpha);
   }
-
   ```
 
   **Figure: Changing the opacity**
@@ -241,7 +235,6 @@ _unref_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
     evas_object_del(ad->spacer);
     ad->spacer = NULL;
 }
-
 ```
 
 In the above example, a green rectangle is used as padding and the clipper object calculates its X, Y coordinates based on the rectangle position. When the rectangle is created, its reference count is increased to 1 by calling the `evas_object_ref()` function. When the `_unref_cb()` callback is triggered, the reference count value is higher than 0 and the `evas_object_unref()` function is called to decrease it. At the end of the callback, the reference count is 0 and the `evas_object_del(ad->spacer)` function marks the rectangle object for deletion.
@@ -274,7 +267,6 @@ To handle the object order on the canvas:
   evas_object_resize(ad->order_rect2, 200, 200);
   /* Show the blue rectangle on top of the red rectangle */
   evas_object_show(ad->order_rect2);
-
   ```
 
   **Figure: Default object order on the canvas**
@@ -307,12 +299,13 @@ To handle the object order on the canvas:
   }
   ```
 
-  **Figure: Changed object order**  
+  **Figure: Changed object order**
+
   ![Changed object order](./media/changed_order.png)
 
-- To place an object to the top or bottom of its layer on the canvas object stack, use the `evas_object_raise()` or `evas_object_lower()` function.  
+- To place an object to the top or bottom of its layer on the canvas object stack, use the `evas_object_raise()` or `evas_object_lower()` function.
 
- In the following example, the `_lower_cb()` callback puts the canvas background at the bottom, showing both the rectangles that are on higher levels. On the other hand, the `_raise_cb()` callback puts the background to the top, hiding both the rectangles that are now on lower levels.
+  In the following example, the `_lower_cb()` callback puts the canvas background at the bottom, showing both the rectangles that are on higher levels. On the other hand, the `_raise_cb()` callback puts the background to the top, hiding both the rectangles that are now on lower levels.
 
   ```
   static void
@@ -335,10 +328,11 @@ To handle the object order on the canvas:
   }
   ```
 
-  **Figure: Canvas background at the bottom (left) and on the top (right)**  
+  **Figure: Canvas background at the bottom (left) and on the top (right)**
+
   ![Canvas background at the bottom (left) and on the top (right)](./media/background_order.png)
 
 ## Related Information
-- Dependencies  
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

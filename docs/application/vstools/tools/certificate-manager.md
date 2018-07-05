@@ -67,7 +67,7 @@ To distribute your application, you must create a certificate profile and sign t
 
         ![Distributor certificate](media/cert_reg_dist_cert2.png)
 
-    3.  Click **Finish**.
+5.  Click **Finish**.
 
 ## Managing Certificate Profiles
 

@@ -30,7 +30,9 @@ To use a notify component in your application:
      elm_object_content_set(notify, label);
      ```
 
-3. Register the [callback](#callbacks) functions. The following example shows how to define and register a callback for the `timeout` signal:
+3. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `timeout` signal:
 
    ```
    evas_object_smart_callback_add(notify, "timeout", timeout_cb, data);
@@ -104,14 +106,16 @@ You can register callback functions connected to the following signals for a not
 **Table: Notify callback signals**
 
 | Signal          | Description                              | `event_info` |
-|---------------|----------------------------------------|------------|
+|-----------------|------------------------------------------|--------------|
 | `timeout`       | The timeout count ends and the notify component is hidden. | `NULL`       |
 | `block,clicked` | The user clicks outside the notify component. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

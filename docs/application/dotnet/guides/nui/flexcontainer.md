@@ -4,7 +4,7 @@ A flex container is a NUI container control that contains items, such as buttons
 
 The flex container can alter the width and height of the flex items within it, so that they optimally fill the available space on any display size. It expands items to fill available free space, or reduces their size to prevent overflow.
 
-The following figure illustrates flex container terminology and alignment axes, based on a flex container where the "flex direction" is defined as *row*.
+The following figure illustrates flex container terminology and alignment axes, based on a flex container where the **flex direction** is defined as **row**.
 
 **Figure: Flex container terminology**
 
@@ -34,14 +34,14 @@ The following example shows how to create a gallery-like flexbox layout using th
     Window.Instance.Add(flexContainer);
     ```
 
-2.  To make the toolbar and main content display vertically, set the flex direction of the main container to "column":
+2.  To make the toolbar and main content display vertically, set the flex direction of the main container to **column**:
 
     ```
     /// Display toolbar and content vertically
     flexContainer.FlexDirection = FlexContainer.FlexDirectionType.Column;
     ```
 
-3.  Create a new flex container as the toolbar and add it to the main container. Because the flex direction in the main container is "column", the toolbar is placed at the top.
+3.  Create a new flex container as the toolbar and add it to the main container. Because the flex direction in the main container is **column**, the toolbar is placed at the top.
 
     ```
     /// Create the toolbar
@@ -54,7 +54,7 @@ The following example shows how to create a gallery-like flexbox layout using th
     flexContainer.Add(toolBar);
     ```
 
-4.  To make the buttons and title display horizontally, but vertically aligned to the center of the toolbar, set the toolbar flex direction to "row" and its `AlignItems` property to "center":
+4.  To make the buttons and title display horizontally, but vertically aligned to the center of the toolbar, set the toolbar flex direction to **row** and its `AlignItems` property to **center**:
 
     ```
     /// Display toolbar items horizontally

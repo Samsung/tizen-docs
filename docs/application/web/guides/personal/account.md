@@ -34,7 +34,7 @@ To understand account management, you must be familiar with the following basic 
 
 - Account
 
-  An entity that collects all the data (such as user name, credentials, settings) needed for connecting to services. An account is always bound to a single provider and has a list of service instances bound to the account. The services can be individually enabled and disabled on the given account. For instance, "Laccount1@gmail.com" can identify a Google account, giving access to services, such as Gmail, Picasa, and Youtube, with each service having a separate service instance bound to the account.
+  An entity that collects all the data (such as user name, credentials, settings) needed for connecting to services. An account is always bound to a single provider and has a list of service instances bound to the account. The services can be individually enabled and disabled on the given account. For instance, "`Laccount1@gmail.com`" can identify a Google account, giving access to services, such as Gmail, Picasa, and Youtube, with each service having a separate service instance bound to the account.
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ To enable your application to use the account functionality:
    </widget>
    ```
 
-   Additionally, to double-check the Account API support (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html) applications) while the application is running, use the `tizen.systeminfo.getCapability()` method and enable or disable the code that needs the API, as needed.
+   Additionally, to double-check the Account API support (in [mobile](../../api/latest/device_api/mobile/tizen/account.html) and [wearable](../../api/latest/device_api/wearable/tizen/account.html) applications) while the application is running, use the `tizen.systeminfo.getCapability()` method and enable or disable the code that needs the API, as needed.
 
 2. To use the Account API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
@@ -83,7 +83,7 @@ To enable your application to use the account functionality:
 
 Learning how to retrieve account information enables you to include account support into your applications:
 
-- To retrieve information about all available accounts, use the `getAccounts()` method of the `AccountManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html#AccountManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html#AccountManager) applications):
+- To retrieve information about all available accounts, use the `getAccounts()` method of the `AccountManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#AccountManager) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#AccountManager) applications):
 
   ```
   function getAccountsSuccess(accounts) {
@@ -97,7 +97,7 @@ Learning how to retrieve account information enables you to include account supp
   tizen.account.getAccounts(getAccountsSuccess, getAccountsError);
   ```
 
-- If you already know the ID of the account, you can get the `Account` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html#Account) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html#Account) applications) using the `getAccount()` method of the `AccountManager` interface:
+- If you already know the ID of the account, you can get the `Account` object (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#Account) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#Account) applications) using the `getAccount()` method of the `AccountManager` interface:
 
   ```
   var account = tizen.account.getAccount(my_account_id);
@@ -107,7 +107,8 @@ Learning how to retrieve account information enables you to include account supp
 
 To create accounts, you must learn how to get access to account providers:
 
-- Get a specific account provider with the given application ID using the `getProviders()` method of the `ApplicationManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationManager) applications).If the current application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_account) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_account) applications, in its `config.xml` file), you can use the current application ID.  Otherwise, get the ID of the current application using the `getCurrentApplication()` method of the `ApplicationManager` interface:
+- Get a specific account provider with the given application ID using the `getProviders()` method of the `ApplicationManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationManager) and [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationManager) applications).  
+  If the current application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_account) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_account) applications, in its `config.xml` file), you can use the current application ID.  Otherwise, get the ID of the current application using the `getCurrentApplication()` method of the `ApplicationManager` interface:
 
   ```
   var appId = tizen.application.getCurrentApplication().appInfo.id;
@@ -134,14 +135,14 @@ Creating, adding, updating, and deleting accounts is a basic account management 
 > **Note**  
 > To perform these operations, your application must be the account provider.
 
-1. To create an account, first get an account provider. If your application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_account) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_account) applications, in its `config.xml` file), use the `getProvider()` method:
+1. To create an account, first get an account provider. If your application is an account provider application (meaning that it contains the `<tizen:account>` element, in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_account) and [wearable](../../../tizen-studio/web-tools/config-editor.md#mw_account) applications, in its `config.xml` file), use the `getProvider()` method:
 
    ```
    var appId = tizen.application.getCurrentApplication().appInfo.id;
    var accountProvider = tizen.account.getProvider(appId);
    ```
 
-2. Create an instance of the `Account` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html#Account) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html#Account) applications):
+2. Create an instance of the `Account` interface (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#Account) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#Account) applications):
 
    ```
    var account = new tizen.Account(accountProvider, {userName: 'admin', iconUri: 'path/to/icon.jpg'});
@@ -159,13 +160,13 @@ Creating, adding, updating, and deleting accounts is a basic account management 
    account.userName = 'new username';
    ```
 
-5. To save the changed values, use the `update()` method of the `AccountManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html#AccountManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html#AccountManager) applications):
+5. To save the changed values, use the `update()` method of the `AccountManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#AccountManager) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#AccountManager) applications):
 
    ```
    tizen.account.update(account);
    ```
 
-6. To remove the account from the system, use the `remove()` method of  the `AccountManager` interface, providing the account ID
+6. To remove the account from the system, use the `remove()` method of  the `AccountManager` interface, providing the account ID:
 
    ```
    tizen.account.remove(account.id);
@@ -175,7 +176,7 @@ Creating, adding, updating, and deleting accounts is a basic account management 
 
 Learning how to register change listeners enables you to synchronize the view of your application with the changes in the account database:
 
-1. Define a listener implementing the `AccountChangeCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html#AccountChangeCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html#AccountChangeCallback) applications):
+1. Define a listener implementing the `AccountChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#AccountChangeCallback) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#AccountChangeCallback) applications):
 
    ```
    var accountChangeListener = {
@@ -191,7 +192,7 @@ Learning how to register change listeners enables you to synchronize the view of
    };
    ```
 
-2. Register the account listener using the `addAccountListener()` method of the `AccountManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html#AccountManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html#AccountManager) applications) to start receiving notifications about changes:
+2. Register the account listener using the `addAccountListener()` method of the `AccountManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#AccountManager) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#AccountManager) applications) to start receiving notifications about changes:
 
    ```
    var watchId = tizen.account.addAccountListener(accountChangeListener);
@@ -229,7 +230,11 @@ Learning how to manage extended data for an account enables you to include accou
 
    - To get extended data:
 
-     - To retrieve extended data value for a specific key, use the `getExtendedData()` method:`var key = 'accessToken';var value = account.getExtendedData(key);`
+     - To retrieve extended data value for a specific key, use the `getExtendedData()` method:
+       ```
+       var key = 'accessToken';
+       var value = account.getExtendedData(key);
+       ```
 
      - To retrieve all extended data for an account, use the asynchronous version of the `getExtendedData()` method. The success callback contains an array of the extended data key-value pairs.
 

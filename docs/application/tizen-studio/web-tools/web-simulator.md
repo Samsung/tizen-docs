@@ -91,10 +91,16 @@ You can modify the following configuration settings in the Web Simulator configu
 
   You can modify the following system configuration settings on the **SYSTEM SETTINGS** tab:
 
-  - **CONFIG** Manage the device vibration and screen lock status.
-  - **CPU** Manually set the CPU load. If the value is set to 0, the CPU is idle. If the value is set to 1, the CPU usage is 100%.
-  - **BUILD**, **LOCALE**, **DEVICE ORIENTATION**, **STORAGE**, and **DISPLAY**Display the build type, language, country, display orientation, dots per inch (DPI), and device width and height. You can also set the display brightness and storage attributes.
-  - **PERIPHERAL** Display and set the video output.
+  - **CONFIG**  
+    Manage the device vibration and screen lock status.
+
+  - **CPU**  
+    Manually set the CPU load. If the value is set to 0, the CPU is idle. If the value is set to 1, the CPU usage is 100%.
+
+  - **BUILD**, **LOCALE**, **DEVICE ORIENTATION**, **STORAGE**, and **DISPLAY**  
+    Display the build type, language, country, display orientation, dots per inch (DPI), and device width and height. You can also set the display brightness and storage attributes.
+  - **PERIPHERAL**  
+     Display and set the video output.
 
 - Network settings
 

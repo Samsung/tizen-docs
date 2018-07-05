@@ -35,13 +35,15 @@ To use a map component in your application:
    elm_map_region_show(map, 2.2, 48.8);
    ```
 
-   To show a specific area with a bring-in animation, use the `elm_map_region_bring_in()` function:\
+   To show a specific area with a bring-in animation, use the `elm_map_region_bring_in()` function:
 
    ```
    elm_map_region_bring_in(map, 2.2, 48.8);
    ```
 
-5. Register the [callback](#callbacks) functions. The following example shows how to define and register a callback for the `clicked` signal:
+5. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `clicked` signal:
 
    ```
    evas_object_smart_callback_add(map, "clicked", clicked_cb, data);
@@ -97,7 +99,7 @@ The following table lists the available component styles.
 **Table: Map styles**
 
 | Style     | Sample                                   |
-|---------|----------------------------------------|
+|-----------|------------------------------------------|
 | `default` | ![elm/map/base/default](./media/map_default.png) |
 
 ## Callbacks
@@ -107,14 +109,14 @@ You can register callback functions connected to the following signals for a map
 **Table: Map callback signals**
 
 | Signal              | Description                              | `event_info`            |
-|-------------------|----------------------------------------|-----------------------|
+|---------------------|------------------------------------------|-------------------------|
 | `clicked`           | The map is clicked without dragging.     | `Evas_Event_Mouse_Up`   |
 | `clicked,double`    | The map is double-clicked.               | `Evas_Event_Mouse_Down` |
 | `press`             | The map is pressed down on.              | `Evas_Event_Mouse_Down` |
 | `longpressed`       | The map is pressed down for a long time without dragging. | `Evas_Event_Mouse_Down` |
 | `scroll`            | The content is scrolled (moved).         | `NULL`                  |
-| `scroll,drag,start` | Dragging the content around starts.      | `NULL`                  |
-| `scroll,drag,stop`  | Dragging the content around stops.       | `NULL`                  |
+| `scroll,drag,start` | Dragging the content starts.             | `NULL`                  |
+| `scroll,drag,stop`  | Dragging the content stops.              | `NULL`                  |
 | `scroll,anim,start` | The scrolling animation starts.          | `NULL`                  |
 | `scroll,anim,stop`  | The scrolling animation stops.           | `NULL`                  |
 | `zoom,start`        | The zoom animation starts.               | `NULL`                  |
@@ -132,10 +134,12 @@ You can register callback functions connected to the following signals for a map
 | `overlay,clicked`   | An overlay is clicked.                   | `Elm_Map_Overlay`       |
 | `loaded`            | The map is loaded.                       | `NULL`                  |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

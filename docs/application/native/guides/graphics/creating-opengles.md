@@ -5,7 +5,9 @@ The easiest way to use the OpenGL&reg; ES API in a Tizen application is to rely 
 
 The following example shows the steps to create an OpenGL&reg; ES application. From now on, the `Elm_GLView` component is shortened to GLView.
 
-1. Create a basic application as presented in the [mobile](../../getting-started/mobile/first-app.md#create) and [wearable](../../getting-started/wearable/first-app.md#create) Tizen first application example.The UI application's skeleton makes available the window object, which can contain the GLView component.
+1. Create a basic application as presented in the [mobile](../../getting-started/mobile/first-app.md#create) and [wearable](../../getting-started/wearable/first-app.md#create) Tizen first application example.
+
+   The UI application's skeleton makes available the window object, which can contain the GLView component.
 
 2. Enable hardware acceleration.
 
@@ -16,7 +18,7 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
    ```
    Evas_Object *win;
    elm_config_accel_preference_set("opengl");
-   win = elm_win_util_standard_add(name, "OpenGL&reg; example");
+   win = elm_win_util_standard_add(name, "OpenGL example");
    ```
 
    You must also set hardware acceleration in the manifest file. For more information, see [Hardware Acceleration](hw-acceleration.md).
@@ -66,7 +68,7 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
        /* Create and initialize GLView */
        glview = elm_glview_add(parent);
 
-       /* Prepare to use OpenGL&reg; ES APIs directly */
+       /* Prepare to use OpenGL ES APIs directly */
        ELEMENTARY_GLVIEW_GLOBAL_USE(glview);
    }
    ```
@@ -102,14 +104,14 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
       The initialization callback is called when the GLView is created.
 
       ```
-      /* OpenGL&reg; ES init callback */
+      /* OpenGL ES init callback */
       static void
       init_glview(Evas_Object *glview)
       {
-          /* Set OpenGL&reg; ES state color to pink */
+          /* Set OpenGL ES state color to pink */
           glClearColor(1.0, 0.2, 0.6, 1.0);
 
-          /* Do any form of OpenGL&reg; ES initialization here */
+          /* Do any form of OpenGL ES initialization here */
           /* init_shaders(); */
           /* init_vertices(); */
       }
@@ -136,14 +138,14 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
       The drawing callback is called whenever the GLView must be updated. The OpenGL&reg; ES draw commands must be made here.
 
       ```
-      /* OpenGL&reg; ES draw callback */
+      /* OpenGL ES draw callback */
       static void
       draw_glview(Evas_Object *glview)
       {
           /* Paint it pink */
           glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-          /* Usual OpenGL&reg; ES draw commands come here */
+          /* Usual OpenGL ES draw commands come here */
           /* draw_scene(); */
       }
       ```
@@ -157,14 +159,17 @@ The following example shows the steps to create an OpenGL&reg; ES application. F
       static void
       del_glview(Evas_Object *glview)
       {
-          /* Destroy all the OpenGL&reg; ES resources here */
+          /* Destroy all the OpenGL ES resources here */
           /* destroy_shaders(); */
           /* destroy_objects(); */
       }
       ```
 
-> **Note**  
-> If the OpenGL&reg; ES functions are called outside the 4 GLView callback functions, you must call the `evas_gl_make_current()` function before the OpenGL&reg; ES function is called. However, this results in a performance degradation due to context switching, and only works if the direct rendering mode is not used.If Direct Rendering is enabled, all OpenGL&reg; ES functions must be called from the 4 GLView callback functions only. All other operations can break the rendering order and cause unexpected rendering.
+> **Note**
+>
+> If the OpenGL&reg; ES functions are called outside the 4 GLView callback functions, you must call the `evas_gl_make_current()` function before the OpenGL&reg; ES function is called. However, this results in a performance degradation due to context switching, and only works if the direct rendering mode is not used.
+>
+> If Direct Rendering is enabled, all OpenGL&reg; ES functions must be called from the 4 GLView callback functions only. All other operations can break the rendering order and cause unexpected rendering.
 
 ## Related Information
 - Dependencies

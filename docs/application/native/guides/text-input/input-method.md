@@ -18,7 +18,10 @@ The main features of the Input Method API include:
   The IME application runs as follows:
 
   1. Once the IME application is started, the `create()` callback function is called.
-  2. When a text input UI control gets the focus, the `show()` callback function is called.The IME application can call Input Method APIs to interact with the UI control. The event callback functions are called when the UI control state changes. When the text input UI control loses the focus, the `hide()` callback function is called.
+  2. When a text input UI control gets the focus, the `show()` callback function is called.
+
+     The IME application can call Input Method APIs to interact with the UI control. The event callback functions are called when the UI control state changes. When the text input UI control loses the focus, the `hide()` callback function is called.
+
   3. When the IME application is finished, the `terminate()` callback function is called.
 
 - Managing the main loop and event callback functions
@@ -235,31 +238,31 @@ To register and define event callbacks for the IME application:
 
       - The `focus_in()` callback is triggered when an associated text input UI control in any application gets the focus. Usually, the `focus_in()` event is followed by the `show()` event.
 
-    ```
-    static int
-    focus_in(int context_id, void *user_data)
-    {
-        /* Take action */
-    }
-    ```
+        ```
+        static int
+        focus_in(int context_id, void *user_data)
+        {
+            /* Take action */
+        }
+        ```
       - The `focus_out()` callback is triggered when an associated text input UI control in any application loses the focus. Usually, the `focus_out()` event is followed by the `hide()` event.
 
-    ```
-    static int
-    focus_out(int context_id, void *user_data)
-    {
-        /* Take action */
-    }
-    ```
+        ```
+        static int
+        focus_out(int context_id, void *user_data)
+        {
+            /* Take action */
+        }
+        ```
       - The `cursor_position_updated()` callback is triggered when the position of the cursor in an associated text input UI control changes. You can use this callback to provide, for example, auto-capitalization or predictive text features.
 
-    ```
-    static int
-    cursor_position_updated(int cursor_pos, void *user_data)
-    {
-        /* Take action */
-    }
-    ```
+        ```
+        static int
+        cursor_position_updated(int cursor_pos, void *user_data)
+        {
+            /* Take action */
+        }
+        ```
 
 <a name="menu"></a>
 ## Making a Keyboard Option Menu
@@ -288,18 +291,20 @@ To make the option menu for the keyboard:
 
 2. The option menu can be opened in 2 different ways:
 
-   - The device Settings application can open the keyboard option menu from **Settings > Language and input > Keyboard > Keyboard settings**.If the user selects the keyboard settings, the `option_window_created()` callback is executed:
+   - The device Settings application can open the keyboard option menu from **Settings > Language and input > Keyboard > Keyboard settings**.
 
-    ```
-    static void
-    option_window_created(Evas_Object *window, ime_option_window_type_e type, void *user_data)
-    {
-        /* Create the option window */
-        /* Draw the content to the given window object */
+     If the user selects the keyboard settings, the `option_window_created()` callback is executed:
 
-        evas_object_show(window);
-    }
-    ```
+     ```
+     static void
+     option_window_created(Evas_Object *window, ime_option_window_type_e type, void *user_data)
+     {
+         /* Create the option window */
+         /* Draw the content to the given window object */
+
+         evas_object_show(window);
+     }
+     ```
 
    - The keyboard can have a specific key button for its option menu, allowing the user to open the option menu directly from the keyboard.
 
@@ -381,6 +386,7 @@ To check the current default keyboard or whether a specific IME is enabled, or t
     }
     ```
 	If the function is successful, it returns 0.
+
 - To check which IME is currently selected as the default keyboard, call the `ime_manager_get_active_ime()` function:
 
     ```
@@ -398,6 +404,7 @@ To check the current default keyboard or whether a specific IME is enabled, or t
     ```
 
 	If the function is successful, it returns 0.
+
 - To get the number of enabled (usable) IMEs, call the `ime_manager_get_enabled_ime_count()` function:
 
     ```

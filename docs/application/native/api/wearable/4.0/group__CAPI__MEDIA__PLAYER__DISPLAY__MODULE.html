@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -87,7 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">Display</div>  </div>
 <div class="ingroups"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html">Player</a></div></div><!--header-->
@@ -122,7 +124,53 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation settings of the video surface display.  <a href="#gaf61b3aaa20a868c0e7a473647fe0ca55"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga969f24d15ab6fd0f74ad4c5d4f6d75de">player_get_display_rotation</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gab8c4c170d4b2628a09831edc8d652302">player_display_rotation_e</a> *rotation)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the rotation of the video surface display.  <a href="#ga969f24d15ab6fd0f74ad4c5d4f6d75de"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gad2eff88d820bdcbfe1391a43566658cc">player_display_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The player display handle.  <a href="#gad2eff88d820bdcbfe1391a43566658cc"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gafd73ee3d0208cbbc2fd96293026ff60a">GET_DISPLAY</a>(x)&#160;&#160;&#160;(void*)(x)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for a display handle from evas object.  <a href="#gafd73ee3d0208cbbc2fd96293026ff60a"></a><br/></td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="gafd73ee3d0208cbbc2fd96293026ff60a"></a><!-- doxytag: member="player.h::GET_DISPLAY" ref="gafd73ee3d0208cbbc2fd96293026ff60a" args="(x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gafd73ee3d0208cbbc2fd96293026ff60a">GET_DISPLAY</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(void*)(x)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition for a display handle from evas object. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="gad2eff88d820bdcbfe1391a43566658cc"></a><!-- doxytag: member="player.h::player_display_h" ref="gad2eff88d820bdcbfe1391a43566658cc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gad2eff88d820bdcbfe1391a43566658cc">player_display_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The player display handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="gaafcf6f7487d8cb376e1851a6e1253f3a"></a><!-- doxytag: member="player.h::player_display_mode_e" ref="gaafcf6f7487d8cb376e1851a6e1253f3a" args="" -->
 <div class="memitem">
@@ -443,9 +491,11 @@ Functions</h2></td></tr>
 
 <p>Sets the ROI(Region Of Interest) area of display. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If no display is set, no operation is performed. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If no display is set, no operation is performed and the ROI area is valid only in <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ggaafcf6f7487d8cb376e1851a6e1253f3aa3bc890d9bba97e80b256789d512220fc">PLAYER_DISPLAY_MODE_DST_ROI</a> display mode. </dd>
 <dd>
-Before set display ROI area, <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ggaafcf6f7487d8cb376e1851a6e1253f3aa3bc890d9bba97e80b256789d512220fc">PLAYER_DISPLAY_MODE_DST_ROI</a> must be set with <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga55ed3a19040c5364fd0d248bb71c02c1" title="Sets the video display mode.">player_set_display_mode()</a>. The minimum value of width and height are 1. </dd></dl>
+The minimum value of width and height are 1. </dd>
+<dd>
+ROI area can be set before setting ROI display mode. (since 4.0) </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
@@ -465,9 +515,7 @@ Before set display ROI area, <a class="el" href="group__CAPI__MEDIA__PLAYER__DIS
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>display_mode must be set to <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ggaafcf6f7487d8cb376e1851a6e1253f3aa3bc890d9bba97e80b256789d512220fc">PLAYER_DISPLAY_MODE_DST_ROI</a>. </dd>
-<dd>
-The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga13098b40509e1b5d4efd7ea295f3a7ae" title="Sets the video display.">player_set_display()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga55ed3a19040c5364fd0d248bb71c02c1" title="Sets the video display mode.">player_set_display_mode()</a> </dd></dl>

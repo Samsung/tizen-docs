@@ -22,31 +22,31 @@ To create a Web application project:
 
     1.  Select the **Template** project type and click **Next**.
 
-      ![Selecting the project        type](./media/create_project_wizard_type.png)
+        ![Selecting the project type](./media/create_project_wizard_type.png)
 
     2.  Select the profile (**Mobile**, **Wearable**, or **TV**) and
       version from a drop-down list and click **Next**.  
-      >  **Note**  
-      > If you cannot see the TV profile option, open the        Package Manager and make sure that you have installed the TV    extension packages in the **Extension SDK** tab.
+        >  **Note**  
+        > If you cannot see the TV profile option, open the Package Manager and make sure that you have installed the TV extension packages in the **Extension SDK** tab.
 
-    ![Selecting the profile and        version](./media/create_project_wizard_version_wearable.png)
+        ![Selecting the profile and version](./media/create_project_wizard_version_wearable.png)
 
-  3.  Select the **Web Application** application type and click        **Next**.
+    3. Select the **Web Application** application type and click **Next**.
 
-   ![Selecting the application        type](./media/create_project_wizard_app_web_wearable.png)
+        ![Selecting the application type](./media/create_project_wizard_app_web_wearable.png)
 
-  4.  Select the template you want to use and click **Next**.
+    4. Select the template you want to use and click **Next**.
 
-   ![Selecting the        template](./media/create_project_wizard_template_ww.png)
+       ![Selecting the template](./media/create_project_wizard_template_ww.png)
 
-  5.  Define the project properties and click **Finish**.  
-      You can fill the project name. You can also select the location  and working sets by clicking **More properties**.  
-      >  **Note**  
-      > The Tizen API names cannot be used as project names.      The project name must be more than 2 characters and is      restricted to the following regular     expression: \[a-zA-Z\]\[a-zA-Z0-9-\]{2,49}.
+    5. Define the project properties and click **Finish**.  
+       You can fill the project name. You can also select the location and working sets by clicking **More properties**.  
+       >  **Note**  
+       > The Tizen API names cannot be used as project names. The project name must be more than 2 characters and is restricted to the following regular expression: \[a-zA-Z\]\[a-zA-Z0-9-\]{2,49}.
 
-    ![Defining        properties](./media/create_project_wizard_properties_ww.png)
+       ![Defining properties](./media/create_project_wizard_properties_ww.png)
 
-   The Project Wizard sets up the project, creates the application      files using the default content from the template, and closes.      For more information on the Project Wizard and the available      templates, see [Creating Tizen Projects with Tizen Project      Wizard](../../../tizen-studio/web-tools/project-wizard.md).
+      The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/web-tools/project-wizard.md).
 
 The new application project is shown in the **Project Explorer** view of the Tizen Studio, with default content in the `config.xml` file as well as in several project folders.
 

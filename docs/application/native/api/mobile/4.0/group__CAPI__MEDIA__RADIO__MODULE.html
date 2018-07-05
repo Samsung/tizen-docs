@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -144,9 +144,9 @@ Callback(Event) Operations</h3>
 <tr>
 <th><b>REGISTER</b> </th><th><b>UNREGISTER</b> </th><th><b>CALLBACK</b> </th><th><b>DESCRIPTION</b>  </th></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Registers a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga619f4a2e32644d8ac3f18ec70dd85ebc" title="Unregisters the callback function.">radio_unset_scan_completed_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0" title="Called when the radio scan is completed.">radio_scan_completed_cb()</a> </td><td>This callback is invoked when the scan is completed   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Sets a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga619f4a2e32644d8ac3f18ec70dd85ebc" title="Unsets the scan completed callback function.">radio_unset_scan_completed_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0" title="Called when the radio scan is completed.">radio_scan_completed_cb()</a> </td><td>This callback is invoked when the scan is completed   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga24de8c8802f128908b36938573431bf1" title="Registers a callback function to be invoked when the radio is interrupted.">radio_set_interrupted_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6a43aa1bf0466ef566c0918f65cca450" title="Unregisters the callback function.">radio_unset_interrupted_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6c586e9926a87517b4e63ea42cca9294" title="Called when the radio is interrupted.">radio_interrupted_cb()</a> </td><td>This callback is used to notify when the radio is interrupted   </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga24de8c8802f128908b36938573431bf1" title="Sets a callback function to be invoked when the radio is interrupted.">radio_set_interrupted_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6a43aa1bf0466ef566c0918f65cca450" title="Unsets the interrupted callback function.">radio_unset_interrupted_cb()</a> </td><td><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6c586e9926a87517b4e63ea42cca9294" title="Called when the radio is interrupted.">radio_interrupted_cb()</a> </td><td>This callback is used to notify when the radio is interrupted   </td></tr>
 </table>
 </div> <h2><a class="anchor" id="CAPI_MEDIA_RADIO_MODULE_FEATURE"></a>
 Related Features</h2>
@@ -195,13 +195,13 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga7f1fbf68816bccd6caac1ca83d9bbf3d">radio_is_muted</a> (<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gabab34e80022092a69cf5f5e362662d61">radio_h</a> radio, bool *muted)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the radio's mute status.  <a href="#ga7f1fbf68816bccd6caac1ca83d9bbf3d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75">radio_set_scan_completed_cb</a> (<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gabab34e80022092a69cf5f5e362662d61">radio_h</a> radio, <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0">radio_scan_completed_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function to be invoked when the scan finishes.  <a href="#ga6ccda4d04f9c8f4bdcc915aed2da4b75"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be invoked when the scan finishes.  <a href="#ga6ccda4d04f9c8f4bdcc915aed2da4b75"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga619f4a2e32644d8ac3f18ec70dd85ebc">radio_unset_scan_completed_cb</a> (<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gabab34e80022092a69cf5f5e362662d61">radio_h</a> radio)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the callback function.  <a href="#ga619f4a2e32644d8ac3f18ec70dd85ebc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the scan completed callback function.  <a href="#ga619f4a2e32644d8ac3f18ec70dd85ebc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga24de8c8802f128908b36938573431bf1">radio_set_interrupted_cb</a> (<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gabab34e80022092a69cf5f5e362662d61">radio_h</a> radio, <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6c586e9926a87517b4e63ea42cca9294">radio_interrupted_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function to be invoked when the radio is interrupted.  <a href="#ga24de8c8802f128908b36938573431bf1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be invoked when the radio is interrupted.  <a href="#ga24de8c8802f128908b36938573431bf1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6a43aa1bf0466ef566c0918f65cca450">radio_unset_interrupted_cb</a> (<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gabab34e80022092a69cf5f5e362662d61">radio_h</a> radio)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the callback function.  <a href="#ga6a43aa1bf0466ef566c0918f65cca450"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the interrupted callback function.  <a href="#ga6a43aa1bf0466ef566c0918f65cca450"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga507cfe1cc21f08ec19df03fc1bb468fa">radio_get_frequency_range</a> (<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gabab34e80022092a69cf5f5e362662d61">radio_h</a> radio, int *min_freq, int *max_freq)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the min, max frequency of the region.  <a href="#ga507cfe1cc21f08ec19df03fc1bb468fa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gac35ed83b7e482a55e45bc116d52eb24c">radio_get_channel_spacing</a> (<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gabab34e80022092a69cf5f5e362662d61">radio_h</a> radio, int *channel_spacing)</td></tr>
@@ -257,14 +257,14 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">error_code</td><td>The interrupted error code </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">code</td><td>The interrupted error code </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga24de8c8802f128908b36938573431bf1" title="Registers a callback function to be invoked when the radio is interrupted.">radio_set_interrupted_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga24de8c8802f128908b36938573431bf1" title="Sets a callback function to be invoked when the radio is interrupted.">radio_set_interrupted_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6a43aa1bf0466ef566c0918f65cca450" title="Unregisters the callback function.">radio_unset_interrupted_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6a43aa1bf0466ef566c0918f65cca450" title="Unsets the interrupted callback function.">radio_unset_interrupted_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -287,12 +287,12 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>It will be invoked when the scan is completed by registering this callback using <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Registers a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>It will be invoked when the scan is completed by registering this callback using <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Sets a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gaf16ae3d7d4650e33e1e64f8768b45664" title="Starts scanning radio signals, asynchronously.">radio_scan_start()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Registers a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Sets a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga619f4a2e32644d8ac3f18ec70dd85ebc" title="Unregisters the callback function.">radio_unset_scan_completed_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga619f4a2e32644d8ac3f18ec70dd85ebc" title="Unsets the scan completed callback function.">radio_unset_scan_completed_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -521,6 +521,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ggafa6c51d5733d1281fdbcf13af4228d38aa57f05302f5e5d43ed55a74a575a4271">RADIO_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -890,8 +891,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the radio's mute status. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <p>If the mute status is <code>true</code>, no sounds are played. If <code>false</code>, sounds are played. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">radio</td><td>The handle to radio </td></tr>
@@ -970,10 +971,10 @@ Typedefs</h2></td></tr>
 <dd>
 It invokes <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga04a6bfbf83a2cd44976b53ddbbb0d814" title="Called when the scan information is updated.">radio_scan_updated_cb()</a> when the scan information updates. </dd>
 <dd>
-It invokes <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0" title="Called when the radio scan is completed.">radio_scan_completed_cb()</a> when the scan completes, if you set a callback with <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Registers a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a>. </dd></dl>
+It invokes <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0" title="Called when the radio scan is completed.">radio_scan_completed_cb()</a> when the scan completes, if you set a callback with <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Sets a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gac9002499e52ca07c1343fa96306dff57" title="Stops scanning radio signals, asynchronously.">radio_scan_stop()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Registers a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Sets a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0" title="Called when the radio scan is completed.">radio_scan_completed_cb()</a> </dd></dl>
 
@@ -1234,7 +1235,7 @@ After the scan stopped, the radio state will be set back to the state from befor
 </div>
 <div class="memdoc">
 
-<p>Registers a callback function to be invoked when the radio is interrupted. </p>
+<p>Sets a callback function to be invoked when the radio is interrupted. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1255,7 +1256,7 @@ After the scan stopped, the radio state will be set back to the state from befor
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6c586e9926a87517b4e63ea42cca9294" title="Called when the radio is interrupted.">radio_interrupted_cb()</a> will be invoked. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6a43aa1bf0466ef566c0918f65cca450" title="Unregisters the callback function.">radio_unset_interrupted_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6a43aa1bf0466ef566c0918f65cca450" title="Unsets the interrupted callback function.">radio_unset_interrupted_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gaf4e23bf4f8d30ecbad0c0c87a510b1cd" title="Enumeration of radio interrupted type.">radio_interrupted_code_e</a> </dd>
 <dd>
@@ -1289,8 +1290,8 @@ After the scan stopped, the radio state will be set back to the state from befor
 <div class="memdoc">
 
 <p>Sets the radio's mute status. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <p>If the mute status is <code>true</code>, no sounds will be played. If <code>false</code>, sounds will be played. Until this function is called, by default the radio is not muted. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">radio</td><td>The handle to radio </td></tr>
@@ -1343,7 +1344,7 @@ After the scan stopped, the radio state will be set back to the state from befor
 </div>
 <div class="memdoc">
 
-<p>Registers a callback function to be invoked when the scan finishes. </p>
+<p>Sets a callback function to be invoked when the scan finishes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1364,7 +1365,7 @@ After the scan stopped, the radio state will be set back to the state from befor
   </dd>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0" title="Called when the radio scan is completed.">radio_scan_completed_cb()</a> will be invoked. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga619f4a2e32644d8ac3f18ec70dd85ebc" title="Unregisters the callback function.">radio_unset_scan_completed_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga619f4a2e32644d8ac3f18ec70dd85ebc" title="Unsets the scan completed callback function.">radio_unset_scan_completed_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#gae28735f4c08fbb04d6195e180f0aead0" title="Called when the radio scan is completed.">radio_scan_completed_cb()</a> </dd></dl>
 
@@ -1516,7 +1517,7 @@ After the scan stopped, the radio state will be set back to the state from befor
 </div>
 <div class="memdoc">
 
-<p>Unregisters the callback function. </p>
+<p>Unsets the interrupted callback function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1534,7 +1535,7 @@ After the scan stopped, the radio state will be set back to the state from befor
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga24de8c8802f128908b36938573431bf1" title="Registers a callback function to be invoked when the radio is interrupted.">radio_set_interrupted_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga24de8c8802f128908b36938573431bf1" title="Sets a callback function to be invoked when the radio is interrupted.">radio_set_interrupted_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1553,7 +1554,7 @@ After the scan stopped, the radio state will be set back to the state from befor
 </div>
 <div class="memdoc">
 
-<p>Unregisters the callback function. </p>
+<p>Unsets the scan completed callback function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1571,7 +1572,7 @@ After the scan stopped, the radio state will be set back to the state from befor
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Registers a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__RADIO__MODULE.html#ga6ccda4d04f9c8f4bdcc915aed2da4b75" title="Sets a callback function to be invoked when the scan finishes.">radio_set_scan_completed_cb()</a> </dd></dl>
 
 </div>
 </div>

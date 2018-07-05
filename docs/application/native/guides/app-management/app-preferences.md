@@ -5,7 +5,7 @@ You can manage application preferences by setting and getting them. You can also
 
 ## Prerequisites
 
-To use the functions and data types of the Preference API (in [mobile](../../api/Mobile/latest/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PREFERENCE__MODULE.html) applications), include the `<app_preference.h>` header file in your application:
+To use the functions and data types of the Preference API (in [mobile](../../api/mobile/latest/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PREFERENCE__MODULE.html) applications), include the `<app_preference.h>` header file in your application:
 
 ```
 #include <app_preference.h>
@@ -98,25 +98,28 @@ To manage preferences:
   preference_unset_changed_cb(const char *key);
   ```
 
-- To list all records, use the foreach function. The function calls a specific callback function for each key-value pair in the database. You can pass additional data to the function in the `user_data` field.If the callback function returns `false`, or if all the records have been opened, the foreach function ends.
-    ```
-    bool
-    preference_foreach_item_cb(const char *key, void *user_data)
-    {
-        dlog_print(DLOG_DEBUG, LOG_TAG, "[preference_foreach_item_cb]\n");
-        dlog_print(DLOG_DEBUG, LOG_TAG, "Key found: %s\n", key);
+- To list all records, use the foreach function. The function calls a specific callback function for each key-value pair in the database. You can pass additional data to the function in the `user_data` field.
 
-        return true;
-    }
+  If the callback function returns `false`, or if all the records have been opened, the foreach function ends.
 
-    preference_foreach_item(preference_foreach_item_cb, NULL);
-    ```
+   ```
+   bool
+   preference_foreach_item_cb(const char *key, void *user_data)
+   {
+       dlog_print(DLOG_DEBUG, LOG_TAG, "[preference_foreach_item_cb]\n");
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Key found: %s\n", key);
+
+       return true;
+   }
+
+   preference_foreach_item(preference_foreach_item_cb, NULL);
+   ```
 
 - To delete records one by one, use a unique key. You can also delete all records for an application using the preference_remove_all() function.
-```
-preference_remove(key);
-```
 
+  ```
+  preference_remove(key);
+  ```
 
 ## Related Information
 - Dependencies

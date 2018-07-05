@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+	 <script type="text/javascript" src="../snippet.js"></script>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	 <link href="../styles.css" rel="StyleSheet" type="text/css" />
+	 <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+	 <title>Swipe List</title>
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Swipe List</h1>
+
+<p>The swipe list component shows on the screen a list where you can swipe horizontally through a list item to activate a specific feature or perform a specific task.<p>
+For example, you can swipe a contact in a contact list to call them or to open a message editor in order to write them a message.<p>
+You can set the details when swiping such as elements that appear, background color and the property of the animation.<p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is released for <strong>2.3 rectangular UI</strong>. <br>
+		When you create this component in round screen, layout can be shown broken because screen hides the swipe component.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#manual-constructor">How to Create Swipe List</a>
+
+		</li>
+
+		<li><a href="#options-list">Options</a>
+
+		</li>
+
+		<li><a href="#events-list">Events</a>
+
+		</li>
+</ol>
+
+<h2 id="manual-constructor">How to Create Swipe List</h2>
+<p>In the following, left swipe shows "Calling" text and right swipe shows "Message" on the list item.</p>
+
+<h3>HTML</h3>
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page&quot; id=&quot;pageSwipeList&quot;&gt;
+&nbsp;&nbsp; &lt;div class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--List items that can be swiped--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview ui-swipelist-list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Andrew&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Bill&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Christina&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Daniel&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Edward&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Peter&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Sam&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Tom&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--Swipe actions--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-swipelist&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;ui-swipelist-left&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-swipelist-icon&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-swipelist-text&quot;&gt;Calling&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;ui-swipelist-right&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-swipelist-icon&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-swipelist-text&quot;&gt;Message&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp; &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>JavaScript</h3>
+<pre class="prettyprint">
+(function() {
+&nbsp;&nbsp;&nbsp;var page = document.getElementById(&quot;pageSwipeList&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listElement = page.getElementsByClassName(&quot;ui-swipelist-list&quot;)[0],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swipeList;
+&nbsp;&nbsp;&nbsp;page.addEventListener(&quot;pageshow&quot;, function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Make swipe list object */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swipeList = new tau.widget.SwipeList(listElement, {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swipeTarget: &quot;li&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swipeElement: &quot;.ui-swipelist&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;page.addEventListener(&quot;pagehide&quot;, function() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Release object */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swipeList.destroy();
+&nbsp;&nbsp;&nbsp;});
+})();
+</pre>
+
+<h2 id="options-list">Options</h2>
+
+<p>The following table describes the supported swipe list options.</p>
+<table>
+<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Type</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">swipeTarget</span></td>
+		<td>String</td>
+		<td>Swipe list selector.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">li</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">swipeElement</span></td>
+		<td>String</td>
+		<td>Swipe list container selector.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">.ui-swipelist</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">swipeLeftElement</span></td>
+		<td>String</td>
+		<td>Swipe left container selector.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">.ui-swipelist-left</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">swipeRightElement</span></td>
+		<td>String</td>
+		<td>Swipe right container selector.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">.ui-swipelist-right</span>.</p></td>
+	</tr>	
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">threshold</span></td>
+		<td>Number</td>
+		<td>Defines the threshold (in pixels) for the minimum swipe movement which allows the swipe action to appear.
+		</td>
+	</tr>		
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">animationThreshold</span></td>
+		<td>IntNumbereger</td>
+		<td>Defines the threshold (in pixels) for the minimum swipe movement that allows a swipe animation (with a color change) to be shown. The animation threshold is usually the threshold for the next operation after the swipe.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">150</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">animationDuration</span></td>
+		<td>Number</td>
+		<td>Defines the swipe list animation duration.
+		<p>Do not change the default value, since it has been defined to show a complete color change.</p>
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">200</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">animationInterval</span></td>
+		<td>Number</td>
+		<td>Defines the swipe list animation interval. The animation is called with the <span style="font-family: Courier New,Courier,monospace">requestAnimationFrame()</span> method once every 1/60 seconds. The interval determines how many coordinates the animation proceeds between each call. The animation ends when the coordinates reach the value defined as <span style="font-family: Courier New,Courier,monospace">animationDuration</span>. This option basically allows you to control the speed of the animation.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">8</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ltrStartColor</span></td>
+		<td>String</td>
+		<td>Defines the start color for the left-to-right swipe.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#62a917</span>.</p></td>
+	</tr>	
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ltrEndColor</span></td>
+		<td>String</td>
+		<td>Defines the end color for the left-to-right swipe.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#58493a</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">rtlStartColor</span></td>
+		<td>String</td>
+		<td>Defines the start color for the right-to-left swipe.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#eaa317</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">rtlEndColor</span></td>
+		<td>String</td>
+		<td>Defines the end color for the right-to-left swipe.
+		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#58493a</span>.</p></td>
+	</tr>	
+</tbody>
+</table>
+
+
+
+<h2 id="events-list">Events</h2>
+<p>The following table lists the events related to swipe lists.</p>
+
+<table>
+<tbody>
+	<tr>
+		<th style="width:40%;">Event</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">swipelist.left</span></td>
+		<td>Triggered when a left-to-right swipe is completed.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">swipelist.right</span></td>
+		<td>Triggered when a right-to-left swipe is completed.</td>
+	</tr>
+
+</tbody>
+</table>
+
+<p>To use the swipe list events, use the following code:</p>
+
+<pre class="prettyprint">
+(function() 
+{
+&nbsp;&nbsp;&nbsp;var slist = document.getElementById(&quot;swipelist&quot;);
+&nbsp;&nbsp;&nbsp;slist.addEventListener(&quot;swipelist.left&quot;, function(evt) 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* You can connect your app with a native app (such as phone call or message) using the Device API */
+&nbsp;&nbsp;&nbsp;});
+})();
+</pre>
+
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

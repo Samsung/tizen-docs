@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>Applying Circular Scroll Bar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<div id="container"><div id="contents"><div class="content">
+<h1>Applying Circular Scroll Bar</h1>
+
+<p>With TAU, you can use scroll bar of web engine. If you want to scroll an element, set an attributes <span style="font-family: Courier New,Courier,monospace">&quot;overflow-y&quot;</span> in scrollable &lt;div&gt; element.</p>
+<p>Basically, shape of scroll bar is &quot;BAR&quot; type. But we recommend that using &quot;CIRCULAR BAR&quot; type scroll bar in Circular Devices.</p>
+<p>To set circular-bar type scroll bar, &quot;tizen-circular-scrollbar&quot; attribute is used.</p>
+	<br>
+<p>This feature is supported in wearable applications only.</p>
+
+<p>The following figure shows the scroll bar in a rectangular and circular UI.</p>
+<p class="figure">Figure: Scroll Bar in rectangular and circular devices</p>
+<p align="center"><img alt="Scroll Bar in a rectangular device" src="../../../../images/rectangular_scrollbar.png" /> <img alt="Scroll Bar in a circular device" src="../../../../images/round_scrollbar.png" /></p>
+
+<h2 id="tau_scroll">Applying with TAU library</h2>
+<p>Using TAU library, you can define page with &lt;div&gt;&nbsp;element&nbsp;using&nbsp;&quot;ui-page&quot;&nbsp;class. In circular UI, When TAU page created, it create &lt;div&gt;&nbsp;element with &quot;ui-scroller&quot; and it can be scrolled.</p>
+<p>To apply circular bar type scroll bar:</p>
+<pre class="prettyprint">
+(function(tau)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;page,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elScroller,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headerHelper;
+
+&nbsp;&nbsp;&nbsp;if&nbsp;(tau.support.shape.circle)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagebeforeshow&quot;,&nbsp;function&nbsp;(e)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page&nbsp;=&nbsp;e.target;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elScroller&nbsp;=&nbsp;page.querySelector(&quot;.ui-scroller&quot;);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elScroller)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elScroller.setAttribute(&quot;tizen-circular-scrollbar&quot;,&nbsp;&quot;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.addEventListener(&quot;pagebeforehide&quot;,&nbsp;function&nbsp;(e)&nbsp;{
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(elScroller)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elScroller.removeAttribute(&quot;tizen-circular-scrollbar&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;}
+}(tau));
+</pre>
+
+<h2 id="tau_scroll">Applying without TAU library</h2>
+<p>When writing code without TAU library, please set &quot;tizen-circular-scrollbar&quot; when scroller element loaded.</p>
+<p>To apply circular bar type scroll bar:</p>
+
+<pre class="prettyprint">
+&nbsp;&lt;div&nbsp;class=&quot;page&quot;&nbsp;style=&quot;height:100%;overflow:hidden;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;content&quot;&nbsp;style=&quot;width:100%;height:100%;overflow-y:auto;&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;fill&nbsp;contents&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+window.onload&nbsp;=&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;scroller&nbsp;=&nbsp;document.querySelector(&quot;.content&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;if(scroller)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scroller.setAttribute(&quot;tizen-circular-scrollbar&quot;,&nbsp;&quot;&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+};
+&lt;/script&gt;
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

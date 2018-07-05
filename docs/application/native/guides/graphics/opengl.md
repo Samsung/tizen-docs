@@ -78,7 +78,7 @@ To be able to call OpenGL&reg; ES functions directly, first declare the global v
 #include <Evas_GL_GLES2_Helpers.h>
 
 /*
-   This code is placed at the beginning of any function using OpenGL&reg; ES 2.0 APIs
+   This code is placed at the beginning of any function using OpenGL ES 2.0 APIs
    When using this macro, you can call all glFunctions without changing their code
    For details, see Evas_GL_GLES2_Helpers.h
 */
@@ -93,11 +93,11 @@ To hold all the objects for your EvasGL application, define the application data
 ```
 struct appdata {
     Evas_Object *win; /* Application window */
-    Evas_Object *img; /* OpenGL&reg; ES canvas */
+    Evas_Object *img; /* OpenGL ES canvas */
 
-    Evas_GL *evasgl; /* EvasGL object for rendering OpenGL&reg; ES in Evas */
-    Evas_GL_Context *ctx; /* EvasGL context object, an OpenGL&reg; ES rendering context in Evas GL */
-    Evas_GL_Surface *sfc; /* EvasGL surface object, an OpenGL&reg; ES rendering target in Evas GL */
+    Evas_GL *evasgl; /* EvasGL object for rendering OpenGL ES in Evas */
+    Evas_GL_Context *ctx; /* EvasGL context object, an OpenGL ES rendering context in Evas GL */
+    Evas_GL_Surface *sfc; /* EvasGL surface object, an OpenGL ES rendering target in Evas GL */
     Evas_GL_Config *cfg; /* EvasGL surface configuration object for surface creation */
     Evas_Coord sfc_w;
     Evas_Coord sfc_h;
@@ -123,7 +123,7 @@ To create the Elm window and EvasGL:
    Evas_Object *win;
 
    /*
-      To use OpenGL&reg; ES, the application must switch on hardware acceleration
+      To use OpenGL ES, the application must switch on hardware acceleration
       To enable that, call elm_config_accel_preference_set() with "opengl"
       before creating the Elm window
       This function is supported since 2.3.
@@ -173,9 +173,9 @@ To create the Elm window and EvasGL:
    ad->ctx = evas_gl_context_create(ad->evasgl, NULL);
 
    /*
-      This macro sets the global variable holding the OpenGL&reg; ES API,
+      This macro sets the global variable holding the OpenGL ES API,
       so that it is available to the application
-      Use it right after setting up the OpenGL&reg; ES context object
+      Use it right after setting up the OpenGL ES context object
       For details, see Evas_GL_GLES2_Helpers.h
    */
    EVAS_GL_GLOBAL_GLES2_USE(ad->evasgl, ad->ctx);
@@ -226,14 +226,18 @@ When you have configured the EvasGL environment, you can declare a UI component 
        /* Paint it blue */
        glClearColor(0.2, 0.2, 0.6, 1.0);
        glClear(GL_COLOR_BUFFER_BIT);
-       /* Usual OpenGL&reg; ES draw commands come here */
+       /* Usual OpenGL ES draw commands come here */
        /* draw_scene(); */
    }
    ```
 
    At every tick, set the given context as a current context for the given surface using the `evas_gl_make_current()` function.
 
-4. You can use the `Ecore_Animator` to define the OpenGL&reg; ES main loop.To use the `Ecore_Animator`, create a callback that is called on every animation tick. This animation callback is used only to mark the image as "dirty", meaning that it needs an update next time Evas renders. It calls the pixel get callback that redraws the scene.The animator callback function is also triggered when the display is off. Use the `ecore_animator_freeze()` and `ecore_animator_thaw()` functions in the `app_pause_cb()` and `app_resume_cb()` callbacks for power saving.
+4. You can use the `Ecore_Animator` to define the OpenGL&reg; ES main loop.
+
+   To use the `Ecore_Animator`, create a callback that is called on every animation tick. This animation callback is used only to mark the image as "dirty", meaning that it needs an update next time Evas renders. It calls the pixel get callback that redraws the scene.
+
+   The animator callback function is also triggered when the display is off. Use the `ecore_animator_freeze()` and `ecore_animator_thaw()` functions in the `app_pause_cb()` and `app_resume_cb()` callbacks for power saving.
 
     ```
     static Eina_Bool
@@ -305,7 +309,7 @@ EvasGL, offering an abstraction layer above OpenGL&reg; ES, provides an easy mec
 
 1. Detect support for an extension.
 
-   In OpenGL&reg; ES, you must always call the `glGetString(GL_EXTENSIONS)` function. Make sure that the extension name is present in the list and then dynamically find the function pointer using the `dlsym()`, `eglGetProcAddress()`, or `glXGetProcAddress()`function.
+   In OpenGL&reg; ES, you must always call the `glGetString(GL_EXTENSIONS)` function. Make sure that the extension name is present in the list and then dynamically find the function pointer using the `dlsym()`, `eglGetProcAddress()`, or `glXGetProcAddress()` function.
 
    Since EvasGL exposes only a structure with the function pointers set to internal wrappers or the proper OpenGL&reg; ES implementation library, it can also expose all the detected extensions simply by setting their function pointers.
 
@@ -495,11 +499,24 @@ To enhance rendering performance, the Direct Rendering option is supported.
 
   To use the Direct Rendering mode since Tizen 2.3.1, set the same option values (depth, stencil, and MSAA) to a rendering engine and an `Evas_GL_Config` object. You can set the option values to a rendering engine using the `elm_config_accel_preference_set()` function. If the `Evas_GL_Config` object option values are bigger or higher than the rendering engine's, the Direct Rendering mode is disabled.
 
-  > **Note**  
-  > If direct rendering is enabled, EvasGL renders directly to the back buffer of the window. Otherwise, EvasGL renders to the off screen buffer, then composited to the back buffer of the window.Although direct rendering is enabled, EvasGL not always renders directly to the back buffer. The following conditions disable direct rendering and force a fallback to indirect rendering in a frame buffer:If the object's color is not 255,255,255,255.If the object has an Evas map.If the object size is different from the viewport (`RESIZE_POLICY_SCALE`).If the window is rotated and `CLIENT_SIDE_ROTATION` is not set.If the GLView policy is set to `ALWAYS` render or the EvasGL does not use pixel getter callback.
+  > **Note**
+  >
+  > If direct rendering is enabled, EvasGL renders directly to the back buffer of the window. Otherwise, EvasGL renders to the off screen buffer, then composited to the back buffer of the window.
+  >
+  > Although direct rendering is enabled, EvasGL not always renders directly to the back buffer. The following conditions disable direct rendering and force a fallback to indirect rendering in a frame buffer:
+  > - If the object's color is not 255,255,255,255.
+  > - If the object has an Evas map.
+  > - If the object size is different from the viewport (`RESIZE_POLICY_SCALE`).
+  > - If the window is rotated and `CLIENT_SIDE_ROTATION` is not set.
+  > - If the GLView policy is set to `ALWAYS` render or the EvasGL does not use pixel getter callback.
 
-  **Caution**
-  In the render callback function, call only OpenGL&reg; ES functions.If the OpenGL&reg; ES functions are called outside the render callback function, you must call the `evas_gl_make_current()` function before the OpenGL&reg; ES function calls. However, this results in a performance degradation due to context switching, and only works if the target surface is not an `Evas_GL_Surface` with Direct Rendering enabled.If the target buffer is an `Evas_GL_Surface` with Direct Rendering enabled, all OpenGL&reg; ES functions must be called from the render callback function only. All other operations can break the rendering order, causing unexpected rendering.
+  > **Caution**
+  >
+  > In the render callback function, call only OpenGL&reg; ES functions.
+  >
+  > If the OpenGL&reg; ES functions are called outside the render callback function, you must call the `evas_gl_make_current()` function before the OpenGL&reg; ES function calls. However, this results in a performance degradation due to context switching, and only works if the target surface is not an `Evas_GL_Surface` with Direct Rendering enabled.
+  >
+  > If the target buffer is an `Evas_GL_Surface` with Direct Rendering enabled, all OpenGL&reg; ES functions must be called from the render callback function only. All other operations can break the rendering order, causing unexpected rendering.
 
 <a name="client"></a>
 ## Using Client-side Rotation

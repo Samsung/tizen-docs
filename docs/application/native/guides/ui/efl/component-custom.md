@@ -52,7 +52,11 @@ To customize a UI component:
 
    See [Creating Your First Tizen Mobile Native Application](../../../getting-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../getting-started/wearable/first-app.md) for creating a EDC UI project.
 
-2. Create an EDJ file in the `/res/edje/` directory. If you add the `custom.edc` file, the Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project. The EDJ file is installed under the application data path. You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
+2. Create an EDJ file in the `/res/edje/` directory.
+
+   If you add the `custom.edc` file, the Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project.
+
+   The EDJ file is installed under the application data path. You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
 
    ```
    char edj_path[PATH_MAX] = {0,};
@@ -128,7 +132,8 @@ To attach an EDJ file to an existing theme, you can use:
 
   Adding a theme with a default style as an overlay is not recommended, since it makes Elementary to use the new theme for all the objects defined in the application. You must make sure that the `theme_button.edj` file reimplements everything that was previously defined in the default theme concerning the button component.
 
-  > **Note**  
+  > **Note**
+  >
   > With overlays, you can replace the default view and affect every UI component. This is very similar to setting the theme for the whole application, and probably clashes with the end user options. Using overlays also runs the risk of non-matching styles across the application. Unless you have a very good reason to use them, avoid overlays.
 
 The following process shows how Elementary loads a style of a certain name:
@@ -148,7 +153,8 @@ For example, if you make your own EDJ file and name a group `elm/button/base/def
 - If you use the `elm_theme_overlay_add` function, the newly defined style is applied to a button object.
 - If you use the `elm_theme_extension_add` function, the newly defined style is not applied, since there is a group with the same name in the default theme.
 
-> **Note**  
+> **Note**
+>
 > When using the `elm_theme_extension_add()` or `elm_theme_overlay_add()` function to add a new theme extension or overlay to a theme object (the default theme), Elementary calls the `elm_theme_flush()` function to flush the Elementary theme caches. This means that the theme of all UI components that use the default theme is reloaded.
 
 ### Example: Creating a Customized Style for the Check Component
@@ -238,7 +244,8 @@ To create a customized check component style:
    - In the background part, replace `check_base.png` with `check_base_custom.png`.
    - In the check part, replace `check.png` with `check_custom.png`.
 
-   > **Note**  
+   > **Note**
+   >
    > This example assumes that the custom images are the same size as the `default` images.
 
    ```
@@ -279,7 +286,9 @@ To create a customized button component style:
 
 2. In the new `elm/button/base/custom` group, find the programs playing sound effects.
 
-   > **Note**  
+   > **Note**
+   >
+   >
    > In the EDC file, sound effects are played by program actions, such as `RUN_PLUGIN`, `PLAY_SAMPLE`, and `PLAY_TONE`.
 
    ```
@@ -293,8 +302,14 @@ To create a customized button component style:
 
 4. Remove the code lines that execute the removed programs (the line to be removed is marked with a background highlight in the following example).
 
-   > **Note**  
-   > In the EDC file, programs are executed by the `after` keyword or the `run_program` script function. For example:`after: "touch_sound";/* OR */run_program(PROGRAM: "touch_sound");`
+   > **Note**
+   >
+   > In the EDC file, programs are executed by the `after` keyword or the `run_program` script function. For example:
+   > ```
+   > after: "touch_sound";
+   > /* OR */
+   > run_program(PROGRAM: "touch_sound");
+   > ```
 
    ```
    program {
@@ -308,7 +323,8 @@ To create a customized button component style:
    }
    ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

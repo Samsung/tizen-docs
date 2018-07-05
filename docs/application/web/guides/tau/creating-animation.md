@@ -1,6 +1,7 @@
 # Creating Applications with Animation
 
 You can create a simple application using TAU Animation. With the following example, you can learn how to import TAU Animation into your application and create a basic simple application with animation.
+
 This feature is supported in mobile and wearable applications only.
 
 ## Loading a TAU Animation

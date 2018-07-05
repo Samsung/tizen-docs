@@ -31,20 +31,20 @@ The source actor is specified as either the same actor, its parent, or another a
 
 A constraint input source can be one of the following types:
 
-- **Local source** (use `Dali::LocalSource`)
+- **Local source** (use `Dali::LocalSource`)  
 A local source is based on the local properties (such as size, position, scale, orientation, or color) of an actor. For example, the actor's orientation can be used as a constraint input source:
 
     ```
     ConstraintSource source( LocalSource( Actor::Property::ORIENTATION ) );
     ```
-- **Parent source** (use `Dali::ParentSource`)
+- **Parent source** (use `Dali::ParentSource`)  
 A parent source is based on properties of the actor's parent. For example, a parent's position can be used as a constraint input source:
 
     ```
     ConstraintSource source( ParentSource( Actor::Property::POSITION ) );
     ```
 
-- **Other handle source** (use `Dali::Source`)
+- **Other handle source** (use `Dali::Source`)  
 You can base your source on the properties of another handle altogether. For example, a sibling actor's color can be used as a constraint input source:
 
     ```
@@ -243,13 +243,13 @@ Generally, do not use constraints with the `size` property as constraining the s
 
 | Requirement                              | Solution                                 |
 |------------------------------------------|------------------------------------------|
-| Need a child to be 50% the size of its parent. | Use size negotiation.For more information, see [Layout Management](layout.md). |
-| Need to zoom an actor in to the screen using its scale property. | Use an animation.For more information, see [Animation](animation.md). |
-| Need an actor to appear centered around the bottom-right corner of its parent. | Use the `Dali::ParentOrigin` (in [mobile](../../../api/mobile/latest/namespaceDali_1_1ParentOrigin.html) and [wearable](../../../api/wearable/latest/namespaceDali_1_1ParentOrigin.html) applications) and `Dali::AnchorPoint` (in [mobile](../../../api/mobile/latest/namespaceDali_1_1AnchorPoint.html) and [wearable](../../../api/wearable/latest/namespaceDali_1_1AnchorPoint.html)applications) namespaces.For more information, see [Positioning Actors](actors.md#positioning-actors). |
-| Need to lay out a series of controls with various alignment requirements. | Use either `ParentOrigin` and `AnchorPoint` settings, or the `Dali::Toolkit::TableView` class (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1TableView.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1TableView.html)applications). |
+| Need a child to be 50% the size of its parent. | Use size negotiation.<br>For more information, see [Layout Management](layout.md). |
+| Need to zoom an actor in to the screen using its scale property. | Use an animation.<br>For more information, see [Animation](animation.md). |
+| Need an actor to appear centered around the bottom-right corner of its parent. | Use the `Dali::ParentOrigin` (in [mobile](../../../api/mobile/latest/namespaceDali_1_1ParentOrigin.html) and [wearable](../../../api/wearable/latest/namespaceDali_1_1ParentOrigin.html) applications) and `Dali::AnchorPoint` (in [mobile](../../../api/mobile/latest/namespaceDali_1_1AnchorPoint.html) and [wearable](../../../api/wearable/latest/namespaceDali_1_1AnchorPoint.html) applications) namespaces.<br>For more information, see [Positioning Actors](actors.md#positioning-actors). |
+| Need to lay out a series of controls with various alignment requirements. | Use either `ParentOrigin` and `AnchorPoint` settings, or the `Dali::Toolkit::TableView` class (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1TableView.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1TableView.html) applications). |
 | Need to automatically modify the position property of one actor based on the position property of another actor that is neither a parent nor a child. | Use a constraint.                        |
 | Need to position an actor relative to its parent actor in a NON-UNIFORM way, or a non-linear calculation needs to be performed that requires a functor. | Use a constraint.                        |
-| Need to modify an actor's property in real time based on some calculations that require additional data to be stored in-between frames. | Use a constraint.The constraint functor can hold any variables within it that need to be preserved frame-to-frame. |
+| Need to modify an actor's property in real time based on some calculations that require additional data to be stored in-between frames. | Use a constraint.<br>The constraint functor can hold any variables within it that need to be preserved frame-to-frame. |
 
 In most general cases, the position and size requirements of a child or parent actor (from its child or parent) can be calculated with size negotiation.
 

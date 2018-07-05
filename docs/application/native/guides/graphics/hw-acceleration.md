@@ -27,7 +27,7 @@ Normally, it is enough to modify the manifest file to enable hardware accelerati
 
   ```
   elm_config_accel_preference_set("opengl");
-  win = elm_win_util_standard_add(name, "OpenGL&reg; example");
+  win = elm_win_util_standard_add(name, "OpenGL example");
   ```
 
   This function and option are supported since Tizen 2.3.
@@ -36,7 +36,7 @@ Normally, it is enough to modify the manifest file to enable hardware accelerati
 
   ```
   elm_config_accel_preference_set("opengl:depth24:stencil8:msaa_high");
-  win = elm_win_util_standard_add(name, "OpenGL&reg; example");
+  win = elm_win_util_standard_add(name, "OpenGL example");
   ```
 
   In the above example, the depth buffer size is 24 bit, stencil buffer size is 8 bit and MSAA is on with a high bit.

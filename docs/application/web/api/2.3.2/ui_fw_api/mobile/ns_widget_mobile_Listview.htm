@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>List View</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>List View</h1>
+
+<p>The list view component is used to display, for example, navigation data, results, and data entries, in a list format.</p>
+
+    <table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">
+             <ul>
+              <li>A <a href="ns_widget_mobile_Button.htm">button component</a> placed inside an <code>&lt;a&gt;</code> element is not supported in the list view component. The button component must be placed inside a <code>&lt;div&gt;</code> element.</li>
+              <li>If you implement the list view component differently from what is described in the following examples, you must customize the element positioning for your application.</li>
+             </ul>
+            </td>
+		</tr>
+		</tbody>
+	</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.8381957695819438">Default Selectors</a></li>
+
+        <li><a href="#manual-constructor">Manual Constructor</a></li>
+
+		<li><a href="#html-example code0.796579651767388">HTML Examples</a></li>
+
+		<li><a href="#options-list">Options</a></li>
+
+		<li><a href="#events-list">Events</a></li>
+
+		<li><a href="#methods-list">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selectors0.8381957695819438"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> elements with the <code>data-role=&quot;listview&quot;</code> attribute are displayed as list views.</p>
+
+<h2><a id="manual-constructor"></a>Manual Constructor</h2>
+
+<p>To manually create a list view component, use the component constructor from the <code>tau</code> namespace:</p>
+
+<pre class="prettyprint">&lt;ul id=&quot;list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Anton&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Arabella&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Barry&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Bill&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;tau.widget.Listview(document.getElementById(&quot;list&quot;));
+&lt;/script&gt;
+</pre>
+
+<p>If the jQuery library is loaded, you can use its method:</p>
+
+<pre class="prettyprint">&lt;ul id=&quot;list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Anton&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Arabella&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Barry&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Bill&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&#39;#list&#39;).listview();
+&lt;/script&gt;
+</pre>
+
+<h2><a id="html-example code0.796579651767388"></a>HTML Examples</h2>
+
+<ul>
+
+<li>
+
+<p>To create a basic 1-line list item with or without an anchor:</p>
+
+<pre class="prettyprint">&lt;!--With an anchor--&gt;
+&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Anton&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Barry&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bill&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--Without an anchor--&gt;
+&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Anton&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Barry&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;Bill&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+</li>
+
+<li>
+
+<p>To create a 1-line list item with a subtext.</p>
+<p>If the <code>class=&quot;ui-li-multiline&quot;</code> attribute is not used, the subtext is placed next to the main text. With the attribute, the subtext is placed below the main text.</p>
+
+<pre class="prettyprint">
+&lt;!--Subtext next to the main text--&gt;
+&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anton
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-text-sub&quot;&gt;subtext&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barry
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-text-sub&quot;&gt;subtext&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--Subtext below the main text--&gt;
+&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-multiline&quot;&gt;Anton
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-text-sub&quot;&gt;subtext&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-multiline&quot;&gt;Barry
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-text-sub&quot;&gt;subtext&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+</li>
+
+<li>
+
+<p>To create a 1-line list item with a text button or a circle-shaped button:</p>
+
+<pre class="prettyprint">&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anton
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;Button&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barry
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot; data-icon=&quot;plus&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data-style=&quot;circle&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+</li>
+
+<li>
+
+<p>To create a 1-line list item with a thumbnail:</p>
+
+<pre class="prettyprint">&lt;ul data-role=&quot;listview&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;!--Thumbnail--&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;thumbnail.jpg&quot; class=&quot;ui-li-bigicon&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anton
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+
+&nbsp;&nbsp;&nbsp;&lt;!--Thumbnail on the right side--&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-thumbnail-right&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;a.jpg&quot; class=&quot;ui-li-bigicon&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barry
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+</li>
+
+<li>
+
+<p>To create a 1-line list item with a checkbox:</p>
+
+<pre class="prettyprint">&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-has-checkbox&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;c1line-check1&quot; /&gt;Anton&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+</li>
+
+
+<li>
+
+<p>To create a basic 2-line list item:</p>
+
+<pre class="prettyprint">&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-has-multiline&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anton
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-text-sub&quot;&gt;subtext&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-has-multiline&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barry
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-text-sub&quot;&gt;subtext&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+</li>
+
+
+<li>
+
+<p>To create a 2-line list item with a color bar:</p>
+
+
+<pre class="prettyprint">&lt;ul data-role=&quot;listview&quot;&gt;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--Color bar, subtext, three star-shaped icons, and text button--&gt;
+&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-li-has-multiline&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;#&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-color-bar&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style=&quot;background-color: red;&quot;&gt;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anton
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class=&quot;ui-li-text-sub&quot;&gt;subtext
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;00_winset_icon_favorite_on.png&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;00_winset_icon_favorite_on.png&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;00_winset_icon_favorite_on.png&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;button&quot; data-inline=&quot;true&quot;&gt;button&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+</pre>
+
+</li>
+
+</ul>
+
+	<h2><a id="options-list"></a>Options</h2>
+
+<p>The following table lists the options for the list view component.</p>	
+	
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-inset</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">Sets whether the list view is wrapped by an additional layer.</td>
+			</tr>		
+		</tbody>
+	</table>
+
+	<h2><a id="events-list"></a>Events</h2>
+
+<p>The following table lists the events related to list view component.</p>	
+	
+	<table>
+		<tbody>
+		<tr>
+			<th>Event</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">beforerefreshitems</span></td>
+				<td><p>Triggered before the list view items are refreshed.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-destroy">addItem</a> (HTMLElement listItem, number position) </pre>
+					</td>
+					<td><p>Adds an item to and refreshes the list view.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-destroy">refresh</a> ( ) </pre>
+					</td>
+					<td><p>Refreshes the list view.</p></td>
+				</tr>
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-destroy">removeItem</a> (number position) </pre>
+					</td>
+					<td><p>Removes an item from and refreshes the list view.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-destroy">addItem</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Adds an item to and refreshes the list view.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">addItem (HTMLElement listItem, number position) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">listItem</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td>New <code>&lt;li&gt;</code> element.</td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">position</span></td>
+						<td>number</td>
+						<td>Required</td>
+						<td></td>
+						<td>Position in the list.</td>
+					</tr>
+					</table></tbody></div>
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;ul id=&quot;listvi&quot; data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Normal lists&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Normal lists&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;listvi&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listv = tau.widget.Listview(element);
+&nbsp;&nbsp;&nbsp;listv.addItem(&quot;&lt;li&gt;Test&lt;div data-role=&#39;button&#39; data-inline=&#39;true&#39;&gt;TEST&lt;/div&gt;&lt;/li&gt;&quot;, 2);
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-destroy">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Refreshes the list view.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">refresh ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;ul id=&quot;listvi&quot; data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Normal lists&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Normal lists&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;listvi&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listv = tau.widget.Listview(element);
+&nbsp;&nbsp;&nbsp;listv.refresh();
+&lt;/script&gt;
+</pre>
+						</div>
+
+					
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-destroy">removeItem</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Removes an item from and refreshes the list view.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">removeItem (number position) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">position</span></td>
+						<td>number</td>
+						<td>Required</td>
+						<td></td>
+						<td>Position in the list.</td>
+					</tr>
+					</table></tbody></div>
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;ul id=&quot;listvi&quot; data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Normal lists&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Normal lists&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;listvi&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listv = tau.widget.Listview(element);
+&nbsp;&nbsp;&nbsp;listv.removeItem(0);
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

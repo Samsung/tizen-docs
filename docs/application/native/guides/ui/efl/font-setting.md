@@ -8,9 +8,9 @@ The font handling methods include:
 
 - [Setting the font using the EDC file](#setting-the-font-using-edc)
 
-- [Changing the font and text size](#using-the-edje-text-class) using the Edje Class: Text API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Text__Class.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Text__Class.html) applications)  
+- [Changing the font and text size](#using-the-edje-text-class) using the Edje Class: Text API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Text__Class.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Text__Class.html) applications)
 
-  In the application, you can create text classes to apply the same font and font size to various text (textblock) parts.  
+  In the application, you can create text classes to apply the same font and font size to various text (textblock) parts.
 
   The following words in the `text_class` definition are reserved for the system. If you use these text classes in a text or text block, a system font is applied to their texts. When the system font changes, the new font and size are applied to the texts too (except for the `tizen` text class, which only applies the new font, not the size).
   - `button`
@@ -49,16 +49,16 @@ For example:
   }
   ```
 
-- Use the system font when creating a text part with the `tizen` text class.  
+- Use the system font when creating a text part with the `tizen` text class.
 
   When the object is created or if the system setting changes, the part loads the new system font. However, the part font size remains 36 regardless of the new system font size, because the `tizen` text class does not apply system font size changes.
   ```
-  description {   
-    text {      
-      font: "Tizen:style=Regular";      
-      font_size: 36;      
-      text_class: "tizen";   
-    }
+  description {
+     text {
+        font: "Tizen:style=Regular";
+        font_size: 36;
+        text_class: "tizen";
+     }
   }
   ```
 
@@ -137,8 +137,9 @@ To set a font for a UI component:
 
 - Set the font for a common UI component:
 
-> **Note**  
-> If you add markup tags for the font inside the text, you can change the font of the text. However, you cannot set the font for a text part in EDC the same way (using markup tags), because the `TEXT` type does not support markup tags.
+  > **Note**
+  >
+  > If you add markup tags for the font inside the text, you can change the font of the text. However, you cannot set the font for a text part in EDC the same way (using markup tags), because the `TEXT` type does not support markup tags.
 
   ```
   char *buf = "<font=Sans:style=Regular font_size=50>Hello</font/>Font";
@@ -147,17 +148,18 @@ To set a font for a UI component:
 
 - Set the font for an entry component (in [mobile](../../../api/mobile/latest/group__Entry.html) and [wearable](../../../api/wearable/latest/group__Entry.html) applications) using the `elm_entry_text_style_user_push()` function. It overrides the default style of the entry component for each attribute.
 
-> **Note**  
-> The `elm_entry_text_style_user_push()` function only affects the main text of the UI component. To change the font of the guide text, you have to add markup tags.
+  > **Note**
+  >
+  > The `elm_entry_text_style_user_push()` function only affects the main text of the UI component. To change the font of the guide text, you have to add markup tags.
 
-```
-/* Main text font */
-char *user_style = "DEFAULT='font=Sans:style=Regular font_size=40'";
-elm_entry_text_style_user_push(entry, user_style);
-/* Guide text font */
-elm_object_part_text_set(entry, "elm.guide",
-                         "<font=Sans:style=Regular font_size=40>Guide Text</font>");
-```
+  ```
+  /* Main text font */
+  char *user_style = "DEFAULT='font=Sans:style=Regular font_size=40'";
+  elm_entry_text_style_user_push(entry, user_style);
+  /* Guide text font */
+  elm_object_part_text_set(entry, "elm.guide",
+                           "<font=Sans:style=Regular font_size=40>Guide Text</font>");
+  ```
 
 ## Setting the Font Using EDC
 
@@ -237,6 +239,7 @@ To create a layout with text using the EDC, you can set the font for each text o
 You can use the Edje Class: Text API (in [mobile](../../../api/mobile/latest/group__Edje__Object__Text__Class.html) and [wearable](../../../api/wearable/latest/group__Edje__Object__Text__Class.html) applications) to change multiple text occurrences as a batch. If you set a new font or font size to a text class, the change is applied to multiple objects.
 
 > **Note**
+>
 > Note that the `text_class` cannot be used in a UI component with markup text or the `elm_entry_text_style_user_push()` function. You must set the `text_class` in EDC.
 
 To set the text class, you can use reserved words or make your own text class:
@@ -309,6 +312,6 @@ To set the text class, you can use reserved words or make your own text class:
   ```
 
 ## Related Information
-- Dependencies  
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

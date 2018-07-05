@@ -1,21 +1,14 @@
 
 # Receiving Content from Other Applications
 
-The basic tasks involved in receiving content from other applications
-are advertising the features available in your application, handling the
-incoming content, and managing any extra data sent with the content. The
-following sections provide you with the fundamental building blocks for
-receiving content that other applications want to share with you.
+The basic tasks involved in receiving content from other applications are advertising the features available in your application, handling the
+incoming content, and managing any extra data sent with the content. The following sections provide you with the fundamental building blocks for receiving content that other applications want to share with you.
 
 ## Exporting Application Control Functionality
 
-To allow other applications to find and use your application features
-implicitly without your application ID, you must advertise your
-application features to other applications. You can do this by declaring
-your application control information in the `tizen-manifest.xml` file.
+To allow other applications to find and use your application features implicitly without your application ID, you must advertise your application features to other applications. You can do this by declaring your application control information in the `tizen-manifest.xml` file.
 
-The following example shows an advertisement for the `VIEW` and `CALL`
-application control operations:
+The following example shows an advertisement for the `VIEW` and `CALL` application control operations:
 
 ```xml
 <app-control>
@@ -29,30 +22,19 @@ application control operations:
 </app-control>
 ```
 
-> **Note**  
-> In the application manifest file, the valid operation name
-format is `http://tizen.org/appcontrol/operation/<verb>`. You cannot use the related macro name format: `APP_CONTROL_OPERATION_<VERB>`.
-
-
+> **Note**
+>
+> In the application manifest file, the valid operation name format is `http://tizen.org/appcontrol/operation/<verb>`. You cannot use the related macro name format: `APP_CONTROL_OPERATION_<VERB>`.
 
 ## Handling Incoming Content
 
-application, the application framework calls your application's
-`app_control_cb()` callback just after your application enters the main
-loop. This callback is passed to the handler, `app_control`, containing
-the reason why your application was launched. For example, your
-application can be launched to open a file that another application is
-sharing with you.
+When another application sends an application control request to your application, the application framework calls your application's `app_control_cb()` callback just after your application enters the main loop. This callback is passed to the handler, `app_control`, containing the reason why your application was launched. For example, your application can be launched to open a file that another application is sharing with you.
 
-When an application control request arrives, your application is
-responsible for checking and responding to the `app_control` handler
-accordingly.
+When an application control request arrives, your application is responsible for checking and responding to the `app_control` handler accordingly.
 
-The following example shows how you can initialize the application to
-allow the application control callback to handle the request for the
-`APP_CONTROL_OPERATION_VIEW` operation:
+The following example shows how you can initialize the application to allow the application control callback to handle the request for the `APP_CONTROL_OPERATION_VIEW` operation:
 
-```c++
+```cpp
 int
 main(int argc, char *argv[])
 {
@@ -99,13 +81,9 @@ app_control(app_control_h app_control, void *user_data)
 
 ## Managing Extra Data
 
-Using the `app_control_foreach_extra_data()` function, you can read any
-extra data added to the `app_control` handle. This function calls the
-`_app_control_extra_data_cb()` callback once for each extra data
-key-value pair contained in the handle. When the callback returns
-`false`, the iteration ends.
+Using the `app_control_foreach_extra_data()` function, you can read any extra data added to the `app_control` handle. This function calls the `_app_control_extra_data_cb()` callback once for each extra data key-value pair contained in the handle. When the callback returns `false`, the iteration ends.
 
-```c++
+```cpp
 bool
 _app_control_extra_data_cb(app_control_h app, const char *key, void *user_data)
 {

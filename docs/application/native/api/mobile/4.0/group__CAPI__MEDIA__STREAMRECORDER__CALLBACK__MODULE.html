@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -131,7 +131,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga457a6b3b29cdd0132954b7510770276b">streamrecorder_recording_status_cb</a> )(unsigned long long elapsed_time, unsigned long long file_size, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to indicate the recording status.  <a href="#ga457a6b3b29cdd0132954b7510770276b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga9e27564bc42be56b7dfe111e04c6e9bf">streamrecorder_notify_cb</a> )(<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gabead65b87737a5e6bc5f4d5f48306fd5">streamrecorder_state_e</a> previous, <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gabead65b87737a5e6bc5f4d5f48306fd5">streamrecorder_state_e</a> current, <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga0422c2b9f4f2972a7e3db263970c2021">streamrecorder_notify_e</a> notification, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the streamrecorder gets some nofications.  <a href="#ga9e27564bc42be56b7dfe111e04c6e9bf"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the streamrecorder gets some notifications.  <a href="#ga9e27564bc42be56b7dfe111e04c6e9bf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga981e107c429e044cce79562509d8d821">streamrecorder_error_cb</a> )(<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga183d6a4b17d0b3f0b68db02b6c876310">streamrecorder_error_e</a> error, <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gabead65b87737a5e6bc5f4d5f48306fd5">streamrecorder_state_e</a> current_state, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the error occurred.  <a href="#ga981e107c429e044cce79562509d8d821"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga93a7a69daae71baa4071ceb3d18fc873">streamrecorder_consume_completed_cb</a> )(void *buffer, void *user_data)</td></tr>
@@ -209,13 +209,13 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called when the streamrecorder gets some nofications. </p>
+<p>Called when the streamrecorder gets some notifications. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">previous</td><td>The previous state of the streamrecorder </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">current</td><td>The current state of the streamrecorder </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">notification</td><td>The notification type of the srecorder </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">notification</td><td>The notification type of the streamrecorder </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
   </table>
   </dd>
@@ -468,10 +468,10 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga9e27564bc42be56b7dfe111e04c6e9bf" title="Called when the streamrecorder gets some nofications.">streamrecorder_notify_cb()</a> will be invoked. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga9e27564bc42be56b7dfe111e04c6e9bf" title="Called when the streamrecorder gets some notifications.">streamrecorder_notify_cb()</a> will be invoked. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga602b6de28cedf5d084a57c2103d7b1ec" title="Unregisters the callback function.">streamrecorder_unset_notify_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga9e27564bc42be56b7dfe111e04c6e9bf" title="Called when the streamrecorder gets some nofications.">streamrecorder_notify_cb()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CALLBACK__MODULE.html#ga9e27564bc42be56b7dfe111e04c6e9bf" title="Called when the streamrecorder gets some notifications.">streamrecorder_notify_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -510,7 +510,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">recorder</td><td>The handle to treamrecorder </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">recorder</td><td>The handle to streamrecorder </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The function pointer of user callback </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>

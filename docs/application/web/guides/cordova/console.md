@@ -18,7 +18,7 @@ The main features of the Console API include:
 
   You can [measure the time elapsed during an operation](#measuring-timing).
 
-> **Note**
+> **Note**  
 > To see the message writing results, use the system console in the Tizen Studio or use the `sdb dlog` command.
 
 The global `console` object contains some additional features defined by Cordova.
@@ -47,7 +47,7 @@ console.log('console.log works well');
 console.error('console.error works well');
 ```
 
-> **Note**
+> **Note**  
 > To see the writing results, use the system console available in your Tizen Studio or use the `sdb dlog` command.
 
 ## Formatting Objects
@@ -87,7 +87,14 @@ To measure the time elapsed during an operation:
    }
    ```
 
-3. Stop the timer by passing the same label to the `timeEnd()` method:`console.timeEnd('Big array initialization');`The following output is shown in the system console:`Big array initialization: 176ms`
+3. Stop the timer by passing the same label to the `timeEnd()` method:
+   ```
+   console.timeEnd('Big array initialization');
+   ```
+   The following output is shown in the system console:
+   ```
+   Big array initialization: 176ms
+   ```
 
 
 ## Related Information

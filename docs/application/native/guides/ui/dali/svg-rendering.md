@@ -18,7 +18,9 @@ For more information on the SVG features, see [SVG Tiny 1.2 Specification](https
 
 You can render an SVG image on screen with DALi with both C++ and JSON. You can render an image in 2 ways:
 
-- Use the SVG URL to create an `ImageView` object (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1ImageView.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1ImageView.html) applications).You can show the SVG image in a C++ file or, without using C++, write the JSON representations in a style sheet.
+- Use the SVG URL to create an `ImageView` object (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1ImageView.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1ImageView.html) applications).
+
+  You can show the SVG image in a C++ file or, without using C++, write the JSON representations in a style sheet.
 
   ```
   // C++ example, use ImageView to render the SVG image
@@ -34,7 +36,9 @@ You can render an SVG image on screen with DALi with both C++ and JSON. You can 
   ] }
   ```
 
-- Create a control, generate a property map with the SVG URL as the `ImageVisual::Property::URL` key value, and set it to `Control::Property::BACKGROUND`.You can show the SVG image in a C++ file or, without using C++, write the JSON representations in a style sheet.
+- Create a control, generate a property map with the SVG URL as the `ImageVisual::Property::URL` key value, and set it to `Control::Property::BACKGROUND`.
+
+  You can show the SVG image in a C++ file or, without using C++, write the JSON representations in a style sheet.
 
   ```
   // C++ example, set SVG image as control background

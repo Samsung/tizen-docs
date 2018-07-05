@@ -32,8 +32,8 @@ The Web Runtime supports the following Web application types:
 
 All Web applications must be packaged according to the [Widget Packaging and XML Configuration
 guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). However, unlike packaged Web applications, the hosted Web applications have an externally hosted document as their starting page. For more information, see Extending Configuration Elements (in
-[mobile](../../../tizen-studio/web-tools/config-editor.md#mw_extend)
-and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_extend) applications).
+[mobile](../../tizen-studio/web-tools/config-editor.md#mw_extend)
+and [wearable](../../tizen-studio/web-tools/config-editor.md#ww_extend) applications).
 
 You can manage Web applications by:
 
@@ -125,10 +125,10 @@ The main functionality of the Web Runtime is to provide the following
 Tizen Web APIs to Web applications:
 
 -   [W3C/HTML5
-    APIs](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_cover.html)
+    APIs](../api/latest/w3c_api/w3c_api_cover.html)
 
 -   [Tizen Device
-    API](../../../../org.tizen.web.apireference/html/device_api/device_api_cover.html)
+    API](../api/latest/device_api/device_api_cover.html)
 
 It also supports multiple browsing context creation within a single Web
 application using, for example, the `window.open()` method, or hyperlink
@@ -189,9 +189,9 @@ process:
 ### Web Application Protection
 
 For Web applications that explicitly turn on encryption (in
-[mobile](../../../tizen-studio/web-tools/config-editor.md#mw_setting)
+[mobile](../../tizen-studio/web-tools/config-editor.md#mw_setting)
 and
-[wearable](../../../tizen-studio/web-tools/config-editor.md#ww_setting)
+[wearable](../../tizen-studio/web-tools/config-editor.md#ww_setting)
 applications) using the `<tizen:setting/>` element in the configuration
 file, the Web Runtime provides the following protection features:
 -   HTML, JavaScript, and CSS files of the Web application stored by the    device are encrypted.
@@ -267,7 +267,7 @@ Web Notifications (in **mobile applications only**)</td>
 
 <td>
 
-Storage (IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
+Storage (in **mobile and wearable applications only**)<br>(IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
 </td>
 <td>
 
@@ -282,7 +282,7 @@ Storage (IndexedDB, FileSystem capacity, quota exceeding WebDatabase)
 
 <td>
 
-FullScreen  (in ** mobile and TV applications only**)</td>
+FullScreen (in **mobile and TV applications only**)</td>
 <td>
 
 `http://tizen.org/privilege/fullscreen`</td>
@@ -326,7 +326,7 @@ individual user cannot elevate the permissions set by the
 platform-defined security policy. The mapping between each Tizen Device
 API and the corresponding privilege is defined in the API definitions in
 the [Tizen Device API
-Reference](../../../../org.tizen.web.apireference/html/device_api/device_api_cover.html).
+Reference](../api/latest/device_api/device_api_cover.html).
 
 The following table summarizes distributor signature type to API
 privilege level behavior mapping:

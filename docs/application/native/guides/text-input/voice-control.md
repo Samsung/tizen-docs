@@ -40,7 +40,7 @@ To use the voice control:
 
 1. Set up the voice control and [register callbacks](#callback).
 
-  The initialization allows the voice control to distinguish your application from any other applications also using voice control. The registered callbacks allow you to receive notifications about changes in the service state, language, and recognition result, and about any errors.
+   The initialization allows the voice control to distinguish your application from any other applications also using voice control. The registered callbacks allow you to receive notifications about changes in the service state, language, and recognition result, and about any errors.
 
 2. Prepare the voice control.
 

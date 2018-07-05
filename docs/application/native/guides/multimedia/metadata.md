@@ -43,7 +43,8 @@ To enable your application to use the metadata functionality:
 
 3. Make sure you have access to the file whose metadata and artwork you want to edit.
 
-   > **Note**  
+   > **Note**
+   >
    > The metadata editor APIs can use both common content in the device storage (internal or external) and private content in your application data.
 
    This guide uses an MP3 audio file, which is accessed through its file path. The following example code uses an internal storage, so you must include the `storage.h` header file for the code to work.
@@ -112,7 +113,8 @@ To enable your application to use the metadata functionality:
 
 6. Make sure you have access to the files whose metadata you want to extract, and make sure the files contain metadata, since the Metadata Extractor API only works on files with metadata.
 
-   > **Note**  
+   > **Note**
+   >
    > The Metadata Extractor functions can use both common content in the device storage (internal or external) and private content in your application data.
 
    This guide uses 2 files: an MP3 audio file and an MP4 video file, which are accessed through their file paths. The following example code uses an internal storage, so you must include the `storage.h` header file for the code to work.
@@ -219,7 +221,8 @@ To edit the metadata and artwork in the file:
 
    After calling the function, check whether the return value is `METADATA_EDITOR_ERROR_NONE`. If it is, you can check the updated metadata using the `metadata_editor_get_metadata()` function. Otherwise, the function failed because of an error, which you need to handle.
 
-   > **Note**  
+   > **Note**
+   >
    > The updated metadata is applied to the file only after you [call the `metadata_editor_update_metadata()` function](#apply).
 
 4. Add artwork to the file using the `metadata_editor_append_picture()` function.
@@ -242,10 +245,11 @@ To edit the metadata and artwork in the file:
    ret = metadata_editor_remove_picture(g_metadata_h, index);
    ```
 
-   > **Note**  
+   > **Note**
+   >
    > The artwork is added to the file or removed from the file only after you [call the `metadata_editor_update_metadata()` function](#apply).
 
-<a name="apply"></a>
+   <a name="apply"></a>
 5. Apply the metadata and artwork edits to the file using the `metadata_editor_update_metadata()` function:
 
    ```

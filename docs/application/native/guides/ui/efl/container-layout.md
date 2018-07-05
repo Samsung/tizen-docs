@@ -38,7 +38,7 @@ Unlike when using other UI containers, you must write C code and an EDC script t
    layout = elm_layout_add(parent);
    ```
 
-3. Load the EDJ file with the `elm_layout_file_set()` function.  
+3. Load the EDJ file with the `elm_layout_file_set()` function.
 
  You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
 
@@ -51,7 +51,7 @@ Unlike when using other UI containers, you must write C code and an EDC script t
 
 4. Set objects or texts to the layout with the `elm_object_part_content_set()` or `elm_object_part_text_set()` function.
 
-5. Elementary can send Edje signals to the EDC part using the `elm_layout_signal_emit()` function. You can also use the `elm_layout_signal_callback_add()` function to receive signals.  
+5. Elementary can send Edje signals to the EDC part using the `elm_layout_signal_emit()` function. You can also use the `elm_layout_signal_callback_add()` function to receive signals.
 
  Use the following code to listen for any signals sent by the layout:
 
@@ -167,7 +167,9 @@ The following predefined themes are available in the mobile profile:
   elm_object_part_content_set(ly, "elm.swallow.background", background);
   ```
 
-- `nocontents/default`: This layout can be used when there is no content to display, such as in a contact or email list.You can only set texts. There are 2 different texts zones: `elm.text` and `elm.help.text`. To change the text:
+- `nocontents/default`: This layout can be used when there is no content to display, such as in a contact or email list.
+
+  You can only set texts. There are 2 different texts zones: `elm.text` and `elm.help.text`. To change the text:
 
   ```
   elm_layout_theme_set(ly, "layout", "nocontents", "default");
@@ -175,7 +177,7 @@ The following predefined themes are available in the mobile profile:
   elm_object_part_text_set(ly, "elm.help.text", "Hi All :)");
   ```
 
-> **Note**  
+> **Note**
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

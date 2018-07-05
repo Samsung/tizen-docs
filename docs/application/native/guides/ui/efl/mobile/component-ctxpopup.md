@@ -127,7 +127,10 @@ To manage the ctxpopup items:
 
 2. Change the item label and icon, if the label and icon parameters are not `NULL` when the item is appended:
 
-   - To change the item label to `New label`:`elm_object_item_part_text_set(it, "default", "New label");`
+   - To change the item label to `New label`:
+     ```
+     elm_object_item_part_text_set(it, "default", "New label");
+     ```
 
    - To set the icon to the standard `home` icon:
 
@@ -173,10 +176,12 @@ You can register callback functions connected to the following signals for a ctx
 |-----------|--------------------------|------------|
 | `dismissed` | The ctxpopup is dismissed. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

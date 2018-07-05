@@ -35,7 +35,7 @@ If you want to use deprecated components, you can import those files. See the fo
 
 Since Tizen 2.4, it is strongly recommended to use the `class` selector to define the components in HTML files. The `"data-role"` selector has been deprecated and is no longer supported.
 
-The class selectors in TAU are composed with the `"ui-"` prefix and followed by the `<COMPONENT_NAME>`. For more information, see [UI Component API Reference](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm).
+The class selectors in TAU are composed with the `"ui-"` prefix and followed by the `<COMPONENT_NAME>`. For more information, see [UI Component API Reference](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm).
 
 The following example shows how to define the UI components before and after:
 
@@ -64,8 +64,8 @@ The following example shows how to define the UI components before and after:
   </div>
   ```
 
-> **Note**  
-> The old selector with `data-role` can still be used in 2.4, but it is **DEPRECATED** and no longer supported in the next version.
+  > **Note**  
+  > The old selector with `data-role` can still be used in 2.4, but it is **DEPRECATED** and no longer supported in the next version.
 
 - After:
 
@@ -96,52 +96,52 @@ The following example shows how to define the UI components before and after:
 
 Some new mobile components are added in TAU since 2.4. Some are renamed from old components (such as Checkbox and Radio) and others are newly added with a new feature and theme (such as Colored ListView). The following table shows the new TAU components in 2.4.
 
-For more information, see the [Mobile UI Component API Reference](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm).
+For more information, see the [Mobile UI Component API Reference](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm).
 
 **Table: New TAU mobile components in 2.4**
 
 | UI component                             | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| [Checkbox](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm) | The checkbox component changes the default browser checkboxes to a form more adapted to the mobile environment. |
-| [Colored List View](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm) | The colored list view component shows each list item with a gradient background color. |
-| [Dropdown Menu](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm) | The dropdown menu component is used to select one option. It is created as a drop-down list form. |
-| [Expandable](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm) | The expandable component allows you to expand or collapse content when tapped. |
-| [Floating Actions](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm) | The floating actions component shows a floating action button that can be moved left and right. |
-| [Grid View](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm) | The grid view component provides a grid-type list and presents content that are easily identified as images. |
-| [Index Scrollbar](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm) | The index scrollbar component shows a shortcut list that is bound to its parent scrollbar and list view. |
-| [Page Indicator](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm) | The page indicator component presents as a dot-typed indicator. |
-| [Panel Changer](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm) | The panel changer and panel component provide a multi-page layout in a page component. |
-| [Radio](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm) | The radio component changes the default browser radio button to a form more adapted to the mobile environment. |
-| [Search Input](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm) | The search input component is used to search for page content. |
-| [Section Changer](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm) | The section changer component provides an application architecture, which has multiple sections on one page. |
-| [Tabs](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm) | The tabs component shows an unordered list of buttons on the screen wrapped together in a single group. |
-| [Text Enveloper](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm) | The text enveloper component changes a text item to a button. |
+| [Checkbox](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm) | The checkbox component changes the default browser checkboxes to a form more adapted to the mobile environment. |
+| [Colored List View](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm) | The colored list view component shows each list item with a gradient background color. |
+| [Dropdown Menu](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm) | The dropdown menu component is used to select one option. It is created as a drop-down list form. |
+| [Expandable](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm) | The expandable component allows you to expand or collapse content when tapped. |
+| [Floating Actions](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm) | The floating actions component shows a floating action button that can be moved left and right. |
+| [Grid View](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm) | The grid view component provides a grid-type list and presents content that are easily identified as images. |
+| [Index Scrollbar](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm) | The index scrollbar component shows a shortcut list that is bound to its parent scrollbar and list view. |
+| [Page Indicator](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm) | The page indicator component presents as a dot-typed indicator. |
+| [Panel Changer](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm) | The panel changer and panel component provide a multi-page layout in a page component. |
+| [Radio](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm) | The radio component changes the default browser radio button to a form more adapted to the mobile environment. |
+| [Search Input](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm) | The search input component is used to search for page content. |
+| [Section Changer](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm) | The section changer component provides an application architecture, which has multiple sections on one page. |
+| [Tabs](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm) | The tabs component shows an unordered list of buttons on the screen wrapped together in a single group. |
+| [Text Enveloper](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm) | The text enveloper component changes a text item to a button. |
 
 ## Deprecated Components
 
 Some mobile components are deprecated and no longer supported since 2.4. Instead of using deprecated components, see the following table and replace the components by new components or an HTML element.
 
-For more information on deprecated components, see the [Mobile Component API Reference](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm).
+For more information on deprecated components, see the [Mobile Component API Reference](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm).
 
 **Table: Deprecated TAU mobile components**
 
 | UI component                             | Replace with                             |
 | ---------------------------------------- | ---------------------------------------- |
-| [Autodividers](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Autodividers.htm) | -                                        |
-| [CheckboxRadio](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Checkboxradio.htm) | Checkbox component for the checkbox, radio component for the radio button. |
-| [Collapsible](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Collapsible.htm) | Expandable component.                    |
-| [ControlGroup](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Controlgroup.htm) | Implement your own customized application style. |
-| [Fast Scroll](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_FastScroll.htm) | Index scrollbar component.               |
-| [Gallery](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Gallery.htm) | Implement your own gallery with the section changer component. |
-| [List Divider](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_ListDivider.htm) | Use the `ui-group-index` class for a group index. |
-| [Notification](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Notification.htm) | Popup component with the `ui-popup-toast` class. |
-| [Progress Bar](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_ProgressBar.htm) | Progress component with the `data-type="bar"` option. |
-| [Scroll Handler](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_ScrollHandler.htm) | -                                        |
-| [Search Bar](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_SearchBar.htm) | Search input component.                  |
-| [Select Menu](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_SelectMenu.htm) | Dropdown menu component.                 |
-| [Swipe](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Swipe.htm) | -                                        |
-| [Tab Bar](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_TabBar.htm) | Tabs component.                          |
-| [Token Text Area](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Tokentextarea.htm) | Text enveloper component.                |
+| [Autodividers](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Autodividers.htm) | -                                        |
+| [CheckboxRadio](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Checkboxradio.htm) | Checkbox component for the checkbox, radio component for the radio button. |
+| [Collapsible](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Collapsible.htm) | Expandable component.                    |
+| [ControlGroup](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Controlgroup.htm) | Implement your own customized application style. |
+| [Fast Scroll](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_FastScroll.htm) | Index scrollbar component.               |
+| [Gallery](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Gallery.htm) | Implement your own gallery with the section changer component. |
+| [List Divider](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_ListDivider.htm) | Use the `ui-group-index` class for a group index. |
+| [Notification](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Notification.htm) | Popup component with the `ui-popup-toast` class. |
+| [Progress Bar](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_ProgressBar.htm) | Progress component with the `data-type="bar"` option. |
+| [Scroll Handler](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_ScrollHandler.htm) | -                                        |
+| [Search Bar](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_SearchBar.htm) | Search input component.                  |
+| [Select Menu](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_SelectMenu.htm) | Dropdown menu component.                 |
+| [Swipe](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Swipe.htm) | -                                        |
+| [Tab Bar](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_TabBar.htm) | Tabs component.                          |
+| [Token Text Area](../../api/latest/ui_fw_api/Mobile_UIComponents/deprecated/mobile_Tokentextarea.htm) | Text enveloper component.                |
 
 If your application used the above deprecated components, see the following examples for successful migration:
 
@@ -600,7 +600,7 @@ Some events have changed. The following examples illustrate how to handle events
   }());
   ```
 
-  For more information, see the [Gesture Event API](../../../../org.tizen.web.apireference/html/ui_fw_api/Gesture_Events/gesture.htm).
+  For more information, see the [Gesture Event API](../../api/latest/ui_fw_api/Gesture_Events/gesture.htm).
 
 - Tap event    
 

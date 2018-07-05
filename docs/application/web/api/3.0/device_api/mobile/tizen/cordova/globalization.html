@@ -1,0 +1,2338 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>Globalization API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Globalization">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="title"><h1>Globalization API</h1></div>
+<div class="brief">
+ This plugin obtains information and performs operations specific to the user's locale,
+language, and timezone. Note the difference between locale and language: locale controls how numbers,
+dates, and times are displayed for a region, while language determines what language text appears as,
+independently of locale settings. Often developers use locale to set both settings, but there is no reason
+a user couldn't set her language to "English" but locale to "French", so that text is displayed in English
+but dates, times, etc., are displayed as they are in France. Unfortunately, most mobile platforms
+currently do not make a distinction between these settings.
+        </div>
+<div class="description">
+        <p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-globalization">Cordova Globalization</a>        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#GlobalizationManager">GlobalizationManager</a>
+</li>
+<li>1.2. <a href="#DateOptions">DateOptions</a>
+</li>
+<li>1.3. <a href="#CurrencyPattern">CurrencyPattern</a>
+</li>
+<li>1.4. <a href="#GetDateNamesOptions">GetDateNamesOptions</a>
+</li>
+<li>1.5. <a href="#NumberPatternOptions">NumberPatternOptions</a>
+</li>
+<li>1.6. <a href="#DatePattern">DatePattern</a>
+</li>
+<li>1.7. <a href="#NumberPattern">NumberPattern</a>
+</li>
+<li>1.8. <a href="#GlobalizationDate">GlobalizationDate</a>
+</li>
+<li>1.9. <a href="#DSTSuccessCallback">DSTSuccessCallback</a>
+</li>
+<li>1.10. <a href="#StringSuccessCallback">StringSuccessCallback</a>
+</li>
+<li>1.11. <a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a>
+</li>
+<li>1.12. <a href="#LongSuccessCallback">LongSuccessCallback</a>
+</li>
+<li>1.13. <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a>
+</li>
+<li>1.14. <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a>
+</li>
+<li>1.15. <a href="#PatternSuccessCallback">PatternSuccessCallback</a>
+</li>
+<li>1.16. <a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a>
+</li>
+<li>1.17. <a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a>
+</li>
+<li>1.18. <a href="#GlobalizationError">GlobalizationError</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#GlobalizationManager">GlobalizationManager</a></td>
+<td>
+<div>void <a href="#GlobalizationManager::getPreferredLanguage">getPreferredLanguage</a> (<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror)</div>
+<div>void <a href="#GlobalizationManager::getLocaleName">getLocaleName</a> (<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror)</div>
+<div>void <a href="#GlobalizationManager::dateToString">dateToString</a> (Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)</div>
+<div>void <a href="#GlobalizationManager::getCurrencyPattern">getCurrencyPattern</a> (DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror)</div>
+<div>void <a href="#GlobalizationManager::getDateNames">getDateNames</a> (<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options)</div>
+<div>void <a href="#GlobalizationManager::getDatePattern">getDatePattern</a> (<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)</div>
+<div>void <a href="#GlobalizationManager::getFirstDayOfWeek">getFirstDayOfWeek</a> (<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror)</div>
+<div>void <a href="#GlobalizationManager::getNumberPattern">getNumberPattern</a> (<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)</div>
+<div>void <a href="#GlobalizationManager::isDayLightSavingsTime">isDayLightSavingsTime</a> (Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror)</div>
+<div>void <a href="#GlobalizationManager::numberToString">numberToString</a> (double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)</div>
+<div>void <a href="#GlobalizationManager::stringToDate">stringToDate</a> (DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)</div>
+<div>void <a href="#GlobalizationManager::stringToNumber">stringToNumber</a> (DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#DateOptions">DateOptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#CurrencyPattern">CurrencyPattern</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#GetDateNamesOptions">GetDateNamesOptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NumberPatternOptions">NumberPatternOptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#DatePattern">DatePattern</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NumberPattern">NumberPattern</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#GlobalizationDate">GlobalizationDate</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#DSTSuccessCallback">DSTSuccessCallback</a></td>
+<td><div>void <a href="#DSTSuccessCallback::onsuccess">onsuccess</a> (object properties)</div></td>
+</tr>
+<tr>
+<td><a href="#StringSuccessCallback">StringSuccessCallback</a></td>
+<td><div>void <a href="#StringSuccessCallback::onsuccess">onsuccess</a> (object properties)</div></td>
+</tr>
+<tr>
+<td><a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a></td>
+<td><div>void <a href="#ArrayStringSuccessCallback::onsuccess">onsuccess</a> (object properties)</div></td>
+</tr>
+<tr>
+<td><a href="#LongSuccessCallback">LongSuccessCallback</a></td>
+<td><div>void <a href="#LongSuccessCallback::onsuccess">onsuccess</a> (object properties)</div></td>
+</tr>
+<tr>
+<td><a href="#DoubleSuccessCallback">DoubleSuccessCallback</a></td>
+<td><div>void <a href="#DoubleSuccessCallback::onsuccess">onsuccess</a> (object properties)</div></td>
+</tr>
+<tr>
+<td><a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a></td>
+<td><div>void <a href="#GlobalizationDateSuccessCallback::onsuccess">onsuccess</a> (Date date)</div></td>
+</tr>
+<tr>
+<td><a href="#PatternSuccessCallback">PatternSuccessCallback</a></td>
+<td><div>void <a href="#PatternSuccessCallback::onsuccess">onsuccess</a> (<a href="#CurrencyPattern">CurrencyPattern</a> pattern)</div></td>
+</tr>
+<tr>
+<td><a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a></td>
+<td><div>void <a href="#GetDatePatternSuccessCallback::onsuccess">onsuccess</a> (<a href="#DatePattern">DatePattern</a> pattern)</div></td>
+</tr>
+<tr>
+<td><a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a></td>
+<td><div>void <a href="#GetNumberPatternSuccessCallback::onsuccess">onsuccess</a> (<a href="#NumberPattern">NumberPattern</a> pattern)</div></td>
+</tr>
+<tr>
+<td><a href="#GlobalizationError">GlobalizationError</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="GlobalizationManager">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager"></a><h3>1.2. GlobalizationManager</h3>
+<div class="brief">
+ the GlobalizationManager interface embodies Globalization module methods.
+          </div>
+<pre class="webidl prettyprint"> [NoInterfaceObject] interface GlobalizationManager {
+
+   void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess,
+                             <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess,
+                      <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                     optional <a href="#DateOptions">DateOptions</a> options);
+
+   void getCurrencyPattern(DOMString currencyCode,
+                           <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess,
+                           <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                     optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options);
+
+   void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                       optional <a href="#DateOptions">DateOptions</a> options);
+
+   void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess,
+                          <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess,
+                         <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                         optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
+
+   void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess,
+                              <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                       optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
+
+   void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess,
+                     <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                     optional <a href="#DateOptions">DateOptions</a> options);
+   void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess,
+                       <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                       optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GlobalizationManager::getPreferredLanguage">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::getPreferredLanguage"></a><code><b><span class="methodName">getPreferredLanguage</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the BCP 47 language tag for the client's current language.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+Returns the BCP-47 compliant language identifier tag to the successCallback
+with a properties object as a parameter. That object should have a value property
+with a String value.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback method to be invoked if the preferred language
+is obtained successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method called when errors occur
+during this method's execution.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language, */
+/* this outputs the text */
+/* similar to the results that follow */
+
+navigator.globalization.getPreferredLanguage(function(language)
+{
+  console.log('Language: ' + language.value);
+}, function()
+{
+  console.log('Error getting language');
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Language: en-US
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::getLocaleName">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::getLocaleName"></a><code><b><span class="methodName">getLocaleName</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns the BCP 47 compliant tag for the client's current locale settings.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+Returns the BCP 47 compliant locale identifier string to the successCallback
+with a properties object as a parameter. That object should have a value
+property with a String value. The locale tag will consist of a two-letter
+lower case language code, two-letter upper case country code, and (unspecified)
+variant code, separated by a hyphen.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback function called when the locale name
+has been obtained successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method invoked in case of errors
+occuring while getting a locale name.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language, */
+/* this outputs the text */
+/* similar to the results that follow */
+
+navigator.globalization.getLocaleName( function(locale)
+{
+  console.log('Locale: ' + locale.value);
+}, function()
+{
+  console.log('Error getting locale');
+}
+);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Locale: en-US
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::dateToString">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::dateToString"></a><code><b><span class="methodName">dateToString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns a date formatted as a string according to the client's locale and timezone.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+Returns the date formatted as a String via a value property accessible from the object
+passed as a parameter to the successCallback.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">date</span>: 
+ The date to be converted to a DOMString. It should be of type Date.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback method called after a successful conversion.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method called if errors occur during conversion.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span>: 
+ Optional parameter defining conversion options. The default values are:
+<var>{formatLength : 'short', selector : 'date and time'}</var>.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language, */
+/* this should output text similar to the results that follow */
+/* This example uses the default conversion options */
+
+navigator.globalization.dateToString(new Date(), function(date)
+{
+  console.log('Date: ' + date.value);
+}, function()
+{
+  console.log('Error getting dateString');
+}, {formatLength: 'short', selector: 'date and time'});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Date: 9/25/2012 4:21PM
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::getCurrencyPattern">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::getCurrencyPattern"></a><code><b><span class="methodName">getCurrencyPattern</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns a pattern string to format and parse currency values according to
+the client's user preferences and ISO 4217 currency code.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getCurrencyPattern(DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+The pattern information is returned in the onsuccess callback with pattern object
+as a parameter.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">currencyCode</span>: 
+ ISO 4217 compliant currency code provided as a DOMString,
+for example 'USD'.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback method invoked after a successful conversion.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method called if errors occur during the conversion.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en-US language and the selected */
+/* currency is United States dollars, this outputs */
+/* the text similar to the results that follow */
+
+navigator.globalization.getCurrencyPattern('USD', function(pattern)
+{
+  console.log('pattern: '  + pattern.pattern);
+  console.log('code: ' + pattern.code);
+  console.log('fraction: ' + pattern.fraction);
+  console.log('rounding: ' + pattern.rounding);
+  console.log('decimal: '  + pattern.decimal);
+  console.log('grouping: ' + pattern.grouping);
+}, function()
+{
+  console.log('Error getting pattern');
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>pattern: $#,##0.##;($#,##0.##)
+code: USD
+fraction: 2
+rounding: 0
+decimal: .
+grouping: ,
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::getDateNames">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::getDateNames"></a><code><b><span class="methodName">getDateNames</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns an array of the names of the months or the days of the week,
+depending on the client's user preferences and calendar.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+If this method executes successfully, it invokes the onsuccess callback
+with months' or days' names passed as an Array of DOMString values
+in a parameter. This array features names starting from either
+the first month in the year or the first day of the week
+depending on the option selected.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The function to be called if this method returns the names correctly.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The function to be called in case of error occuring.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span>: 
+ An optional parameter specifying additional options.
+The default value is <var>{type: 'wide', item: 'months'}</var>                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US language, */
+/* this example logs the names of months, as per locale settings */
+/* with text similar to the results that follow */
+
+navigator.globalization.getDateNames(function(names)
+{
+  for (var i = 0; i &lt; names.value.length; i++)
+  {
+    console.log('month: ' + names.value[i]);
+  }
+}, function()
+{
+  console.log('Error getting names');
+}, { type: 'wide', item: 'months' });
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>month: January
+month: February
+month: March
+month: April
+month: May
+month: June
+month: July
+month: August
+month: September
+month: October
+month: November
+month: December
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::getDatePattern">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::getDatePattern"></a><code><b><span class="methodName">getDatePattern</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a pattern string to format and parse dates according to the client's
+user preferences.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+If this method executes successfully, the onsuccess callback is invoked
+with a DatePattern object passed as a parameter.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The method to be invoked when this function executes successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The function to be invoked in case of errors occuring.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span>: 
+ The DateOptions object containing additional options.
+The default value is <var>{formatLength: 'short', selector: 'date and time'}</var>.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* This example displays the locale date pattern */
+/* When the browser is set to the en-US locale, */
+/* this outputs the text similar to the results that follow */
+
+function checkDatePattern()
+{
+  navigator.globalization.getDatePattern(function(date)
+  {
+    console.log('Date pattern: ' + date.pattern);
+  }, function()
+  {
+    console.log('Error getting pattern');
+  }, {formatLength: 'short', selector: 'date and time'});
+}
+
+checkDatePattern();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Date pattern: M/d/yyyy h:mm a
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::getFirstDayOfWeek">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::getFirstDayOfWeek"></a><code><b><span class="methodName">getFirstDayOfWeek</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the first day of the week according to the client's
+user preferences and calendar.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+The days of the week are numbered starting from 1, where 1 is assumed to be Sunday.
+If successful, it invokes onsuccess callback with a LongSuccessCallback object
+as a parameter. That object has a value property representing the number of
+the first day of a week.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The method to be called when this function executes successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The method to be invoked in case of errors occuring.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this outputs the text similar to "day: 1" */
+
+navigator.globalization.getFirstDayOfWeek(function(day)
+{
+  console.log('Day: ' + day.value);
+}, function()
+{
+  console.log('Error getting first day of week');
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Day: 1
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::getNumberPattern">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::getNumberPattern"></a><code><b><span class="methodName">getNumberPattern</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a pattern string to format and parse numbers
+according to the client's user preferences.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+The obtained pattern is then passed to the onsuccess callback
+as a parameter.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback method to be invoked
+when this function executes successfully.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method to be invoked
+in case of errors occuring during this method's execution.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span>: 
+ Defines the type of numeric value for which
+the pattern will be returned.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this example outputs the text */
+/* similar to the results that follow */
+
+navigator.globalization.getNumberPattern( function(pattern)
+{
+  console.log('pattern: '  + pattern.pattern);
+  console.log('symbol: '   + pattern.symbol);
+  console.log('fraction: ' + pattern.fraction);
+  console.log('rounding: ' + pattern.rounding);
+  console.log('positive: ' + pattern.positive);
+  console.log('negative: ' + pattern.negative);
+  console.log('decimal: '  + pattern.decimal);
+  console.log('grouping: ' + pattern.grouping);
+  }, function()
+  {
+    console.log('An error occurred');
+  }, {type: 'decimal'});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>pattern: #,##0.###
+symbol: .
+fraction: 0
+rounding: 0
+positive:
+negative: -
+decimal: .
+grouping: ,
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::isDayLightSavingsTime">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::isDayLightSavingsTime"></a><code><b><span class="methodName">isDayLightSavingsTime</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Indicates whether or not daylight savings time is in effect
+for a given date using the client's time zone and calendar.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+If this function executes successfully, the onsuccess callback
+will be invoked with a dstStatus object as a parameter. That object
+would contain a dst property with a Boolean value. The true value
+indicates that the DST is in effect for the given date.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">date</span>: 
+ The Date object for which the daylight savings time status will be checked.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback method to be called when this function
+successfully completes its execution.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method to be called in case of
+errors occuring during this method's execution.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* During the summer, and if the browser */
+/* is set to a DST-enabled timezone, */
+/* this logs text similar to "dst: true" */
+
+navigator.globalization.isDayLightSavingsTime(new Date(), function(date)
+{
+  console.log('dst: ' + date.dst);
+}, function()
+{
+  console.log('Error getting the DST state');
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>dst: true
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::numberToString">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::numberToString"></a><code><b><span class="methodName">numberToString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns a number formatted as a string
+according to the client's user preferences.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+The formatted number string is returned by onsuccess callback with
+a properties object as a parameter. That object contains a property value
+of DOMString type containing the result of the conversion.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">number</span>: 
+ The number that will be converted to a DOMString
+in accordance with the client's user preferences.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback function executed when the conversion
+is done successfully. The results of the conversion are passed
+as a parameter to this callback function.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback function executed in case of errors
+occuring during the conversion. The GlobalizationError object with
+the details is passed as a parameter to this callback function.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span>: 
+ Additional options specifying the details of conversion.
+It is a dictionary with a single property <var>type</var>.
+The default value of this parameter is <var>{type: 'decimal'}</var>.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this code displays the results that follow */
+
+navigator.globalization.numberToString(3.1415926,function(number)
+{
+  console.log('Decimal number: ' + number.value);
+}, function()
+{
+  console.log('Error getting number');
+}, {type: 'decimal'});
+
+navigator.globalization.numberToString(1000003, function(number)
+{
+  console.log('Big decimal number: ' + number.value);
+}, function()
+{
+  console.log('Error getting number');
+}, {type: 'decimal'});
+
+navigator.globalization.numberToString(0.3183099, function(number)
+{
+  console.log('Percentile: ' + number.value);
+}, function()
+{
+  console.log('Error getting number');
+}, {type: 'percent'});
+
+navigator.globalization.numberToString(1099.95, function(number)
+{
+  console.log('Currency: ' + number.value);
+}, function()
+{
+  console.log('Error getting number');
+}, {type: 'currency'});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Decimal number: 3.142
+Big decimal number: 1,000,003
+Percentile: 32%
+Currency: $1,099.95
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::stringToDate">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::stringToDate"></a><code><b><span class="methodName">stringToDate</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Parses a date formatted as a DOMString according to the client's
+user preferences and calendar using the time zone of the client.
+Returns the corresponding date object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">dateString</span>: 
+ a string containing the representation of a date to be converted
+to a Date object.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback method invoked when the conversion completes successfully.
+The result of conversion is passed as a parameter to this callback.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method invoked in case of errors occuring during
+the conversion. A GlobalizationError object is passed as a parameter
+to this callback.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span>: 
+ Additional options specifying the details of the conversion.
+The default value is <var>{formatLength: 'short', selector: 'date and time'}</var>.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* when the browser is set to the en_US locale, */
+/* this example outputs text similar to the results that follow */
+/* Note that the month integer is one less than the string, */
+/* as the month integer represents an array index */
+
+navigator.globalization.stringToDate('9/25/2012', function(date)
+{
+  console.log('month: '  + date.month +
+              ', day: '  + date.day +
+              ', year: ' + date.year)
+}, function()
+{
+  console.log('Error getting date');
+}, {selector: 'date'});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>month: 8, day: 25, year: 2012
+</pre>
+</div>
+</dd>
+<dt class="method" id="GlobalizationManager::stringToNumber">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationManager::stringToNumber"></a><code><b><span class="methodName">stringToNumber</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Parses a number formatted as a string according to the client's
+user preferences and returns the corresponding number.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+If successful, the result of the conversion is passed as a parameter to the onsuccess
+callback method.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">numberString</span>: 
+ The DOMString containing a text representation of a number
+to be converted to a double data type.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span>: 
+ The callback method called after a successful conversion.
+The result of a conversion is passed as a parameter of this callback method.
+                </li>
+          <li class="param">
+<span class="name">onerror</span>: 
+ The callback method invoked in case of errors occuring during
+the conversion. The error is passed as a parameter of this callback method.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span>: 
+ Additional options specifying the details of the conversion.
+The default value is <var>{type: 'decimal'}</var>                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters contains an invalid value.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* When the browser is set to the en_US locale, */
+/* this displays the text similar to the results that follow */
+
+navigator.globalization.stringToNumber('1234.56', function(number)
+{
+  console.log('Number: ' + number.value);
+}, function()
+{
+  console.log('Error getting number');
+}, {type: 'decimal'});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Number: 1234.56
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="DateOptions">
+<a class="backward-compatibility-anchor" name="::Globalization::DateOptions"></a><h3>1.3. DateOptions</h3>
+<div class="brief">
+ DateOptions is a dictionary containing options for date conversions.
+          </div>
+<pre class="webidl prettyprint"> dictionary DateOptions {
+   DOMString formatLength;
+   DOMString selector;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="DateOptions::formatLength"><span class="attrName">DOMString formatLength</span></dt>
+<dd>
+<div class="brief">
+ Indicates the length of DOMString representation of the date.
+            </div>
+<div class="description">
+            <p>
+Valid values are:
+            </p>
+            <ul>
+              <li>
+'short'              </li>
+              <li>
+'medium'              </li>
+              <li>
+'long'              </li>
+              <li>
+'full'              </li>
+            </ul>
+           </div>
+</dd>
+<dt class="member" id="DateOptions::selector"><span class="attrName">DOMString selector</span></dt>
+<dd>
+<div class="brief">
+ Indicates the selector for DOMString representation of the date.
+            </div>
+<div class="description">
+            <p>
+Valid values are:
+            </p>
+            <ul>
+              <li>
+'date'              </li>
+              <li>
+'time'              </li>
+              <li>
+'date and time'              </li>
+            </ul>
+           </div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="CurrencyPattern">
+<a class="backward-compatibility-anchor" name="::Globalization::CurrencyPattern"></a><h3>1.4. CurrencyPattern</h3>
+<div class="brief">
+ CurrencyPattern is a dictionary containing currency formatting properties.
+          </div>
+<pre class="webidl prettyprint"> dictionary CurrencyPattern {
+   DOMString pattern;
+   DOMString code;
+   long fraction;
+   double rounding;
+   DOMString decimal;
+   DOMString grouping;
+ };</pre>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="CurrencyPattern::pattern"><span class="attrName">DOMString pattern</span></dt>
+<dd>
+<div class="brief">
+ The currency pattern to format and parse the currency values.
+The patterns follow Unicode Technical Standard #35.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="CurrencyPattern::code"><span class="attrName">DOMString code</span></dt>
+<dd>
+<div class="brief">
+ The ISO 4217 currency code for the pattern.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="CurrencyPattern::fraction"><span class="attrName">long fraction</span></dt>
+<dd>
+<div class="brief">
+ The number of fractional digits to use when parsing and formatting currency.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="CurrencyPattern::rounding"><span class="attrName">double rounding</span></dt>
+<dd>
+<div class="brief">
+ The rounding increment to use when parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="CurrencyPattern::decimal"><span class="attrName">DOMString decimal</span></dt>
+<dd>
+<div class="brief">
+ The decimal symbol to use for parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="CurrencyPattern::grouping"><span class="attrName">DOMString grouping</span></dt>
+<dd>
+<div class="brief">
+ The grouping symbol to use for parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="GetDateNamesOptions">
+<a class="backward-compatibility-anchor" name="::Globalization::GetDateNamesOptions"></a><h3>1.5. GetDateNamesOptions</h3>
+<div class="brief">
+ The GetDateNamesOptions dictionary contains options used in getDateNames method.
+          </div>
+<pre class="webidl prettyprint"> dictionary GetDateNamesOptions {
+   DOMString type;
+   DOMString item;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="GetDateNamesOptions::type"><span class="attrName">DOMString type</span></dt>
+<dd>
+<div class="brief">
+ Determines whether to use abbreviated (narrow) or full-length (wide) names.
+            </div>
+<div class="description">
+            <p>
+The following values are valid:
+            </p>
+            <ul>
+              <li>
+'narrow' - Abbreviated names will be returned.              </li>
+              <li>
+'wide' - Full names will be returned.              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="GetDateNamesOptions::item"><span class="attrName">DOMString item</span></dt>
+<dd>
+<div class="brief">
+ Determines whether to return the names of months or the names of days.
+            </div>
+<div class="description">
+            <p>
+The following values are valid:
+            </p>
+            <ul>
+              <li>
+'months' - The names of months will be returned.              </li>
+              <li>
+'days' - The names of days of the week will be returned.              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="NumberPatternOptions">
+<a class="backward-compatibility-anchor" name="::Globalization::NumberPatternOptions"></a><h3>1.6. NumberPatternOptions</h3>
+<div class="brief">
+ The NumberPatternOptions dictionary contains options
+used in handling numerical locale settings.
+          </div>
+<pre class="webidl prettyprint"> dictionary NumberPatternOptions {
+   DOMString type;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="NumberPatternOptions::type"><span class="attrName">DOMString type</span></dt>
+<dd>
+<div class="brief">
+ The type determines the genus of numeric value,
+for which the pattern will be extracted.
+            </div>
+<div class="description">
+            <p>
+The following values are valid:
+            </p>
+            <ul>
+              <li>
+'decimal' - Indicates that the pattern for the
+decimal numbers should be extracted.              </li>
+              <li>
+'percent' - Indicates that the pattern for the
+percents should be extracted.              </li>
+              <li>
+'currency' - Indicates that the pattern for the
+currency values should be extracted.              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="DatePattern">
+<a class="backward-compatibility-anchor" name="::Globalization::DatePattern"></a><h3>1.7. DatePattern</h3>
+<div class="brief">
+ The DatePattern dictionary contains the information obtained in getDatePattern method.
+          </div>
+<pre class="webidl prettyprint"> dictionary DatePattern {
+   DOMString pattern;
+   DOMString timezone;
+   long utc_offset;
+   long dst_offset;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="DatePattern::pattern"><span class="attrName">DOMString pattern</span></dt>
+<dd>
+<div class="brief">
+ The date and time pattern to format and parse dates.
+The patterns follow Unicode Technical Standard #35.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="DatePattern::timezone"><span class="attrName">DOMString timezone</span></dt>
+<dd>
+<div class="brief">
+ The abbreviated name of the time zone on client's device.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="DatePattern::utc_offset"><span class="attrName">long utc_offset</span></dt>
+<dd>
+<div class="brief">
+ The current difference in seconds between the client's time zone
+and coordinated universal time.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="DatePattern::dst_offset"><span class="attrName">long dst_offset</span></dt>
+<dd>
+<div class="brief">
+ The current daylight saving time offset in seconds between the client's
+non-daylight saving time zone and the client's daylight saving time zone.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="NumberPattern">
+<a class="backward-compatibility-anchor" name="::Globalization::NumberPattern"></a><h3>1.8. NumberPattern</h3>
+<div class="brief">
+ The NumberPattern dictionary contains the information obtained
+by calling the getNumberPattern method.
+          </div>
+<pre class="webidl prettyprint"> dictionary NumberPattern {
+   DOMString pattern;
+   DOMString symbol;
+   long fraction;
+   double rounding;
+   DOMString positive;
+   DOMString negative;
+   DOMString decimal;
+   DOMString grouping;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="NumberPattern::pattern"><span class="attrName">DOMString pattern</span></dt>
+<dd>
+<div class="brief">
+ The number pattern to format and parse numbers.
+The patterns follow Unicode Technical Standard #35.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="NumberPattern::symbol"><span class="attrName">DOMString symbol</span></dt>
+<dd>
+<div class="brief">
+ The symbol to use when formatting and parsing,
+such as percent or currency symbol.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="NumberPattern::fraction"><span class="attrName">long fraction</span></dt>
+<dd>
+<div class="brief">
+ The number of fractional digits to use
+when parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="NumberPattern::rounding"><span class="attrName">double rounding</span></dt>
+<dd>
+<div class="brief">
+ The rounding increment to use when parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="NumberPattern::positive"><span class="attrName">DOMString positive</span></dt>
+<dd>
+<div class="brief">
+ The symbol to use for positive numbers
+when parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="NumberPattern::negative"><span class="attrName">DOMString negative</span></dt>
+<dd>
+<div class="brief">
+ The symbol to use for negative numbers
+when parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="NumberPattern::decimal"><span class="attrName">DOMString decimal</span></dt>
+<dd>
+<div class="brief">
+ The decimal symbol to use for parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="NumberPattern::grouping"><span class="attrName">DOMString grouping</span></dt>
+<dd>
+<div class="brief">
+ The grouping symbol to use for parsing and formatting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="GlobalizationDate">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationDate"></a><h3>1.9. GlobalizationDate</h3>
+<div class="brief">
+ the GlobalizationDate dictionary represents a point in time,
+similar to a Date object in javascript.
+          </div>
+<pre class="webidl prettyprint"> dictionary GlobalizationDate {
+   long year;
+   long month;
+   long day;
+   long hour;
+   long minute;
+   long second;
+   long millisecond;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="GlobalizationDate::year"><span class="attrName">long year</span></dt>
+<dd>
+<div class="brief">
+ The four digit year.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="GlobalizationDate::month"><span class="attrName">long month</span></dt>
+<dd>
+<div class="brief">
+ The month index in range (0, 11) inclusively.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="GlobalizationDate::day"><span class="attrName">long day</span></dt>
+<dd>
+<div class="brief">
+ The day of month in range (1, 31) inclusively.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="GlobalizationDate::hour"><span class="attrName">long hour</span></dt>
+<dd>
+<div class="brief">
+ The hour in range (0, 23) inclusively.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="GlobalizationDate::minute"><span class="attrName">long minute</span></dt>
+<dd>
+<div class="brief">
+ The minute in range (0, 59) inclusively.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="GlobalizationDate::second"><span class="attrName">long second</span></dt>
+<dd>
+<div class="brief">
+ The second in range (0, 59) inclusively.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="GlobalizationDate::millisecond"><span class="attrName">long millisecond</span></dt>
+<dd>
+<div class="brief">
+ The milliseconds in range (0, 999) inclusively.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="DSTSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::DSTSuccessCallback"></a><h3>1.10. DSTSuccessCallback</h3>
+<div class="brief">
+ A callback method invoked on successful extraction
+of Daylight Saving Time data.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface DSTSuccessCallback {
+   void onsuccess(object properties);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DSTSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::DSTSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns the DST data successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">properties</span>: 
+ An object containing the field "dst" of boolean type.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="StringSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::StringSuccessCallback"></a><h3>1.11. StringSuccessCallback</h3>
+<div class="brief">
+ A callback method invoked on successful extraction of
+a data encoded as a DOMString.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface StringSuccessCallback {
+   void onsuccess(object properties);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="StringSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::StringSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns the properties object with data successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">properties</span>: 
+ An object containing the field "value" of a DOMString type.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ArrayStringSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::ArrayStringSuccessCallback"></a><h3>1.12. ArrayStringSuccessCallback</h3>
+<div class="brief">
+ The callback method invoked on successful extraction of
+the data represented as an array of DOMString values.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface ArrayStringSuccessCallback {
+   void onsuccess(object properties);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ArrayStringSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::ArrayStringSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns the array of DOMString values succesfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">properties</span>: 
+ an object with the field "value"
+containing an Array of DOMString values.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="LongSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::LongSuccessCallback"></a><h3>1.13. LongSuccessCallback</h3>
+<div class="brief">
+ The callback method invoked on successful extraction
+of the data represented as a long integer value.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface LongSuccessCallback {
+   void onsuccess(object properties);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="LongSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::LongSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns a numeric (long) data successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">properties</span>: 
+ An object containing the field "value" of a long type.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="DoubleSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::DoubleSuccessCallback"></a><h3>1.14. DoubleSuccessCallback</h3>
+<div class="brief">
+ The callback method invoked on successful extraction
+of the data represented as a double precision numeric value.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface DoubleSuccessCallback {
+   void onsuccess(object properties);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DoubleSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::DoubleSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns a numeric (double) data successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object properties);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">properties</span>: 
+ An object containing the field "value" of a double type.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GlobalizationDateSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationDateSuccessCallback"></a><h3>1.15. GlobalizationDateSuccessCallback</h3>
+<div class="brief">
+ The callback method invoked on successful extraction
+of the GlobalizationDate object.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface GlobalizationDateSuccessCallback {
+   void onsuccess(Date date);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GlobalizationDateSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationDateSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns a GlobalizationDate object successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(Date date);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">date</span>: 
+ a GlobalizationDate object containing the date information.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PatternSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::PatternSuccessCallback"></a><h3>1.16. PatternSuccessCallback</h3>
+<div class="brief">
+ The callback method invoked on successful extraction
+of a CurrencyPattern object.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface PatternSuccessCallback {
+   void onsuccess(<a href="#CurrencyPattern">CurrencyPattern</a> pattern);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PatternSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::PatternSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns the currency pattern information succesfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CurrencyPattern">CurrencyPattern</a> pattern);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">pattern</span>: 
+ a CurrencyPattern object containing retrieved information.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GetDatePatternSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::GetDatePatternSuccessCallback"></a><h3>1.17. GetDatePatternSuccessCallback</h3>
+<div class="brief">
+ The callback method invoked on succesful extraction
+of a DatePattern object.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface GetDatePatternSuccessCallback {
+   void onsuccess(<a href="#DatePattern">DatePattern</a> pattern);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GetDatePatternSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::GetDatePatternSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns the date pattern information successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#DatePattern">DatePattern</a> pattern);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">pattern</span>: 
+ a DatePattern object containing retrieved information.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GetNumberPatternSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Globalization::GetNumberPatternSuccessCallback"></a><h3>1.18. GetNumberPatternSuccessCallback</h3>
+<div class="brief">
+ The callback method invoked on successful extraction
+of a NumberPattern object.
+          </div>
+<pre class="webidl prettyprint"> [Callback=FunctionOnly, NoInterfaceObject] interface GetNumberPatternSuccessCallback {
+   void onsuccess(<a href="#NumberPattern">NumberPattern</a> pattern);
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="GetNumberPatternSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Globalization::GetNumberPatternSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a function returns the number pattern information successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#NumberPattern">NumberPattern</a> pattern);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">pattern</span>: 
+ a NumberPattern object containing retrieved information.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="GlobalizationError">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationError"></a><h3>1.19. GlobalizationError</h3>
+<pre class="webidl prettyprint"> interface GlobalizationError {
+   attribute long code;
+   attribute DOMString message;
+   const short UNKNOWN_ERROR = 0;
+   const short FORMATTING_ERROR = 1;
+   const short PARSING_ERROR = 2;
+   const short PATTERN_ERROR = 3;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The GlobalizationError interface
+          </p>
+         </div>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="GlobalizationError::UNKNOWN_ERROR">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationError::UNKNOWN_ERROR"></a><span class="name">UNKNOWN_ERROR</span><div class="brief">
+ Unknown error
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="GlobalizationError::FORMATTING_ERROR">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationError::FORMATTING_ERROR"></a><span class="name">FORMATTING_ERROR</span><div class="brief">
+ Formatting error
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="GlobalizationError::PARSING_ERROR">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationError::PARSING_ERROR"></a><span class="name">PARSING_ERROR</span><div class="brief">
+ Parsing error
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="GlobalizationError::PATTERN_ERROR">
+<a class="backward-compatibility-anchor" name="::Globalization::GlobalizationError::PATTERN_ERROR"></a><span class="name">PATTERN_ERROR</span><div class="brief">
+ Pattern error
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="GlobalizationError::code">
+<span class="attrName"><span class="type">long </span><span class="name">code</span></span><div class="brief">
+ One of the following codes representing the error type.
+            </div>
+<div class="description">
+            <ul>
+              <li>
+0: GlobalizationError.UNKNOWN_ERROR              </li>
+              <li>
+1: GlobalizationError.FORMATTING_ERROR              </li>
+              <li>
+2: GlobalizationError.PARSING_ERROR              </li>
+              <li>
+3: GlobalizationError.PATTERN_ERROR              </li>
+            </ul>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="GlobalizationError::message">
+<span class="attrName"><span class="type">DOMString </span><span class="name">message</span></span><div class="brief">
+ A text message that includes the error's explaination and/or details.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">2. Full WebIDL</h2>
+<pre class="webidl prettyprint"> module Globalization {
+
+ [NoInterfaceObject] interface GlobalizationManagerObject {
+   readonly attribute <a href="#GlobalizationManager">GlobalizationManager</a> globalization;
+ };
+
+  implements <a href="#GlobalizationManagerObject">GlobalizationManagerObject</a>;
+
+ [NoInterfaceObject] interface GlobalizationManager {
+
+   void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess,
+                             <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess,
+                      <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                     optional <a href="#DateOptions">DateOptions</a> options);
+
+   void getCurrencyPattern(DOMString currencyCode,
+                           <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess,
+                           <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                     optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options);
+
+   void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                       optional <a href="#DateOptions">DateOptions</a> options);
+
+   void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess,
+                          <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess,
+                         <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                         optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
+
+   void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess,
+                              <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
+
+   void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                       optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
+
+   void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess,
+                     <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                     optional <a href="#DateOptions">DateOptions</a> options);
+   void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess,
+                       <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror,
+                       optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);
+ };
+
+ dictionary DateOptions {
+   DOMString formatLength;
+   DOMString selector;
+ };
+
+ dictionary CurrencyPattern {
+   DOMString pattern;
+   DOMString code;
+   long fraction;
+   double rounding;
+   DOMString decimal;
+   DOMString grouping;
+ };
+
+ dictionary GetDateNamesOptions {
+   DOMString type;
+   DOMString item;
+ };
+
+ dictionary NumberPatternOptions {
+   DOMString type;
+ };
+
+ dictionary DatePattern {
+   DOMString pattern;
+   DOMString timezone;
+   long utc_offset;
+   long dst_offset;
+ };
+
+ dictionary NumberPattern {
+   DOMString pattern;
+   DOMString symbol;
+   long fraction;
+   double rounding;
+   DOMString positive;
+   DOMString negative;
+   DOMString decimal;
+   DOMString grouping;
+ };
+
+ dictionary GlobalizationDate {
+   long year;
+   long month;
+   long day;
+   long hour;
+   long minute;
+   long second;
+   long millisecond;
+ };
+
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface DSTSuccessCallback {
+   void onsuccess(object properties);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface StringSuccessCallback {
+   void onsuccess(object properties);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface ArrayStringSuccessCallback {
+   void onsuccess(object properties);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface LongSuccessCallback {
+   void onsuccess(object properties);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface DoubleSuccessCallback {
+   void onsuccess(object properties);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface GlobalizationDateSuccessCallback {
+   void onsuccess(Date date);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface PatternSuccessCallback {
+   void onsuccess(<a href="#CurrencyPattern">CurrencyPattern</a> pattern);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface GetDatePatternSuccessCallback {
+   void onsuccess(<a href="#DatePattern">DatePattern</a> pattern);
+ };
+
+ [Callback=FunctionOnly, NoInterfaceObject] interface GetNumberPatternSuccessCallback {
+   void onsuccess(<a href="#NumberPattern">NumberPattern</a> pattern);
+ };
+
+ interface GlobalizationError {
+   attribute long code;
+   attribute DOMString message;
+   const short UNKNOWN_ERROR = 0;
+   const short FORMATTING_ERROR = 1;
+   const short PARSING_ERROR = 2;
+   const short PATTERN_ERROR = 3;
+ };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

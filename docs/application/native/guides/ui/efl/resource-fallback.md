@@ -8,12 +8,17 @@ The image set elements are used to display a specific image on the screen depend
 
 The image sets can have the following properties:
 
-- `image: image-name`Specifies the name of the image file.
-- `size: minw minh maxw maxh`Specifies the minimum and maximum size that causes a specified image to be selected and shown.
+- `image: image-name`
+
+  Specifies the name of the image file.
+
+- `size: minw minh maxw maxh`
+
+  Specifies the minimum and maximum size that causes a specified image to be selected and shown.
 
 **Example: Image set implementation**
 
- ![Image set](./media/fallback_imageset.png) 
+ ![Image set](./media/fallback_imageset.png)
 
 ```
 collections {

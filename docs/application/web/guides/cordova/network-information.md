@@ -28,7 +28,7 @@ To enable your application to use the network information functionality:
    }
    ```
 
-2. To use the Network Information API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/cordova/networkInformation.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/cordova/networkInformation.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/cordova/networkInformation.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+2. To use the Network Information API (in [mobile](../../api/latest/device_api/mobile/tizen/cordova/networkInformation.html), [wearable](../../api/latest/device_api/wearable/tizen/cordova/networkInformation.html), and [TV](../../api/latest/device_api/tv/tizen/cordova/networkInformation.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
    ```
    <tizen:privilege name="http://tizen.org/privilege/telephony"/>

@@ -12,7 +12,8 @@ The Edje animations are based on a simple principle of moving from one state to 
 
 To start an animation, a program must receive a signal from a source. Edje handles many kinds of signals, including mouse events.
 
-> **Note**  
+> **Note**
+>
 > To show the signals used in a specific EDJ file, use the `edje_player -p <filename>.edj` command.
 
 <a name="create_animation"></a>
@@ -123,9 +124,18 @@ The following types of transitions can be added to the programs to create effect
 - `ACCEL_FAC` or `ACCELERATE_FACTOR`: Makes an accelerated transition and takes the duration and the factor as a parameters
 - `DECEL_FAC` or `DECELERATE_FACTOR`: Makes a decelerated transition and takes the duration and the factor as a parameters
 - `SIN_FAC` or `SINUSOIDAL_FACTOR`: Makes a sinusoidal transition and takes the duration and the factor as a parameters
-- `DIVIS` or `DIVISOR_INTERP`: Makes an interpolated transition and takes 3 parameters:DurationInitial gradient start (for example, 0.0 is horizontal, 1.0 is diagonal (linear), and 2.0 is twice the gradient of linear)Integer factor that defines how much the value swings outside the gradient to come back to the final resting spot at the end. 0.0 is equivalent to linear interpolation. Note that DIVIS can exceed 1.0.
-- `BOUNCE`: Makes a bounce transition and takes 3 parameters:DurationBounce decay, with 0.0 giving a linear decay per bounce, and higher values giving more decayNumber of bounces (rounded down to the nearest integer value)
-- `SPRING`: Makes a spring transition and takes 3 parameters:DurationDecay, with the level exceeding 1.0 on the outer swingsNumber of spring swings
+- `DIVIS` or `DIVISOR_INTERP`: Makes an interpolated transition and takes 3 parameters:
+  - Duration
+  - Initial gradient start (for example, 0.0 is horizontal, 1.0 is diagonal (linear), and 2.0 is twice the gradient of linear)
+  - Integer factor that defines how much the value swings outside the gradient to come back to the final resting spot at the end. 0.0 is equivalent to linear interpolation. Note that DIVIS can exceed 1.0.
+- `BOUNCE`: Makes a bounce transition and takes 3 parameters:
+  - Duration
+  - Bounce decay, with 0.0 giving a linear decay per bounce, and higher values giving more decay
+  - Number of bounces (rounded down to the nearest integer value)
+- `SPRING`: Makes a spring transition and takes 3 parameters:
+  - Duration
+  - Decay, with the level exceeding 1.0 on the outer swings
+  - Number of spring swings
 
 For graphical representations of these effects, see the [position mappings in Ecore animations](ecore-animation.md#table_position_mappings).
 
@@ -151,7 +161,7 @@ To chain programs:
    }
    ```
 
-2. Define the second program block that returns the rectangle to its original position and color using a bounce transition with a decay factor of 1.8 and 6 bounces. Since this program is only used in a chain at the end of the first program, it has no `signal` or `source`property.
+2. Define the second program block that returns the rectangle to its original position and color using a bounce transition with a decay factor of 1.8 and 6 bounces. Since this program is only used in a chain at the end of the first program, it has no `signal` or `source` property.
 
    ```
    program {
@@ -164,7 +174,8 @@ To chain programs:
    }
    ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information
