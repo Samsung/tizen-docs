@@ -35,8 +35,9 @@ To obtain the information, query a feature or system key.
 | [Database](#database)              | [Location](#location)          | [Platform](#platformfeat)        | [USB](#usb)                      |
 | [Download](#download)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Vision](#vision)                |
 | [FIDO](#fido)                      | [Media](#media)                | [Screen](#screen)                | [Web](#web)                      |
+| [Vibration](#vibration)            | -                              | -                                | -                                |
 | [System keys](#system)             |                                |                                  |                                  |
-| [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | [Vibration](#vibration)          |
+| [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | -                                |
 | [Manufacturer](#manufacturer)      | [Platform](#platformsys)       | [TizenID](#tizenid)              | -                                |
 
 > **Note**  
