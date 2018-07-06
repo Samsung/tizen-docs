@@ -26,15 +26,16 @@ To obtain the information, query a feature or system key.
 
 | [Feature keys](#feature)           |                                |                                  |                                  |
 |------------------------------------|--------------------------------|----------------------------------|----------------------------------|
-| [Account](#account)                | [FM radio](#fmradio)           | [Microphone](#microphone)        | [Security](#security)            |
-| [Application history](#apphistory) | [Graphics](#graphics)          | [Multimedia](#multimedia)        | [Sensor](#sensor)                |
-| [Battery](#battery)                | [Human activity monitor](#ham) | [Multi-point touch](#multipoint) | [Shell](#shell)                  |
-| [Camera](#camera)                  | [Input](#input)                | [Network](#network)              | [Sip](#sip)                      |
-| [Consumer IR](#consumer)           | [IOT](#iot)                    | [OAuth 2.0](#oauth2)             | [Speech](#speech)                |
-| [Contextual trigger](#trigger)     | [LED](#led)                    | [OpenGL&reg; ES](#opengl)        | [System setting](#systemsetting) |
-| [Database](#database)              | [Location](#location)          | [Platform](#platformfeat)        | [USB](#usb)                      |
-| [Download](#download)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Vision](#vision)                |
-| [FIDO](#fido)                      | [Media](#media)                | [Screen](#screen)                | [Web](#web)                      |
+| [Account](#account)                | [Graphics](#graphics)          | [Multimedia](#multimedia)        | [Shell](#shell)                  |
+| [Application history](#apphistory) | [Human activity monitor](#ham) | [Multi-point touch](#multipoint) | [Sip](#sip)               |
+| [Battery](#battery)                | [Input](#input)                | [Network](#network)              | [Speech](#speech)                 |
+| [Camera](#camera)                  | [IOT](#iot)                    | [OAuth 2.0](#oauth2)             | [System setting](#systemsetting) |
+| [Consumer IR](#consumer)           | [LED](#led)                    | [OpenGL&reg; ES](#opengl)        | [USB](#usb)                      |
+| [Contextual trigger](#trigger)     | [Location](#location)          | [Platform](#platformfeat)        | [Vibration](#vibration)          |
+| [Database](#database)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Vision](#vision)                |
+| [Download](#download)              | [Media](#media)                | [Screen](#screen)                | [Web](#web)                      |
+| [FIDO](#fido)                      | [Media](#media)                | [Security](#security)            | -                                |
+| [FM radio](#fmradio)               | [Microphone](#microphone)      | [Sensor](#sensor)                | -                                |
 | [System keys](#system)             |                                |                                  |                                  |
 | [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | -                                |
 | [Manufacturer](#manufacturer)      | [Platform](#platformsys)       | [TizenID](#tizenid)              | -                                |
@@ -196,6 +197,15 @@ The following table lists the download feature keys.
 | `http://tizen.org/feature/download` | `bool` | The platform returns `true` for this key, if the device supports the Download API. |
 
 The following table lists the FIDO feature keys.
+
+<a name="vibration"></a>
+**Table: Vibration feedback feature keys**  
+
+| Key                                 | Type   | Description                              |
+|-------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/feedback.vibration` | `bool` | The platform returns `true` for this key, if the device supports the Vibration feedback API. |
+
+The following table lists the vibration feedback feature keys.
 
 <a name="fido"></a>
 **Table: FIDO feature keys**  
