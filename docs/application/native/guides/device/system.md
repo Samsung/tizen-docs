@@ -22,25 +22,100 @@ The main features of the System Information API include:
 
 To obtain the information, query a feature or system key.
 
-**Table: System information keys**
+- [Feature keys](#feature)
 
-| [Feature keys](#feature)           |                                |                                  |                                  |
-|------------------------------------|--------------------------------|----------------------------------|----------------------------------|
-| [Account](#account)                | [Graphics](#graphics)          | [Multimedia](#multimedia)        | [Shell](#shell)                  |
-| [Application history](#apphistory) | [Human activity monitor](#ham) | [Multi-point touch](#multipoint) | [Sip](#sip)               |
-| [Battery](#battery)                | [Input](#input)                | [Network](#network)              | [Speech](#speech)                 |
-| [Camera](#camera)                  | [IOT](#iot)                    | [OAuth 2.0](#oauth2)             | [System setting](#systemsetting) |
-| [Consumer IR](#consumer)           | [LED](#led)                    | [OpenGL&reg; ES](#opengl)        | [USB](#usb)                      |
-| [Contextual trigger](#trigger)     | [Location](#location)          | [Platform](#platformfeat)        | [Vibration](#vibration)          |
-| [Database](#database)              | [Maps](#maps)                  | [Profile](#profile_feat)         | [Vision](#vision)                |
-| [Download](#download)              | [Media](#media)                | [Screen](#screen)                | [Web](#web)                      |
-| [FIDO](#fido)                      | [Media](#media)                | [Security](#security)            | -                                |
-| [FM radio](#fmradio)               | [Microphone](#microphone)      | [Sensor](#sensor)                | -                                |
-| [System keys](#system)             |                                |                                  |                                  |
-| [Build](#build)                    | [Model name](#modelname)       | [Sound](#sound)                  | -                                |
-| [Manufacturer](#manufacturer)      | [Platform](#platformsys)       | [TizenID](#tizenid)              | -                                |
+   - [Account](#account)
 
-> **Note**  
+   - [Application history](#apphistory)
+
+   - [Attach panel](#attachpanel)
+
+   - [Battery](#battery)
+
+   - [Camera](#camera)
+
+   - [Consumer IR](#consumer)
+
+   - [Contextual trigger](#trigger)
+
+   - [Database](#database)
+
+   - [Download](#download)
+
+   - [FIDO](#fido)
+
+   - [FM radio](#fmradio)
+
+   - [Graphics](#graphics)
+
+   - [Human activity monitor](#ham)
+
+   - [Input](#input)
+
+   - [IOT](#iot)
+
+   - [LED](#led)
+
+   - [Location](#location)
+
+   - [Maps](#maps)
+
+   - [Media](#media)
+
+   - [Microphone](#microphone)
+
+   - [Multimedia](#multimedia)
+
+   - [Multi-point touch](#multipoint)
+
+   - [Network](#network)
+
+   - [OAuth 2.0](#oauth2)
+
+   - [OpenGL&reg; ES](#opengl)
+
+   - [Platform](#platformfeat)
+
+   - [Profile](#profile_feat)
+
+   - [Screen](#screen)
+
+   - [Security](#security)
+
+   - [Sensor](#sensor)
+
+   - [Shell](#shell)
+
+   - [Sip](#sip)
+
+   - [Speech](#speech)
+
+   - [System setting](#systemsetting)
+
+   - [USB](#usb)
+
+   - [Vibration](#vibration)
+
+   - [Vision](#vision)
+
+   - [Web](#web)
+
+- [System keys](#system)
+
+   - [Build](#build)
+
+   - [Manufacturer](#manufacturer)
+
+   - [Model name](#modelname)
+
+   - [Platform](#platformsys)
+
+   - [Sound](#sound)
+
+   - [TizenID](#tizenid)
+
+> **Note**
+>
 > Some device-specific information keys look similar to feature keys for application filtering, but their usage differs. Feature keys for device-specific information are used to determine whether the feature is supported in the system. Feature keys for application filtering let the Tizen Store filter applications based on features.
 
 ## Prerequisites
@@ -196,7 +271,7 @@ The following table lists the download feature keys.
 |-------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/download` | `bool` | The platform returns `true` for this key, if the device supports the Download API. |
 
-The following table lists the FIDO feature keys.
+The following table lists the vibration feedback feature keys.
 
 <a name="vibration"></a>
 **Table: Vibration feedback feature keys**  
@@ -205,7 +280,7 @@ The following table lists the FIDO feature keys.
 |-------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/feedback.vibration` | `bool` | The platform returns `true` for this key, if the device supports the Vibration feedback API. |
 
-The following table lists the vibration feedback feature keys.
+The following table lists the FIDO feature keys.
 
 <a name="fido"></a>
 **Table: FIDO feature keys**  
