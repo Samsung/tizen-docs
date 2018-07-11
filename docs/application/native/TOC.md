@@ -26,6 +26,7 @@
 ### [File System Directory Hierarchy](/application/native/tutorials/details/io-overview.md)
 ### [Application Signing and Certificates](/application/native/tutorials/details/sign-certificate.md)
 ### [API Versioning and Deprecation Policy of the Tizen Platform](/application/native/tutorials/details/deprecation-policy.md)
+### [Removed functions and enumerations of Tizen Native API](/application/native/tutorials/details/native-removed-history.md)
 
 ## Tizen UI Development
 ### [Overview](/application/native/tutorials/ui-builder/ui-builder-overview.md)
