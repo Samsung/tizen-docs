@@ -2246,7 +2246,7 @@ From Tizen 5.0, the privacy setting guide popup application control is supported
 
 ### Shows privacy related common guide popup
 
-To show common privacy setting guide popup, use the `APP_CONTROL_OPERATION_PRIVACY_SETTING_GUIDE` operation. This operation helps you to guide users to change privacy privilege settings. You need to check permissions to see if the user actually granted requested permissions after using this application control.
+To show common privacy setting guide popup, use the `APP_CONTROL_OPERATION_PRIVACY_SETTING_GUIDE` operation. This operation helps you to guide users to change privacy privilege settings. After using this application control, check permissions to verify whether the user granted the requested permissions.
 
 **Figure: Privacy setting guide popup**
 
