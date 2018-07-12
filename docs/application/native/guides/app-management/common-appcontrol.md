@@ -2242,7 +2242,7 @@ vpn_appcontrol_result_cb(app_control_h request, app_control_h reply, app_control
 ```
 ## Privacy setting guide popup
 
-The Privacy setting guide popup application control is supported only in wearable applications since Tizen 5.0.
+From Tizen 5.0, the privacy setting guide popup application control is supported only in wearable applications.
 
 ### Shows privacy related common guide popup
 
@@ -2252,7 +2252,7 @@ To show common privacy setting guide popup, use the `APP_CONTROL_OPERATION_PRIVA
 
 ![Guide popup for app launching](./media/common_appcontrol_privacy_setting_guide_open.png)![Guide popup for using privacy privileged function](./media/common_appcontrol_privacy_setting_guide_use.png)![Required privacy list shown in popup](./media/common_appcontrol_privacy_setting_guide_privacy.png)
 
-#### Operation
+#### Operations
 
 - `http://tizen.org/appcontrol/operation/setting/guide_privacy_setting` (in `.c` files and manifest file)
 - `APP_CONTROL_OPERATION_PRIVACY_SETTING_GUIDE` (in `.c` files only)
@@ -2262,8 +2262,8 @@ To show common privacy setting guide popup, use the `APP_CONTROL_OPERATION_PRIVA
 | Key                     | Description                              | Note                   |
 |-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_TYPE` | The guide message type. The available values are `open` (for application launching) and `use` (for using function).  This key must be passed as a string. | This key is mandatory. |
-| `APP_CONTROL_DATA_FEATURE` | The feature or function name to show. This key must be passed as a string. |   |
-| `APP_CONTROL_DATA_PRIVILEGES` | The required privacy privileges to show. This key must be passed as an array of string.| The required privacy privileges to show. This key must be passed as an array of string. |
+| `APP_CONTROL_DATA_FEATURE` | The feature or function name. This key must be passed as a string. |   |
+| `APP_CONTROL_DATA_PRIVILEGES` | The required privacy privileges to show. This key must be passed as an array of string.| This key is mandatory. |
 
 #### Extra Output
 
