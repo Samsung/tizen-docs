@@ -1,6 +1,6 @@
 # Data Control
 
-    The data control is a standard mechanism for exchanging specific data between applications.
+The data control is a standard mechanism for exchanging specific data between applications.
 
 A provider application shares its data, and a consumer application can request the shared data. All applications can function as consumers and request data shared by other applications using a data control. However, only service applications can function as providers and share their own data.
 
@@ -32,7 +32,7 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 ## Prerequisites
 
-The data control use cases run 2 applications. Each application plays a different role: one as the consumer, the other as the provider.
+The data control use cases involve 2 applications. Each application plays a different role: one as the consumer, the other as the provider.
 
 To enable your application to use the data control functionality:
 

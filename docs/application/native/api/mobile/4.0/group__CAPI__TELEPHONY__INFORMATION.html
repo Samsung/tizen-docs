@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -279,7 +279,7 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3f9d407deee8c7c7f1f7ed946bc60b4da21ae6632a648a5d1fe5bc247e2985cc8"></a><!-- doxytag: member="TELEPHONY_NOTI_NETWORK_NETWORK_NAME" ref="gga3f9d407deee8c7c7f1f7ed946bc60b4da21ae6632a648a5d1fe5bc247e2985cc8" args="" -->TELEPHONY_NOTI_NETWORK_NETWORK_NAME</em>&nbsp;</td><td>
 <p>Notification to be invoked when the network name changes. <br/>
- 'network_name(char *)' wil be delivered in notification data (<b>Since:</b> 2.4) <br/>
+ 'network_name(char *)' will be delivered in notification data (<b>Since:</b> 2.4) <br/>
  Privilege : <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3f9d407deee8c7c7f1f7ed946bc60b4da37f9d64e14b7935418d07ddb5b640ce6"></a><!-- doxytag: member="TELEPHONY_NOTI_NETWORK_PS_TYPE" ref="gga3f9d407deee8c7c7f1f7ed946bc60b4da37f9d64e14b7935418d07ddb5b640ce6" args="" -->TELEPHONY_NOTI_NETWORK_PS_TYPE</em>&nbsp;</td><td>
@@ -289,7 +289,7 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3f9d407deee8c7c7f1f7ed946bc60b4dafe960eafc6cad9fcda1445a69742965a"></a><!-- doxytag: member="TELEPHONY_NOTI_NETWORK_DEFAULT_DATA_SUBSCRIPTION" ref="gga3f9d407deee8c7c7f1f7ed946bc60b4dafe960eafc6cad9fcda1445a69742965a" args="" -->TELEPHONY_NOTI_NETWORK_DEFAULT_DATA_SUBSCRIPTION</em>&nbsp;</td><td>
 <p>Notification to be invoked when the default data subscription changes. <br/>
- '<a class="el" href="group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#ga6c9c05c55d8059a64cc4d666cf7dabef" title="Enumeration for the possible &#39;default&#39; Data Subscriptions for Packet Switched(PS).">telephony_network_default_data_subs_e</a>' wil be delivered in notification data (<b>Since:</b> 2.4) <br/>
+ '<a class="el" href="group__CAPI__TELEPHONY__INFORMATION__NETWORK.html#ga6c9c05c55d8059a64cc4d666cf7dabef" title="Enumeration for the possible &#39;default&#39; Data Subscriptions for Packet Switched(PS).">telephony_network_default_data_subs_e</a>' will be delivered in notification data (<b>Since:</b> 2.4) <br/>
  Privilege : <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3f9d407deee8c7c7f1f7ed946bc60b4da604b78c31e82a42337cdea1e2463eeec"></a><!-- doxytag: member="TELEPHONY_NOTI_NETWORK_DEFAULT_SUBSCRIPTION" ref="gga3f9d407deee8c7c7f1f7ed946bc60b4da604b78c31e82a42337cdea1e2463eeec" args="" -->TELEPHONY_NOTI_NETWORK_DEFAULT_SUBSCRIPTION</em>&nbsp;</td><td>
@@ -363,7 +363,7 @@ Typedefs</h2></td></tr>
  Privilege : <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3f9d407deee8c7c7f1f7ed946bc60b4da292af1ea19032abb88c6c2ff994075ac"></a><!-- doxytag: member="TELEPHONY_NOTI_VOICE_CALL_STATUS_ALERTING" ref="gga3f9d407deee8c7c7f1f7ed946bc60b4da292af1ea19032abb88c6c2ff994075ac" args="" -->TELEPHONY_NOTI_VOICE_CALL_STATUS_ALERTING</em>&nbsp;</td><td>
-<p>Notification to be invoked when a voice call is in alertingstatus. <br/>
+<p>Notification to be invoked when a voice call is in alerting status. <br/>
  'handle_id(unsigned int)' will be delivered in notification data (<b>Since:</b> 2.4) <br/>
  Privilege : <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> </p>
 </td></tr>
@@ -595,7 +595,7 @@ Typedefs</h2></td></tr>
 
 <p>Sets a callback function to be invoked when the telephony state changes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>An application should have the privilege corresponding to each notificaiton ID. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>An application should have the privilege corresponding to each notification ID. <br/>
  Please see the <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga3f9d407deee8c7c7f1f7ed946bc60b4d" title="Enumeration for Telephony notification.">telephony_noti_e</a> to know the privilege. <br/>
  If an application has no proper privilege, callback will not be invoked although API returns success.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

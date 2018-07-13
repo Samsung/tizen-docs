@@ -23,7 +23,7 @@ The main features of the getUserMedia API include:
 
 Learning how to access a video stream is a basic user media management skill:
 
-1. Create the HTML5 video element (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#video), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#video), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#video) applications) and a button used to control audio stream access:
+1. Create the HTML5 video element (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#video), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#video), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#video) applications) and a button used to control audio stream access:
 
    ```
    <body>

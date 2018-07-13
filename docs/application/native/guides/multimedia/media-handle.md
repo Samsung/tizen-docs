@@ -13,7 +13,7 @@ The main features of the Media Tool API include:
 
   You can [set and get metadata](#packet) using the created `media_packet_h` handle. Some `media_packet_h` metadata are NOT filled after creating the `media_packet_h` handle: pts, dts, duration, extradata, codec data, codec data size, and buffer flags.
 
-The `media_format_h` handle is created by the caller, who can set and get the video or audio information. The `media_format_h` handle creates the `media_packet_h` handle and allocates the buffer. The caller can set and get the metadata with the `media_packet_h`handle.
+The `media_format_h` handle is created by the caller, who can set and get the video or audio information. The `media_format_h` handle creates the `media_packet_h` handle and allocates the buffer. The caller can set and get the metadata with the `media_packet_h` handle.
 
 The `media_format_h` handle has a specific design for increasing and decreasing its [reference count](#reference).
 
@@ -235,19 +235,19 @@ The following table describes the reference count design of the `media_format_h`
 
 | Function                                 | Reference count number                   | Description                              |
 |------------------------------------------|------------------------------------------|------------------------------------------|
-| `media_format_h fmt1, fmt2, tmp;``media_packet_h pkt1, pkt2;``media_format_create(&fmt1);` | `fmt1`: 1                                | Define the `media_format_h` and `media_packet_h` handles.Create the `fmt1` handle and set the `media_format_video_mime()` or `media_format_audio_mime()` function. |
+| `media_format_h fmt1, fmt2, tmp;`<br> `media_packet_h pkt1, pkt2;`<br> `media_format_create(&fmt1);` | `fmt1`: 1                                | Define the `media_format_h` and `media_packet_h` handles.<br> Create the `fmt1` handle and set the `media_format_video_mime()` or `media_format_audio_mime()` function. |
 | `media_packet_create(&pkt1, fmt1);`      | `fmt1`: 2                                | After the `media_packet_create()` function, you must use the `media_format_unref()` function, because the `media_packet_create()` function increases the `media_format_h` reference count. |
 | `media_format_unref(fmt1);`              | `fmt1`: 1                                | If the `ref_count` is 1, the `fmt1` is currently owned by the `pkt1` only. |
 | `media_packet_copy(pkt1, &pkt2);`        | `fmt1`: 2                                | Copy the `pkt1` metadata to `pkt2`, except the allocated buffer and buffer size. `pkt2` refers to `fmt1`, and `fmt1` `ref_count` is increased. |
 | `media_packet_get_format(pkt1, &tmp);`   | `fmt1`: 3                                | `fmt1` `ref_count` is increased by the `media_packet_get_format()` function. |
-| `media_format_set_video_mime(tmp, ...);` | `fmt1`: 3                                | If you try to modify the `fmt1` data (call the `media_format_set_video_mime()` function) for `fmt1` (=`tmp`), the `ref_count` is bigger than 1, and `fmt1` cannot be modified.To modify the `fmt1` data, call the `media_format_make_writable()` function. |
-| `media_format_make_writable(tmp, &fmt2);` | `fmt1`: 2`fmt2`: 1                       | If called, the `tmp` (`fmt1`) `ref_count` is decreased. Creates the `fmt2` handle and copies the `fmt1` data to `fmt2`. |
-| `media_format_set_video_mime(fmt2, ...);` | `fmt1`: 2`fmt2`: 1                       | `fmt2` `ref_count` is 1, which means that you can modify the `fmt2` data. |
-| `media_packet_set_format(pkt2, fmt2);`   | `fmt1`: 2 `fmt2`: 2                      | Set the modified `fmt2` to the `pkt2` handle. You must call the `media_format_unref(fmt2)` function. |
-| `media_format_unref(tmp);`               | `fmt1`: 1 `fmt2`: 2                      | You must call this function because of the `media_packet_get_format(pkt1, &tmp)` function call. |
-| `media_format_unref(fmt2);`              | `fmt1`: 1`fmt2`: 1                       | You must call this function because of the `media_packet_set_format(pkt2, fmt2)` function call. |
-| `media_packet_destroy(pkt1);`            | `fmt1`: 1 > finalize`fmt2`: 1            | If you destroy the `pkt1` handle, the `fmt1` `ref_count` is decreased. If the `ref_count` becomes 0, `fmt1` is freed. |
-| `media_packet_destroy(pkt2);`            | `fmt1`: 1 > finalize`fmt2`: 0 > finalize | If you destroy the `pkt2` handle, the `fmt2` `ref_count` is decreased. If the `ref_count` becomes 0, `fmt2` is freed. |
+| `media_format_set_video_mime(tmp, ...);` | `fmt1`: 3                                | If you try to modify the `fmt1` data (call the `media_format_set_video_mime()` function) for `fmt1` (=`tmp`), the `ref_count` is bigger than 1, and `fmt1` cannot be modified.<br> To modify the `fmt1` data, call the `media_format_make_writable()` function. |
+| `media_format_make_writable(tmp, &fmt2);` | `fmt1`: 2<br> `fmt2`: 1                       | If called, the `tmp` (`fmt1`) `ref_count` is decreased. Creates the `fmt2` handle and copies the `fmt1` data to `fmt2`. |
+| `media_format_set_video_mime(fmt2, ...);` | `fmt1`: 2<br> `fmt2`: 1                       | `fmt2` `ref_count` is 1, which means that you can modify the `fmt2` data. |
+| `media_packet_set_format(pkt2, fmt2);`   | `fmt1`: 2<br> `fmt2`: 2                      | Set the modified `fmt2` to the `pkt2` handle. You must call the `media_format_unref(fmt2)` function. |
+| `media_format_unref(tmp);`               | `fmt1`: 1<br> `fmt2`: 2                      | You must call this function because of the `media_packet_get_format(pkt1, &tmp)` function call. |
+| `media_format_unref(fmt2);`              | `fmt1`: 1<br> `fmt2`: 1                       | You must call this function because of the `media_packet_set_format(pkt2, fmt2)` function call. |
+| `media_packet_destroy(pkt1);`            | `fmt1`: 1 > finalize<br> `fmt2`: 1            | If you destroy the `pkt1` handle, the `fmt1` `ref_count` is decreased. If the `ref_count` becomes 0, `fmt1` is freed. |
+| `media_packet_destroy(pkt2);`            | `fmt1`: 1 > finalize<br> `fmt2`: 0 > finalize | If you destroy the `pkt2` handle, the `fmt2` `ref_count` is decreased. If the `ref_count` becomes 0, `fmt2` is freed. |
 
 ## Related Information
 - Dependencies

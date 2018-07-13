@@ -12,7 +12,7 @@ You can use the helper script as follows:
 </script>
 ```
 
-The SnapListMarqueeStyle helper provides a helper script to support creating some usable components for the list style. It supports making the list view more effective using the [SnapListview](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm) and [Marquee](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm) components.
+The SnapListMarqueeStyle helper provides a helper script to support creating some usable components for the list style. It supports making the list view more effective using the [SnapListview](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm) and [Marquee](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm) components.
 
 > **Note**  
 > This helper script is supported since Tizen 2.3.
@@ -105,27 +105,35 @@ The following table shows the options you have in creating your SnapListMarqueeS
 
 You can use the following methods with the SnapListMarqueeStyle:
 
-- `create()`		
+- `create()`
 
-  Creates the related components for SnapListMarqueeStyle.		This method is supported since Tizen 2.3.		The following code example shows the use of the method:
+  Creates the related components for SnapListMarqueeStyle.
 
-  <ul class="ui-listview ui-snap-listview" id="snapList">
-     <li>some element or text</li>
-  </ul>
+  This method is supported since Tizen 2.3.
 
-  <script>
-  ```
-  var list = document.getElementById('snapList'),
-      listHelper;
+  The following code example shows the use of the method:
+  
+    ```
+    <ul class="ui-listview ui-snap-listview" id="snapList">
+       <li>some element or text</li>
+    </ul>
 
-  /* Create the helper */
-  listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
-  ```
-  </script>
+    <script>
+       var list = document.getElementById('snapList'),
+           listHelper;
 
-- `destroy()`		
+       /* Create the helper */
+       listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
+    </script>
+    ```
 
-  Destroys the related components for SnapListMarqueeStyle.		This method is supported since Tizen 2.3. It has no return value.		The following code example shows the use of the method:
+- `destroy()`
+
+  Destroys the related components for SnapListMarqueeStyle.
+
+  This method is supported since Tizen 2.3. It has no return value.
+
+  The following code example shows the use of the method:
 
   ```
   <ul class="ui-listview ui-snap-listview" id="snapList">

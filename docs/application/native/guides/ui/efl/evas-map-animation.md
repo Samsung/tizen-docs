@@ -37,9 +37,9 @@ In the created map, each point is empty and ready to be modified with `Evas_Map`
 
   ![Map](./media/evas_map_1.png)
 
-  - To set the map point coordinates one by one, use the `evas_map_point_coord_set()` function.  
+  - To set the map point coordinates one by one, use the `evas_map_point_coord_set()` function.
 
-   The following example defines the points of a map that matches the geometry of a rectangle (a square in this case):
+    The following example defines the points of a map that matches the geometry of a rectangle (a square in this case):
 
     ```
     /* Map point 0 located in 100 x 100 */
@@ -107,24 +107,27 @@ You can modify an already configured map with various utility functions to produ
 
 - To rotate an object, you can use the `evas_map_util_rotate()` function, which rotates the map based on an angle and the center coordinates of the rotation (the rotation point). A positive angle rotates the map clockwise, while a negative angle rotates the map counter-clockwise.
 
-  - To rotate around the object center, you need the rotation angle and the coordinates of each corner of the object to perform the math required to get the new set of coordinates that needs to be set for the map.The following example shows how to rotate an object around its center point by 45 degrees clockwise.
+  - To rotate around the object center, you need the rotation angle and the coordinates of each corner of the object to perform the math required to get the new set of coordinates that needs to be set for the map.
 
-  ```
-  evas_object_geometry_get(o, &x, &y, &w, &h);
-  /* Create a map and set the map points from geometry */
-  m = evas_map_new(4);
-  evas_map_util_points_populate_from_object(m, o);
-  /* Rotate the map 45 degrees around the center point */
-  evas_map_util_rotate(m, 45, x + (w / 2), y + (h / 2));
-  evas_object_map_set(o, m);
-  evas_object_map_enable_set(o, EINA_TRUE);
-  evas_map_free(m);
-  ```
+    The following example shows how to rotate an object around its center point by 45 degrees clockwise.
 
-  The following figure shows the rotating object with the red dot as the center point.
+    ```
+    evas_object_geometry_get(o, &x, &y, &w, &h);
+    /* Create a map and set the map points from geometry */
+    m = evas_map_new(4);
+    evas_map_util_points_populate_from_object(m, o);
+    /* Rotate the map 45 degrees around the center point */
+    evas_map_util_rotate(m, 45, x + (w / 2), y + (h / 2));
+    evas_object_map_set(o, m);
+    evas_object_map_enable_set(o, EINA_TRUE);
+    evas_map_free(m);
+    ```
 
-  **Figure: Rotating around the center point**  
-  ![Rotating around the center point](./media/evas_map_3.png)
+    The following figure shows the rotating object with the red dot as the center point.
+
+    **Figure: Rotating around the center point**
+
+    ![Rotating around the center point](./media/evas_map_3.png)
 
   - To rotate around a point other than the center of the object, set the last 2 parameters of the `evas_map_util_rotate()` function to the appropriate values:
 
@@ -134,8 +137,9 @@ You can modify an already configured map with various utility functions to produ
 
     The following figure shows the object rotating around a point that is not in the center of the object.
 
-  **Figure: Rotating around other points**  
-  ![Rotating around other points](./media/evas_map_4.png)
+    **Figure: Rotating around other points**
+
+    ![Rotating around other points](./media/evas_map_4.png)
 
   - To set the center of the window as the rotation point, use the appropriate coordinates of the Evas canvas:
 
@@ -150,9 +154,9 @@ You can modify an already configured map with various utility functions to produ
     evas_map_free(m);
     ```
 
-- To zoom an object, you can use the `evas_map_util_zoom()` function, which zooms the points of the map from a center point, defined by the last 2 parameters. The second and third parameters specify how much to zoom in on the X and Y axes. For example, a value of 1.0 means no zoom, 2.0 means double the size, and 0.5 means half the size. All the coordinates are global canvas coordinates.  
+- To zoom an object, you can use the `evas_map_util_zoom()` function, which zooms the points of the map from a center point, defined by the last 2 parameters. The second and third parameters specify how much to zoom in on the X and Y axes. For example, a value of 1.0 means no zoom, 2.0 means double the size, and 0.5 means half the size. All the coordinates are global canvas coordinates.
 
- The following example shows how to zoom in with value 2.0 on both X and Y axes with the canvas center as the zoom center point:
+  The following example shows how to zoom in with value 2.0 on both X and Y axes with the canvas center as the zoom center point:
 
   ```
   evas_output_size_get(evas, &w, &h);
@@ -183,12 +187,13 @@ To handle the 3D effects:
 
 - To determine whether a map is facing the user, use the `evas_map_util_clockwise_get()` function. The function returns `EINA_TRUE` if the map is facing the user, and `EINA_FALSE` if the map is facing away from the user. Check the face orientation after applying all other operations to the map.
 
-- To transform a map and apply a 3D rotation to the mapped object, use the `evas_map_util_3d_rotate()` function. You can apply the rotation around any point on the canvas (including a Z coordinate). You can also apply the rotation around any of the 3 axes.  
+- To transform a map and apply a 3D rotation to the mapped object, use the `evas_map_util_3d_rotate()` function. You can apply the rotation around any point on the canvas (including a Z coordinate). You can also apply the rotation around any of the 3 axes.
 
- The following figure shows the result of starting from this simple setup, and setting the map so that the blue square rotates around the Y axis.  
+  The following figure shows the result of starting from this simple setup, and setting the map so that the blue square rotates around the Y axis.
 
- **Figure: 3D rotation**  
- ![3D rotation](./media/evas_map_6.png)
+  **Figure: 3D rotation**
+
+  ![3D rotation](./media/evas_map_6.png)
 
 - A simple overlay over the image shows the original geometry of each object and the axis around which they are being rotated. The Z axis is not shown, since it is orthogonal to the screen.
 
@@ -196,9 +201,9 @@ To handle the 3D effects:
 
   The result makes the vanishing point the center of each object.
 
- **Figure: Adding 3D perspective**
+  **Figure: Adding 3D perspective**
 
- ![Adding perspective](./media/evas_map_7.png)
+  ![Adding perspective](./media/evas_map_7.png)
 
 ## Defining Color and Lighting
 
@@ -330,7 +335,8 @@ To disable smoothing when rendering a map, use the `evas_map_smooth_set()` funct
 evas_map_smooth_set(m, EINA_FALSE);
 ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

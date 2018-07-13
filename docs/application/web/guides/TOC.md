@@ -172,11 +172,10 @@
 ### [Page Visibility](/application/web/guides/w3c/perf-opt/page.md)
 ### [Timing control for script-based animations](/application/web/guides/w3c/perf-opt/timing-control.md)
 ### [Performance Improvement](/application/web/guides/w3c/perf-opt/performance.md)
-### Web Workers
-#### [Overview](/application/web/guides/w3c/perf-opt/web-workers.md)
-#### [JavaScript Performance Improvement](/application/web/guides/w3c/perf-opt/js-performance-improvement.md)
-#### [JavaScript and CSS Minification](/application/web/guides/w3c/perf-opt/minify-js-css.md)
-#### [jQuery Performance Improvement](/application/web/guides/w3c/perf-opt/jquery-performance-improvement.md)
+### [Web Workers](/application/web/guides/w3c/perf-opt/web-workers.md)
+### [JavaScript Performance Improvement](/application/web/guides/w3c/perf-opt/js-performance-improvement.md)
+### [JavaScript and CSS Minification](/application/web/guides/w3c/perf-opt/minify-js-css.md)
+### [jQuery Performance Improvement](/application/web/guides/w3c/perf-opt/jquery-performance-improvement.md)
 ## Location
 ### [Geolocation API Specification](/application/web/guides/w3c/location/geolocation.md)
 ## Supplementary Features

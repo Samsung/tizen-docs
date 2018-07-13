@@ -230,7 +230,7 @@ The following table lists the input feature keys.
 | Key                                      | Type     | Description                              |
 |------------------------------------------|----------|------------------------------------------|
 | `http://tizen.org/feature/input.keyboard` | `bool`   | The platform returns `true` for this key, if the device provides a built-in keyboard supporting any keyboard layout. |
-| `http://tizen.org/feature/input.keyboard.layout` | `String` | The platform returns the keyboard layout (such as `"qwerty"`) supported by the built-in keyboard for this key and returns `true` for the `http://tizen.org/feature/input.keyboard` key.If the device does not provide a built-in keyboard, the platform returns an empty string for this key and returns `false` for the `http://tizen.org/feature/input.keyboard`key. |
+| `http://tizen.org/feature/input.keyboard.layout` | `String` | The platform returns the keyboard layout (such as `"qwerty"`) supported by the built-in keyboard for this key and returns `true` for the `http://tizen.org/feature/input.keyboard` key.<br>If the device does not provide a built-in keyboard, the platform returns an empty string for this key and returns `false` for the `http://tizen.org/feature/input.keyboard` key. |
 | `http://tizen.org/feature/input.rotating_bezel` | `bool`   | The platform returns `true` for this key, if the device supports the rotating bezel feature. |
 
 The following table lists the IOT feature keys.
@@ -311,7 +311,7 @@ The following table lists the multi-point touch feature keys.
 | Key                                      | Type   | Description                              |
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | `bool` | The platform returns `true` for this key, if the device supports pinch zoom gestures. |
-| `http://tizen.org/feature/multi_point_touch.point_count` | `int`  | The platform returns the maximum number of supported multi-touch points for this key.The platform returns a value less than 2 for this key, if the device does not support multi-point touch. |
+| `http://tizen.org/feature/multi_point_touch.point_count` | `int`  | The platform returns the maximum number of supported multi-touch points for this key.<br>The platform returns a value less than 2 for this key, if the device does not support multi-point touch. |
 
 The following table lists the network feature keys.
 
@@ -363,6 +363,7 @@ The following table lists the network feature keys.
 | `http://tizen.org/feature/network.tethering.bluetooth` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over Bluetooth. |
 | `http://tizen.org/feature/network.tethering.usb` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over USB connection. |
 | `http://tizen.org/feature/network.tethering.wifi` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over Wi-Fi. |
+| `http://tizen.org/feature/network.tethering.wifi.direct` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.tethering` key, if the device supports tethering over Wi-Fi Direct. |
 | `http://tizen.org/feature/network.vpn`   | `bool` | The platform returns `true` for this key, if the device supports the Virtual Private Network feature (VPN). |
 | `http://tizen.org/feature/network.wifi`  | `bool` | The platform returns `true` for this key, if the device supports all APIs which require Wi-Fi. |
 | `http://tizen.org/feature/network.wifi.direct` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct&reg;. |
@@ -387,7 +388,7 @@ The following table lists the OpenGL&reg; ES feature keys.
 | Key                                      | Type     | Description                              |
 | ---------------------------------------- | -------- | ---------------------------------------- |
 | `http://tizen.org/feature/opengles`      | `bool`   | The platform returns `true` for this key, if the device supports any OpenGL&reg; ES version and any texture format. |
-| `http://tizen.org/feature/opengles.texture_format` | `String` | The platform returns `true` for this key, if the device supports any OpenGL&reg; ES or compressed texture format.If the device supports no formats, the platform returns an empty string for this key. |
+| `http://tizen.org/feature/opengles.texture_format` | `String` | The platform returns `true` for this key, if the device supports any OpenGL&reg; ES or compressed texture format.<br>If the device supports no formats, the platform returns an empty string for this key. |
 | `http://tizen.org/feature/opengles.texture_format.3dc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the 3DC texture format for OpenGL&reg; ES. |
 | `http://tizen.org/feature/opengles.texture_format.atc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the ATC texture format for OpenGL&reg; ES. |
 | `http://tizen.org/feature/opengles.texture_format.etc` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the ETC texture format for OpenGL&reg; ES. |
@@ -407,7 +408,7 @@ The following table lists the platform feature keys.
 
 | Key                                      | Type     | Description                              |
 |------------------------------------------|----------|------------------------------------------|
-| `http://tizen.org/feature/platform.core.api.version` | `String` | The platform returns the version of the Tizen Core API in the "[Major].[Minor]" format.If a device does not provide the Tizen Core API, it returns an empty string for this key. |
+| `http://tizen.org/feature/platform.core.api.version` | `String` | The platform returns the version of the Tizen Core API in the "[Major].[Minor]" format.<br>If a device does not provide the Tizen Core API, it returns an empty string for this key. |
 | `http://tizen.org/feature/platform.core.cpu.arch` | `String` | The platform returns the CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv6` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv6 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv7 CPU architecture. |
@@ -457,16 +458,16 @@ The following table lists the screen feature keys.
 | `http://tizen.org/feature/screen.size.all` | `bool` | The platform always returns `true`, if the device supports any screen sizes and resolutions. |
 | `http://tizen.org/feature/screen.size.large` | `bool` | The platform returns `true` for this key, if the device supports the large screen size. |
 | `http://tizen.org/feature/screen.size.normal` | `bool` | The platform always returns `false` for this key. |
-| `http://tizen.org/feature/screen.size.normal.240.400` | `bool` | The platform returns `true` for this key, if the device supports the 240 x 400 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.320.320` | `bool` | The platform returns `true` for this key, if the device supports the 320 x 320 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.320.480` | `bool` | The platform returns `true` for this key, if the device supports the 320 x 480 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.360.360` | `bool` | The platform returns `true` for this key, if the device supports the 360 x 360 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.360.480` | `bool` | The platform returns `true` for this key, if the device supports the 360 x 480 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.480.800` | `bool` | The platform returns `true` for this key, if the device supports the 480 x 800 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.540.960` | `bool` | The platform returns `true` for this key, if the device supports the 540 x 960 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.600.1024` | `bool` | The platform returns `true` for this key, if the device supports the 600 x 1024 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.720.1280` | `bool` | The platform returns `true` for this key, if the device supports the 720 x 1280 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
-| `http://tizen.org/feature/screen.size.normal.1080.1920` | `bool` | The platform returns `true` for this key, if the device supports the 1080 x 1290 resolution for the normal screen size.The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.240.400` | `bool` | The platform returns `true` for this key, if the device supports the 240 x 400 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.320.320` | `bool` | The platform returns `true` for this key, if the device supports the 320 x 320 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.320.480` | `bool` | The platform returns `true` for this key, if the device supports the 320 x 480 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.360.360` | `bool` | The platform returns `true` for this key, if the device supports the 360 x 360 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.360.480` | `bool` | The platform returns `true` for this key, if the device supports the 360 x 480 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.480.800` | `bool` | The platform returns `true` for this key, if the device supports the 480 x 800 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.540.960` | `bool` | The platform returns `true` for this key, if the device supports the 540 x 960 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.600.1024` | `bool` | The platform returns `true` for this key, if the device supports the 600 x 1024 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.720.1280` | `bool` | The platform returns `true` for this key, if the device supports the 720 x 1280 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
+| `http://tizen.org/feature/screen.size.normal.1080.1920` | `bool` | The platform returns `true` for this key, if the device supports the 1080 x 1290 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
 | `http://tizen.org/feature/screen.width`  | `int`  | The platform returns the width of the screen in pixels supported by the device for this key. |
 
 The following table lists the sensor feature keys.
@@ -503,6 +504,7 @@ The following table lists the sensor feature keys.
 | `http://tizen.org/feature/sensor.proximity` | `bool` | The platform returns `true` for this key, if the device supports the proximity sensor. |
 | `http://tizen.org/feature/sensor.proximity.wakeup` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/sensor.proximity` key, if the device supports the wake-up operation by the proximity sensor. |
 | `http://tizen.org/feature/sensor.rotation_vector` | `bool` | The platform returns `true` for this key, if the device supports the rotation vector sensor. |
+| `http://tizen.org/feature/sensor.significant_motion` | `bool` | The platform returns `true` for this key, if the device supports the significant motion sensor which detects any significant movements caused by changes in the user location. |
 | `http://tizen.org/feature/sensor.sleep_monitor` | `bool` | The platform returns `true` for this key, if the device supports the sleep monitor sensor or the sleep detector sensor which tracks and detects the human sleep state. |
 | `http://tizen.org/feature/sensor.stress_monitor` | `bool` | The platform returns `true` for this key, if the device supports the stress monitor which tracks the human stress level. |
 | `http://tizen.org/feature/sensor.temperature` | `bool` | The platform returns `true` for this key, if the device supports the temperature sensor. |

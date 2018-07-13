@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -101,7 +101,7 @@ Required Header</h2>
 <p>#include &lt;metadata_editor.h&gt;</p>
 <h2><a class="anchor" id="CAPI_MEDIA_METADATA_EDITOR_OVERVIEW"></a>
 Overview</h2>
-<p>The <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html">Metadata Editor</a> API allows you to read the metadata from a media file(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>). To edit a metadata(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gab3185a6e0b860d104bcee8b1384c075c" title="Sets the attribute of the metadata.">metadata_editor_set_metadata()</a>), create/destory the handle(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>/<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy</a>), and append/ remove a picture in the metadata(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gaaed16b205382f1013072916ff0028e14" title="Appends the picture to the media file.">metadata_editor_append_picture()</a>/ <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga619f39023b78c8e5c7f3e213407b190c" title="Removes artwork image from media file.">metadata_editor_remove_picture()</a>). </p>
+<p>The <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html">Metadata Editor</a> API allows you to read the metadata from a media file(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>). To edit a metadata(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gab3185a6e0b860d104bcee8b1384c075c" title="Sets the attribute of the metadata.">metadata_editor_set_metadata()</a>), create/destroy the handle(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>/<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy</a>), and append/ remove a picture in the metadata(<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gaaed16b205382f1013072916ff0028e14" title="Appends the picture to the media file.">metadata_editor_append_picture()</a>/ <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga619f39023b78c8e5c7f3e213407b190c" title="Removes artwork image from media file.">metadata_editor_remove_picture()</a>). </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -503,7 +503,7 @@ Defines</h2></td></tr>
 
 <p>Gets the picture in the media file. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>picture</em> abd <em>mime_type</em> should be released using free(). <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>picture</em> and <em>mime_type</em> should be released using free(). <br/>
  In case of accessing specific path in internal storage or external storage, you may add the privilege for accessing the path. <br/>
  For example, if you get the specific path by using <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga3fa5d91f560ca1adffbb8c2717c0eed8" title="Gets the absolute path to the each directory of the given storage.">storage_get_directory()</a>. you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> or <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

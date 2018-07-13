@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Button</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Button</h1>
+
+<p>The button component changes the default browser buttons to special buttons with additional configuration options, such as an icon, corners, and a shadow.</p>
+
+<h2>Table of Contents</h2>
+
+<ol class="toc">
+
+		<li><a href="#default-selectors0.22067294060252607">Default Selectors</a></li>
+
+		<li><a href="#manual-constructor0.8647231981158257">Manual Constructor</a></li>
+
+		<li><a href="#html-examples0.3870438882149756">HTML Examples</a></li>
+
+		<li><a href="#options-for button widget0.28114810213446617">Options</a></li>
+
+		<li><a href="#methods0.8668504238594323">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selectors0.22067294060252607"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;button&gt;</code> elements are displayed as Tizen Web UI buttons.<br>
+In addition, all elements with the <code>class="ui-btn"</code> and <code>data-role="button"</code> attribute are displayed as Tizen Web UI buttons.</p>
+
+<h2><a id="manual-constructor0.8647231981158257"></a>Manual Constructor</h2>
+
+<p>To manually create a button component, use the component constructor from the <code>tau</code> namespace:</p>
+
+<pre class="prettyprint">&lt;div id="button"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var buttonElement = document.getElementById("button"),
+       button = tau.widget.Button(buttonElement);
+&lt;/script&gt;
+</pre>
+
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+
+
+<h2><a id="html-examples0.3870438882149756"></a>HTML Examples</h2>
+
+<ul>
+
+<li>
+
+<p><a id='create-simple button from link using data-role0.20266016316600144'></a>To create a simple button from a link using the <code>class</code> selector:</p>
+
+<pre class="prettyprint">&lt;a href="#page2" class="ui-btn"&gt;Link button&lt;/a&gt;
+</pre>
+
+</li>
+
+
+
+<li>
+
+<p><a id='create-simple button using button tag0.022702615475282073'></a>To create a simple button using the <code>&lt;button&gt;</code> element:</p>
+
+<pre class="prettyprint">&lt;button&gt;Button element&lt;/button&gt;
+</pre>
+
+</li>
+
+</ul>
+
+<h2><a id="options-for button widget0.28114810213446617"></a>Options</h2>
+
+<p>The options for a component can be defined as <code>data-...</code> attributes or passed as parameters to the constructor.</p>
+
+<p>You can change an option for the component using the <code>option</code> method.</p>
+
+	<h3>Summary</h3>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-icon</span></td>
+				<td class="option">string | null</td>
+				<td class="option">null</td>
+				<td class="option">Icon type.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-iconpos</span></td>
+				<td class="option">"left" | "right" | "top" | "bottom" | "notext" | null</td>
+				<td class="option">"left"</td>
+				<td class="option">Position of the icon.</td>
+			</tr>
+
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-inline</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">If the value is <code>true</code>, the button has the <code>display = "inline"</code> CSS property.</td>
+			</tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-disabled</span></td>
+                <td class="option">boolean</td>
+                <td class="option">false</td>
+                <td class="option">If the value is <code>true</code>, the button has disabled status.</td>
+            </tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-style</span></td>
+				<td class="option">"circle" | "nobg" | null</td>
+				<td class="option">null</td>
+				<td class="option">Style of the button.</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+
+<h3><a id='inline-buttons0.8866881858557463'></a>Inline Buttons</h3>
+
+<p>By default, all buttons in the body content are styled as block-level elements, so they fill the width of the screen. If you want a more compact button that is only as wide as the text and icons inside it, add the <code>data-inline="true"</code> attribute to the button.</p>
+
+<pre class="prettyprint">&lt;a href="#" class="ui-btn" data-inline="true"&gt;Cancel&lt;/a&gt;
+</pre>
+
+<p>If you have multiple buttons that must sit side-by-side on the same line, add the <code>data-inline="true"</code> attribute to each button. This styles the buttons to be the width of their content and floats the buttons so that they sit on the same line.</p>
+
+<pre class="prettyprint">&lt;a href="#" class="ui-btn" data-inline="true"&gt;Cancel&lt;/a&gt;
+&lt;a href="#" class="ui-btn" data-inline="true"&gt;Save&lt;/a&gt;
+</pre>
+
+<h3><a id='icon-positioning0.689597582211718'></a>Icon Positioning</h3>
+
+<p>By default, all icons in buttons are placed to the left of the button text. This default can be overridden using the <code>data-iconpos</code> attribute.</p>
+
+<pre class="prettyprint">&lt;a href="#" class="ui-btn" data-icon="delete" data-iconpos="right"&gt;Delete&lt;/a&gt;
+</pre>
+
+<p>Possible values for the <code>data-iconpos</code> attribute:</p>
+
+<ul>
+<li><code>"left"</code>: Creates the button with a left-aligned icon.</li>
+<li><code>"right"</code>: Creates the button with a right-aligned icon.</li>
+<li><code>"top"</code>: Creates the button with the icon positioned above the text.</li>
+<li><code>"bottom"</code>: creates the button with the icon positioned below the text.</li>
+</ul>
+
+<p>You can also create an icon-only button by setting the <code>data-iconpos</code> attribute to <code>"notext"</code>. The button plugin hides the text on-screen, but adds it as a title attribute to the link to provide context for screen readers and devices that support tooltips.</p>
+
+<pre class="prettyprint">&lt;a href="#" class="ui-btn" data-icon="delete" data-iconpos="notext"&gt;Delete&lt;/a&gt;
+</pre>
+
+<h2><a id="methods0.8668504238594323"></a>Methods</h2>
+
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+<pre class="prettyprint">&lt;div id="button" class="ui-btn"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var buttonElement = document.getElementById("button"),
+       button = tau.widget.Button(buttonElement);
+
+   /* 
+      button.methodName(methodArgument1, methodArgument2, ...);
+      For example:
+   */
+   button.value("text");
+&lt;/script&gt;
+</pre>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Button <a href="#method-disable">disable</a>() </pre>
+					</td>
+					<td><p>Disables the button.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Button <a href="#method-enable">enable</a>() </pre>
+					</td>
+					<td><p>Enables the button.</p></td>
+				</tr>
+			
+
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Button <a href="#method-refresh">refresh</a>() </pre>
+					</td>
+					<td><p>Refreshes a button markup.</p></td>
+				</tr>
+			
+		
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string <a href="#method-value">value</a>(string? value) </pre>
+					</td>
+					<td><p>Gets or sets a value.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+	
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-disable">disable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Disables the button.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Button disable() </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method sets the disabled attribute for the button and changes the look of the button to the disabled state.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Button</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class="ui-btn" id="button"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("button"),
+       buttonWidget = tau.widget.Button(element);
+   buttonWidget.disable();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-enable">enable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Enables the button.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Button enable() </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method removes the disabled attribute from the button and changes the look of the button to the enabled state.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Button</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class="ui-btn" id="button"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("button"),
+       buttonWidget = tau.widget.Button(element);
+   buttonWidget.enable();
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+			
+		
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-refresh">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Refreshes a button markup.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Button refresh() </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method rebuilds the DOM structure of the button component. It must be called after you manually change the HTML attributes of the component's DOM structure.</p>
+
+<p>The method is called automatically after any component option is changed.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Button</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class="ui-btn" id="button"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("button"),
+       buttonWidget = tau.widget.Button(element);
+   buttonWidget.refresh();
+&lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+			
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets a value.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">string value(string? value) </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>The method returns the inner text of the button or sets the text of the button.</p>
+
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>string</td>
+						<td>Optional</td>
+						<td></td>
+						<td>Text to set for the button.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>string</td>
+									<td>In the get mode, returns the inner text of the button.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class="ui-btn" id="button"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("button"),
+       buttonWidget = tau.widget.Button(element),
+       /* Value contains inner text of button */
+       value = buttonWidget.value();
+
+   /* "New text" will be text of button */
+   buttonWidget.value("New text");
+&lt;/script&gt;
+</pre>
+						</div>
+				</dd>
+			
+		
+	</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

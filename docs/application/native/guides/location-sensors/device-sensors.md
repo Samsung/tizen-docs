@@ -25,25 +25,26 @@ The main features of the Sensor API include:
   - Sensing interval
   - Measurement range
 
+- Sensor types
+
   A device can have various physical and virtual sensors. The following table lists the sensors supported by Tizen.
 
-  > **Note**  
+  > **Note**
+  >
   > Not all devices support all sensors, so each sensor is not necessarily available on all devices. You can [check whether a sensor is supported](#sensorlistener). For more information, see [System Information](../device/system.md).
 
+  **Table: Supported sensor types**
 
-
-**Table: Supported sensor types**
-
-| Supported sensor types                   |                                          |                                          |
-|------------------------------------------|------------------------------------------|------------------------------------------|
-| [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)           |
-| [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)      |
-| [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Significant Motion Sensor](#significant_motion) |
-| [Gyroscope](#gyro)                       | [Linear Acceleration Sensor](#lin_accelerometer) | [Sleep Monitor](#sleep_monitor)          |
-| [Gyroscope Rotation Vector Sensor](#gyro_rotation) | [Magnetic Sensor](#magnetic)             | [Temperature Sensor](#temperature)       |
-| [Heart Rate Monitor LED Green Sensor](#hrm_green) | [Orientation Sensor](#orientation)       | [Ultraviolet Sensor](#ultraviolet)       |
-| [Heart Rate Monitor LED IR Sensor](#hrm_ir) | [Pedometer](#pedometer)                  | [Uncalibrated Gyroscope](#uncal_gyro)    |
-| [Heart Rate Monitor LED Red Sensor](#hrm_red) | [Pressure Sensor](#pressure)             | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
+  | Supported sensor types                   |                                          |                                          |
+  |------------------------------------------|------------------------------------------|------------------------------------------|
+  | [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)           |
+  | [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)      |
+  | [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Significant Motion Sensor](#significant_motion) |
+  | [Gyroscope](#gyro)                       | [Linear Acceleration Sensor](#lin_accelerometer) | [Sleep Monitor](#sleep_monitor)          |
+  | [Gyroscope Rotation Vector Sensor](#gyro_rotation) | [Magnetic Sensor](#magnetic)             | [Temperature Sensor](#temperature)       |
+  | [Heart Rate Monitor LED Green Sensor](#hrm_green) | [Orientation Sensor](#orientation)       | [Ultraviolet Sensor](#ultraviolet)       |
+  | [Heart Rate Monitor LED IR Sensor](#hrm_ir) | [Pedometer](#pedometer)                  | [Uncalibrated Gyroscope](#uncal_gyro)    |
+  | [Heart Rate Monitor LED Red Sensor](#hrm_red) | [Pressure Sensor](#pressure)             | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
 
 -   Sensor URI
 
@@ -157,7 +158,7 @@ If a listener is created successfully, it is able to observe sensor data changes
      sensor_listener_set_attribute_int(listener, SENSOR_ATTRIBUTE_PAUSE_POLICY, SENSOR_PAUSE_NONE);
      ```
 
-     The above example makes the listener listen for the sensor data regardless of the display state and the power-save mode. However, it does not prevent the device from going to sleep mode. To listen for the sensor data, the device must be awake anyway.
+     The above example makes the listener listen for the sensor data regardless of the display state and the power-save mode. However, it does not prevent the device from going to the sleep mode. To listen for the sensor data, the device must be awake anyway.
 
 4. When the sensor data is no more necessary, stop the listener:
 

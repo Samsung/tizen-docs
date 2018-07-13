@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Text Enveloper</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Text Enveloper</h1>
+
+<p>
+The TextEnveloper component allows you to convert text to a chunk divided by delimiter. <br>
+You can use this component for managing various word blocks. <br></p>
+
+<p>
+This component consists of an input area and word block area. The word block is created when you insert text in to the input area and press the Enter key.<br>
+If you want to delete a word block, press the backspace key. If you focus out the input area, the word block is changed to minimize.
+</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>Tizen 2.4.</strong></td>
+	</tr>
+	<tr>
+		<td class="note">It was renamed from <i>TokenTextArea</i> component of Tizen 2.3.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+	<li><a href="#default-selectors0.8452272061258554">Default Selectors</a>
+
+
+	</li>
+
+	<li><a href="#html-examples0.5533997314050794">HTML Examples</a>
+
+	</li>
+
+	<li><a href="#manual-constructor0.8452272061258554">Manual constructor</a>
+
+
+	</li>
+
+
+	<li><a href="#events0.18996005482040346">Events</a>
+
+	</li>
+
+	<li><a href="#methods-list">Methods</a>
+
+	</li>
+
+</ol>
+
+
+<h2><a id='default-selectors0.8452272061258554'></a>Default Selectors</h2>
+<p>By default, all elements with the <code>class=&quot;ui-text-enveloper&quot;</code> or <code>data-role=&quot;textenveloper&quot;</code> attribute are displayed as TextEnveloper component.</p>
+
+<h2><a id='html-examples0.5533997314050794'></a>HTML Examples</h2>
+<p>Create simple TextEnveloper from div using class:</p>
+
+<pre class="prettyprint">&lt;div class="ui-text-enveloper"&gt;&lt;/div&gt;
+</pre>
+
+<h2><a id='manual-constructor0.8452272061258554'></a>Manual constructor</h2>
+
+<p>To manually create a TextEnveloper component, use the component constructor from the tau namespace.</p>
+
+<pre class="prettyprint">&lt;script&gt;
+var textEnveloperElement = document.getElementById("textenveloper"),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+&lt;/script&gt;
+</pre>
+
+
+<h2><a id='events0.18996005482040346'></a>Events</h2>
+<table>
+	<tbody>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">newvalue</span></td>
+		<td><p>Triggered when the user presses the <code>ENTER</code> key after inserting text to input tag.</p></td>
+	</tr>
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">added</span></td>
+		<td><p>Triggered when TextEnveloper button is added.</p></td>
+	</tr>
+	<tr>
+		<td class="option"><span style="font-family: Courier New,Courier,monospace">removed</span></td>
+		<td><p>Triggered when TextEnveloper button is removed.</p></td>
+	</tr>
+
+	</tbody>
+</table>
+
+
+<h2><a id="methods-list"></a>Methods</h2>
+
+
+<p>To call a method on this component, see the following code:</p>
+
+<pre class="prettyprint">var textEnveloperElement = document.getElementById("textenveloper"),
+   textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+
+textEnveloper.methodName(methodArgument1, methodArgument2, ...);
+</pre>
+
+<h3>Summary</h3>
+<table class="informaltable">
+	<thead>
+	<tr>
+		<th>Method</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tbody>
+
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-add">add</a> ( string messages ) </pre>
+		</td>
+		<td><p>Adds message token to TextEnveloper.</p></td>
+	</tr>
+
+
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-remove">remove</a> ( number index ) </pre>
+		</td>
+		<td><p>Deletes token matched index.</p></td>
+	</tr>
+
+
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint">number <a href="#method-length">length</a> (  ) </pre>
+		</td>
+		<td><p>Returns the number of tokens.</p></td>
+	</tr>
+
+
+	</tbody>
+</table>
+<dl>
+
+
+	<dt class="method"><code><b><span class="methodName"
+									  id="method-add">add</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Adds message token to TextEnveloper.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">add ( string messages ) </pre>
+		</div>
+
+		<div class="description">
+			<p>
+			<p>This method adds new token text component button.</p>
+
+
+			</p>
+		</div>
+
+		<div class="parameters">
+			<p><span class="param">Parameters:</span></p>
+			<table>
+				<tbody>
+				<tr>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Required / optional</th>
+					<th>Default value</th>
+					<th>Description</th>
+				</tr>
+
+
+				<tr>
+					<td><span style="font-family: Courier New,Courier,monospace">messages</span></td>
+					<td>string</td>
+					<td>Required</td>
+					<td></td>
+					<td></td>
+				</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+
+			No return value
+
+		</div>
+
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;script&gt;
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+
+textEnveloper.add("hello");
+&lt;/script&gt;
+</pre>
+		</div>
+
+	</dd>
+
+
+
+	<dt class="method"><code><b><span class="methodName"
+									  id="method-remove">remove</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Deletes the token matched index.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">remove ( number index ) </pre>
+		</div>
+
+		<div class="description">
+			<p>The remove method is used to remove a token button at the specified index position.
+			</p>
+		</div>
+
+		<div class="parameters">
+			<p><span class="param">Parameters:</span></p>
+			<table>
+				<tbody>
+				<tr>
+					<th>Parameter</th>
+					<th>Type</th>
+					<th>Required / optional</th>
+					<th>Default value</th>
+					<th>Description</th>
+				</tr>
+
+
+				<tr>
+					<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+					<td>number</td>
+					<td>Required</td>
+					<td></td>
+					<td></td>
+				</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+
+			No return value
+
+		</div>
+
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;script&gt;
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+
+textEnveloper.remove(1);
+&lt;/script&gt;
+</pre>
+		</div>
+
+	</dd>
+
+
+
+	<dt class="method"><code><b><span class="methodName"
+									  id="method-length">length</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Returns the number of tokens.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">number length ( ) </pre>
+		</div>
+
+		<div class="description">
+			<p>
+			<p>The length method is used to retrieve the number of tokens in the TextEnveloper component.</p>
+
+
+			</p>
+		</div>
+
+
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+			<table>
+				<tbody>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>number</td>
+					<td>The number of string tokens.</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">&lt;script&gt;
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement),
+    textTokenLength;
+
+textEnveloper.add("hello1");
+textEnveloper.add("hello2");
+//textTokenLength will be 2
+textTokenLength = textEnveloper.length();
+&lt;/script&gt;
+</pre>
+		</div>
+
+	</dd>
+
+
+</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

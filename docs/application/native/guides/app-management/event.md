@@ -32,7 +32,16 @@ To enable your application to use the event functionality:
    #include <app_event.h>
    ```
 
-2. To use Launch-On-Events in your application, define the `http://tizen.org/appcontrol/operation/launch_on_event` operation in the `tizen-manifest.xml` file.The URI name for the operation represents the event name in the Launch-On-Event format (`event://{Event_Name}`).`<app-control>   <operation name="http://tizen.org/appcontrol/operation/launch_on_event"/>   <uri name="event://tizen.system.event.battery_charger_status"/></app-control>`
+2. To use Launch-On-Events in your application, define the `http://tizen.org/appcontrol/operation/launch_on_event` operation in the `tizen-manifest.xml` file.
+
+   The URI name for the operation represents the event name in the Launch-On-Event format (`event://{Event_Name}`).
+
+   ```
+   <app-control>
+      <operation name="http://tizen.org/appcontrol/operation/launch_on_event"/>
+      <uri name="event://tizen.system.event.battery_charger_status"/>
+   </app-control>
+   ```
 
 <a name="broadcast"></a>
 ## Publishing an Event
@@ -149,8 +158,11 @@ To subscribe to a predefined system event or user-defined event:
 
 To register an interest in a Launch-On-Event, define the `http://tizen.org/appcontrol/operation/launch_on_event` operation in the `tizen-manifest.xml` file.
 
-> **Note**  
-> Only service applications can register and receive Launch-On-Events.The Launch-On-Event operation cannot be requested using the `app_control_send_launch_request()` function, unlike other application control operations.
+> **Note**
+>
+> Only service applications can register and receive Launch-On-Events.
+>
+> The Launch-On-Event operation cannot be requested using the `app_control_send_launch_request()` function, unlike other application control operations.
 
 The following table shows the system events that support Launch-On-Event.
 

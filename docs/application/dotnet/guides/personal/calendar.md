@@ -77,16 +77,16 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
 
     | Views                                    | Description                              |
     |----------------------------------------|----------------------------------------|
-    | `Tizen.Pims.Calendar.CalendarViews.Book` | This view holds calendar book properties, such as name, color, and visibility.There are 3 [default calendar books](#book) for the local event, todo, and birthday event types.Calendar books can be created by service providers, such as Google or Yahoo (with an account), or by applications, such as Joyn or Facebook. |
-    | `Tizen.Pims.Calendar.CalendarViews.Event` | This view holds event properties, such as a summary, description, and location.Alarms, attendees, and extended views can be inserted as child records for an event.Recurrence properties can be set to make a repeating event, such as a birthday.The recurrence rules follow the [vCalendar2.0 specification](https://www.ietf.org/rfc/rfc2445.txt). |
+    | `Tizen.Pims.Calendar.CalendarViews.Book` | This view holds calendar book properties, such as name, color, and visibility.<br>There are 3 [default calendar books](#book) for the local event, todo, and birthday event types.<br>Calendar books can be created by service providers, such as Google or Yahoo (with an account), or by applications, such as Joyn or Facebook. |
+    | `Tizen.Pims.Calendar.CalendarViews.Event` | This view holds event properties, such as a summary, description, and location.<br>Alarms, attendees, and extended views can be inserted as child records for an event.<br>Recurrence properties can be set to make a repeating event, such as a birthday.<br>The recurrence rules follow the [vCalendar2.0 specification](https://www.ietf.org/rfc/rfc2445.txt). |
     | `Tizen.Pims.Calendar.CalendarViews.Todo` | This view holds todo properties, such as a due time. |
     | `Tizen.Pims.Calendar.CalendarViews.Alarm` | This view holds notification properties. Multiple alarms can be inserted into an event or todo. |
     | `Tizen.Pims.Calendar.CalendarViews.Attendee` | This view holds attendee properties. Multiple attendees can be inserted into an event or todo. |
     | `Tizen.Pims.Calendar.CalendarViews.Timezone` | This view holds time zone properties.    |
-    | `Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook` | This view has the combined properties of instance and book.Instances are generated depending on time type (`UtcTime` or `LocalTime`). |
-    | `Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook` | This view has the combined properties of instance and book. The instance view is used to get repeat instances.Instances are generated depending on the time type (`UtcTime` or `LocalTime`). |
-    | `Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended` | This view has the combined properties of instance, book, and extended. The instance view is used to get repeat instances.Instances are generated depending on the time type (`UtcTime` or `LocalTime`). |
-    | `Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended` | This view has the combined properties of instance, book, and extended. The instance view is used to get repeat instances.Instances are generated depending on the time type (`UtcTime` or `LocalTime`). |
+    | `Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBook` | This view has the combined properties of instance and book.<br>Instances are generated depending on time type (`UtcTime` or `LocalTime`). |
+    | `Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBook` | This view has the combined properties of instance and book. The instance view is used to get repeat instances.<br>Instances are generated depending on the time type (`UtcTime` or `LocalTime`). |
+    | `Tizen.Pims.Calendar.CalendarViews.InstanceUtimeBookExtended` | This view has the combined properties of instance, book, and extended. The instance view is used to get repeat instances.<br>Instances are generated depending on the time type (`UtcTime` or `LocalTime`). |
+    | `Tizen.Pims.Calendar.CalendarViews.InstanceLocaltimeBookExtended` | This view has the combined properties of instance, book, and extended. The instance view is used to get repeat instances.<br>Instances are generated depending on the time type (`UtcTime` or `LocalTime`). |
     | `Tizen.Pims.Calendar.CalendarViews.UpdatedInfo` | This view has properties to use when identifying record changes depending on the version. |
     | `Tizen.Pims.Calendar.CalendarViews.Extended` | This view has the key/value properties to add extended data. |
 
@@ -144,8 +144,8 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
 
     | Identifier                | Description                              |
     |-------------------------|----------------------------------------|
-    | `CalendarTime.Type.Utc`   | UTC time is used to describe non-all-day events.For non-all-day events, you must convert local time to UTC time. The local time zone identifier must be stored in the record, in the corresponding property.For example, when setting the start time of an event, the local time zone must be stored in the `CalendarViews.Event.StartTzid` property. |
-    | `CalendarTime.Type.Local` | Date only (year, month, and day of the month) is used to describe all-day events.For all day events, use `CalendarTime` with parameters (year, month, day, hour, minute, second).Both the start and end time of the event must be set, and they do not have to be equal. If they are not, the event lasts more than 1 day. |
+    | `CalendarTime.Type.Utc`   | UTC time is used to describe non-all-day events.<br>For non-all-day events, you must convert local time to UTC time. The local time zone identifier must be stored in the record, in the corresponding property.<br>For example, when setting the start time of an event, the local time zone must be stored in the `CalendarViews.Event.StartTzid` property. |
+    | `CalendarTime.Type.Local` | Date only (year, month, and day of the month) is used to describe all-day events.<br>For all day events, use `CalendarTime` with parameters (year, month, day, hour, minute, second).<br>Both the start and end time of the event must be set, and they do not have to be equal. If they are not, the event lasts more than 1 day. |
 
     For example, adding an event with the current time:
 
@@ -223,13 +223,13 @@ If an event is inserted with recurrence rule, alarm, and attendee, its data is s
 
 The following table illustrates an example of a recurring event and its instances.
 
-****Table: Event and instance example**
+**Table: Event and instance example**
 
 | Event with recurrence rule               | Generated instances |
 |----------------------------------------|-------------------|
 | Recurrence rules: <br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-09 Tuesday  |
-|                                          | 2012-10-16 Tuesday  |
-|                                          | 2012-10-22 Tuesday  |
+| Recurrence rules: <br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-16 Tuesday  |
+| Recurrence rules: <br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-22 Tuesday  |
 
 The calendar recurrence model is compliant with the [iCalendar specification](http://www.ietf.org/rfc/rfc2445.txt). The following event properties have the same functionality as their corresponding values in iCalendar:
 
@@ -253,7 +253,7 @@ When you have a recurring event, you can [remove a specific recurrence instance]
 <a name="exception_rule"></a>
 ### Exceptions
 
-If 1 instance of a recurring event is modified (such as its summary or date) or deleted, it is called an exception. For example, if the second instance date is modified from 16^th^ to 17^th^, 17^th^ is the exception.
+If 1 instance of a recurring event is modified (such as its summary or date) or deleted, it is called an exception. For example, if the second instance date is modified from 16th to 17th, 17th is the exception.
 
 **Table: Exception example**
 
@@ -479,7 +479,7 @@ To create a new event:
 
         1.  Set the frequency.
 
-            In the following example, the event is set to occur every month on the 3^rd^, 4^th^, and 5^th^ day:
+            In the following example, the event is set to occur every month on the 3rd, 4th, and 5th day:
 
             ```
             var record = new CalendarRecord(CalendarViews.Event.Uri);
@@ -733,7 +733,7 @@ To remove an event instance from a recurring event:
 
     | unixtime                                 | Date time                                |
     |----------------------------------------|----------------------------------------|
-    | <br>1349226000 <br>1349312400 <br> 1349398800 <br>1351904400 <br>1351990800<br> 1352077200 <br>1354496400<br> 1354582800 | <br>2012-10-03 01:00:00 <br>2012-10-04 01:00:00 <br>2012-10-05 01:00:00 <br>2012-11-03 01:00:00 <br>2012-11-04 01:00:00 <br>2012-11-05 01:00:00 <br>2012-12-03 01:00:00 <br>2012-12-04 01:00:00 |
+    | 1349226000 <br>1349312400 <br> 1349398800 <br>1351904400 <br>1351990800<br> 1352077200 <br>1354496400<br> 1354582800 | 2012-10-03 01:00:00 <br>2012-10-04 01:00:00 <br>2012-10-05 01:00:00 <br>2012-11-03 01:00:00 <br>2012-11-04 01:00:00 <br>2012-11-05 01:00:00 <br>2012-12-03 01:00:00 <br>2012-12-04 01:00:00 |
 
 2. Create the exception by setting the `Exdate` property.
 

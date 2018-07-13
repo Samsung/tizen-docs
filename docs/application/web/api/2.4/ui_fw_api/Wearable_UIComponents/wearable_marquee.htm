@@ -1,0 +1,353 @@
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>Marquee</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Marquee</h1>
+
+<p>The Marquee component shows moving HTML element.<br>
+It makes the &lt;div&gt; element (having some child nodes such as text and img) move horizontally like legacy &lt;marquee&gt; tag.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>2.3</strong>.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#make-marquee element0.013777208048850298">How to Create Marquee</a>
+			
+		</li>
+	
+		<li><a href="#options-list">Options</a>
+			
+		</li>
+		<li><a href="#events-list">Events</a></li>
+	
+		<li><a href="#methods-list">Methods</a>
+			
+				<ol class="toc">
+						<li><a href="#method-start">start</a>
+						</li>
+						<li><a href="#method-stop">stop</a>
+						</li>
+					
+						<li><a href="#method-reset">reset</a>
+						</li>
+					
+				</ol>
+			
+		</li>
+	
+</ol>
+
+<h2><a id='make-marquee element0.013777208048850298'></a>How to Create Marquee</h2>
+
+<p>If you want to create Marquee component, you have to declare &quot;ui-marquee&quot; in &lt;div&gt; element and make Marquee component in JS code.
+<br>To use a Marquee component in your application, see the following code and marquee options:</p>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;marqueePage&quot; &gt;
+	&lt;header class=&quot;ui-header&quot;&gt;
+		&lt;h2 class=&quot;ui-title&quot;&gt;Marquee&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class="ui-content"&gt;
+		&lt;ul class="ui-listview"&gt;
+			&lt;li&gt;&lt;div class="ui-marquee" id="marquee"&gt;Marquee code sample&lt;/div&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+	var page = document.querySelector(&quot;#marqueePage&quot;);
+
+	page.addEventListener( &quot;pagebeforeshow&quot;, function() {
+		var marqueeEl = document.getElementById("marquee"),
+		marqueeWidget = new tau.widget.Marquee(marqueeEl, {marqueeStyle: "scroll", delay: "3"});
+	});
+&lt;/script&gt;
+</pre>
+
+
+
+	<h2><a id="options-list"></a>Options</h2>
+	<h3>Summary</h3>
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">marqueeStyle</span></td>
+				<td class="option">&quot;slide&quot; | &quot;scroll&quot; | &quot;alternate&quot;</td>
+				<td class="option">&quot;slide&quot;</td>
+				<td class="option">Sets the default style for the marquee.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">ellipsisEffect</span></td>
+				<td class="option">&quot;gradient&quot; | &quot;ellipsis&quot; | &quot;none&quot;</td>
+				<td class="option">&quot;gradient&quot;</td>
+				<td class="option">Sets the end-effect (gradient) of marquee.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">delay</span></td>
+				<td class="option">number</td>
+				<td class="option">2000</td>
+				<td class="option">Sets the delay (ms) for marquee.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">iteration</span></td>
+				<td class="option">number | &quot;infinite&quot;</td>
+				<td class="option">1</td>
+				<td class="option">Sets the iteration count number for marquee.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">speed</span></td>
+				<td class="option">number</td>
+				<td class="option">60</td>
+				<td class="option">Sets the speed (px/sec) for the marquee.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">timingFunction</span></td>
+				<td class="option">&quot;linear&quot; | &quot;ease&quot; | &quot;ease-in&quot; | &quot;ease-out&quot; | &quot;cubic-bezier(n,n,n,n)&quot;</td>
+				<td class="option">&quot;linear&quot;</td>
+				<td class="option">Sets the timing function for marquee.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">autoRun</span></td>
+				<td class="option">boolean</td>
+				<td class="option">true</td>
+				<td class="option">Sets the status of <code>autoRun</code>.</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+<h2><a id="events-list"></a>Events</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">marqueestart</span></td>
+				<td><p>Triggered when marquee animation started.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">marqueeend</span></td>
+				<td><p>Triggered when marquee animation ended.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">marqueestopped</span></td>
+				<td><p>Triggered when marquee animation stopped.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<pre class="intable prettyprint"><a href="#method-start">start</a> (  ) </pre>
+				</td>
+				<td><p>Starts Marquee animation.</p></td>
+			</tr>
+			<tr>
+				<td>
+					<pre class="intable prettyprint"><a href="#method-stop">stop</a> (  ) </pre>
+				</td>
+				<td><p>Stops Marquee animation.</p></td>
+			</tr>
+			<tr>
+				<td>
+					<pre class="intable prettyprint"><a href="#method-reset">reset</a> (  ) </pre>
+				</td>
+				<td><p>Resets Marquee animation.</p></td>
+			</tr>
+
+		</tbody>
+	</table>
+	<dl>
+
+
+		<dt class="method"><code><b><span class="methodName"
+										  id="method-start">start</span></b></code></dt>
+		<dd>
+			<div class="brief">
+				<p>Starts Marquee animation.</p>
+			</div>
+			<div class="synopsis">
+				<pre class="signature prettyprint">start ( ) </pre>
+			</div>
+
+			<div class="description">
+				<p>
+
+				</p>
+			</div>
+
+
+
+			<div class="returntype">
+				<p><span class="return">Return value:</span></p>
+
+
+				No return value
+
+			</div>
+
+			<div class="example">
+							<span class="example"><p>Code
+								example:</p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class="ui-marquee" id="marquee"&gt;
+    &lt;p&gt;MarqueeTEST TEST message TEST for marquee&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
+    marqueeWidget.start();
+&lt;/script&gt;
+</pre>
+			</div>
+
+		</dd>
+
+		<dt class="method"><code><b><span class="methodName"
+																   id="method-stop">stop</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Stops Marquee animation.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">stop ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class="ui-marquee" id="marquee"&gt;
+    &lt;p&gt;MarqueeTEST TEST message TEST for marquee&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
+    marqueeWidget.stop();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-reset">reset</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Resets Marquee animation (reset and end).</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">reset ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class="ui-marquee" id="marquee"&gt;
+    &lt;p&gt;MarqueeTEST TEST message TEST for marquee&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
+    marqueeWidget.reset();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+		</dl>
+	
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

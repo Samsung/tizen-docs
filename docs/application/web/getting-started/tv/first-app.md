@@ -6,9 +6,9 @@ A TV Web application is basically a Web site stored on a TV. You can create it u
 
 Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic TV Web application, which displays some text on the screen and changes the text when the user clicks it:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2. [Create a TV Web project](#create) using the Tizen Studio.
 
@@ -26,7 +26,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/cover-web.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/overview.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -45,7 +45,7 @@ The following figure illustrates the application to be created:
 
 To create the application project:
 
-1.  Launch the Tizen Studio.
+1. Launch the Tizen Studio.
 2. Make sure the **Web** perspective is selected in the upper-right corner of the Tizen Studio window.
 
     ![Checking the perspective](media/change_perspective_w.png)
@@ -60,13 +60,13 @@ To create the application project:
 
 4. In the Project Wizard, define the project details.
 
-    The Project Wizard is used to create the basic application skeleton with the required folder structure and mandatory files. 
-	You can easily create different applications by selecting an applicable template or sample for the Project Wizard to use.
+    The Project Wizard is used to create the basic application skeleton with the required folder structure and mandatory files. You can easily create different applications by selecting an applicable template or sample for the Project Wizard to use.
 
-	1. Select the **Template** project type and click **Next**.
+    1. Select the **Template** project type and click **Next**.
+
         ![Selecting the project type](media/create_project_wizard_type.png)
 
-    2.   Select the profile (**TV**) and version from a drop-down list and click **Next**.
+    2. Select the profile (**TV**) and version from a drop-down list and click **Next**.
 
         The version depends on the platform version you have installed and with which you are developing the application.
 
@@ -194,12 +194,13 @@ You can run the Web application on the [emulator](../../tutorials/process/run-de
 
 To run the application on the emulator:
 
-1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-   1.  In the Tizen Studio menu, select **Tools &gt; Emulator Manager**.
+1. Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
+
+    1. In the Tizen Studio menu, select **Tools &gt; Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
-   2. In the Emulator Manager, select a TV emulator from the list and click **Launch**.
+    2. In the Emulator Manager, select a TV emulator from the list and click **Launch**.
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
@@ -255,35 +256,38 @@ For more information on using the simulator features, see [TV Simulator](http://
 
 To run the application on a target device:
 
-1.  Connect the TV target device to your computer:
-   1.  Define settings on the TV:
-       1.  Start the TV, press the **Smart Hub** key, and select **Apps**.
-       2.  In the **Apps** panel, enter the "Magic sequence" (keys **1**, **2**, **3**, **4**, and **5** in sequence).
-       3.  Set the **Developer mode** to **On**, and enter the IP address of your computer.
-       4.  Click **OK** and reboot the TV.
+1. Connect the TV target device to your computer:
 
-   2. In the Tizen Studio, use the Remote Device Manager to connect the TV:
-   3. In the **Device Manager**, click the **Remote Device Manager** button.
+    1. Define settings on the TV:
+
+         1. Start the TV, press the **Smart Hub** key, and select **Apps**.
+         2. In the **Apps** panel, enter the "Magic sequence" (keys **1**, **2**, **3**, **4**, and **5** in sequence).
+         3. Set the **Developer mode** to **On**, and enter the IP address of your computer.
+         4. Click **OK** and reboot the TV.
+
+    2. In the Tizen Studio, use the Remote Device Manager to connect the TV:
+   
+        1. In the **Device Manager**, click the **Remote Device Manager** button.
 
             ![Launch the Remote Device Manager](media/remote_conn_mgr_ww.png)
 
-       2.   In the **Remote Device Manager** window, click **+**.
+        2. In the **Remote Device Manager** window, click **+**.
 
             ![Add new device](media/remote_conn_new_ww.png)
 
-       3. In the **Add Device** window, enter the device and network details, and click **Add**.
+        3. In the **Add Device** window, enter the device and network details, and click **Add**.
 
             ![Define device details](media/remote_conn_add_ww.png)
 
-       4. In the **Remote Device Manager** window, switch the new device on by clicking the switch under **Connect**.
+        4. In the **Remote Device Manager** window, switch the new device on by clicking the switch under **Connect**.
 
             ![Connect the device](media/remote_connect_ww.png)
 
-   4. In the **Device Manager**, confirm that the device is connected (shown in the device list).
+   3. In the **Device Manager**, confirm that the device is connected (shown in the device list).
 
         ![Device is connected](media/remote_connected_ww.png)
 
-   5. Right-click the device and select **Permit to install application**.
+   4. Right-click the device and select **Permit to install application**.
 
 2. Generate an author certificate.
 

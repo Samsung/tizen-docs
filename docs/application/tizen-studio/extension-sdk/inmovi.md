@@ -75,50 +75,58 @@ To use InMobi Tizen Ads in Web applications:
    <access origin="*" subdomains="true"></access>
    ```
 
-3. Configure the parameters for the InMobi Tizen ad <div> element:siteid: Two IDs are provided during registration, one for banner ads and one for interstitial ads. Use the respective IDs for the type of ad to be created (Mandatory)slot: Corresponds to the dimensions of the slot or box where the ads appear in your application. (Mandatory)Currently supported slot numbers are 10 (300x250), 14 (320x480), and 15 (320x50).test: This parameter must be true during development and testing phase. It must be made false before publishing the application to receive the live ads.manual: This parameter must be set to true, otherwise it takes the default false value and the ad is rendered before the Web application page is rendered.autoRefresh: This is the auto refresh time in seconds. The minimum accepted value is 20.uIdMap: InMobi Tizen ad id as per user settings for personalized ads.  
-```
-<script type="text/javascript">
-    var ad_id = '00000000-0000-0000-000000000000';
-</script>
-
-<script type="text/javascript">
-    function requestAd() {
-        var inmobi_conf = {
-            siteid: "YOUR BANNER SITEID", /* Your banner site ID from InMobi registration */
-            slot: '15',
-            test: false,
-            manual: true,
-            autoRefresh: 20, /* In seconds, the minimum accepted value is 20 */
-            uIdMap: {TI: ad_id}
-        };
-        _inmobi.getNewAd(document.getElementById('tizen_15'), inmobi_conf);
-    }
-
-    function onSuccess(ad) {
-        ad_id = ad.id;
-        requestAd();
-    }
-
-    function onError(error) {
-        ad_id = '00000000-0000-0000-0000-000000000000';
-        requestAd();
-    }
-
-    function getAdId() {
-        try {
-            tizen.systeminfo.getPropertyValue('ADS', onSuccess, onError);
-        } catch (err) {
-            ad_id = '00000000-0000-0000-0000-000000000000';
-            requestAd();
-        }
-    } 
-</script>
-
-<body onload="getAdId()">
-  <div id="tizen_15">
-   <script type="text/javascript" src="https://i.l.inmobicdn.net/sdk/jsac/p1/inmobi.js"></script>
-</div>
-```
+3. Configure the parameters for the InMobi Tizen ad \<div\> element:
+   - siteid: Two IDs are provided during registration, one for banner ads and one for interstitial ads. Use the respective IDs for the type of ad to be created (Mandatory)
+   - slot: Corresponds to the dimensions of the slot or box where the ads appear in your application. (Mandatory)  
+     Currently supported slot numbers are 10 (300x250), 14 (320x480), and 15 (320x50).
+   - test: This parameter must be true during development and testing phase. It must be made false before publishing the application to receive the live ads.
+   - manual: This parameter must be set to true, otherwise it takes the default false value and the ad is rendered before the Web application page is rendered.
+   - autoRefresh: This is the auto refresh time in seconds. The minimum accepted value is 20.
+   - uIdMap: InMobi Tizen ad id as per user settings for personalized ads.  
+   
+   ```
+   <script type="text/javascript">
+       var ad_id = '00000000-0000-0000-000000000000';
+   </script>
+   
+   <script type="text/javascript">
+       function requestAd() {
+           var inmobi_conf = {
+               siteid: "YOUR BANNER SITEID", /* Your banner site ID from InMobi registration */
+               slot: '15',
+               test: false,
+               manual: true,
+               autoRefresh: 20, /* In seconds, the minimum accepted value is 20 */
+               uIdMap: {TI: ad_id}
+           };
+           _inmobi.getNewAd(document.getElementById('tizen_15'), inmobi_conf);
+       }
+   
+       function onSuccess(ad) {
+           ad_id = ad.id;
+           requestAd();
+       }
+   
+       function onError(error) {
+           ad_id = '00000000-0000-0000-0000-000000000000';
+           requestAd();
+       }
+   
+       function getAdId() {
+           try {
+               tizen.systeminfo.getPropertyValue('ADS', onSuccess, onError);
+           } catch (err) {
+               ad_id = '00000000-0000-0000-0000-000000000000';
+               requestAd();
+           }
+       }
+   </script>
+   
+   <body onload="getAdId()">
+     <div id="tizen_15">
+      <script type="text/javascript" src="https://i.l.inmobicdn.net/sdk/jsac/p1/inmobi.js"></script>
+   </div>
+   ```
 
 ## InMobi Tizen Ads for Native Applications
 
@@ -250,10 +258,15 @@ To create InMobi Tizen ads in native applications:
         adlib_err result = adview_add_interstitial_ad(ad->layout);
         ```
 
-     2. The application needs to load the interstitial ad, and on successful
-         load, it needs to call show. Once the load is successful, the interstitial_ad_load_request_succeeded callback is triggered. After this, the interstitial ad is ready to be shown.
-        `result = adview_interstitial_load();`After receiving the interstitial_ad_load_request_succeeded callback, the application can show the ad at any time as per application logic.
-        `result = adview_interstitial_show(); /* Show the interstitial ad */`Contrary to the banner ad, the call to load does not take care of showing the interstitial ad.
+     2. The application needs to load the interstitial ad, and on successful load, it needs to call show. Once the load is successful, the interstitial_ad_load_request_succeeded callback is triggered. After this, the interstitial ad is ready to be shown.
+        ```
+        result = adview_interstitial_load();
+        ```
+        After receiving the interstitial_ad_load_request_succeeded callback, the application can show the ad at any time as per application logic.
+        ```
+        result = adview_interstitial_show(); /* Show the interstitial ad */
+        ```
+        Contrary to the banner ad, the call to load does not take care of showing the interstitial ad.
 
      3. Adlib has a callback mechanism to update the application about the interstitial ad state. The following example shows the callbacks the application has to register.
 
@@ -414,8 +427,14 @@ To create InMobi Tizen ads for Unity games:
         ```
 
      2. The game needs to load the interstitial ad and on successful load, it needs to call show. Once the load is successful, the OnAdLoadSucceeded callback is triggered by the Adlib. After this the interstitial ad is ready to be shown.
-        `result = adobject.InterstitialAdLoad();`After receiving the OnAdLoadSucceeded callback, the game can show the ad at any time.
-        `result = adobject.InterstitialAdShow(); // Show the interstitial ad`Contrary to the banner ad, the call to load does not take care of showing the interstitial ad.
+        ```
+        result = adobject.InterstitialAdLoad();
+        ```
+        After receiving the OnAdLoadSucceeded callback, the game can show the ad at any time.
+        ```
+        result = adobject.InterstitialAdShow(); // Show the interstitial ad
+        ```
+        Contrary to the banner ad, the call to load does not take care of showing the interstitial ad.
 
      3. Adlib has a callback mechanism to update the game about the interstitial ad state. The game has to register listener callbacks with Adlib using the following functions:
 

@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>SystemSetting API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::SystemSetting">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="title"><h1>SystemSetting API</h1></div>
+<div class="brief">
+ The SystemSetting API provides interfaces and methods providing web applications with access to various values of the system.
+        </div>
+<div class="description">
+        <p>
+This API provides an interface and methods through features such as:
+        </p>
+        <ul>
+          <li>
+ HOME_SCREEN          </li>
+          <li>
+ LOCK_SCREEN          </li>
+          <li>
+ INCOMING_CALL          </li>
+          <li>
+ NOTIFICATION_EMAIL          </li>
+        </ul>
+        <p>
+SystemSetting API may not be provided in some devices.
+The API capability can be checked by tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting"</em>).
+        </p>
+        <p>
+In addition, not all the above properties may be available even though a device supports SystemSetting API. For instance, a watch device may provide the home screen image but may not support the lock screen wallpaper. <br><br>To check if <var>SystemSettingType</var>(e.g. HOME_SCREEN, LOCK_SCREEN and so on) is supported or not, use SystemInformation API.
+        </p>
+        <ul>
+          <li>
+ HOME_SCREEN        - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.home_screen"</em>)          </li>
+          <li>
+ LOCK_SCREEN        - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.lock_screen"</em>)          </li>
+          <li>
+ INCOMING_CALL      - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.incoming_call"</em>)          </li>
+          <li>
+ NOTIFICATION_EMAIL - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.notification_email"</em>)          </li>
+        </ul>
+        <p>
+For more information on the SystemSetting features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/system-setting">System Setting Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#SystemSettingType">SystemSettingType</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#SystemSettingObject">SystemSettingObject</a>
+</li>
+<li>2.2. <a href="#SystemSettingManager">SystemSettingManager</a>
+</li>
+<li>2.3. <a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#SystemSettingObject">SystemSettingObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SystemSettingManager">SystemSettingManager</a></td>
+<td>void <a href="#SystemSettingManager::setProperty">setProperty</a> (<a href="#SystemSettingType">SystemSettingType</a> type, DOMString value, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#SystemSettingManager::getProperty">getProperty</a> (<a href="#SystemSettingType">SystemSettingType</a> type, <a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+</tr>
+<tr>
+<td><a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a></td>
+<td>void <a href="#SystemSettingSuccessCallback::onsuccess">onsuccess</a> (DOMString value)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="SystemSettingType">
+<a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingType"></a><h3>1.1. SystemSettingType</h3>
+<div class="brief">
+ Specifies the type of supported system setting.
+          </div>
+<pre class="webidl prettyprint">  enum SystemSettingType {"HOME_SCREEN", "LOCK_SCREEN", "INCOMING_CALL", "NOTIFICATION_EMAIL"};</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+The following values are supported in this release:
+          </p>
+          <ul>
+            <li>
+HOME_SCREEN - For homescreen background image.            </li>
+            <li>
+LOCK_SCREEN - For lockscreen background image.            </li>
+            <li>
+INCOMING_CALL - For incoming call ringtone.            </li>
+            <li>
+NOTIFICATION_EMAIL - For email notification alert tone.            </li>
+          </ul>
+          <p>
+Defines supporting setting types.
+The HOME_SCREEN and LOCK_SCREEN are supported for images files.
+The INCOMING_CALL and NOTIFICATION_EMAIL are supported for sound files.
+          </p>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="SystemSettingObject">
+<a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingObject"></a><h3>2.1. SystemSettingObject</h3>
+<div class="brief">
+ The SystemSettingObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemSettingObject {
+    readonly attribute <a href="#SystemSettingManager">SystemSettingManager</a> systemsetting;
+  };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemSettingObject">SystemSettingObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+There will be a <em>tizen.systemsetting </em>object that allows accessing the functionality of the SystemSetting API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="SystemSettingManager">
+<a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingManager"></a><h3>2.2. SystemSettingManager</h3>
+<div class="brief">
+ The SystemSettingManager interface is the top-level interface for the SystemSetting API that provides
+access to the module functionalities.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemSettingManager {
+
+     void setProperty(<a href="#SystemSettingType">SystemSettingType</a> type,
+              DOMString value,
+              <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+     void getProperty(<a href="#SystemSettingType">SystemSettingType</a> type,
+              <a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a> successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SystemSettingManager::setProperty">
+<a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingManager::setProperty"></a><code><b><span class="methodName">setProperty</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the property of a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setProperty(<a href="#SystemSettingType">SystemSettingType</a> type, DOMString value, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+This method allows the user to set the image or sound file specified as an input parameter as the wallpaper or ringtone of a device.
+            </p>
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+              <li>
+NotSupportedError - If the given <var>type</var> is not supported on the device               </li>
+              <li>
+UnknownError - If any other error occurs              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+      http://tizen.org/privilege/setting
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>: 
+            Setting type to set
+                </li>
+          <li class="param">
+<span class="name">value</span>: 
+           Location path of a wallpaper or ringtone file
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>: 
+ Callback function that is called when the setting value is successfully set
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+   Callback function that is called when the setting value cannot be set
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if this functionality is not allowed.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Checks whether SystemSetting API is supported */
+var systemsetting_api_supported = tizen.systeminfo.getCapability("http://tizen.org/feature/systemsetting");
+
+/* Checks whether the picture on home screen can be changed or retrieved through SystemSetting API */
+var home_screen_system_setting = tizen.systeminfo.getCapability("http://tizen.org/feature/systemsetting.home_screen");
+
+/* Defines the success callback */
+function successCallback()
+{
+   console.log("Succeeded in changing the property");
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Failed to change the property. Error: " + error.message);
+}
+
+if (systemsetting_api_supported === true)
+{
+   /* tizen.systemsetting will be available */
+   if (home_screen_system_setting === true)
+   {
+      /* Sets the home screen image */
+      /* newHomeScreenImagePath variable should hold the path of the image to be set as home screen background */
+      tizen.systemsetting.setProperty("HOME_SCREEN", newHomeScreenImagePath, successCallback, errorCallback);
+   }
+   else
+   {
+      /* if tizen.systemsetting.setProperty("HOME_SCREEN", ..) is invoked, NotSupportedError is returned through ErrorCallback */
+   }
+}
+else
+{
+   /* tizen.systemsetting will be 'undefined' */
+   console.log("SystemSetting API is not supported on the device.");
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="SystemSettingManager::getProperty">
+<a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingManager::getProperty"></a><code><b><span class="methodName">getProperty</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the value of the property of a device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getProperty(<a href="#SystemSettingType">SystemSettingType</a> type, <a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="description">
+            <p>
+This method allows the user to get the value of the specified system property as wallpaper or ringtone of a device.
+            </p>
+           </div>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> method is launched with these error types:
+            </p>
+            <ul>
+              <li>
+TypeMismatchError - If any input parameter is not compatible with the expected type for that parameter               </li>
+              <li>
+InvalidValuesError - If any of the input parameters contain an invalid value               </li>
+              <li>
+NotSupportedError - If the given <var>type</var> is not supported on the device               </li>
+              <li>
+UnknownError - If any other error occurs               </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>: 
+            Type of the property to get
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>: 
+ Callback function that is called when the setting value is successfully retrieved
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+   Callback function that is called when the setting value cannot be retrieved
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Defines the success callback */
+function getPropertySuccessCallback(value)
+{
+   /* Case: tizen.systeminfo.getCapability("http://tizen.org/feature/systemsetting.home_screen") returns 'true' */
+   console.log("Succeeded in retrieving the property. The value is " + value);
+}
+
+/* Defines the error callback */
+function errorCallback(error)
+{
+   console.log("Failed to get the property. Error: " + error.message);
+   /* If the device does not support to get the image on home screen, NotSupportedError is thrown */
+}
+
+tizen.systemsetting.getProperty("HOME_SCREEN", getPropertySuccessCallback, errorCallback);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SystemSettingSuccessCallback">
+<a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingSuccessCallback"></a><h3>2.3. SystemSettingSuccessCallback</h3>
+<div class="brief">
+ The SystemSettingSuccessCallback interface defines the success callback for getProperty().
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SystemSettingSuccessCallback {
+    void onsuccess(DOMString value);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SystemSettingSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::SystemSetting::SystemSettingSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the value of the system setting property is successfully retrieved.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString value);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>: 
+ The value of the requested property.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module SystemSetting {
+
+  [NoInterfaceObject] interface SystemSettingObject {
+    readonly attribute <a href="#SystemSettingManager">SystemSettingManager</a> systemsetting;
+  };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemSettingObject">SystemSettingObject</a>;
+
+  enum SystemSettingType {"HOME_SCREEN", "LOCK_SCREEN", "INCOMING_CALL", "NOTIFICATION_EMAIL"};
+
+  [NoInterfaceObject] interface SystemSettingManager {
+
+     void setProperty(<a href="#SystemSettingType">SystemSettingType</a> type,
+              DOMString value,
+              <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+     void getProperty(<a href="#SystemSettingType">SystemSettingType</a> type,
+              <a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a> successCallback,
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface SystemSettingSuccessCallback {
+    void onsuccess(DOMString value);
+  };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

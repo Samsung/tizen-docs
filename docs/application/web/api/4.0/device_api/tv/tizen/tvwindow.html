@@ -1,0 +1,1387 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>TVWindow API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::TVWindow">
+<div class="supported-platforms"><img title="Optional" src="../../../images/tv_s_w_optional.png"></div>
+<div class="title"><h1>TVWindow API</h1></div>
+<div class="brief">
+        </div>
+<div class="description">
+        <p>
+This API provides a way to embed a video source in a Tizen Web Application running on a device associated with the TV.
+It allows an available video source to be selected and shown on or hidden from the display in a Tizen Web Application.
+There will be a <em>tizen.tvwindow</em> object that allows access to the functionality of the TV Window API.
+To show a TV signal, execute the
+<em>show</em> function.
+A TV source is controlled by the user or
+by you with the Tizen Web Device APIs. You do not have to implement any routines if you
+do not want to interact with the TV image.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#WindowType">WindowType</a>
+</li>
+<li>
+                    1.2. <a href="#MeasurementUnit">MeasurementUnit</a>
+</li>
+<li>
+                    1.3. <a href="#AspectRatio">AspectRatio</a>
+</li>
+<li>
+                    1.4. <a href="#ZPosition">ZPosition</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#TVWindowManagerObject">TVWindowManagerObject</a>
+</li>
+<li>2.2. <a href="#TVWindowManager">TVWindowManager</a>
+</li>
+<li>2.3. <a href="#VideoResolution">VideoResolution</a>
+</li>
+<li>2.4. <a href="#VideoResolutionChangeCallback">VideoResolutionChangeCallback</a>
+</li>
+<li>2.5. <a href="#AvailableWindowListCallback">AvailableWindowListCallback</a>
+</li>
+<li>2.6. <a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a>
+</li>
+<li>2.7. <a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#TVWindowManagerObject">TVWindowManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#TVWindowManager">TVWindowManager</a></td>
+<td>
+<div>void <a href="#TVWindowManager::getAvailableWindows">getAvailableWindows</a> (<a href="#AvailableWindowListCallback">AvailableWindowListCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#TVWindowManager::setSource">setSource</a> (<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> videoSource, <a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type)</div>
+<div>
+<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> <a href="#TVWindowManager::getSource">getSource</a> (optional <a href="#WindowType">WindowType</a>? type)</div>
+<div>void <a href="#TVWindowManager::show">show</a> (<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle, optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition)</div>
+<div>void <a href="#TVWindowManager::hide">hide</a> (<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type)</div>
+<div>void <a href="#TVWindowManager::getRect">getRect</a> (<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit, optional <a href="#WindowType">WindowType</a>? type)</div>
+<div>
+<a href="#VideoResolution">VideoResolution</a> <a href="#TVWindowManager::getVideoResolution">getVideoResolution</a> (optional <a href="#WindowType">WindowType</a>? type)</div>
+<div>long <a href="#TVWindowManager::addVideoResolutionChangeListener">addVideoResolutionChangeListener</a> (<a href="#VideoResolutionChangeCallback">VideoResolutionChangeCallback</a> callback, optional <a href="#WindowType">WindowType</a>? type)</div>
+<div>void <a href="#TVWindowManager::removeVideoResolutionChangeListener">removeVideoResolutionChangeListener</a> (long listenerId)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#VideoResolution">VideoResolution</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#VideoResolutionChangeCallback">VideoResolutionChangeCallback</a></td>
+<td><div>void <a href="#VideoResolutionChangeCallback::onchanged">onchanged</a> (<a href="#VideoResolution">VideoResolution</a> resolution, <a href="#WindowType">WindowType</a> type)</div></td>
+</tr>
+<tr>
+<td><a href="#AvailableWindowListCallback">AvailableWindowListCallback</a></td>
+<td><div>void <a href="#AvailableWindowListCallback::onsuccess">onsuccess</a> (<a href="#WindowType">WindowType</a>[] type)</div></td>
+</tr>
+<tr>
+<td><a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a></td>
+<td><div>void <a href="#WindowRectangleSuccessCallback::onsuccess">onsuccess</a> (DOMString[] windowRect, <a href="#WindowType">WindowType</a> type)</div></td>
+</tr>
+<tr>
+<td><a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a></td>
+<td><div>void <a href="#SourceChangedSuccessCallback::onsuccess">onsuccess</a> (<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> source, <a href="#WindowType">WindowType</a> type)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">          -         -
+             -    -
+               -
+    ------------------------
+    |                      |
+    |         +---------+  |
+    |         |TV window|  |
+    |         +---------+  |
+    |                      |
+    |   YOUR APPLICATION   |
+    |                      |
+    |                      |
+    ------------------------
+ </pre>
+</div>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="WindowType">
+<a class="backward-compatibility-anchor" name="::TVWindow::WindowType"></a><h3>1.1. WindowType</h3>
+<div class="brief">
+ An enumerator to indicate the window type.
+          </div>
+<pre class="webidl prettyprint">    enum WindowType {
+        "MAIN",
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ MAIN - The main video window, which can be show anywhere            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="MeasurementUnit">
+<a class="backward-compatibility-anchor" name="::TVWindow::MeasurementUnit"></a><h3>1.2. MeasurementUnit</h3>
+<div class="brief">
+ An enumerator to indicate the units of measurement for specifying the measurement unit when calling <b>getRect()</b>.
+          </div>
+<pre class="webidl prettyprint">    enum MeasurementUnit {
+        "px",
+        "%"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ px - pixel unit            </li>
+            <li>
+ % - percentage unit for specifying relative size            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="AspectRatio">
+<a class="backward-compatibility-anchor" name="::TVWindow::AspectRatio"></a><h3>1.3. AspectRatio</h3>
+<div class="brief">
+ An enumerator to indicate the aspect ratio of video source.
+          </div>
+<pre class="webidl prettyprint">    enum AspectRatio{
+        "ASPECT_RATIO_1x1",
+        "ASPECT_RATIO_4x3",
+        "ASPECT_RATIO_16x9",
+        "ASPECT_RATIO_221x100"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ ASPECT_RATIO_1x1 - 1:1            </li>
+            <li>
+ ASPECT_RATIO_4x3 - 4:3            </li>
+            <li>
+ ASPECT_RATIO_16x9 - 16:9            </li>
+            <li>
+ ASPECT_RATIO_221x100 - 2.21:1            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="ZPosition">
+<a class="backward-compatibility-anchor" name="::TVWindow::ZPosition"></a><h3>1.4. ZPosition</h3>
+<div class="brief">
+ An enumerator to indicate the z position of the TV window or the relative position of the TV window and the Web Application.
+          </div>
+<pre class="webidl prettyprint">    enum ZPosition{
+        "FRONT",
+        "BEHIND"
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <ul>
+            <li>
+ FRONT - Displays the TV window in front of the Web Application            </li>
+            <li>
+ BEHIND - Displays the TV window behind the Web Application            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="TVWindowManagerObject">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManagerObject"></a><h3>2.1. TVWindowManagerObject</h3>
+<div class="brief">
+ This interface defines what is instantiated by the <em>tizen</em> object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface TVWindowManagerObject {
+        readonly attribute <a href="#TVWindowManager">TVWindowManager</a> tvwindow;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVWindowManagerObject">TVWindowManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+There will be a <em>tizen.tvwindow</em> object that allows access to the
+functionality of the TV Window API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="TVWindowManager">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager"></a><h3>2.2. TVWindowManager</h3>
+<div class="brief">
+ This interface provides access to the API funtionalities through the <em>tizen.tvwindow</em> interface.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface TVWindowManager {
+        void getAvailableWindows(<a href="#AvailableWindowListCallback">AvailableWindowListCallback</a> successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setSource(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> videoSource,
+                       <a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a> successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                       optional <a href="#WindowType">WindowType</a>? type) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> getSource(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback,
+                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                 optional DOMString[]? rectangle,
+                 optional <a href="#WindowType">WindowType</a>? type,
+                 optional <a href="#ZPosition">ZPosition</a>? zPosition) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void hide(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                  optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback,
+                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                 optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit,
+                 optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#VideoResolution">VideoResolution</a> getVideoResolution(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addVideoResolutionChangeListener(<a href="#VideoResolutionChangeCallback">VideoResolutionChangeCallback</a> callback,
+                                       optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeVideoResolutionChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="TVWindowManager::getAvailableWindows">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::getAvailableWindows"></a><code><b><span class="methodName">getAvailableWindows</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the list of available windows.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAvailableWindows(<a href="#AvailableWindowListCallback">AvailableWindowListCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke when a list of the available windows is retrieved successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function successCB(availableWindows)
+{
+   for (var i = 0; i &lt; availableWindows.length; i++)
+   {
+      console.log("Window [" + i + "] = " + availableWindows[i]);
+   }
+}
+
+try
+{
+   tizen.tvwindow.getAvailableWindows(successCB);
+}
+catch (error)
+{
+   console.log("Error name = " + error.name + ", Error message = " + error.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::setSource">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::setSource"></a><code><b><span class="methodName">setSource</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Changes the source of a TV window.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setSource(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> videoSource, <a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">videoSource</span>:
+ The video source to set <br>The possible video sources can be obtained through <b>tizen.systeminfo.getPropertyValue("VIDEOSOURCE")</b>.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke when the intput source has been changed successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs
+                </li>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The window type - by default, this attribute is set to <var>MAIN</var>                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var connectedVideoSources;
+function successCB(source, type)
+{
+   console.log("setSource() is successfully done. source name = " + source.name + ", source port number = " + source.number);
+}
+
+function errorCB(error)
+{
+   console.log("setSource() is failed. Error name = " + error.name + ", Error message = " + error.message);
+}
+
+function systemInfoSuccessCB(videoSource)
+{
+   connectedVideoSources = videoSource.connected;
+   for (var i = 0; i &lt; connectedVideoSources.length; i++)
+   {
+      console.log("--------------- Source " + i + " ---------------");
+      console.log("type = " + connectedVideoSources[i].type);
+      console.log("number = " + connectedVideoSources[i].number);
+      if (connectedVideoSources[i].type === "HDMI")
+      {
+         /* Set HDMI as input source of the TV window */
+         tizen.tvwindow.setSource(connectedVideoSources[i], successCB, errorCB);
+         break;
+      }
+   }
+}
+
+function systemInfoErrorCB(error)
+{
+   console.log("getPropertyValue(VIDEOSOURCE) is failed. Error name = " + error.name + ", Error message = " + error.message);
+}
+
+try
+{
+   tizen.systeminfo.getPropertyValue("VIDEOSOURCE", systemInfoSuccessCB, systemInfoErrorCB);
+}
+catch (error)
+{
+   console.log("Error name = " + error.name + ", Error message = " + error.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::getSource">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::getSource"></a><code><b><span class="methodName">getSource</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets information about the current source of a specified TV window.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> getSource(optional <a href="#WindowType">WindowType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The window type - by default, this attribute is set to <var>MAIN</var>                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ SystemInfoVideoSourceInfo The information about the current video source
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   var source = tizen.tvwindow.getSource();
+   console.log("type = " + source.type);
+   console.log("number = " + source.number);
+}
+catch (error)
+{
+   console.log("Error name = " + error.name + ", Error message = " + error.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::show">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::show"></a><code><b><span class="methodName">show</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the display area of a TV window and shows it on the display.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle, optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+The <em>rectangle</em> array requires exactly four elements which are described below:
+            </p>
+            <ul>
+              <li>
+The first element indicates the x coordinate of the top left corner of the TV window (distance from the left edge of the screen).              </li>
+              <li>
+The second element indicates the y coordinate of the top left corner of the TV window (distance from the top edge of the screen).              </li>
+              <li>
+The third element indicates the width of the TV window.              </li>
+              <li>
+The fourth element indicates the height of the TV window.              </li>
+            </ul>
+            <p>
+Each element of <em>rectangle</em> can be described in either absolute value by using pixel units "px"
+or relative value by using percentage units "%". If you do not specify any unit after a value then it will be taken as an absolute value.
+            </p>
+            <p>
+The <em>errorCallback</em> is invoked with these error types:
+            </p>
+            <ul>
+              <li>
+<em>InvalidValuesError</em> will be thrown if <em>rectangle</em> has any element with invalid format (e.g. "10p") or it does not have 4 elements.              </li>
+              <li>
+<em>NotSupportedError</em> will be thrown if you set <em>rectangle</em> which is not within the boundary of the display area or when the TV window is not supported in the current screen orientation.               </li>
+              <li>
+<em>TypeMismatchError</em> will be thrown if <em>rectangle</em> is not an array.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method which will be invoked when the position and size of the TV window has been changed successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method which will be invoked when an error occurs
+                </li>
+          <li class="param">
+<span class="name">rectangle</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An array that contains information about the position and size of a specified TV window as a string with units <br>Without this parameter, the TV window will have the same size and location as when this method last suceeded.<br>But, if a rectangle has never been specified, the TV window will be shown in full screen mode.
+                </li>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The window type - by default, this attribute is set to <var>MAIN</var>                </li>
+          <li class="param">
+<span class="name">zPosition</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Specifies whether the TV window should be in front of or behind the Web Application since Tizen 2.4<br> By default, this parameter is set to <var>FRONT</var>.<br>If this parameter is set to null or <var>FRONT</var>, this method behaves in the same way as it did before Tizen 2.4.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function successCB(windowRect, type)
+{
+   /* You will get exactly what you put as rectangle argument of show() through windowRect */
+   /* Expected result: ["0", "0px", "50%", "540px"] */
+   console.log("Rectangle: [" + windowRect[0] + ", " + windowRect[1] + ", " + windowRect[2] + ", " + windowRect[3] + "]");
+}
+
+try
+{
+   tizen.tvwindow.show(successCB, null, ["0", "0px", "50%", "540px"], "MAIN");
+}
+catch (error)
+{
+   console.log("error: " + error.name);
+}
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function successCB(windowRect, type)
+{
+   /* Expected result: ["0", "0", "50%", "50%"] */
+   console.log("Rectangle: [" + windowRect[0] + ", " + windowRect[1] + ", " + windowRect[2] + ", " + windowRect[3] + "]");
+}
+
+try
+{
+   tizen.tvwindow.show(successCB, null, ["0", "0", "50%", "50%"], "MAIN");
+}
+catch (error)
+{
+   console.log("error: " + error.name);
+}
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function successCB(windowRect, type)
+{
+   /* Expected result: ["10.5%", "10%", "900", "500px"] */
+   console.log("Rectangle: [" + windowRect[0] + ", " + windowRect[1] + ", " + windowRect[2] + ", " + windowRect[3] + "]");
+}
+
+try
+{
+   tizen.tvwindow.show(successCB, null, ["10.5%", "10%", "900", "500px"]);
+}
+catch (error)
+{
+   console.log("error: " + error.name);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::hide">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::hide"></a><code><b><span class="methodName">hide</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Hides a TV window which is shown.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void hide(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke when the window is hidden successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs
+                </li>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The window type - by default, this attribute is set to <var>MAIN</var>                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="TVWindowManager::getRect">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::getRect"></a><code><b><span class="methodName">getRect</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the area information of a TV window which is shown.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit, optional <a href="#WindowType">WindowType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+According to the specified <b>unit</b>, information about the area will be passed to an array that contains 4 strings through <em>WindowRectangleSuccessCallback</em> as follows :
+            </p>
+            <ul>
+              <li>
+If you set <em>"px"</em> as <em>unit</em>, ["0px", "0px", "1920px", "1080px"]               </li>
+              <li>
+If you set <em>"%"</em> as <em>unit</em>, ["0%", "0%", "100%", "100%"]               </li>
+            </ul>
+            <p>
+If you omit <b>unit</b>, the pixel(<var>"px"</var>) unit will be used as a default unit.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The method to invoke when the position and size of the TV window has been obtained successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs
+                </li>
+          <li class="param">
+<span class="name">unit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The measurement unit for specifying the display area - by default, this attribute is set to <em>"px"</em>                </li>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The window type - by default, this attribute is set to <var>MAIN</var>                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function rectangleCB(windowRect, type)
+{
+   /* You call getRect() without specifying a unit, it expresses the area information with pixel unit */
+   /* Expected result: ["0px", "0px", "960px", "540px"] if the screen resolution of a device is 1920 x 1080 */
+   console.log("Rectangle: [" + windowRect[0] + ", " + windowRect[1] + ", " + windowRect[2] + ", " + windowRect[3] + "]");
+}
+
+function successCB(windowRect, type)
+{
+   /* You will get exactly what you put as rectangle argument through windowRect */
+   /* Expected result: ["0", "0", "50%", "50%"] */
+   console.log("Rectangle: [" + windowRect[0] + ", " + windowRect[1] + ", " + windowRect[2] + ", " + windowRect[3] + "]");
+   tizen.tvwindow.getRect(rectangleCB);
+}
+
+try
+{
+   tizen.tvwindow.show(successCB, null, ["0", "0", "50%", "50%"]);
+}
+catch (error)
+{
+   console.log("error: " + error.name);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::getVideoResolution">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::getVideoResolution"></a><code><b><span class="methodName">getVideoResolution</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets video resolution information.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#VideoResolution">VideoResolution</a> getVideoResolution(optional <a href="#WindowType">WindowType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The window type - by default, this attribute is set to <var>MAIN</var>                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ VideoResolution current video resolution information
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var res = tizen.tvwindow.getVideoResolution();
+console.log("Video resolution: " + res.width + "x" + res.height + " pixels");
+console.log("Frequency: " + res.frequency +"Hz");
+if (res.aspectRatio === "ASPECT_RATIO_16x9")
+{
+   console.log("Widescreen on");
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::addVideoResolutionChangeListener">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::addVideoResolutionChangeListener"></a><code><b><span class="methodName">addVideoResolutionChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a video resolution listener for getting notified about resolution changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addVideoResolutionChangeListener(<a href="#VideoResolutionChangeCallback">VideoResolutionChangeCallback</a> callback, optional <a href="#WindowType">WindowType</a>? type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>:
+ The method to invoke when the resolution has been changed
+                </li>
+          <li class="param">
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The window type. By default, this parameter is set to <var>MAIN</var>                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long The identifier of the resolution change listener.
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if it fails to register a listener.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function change(res, type)
+{
+   console.log("Switched to new resolution: " + res.width + "x" + res.height);
+   console.log("New frequency: " + res.frequency);
+   if (res.aspectRatio === "ASPECT_RATIO_16x9")
+   {
+      console.log("Widescreen is now turned on");
+   }
+}
+
+try
+{
+   var watch = tizen.tvwindow.addVideoResolutionChangeListener(change);
+}
+catch (error)
+{
+   console.log("Error name = " + error.name + ", Error message = " + error.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="TVWindowManager::removeVideoResolutionChangeListener">
+<a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::removeVideoResolutionChangeListener"></a><code><b><span class="methodName">removeVideoResolutionChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes the listener to stop receiving notifications for the video resolution changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeVideoResolutionChangeListener(long listenerId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/tv.window
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">listenerId</span>:
+ The identifier of the listener for resolution changes
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="VideoResolution">
+<a class="backward-compatibility-anchor" name="::TVWindow::VideoResolution"></a><h3>2.3. VideoResolution</h3>
+<div class="brief">
+ The VideoResolution interface contains information about current video resolution.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface VideoResolution {
+
+        readonly attribute long width;
+
+        readonly attribute long height;
+
+        readonly attribute long frequency;
+
+        readonly attribute <a href="#AspectRatio">AspectRatio</a> aspectRatio;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="VideoResolution::width">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">width</span></span><div class="brief">
+ Video width in pixels.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</li>
+<li class="attribute" id="VideoResolution::height">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">height</span></span><div class="brief">
+ Video height in pixels.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</li>
+<li class="attribute" id="VideoResolution::frequency">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">frequency</span></span><div class="brief">
+ Vertical frequency rate in Hz.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</li>
+<li class="attribute" id="VideoResolution::aspectRatio">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">AspectRatio </span><span class="name">aspectRatio</span></span><div class="brief">
+ Video aspect ratio.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="VideoResolutionChangeCallback">
+<a class="backward-compatibility-anchor" name="::TVWindow::VideoResolutionChangeCallback"></a><h3>2.4. VideoResolutionChangeCallback</h3>
+<div class="brief">
+ This interface defines a video resolution change callback for getting notified about video resolution changes.
+          </div>
+<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface VideoResolutionChangeCallback {
+        void onchanged(<a href="#VideoResolution">VideoResolution</a> resolution, <a href="#WindowType">WindowType</a> type);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="VideoResolutionChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::TVWindow::VideoResolutionChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method invoked when the video resolution has been changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#VideoResolution">VideoResolution</a> resolution, <a href="#WindowType">WindowType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">resolution</span>:
+ The resolution that the video has changed to
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ The window type
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AvailableWindowListCallback">
+<a class="backward-compatibility-anchor" name="::TVWindow::AvailableWindowListCallback"></a><h3>2.5. AvailableWindowListCallback</h3>
+<div class="brief">
+ This interface defines a callback that is invoked when a list of available windows is retrieved successfully.
+          </div>
+<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface AvailableWindowListCallback {
+        void onsuccess(<a href="#WindowType">WindowType</a>[] type);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AvailableWindowListCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::TVWindow::AvailableWindowListCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method invoked when a list of available windows is retrieved.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#WindowType">WindowType</a>[] type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ The available window types
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="WindowRectangleSuccessCallback">
+<a class="backward-compatibility-anchor" name="::TVWindow::WindowRectangleSuccessCallback"></a><h3>2.6. WindowRectangleSuccessCallback</h3>
+<div class="brief">
+ This interface includes the success callback that is invoked when the position and size of a TV window has been changed or retrieved.
+          </div>
+<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface WindowRectangleSuccessCallback {
+        void onsuccess(DOMString[] windowRect, <a href="#WindowType">WindowType</a> type);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="WindowRectangleSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::TVWindow::WindowRectangleSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method invoked when the position and size of the TV window has been changed or retrieved.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] windowRect, <a href="#WindowType">WindowType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method returns information <b>windowRect</b> and <b>type</b>.
+For more detailed information about <em>windowRect</em>, see the description of <em>show()</em>.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">windowRect</span>:
+ An array that contains information about the position and size of a specified TV  window as a string with units
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ The window type
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="SourceChangedSuccessCallback">
+<a class="backward-compatibility-anchor" name="::TVWindow::SourceChangedSuccessCallback"></a><h3>2.7. SourceChangedSuccessCallback</h3>
+<div class="brief">
+ This interface includes the success callback that is invoked when the source has been set.
+          </div>
+<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface SourceChangedSuccessCallback {
+        void onsuccess(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> source, <a href="#WindowType">WindowType</a> type);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SourceChangedSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::TVWindow::SourceChangedSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method invoked when the new source has been set.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> source, <a href="#WindowType">WindowType</a> type);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method returns information <b>source</b> and <b>type</b>.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">source</span>:
+ A descriptor object <em>SystemInfoVideoSourceInfo</em> that contains information about the source used by TV
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ The window type
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of this application on a device with a TV picture-in-picture support, define the following requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/tv.pip</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module TVWindow {
+
+    enum WindowType {
+        "MAIN",
+    };
+
+    enum MeasurementUnit {
+        "px",
+        "%"
+    };
+
+    enum AspectRatio{
+        "ASPECT_RATIO_1x1",
+        "ASPECT_RATIO_4x3",
+        "ASPECT_RATIO_16x9",
+        "ASPECT_RATIO_221x100"
+    };
+
+    enum ZPosition{
+        "FRONT",
+        "BEHIND"
+    };
+
+    [NoInterfaceObject] interface TVWindowManagerObject {
+        readonly attribute <a href="#TVWindowManager">TVWindowManager</a> tvwindow;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVWindowManagerObject">TVWindowManagerObject</a>;
+
+    [NoInterfaceObject] interface TVWindowManager {
+        void getAvailableWindows(<a href="#AvailableWindowListCallback">AvailableWindowListCallback</a> successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setSource(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> videoSource,
+                       <a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a> successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                       optional <a href="#WindowType">WindowType</a>? type) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> getSource(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback,
+                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                 optional DOMString[]? rectangle,
+                 optional <a href="#WindowType">WindowType</a>? type,
+                 optional <a href="#ZPosition">ZPosition</a>? zPosition) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void hide(<a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                  optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback,
+                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                 optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit,
+                 optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#VideoResolution">VideoResolution</a> getVideoResolution(optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long addVideoResolutionChangeListener(<a href="#VideoResolutionChangeCallback">VideoResolutionChangeCallback</a> callback,
+                                       optional <a href="#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeVideoResolutionChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [NoInterfaceObject] interface VideoResolution {
+
+        readonly attribute long width;
+
+        readonly attribute long height;
+
+        readonly attribute long frequency;
+
+        readonly attribute <a href="#AspectRatio">AspectRatio</a> aspectRatio;
+    };
+
+    [Callback = FunctionOnly, NoInterfaceObject] interface VideoResolutionChangeCallback {
+        void onchanged(<a href="#VideoResolution">VideoResolution</a> resolution, <a href="#WindowType">WindowType</a> type);
+    };
+
+    [Callback = FunctionOnly, NoInterfaceObject] interface AvailableWindowListCallback {
+        void onsuccess(<a href="#WindowType">WindowType</a>[] type);
+    };
+
+    [Callback = FunctionOnly, NoInterfaceObject] interface WindowRectangleSuccessCallback {
+        void onsuccess(DOMString[] windowRect, <a href="#WindowType">WindowType</a> type);
+    };
+
+    [Callback = FunctionOnly, NoInterfaceObject] interface SourceChangedSuccessCallback {
+        void onsuccess(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> source, <a href="#WindowType">WindowType</a> type);
+    };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -1,14 +1,14 @@
 # Creating Your First Tizen Wearable Web Watch Application
 
-**Welcome to Tizen wearafble Web watch application development!**
+**Welcome to Tizen wearable Web watch application development!**
 
 A wearable Web application is basically a Web site stored on a wearable device. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript, and run it on Tizen wearable devices to display a customized watch face to the user.
 
 Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web watch application, which displays an analog watch face with the current time on the screen:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2.  [Create a wearable Web watch project](#create) using the Tizen Studio.
 
@@ -26,7 +26,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/cover-web.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/overview.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -167,7 +167,7 @@ Pay attention to the following main issues in the application source code, to un
 
 -   On a low-powered wearable device, an ambient mode is available. In this mode, the watch application shows a limited UI and receives only the ambient tick event every minute to reduce power consumption.
 
-    If the application contains a custom UI for the [ambient mode](../../tutorials/details/event-handling.md#ambient), the ambient mode support is also shown in the `config.xml` file. However, this sample application does not support a custom ambient UI.
+    If the application contains a custom UI for the [ambient mode](../../tutorials/event-handling.md#ambient), the ambient mode support is also shown in the `config.xml` file. However, this sample application does not support a custom ambient UI.
 
 <a name="build"></a>
 ## Building Your Application
@@ -261,10 +261,11 @@ To run the application on the emulator:
         ![Application running in the emulator](media/emulator_running_watch_ww.png)
 
         > **Note**  
-		> If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
+        > If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
     <a name="watchface"></a>
-    3.  Change the watch face.
+
+    3. Change the watch face.
 
         To change the device watch face and make the installed watch application visible on the home screen:
 
@@ -532,7 +533,7 @@ By default, the watch uses a background image. If you change the CSS code and re
 
 ### Showing the Current Time with W3C
 
-To display the current time, use the [CSS Transforms](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#transforms) API in the `app.js` file to rotate the clock hand images:
+To display the current time, use the [CSS Transforms](../../api/latest/w3c_api/w3c_api_w.html#transforms) API in the `app.js` file to rotate the clock hand images:
 
 1.  When the application is shown on the device screen, initialize it to update the clock hands every second:
 
@@ -574,4 +575,3 @@ To display the current time, use the [CSS Transforms](../../../../org.tizen.web.
         element.style.transform = 'rotate(' + angle + 'deg)';
     }
     ```
-

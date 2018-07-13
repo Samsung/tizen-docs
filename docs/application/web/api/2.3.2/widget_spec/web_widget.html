@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="../css/snippet.css" />
+	<script type="text/javascript" src="../scripts/snippet.js"></script>
+	<script type="text/javascript" src="../scripts/jquery.util.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../scripts/common.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../scripts/core.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../scripts/search.js" charset="utf-8"></script>
+        <title>Tizen Wearable Web Widget Specification</title>
+</head>
+
+<body>
+
+<h1>Tizen Wearable Web Widget Specification</h1>
+
+    <div class="brief">
+         <p>This document describes the complete list of features supported by the Widget engine.</p>
+
+<h3>
+<a id="user-content-widget-specification" class="anchor" href="#widget-specification" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Widget Specification</h3>
+
+<table class="api-list"><thead><tr><th>Contents</th><th>Description</th><th>Version (Since)</th><th>Wearable</th><th>Supported on<br>Wearable Emulator</th></tr>
+       </thead>
+    <tbody>
+        <tr>
+            <td><a href="#user-content-configxml">config.xml</a></td>
+            <td>This section describes how to configure config.xml to define necessary properties required by a Web widget.</td>
+            <td>2.3.2</td>
+            <td>Mandatory</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><a href="#user-content-html">HTML</a></td>
+            <td>This section describes the complete list of supported HTML tags and attributes by the Web widget engine.</td>
+            <td>2.3.2</td>
+            <td>Mandatory</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><a href="#user-content-dom">DOM</a></td>
+            <td>This section describes the complete list of supported DOM APIs by the Web widget engine.</td>
+            <td>2.3.2</td>
+            <td>Mandatory</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><a href="#user-content-css">CSS</a></td>
+            <td>This section describes the complete list of supported CSS properties by the Web widget engine.</td>
+            <td>2.3.2</td>
+            <td>Mandatory</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><a href="#user-content-selectors">Selectors</a></td>
+            <td>This section describes the complete list of supported selectors by the Web widget engine.</td>
+            <td>2.3.2</td>
+            <td>Mandatory</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><a href="#user-content-additional-supported-apis">Additional Supported APIs</a></td>
+            <td>This section describes the complete list of additional APIs that are not mentioned above.</td>
+            <td>2.3.2</td>
+            <td>Mandatory</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td><a href="#user-content-web-device-api">Web Device API</a></td>
+            <td>This section describes Web device APIs supported by Widget Engine.</td>
+            <td>2.3.2</td>
+            <td>Mandatory</td>
+            <td>Yes</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>
+<a id="user-content-encoding-scheme" class="anchor" href="#encoding-scheme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Encoding Scheme</h3>
+
+<p>All files (i.e., .html, .css, and .js) are to be encoded in UTF-8. This is needed for supporting multilanguages. Widgets may not be displayed correctly especially when widgets contain non-ASCII characters when encodings other than UTF-8 are used.</p>
+
+<h2>
+<a id="user-content-configxml" class="anchor" href="#configxml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>config.xml</h2>
+
+<p><code>config.xml</code> is used to define all necessary properties required by a Web widget. It is mandatory to have a <code>config.xml</code> for each Web widget. This section describes the complete list of supported elements with their usages when defining properties.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Element</th>
+            <th rowspan="2" style="width: 25%">Description</th>
+            <th rowspan="2">Occurrence</th>
+            <th rowspan="2">Allowed Child Elements</th>
+            <th colspan="4" style="width: 25%">Attributes</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Required</th>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="3">&lt;tizen:app-widget&gt;</td>
+            <td rowspan="3">Defines the basic information about a Web widget</td>
+            <td rowspan="3">0 or more</td>
+            <td rowspan="3">
+                &lt;tizen:widget-label/&gt; <br/>
+                &lt;tizen:widget-content/&gt;
+            </td>
+            <td>id</td>
+            <td>required</td>
+            <td>String, which comprises 1 or more characters (0~9, a~z, A~Z)</td>
+            <td>Unique ID of the Web widget. The ID must be in &lt;TIZEN_APPLICATION_ID&gt;.&lt;String&gt; format</td>
+        </tr>
+        <tr>
+            <td>primary</td>
+            <td>required</td>
+            <td>true | false</td>
+            <td>Defines a primary Web widget among Web widgets in a Web app</td>
+        </tr>
+        <tr>
+            <td>max-instance</td>
+            <td>optional</td>
+            <td>integer</td>
+            <td>Limits the number of widget instances concurrently executable for a Web app. Multi-instances is not supported in Tizen 2.3.2 for Wearable, so its value can only be 1</td>
+        </tr>
+
+
+        <tr>
+            <td rowspan="1">&lt;tizen:widget-label&gt;</td>
+            <td rowspan="1">Defines the name of the Web widget</td>
+            <td rowspan="1">1 or more</td>
+            <td rowspan="1">None</td>
+            <td>xml:lang</td>
+            <td>optional</td>
+            <td>String</td>
+            <td>Specifies the language of the box label (available values: the IANA Language Subtags)</td>
+        </tr>
+
+        <tr>
+            <td rowspan="1">&lt;tizen:widget-content&gt;</td>
+            <td rowspan="1">Defines the starting page of the Web widget</td>
+            <td rowspan="1">1</td>
+            <td rowspan="1"> &lt;tizen:widget-size/&gt;</td>
+            <td>src</td>
+            <td>required</td>
+            <td>String</td>
+            <td>Local file path, relative to the source Web app directory, of the Widget's starting page</td>
+        </tr>
+
+        <tr>
+            <td rowspan="1">&lt;tizen:widget-size&gt;</td>
+            <td rowspan="1">Defines the size of the Web widget. Available value is 2x2</td>
+            <td rowspan="1">1</td>
+            <td rowspan="1">None</td>
+            <td>preview</td>
+            <td>required</td>
+            <td>String</td>
+            <td>Image file path, relative to the source Web app directory, of the box content displayed in the Widget viewer</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">&lt;tizen:widget-metadata&gt;</td>
+            <td rowspan="2">Defines a (key, value) pair that can be read by a Web widget via widget_service API. Its main use is to allow developers to define a constant to be read by a Web widget</td>
+            <td rowspan="2">1 or more</td>
+            <td rowspan="2">None</td>
+            <td>key</td>
+            <td>required</td>
+            <td>String</td>
+            <td>Key of a constant</td>
+        </tr>
+        <tr>
+            <td>value</td>
+            <td>required</td>
+            <td>String</td>
+            <td>Value of a constant</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<h2>
+<a id="user-content-html" class="anchor" href="#html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML</h2>
+
+<p>This section describes the complete list of supported HTML tags and attributes by the Web widget engine.
+Please note that only the tags and attributes mentioned explicitly in this section are supported. In addition, the Widget engine supports only HTML5 documents, and it assumes all input documents are HTML5 documents even if <code>!DOCTYPE</code> is not explicitly specified.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>HTML Tag</th>
+            <th>Attribute</th>
+            <th>Allowed Value</th>
+            <th>Usage</th>
+            <th style="width: 20%">Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="4"><a href="https://www.w3.org/TR/html5/dom.html#global-attributes">Global Attributes</a></td>
+            <td>class</td>
+            <td>&lt;string&gt;</td>
+            <td><code>&lt;element class="classname"&gt;</code></td>
+            <td rowspan="4">&lt;css_styles&gt; must conform to the widget engine's <a href="#user-content-css">CSS</a> rules</td>
+        </tr>
+        <tr>
+            <td>dir</td>
+            <td>ltr  |  rtl</td>
+            <td><code>&lt;element dir="ltr"&gt;</code></td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>&lt;string&gt;</td>
+            <td><code>&lt;element id="id"&gt;</code></td>
+        </tr>
+        <tr>
+            <td>style</td>
+            <td>&lt;css_styles&gt;</td>
+            <td><code>&lt;element style="css_styles"&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/semantics.html#the-root-element">html</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/document-metadata.html#the-head-element">head</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/html5/document-metadata.html#the-link-element">link</a></td>
+            <td>rel</td>
+            <td>stylesheet</td>
+            <td><code>&lt;link rel="stylesheet"&gt;</code></td>
+            <td rowspan="3">&lt;URL&gt; must be a local path</td>
+        </tr>
+        <tr>
+            <td>href</td>
+            <td>&lt;URL&gt;</td>
+            <td><code>&lt;link href="local_path"&gt;</code></td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>text/css</td>
+            <td><code>&lt;link type="text/css"&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/html5/document-metadata.html#the-meta-element">meta</a></td>
+            <td>charset</td>
+            <td>UTF-8</td>
+            <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+            <td rowspan="3"><code>name</code> and <code>content</code> are used to set the widget background transparent only. To do so, both <code>name</code> and <code>content</code> must be set in the same <code>meta</code> tag</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>tizen-widget-transparent-background</td>
+            <td><code>&lt;meta name="tizen-widget-transparent-background" content="yes"&gt;</code></td>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>yes | no</td>
+            <td><code>&lt;meta name="tizen-widget-transparent-background" content="yes"&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/document-metadata.html#the-style-element">style</a></td>
+            <td>type</td>
+            <td>text/css</td>
+            <td><code>&lt;style type="text/css"&gt;</code></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/sections.html#the-body-element">body</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/grouping-content.html#the-p-element">p</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/grouping-content.html#the-div-element">div</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/text-level-semantics.html#the-span-element">span</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/text-level-semantics.html#the-br-element">br</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/html5/embedded-content-0.html#the-img-element">image</td>
+            <td>src</td>
+            <td>&lt;URL&gt;</td>
+            <td><code>&lt;img src="local_path"&gt;</code></td>
+            <td rowspan="3">&lt;URL&gt; must be a local path. Supported images are of type <code>.png</code>, <code>.jpg</code>, and <code>.bmp</code></td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>pixels</td>
+            <td><code>&lt;img height="pixels"&gt;</code></td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>pixels</td>
+            <td><code>&lt;img width="pixels"&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/html5/scripting-1.html#the-script-element">script</a></td>
+            <td>src</td>
+            <td>&lt;URL&gt;</td>
+            <td><code>&lt;script src="local_path"&gt;</code></td>
+            <td rowspan="3">&lt;URL&gt; must be a local path</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>text/javascript</td>
+            <td><code>&lt;script type="text/javascript"&gt;</code></td>
+        </tr>
+        <tr>
+            <td>charset</td>
+            <td>UTF-8</td>
+            <td><code>&lt;script charset="UTF-8"&gt;</code></td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/html5/syntax.html#the-doctype">DOCTYPE</td>
+            <td></td>
+            <td>html</td>
+            <td><code>&lt;!DOCTYPE html&gt;</code></td>
+            <td rowspan="1">The DOCTYPE declaration must be the first tag in your HTML document. The Web widget engine supports HTML5 only. Other versions of HTMLs and HTML modes (such as quirks mode) are not supported.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<h2>
+<a id="user-content-dom" class="anchor" href="#dom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DOM</h2>
+
+This section describes the complete list of supported DOM interfaces by the Web widget engine. Please note that only the attributes and methods mentioned explicitly in this section are supported.
+
+<table>
+    <thead>
+        <tr>
+            <th>Interface</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="https://www.w3.org/TR/domcore/#interface-nonelementparentnode">NonElementParentNode</a></td>
+            <td>method</td>
+            <td>getElementById(<em>elementId</em>)</td>
+            <td>Returns the first element within node's descendants whose ID is elementId</td>
+        </tr>
+
+        <tr>
+            <td rowspan="4"><a href="https://www.w3.org/TR/domcore/#interface-parentnode">ParentNode</a></td>
+            <td rowspan="4">attribute</td>
+            <td>children</td>
+            <td>Returns the child elements</td>
+        </tr>
+        <tr>
+            <td>firstElementChild</td>
+            <td>Returns the first child that is an element, and null otherwise.</td>
+        </tr>
+        <tr>
+            <td>lastElementChild</td>
+            <td>Returns the last child that is an element, and null otherwise.</td>
+        </tr>
+        <tr>
+            <td>childElementCount</td>
+            <td>Returns the number of children of the context object that are elements</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/domcore/#interface-nondocumenttypechildnode">NonDocumentTypeChildNode</a></td>
+            <td rowspan="2">attribute</td>
+            <td>previousElementSibling</td>
+            <td>Returns the first preceding sibling that is an element, and null otherwise.</td>
+        </tr>
+        <tr>
+            <td>nextElementSibling</td>
+            <td>Returns the first following sibling that is an element, and null otherwise.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/domcore/#childnode">ChildNode</a></td>
+            <td>method</td>
+            <td>remove()</td>
+            <td>Removes the node</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/domcore/#nodelist">NodeList</a></td>
+            <td>method</td>
+            <td>item(<em>index</em>) (or <em>collection</em>[<em>index</em>])</td>
+            <td>Returns the node with index index number from the collection. The nodes are sorted in tree order.</td>
+        </tr>
+        <tr>
+            <td>attribute</td>
+            <td>length</td>
+            <td>Returns the number of elements in the collection.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/domcore/#htmlcollection">HTMLCollection</a></td>
+            <td>attribute</td>
+            <td>length</td>
+            <td>Returns the number of elements in the collection.</td>
+        </tr>
+        <tr>
+            <td rowspan="2">method</td>
+            <td>item(<em>index</em>) (or <em>collection</em>[<em>index</em>])</td>
+            <td>Returns the element with index index number from the collection. The elements are sorted in tree order.</td>
+        </tr>
+        <tr>
+            <td>namedItem(<em>name</em>) (or <em>collection</em>[<em>name</em>])</td>
+            <td>Returns the first element with ID or name name from the collection.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="19"><a href="https://www.w3.org/TR/domcore/#interface-node">HTMLCollection</a></td>
+            <td rowspan="10">attribute</td>
+            <td>nodeType</td>
+            <td>Returns the type of node.</td>
+        </tr>
+        <tr>
+            <td>nodeName</td>
+            <td>Returns a string appropriate for the type of node.</td>
+        </tr>
+        <tr>
+            <td>parentNode</td>
+            <td>Returns the parent.</td>
+        </tr>
+        <tr>
+            <td>childNodes</td>
+            <td>Returns the children.</td>
+        </tr>
+        <tr>
+            <td>firstChild</td>
+            <td>Returns the first child.</td>
+        </tr>
+        <tr>
+            <td>lastChild</td>
+            <td>Returns the last child.</td>
+        </tr>
+        <tr>
+            <td>previousSibling</td>
+            <td>Returns the previous sibling.</td>
+        </tr>
+        <tr>
+            <td>nextSibling</td>
+            <td>Returns the next sibling.</td>
+        </tr>
+        <tr>
+            <td>nodeValue</td>
+            <td>If node is Text, Comment or ProcessingInstruction, returns the context object's data. <br> Otherwise returns Null.</td>
+        </tr>
+        <tr>
+            <td>textContent</td>
+            <td>If node is Element, returns the concatenation of data of all the Text node descendants of the context object, in tree order. <br> If node is Text or Comment, returns the context object's data. <br> Otherwise returns Null.</td>
+        </tr>
+        <tr>
+            <td rowspan="9">method</td>
+            <td>hasChildNodes</td>
+            <td>Returns whether node has children.</td>
+        </tr>
+        <tr>
+            <td>cloneNode(deep = false)</td>
+            <td>Returns a copy of node. If deep is true, the copy also includes the node's descendants.</td>
+        </tr>
+        <tr>
+            <td>isEqualNode(other)</td>
+            <td>Returns whether node and other have the same properties.</td>
+        </tr>
+        <tr>
+            <td>compareDocumentPosition(other)</td>
+            <td>Returns a bitmask indicating the position of other relative to node.</td>
+        </tr>
+        <tr>
+            <td>contains(other)</td>
+            <td>Returns true if other is an inclusive descendant of node, and false otherwise.</td>
+        </tr>
+        <tr>
+            <td>insertBefore(node, child)</td>
+            <td>Inserts Node before child.</td>
+        </tr>
+        <tr>
+            <td>appendChild(node)</td>
+            <td>Adds node to the end of child list.</td>
+        </tr>
+        <tr>
+            <td>replaceChild(node, child)</td>
+            <td>Replaces child to Node.</td>
+        </tr>
+        <tr>
+            <td>removeChild(child)</td>
+            <td>Removes child.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="10"><a href="https://www.w3.org/TR/domcore/#document">Document</a></td>
+            <td rowspan="5">attribute</td>
+            <td>compatMode</td>
+            <td>Returns the string "CSS1Compat".</td>
+        </tr>
+        <tr>
+            <td>characterSet</td>
+            <td>Returns document's encoding type "UTF8".</td>
+        </tr>
+        <tr>
+            <td>contentType</td>
+            <td>Returns document's content type "text/html".</td>
+        </tr>
+        <tr>
+            <td>doctype</td>
+            <td>Returns the doctype or null if there is none.</td>
+        </tr>
+        <tr>
+            <td>documentElement</td>
+            <td>Returns the document element.</td>
+        </tr>
+        <tr>
+            <td rowspan="5">method</td>
+            <td>getElementsByTagName(localName)</td>
+            <td>If localName is "*" returns an HTMLCollection of all descendant elements.Otherwise, returns an HTMLCollection of all descendant elements whose local name is localName.</td>
+        </tr>
+        <tr>
+            <td>getElementsByClassName(classes)</td>
+            <td>Returns an HTMLCollection of the elements in the object on which the method was invoked (a document or an element) that have all the classes given by classes.</td>
+        </tr>
+        <tr>
+            <td>createElement(localName)</td>
+            <td>Returns an element in the HTML namespace with localName as local name.</td>
+        </tr>
+        <tr>
+            <td>createTextNode(data)</td>
+            <td>Returns a Text node whose data is data.</td>
+        </tr>
+        <tr>
+            <td>createComment(data)</td>
+            <td>Returns a Comment node whose data is data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/domcore/#interface-documenttype">DocumentType</a></td>
+            <td>attribute</td>
+            <td>name</td>
+            <td>Returns the name.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="16"><a href="https://www.w3.org/TR/domcore/#element">Element</a></td>
+            <td rowspan="10">attribute</td>
+            <td>localName</td>
+            <td>Return the value of the attribute in element's attribute list whose namespace is namespace and local name is localName, if it has one, and null otherwise.</td>
+        </tr>
+        <tr>
+            <td>tagName</td>
+            <td>If namespace prefix is not null, returns the concatenation of namespace prefix, ":", and local name. Otherwise it returns the local name.</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>Reflects the "id" content attribute.</td>
+        </tr>
+        <tr>
+            <td>className</td>
+            <td>Reflects the "class" content attribute.</td>
+        </tr>
+        <tr>
+            <td>classList</td>
+            <td>Returns the associated DOMTokenList object representing the context object's classes.</td>
+        </tr>
+        <tr>
+            <td>attributes</td>
+            <td>Returns a NamedNodeMap.</td>
+        </tr>
+        <tr>
+            <td>clientLeft</td>
+            <td>Returns the width of the left border of an element in pixels.</td>
+        </tr>
+        <tr>
+            <td>clientTop</td>
+            <td>Returns the width of the top border of an element in pixels.</td>
+        </tr>
+        <tr>
+            <td>clientWidth</td>
+            <td>Returns the sum of contents width + padding width. Returns 0 if an element, or an ancestor of an element is set to <code>display: none</code> or <code>display: inline</code>.</td>
+        </tr>
+        <tr>
+            <td>clientHeight</td>
+            <td>Returns the sum of contents height + padding height. Returns 0 if an element, or an ancestor of an element is set to <code>display: none</code> or <code>display: inline</code>.</td>
+        </tr>
+        <tr>
+            <td rowspan="6">method</td>
+            <td>getAttribute(name)</td>
+            <td>Returns the value of the first attribute in the context object's attribute list whose name is name, and null otherwise.</td>
+        </tr>
+        <tr>
+            <td>setAttribute(name, value)</td>
+            <td>Changes the attribute whose name is name from context object to value.</td>
+        </tr>
+        <tr>
+            <td>removeAttribute(name)</td>
+            <td>Removes the first attribute from the context object whose name is name, if any.</td>
+        </tr>
+        <tr>
+            <td>hasAttribute(name)</td>
+            <td>Returns true if the context object has an attribute whose name is name, and false otherwise.</td>
+        </tr>
+        <tr>
+            <td>getElementsByTagName(localName)</td>
+            <td>Returns the list of elements with local name localName for the context object.</td>
+        </tr>
+        <tr>
+            <td>getElementsByClassName(classNames)</td>
+            <td>Returns the list of elements with class names classNames for the context object.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/domcore/#attr">Attr</a></td>
+            <td rowspan="3">attribute</td>
+            <td>name</td>
+            <td>Returns the name.</td>
+        </tr>
+        <tr>
+            <td>value</td>
+            <td>Returns the value.</td>
+        </tr>
+        <tr>
+            <td>specified</td>
+            <td>Always returns true</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/domcore/#characterdata">CharacterData</a></td>
+            <td rowspan="2">attribute</td>
+            <td>data</td>
+            <td>Returns data, and on setting, must replace data with node context object offset 0, count length attribute value, and data new value.</td>
+        </tr>
+        <tr>
+            <td>length</td>
+            <td>Returns the number of code units in data.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/domcore/#text">Text</a></td>
+            <td>attribute</td>
+            <td>wholeText</td>
+            <td>Returns a concatenation of the data of the contiguous Text nodes of the context object, in tree order.</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/domcore/#interface-comment">Comment</a></td>
+            <td></td>
+            <td></td>
+            <td>Comment does not define neither attributes or methods</td>
+        </tr>
+
+        <tr>
+            <td rowspan="6"><a href="https://www.w3.org/TR/domcore/#interface-domtokenlist">DOMTokenList</a></td>
+            <td>attribute</td>
+            <td>length</td>
+            <td>Returns the number of tokens.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5">method</td>
+            <td>item(index) (or tokenlist[index])</td>
+            <td>Returns the token with the index index number.</td>
+        </tr>
+        <tr>
+            <td>contains(token)</td>
+            <td>Returns true if token is present, and false otherwise.</td>
+        </tr>
+        <tr>
+            <td>add(tokens...)</td>
+            <td>Adds all arguments passed, except those already present.</td>
+        </tr>
+        <tr>
+            <td>remove(tokens...)</td>
+            <td>Removes arguments passed, if they are present.</td>
+        </tr>
+        <tr>
+            <td>toggle(token [, force])</td>
+            <td>If force is not specified, "toggles" token, removing it if it is present and adding it if it is not. If force is true, adds token (same as add()). If force is false, removes token (same as remove()). <br>Returns true if token is now present, and false otherwise.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5">Window from <a href="https://www.w3.org/TR/html5/browsers.html#the-window-object">HTML5</a> and <a href="https://www.w3.org/TR/cssom-view-1/#extensions-to-the-window-interface">CSSOM</a>, and <a href="https://html.spec.whatwg.org/multipage/browsers.html#named-access-on-the-window-object">Named Access on the Window Object</a></td>
+            <td rowspan="4">attribute</td>
+            <td>window</td>
+            <td>Returns window.</td>
+        </tr>
+        <tr>
+            <td>document</td>
+            <td>Returns the document associated with window.</td>
+        </tr>
+        <tr>
+            <td>innerHeight</td>
+            <td>Returns the inner height of a window's content area.</td>
+        </tr>
+        <tr>
+            <td>innerWidth</td>
+            <td>Returns the inner width of a window's content area.</td>
+        </tr>
+        <tr>
+            <td>misc</td>
+            <td>window[id]</td>
+            <td>Named access on the Window object returns the indicated element, where <em>id</em> is a non-empty ID of an HTML element in the current document.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="4"><a href="https://www.w3.org/TR/html5/webappapis.html#timers">WindowTimers</a></td>
+            <td rowspan="4">method</td>
+            <td>setTimeout(handler [, timeout [, arguments... ]])</td>
+            <td>Calls a function or evaluates an expression after a specified number of milliseconds.</td>
+        </tr>
+        <tr>
+            <td>clearTimeout(handle)</td>
+            <td>Clears a timer set with setTimeout().</td>
+        </tr>
+        <tr>
+            <td>setInterval(handler [, timeout [, arguments...]])</td>
+            <td>Calls a function or evaluates an expression at specified intervals (in milliseconds).</td>
+        </tr>
+        <tr>
+            <td>clearInterval(handle)</td>
+            <td>Clears a timer set with setInterval().</td>
+        </tr>
+
+
+
+    </tbody>
+</table>
+
+
+<h2>
+<a id="user-content-event" class="anchor" href="#event" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Event</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Interface</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th style="width: 20%">Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/html5/webappapis.html#event-handler-attributes">Global event handler attribute</a></td>
+            <td rowspan="2">attribute</td>
+            <td>onclick</td>
+            <td>The <strong><em>onclick</em></strong> event occurs when the user clicks on an element</td>
+            <td rowspan="2">Attributes that are common to all elements in the HTML language.</td>
+        </tr>
+        <tr>
+            <td>onload</td>
+            <td>The <strong><em>onload</em></strong> event occurs when an object has been loaded</td>
+        </tr>
+
+        <tr>
+            <td rowspan="17"><a href="https://www.w3.org/TR/domcore/#interface-event">DOM Event</a></td>
+            <td rowspan="4">constant</td>
+            <td>CAPTURING_PHASE</td>
+            <td>The current event phase is the capturing phase.</td>
+            <td rowspan="17"></td>
+        </tr>
+        <tr>
+            <td>AT_TARGET</td>
+            <td>The event is currently being evaluated at the target EventTarget.</td>
+        </tr>
+        <tr>
+            <td>BUBBLING_PHASE</td>
+            <td>The current event phase is the bubbling phase.</td>
+        </tr>
+        <tr>
+            <td>NONE</td>
+            <td>Events not currently dispatched are in this phase.</td>
+        </tr>
+        <tr>
+            <td rowspan="8">attribute</td>
+            <td>bubbles</td>
+            <td>Used to indicate whether or not an event is a bubbling event</td>
+        </tr>
+        <tr>
+            <td>cancelable</td>
+            <td>Used to indicate whether or not an event can have its default action prevented</td>
+        </tr>
+        <tr>
+            <td>currentTarget</td>
+            <td>Used to indicate the EventTarget whose EventListeners are currently being processed</td>
+        </tr>
+        <tr>
+            <td>eventPhase</td>
+            <td>Used to indicate which phase of event flow is currently being evaluated.</td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>Used to indicate the EventTarget to which the event was originally dispatched.</td>
+        </tr>
+        <tr>
+            <td>timeStamp</td>
+            <td>Returns the number of milliseconds (after midnight January 1, 1970), when the event occurred</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>Name of the event type (case-insensitive).</td>
+        </tr>
+        <tr>
+            <td>defaultPrevented</td>
+            <td>Checks whether the preventDefault() method was called for the event</td>
+        </tr>
+        <tr>
+            <td rowspan="3">method</td>
+            <td>preventDefault()</td>
+            <td>If an event is cancelable, the preventDefault method is used to signify that the event is to be canceled</td>
+        </tr>
+        <tr>
+            <td>stopPropagation()</td>
+            <td>Prevents further propagation of the current event in the bubbling phase</td>
+        </tr>
+        <tr>
+            <td>stopImmediatePropagation()</td>
+            <td>Prevents other listeners of the same event from being called</td>
+        </tr>
+        <tr>
+            <td rowspan="2">property</td>
+            <td>EventInit::bubbles</td>
+            <td>Initializes an Event object with bubbles</td>
+        </tr>
+        <tr>
+            <td>EventInit::cancelable</td>
+            <td>Initializes an Event object with cancelable</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-EventTarget">EventTarget</a></td>
+            <td rowspan="3">method</td>
+            <td>addEventListener(<em>type</em>, <em>listener</em>, <em>useCapture</em>)</td>
+            <td>Attaches an event handler to the specified element</td>
+            <td rowspan="3"></td>
+        </tr>
+        <tr>
+            <td>removeEventListener(<em>type</em>, <em>listener</em>, <em>useCapture</em>)</td>
+            <td>Removes an event handler that has been attached with the addEventListener() method</td>
+        </tr>
+        <tr>
+            <td>dispatchEvent(<em>evt</em>)</td>
+            <td>Allows the dispatch of events into the implementations event model</td>
+        </tr>
+
+        <tr>
+            <td rowspan="1"><a href="https://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-EventListener">EventListener</a></td>
+            <td rowspan="1">method</td>
+            <td>handleEvent(<em>evt</em>)</td>
+            <td>This method is called whenever an event occurs of the type for which the EventListener interface was registered.</td>
+            <td rowspan="1"></td>
+        </tr>
+
+        <tr>
+            <td rowspan="6"><a href="https://www.w3.org/TR/progress-events/#interface-progressevent">ProgressEvent</a></td>
+            <td rowspan="3">attribute</td>
+            <td>lengthComputable</td>
+            <td>Progress has started</td>
+            <td rowspan="6">ProgressEvent is dispatched on XMLHttpRequest object.
+                Events using the ProgressEvent interface indicate some kind of progression.</td>
+            </tr>
+            <tr>
+                <td>loaded</td>
+                <td>In progress</td>
+            </tr>
+            <tr>
+                <td>total</td>
+                <td>Progress failed</td>
+            </tr>
+            <tr>
+                <td rowspan="3">property</td>
+                <td>ProgressEventInit::lengthComputable</td>
+                <td>Initialize a ProgressEvent object with lengthComputable</td>
+            </tr>
+            <tr>
+                <td>ProgressEventInit::loaded</td>
+                <td>Initialize a ProgressEvent object with loaded</td>
+            </tr>
+            <tr>
+                <td>ProgressEventInit::total</td>
+                <td>Initialize a ProgressEvent object with total</td>
+            </tr>
+
+    </tbody>
+</table>
+
+
+<h2>
+<a id="user-content-css" class="anchor" href="#css" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CSS</h2>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Property</th>
+            <th>Allowed Value</th>
+            <th>Description</th>
+            <th style="width: 20%">Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="5"><a href="https://www.w3.org/TR/CSS2/box.html#margin-properties">Margin</a></td>
+            <td>margin</td>
+            <td>&lt;margin-width&gt;{1,4}</td>
+            <td>The margin shorthand property sets all the margin properties in one declaration</td>
+            <td rowspan="5"><p>The margin properties specify the width of the margin area of a box.</p>
+            <p>&lt;margin-width&gt; may take one of the following values:  &lt;length&gt;,  &lt;percentage&gt;, auto.</p> (Also check <a href="https://www.w3.org/TR/CSS2/syndata.html#length-units">Length</a>)</td>
+        </tr>
+        <tr>
+            <td>margin-bottom</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the bottom margin of an element</td>
+        </tr>
+        <tr>
+            <td>margin-left</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the left margin of an element</td>
+        </tr>
+        <tr>
+            <td>margin-right</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the right margin of an element</td>
+        </tr>
+        <tr>
+            <td>margin-top</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the top margin of an element</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5"><a href="https://www.w3.org/TR/CSS2/box.html#padding-properties">Padding</a></td>
+            <td>padding</td>
+            <td>&lt;padding-width&gt;{1,4}</td>
+            <td>The padding shorthand property sets all the padding properties in one declaration</td>
+            <td rowspan="5">&lt;padding-width&gt; may take one of the following values: &lt;length&gt;, &lt;percentage&gt;</td>
+        </tr>
+        <tr>
+            <td>padding-bottom</td>
+            <td>&lt;length&gt; | &lt;percentage&gt;</td>
+            <td>Sets the bottom padding for an element</td>
+        </tr>
+        <tr>
+            <td>padding-left</td>
+            <td>&lt;length&gt; | &lt;percentage&gt;</td>
+            <td>Sets the left padding for an element</td>
+        </tr>
+        <tr>
+            <td>padding-right</td>
+            <td>&lt;length&gt; | &lt;percentage&gt;</td>
+            <td>Sets the right padding for an element</td>
+        </tr>
+        <tr>
+            <td>padding-top</td>
+            <td>&lt;length&gt; | &lt;percentage&gt;</td>
+            <td>Sets the top padding for an element</td>
+        </tr>
+
+        <tr>
+            <td rowspan="23"><a href="https://www.w3.org/TR/css3-border">Border</a>
+            </td>
+            <td>border</td>
+            <td>&lt;border-width&gt;   &lt;border-style&gt;   &lt;border-color&gt;</td>
+            <td>Sets all the border properties (shorthand).</td>
+            <td rowspan="23"><p>The border can either be a predefined style (solid line) or it can be an image. In the former case, various properties define the style (&lt;border-style&gt;), color (&lt;border-color&gt;), and thickness (&lt;border-width&gt;) of the border.</p>
+
+            <p>&lt;border-width&gt; may take one of the following values: thin, medium, thick, &lt;length&gt; <br>
+            &lt;border-color&gt; may take one of the following values: &lt;color&gt;, transparent <br>
+            &lt;border-style&gt; may take one of the following values: none, solid</p>
+
+            (Also check <a href="https://www.w3.org/TR/CSS2/box.html#border-properties">Border Properties</a>)
+            </td>
+        </tr>
+        <tr>
+            <td>border-top</td>
+            <td>&lt;border-width&gt;   &lt;border-style&gt;   &lt;border-color&gt;</td>
+            <td>Sets all the top border properties (shorthand).</td>
+        </tr>
+        <tr>
+            <td>border-right</td>
+            <td>&lt;border-width&gt;   &lt;border-style&gt;   &lt;border-color&gt;</td>
+            <td>Sets all the right border properties (shorthand).</td>
+        </tr>
+        <tr>
+            <td>border-bottom</td>
+            <td>&lt;border-width&gt;   &lt;border-style&gt;   &lt;border-color&gt;</td>
+            <td>Sets all the bottom border properties (shorthand).</td>
+        </tr>
+        <tr>
+            <td>border-left</td>
+            <td>&lt;border-width&gt;   &lt;border-style&gt;   &lt;border-color&gt;</td>
+            <td>Sets all the left border properties (shorthand).</td>
+        </tr>
+        <tr>
+            <td>border-color</td>
+            <td>&lt;border-color&gt;{1,4}</td>
+            <td>Sets the color of the four borders (shorthand).</td>
+        </tr>
+        <tr>
+            <td>border-top-color</td>
+            <td>&lt;color&gt; | transparent</td>
+            <td>Sets the color of the top border.</td>
+        </tr>
+        <tr>
+            <td>border-right-color</td>
+            <td>&lt;color&gt; | transparent</td>
+            <td>Sets the color of the right border.</td>
+        </tr>
+        <tr>
+            <td>border-bottom-color</td>
+            <td>&lt;color&gt; | transparent</td>
+            <td>Sets the color of the bottom border.</td>
+        </tr>
+        <tr>
+            <td>border-left-color</td>
+            <td>&lt;color&gt; | transparent</td>
+            <td>Sets the color of the left border.</td>
+        </tr>
+        <tr>
+            <td>border-style</td>
+            <td>&lt;border-style&gt;{1,4}</td>
+            <td>Sets the style of the four borders (shorthand).</td>
+        </tr>
+        <tr>
+            <td>border-top-style</td>
+            <td>none | solid</td>
+            <td>Sets the style of the top border.</td>
+        </tr>
+        <tr>
+            <td>border-right-style</td>
+            <td>none | solid</td>
+            <td>Sets the style of the right border.</td>
+        </tr>
+        <tr>
+            <td>border-bottom-style</td>
+            <td>none | solid</td>
+            <td>Sets the style of the bottom border.</td>
+        </tr>
+        <tr>
+            <td>border-left-style</td>
+            <td>none | solid</td>
+            <td>Sets the style of the left border.</td>
+        </tr>
+        <tr>
+            <td>border-width</td>
+            <td>&lt;border-width&gt;</td>
+            <td>Sets the width of the four borders (shorthand).</td>
+        </tr>
+        <tr>
+            <td>border-top-width</td>
+            <td>medium | thin | thick | &lt;length&gt;</td>
+            <td>Sets the width of the top border.</td>
+        </tr>
+        <tr>
+            <td>border-right-width</td>
+            <td>medium | thin | thick | &lt;length&gt;</td>
+            <td>Sets the width of the left border.</td>
+        </tr>
+        <tr>
+            <td>border-bottom-width</td>
+            <td>medium | thin | thick | &lt;length&gt;</td>
+            <td>Sets the width of the bottom border.</td>
+        </tr>
+        <tr>
+            <td>border-left-width</td>
+            <td>medium | thin | thick | &lt;length&gt;</td>
+            <td>Sets the width of the left border.</td>
+        </tr>
+        <tr>
+            <td>border-image-source</td>
+            <td>&lt;image&gt; | none</td>
+            <td>The path to the image is to be used as a border</td>
+        </tr>
+        <tr>
+            <td>border-image-slice</td>
+            <td>&lt;number&gt; &amp;&amp; fill?</td>
+            <td>How to slice the border image. <br> <em>&lt;number&gt; value can take only one value and initial value is 0 (not 100%).</em>
+            </td>
+        </tr>
+        <tr>
+            <td>border-image-width</td>
+            <td>&lt;length&gt; | &lt;number&gt;</td>
+            <td>Width of the border image. <br> <em>&lt;number&gt; value represents multiples of the corresponding border-top-width.</em>
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/CSS2/visuren.html#display-prop">Display</a></td>
+            <td>display</td>
+            <td>block | inline | inline-block | none</td>
+            <td>Displays elements as inline elements</td>
+            <td rowspan="2"><p>The display property specifies the type of box used for an HTML element</p> (Also check <a href="https://www.w3.org/TR/CSS2/visufx.html#visibility">Visibility</a>)</td>
+        </tr>
+        <tr>
+            <td>visibility</td>
+            <td>visible | hidden</td>
+            <td>Specifies whether or not an element should be visible</td>
+        </tr>
+
+        <tr>
+            <td rowspan="12"><a href="https://www.w3.org/TR/CSS2/visuren.html#positioning-scheme">Position</a></td>
+            <td>position</td>
+            <td>static | absolute | relative</td>
+            <td>The position property specifies the type of positioning method used for an element.</td>
+            <td rowspan="12"><p>Each element in the document tree generates zero or more boxes according to the box model. The layout of these boxes is governed by box dimensions, type, positioning scheme, relationships between in the document tree and external information.</p>
+
+            <p>*CSS <code>direction</code> property only accepts "ltr" as a value. To support right-to-left text, the <code>dir</code> attribute in an HTML element should be used, e.g., <code>&lt;html dir="rtl"&gt;</code></p>
+
+            (Also check <a href="https://www.w3.org/TR/CSS2/visuren.html#layers">Layers</a>, <a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-direction">Direction</a>, <a href="https://www.w3.org/TR/CSS2/visudet.html">Visual Formatting Model</a>, and <a href="https://www.w3.org/TR/CSS2/visufx.html">Visual Effects</a>)
+            </td>
+        </tr>
+        <tr>
+            <td>top</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the top edge of an element to a unit above/below the top edge of its nearest positioned ancestor.</td>
+        </tr>
+        <tr>
+            <td>right</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the right edge of an element to a unit above/below the right edge of its nearest positioned ancestor.</td>
+        </tr>
+        <tr>
+            <td>bottom</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the bottom edge of an element to a unit above/below the bottom edge of its nearest positioned ancestor.</td>
+        </tr>
+        <tr>
+            <td>left</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the left edge of an element to a unit above/below the left edge of its nearest positioned ancestor.</td>
+        </tr>
+        <tr>
+            <td>z-index</td>
+            <td>auto | &lt;integer&gt;</td>
+            <td>Specifies the stack order of an element.</td>
+        </tr>
+        <tr>
+            <td>direction*</td>
+            <td>ltr</td>
+            <td>Specifies the text direction/writing direction.</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the width of an element.</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto</td>
+            <td>Sets the height of an element.</td>
+        </tr>
+        <tr>
+            <td>vertical-align</td>
+            <td>baseline | sub | super | top | text-top | middle | bottom | text-bottom | &lt;length&gt; | &lt;percentage&gt;</td>
+            <td>Sets the vertical alignment of an element.</td>
+        </tr>
+        <tr>
+            <td>line-height</td>
+            <td>normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;</td>
+            <td>Sets the line height.</td>
+        </tr>
+        <tr>
+            <td>overflow</td>
+            <td>visible | hidden</td>
+            <td>Specifies what happens if content overflows an element's box.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/css3-color">Color</a></td>
+            <td>color</td>
+            <td>&lt;color&gt;</td>
+            <td>Sets the color of text <br> HSL color value is not supported</td>
+            <td rowspan="2"><p>CSS uses color-related properties and values to color the text, backgrounds, borders, and other parts of elements in a document.</p></td>
+        </tr>
+        <tr>
+            <td>opacity</td>
+            <td>alpha value (0.0 ~ 1.0)</td>
+            <td>Sets the opacity level for an element</td>
+        </tr>
+
+        <tr>
+            <td rowspan="5"><a href="https://www.w3.org/TR/CSS2/colors.html#background">Background</a></td>
+            <td>background</td>
+            <td>&lt;background-color&gt;   &lt;background-image&gt;   &lt;background-repeat&gt;</td>
+            <td>A shorthand property for setting all the background properties in one declaration</td>
+            <td rowspan="5"><p>The background property sets all the background properties.</p> (Also check <a href="https://www.w3.org/TR/css3-background">Background</a>)</td>
+        </tr>
+        <tr>
+            <td>background-color</td>
+            <td>&lt;color&gt; | transparent</td>
+            <td>Specifies the background color of an element.</td>
+        </tr>
+        <tr>
+            <td>background-image</td>
+            <td>&lt;uri&gt; | none</td>
+            <td>Specifies one or more background images for an element. <br> <em>Multiple layering is not supported.</em>
+            </td>
+        </tr>
+        <tr>
+            <td>background-repeat</td>
+            <td>repeat | repeat-x | repeat-y | no-repeat</td>
+            <td>Sets how a background image will be repeated</td>
+        </tr>
+        <tr>
+            <td>background-size</td>
+            <td>&lt;length&gt; | &lt;percentage&gt; | auto | cover | contain</td>
+            <td>Specifies the size of the background image(s).</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://www.w3.org/TR/CSS2/fonts.html">Font</a></td>
+            <td>font-style</td>
+            <td>normal | italic | oblique</td>
+            <td>Specifies the font style for text.</td>
+            <td rowspan="3"><p>A font provides a resource containing the visual representation of characters.</p></td>
+        </tr>
+        <tr>
+            <td>font-weight</td>
+            <td>normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</td>
+            <td>Specifies the weight of a font.</td>
+        </tr>
+        <tr>
+            <td>font-size</td>
+            <td>medium | xx-small | x-small | small | large | x-large | xx-large | smaller | larger | &lt;length&gt; | &lt;percentage&gt;</td>
+            <td>Specifies the font size of text.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/CSS2/text.html">Text</a></td>
+            <td>text-align</td>
+            <td>left | right | center</td>
+            <td>Specifies the horizontal alignment of text in an element</td>
+            <td rowspan="2"><p>This CSS3 module defines properties for text manipulation and specifies their processing model. It covers line breaking, justification and alignment, white space handling, and text transformation.</p></td>
+        </tr>
+        <tr>
+            <td>text-decoration</td>
+            <td>none | underline | line-through</td>
+            <td>Specifies the decoration added to the text</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/css3-transforms">Transform</a></td>
+            <td>transform</td>
+            <td>none | matrix | translate | translateX | translateY | scale | scaleX | scaleY | rotate | skew | skewX | skewY</td>
+            <td>Applies a 2D transformation to an element.</td>
+            <td rowspan="2"><p>The transform property applies a 2D transformation to an element. This property allows you to rotate, scale, move and skew. A transformable element is an element whose layout is governed by the CSS box model which is either a block-level or atomic inline-level element.</p></td>
+        </tr>
+        <tr>
+            <td>transform-origin</td>
+            <td>&lt;percentage&gt; | &lt;length&gt; | top | right | bottom | left | center</td>
+            <td>Changes the position of transformed elements</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<h2>
+<a id="user-content-selectors" class="anchor" href="#selector" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Selectors</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Selectors</th>
+            <th>Type</th>
+            <th>Pattern</th>
+            <th>Usage</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="5"><a href="https://www.w3.org/TR/CSS2/selector.html">Selectors</a></td>
+            <td>Universal Selector</td>
+            <td>*</td>
+            <td><code>*</code></td>
+            <td>Selects all elements.</td>
+        </tr>
+        <tr>
+            <td>Type Selector</td>
+            <td>element</td>
+            <td><code>p</code></td>
+            <td>Selects all &lt;p&gt; elements <br> <em>The 'OR' condition is allowed (for example, element, element)</em>
+            </td>
+        </tr>
+        <tr>
+            <td>Dynamic Pseudo Selector</td>
+            <td>element:active</td>
+            <td><code>p:active</code></td>
+            <td>Selects the active element<br>Support only :active pseudo-class</td>
+        </tr>
+        <tr>
+            <td>Class Selector</td>
+            <td>element.class</td>
+            <td><code>div.intro</code></td>
+            <td>Selects all &lt;div&gt; elements with class="intro" <br> <em>A subset matching of "class" values is not allowed (for example, div.class1.class2)</em>
+            </td>
+        </tr>
+        <tr>
+            <td>ID Selector</td>
+            <td>element#id</td>
+            <td><code>div#firstname</code></td>
+            <td>Selects an &lt;div&gt; element with id="firstname"</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>
+<a id="user-content-additional-supported-apis" class="anchor" href="#additional-supported-apis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional Supported APIs</h2>
+
+<h3>
+<a id="user-content-xmlhttprequest" class="anchor" href="#xmlhttprequest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>XMLHttpRequest</h3>
+
+<p>XMLHttpRequest is a constructor object. It is created by a <code>new</code> command, e.g., <code>var xhr = new XMLHttpRequest();</code> In addition, two XHR objects are created and executed concurrently by the threadpool by default.</p>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Interface</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="7"><a href="https://xhr.spec.whatwg.org/#xmlhttprequesteventtarget">XMLHttpRequestEventTarget</a></td>
+            <td rowspan="7">attribute</td>
+            <td>onloadstart</td>
+            <td>Function called when the request starts. Usage: <code>onloadstart: function() {}</code></td>
+        </tr>
+        <tr>
+            <td>onprogress</td>
+            <td>Function called when transmitting data. Usage: <code>onprogress: function() {}</code></td>
+        </tr>
+        <tr>
+            <td>onabort</td>
+            <td>Function called when the request has been aborted. For instance, by invoking the abort() method. Usage: <code>onabort: function() {}</code></td>
+        </tr>
+        <tr>
+            <td>onerror</td>
+            <td>Function called when the request has failed. Usage: <code>onerror: function() {}</code></td>
+        </tr>
+        <tr>
+            <td>onload</td>
+            <td>Function called when the request has successfully completed. Usage: <code>onload: function() {}</code></td>
+        </tr>
+        <tr>
+            <td>ontimeout</td>
+            <td>Function called when the author specified timeout has passed before the request completed. Usage: <code>ontimeout: function() {}</code></td>
+        </tr>
+        <tr>
+            <td>onloadend</td>
+            <td>Function called when the request has completed (either in success or failure). Usage: <code>onloadend: function() {}</code></td>
+        </tr>
+
+        <tr>
+            <td rowspan="10"><a href="https://xhr.spec.whatwg.org/#interface-xmlhttprequest">XMLHttpRequest</a></td>
+            <td rowspan="7">attribute</td>
+            <td>onreadystatechange</td>
+            <td>The readyState attribute changes value, except when it changes to UNSENT. Usage: <code>onreadystatechange: function() {}</code></td>
+        </tr>
+        <tr>
+            <td>readyState*</td>
+            <td>Returns the current state, which is one of the readyState code shown below.</td>
+        </tr>
+        <tr>
+            <td>timeout</td>
+            <td>Terminates fetching after the given time (in milliseconds) has passed. If the fetching has not completed after the time passed and the synchronous flag is unset, a timeout event will be dispatched.</td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>Returns 0 if the state is UNSENT or OPENED, or error flag is set. Otherwise returns the HTTP status code.</td>
+        </tr>
+        <tr>
+            <td>responseType</td>
+            <td>Sets or returns the response type, which is either <code>""</code>, <code>"blob"</code>, <code>"json"</code>, or <code>"text"</code>.</td>
+        </tr>
+        <tr>
+            <td>response</td>
+            <td>Returns the response entity body, which is either <code>string</code>, <code>Blob</code> object, <code>object</code>, or <code>string</code> when responseType is <code>""</code>, <code>"blob"</code>, <code>"json"</code>, or <code>"text"</code>, respectively.</td>
+        </tr>
+        <tr>
+            <td>responseText</td>
+            <td>Returns an empty string if the state is not LOADING or DONE, or error flag is set. Returns the text response entity body when responseType is either <code>""</code> or <code>"text"</code>. The allowed character set for response text is UTF-8. Otherwise returns an invalidStateError exception with either "Permission denied", "Position unavailable", or "Timeout expired".</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">method</td>
+            <td>open(method, url [, async = true [, username = null [, password = null]]])</td>
+            <td>Sets the request method, request URL, and synchronous flag. <br> Supported request method : GET, POST</td>
+        </tr>
+        <tr>
+            <td>send(data = null)</td>
+            <td>Initiates the request. The optional 'data' argument allows only UTF-8 encoded string type. The argument is ignored if request method is GET.</td>
+        </tr>
+        <tr>
+            <td>abort()</td>
+            <td>Cancels any network activity.</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+<p>* The readyState code are as follows.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>readyState Code</th>
+            <th>Description</th>
+            <th>Numeric Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>UNSENT</td>
+            <td>The object has been constructed.</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>OPENED</td>
+            <td>The open() method has been successfully invoked.</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>HEADERS_RECEIVED</td>
+            <td>All redirects (if any) have been followed and all HTTP headers of the final response have been received.</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>LOADING</td>
+            <td>The response entity body is being received.</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>DONE</td>
+            <td>The data transfer has been completed or something went wrong during the transfer (for example, infinite redirects).</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<h3>
+<a id="user-content-blob" class="anchor" href="#blob" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Blob</h3>
+
+<p>Blob object is used by an XMLHTTPRequest object to retrieve binary data. Supported binary data are the resources
+supported by the widget engine. When blob is used for other types of binary data, it is likely that
+the binary data is not recognized by the widget engine.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Interface</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="5"><a href="https://w3c.github.io/FileAPI/#blob">Blob</a></td>
+            <td rowspan="3">attribute</td>
+            <td>size</td>
+            <td>Returns the size of the byte sequence in number of bytes.</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>Returns a parsable MIME type.</td>
+        </tr>
+        <tr>
+            <td>isClosed</td>
+            <td>Returns a boolean value that indicates whether the Blob is in the CLOSED readability state.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">method</td>
+            <td>slice(start = 0, end = size, contentType = "")</td>
+            <td>The slice() method returns a new Blob object with bytes ranging from the optional start parameter up to but not including the optional end parameter, and with a type attribute that is the value of the optional contentType parameter.</td>
+        </tr>
+        <tr>
+            <td>close()</td>
+            <td>The close() method closes a Blob.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<h3>
+<a id="user-content-page-visibility" class="anchor" href="#page-visibility" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Page Visibility</h3>
+
+<p>Extensions to the Document Object: The <code>document</code> object is extended by the following attributes.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Interface</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/page-visibility/#sec-document-interface">Document</a></td>
+            <td rowspan="2">attribute</td>
+            <td>hidden</td>
+            <td>Returns true if the Document contained by the top level browsing context (root window in the browser's viewport) is not visible at all.</td>
+        </tr>
+        <tr>
+            <td>visibilityState</td>
+            <td>Returns one of the following strings: "hidden", or "visible"</td>
+        </tr>
+
+        <tr>
+            <td><a href="https://www.w3.org/TR/page-visibility/#sec-visibilitychange-event">VisibilityChange Event</a></td>
+            <td>Event Handler</td>
+            <td>visibilitychange</td>
+            <td>Fire when the content of a tab has become visible or has been hidden.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+<h3>
+<a id="user-content-timing-control-for-script-based-animations" class="anchor" href="#timing-control-for-script-based-animations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Timing Control for Script-based Animations</h3>
+
+<p>Extensions to the Window Object: The <code>window</code> object is extended by the following methods.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Interface</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2"><a href="https://www.w3.org/TR/animation-timing/#Window-interface-extensions">Window</a></td>
+            <td rowspan="2">method</td>
+            <td>requestAnimationFrame(callback)</td>
+            <td>Used to signal to the user agent that a script-based animation needs to be resampled.</td>
+        </tr>
+        <tr>
+            <td>cancelAnimationFrame(handle)</td>
+            <td>Used to cancel a previously made request to schedule an animation frame update.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<h3>
+<a id="user-content-geolocation" class="anchor" href="#geolocation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Geolocation</h3>
+
+<p>Extensions to the Navigator Object: The <code>navigator</code> is extended by the following attributes and methods.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Interface</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="1"><a href="https://dev.w3.org/geo/api/spec-source.html#api_description">Navigator</a></td>
+            <td rowspan="1">attribute</td>
+            <td>geolocation</td>
+            <td><code>navigator.geolocation</code> object is used to determine the location information associated with the hosting device.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="1"><a href="https://dev.w3.org/geo/api/spec-source.html#api_description">Geolocation</a></td>
+            <td>method</td>
+            <td>getCurrentPosition(successCallback, errorCallback, options)</td>
+            <td>Parameters are in following formats:<br><code>successCallback</code>: <code>function(position) {}</code> <br><code>errorCallback</code>:<code>function (positionError) {}</code><br><code>options</code>: <code>PositionOptions</code>
+            </td>
+        </tr>
+
+        <tr>
+            <td rowspan="3"><a href="https://dev.w3.org/geo/api/spec-source.html#position-options">PositionOptions</a></td>
+            <td rowspan="3">attribute</td>
+            <td>enableHighAccuracy</td>
+            <td>When enabled, use GPS only to improve the location accuracy. When disabled, use both GPS and WPS. Enabling it may result in slower response times or increased power consumption. Default: false</td>
+        </tr>
+        <tr>
+            <td>timeout</td>
+            <td>The maximum length of time (expressed in milliseconds) that is allowed to pass from the call to getCurrentPosition() until the corresponding successCallback is invoked. The maximum allowed value is 120. Default: 120</td>
+        </tr>
+        <tr>
+            <td>maximumAge</td>
+            <td>Sets to return a cached position whose age is no greater than the specified time in milliseconds. If maximumAge is set to 0, a new position object is acquired immediately. Default: 0</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://dev.w3.org/geo/api/spec-source.html#position_interface">Position</a></td>
+            <td rowspan="2">attribute</td>
+            <td>coords</td>
+            <td>The coords attribute contains a set of geographic coordinates together with their associated accuracy, as well as a set of other optional attributes such as altitude and speed.</td>
+        </tr>
+        <tr>
+            <td>timestamp</td>
+            <td>The timestamp attribute represents the time when the Position object was acquired in milliseconds.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="7"><a href="https://dev.w3.org/geo/api/spec-source.html#coordinates_interface">Coordinates</a></td>
+            <td rowspan="7">attribute</td>
+            <td>latitude</td>
+            <td>The latitude attribute is a geographic coordinate specified in decimal degrees.</td>
+        </tr>
+        <tr>
+            <td>longitude</td>
+            <td>The longitude attribute is a geographic coordinate specified in decimal degrees.</td>
+        </tr>
+        <tr>
+            <td>altitude</td>
+            <td>The altitude attribute denotes the height of the position, specified in meters above the <a href="https://dev.w3.org/geo/api/spec-source.html#ref-wgs">WGS84</a> ellipsoid.</td>
+        </tr>
+        <tr>
+            <td>accuracy</td>
+            <td>The accuracy attribute denotes the accuracy level of the latitude and longitude coordinates. It is specified in meters, and is a non-negative real number.</td>
+        </tr>
+        <tr>
+            <td>altitudeAccuracy</td>
+            <td>Not supported by the widget engine. Always returns null.</td>
+        </tr>
+        <tr>
+            <td>heading</td>
+            <td>The heading attribute denotes the direction of travel of the hosting device and is specified in degrees, where 0° ≤ heading &lt; 360°, counting clockwise relative to the true north.</td>
+        </tr>
+        <tr>
+            <td>speed</td>
+            <td>The speed attribute denotes the magnitude of the horizontal component of the hosting device's current velocity and is specified in meters per second. The value of the speed attribute is a non-negative real number.</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"><a href="https://dev.w3.org/geo/api/spec-source.html#position_error_interface">PositionError</a></td>
+            <td rowspan="2">attribute</td>
+            <td>code*</td>
+            <td>Returns the appropriate position error code</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>Returns an error message describing the details of the error encountered.</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
+* PositionError codes are as follows:
+
+<table>
+    <thead>
+        <tr>
+            <th>Error Code</th>
+            <th>Description</th>
+            <th>Numeric Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>PERMISSION_DENIED</td>
+            <td>The location acquisition process failed because the widget does not have permission to use the Geolocation API.</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>POSITION_UNAVAILABLE</td>
+            <td>The position of the device could not be determined.</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>TIMEOUT</td>
+            <td>The length of time specified by the timeout property has elapsed before successfully acquiring a new Position object.</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<h2>
+<a id="user-content-web-device-api" class="anchor" href="#web-device-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Web Device API</h2>
+
+<p>The following describes Web device APIs supported by Widget Engine. Supported interfaces and methods are generally the same as the interfaces and methods supported by Tizen API, respectively. If there are exceptions, they are explicitly mentioned below.</p>
+
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://developer.tizen.org/dev-guide/2.3.1/org.tizen.web.apireference/html/device_api/wearable/tizen/application.html">Application</a></td>
+<td>This API allows a widget to launch and access installed applications. Note that launching other Web widgets installed on the same device is deprecated in Tizen 3.0, so such use is not recommended.<br>Unsupported methods: <br> - ApplicationManager: Application getCurrentApplication() <br> - Application: void exit() <br>- Application: void hide() <br>- Application: RequestedApplicationControl getRequestedAppControl()<br>
+</td>
+</tr>
+<tr>
+<td><a href="https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/device_api/wearable/tizen/preference.html">Preference</a>
+</td>
+<td>This API allows to store and retrieve a (key, value) pair to set application preferences.</td>
+</tr>
+<tr>
+<td><a href="https://developer.tizen.org/dev-guide/2.3.1/org.tizen.web.apireference/html/device_api/wearable/tizen/sensor.html">Sensor</a></td>
+<td>This API provides interfaces and methods for getting sensor data from the various device sensors.</td>
+</tr>
+<tr>
+<td><a href="https://developer.tizen.org/dev-guide/2.3.1/org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html">System Information</a></td>
+<td>This API provides information about the device's display, network, storage and other capabilities. <br> Unsupported feature: Getting 'LOCALE' value using addPropertyValueChangeListener() is not supported. Because when 'LOCALE' is changed, web widget will be restarted so it is not possible to get 'LOCALE' at runtime.</td>
+</tr>
+<tr>
+<td><a href="http://img-developer.samsung.com/onlinedocs/samsung_webapi_guide_public_2.0/html/wapi_spec/sap.html">SAP *</a></td>
+<td>The Samsung Accessory Protocol (SAP) APIs offers services that enable mobile devices to establish connections and exchange data with web widget applications.</td>
+</tr>
+<tr>
+<td><a href="https://developer.tizen.org/dev-guide/2.3.2/org.tizen.web.apireference/html/device_api/wearable/tizen/widgetservice.html">Widgetservice</a>
+</td>
+<td>This API provides information about installed widgets.<br>Unsupported methods:<br> - WidgetInstance: void changeUpdatePeriod()<br> - WidgetInstance: void sendContent()<br> - WidgetInstance: void getContent()<br>Important Notice<br> - The <code>WidgetInstanceId</code> in interface <code>WidgetInstance</code> is not persistent, i.e., each widget instance is assigned a new <code>WidgetInstace.id</code> at every reboot of a wearable device. Therefore, it cannot be used to identify a widget instance existed before rebooting a device.</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+* The SAP (Samsung Accessory Protocol) is a Samsung device API.
+</blockquote>
+</body></html>

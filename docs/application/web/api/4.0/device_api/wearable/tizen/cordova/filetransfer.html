@@ -1,0 +1,1157 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>FileTransfer API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::FileTransfer">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+<div class="title"><h1>FileTransfer API</h1></div>
+<div class="brief">
+ This module allows you to upload and download files.
+        </div>
+<div class="description">
+        <p>
+Original documetation: <a href="https://www.npmjs.com/package/cordova-plugin-file-transfer">Cordova FileTransfer</a>        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#FileUploadParams">FileUploadParams</a>
+</li>
+<li>
+                    1.2. <a href="#HeaderFields">HeaderFields</a>
+</li>
+<li>
+                    1.3. <a href="#FileDownloadOptions">FileDownloadOptions</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#FileUploadOptions">FileUploadOptions</a>
+</li>
+<li>2.2. <a href="#FileUploadResult">FileUploadResult</a>
+</li>
+<li>2.3. <a href="#FileTransferError">FileTransferError</a>
+</li>
+<li>2.4. <a href="#FileTransfer">FileTransfer</a>
+</li>
+<li>2.5. <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>
+</li>
+<li>2.6. <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>
+</li>
+<li>2.7. <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#FileUploadOptions">FileUploadOptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FileUploadResult">FileUploadResult</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FileTransferError">FileTransferError</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FileTransfer">FileTransfer</a></td>
+<td>
+<div>void <a href="#FileTransfer::upload">upload</a> (DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, optional boolean? trustAllHosts)</div>
+<div>void <a href="#FileTransfer::download">download</a> (DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options)</div>
+<div>void <a href="#FileTransfer::abort">abort</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a></td>
+<td><div>void <a href="#FileUploadSuccessCallback::onsuccess">onsuccess</a> (<a href="#FileUploadResult">FileUploadResult</a> result)</div></td>
+</tr>
+<tr>
+<td><a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a></td>
+<td><div>void <a href="#FileDownloadSuccessCallback::onsuccess">onsuccess</a> (<a href="file.html#FileEntry">FileEntry</a> file)</div></td>
+</tr>
+<tr>
+<td><a href="#FileTransferErrorCallback">FileTransferErrorCallback</a></td>
+<td><div>void <a href="#FileTransferErrorCallback::onerror">onerror</a> (<a href="#FileTransferError">FileTransferError</a> error)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="FileUploadParams">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileUploadParams"></a><h3>1.1. FileUploadParams</h3>
+<div class="brief">
+ A set of additional upload HTTP request parameters.
+          </div>
+<pre class="webidl prettyprint">  typedef object FileUploadParams;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The key / value type to pass in the HTTP request.
+          </p>
+         </div>
+</div>
+<div class="typedef" id="HeaderFields">
+<a class="backward-compatibility-anchor" name="::FileTransfer::HeaderFields"></a><h3>1.2. HeaderFields</h3>
+<div class="brief">
+ A set of HTTP header fields.
+          </div>
+<pre class="webidl prettyprint">  typedef object HeaderFields;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The key / value type of each HTTP header field should be DOMString.
+          </p>
+         </div>
+</div>
+<div class="typedef" id="FileDownloadOptions">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileDownloadOptions"></a><h3>1.3. FileDownloadOptions</h3>
+<div class="brief">
+ A set of download options.
+          </div>
+<pre class="webidl prettyprint">  typedef object FileDownloadOptions;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The key / value type of download options values.  Currently only supports headers (such as Authorization (Basic Authentication), etc).
+          </p>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="FileUploadOptions">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileUploadOptions"></a><h3>2.1. FileUploadOptions</h3>
+<div class="brief">
+ A FileUploadOptions object can be passed to the FileTransfer objects upload method in order to specify additional parameters to the upload script
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, DOMString httpMethod)]
+  interface FileUploadOptions {
+    attribute DOMString fileKey;
+    attribute DOMString fileName;
+    attribute DOMString httpMethod;
+    attribute DOMString mimeType;
+    attribute <a href="#FileUploadParams">FileUploadParams</a> params;
+    attribute boolean chunkedMode;
+    attribute <a href="#HeaderFields">HeaderFields</a> headers;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Assume the variable fileURL contains a valid URL to a text file on the device */
+
+var win = function(r)
+{
+  console.log('Code = ' + r.responseCode);
+  console.log('Response = ' + r.response);
+  console.log('Sent = ' + r.bytesSent);
+}
+
+var fail = function(error)
+{
+  alert('An error has occurred: Code = ' + error.code);
+  console.log('Upload error source ' + error.source);
+  console.log('Upload error target ' + error.target);
+}
+
+var options = new FileUploadOptions();
+options.fileKey = 'file';
+options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+options.mimeType = 'text/plain';
+
+var params = {};
+params.value1 = 'test';
+params.value2 = 'param';
+
+options.params = params;
+
+var ft = new FileTransfer();
+ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail, options);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Code = 200
+Response = OK
+Sent = 1024
+</pre>
+</div>
+<div class="constructors">
+<h4 id="FileUploadOptions::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">FileUploadOptions(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, DOMString httpMethod);</pre>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileUploadOptions object */
+var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null, 'POST');
+</pre>
+</div>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FileUploadOptions::fileKey">
+<span class="attrName"><span class="type">DOMString </span><span class="name">fileKey</span></span><div class="brief">
+ The name of the form element. Defaults to file
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadOptions::fileName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">fileName</span></span><div class="brief">
+ The file name to use when saving the file on the server. Defaults to image.jpg.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadOptions::httpMethod">
+<span class="attrName"><span class="type">DOMString </span><span class="name">httpMethod</span></span><div class="brief">
+ The HTTP method to use - either PUT or POST. Defaults to POST.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadOptions::mimeType">
+<span class="attrName"><span class="type">DOMString </span><span class="name">mimeType</span></span><div class="brief">
+ The mime type of the data to upload. Defaults to image/jpeg.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadOptions::params">
+<span class="attrName"><span class="type">FileUploadParams </span><span class="name">params</span></span><div class="brief">
+ A set of optional key/value pairs to pass in the HTTP request.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadOptions::chunkedMode">
+<span class="attrName"><span class="type">boolean </span><span class="name">chunkedMode</span></span><div class="brief">
+ Whether to upload the data in chunked streaming mode. Defaults to true.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadOptions::headers">
+<span class="attrName"><span class="type">HeaderFields </span><span class="name">headers</span></span><div class="brief">
+ A map of header name/header values. Use an array to specify more than one value.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="FileUploadResult">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileUploadResult"></a><h3>2.2. FileUploadResult</h3>
+<div class="brief">
+ A FileUploadResult object is passed to the success callback of the FileTransfer object's upload() method.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileUploadResult {
+    attribute long bytesSent;
+    attribute long responseCode;
+    attribute DOMString response;
+    attribute <a href="#HeaderFields">HeaderFields</a>  headers;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FileUploadResult::bytesSent">
+<span class="attrName"><span class="type">long </span><span class="name">bytesSent</span></span><div class="brief">
+ The number of bytes sent to the server as part of the upload.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadResult::responseCode">
+<span class="attrName"><span class="type">long </span><span class="name">responseCode</span></span><div class="brief">
+ The HTTP response code returned by the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadResult::response">
+<span class="attrName"><span class="type">DOMString </span><span class="name">response</span></span><div class="brief">
+ The HTTP response returned by the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileUploadResult::headers">
+<span class="attrName"><span class="type">HeaderFields </span><span class="name">headers</span></span><div class="brief">
+ The HTTP response headers by the server.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="FileTransferError">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError"></a><h3>2.3. FileTransferError</h3>
+<div class="brief">
+ A FileTransferError object is passed to an error callback when an error occurs.
+          </div>
+<pre class="webidl prettyprint">  interface FileTransferError {
+    attribute short code;
+    attribute DOMString source;
+    attribute DOMString target;
+    attribute long http_status;
+    attribute DOMString body;
+    attribute DOMString exception;
+    const short FILE_NOT_FOUND_ERR = 1;
+    const short INVALID_URL_ERR = 2;
+    const short CONNECTION_ERR = 3;
+    const short ABORT_ERR = 4;
+    const short NOT_MODIFIED_ERR = 5;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="FileTransferError::FILE_NOT_FOUND_ERR">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::FILE_NOT_FOUND_ERR"></a><span class="name">FILE_NOT_FOUND_ERR</span><div class="brief">
+ File Not Found error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="FileTransferError::INVALID_URL_ERR">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::INVALID_URL_ERR"></a><span class="name">INVALID_URL_ERR</span><div class="brief">
+ Invalid URL error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="FileTransferError::CONNECTION_ERR">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::CONNECTION_ERR"></a><span class="name">CONNECTION_ERR</span><div class="brief">
+ Connection error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="FileTransferError::ABORT_ERR">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::ABORT_ERR"></a><span class="name">ABORT_ERR</span><div class="brief">
+ Abort error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="FileTransferError::NOT_MODIFIED_ERR">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::NOT_MODIFIED_ERR"></a><span class="name">NOT_MODIFIED_ERR</span><div class="brief">
+ Not Modified error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FileTransferError::code">
+<span class="attrName"><span class="type">short </span><span class="name">code</span></span><div class="brief">
+ One of the predefined error codes listed above.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileTransferError::source">
+<span class="attrName"><span class="type">DOMString </span><span class="name">source</span></span><div class="brief">
+ URL to the source.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileTransferError::target">
+<span class="attrName"><span class="type">DOMString </span><span class="name">target</span></span><div class="brief">
+ URL to the target.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileTransferError::http_status">
+<span class="attrName"><span class="type">long </span><span class="name">http_status</span></span><div class="brief">
+ HTTP status code. This attribute is only available when a response code is received from the HTTP connection.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileTransferError::body">
+<span class="attrName"><span class="type">DOMString </span><span class="name">body</span></span><div class="brief">
+ Response body. This attribute is only available when a response is received from the HTTP connection.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileTransferError::exception">
+<span class="attrName"><span class="type">DOMString </span><span class="name">exception</span></span><div class="brief">
+ Either e.getMessage or e.toString
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="FileTransfer">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransfer"></a><h3>2.4. FileTransfer</h3>
+<div class="brief">
+ The FileTransfer object provides a way to upload files using an HTTP multi-part POST or PUT request, and to download files as well.
+          </div>
+<pre class="webidl prettyprint">  [Constructor()]
+  interface FileTransfer {
+    [TreatNonCallableAsNull] attribute <a href="file.html#ProgressCallback">ProgressCallback</a>? onprogress;
+
+   void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, optional boolean? trustAllHosts);
+
+   void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);
+
+   void abort();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="constructors">
+<h4 id="FileTransfer::constructor">Constructors</h4>
+<dl>
+<pre class="webidl prettyprint">FileTransfer();</pre>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileTransfer object */
+var file_transfer = new FileTransfer();
+</pre>
+</div>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="FileTransfer::onprogress">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onprogress</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called with a ProgressEvent whenever a new chunk of data is transferred.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+
+var win = function(r)
+{
+  console.log('Success. File uploaded');
+}
+
+var fail = function(error)
+{
+  /* error.code == FileTransferError.ABORT_ERR */
+  alert('An error has occurred: Code = ' + error.code);
+  console.log('Upload error source ' + error.source);
+  console.log('Upload error target ' + error.target);
+};
+
+var ft = new FileTransfer();
+
+ft.onprogress = function(event)
+{
+  console.log('Uploaded: ' + event.loaded);
+};
+
+ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Uploaded: 512
+Uploaded: 1024
+Success. File uploaded
+</pre>
+</div>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileTransfer::upload">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransfer::upload"></a><code><b><span class="methodName">upload</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sends a file to a server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, optional boolean? trustAllHosts);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/internet
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">fileURL</span>:
+ Filesystem URL representing the file on the device. For backwards compatibility, this can also be the full path of the file on the device.
+                </li>
+          <li class="param">
+<span class="name">server</span>:
+ URL of the server to receive the file, as encoded by encodeURI().
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A callback that is passed a FileUploadResult object.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ : A callback that executes if an error occurs retrieving the FileUploadResult. Invoked with a FileTransferError object.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Optional parameters
+                </li>
+          <li class="param">
+<span class="name">trustAllHosts</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Optional parameter, defaults to false. If set to true, it accepts all security certificates.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+
+var win = function (r)
+{
+  console.log('Code = ' + r.responseCode);
+  console.log('Response = ' + r.response);
+  console.log('Sent = ' + r.bytesSent);
+}
+
+var fail = function (error)
+{
+  alert('An error has occurred: Code = ' + error.code);
+  console.log('Upload error source ' + error.source);
+  console.log('Upload error target ' + error.target);
+}
+
+var ft = new FileTransfer();
+ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Code = 200
+Response = OK
+Sent = 1024
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileTransfer::download">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransfer::download"></a><code><b><span class="methodName">download</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Downloads a file from a server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">source</span>:
+ URL of the server to download the file, as encoded by encodeURI().
+                </li>
+          <li class="param">
+<span class="name">target</span>:
+ Filesystem url representing the file on the device. For backwards compatibility, this can also be the full path of the file on the device.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A callback that is passed a FileEntry object.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A callback that executes if an error occurs when retrieving the FileEntry. Invoked with a FileTransferError object.
+                </li>
+          <li class="param">
+<span class="name">trustAllHosts</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Optional parameter, defaults to false. If set to true, it accepts all security certificates.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Optional parameters, currently only supports headers (such as Authorization (Basic Authentication), etc).
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+
+var fileTransfer = new FileTransfer();
+var uri = encodeURI('http://some.server.com/download.php');
+
+fileTransfer.download(uri, fileURL, function(entry)
+{
+  console.log('Download complete: ' + entry.toURL());
+}, function(error)
+{
+  console.log('Download error source ' + error.source);
+  console.log('Download error target ' + error.target);
+  console.log('Upload error code' + error.code);
+}, false,
+{
+  headers: {
+    'Authorization': 'Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=='
+  }
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Download complete: file:///home/owner/apps_rw/Gk6hf8hjk/tmp/file.txt
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileTransfer::abort">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransfer::abort"></a><code><b><span class="methodName">abort</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Aborts an in-progress transfer. The onerror callback is passed a FileTransferError object which has an error code of FileTransferError.ABORT_ERR.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void abort();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/internet
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+
+var win = function(r)
+{
+  console.log('Should not be called');
+}
+
+var fail = function(error)
+{
+  /* error.code == FileTransferError.ABORT_ERR */
+  alert('An error has occurred: Code = ' + error.code);
+  console.log('Upload error source ' + error.source);
+  console.log('Upload error target ' + error.target);
+};
+
+var ft = new FileTransfer();
+ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail);
+ft.abort();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>An error has occurred: Code = 4
+Upload error source file:///home/owner/apps_rw/Gk6hf8hjk/tmp/file.txt
+Upload error target http://some.server.com/file.txt
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileUploadSuccessCallback">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileUploadSuccessCallback"></a><h3>2.5. FileUploadSuccessCallback</h3>
+<div class="brief">
+ The interface that defines a callback function which is called when an upload is successfully finished.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileUploadSuccessCallback {
+    void onsuccess(<a href="#FileUploadResult">FileUploadResult</a> result);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileUploadSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileUploadSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when upload is successfully finished.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#FileUploadResult">FileUploadResult</a> result);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ See the <a href="#FileTransfer::upload">example</a>            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">result</span>:
+ A result object that defines an upload result.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileDownloadSuccessCallback">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileDownloadSuccessCallback"></a><h3>2.6. FileDownloadSuccessCallback</h3>
+<div class="brief">
+ The interface that defines a callback function which is called when download is successfully finished.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileDownloadSuccessCallback {
+    void onsuccess(<a href="file.html#FileEntry">FileEntry</a> file);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileDownloadSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileDownloadSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when download is successfully finished.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="file.html#FileEntry">FileEntry</a> file);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ See the <a href="#FileTransfer::download">example</a>            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">file</span>:
+ An object that defines a downloaded file.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileTransferErrorCallback">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferErrorCallback"></a><h3>2.7. FileTransferErrorCallback</h3>
+<div class="brief">
+ The interface that defines an error callback function which is called when an error occur.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileTransferErrorCallback {
+    void onerror(<a href="#FileTransferError">FileTransferError</a> error);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileTransferErrorCallback::onerror">
+<a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferErrorCallback::onerror"></a><code><b><span class="methodName">onerror</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when file transfer is finished with an error
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#FileTransferError">FileTransferError</a> error);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="remark"> Remark : </span>
+ See the <a href="#FileTransfer::download">example</a>            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">error</span>:
+ An object that defines details of the error
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module FileTransfer {
+  typedef object FileUploadParams;
+
+  typedef object HeaderFields;
+
+  typedef object FileDownloadOptions;
+
+  [Constructor(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, DOMString httpMethod)]
+  interface FileUploadOptions {
+    attribute DOMString fileKey;
+    attribute DOMString fileName;
+    attribute DOMString httpMethod;
+    attribute DOMString mimeType;
+    attribute <a href="#FileUploadParams">FileUploadParams</a> params;
+    attribute boolean chunkedMode;
+    attribute <a href="#HeaderFields">HeaderFields</a> headers;
+  };
+
+  [NoInterfaceObject] interface FileUploadResult {
+    attribute long bytesSent;
+    attribute long responseCode;
+    attribute DOMString response;
+    attribute <a href="#HeaderFields">HeaderFields</a>  headers;
+  };
+
+  interface FileTransferError {
+    attribute short code;
+    attribute DOMString source;
+    attribute DOMString target;
+    attribute long http_status;
+    attribute DOMString body;
+    attribute DOMString exception;
+    const short FILE_NOT_FOUND_ERR = 1;
+    const short INVALID_URL_ERR = 2;
+    const short CONNECTION_ERR = 3;
+    const short ABORT_ERR = 4;
+    const short NOT_MODIFIED_ERR = 5;
+  };
+
+  [Constructor()]
+  interface FileTransfer {
+    [TreatNonCallableAsNull] attribute <a href="file.html#ProgressCallback">ProgressCallback</a>? onprogress;
+
+   void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, optional boolean? trustAllHosts);
+
+   void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);
+
+   void abort();
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface FileUploadSuccessCallback {
+    void onsuccess(<a href="#FileUploadResult">FileUploadResult</a> result);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface FileDownloadSuccessCallback {
+    void onsuccess(<a href="file.html#FileEntry">FileEntry</a> file);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface FileTransferErrorCallback {
+    void onerror(<a href="#FileTransferError">FileTransferError</a> error);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

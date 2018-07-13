@@ -16,7 +16,7 @@ The main features of the Device Policy Manager API include:
 
   You can [check the restriction states of the device](#client_application), such as camera, microphone, Wi-Fi, Bluetooth, and USB, using the getter functions of the Restriction policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__RESTRICTION__POLICY__MODULE.html) applications).
 
-  You can also check the external and internal storage encryption state using the Security policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__SECURITY__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__SECURITY__POLICY__MODULE.html) applications) and get the name of the created zone and the zone state using the Zone policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__ZONE__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__ZONE__POLICY__MODULE.html)applications).
+  You can also check the external and internal storage encryption state using the Security policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__SECURITY__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__SECURITY__POLICY__MODULE.html) applications) and get the name of the created zone and the zone state using the Zone policy group API (in [mobile](../../api/mobile/latest/group__CAPI__DPM__ZONE__POLICY__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DPM__ZONE__POLICY__MODULE.html) applications).
 
 The following figure illustrates the DPM framework process.
 

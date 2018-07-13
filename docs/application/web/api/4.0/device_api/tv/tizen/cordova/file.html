@@ -1,0 +1,4080 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>File API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::File">
+<div class="supported-platforms"><img title="Mandatory" src="../../../../images/tv_s_w.png"></div>
+<div class="title"><h1>File API</h1></div>
+<div class="brief">
+ This plugin implements a File API allowing read/write access to files residing on the device.
+        </div>
+<div class="description">
+        <p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-file">Cordova File</a>.
+        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
+                    1.1. <a href="#Blob">Blob</a>
+</li>
+<li>
+                    1.2. <a href="#WriteData">WriteData</a>
+</li>
+<li>
+                    1.3. <a href="#ReadResultData">ReadResultData</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#FilePropertyBag">FilePropertyBag</a>
+</li>
+<li>2.2. <a href="#ProgressEventInit">ProgressEventInit</a>
+</li>
+<li>2.3. <a href="#ProgressEvent">ProgressEvent</a>
+</li>
+<li>2.4. <a href="#FileSystemManagerObject">FileSystemManagerObject</a>
+</li>
+<li>2.5. <a href="#FileSystemManager">FileSystemManager</a>
+</li>
+<li>2.6. <a href="#FileSystem">FileSystem</a>
+</li>
+<li>2.7. <a href="#Metadata">Metadata</a>
+</li>
+<li>2.8. <a href="#FileError">FileError</a>
+</li>
+<li>2.9. <a href="#File">File</a>
+</li>
+<li>2.10. <a href="#LocalFileSystem">LocalFileSystem</a>
+</li>
+<li>2.11. <a href="#Entry">Entry</a>
+</li>
+<li>2.12. <a href="#DirectoryEntry">DirectoryEntry</a>
+</li>
+<li>2.13. <a href="#DirectoryReader">DirectoryReader</a>
+</li>
+<li>2.14. <a href="#FileEntry">FileEntry</a>
+</li>
+<li>2.15. <a href="#FileReader">FileReader</a>
+</li>
+<li>2.16. <a href="#FileWriter">FileWriter</a>
+</li>
+<li>2.17. <a href="#ProgressCallback">ProgressCallback</a>
+</li>
+<li>2.18. <a href="#FileSystemCallback">FileSystemCallback</a>
+</li>
+<li>2.19. <a href="#EntryCallback">EntryCallback</a>
+</li>
+<li>2.20. <a href="#EntriesCallback">EntriesCallback</a>
+</li>
+<li>2.21. <a href="#MetadataCallback">MetadataCallback</a>
+</li>
+<li>2.22. <a href="#FileWriterCallback">FileWriterCallback</a>
+</li>
+<li>2.23. <a href="#FileCallback">FileCallback</a>
+</li>
+<li>2.24. <a href="#VoidCallback">VoidCallback</a>
+</li>
+<li>2.25. <a href="#ErrorCallback">ErrorCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#FilePropertyBag">FilePropertyBag</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ProgressEventInit">ProgressEventInit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ProgressEvent">ProgressEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FileSystemManagerObject">FileSystemManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FileSystemManager">FileSystemManager</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FileSystem">FileSystem</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Metadata">Metadata</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FileError">FileError</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#File">File</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#LocalFileSystem">LocalFileSystem</a></td>
+<td>
+<div>void <a href="#LocalFileSystem::requestFileSystem">requestFileSystem</a> (short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#LocalFileSystem::resolveLocalFileSystemURL">resolveLocalFileSystemURL</a> (DOMString uri, optional <a href="#EntryCallback">EntryCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#Entry">Entry</a></td>
+<td>
+<div>void <a href="#Entry::getMetadata">getMetadata</a> (<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>void <a href="#Entry::moveTo">moveTo</a> (<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>void <a href="#Entry::copyTo">copyTo</a> (<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>void <a href="#Entry::getParent">getParent</a> (<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>void <a href="#Entry::remove">remove</a> (<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>DOMString <a href="#Entry::toURL">toURL</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#DirectoryEntry">DirectoryEntry</a></td>
+<td>
+<div>
+<a href="#DirectoryReader">DirectoryReader</a> <a href="#DirectoryEntry::createReader">createReader</a> ()</div>
+<div>void <a href="#DirectoryEntry::getDirectory">getDirectory</a> (DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>void <a href="#DirectoryEntry::getFile">getFile</a> (DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>void <a href="#DirectoryEntry::removeRecursively">removeRecursively</a> (<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#DirectoryReader">DirectoryReader</a></td>
+<td><div>void <a href="#DirectoryReader::readEntries">readEntries</a> (<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div></td>
+</tr>
+<tr>
+<td><a href="#FileEntry">FileEntry</a></td>
+<td>
+<div>void <a href="#FileEntry::createWriter">createWriter</a> (<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)</div>
+<div>void <a href="#FileEntry::file">file</a> (<a href="#FileCallback">FileCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a> onerror)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#FileReader">FileReader</a></td>
+<td>
+<div>void <a href="#FileReader::abort">abort</a> ()</div>
+<div>void <a href="#FileReader::readAsDataURL">readAsDataURL</a> (<a href="#Blob">Blob</a> blob)</div>
+<div>void <a href="#FileReader::readAsText">readAsText</a> (<a href="#Blob">Blob</a> blob, optional DOMString? label)</div>
+<div>void <a href="#FileReader::readAsBinaryString">readAsBinaryString</a> (<a href="#Blob">Blob</a> blob)</div>
+<div>void <a href="#FileReader::readAsArrayBuffer">readAsArrayBuffer</a> (<a href="#Blob">Blob</a> blob)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#FileWriter">FileWriter</a></td>
+<td>
+<div>void <a href="#FileWriter::abort">abort</a> ()</div>
+<div>void <a href="#FileWriter::seek">seek</a> (long offset)</div>
+<div>void <a href="#FileWriter::truncate">truncate</a> (long size)</div>
+<div>void <a href="#FileWriter::write">write</a> (<a href="#WriteData">WriteData</a> data)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#ProgressCallback">ProgressCallback</a></td>
+<td><div>void <a href="#ProgressCallback::onsuccess">onsuccess</a> (<a href="#ProgressEvent">ProgressEvent</a> event)</div></td>
+</tr>
+<tr>
+<td><a href="#FileSystemCallback">FileSystemCallback</a></td>
+<td><div>void <a href="#FileSystemCallback::handleEvent">handleEvent</a> (<a href="#FileSystem">FileSystem</a> filesystem)</div></td>
+</tr>
+<tr>
+<td><a href="#EntryCallback">EntryCallback</a></td>
+<td><div>void <a href="#EntryCallback::handleEvent">handleEvent</a> (<a href="#Entry">Entry</a> entry)</div></td>
+</tr>
+<tr>
+<td><a href="#EntriesCallback">EntriesCallback</a></td>
+<td><div>void <a href="#EntriesCallback::handleEvent">handleEvent</a> (<a href="#Entry">Entry</a>[] entries)</div></td>
+</tr>
+<tr>
+<td><a href="#MetadataCallback">MetadataCallback</a></td>
+<td><div>void <a href="#MetadataCallback::handleEvent">handleEvent</a> (<a href="#Metadata">Metadata</a> metadata)</div></td>
+</tr>
+<tr>
+<td><a href="#FileWriterCallback">FileWriterCallback</a></td>
+<td><div>void <a href="#FileWriterCallback::handleEvent">handleEvent</a> (<a href="#FileWriter">FileWriter</a> fileWriter)</div></td>
+</tr>
+<tr>
+<td><a href="#FileCallback">FileCallback</a></td>
+<td><div>void <a href="#FileCallback::handleEvent">handleEvent</a> (<a href="#File">File</a> file)</div></td>
+</tr>
+<tr>
+<td><a href="#VoidCallback">VoidCallback</a></td>
+<td><div>void <a href="#VoidCallback::handleEvent">handleEvent</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#ErrorCallback">ErrorCallback</a></td>
+<td><div>void <a href="#ErrorCallback::handleEvent">handleEvent</a> (<a href="#FileError">FileError</a> err)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="Blob">
+<a class="backward-compatibility-anchor" name="::File::Blob"></a><h3>1.1. Blob</h3>
+<div class="brief">
+ Specifies the Blob object defined in <a href="https://www.w3.org/TR/FileAPI/">W3C File API</a>.
+See <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface and Binary Data</a>.
+          </div>
+<pre class="webidl prettyprint">  typedef <a href="#Blob">Blob</a> Blob;</pre>
+</div>
+<div class="typedef" id="WriteData">
+<a class="backward-compatibility-anchor" name="::File::WriteData"></a><h3>1.2. WriteData</h3>
+<div class="brief">
+ Specifies the user or system defined event data.
+          </div>
+<pre class="webidl prettyprint">  typedef (<a href="#Blob">Blob</a> or DOMString) WriteData;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+</div>
+<div class="typedef" id="ReadResultData">
+<a class="backward-compatibility-anchor" name="::File::ReadResultData"></a><h3>1.3. ReadResultData</h3>
+<div class="brief">
+ Specifies the result data of <em>FileReader</em> object.
+          </div>
+<pre class="webidl prettyprint">  typedef (DOMString or byte[]) ReadResultData;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="dictionary" id="FilePropertyBag">
+<a class="backward-compatibility-anchor" name="::File::FilePropertyBag"></a><h3>2.1. FilePropertyBag</h3>
+<div class="brief">
+ FilePropertyBag.
+          </div>
+<pre class="webidl prettyprint">  dictionary FilePropertyBag {
+
+    DOMString type;
+
+    long long lastModified;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Dictionary members</h4>
+<dl>
+<dt class="member" id="FilePropertyBag::type"><span class="attrName">DOMString type</span></dt>
+<dd>
+<div class="brief">
+ The ASCII-encoded string in lower case representing the media type of the File. Normative conditions for this member are provided in the File constructor steps.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+<dt class="member" id="FilePropertyBag::lastModified"><span class="attrName">long long lastModified</span></dt>
+<dd>
+<div class="brief">
+ conditions for this member are provided in the File constructor steps.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="dictionary" id="ProgressEventInit">
+<a class="backward-compatibility-anchor" name="::File::ProgressEventInit"></a><h3>2.2. ProgressEventInit</h3>
+<div class="brief">
+ A dictionary used to initialize ProgressEvent object.
+          </div>
+<pre class="webidl prettyprint">  dictionary ProgressEventInit {
+    unsigned long long loaded = false;
+    unsigned long long total = false;
+     target = null;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+</div>
+<div class="interface" id="ProgressEvent">
+<a class="backward-compatibility-anchor" name="::File::ProgressEvent"></a><h3>2.3. ProgressEvent</h3>
+<div class="brief">
+ The interface that indicates progression event.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict)]
+  interface ProgressEvent {
+    readonly attribute DOMString type;
+    readonly attribute boolean bubbles;
+    readonly attribute boolean cancelBubble;
+    readonly attribute boolean cancelable;
+    readonly attribute boolean lengthComputable;
+    readonly attribute unsigned long long loaded;
+    readonly attribute unsigned long long total;
+    readonly attribute  target;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var eventInit =
+{
+  loaded: 128,
+  total: 1024
+};
+var event = new ProgressEvent('submit', eventInit);
+</pre>
+</div>
+<div class="constructors">
+<h4 id="ProgressEvent::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="ProgressEvent::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ The type of event, e.g. 'click', 'hashchange', or 'submit'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="ProgressEvent::bubbles">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">bubbles</span></span><div class="brief">
+ True if event's goes through its target attribute value's ancestors in reverse tree order, and false otherwise.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="ProgressEvent::cancelBubble">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">cancelBubble</span></span><div class="brief">
+ Cancel bubble
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="ProgressEvent::cancelable">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">cancelable</span></span><div class="brief">
+ Its return value does not always carry meaning, but true can indicate that part of the operation during which event was dispatched, can be canceled.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="ProgressEvent::lengthComputable">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">lengthComputable</span></span><div class="brief">
+ True when the length of the transferred content is known.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="ProgressEvent::loaded">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long long </span><span class="name">loaded</span></span><div class="brief">
+ Number of bytes transferred.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="ProgressEvent::total">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long long </span><span class="name">total</span></span><div class="brief">
+ The total length of the content.  This attribute is set when lengthComputable is true.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="ProgressEvent::target">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">EventTarget </span><span class="name">target</span></span><div class="brief">
+ The object to which event is dispatched.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="FileSystemManagerObject">
+<a class="backward-compatibility-anchor" name="::File::FileSystemManagerObject"></a><h3>2.4. FileSystemManagerObject</h3>
+<div class="brief">
+ The FileSystemManagerObject interface defines what is instantiated by the Cordova object.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileSystemManagerObject {
+    readonly attribute <a href="#FileSystemManager">FileSystemManager</a> file;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="cordova.html#Cordova">Cordova</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+There is a <em>cordova.file </em>object that allows accessing the functionality of the Filesystem API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="FileSystemManager">
+<a class="backward-compatibility-anchor" name="::File::FileSystemManager"></a><h3>2.5. FileSystemManager</h3>
+<div class="brief">
+ The FileSystemManager interface provides access to the Filesystem API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileSystemManager {
+    readonly attribute DOMString? applicationDirectory;
+
+    readonly attribute DOMString? applicationStorageDirectory;
+
+    readonly attribute DOMString? dataDirectory;
+
+    readonly attribute DOMString? cacheDirectory;
+
+    readonly attribute DOMString? externalApplicationStorageDirectory;
+
+    readonly attribute DOMString? externalDataDirectory;
+
+    readonly attribute DOMString? externalCacheDirectory;
+
+    readonly attribute DOMString? externalRootDirectory;
+
+    readonly attribute DOMString? tempDirectory;
+
+    readonly attribute DOMString? syncedDataDirectory;
+
+    readonly attribute DOMString? documentsDirectory;
+
+    readonly attribute DOMString? sharedDirectory;
+
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+This manager interface exposes the Filesystem base API constants.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FileSystemManager::applicationDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">applicationDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Read-only directory where the application is installed.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("The directory where the application is installed " + cordova.file.applicationDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>The directory where the application is installed file:///opt/usr/apps/WfigBlWDyf/res/wgt/
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::applicationStorageDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">applicationStorageDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Root directory of the application's sandbox.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Root directory of the application's sandbox " + cordova.file.applicationStorageDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Root directory of the application's sandbox file:///opt/usr/apps/WfigBlWDyf/
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::dataDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">dataDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Persistent and private data storage within the application's sandbox using internal memory
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Data directory " + cordova.file.dataDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Data directory file:///opt/usr/apps/WfigBlWDyf/data/
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::cacheDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">cacheDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Directory for cached data files or any files that your app can re-create easily. The OS may delete these files when the device runs low on storage, nevertheless, apps should not rely on the OS to delete files in here.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Cache directory " + cordova.file.cacheDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Cache directory file:///opt/usr/apps/WfigBlWDyf/tmp/
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::externalApplicationStorageDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">externalApplicationStorageDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Application space on external storage.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Space on external storage " + cordova.file.externalApplicationStorageDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Space on external storage null
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::externalDataDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">externalDataDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Where to put app-specific data files on external storage.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Data files on external storage " + cordova.file.externalDataDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Data files on external storage null
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::externalCacheDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">externalCacheDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Application cache on external storage.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Cache on external storage " + cordova.file.externalCacheDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Cache on external storage null
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::externalRootDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">externalRootDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ External storage root.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Root on external storage " + cordova.file.externalRootDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Root on external storage file:///usr/storage/sdcard/
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::tempDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">tempDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+  Temp directory that the OS can clear at will. Do not rely on the OS to clear this directory; your app should always remove files as applicable.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Temp directory " + cordova.file.tempDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Temp directory null
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::syncedDataDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">syncedDataDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Holds app-specific files that should be synced.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Synced data directory " + cordova.file.syncedDataDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Synced data directory null
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::documentsDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">documentsDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Files private to the app, but that are meaningful to other application (e.g. Office files).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Documents directory " + cordova.file.documentsDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Documents directory null
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystemManager::sharedDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">sharedDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Files globally available to all applications.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Files globally available to all applications " + cordova.file.sharedDirectory);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Files globally available to all applications file:///opt/usr/media/
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="FileSystem">
+<a class="backward-compatibility-anchor" name="::File::FileSystem"></a><h3>2.6. FileSystem</h3>
+<div class="brief">
+ This interface provides object that represents a file system.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileSystem {
+
+  readonly attribute DOMString name;
+
+  readonly attribute <a href="#DirectoryEntry">DirectoryEntry</a> root;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FileSystem::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ This is the name of the file system.
+            </div>
+<div class="description">
+            <p>
+The specifics of naming filesystems is unspecified, but a name must be unique across the list of exposed file systems.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fileSystem)
+{
+  console.log('Name of the filesystem: ' + fileSystem.name);
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Name of the filesystem: temporary
+</pre>
+</div>
+</li>
+<li class="attribute" id="FileSystem::root">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DirectoryEntry </span><span class="name">root</span></span><div class="brief">
+ The root directory of the file system.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="Metadata">
+<a class="backward-compatibility-anchor" name="::File::Metadata"></a><h3>2.7. Metadata</h3>
+<div class="brief">
+ This interface supplies information about the state of a file or directory.
+          </div>
+<pre class="webidl prettyprint">  interface Metadata {
+    readonly attribute Date modificationTime;
+
+    readonly attribute unsigned long long size;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Metadata::modificationTime">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">modificationTime</span></span><div class="brief">
+ This is the time at which the file or directory was last modified.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Metadata::size">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long long </span><span class="name">size</span></span><div class="brief">
+ The size of the file, in bytes. This must return 0 for directories.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="FileError">
+<a class="backward-compatibility-anchor" name="::File::FileError"></a><h3>2.8. FileError</h3>
+<div class="brief">
+ File Error
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileError {
+    const unsigned short NOT_FOUND_ERR = 1;
+    const unsigned short SECURITY_ERR = 2;
+    const unsigned short ABORT_ERR = 3;
+    const unsigned short NOT_READABLE_ERR = 4;
+    const unsigned short ENCODING_ERR = 5;
+    const unsigned short NO_MODIFICATION_ALLOWED_ERR = 6;
+    const unsigned short INVALID_STATE_ERR = 7;
+    const unsigned short SYNTAX_ERR = 8;
+    const unsigned short INVALID_MODIFICATION_ERR = 9;
+    const unsigned short QUOTA_EXCEEDED_ERR = 10;
+    const unsigned short TYPE_MISMATCH_ERR = 11;
+    const unsigned short PATH_EXISTS_ERR = 12;
+    attribute unsigned short code;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+</div>
+<div class="interface" id="File">
+<a class="backward-compatibility-anchor" name="::File::File"></a><h3>2.9. File</h3>
+<div class="brief">
+ The File interface provides access to file's properties. File object could be created with using of <em>FileEntry.file()</em> method.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface File {
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString localURL;
+
+    readonly attribute DOMString type;
+
+    readonly attribute Date lastModified;
+
+    readonly attribute long long size;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="File::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ The name of the file.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="File::localURL">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">localURL</span></span><div class="brief">
+ The full path of the file, including the name.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="File::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ The mime type of the file.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="File::lastModified">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Date </span><span class="name">lastModified</span></span><div class="brief">
+ The last modified date of the file.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="File::size">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long long </span><span class="name">size</span></span><div class="brief">
+ The size of the file in bytes.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="LocalFileSystem">
+<a class="backward-compatibility-anchor" name="::File::LocalFileSystem"></a><h3>2.10. LocalFileSystem</h3>
+<div class="brief">
+ This interface provides a way to obtain <em>Entry</em> and <em>FileSystem</em> objects.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface LocalFileSystem {
+
+  const short TEMPORARY = 0;
+
+  const short PERSISTENT = 1;
+
+   void requestFileSystem(short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback);
+
+   void resolveLocalFileSystemURL(DOMString uri, optional <a href="#EntryCallback">EntryCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback);
+
+  };</pre>
+<pre class="webidl prettyprint">  Window implements <a href="#LocalFileSystem">LocalFileSystem</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="LocalFileSystem::TEMPORARY">
+<a class="backward-compatibility-anchor" name="::File::LocalFileSystem::TEMPORARY"></a><span class="name">TEMPORARY</span><div class="brief">
+ Used for storage with no guarantee of persistence.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="LocalFileSystem::PERSISTENT">
+<a class="backward-compatibility-anchor" name="::File::LocalFileSystem::PERSISTENT"></a><span class="name">PERSISTENT</span><div class="brief">
+ Used for storage that should not be removed by the user agent without application or user permission.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="LocalFileSystem::requestFileSystem">
+<a class="backward-compatibility-anchor" name="::File::LocalFileSystem::requestFileSystem"></a><code><b><span class="methodName">requestFileSystem</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Request a file system in which to store application data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void requestFileSystem(short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ Local file system type, either TEMPORARY or PERSISTENT.
+                </li>
+          <li class="param">
+<span class="name">size</span>:
+ Indicates how much storage space, in bytes, the application expects to need.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked with a <em>FileSystem</em> object.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked if error occurs retrieving file system.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters has incorrect type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(fs)
+{
+  console.log('File system name ' + fs.name);
+};
+
+errorCallback = function(err)
+{
+  console.log(err.code);
+};
+
+requestFileSystem(TEMPORARY, 1024 * 1024, successCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>File system name temporary
+</pre>
+</div>
+</dd>
+<dt class="method" id="LocalFileSystem::resolveLocalFileSystemURL">
+<a class="backward-compatibility-anchor" name="::File::LocalFileSystem::resolveLocalFileSystemURL"></a><code><b><span class="methodName">resolveLocalFileSystemURL</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Retrieves a <em>DirectoryEntry</em> or <em>FileEntry</em> using local URI.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void resolveLocalFileSystemURL(DOMString uri, optional <a href="#EntryCallback">EntryCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">uri</span>:
+ URI referring to a local file or directory.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked with <em>Entry</em> object corresponding to URI.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Invoked if error occurs retrieving file system entry.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if any of the input parameters has incorrect type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(entry)
+{
+  console.log('Entry name ' + entry.name);
+};
+
+errorCallback = function(err)
+{
+  console.log(err.code);
+};
+
+var uri = 'file:///home/owner/content/Documents/example.txt';
+resolveLocalFileSystemURL(uri, successCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Entry name example.txt
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="Entry">
+<a class="backward-compatibility-anchor" name="::File::Entry"></a><h3>2.11. Entry</h3>
+<div class="brief">
+ The Entry interface.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Entry {
+
+    readonly attribute boolean isFile;
+
+    readonly attribute boolean isDirectory;
+
+    readonly attribute DOMString fullPath;
+
+    readonly attribute DOMString name;
+
+    readonly attribute <a href="#FileSystem">FileSystem</a> filesystem;
+
+    void getMetadata(<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void moveTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void copyTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void getParent(<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void remove(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    DOMString toURL();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Entry::isFile">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isFile</span></span><div class="brief">
+ True if the entry is a file.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Entry::isDirectory">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isDirectory</span></span><div class="brief">
+ True if the entry is a directory.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Entry::fullPath">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">fullPath</span></span><div class="brief">
+ The full absolute path from the root to the entry. An absolute path is a relative path from the root directory, prepended with a '/'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Entry::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ The name of the entry, excluding the path leading to it.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Entry::filesystem">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">FileSystem </span><span class="name">filesystem</span></span><div class="brief">
+ The file system where the entry resides.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Entry::getMetadata">
+<a class="backward-compatibility-anchor" name="::File::Entry::getMetadata"></a><code><b><span class="methodName">getMetadata</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Look up metadata about this entry.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getMetadata(<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ A callback that is called with the time of the last modification.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   A callback that is called when errors happen.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getMetadata(function(metadata)
+  {
+    console.log("Last modification time: " + metadata.modificationTime); /* Get metadata successfully */
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Last modification time: Fri Jan 02 2015 03:58:08 GMT+0900 (KST)
+</pre>
+</div>
+</dd>
+<dt class="method" id="Entry::moveTo">
+<a class="backward-compatibility-anchor" name="::File::Entry::moveTo"></a><code><b><span class="methodName">moveTo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Move an entry to a different location on the file system.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void moveTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+It is an error to try to:
+            </p>
+            <ul>
+              <li>
+move a directory inside itself or to any child at any depth              </li>
+              <li>
+move an entry into its parent if a name different from its current one isn't provided              </li>
+              <li>
+move a file to a path occupied by a directory              </li>
+              <li>
+move a directory to a path occupied by a file              </li>
+              <li>
+move any element to a path occupied by a directory which is not empty              </li>
+            </ul>
+            <p>
+A move of a file on top of an existing file must attempt to delete and replace that file.
+A move of a directory on top of an existing empty directory must attempt to delete and replace that directory.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">parent</span>:
+    The directory to which to move the entry.
+                </li>
+          <li class="param">
+<span class="name">newName</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   The new name of the entry. Defaults to the Entry's current name if unspecified.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A callback that is called with the Entry for the new location.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(entry)
+{
+  console.log('Full path to the moved file: ' + entry.fullPath)
+};
+requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getDirectory('testDirectory', {create:true}, function(direntry)
+  {
+    fs.root.getFile("aa.txt", {create:true}, function(fileentry)
+    {
+      console.log('Full path before move: ' + fileentry.fullPath);
+      fileentry.moveTo(direntry, 'newname.txt', successCallback);
+    });
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Full path before move: /aa.txt
+Full path to the moved file: /testDirectory/newname.txt
+</pre>
+</div>
+</dd>
+<dt class="method" id="Entry::copyTo">
+<a class="backward-compatibility-anchor" name="::File::Entry::copyTo"></a><code><b><span class="methodName">copyTo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Copy an entry to a different location on the file system.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void copyTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+It is an error to try to:
+            </p>
+            <ul>
+              <li>
+copy a directory inside itself or to any child at any depth              </li>
+              <li>
+copy an entry into its parent if a name different from its current one isn't provided              </li>
+              <li>
+copy a file to a path occupied by a directory              </li>
+              <li>
+copy a directory to a path occupied by a file              </li>
+              <li>
+copy any element to a path occupied by a directory which is not empty              </li>
+            </ul>
+            <p>
+A copy of a file on top of an existing file must attempt to delete and replace that file.
+A copy of a directory on top of an existing empty directory must attempt to delete and replace that directory.
+Directory copies are always recursive--that is, they copy all contents of the directory.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">parent</span>:
+    The directory to which to copy the entry.
+                </li>
+          <li class="param">
+<span class="name">newName</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   The new name of the entry. Defaults to the Entry's current name if unspecified.
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A callback that is called with the Entry for the new location.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(entry)
+{
+  console.log('Full path to the copied file: ' + entry.fullPath);
+};
+requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getDirectory('testDirectory', {create:true}, function(direntry)
+  {
+    fs.root.getFile("test.txt", {create:true}, function(fileentry)
+    {
+      fileentry.copyTo(direntry, 'newname.txt', successCallback);
+    });
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Full path to the copied file: /testDirectory/newname.txt
+</pre>
+</div>
+</dd>
+<dt class="method" id="Entry::getParent">
+<a class="backward-compatibility-anchor" name="::File::Entry::getParent"></a><code><b><span class="methodName">getParent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Look up the parent DirectoryEntry containing this Entry. If this Entry is the root of its filesystem, its parent is itself.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getParent(<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ A callback that is called to return the parent Entry.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getParent(function (entry)
+  {
+    console.log("Success");
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Success
+</pre>
+</div>
+</dd>
+<dt class="method" id="Entry::remove">
+<a class="backward-compatibility-anchor" name="::File::Entry::remove"></a><code><b><span class="methodName">remove</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Deletes a file or directory. It is an error to attempt to delete a directory that is not empty. It is an error to attempt to delete the root directory of a filesystem.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ A callback that is called on success.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getFile('test.txt', {create: true}, function(fileEntry)
+  {
+    fileEntry.remove(function()
+    {
+      console.log("Success");
+    });
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Success
+</pre>
+</div>
+</dd>
+<dt class="method" id="Entry::toURL">
+<a class="backward-compatibility-anchor" name="::File::Entry::toURL"></a><code><b><span class="methodName">toURL</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns a URL that can be used to identify this entry. Unlike the URN defined in [FILE-API-ED], it has no specific expiration; as it describes a location on disk, it should be valid at least as long as that location exists.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toURL();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ URL that can be used to identify this entry.
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getDirectory('testDirectory', {create:true}, function(entry)
+  {
+    var url = entry.toURL();
+    console.log('URL: ' + url);
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>URL: file:///home/owner/apps_rw/WfigBlWDyf/tmp/testDirectory/
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="DirectoryEntry">
+<a class="backward-compatibility-anchor" name="::File::DirectoryEntry"></a><h3>2.12. DirectoryEntry</h3>
+<div class="brief">
+ The DirectoryEntry interface provides access to the Filesystem API.
+          </div>
+<pre class="webidl prettyprint">   interface DirectoryEntry : <a href="#Entry">Entry</a> {
+
+    <a href="#DirectoryReader">DirectoryReader</a> createReader();
+
+    void getDirectory(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void getFile(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void removeRecursively(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DirectoryEntry::createReader">
+<a class="backward-compatibility-anchor" name="::File::DirectoryEntry::createReader"></a><code><b><span class="methodName">createReader</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates a new DirectoryReader to read Entries from this Directory.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#DirectoryReader">DirectoryReader</a> createReader();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ DirectoryReader
+              </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(entry)
+{
+  entry.root.getDirectory("MyDocument", {create:true}, function(dirEntry)
+  {
+    var directoryReader = dirEntry.createReader();
+  });
+});
+</pre>
+</div>
+</dd>
+<dt class="method" id="DirectoryEntry::getDirectory">
+<a class="backward-compatibility-anchor" name="::File::DirectoryEntry::getDirectory"></a><code><b><span class="methodName">getDirectory</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates or looks up a directory.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getDirectory(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <ul>
+              <li>
+If create and exclusive are both true and the path already exists, getDirectory must fail.              </li>
+              <li>
+If create is true, the path doesn't exist, and no other error occurs, getDirectory must create and return a corresponding DirectoryEntry.              </li>
+              <li>
+If create is not true and the path doesn't exist, getDirectory must fail.              </li>
+              <li>
+If create is not true and the path exists, but is a file, getDirectory must fail.              </li>
+              <li>
+Otherwise, if no other error occurs, getDirectory must return a DirectoryEntry corresponding to path.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">path</span>:
+ Either an absolute path or a relative path from this DirectoryEntry to the directory to be looked up or created. It is an error to attempt to create a directory whose immediate parent does not yet exist.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Flags
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A callback that is called to return the DirectoryEntry selected or created.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getDirectory("ert", {create:true}, function(dir)
+  {
+    console.log('Created dir: ' + dir.name);
+  })
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Created dir: ert
+</pre>
+</div>
+</dd>
+<dt class="method" id="DirectoryEntry::getFile">
+<a class="backward-compatibility-anchor" name="::File::DirectoryEntry::getFile"></a><code><b><span class="methodName">getFile</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates or looks up a file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getFile(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <ul>
+              <li>
+If create and exclusive are both true, and the path already exists, getFile must fail.              </li>
+              <li>
+If create is true, the path doesn't exist, and no other error occurs, getFile must create it as a zero-length file and return a corresponding FileEntry.              </li>
+              <li>
+If create is not true and the path doesn't exist, getFile must fail.              </li>
+              <li>
+If create is not true and the path exists, but is a directory, getFile must fail.              </li>
+              <li>
+Otherwise, if no other error occurs, getFile must return a FileEntry corresponding to path.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">path</span>:
+ Either an absolute path or a relative path from this DirectoryEntry to the file to be looked up or created. It is an error to attempt to create a file whose immediate parent does not yet exist.
+                </li>
+          <li class="param">
+<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Flags
+                </li>
+          <li class="param">
+<span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ A callback that is called to return the File selected or created.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getFile("qa.txt", {create:true}, function(file)
+  {
+    console.log('Created file: ' + file.name);
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Created file: qa.txt
+</pre>
+</div>
+</dd>
+<dt class="method" id="DirectoryEntry::removeRecursively">
+<a class="backward-compatibility-anchor" name="::File::DirectoryEntry::removeRecursively"></a><code><b><span class="methodName">removeRecursively</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Deletes a directory and all of its contents, if any. In the event of an error [e.g. trying to delete a directory that contains a file that cannot be removed], some of the contents of the directory may be deleted. It is an error to attempt to delete the root directory of a filesystem.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeRecursively(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ A callback that is called on success.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getDirectory("testDirectory", {create:true}, function(directoryEntry)
+  {
+    directoryEntry.removeRecursively(function()
+    {
+        console.log("Success");
+    });
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Success
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="DirectoryReader">
+<a class="backward-compatibility-anchor" name="::File::DirectoryReader"></a><h3>2.13. DirectoryReader</h3>
+<div class="brief">
+ The DirectoryReader interface provides access to the Filesystem API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DirectoryReader {
+
+    void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+  };</pre>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="DirectoryReader::readEntries">
+<a class="backward-compatibility-anchor" name="::File::DirectoryReader::readEntries"></a><code><b><span class="methodName">readEntries</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Read the next block of entries from this directory.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ Called once per successful call to readEntries to deliver the next previously-unreported set of Entries in the associated Directory. If all Entries have already been returned from previous invocations of readEntries, successCallback must be called with a zero-length array as an argument.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   A callback indicating that there was an error reading from the Directory.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  var a = fs.root.createReader();
+  a.readEntries(function successCallback(entries)
+  {
+    console.log("Success");
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Success
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileEntry">
+<a class="backward-compatibility-anchor" name="::File::FileEntry"></a><h3>2.14. FileEntry</h3>
+<div class="brief">
+ The FileEntry interface provides access to the Filesystem API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileEntry : <a href="#Entry">Entry</a> {
+
+    void createWriter(<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void file (<a href="#FileCallback">FileCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a> onerror);
+  };</pre>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+
+      <div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileEntry::createWriter">
+<a class="backward-compatibility-anchor" name="::File::FileEntry::createWriter"></a><code><b><span class="methodName">createWriter</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates a new FileWriter associated with the file that this FileEntry represents.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void createWriter(<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ A callback that is called with the new FileWriter.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getFile("logFile.txt", {create: true}, function (f)
+  {
+    f.createWriter(function(fileWriter)
+    {
+      fileWriter.write(new Blob(['hello']));
+      fileWriter.onerror = function(e)
+      {
+        console.log('Write file failed:' + e);
+      };
+      fileWriter.onwriteend = function ()
+      {
+        console.log("Success");
+      };
+    });
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Success
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileEntry::file">
+<a class="backward-compatibility-anchor" name="::File::FileEntry::file"></a><code><b><span class="methodName">file</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns a File that represents the current state of the file that this FileEntry represents.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void file(<a href="#FileCallback">FileCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">onsuccess</span>:
+ A callback that is called with the File.
+                </li>
+          <li class="param">
+<span class="name">onerror</span><span class="optional"> [optional]</span>:
+   Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">requestFileSystem(TEMPORARY, 100, function(fs)
+{
+  fs.root.getFile("abcdz.txt", {create: true}, function(f)
+  {
+    f.file(function (file)
+    {
+      console.log("Success");
+    });
+  });
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Success
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileReader">
+<a class="backward-compatibility-anchor" name="::File::FileReader"></a><h3>2.15. FileReader</h3>
+<div class="brief">
+ The FileReader interface provides access to capabilities of reading <em>Blob</em> objects.
+          </div>
+<pre class="webidl prettyprint">  [Constructor()]
+  interface FileReader {
+    const short EMPTY = 0;
+    const short LOADING = 1;
+    const short DONE = 2;
+
+    readonly attribute short readyState;
+
+    readonly attribute <a href="#ReadResultData">ReadResultData</a>? result;
+
+    readonly attribute <a href="#FileError">FileError</a>? error;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onloadstart;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onload;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onabort;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onloadend;
+
+    void abort();
+
+    void readAsDataURL(<a href="#Blob">Blob</a> blob);
+
+    void readAsText(<a href="#Blob">Blob</a> blob, optional DOMString? label);
+
+    void readAsBinaryString(<a href="#Blob">Blob</a> blob);
+
+    void readAsArrayBuffer(<a href="#Blob">Blob</a> blob);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var deviceReady, fileReader;
+deviceReady = function()
+{
+  fileReader = new FileReader();
+};
+document.addEventListener('deviceready', deviceReady, true);
+</pre>
+</div>
+<div class="constructors">
+<h4 id="FileReader::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">FileReader();</pre></dl>
+</div>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="FileReader::EMPTY">
+<a class="backward-compatibility-anchor" name="::File::FileReader::EMPTY"></a><span class="name">EMPTY</span><div class="brief">
+ The FileReader object has been constructed, and there are no pending reads. None of the read methods have been called.
+This is the default state of a newly minted FileReader object, until one of the read methods have been called on it.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="FileReader::LOADING">
+<a class="backward-compatibility-anchor" name="::File::FileReader::LOADING"></a><span class="name">LOADING</span><div class="brief">
+ A File or Blob is being read. One of the read methods is being processed, and no error has occurred during the read.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="FileReader::DONE">
+<a class="backward-compatibility-anchor" name="::File::FileReader::DONE"></a><span class="name">DONE</span><div class="brief">
+ The entire File or Blob has been read into memory, OR a file error occurred during read, OR the read was aborted using abort().
+The FileReader is no longer reading a File or Blob. If readyState is set to DONE it means at least one of the read methods have been called on this FileReader.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FileReader::readyState">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">short </span><span class="name">readyState</span></span><div class="brief">
+ The state of FileReader. Possible values are <em>FileReader.EMPTY</em>, <em>FileReader.LOADING</em> or <em>FileReader.DONE</em>.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileReader::result">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ReadResultData </span><span class="name">result</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The contents of the file, that have been read.
+Returns a Blob's data as a DOMString, or byte[], or null, depending on the read method that has been called on the FileReader. It is <em>null</em> if any errors occurred.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileReader::error">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">FileError </span><span class="name">error</span><span class="optional"> [nullable]</span></span><div class="brief">
+ An object describing error, if any occured.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileReader::onloadstart">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onloadstart</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Callback, which is triggered, when the read starts.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileReader::onload">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onload</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Callback, which is triggered, when the read has successfully completed.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileReader::onabort">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onabort</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Callback, which is triggered, when the read has been aborted. For instance, by invoking the abort() method.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileReader::onerror">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onerror</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Callback, which is triggered, when the read has failed.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileReader::onloadend">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onloadend</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Callback, which is triggered, when the request has completed (either in success or failure).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileReader::abort">
+<a class="backward-compatibility-anchor" name="::File::FileReader::abort"></a><code><b><span class="methodName">abort</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Aborts current operation of reading file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void abort();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var blob = new Blob(['abc']);
+var fileReader = new FileReader();
+fileReader.onload = function()
+{
+  console.log('Loaded');
+};
+fileReader.onabort = function()
+{
+  console.log('Aborted');
+};
+fileReader.readAsDataURL(blob);
+fileReader.abort();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Aborted
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileReader::readAsDataURL">
+<a class="backward-compatibility-anchor" name="::File::FileReader::readAsDataURL"></a><code><b><span class="methodName">readAsDataURL</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads file and return data as a base64-encoded data URL.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void readAsDataURL(<a href="#Blob">Blob</a> blob);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">blob</span>:
+ The <em>Blob</em> object to be read as data URL.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if input parameter is missing.
+                </p></li></ul>
+</li></ul>
+          <ul class="exception"><li>FileError<ul><li class="list"><p>
+ with error type INVALID_STATE_ERR, if it is already reading a file.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var blob = new Blob(['abc']);
+var fileReader = new FileReader();
+fileReader.onload = function()
+{
+  console.log('Loaded, result = ' + fileReader.result);
+};
+fileReader.readAsDataURL(blob);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Loaded, result = data:;base64,YWJj
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileReader::readAsText">
+<a class="backward-compatibility-anchor" name="::File::FileReader::readAsText"></a><code><b><span class="methodName">readAsText</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads text file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void readAsText(<a href="#Blob">Blob</a> blob, optional DOMString? label);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">blob</span>:
+ The <em>Blob</em> object to be read as text.
+                </li>
+          <li class="param">
+<span class="name">label</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An optional argument, that represents the label of an encoding
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if input parameter is missing.
+                </p></li></ul>
+</li></ul>
+          <ul class="exception"><li>FileError<ul><li class="list"><p>
+ with error type INVALID_STATE_ERR, if it is already reading a file.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var blob = new Blob(['abc']);
+var fileReader = new FileReader();
+fileReader.onload = function()
+{
+  console.log('Loaded, result = ' + fileReader.result);
+};
+fileReader.readAsText(blob);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Loaded, result = abc
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileReader::readAsBinaryString">
+<a class="backward-compatibility-anchor" name="::File::FileReader::readAsBinaryString"></a><code><b><span class="methodName">readAsBinaryString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads file as binary and returns a binary string.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void readAsBinaryString(<a href="#Blob">Blob</a> blob);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">blob</span>:
+ The <em>Blob</em> object to be read as binary.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if input parameter is missing.
+                </p></li></ul>
+</li></ul>
+          <ul class="exception"><li>FileError<ul><li class="list"><p>
+ with error type INVALID_STATE_ERR, if it is already reading a file.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var blob = new Blob(['abc']);
+var fileReader = new FileReader();
+fileReader.onload = function()
+{
+  console.log('Loaded, result = ' + fileReader.result);
+};
+fileReader.readAsBinaryString(blob);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Loaded, result = abc
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileReader::readAsArrayBuffer">
+<a class="backward-compatibility-anchor" name="::File::FileReader::readAsArrayBuffer"></a><code><b><span class="methodName">readAsArrayBuffer</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Reads file as an array buffer and result would be <em>byte[]</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void readAsArrayBuffer(<a href="#Blob">Blob</a> blob);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">blob</span>:
+ The <em>Blob</em> object to be read as array buffer.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>TypeError<ul><li class="list"><p>
+ if input parameter is missing.
+                </p></li></ul>
+</li></ul>
+          <ul class="exception"><li>FileError<ul><li class="list"><p>
+ with error type INVALID_STATE_ERR, if it is already reading a file.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var blob = new Blob(['abc']);
+var fileReader = new FileReader();
+fileReader.onload = function()
+{
+  resultValue = fileReader.result;
+  console.log("Result: " + resultValue.toString() + '\n' + 'ByteLength: ' + resultValue.byteLength);
+};
+fileReader.readAsArrayBuffer(blob);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Result: [object ArrayBuffer]
+ByteLength: 3
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileWriter">
+<a class="backward-compatibility-anchor" name="::File::FileWriter"></a><h3>2.16. FileWriter</h3>
+<div class="brief">
+ FileWriter interface allows to create and write data to file.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileWriter {
+    const short INIT = 0;
+    const short WRITING = 1;
+    const short DONE = 2;
+
+    attribute short readyState;
+
+    attribute DOMString fileName;
+
+    attribute long length;
+
+    attribute long position;
+
+    attribute <a href="#FileError">FileError</a>? error;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onwritestart;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onwrite;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onabort;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onwriteend;
+
+    void abort ();
+
+    void seek (long offset);
+
+    void truncate (long size);
+
+    void write (<a href="#WriteData">WriteData</a> data);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="FileWriter::INIT">
+<a class="backward-compatibility-anchor" name="::File::FileWriter::INIT"></a><span class="name">INIT</span><br><br>
+</li>
+<li class="const" id="FileWriter::WRITING">
+<a class="backward-compatibility-anchor" name="::File::FileWriter::WRITING"></a><span class="name">WRITING</span><br><br>
+</li>
+<li class="const" id="FileWriter::DONE">
+<a class="backward-compatibility-anchor" name="::File::FileWriter::DONE"></a><span class="name">DONE</span><div class="brief">
+ Above constants describe current state of FileWriter object.
+            </div>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FileWriter::readyState">
+<span class="attrName"><span class="type">short </span><span class="name">readyState</span></span><div class="brief">
+ One of the three possible states, either INIT, WRITING, or DONE.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::fileName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">fileName</span></span><div class="brief">
+ The name of the file to be written.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::length">
+<span class="attrName"><span class="type">long </span><span class="name">length</span></span><div class="brief">
+ The length of the file to be written.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::position">
+<span class="attrName"><span class="type">long </span><span class="name">position</span></span><div class="brief">
+ The current position of the file pointer.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::error">
+<span class="attrName"><span class="type">FileError </span><span class="name">error</span><span class="optional"> [nullable]</span></span><div class="brief">
+ An object containing errors.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::onwritestart">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onwritestart</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the write starts.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::onwrite">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onwrite</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the request has completed successfully.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::onabort">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onabort</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the write has been aborted. For instance, by invoking the abort() method.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::onerror">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onerror</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the write has failed.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="FileWriter::onwriteend">
+<span class="attrName"><span class="type">ProgressCallback </span><span class="name">onwriteend</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Called when the request has completed (either in success or failure).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileWriter::abort">
+<a class="backward-compatibility-anchor" name="::File::FileWriter::abort"></a><code><b><span class="methodName">abort</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Aborts writing the file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void abort();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type TYPE_MISMATCH_ERR, if any of the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(writer)
+{
+  writer.onwrite = function(evt)
+  {
+    console.log('Write success');
+  };
+  writer.onabort = function(e)
+  {
+    console.log('Abort');
+  };
+  writer.write('some sample text');
+  writer.abort();
+};
+
+errorCallback = function(err)
+{
+  console.log(err.code);
+};
+
+/* entry is FileEntry object retrieved by getFile() method of DirectoryEntry interface */
+entry.createWriter(successCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Abort
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileWriter::seek">
+<a class="backward-compatibility-anchor" name="::File::FileWriter::seek"></a><code><b><span class="methodName">seek</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Moves the file pointer to the specified byte.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void seek(long offset);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="description">
+            <p>
+If the offset is a negative number the position of the file pointer is rewound. If the offset is greater than the file size the position is set to the end of the file.
+            </p>
+           </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">offset</span>:
+ Location to move the file pointer to.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type INVALID_STATE_ERR, if it is already writing a file.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(writer)
+{
+  /* Fast forwards file pointer to the end of file */
+  writer.seek(writer.length);
+};
+
+errorCallback = function(err)
+{
+  console.log(err.code);
+};
+
+/* entry is FileEntry object retrieved by getFile() method of DirectoryEntry interface */
+entry.createWriter(successCallback, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileWriter::truncate">
+<a class="backward-compatibility-anchor" name="::File::FileWriter::truncate"></a><code><b><span class="methodName">truncate</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Shortens the file to the specified length.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void truncate(long size);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">size</span>:
+ Size to chop the file at.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type INVALID_STATE_ERR, if it is already writing a file.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(writer)
+{
+  writer.onwrite = function(evt)
+  {
+    console.log('truncate success');
+  };
+
+  writer.truncate(10);
+};
+
+errorCallback = function(err)
+{
+  console.log(err.code);
+};
+
+/* entry is FileEntry object retrieved by getFile() method of DirectoryEntry interface */
+entry.createWriter(successCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>truncate success
+</pre>
+</div>
+</dd>
+<dt class="method" id="FileWriter::write">
+<a class="backward-compatibility-anchor" name="::File::FileWriter::write"></a><code><b><span class="methodName">write</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Writes data to the file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void write(<a href="#WriteData">WriteData</a> data);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.write
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ Text or Blob to be written.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>FileException<ul><li class="list"><p>
+ with error type INVALID_STATE_ERR, if it is already writing a file.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function(writer)
+{
+  writer.onwrite = function(evt)
+  {
+    console.log('Write success');
+  };
+
+  writer.write('some sample text');
+};
+
+errorCallback = function(err)
+{
+  console.log(err.code);
+};
+
+/* entry is FileEntry object retrieved by getFile() method of DirectoryEntry interface */
+entry.createWriter(successCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Write success
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ProgressCallback">
+<a class="backward-compatibility-anchor" name="::File::ProgressCallback"></a><h3>2.17. ProgressCallback</h3>
+<div class="brief">
+ The interface that defines a callback function which is called with the ProgressEvent object.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ProgressCallback {
+    void onsuccess(<a href="#ProgressEvent">ProgressEvent</a> event);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ProgressCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::File::ProgressCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called with a ProgressEvent object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ProgressEvent">ProgressEvent</a> event);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">event</span>:
+ A progress event.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileSystemCallback">
+<a class="backward-compatibility-anchor" name="::File::FileSystemCallback"></a><h3>2.18. FileSystemCallback</h3>
+<div class="brief">
+ The FileSystemCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemCallback {
+    void handleEvent(<a href="#FileSystem">FileSystem</a> filesystem);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#FileSystem">FileSystem</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileSystemCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::FileSystemCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the file system was successfully obtained.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#FileSystem">FileSystem</a> filesystem);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">filesystem</span>:
+ FileSystem The file systems to which the app is granted access.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="EntryCallback">
+<a class="backward-compatibility-anchor" name="::File::EntryCallback"></a><h3>2.19. EntryCallback</h3>
+<div class="brief">
+ The EntryCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface EntryCallback {
+    void handleEvent(<a href="#Entry">Entry</a> entry);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#DirectoryEntry::getDirectory">DirectoryEntry::getDirectory</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="EntryCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::EntryCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Used to supply an Entry as a response to a user query.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#Entry">Entry</a> entry);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">entry</span>:
+ Entry
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="EntriesCallback">
+<a class="backward-compatibility-anchor" name="::File::EntriesCallback"></a><h3>2.20. EntriesCallback</h3>
+<div class="brief">
+ The EntriesCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface EntriesCallback {
+    void handleEvent(<a href="#Entry">Entry</a>[] entries);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#DirectoryReader::readEntries">DirectoryReader::readEntries</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="EntriesCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::EntriesCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Used to supply an array of Entries as a response to a user query.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#Entry">Entry</a>[] entries);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">entries</span>:
+ Entry[]
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MetadataCallback">
+<a class="backward-compatibility-anchor" name="::File::MetadataCallback"></a><h3>2.21. MetadataCallback</h3>
+<div class="brief">
+ The MetadataCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MetadataCallback {
+    void handleEvent(<a href="#Metadata">Metadata</a> metadata);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#Entry::getMetadata">Entry::getMetadata</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MetadataCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::MetadataCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Used to supply file or directory metadata as a response to a user query.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#Metadata">Metadata</a> metadata);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">metadata</span>:
+ Metadata
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileWriterCallback">
+<a class="backward-compatibility-anchor" name="::File::FileWriterCallback"></a><h3>2.22. FileWriterCallback</h3>
+<div class="brief">
+ The FileWriterCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileWriterCallback {
+    void handleEvent(<a href="#FileWriter">FileWriter</a> fileWriter);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#FileEntry::createWriter">FileEntry::createWriter</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileWriterCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::FileWriterCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Used to supply a FileWriter as a response to a user query.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#FileWriter">FileWriter</a> fileWriter);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">fileWriter</span>:
+ FileWriter
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FileCallback">
+<a class="backward-compatibility-anchor" name="::File::FileCallback"></a><h3>2.23. FileCallback</h3>
+<div class="brief">
+ The FileCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileCallback {
+    void handleEvent(<a href="#File">File</a> file);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#FileEntry::file">FileEntry::file</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FileCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::FileCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Used to supply a File as a response to a user query.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#File">File</a> file);</pre></div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">file</span>:
+ File
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="VoidCallback">
+<a class="backward-compatibility-anchor" name="::File::VoidCallback"></a><h3>2.24. VoidCallback</h3>
+<div class="brief">
+ The VoidCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface VoidCallback {
+    void handleEvent();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#Entry::remove">Entry::remove</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="VoidCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::VoidCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ .
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ErrorCallback">
+<a class="backward-compatibility-anchor" name="::File::ErrorCallback"></a><h3>2.25. ErrorCallback</h3>
+<div class="brief">
+ The ErrorCallback interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
+    void handleEvent(<a href="#FileError">FileError</a> err);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="remark"> Remark : </span>
+ Example of using can be find at <a href="file.html#Entry::getMetadata">Entry::getMetadata</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ErrorCallback::handleEvent">
+<a class="backward-compatibility-anchor" name="::File::ErrorCallback::handleEvent"></a><code><b><span class="methodName">handleEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ There was an error with the request. Details are provided by the FileError parameter.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#FileError">FileError</a> err);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">err</span>:
+ FileError
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module File {
+
+  typedef <a href="#Blob">Blob</a> Blob;
+
+  typedef (<a href="#Blob">Blob</a> or DOMString) WriteData;
+
+  typedef (DOMString or byte[]) ReadResultData;
+
+  dictionary FilePropertyBag {
+
+    DOMString type;
+
+    long long lastModified;
+  };
+
+  dictionary ProgressEventInit {
+    unsigned long long loaded = false;
+    unsigned long long total = false;
+     target = null;
+  };
+
+  [Constructor(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict)]
+  interface ProgressEvent {
+    readonly attribute DOMString type;
+    readonly attribute boolean bubbles;
+    readonly attribute boolean cancelBubble;
+    readonly attribute boolean cancelable;
+    readonly attribute boolean lengthComputable;
+    readonly attribute unsigned long long loaded;
+    readonly attribute unsigned long long total;
+    readonly attribute  target;
+  };
+
+  [NoInterfaceObject] interface FileSystemManagerObject {
+    readonly attribute <a href="#FileSystemManager">FileSystemManager</a> file;
+  };
+  <a href="cordova.html#Cordova">Cordova</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
+
+
+  [NoInterfaceObject] interface FileSystemManager {
+    readonly attribute DOMString? applicationDirectory;
+
+    readonly attribute DOMString? applicationStorageDirectory;
+
+    readonly attribute DOMString? dataDirectory;
+
+    readonly attribute DOMString? cacheDirectory;
+
+    readonly attribute DOMString? externalApplicationStorageDirectory;
+
+    readonly attribute DOMString? externalDataDirectory;
+
+    readonly attribute DOMString? externalCacheDirectory;
+
+    readonly attribute DOMString? externalRootDirectory;
+
+    readonly attribute DOMString? tempDirectory;
+
+    readonly attribute DOMString? syncedDataDirectory;
+
+    readonly attribute DOMString? documentsDirectory;
+
+    readonly attribute DOMString? sharedDirectory;
+
+  };
+
+  [NoInterfaceObject] interface FileSystem {
+
+  readonly attribute DOMString name;
+
+  readonly attribute <a href="#DirectoryEntry">DirectoryEntry</a> root;
+  };
+
+  interface Metadata {
+    readonly attribute Date modificationTime;
+
+    readonly attribute unsigned long long size;
+  };
+
+  [NoInterfaceObject] interface FileError {
+    const unsigned short NOT_FOUND_ERR = 1;
+    const unsigned short SECURITY_ERR = 2;
+    const unsigned short ABORT_ERR = 3;
+    const unsigned short NOT_READABLE_ERR = 4;
+    const unsigned short ENCODING_ERR = 5;
+    const unsigned short NO_MODIFICATION_ALLOWED_ERR = 6;
+    const unsigned short INVALID_STATE_ERR = 7;
+    const unsigned short SYNTAX_ERR = 8;
+    const unsigned short INVALID_MODIFICATION_ERR = 9;
+    const unsigned short QUOTA_EXCEEDED_ERR = 10;
+    const unsigned short TYPE_MISMATCH_ERR = 11;
+    const unsigned short PATH_EXISTS_ERR = 12;
+    attribute unsigned short code;
+  };
+
+  [NoInterfaceObject] interface File {
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString localURL;
+
+    readonly attribute DOMString type;
+
+    readonly attribute Date lastModified;
+
+    readonly attribute long long size;
+  };
+
+  [NoInterfaceObject] interface LocalFileSystem {
+
+  const short TEMPORARY = 0;
+
+  const short PERSISTENT = 1;
+
+   void requestFileSystem(short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback);
+
+   void resolveLocalFileSystemURL(DOMString uri, optional <a href="#EntryCallback">EntryCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback);
+
+  };
+
+  Window implements <a href="#LocalFileSystem">LocalFileSystem</a>;
+
+  [NoInterfaceObject] interface Entry {
+
+    readonly attribute boolean isFile;
+
+    readonly attribute boolean isDirectory;
+
+    readonly attribute DOMString fullPath;
+
+    readonly attribute DOMString name;
+
+    readonly attribute <a href="#FileSystem">FileSystem</a> filesystem;
+
+    void getMetadata(<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void moveTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void copyTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void getParent(<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void remove(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    DOMString toURL();
+  };
+
+   interface DirectoryEntry : <a href="#Entry">Entry</a> {
+
+    <a href="#DirectoryReader">DirectoryReader</a> createReader();
+
+    void getDirectory(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void getFile(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void removeRecursively(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+  };
+
+  [NoInterfaceObject] interface DirectoryReader {
+
+    void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+  };
+
+  [NoInterfaceObject] interface FileEntry : <a href="#Entry">Entry</a> {
+
+    void createWriter(<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
+
+    void file (<a href="#FileCallback">FileCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a> onerror);
+  };
+
+  [Constructor()]
+  interface FileReader {
+    const short EMPTY = 0;
+    const short LOADING = 1;
+    const short DONE = 2;
+
+    readonly attribute short readyState;
+
+    readonly attribute <a href="#ReadResultData">ReadResultData</a>? result;
+
+    readonly attribute <a href="#FileError">FileError</a>? error;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onloadstart;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onload;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onabort;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onloadend;
+
+    void abort();
+
+    void readAsDataURL(<a href="#Blob">Blob</a> blob);
+
+    void readAsText(<a href="#Blob">Blob</a> blob, optional DOMString? label);
+
+    void readAsBinaryString(<a href="#Blob">Blob</a> blob);
+
+    void readAsArrayBuffer(<a href="#Blob">Blob</a> blob);
+  };
+
+  [NoInterfaceObject] interface FileWriter {
+    const short INIT = 0;
+    const short WRITING = 1;
+    const short DONE = 2;
+
+    attribute short readyState;
+
+    attribute DOMString fileName;
+
+    attribute long length;
+
+    attribute long position;
+
+    attribute <a href="#FileError">FileError</a>? error;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onwritestart;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onwrite;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onabort;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
+
+    attribute <a href="#ProgressCallback">ProgressCallback</a>? onwriteend;
+
+    void abort ();
+
+    void seek (long offset);
+
+    void truncate (long size);
+
+    void write (<a href="#WriteData">WriteData</a> data);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface ProgressCallback {
+    void onsuccess(<a href="#ProgressEvent">ProgressEvent</a> event);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemCallback {
+    void handleEvent(<a href="#FileSystem">FileSystem</a> filesystem);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface EntryCallback {
+    void handleEvent(<a href="#Entry">Entry</a> entry);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface EntriesCallback {
+    void handleEvent(<a href="#Entry">Entry</a>[] entries);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface MetadataCallback {
+    void handleEvent(<a href="#Metadata">Metadata</a> metadata);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface FileWriterCallback {
+    void handleEvent(<a href="#FileWriter">FileWriter</a> fileWriter);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface FileCallback {
+    void handleEvent(<a href="#File">File</a> file);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface VoidCallback {
+    void handleEvent();
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
+    void handleEvent(<a href="#FileError">FileError</a> err);
+  };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -10,11 +10,11 @@ Rotary events are used to deliver the rotary device or sensor data to the applic
 
 ![Rotary device and interaction direction](./media/rotary_event.png)
 
-** Table: Rotary events**
+**Table: Rotary events**
 
 | Type           | Description                              | Attribute                                |
 | -------------- | ---------------------------------------- | ---------------------------------------- |
-| `rotarydetent` | Triggered when a device detects the detent point. | `detail.direction`: Rotation direction, which can be:			`CW`: Clockwise rotation				`CCW`: Counter-clockwise rotation |
+| `rotarydetent` | Triggered when a device detects the detent point. | `detail.direction`: Rotation direction, which can be:<br> - `CW`: Clockwise rotation<br> - `CCW`: Counter-clockwise rotation |
 
 Some UI components provide interactive features with this event. For example, you can implement some rotary-dependent behaviors and control the application page, circle-shaped progress bar, and section changer with a rotary event.
 

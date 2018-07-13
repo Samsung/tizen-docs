@@ -21,7 +21,7 @@ The main features of the Data Synchronization API include:
 
 ## Prerequisites
 
-To use the [Data Synchronization](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datasync.html) API, the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the [Data Synchronization](../../api/latest/device_api/mobile/tizen/datasync.html) API, the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/datasync"/>
@@ -31,14 +31,14 @@ To use the [Data Synchronization](../../../../org.tizen.web.apireference/html/de
 
 To create a sync profile:
 
-1. Check whether there are available profile slots on the device using the `getProfilesNum()` and `getMaxProfilesNum()` methods of the [DataSynchronizationManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datasync.html#DataSynchronizationManager) interface:
+1. Check whether there are available profile slots on the device using the `getProfilesNum()` and `getMaxProfilesNum()` methods of the [DataSynchronizationManager](../../api/latest/device_api/mobile/tizen/datasync.html#DataSynchronizationManager) interface:
 
    ```
    var numMaxProfiles = tizen.datasync.getMaxProfilesNum();
    var numProfiles = tizen.datasync.getProfilesNum();
    ```
 
-2. Create a sync profile. Use the [SyncInfo](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datasync.html#SyncInfo), [SyncServiceInfo](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datasync.html#SyncServiceInfo), and [SyncProfileInfo](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datasync.html#SyncProfileInfo) interfaces to provide sync profile and operation information:
+2. Create a sync profile. Use the [SyncInfo](../../api/latest/device_api/mobile/tizen/datasync.html#SyncInfo), [SyncServiceInfo](../../api/latest/device_api/mobile/tizen/datasync.html#SyncServiceInfo), and [SyncProfileInfo](../../api/latest/device_api/mobile/tizen/datasync.html#SyncProfileInfo) interfaces to provide sync profile and operation information:
 
    ```
    if ((numMaxProfiles <= 0) || (numProfiles < numMaxProfiles)) {
@@ -49,7 +49,7 @@ To create a sync profile:
        var profile = new tizen.SyncProfileInfo('MyProfile', syncInfo, serviceInfo);
    ```
 
-3. To be able to use the created profile, add it to your device using the `add()` method of the `DataSynchronizationManager` interface:
+3. To be able to use the created profile, add it to your device using the `add()` method of the [DataSynchronizationManager](../../api/latest/device_api/mobile/tizen/datasync.html#DataSynchronizationManager) interface:
 
    ```
        tizen.datasync.add(profile);
@@ -59,7 +59,7 @@ To create a sync profile:
 
 ## Starting and Monitoring Data Synchronization
 
-After starting the synchronization process using the `startSync()` method of the `DataSynchronizationManager` interface, you can monitor the progress of the operation. Use the [SyncProgressCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/datasync.html#SyncProgressCallback) interface to define listeners for receiving notifications. After the synchronization is completed, you can retrieve statistics using the `getLastSyncStatistics()` method.
+After starting the synchronization process using the `startSync()` method of the `DataSynchronizationManager` interface, you can monitor the progress of the operation. Use the [SyncProgressCallback](../../api/latest/device_api/mobile/tizen/datasync.html#SyncProgressCallback) interface to define listeners for receiving notifications. After the synchronization is completed, you can retrieve statistics using the `getLastSyncStatistics()` method.
 
 To start and monitor the data synchronization process:
 

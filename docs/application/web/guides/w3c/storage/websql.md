@@ -81,8 +81,8 @@ To execute SQL statements asynchronously:
 
    The difference between the `transaction()` and `readTransaction()` methods is that the latter cannot be used with SQL statements that change the database (such as `INSERT`, `UPDATE`, `DELETE`, or `CREATE`).
 
- > **Note**  
- > When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
+   > **Note**  
+   > When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
 
 2. To execute a SQL statement, use the `executeSql()` method. The SQL statement is the first parameter of the method and cannot contain SQL transaction statements (such as `BEGIN`, `END`, or `ROLLBACK`):
 
@@ -101,8 +101,8 @@ To execute SQL statements asynchronously:
    sqlTransaction.executeSql('SELECT * FROM tizenTable WHERE id=?', [value]);
    ```
 
- > **Note**  
- > Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
+   > **Note**  
+   > Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
 
 ### Source Code
 
@@ -125,7 +125,7 @@ To access the result:
   });
   ```
 
-- The result object of the SELECT statement stores also the number of records that were inserted, changed, or deleted.It contains the number of selected rows (length field) and the `item()` method. Use the method with the index argument (integer value from 0 to `rows.length` - 1) to get individual records:
+- The result object of the SELECT statement stores also the number of records that were inserted, changed, or deleted. It contains the number of selected rows (length field) and the `item()` method. Use the method with the index argument (integer value from 0 to `rows.length` - 1) to get individual records:
 
   ```
   sqlTransaction.executeSql('SELECT id, title, author FROM books', [], function(sqlTransaction, sqlResultSet) {
@@ -165,7 +165,7 @@ Other types of errors that can occur are exceptions. The `sqlException` object h
 
 ## Opening a Database Synchronously
 
-To open a SQL database synchronously, use the `openDatabaseSync()` method. The method can only be used in the [Web Worker](./w3c/perf_opt/web-workers.md#js_performance) context. If the database does not exist, the method first creates it and then opens it:
+To open a SQL database synchronously, use the `openDatabaseSync()` method. The method can only be used in the [Web Worker](../perf-opt/web-workers.md#js_performance) context. If the database does not exist, the method first creates it and then opens it:
 
 ```
 var databaseSync = null;
@@ -183,7 +183,7 @@ The method takes the following arguments: unique name of the database, expected 
 
 ## Executing SQL Statements Synchronously
 
-TTo execute SQL statements synchronously:
+To execute SQL statements synchronously:
 
 1. In the Web SQL Database API, each SQL statement must be executed under a transaction. To create a transaction, use either `transaction()` or  `readTransaction()` method returned by the `openDatabaseSync()` method:
 
@@ -197,8 +197,8 @@ TTo execute SQL statements synchronously:
 
    The difference between the `transaction()` and `readTransaction()` methods is that the latter cannot be used with SQL statements that change the database (such as `INSERT`, `UPDATE`, `DELETE`, or `CREATE`).
 
- > **Note**  
- > When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
+   > **Note**  
+   > When possible, use the `readTransaction()` to obtain better execution performance of SQL statements.
 
 2. To execute a SQL statement, use the `executeSql()` method. The SQL statement is the first parameter of the method and cannot contain SQL transaction statements (such as `BEGIN`, `END`, or `ROLLBACK`):
 
@@ -214,8 +214,8 @@ TTo execute SQL statements synchronously:
                                                     ['Ulysses', 'James Joyce']);
    ```
 
- > **Note**  
- > Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
+   > **Note**  
+   > Use an array to pass the arguments to secure SQL statements from SQL injection attacks.
 
 ## Accessing SQL Results Synchronously
 
@@ -231,7 +231,7 @@ To access the result:
   alert('The 'id' of the new record is ' + sqlResultSet.insertId);
   ```
 
-- The result object of the SELECT statement stores also the number of records that were inserted, changed, or deleted.It contains the number of selected rows (length field) and the `item()` method. Use the method with the index argument (integer value from 0 to `rows.length` - 1) to get individual records
+- The result object of the SELECT statement stores also the number of records that were inserted, changed, or deleted. It contains the number of selected rows (length field) and the `item()` method. Use the method with the index argument (integer value from 0 to `rows.length` - 1) to get individual records:
 
   ```
   var sqlResultSet = sqlTransactionSync.executeSql('SELECT id, title, author FROM books');

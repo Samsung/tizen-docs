@@ -8,7 +8,7 @@ To build a watch face application, you must follow these general steps:
 
 1. Before you get started with developing Tizen applications, download and install the [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
 
-   For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+   For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2. [Create a wearable Web watch project](../../getting-started/wearable-watch/first-app-watch.md#create) using the Tizen Studio.
 

@@ -124,7 +124,7 @@ You can use the following media streamer callbacks when setting parameters:
 
 ### Getting Parameters
 
-Use the `media_streamer_node_get_param()` function to get a parameter from the media streamer node. The function gets a parameter possible for the given node with the appropriate value. The possible parameters returned can be found in the `media_streamer.h`header file. They can be, for example, `MEDIA_STREAMER_PARAM_CAMERA_ID`, `MEDIA_STREAMER_PARAM_ROTATE`, or `MEDIA_STREAMER_PARAM_PORT`.
+Use the `media_streamer_node_get_param()` function to get a parameter from the media streamer node. The function gets a parameter possible for the given node with the appropriate value. The possible parameters returned can be found in the `media_streamer.h` header file. They can be, for example, `MEDIA_STREAMER_PARAM_CAMERA_ID`, `MEDIA_STREAMER_PARAM_ROTATE`, or `MEDIA_STREAMER_PARAM_PORT`.
 
 You can also use the `media_streamer_node_get_params()` function to get the list of parameters from the created media streamer node in the `bundle` structure format.
 
@@ -207,39 +207,42 @@ To create the server part:
 
    1. Create the `Videotestsrc` source node:
 
-    ```
-    media_streamer_node_h video_src = NULL;
-    media_streamer_node_create_src(MEDIA_STREAMER_NODE_SRC_TYPE_VIDEO_TEST, &video_src);
-    ```
+      ```
+      media_streamer_node_h video_src = NULL;
+      media_streamer_node_create_src(MEDIA_STREAMER_NODE_SRC_TYPE_VIDEO_TEST, &video_src);
+      ```
 
    2. Add the `Videotestsrc` source node to the media streamer:
 
-    ```
-    media_streamer_node_add(ms_streamer, video_src);
-    ```
+      ```
+      media_streamer_node_add(ms_streamer, video_src);
+      ```
 
-3. To transfer data over an IP connection, create the final sending node on the server part and the first receiving node on the client part. The creation of the client part is described in [Creating the Client Part](#create_client).The Real Time Protocol (RTP) node is universal and unique at the same time, and capable of performing enormous work on the RTP packets for their truthful and confident transmission, such as RTP packet validation, maintenance of the SSRC participant database, scheduling of RR/SR RTCP packets, and parsing codec streams transmitted in the same RTP session.
+3. To transfer data over an IP connection, create the final sending node on the server part and the first receiving node on the client part. The creation of the client part is described in [Creating the Client Part](#create_client).
+
+    The Real Time Protocol (RTP) node is universal and unique at the same time, and capable of performing enormous work on the RTP packets for their truthful and confident transmission, such as RTP packet validation, maintenance of the SSRC participant database, scheduling of RR/SR RTCP packets, and parsing codec streams transmitted in the same RTP session.
+
 	- Create the `rtp_bin` RTP node:
 
-    ```
-    media_streamer_node_h rtp_bin = NULL;
-    media_streamer_node_create(MEDIA_STREAMER_NODE_TYPE_RTP, NULL, NULL, &rtp_bin);
-    ```
+      ```
+      media_streamer_node_h rtp_bin = NULL;
+      media_streamer_node_create(MEDIA_STREAMER_NODE_TYPE_RTP, NULL, NULL, &rtp_bin);
+      ```
 
 	- Create a bundle and add the RTP node parameters to it:
 
-    ```
-    bundle *params = bundle_create();
-    bundle_add_str(params, MEDIA_STREAMER_PARAM_VIDEO_OUT_PORT, "5000");
-    bundle_add_str(params, MEDIA_STREAMER_PARAM_HOST, "127.0.0.1");
-    media_streamer_node_set_params(rtp_bin, params);
-    ```
+      ```
+      bundle *params = bundle_create();
+      bundle_add_str(params, MEDIA_STREAMER_PARAM_VIDEO_OUT_PORT, "5000");
+      bundle_add_str(params, MEDIA_STREAMER_PARAM_HOST, "127.0.0.1");
+      media_streamer_node_set_params(rtp_bin, params);
+      ```
 
 	- Add the RTP node to the media streamer:
 
-    ```
-    media_streamer_node_add(ms_streamer, rtp_bin);
-    ```
+      ```
+      media_streamer_node_add(ms_streamer, rtp_bin);
+      ```
 
 4. Create the encoding format.
 
@@ -380,7 +383,11 @@ To create the client part on the 2nd device on which the server part device is i
 
    The RTP node is universal and unique at the same time, and capable of performing enormous work on RTP packets for their truthful and confident receiving, such as keeping per participant statistics based on received RTCP packets, allowing an application to easily receive and decode an RTP stream with multiple SSRCs, and reordering and removing duplicate RTP packets as they are received from a network source.
 
-   1. Create the `rtp_bin` RTP node:`media_streamer_node_h rtp_bin = NULL;media_streamer_node_create(MEDIA_STREAMER_NODE_TYPE_RTP, NULL, NULL, &rtp_bin);`
+   1. Create the `rtp_bin` RTP node:
+      ```
+      media_streamer_node_h rtp_bin = NULL;
+      media_streamer_node_create(MEDIA_STREAMER_NODE_TYPE_RTP, NULL, NULL, &rtp_bin);
+      ```
 
    2. Create a bundle and add the RTP node parameters to it:
 

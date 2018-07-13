@@ -87,7 +87,7 @@ You can use transitions to change element property values naturally. The followi
 
 1. Add a background color change to the "UPCOMING EVENTS" area during a `mouseover` state:
 
-   a. Originally, the area on the site is defined as follows:
+   1. Originally, the area on the site is defined as follows:
 
       ```
       <h2 class="block-title">Upcoming Events</h2>
@@ -103,7 +103,7 @@ You can use transitions to change element property values naturally. The followi
 
       The `all` value in the transition property means that the transition effect applies to all CSS properties of the element.
 
-   b. Define the `mouseover` state for the `block-title` class:
+   2. Define the `mouseover` state for the `block-title` class:
 
       ```
       .block-title: hover {background: #eaeaea;}
@@ -117,7 +117,7 @@ You can use transitions to change element property values naturally. The followi
 
 2. Apply the transition effect in other elements:
 
-   a. To avoid unnecessary repetition, tie a list of `transition` elements together into groups `a` and `span`:
+   1. To avoid unnecessary repetition, tie a list of `transition` elements together into groups `a` and `span`:
 
       ```
       .location, .date, .location .anibg, h3 > a, .day > span {
@@ -125,7 +125,7 @@ You can use transitions to change element property values naturally. The followi
       }
       ```
 
-   b. When the mouse hovers over the date element, change the background of the date and the font size of all the elements tied into the `span` group. When the mouse hovers over the title element, change the color of all elements tied into the `a` group.
+   2. When the mouse hovers over the date element, change the background of the date and the font size of all the elements tied into the `span` group. When the mouse hovers over the title element, change the color of all elements tied into the `a` group.
 
       ```
       .date: hover {background: #d2ecff !important;}
@@ -138,13 +138,13 @@ You can use transitions to change element property values naturally. The followi
 
 3. Emphasize the location phrase by adding an empty element. The emphasis is made by filling the background with black from left to right, and changing the font color to an appropriate value for the black background.
 
-   a. Add the empty element:
+   1. Add the empty element:
 
       ```
       <div class="location">San Francisco, CA<span class="anibg"></span></div>
       ```
 
-   b. Create the effect using the width value of the added element:
+   2. Create the effect using the width value of the added element:
 
       ```
       .location {position: relative; z-index: 3; margin-top: 3px;}
@@ -160,7 +160,7 @@ You can use transitions to change element property values naturally. The followi
 
       The effect is defined by using the `position` property. The location element position is declared `relative`, while the `anibg` child element position is declared as `absolute`. The width of the child element basic state is set as 0. Since the child element layer covers the location text, the child element has been defined to come out from the back of the text in the `z-index` value of the child.
 
-   c. Define the state to be changed:
+   3. Define the state to be changed:
 
       ```
       .location, .date, .location .anibg, h3 > a, .day > span {
@@ -244,7 +244,7 @@ In the following examples, a blue box moves from the top left diagonally downwar
      </html>
      ```
 
-  - Use CSS transition:
+- Use CSS transition:
 
   Separate a moving element to an independent layer with the `-webkit-transition` CSS attribute. This approach uses hardware acceleration, and can enhance performance while an element is moving.
 
@@ -278,7 +278,7 @@ In the following examples, a blue box moves from the top left diagonally downwar
   </html>
   ```
 
-  - Use 3D transform:
+- Use 3D transform:
 
   Use the `-webkit-transform: translate3d` 3D transform attribute. The element is separated to an independent layer and uses hardware acceleration irrespective of its movement:
 

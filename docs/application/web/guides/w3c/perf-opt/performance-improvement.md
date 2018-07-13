@@ -28,14 +28,43 @@ The following example illustrates the issue.
 
 **Table: Example of using local variables**
 
-| Before | `var globalVar; test: function() {    var one = globalVar + 1; (X)    var two = globalVar + 2; (X)    var ratio = window.innerWidth /                (window.innerHeight + window.innerWidth); (X)}` |
-| ------ | ---------------------------------------- |
-| After  | `test: function() {    var global = globalVar; (O)    var one = global + 1;    screenHeight = window.innerHeight; (O)    screenWidth= window.innerWidth; (O)    var ratio = screenWidth / (screenHeight + screenWidth);}` |
+<table border="1">
+	<tbody>
+		<tr>
+			<th>Before</th>
+			<td>
+<pre class="prettyprint">
+var globalVar;
+test: function() {
+    var one = globalVar + 1; (X)
+    var two = globalVar + 2; (X)
+    var ratio = window.innerWidth /
+                (window.innerHeight + window.innerWidth); (X)
+}
+</pre>
+			</td>
+		</tr>
+		<tr>
+			<th>After</th>
+			<td>
+<pre class="prettyprint">
+test: function() {
+    var global = globalVar; (O)
+    var one = global + 1;
+    screenHeight = window.innerHeight; (O)
+    screenWidth= window.innerWidth; (O)
+    var ratio = screenWidth / (screenHeight + screenWidth);
+}
+</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
->​ **Tip**  
->	To minimize the property access time:  
-> - Property depth: the deeper the property hierarchy is, the more search time is required (object.name < object.name.name).
-> - Property notation: dot notation is faster than associate notation in Webkit (object.name < object ["name"]).
+> **Tip**  
+> To minimize the property access time:  
+> - Property depth: the deeper the property hierarchy is, the more search time is required (`object.name` < `object.name.name`).
+> - Property notation: dot notation is faster than associate notation in Webkit (`object.name` < `object ["name"]`).
 
 ## Improving the Event Handler Response Time
 
@@ -47,9 +76,39 @@ The following example illustrates the issue.
 
 **Table: Example of improving response time**
 
-| Before | `document.getElementById('a').onclick = function() {    alert('<a> clicked!!');};document.getElementById('div').onclick = function() {    alert('<div> clicked!!');};` |
-| ------ | ---------------------------------------- |
-| After  | `document.getElementById('ul').onclick = function() {    var target = e.target;    if (target.nodeName == 'a') {        alert('<a> clicked!!');    } else if (target.nodeName == 'div') {        alert('<div> clicked!');    }};` |
+<table border="1">
+<tbody>
+<tr>
+	<th>Before</th>
+	<td>
+<pre class="prettyprint">
+document.getElementById('a').onclick = function() {
+    alert('&lt;a&gt; clicked!!');
+};
+
+document.getElementById('div').onclick = function() {
+&nbsp;&nbsp;&nbsp;&nbsp;alert('&lt;div&gt; clicked!!');
+};
+</pre>
+	</td>
+</tr>
+<tr>
+	<th>After</th>
+	<td>
+<pre class="prettyprint">
+document.getElementById('ul').onclick = function() {
+    var target = e.target;
+    if (target.nodeName == 'a') {
+        alert('&lt;a&gt; clicked!!');
+    } else if (target.nodeName == 'div') {
+        alert('&lt;div&gt; clicked!');
+    }
+};
+</pre>
+	</td>
+</tr>
+</tbody>
+</table>
 
 ## Cleaning up Unused Properties and DOM Elements
 
@@ -59,9 +118,28 @@ The following examples illustrate the issue.
 
 **Table: Example of removing unused elements and properties**
 
-| Removing an unused property    | `var myApp = {prop: 'myprop'};delete myApp.prop;` |
-| ------------------------------ | ---------------------------------------- |
-| Removing an unused DOM element | `var el= $('#myelem');el.parentNode.removeChild(el);` |
+<table border="1">
+<tbody>
+	<tr>
+		<th>Removing an unused property</th>
+		<td>
+<pre class="prettyprint">
+var myApp = {prop: 'myprop'};
+delete myApp.prop;
+</pre>
+		</td>
+	</tr>
+	<tr>
+		<th>Removing an unused DOM element</th>
+		<td>
+<pre class="prettyprint">
+var el = $('#myelem');
+el.parentNode.removeChild(el);
+</pre>
+		</td>
+	</tr>
+</tbody>
+</table>
 
 ## Minimizing the Document Flow
 
@@ -92,9 +170,30 @@ To reduce document reflow, apply the following tips:
 
   **Table: Example of manipulating tables**
 
-| Directly manipulating table nodes        | `table.addLotsAndLotsOfRows();`          |
-  | ---------------------------------------- | ---------------------------------------- |
-  | Manipulating table nodes without document reflow | `var table = $('#some-table');var parent = table.parent();table.remove();table.addLotsAndLotsOfRows();parent.append(table);` |
+  <table border="1">
+  <tbody>
+  	<tr>
+  		<th>Directly manipulating table nodes</th>
+  		<td>
+  <pre class="prettyprint">
+  table.addLotsAndLotsOfRows();
+  </pre>
+  		</td>
+  	</tr>
+  	<tr>
+  		<th>Manipulating table nodes without document reflow</th>
+  		<td>
+  <pre class="prettyprint">
+  var table = $('#some-table');
+  var parent = table.parent();
+  table.remove();
+  table.addLotsAndLotsOfRows();
+  parent.append(table);
+  </pre>
+  		</td>
+  	</tr>
+  </tbody>
+  </table>
 
 - Be careful with specific properties.
 
@@ -111,15 +210,36 @@ To reduce document reflow, apply the following tips:
 
   **Table: Examples of expression order effects**
 
-| 2 document reflows | `var newWidth = aDiv.offsetWidth + 10; /* Read */aDiv.style.width = newWidth + 'px'; /* Write */var newHeight = aDiv.offsetHeight + 10; /* Read */aDiv.style.height = newHeight + 'px'; /* Write */` |
-  | ------------------ | ---------------------------------------- |
-  | 1 document reflow  | `var newWidth = aDiv.offsetWidth + 10; /* Read */var newHeight = aDiv.offsetHeight + 10; /* Read */aDiv.style.width = newWidth + 'px'; /* Write */aDiv.style.height = newHeight + 'px'; /* Write */` |
+  <table border="1">
+  		<tbody>
+  			<tr>
+  				<th>2 document reflows </th>
+  				<td>
+  <pre class="prettyprint">
+  var newWidth = aDiv.offsetWidth + 10; /* Read */
+  aDiv.style.width = newWidth + 'px'; /* Write */
+  var newHeight = aDiv.offsetHeight + 10; /* Read */
+  aDiv.style.height = newHeight + 'px'; /* Write */
+  </pre></td>
+  			</tr>
+  			<tr>
+  				<th>1 document reflow</th>
+  				<td>
+  <pre class="prettyprint">
+  var newWidth = aDiv.offsetWidth + 10; /* Read */
+  var newHeight = aDiv.offsetHeight + 10; /* Read */
+  aDiv.style.width = newWidth + 'px'; /* Write */
+  aDiv.style.height = newHeight + 'px'; /* Write */
+  </pre></td>
+  			</tr>
+  		</tbody>
+  </table>
 
 ## Improving the Application Launch Time
 
 The basic principle of improving the launch time of a Web application is simply to "show first page as quickly as possible and do nothing but UI rendering". To apply this principle:
 
-- Reduce the number of files.		
+- Reduce the number of files.
 
   The intuition behind the rule to reducing the number of files can be expressed as "less files > less file operations > faster load". As shown in the following table, you can reduce 3 JavaScript files to just 1 while keeping the same content.
 
@@ -127,11 +247,29 @@ The basic principle of improving the launch time of a Web application is simply 
 
   **Table: Example of reducing the number of files**
 
-| Separating JavaScript files    | `<script src="foo1.js"></script><script src="foo2.js"></script><script src="foo3.js"></script>` |
-  | ------------------------------ | ---------------------------------------- |
-  | Concatenating JavaScript files | `<script src="foo.js"></script><!--foo.js contains foo1.js, foo2.js, and foo3.js-->` |
-
-- Minify JavaScript and CSS files.		
+  <table border="1">
+  		<tbody>
+  			<tr>
+  				<th>Separating JavaScript files</th>
+  				<td>
+  <pre class="prettyprint">
+  &lt;script src="foo1.js"&gt;&lt;/script&gt;
+  &lt;script src="foo2.js"&gt;&lt;/script&gt;
+  &lt;script src="foo3.js"&gt;&lt;/script&gt;
+  </pre></td>
+  			</tr>
+  			<tr>
+  				<th>Concatenating JavaScript files</th>
+  				<td>
+  <pre class="prettyprint">
+  &lt;script src="foo.js"&gt;&lt;/script&gt;
+  &lt;!--foo.js contains foo1.js, foo2.js, and foo3.js--&gt;
+  </pre></td>
+  			</tr>
+  		</tbody>
+  </table>
+  
+- Minify JavaScript and CSS files.
 
   You can utilize several minifying tools to reduce the size of the JavaScript file. Minified JavaScript is very helpful in achieving faster launch time, because it minimizes the data size to load.
 
@@ -142,7 +280,11 @@ The basic principle of improving the launch time of a Web application is simply 
   - JSMin
   - UglifyJS
 
-- Keep only the first page elements in the `index.html` file.		Take advantage of a useful technique called deferring loading. The UI component creation starts at the DOMContentLoad time, and at this time all the DOM elements in the first page (`index.html`) are constructed. Of course, images and other resources are not yet loaded at this stage.Often the first page can contain unnecessary elements, and consequently slow down the DOM construction. To avoid the problem, construct the first page to contain only the necessary elements to show the first scene, and put the rest of the pages in another HTML file. Similarly, if you do not need some JavaScript functionality on the first page, load the related JavaScript files only after the first page is loaded.
+- Keep only the first page elements in the `index.html` file.
+
+  Take advantage of a useful technique called deferring loading. The UI component creation starts at the DOMContentLoad time, and at this time all the DOM elements in the first page (`index.html`) are constructed. Of course, images and other resources are not yet loaded at this stage.
+  
+  Often the first page can contain unnecessary elements, and consequently slow down the DOM construction. To avoid the problem, construct the first page to contain only the necessary elements to show the first scene, and put the rest of the pages in another HTML file. Similarly, if you do not need some JavaScript functionality on the first page, load the related JavaScript files only after the first page is loaded.
 
 ## Related Information
 * Dependencies

@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>ViewSwitcher</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>ViewSwitcher</h1>
+
+
+ViewSwitcher component controls each view elements which are changing position.This component manages animation, views position, events and gets/sets active view index. If you want to change the view as various animating, you should wrap views as the ViewSwitcher element thenViewSwitcher would set views position and start to manage to gesture event.
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>2.3</strong>.</td>
+	</tr>
+	
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#how-to">How to Create ViewSwitcher</a></li>
+		<li><a href="#events-list">Events</a></li>
+		<li><a href="#methods-list">Methods</a>
+				<ol class="toc">			
+						<li><a href="#method-setActiveIndex">setActiveIndex</a>
+						</li>
+					
+						<li><a href="#method-getActiveIndex">getActiveIndex</a>
+						</li>
+					
+				</ol>
+			
+		</li>
+	
+</ol>
+
+<h2><a id="how-to"></a>How to Create ViewSwitcher</h2>
+	<h3>HTML Examples</h3>
+
+<pre class="prettyprint">&lt;div id=&quot;drawerPage&quot; class=&quot;ui-page&quot;&gt;
+    &lt;div id=&quot;moreoptionsDrawer&quot; class=&quot;ui-drawer&quot;&gt;
+	&lt;div id=&quot;pageIndicator&quot; class=&quot;ui-page-indicator&quot;&gt;&lt;/div&gt;
+	&lt;div id=&quot;viewSwitcher&quot; class=&quot;ui-view-switcher&quot;&gt;
+	    &lt;div class=&quot;ui-view custom-view&quot;&gt;
+	        &lt;button class=&quot;option-button&quot;&gt;1&lt;/button&gt;
+	    &lt;/div&gt;
+	    &lt;div class=&quot;ui-view custom-view ui-view-active&quot;&gt;
+	        &lt;button class=&quot;option-button&quot;&gt;2&lt;/button&gt;
+	    &lt;/div&gt;
+	    &lt;div class=&quot;ui-view custom-view&quot;&gt;
+	        &lt;button class=&quot;option-button&quot;&gt;3&lt;/button&gt;
+	    &lt;/div&gt;
+	    &lt;div class=&quot;ui-view custom-view&quot;&gt;
+	        &lt;button class=&quot;option-button&quot;&gt;4&lt;/button&gt;
+	    &lt;/div&gt;
+	    &lt;div class=&quot;ui-view custom-view&quot;&gt;
+	        &lt;button class=&quot;option-button&quot;&gt;5&lt;/button&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+
+	<h3>Manual Constructor</h3>
+<pre class="prettyprint">
+(function() {
+	var viewSwitcherElement = page.querySelector("#viewSwitcher"),
+ 		viewSwitcher = tau.widget.ViewSwitcher(viewSwitcherElement);
+})();
+</pre>
+
+	<h2><a id="events-list"></a>Events</h2>
+	<h3>Summary</h3>	
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">viewchange</span></td>
+				<td><p>This event is triggered when the view is located in the change location.
+					<br>(User drags ViewSwitcher over the half of width.)</p>
+				<p>This event has detail information.<br>
+				- index : {number} The active index after the view animation.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">viewchangestart</span></td>
+				<td><p>Triggered when view changing started.</p></td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">viewchangeend</span></td>
+				<td><p>Triggered when view changing ended.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+	<h3>Event example</h3>
+	<pre class="prettyprint">
+(function() {
+	var viewSwitcherElement = page.querySelector("#viewSwitcher"),
+		views = document.querySelectorAll(".ui-view"),
+		elPageIndicator = document.querySelector("#pageIndicator");
+
+	pageIndicator = tau.widget.PageIndicator(elPageIndicator, { numberOfPages: 5 }),
+	viewSwitcherElement.addEventListener("viewchange", function(event) {	
+		var index = event.detail.index;
+		if (index < 0 || index > views.length - 1) {
+			return;
+		}
+		pageIndicator.setActive(index);
+	}, false);
+})();
+	</pre>
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setActiveIndex">setActiveIndex</a> ( index ) </pre>
+					</td>
+					<td><p>Sets the active view with index value.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-getActiveIndex">getActiveIndex</a> (  ) </pre>
+					</td>
+					<td><p>Gets the active view index.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+				
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-setActiveIndex">setActiveIndex</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Sets the active view with index value.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setActiveIndex ( index ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-getActiveIndex">getActiveIndex</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets the active view index.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">getActiveIndex ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>Index of the active view</td>
+								</tr>
+								</tbody>
+							</table>
+						
+					</div>
+					
+				</dd>
+			
+		
+		</dl>
+	
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

@@ -103,6 +103,8 @@ when using security-sensitive API modules in mobile native applications.
 | `http://tizen.org/privilege/email`       | public   | -            | 2.3   | The application can manage the user's email accounts, including the user's folders and emails, POP3 and IMAP downloads, and SMTP uploads. This can result in additional charges depending on the user's payment plan. |
 | `http://tizen.org/privilege/email.admin` | platform | -            | 2.3   | The application can manage the email application settings. |
 | `http://tizen.org/privilege/fido.client` | public   | -            | 3.0   | The application can trigger authenticators on the user's device and it can request to use the user's PIN or biometrics (fingerprints or irises) for authentication. |
+| `http://tizen.org/privilege/gestureactivation` | platform | -            | 4.0   | The application can allow and block special touch gestures. |
+| `http://tizen.org/privilege/gesturegrab` | platform | -            | 4.0   | The application can read special touch gestures, even while it is running in the background. |
 | `http://tizen.org/privilege/haptic`      | public   | -            | 2.3   | The application can control vibration feedback. |
 | `http://tizen.org/privilege/healthinfo`  | public   | Sensor       | 2.3.1 | The application can read health information gathered by the device sensors, such as the pedometer and heart rate monitor. |
 | `http://tizen.org/privilege/ime`         | public   | -            | 2.4   | The application can provide users with a way to enter characters and symbols into an associated text field. |
@@ -132,6 +134,7 @@ when using security-sensitive API modules in mobile native applications.
 | `http://tizen.org/privilege/packagemanager.admin` | platform | -            | 2.3   | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public   | -            | 2.4   | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public   | -            | 2.3   | The application can retrieve detailed application package information. |
+| `http://tizen.org/privilege/peripheralio` | platform   | -            | 4.0   | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
 | `http://tizen.org/privilege/power`       | public   | -            | 2.3   | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push`        | public   | -            | 2.3   | The application can receive notifications from the Internet. This can result in additional charges depending on the user's payment plan. |
 | `http://tizen.org/privilege/reboot`      | platform | -            | 2.3.1 | The application can restart the device.  |
@@ -142,6 +145,7 @@ when using security-sensitive API modules in mobile native applications.
 | `http://tizen.org/privilege/systemmonitor` | public   | -            | 2.4   | The application can read system information, including information from the CPU and RAM. |
 | `http://tizen.org/privilege/systemsettings` | public   | -            | 2.3   | The application can read and write unrestricted system settings.<br>**Deprecated since 2.3.1.** |
 | `http://tizen.org/privilege/systemsettings.admin` | platform | -            | 2.3   | The application can read and write all system settings. |
+| `http://tizen.org/privilege/tee.client` | partner | -            | 4.0   | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment.<br>**Allowed to licensed partners.** |
 | `http://tizen.org/privilege/telephony`   | public   | -            | 2.3   | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the status of calls. |
 | `http://tizen.org/privilege/telephony.admin` | platform | -            | 2.3   | The application can manage telephony settings, such as those for incoming and outgoing calls, forwarding and holding calls, networks, and SIM cards. |
 | `http://tizen.org/privilege/tethering.admin` | platform | -            | 2.3   | The application can enable and disable tethering services. This can result in additional charges depending on the user's payment plan. |
@@ -152,6 +156,8 @@ when using security-sensitive API modules in mobile native applications.
 | `http://tizen.org/privilege/widget.viewer` | public   | -            | 2.3.1 | The application can show widgets, and information from their associated applications, on the home screen. |
 | `http://tizen.org/privilege/wifidirect`  | public   | -            | 2.3   | The application can enable and disable Wi-Fi Direct&reg;, manage Wi-Fi Direct connections, and change Wi-Fi Direct settings. |
 | `http://tizen.org/privilege/window.priority.set` | public   | -            | 2.3   | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This can prevent the user from interacting with other applications or screens until the window for the application is closed. |
+| `http://tizen.org/privilege/zigbee` | public   | -            | 4.0   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
+| `http://tizen.org/privilege/zigbee.admin` | platform   | -            | 4.0   | The application can control a connected ZigBee coordinator, e.g. turning it on or off. |
 
 <a name="wearable"></a>
 ## Wearable Native API Privileges
@@ -171,6 +177,7 @@ applications.
 | `http://tizen.org/privilege/antivirus.admin` | platform | -            | 3.0   | The application can enable or disable antivirus programs and manage detected malware. |
 | `http://tizen.org/privilege/antivirus.scan` | partner  | -            | 3.0   | The application can request to scan files in other applications or on the device to detect harmful content. |
 | `http://tizen.org/privilege/antivirus.webprotect` | partner  | -            | 3.0   | The application can check the reputation of a Web address and determine whether accessing it can put the user's device at risk. |
+| `http://tizen.org/privilege/apphistory.read` | public | User history         | 4.0 | The application can read the statistics of application usage, such as which applications have been used frequently or recently. |
 | `http://tizen.org/privilege/appmanager.kill` | platform | -            | 2.3.1 | The application can close other applications. |
 | `http://tizen.org/privilege/appmanager.kill.bgapp` | public   | -            | 3.0   | The application can request to close applications running in the background. |
 | `http://tizen.org/privilege/appmanager.launch` | public   | -            | 2.3.1 | The application can open other applications. |
@@ -178,6 +185,8 @@ applications.
 | `http://tizen.org/privilege/blocknumber.write`   | partner    | -      | 4.0 | The application can write rules for blocking calls and messages.<br>**Allowed to licensed partners.** |
 | `http://tizen.org/privilege/bluetooth`   | public   | -            | 2.3.1 | The application can perform unrestricted actions using  Bluetooth, such as scanning for and connecting to other devices. |
 | `http://tizen.org/privilege/bluetooth.admin` | platform | -            | 2.3.1 | The application can change Bluetooth settings, such as switching Bluetooth on or off, setting the device name, and enabling or disabling the AV remote control. |
+| `http://tizen.org/privilege/calendar.read` | public   | Calendar | 3.0 | The application can read events and tasks. |
+| `http://tizen.org/privilege/calendar.write` | public   | Calendar | 3.0 | The application can create, update, and delete events and tasks. |
 | `http://tizen.org/privilege/call`        | public   | Call         | 2.3.1 | The application can make phone calls to numbers when they are tapped without further confirmation. This can result in additional charges depending on the user's payment plan. |
 | `http://tizen.org/privilege/callhistory.read` | public   | User history | 2.3.1 | The application can read call log items. |
 | `http://tizen.org/privilege/callhistory.write` | public   | User history | 2.3.1 | The application can create, update, and delete call log items. |
@@ -207,6 +216,8 @@ applications.
 | `http://tizen.org/privilege/dpm.zone`    | partner  | -            | 3.0   | The application can create and remove containers. Containers are private workspaces which provide separate application runtime environments and data storage.<br>**Allowed to licensed partners.** |
 | `http://tizen.org/privilege/email`       | public   | -            | 3.0   | The application can manage the user's email accounts, including the user's folders and emails, POP3 and IMAP downloads, and SMTP uploads. This can result in additional charges depending on the user's payment plan. |
 | `http://tizen.org/privilege/fido.client` | public   | -            | 3.0   | The application can trigger authenticators on the user's device and it can request to use the user's PIN or biometrics (fingerprints or irises) for authentication. |
+| `http://tizen.org/privilege/gestureactivation`      | platform   | -            | 4.0 | The application can allow and block special touch gestures. |
+| `http://tizen.org/privilege/gesturegrab`      | platform   | -            | 4.0 | The application can read special touch gestures, even while it is running in the background. |
 | `http://tizen.org/privilege/haptic`      | public   | -            | 2.3.1 | The application can control vibration feedback. |
 | `http://tizen.org/privilege/healthinfo`  | public   | Sensor       | 2.3.1 | The application can read health information gathered by the device sensors, such as the pedometer and heart rate monitor. |
 | `http://tizen.org/privilege/ime`         | public   | -            | 3.0   | The application can provide users with a way to enter characters and symbols into an associated text field. |
@@ -234,6 +245,7 @@ applications.
 | `http://tizen.org/privilege/packagemanager.admin` | platform | -            | 2.3.1 | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public   | -            | 3.0   | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public   | -            | 2.3.1 | The application can retrieve detailed application package information. |
+| `http://tizen.org/privilege/peripheralio` | platform   | -            | 4.0 | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
 | `http://tizen.org/privilege/power`       | public   | -            | 2.3.1 | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push`        | public   | -            | 2.3.1 | The application can receive notifications from the Internet. This can result in additional charges depending on the user's payment plan. |
 | `http://tizen.org/privilege/reboot`      | platform | -            | 2.3.1 | The application can restart the device.  |
@@ -242,12 +254,15 @@ applications.
 | `http://tizen.org/privilege/secureelement` | public   | -            | 2.3.1 | The application can access secure smart card chips, such as UICC/SIM, embedded secure elements, and secure SD cards. |
 | `http://tizen.org/privilege/systemmonitor` | public   | -            | 3.0   | The application can read system information, including information from the CPU and RAM. |
 | `http://tizen.org/privilege/systemsettings.admin` | platform | -            | 2.3.1   | The application can read and write all system settings. |
+| `http://tizen.org/privilege/tee.client` | partner | -            | 4.0   | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment.<br>**Allowed to licensed partners.** |
 | `http://tizen.org/privilege/telephony`   | public   | -            | 2.3.1   | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the status of calls. |
 | `http://tizen.org/privilege/telephony.admin` | platform | -            | 2.3.1   | The application can manage telephony settings, such as those for incoming and outgoing calls, forwarding and holding calls, networks, and SIM cards. |
 | `http://tizen.org/privilege/use_ir`      | public   | -            | 3.0   | The application can use the infrared transmitter. |
 | `http://tizen.org/privilege/volume.set`  | public   | -            | 2.3.1   | The application can adjust the volume for different features, such as notification alerts, ringtones, and media. |
 | `http://tizen.org/privilege/widget.viewer` | public   | -            | 2.3.1 | The application can show widgets, and information from their associated applications, on the home screen. |
 | `http://tizen.org/privilege/window.priority.set` | public   | -            | 2.3.1   | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This can prevent the user from interacting with other applications or screens until the window for the application is closed. |
+| `http://tizen.org/privilege/zigbee`      | public   | -            | 4.0   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
+| `http://tizen.org/privilege/zigbee.admin`      | platform   | -            | 4.0   | The application can control a connected ZigBee coordinator, e.g. turning it on or off. |
 
 
 <a name="nonAPI"></a>

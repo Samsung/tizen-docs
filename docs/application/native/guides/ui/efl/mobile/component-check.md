@@ -43,7 +43,9 @@ To use a check component in your application:
      elm_object_part_content_set(check, "icon", icon);
      ```
 
-3. Register the [callback](#callbacks) functions.The following example shows how to define and register a callback for the `changed` signal:
+3. Register the [callback](#callbacks) functions.
+
+   The following example shows how to define and register a callback for the `changed` signal:
 
    ```
    evas_object_smart_callback_add(check, "changed", changed_cb, data);
@@ -104,10 +106,12 @@ You can register callback functions connected to the following signals for a che
 |---------|----------------------------------|------------|
 | `changed` | The check component value changes. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

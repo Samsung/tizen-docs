@@ -8,7 +8,11 @@ This feature is supported in mobile and wearable applications only.
 
 You can define UI components in 2 different ways using selectors:
 
-- With a `class` selectorIt is recommended to use the `class` selector for each component. Class selectors in TAU are composed with a `ui-`prefix and <COMPONENT_NAME>.The following example shows the creation of some components with a `class` selector:
+- With a `class` selector
+
+  It is recommended to use the `class` selector for each component. Class selectors in TAU are composed with a `ui-`prefix and <COMPONENT_NAME>.
+  
+  The following example shows the creation of some components with a `class` selector:
 
   ```
   <!--Create an Expandable component-->
@@ -24,7 +28,11 @@ You can define UI components in 2 different ways using selectors:
   </select>
   ```
 
-- With a `data-role` selectorThe `data-role` selector in TAU is composed with <COMPONENT_NAME> in lowercase.The following example shows the creation of some components with a `data-role` selector:
+- With a `data-role` selector
+
+  The `data-role` selector in TAU is composed with <COMPONENT_NAME> in lowercase.
+  
+  The following example shows the creation of some components with a `data-role` selector:
 
   ```
   <!--Create a TextEnveloper component-->
@@ -40,11 +48,15 @@ You can define UI components in 2 different ways using selectors:
 
 ## Setting UI Component Options
 
-TAU supports several ways of setting options for a UI component. For more information, see [Mobile UI Components](../../../../org.tizen.web.apireference/html/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm) and [Wearable UI Components](../../../../org.tizen.web.apireference/html/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm).
+TAU supports several ways of setting options for a UI component. For more information, see [Mobile UI Components](../../api/latest/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm) and [Wearable UI Components](../../api/latest/ui_fw_api/Wearable_UIComponents/wearable_component_list.htm).
 
 To set the options:
 
-- Initializing options with the `data-` attributeVarious options can be set with `data-` attribute when the component is being created. You can set options this way only when the component is created. After creating the component, changing the data attributes on the HTML element does not change the component options.The following example shows a SectionChanger code with a `data-` option:
+- Initializing options with the `data-` attribute
+
+  Various options can be set with `data-` attribute when the component is being created. You can set options this way only when the component is created. After creating the component, changing the data attributes on the HTML element does not change the component options.
+  
+  The following example shows a SectionChanger code with a `data-` option:
 
   ```
   <div id="hasSectionchangerPage" class="ui-page">
@@ -162,3 +174,4 @@ To manage the UI components if the jQuery library is loaded:
 ## Related Information
 * Dependencies   
    - Tizen 2.4 and Higher for Mobile
+   - Tizen 2.3.1 and Higher for Wearable

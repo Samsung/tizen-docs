@@ -2,34 +2,34 @@
 
 When managing large amounts of data, you can create filters to search for specific information, and make queries to receive only the information you are looking for. You can use various filter attributes and sort the received data.
 
-The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The main data handling features of the Tizen API include:
 
 - Filters
 
-  The Tizen API supports the following filter types, which are subtypes of the `AbstractFilter` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AbstractFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AbstractFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AbstractFilter) applications):
+  The Tizen API supports the following filter types, which are subtypes of the `AbstractFilter` interface (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#AbstractFilter), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#AbstractFilter), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#AbstractFilter) applications):
 
-  - `AttributeFilter` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeFilter) applications)  
+  - `AttributeFilter` (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#AttributeFilter), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#AttributeFilter), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#AttributeFilter) applications)  
   	 Matches objects containing a defined attribute or attribute value. The match is determined based on match flags defined with the `FilterMatchFlag` type definition.
 
-  - `AttributeRangeFilter`(in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeRangeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeRangeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeRangeFilter) applications)  
+  - `AttributeRangeFilter`(in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#AttributeRangeFilter), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#AttributeRangeFilter), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#AttributeRangeFilter) applications)  
   	 Matches objects containing an attribute whose values are within a particular range.
 
-  - `CompositeFilter` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#CompositeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#CompositeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#CompositeFilter) applications)	  
+  - `CompositeFilter` (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#CompositeFilter), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#CompositeFilter), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#CompositeFilter) applications)	  
    Combines several filters into a set.
 
   You can create [attribute filters](#creating-attribute-filters), [attribute range filters](#creating-attribute-range-filters), and [composite filters](#creating-composite-filters) to search for specific data and [make complex queries](#making-complex-queries-using-filters). The attributes you can use with the filter types vary depending on the API you are using. For example, query methods related to the [calendar](#calendar-filter-attributes), [call history](#call-history-filter-attributes), [contact](#contact-filter-attributes), [content](#content-filter-attributes), and [messaging](#messaging-filter-attributes) data each have their own sets of supported filter attributes.
 
 - Sorting   
 
-  You can [sort the results of queried data](#using-sorting-modes) using the `SortMode` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#SortMode), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#SortMode), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#SortMode) applications).
+  You can [sort the results of queried data](#using-sorting-modes) using the `SortMode` interface (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#SortMode), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#SortMode), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#SortMode) applications).
 
 ## Creating Attribute Filters
 
  Learning how to create attribute filters allows you effectively incorporate query methods in your application:
 
-1. The `AttributeFilter` filter (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeFilter) applications) is used to filter the search results based on an attribute value. In this example, the filter finds contacts, with the first name Chris, from the default address book.
+1. The `AttributeFilter` filter (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#AttributeFilter), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#AttributeFilter), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#AttributeFilter) applications) is used to filter the search results based on an attribute value. In this example, the filter finds contacts, with the first name Chris, from the default address book.
 
    Create the filter with the `AttributeFilter` constructor. You can specify attribute options, such as the attribute name, match flag, and match value.
 
@@ -38,7 +38,7 @@ The main data handling features of the Tizen API include:
    var firstNameFilter = new tizen.AttributeFilter('name.firstName', 'EXACTLY', 'Chris');
    ```
 
-2. Call the `find()` method of the `AddressBook` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#AddressBook) applications) to find contacts. The filter (`firstNameFilter`) you created is included as a parameter.
+2. Call the `find()` method of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications) to find contacts. The filter (`firstNameFilter`) you created is included as a parameter.
 
    ```
    tizen.contact.getDefaultAddressBook().find(successCB, errorCB, firstNameFilter);
@@ -48,7 +48,7 @@ The main data handling features of the Tizen API include:
 
  Learning how to use attribute range filters allows you effectively incorporate query methods in your application:
 
-1. The `AttributeRangeFilter` filter (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#AttributeRangeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#AttributeRangeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#AttributeRangeFilter) applications)is used to search for results based on a range of attribute values. In this example, the filter finds all events starting on a defined day from the calendar.
+1. The `AttributeRangeFilter` filter (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#AttributeRangeFilter), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#AttributeRangeFilter), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#AttributeRangeFilter) applications)is used to search for results based on a range of attribute values. In this example, the filter finds all events starting on a defined day from the calendar.
 
    Create the filter with the `AttributeRangeFilter` constructor. Specify the attribute, and the start and end points of the value range.
 
@@ -61,17 +61,17 @@ The main data handling features of the Tizen API include:
    var dateRangeFilter = new tizen.AttributeRangeFilter('startDate', today_begin, today_end);
    ```
 
-2.  Call the `find()` method of the `Calendar` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications) to find events. The filter (`dateRangeFilter`) you created is included as a parameter.
+2.  Call the `find()` method of the `Calendar` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications) to find events. The filter (`dateRangeFilter`) you created is included as a parameter.
 
-   ```
-   tizen.calendar.getDefaultCalendar('EVENT').find(successCB, errorCB, dateRangeFilter);
-   ```
+    ```
+    tizen.calendar.getDefaultCalendar('EVENT').find(successCB, errorCB, dateRangeFilter);
+    ```
 
 ## Creating Composite Filters
 
  Learning how to use composite filters allows you effectively incorporate query methods in your application:
 
-1. The `CompositeFilter` filter (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#CompositeFilter), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#CompositeFilter), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#CompositeFilter) applications) is used to search for results based on a set of filters. In this example, the filter finds contacts, whose first name contains Chris and last name is Smith, from the default address book.
+1. The `CompositeFilter` filter (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#CompositeFilter), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#CompositeFilter), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#CompositeFilter) applications) is used to search for results based on a set of filters. In this example, the filter finds contacts, whose first name contains Chris and last name is Smith, from the default address book.
 
    Create the filter with the `CompositeFilter` constructor. You can specify multiple sub-filters for the filter set.
 
@@ -90,11 +90,11 @@ The main data handling features of the Tizen API include:
    var nameCompositeFilter = new tizen.CompositeFilter('INTERSECTION', [firstNameFilter, lastNameFilter]);
    ```
 
-2.  Call the `find()` method of the `AddressBook` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#AddressBook) applications) to find matching contacts. The filter (`nameCompositeFilter`) you created is included as a parameter.
+2.  Call the `find()` method of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications) to find matching contacts. The filter (`nameCompositeFilter`) you created is included as a parameter.
 
-   ```
-   tizen.contact.getDefaultAddressBook().find(successCB, errorCB, nameCompositeFilter);
-   ```
+    ```
+    tizen.contact.getDefaultAddressBook().find(successCB, errorCB, nameCompositeFilter);
+    ```
 
 ## Using Sorting Modes
 
@@ -105,7 +105,7 @@ The following sorting modes are supported:
 
  Learning how to use sorting modes allows you effectively incorporate query methods in your application:
 
-1. The `SortMode` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#SortMode), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#SortMode), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#SortMode) applications) is created to sort the search results. In this example, it is used to sort contacts in the device address book in ascending order by first name.
+1. The `SortMode` interface (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#SortMode), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#SortMode), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#SortMode) applications) is created to sort the search results. In this example, it is used to sort contacts in the device address book in ascending order by first name.
 
    Create the sort order with the `SortMode()` method. Specify an attribute name to sort by and an order option.
 
@@ -114,14 +114,19 @@ The following sorting modes are supported:
    var sortMode = new tizen.SortMode('name.firstName', 'ASC');
    ```
 
-2.  Call the `find()` method of the `AddressBook` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#AddressBook) applications) to find matching contacts. In this example, the filter parameter in the `find()` method is defined as `null`, which means that the method retrieves all contacts in the address book.
+2.  Call the `find()` method of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications) to find matching contacts. In this example, the filter parameter in the `find()` method is defined as `null`, which means that the method retrieves all contacts in the address book.
 
-   ```
-   tizen.contact.getDefaultAddressBook().find(successCB, errorCB, null, sortMode);
-   ```
+    ```
+    tizen.contact.getDefaultAddressBook().find(successCB, errorCB, null, sortMode);
+    ```
 
-> **Note**
-> If you use a type attribute as a sort mode parameter, the sorting is not performed alphabetically since the attribute values are stored normally after the type conversion in the platform implementation.For example, if the `ContentType` enum (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/content.html#ContentType), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/content.html#ContentType), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/content.html#ContentType) applications) is the type attribute and the sorting order is `"DESC"`, the sorting result is ordered according to the listed enum order:ImageVideoAudioOther
+> **Note**  
+> If you use a type attribute as a sort mode parameter, the sorting is not performed alphabetically since the attribute values are stored normally after the type conversion in the platform implementation.  
+> For example, if the `ContentType` enumeration (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentType), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentType), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentType) applications) is the type attribute and the sorting order is `"DESC"`, the sorting result is ordered according to the listed enumerator order:
+> - Image
+> - Video
+> - Audio
+> - Other
 
 ## Making Complex Queries Using Filters
 
@@ -162,7 +167,7 @@ Basically, you search the content of the device for media items where the media 
            new tizen.CompositeFilter('INTERSECTION', [typeFilter, titleFilter]);
    ```
 
-5. Call the `find()` method of the Content API's `ContentManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/content.html#ContentManager) applications) to retrieve the media items that match the final filter:
+5. Call the `find()` method of the Content API's `ContentManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications) to retrieve the media items that match the final filter:
 
    ```
        tizen.content.find(findMediaContentsCallback, onError, null, finalFilter);
@@ -173,7 +178,7 @@ Basically, you search the content of the device for media items where the media 
 
 ## Calendar Filter Attributes
 
-The following table lists the filter types you can use with specific calendar item attributes in the methods of the `Calendar` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications).
+The following table lists the filter types you can use with specific calendar item attributes in the methods of the `Calendar` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications).
 
 **Table: Calendar filter attributes**
 
@@ -208,7 +213,7 @@ The following table lists the filter types you can use with specific calendar it
 
 ## Call History Filter Attributes
 
-The following table lists the filter types you can use with specific call history attributes in the methods of the [CallHistory](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistory) interface.
+The following table lists the filter types you can use with specific call history attributes in the methods of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface.
 
 **Table: Call History filter attributes**
 
@@ -225,7 +230,7 @@ The following table lists the filter types you can use with specific call histor
 
 ## Contact Filter Attributes
 
-The following table lists the filter types you can use with specific contact attributes in the methods of the `AddressBook` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#AddressBook) applications).
+The following table lists the filter types you can use with specific contact attributes in the methods of the `AddressBook` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#AddressBook) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#AddressBook) applications).
 
 **Table: Contact filter attributes**
 
@@ -272,7 +277,7 @@ The following table lists the filter types you can use with specific contact att
 | `urls.type`                       | No                         | No                               |
 | `groupIds`                        | Yes                        | Yes                              |
 
-The following table lists the filter types you can use with specific person attributes in the methods of the `ContactManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/contact.html#ContactManager) applications).
+The following table lists the filter types you can use with specific person attributes in the methods of the `ContactManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/contact.html#ContactManager) and [wearable](../../api/latest/device_api/wearable/tizen/contact.html#ContactManager) applications).
 
 **Table: Person filter attributes**
 
@@ -290,7 +295,7 @@ The following table lists the filter types you can use with specific person attr
 
 ## Content Filter Attributes
 
-The following table lists the filter types you can use with specific content attributes in the methods of the `ContentManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/content.html#ContentManager) applications).
+The following table lists the filter types you can use with specific content attributes in the methods of the `ContentManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/content.html#ContentManager), [wearable](../../api/latest/device_api/wearable/tizen/content.html#ContentManager), and [TV](../../api/latest/device_api/tv/tizen/content.html#ContentManager) applications).
 
 **Table: Content filter attributes**
 
@@ -323,7 +328,7 @@ The following table lists the filter types you can use with specific content att
 
 ## Messaging Filter Attributes
 
-The following tables list the filter types you can use with specific message attributes in the methods of the [MessageStorage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageStorage) interface.
+The following tables list the filter types you can use with specific message attributes in the methods of the [MessageStorage](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage) interface.
 
 The following table lists the filter attributes related to the `findMessage()` method.
 
@@ -385,8 +390,8 @@ The following table lists the filter attributes related to the `findFolders()` m
 | `type`           | No                         | No                               |
 | `synchronizable` | No                         | No                               |
 
-> **Note**
-> The `FULLSTRING` value of the `FilterMatchFlag` enumerator (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html#FilterMatchFlag), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html#FilterMatchFlag), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tizen.html#FilterMatchFlag) applications) is not supported and returns an error callback.
+> **Note**  
+> The `FULLSTRING` value of the `FilterMatchFlag` enumerator (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#FilterMatchFlag), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#FilterMatchFlag), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#FilterMatchFlag) applications) is not supported and returns an error callback.
 
 ## Related Information
 * Dependencies

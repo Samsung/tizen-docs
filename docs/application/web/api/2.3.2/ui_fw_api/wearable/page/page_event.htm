@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../../snippet.js"></script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" /> 
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" /> 
+  <title>Handling Page Events</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Handling Page Events</h1>
+
+<p>The following table lists the events related to pages.</p>
+<table>
+<caption>Table: Page events</caption>
+<tbody>
+	<tr>
+		<th style="width:40%;">Event</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pagebeforecreate</span></td>
+		<td>Triggered when the page is being initialized, before most plugin auto-initialization occurs.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pagecreate</span></td>
+		<td>Triggered when the page has been created in the DOM (for example, through Ajax) but before all UI Components have had an opportunity to enhance the contained markup.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pagebeforeshow</span></td>
+		<td>Triggered on the page we are transitioning to, before the actual transition animation is kicked off.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pageshow</span></td>
+		<td>Triggered on the page we are transitioning to, after the transition animation has completed.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pagebeforehide</span></td>
+		<td>Triggered on the page we are transitioning away from, before the actual transition animation is kicked off.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pagehide</span></td>
+		<td>Triggered on the page we are transitioning away from, after the transition animation has completed.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pagechange</span></td>
+		<td>Triggered after the <span style="font-family: Courier New,Courier,monospace">changePage()</span> request has finished loading the page into the DOM and all page transition animations have completed.</td>
+	</tr>
+</tbody>
+</table>
+
+<p>To implement page events, use the following code:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;page&quot; class=&quot;ui-page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;header class=&quot;ui-header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;/header&gt;
+&nbsp;&nbsp;&nbsp;&lt;div class=&quot;ui-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;  
+&nbsp;&nbsp;&nbsp;var page = document.getElementById(&quot;page&quot;);
+&nbsp;&nbsp;&nbsp;page.addEventListener(&quot;Event&quot;, function(ev) 
+&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Your code */
+&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</pre>
+
+<p>To bind an event callback on the <strong>Back</strong> key, use the following code:</p>
+
+<pre class="prettyprint">/* JavaScript code */
+(function () {
+&nbsp;&nbsp;&nbsp;window.addEventListener(&#39;tizenhwkey&#39;, function(ev) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ev.keyName === &quot;back&quot;) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var page = document.getElementsByClassName("ui-page-active")[0],
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pageid = page ? page.id : "";
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ( pageid === "main" ) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Call tizen.application.getCurrentApplication().exit() to exit application */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tizen.application.getCurrentApplication().exit();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (ignore) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Add script to add another behavior */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Call window.history.back() to go to previous browser window */
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.history.back();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;});
+})();
+</pre>
+
+
+
+<h2>Where to Go Next</h2>
+<ul>
+<li><a href="app_page_layout.htm">Application Page Layout</a></li></ul>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

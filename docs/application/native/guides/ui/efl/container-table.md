@@ -16,10 +16,11 @@ To build a layout with a table:
    Evas_Object *table;
 
    table = elm_table_add(parent);
-
    ```
 
-2. Add an object to the table using the `elm_table_pack()` function.The function takes as parameters the table, the item to add to the table, and the position where to add the item: column, row, and the size of the item in number of rows and columns (colspan and rowspan).
+2. Add an object to the table using the `elm_table_pack()` function.
+
+   The function takes as parameters the table, the item to add to the table, and the position where to add the item: column, row, and the size of the item in number of rows and columns (colspan and rowspan).
 
    ```
    Evas_Object *btn;
@@ -33,6 +34,7 @@ The following example shows a simple use case of the table component, where 5 bu
 **Example: Table use case**
 
  ![Table](./media/table1.png)
+
 ```
 Evas_Object *win;
 Evas_Object *conf;

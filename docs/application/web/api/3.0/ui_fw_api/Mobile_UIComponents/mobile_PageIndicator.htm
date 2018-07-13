@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>PageIndicator</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>PageIndicator</h1>
+
+<p>PageIndicator component presents as a dot-typed indicator.<br>
+The highlighted dots represent the corresponing active pages.</p>
+<p>According to option, the maximum number of dots and the number of pages to be linked can be set.
+<br>If the number of linked pages is more than dots which can be displayed, a central dot is assigned to multiple pages.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>2.4</strong>.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors">Default Selectors</a></li>
+
+		<li><a href="#manual-constructor">Manual Constructor</a></li>
+
+		<li><a href="#html-examples">HTML Examples</a></li>
+
+		<li><a href="#options-list">Options</a></li>
+
+		<li><a href="#methods-list">Methods</a>
+		</li>
+
+</ol>
+
+<h2><a id="default-selectors"></a>Default Selectors</h2>
+
+<p>By default, all elements with the class="ui-pageindicator" or data-role="page-indicator" attribute are displayed as page indicator components.</p>
+
+<h2><a id='manual-constructor'></a>Manual Constructor</h2>
+
+<p>For manual creation of PageIndicator, you can use constructor from <strong>tau</strong> namespace:</p>
+
+<pre class="prettyprint">
+var elPageIndicator = document.getElementById("pageIndicator"),
+    pageIndicator = tau.widget.PageIndicator(elPageIndicator, {numberOfPages: 5});
+</pre>
+
+<p>Constructor has two require parameter <strong>element</strong> which are base <strong>HTMLElement</strong> to create component. We recommend get this element by method <em>document.getElementById</em>.</p>
+<p>Second parameter is <strong>options</strong> and it is a object with options for component. numberOfPages means the number of pages to be linked and it is <strong>mandatory</strong>.</p>
+
+<h2><a id="html-examples"></a>HTML Examples</h2>
+
+<ul><li>
+<p>To create page indicator</p>
+<pre class="prettyprint">
+&lt;div id="pageIndicator" class="ui-page-indicator" data-number-of-pages="5"&gt;&lt;/div&gt;
+</pre>
+
+<p>data-number-of-page attribute is same as numberOfPages option in manual constructor description.</p>
+</li>
+<br>
+<li>
+<p>To use page indicator with section changer component</p>
+<pre class="prettyprint">
+&lt;div class="ui-content"&gt;
+   &lt;div class="ui-page-indicator" id="pageIndicator" data-number-of-pages="4" style="bottom: 0;"&gt;&lt;/div&gt;
+   &lt;div id="hsectionchanger" class="ui-section-changer"&gt;
+      &lt;!--Section changer has only one child--&gt;
+      &lt;div&gt;
+         &lt;section class="ui-section-active"&gt;
+            &lt;ul class="ui-listview"&gt;
+               &lt;li class="ui-li-static"&gt;List&lt;/li&gt;
+            &lt;/ul&gt;
+         &lt;/section&gt;
+         &lt;section&gt;
+            &lt;ul class="ui-listview"&gt;
+               &lt;li class="ui-li-static"&gt;List&lt;/li&gt;
+            &lt;/ul&gt;
+         &lt;/section&gt;
+         &lt;section&gt;
+            &lt;ul class="ui-listview"&gt;
+               &lt;li class="ui-li-static"&gt;List&lt;/li&gt;
+            &lt;/ul&gt;
+         &lt;/section&gt;
+         &lt;section&gt;
+            &lt;ul class="ui-listview"&gt;
+               &lt;li class="ui-li-static"&gt;List&lt;/li&gt;
+            &lt;/ul&gt;
+         &lt;/section&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var sectionChanger = document.getElementById("hsectionchanger"),
+       elPageIndicator = document.getElementById("pageIndicator"),
+       pageIndicator;
+   pageIndicator = tau.widget.PageIndicator(elPageIndicator);
+   sectionChanger.addEventListener("sectionchange", function(e)
+   {
+      pageIndicator.setActive(e.detail.active);
+   }, false);
+&lt;/script&gt;
+</pre>
+</li></ul>
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">maxPage</span></td>
+				<td class="option">number</td>
+				<td class="option">5</td>
+				<td class="option"><p>the maximum number of pages(dots) which can be displayed on screen</p></td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">numberOfPages</span></td>
+				<td class="option">number</td>
+				<td class="option">null</td>
+				<td class="option">the number of pages to be linked <strong>(mandatory)</strong></td>
+			</tr>
+
+		</tbody>
+	</table>
+<br>
+<p>
+Take an example : the situation that the value of data-number-of-pages is "5" (5 pages in all), and the value of data-max-page is "3" (3 dots).<br>
+<pre class="prettyprint">
+&lt;div id="pageIndicator" class="ui-page-indicator" data-number-of-pages="5" data-max-page="3"&gt;&lt;/div&gt;
+</pre>
+<br>
+When you scroll the page (or section) horizontally,  the number of exceeding pages (in this case, it is 2 pages, which is the result of 5 - 3)<br>
+would be indicated by the central dot, from middle of the pages.<br>
+<br>
+So, the first dot is for the first page, and the last dot is for the fifth (the last) page.<br>
+And the middle dot is shared by 2nd, 3rd and 4th page while scrolling pages.<br>
+<br>
+In the case of even value of data-max-page (the number of dots on the screen), the next order of half of the data-max-page value would work as middle dot.<br>
+For example, in the situation that the value of data-number-of-pages is "6", and the value of data-max-page is "4", the 3rd dot (the result of 4 / 2 + 1) would indicate
+3rd, 4th and 5th pages as middle dot.<br>
+<br>
+Of course, the value of data-number-of-pages should meet the number of the pages you have added to HTML.<br>
+<br>
+And if the the value of data-max-page (dots) exceeds the value of data-number-of-pages, indicator dots will be displayed as the value of data-number-of-pages.<br>
+For example, in the situation that the value of numberOfPages is "6", and the value of maxPage is "100",there would be still 6 dots on the screen.
+</P>
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setActive">setActive</a>(number index) </pre>
+					</td>
+					<td><p>This method sets a dot to active state.</p></td>
+				</tr>
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-setActive">setActive</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>This method sets a dot to active state.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setActive(number index) </pre>
+					</div>
+
+					<div class="description">
+						<p>
+
+						</p>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+
+
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>number</td>
+						<td>required</td>
+						<td></td>
+						<td>index which is active state.</td>
+					</tr>
+
+
+					</tbody>
+					</table>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No Return Value
+
+					</div>
+
+				</dd>
+
+
+		</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

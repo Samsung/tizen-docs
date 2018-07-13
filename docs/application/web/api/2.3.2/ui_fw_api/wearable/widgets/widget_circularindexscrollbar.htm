@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Circular Index Scroll Bar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Circular Index Scroll Bar</h1>
+
+<p>Circular index scroll bar component shows on the screen a circular indicator with an index and support to scroll.</p>
+<p>If you spin the rotary quickly, an indicator will be displayed and you can move in an index unit.</p>
+<p>The indicator will disappear if no rotary action is detected for a second.</p>
+<p>This component fires a select event when the index characters are selected.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>2.3</strong>.</td>
+	</tr>
+	<tr>
+		<td class="note">This component is optimized for circular UI. The component may not be shown properly in rectangular UI.</td>
+	</tr>
+	<tr>
+		<td class="note">If you want information for support to both circular and rectangular UI, see <a href="../circular_support/components/indexscroll.htm">here</a></td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#manual-constructor0.6990520032122731">How to create circular index scroll bar</a>
+
+		</li>
+
+		<li><a href="#options-list">Options</a>
+
+		</li>
+
+		<li><a href="#events-list">Events</a>
+
+		</li>
+
+		<li><a href="#methods-list">Methods</a>
+
+				<ol class="toc">
+
+						<li><a href="#method-value">value</a>
+						</li>
+
+				</ol>
+
+		</li>
+
+</ol>
+
+
+<h2><a id='manual-constructor0.6990520032122731'></a>How to create circular index scroll bar</h2>
+
+<p>For manual creation of circular index scroll bar, you can use constructor from <strong>tau</strong> namespace:</p>
+
+<pre class="prettyprint">var circularindexElement = document.getElementById('circularindexscrollbar'),
+    circularindexscrollbar = tau.widget.CircularIndexScrollbar(circularindexElement, {index: "A,B,C"});
+</pre>
+
+<p>Constructor has one require parameter <strong>element</strong> which are base <strong>HTMLElement</strong> to create component. We recommend get this element by method <em>document.getElementById</em>.</p>
+<p>Second parameter is <strong>options</strong> and it is a object with options for component.</p>
+
+<p>To add a circular index scroll bar component to the application, use the following code:</p>
+
+<pre class="prettyprint"> &lt;div id="indexscrollbar" class="ui-circularindexscrollbar" data-index="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"&gt;&lt;/div&gt;
+ &lt;script&gt;
+     (function() {
+         var elem = document.getElementById("indexscrollbar");
+         tau.widget.CircularIndexScrollbar(elem);
+         elem.addEventListener("select", function( event ) {
+             var index = event.detail.index;
+             // Print selected index
+             console.log(index);
+         });
+     }());
+ &lt;/script&gt;
+</pre>
+
+<p>The index value can be retrieved by accessing event.detail.index property.</p>
+
+<p>In the following example, the list scrolls to the position of the list item defined using the li-divider class which is selected by the circular index scroll bar:</p>
+
+<pre class="prettyprint">
+ &lt;div id="pageIndexScrollbar" class="ui-page"&gt;
+	&lt;header class="ui-header"&gt;
+		&lt;h2 class="ui-title"&gt;CircularIndexScrollbar&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div id="indexscrollbar" class="ui-circularindexscrollbar"&gt;&lt;/div&gt;
+	&lt;section class="ui-content"&gt;
+		&lt;ul class="ui-listview" id="list1"&gt;
+			&lt;li class="li-divider"&gt;A&lt;/li&gt;
+			&lt;li&gt;Anton&lt;/li&gt;
+			&lt;li&gt;Arabella&lt;/li&gt;
+			&lt;li&gt;Art&lt;/li&gt;
+			&lt;li class="li-divider"&gt;B&lt;/li&gt;
+			&lt;li&gt;Barry&lt;/li&gt;
+			&lt;li&gt;Bibi&lt;/li&gt;
+			&lt;li&gt;Billy&lt;/li&gt;
+			&lt;li&gt;Bob&lt;/li&gt;
+			&lt;li class="li-divider"&gt;D&lt;/li&gt;
+			&lt;li&gt;Daisy&lt;/li&gt;
+			&lt;li&gt;Derek&lt;/li&gt;
+			&lt;li&gt;Desmond&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/section&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function() {
+	var page = document.getElementById("pageIndexScrollbar"),
+		indexScrollbar;
+
+	page.addEventListener("pageshow", function(ev) {
+		var indexScrollbarElement = document.getElementById("indexscrollbar"),
+			listviewElement = document.getElementById("list1"),	// list
+			listDividers = listviewElement.getElementsByClassName("li-divider"),	// list dividers
+			dividers = {},	// collection of list dividers
+			indices = [],	// index list
+			scroller,
+			divider,
+			i, idx;
+
+		// For all list dividers,
+		for(i = 0; i < listDividers.length; i++) {
+			// Add the list divider elements to the collection
+			divider = listDividers[i];
+			idx = divider.innerText;
+			dividers[idx] = divider;
+
+			// Add the index to the index list
+			indices.push(idx);
+		}
+
+		scroller = tau.util.selectors.getScrollableParent(listviewElement);
+
+		// Create CircularIndexScrollbar
+		indexScrollbar = new tau.widget.CircularIndexScrollbar(indexScrollbarElement, {index: indices});
+
+		// Add SnapListview item "selected" event handler.
+		// You should update the information for current index
+		listviewElement.addEventListener("selected", function (ev) {
+			var indexValue = ev.target.textContent[0];
+			indexScrollbar.value(indexValue);
+		});
+
+		// Add IndexScrollbar index "select" event handler.
+		indexScrollbarElement.addEventListener("select", function (ev) {
+			var divider,
+				idx = ev.detail.index;
+
+			divider = dividers[idx];
+			if(divider && scroller) {
+				// Scroll to the li-divider element
+				scroller.scrollTop = divider.offsetTop - scroller.offsetTop;
+			}
+		});
+	});
+
+	page.addEventListener("pagehide", function(ev) {
+		indexScrollbar.destroy();
+	});
+} ());
+&lt;/script&gt;
+</pre>
+
+
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">delimiter</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;,&quot;</td>
+				<td class="option">delimiter in index</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">index</span></td>
+				<td class="option">string | Array</td>
+				<td class="option">&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,(...),&quot;V&quot;,&quot;W&quot;,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;,&quot;1&quot;</td>
+				<td class="option">indices list</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+	<h2><a id="events-list"></a>Events</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">select</span></td>
+				<td><p>Event triggered after select index by user<p>This event has "detail" object and there is "index" property in the "detail"<p>
+					detail.index provides information for selected index.</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string <a href="#method-value">value</a> (  ) </pre>
+					</td>
+					<td><p>Get or Set index of the circular index scroll bar</p></td>
+				</tr>
+
+
+
+
+		</tbody>
+	</table>
+	<dl>
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Get or Set index of the circular index scroll bar</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">string value ( ) </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<p>Return current index or set the index</p>
+
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>string</td>
+									<td>In get mode return current index value</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+    &lt;div id="circularindexscrollbar"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        var circularindexElement = document.getElementById("circularindexscrollbar"),
+            circularIndexScrollbar = tau.widget.CircularIndexScrollbar(circularindexElement),
+        // return current index value
+        value = circularIndexScrollbar.value();
+        // sets the index value
+        circularIndexScrollbar.value("C");
+    &lt;/script&gt;
+</pre>
+						</div>
+
+				</dd>
+
+		</dl>
+
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="./widget_reference.htm">UI Component Reference</a></li>
+	
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

@@ -110,9 +110,15 @@ To make and call several animations:
 
    In the above queue, there are 4 animations in queue. When all animations are inserted, the animations are popped and animated sequentially by the TweenAnimator.
 
-5. The Ticker calls the `requestAnimationFrame()` method.The TweenAnimator invokes the play and tick methods in the Ticker. The Ticker calls the `on()` method, and the `on()` method includes the `requestAnimationFrame()` method. The `RAF()` method is invoked until the TweenAnimator's tick time reaches the end of the duration.
+5. The Ticker calls the `requestAnimationFrame()` method.  
+  The TweenAnimator invokes the play and tick methods in the Ticker. The Ticker calls the `on()` method, and the `on()` method includes the `requestAnimationFrame()` method. The `RAF()` method is invoked until the TweenAnimator's tick time reaches the end of the duration.
 
-6. During the `requestAnimationFrame()` method call, the `AnimationObject` renders the target object and the TweenAnimator's time logic is operating.The `AnimationObject` can get the time value using the calculating animation. The `AnimationObject` renders the target object based on the time value. If the duration is 1000 (ms), the TweenAnimator gives time 0 through 1000.**Figure: TweenAnimator**![TweenAnimator](./media/tau_animation_4.png)
+6. During the `requestAnimationFrame()` method call, the `AnimationObject` renders the target object and the TweenAnimator's time logic is operating.  
+   The `AnimationObject` can get the time value using the calculating animation. The `AnimationObject` renders the target object based on the time value. If the duration is 1000 (ms), the TweenAnimator gives time 0 through 1000.
+
+   **Figure: TweenAnimator**
+
+   ![TweenAnimator](./media/tau_animation_4.png)
 
 ## Animation Functions
 
@@ -164,42 +170,43 @@ The chaining feature makes an intuitive sequence group animation.
 ### Predefined Effects
 
 To make an effect, you can combine many single animations, or use a predefined effect.
+
 The following predefined effects are available:
 
-`bounce`, `flash`, `pulse`, `rubberBand`, `shake`, `swing`, `tada`, `wobble`, `jello`, `bounceIn`, `bounceInDown`, `bounceInLeft`, `bounceInRight`, `bounceInUp`, `bounceOut`, `bounceOutDown`, `bounceOutLeft`, `bounceOutRight`, `bounceOutUp`, `fadeIn`, `fadeInDown`, `fadeInLeft`, `fadeInRight`, `fadeInUp`,`fadeOut`, `fadeOutDown`, `fadeOutLeft`, `fadeOutRight`, `fadeOutUp`, `flip`, `flipInX`, `flipInY`, `flipOutX`, `flipOutY`,`lightSpeedIn`, `lightSpeedOut`, `rotateIn`, `rotateInDownLeft`, `rotateInDownRight`, `rotateInUpLeft`, `rotateInUpRight`,`rotateOut`, `rotateOutDownLeft`, `rotateOutDownRight`, `rotateOutUpLeft`, `rotateOutUpRight`, `slideInUp`, `slideInDown`, `slideInLeft`, `slideInRight`,`slideOutUp`, `slideOutDown`, `slideOutLeft`, `slideOutRight`, `zoomIn`, `zoomInDown`, `zoomInLeft`, `zoomInRight`, `zoomInUp`, `zoomOut`, `zoomOutDown`, `zoomOutLeft`, `zoomOutRight`, `zoomOutUp`, `hinge`, `rollIn`, `rollOut`
+`bounce`, `flash`, `pulse`, `rubberBand`, `shake`, `swing`, `tada`, `wobble`, `jello`, `bounceIn`, `bounceInDown`, `bounceInLeft`, `bounceInRight`, `bounceInUp`, `bounceOut`, `bounceOutDown`, `bounceOutLeft`, `bounceOutRight`, `bounceOutUp`, `fadeIn`, `fadeInDown`, `fadeInLeft`, `fadeInRight`, `fadeInUp`, `fadeOut`, `fadeOutDown`, `fadeOutLeft`, `fadeOutRight`, `fadeOutUp`, `flip`, `flipInX`, `flipInY`, `flipOutX`, `flipOutY`, `lightSpeedIn`, `lightSpeedOut`, `rotateIn`, `rotateInDownLeft`, `rotateInDownRight`, `rotateInUpLeft`, `rotateInUpRight`, `rotateOut`, `rotateOutDownLeft`, `rotateOutDownRight`, `rotateOutUpLeft`, `rotateOutUpRight`, `slideInUp`, `slideInDown`, `slideInLeft`, `slideInRight`, `slideOutUp`, `slideOutDown`, `slideOutLeft`, `slideOutRight`, `zoomIn`, `zoomInDown`, `zoomInLeft`, `zoomInRight`, `zoomInUp`, `zoomOut`, `zoomOutDown`, `zoomOutLeft`, `zoomOutRight`, `zoomOutUp`, `hinge`, `rollIn`, `rollOut`
 
 The following example shows how you can make a shake effect:
 
--   Using multiple animations:
+- Using multiple animations:
 
-```
-<div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;"></div>
-```
+   ```
+   <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;"></div>
+   ```
 
-```
-var t = tau.animation.target;
-t('#blueBox').tween({translateX: -10}, 100);
-t('#blueBox').tween({translateX: 10}, 100);
-t('#blueBox').tween({translateX: -10}, 100);
-t('#blueBox').tween({translateX: 10}, 100);
-t('#blueBox').tween({translateX: -10}, 100);
-t('#blueBox').tween({translateX: 10}, 100);
-t('#blueBox').tween({translateX: -10}, 100);
-t('#blueBox').tween({translateX: 10}, 100);
-t('#blueBox').tween({translateX: -10}, 100);
-t('#blueBox').tween({translateX: 0}, 100);
-```
+   ```
+   var t = tau.animation.target;
+   t('#blueBox').tween({translateX: -10}, 100);
+   t('#blueBox').tween({translateX: 10}, 100);
+   t('#blueBox').tween({translateX: -10}, 100);
+   t('#blueBox').tween({translateX: 10}, 100);
+   t('#blueBox').tween({translateX: -10}, 100);
+   t('#blueBox').tween({translateX: 10}, 100);
+   t('#blueBox').tween({translateX: -10}, 100);
+   t('#blueBox').tween({translateX: 10}, 100);
+   t('#blueBox').tween({translateX: -10}, 100);
+   t('#blueBox').tween({translateX: 0}, 100);
+   ```
 
--   Using the predefined `shake` effect:
+- Using the predefined `shake` effect:
 
-```
-<div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;"></div>
-```
+   ```
+   <div id="blueBox" style="background-color: 'blue'; position:absolute; width:100px; height:100px;"></div>
+   ```
 
-```
-var t = tau.animation.target;
-t('#blueBox').tween('shake', 1000);
-```
+   ```
+   var t = tau.animation.target;
+   t('#blueBox').tween('shake', 1000);
+   ```
 
 ### Group
 

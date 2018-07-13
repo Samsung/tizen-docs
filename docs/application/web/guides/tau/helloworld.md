@@ -70,8 +70,10 @@ You can import TAU with HTML. For better performance, all CSS files must be incl
 
 In HTML, use the `<script>` and `<link>` elements. These default elements are used to load the basic Tizen Advanced UI (TAU) libraries that must be included in Tizen Web applications. The loaded libraries are:
 
-- TAU library: `tau(.min).js` This element is mandatory, as it imports the TAU library, which you need to use the TAU JavaScript Interface.
-- TAU theme: `tau(.min).css` This element is also mandatory, as it imports the TAU theme.
+- TAU library: `tau(.min).js`  
+   This element is mandatory, as it imports the TAU library, which you need to use the TAU JavaScript Interface.
+- TAU theme: `tau(.min).css`  
+   This element is also mandatory, as it imports the TAU theme.
 
 ## Running Custom JavaScript and CSS
 

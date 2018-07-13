@@ -331,7 +331,7 @@ The following UI layouts with code examples are common use cases in widgets on w
 
   ![Vertical split layout](./media/webwidget_vertical_split_layout.png)
 
-> **Note**
+> **Note**  
 > The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.
 > ```
 > #more {   
@@ -777,7 +777,7 @@ Web widgets can communicate with other applications in various ways. As shown in
 <a name="comm_parent"></a>
 ### Communicating with a Web Application on a Wearable Device
 
-For data sharing between a Web widget and its parent application on the same device, use the Tizen [Preference API](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/preference.html). The Preference API allows a Web widget to communicate with its parent Web app (and vice versa) by storing key-value pairs in a hashtable-like data structure. The data stored by the Preference API has a "package" scope, which means that any widgets (or a Web app) in a package can access the data stored by the other widgets (or a Web app) in the same package. In addition, the Preference API does not need additional permissions, so no modifications in the `config.xml` file are required.
+For data sharing between a Web widget and its parent application on the same device, use the Tizen [Preference API](../../api/latest/device_api/wearable/tizen/preference.html). The Preference API allows a Web widget to communicate with its parent Web app (and vice versa) by storing key-value pairs in a hashtable-like data structure. The data stored by the Preference API has a "package" scope, which means that any widgets (or a Web app) in a package can access the data stored by the other widgets (or a Web app) in the same package. In addition, the Preference API does not need additional permissions, so no modifications in the `config.xml` file are required.
 
 The following table lists the Preference API methods.
 
@@ -836,7 +836,7 @@ window.onload = function() {
 
 #### Tizen Application API
 
-The [Application](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) API allows a widget to launch and access installed applications on the same device. For this, you need to set the following privileges:
+The [Application](../../api/latest/device_api/wearable/tizen/application.html) API allows a widget to launch and access installed applications on the same device. For this, you need to set the following privileges:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/application.info"/>
@@ -1323,7 +1323,7 @@ It is important to prevent unnecessary performance degradation in widgets. As a 
 <a name="user-content-how-are-click--touch-events-handled-in-web-widgets"></a>
 ### How are click and touch events handled in Web widgets?
 
-The Web widget engine supports only the `onclick` event handler for click and touch events. Implement and bind an event handler to the target element. For more information, see [onclick Event](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/wearable_widget/web_widget.html#user-content-event).
+The Web widget engine supports only the `onclick` event handler for click and touch events. Implement and bind an event handler to the target element. For more information, see [onclick Event](../../api/latest/wearable_widget/web_widget.html#user-content-event).
 
 <a name="user-content-can-heading-styles-be-applied-to-text"></a>
 ### Can I apply heading styles to text?
@@ -1338,7 +1338,7 @@ The Web widget engine does not support hyperlinks. To change from the current We
 <a name="user-content-what-font-styles-are-supported"></a>
 ### Which font styles are supported?
 
-The Web widget engine supports the `<br>` and `<span>` elements for text-level semantics (for more information, see [HTML](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/wearable_widget/web_widget.html#user-content-html)). You can also use CSS properties to make the text display like text with text-level semantics elements applied. The following table lists examples of typical element/CSS property correlations.
+The Web widget engine supports the `<br>` and `<span>` elements for text-level semantics (for more information, see [HTML](../../api/latest/wearable_widget/web_widget.html#user-content-html)). You can also use CSS properties to make the text display like text with text-level semantics elements applied. The following table lists examples of typical element/CSS property correlations.
 
 **Table: Element and CSS property correlations**
 
@@ -1495,7 +1495,7 @@ The `XMLHttpRequest()` method is supported only for the text data type. Therefor
 <a name="user-content-where-can-i-find-a-guide-for-using-response-and-responsetype-attributes"></a>
 ### How can I use the `response` and `responseType` attributes?
 
-You cannot use them, because the `XMLHttpRequest()` method is supported for the text data type only. For more information, see [XMLHttpRequest](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/wearable_widget/web_widget.html#user-content-xmlhttprequest).
+You cannot use them, because the `XMLHttpRequest()` method is supported for the text data type only. For more information, see [XMLHttpRequest](../../api/latest/wearable_widget/web_widget.html#user-content-xmlhttprequest).
 
 <a name="user-content-how-can-i-change-web-widget-text-font"></a>
 ### How can I change the Web widget text font?
@@ -1520,7 +1520,7 @@ No, the Web Widget Specification is a limited set of the W3C standard specificat
 <a name="user-content-which-tags-and-properties-can-i-use"></a>
 ### Which elements or properties can I use?
 
-For the supported elements and properties, see [Tizen Wearable Web Widget Specification](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/wearable_widget/web_widget.html).
+For the supported elements and properties, see [Tizen Wearable Web Widget Specification](../../api/latest/wearable_widget/web_widget.html).
 
 <a name="user-content-how-can-i-design-my-web-widget-layout-for-a-circular-shape"></a>
 ### How can I design my Web widget layout for a circular shape?
@@ -1550,7 +1550,7 @@ For your convenience during testing and debugging only, the Web widget engine su
 <a name="user-content-how-can-i-determine-which-apis-are-supported-in-web-widgets"></a>
 ### How can I determine which APIs are supported in Web widgets?
 
-For the APIs supported by the Web Widget Specification, see [Tizen Wearable Web Widget Specification](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/wearable_widget/web_widget.html). Additionally, the Tizen Studio provides a Web widget validator that indicates whether a typed-in API follows the Web Widget Specification.
+For the APIs supported by the Web Widget Specification, see [Tizen Wearable Web Widget Specification](../../api/latest/wearable_widget/web_widget.html). Additionally, the Tizen Studio provides a Web widget validator that indicates whether a typed-in API follows the Web Widget Specification.
 
 <a name="user-content-can-web-widgets-re-use-the-javascript-library-or-css-styles-of-their-parent-web-application"></a>
 ### Can Web widgets reuse the JavaScript library or CSS styles of their parent Web application?

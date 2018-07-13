@@ -59,6 +59,7 @@ win_back_cb(void *data, Evas_Object *obj, void *event_info)
     appdata_s *ad = data;
     /* Let the window go to the hide state */
     elm_win_lower(ad->win);
+}
 ```
 
 The basic template code includes the following steps:
@@ -94,7 +95,7 @@ The basic template code includes the following steps:
 
 5. Add a conformant to the window with the `elm_win_resize_object_add()` function.
 
-   In most cases, you want the content of the window to be resized every time the window is resized due to rotation. To match the content size with the window size, make the content expand to fit the container size with the `evas_object_size_hint_weight_set()`function and add it to the window with the `elm_win_resize_object_add()` function.
+   In most cases, you want the content of the window to be resized every time the window is resized due to rotation. To match the content size with the window size, make the content expand to fit the container size with the `evas_object_size_hint_weight_set()` function and add it to the window with the `elm_win_resize_object_add()` function.
 
    ```
    Evas_Object *win;
@@ -128,17 +129,19 @@ You can register callback functions connected to the following signals for a win
 | `maximized`              | The window is maximized.                 | `NULL`       |
 | `unmaximized`            | The window is diminished.                | `NULL`       |
 | `ioerr`                  | A low-level I/O error occurred in the display system. | `NULL`       |
-| `wm,rotation,changed`    | The rotation of the window is changed by the Windows Manager. | `NULL`       |
+| `wm,rotation,changed`    | The rotation of the window is changed by the Window Manager. | `NULL`       |
 | `indicator,prop,changed` | The property, or indicator mode and indicator opacity are changed. | `NULL`       |
 | `rotation,changed`       | The rotation of the window is changed.   | `NULL`       |
 | `profile,changed`        | The profile of the window is changed.    | `NULL`       |
 | `aux,hint,allowed`       | The window auxiliary hint is allowed.    | `NULL`       |
 | `access,changed`         | The access function of the window changes. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -49,19 +49,19 @@ To use a progressbar component in your application:
      elm_progressbar_pulse(progressbar, EINA_TRUE);
      ```
 
-4. Register the [callback](#callbacks) functions.  
+4. Register the [callback](#callbacks) functions.
 
- The following example shows how to define and register a callback for the `changed` signal:
+    The following example shows how to define and register a callback for the `changed` signal:
 
-   ```
-   evas_object_smart_callback_add(progressbar, "changed", changed_cb, data);
+    ```
+    evas_object_smart_callback_add(progressbar, "changed", changed_cb, data);
 
-   void
-   changed_cb(void *data, Evas_Object *obj, void *event_info)
-   {
-       dlog_print(DLOG_INFO, LOG_TAG, "The value has changed\n");
-   }
-   ```
+    void
+    changed_cb(void *data, Evas_Object *obj, void *event_info)
+    {
+        dlog_print(DLOG_INFO, LOG_TAG, "The value has changed\n");
+    }
+    ```
 
 The following example shows a simple use case of the progressbar component.
 
@@ -127,12 +127,15 @@ To configure the progressbar features:
 - Set a text in the progressbar:
 
   - Set a label to the progressbar with the `elm_object_text_set()` function, if the style supports a text part.
-  ```
-  /* Supported styles: default, pending */elm_object_text_set(progressbar, "progressbar");
-  ```
+    ```
+    /* Supported styles: default, pending */
+    elm_object_text_set(progressbar, "progressbar");
+    ```
 
-  - According to the [style](#styles), the `elm_object_part_text_set()` function is used in order to do the setting in the other location.  
-  `elm_object_part_text_set(progressbar, "elm.text.bottom.left", "progressbar");`
+  - According to the [style](#styles), the `elm_object_part_text_set()` function is used in order to do the setting in the other location.
+    ```
+    elm_object_part_text_set(progressbar, "elm.text.bottom.left", "progressbar");
+    ```
 
   - Set the unit label with the `elm_progressbar_unit_format_set()` function.
 
@@ -175,10 +178,12 @@ You can register callback functions connected to the following signals for a pro
 |---------|------------------------------|------------|
 | `changed` | The progressbar value changes. | `NULL`       |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

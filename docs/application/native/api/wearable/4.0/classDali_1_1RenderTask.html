@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -236,7 +236,7 @@ static const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a 
 <p>The <a class="el" href="classDali_1_1Stage.html#a08466772d98bfb56fa00e456913414e6" title="Retrieves the list of render-tasks.">Stage::GetRenderTaskList()</a> method provides access to an ordered list of render-tasks.</p>
 <p>Each <a class="el" href="classDali_1_1RenderTask.html" title="RenderTasks describe how the Dali scene should be rendered.">RenderTask</a> must specify the source actors to be rendered, and a camera actor from which the scene is viewed.</p>
 <p>RenderTasks may optionally target a frame-buffer, otherwise the default GL surface is used; typically this is a window provided by the native system.</p>
-<p>By default <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> provides a single <a class="el" href="classDali_1_1RenderTask.html" title="RenderTasks describe how the Dali scene should be rendered.">RenderTask</a>, which renders the entire actor hierachy using a default camera actor and GL surface. If stereoscopic rendering is enabled, <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> will create two additional render tasks, on for each eye. Each render task will have its own camera parented to the default camera actor.</p>
+<p>By default <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> provides a single <a class="el" href="classDali_1_1RenderTask.html" title="RenderTasks describe how the Dali scene should be rendered.">RenderTask</a>, which renders the entire actor hierarchy using a default camera actor and GL surface. If stereoscopic rendering is enabled, <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> will create two additional render tasks, on for each eye. Each render task will have its own camera parented to the default camera actor.</p>
 <p>The first <a class="el" href="classDali_1_1RenderTask.html" title="RenderTasks describe how the Dali scene should be rendered.">RenderTask</a> used for input handling will be the last one rendered, which also has input enabled, and has a valid source &amp; camera actor; see <a class="el" href="classDali_1_1RenderTask.html#a93cdb36e5071e03b37f20978b0221cf8" title="Sets whether the render-task should be considered for input handling; the default is true...">SetInputEnabled()</a>.</p>
 <p>If none of the actors are hit in the last <a class="el" href="classDali_1_1RenderTask.html" title="RenderTasks describe how the Dali scene should be rendered.">RenderTask</a> rendered, then input handling will continue with the second last <a class="el" href="classDali_1_1RenderTask.html" title="RenderTasks describe how the Dali scene should be rendered.">RenderTask</a> rendered, and so on.</p>
 <p>All RenderTasks which target a frame-buffer (i.e. off screen) will be rendered before all RenderTasks which target the default GL surface. This allows the user to render intermediate targets which are used later when targeting the screen.</p>
@@ -937,7 +937,7 @@ If the shader uses <a class="el" href="structDali_1_1Shader_1_1Hint.html#ab0bfa4
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.1.38 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">frameBuffer</td><td>er A valid <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> handle to enable off-screen rendering, or an uninitialized handle to disable it </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">frameBuffer</td><td>A valid <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> handle to enable off-screen rendering, or an uninitialized handle to disable it </td></tr>
   </table>
   </dd>
 </dl>

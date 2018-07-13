@@ -1,6 +1,6 @@
 # Tizen Studio
 
-**Tizen Studio 2.2 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png)  **Download**](https://developer.tizen.org/development/tizen-studio/download)
+**Tizen Studio 2.3 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png)  **Download**](https://developer.tizen.org/development/tizen-studio/download)
 
 The Tizen Studio platform is based on a new version of Eclipse, so you can experience a stable, lightweight, and consistent user interface that is unique to the Tizen development environment. With the Tizen Studio, you can select and install only those platforms and profiles you need.
 
@@ -9,13 +9,13 @@ In the Tizen Studio, you can perform all the same development activities that we
 
 To develop your applications, use the set of tools provided by the Tizen Studio:
 
-- [Setup](setup/installing-sdk.md)  
+- [Setup](setup/install-sdk.md)  
   Learn about installing and updating the Tizen Studio. You may need to install additional packages to develop applications for various platforms.
 
-- [Native Tools](native-tools/overview.md)  
+- [Native Tools](native-tools/index.md)  
   Learn about the available native application development tools. Native applications are developed using the C programming language. You can create an application project, edit the code to meet your needs, and run the application on the emulator or a target device.
 
-- [Web Tools](web-tools/overview.md)  
+- [Web Tools](web-tools/index.md)  
   Learn about the available Web application development tools. Web applications are developed using the JavaScript, HTML, and CSS languages. You can create an application project, edit the code to meet your needs, and run the application on the emulator, simulator, or a target device.
 
 - [Platform Tools](platform-tools/overview.md)  

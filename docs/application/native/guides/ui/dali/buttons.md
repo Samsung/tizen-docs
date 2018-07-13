@@ -27,7 +27,7 @@ Buttons can be made **togglable**, and then **selected** or **unselected**.
 **Table: Dali::Toolkit::Button input signals**
 
 | Input signal           | Description                               |
-|------------------------|------------------------------------------|
+|------------------------|-------------------------------------------|
 | `PressedSignal()`      | Emitted when the button is touched.       |
 | `ReleasedSignal()`     | Emitted when the button is touched, and the touch point leaves the boundary of the button.      |
 | `ClickedSignal()`      | Emitted when the button is touched, and the touch point doesn't leave the boundary of the button.       |
@@ -36,14 +36,14 @@ Buttons can be made **togglable**, and then **selected** or **unselected**.
 Here is an example of adding an event handler to a push button _Clicked_ event:
 
 ```
-  button.ClickedSignal().Connect( this, &ButtonClicked );
+button.ClickedSignal().Connect( this, &ButtonClicked );
 
-  bool ChangeImageClicked( Button button )
-  {
-    ...
-    // button pressed
-    return true;
-  }
+bool ChangeImageClicked( Button button )
+{
+  ...
+  // button pressed
+  return true;
+}
 ```
 
 Events are not fired when the disabled property is set to true.
@@ -52,15 +52,15 @@ The `Dali::Toolkit::Button` class provides the following properties which modify
 
 1. When *autorepeating* is set to true, the Pressed, Released and Clicked events are fired at regular intervals while the button is touched.
 
- The interval times can be modified with the _InitialAutoRepeatingDelay_ and _NextAutoRepeatingDelay_ properties.
+   The interval times can be modified with the _InitialAutoRepeatingDelay_ and _NextAutoRepeatingDelay_ properties.
 
- A togglable button can't be autorepeating. If the autorepeating property is set to true, then the togglable property is set to false but no event is fired.
+   A togglable button can't be autorepeating. If the autorepeating property is set to true, then the togglable property is set to false but no event is fired.
 
 2. When *togglable* is set to true, a _StateChanged_ event is fired, with the selected state.
 
- For a checkbox all 4 events are available, usually only the _StateChanged_ event is used to notify when the button changes its state to selected or unselected.
+   For a checkbox all 4 events are available, usually only the _StateChanged_ event is used to notify when the button changes its state to selected or unselected.
 
- For a radio button use the _StateChanged_ event to check when the radio button is selected.
+   For a radio button use the _StateChanged_ event to check when the radio button is selected.
 
 
 <a name="2"></a>

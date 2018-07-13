@@ -673,4 +673,3 @@
 		</tr>
 	</tbody>
 </table>
-

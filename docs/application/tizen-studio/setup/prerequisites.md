@@ -10,7 +10,7 @@ The following table lists the supported operating systems and hardware requireme
 
 |      |              | Microsoft Windows&reg;          | macOS                              | Ubuntu                     |
 |----|------------|---------------------------|----------------------------------|--------------------------|
-| OS   | Version      | 10/8/7                      | 10.11 (El Capitan)10.10 (Yosemite) | 16.04/14.04                |
+| OS   | Version      | 10/8/7                      | 10.13 (High Sierra)<br>10.12 (Sierra)<br>10.11 (El Capitan) | 16.04/14.04                |
 |      | Bit          | 64 bit / 32 bit             | 64 bit only                        | 64 bit / 32 bit            |
 | HW   | CPU          | Dual Core, 2 GHz or faster  | Dual Core, 2 GHz or faster         | Dual Core, 2 GHz or faster |
 |      | Architecture | x64 (64 bit) / x86 (32 bit) | x64 only                           | x64 / x86                  |
@@ -19,7 +19,7 @@ The following table lists the supported operating systems and hardware requireme
 
 ## Java Development Kit (JDK) Requirements
 
-You must install Java Development Kit (JDK) 8 to use the Tizen Studio. Do not install OpenJDK.
+You must install Java Development Kit (JDK) 8 or 9 to use the Tizen Studio. Do not install OpenJDK.
 
 Follow these instructions to install the appropriate JDK version for your system:
 
@@ -35,7 +35,7 @@ Follow these instructions to install the appropriate JDK version for your system
 
 - Ubuntu
 
-  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java#Oracle_Java_8) for detailed instructions for installing the Oracle&reg; JDK version 8.
+  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8 or 9. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html))
 
 <a name="emulator"></a>
 ## Emulator Requirements
@@ -48,9 +48,9 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 |----------------------------------------|----------------------------------------|-------------|----------------------------------------|
 | CPU                                       <td colspan=3> Recommended: Support for Intel VTx (Virtualization Technology) |                                          |               |                                          |
 | Screen resolution                         <td colspan=3>  Recommended: 1280 x 1024 |                                          |               |                                          |
-| Graphic card                             <td colspan=3>  Recommended: The following requirements have passed tests with the emulator.<br><br> **Supported graphic cards**<br> - NVIDIA: NVIDIA&reg; GeForce&reg; 8300 GS, GeForce&reg; 8500 GT, GeForce&reg; GT 220, GeForce&reg; GT 430, GeForce&reg; GT 530, GeForce&reg; GT 330M, GeForce&reg; GTX 550Ti, NVIDIA&reg; Quadro&reg; NVS 290<br> - ATI: RADEON HD 4850, RADEON HD 5450<br> - Intel: HD Graphics 2000, HD Graphics 2500, HD Graphics 4000<br><br> **Note**<br> If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.Integrated graphic cards inside Intel's Q33/Q35/Q43/Q45 motherboards are not supported.First generation Intel HD Graphics is not supported. |                                          |               |                                          |
+| Graphic card                             <td colspan=3>  Recommended: The following requirements have passed tests with the emulator.<br><br> **Supported graphic cards**<br> - NVIDIA: NVIDIA&reg; GeForce&reg; 8300 GS, GeForce&reg; 8500 GT, GeForce&reg; GT 220, GeForce&reg; GT 430, GeForce&reg; GT 530, GeForce&reg; GT 330M, GeForce&reg; GTX 550Ti, NVIDIA&reg; Quadro&reg; NVS 290<br> - ATI: RADEON HD 4850, RADEON HD 5450<br> - Intel: HD Graphics 2000, HD Graphics 2500, HD Graphics 4000<br><br> **Note**<br> - If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.<br>- Integrated graphic cards inside Intel's Q33/Q35/Q43/Q45 motherboards are not supported.<br>- First generation Intel HD Graphics is not supported. |                                          |               |                                          |
 | Driver                                 <td colspan=3>  You must upgrade to the latest vendor-provided version of the graphic card driver for OpenGL&reg; ES acceleration. |                                          |               |                                          |
-|                                          | Check and install the necessary drivers in the **Control Panel > System and Security > Windows Update**. | -             | For more information on driver upgrades, see the [Ubuntu Web site](https://help.ubuntu.com/community/BinaryDriverHowto/). Check and install the necessary drivers in the **System Settings > Software & Updates > Additional Drivers**.In 16.04 and 14.04, the Intel driver version must be 8.0.1 or higher. |
+|                                          | Check and install the necessary drivers in the **Control Panel > System and Security > Windows Update**. | -             | For more information on driver upgrades, see the [Ubuntu Web site](https://help.ubuntu.com/community/BinaryDriverHowto/). Check and install the necessary drivers in the **System Settings > Software & Updates > Additional Drivers**.<br>In 16.04 and 14.04, the Intel driver version must be 8.0.1 or higher. |
 | Webcam                                  <td colspan=3> To use the emulator with your computer's webcam, the webcam must support the USB Video Class (UVC) driver. The following image format requirements apply to each OS: |                                          |               |                                          |
 |                                          | YUYV or MJPEG                            | RGB24 or YUY2 | UYYY, YYU420, YUY420, or YUYY            |
 

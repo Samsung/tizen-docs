@@ -2,7 +2,7 @@
 
 You can use locale-specific calendar features by retrieving date and time information. You can also change the date, time, and time zone, and make some date- and time-related calculations. The Time API overcomes several limitations of the JavaScript `Date` object.
 
-The Time API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Time API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 Locale refers to the set of information that is specific to a language and a country. It affects the numeric formats (decimal and list separators), date formats, and the character sorting order. It determines how a locale-specific functionality behaves; for example, how numbers are displayed or strings converted to dates.
 
@@ -26,12 +26,14 @@ The main features of the Time API include:
 
 ## Retrieving Date and Time
 
-With the `TimeUtil` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/time.html#TimeUtil) applications), you can retrieve the current date, time, and time zone, and the number of available time zones, and determine whether a year is a leap year.
+With the `TimeUtil` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications), you can retrieve the current date, time, and time zone, and the number of available time zones, and determine whether a year is a leap year.
 
 You can also perform other date-and time-related tasks, such as getting the date of the next and previous daylight saving time transition, converting current time to UTC standard time, and getting the time zone abbreviation.
 
-> **Note**
-> UTC is the primary time standard used by the world to track time. Time zones are created for the world as a positive or negative offset of UTC. For example, the time zone for Iceland is UTC+00:00, and the time zone for India is UTC+05:30.	DST (or summer time) is the practice of clocks being advanced temporarily by a fixed time during the summer to take advantage of more daylight. Typically, this temporary adjustment is one hour. For example, one hour shift ahead in time will cause the last moment of 20:59 to jump to 22:00 instead of 21:00. In this case, the day will have 23 hours. In another scenario, one hour shift back in time will cause the day to have 25 hours.
+> **Note**  
+> UTC is the primary time standard used by the world to track time. Time zones are created for the world as a positive or negative offset of UTC. For example, the time zone for Iceland is UTC+00:00, and the time zone for India is UTC+05:30.
+>
+> DST (or summer time) is the practice of clocks being advanced temporarily by a fixed time during the summer to take advantage of more daylight. Typically, this temporary adjustment is one hour. For example, one hour shift ahead in time will cause the last moment of 20:59 to jump to 22:00 instead of 21:00. In this case, the day will have 23 hours. In another scenario, one hour shift back in time will cause the day to have 25 hours.
 
 To handle date and time in your application:
 
@@ -94,7 +96,7 @@ To handle date and time formats in your application:
 
 ## Calculating Date and Time Information
 
-Calculate and compare time and date information using the applicable methods of the `TimeDuration` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TimeDuration), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TimeDuration), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/time.html#TimeDuration) applications):
+Calculate and compare time and date information using the applicable methods of the `TimeDuration` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeDuration), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeDuration), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeDuration) applications):
 
 1. To calculate the duration difference between 2 date or time events, use the `difference()` method of the `TimeDuration` object:
 
@@ -110,34 +112,34 @@ Calculate and compare time and date information using the applicable methods of 
        console.log('Event1 is shorter than Event2.');
    ```
 
-> **Note**
-> The unit of the returned `TimeDuration` object is equivalent to the largest possible unit amongst the source parameter units while making sure that precision is not lost in the result. This implies that if, for example, a comparison is done between "1 hour" and "20 minutes", the result is displayed as 40 minutes, not 0.67 hour. Although the hour is a bigger unit than the minute, the result is more precise if presented in minutes.
+   > **Note**  
+   > The unit of the returned `TimeDuration` object is equivalent to the largest possible unit amongst the source parameter units while making sure that precision is not lost in the result. This implies that if, for example, a comparison is done between "1 hour" and "20 minutes", the result is displayed as 40 minutes, not 0.67 hour. Although the hour is a bigger unit than the minute, the result is more precise if presented in minutes.
 
 2.  To compare 2 `TimeDuration` objects for equality, use the `equalsTo()` method:
 
-   ```
-   var d1 = new tizen.TimeDuration(60, 'MINS');
-   var d2 = new tizen.TimeDuration(1, 'HOURS');
-   var ret = d1.equalsTo(d2); /* Returns true */
-   ```
+      ```
+      var d1 = new tizen.TimeDuration(60, 'MINS');
+      var d2 = new tizen.TimeDuration(1, 'HOURS');
+      var ret = d1.equalsTo(d2); /* Returns true */
+      ```
 
 3.  To check whether 1 `TimeDuration` object is shorter than another, use the `lessThan()` method:
 
-   ```
-   /* Check whether d1 is shorter than d2 */
-   var d1 = new tizen.TimeDuration(1, 'HOURS');
-   var d2 = new tizen.TimeDuration(120, 'MINS');
-   var ret = d1.lessThan(d2); /* Returns true */
-   ```
+      ```
+      /* Check whether d1 is shorter than d2 */
+      var d1 = new tizen.TimeDuration(1, 'HOURS');
+      var d2 = new tizen.TimeDuration(120, 'MINS');
+      var ret = d1.lessThan(d2); /* Returns true */
+      ```
 
 4.  To check whether 1 `TimeDuration` object is longer than another, use the `greaterThan()` method:
 
-   ```
-   /* Check whether d1 is longer than d2 */
-   var d1 = new tizen.TimeDuration(2, 'HOURS');
-   var d2 = new tizen.TimeDuration(60, 'MINS');
-   var ret = d1.greaterThan(d2); /* Returns true */
-   ```
+      ```
+      /* Check whether d1 is longer than d2 */
+      var d1 = new tizen.TimeDuration(2, 'HOURS');
+      var d2 = new tizen.TimeDuration(60, 'MINS');
+      var ret = d1.greaterThan(d2); /* Returns true */
+      ```
 
 5. To add a predefined time to the current date, use the `addDuration()` method:
 
@@ -183,7 +185,7 @@ Getting notifications when the user changes the time or time zone allows you to 
 
 2. When the event handlers are defined, register them as listeners:
 
-   - Register the time change listener using the `setDateTimeChangeListener()` method of the `TimeUtil` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/time.html#TimeUtil) applications):
+   - Register the time change listener using the `setDateTimeChangeListener()` method of the `TimeUtil` interface (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TimeUtil), [wearable](../../api/latest/device_api/wearable/tizen/time.html#TimeUtil), and [TV](../../api/latest/device_api/tv/tizen/time.html#TimeUtil) applications):
 
      ```
      tizen.time.setDateTimeChangeListener(timeChangedCallback);

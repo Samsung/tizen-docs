@@ -12,9 +12,9 @@ A widget application is one of the Tizen application types. It can be shown by s
 
 Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web widget application (a Web widget), which displays some text on the screen with no user interaction:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2.  [Create a wearable Web widget project](#create) using the Tizen Studio.
 
@@ -32,7 +32,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/cover-web.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/overview.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -41,6 +41,7 @@ The following example shows you how to create and configure a basic wearable Web
 
 > **Note**  
 > Standalone widget application packages are not allowed in the Tizen Store.
+>
 > For user convenience, you can use a standalone widget application for testing purposes in the Tizen Studio. If you want to publish the application in the Tizen Store, combine it with at least 1 UI application in the same package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#multi).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello Widget** text and no user interaction is provided.

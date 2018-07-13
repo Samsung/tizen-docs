@@ -62,8 +62,8 @@ The following table lists the system events.
 
 | Callback                       | Description                              |
 |--------------------------------|------------------------------------------|
-| `service_app_low_memory_cb()`  | Used to take necessary actions in low memory situations.Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory. |
-| `service_app_low_battery_cb()` | Used to take necessary actions in low battery situations.Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power goes off completely. Stop heavy CPU consumption or power consumption activities to save the remaining power. |
+| `service_app_low_memory_cb()`  | Used to take necessary actions in low memory situations.<br> Save data in the main memory to a persistent memory or storage, to avoid data loss in case the Tizen platform Low Memory Killer kills your application to get more free memory. Release any cached data in the main memory to secure more free memory. |
+| `service_app_low_battery_cb()` | Used to take necessary actions in low battery situations.<br> Save data in the main memory to a persistent memory or storage, to avoid data loss in case the power goes off completely. Stop heavy CPU consumption or power consumption activities to save the remaining power. |
 
 <a name="attribute"></a>
 ## Application Attributes
@@ -86,14 +86,20 @@ Describe your service application attributes in the manifest file. The attribute
 
 Pay specific attention to the following attributes:
 
-- `auto-restart`If set to `true`, the application restarts whenever it terminates abnormally. If the application is running, it is launched after installing or updating the package.
+- `auto-restart`
 
-  > **Note**  
+  If set to `true`, the application restarts whenever it terminates abnormally. If the application is running, it is launched after installing or updating the package.
+
+  > **Note**
+  >
   > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `auto-restart` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
 
-- `on-boot`If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start if this attribute is removed after updating the package.
+- `on-boot`
 
-  > **Note**  
+  If set to `true`, the application launches on boot time, and after installing or updating the package. The application does not start if this attribute is removed after updating the package.
+
+  > **Note**
+  >
   > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices. Because of this, the `on-boot` attribute used in a lower API version package than 2.4 is ignored on devices with the Tizen platform version 2.4 and higher.
 
 The following table defines the behaviors resulting from the attribute combinations:
@@ -222,6 +228,7 @@ To monitor application state change and system events:
        dlog_print(DLOG_DEBUG, LOG_TAG, "service_app_main() is called.");
 
        return service_app_main(argc, argv, &event_callback, &ad);
+   }
    ```
 
 ## Related Information

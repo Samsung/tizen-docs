@@ -205,9 +205,9 @@ These signals are provided by the following classes:
 
   | Input signals        | Description                              |
   | -------------------- | ---------------------------------------- |
-  | `TouchSignal()`      | Emitted when touch input is received.Callback: `bool YourCallbackName( Actor actor, const TouchData& touch );` |
-  | `HoveredSignal()`    | Emitted when hover input is received.Callback: `bool YourCallbackName( Actor actor, const HoverEvent& event );` |
-  | `WheelEventSignal()` | Emitted when wheel event is received.Callback: `bool YourCallbackName( Actor actor, const WheelEvent& event );` |
+  | `TouchSignal()`      | Emitted when touch input is received.<br>Callback: `bool YourCallbackName( Actor actor, const TouchData& touch );` |
+  | `HoveredSignal()`    | Emitted when hover input is received.<br>Callback: `bool YourCallbackName( Actor actor, const HoverEvent& event );` |
+  | `WheelEventSignal()` | Emitted when wheel event is received.<br>Callback: `bool YourCallbackName( Actor actor, const WheelEvent& event );` |
 
   The actor receiving events is passed to the callbacks.
 
@@ -217,9 +217,9 @@ These signals are provided by the following classes:
 
   | Input signals      | Description                              |
   | ------------------ | ---------------------------------------- |
-  | `TouchSignal()`    | Emitted when touch input is received.Callback: `void YourCallbackName( const TouchData& data )` |
-  | `HoveredSignal()`  | Emitted when hover input is received.Callback: `void YourCallbackName( const TouchEvent& event );` |
-  | `KeyEventSignal()` | Emitted when a key event is received.Callback: `void YourCallbackName( const KeyEvent& event );` |
+  | `TouchSignal()`    | Emitted when touch input is received.<br>Callback: `void YourCallbackName( const TouchData& data )` |
+  | `HoveredSignal()`  | Emitted when hover input is received.<br>Callback: `void YourCallbackName( const TouchEvent& event );` |
+  | `KeyEventSignal()` | Emitted when a key event is received.<br>Callback: `void YourCallbackName( const KeyEvent& event );` |
 
   Only events are passed to the callbacks since only a single stage instance can exist in DALi application. The callback return types are `void` because the stage has no parent to pass events to, even though it does not consume the events.
 
@@ -229,9 +229,9 @@ These signals are provided by the following classes:
 
   | Input signals                            | Description                              |
   | ---------------------------------------- | ---------------------------------------- |
-  | `KeyEventSignal()`                       | Emitted when a key event is received.Callback: `bool YourCallbackName( Control control, const KeyEvent& event );` |
-  | `KeyInputFocusGainedSignal()`            | Emitted when the control gets key input focus.Callback: `bool YourCallbackName( Control control );` |
-  | `KeyInputFocusLostSignal()`              | Emitted when the control loses key input focus, which can be due to it being gained by another control or actor or simply cleared from this control as no longer required.Callback: `bool YourCallbackName( Control control );` |
+  | `KeyEventSignal()`                       | Emitted when a key event is received.<br>Callback: `bool YourCallbackName( Control control, const KeyEvent& event );` |
+  | `KeyInputFocusGainedSignal()`            | Emitted when the control gets key input focus.<br>Callback: `bool YourCallbackName( Control control );` |
+  | `KeyInputFocusLostSignal()`              | Emitted when the control loses key input focus, which can be due to it being gained by another control or actor or simply cleared from this control as no longer required.<br>Callback: `bool YourCallbackName( Control control );` |
   | `TouchSignal(), HoveredSignal(), KeyEventSignal()` | Same as the ones supported by `Actor`.   |
 
   The key event signal is provided by the `Dali::Stage` and `Dali::Toolkit::Control` classes, not by the `Dali::Actor` class. The `Dali::Actor` class is not designed to get key events. To receive key events, an actor must be an instance of the `Dali::Toolkit::Control` class or one of its subclasses.
@@ -244,10 +244,10 @@ These signals are provided by the following classes:
 
   | Input signals                  | Description                              |
   | ------------------------------ | ---------------------------------------- |
-  | `PreFocusChangeSignal()`       | Emitted before the focus is going to be changed.Callback: `Actor YourCallbackName( Actor currentFocusedActor, Actor proposedActorToFocus, Control::KeyboardFocus::Direction direction );` |
-  | `FocusChangedSignal()`         | Emitted after the current focused actor has been changed.Callback: `void YourCallbackName( Actor originalFocusedActor, Actor currentFocusedActor );` |
-  | `FocusGroupChangedSignal()`    | Emitted when the focus group has been changed.Callback: `void YourCallbackName( Actor currentFocusedActor, bool forward );` |
-  | `FocusedActorEnterKeySignal()` | Emitted when the current focused actor has the enter key pressed on it.Callback: `void YourCallbackName( Actor enterPressedActor );` |
+  | `PreFocusChangeSignal()`       | Emitted before the focus is going to be changed.<br>Callback: `Actor YourCallbackName( Actor currentFocusedActor, Actor proposedActorToFocus, Control::KeyboardFocus::Direction direction );` |
+  | `FocusChangedSignal()`         | Emitted after the current focused actor has been changed.<br>Callback: `void YourCallbackName( Actor originalFocusedActor, Actor currentFocusedActor );` |
+  | `FocusGroupChangedSignal()`    | Emitted when the focus group has been changed.<br>Callback: `void YourCallbackName( Actor currentFocusedActor, bool forward );` |
+  | `FocusedActorEnterKeySignal()` | Emitted when the current focused actor has the enter key pressed on it.<br>Callback: `void YourCallbackName( Actor enterPressedActor );` |
 
   `Dali::Toolkit::KeyboardFocusManager` provides the functionality of handling keyboard navigation and maintaining the 2-dimensional keyboard focus chain. Dissimilar to the key input focus, the keyboard focus is about the focus moving between actors, and that is why this signal is provided by the specific focus managing class.
 

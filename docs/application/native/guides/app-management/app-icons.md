@@ -15,9 +15,13 @@ The main features of the Badge and Shortcut API include:
 
   You can [get and set the count and display attributes for the badge](#manage).
 
-- Adding a shortcut **in mobile applications only**You can [add a shortcut](#add) to the home screen to launch an application.
+- Adding a shortcut **in mobile applications only**
 
-- Adding a widget **in mobile applications only**If you have created a widget application, you can [add the widget](#add_widget) to the home screen.
+  You can [add a shortcut](#add) to the home screen to launch an application.
+
+- Adding a widget **in mobile applications only**
+
+  If you have created a widget application, you can [add the widget](#add_widget) to the home screen.
 
 **Figure: Badges and shortcuts**
 
@@ -60,14 +64,16 @@ To enable your application to use the application icon functionality:
 - To handle shortcuts:
 
   1. To use the [Shortcut](../../api/mobile/latest/group__SHORTCUT__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
-  ```
-  <privileges>   <privilege>http://tizen.org/privilege/shortcut</privilege></privileges>
-  ```
+     ```
+     <privileges>
+        <privilege>http://tizen.org/privilege/shortcut</privilege>
+     </privileges>
+     ```
 
   2. To use the functions and data types of the Shortcut API, include the `<shortcut_manager.h>` header file in your application:
-  ```
-  #include <shortcut_manager.h>
-  ```
+     ```
+     #include <shortcut_manager.h>
+     ```
 
 <a name="create"></a>
 ## Creating and Removing a Badge
@@ -99,32 +105,44 @@ To create and remove badges:
 
 To manage the badge:
 
-- Get the count attribute with the `badge_get_count()` function. The count attribute is displayed in the upper-right corner of the badge and its value must be an integer.The parameters are the name of the application whose badge count is retrieved, and the current badge count.
-```
-unsigned int count = 0;
-ret = badge_get_count(TEST_PKG, &count);
-if (ret != BADGE_ERROR_NONE)
-    /* Error handling */
-```
-- Set the count attribute with the `badge_set_count()` function.The parameters are the name of the application whose badge count is updated, and the new badge count.
-```
-ret = badge_set_count(TEST_PKG, count + 1);
-if (ret != BADGE_ERROR_NONE)
-    /* Error handling */
-```
-- Get the display attribute and check whether the badge is visible with the `badge_get_display()` function.The parameters are the application which owns the badge, and the value of the display attribute (1 = badge is visible, 0 = badge is hidden).
-```
-unsigned int is_displayed = false;
-ret = badge_get_display(TEST_PKG, &is_displayed);
-if (ret != BADGE_ERROR_NONE)
-    /* Error handling */
-```
-- Set the display attribute with the `badge_set_display()` function to hide or show the badge.The parameters are the application which owns the badge, and the display attribute (1 = badge is visible, 0 = badge is hidden).
-```
-ret = badge_set_display(TEST_PKG, 1);
-if (ret != BADGE_ERROR_NONE)
-    /* Error handling */
-```
+- Get the count attribute with the `badge_get_count()` function. The count attribute is displayed in the upper-right corner of the badge and its value must be an integer.
+
+  The parameters are the name of the application whose badge count is retrieved, and the current badge count.
+
+  ```
+  unsigned int count = 0;
+  ret = badge_get_count(TEST_PKG, &count);
+  if (ret != BADGE_ERROR_NONE)
+      /* Error handling */
+  ```
+- Set the count attribute with the `badge_set_count()` function.
+
+  The parameters are the name of the application whose badge count is updated, and the new badge count.
+
+  ```
+  ret = badge_set_count(TEST_PKG, count + 1);
+  if (ret != BADGE_ERROR_NONE)
+      /* Error handling */
+  ```
+- Get the display attribute and check whether the badge is visible with the `badge_get_display()` function.
+
+  The parameters are the application which owns the badge, and the value of the display attribute (1 = badge is visible, 0 = badge is hidden).
+
+  ```
+  unsigned int is_displayed = false;
+  ret = badge_get_display(TEST_PKG, &is_displayed);
+  if (ret != BADGE_ERROR_NONE)
+      /* Error handling */
+  ```
+- Set the display attribute with the `badge_set_display()` function to hide or show the badge.
+
+  The parameters are the application which owns the badge, and the display attribute (1 = badge is visible, 0 = badge is hidden).
+
+  ```
+  ret = badge_set_display(TEST_PKG, 1);
+  if (ret != BADGE_ERROR_NONE)
+      /* Error handling */
+  ```
 
 ## Adding a Shortcut in Mobile Applications
 

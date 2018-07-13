@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   
+   &#160;<span id="projectnumber">4.0</span>
    </div>
    
   </td>
@@ -496,7 +496,7 @@ Defines</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Since 4.0, <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gga12a323c7cd97da4a294340762ce7ce95abff4ee42c308ac9f5b4d99260b7d010f">MEDIA_CONTENT_TYPE_OTHERS</a> is related to the following feature:<br/>
  http://tizen.org/feature/content.scanning.others<br/>
- If this feature is not suppported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned. </dd></dl>
+ If this feature is not supported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned. </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga12a323c7cd97da4a294340762ce7ce95a17847afa5de617634760617c0bcac4be"></a><!-- doxytag: member="MEDIA_CONTENT_TYPE_IMAGE" ref="gga12a323c7cd97da4a294340762ce7ce95a17847afa5de617634760617c0bcac4be" args="" -->MEDIA_CONTENT_TYPE_IMAGE</em>&nbsp;</td><td>
 <p>The type of an image </p>
@@ -855,11 +855,13 @@ Defines</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must add privilege <a href="http://tizen.org/privilege/content.write">http://tizen.org/privilege/content.write</a>. And You add more privilege depending on your choice of contents path. <br/>
  If you want to access only internal storage by using this function, you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>. <br/>
  Or if you want to access only external storage by using this function, you should add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>. <br/>
- If you can access both storage, you must add all privilege. </dd>
+ If you can access both storage, you must add all privilege. <br/>
+ Since 4.0, This function does not allow a symbolic link.<br/>
+ </dd>
 <dd>
 Since 4.0, this function is related to the following feature:<br/>
  http://tizen.org/feature/content.scanning.others<br/>
- If this feature is not suppported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned.</dd></dl>
+ If this feature is not supported on the device, MEDIA_CONTENT_TYPE_OTHERS type file is not scanned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The file path</td></tr>
@@ -936,7 +938,8 @@ Since 4.0, this function is related to the following feature:<br/>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must add privilege <a href="http://tizen.org/privilege/content.write">http://tizen.org/privilege/content.write</a>. And You add more privilege depending on your choice of contents path. <br/>
  If you want to access only internal storage by using this function, you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>. <br/>
  Or if you want to access only external storage by using this function, you should add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>. <br/>
- If you can access both storage, you must add all privilege.</dd></dl>
+ If you can access both storage, you must add all privilege. <br/>
+ Since 4.0, This function does not allow a symbolic link.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The folder path </td></tr>
@@ -993,7 +996,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Subscribes notifications of the media DB change. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000323">Deprecated:</a></b></dt><dd>Deprecated since 3.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#ga8fb5f2ab8c6f7454c37ed87dfc2c7ff0" title="Subscribes notifications of the media DB change.">media_content_add_db_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000496">Deprecated:</a></b></dt><dd>Deprecated since 3.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#ga8fb5f2ab8c6f7454c37ed87dfc2c7ff0" title="Subscribes notifications of the media DB change.">media_content_add_db_updated_cb()</a> instead. </dd></dl>
 <p>This function subscribes notifications of the media DB change which are published by the media server or other apps. <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#ga93110ce198539ff455a19fd59cc71df3" title="Called when the notification of the media DB change is subscribed.">media_content_db_update_cb()</a> function will be called when notification of the media DB change is subscribed.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1035,7 +1038,7 @@ Since 4.0, this function is related to the following feature:<br/>
 <div class="memdoc">
 
 <p>Unsubscribes notifications of the media DB change. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000324">Deprecated:</a></b></dt><dd>Deprecated since 3.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#ga41c258225a4fd4eb5592bb3e376b3c40" title="Removes notifications of the media DB change.">media_content_remove_db_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000497">Deprecated:</a></b></dt><dd>Deprecated since 3.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#ga41c258225a4fd4eb5592bb3e376b3c40" title="Removes notifications of the media DB change.">media_content_remove_db_updated_cb()</a> instead. </dd></dl>
 <p>This function unsubscribes notifications of the media DB change which are published by the media server or other apps.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value</dd></dl>

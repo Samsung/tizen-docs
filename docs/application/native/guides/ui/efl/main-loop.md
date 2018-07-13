@@ -34,7 +34,9 @@ A timer callback prototype looks like the `my_timed_cb()` callback function. Thi
 
 To create and destroy a timer:
 
-- To create a timer, use the `ecore_timer_add()` function. The interval, specified in seconds, indicates when the given function is called, and receives the specified data as a parameter. It returns an `Ecore_Timer` object.In the following example, the `my_timed_cb()` function is run after 2 seconds and it receives `my_data`. It is renewed while its count variable value is under 5, and stops after that.
+- To create a timer, use the `ecore_timer_add()` function. The interval, specified in seconds, indicates when the given function is called, and receives the specified data as a parameter. It returns an `Ecore_Timer` object.
+
+  In the following example, the `my_timed_cb()` function is run after 2 seconds and it receives `my_data`. It is renewed while its count variable value is under 5, and stops after that.
 
   ```
   Eina_Bool
@@ -114,7 +116,9 @@ To create and destroy the animator:
   ecore_animator_timeline_add(5., my_anim_cb, my_data);
   ```
 
-  In this example, the animator is specified to run for 5 seconds. The function returns `ECORE_CALLBACK_CANCEL` as soon as the position among the timeline passes half of the duration, 2.5 seconds.Ecore can generate a virtual position from the original one using `ecore_animator_pos_map(position, map, v1, v2)`. Several maps are available:
+  In this example, the animator is specified to run for 5 seconds. The function returns `ECORE_CALLBACK_CANCEL` as soon as the position among the timeline passes half of the duration, 2.5 seconds.
+
+  Ecore can generate a virtual position from the original one using `ecore_animator_pos_map(position, map, v1, v2)`. Several maps are available:
 
   - `ECORE_POS_MAP_LINEAR`: linear from 0.0 to 1.0.
 
@@ -249,13 +253,13 @@ my_feedback_job_notify(void *data, Ecore_Thread *thread, void *msg)
 void
 my_job_end(void *data, Ecore_Thread *thread)
 {
-    dlog_print(DLOG_INFO, LOG_TAG, "Thread has normally ended./n");
+    dlog_print(DLOG_INFO, LOG_TAG, "Thread has normally ended.\n");
 }
 
 void
 my_job_cancel(void *data, Ecore_Thread *thread)
 {
-    dlog_print(DLOG_INFO, LOG_TAG, "Thread has been cancelled./n");
+    dlog_print(DLOG_INFO, LOG_TAG, "Thread has been cancelled.\n");
 }
 
 ecore_thread_run(my_short_job, my_job_end, my_job_cancel, my_data);
@@ -266,9 +270,15 @@ ecore_thread_feedback_run(my_feedback_job, my_feedback_job_notify, my_job_end,
 To manage threads:
 
 - To cancel a thread, use the `ecore_thread_cancel()` function. However, note that this is done cooperatively: the thread continues to run until it exists. Call the `ecore_thread_check()` function regularly to check whether the thread has been marked for cancellation and exit if `true`.
-- To run threads that are not accounted for in the worker thread pool, use the `ecore_thread_feedback_run()` function with the last parameter set to `EINA_TRUE`.The feedback message a thread sends as notification can be any kind of data. In the above example, it is a simple integer, but it can be as complex as needed.
+
+- To run threads that are not accounted for in the worker thread pool, use the `ecore_thread_feedback_run()` function with the last parameter set to `EINA_TRUE`.
+
+  The feedback message a thread sends as notification can be any kind of data. In the above example, it is a simple integer, but it can be as complex as needed.
+
 - To execute a thread later, use the `ecore_thread_reschedule()` function. This function is added to the end of the pending tasks.
+
 - To get the maximum number of concurrent threads, use the `ecore_thread_max_get()` function. If needed, set it by using the `ecore_thread_max_set()` function, or reset the default value using the `ecore_thread_max_reset()` function.
+
 - To query the number of active threads, use the `ecore_thread_active_get()` function. To query the number of available worker threads, use the `ecore_thread_available_get()` function, which is basically the same as the `ecore_thread_max_get()` - `ecore_thread_active_get()`.
 
 ## Idlers
@@ -312,7 +322,8 @@ ecore_idle_exiter_add(my_idle_exiter_cb, my_data);
 ecore_idler_add(my_idler_cb, my_data);
 ```
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -9,3 +9,4 @@ When designing Tizen native applications, you need to take into account the foll
 - [File System Directory Hierarchy](io-overview.md)
 - [Application Signing and Certificates](sign-certificate.md)
 - [API Versioning and Deprecation Policy of the Tizen Platform](deprecation-policy.md)
+- [Removed functions and enumerations of Tizen Native API](native-removed-history.md)

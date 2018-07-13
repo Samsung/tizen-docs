@@ -30,7 +30,9 @@ To use a background component in your application:
      elm_bg_file_set(bg, "/path/to/the/edje", "group name");
      ```
 
-   - Set an image file as a background using the `elm_bg_file_set()` function.For an image background, you can set additional [options](#options).
+   - Set an image file as a background using the `elm_bg_file_set()` function.
+
+     For an image background, you can set additional [options](#options).
 
      `elm_bg_file_set(bg, "/path/to/the/image", NULL);`
 
@@ -104,7 +106,8 @@ The following table lists the available component styles.
 | `default`     | `elm.swallow.content`<br>`(alias:overlay)` | Default background style with an overlay swallow part on the top. |
 | `transparent` | `elm.swallow.content`<br>`(alias:overlay)` | Transparent background style with overlay swallow part on the top. |
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

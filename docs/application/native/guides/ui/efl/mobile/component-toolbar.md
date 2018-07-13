@@ -126,7 +126,7 @@ The following examples illustrate the shrink modes.
 **Table: Shrink mode example**
 
 | Mode                        | Example                                  |
-|---------------------------|----------------------------------------|
+|-----------------------------|------------------------------------------|
 | `ELM_TOOLBAR_SHRINK_EXPAND` | ![ELM_TOOLBAR_SHRINK_EXPAND](./media/toolbar_shrink_expand.png) |
 | `ELM_TOOLBAR_SHRINK_SCROLL` | ![ELM_TOOLBAR_SHRINK_SCROLL](./media/toolbar_shrink_scroll.png) |
 
@@ -189,12 +189,12 @@ The following table lists the available component styles.
 **Table: Toolbar styles**
 
 | Style                                    | Sample                                   | Text part  | Swallow part       | Notes                                    |
-|----------------------------------------|----------------------------------------|----------|------------------|----------------------------------------|
+|------------------------------------------|------------------------------------------|------------|--------------------|------------------------------------------|
 | `elm/toolbar/base/default`               | ![elm/toolbar/base/default](./media/toolbar_default.png) | N/A        | N/A                | N/A                                      |
 | `elm/toolbar/base/navigationbar`         | ![elm/toolbar/base/navigationbar](./media/toolbar_navigation.png) | N/A        | N/A                | N/A                                      |
 | `elm/toolbar/base/tabbar_with_title`     | ![elm/toolbar/base/tabbar_with_title](./media/toolbar_tabbar.png) | N/A        | N/A                | N/A                                      |
-| `elm/toolbar/item/tabbar``elm/toolbar/item/default` |                                          | `elm.text` | `elm.swallow.icon` | This style is for the toolbar's item.<br> Use the `elm_toolbar_item_append()` function to set the text and the icon. |
-| `elm/toolbar/item/navigationbar`         |                                          | `elm.text` | N/A                | This style is for the toolbar's item.<br> Use the `elm_toolbar_item_append()` function to set the text and the icon. |
+| `elm/toolbar/item/tabbar`<br> `elm/toolbar/item/default` | -                                         | `elm.text` | `elm.swallow.icon` | This style is for the toolbar's item.<br> Use the `elm_toolbar_item_append()` function to set the text and the icon. |
+| `elm/toolbar/item/navigationbar`         | -                                         | `elm.text` | N/A                | This style is for the toolbar's item.<br> Use the `elm_toolbar_item_append()` function to set the text and the icon. |
 
 ## Callbacks
 
@@ -207,7 +207,7 @@ You can register callback functions connected to the following signals for a too
 | `clicked`           | The toolbar item is double-clicked and selected. | `Elm_Toolbar_Item` |
 | `clicked,double`    | The toolbar item is double-clicked.      | `Elm_Toolbar_Item` |
 | `longpressed`       | The toolbar is pressed for a certain amount of time. | `Elm_Toolbar_Item` |
-| `language,changed`  | The program language changes.            |                    |
+| `language,changed`  | The program language changes.            | -                  |
 | `item,focused`      | The item is highlighted.                 | `Elm_Toolbar_Item` |
 | `item,unfocused`    | The highlight is removed from the item.  | `Elm_Toolbar_Item` |
 | `scroll`            | The toolbar scrolls.                     | `NULL`             |
@@ -216,10 +216,12 @@ You can register callback functions connected to the following signals for a too
 | `scroll,drag,start` | The user starts dragging the toolbar.    | `NULL`             |
 | `scroll,drag,stop`  | The user stops dragging the toolbar.     | `NULL`             |
 
-> **Note**  
+> **Note**
+>
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**  
+> **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

@@ -6,9 +6,9 @@ A wearable Web application is basically a Web site stored on a wearable device. 
 
 Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web application, which displays some text on the screen and changes the text when the user clicks it:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2.  [Create a wearable Web project](#create) using the Tizen Studio.
 
@@ -26,7 +26,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/cover-web.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/overview.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -145,9 +145,9 @@ To view and modify the application configuration:
 For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
 <a name="build"></a>
-## Building Your Application {#build}
+## Building Your Application
 
-After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
+After you have [created the application project](#create), you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
 When your application code is ready, you must build the application. The building process performs a validation check and compiles your JavaScript and CSS files.
 
@@ -198,18 +198,18 @@ You can run the Web application on the [emulator](../../tutorials/process/run-de
 
 To run the application on the emulator:
 
-1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-    1.  In the Tizen Studio menu, select **Tools &gt; Emulator Manager**.
+1. Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
+    1. In the Tizen Studio menu, select **Tools &gt; Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
-    2.  In the Emulator Manager, select a wearable emulator from the list and click **Launch**.
+    2. In the Emulator Manager, select a wearable emulator from the list and click **Launch**.
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
         ![Launching the emulator](media/emulator_instance_launch_wearable.png)
 
-        The emulator is launched in its own window. You can also see the new emulator instance and its folder structure in the **Device Manager**.
+    3. The emulator is launched in its own window. You can also see the new emulator instance and its folder structure in the **Device Manager**.
 
         ![Emulator](media/emulator_window_wearable.png)
 
@@ -235,14 +235,15 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_ww.png)
 
-        > **Note**  
-		> If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
+    > **Note**  
+    > If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
-        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window &gt; Show View &gt; Log**.
+    While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window &gt; Show View &gt; Log**.
 
-For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
+    For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 <a name="target"></a>
+
 ### Running on a Target Device
 
 To run the application on a target device:
@@ -268,6 +269,7 @@ To run the application on a target device:
             ![Switch on debugging](media/emulator_target_debug.png)
 
     <a name="remote_device"></a>
+
     2.  Use the Remote Device Manager to connect the wearable device:
         1.  In the **Device Manager**, click the **Remote Device Manager** button.
 
@@ -468,7 +470,7 @@ By default, the text uses the `#fff` color (white). If you change the CSS code a
 
 ### Adding More Components and Functionality with TAU
 
-TAU (Tizen Advanced UI) is a Web UI library that enables you to create and manage various kinds of UI components. The components represent a visual UI element, such as a button, checkbox, or list view. You can manipulate and interact with the application screens through the UI components. For more information, see [Tizen Advanced UI](../../guides/tau/tau.md) and [Tizen Advanced UI framework Reference](../../../../org.tizen.web.apireference/html/ui_fw_api/ui_fw_api_cover.htm).
+TAU (Tizen Advanced UI) is a Web UI library that enables you to create and manage various kinds of UI components. The components represent a visual UI element, such as a button, checkbox, or list view. You can manipulate and interact with the application screens through the UI components. For more information, see [Tizen Advanced UI](../../guides/tau/tau.md) and [Tizen Advanced UI framework Reference](../../api/latest/ui_fw_api/ui_fw_api_cover.htm).
 
 UI components for wearable devices have been enhanced to support a circular screen. You can make an application that runs on both rectangular and circular screens with a single source code.
 

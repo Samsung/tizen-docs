@@ -163,7 +163,6 @@ To download content:
    Use the progress callback to monitor the download progress. The following example prints the number of bytes received and the total size of the file being downloaded. Since you do not know the file size at the beginning, use 0.
 
    1. Create the download:
-
       ```
       unsigned long long content_size = 0;
 
@@ -171,7 +170,6 @@ To download content:
       ```
 
    2. Register the progress callback and start the download:
-
       ```
       error = download_set_progress_cb(download_id, progress_cb, &content_size);
 
@@ -179,7 +177,6 @@ To download content:
       ```
 
    3. When the file is being downloaded, get the total content size:
-
       ```
       download_state_e state = 0;
       content_size = 0;
@@ -189,18 +186,17 @@ To download content:
       ```
 
    4. The received parameter of the `progress_cb()` callback function contains the size of the data received in bytes. In this example, print out the value and the total download size.
-   ```
-    static void
-    progress_cb(int download_id, unsigned long long received, void *user_data)
-    {
-        dlog_print(DLOG_INFO, LOG_TAG, "received: %llu of %llu", received, *((unsigned long long*)user_data));
-    }
-   ```
+      ```
+      static void
+      progress_cb(int download_id, unsigned long long received, void *user_data)
+      {
+          dlog_print(DLOG_INFO, LOG_TAG, "received: %llu of %llu", received, *((unsigned long long*)user_data));
+      }
+      ```
 
 7. Get error information.
 
    To get error information, use the `download_get_error()` function:
-
    ```
    download_error_e error_val = 0;
    error = download_get_error(download_id, &error_val);
@@ -211,7 +207,6 @@ To download content:
 8. Clean up.
 
    When the registered download is no longer needed (the downloading is finished or has been canceled), delete it using the `download_destroy()` function. In addition, unset all callback functions.
-
    ```
    download_unset_progress_cb(download_id);
    download_unset_state_changed_cb(download_id);

@@ -14,7 +14,7 @@
 
 # Validation
 ## Guidelines
-### [Introduction] (validation/guidelines/introduction.md)
+### [Introduction](validation/guidelines/introduction.md)
 ### [Application Validation Process](/application/distribute/validation/guidelines/application-validation-process.md)
 ### [Tizen Application Compliance](/application/distribute/validation/guidelines/tizen-application-compliance.md)
 ### [Age Rating Guide](/application/distribute/validation/guidelines/age-rating-guide.md)

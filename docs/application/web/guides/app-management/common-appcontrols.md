@@ -4,9 +4,7 @@ An application control provides functions for launching other applications with 
 
 The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
-All the common application controls are supported in mobile applications. The input delegator is supported in mobile and TV applications since Tizen 4.0, with limited features. In wearable applications, only the map and input delegator application controls are supported.
-
-> **Note**
+> **Note**  
 > It is possible that no application suitable to receive the application control exists. In that case, before you send the launch request, verify that a suitable application exists.
 
 ## Browser
@@ -112,10 +110,10 @@ To add a new event to the user's calendar, use the `http://tizen.org/appcontrol/
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/calendar/all_day` | The string to indicate if an event applies to all day. The available values are `true` or `false`. This key must be passed as a string. | This key is optional. |
-| `http://tizen.org/appcontrol/data/calendar/start_time` | The start time of the event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/calendar/end_time` | The end time of the event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/title` | The title of the event. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/text`  | The description of the event. This key must be passed as a string. |                       |
+| `http://tizen.org/appcontrol/data/calendar/start_time` | The start time of the event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/calendar/end_time` | The end time of the event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/title` | The title of the event. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/text`  | The description of the event. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
@@ -161,10 +159,10 @@ To edit an existing event in the user's calendar, use the `http://tizen.org/appc
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/id`    | The database record ID of the event (ID in the `_calendar_event` view). This key must be passed as a string. | This key is mandatory. |
 | `http://tizen.org/appcontrol/data/calendar/all_day` | The string to indicate if an event applies to all day. The available values are `true` or `false`. This key must be passed as a string. | This key is optional.  |
-| `http://tizen.org/appcontrol/data/calendar/start_time` | The start time of event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. |                        |
-| `http://tizen.org/appcontrol/data/calendar/end_time` | The end time of event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. |                        |
-| `http://tizen.org/appcontrol/data/title` | The title of event. This key must be passed as a string. |                        |
-| `http://tizen.org/appcontrol/data/text`  | The description of event. This key must be passed as a string. |                        |
+| `http://tizen.org/appcontrol/data/calendar/start_time` | The start time of event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/calendar/end_time` | The end time of event (format: YYYY-MM-DD HH:MM:SS). This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/title` | The title of event. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/text`  | The description of event. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
@@ -211,7 +209,8 @@ For example: `file://<media storage path>/file.vcs`
 
 #### MIME Type
 
-- `application/vnd.tizen.calendar`		If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.		
+- `application/vnd.tizen.calendar`  
+   If viewing an event by event ID, the event ID (ID in the `_calendar_event` view) extra data and `application/vnd.tizen.calendar` MIME type must be specified.
 - `text/x-vcalendar` (for vcalendar file)
 - `text/vcalendar` (for vcalendar file)
 
@@ -269,8 +268,8 @@ To select a specified event in the user's calendar, use the `http://tizen.org/ap
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id` (default) and `vcs`. This key must be passed as a string. | This key is optional. |
-| `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the PICK operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/total_count` | The total number of events to be returned. This key must be passed as a string. |                       |
+| `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the PICK operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/total_count` | The total number of events to be returned. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
@@ -507,9 +506,9 @@ To add a new contact, use the `http://tizen.org/appcontrol/operation/add` operat
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/phone` | The phone number. This key must be passed as a string. | This key is optional. |
-| `http://tizen.org/appcontrol/data/email` | The email address. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/url`   | The homepage URL. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/name`  | The contact's name. This key must be passed as a string. |                       |
+| `http://tizen.org/appcontrol/data/email` | The email address. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/url`   | The homepage URL. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/name`  | The contact's name. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
@@ -558,8 +557,8 @@ To edit a known contact, use the `http://tizen.org/appcontrol/operation/edit` op
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/id`    | The database record ID of the person to be edited (ID in the `_contacts_person` view). This key must be passed as a string. | This key is mandatory. |
 | `http://tizen.org/appcontrol/data/phone` | The phone number that is added to the contact. This key must be passed as a string. | This key is optional.  |
-| `http://tizen.org/appcontrol/data/email` | The email address that is added to the contact. This key must be passed as a string. |                        |
-| `http://tizen.org/appcontrol/data/url`   | The homepage URL that is added to the contact. This key must be passed as a string. |                        |
+| `http://tizen.org/appcontrol/data/email` | The email address that is added to the contact. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/url`   | The homepage URL that is added to the contact. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
@@ -606,7 +605,8 @@ To display a specified contact from a vcard file, use the `file:` URI. To displa
 
 #### MIME Type
 
-- `application/vnd.tizen.contact`	If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
+- `application/vnd.tizen.contact`  
+   If viewing a contact by person ID, the person ID (ID in the `_contact_person` view) extra data and `application/vnd.tizen.contact` MIME type must be specified.
 - `text/vcard`
 - `text/x-vcard`
 
@@ -668,15 +668,15 @@ To select a specified contact in the user's contacts, use the `http://tizen.org/
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the PICK operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
-| `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id` (default), `phone`, `email`, and `vcf`. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/total_count` | The total number of events to be returned. This key must be passed as a string. |                       |
+| `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id` (default), `phone`, `email`, and `vcf`. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/total_count` | The total number of events to be returned. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
 | Key                                      | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
 | `http://tizen.org/appcontrol/data/type`  | The type of items to be delivered. The available values are `id`, `phone`, `email`, and `vcf`. This key must be passed as a string. |
-| `http://tizen.org/appcontrol/data/selected` | The extra field to get the return information. The content of this key depends on its type:								`id`: The database record ID of the selected person (ID in the `_contacts_person` view).				`phone`: The database record ID of the number of the selected person (ID in the `_contacts_number` view).				`email`: The database record ID of the email of the selected person (ID in the `_contacts_email` view).				`vcf`: The path to the vCard file.						This key must be passed as an array. |
+| `http://tizen.org/appcontrol/data/selected` | The extra field to get the return information. The content of this key depends on its type:<br> - `id`: The database record ID of the selected person (ID in the `_contacts_person` view).<Br> - `phone`: The database record ID of the number of the selected person (ID in the `_contacts_number` view).<br> - `email`: The database record ID of the email of the selected person (ID in the `_contacts_email` view).<br> - `vcf`: The path to the vCard file.<Br>This key must be passed as an array. |
 
 #### Example Code
 
@@ -729,8 +729,8 @@ To share a single contact, use the `http://tizen.org/appcontrol/operation/share`
 
 | Key                                     | Description                              | Note                   |
 | --------------------------------------- | ---------------------------------------- | ---------------------- |
-| `http://tizen.org/appcontrol/data/id`   | The database record ID of the person (ID in the `_contacts_person` view) when `http://tizen.org/appcontrol/data/type` is set to `person`.				The database record ID of my profile (ID in the `_contacts_my_profile` view) when `http://tizen.org/appcontrol/data/type` is set to `my_profile`. This key must be passed as a string. | This key is mandatory. |
-| `http://tizen.org/appcontrol/data/type` | The type of contact. The available values are `my_profile` and `person`. This key must be passed as a string. |                        |
+| `http://tizen.org/appcontrol/data/id`   | The database record ID of the person (ID in the `_contacts_person` view) when `http://tizen.org/appcontrol/data/type` is set to `person`.<br>The database record ID of my profile (ID in the `_contacts_my_profile` view) when `http://tizen.org/appcontrol/data/type` is set to `my_profile`. This key must be passed as a string. | This key is mandatory. |
+| `http://tizen.org/appcontrol/data/type` | The type of contact. The available values are `my_profile` and `person`. This key must be passed as a string. | This key is mandatory. |
 
 #### Example Code
 
@@ -811,11 +811,11 @@ If the `mailto:` field is empty, it filters out all but email applications in th
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/to`    | The email address of the main recipients. This key must be passed as an array. | This key is optional. |
-| `http://tizen.org/appcontrol/data/cc`    | The email address of the recipients that must be carbon copied. This key must be passed as an array. |                       |
-| `http://tizen.org/appcontrol/data/bcc`   | The email address of the recipients that must be blind carbon copied. This key must be passed as an array. |                       |
-| `http://tizen.org/appcontrol/data/subject` | The subject of an email message. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/text`  | The body of the email to be sent. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in an email message. This key must be passed as an array. |                       |
+| `http://tizen.org/appcontrol/data/cc`    | The email address of the recipients that must be carbon copied. This key must be passed as an array. | This key is optional. |
+| `http://tizen.org/appcontrol/data/bcc`   | The email address of the recipients that must be blind carbon copied. This key must be passed as an array. | This key is optional. |
+| `http://tizen.org/appcontrol/data/subject` | The subject of an email message. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/text`  | The body of the email to be sent. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in an email message. This key must be passed as an array. | This key is optional. |
 
 #### Example Code
 
@@ -851,7 +851,8 @@ To share a single file of any MIME type in an email message, use the `http://tiz
 #### URI (Mandatory)
 
 - `file:<path>`
-- `mailto:`Only an empty `mailto:` field is allowed. This can be used to filter out all but email applications available in the system.
+- `mailto:`  
+   Only an empty `mailto:` field is allowed. This can be used to filter out all but email applications available in the system.
 
 #### MIME Type
 
@@ -952,7 +953,7 @@ Only an empty `mailto:` field is allowed. It filters out all but email applicati
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/text`  | The body of the message to be sent. This key must be passed as a string. | This key is mandatory. |
 | `http://tizen.org/appcontrol/data/subject` | The subject of an email message. This key must be passed as a string. | This key is optional.  |
-| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared using an email message. This key must be passed as an array. |                        |
+| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared using an email message. This key must be passed as an array. | This key is optional. |
 
 #### Example Code
 
@@ -985,15 +986,15 @@ To select any kind of file from the storage, use the `http://tizen.org/appcontro
 
 #### MIME Type (Optional)
 
-*/*
+\*/\*
 
 #### Extra Input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the pick operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
-| `http://tizen.org/appcontrol/data/total_count` | The total number of items to be returned. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. |                       |
+| `http://tizen.org/appcontrol/data/total_count` | The total number of items to be returned. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
@@ -1046,7 +1047,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Input Delegator
 
-​The input delegator application control is supported in wearable applications since Tizen 2.3.2, and in mobile and TV applications since Tizen 4.0. Some of the input types are not supported in mobile and TV applications.
+The input delegator application control is supported in wearable applications since Tizen 2.3.2, and in mobile and TV applications since Tizen 4.0. Some of the input types are not supported in mobile and TV applications.
 
 ### Receiving User Input
 
@@ -1071,15 +1072,15 @@ To receive a specific type of input from the user, use the `http://tizen.org/app
 
 | Key                                      | Description                              | Note                                     |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `http://tizen.org/appcontrol/data/input_type` | The input method type. This key must be passed as a string. The available values are:							   							   `input_voice`: Ask for voice input							   `input_emoticon`: Ask for emoticon input							   `input_keyboard`: Ask for keyboard input							   `input_reply`: Ask for reply input							   `input_drawing`: Ask for drawing input							   `input_recording`: Ask for recording input | This key is optional.							   **The input_reply, input_drawing and input_recording values are supported since Tizen 4.0, in wearable applications only.** |
+| `http://tizen.org/appcontrol/data/input_type` | The input method type. This key must be passed as a string. The available values are:<br> - `input_voice`: Ask for voice input<br> - `input_emoticon`: Ask for emoticon input<br> - `input_keyboard`: Ask for keyboard input<br> - `input_reply`: Ask for reply input<br> - `input_drawing`: Ask for drawing input<br> - `input_recording`: Ask for recording input | This key is optional.<br>**The input_reply, input_drawing and input_recording values are supported since Tizen 4.0, in wearable applications only.** |
 | `http://tizen.org/appcontrol/data/input_default_text` | The preformatted text to be used as default input, such as "http://" for Web addresses. This key must be passed as a string. | This key is optional.                    |
-| `http://tizen.org/appcontrol/data/input_default_text` | The guide text, such as "Input user name". This key must be passed as a string. |                                          |
-| `http://tizen.org/appcontrol/data/input_guide_text` | The text to receive an answer result from a smart reply. This key must be passed as a string. |                                          |
-| `http://tizen.org/appcontrol/data/input_returnkey_type` | The return key used in the keyboard input type. This key must be passed as a string. The available values are:							   							   `Done`: Set key label to **Done**							   `Send`: Set key label to **Send**							   `Join`: Set key label to **Join**							   `Login`: Set key label to **Login**							   `Next`: Set key label to **Next**							   `Sign-in`: Set key label to **Sign-in**							   `Search`: Set key label to **Search**							   `Go`: Set key label to **Go** | This key is optional, and **it is supported since Tizen 4.0.** |
-| `http://tizen.org/appcontrol/data/input_max_text_length` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. |                                          |
-| `http://tizen.org/appcontrol/data/input_cursor_position_set` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. |                                          |
-| `http://tizen.org/appcontrol/data/input_cursor_position_get` | The current position of the cursor in the keyboard input type. This key must be passed as a string. |                                          |
-| `http://tizen.org/appcontrol/data/input_reply_type` | The reply type. This key must be passed as a string. The available values are:							   							   `input_voice`: Receive the result as voice							   `input_emoticon`: Receive the result as an emoticon							   `input_keyboard`: Receive the result as keyboard input							   `input_reply`: Receive the result as reply input							   `input_image`: Receive the result as an image							   `input_audio`: Receive the result as audio | This key is optional, and **it is supported since Tizen 4.0, in wearable applications only.** |
+| `http://tizen.org/appcontrol/data/input_default_text` | The guide text, such as "Input user name". This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/input_guide_text` | The text to receive an answer result from a smart reply. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/input_returnkey_type` | The return key used in the keyboard input type. This key must be passed as a string. The available values are:<Br> - `Done`: Set key label to **Done**<br> - `Send`: Set key label to **Send**<br> - `Join`: Set key label to **Join** <br> - `Login`: Set key label to **Login**<br> - `Next`: Set key label to **Next**<br> - `Sign-in`: Set key label to **Sign-in**<br> - `Search`: Set key label to **Search**<br> - `Go`: Set key label to **Go** | This key is optional, and **it is supported since Tizen 4.0.** |
+| `http://tizen.org/appcontrol/data/input_max_text_length` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional, and **it is supported since Tizen 4.0.** |
+| `http://tizen.org/appcontrol/data/input_cursor_position_set` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional, and **it is supported since Tizen 4.0.** |
+| `http://tizen.org/appcontrol/data/input_cursor_position_get` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional, and **it is supported since Tizen 4.0.** |
+| `http://tizen.org/appcontrol/data/input_reply_type` | The reply type. This key must be passed as a string. The available values are:<br> - `input_voice`: Receive the result as voice<br> - `input_emoticon`: Receive the result as an emoticon<Br> - `input_keyboard`: Receive the result as keyboard input<br> - `input_reply`: Receive the result as reply input<br> - `input_image`: Receive the result as an image<br> - `input_audio`: Receive the result as audio | This key is optional, and **it is supported since Tizen 4.0, in wearable applications only.** |
 
 #### Extra Output
 
@@ -1105,7 +1106,7 @@ tizen.application.launchAppControl(appControl, null, function() {
 
 ## Map
 
-​The map application control is supported in mobile and wearable applications only. In wearable applications, this application control is available since Tizen 2.3.2.
+The map application control is supported in mobile and wearable applications only. In wearable applications, this application control is available since Tizen 2.3.2.
 
 
 ### Showing a Location on a Map
@@ -1118,8 +1119,11 @@ To open a map to show a location, use the `http://tizen.org/appcontrol/operation
 
 #### URI (Mandatory)
 
-- `geo:latitude,longitude`	Show the map with 2 values that represent the latitude and longitude. For example: `geo:50.1,-50.1`
-- `geo:0,0?q=keyword`	Show the map at the location of a given keyword (address or POI). For example: `geo:0,0?q=Eiffel%20Tower`	All strings passed in the `geo:` URI must be encoded. If only `geo:` is used, it filters out all but map applications in the system, and the location to be shown depends on the application scenario and configuration.
+- `geo:latitude,longitude`  
+   Show the map with 2 values that represent the latitude and longitude. For example: `geo:50.1,-50.1`
+- `geo:0,0?q=keyword`  
+   Show the map at the location of a given keyword (address or POI). For example: `geo:0,0?q=Eiffel%20Tower`  
+   All strings passed in the `geo:` URI must be encoded. If only `geo:` is used, it filters out all but map applications in the system, and the location to be shown depends on the application scenario and configuration.
 
 #### Example Code
 
@@ -1162,11 +1166,11 @@ If only `geo:` is used, it filters out all but map applications in the system, a
 
 | Key                                      | Description                              | Note                                     |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `http://tizen.org/appcontrol/data/selected` | The address of the selected location. This key must be passed as a string. |                                          |
-| `http://tizen.org/appcontrol/data/name` **** | The name of the selected location. This key must be passed as a string. | **This key is not supported in Tizen 2.4.** |
+| `http://tizen.org/appcontrol/data/selected` | The address of the selected location. This key must be passed as a string. | -                                        |
+| `http://tizen.org/appcontrol/data/name` | The name of the selected location. This key must be passed as a string. | **This key is not supported in Tizen 2.4.** |
 | `http://tizen.org/appcontrol/data/location` | The geo-coordinates of the selected location. This key must be passed as a string. | **This key is supported since Tizen 3.0.** |
 | `http://tizen.org/appcontrol/data/url`   | The URI of a place that shows the selected location. This key must be passed as a string. | **This key is supported since Tizen 3.0.** |
-| `http://tizen.org/appcontrol/data/path`  | The file path of the image showing the selected location. This key must be passed as a string. |                                          |
+| `http://tizen.org/appcontrol/data/path`  | The file path of the image showing the selected location. This key must be passed as a string. | -                                        |
 
 #### Example Code
 
@@ -1212,17 +1216,19 @@ To compose a new message, use the `http://tizen.org/appcontrol/operation/compose
 
 #### URI (Mandatory)
 
-- `sms:<phone-number>`	For example: `sms:+17913331234`
-- `mmsto:<phone-number>`	For example: `mmsto:+17913331234`
+- `sms:<phone-number>`  
+   For example: `sms:+17913331234`
+- `mmsto:<phone-number>`  
+   For example: `mmsto:+17913331234`
 
 #### Extra Input
 
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/to`    | The phone numbers of recipients. This key must be passed as an array. | This key is optional. |
-| `http://tizen.org/appcontrol/data/text`  | The body of the message to be sent. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/subject` | The subject of an MMS message. If this value is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. |                       |
+| `http://tizen.org/appcontrol/data/text`  | The body of the message to be sent. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/subject` | The subject of an MMS message. If this value is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. | This key is optional. |
 
 #### Example Code
 
@@ -1255,8 +1261,10 @@ To share a single item using an MMS message, use the `http://tizen.org/appcontro
 
 #### URI (Mandatory)
 
-- `mmsto:`	Only an empty `mmsto:` field is allowed. This can be used to filter out all but message applications available in the system.
-- `file:<path>`	For example: `file://<media storage path>/item.jpg`
+- `mmsto:`  
+   Only an empty `mmsto:` field is allowed. This can be used to filter out all but message applications available in the system.
+- `file:<path>`  
+   For example: `file://<media storage path>/item.jpg`
 
 #### MIME Type
 
@@ -1358,8 +1366,8 @@ Only an empty `sms:` or `mmsto:` field is allowed. This can be used to filter ou
 | Key                                      | Description                              | Note                   |
 | ---------------------------------------- | ---------------------------------------- | ---------------------- |
 | `http://tizen.org/appcontrol/data/text`  | The body of the message to be sent. This key must be passed as a string. | This key is mandatory. |
-| `http://tizen.org/appcontrol/data/subject` | The subject of an MMS message. If it is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. | This key is optional.  |
-| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. |                        |
+| `http://tizen.org/appcontrol/data/subject` | The subject of an MMS message. If it is set for an SMS message, the message is automatically converted to MMS. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/path`  | The list of multiple file paths to be shared in a multimedia message. This key must be passed as an array. | This key is optional. |
 
 #### Example Code
 
@@ -1474,8 +1482,8 @@ To retrieve a specific type of media file, use the `http://tizen.org/appcontrol/
 | Key                                      | Description                              | Note                  |
 | ---------------------------------------- | ---------------------------------------- | --------------------- |
 | `http://tizen.org/appcontrol/data/selection_mode` | The selection mode of the pick operation. The available values are `single` (default) and `multiple`. This key must be passed as a string. | This key is optional. |
-| `http://tizen.org/appcontrol/data/total_count` | The total number of items to be returned. This key must be passed as a string. |                       |
-| `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. |                       |
+| `http://tizen.org/appcontrol/data/total_count` | The total number of items to be returned. This key must be passed as a string. | This key is optional. |
+| `http://tizen.org/appcontrol/data/total_size` | The total size of items to be returned in bytes. This key must be passed as a string. | This key is optional. |
 
 #### Extra Output
 
@@ -1586,7 +1594,7 @@ The location settings application control is supported in mobile applications on
 
 To launch the location setting application to allow the user to configure the source of the location information, use the `http://tizen.org/appcontrol/operation/setting/location` operation.
 
-If the location service is not active when an application tries to use the `HumanActivityMonitorManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html) applications), an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
+If the location service is not active when an application tries to use the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) applications), an error occurs. To solve the problem, the application can try to launch the location setting application to let the user enable the location service. The user can activate the GPS, network positioning using the Wi-Fi Positioning System (WPS) and cellular network, or both.
 
 **Figure: Showing location settings**
 
@@ -1628,7 +1636,7 @@ To launch the NFC setting application to allow the user to activate or deactivat
 
 | Key                     | Description                              | Note                                     |
 | ----------------------- | ---------------------------------------- | ---------------------------------------- |
-| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:							   							   `nfc` (default): Default setting menu is launched							   `tap_n_pay`: Tap & pay setting menu is launched							   The support for this value depends on the device NFC settings. | This key is optional, and **it is supported since Tizen 3.0**. |
+| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:<br>  - `nfc` (default): Default setting menu is launched<br>  - `tap_n_pay`: Tap & pay setting menu is launched. The support for this value depends on the device NFC settings. | This key is optional, and **it is supported since Tizen 3.0**. |
 
 #### Example Code
 

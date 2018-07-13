@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Badge API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Badge">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>Badge API</h1></div>
+<div class="brief">
+ The Badge API provides Badge management functionality. It provides functions for creating and updating a badge.
+The application with new unread information has a number in the upper right hand corner of the app icon. This number is called a badge.
+For example, when a new message is received the badge count appears on the app icon. The badge remains until the message is read by the user.
+        </div>
+<div class="description">
+        <p>
+For more information about how to use Badge API, see <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-icons">Badge Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#BadgeManagerObject">BadgeManagerObject</a>
+</li>
+<li>1.2. <a href="#BadgeManager">BadgeManager</a>
+</li>
+<li>1.3. <a href="#BadgeChangeCallback">BadgeChangeCallback</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#BadgeManagerObject">BadgeManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#BadgeManager">BadgeManager</a></td>
+<td>void <a href="#BadgeManager::setBadgeCount">setBadgeCount</a> (<a href="application.html#ApplicationId">ApplicationId</a> appId, long count)<br>
+    long <a href="#BadgeManager::getBadgeCount">getBadgeCount</a> (<a href="application.html#ApplicationId">ApplicationId</a> appId)<br>
+    void <a href="#BadgeManager::addChangeListener">addChangeListener</a> (<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList, <a href="#BadgeChangeCallback">BadgeChangeCallback</a> successCallback)<br>
+    void <a href="#BadgeManager::removeChangeListener">removeChangeListener</a> (<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList)</td>
+</tr>
+<tr>
+<td><a href="#BadgeChangeCallback">BadgeChangeCallback</a></td>
+<td>void <a href="#BadgeChangeCallback::onsuccess">onsuccess</a> (<a href="application.html#ApplicationId">ApplicationId</a> appId, long count)</td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="BadgeManagerObject">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeManagerObject"></a><h3>1.1. BadgeManagerObject</h3>
+<div class="brief">
+ The BadgeManagerObject interface defines what is instantiated in the tizen object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface BadgeManagerObject {
+         readonly attribute <a href="#BadgeManager">BadgeManager</a> badge;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BadgeManagerObject">BadgeManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+There is a tizen.badge object that allows accessing the functionality of the Badge API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="BadgeManager">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeManager"></a><h3>1.2. BadgeManager</h3>
+<div class="brief">
+ The BadgeManager interface manages Badge functionality. It provides functions for creating and updating a badge, and registering for badge change events.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface BadgeManager {
+        readonly attribute long maxBadgeCount;
+
+        void setBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long getBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void addChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[]appIdList, <a href="#BadgeChangeCallback">BadgeChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="BadgeManager::maxBadgeCount">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">maxBadgeCount</span></span><div class="brief">
+ Maximum length of a badge number.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BadgeManager::setBadgeCount">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeManager::setBadgeCount"></a><code><b><span class="methodName">setBadgeCount</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the badge count for the designated application. Only applications with the same author signature can have their badge count modified.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/notification
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appId</span>: 
+ ID of the application to update the badge
+                </li>
+          <li class="param">
+<span class="name">count</span>: 
+ Number to display as the badge on the application icon<br>To remove the badge, set the value of this param to 0.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError,  if the application does not have the privilege to call this method or if the author signature does not match that of the designated application.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   tizen.badge.setBadgeCount("AVbg1ZHu6l.BadgeSample", 3);
+}
+catch (e)
+{
+   console.log("Error Exception, error name: " + e.name + ", error message: " + e.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="BadgeManager::getBadgeCount">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeManager::getBadgeCount"></a><code><b><span class="methodName">getBadgeCount</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the badge count for the designated application.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long getBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/notification
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appId</span>: 
+ ID of the designated application
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ long Count of the badge
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError,  if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of an unknown error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+try
+{
+   var count = tizen.badge.getBadgeCount("AVbg1ZHu6l.BadgeSample");
+}
+catch (e)
+{
+   console.log("Error Exception, error name: " + e.name + ", error message: " + e.message);
+}
+</pre>
+</div>
+</dd>
+<dt class="method" id="BadgeManager::addChangeListener">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeManager::addChangeListener"></a><code><b><span class="methodName">addChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Adds a listener to receive a notification when the badge number for the designated application changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void addChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList, <a href="#BadgeChangeCallback">BadgeChangeCallback</a> successCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/notification
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appIdList</span>: 
+ Array of the ID of the designated application
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>: 
+ Callback method to be invoked when a badge number change notification is received
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function watcher(appId, count)
+{
+   console.log(appId + ' badge number were updated: ' + count);
+}
+
+/* Registers to be notified when the badge number changes */
+tizen.badge.addChangeListener(["AVbg1ZHu6l.BadgeSample", "BDb5tZJe47.TestSample"], watcher);
+</pre>
+</div>
+</dd>
+<dt class="method" id="BadgeManager::removeChangeListener">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeManager::removeChangeListener"></a><code><b><span class="methodName">removeChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsubscribes from receiving notifications for badge number changes.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/notification
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appIdList</span>: 
+ Array of the ID of the designated application
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Receives badge number changes */
+function watcher(appId, count)
+{
+   console.log(appId + ' badge number were updated: ' + count);
+}
+
+/* Registers to be notified when the badge number changes */
+tizen.badge.addChangeListener(["AVbg1ZHu6l.BadgeSample", "BDb5tZJe47.TestSample"], watcher);
+
+/* Cancels the watch operation */
+tizen.badge.removeChangeListener(["AVbg1ZHu6l.BadgeSample", "BDb5tZJe47.TestSample"]);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="BadgeChangeCallback">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeChangeCallback"></a><h3>1.3. BadgeChangeCallback</h3>
+<div class="brief">
+ The BadgeChangeCallback interface specifies a set of methods that are invoked every time a badge number change occurs.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject]
+    interface BadgeChangeCallback {
+        void onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BadgeChangeCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Badge::BadgeChangeCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the badge number of a specified application is updated.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">appId</span>: 
+ ID of the designated application
+                </li>
+          <li class="param">
+<span class="name">count</span>: 
+ Count of the badge
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">2. Full WebIDL</h2>
+<pre class="webidl prettyprint"> module Badge{
+
+    [NoInterfaceObject] interface BadgeManagerObject {
+         readonly attribute <a href="#BadgeManager">BadgeManager</a> badge;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BadgeManagerObject">BadgeManagerObject</a>;
+
+    [NoInterfaceObject] interface BadgeManager {
+        readonly attribute long maxBadgeCount;
+
+        void setBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        long getBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void addChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[]appIdList, <a href="#BadgeChangeCallback">BadgeChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void removeChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject]
+    interface BadgeChangeCallback {
+        void onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

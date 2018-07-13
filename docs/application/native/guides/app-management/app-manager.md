@@ -31,12 +31,14 @@ To use the functions and data types of the Application Manager API (in [mobile](
 
 To get the running application context and its details, and to operate on the context:
 
-1. Get the context of the currently-running application with the `app_manager_get_app_context()` function. Its parameters are the ID of the application from which the context is being obtained, and the handle (`app_context_h*`) to the application context which is filled with the received context.When an application is not running, it is impossible to get its context.
-```
-app_context_h app_context = NULL;
-int ret = app_manager_get_app_context(Your App ID, &app_context);
-```
-If the function returns `APP_MANAGER_ERROR_NONE`, it has executed correctly and the `app_context` variable now contains the handle to the defined application context.
+1. Get the context of the currently-running application with the `app_manager_get_app_context()` function. Its parameters are the ID of the application from which the context is being obtained, and the handle (`app_context_h*`) to the application context which is filled with the received context.
+
+   When an application is not running, it is impossible to get its context.
+   ```
+   app_context_h app_context = NULL;
+   int ret = app_manager_get_app_context(Your App ID, &app_context);
+   ```
+   If the function returns `APP_MANAGER_ERROR_NONE`, it has executed correctly and the `app_context` variable now contains the handle to the defined application context.
 
 2. Operate on the context:
 
@@ -104,10 +106,10 @@ If the function returns `APP_MANAGER_ERROR_NONE`, it has executed correctly and 
 To get information on filtered applications:
 
 1. Create the `app_info_filter_h` handle using the `app_info_filter_create()` function:
-```
-app_info_filter_h app_info_filter = NULL;
-int ret = app_info_filter_create(&app_info_filter);
-```
+   ```
+   app_info_filter_h app_info_filter = NULL;
+   int ret = app_info_filter_create(&app_info_filter);
+   ```
 
 2. Add filter rules:
 

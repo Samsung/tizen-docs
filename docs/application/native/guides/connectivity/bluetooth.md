@@ -116,7 +116,8 @@ To enable your application to use the Bluetooth functionality:
    }
    ```
 
-   > **Note**  
+   > **Note**
+   >
    > The Bluetooth feature is not thread-safe and depends on the main loop. Implement Bluetooth within the main loop, and do not use it in a thread.
 
 <a name="enable"></a>
@@ -264,9 +265,15 @@ To find remote Bluetooth devices, you can either discover them and bond with the
      Use the callback to manage the discovery process:
 
      - The first callback parameter defines the result of the Bluetooth discovery process. If successful, the parameter value is `BT_ERROR_NONE`. If the discovery failed to start due to an error, the parameter value is `BT_ERROR_TIMEOUT`.
+
      - The second callback parameter defined the current state of the discovery process using the enumerators `bt_adapter_device_discovery_state_e` (classic Bluetooth) (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) applications) or `bt_adapter_le_device_discovery_state_e` (Bluetooth LE) (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga4b90a954c6cfb51b60d520c114d8f62d) applications):
-       - When you start the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_STARTED` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_STARTED` state.Similarly, when you stop the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FINISHED` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_FINISHED` state.
-       - Each time a remote Bluetooth device is found, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FOUND` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_FOUND` state.In this state, you can get some information about the discovered device, such as the device MAC address, name, class, RSSI (received signal strength indicator), and bonding state. Using this information, you can bond with the discovered device.
+       - When you start the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_STARTED` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_STARTED` state.
+
+         Similarly, when you stop the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FINISHED` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_FINISHED` state.
+
+       - Each time a remote Bluetooth device is found, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FOUND` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_FOUND` state.
+
+         In this state, you can get some information about the discovered device, such as the device MAC address, name, class, RSSI (received signal strength indicator), and bonding state. Using this information, you can bond with the discovered device.
 
      The following example shows the callback implementation for classic Bluetooth. Bluetooth LE is implemented in the same way.
 
@@ -436,7 +443,8 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
   To remove a device from the bonded list, call the `bt_device_destroy_bond()` function.
 
-	> **Note**  
+	> **Note**
+    >
 	> A Bluetooth device must be in a discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
 
 To manage the device visibility and enable discovery:
@@ -608,17 +616,20 @@ To connect to other devices:
 
 - Connect as a client:
 
-  1. Define and register the socket connection state change callback using the `bt_socket_set_connection_state_changed_cb()` function.The callback is invoked whenever the connection state changes (for example, when you connect to the server device).
-  ```
-    ret = bt_socket_set_connection_state_changed_cb(socket_connection_state_changed, NULL);
-    if (ret != BT_ERROR_NONE) {
-        dlog_print(DLOG_ERROR, LOG_TAG, "[bt_socket_set_connection_state_changed_cb] failed.");
+  1. Define and register the socket connection state change callback using the `bt_socket_set_connection_state_changed_cb()` function.
 
-        return;
-    }
-  ```
-  > **Note**  
-  > When you connect to a Bluetooth server device, retrieve the server socket file descriptor (`bt_socket_connection_s->socket_fd`) in the callback and store it for later use. You need the file descriptor when sending data or disconnecting from the service.
+     The callback is invoked whenever the connection state changes (for example, when you connect to the server device).
+     ```
+     ret = bt_socket_set_connection_state_changed_cb(socket_connection_state_changed, NULL);
+     if (ret != BT_ERROR_NONE) {
+         dlog_print(DLOG_ERROR, LOG_TAG, "[bt_socket_set_connection_state_changed_cb] failed.");
+
+         return;
+     }
+     ```
+     > **Note**
+     >
+     > When you connect to a Bluetooth server device, retrieve the server socket file descriptor (`bt_socket_connection_s->socket_fd`) in the callback and store it for later use. You need the file descriptor when sending data or disconnecting from the service.
 
   2. Request a connection to the Bluetooth server using the `bt_socket_connect_rfcomm()` function.
 
@@ -780,7 +791,6 @@ To perform GATT client operations:
 4. Discover the service, characteristics, and descriptors of the remote service:
 
    1. Discover the service:
-
       ```
       int ret = 0;
 
@@ -792,66 +802,66 @@ To perform GATT client operations:
       ```
 
    2. Use the `bt_gatt_client_foreach_svc_cb()` callback to initiate the service characteristics discovery:
-   ```
-    bool
-    __bt_gatt_client_foreach_svc_cb(int total, int index, bt_gatt_h svc_handle, void *data)
-    {
-        int ret;
-        char *uuid = NULL;
+      ```
+      bool
+      __bt_gatt_client_foreach_svc_cb(int total, int index, bt_gatt_h svc_handle, void *data)
+      {
+          int ret;
+          char *uuid = NULL;
 
-        bt_gatt_get_uuid(svc_handle, &uuid);
-        dlog_print(DLOG_INFO, LOG_TAG, "[%d / %d] uuid: (%s)", index, total, uuid);
+          bt_gatt_get_uuid(svc_handle, &uuid);
+          dlog_print(DLOG_INFO, LOG_TAG, "[%d / %d] uuid: (%s)", index, total, uuid);
 
-        g_free(uuid);
+          g_free(uuid);
 
-        ret = bt_gatt_service_foreach_characteristics(svc_handle,
-                                                      __bt_gatt_client_foreach_chr_cb, NULL);
-        if (ret != BT_ERROR_NONE)
-            dlog_print(DLOG_INFO, LOG_TAG, "bt_gatt_service_foreach_characteristics failed: %d", ret);
+          ret = bt_gatt_service_foreach_characteristics(svc_handle,
+                                                        __bt_gatt_client_foreach_chr_cb, NULL);
+          if (ret != BT_ERROR_NONE)
+              dlog_print(DLOG_INFO, LOG_TAG, "bt_gatt_service_foreach_characteristics failed: %d", ret);
 
-        return true;
-    }
-   ```
+          return true;
+      }
+      ```
 
    3. Use the `bt_gatt_client_foreach_chr_cb()` callback to discover the characteristic descriptors:
-   ```
-    bool
-    __bt_gatt_client_foreach_chr_cb(int total, int index, bt_gatt_h chr_handle, void *data)
-    {
-        int ret;
-        char *uuid = NULL;
+      ```
+      bool
+      __bt_gatt_client_foreach_chr_cb(int total, int index, bt_gatt_h chr_handle, void *data)
+      {
+          int ret;
+          char *uuid = NULL;
 
-        bt_gatt_get_uuid(chr_handle, &uuid);
+          bt_gatt_get_uuid(chr_handle, &uuid);
 
-        dlog_print(DLOG_INFO, LOG_TAG, "\t[%d / %d] uuid: (%s)", index, total, uuid);
+          dlog_print(DLOG_INFO, LOG_TAG, "\t[%d / %d] uuid: (%s)", index, total, uuid);
 
-        g_free(uuid);
+          g_free(uuid);
 
-        ret = bt_gatt_characteristic_foreach_descriptors(chr_handle,
-                                                         __bt_gatt_client_foreach_desc_cb, NULL);
-        if (ret != BT_ERROR_NONE)
-            dlog_print(DLOG_INFO, LOG_TAG, "bt_gatt_characteristic_foreach_descriptors failed: %d", ret);
+          ret = bt_gatt_characteristic_foreach_descriptors(chr_handle,
+                                                           __bt_gatt_client_foreach_desc_cb, NULL);
+          if (ret != BT_ERROR_NONE)
+              dlog_print(DLOG_INFO, LOG_TAG, "bt_gatt_characteristic_foreach_descriptors failed: %d", ret);
 
-        return true;
-    }
-   ```
+          return true;
+      }
+      ```
 
    4. Use the `bt_gatt_client_foreach_desc_cb()` callback to get the descriptor data:
-   ```
-    bool
-    __bt_gatt_client_foreach_desc_cb(int total, int index, bt_gatt_h desc_handle, void *data)
-    {
-        char *uuid = NULL;
+      ```
+      bool
+      __bt_gatt_client_foreach_desc_cb(int total, int index, bt_gatt_h desc_handle, void *data)
+      {
+          char *uuid = NULL;
 
-        bt_gatt_get_uuid(desc_handle, &uuid);
+          bt_gatt_get_uuid(desc_handle, &uuid);
 
-        dlog_print(DLOG_INFO, LOG_TAG, "\t\t[%d / %d] uuid: (%s)", index, total, uuid);
+          dlog_print(DLOG_INFO, LOG_TAG, "\t\t[%d / %d] uuid: (%s)", index, total, uuid);
 
-        g_free(uuid);
+          g_free(uuid);
 
-        return true;
-    }
-   ```
+          return true;
+      }
+      ```
 
 5. Read the value of the given attribute handle:
 
@@ -1731,7 +1741,8 @@ To discover nearby LE devices, perform an LE scan operation:
 
 Perform the LE discovery operation to discover nearby Bluetooth LE devices. You can register and deregister a callback for the LE discovery operation through the set and unset callback functions. The registered device discovery callback provides details of the discovered devices and the state of the discovery (started, finished, found).
 
-> **Note**  
+> **Note**
+>
 > The APIs used in this use case are deprecated since Tizen 2.3.1. For scanning nearby BLE devices in Tizen 2.3.1 and higher, see [Managing Bluetooth LE Scans](#le_scan).
 
 To start the BLE discovery operation:

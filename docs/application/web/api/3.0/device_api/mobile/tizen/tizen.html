@@ -1,0 +1,1462 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Tizen API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Tizen">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="title"><h1>Tizen API</h1></div>
+<div class="brief">
+ This API provides common Tizen functionality.
+        </div>
+<div class="description">
+        <p>
+The API provides the basic definitions that are used in the Tizen Web Device API.
+These include generic callbacks that are invoked when the operations succeed or fail,
+WebAPIError and WebAPIException that give information of the platform's error and
+filter interfaces that are used to make query statements for searching.
+        </p>
+        <p>
+Additionally, this API specifies the location in the ECMAScript hierarchy in which
+the Tizen Web Device API is instantiated (<em>window.tizen</em>).
+        </p>
+        <p>
+For more information on the Tizen features, see <a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/data-filtering-and-sorting">Data Filtering and Sorting Guide</a> or <a href="https://developer.tizen.org/development/guides/web-application/error-handling">Error Handling Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>1.1. <a href="#FilterMatchFlag">FilterMatchFlag</a>
+</li>
+<li>1.2. <a href="#SortModeOrder">SortModeOrder</a>
+</li>
+<li>1.3. <a href="#CompositeFilterType">CompositeFilterType</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#TizenObject">TizenObject</a>
+</li>
+<li>2.2. <a href="#Tizen">Tizen</a>
+</li>
+<li>2.3. <a href="#AbstractFilter">AbstractFilter</a>
+</li>
+<li>2.4. <a href="#AttributeFilter">AttributeFilter</a>
+</li>
+<li>2.5. <a href="#AttributeRangeFilter">AttributeRangeFilter</a>
+</li>
+<li>2.6. <a href="#CompositeFilter">CompositeFilter</a>
+</li>
+<li>2.7. <a href="#SortMode">SortMode</a>
+</li>
+<li>2.8. <a href="#SimpleCoordinates">SimpleCoordinates</a>
+</li>
+<li>2.9. <a href="#WebAPIException">WebAPIException</a>
+</li>
+<li>2.10. <a href="#WebAPIError">WebAPIError</a>
+</li>
+<li>2.11. <a href="#SuccessCallback">SuccessCallback</a>
+</li>
+<li>2.12. <a href="#ErrorCallback">ErrorCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#TizenObject">TizenObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Tizen">Tizen</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#AbstractFilter">AbstractFilter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#AttributeFilter">AttributeFilter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#AttributeRangeFilter">AttributeRangeFilter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#CompositeFilter">CompositeFilter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SortMode">SortMode</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SimpleCoordinates">SimpleCoordinates</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#WebAPIException">WebAPIException</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#WebAPIError">WebAPIError</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SuccessCallback">SuccessCallback</a></td>
+<td>void <a href="#SuccessCallback::onsuccess">onsuccess</a> ()</td>
+</tr>
+<tr>
+<td><a href="#ErrorCallback">ErrorCallback</a></td>
+<td>void <a href="#ErrorCallback::onerror">onerror</a> (<a href="#WebAPIError">WebAPIError</a> error)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="FilterMatchFlag">
+<a class="backward-compatibility-anchor" name="::Tizen::FilterMatchFlag"></a><h3>1.1. FilterMatchFlag</h3>
+<div class="brief">
+ Filter match flags.
+          </div>
+<pre class="webidl prettyprint">  enum FilterMatchFlag { "EXACTLY", "FULLSTRING", "CONTAINS", "STARTSWITH", "ENDSWITH", "EXISTS" };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+These values are supported:
+          </p>
+          <ul>
+            <li>
+EXACTLY - Indicates that an attribute value should match exactly with the specified default value.
+For strings, this type of comparison is case-sensitive.            </li>
+            <li>
+FULLSTRING - Indicates String-based comparison and that the attribute value should match the whole string (case insensitive).            </li>
+            <li>
+CONTAINS - Indicates that an attribute value should contain the specified string. This type of comparison works only on strings and is case insensitive.            </li>
+            <li>
+STARTSWITH - Indicates that an attribute value should start with the specified string.
+This type of comparison works only on strings and is case insensitive.            </li>
+            <li>
+ENDSWITH - Indicates that an attribute value should end with the specified string. This type of comparison works only on strings and is case insensitive.            </li>
+            <li>
+EXISTS - Indicates that a filter comparison should match if the specified attribute exists.            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="SortModeOrder">
+<a class="backward-compatibility-anchor" name="::Tizen::SortModeOrder"></a><h3>1.2. SortModeOrder</h3>
+<div class="brief">
+ An enumerator that indicates the sorting order.
+          </div>
+<pre class="webidl prettyprint">  enum SortModeOrder { "ASC", "DESC" };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+ASC - Indicates that the sorting order is ascending            </li>
+            <li>
+DESC - Indicates that the sorting order is descending            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="CompositeFilterType">
+<a class="backward-compatibility-anchor" name="::Tizen::CompositeFilterType"></a><h3>1.3. CompositeFilterType</h3>
+<div class="brief">
+ An enumerator that indicates the type of composite filter.
+          </div>
+<pre class="webidl prettyprint">  enum CompositeFilterType { "UNION", "INTERSECTION" };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+The following values are supported:
+          </p>
+          <ul>
+            <li>
+UNION - Indicates that the composite is a union of filters ("OR" operator)            </li>
+            <li>
+INTERSECTION - Indicates that the composite is an intersection of filters ("AND" operator)            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="TizenObject">
+<a class="backward-compatibility-anchor" name="::Tizen::TizenObject"></a><h3>2.1. TizenObject</h3>
+<div class="brief">
+ Defines the tizen interface as a part of the window global object.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TizenObject {
+    readonly attribute <a href="#Tizen">Tizen</a> tizen;
+  };</pre>
+<pre class="webidl prettyprint">  Window implements <a href="#TizenObject">TizenObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+The <em>Tizen</em> interface is always available within the <em>Window </em>object in the ECMAScript hierarchy.
+          </p>
+         </div>
+</div>
+<div class="interface" id="Tizen">
+<a class="backward-compatibility-anchor" name="::Tizen::Tizen"></a><h3>2.2. Tizen</h3>
+<div class="brief">
+ The root of the Tizen Web Device API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Tizen {
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+This is the Tizen root interface.
+It is a property of the ECMAScript global object, as specified by the <em>TizenObject</em> interface.
+          </p>
+         </div>
+</div>
+<div class="interface" id="AbstractFilter">
+<a class="backward-compatibility-anchor" name="::Tizen::AbstractFilter"></a><h3>2.3. AbstractFilter</h3>
+<div class="brief">
+ This is a common interface used by different types of
+object filters.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface AbstractFilter {
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+Never use this base interface directly, instead use <em>AbstractFilter</em> subtypes,
+such as <em>AttributeFilter</em>, <em>AttributeRangeFilter</em>, and <em>CompositeFilter</em>.
+          </p>
+         </div>
+</div>
+<div class="interface" id="AttributeFilter">
+<a class="backward-compatibility-anchor" name="::Tizen::AttributeFilter"></a><h3>2.4. AttributeFilter</h3>
+<div class="brief">
+ This interface represents a set of filters.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString attributeName, optional <a href="#FilterMatchFlag">FilterMatchFlag</a>? matchFlag, optional any matchValue)]
+  interface AttributeFilter : <a href="#AbstractFilter">AbstractFilter</a> {
+    attribute DOMString attributeName;
+
+    attribute <a href="#FilterMatchFlag">FilterMatchFlag</a> matchFlag setraises(<a href="#WebAPIException">WebAPIException</a>);
+
+    attribute any matchValue;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+It represents the query statement for the specified value of <em>matchValue</em> by the rule of <em>matchFlag</em>.
+          </p>
+          <p>
+If no <em>matchValue</em> is defined, the filter matches all objects that have the attribute
+defined (same as the "EXISTS" filter works), otherwise, it only matches objects which have an attribute that match
+the specified value.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Following example retrieves all songs from the album "The Joshua Tree" */
+var count = 100;
+var offset = 0;
+var albumFilter = new tizen.AttributeFilter("album", "EXACTLY", "The Joshua Tree");
+
+function errorCB(err)
+{
+   console.log('The following error occurred: ' +  err.name);
+}
+
+function findCB(contents)
+{
+   console.log('The Joshua Tree:' + contents.length);
+}
+
+tizen.content.find(findCB, errorCB, null, albumFilter, null, count, offset);
+</pre>
+</div>
+        
+      <div class="constructors">
+<h4 id="AttributeFilter::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">AttributeFilter(DOMString attributeName, optional <a href="#FilterMatchFlag">FilterMatchFlag</a>? matchFlag, optional any matchValue);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="AttributeFilter::attributeName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">attributeName</span></span><div class="brief">
+ The name of the object attribute used for filtering.
+            </div>
+<div class="description">
+            <p>
+This is the name of the object attribute exactly as it is defined in
+the object's interface. For attributes of complex type, use fully-qualified names
+(such as 'geolocation.latitude' to filter a video or image content's latitude in a geolocation).
+            </p>
+            <p>
+For attributes of an array type, the filter will match if any value in the array
+matches.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="AttributeFilter::matchFlag">
+<span class="attrName"><span class="type">FilterMatchFlag </span><span class="name">matchFlag</span></span><div class="brief">
+ The match flag used for attribute-based filtering.
+            </div>
+<div class="description">
+            <p>
+By default, this attribute is set to "EXACTLY".
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="AttributeFilter::matchValue">
+<span class="attrName"><span class="type">any </span><span class="name">matchValue</span></span><div class="brief">
+ The value used for matching.
+            </div>
+<div class="description">
+            <p>
+The filter will match if the attribute value matches the given matchValue.
+            </p>
+            <p>
+This value is not used if the <em>matchFlag</em> is set to "EXISTS".
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="AttributeRangeFilter">
+<a class="backward-compatibility-anchor" name="::Tizen::AttributeRangeFilter"></a><h3>2.5. AttributeRangeFilter</h3>
+<div class="brief">
+ <em>AttributeRangeFilter</em> represents a filter based on an object attribute
+which has values that are within a particular range.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString attributeName, optional any initialValue, optional any endValue)]
+  interface AttributeRangeFilter : <a href="#AbstractFilter">AbstractFilter</a> {
+    attribute DOMString attributeName;
+
+    attribute any initialValue;
+
+    attribute any endValue;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+Range filters, where only one boundary is set, are available.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var count = 100;
+var offset = 0;
+/*
+   Use the modifiedDate attribute with a range that starts today and ends in 1 day
+   (meaning that you search for all contents modified today)
+*/
+var today = new Date();
+var today_begin = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+var today_end = new Date(today.getFullYear(), today.getMonth(), today.getDate()+1);
+var dateRangeFilter = new tizen.AttributeRangeFilter("modifiedDate", today_begin, today_end);
+
+function errorCB(err)
+{
+   console.log('The following error occurred: ' +  err.name);
+}
+
+function findCB(contents)
+{
+   console.log('The contents modified today:' + contents.length);
+}
+
+tizen.content.find(findCB, errorCB, null, dateRangeFilter, null, count, offset);
+</pre>
+</div>
+        
+      <div class="constructors">
+<h4 id="AttributeRangeFilter::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">AttributeRangeFilter(DOMString attributeName, optional any initialValue, optional any endValue);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="AttributeRangeFilter::attributeName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">attributeName</span></span><div class="brief">
+ The name of the object attribute used for filtering.
+            </div>
+<div class="description">
+            <p>
+The value of this attribute is exactly as it is defined in the object's interface. For attributes of complex type, use fully-qualified names
+(such as 'geolocation.latitude' to filter a video or image content's latitude in a geolocation).
+            </p>
+            <p>
+For attributes of array type, the filter will match if any value in the array
+matches.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="AttributeRangeFilter::initialValue">
+<span class="attrName"><span class="type">any </span><span class="name">initialValue</span></span><div class="brief">
+ Objects with an attribute that is greater than or equal to <em>initialValue</em> will match.
+            </div>
+<div class="description">
+            <p>
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="AttributeRangeFilter::endValue">
+<span class="attrName"><span class="type">any </span><span class="name">endValue</span></span><div class="brief">
+ Objects with an attribute that is strictly lower than or equal to <em>endValue</em> will match.
+            </div>
+<div class="description">
+            <p>
+By default, this attribute is set to <var>null</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="CompositeFilter">
+<a class="backward-compatibility-anchor" name="::Tizen::CompositeFilter"></a><h3>2.6. CompositeFilter</h3>
+<div class="brief">
+ <em>CompositeFilter</em> represents a set of filters.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(<a href="#CompositeFilterType">CompositeFilterType</a> type, optional <a href="#AbstractFilter">AbstractFilter</a>[]? filters)]
+  interface CompositeFilter : <a href="#AbstractFilter">AbstractFilter</a> {
+
+    attribute <a href="#CompositeFilterType">CompositeFilterType</a> type;
+
+    attribute <a href="#AbstractFilter">AbstractFilter</a>[] filters;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+The composite filters can be one of the following 2 types:
+          </p>
+          <ul>
+            <li>
+The union - used to filter objects that match any of the filters it includes.            </li>
+            <li>
+The intersection - used to filter objects that match all the filters it includes.            </li>
+          </ul>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Following example retrieves all songs from the album "The Joshua Tree", by artist "U2" */
+var count = 100;
+var offset = 0;
+var artistFilter = new tizen.AttributeFilter("artists", "EXACTLY", "U2");
+var albumFilter = new tizen.AttributeFilter("album", "EXACTLY", "The Joshua Tree");
+var filter = new tizen.CompositeFilter("INTERSECTION", [albumFilter, artistFilter]);
+
+function errorCB(err)
+{
+   console.log('The following error occurred: ' +  err.name);
+}
+
+function findCB(contents)
+{
+   console.log('The Joshua Tree by U2:' + contents.length);
+}
+
+tizen.content.find(findCB, errorCB, null, filter, null, count, offset);
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Following example retrieves all songs from the album "Tormato" and all songs by artist "Rush" */
+var count = 100;
+var offset = 0;
+var artistFilter = new tizen.AttributeFilter("artists", "EXACTLY", "Rush");
+var albumFilter = new tizen.AttributeFilter("album", "EXACTLY", "Tormato");
+var filter = new tizen.CompositeFilter("UNION", [albumFilter, artistFilter]);
+
+function errorCB(err)
+{
+   console.log('The following error occurred: ' +  err.name);
+}
+
+function findCB(contents)
+{
+   console.log('Songs found:' + contents.length);
+}
+
+tizen.content.find(findCB, errorCB, null, filter, null, count, offset);
+</pre>
+</div>
+        
+      <div class="constructors">
+<h4 id="CompositeFilter::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">CompositeFilter(<a href="#CompositeFilterType">CompositeFilterType</a> type, optional <a href="#AbstractFilter">AbstractFilter</a>[]? filters);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="CompositeFilter::type">
+<span class="attrName"><span class="type">CompositeFilterType </span><span class="name">type</span></span><div class="brief">
+ The composite filter type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="CompositeFilter::filters">
+<span class="attrName"><span class="type">AbstractFilter[]
+                      </span><span class="name">filters</span></span><div class="brief">
+ The list of filters in the composite filter.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SortMode">
+<a class="backward-compatibility-anchor" name="::Tizen::SortMode"></a><h3>2.7. SortMode</h3>
+<div class="brief">
+ <em>SortMode</em> is a common interface used for sorting of queried data.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString attributeName, optional <a href="#SortModeOrder">SortModeOrder</a>? order)]
+  interface SortMode {
+    attribute DOMString attributeName;
+
+    attribute <a href="#SortModeOrder">SortModeOrder</a> order setraises(<a href="#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+Note that the sorting result of list type attributes is not determined.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Following example retrieves all songs from the album "The Joshua Tree", by artist "U2", ordered by the track number */
+var count = 100;
+var offset = 0;
+var sortMode = new tizen.SortMode("trackNumber", "ASC");
+var artistFilter = new tizen.AttributeFilter("artists", "EXACTLY", "U2");
+var albumFilter = new tizen.AttributeFilter("album", "EXACTLY", "The Joshua Tree");
+var filter = new tizen.CompositeFilter("INTERSECTION", [albumFilter, artistFilter]);
+
+function errorCB(err)
+{
+   console.log('The following error occurred: ' +  err.name);
+}
+
+function printContent(content, index, contents)
+{
+   console.log('Track: ' + content.trackNumber + ' Title: ' + content.title + 'Duration: ' + content.duration + 
+               'URL: ' + content.contentURI + 'MIME: ' + content.mimeType);
+}
+
+function findCB(contents)
+{
+   console.log('The Joshua Tree by U2:');
+   contents.forEach(printContent);
+   /* Increase the offset as much as the count and then find content again */
+   if (contents.length == count)
+   {
+      offset += count;
+      tizen.content.find(findCB, errorCB, null, filter, sortMode, count, offset);
+   }
+}
+
+tizen.content.find(findCB, errorCB, null, filter, sortMode, count, offset);
+</pre>
+</div>
+<div class="constructors">
+<h4 id="SortMode::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">SortMode(DOMString attributeName, optional <a href="#SortModeOrder">SortModeOrder</a>? order);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SortMode::attributeName">
+<span class="attrName"><span class="type">DOMString </span><span class="name">attributeName</span></span><div class="brief">
+ The name of the object attribute used for sorting.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="SortMode::order">
+<span class="attrName"><span class="type">SortModeOrder </span><span class="name">order</span></span><div class="brief">
+ The type of the sorting.
+            </div>
+<div class="description">
+            <p>
+By default, this attribute is set to <var>ASC</var>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SimpleCoordinates">
+<a class="backward-compatibility-anchor" name="::Tizen::SimpleCoordinates"></a><h3>2.8. SimpleCoordinates</h3>
+<div class="brief">
+ <em>SimpleCoordinates</em> represents a point (latitude and longitude) in the map coordinate system.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(double latitude, double longitude)]
+  interface SimpleCoordinates {
+    attribute double latitude setraises(<a href="#WebAPIException">WebAPIException</a>);
+
+    attribute double longitude setraises(<a href="#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+Latitude and longitude are of the WGS84 datum.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* This example utilizes methods from Tizen's HAM module to get current latitude and longitude */
+var myPosition;
+
+/* Reads current position from the GPS module */
+function onChangedCB(info)
+{
+   var latitude, longitude;
+   latitude = info.gpsInfo[0].latitude;
+   longitude = info.gpsInfo[0].longitude;
+
+   /* Packs these values in one variable */
+   myPosition = new SimpleCoordinates(latitude, longitude);
+}
+
+/* Starts monitoring GPS info periodically */
+try
+{
+   tizen.humanactivitymonitor.start("GPS", onChangedCB, {callbackInterval: 120000, sampleInterval: 60000});
+}
+catch (err)
+{
+   console.log(err.name + ": " + err.message);
+}
+</pre>
+</div>
+<div class="constructors">
+<h4 id="SimpleCoordinates::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">SimpleCoordinates(double latitude, double longitude);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SimpleCoordinates::latitude">
+<span class="attrName"><span class="type">double </span><span class="name">latitude</span></span><div class="brief">
+ Latitude.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+<li class="attribute" id="SimpleCoordinates::longitude">
+<span class="attrName"><span class="type">double </span><span class="name">longitude</span></span><div class="brief">
+ Longitude.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="WebAPIException">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException"></a><h3>2.9. WebAPIException</h3>
+<div class="brief">
+ Generic exception interface.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject]
+  interface WebAPIException {
+    readonly attribute unsigned short code;
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString message;
+
+    const unsigned short INDEX_SIZE_ERR = 1;
+    const unsigned short DOMSTRING_SIZE_ERR = 2; 
+    const unsigned short HIERARCHY_REQUEST_ERR = 3;
+    const unsigned short WRONG_DOCUMENT_ERR = 4;
+    const unsigned short INVALID_CHARACTER_ERR = 5;
+    const unsigned short NO_DATA_ALLOWED_ERR = 6; 
+    const unsigned short NO_MODIFICATION_ALLOWED_ERR = 7;
+    const unsigned short NOT_FOUND_ERR = 8;
+    const unsigned short NOT_SUPPORTED_ERR = 9;
+    const unsigned short INUSE_ATTRIBUTE_ERR = 10; 
+    const unsigned short INVALID_STATE_ERR = 11;
+    const unsigned short SYNTAX_ERR = 12;
+    const unsigned short INVALID_MODIFICATION_ERR = 13;
+    const unsigned short NAMESPACE_ERR = 14;
+    const unsigned short INVALID_ACCESS_ERR = 15;
+    const unsigned short VALIDATION_ERR = 16; 
+    const unsigned short TYPE_MISMATCH_ERR = 17;
+    const unsigned short SECURITY_ERR = 18;
+    const unsigned short NETWORK_ERR = 19;
+    const unsigned short ABORT_ERR = 20;
+    const unsigned short URL_MISMATCH_ERR = 21;
+    const unsigned short QUOTA_EXCEEDED_ERR = 22;
+    const unsigned short TIMEOUT_ERR = 23;
+    const unsigned short INVALID_NODE_TYPE_ERR = 24;
+    const unsigned short DATA_CLONE_ERR = 25;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+This interface will be used by the APIs to throw errors synchronously.
+          </p>
+          <p>
+The attempt to set an attribute value may or may not raise WebAPIException synchronously with error type TypeMismatchError or InvalidValuesError.
+          </p>
+         </div>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="WebAPIException::INDEX_SIZE_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::INDEX_SIZE_ERR"></a><span class="name">INDEX_SIZE_ERR</span><div class="brief">
+ The index is not in the allowed range.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::DOMSTRING_SIZE_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::DOMSTRING_SIZE_ERR"></a><span class="name">DOMSTRING_SIZE_ERR</span><div class="brief">
+ The specified range of text is too large.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::HIERARCHY_REQUEST_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::HIERARCHY_REQUEST_ERR"></a><span class="name">HIERARCHY_REQUEST_ERR</span><div class="brief">
+ The operation would yield an incorrect node tree.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::WRONG_DOCUMENT_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::WRONG_DOCUMENT_ERR"></a><span class="name">WRONG_DOCUMENT_ERR</span><div class="brief">
+ The object is in the wrong document.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::INVALID_CHARACTER_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::INVALID_CHARACTER_ERR"></a><span class="name">INVALID_CHARACTER_ERR</span><div class="brief">
+ The string contains invalid characters.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::NO_DATA_ALLOWED_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::NO_DATA_ALLOWED_ERR"></a><span class="name">NO_DATA_ALLOWED_ERR</span><div class="brief">
+ Data is specified for a node that does not support data.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::NO_MODIFICATION_ALLOWED_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::NO_MODIFICATION_ALLOWED_ERR"></a><span class="name">NO_MODIFICATION_ALLOWED_ERR</span><div class="brief">
+ The object cannot be modified.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::NOT_FOUND_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::NOT_FOUND_ERR"></a><span class="name">NOT_FOUND_ERR</span><div class="brief">
+ The object cannot be found here.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::NOT_SUPPORTED_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::NOT_SUPPORTED_ERR"></a><span class="name">NOT_SUPPORTED_ERR</span><div class="brief">
+ The operation is not supported.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::INUSE_ATTRIBUTE_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::INUSE_ATTRIBUTE_ERR"></a><span class="name">INUSE_ATTRIBUTE_ERR</span><div class="brief">
+ The specified attribute is already in use elsewhere.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::INVALID_STATE_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::INVALID_STATE_ERR"></a><span class="name">INVALID_STATE_ERR</span><div class="brief">
+ The object is in an invalid state.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::SYNTAX_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::SYNTAX_ERR"></a><span class="name">SYNTAX_ERR</span><div class="brief">
+ The string did not match the expected pattern.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::INVALID_MODIFICATION_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::INVALID_MODIFICATION_ERR"></a><span class="name">INVALID_MODIFICATION_ERR</span><div class="brief">
+ The object cannot be modified in this way.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::NAMESPACE_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::NAMESPACE_ERR"></a><span class="name">NAMESPACE_ERR</span><div class="brief">
+ The operation is not allowed by Namespaces in XML.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::INVALID_ACCESS_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::INVALID_ACCESS_ERR"></a><span class="name">INVALID_ACCESS_ERR</span><div class="brief">
+ The object does not support the operation or argument.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::VALIDATION_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::VALIDATION_ERR"></a><span class="name">VALIDATION_ERR</span><div class="brief">
+ The operation would cause the node to fail validation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::TYPE_MISMATCH_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::TYPE_MISMATCH_ERR"></a><span class="name">TYPE_MISMATCH_ERR</span><div class="brief">
+ The type of the object does not match the expected type.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::SECURITY_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::SECURITY_ERR"></a><span class="name">SECURITY_ERR</span><div class="brief">
+ The operation is insecure.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::NETWORK_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::NETWORK_ERR"></a><span class="name">NETWORK_ERR</span><div class="brief">
+ A network error occurred.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::ABORT_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::ABORT_ERR"></a><span class="name">ABORT_ERR</span><div class="brief">
+ The operation has been aborted.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::URL_MISMATCH_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::URL_MISMATCH_ERR"></a><span class="name">URL_MISMATCH_ERR</span><div class="brief">
+ The given URL does not match another URL.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::QUOTA_EXCEEDED_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::QUOTA_EXCEEDED_ERR"></a><span class="name">QUOTA_EXCEEDED_ERR</span><div class="brief">
+ The quota has been exceeded.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::TIMEOUT_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::TIMEOUT_ERR"></a><span class="name">TIMEOUT_ERR</span><div class="brief">
+ The operation has timed out.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::INVALID_NODE_TYPE_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::INVALID_NODE_TYPE_ERR"></a><span class="name">INVALID_NODE_TYPE_ERR</span><div class="brief">
+ The supplied node is incorrect or has an incorrect ancestor for this operation.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+<li class="const" id="WebAPIException::DATA_CLONE_ERR">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException::DATA_CLONE_ERR"></a><span class="name">DATA_CLONE_ERR</span><div class="brief">
+ The object cannot be cloned.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="WebAPIException::code">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned short </span><span class="name">code</span></span><div class="brief">
+ 16-bit error code.
+            </div>
+<div class="description">
+            <p>
+For the possible values of this attribute, see <a href="http://www.w3.org/TR/dom/#domexception">DOMException</a>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="WebAPIException::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ An error type. The name attribute must return the value it had been initialized with.
+            </div>
+<div class="description">
+            <p>
+This attribute can have one of the following values:
+            </p>
+            <ul>
+              <li>
+UnknownError - An unknown error has occurred.              </li>
+              <li>
+InvalidValuesError - The content of an object does not contain valid values.              </li>
+              <li>
+IOError - An error occurred in communication with the underlying implementation and so the requested method cannot be completed.              </li>
+              <li>
+ServiceNotAvailableError - The requested service is not available.              </li>
+            </ul>
+            <p>
+For other possible values of this attribute, see the values defined in <a href="http://www.w3.org/TR/dom/#error-names-0">DOM error names</a>            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="WebAPIException::message">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">message</span></span><div class="brief">
+ An error message that describes the details of an encountered error.
+            </div>
+<div class="description">
+            <p>
+This attribute is mainly intended to be used for developers rather than end users, so it should not be used directly in the user interfaces as it is.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="WebAPIError">
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIError"></a><h3>2.10. WebAPIError</h3>
+<div class="brief">
+ Generic error interface.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject]
+  interface WebAPIError {
+    readonly attribute unsigned short code;
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString message;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.0
+          </p>
+<div class="description">
+          <p>
+This interface will be used by the APIs in order to return them in the error callback of asynchronous methods.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="WebAPIError::code">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned short </span><span class="name">code</span></span><div class="brief">
+ 16-bit error code.
+            </div>
+<div class="description">
+            <p>
+Possible values are defined in <a href="http://www.w3.org/TR/dom/#domexception">DOMException</a>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="WebAPIError::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ An error type. The name attribute must return the value it had been initialized with.
+            </div>
+<div class="description">
+            <p>
+This attribute can have one of the following values:
+            </p>
+            <ul>
+              <li>
+UnknownError - An unknown error has occurred.              </li>
+              <li>
+InvalidValuesError - The content of an object does not contain valid values.              </li>
+              <li>
+IOError - An error occurred in communication with the underlying implementation and so the requested method cannot be completed.              </li>
+              <li>
+ServiceNotAvailableError - The requested service is not available.              </li>
+            </ul>
+            <p>
+For other possible values of this attribute, see the values defined in <a href="http://www.w3.org/TR/dom/#error-names-0">DOM error names</a>            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+<li class="attribute" id="WebAPIError::message">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">message</span></span><div class="brief">
+ An error message that describes the details of the error encountered.
+            </div>
+<div class="description">
+            <p>
+This attribute is not intended to be used directly in the user interfaces
+as it is mainly intended to be useful for developers rather than end users.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="SuccessCallback">
+<a class="backward-compatibility-anchor" name="::Tizen::SuccessCallback"></a><h3>2.11. SuccessCallback</h3>
+<div class="brief">
+ This interface is used in methods that do not require any return value in the success callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface SuccessCallback {
+    void onsuccess ();
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+In case of successful execution of an asynchronous call, <em>SuccessCallback</em> or an API defined callback must be called immediately to notify the user.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+function onSuccess()
+{
+   console.log("Application launched successfully");
+}
+
+var app = tizen.application.getCurrentApplication();
+var appid = app.appInfo.id;
+
+tizen.application.launch(appid, onSuccess);
+</pre>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Tizen::SuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method invoked when the asynchronous call completes successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ErrorCallback">
+<a class="backward-compatibility-anchor" name="::Tizen::ErrorCallback"></a><h3>2.12. ErrorCallback</h3>
+<div class="brief">
+ This interface is used in methods that require only an error as an input parameter in the error callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface ErrorCallback {
+
+    void onerror (<a href="#WebAPIError">WebAPIError</a> error);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 1.0
+          </p>
+<div class="description">
+          <p>
+If an invalid function (such as null) is passed to the API that accepts ErrorCallback,
+it silently fails and there is no further action.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+/* Define the error callback */
+function onError(error)
+{
+   console.log(error.message);
+}
+
+function onSuccess()
+{
+   console.log("Application launched successfully");
+}
+
+var app = tizen.application.getCurrentApplication();
+var appid = app.appInfo.id;
+
+tizen.application.launch(appid, onSuccess, onError);
+</pre>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ErrorCallback::onerror">
+<a class="backward-compatibility-anchor" name="::Tizen::ErrorCallback::onerror"></a><code><b><span class="methodName">onerror</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Method that is invoked when an error occurs.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#WebAPIError">WebAPIError</a> error);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 1.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">error</span>: 
+ Generic error.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Tizen {
+  enum FilterMatchFlag { "EXACTLY", "FULLSTRING", "CONTAINS", "STARTSWITH", "ENDSWITH", "EXISTS" };
+
+  enum SortModeOrder { "ASC", "DESC" };
+
+  enum CompositeFilterType { "UNION", "INTERSECTION" };
+
+  [NoInterfaceObject] interface TizenObject {
+    readonly attribute <a href="#Tizen">Tizen</a> tizen;
+  };
+  Window implements <a href="#TizenObject">TizenObject</a>;
+
+  [NoInterfaceObject] interface Tizen {
+  };
+
+  [NoInterfaceObject] interface AbstractFilter {
+  };
+
+  [Constructor(DOMString attributeName, optional <a href="#FilterMatchFlag">FilterMatchFlag</a>? matchFlag, optional any matchValue)]
+  interface AttributeFilter : <a href="#AbstractFilter">AbstractFilter</a> {
+    attribute DOMString attributeName;
+
+    attribute <a href="#FilterMatchFlag">FilterMatchFlag</a> matchFlag setraises(<a href="#WebAPIException">WebAPIException</a>);
+
+    attribute any matchValue;
+  };
+
+  [Constructor(DOMString attributeName, optional any initialValue, optional any endValue)]
+  interface AttributeRangeFilter : <a href="#AbstractFilter">AbstractFilter</a> {
+    attribute DOMString attributeName;
+
+    attribute any initialValue;
+
+    attribute any endValue;
+  };
+
+  [Constructor(<a href="#CompositeFilterType">CompositeFilterType</a> type, optional <a href="#AbstractFilter">AbstractFilter</a>[]? filters)]
+  interface CompositeFilter : <a href="#AbstractFilter">AbstractFilter</a> {
+
+    attribute <a href="#CompositeFilterType">CompositeFilterType</a> type;
+
+    attribute <a href="#AbstractFilter">AbstractFilter</a>[] filters;
+  };
+
+  [Constructor(DOMString attributeName, optional <a href="#SortModeOrder">SortModeOrder</a>? order)]
+  interface SortMode {
+    attribute DOMString attributeName;
+
+    attribute <a href="#SortModeOrder">SortModeOrder</a> order setraises(<a href="#WebAPIException">WebAPIException</a>);
+  };
+
+  [Constructor(double latitude, double longitude)]
+  interface SimpleCoordinates {
+    attribute double latitude setraises(<a href="#WebAPIException">WebAPIException</a>);
+
+    attribute double longitude setraises(<a href="#WebAPIException">WebAPIException</a>);
+  };
+
+  [NoInterfaceObject]
+  interface WebAPIException {
+    readonly attribute unsigned short code;
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString message;
+
+    const unsigned short INDEX_SIZE_ERR = 1;
+    const unsigned short DOMSTRING_SIZE_ERR = 2; 
+    const unsigned short HIERARCHY_REQUEST_ERR = 3;
+    const unsigned short WRONG_DOCUMENT_ERR = 4;
+    const unsigned short INVALID_CHARACTER_ERR = 5;
+    const unsigned short NO_DATA_ALLOWED_ERR = 6; 
+    const unsigned short NO_MODIFICATION_ALLOWED_ERR = 7;
+    const unsigned short NOT_FOUND_ERR = 8;
+    const unsigned short NOT_SUPPORTED_ERR = 9;
+    const unsigned short INUSE_ATTRIBUTE_ERR = 10; 
+    const unsigned short INVALID_STATE_ERR = 11;
+    const unsigned short SYNTAX_ERR = 12;
+    const unsigned short INVALID_MODIFICATION_ERR = 13;
+    const unsigned short NAMESPACE_ERR = 14;
+    const unsigned short INVALID_ACCESS_ERR = 15;
+    const unsigned short VALIDATION_ERR = 16; 
+    const unsigned short TYPE_MISMATCH_ERR = 17;
+    const unsigned short SECURITY_ERR = 18;
+    const unsigned short NETWORK_ERR = 19;
+    const unsigned short ABORT_ERR = 20;
+    const unsigned short URL_MISMATCH_ERR = 21;
+    const unsigned short QUOTA_EXCEEDED_ERR = 22;
+    const unsigned short TIMEOUT_ERR = 23;
+    const unsigned short INVALID_NODE_TYPE_ERR = 24;
+    const unsigned short DATA_CLONE_ERR = 25;
+  };
+
+  [NoInterfaceObject]
+  interface WebAPIError {
+    readonly attribute unsigned short code;
+
+    readonly attribute DOMString name;
+
+    readonly attribute DOMString message;
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface SuccessCallback {
+    void onsuccess ();
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface ErrorCallback {
+
+    void onerror (<a href="#WebAPIError">WebAPIError</a> error);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -182,8 +182,7 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 
         ```
         Log.Info(Globals.LogTag, "Iccid = " + _sim.IccId);
-
-     ```
+        ```
 
 -   Monitor SIM state changes:
     1.  To receive SIM state change notifications asynchronously, register a callback with the `SetNotificationId()` method of the [Tizen.Telephony.SlotHandle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.SlotHandle.html) class.

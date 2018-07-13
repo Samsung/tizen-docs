@@ -8,7 +8,7 @@ The main features of the Call History API include:
 
 - Call history tracking   
 
-  You can [search and store data about all incoming and outgoing calls](#searching-for-call-history-items) using the [CallHistory](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistory) interface. The retrieved data is displayed as a list using the [CallHistoryEntry](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) interface.
+  You can [search and store data about all incoming and outgoing calls](#searching-for-call-history-items) using the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface. The retrieved data is displayed as a list using the [CallHistoryEntry](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) interface.
 
 - Call history item deletion   
 
@@ -16,11 +16,11 @@ The main features of the Call History API include:
 
 - Change monitoring   
 
-  You can register event listeners to [monitor changes in the call history](#monitoring-the-call-history) using the [CallHistoryChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryChangeCallback) listener interface.
+  You can register event listeners to [monitor changes in the call history](#monitoring-the-call-history) using the [CallHistoryChangeCallback](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryChangeCallback) listener interface.
 
 ## Prerequisites
 
-To use the [Call History](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the [Call History](../../api/latest/device_api/mobile/tizen/callhistory.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/callhistory.read"/>
@@ -31,7 +31,8 @@ To use the [Call History](../../../../org.tizen.web.apireference/html/device_api
 
 Learning how to retrieve call history items using different parameters allows you to view specific items in a specific order, making call history monitoring easy and convenient.
 
-1. To retrieve call history items, use the `find(successCallback, errorCallback, filter, sortMode, limit, offset)` method of the [CallHistory](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistory) interface. This method is asynchronous, and the result of the query is an array of [CallHistoryEntry](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) objects.
+1. To retrieve call history items, use the `find(successCallback, errorCallback, filter, sortMode, limit, offset)` method of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface.  
+  This method is asynchronous, and the result of the query is an array of [CallHistoryEntry](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) objects.
 
    ```
    tizen.callhistory.find(onSuccess, onError, ifilter, sortMode, 20, 10);
@@ -69,7 +70,7 @@ Learning how to retrieve call history items using different parameters allows yo
      var numberFilter = new tizen.AttributeFilter('remoteParties.remoteParty', 'EXACTLY', '123456789');
      ```
 
-   -  The `CompositeFilter` type represents a set of filters. The `UNION` type composite filter matches any object that is matched by any of its filters; the `INTERSECTION` type composite filter matches all objects that are matched by all its filters.
+   - The `CompositeFilter` type represents a set of filters. The `UNION` type composite filter matches any object that is matched by any of its filters; the `INTERSECTION` type composite filter matches all objects that are matched by all its filters.
 
      For example, the following code snippet defines a set of filters that include in the query results only the video calls where the remote party has the telephone number 123456789 and the call has started during the year 2009 or 2011:
 
@@ -111,47 +112,47 @@ Learning how to retrieve call history items using different parameters allows yo
 
 Learning how to remove call history items allows you to keep the call history list organized and save storage space on the device:
 
-1.  Use the `remove()` method of the [CallHistory](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistory) interface to remove a specific item from the call history. First, search for the entry to be removed with the `find()` method, and then handle the removal in the event handler that is called when the `find()` method is successful.
+1.  Use the `remove()` method of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface to remove a specific item from the call history. First, search for the entry to be removed with the `find()` method, and then handle the removal in the event handler that is called when the `find()` method is successful.
 
-   ```
-   /* Remove the found call history item */
-   function onSuccess(results) {
-       if (results.length > 0)
-           tizen.callhistory.remove(results[0]);
-   }
+    ```
+    /* Remove the found call history item */
+    function onSuccess(results) {
+        if (results.length > 0)
+            tizen.callhistory.remove(results[0]);
+    }
 
-   var numberFilter = new tizen.AttributeFilter('remoteParties.remoteParty',
-                                                'EXACTLY', '123456789');
-   /* Search for the item to be removed */
-   tizen.callhistory.find(onSuccess, onError, numberFilter, null, 1);
-   ```
+    var numberFilter = new tizen.AttributeFilter('remoteParties.remoteParty',
+                                                 'EXACTLY', '123456789');
+    /* Search for the item to be removed */
+    tizen.callhistory.find(onSuccess, onError, numberFilter, null, 1);
+    ```
 
 2.  To remove multiple call history items, use the `removeBatch()` method.
 
-   The `removeBatch()` method functions similarly as the `remove()` method, except that it removes a list of call history items instead of a single item:
+    The `removeBatch()` method functions similarly as the `remove()` method, except that it removes a list of call history items instead of a single item:
 
-   ```
-   /* Define success callback */
-   function onSuccess(results) {
-       tizen.callhistory.removeBatch(results);
-   }
+    ```
+    /* Define success callback */
+    function onSuccess(results) {
+        tizen.callhistory.removeBatch(results);
+    }
 
-   var numberFilter = new tizen.AttributeFilter('remoteParties.remoteParty',
-                                                'EXACTLY', '123456789');
-   tizen.callhistory.find(onSuccess, onError, numberFilter);
-   ```
+    var numberFilter = new tizen.AttributeFilter('remoteParties.remoteParty',
+                                                 'EXACTLY', '123456789');
+    tizen.callhistory.find(onSuccess, onError, numberFilter);
+    ```
 
 3.  To remove all call history items, use the `removeAll()` method:
 
-   ```
-   tizen.callhistory.removeAll();
-   ```
+    ```
+    tizen.callhistory.removeAll();
+    ```
 
 ## Monitoring the Call History
 
 Learning how to register change listeners allows you to synchronize the view of your application to changes in the call history database.
 
-1. Define the `onadded` event handler of the [CallHistoryChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryChangeCallback) listener interface, which tracks all new incoming and outgoing calls that are added to the call history.
+1. Define the `onadded` event handler of the [CallHistoryChangeCallback](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryChangeCallback) listener interface, which tracks all new incoming and outgoing calls that are added to the call history.
 
    ```
    var onHistoryChange = {
@@ -164,7 +165,7 @@ Learning how to register change listeners allows you to synchronize the view of 
 
 2. Define the `onchanged` event handler, which tracks all changes in the call history.
 
-   The event handler receives as an argument an array of [CallHistoryEntry](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) instances, which represent the changed items in the call history.
+   The event handler receives as an argument an array of [CallHistoryEntry](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistoryEntry) instances, which represent the changed items in the call history.
 
    ```
        onchanged: function(changedItems) {
@@ -185,7 +186,7 @@ Learning how to register change listeners allows you to synchronize the view of 
    };
    ```
 
-4. Use the `addChangeListener()` method of the [CallHistory](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html#CallHistory) interface to register a listener for observing call history changes:
+4. Use the `addChangeListener()` method of the [CallHistory](../../api/latest/device_api/mobile/tizen/callhistory.html#CallHistory) interface to register a listener for observing call history changes:
 
    ```
    var callHistoryListener = tizen.callhistory.addChangeListener(onHistoryChange);

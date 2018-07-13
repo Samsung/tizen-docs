@@ -9,7 +9,9 @@ The main features of the Connection API include:
 
   You can establish and manage various data connections using a connection handle, which is created with the `connection_create()` function of the Connection Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) applications). You can use the handle to:
 
-  - [Get a state of the connection interface](#detail).You can access the state of the Bluetooth, cellular, and Wi-Fi connections only. Use the `connection_get_[interface]_state()` function to retrieve the state as the `connection_bt_state_e` (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gaf4abc0a653145fb9dec7e885c9081395) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gaf4abc0a653145fb9dec7e885c9081395) applications), `connection_cellular_state_e` (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) applications), or `connection_wifi_state_e` (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) applications) enumerator.
+  - [Get a state of the connection interface](#detail).
+
+    You can access the state of the Bluetooth, cellular, and Wi-Fi connections only. Use the `connection_get_[interface]_state()` function to retrieve the state as the `connection_bt_state_e` (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gaf4abc0a653145fb9dec7e885c9081395) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gaf4abc0a653145fb9dec7e885c9081395) applications), `connection_cellular_state_e` (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) applications), or `connection_wifi_state_e` (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) applications) enumerator.
 
   - Access various network details, such as the IP address, proxy, and gateway information.
 
@@ -34,7 +36,8 @@ The main features of the Connection API include:
 
   You can [gather various statistics on the network usage](#info), such as the amounts of sent and received data, using the Connection Statistics API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) and [wearable](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) applications). You can also retrieve the cumulative size of packets sent or received since the last reset based on the operation mode, such as packet switching (PS). To define the specific type of statistics information you want, use the `connection_statistics_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).
 
-  > **Note**  
+  > **Note**
+  >
   > Statistics are supported for Wi-Fi and cellular connections only.
 
   You can re-initialize the statistics with the `connection_reset_statistics()` function.
@@ -52,8 +55,11 @@ To manage IP sockets, you can:
 4. [Create the client-side socket, and communicate with the remote host](#socket_create), or [create the server-side socket, and communicate with the client](#socket_createserver).
 5. [Close the socket](#socket_close) and release the resources.
 
-> **Note**  
-> To handle HTTP and HTTPS requests in a proxy environment, [get the proxy address](#detail) using the Connection Manager and then set the proxy address using the Connection Profile API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) applications).For libcurl, you can [use the `CURLOPT_PROXY` option](curl.md#manage).
+> **Note**
+>
+> To handle HTTP and HTTPS requests in a proxy environment, [get the proxy address](#detail) using the Connection Manager and then set the proxy address using the Connection Profile API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html) applications).
+>
+> For libcurl, you can [use the `CURLOPT_PROXY` option](curl.md#manage).
 
 <a name="prerequisites"></a>
 ## Prerequisites
@@ -125,7 +131,9 @@ To get the type of the current connection, IP address, and proxy information:
     }
     ```
 
-2. To get the connection IPv4 address, use the `connection_get_ip_address()` function. The Connection API supports both IPv4 and IPv6, as defined in the `connection_address_family_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) applications).The IP address can be printed using the dlog util tool (as in the following example), or shown to the user in another way. Free the memory allocated for the `ip_addr` temporary variable.
+2. To get the connection IPv4 address, use the `connection_get_ip_address()` function. The Connection API supports both IPv4 and IPv6, as defined in the `connection_address_family_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#ga5910989495b39e8c4dbbd05ec9482d19) applications).
+
+    The IP address can be printed using the dlog util tool (as in the following example), or shown to the user in another way. Free the memory allocated for the `ip_addr` temporary variable.
     ```
     char *ip_addr = NULL;
     error_code = connection_get_ip_address(connection, CONNECTION_ADDRESS_FAMILY_IPV4,
@@ -135,7 +143,9 @@ To get the type of the current connection, IP address, and proxy information:
         free(ip_addr);
     }
     ```
-3. To get the connection proxy information, use the `connection_get_proxy()` function. The following example prints the proxy address using the dlog util tool.Free the memory allocated for the `proxy_addr` variable.
+3. To get the connection proxy information, use the `connection_get_proxy()` function. The following example prints the proxy address using the dlog util tool.
+
+    Free the memory allocated for the `proxy_addr` variable.
     ```
     error_code = connection_get_proxy(connection, address_family, &proxy_addr);
     if (error_code == CONNECTION_ERROR_NONE) {
@@ -149,7 +159,9 @@ To get the type of the current connection, IP address, and proxy information:
 
 To obtain cellular and Wi-Fi connection information with data transfer statistics, such as the amount of total sent or received data and last sent or received data (only cellular and Wi-Fi statistics information is supported):
 
-1. To get the cellular connection state, use the `connection_get_cellular_state()` function. The function fills the second parameter with the current state, whose possible values are defined in the `connection_cellular_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) applications).In the following example, a `switch` statement is used to show the cellular state:
+1. To get the cellular connection state, use the `connection_get_cellular_state()` function. The function fills the second parameter with the current state, whose possible values are defined in the `connection_cellular_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga9ca508e61d795be15ee1795581a66396) applications).
+
+    In the following example, a `switch` statement is used to show the cellular state:
     ```
     connection_cellular_state_e cellular_state;
     connection_get_cellular_state(connection, &cellular_state);
@@ -178,7 +190,9 @@ To obtain cellular and Wi-Fi connection information with data transfer statistic
     }
     ```
 
-2. To get the Wi-Fi connection state, use the `connection_get_wifi_state()` function. The function fills the second parameter with the current state, whose possible values are defined in the `connection_wifi_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd)applications).In the following example, a `switch` statement is used to show the Wi-Fi state:
+2. To get the Wi-Fi connection state, use the `connection_get_wifi_state()` function. The function fills the second parameter with the current state, whose possible values are defined in the `connection_wifi_state_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gab3ad7fdb200354b3c34878d88fc97dcd) applications).
+
+    In the following example, a `switch` statement is used to show the Wi-Fi state:
     ```
     connection_wifi_state_e wifi_state;
     connection_get_wifi_state(connection, &wifi_state);
@@ -198,7 +212,14 @@ To obtain cellular and Wi-Fi connection information with data transfer statistic
     }
     ```
 
-3. To get connection statistics, use the `connection_get_statistics()` function.Connection statistics include the amount of total sent and received data and the last sent and received data. The function parameters determine which statistics are received, and for which connection type:The second parameter defines the connection type using the `connection_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga85c33901b8ac24f2e5f66440ec4519ee) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga85c33901b8ac24f2e5f66440ec4519ee) applications).The third parameter defines the statistic type using the `connection_statistics_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).The following example reads all statistics for cellular and Wi-Fi connections:
+3. To get connection statistics, use the `connection_get_statistics()` function.
+
+    Connection statistics include the amount of total sent and received data and the last sent and received data. The function parameters determine which statistics are received, and for which connection type:
+    - The second parameter defines the connection type using the `connection_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga85c33901b8ac24f2e5f66440ec4519ee) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#ga85c33901b8ac24f2e5f66440ec4519ee) applications).
+
+    - The third parameter defines the statistic type using the `connection_statistics_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).
+
+    The following example reads all statistics for cellular and Wi-Fi connections:
     ```
     long long last_received_size;
     error_code = connection_get_statistics(connection, CONNECTION_TYPE_CELLULAR,
@@ -279,6 +300,7 @@ To register callback functions that are called when information changes:
                                                      "IP addr changed:");
    if (error_code != CONNECTION_ERROR_NONE)
        /* Error handling */
+
    error_code = connection_set_proxy_address_changed_cb(connection, __proxy_changed_cb,
                                                         "Proxy IP addr changed:");
    if (error_code != CONNECTION_ERROR_NONE)
@@ -377,7 +399,7 @@ To initialize a client or server-side socket for use:
        /* If both IPv4 and IPv6 types are set, the IPv4 type is used as default here */
        rv = connection_profile_get_ip_address(profile_h, CONNECTION_ADDRESS_FAMILY_IPV4,
                                               &local_ipv4);
-       if (rv == CONNECTION_ERROR_NONE && g_strcmp0(local_ipv4, &0.0.0.0&) != 0) {
+       if (rv == CONNECTION_ERROR_NONE && g_strcmp0(local_ipv4, "0.0.0.0") != 0) {
            ip_type = CONNECTION_ADDRESS_FAMILY_IPV4;
            dlog_print(DLOG_INFO, LOG_TAG, "IPv4 address: %s\n", local_ipv4);
        }
@@ -401,7 +423,9 @@ When you use a socket, it is automatically bound with the network interface of t
 You can open the connection profile manually in 2 ways:
 
 - Use the `connection_get_profile_iterator()` function to retrieve all available profiles, and select the profile you want.
-- Use the `connection_get_default_cellular_service_profile()` function to retrieve the connection profile of a specific cellular service.This use case covers this way of opening the profile.
+- Use the `connection_get_default_cellular_service_profile()` function to retrieve the connection profile of a specific cellular service.
+
+  This use case covers this way of opening the profile.
 
 To change the connection profile:
 
