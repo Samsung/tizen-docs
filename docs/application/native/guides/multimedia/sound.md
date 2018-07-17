@@ -119,8 +119,7 @@ To query sound device information:
       int ret;
       int _ret;
       sound_device_mask_e mask = SOUND_DEVICE_IO_DIRECTION_OUT_MASK |
-                                 SOUND_DEVICE_IO_DIRECTION_BOTH_MASK |
-                                 SOUND_DEVICE_STATE_ACTIVATED_MASK;
+                                 SOUND_DEVICE_IO_DIRECTION_BOTH_MASK;
       ```
 
    2. Retrieve the sound device list handle and sound device handles.
