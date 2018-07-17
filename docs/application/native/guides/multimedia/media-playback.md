@@ -13,7 +13,9 @@ The main media playback features are:
 
   Enables you to play [video](#video).
 
-- Using the player [features](#features)Enables you manage the player and control the volume, sound mode, display, stream info, and audio effects.
+- Using the player [features](#features)
+
+  Enables you to manage the player and control the volume, sound mode, display, stream info, and audio effects.
 
 - Streaming playback
 
@@ -84,13 +86,9 @@ The Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__
 
 - Modifying playback properties
 
-  When the player state is changed to READY, you can modify various playback properties, such as volume, sound type, latency mode, mute mode, and looping mode.
+  When the player state is changed to READY, you can modify various playback properties, such as volume, audio latency mode, mute mode, looping mode, audio only mode, track information of each stream and etc.
 
 - Moving the audio and video content based on time
-
-- Controlling the volume of the audio and video content based on each instance
-
-  The player works based on the audio session manager policy. This means that an application can be interrupted by another application if a resource is in conflict or it has an audio policy rule to follow. You can change the session policy directly by using the Sound Manager API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications).
 
 - Getting information about the audio and video content
 
@@ -126,6 +124,10 @@ The Player sub-APIs offer the following features:
 
   After changing to the READY state, the subtitles can be read.
 
+- Media Streams
+
+  Use the media stream API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html) applications) to play and control the external demuxed stream.
+
 - Spherical Video Playback
 
   Use the Spherical Video API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) applications) to set the rendering attributes for spherical video playback.
@@ -136,7 +138,7 @@ The Player sub-APIs offer the following features:
 
 You can set specific URLs for streaming media playback by using the `player_set_uri()` function.
 
-Both Hypertext Transfer Protocol (HTTP) and Real Time Streaming Protocol (RTSP) protocols support streaming media playback. The HTTP request header supports the playback of both complete and download-in-progress media files. The index table (atoms) must be moved in front of the file for progressive download.
+Both Hypertext Transfer Protocol (HTTP) and Real Time Streaming Protocol (RTSP) protocols support streaming media playback. The HTTP request header supports the playback of both complete and download-in-progress media files.
 
 For HTTP streaming, buffering can happen when the player is prepared. You can get the status using the `player_set_buffering_cb()` function.
 
@@ -148,7 +150,6 @@ The following table lists the streaming protocol features supported by the playe
 |-------------------------------------|-------------------|
 | Hypertext Transfer Protocol (HTTP)  | HTTP Streaming    |
 |  | HTTP Live Streaming                 |                   |
-|  | HTTP Progressive Download Play      |                   |
 | Real Time Streaming Protocol (RTSP) | RTSP Streaming    |
 
 <a name="wav"></a>
