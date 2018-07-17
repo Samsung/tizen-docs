@@ -126,7 +126,7 @@ The Player sub-APIs offer the following features:
 
 - Media Streams
 
-  Use the media stream API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html) applications) to play and control the external demuxed stream.
+  Use the media stream API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications) to play and control the external demuxed stream.
 
 - Spherical Video Playback
 
