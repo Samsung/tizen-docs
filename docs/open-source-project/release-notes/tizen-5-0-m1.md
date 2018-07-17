@@ -7,12 +7,12 @@ Release date: May. 31, 2018
 
 ### New and changed features
 
-- Security improvement on D-bus
-  - Default deny is applied to D-bus/Cynara conf files.
-  - D-bus is removed from Public Whitelist.
+- Security improvement on D-Bus
+  - Default deny is applied to D-Bus/Cynara conf files.
+  - D-Bus is removed from Whitelist.
 - Refactoring
   - Deviced, Storaged, Feedbackd
-    - EFL dependency (edbus, ecore-core) is removed and replaced by Gdbus.
+    - EFL dependency (EDbus, ecore-core) is removed and replaced by GDBus.
   - Deviced, Deviced HAL
     - Configfs/Functionfs kernel drivers are supported for better portability.
 - New APIs
@@ -20,8 +20,6 @@ Release date: May. 31, 2018
     - APIs are added for Container and Platform Upgrade.
   - Storaged
     - C# APIs are added for external storage.
-  - Deviced
-    - Multi-led internal APIs are added.
   - Tizen-Platform-Config
     - UID-based APIs are added.
 - Testsuite
@@ -35,13 +33,13 @@ Release date: May. 31, 2018
 - Deviced
   - Developed safe unmount on writable partitions.
 - Deviced, Storaged, Feedbackd
-  - Race condition during dbus activation is fixed.
+  - Race condition during D-Bus activation is fixed.
 - Dlog
   - Crash or blocking issues are fixed.
 
 ### Known Issues
 
-- Dbus-glib (deprecated library) is being removed from Public Tizen.
+- Dbus-glib (deprecated library) is being removed.
 
 
 ## System (Base)
@@ -107,7 +105,7 @@ Release date: May. 31, 2018
 - Watchface complication framework and stylize editable feature support:
   - Applications can provide custom complication data with the new watchface complication provider API.
   - Watchface applications can receive data from the complication providers.
-  - Watchface applications can register editable design elements and an user will be able to edit the watchface with editor UI.
+  - Watchface applications can register editable design elements and a user will be able to edit the watchface with editor UI.
 - Widget framework refactoring:
   - Screen connector library is rewritten in object-oriented design.
 - Package Manager
@@ -122,14 +120,14 @@ Release date: May. 31, 2018
 
 - Wayland
   - Upgraded the opensource wayland to version 1.14.0.
-  - The opensource wayland-protocols is upgraded to the version 1.12, which has xdg_shell_unstable_v6 protocol. The directory path of xdg-shell protocol unstable version 5 is moved to protocol/unstable/xdg-shell from protocol/tizen.
+  - The opensource wayland-protocols are upgraded to the version 1.12, which has xdg_shell_unstable_v6 protocol. The directory path of xdg-shell protocol unstable version 5 is moved to protocol/unstable/xdg-shell from protocol/tizen.
 - Extended wayland protocols
   - tizen_keyrouter protocol is upgraded to the version 2 to support the event_surface which is newly added.
 - Enlightenment wayland display server
   - keyrouter functionalities is moved from Enlightenment modules to the Enlightenment core.
   - Added support for xdg_shell_unstable_v6 protocol.
   - Added e_input and e_input_device to replace input functionalities of the ecore drm.
-  - Applied Dbus policy to org.enlightenment.wm.conf.
+  - Applied D-Bus policy to org.enlightenment.wm.conf.
   - The debugging tool is extended with the following support:
     - bgcolor_set:  change the background color of canvas to check compositing of the enlightenment.
     - deiconify_approve: enable and disable deiconify_approve function in run time.
@@ -162,14 +160,14 @@ Release date: May. 31, 2018
   - TDM(Tizen Display Manager)
     - Added test cases for TDM HAL.
     - Added APIs for the TDM-HWC.
-    - The libtbm uses the configuration file intead of using the environment variables.
+    - The libtbm uses the configuration file instead of using the environment variables.
   - TPL-EGL(Tizen Porting Layer for EGL)
     - libwayland-egl-tizen package is provided.
       - This contains the development header files for wayland-egl Tizen extensions.
     - Added the new backend type TPL_BACKEND_WAYLAND_VULKAN_WSI_THREAD for Vulkan HWC.
       - Added the event-thread to process wayland event.
       - The sub-thread waits for the sync_fd to know the draw_done of the buffers.
-      - The four present mode is supported with the draw_done and tdm_client_vblank.
+      - The four present modes are supported with the draw_done and tdm_client_vblank.
 - Vulkan
   - vulkan-wsi-tizen
     - It uses the TPL_BACKEND_WAYLAND_VULKAN_WSI_THREAD type of the TPL-EGL backend by default.
@@ -251,7 +249,7 @@ Release date: May. 31, 2018
 
 - EFL
   - Version 1.16 is upgraded to 1.20
-  - Edbus and Eldbus is removed for security reasons.
+  - EDbus and Eldbus are removed for security reasons.
   - Elementary repository is integrated into EFL repository.
   - Added SVG morphing animation.
   - Ecore_wayland is replaced with ecore_wayland2.
@@ -296,15 +294,15 @@ Release date: May. 31, 2018
 
 - Media Player
   - Added support for spherical video playback.
-  - Added support for replaygain.
+  - Added support for ReplayGain.
   - Removed session based audio API.
-  - Pre-condition of settting ROI area API is changed.
+  - Pre-condition of setting ROI area API is changed.
   - The “player_set_display()” must be called in main thread of application by restriction of upgraded EFL.
 - MediaCodec
   - Added H/W resource management.
   - Added the error enum for resource conflict.
 - MediaTool
-  - NAdded new APIs for rotation method.
+  - Added new APIs for rotation method.
 - Radio
   - Removed session based audio API.
 - Camera
@@ -328,7 +326,7 @@ Release date: May. 31, 2018
   - Added support for contents moving between internal or SD Card and USB Storage.
 - Media Controller
   - Added playback position, shuffle mode, repeat mode control APIs.
-  - Added playback action APIs to replace Playback state APIs. And some playback states has changed.
+  - Added playback action APIs to replace Playback state APIs. And some playback states have changed.
   - Added support for playlist.
   - Added support for response of the request.
 - Image Util
@@ -358,7 +356,7 @@ Release date: May. 31, 2018
 - TCP Fast Open
   - Added a http API for allowing TCP Fast Open.
 - SoftAP
-  - capi-network-softap is open to the public API from the internal API.
+  - Added support for SoftAP(Software Access Point).
 - MTP FunctionFS
   - FunctionFS is added in USB File System which is based on MTP operations.
 - Wi-Fi Native CAPI
@@ -396,7 +394,7 @@ Release date: May. 31, 2018
 ### Fixes
 
 - Data Network
-  - Removed a gdbus dependency in network related UGs (e.g,.ug-wifi-efl, ug-wifi-direct, download-manager)
+  - Removed a GDBus dependency in network related UGs (e.g,.ug-wifi-efl, ug-wifi-direct, download-manager)
 - IoT Connectivity.
   - Iotivity is stabilized in multi-thread programming.
 
@@ -431,19 +429,19 @@ Release date: May. 31, 2018
   - Fixed D-Bus Policies
   - Fixed Memory leaks & potential defects
 - Sync-manager
-  - Fixed D-bus policies
+  - Fixed D-Bus policies
   - Fixed memory leak & potential defects
 - Geofence-server
-  - Fixed D-bus policies
+  - Fixed D-Bus policies
   - Fixed memory leak & potential defects
 - LBS Server
-  - Fixed D-bus policies
+  - Fixed D-Bus policies
   - Fixed memory leak & potential defects
 - Maps-plugin-here
-  - Fixed D-bus policies
+  - Fixed D-Bus policies
   - Fixed memory leak & potential defects.
 - Sensor
-  - Fixed Memory leaks & potenatil defects
+  - Fixed Memory leaks & potential defects
 - Email
   - Fixed memory leak & potential defects
 - Message-Service
@@ -472,12 +470,12 @@ Release date: May. 31, 2018
 ### New and changed features
 
 - .NET Runtime
-  - Merged memory optmization patches.
+  - Merged memory optimization patches.
 - .NET Launcher
   - Plugin interface for dll preloading is added.
 - Xamarin.Forms
   - Latest Xamarin.Forms stable version (3.0.0) support.
-  - Xamarin.Forms nuget package (Xamarin.Forms.nupkg) supports tizen as a default platform since Xamarin.Forms 3.0.0.
+  - Xamarin.Forms nuget package (Xamarin.Forms.nupkg) supports Tizen as a default platform since Xamarin.Forms 3.0.0.
   - TargetIdiom.Watch is now available for wearable profile since Xamarin.Forms 3.1 Pre Release 1.2.
 - Tizen.CircularUI
   - Circular UI extension (Tizen.CircularUI) is now available.
@@ -507,5 +505,5 @@ Release date: May. 31, 2018
 - nnfw: Neural Network Runtime (Experimental Release)
   - CPU/GPU acceleration support based on ACL(Arm Compute Library) (currently 6 operators)
   - Android NN API compatible (currently 17/29 API support)
-  - TenworFlow Lite compatible (currently supports 6/50 operators)
+  - TensorFlow Lite compatible (currently supports 6/50 operators)
   - Run Inception V3 model
