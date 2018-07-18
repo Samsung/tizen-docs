@@ -73,7 +73,7 @@
 ### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ## Audio Management
 ### [OpenAL](/application/native/guides/multimedia/openal.md)
-### [Sound Manager](/application/native/guides/multimedia/sound.md)
+### [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
 ## [Media Playback](/application/native/guides/multimedia/media-playback.md)
 ## [Media Recording](/application/native/guides/multimedia/media-recording.md)
 ## [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)

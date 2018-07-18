@@ -1,7 +1,7 @@
 # Audio Management
 
 
-You can control the audio behavior of the application. You can control the output volume and sound conflict scenario, and query various information from sound devices. You can also use OpenAL to specify the objects and operations in producing high-quality audio output.
+You can control the audio behavior of the application. You can control the output volume and sound conflict scenario, and query various information from sound devices. You can also use OpenAL to specify the objects and operations in producing low-latency audio output.
 
 You can use the following audio management features in your native applications:
 
