@@ -2263,7 +2263,7 @@ To show common privacy setting guide popup, use the `APP_CONTROL_OPERATION_PRIVA
 |-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_TYPE` | The guide message type. The available values are `open` (for application launching) and `use` (for using function).  This key must be passed as a string. | This key is mandatory. |
 | `APP_CONTROL_DATA_FEATURE` | The feature or function name. This key must be passed as a string. |   |
-| `APP_CONTROL_DATA_PRIVILEGES` | The required privacy privileges that are requested. This key must be passed as an array of string.| This key is mandatory. |
+| `APP_CONTROL_DATA_PRIVILEGES` | The required privacy privileges that gets displayed. This key must be passed as an array of string.| This key is mandatory. |
 
 #### Extra Output
 
