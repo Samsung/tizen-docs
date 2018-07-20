@@ -94,6 +94,8 @@ The following table lists the available `VideoView` properties.
 | `MUTED`    | BOOLEAN       | Whether the playback is muted            |
 | `VOLUME`   | MAP           | Playback volume. The `Property::Map` must get left and right volume scalar as a float type. |
 | `UNDERLAY` | BOOLEAN       | Video rendering by underlay              |
+| `PLAY_POSITION` | INTEGER       | The play position (millisecond) of the video              |
+| `DISPLAY_MODE` | DisplayMode   | how the video should be display mode to the video view    |
 
 To change a property from its default value, use the `SetProperty()` function:
 
@@ -107,6 +109,17 @@ newMap.Insert( "volumeLeft", 1.0f );
 newMap.Insert( "volumeRight", 0.5f );
 mView.SetProperty( VideoView::Property::VOLUME, newMap );
 ```
+
+How to use DISPLAY_MODE
+there are enum of display modes
+LETTER_BOX, ORIGIN_SIZE, FULL_SCREEN, CROPPED_FULL, ORIGIN_OR_LETTER, DST_ROI
+See [multimedia display](https://developer.tizen.org/dev-guide/3.0.0/org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html)
+
+and it can be used as follows
+```
+mView.SetProperty( VideoView::Property::DISPLAY_MODE, VideoView::DisplayMode::LETTER_BOX );
+```
+
 
 ## Related Information
 - Dependencies
