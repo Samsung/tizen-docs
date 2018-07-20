@@ -24,6 +24,8 @@ The Tizen.NET contains a few limitations on the Xamarin.Forms APIs; these limita
 
 A list of limitations is available at [Current Xamarin.Forms limitations](xamarin.forms-limitations.html).
 
+You can efficiently add Tizen wearable device specific user interfaces. Extended details for these APIs are available on the [Tizen.Wearable.CircularUI github](https://github.com/Samsung/Tizen.CircularUI/).
+
 ## TizenFX API
 
 The Tizen Platform-Specific API allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
