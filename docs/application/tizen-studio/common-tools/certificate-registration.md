@@ -11,6 +11,11 @@ The certificate profile consists of an author certificate and 1 or 2 distributor
 
 ## Creating a Certificate Profile
 
+>**Note**
+>
+>It is recommended to keep your certificates and password safe in the local repo to prevent it from being compromised.
+
+
 You can create a new certificate profile with the Certificate Manager:
 
 1. In the Tizen Studio menu, select **Tools > Certificate Manager**.

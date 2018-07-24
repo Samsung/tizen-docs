@@ -36,6 +36,10 @@ To select the certificates used to package your application:
 <a name="creating"></a>
 ## Creating a Certificate Profile
 
+>**Note**
+>
+>It is recommended to keep your certificates and password safe in the local repo to prevent it from being compromised.
+
 A certificate profile consists of an author certificate and 1 or 2 distributor certificates:
 
 -   An author certificate includes information about the author of the application. It is used to create an author signature, which ensures the integrity of the application from the author since the publication of the application.
