@@ -84,7 +84,6 @@
 ### [Download](/application/native/guides/connectivity/download.md)
 ### [Curl](/application/native/guides/connectivity/curl.md)
 ### [HTTP](/application/native/guides/connectivity/http.md)
-### [Service Access through Plugins](/application/native/guides/connectivity/plugins.md)
 ### [Web View](/application/native/guides/connectivity/web-view.md)
 ## [File Transfer with MTP](/application/native/guides/connectivity/mtp.md)
 ## [VPN Connections](/application/native/guides/connectivity/vpn.md)
