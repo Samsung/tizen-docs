@@ -6,7 +6,7 @@ A mobile native application is created using the C language, and can be run on T
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile native application, which displays some text on the screen with no user interaction:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/install-sdk.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
@@ -26,7 +26,7 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/cover-native.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -323,7 +323,7 @@ To run the application on a target device:
 <a name="build_ui"></a>
 ## Designing a Simple UI 
 
-The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/introduction-n.md).
+The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/index.md).
 
 **Figure: User interface in the Basic UI template**
 

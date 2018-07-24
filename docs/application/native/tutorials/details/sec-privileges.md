@@ -38,7 +38,7 @@ switched it on.
 > **Note**  
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
-> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../../guides/security/requesting-permissions.md) using the Privacy Privilege Manager API (in
+> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../../guides/security/privacy-related-permissions.md) using the Privacy Privilege Manager API (in
 [mobile](../../api/mobile/latest/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SECURITY__FRAMEWORK__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
 applications).
 

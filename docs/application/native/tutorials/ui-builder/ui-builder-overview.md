@@ -120,7 +120,7 @@ the less you have to do yourself. Elementary is at the top, but you
 still access the layers below it for common tasks, as there is no need
 for Elementary to wrap things that work perfectly well as-is.
 
-To learn more about each library, go to [Introduction](../../guides/ui/efl/introduction.md).
+To learn more about each library, go to [Introduction](../../guides/ui/efl/index.md).
 This section only briefly describes the hierarchical structure of your
 application on Tizen.
 

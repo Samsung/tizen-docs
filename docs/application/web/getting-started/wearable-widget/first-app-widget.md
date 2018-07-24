@@ -32,7 +32,7 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/overview.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project

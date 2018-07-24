@@ -133,7 +133,7 @@ section describes some of the features that are available in the
 
 For more information on the XML schema of the layout file, see [Managing
 UI Component Attributes in
-layout.xml](../../../tizen-studio/native-tools/component-attributes.md).
+layout.xml](../../../tizen-studio/native-tools/ui-builder/component-attributes.md).
 
 To use the XML editor and its helpful features:
 

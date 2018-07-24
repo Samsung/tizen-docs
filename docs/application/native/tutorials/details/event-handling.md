@@ -86,4 +86,4 @@ applications).
 
 An ambient mode is available on a low-powered wearable device. For more
 information on ambient events in the mobile native profile, see the
-[Watch Application](../../guides/app-management/watch-app.md) guide.
+[Watch Application](../../guides/app-management/ui-app/watch-app.md) guide.

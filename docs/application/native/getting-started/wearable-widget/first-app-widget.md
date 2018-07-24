@@ -12,7 +12,7 @@ A widget application is one of the Tizen application types. It can be shown by s
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native widget application, which displays some text on the screen with no user interaction:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/install-sdk.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
@@ -32,7 +32,7 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/cover-native.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -231,7 +231,7 @@ Pay attention to the following main issues in the application source code (in th
     }
     ```
 
-    -   The `create` callback is triggered when the widget instance is created. You can use the callback to initialize resources for the widget instance and [draw the UI](../../guides/app-management/widget-app.md#get_window). If the bundle content is not `NULL`, restore the previous status.
+    -   The `create` callback is triggered when the widget instance is created. You can use the callback to initialize resources for the widget instance and [draw the UI](../../guides/app-management/ui-app/widget-app.md#get_window). If the bundle content is not `NULL`, restore the previous status.
 
         ```
         static int
@@ -504,7 +504,7 @@ To run the application on a target device:
 
         Use the IP address you noted before.
 
-        Instead of the terminal, you can also use the [Remote Device Manager](../wearable/first-app-wn.md#remote_device) for the connection.
+        Instead of the terminal, you can also use the [Remote Device Manager](../wearable/first-app.md#remote_device) for the connection.
 
     3.  In the first attempt, the connection fails and the device asks for user confirmation. To allow Gear to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
 
@@ -547,7 +547,7 @@ To run the application on a target device:
 <a name="ui"></a>
 ## Designing a Simple UI
 
-The wearable widget application created with the **Widget** template has a simple user interface with a label component showing the **Hello widget** text. The UI is created using [EFL](../../guides/ui/efl/introduction.md).
+The wearable widget application created with the **Widget** template has a simple user interface with a label component showing the **Hello widget** text. The UI is created using [EFL](../../guides/ui/efl/index.md).
 
 **Figure: User interface in the Widget template**
 
