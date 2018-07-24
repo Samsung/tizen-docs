@@ -39,7 +39,7 @@ Release date: May. 31, 2018
 
 ### Known Issues
 
-- Dbus-glib (deprecated library) is being removed.
+- dbus-glib (deprecated library) is being removed.
 
 
 ## System (Base)
@@ -120,11 +120,11 @@ Release date: May. 31, 2018
 
 - Wayland
   - Upgraded the opensource wayland to version 1.14.0.
-  - The opensource wayland-protocols are upgraded to the version 1.12, which has xdg_shell_unstable_v6 protocol. The directory path of xdg-shell protocol unstable version 5 is moved to protocol/unstable/xdg-shell from protocol/tizen.
+  - Upgraded the opensource wayland-protocols to version 1.12, which has xdg_shell_unstable_v6 protocol. The directory path of xdg-shell protocol unstable version 5 is moved to protocol/unstable/xdg-shell from protocol/tizen.
 - Extended wayland protocols
-  - tizen_keyrouter protocol is upgraded to the version 2 to support the event_surface which is newly added.
+  - Upgraded tizen_keyrouter protocol to version 2 to support the event_surface (newly added).
 - Enlightenment wayland display server
-  - keyrouter functionalities is moved from Enlightenment modules to the Enlightenment core.
+  - Keyrouter functionalities are moved from Enlightenment modules to the Enlightenment core.
   - Added support for xdg_shell_unstable_v6 protocol.
   - Added e_input and e_input_device to replace input functionalities of the ecore drm.
   - Applied D-Bus policy to org.enlightenment.wm.conf.
@@ -157,11 +157,11 @@ Release date: May. 31, 2018
       - The new features will be supported under the new backend APIs.
     - The front end API returns the error type.
       - The front end API can get the error type that comes from the back end module.
-  - TDM(Tizen Display Manager)
+  - TDM (Tizen Display Manager)
     - Added test cases for TDM HAL.
     - Added APIs for the TDM-HWC.
     - The libtbm uses the configuration file instead of using the environment variables.
-  - TPL-EGL(Tizen Porting Layer for EGL)
+  - TPL-EGL (Tizen Porting Layer for EGL)
     - libwayland-egl-tizen package is provided.
       - This contains the development header files for wayland-egl Tizen extensions.
     - Added the new backend type TPL_BACKEND_WAYLAND_VULKAN_WSI_THREAD for Vulkan HWC.
@@ -248,11 +248,11 @@ Release date: May. 31, 2018
 ### New and changed features
 
 - EFL
-  - Version 1.16 is upgraded to 1.20
+  - Version 1.16 is upgraded to 1.20.
   - EDbus and Eldbus are removed for security reasons.
   - Elementary repository is integrated into EFL repository.
   - Added SVG morphing animation.
-  - Ecore_wayland is replaced with ecore_wayland2.
+  - ecore_wayland is replaced with ecore_wayland2.
   - Added GBS incremental build support.
 - Fontconfig
   - Version 2.12.1 is upgraded to 2.13.
@@ -297,7 +297,7 @@ Release date: May. 31, 2018
   - Added support for ReplayGain.
   - Removed session based audio API.
   - Pre-condition of setting ROI area API is changed.
-  - The “player_set_display()” must be called in main thread of application by restriction of upgraded EFL.
+  - The “player_set_display()” must be called in the main thread of application by restriction of upgraded EFL.
 - MediaCodec
   - Added H/W resource management.
   - Added the error enum for resource conflict.
@@ -323,10 +323,10 @@ Release date: May. 31, 2018
     - “capi-media-recorder-tool” must be installed to use “recorder_test”.
 - Media Content
   - Added synchronous thumbnail creation API and old asynchronous API is deprecated.
-  - Added support for contents moving between internal or SD Card and USB Storage.
+  - Added support for contents moving among the internal, SD Card and USB Storage.
 - Media Controller
   - Added playback position, shuffle mode, repeat mode control APIs.
-  - Added playback action APIs to replace Playback state APIs. And some playback states have changed.
+  - Added playback action APIs to replace playback state APIs. And some playback states have changed.
   - Added support for playlist.
   - Added support for response of the request.
 - Image Util
@@ -346,7 +346,7 @@ Release date: May. 31, 2018
 ### New and changed features
 
 - Network Firewall
-  - Added support for In-bound/out-bound rule management.
+  - Added support for in-bound/out-bound rule management.
   - Added support for IP, port and protocol type control.
   - Added support for Accept, Drop and Log targets.
   - Added support for IPv4 and IPv6 rules.
@@ -354,9 +354,9 @@ Release date: May. 31, 2018
   - Added support for Tunneling functions.
   - Added support for lock/unlock functions.
 - TCP Fast Open
-  - Added a http API for allowing TCP Fast Open.
+  - Added a HTTP API for allowing TCP Fast Open.
 - SoftAP
-  - Added support for SoftAP(Software Access Point).
+  - Added support for SoftAP (Software Access Point).
 - MTP FunctionFS
   - FunctionFS is added in USB File System which is based on MTP operations.
 - Wi-Fi Native CAPI
@@ -381,9 +381,6 @@ Release date: May. 31, 2018
   - Removed poweroff wait sequence for CP detach.
 - Bluetooth CAPI
   - Old GATT APIs have been removed, these APIs were deprecated in Tizen 2.3.1
-  - New features and APIs in mobile, wearable, and TV profiles:
-    - Added a delay report API for AVRCP streaming (in-house only).
-  - Added callback API for AVRCP delay changed (in-house only).
 - Open Source Upgrade
   - wpa_supplicant: 2.5 to 2.6.
   - connman: 1.29 to 1.35.
@@ -394,9 +391,9 @@ Release date: May. 31, 2018
 ### Fixes
 
 - Data Network
-  - Removed a GDBus dependency in network related UGs (e.g,.ug-wifi-efl, ug-wifi-direct, download-manager)
-- IoT Connectivity.
-  - Iotivity is stabilized in multi-thread programming.
+  - Removed a GDBus dependency in network related UGs (for example, ug-wifi-efl, ug-wifi-direct, download-manager).
+- IoT Connectivity
+  - IoTivity is stabilized in multi-thread programming.
 
 
 ## Security
@@ -423,35 +420,35 @@ Release date: May. 31, 2018
 ### Fixes
 
 - Phonenumber-util
-  - Fixed D-Bus policies
-  - Fixed memory leaks & potential defects
+  - Fixed D-Bus policies.
+  - Fixed memory leaks and potential defects.
 - Account-Manager
-  - Fixed D-Bus Policies
-  - Fixed Memory leaks & potential defects
+  - Fixed D-Bus policies.
+  - Fixed memory leaks and potential defects.
 - Sync-manager
-  - Fixed D-Bus policies
-  - Fixed memory leak & potential defects
+  - Fixed D-Bus policies.
+  - Fixed memory leak and potential defects.
 - Geofence-server
-  - Fixed D-Bus policies
-  - Fixed memory leak & potential defects
+  - Fixed D-Bus policies.
+  - Fixed memory leak and potential defects.
 - LBS Server
-  - Fixed D-Bus policies
-  - Fixed memory leak & potential defects
+  - Fixed D-Bus policies.
+  - Fixed memory leak and potential defects.
 - Maps-plugin-here
-  - Fixed D-Bus policies
-  - Fixed memory leak & potential defects.
+  - Fixed D-Bus policies.
+  - Fixed memory leak and potential defects.
 - Sensor
-  - Fixed Memory leaks & potential defects
+  - Fixed memory leaks and potential defects.
 - Email
-  - Fixed memory leak & potential defects
+  - Fixed memory leak and potential defects.
 - Message-Service
-  - Fixed memory leaks & potential defects
+  - Fixed memory leaks and potential defects.
 - Context
-  - Fixed memory leaks & potential defects
+  - Fixed memory leaks and potential defects.
 - Calendar
-  - Fixed memory leaks & potential defects
+  - Fixed memory leaks and potential defects.
 - Location 
-  - Fixed memory leaks & potential defects
+  - Fixed memory leaks and potential defects.
 
 
 ## Web framework
@@ -474,7 +471,7 @@ Release date: May. 31, 2018
 - .NET Launcher
   - Plugin interface for dll preloading is added.
 - Xamarin.Forms
-  - Latest Xamarin.Forms stable version (3.0.0) support.
+  - Latest Xamarin.Forms 3.0.0, which is stable version, is now supported.
   - Xamarin.Forms nuget package (Xamarin.Forms.nupkg) supports Tizen as a default platform since Xamarin.Forms 3.0.0.
   - TargetIdiom.Watch is now available for wearable profile since Xamarin.Forms 3.1 Pre Release 1.2.
 - Tizen.CircularUI
@@ -503,7 +500,7 @@ Release date: May. 31, 2018
 ### New and changed features
 
 - nnfw: Neural Network Runtime (Experimental Release)
-  - CPU/GPU acceleration support based on ACL(Arm Compute Library) (currently 6 operators)
-  - Android NN API compatible (currently 17/29 API support)
+  - CPU/GPU acceleration support based on ACL(Arm Compute Library) (currently there are six operators).
+  - Android NN API compatible (currently supports 17/29 API)
   - TensorFlow Lite compatible (currently supports 6/50 operators)
   - Run Inception V3 model
