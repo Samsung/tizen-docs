@@ -12,7 +12,7 @@ A widget application is one of the Tizen application types. It can be shown by s
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native widget application, which displays some text on the screen with no user interaction:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/install-sdk.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
