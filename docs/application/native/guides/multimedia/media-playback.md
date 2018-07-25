@@ -461,6 +461,7 @@ To play a video file:
    > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
 
 <a name="play_video_prepare"></a>
+
 3. Prepare the player for playback using the `player_prepare()` function:
 
    ```
@@ -476,6 +477,7 @@ To play a video file:
    Both functions change the player state from `PLAYER_STATE_IDLE` to `PLAYER_STATE_READY`, which is required to start playback.
 
 <a name="play_video_play"></a>
+
 4. Play the video file:
 
    1. Ensure that the player state has changed to `PLAYER_STATE_READY`. To check the state, use the `player_get_state()` function in a waiting loop:

@@ -513,7 +513,7 @@ for parsing JSON and [libxml2](http://www.xmlsoft.org/) for parsing XML.
 Applications that read and write to a device file system must declare
 the required privileges in the `tizen-manifest.xml` file. For more
 information on the Tizen privileges, see [Security and API
-Privileges](../details/sec-privileges-n.md).
+Privileges](../details/sec-privileges.md).
 
 To perform the download operations and read and write to a file system,
 the application manifest must include the following privileges:

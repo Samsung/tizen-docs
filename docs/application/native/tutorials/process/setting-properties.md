@@ -217,7 +217,7 @@ To define the kind of access and data your service application provides to other
 
 - Add the background category type (since Tizen 2.4).
 
-  You can [describe the background category](../../guides/app-management/efl-ui-app.md#describing-the-background-category) of your Tizen native application.
+  You can [describe the background category](../../guides/app-management/ui-app/efl-ui-app.md#describing-the-background-category) of your Tizen native application.
 
   To add background category types to allow running in the background, click **+** in the **Background Category** panel, select the category type, and click **OK**.
 
