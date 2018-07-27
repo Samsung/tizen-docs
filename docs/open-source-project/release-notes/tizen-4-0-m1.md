@@ -38,7 +38,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 **Fixes**
 
 - System Framework
-  - Many Dbus/Kdbus bugs have been fixed.
+  - Many D-Bus/Kdbus bugs have been fixed.
   - The systemd-journald log starvation bug has been fixed.
   - The dlogutil dump mode (nonblack) bug has been fixed.
 
@@ -310,7 +310,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - Package configuration has been changed:
     - The ecore package has been divided into several smaller packages (ecore-audio, ecore-avahi, ecore-buffer, ecore-con, ecore-core, ecore-drm, ecore-evas, ecore-fb, ecore-file, ecore-imf, ecore-input, ecore-ipc, ecore-wayland).
     - The unified devel package is generated regardless of the Tizen profile.
-  - edbus has been changed to support dbus only.
+  - edbus has been changed to support D-Bus only.
   - Test application and examples are removed from the binary image.
   - A source repository path has been changed:
     - From `profile/PROFILE/platform/core/uifw/efl-ext` to `platform/core/uifw/efl-ext`

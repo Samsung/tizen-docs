@@ -990,7 +990,7 @@ New Features
 - Camera 
   - Flash control behavior has changed. (Flash control can fail if the flash is pre-empted by another API.)
   - Code for removing remaining messages when destroying a handle has been updated.
-  - dbus has been replaced with gdbus.
+  - D-Bus has been replaced with gdbus.
   - Signal handler has been added to reset vconf keys updated by the camera and recorder.
   - MMVideoBuffer has been applied.
 - Notice
@@ -1411,7 +1411,7 @@ New Features
 - Restricting CPU resources for background application processes has been enhanced.
 - Support for default process smack-labeling for security enhancement has been added.
 - Open source upgrades
-  - dbus version has been upgraded to v1.8.16.
+  - D-Bus version has been upgraded to v1.8.16.
   - systemd version has been upgraded to v216.
 
 #### Compatibility Issues Between 2.4.0 Beta and 2.4.0
