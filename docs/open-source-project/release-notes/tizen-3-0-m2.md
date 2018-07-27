@@ -36,7 +36,7 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
 - Storage API and block module enhancement
   - USB/SD Card external storage has been enumerated with the libstorage API.
   - Support for multiple partitions and devices has been added.
-  - Block dbus connection has been separated to a special-purpose block module.
+  - Block D-Bus connection has been separated to a special-purpose block module.
 - Device HAL upgrade
   - Common device HAL structure has been added.
   - USB configfs is supported.
@@ -54,7 +54,7 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
   - Various patterns are supported, such as a combination of duration and waiting.
 - System information enhancement
   - GDBM backend to support a light-weight system registry to improve performance has been added.
-- Cynara-based dbus policy support through dbus-daemon
+- Cynara-based D-Bus policy support through dbus-daemon
   - Privilege-based access check has been added.
 - New APIs
   - IR device APIs have been added.
@@ -507,7 +507,7 @@ As a common feature, multi-user support has been added.
 - In mobile, the tethering configuration has been added.
 - In mobile and TV, the VPN service to build up a VPN client has been added.
 - In mobile and wearable, an additional connection type has been added to handle a gadget connection.
-- In mobile and TV, the IPC of the wifi direct manager has been changed from socket to d-bus.
+- In mobile and TV, the IPC of the wifi direct manager has been changed from socket to D-Bus.
 - In mobile and wearable, the privilege for the `wifi_ap_create()` function has been removed.
 - In mobile and TV, an API for wifi-direct peer signal strength has been added.
 - In mobile and TV, APIs for connection to get/set cellular pdn type have been added.
@@ -535,7 +535,7 @@ As a common feature, multi-user support has been added.
 - Major open-source component upgrades and changes
   - Curl has been upgraded from 7.40 to 7.50.2 for stability.
   - Dnsmasq has been upgraded from 2.57 to 2.74 for stability.
-  - wpa_supplicant has been upgraded from 2.4 to 2.5 for the d-bus interface.
+  - wpa_supplicant has been upgraded from 2.4 to 2.5 for the D-Bus interface.
   - libidn has been upgraded from 1.15 to 1.16 for stability.
   - Libcap has been upgraded from 2.21 to 2.24 for stability.
   - Gnutls has been upgraded from 3.3.5 to 3.4.11 for stability.
