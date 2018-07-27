@@ -26,7 +26,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - System Framework
   - Extended internal storage support, without on-demand device encryption, has been added:
     - Extended internal storage is an SD card-based storage extension feature.
-  - Dbus debugging and profiling tools (eBPF-based monitoring) have been added.
+  - D-Bus debugging and profiling tools (eBPF-based monitoring) have been added.
   - Supplementary group support for libdbuspolicy with Kdbus backend has been added.
   - C# Public APIs (device, feedback, storage, dlog, tizen-platform-config (internal)) has been added.
   - New Public enumerators have been added to libsvi, such as FEEDBACK_PATTERN_SYSTEM_SHORT.
@@ -157,7 +157,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - Window rotation information has been added to `wl_surface.set_buffer_transform()`.
   - DPMS, eom, screenshooter, and video functionalities have been moved from Enlightenment modules to the Enlightenment core.
   - The ecore-drm dependency has been removed by using libtdm.
-  - A dbus signal can be broadcast when the screen is rotated.
+  - A D-Bus signal can be broadcast when the screen is rotated.
   - The video window alpha handling rule has been changed.
   - Support for screen dumps has been added for debugging.
   - A new layer has been added to support the cursor.
@@ -165,7 +165,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - The `sd_notify()` function call has been added to the main function for sending systemd start-up notifications, since the `ecore_main_loop_begin()` function in EFL no longer calls it.
   - Creating the keymap cache file is now processed before initializing the DRM.
   - A remote surface client check has been added to permit access only to processes with a privileged UID.
-  - A dbus policy check has been added to permit access only to processes with a privileged UID.
+  - A D-Bus policy check has been added to permit access only to processes with a privileged UID.
   - Auxiliary hints have been added for:
     - wm.policy.win.deiconify.update: to support clients which need to defer deiconify rendering.
     - wm.policy.win.iconify.buffer.flush: to support clients which need to change the buffer flush feature use when iconified.
@@ -468,13 +468,13 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - A memory leak in the connman and net-config has been fixed.
   - A memory leak in the libnet-client and wifi-manager has been fixed.
 - Telephony
-  - A memory leak in the telephony manager plugin and telephony dbus handling plugin has been fixed.
+  - A memory leak in the telephony manager plugin and telephony D-Bus handling plugin has been fixed.
   - The bugs in tapitest have been fixed.
 - MTP
   - A memory leak in the MTP daemon has been fixed.
 - NFC
   - The bug that caused a crash during UTC testing has been fixed.
-  - The bug that caused a crash when launched by dbus activation has been fixed.
+  - The bug that caused a crash when launched by D-Bus activation has been fixed.
   - A memory leak in the NFC daemon has been fixed.
 - Bluetooth
   - Memory corruption in a GATT operation has been fixed.
@@ -557,8 +557,8 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 - Account Manager
   - Account feature exception has been added for offline APIs.
-  - Unused D-bus policy rules have been removed.
-  - The D-bus policy rule has been fixed from system_fw to service_fw.
+  - Unused D-Bus policy rules have been removed.
+  - The D-Bus policy rule has been fixed from system_fw to service_fw.
 - Push
   - The bug related to waking up a service application has been fixed.
   - The bug related to push_request_unread_notification for root/system daemon has been fixed.
@@ -570,7 +570,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - FIDO
   - On-demand timeout for the fido-service daemon has been added.
   - fido-service has been changed to be used in the system daemon.
-  - fido-asm.service has been changed to use on-demand dbus activation.
+  - fido-asm.service has been changed to use on-demand D-Bus activation.
   - Coding rules and memory leaks have been fixed.
 - Sync Manager
   - In mobile and wearable profiles, sync data storage has changed from XML to DB.
