@@ -1,7 +1,7 @@
 # Audio Management
 
 
-You can control the audio behavior of the application. You can control the output volume and sound conflict scenario, and query various information from sound devices. You can also use OpenAL to specify the objects and operations in producing low-latency audio output.
+You can control the audio behavior of the application. You can control the output volume and sound conflict scenarios. You can also query various information from sound devices. You can also use OpenAL to specify the objects and operations in producing low-latency audio output.
 
 You can use the following audio management features in your native applications:
 
@@ -11,7 +11,7 @@ You can use the following audio management features in your native applications:
 
 - [Sound Manager](sound-manager.md)
 
-  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application, and manage sound conflict senario by using stream focus. You can also query for various information related to the connected sound devices.
+  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application, and manage sound conflict senarios by using stream focus. You can also query for various information related to the connected sound devices, e.g. type, name, id, direction and state.
 
 - [Sound Pools](sound-pool.md)
 
