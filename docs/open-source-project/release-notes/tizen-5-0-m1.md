@@ -143,7 +143,7 @@ Release date: May. 31, 2018
   - Added wayland_tbm_client_queue_get_surfaces API.
   - Added wayland_tbm_server_client_queue_send_buffer_usable API.
 - Tizen HAL
-  - TBM(Tizen Buffer Manager)
+  - TBM (Tizen Buffer Manager)
     - Added test cases for TBM HAL.
     - Added tbm_bufmgr_server_init API.
       - The display server calls the tbm_bufmgr_server_init and this API is used in the place of setting the TBM_DISPLAY_SERVER env variable. 
@@ -225,7 +225,7 @@ Release date: May. 31, 2018
     - Added support for XAML.
     - Added support for mouse wheel event in Window.
 - Evas Render Engine
-  - Support tbm gl/sw rendering engine for EFL 1.20
+  - Support tbm gl/sw rendering engine for EFL 1.20.
 
 ### Fixes
 
@@ -282,10 +282,10 @@ Release date: May. 31, 2018
 - Stabilized evas rendering mechanism.
 
 ### Known Issues
-- CBHM (Clip Board History Manager) is not work properly
-- Ector supports only basic functionalities compared to Cairo
-- SVG morphing animation supports only in EDC
-- Elementary focus manager is disabled (legacy focus mechanism is applied)
+- CBHM (Clip Board History Manager) is not work properly.
+- Ector supports only basic functionalities compared to Cairo.
+- SVG morphing animation supports only in EDC.
+- Elementary focus manager is disabled (legacy focus mechanism is applied).
 
 
 ## Multimedia framework
@@ -314,12 +314,12 @@ Release date: May. 31, 2018
     - Removed the dependencies of display related packages.
     - “libmm-display”  must be included in platform binary to use display related APIs.
   - New package is added to separate camera API test program from “capi-media-camera” package.
-    - “capi-media-camera-tool” must be installed to use “camera_test”
+    - “capi-media-camera-tool” must be installed to use “camera_test”.
 - Recorder
   - A related feature is changed.
     - As-Is: <http://tizen.org/feature/camera>, <http://tizen.org/feature/microphone>
     - To-Be: <http://tizen.org/feature/media.audio_recording>, <http://tizen.org/feature/media.video_recording>
-  - New package is added to separate recorder API test program from capi-media-recorder package
+  - New package is added to separate recorder API test program from capi-media-recorder package.
     - “capi-media-recorder-tool” must be installed to use “recorder_test”.
 - Media Content
   - Added synchronous thumbnail creation API and old asynchronous API is deprecated.
@@ -380,7 +380,7 @@ Release date: May. 31, 2018
   - Removed videocall state based API.
   - Removed poweroff wait sequence for CP detach.
 - Bluetooth CAPI
-  - Old GATT APIs have been removed, these APIs were deprecated in Tizen 2.3.1
+  - Old GATT APIs have been removed, these APIs were deprecated in Tizen 2.3.1.
 - Open Source Upgrade
   - wpa_supplicant: 2.5 to 2.6.
   - connman: 1.29 to 1.35.
@@ -404,10 +404,10 @@ Release date: May. 31, 2018
   - Added support for kernel level audit.
   - Added major protection profiles(CAPP, LSPP, PCI-DSS, NISPOM, STIG).
 - Security Analyzer
-  - Provide general information of Tizen security
-  - Provide access control information of running processes
-  - Check security related logs
-  - Provide basic guides for developers
+  - Provide general information of Tizen security.
+  - Provide access control information of running processes.
+  - Check security related logs.
+  - Provide basic guides for developers.
 
 
 ## Service framework
@@ -421,10 +421,10 @@ Release date: May. 31, 2018
 
 - Phonenumber-util
   - Fixed D-Bus policies.
-  - Fixed memory leaks and potential defects.
+  - Fixed memory leak and potential defects.
 - Account-Manager
   - Fixed D-Bus policies.
-  - Fixed memory leaks and potential defects.
+  - Fixed memory leak and potential defects.
 - Sync-manager
   - Fixed D-Bus policies.
   - Fixed memory leak and potential defects.
@@ -438,17 +438,17 @@ Release date: May. 31, 2018
   - Fixed D-Bus policies.
   - Fixed memory leak and potential defects.
 - Sensor
-  - Fixed memory leaks and potential defects.
+  - Fixed memory leak and potential defects.
 - Email
   - Fixed memory leak and potential defects.
 - Message-Service
-  - Fixed memory leaks and potential defects.
+  - Fixed memory leak and potential defects.
 - Context
-  - Fixed memory leaks and potential defects.
+  - Fixed memory leak and potential defects.
 - Calendar
-  - Fixed memory leaks and potential defects.
+  - Fixed memory leak and potential defects.
 - Location 
-  - Fixed memory leaks and potential defects.
+  - Fixed memory leak and potential defects.
 
 
 ## Web framework
@@ -457,7 +457,7 @@ Release date: May. 31, 2018
 
 - Web engine
   - Applying latest open source chromium(blink) : from M56 to M63
-    - Provide new W3C Standard  (Animated PNG, Full featured Indexed DB, CSS grid layout, Web USB, MSE/EME)
+    - Provide new W3C Standard (Animated PNG, Full featured Indexed DB, CSS grid layout, Web USB, MSE/EME).
     - Enhancement standard web features (WebRTC, ARIA 1.1)
     - Web performance enhancement (V8 : ES 6 performance enhancement, Web Assembly default enabling)
 
@@ -492,7 +492,7 @@ Release date: May. 31, 2018
 ### Known Issues
 
 - Xamarin.Forms
-  - For more information on the list of limitations, see [here](https://developer.tizen.org/ko/development/api-reference/.net-application/current-xamarin.forms-limitations?langredirect=1)
+  - For more information on the list of limitations, see [here](https://developer.tizen.org/ko/development/api-reference/.net-application/current-xamarin.forms-limitations?langredirect=1).
 
 
 ## Experimental
@@ -501,6 +501,6 @@ Release date: May. 31, 2018
 
 - nnfw: Neural Network Runtime (Experimental Release)
   - CPU/GPU acceleration support based on ACL(Arm Compute Library) (currently there are six operators).
-  - Android NN API compatible (currently supports 17/29 API)
-  - TensorFlow Lite compatible (currently supports 6/50 operators)
-  - Run Inception V3 model
+  - Android NN API compatible (currently supports 17/29 API).
+  - TensorFlow Lite compatible (currently supports 6/50 operators).
+  - Run Inception V3 model.
