@@ -110,15 +110,18 @@ newMap.Insert( "volumeRight", 0.5f );
 mView.SetProperty( VideoView::Property::VOLUME, newMap );
 ```
 
-How to use DISPLAY_MODE.
+To change the display mode, use the PLAYER_DISPLAY_MODE enums (in [mobile](https://developer.tizen.org/dev-guide/3.0.0/org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) and [wearable](https://developer.tizen.org/dev-guide/3.0.0/org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) applications) .
 
-there are enum of display modes: LETTER_BOX, ORIGIN_SIZE, FULL_SCREEN, CROPPED_FULL, ORIGIN_OR_LETTER, DST_ROI (See [multimedia display](https://developer.tizen.org/dev-guide/3.0.0/org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html))
+LETTER_BOX
+ORIGIN_SIZE
+FULL_SCREEN
+CROPPED_FULL
+ORIGIN_OR_LETTER
+DST_ROI
 
-and it can be used as follows
 ```
 mView.SetProperty( VideoView::Property::DISPLAY_MODE, VideoView::DisplayMode::LETTER_BOX );
 ```
-
 
 ## Related Information
 - Dependencies
