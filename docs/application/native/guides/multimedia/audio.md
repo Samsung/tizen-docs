@@ -11,7 +11,7 @@ You can use the following audio management features in your native applications:
 
 - [Sound Manager](sound-manager.md)
 
-  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application, and manage sound conflict senarios by using stream focus. You can also query for various information related to the connected sound devices, e.g. type, name, id, direction and state.
+  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application, and manage sound conflict senarios by using stream focus. You can also query for various information related to the connected sound devices, for example, type, name, id, direction and state.
 
 - [Sound Pools](sound-pool.md)
 
