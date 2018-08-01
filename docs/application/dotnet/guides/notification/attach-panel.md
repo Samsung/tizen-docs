@@ -154,8 +154,11 @@ To create an attach panel:
 
     attachPanel.Show();
     ```
-    - To use the camera content category attachPanel.AddCategory(ContentCategory.Camera, null), you must verify the video call status. To launch the camera, the video call status must not be active. To verify the status of video call, Telephony API telephony_call_get_type() is called, ensure that the telephony privilege is added to the tizen-manifest.xml file.
-    
+    > **Note**
+    >
+    > To use the camera content category `attachPanel.AddCategory(ContentCategory.Camera, null)`, you must verify the video call status.     > To launch the camera, the video call status must not be active. To verify the status of video call, Telephony API   
+    > `telephony_call_get_type()`  is called, ensure that the telephony privilege is added to the tizen-manifest.xml file.
+
 3.  Register the needed event handlers:
 
     -   To access the data that the user selects in the called application, register the `ResultCallback` event of the `Tizen.Applications.AttachPanel.AttachPanel` class and define an event handler for it.
