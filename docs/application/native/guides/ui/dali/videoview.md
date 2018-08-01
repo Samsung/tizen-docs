@@ -95,7 +95,7 @@ The following table lists the available `VideoView` properties.
 | `VOLUME`   | MAP           | Playback volume. The `Property::Map` must get left and right volume scalar as a float type. |
 | `UNDERLAY` | BOOLEAN       | Video rendering by underlay              |
 | `PLAY_POSITION` | INTEGER       | The play position (millisecond) of the video              |
-| `DISPLAY_MODE` | DisplayMode   | how the video should be display mode to the video view    |
+| `DISPLAY_MODE` | DisplayMode   | Options for video mode on the VideoView    |
 
 To change a property from its default value, use the `SetProperty()` function:
 
@@ -110,7 +110,7 @@ newMap.Insert( "volumeRight", 0.5f );
 mView.SetProperty( VideoView::Property::VOLUME, newMap );
 ```
 
-To change the display mode, use the `PLAYER_DISPLAY_MODE` enums (in [mobile](https://developer.tizen.org/dev-guide/3.0.0/org.tizen.native.mobile.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) and [wearable](https://developer.tizen.org/dev-guide/3.0.0/org.tizen.native.wearable.apireference/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) applications) .
+To change the display mode, use the `PLAYER_DISPLAY_MODE` enums (in [mobile](../../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications) .
 
 - `LETTER_BOX`
 - `ORIGIN_SIZE`
