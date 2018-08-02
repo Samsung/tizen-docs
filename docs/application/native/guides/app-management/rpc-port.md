@@ -9,26 +9,32 @@ We strongly recommand to use [TIDL](tidl.md) instead of using RPC Port APIs dire
 ## RPC Port API include:
 
 - Proxy APIs
+  
   These APIs are for an application which wants to connect to an application and invoke some functions then return the results.
 
 - Stub APIs
+
   These APIs are for an application which wants to provide some methods to use at other processes like RPC (Remote Procedure Call)
 
 - Parcel APIs
+
   These APIs provides methods to make mashalling and unmashalling parcel from native type format.
 
 
 ## The main features of RPC Port API include:
 
 - Connection oriented communication
+
   You should make a connection between proxy and stub application to send and receive data.
   Once it is disconnected, the callback for disconnected event which was registered before will be called.
   Some other events such as connected and rejected events are supported as well.
 
 - Access control
+
   Stub application can register the privileges to check if the application which is trying to connect has proper privileges.
 
 - Trusted communication
+
   Stub application can register the flag for the trusted communication to allow only trusted applications.
 
 
