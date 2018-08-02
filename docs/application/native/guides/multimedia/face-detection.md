@@ -107,18 +107,38 @@ To detect faces:
     ```
     /* For details, see the Image Util API Reference */
     unsigned char *dataBuffer = NULL;
-    unsigned int bufferSize = 0;
-    int width = 0;
-    int height = 0;
+    unsigned long long bufferSize = 0;
+    unsigned long width = 0;
+    unsigned long height = 0;
+    image_util_decode_h imageDecoder = NULL;
 
-    error_code = image_util_decode_jpeg("/mydir/NasaAstronaut.jpg", IMAGE_UTIL_COLORSPACE_RGB888,
-                                        &dataBuffer, &height, &bufferSize);
+    error_code = image_util_decode_create(&imageDecoder);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_set_input_path(imageDecoder, "/mydir/NasaAstronaut.jpg");
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_destroy(imageDecoder);
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
     /* Fill the dataBuffer to g_source */
-    error_code = mv_source_fill_by_buffer(facedata.g_source, dataBuffer, bufferSize,
-                                          width, height, MEDIA_VISION_COLORSPACE_RGB888);
+    error_code = mv_source_fill_by_buffer(facedata.g_source, dataBuffer, (unsigned int)bufferSize,
+                                          (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -221,16 +241,32 @@ To recognize faces:
 
    char filePath[1024];
    unsigned char *dataBuffer = NULL;
-   unsigned int bufferSize = 0;
-   int width = 0;
-   int height = 0;
+   unsigned long long bufferSize = 0;
+   unsigned long width = 0;
+   unsigned long height = 0;
+   image_util_decode_h imageDecoder = NULL;
+
+    error_code = image_util_decode_create(&imageDecoder);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
    for (example_index = 1; example_index <= 10; ++example_index) {
        /* Decode image and fill the image data to g_source handle */
        snprintf(filePath, 1024, "%s/face_sample_%d.jpg", mydir, example_index);
-       error_code = image_util_decode_jpeg(filePath, IMAGE_UTIL_COLORSPACE_RGB888,
-                                           &dataBuffer, &width, &height, &bufferSize);
-       if (error_code != MEDIA_VISION_ERROR_NONE)
+       error_code = image_util_decode_set_input_path(imageDecoder, filePath);
+       if (error_code != IMAGE_UTIL_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+       error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+       if (error_code != IMAGE_UTIL_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+       error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+       if (error_code != IMAGE_UTIL_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
        roi.x = roi.y = 0;
@@ -240,8 +276,8 @@ To recognize faces:
        if (error_code != MEDIA_VISION_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-       error_code = mv_source_fill_by_buffer(facedata.g_source, &dataBuffer,
-                                             &bufferSize, &width, &height, MEDIA_VISION_COLORSPACE_RGB888);
+       error_code = mv_source_fill_by_buffer(facedata.g_source, dataBuffer, (unsigned int)bufferSize,
+                                             (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
        if (error_code != MEDIA_VISION_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -253,6 +289,10 @@ To recognize faces:
        if (error_code != MEDIA_VISION_ERROR_NONE)
            dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    }
+
+   error_code = image_util_decode_destroy(imageDecoder);
+   if (error_code != IMAGE_UTIL_ERROR_NONE)
+       dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
 
 4. Use the `mv_face_recognition_model_learn()` function to train the face recognition model with the added examples:
@@ -271,17 +311,38 @@ To recognize faces:
     ```
     /* Decode the image and fill the image data to g_source handle */
     snprintf(filePath, 1024, "%s/whos_face.jpg", mydir);
-    error_code = image_util_decode_jpeg(filePath, IMAGE_UTIL_COLORSPACE_RGB888,
-                                        &dataBuffer, &width, &height, &bufferSize);
-    if (error_code != MEDIA_VISION_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
+    image_util_decode_h imageDecoder = NULL;
+
+    error_code = image_util_decode_create(&imageDecoder);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_set_input_path(imageDecoder, filePath);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_set_colorspace(imageDecoder, IMAGE_UTIL_COLORSPACE_RGB888);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_set_output_buffer(imageDecoder, &dataBuffer);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_run(imageDecoder, &width, &height, &bufferSize);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
+
+    error_code = image_util_decode_destroy(imageDecoder);
+    if (error_code != IMAGE_UTIL_ERROR_NONE)
+        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
     error_code = mv_source_clear(facedata.g_source);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
 
-    error_code = mv_source_fill_by_buffer(facedata.g_source, &dataBuffer, &bufferSize,
-                                          &width, &height, MEDIA_VISION_COLORSPACE_RGB888);
+    error_code = mv_source_fill_by_buffer(facedata.g_source, dataBuffer, (unsigned int)bufferSize,
+                                          (unsigned int)width, (unsigned int)height, MEDIA_VISION_COLORSPACE_RGB888);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
 
