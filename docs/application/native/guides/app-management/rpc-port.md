@@ -4,7 +4,7 @@ Tizen applications can communicate with each other using RPC ports. Applications
 
 >**Note**
 APIs will be used in generated source files by [TIDLC](tidl.md) which is a IDL(Interface Definition Language) compiler for Tizen.
-We strongly recommand to use [TIDL](tidl.md) instead of using RPC Port APIs directly.
+**We strongly recommend to use [TIDL](tidl.md) instead of using RPC Port APIs directly.**
 
 ## RPC Port API include:
 
