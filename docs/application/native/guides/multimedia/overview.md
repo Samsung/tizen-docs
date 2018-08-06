@@ -1,7 +1,7 @@
 # Multimedia
 
 
-Multimedia features show how an application can handle everything related to multimedia resources, such as images, audio, video, camera, radio, and more.
+Multimedia features introduce how you can handle multimedia resources, such as media files, images, audio, video, camera and radio.
 
 You can use the following multimedia features in your native applications:
 
