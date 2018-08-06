@@ -41,7 +41,7 @@
 ## [Alarms](/application/native/guides/alarm/alarms.md)
 ## [Contextual System Event Trigger](/application/native/guides/alarm/trigger.md)
 
-# Media and Camera
+# Multimedia
 ## [Overview](/application/native/guides/multimedia/overview.md)
 ## Media Content and Metadata
 ### [Media Content](/application/native/guides/multimedia/media-content.md)
@@ -52,12 +52,11 @@
 ### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
-## Audio Management
-### [OpenAL](/application/native/guides/multimedia/openal.md)
-### [Sound Manager](/application/native/guides/multimedia/sound.md)
 ## [Media Playback](/application/native/guides/multimedia/media-playback.md)
 ## [Media Recording](/application/native/guides/multimedia/media-recording.md)
 ## [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
+## [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
+## [OpenAL](/application/native/guides/multimedia/openal.md)
 ## [Media Controller](/application/native/guides/multimedia/media-controller.md)
 ## [Media Conversions](/application/native/guides/multimedia/media-conversions.md)
 ## [Media Handle Management](/application/native/guides/multimedia/media-handle.md)
