@@ -7,28 +7,29 @@
 ### New Features
 
 -   SDB
-	-  wait-for-device command added, when this command is issued sdb waits indefinitely for the target to come to 'device' state.
+	-  `wait-for-device` command added, when this command is issued SDB waits indefinitely for the target to come to `device` state.
 -   RT IDE Certificate Manager
-	-   Integrated Certificate Manager into RT IDE
+	-   Integrated Certificate Manager into RT IDE.
 -   Baseline SDK Size Optimizations
-	-   Optimized Baseline SDK size from 480MB to 320MB
+	-   Optimized baseline SDK size from 480MB to 320MB.
 
 ### Fixed Bugs
 -   Certificate Manager
-	-   Added validation of .pem & .der files while importing as a new IoT profile in Certificate Manager
+	-   Added validation for .pem and .der files when they are imported as a new IoT profile in the Certificate Manager.
 
 -   Installer  and Package Manager
-	-   Fix extension download failure when url starts with https.
-	-   Fixed a issue of uninstaller window getting closed while uninstallation.
-	-   Fixed a issue of target directory not being able to set after invalid path.
+	-   Fixed the extension download failure, which occurs when URL starts with https.
+	-   Fixed an issue of the uninstaller window, earlier the window gets closed while uninstalling.
+	-   Fixed an issue of the target directory, now it is possible to set the target directory after an invalid path.
 -   Base IDE
-	-   Supporting "Show in History" view of eclipse team service. 
+	-   Supports **Show in History** view of eclipse team service. 
 -   CLI
-	-   Fixed CLI Build failure for IoT Headless App.
+	-   Fixed CLI build failure for IoT Headless App.
 	> **Note**
-	> If you have projects with Old CLI Build Scripts you need to re-create the build script by running "Export to CLI" before running CLI commands.
+	>
+	> If you have projects with old CLI build scripts, you must re-create the build script by running `export to CLI` before running the CLI commands.
 -   Others
-	-   Fixed security issues in Tizen Studio Source code.
+	-   Fixed the security issues in Tizen Studio source code.
 
 ### Known Issues
 -	Tizen Studio
@@ -41,7 +42,7 @@
 	    -   Reset the perspective.
             In the Tizen Studio menu, select Window > Perspective > Reset Perspective
 	    -   After updating to the Tizen Studio 2.0, run the *eclipse.exe -clean -clearPersistedState* command. Then launch the Tizen Studio normally.
-	-   You can create unit tests for Tizen 2.3.2 and higher version projects only. Now the Tizen Studio does not support unit testing for older versions.
+	-   You can create unit tests only for Tizen 2.3.2 and later version projects. Currently, Tizen Studio does not support unit tests for the earlier versions.
 -	Web IDE
 	-   The preview tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the preview tab in the Web Page Editor, use the preview feature **Ctrl + 4** of the Web SDK HTML Editor.
 	-   In RDS (Rapid Development Support) mode, the web unit test result is not updated.
@@ -55,7 +56,7 @@
 	-   Playing sound is not supported on Windows&reg; or macOS.
 	-   The Component Designer crashes if an alias is selected as the source group of an added item.
 -	Emulator
-	-   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen emulator, see [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites).
+	-   To use the Tizen emulator, install an Intel VTx supported by the CPU and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen emulator, see [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites).
 	    -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee ). For Windows&reg;, select *High Speed NVIDIA&reg; Processor* as *Preferred Graphics processor* in the NVIDIA&reg; control panel.
 	    -   On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session occasionally logs out while launching the Emulator Manager, or the emulator skin is displayed improperly. Verify the prerequisites and upgrade to the latest graphics driver.
 	-   On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
