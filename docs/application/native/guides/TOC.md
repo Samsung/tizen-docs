@@ -56,6 +56,7 @@
 ## [Media Recording](/application/native/guides/multimedia/media-recording.md)
 ## [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
 ## [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
+## [Sound Pools](/application/native/guides/multimedia/sound-pool.md)
 ## [OpenAL](/application/native/guides/multimedia/openal.md)
 ## [Media Controller](/application/native/guides/multimedia/media-controller.md)
 ## [Media Conversions](/application/native/guides/multimedia/media-conversions.md)
