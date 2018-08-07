@@ -1,7 +1,7 @@
 # Media Controller
 
 
-You can establish communication between a media controller server and a media controller client. You can send commands from the client to the server, and the client can request updated metadata and playback information from the server. Each profile provides a different interface of media controller, as you can see in [Mobile Media Controller](mobile/media-controller.md) and [Wearable Media Controller](wearable/media-controller.md).
+You can establish communication between a media controller server and a media controller client. You can send commands from the client to the server, and the client can request updated metadata and playback information from the server.
 
 The main features of the Media Controller API include:
 
