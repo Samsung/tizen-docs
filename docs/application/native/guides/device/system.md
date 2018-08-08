@@ -166,8 +166,8 @@ The following table lists the content feature keys.
 
 | Key                                    | Type   | Description                              |
 |----------------------------------------|--------|------------------------------------------|
-| `http://tizen.org/feature/content.scanning.others` | `bool` | The platform returns true for this key, if the device supports the media scanning feature for OTHERS type files which are not included in the media content-types such as IMAGE, VIDEO, SOUND or MUSIC. |
-| `http://tizen.org/feature/content.filter.pinyin ` | `bool` | The platform returns true for this key, if the device supports the Media Filter feature for Pinyin. |
+| `http://tizen.org/feature/content.scanning.others` | `bool` | The platform returns `true` for this key, if the device supports the media scanning feature for OTHERS type files which are not included in the media content-types such as IMAGE, VIDEO, SOUND or MUSIC. |
+| `http://tizen.org/feature/content.filter.pinyin ` | `bool` | The platform returns `true` for this key, if the device supports the Media Filter feature for Pinyin. |
 
 The following table lists the contextual trigger feature keys.
 
