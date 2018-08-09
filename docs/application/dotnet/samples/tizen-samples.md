@@ -43,6 +43,16 @@
 			<p><a href="https://developer.tizen.org/ko/development/sample/web/UI/Voice_Memo_UI" target="_blank">Web version</a></p>
 			</td>
 		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="360" src="media/w5xuicomponents.png" width="360" /></p>
+			</td>
+			<td>
+			<p><strong>XUIComponents</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use many kinds of UI controls.</p>
+			<p><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_UI_Components" target="_blank">Native version</a></p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 
