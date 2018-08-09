@@ -191,8 +191,9 @@ To query sound device information:
       ret = sound_manager_add_device_connection_changed_cb(mask, _sound_device_connection_changed_cb, NULL);
       ```
 
-      > **Note**  
-	  > The initial state of the internal sound device is connected.
+      > **Note**
+      >
+      > The initial state of the internal sound device is connected.
 
    2. Define the connection state changed callback:
 
@@ -229,8 +230,9 @@ To query sound device information:
       ret = sound_manager_add_device_running_changed_cb(mask, _sound_device_running_changed_cb, NULL);
       ```
 
-      > **Note**  
-	  > The state will be changed to **running** when the first stream goes to the device.
+      > **Note**
+      >
+      > The state will be changed to **running** when the first stream goes to the device.
 
    2. Define the running state changed callback:
 
