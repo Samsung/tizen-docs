@@ -143,7 +143,7 @@ To query sound device information:
       - `sound_manager_get_device_io_direction()`: To get the device IO direction.
       - `sound_manager_get_device_id()`: To get the device ID.
       - `sound_manager_get_device_name()`: To get the device name.
-      - `sound_manager_is_device_running()`: To check if the device is running which means any stream is running on the device.
+      - `sound_manager_is_device_running()`: To verify whether the device is running. This means that a stream is running on the device.
 
       When calling the query functions, use the sound device handle as the first parameter (input) and the device information type enumerator as the second parameter (output).
 
@@ -154,21 +154,21 @@ To query sound device information:
           ret = sound_manager_get_device_type(device, &type);
 
           if (type == SOUND_DEVICE_BLUETOOTH_MEDIA)
-              /* Sound device type is Bluetooth Media, handle accordingly */
+              /* Sound device type is Bluetooth Media */
           else if (type == SOUND_DEVICE_AUDIO_JACK)
-              /* Sound device type is Audio Jack, handle accordingly */
+              /* Sound device type is Audio Jack */
           else
-              /* Handle accordingly */
+              /* Do something if needed */
 
           ret = sound_manager_get_device_io_direction(device, &direction);
 
           if (direction == SOUND_DEVICE_IO_DIRECTION_BOTH)
-              /* Sound device has both headphone and mic, handle accordingly */
+              /* Sound device has both headphone and mic */
           else
-              /* Handle accordingly */
+              /* Do something if needed */
       }
       if (_ret == SOUND_MANAGER_ERROR_NO_DATA)
-          /* End of the available devices, handle accordingly */
+          /* End of the available devices */
       ```
 
    4. Free the sound device list handle.
@@ -206,20 +206,20 @@ To query sound device information:
           if (is_connected) {
               ret = sound_manager_get_device_type(device, &type);
               if (type == SOUND_DEVICE_BLUETOOTH_MEDIA)
-                  /* Connected sound device type is Bluetooth Media, handle accordingly */
+                  /* Connected sound device type is Bluetooth Media */
               else
-                  /* Handle accordingly */
+                  /* Do something if needed */
           } else {
               ret = sound_manager_get_device_type(device, &type);
               if (type == SOUND_DEVICE_BLUETOOTH_MEDIA)
-                  /* Disconnected sound device type is Bluetooth Media, handle accordingly */
+                  /* Disconnected sound device type is Bluetooth Media */
               else
-                  /* Handle accordingly */
+                  /* Do something if needed */
           }
       }
       ```
 
-3. To receive a notification whenever the sound device running state changes:
+3. To receive a notification whenever the running state of the sound device changes:
 
    1. Register a callback using the `sound_manager_add_device_running_changed_cb()` function. Use the mask to filter the callback information.
 
@@ -230,7 +230,7 @@ To query sound device information:
       ```
 
       > **Note**  
-	  > The state will be changed to "running" when the first stream goes to the device.
+	  > The state will be changed to **running** when the first stream goes to the device.
 
    2. Define the running state changed callback:
 
@@ -244,15 +244,15 @@ To query sound device information:
           if (is_running) {
               ret = sound_manager_get_device_type(device, &type);
               if (type == SOUND_DEVICE_AUDIO_JACK)
-                  /* Connected sound device type is Audio Jack, handle accordingly */
+                  /* Connected sound device type is Audio Jack */
               else
-                  /* Handle accordingly */
+                  /* Do something if needed */
           } else {
               ret = sound_manager_get_device_type(device, &type);
               if (type == SOUND_DEVICE_AUDIO_JACK)
-                  /* Disconnected sound device type is Audio Jack, handle accordingly */
+                  /* Disconnected sound device type is Audio Jack */
               else
-                  /* Handle accordingly */
+                  /* Do something if needed */
           }
       }
       ```
