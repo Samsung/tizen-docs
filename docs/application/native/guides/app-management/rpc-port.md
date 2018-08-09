@@ -1,48 +1,45 @@
 # RPC Port
 
-Tizen applications can communicate with each other using RPC ports. Applications can send and receive data after making a connection.
+Tizen applications can communicate with each other using RPC ports. Applications can send and receive data after establishing a connection.
 
 >**Note**
-APIs will be used in generated source files by [TIDLC](tidl.md) which is a IDL(Interface Definition Language) compiler for Tizen.
-**We strongly recommend to use [TIDL](tidl.md) instead of using RPC Port APIs directly.**
+APIs will be used in generated source files by TIDLC which is an Interface Definition Language (IDL) compiler for Tizen.
+**Samsung strongly recommends to use [TIDL](tidl.md) instead of using RPC Port APIs directly.**
 
-## RPC Port API include:
+## RPC Port APIs
 
 - Proxy APIs
   
-  These APIs are for an application which wants to connect to an application and invoke some functions then return the results.
+  These APIs are for an application that wants to connect to an application, invoke some functions, and return the results.
 
 - Stub APIs
 
-  These APIs are for an application which wants to provide some methods to use at other processes like RPC (Remote Procedure Call)
+  These APIs are for an application that wants to provide some methods to other processes.
 
 - Parcel APIs
 
-  These APIs provides methods to make mashalling and unmashalling parcel from native type format.
+  These APIs provides methods to create marshalling and unmarshalling parcel from the native type format.
 
-
-## The main features of RPC Port API include:
+## Features of RPC Port API
 
 - Connection oriented communication
 
-  You should make a connection between proxy and stub application to send and receive data.
-  Once it is disconnected, the callback for disconnected event which was registered before will be called.
+  You must create a connection between proxy and stub application to send and receive data.
+  After the connection is disconnected, the callback for disconnected event, which was registered earlier will be called.
   Some other events such as connected and rejected events are supported as well.
 
 - Access control
 
-  Stub application can register the privileges to check if the application which is trying to connect has proper privileges.
+  Stub application can register the privileges to verify whether the application that is trying to connect has proper privileges.
 
 - Trusted communication
 
   Stub application can register the flag for the trusted communication to allow only trusted applications.
 
 
-## Prerequisites
+## To enable your application to use the rpc_port_proxy_connect() API:
 
-To use rpc_port_proxy_connect() API
-
-  The application has to request permission. Add the following privilege to the `tizen-manifest.xml` file:
+  To use the rpc_port_proxy_connect() API, the application has to request permission by adding the following privilege to the 'tizen-manifest.xml' file:
 
     ```
     <privileges>

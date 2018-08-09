@@ -1,25 +1,25 @@
 
 # TIDL
 
-TIDL is programming language to define interfaces for communicating among apps in Tizen.
-It provides methods to make a RPC(Remote Procedure Call) or RMI (Remote Method Invocation) in Tizen.
+TIDL is a programming language to define interfaces for communicating among apps in Tizen.
+It provides methods to create a Remote Procedure Call (RPC) or Remote Method Invocation (RMI) in Tizen.
 
 ## TIDLC
 
-**TIDLC** is a compiler for making stub or proxy code block from **TIDL** file.
+**TIDLC** is a compiler for creating stub or proxy code block from **TIDL** file.
 
 ### Usage
 ```
 Usage:
   tidlc [OPTION...]
 
-  -h, --help                  Show help options
+  -h, --help                  Show help options.
   -l, --language=LANGUAGE     Select generating language (C, C++, C#).
   -i, --input=INPUT           A tidl interface file.
   -o, --output=OUTPUT         The generated interface file.
-  -p, --proxy                 Generate proxy code
-  -s, --stub                  Generate stub code
-  -v, --version               Show version information
+  -p, --proxy                 Generate proxy code.
+  -s, --stub                  Generate stub code.
+  -v, --version               Show version information.
 
 ```
 
@@ -62,11 +62,11 @@ interface <interface_id> { … }
 
 **Example**
 ```csharp
-// Requere launch privilege
+// Require launch privilege
 [privilege=“http://tizen.org/privilege/appmanager.launch”]
 interface ITest {}
 
-// Requere privilege A , privilege B AND trusted signature
+// Require privilege A , privilege B and trusted signature
 [privilege=“http://samsung.com/appdefined/A”,
  privilege=“http://samsung.com/appdefined/B” , trusted  = “true”]
 interface ITest2 {}
@@ -92,7 +92,7 @@ It denotes one-way-call from service.
 >**Note**
 Returned type should be ‘void’
 Keyword ‘out’ is not allowed
-Regarded as a type in methods (Can’t be used in ‘struct’ type)
+Regarded as a type in methods (Cannot be used in ‘struct’ type)
 
 **Example**
 ```csharp
@@ -141,9 +141,9 @@ struct Student  {
 	| bool|1|bool|bool|bool|
 
  - Container type
-	 - **list< [type] >**  Or  **array<[type]>**
-		- Used when sending list/ array of some types
-		- Similar to c++ std::list / std::vector
+	 - **list< [type] >**  or  **array<[type]>**
+		- Used when sending list or array of some types
+		- Similar to c++ std::list or std::vector
 		- Can be nested
 
 	| TIDL type  | C# type| C++ type |C type |
