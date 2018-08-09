@@ -14,7 +14,7 @@ APIs will be used in generated source files by TIDLC which is an Interface Defin
 
 - Stub APIs
 
-  These APIs are for an application that wants to provide some methods to other processes.
+  These APIs are for an application that wants to provide some methods to other processes, which includes Remote Procedure Call (RPC).
 
 - Parcel APIs
 
