@@ -268,7 +268,7 @@ Release date: May. 31, 2018
   - Version 2.16.0 is upgraded to 2.26.1.
 - Text Input
   - Added auto-fill hint enumeration and APIs for keyboard prediction.
-  - Applied Updated the reference TV IME GUI option in UI.
+  - Applied the enhanced reference TV IME GUI option in UI.
   - Added keyboard tutorial for wearable profile.
 - Voice Interaction
   - Downloadable voice control engine support
@@ -285,7 +285,7 @@ Release date: May. 31, 2018
 - CBHM (Clip Board History Manager) is not work properly.
 - Ector supports only basic functionalities compared to Cairo.
 - SVG morphing animation supports only in EDC.
-- Elementary focus manager is disabled (legacy focus mechanism is applied).
+- Elementary focus manager is disabled (Legacy focus mechanism is applied).
 
 
 ## Multimedia framework
@@ -384,9 +384,9 @@ Release date: May. 31, 2018
 - Open Source Upgrade
   - wpa_supplicant: 2.5 to 2.6.
   - connman: 1.29 to 1.35.
-  - pacrunner: 0.7 to 0.9
-  - curl: 7.53.1 to 7.59
-  - bluez: 5.43 to 5.48
+  - pacrunner: 0.7 to 0.9.
+  - curl: 7.53.1 to 7.59.
+  - bluez: 5.43 to 5.48.
 
 ### Fixes
 
