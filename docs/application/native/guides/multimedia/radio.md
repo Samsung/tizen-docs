@@ -85,7 +85,6 @@ To enable your application to use the radio functionality:
            /* Release the application resources or save the current state here */
            break;
        default:
-           /* Other type isn't handled (Other types have been removed since tize_5.0)*/
            break;
        }
    }
