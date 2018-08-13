@@ -72,40 +72,47 @@ Continuous gestures generate events in the begin, update, and end states, while 
 
 You can implement the following gesture types:
 
-- `EFL_UTIL_GESTURE_TYPE_EDGE_SWIPE`: The user touches near a screen edge and moves the finger quickly toward the opposite side. Edge swipe is a non-continuous gesture.  
+- `EFL_UTIL_GESTURE_TYPE_EDGE_SWIPE`: The user touches near a screen edge and moves the finger quickly toward the opposite side. Edge swipe is a non-continuous gesture.
 
- **Figure: Top edge 1-finger swipe gesture**  
-![Edge swipe gesture](./media/efl_global_gesture_edge_swipe.png)
+  **Figure: Top edge 1-finger swipe gesture**
 
-- `EFL_UTIL_GESTURE_TYPE_EDGE_DRAG`: The user touches near a screen edge and drags the finger toward the opposite side. Edge drag is a continuous gesture.  
+  ![Edge swipe gesture](./media/efl_global_gesture_edge_swipe.png)
 
- **Figure: Top edge 1-finger drag gesture**  
- ![Edge drag gesture](./media/efl_global_gesture_edge_drag.png)
+- `EFL_UTIL_GESTURE_TYPE_EDGE_DRAG`: The user touches near a screen edge and drags the finger toward the opposite side. Edge drag is a continuous gesture.
 
-- `EFL_UTIL_GESTURE_TYPE_TAP`: The user touches the screen with their finger and quickly releases it. Tap is a non-continuous gesture.  
+  **Figure: Top edge 1-finger drag gesture**
 
- **Figure: 2-finger double tap gesture**  
- ![Tap gesture](./media/efl_global_gesture_tap.png)
+  ![Edge drag gesture](./media/efl_global_gesture_edge_drag.png)
 
-- `EFL_UTIL_GESTURE_TYPE_PALM_COVER`: The user places their palm over the screen. Palm cover is a continuous gesture.  
+- `EFL_UTIL_GESTURE_TYPE_TAP`: The user touches the screen with their finger and quickly releases it. Tap is a non-continuous gesture.
 
- **Figure: Palm cover gesture**  
- ![Palm cover gesture](./media/efl_global_gesture_palm_cover.png)
+  **Figure: 2-finger double tap gesture**
 
-- `EFL_UTIL_GESTURE_TYPE_PAN`: The user touches the screen with 2 or more fingers and moves them in the same direction. Pan is a continuous gesture.  
+  ![Tap gesture](./media/efl_global_gesture_tap.png)
 
- **Figure: 2-finger pan gesture**  
- ![Pan gesture](./media/efl_global_gesture_pan.png)
+- `EFL_UTIL_GESTURE_TYPE_PALM_COVER`: The user places their palm over the screen. Palm cover is a continuous gesture.
 
-- `EFL_UTIL_GESTURE_TYPE_PINCH`: The user touches the screen with 2 or more fingers and moves the fingers away from or toward each other. Pinch is a continuous gesture.  
+  **Figure: Palm cover gesture**
 
- **Figure: 2-finger pinch gesture**  
- ![Pinch gesture](./media/efl_global_gesture_pinch.png)
+  ![Palm cover gesture](./media/efl_global_gesture_palm_cover.png)
 
-- `EFL_UTIL_GESTURE_TYPE_PALM_SWIPE`: The user places their palm at a screen edge and swipes to the opposite side. Palm swipe is a non-continuous gesture.  
+- `EFL_UTIL_GESTURE_TYPE_PAN`: The user touches the screen with 2 or more fingers and moves them in the same direction. Pan is a continuous gesture.
 
- **Figure: Palm swipe gesture**  
- ![Palm swipe gesture](./media/efl_global_gesture_palm_swipe.png)
+  **Figure: 2-finger pan gesture**
+
+  ![Pan gesture](./media/efl_global_gesture_pan.png)
+
+- `EFL_UTIL_GESTURE_TYPE_PINCH`: The user touches the screen with 2 or more fingers and moves the fingers away from or toward each other. Pinch is a continuous gesture.
+
+  **Figure: 2-finger pinch gesture**
+
+  ![Pinch gesture](./media/efl_global_gesture_pinch.png)
+
+- `EFL_UTIL_GESTURE_TYPE_PALM_SWIPE`: The user places their palm at a screen edge and swipes to the opposite side. Palm swipe is a non-continuous gesture.
+
+  **Figure: Palm swipe gesture**
+
+  ![Palm swipe gesture](./media/efl_global_gesture_palm_swipe.png)
 
 ## Prerequisites
 
@@ -119,46 +126,46 @@ To use the functions and data types of the EFL UTIL API (in [mobile](../../../ap
 
 To create notification windows and access the current notification level of an existing notification window:
 
--   Create a notification window with the default notification level (`EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT`):
+- Create a notification window with the default notification level (`EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT`):
 
-  - To create a new window and give it the `NOTIFICATION` type, call the `elm_win_add()` function with the third parameter set to `ELM_WIN_NOTIFICATION`:  
+  1. To create a new window and give it the `NOTIFICATION` type, call the `elm_win_add()` function with the third parameter set to `ELM_WIN_NOTIFICATION`:
 
-  ```
-   #include <Elementary.h>
-    #include <dlog.h>
+     ```
+     #include <Elementary.h>
+     #include <dlog.h>
 
-    static Evas_Object*
-    create_win(const char *name)
-    {
-        Evas_Object *eo;
-        efl_util_error_e error;
-        /* Create the NOTIFICATION window object */
-        eo = elm_win_add(NULL, name, ELM_WIN_NOTIFICATION);
+     static Evas_Object*
+     create_win(const char *name)
+     {
+         Evas_Object *eo;
+         efl_util_error_e error;
+         /* Create the NOTIFICATION window object */
+         eo = elm_win_add(NULL, name, ELM_WIN_NOTIFICATION);
 
-        if (!eo)
-            return NULL;
-    ```
+         if (!eo)
+             return NULL;
+     ```
 
-  - To set the notification level, call the `efl_util_set_notification_window_level()` function.  
+  2. To set the notification level, call the `efl_util_set_notification_window_level()` function.
 
      If the window is not of the notification type, the function returns the `EFL_UTIL_ERROR_NOT_SUPPORTED_WINDOW_TYPE` error. If the application does not have a permission to set a notification level, the function returns the `TIZEN_ERROR_PERMISSION_DENIED` error.
 
-    ```
-        /* Set the NOTIFICATION level */
-        error = efl_util_set_notification_window_level(eo, EFL_UTIL_NOTIFICATION_LEVEL_1);
-		if (error != EFL_UTIL_ERROR_NONE) {
-                /* Error handling for each error code */
-        }
+     ```
+         /* Set the NOTIFICATION level */
+         error = efl_util_set_notification_window_level(eo, EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT);
+ 		 if (error != EFL_UTIL_ERROR_NONE) {
+             /* Error handling for each error code */
+         }
 
-        elm_win_title_set(eo, name);
-        elm_win_autodel_set(eo, EINA_TRUE);
-        evas_object_smart_callback_add(eo, "delete,request", _quit_cb, NULL);
+         elm_win_title_set(eo, name);
+         elm_win_autodel_set(eo, EINA_TRUE);
+         evas_object_smart_callback_add(eo, "delete,request", _quit_cb, NULL);
 
-        return eo;
-    }
-    ```
+         return eo;
+     }
+     ```
 
-- Get the currently set notification level of a window by using the `efl_util_get_notification_window_level()` function.  
+- Get the currently set notification level of a window by using the `efl_util_get_notification_window_level()` function.
 
   If the window is not of the notification type, the function returns the `EFL_UTIL_ERROR_NOT_SUPPORTED_WINDOW_TYPE` error.
 
@@ -182,16 +189,16 @@ To create notification windows and access the current notification level of an e
       if (error== EFL_UTIL_ERROR_NONE) {
           switch (notification_level) {
           case EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT:
-                /* Do something for default level */
-                break;
-            case EFL_UTIL_NOTIFICATION_LEVEL_MEDIUM:
-                /* Do something for medium level */
-                break;
-            case EFL_UTIL_NOTIFICATION_LEVEL_HIGH:
-                /* Do something for high level */
-                break;
-            case EFL_UTIL_NOTIFICATION_LEVEL_TOP:
-                /* Do something for top level */
+               /* Do something for default level */
+               break;
+          case EFL_UTIL_NOTIFICATION_LEVEL_MEDIUM:
+              /* Do something for medium level */
+              break;
+          case EFL_UTIL_NOTIFICATION_LEVEL_HIGH:
+              /* Do something for high level */
+              break;
+          case EFL_UTIL_NOTIFICATION_LEVEL_TOP:
+              /* Do something for top level */
               break;
           }
       } else {
@@ -452,9 +459,9 @@ To grab gestures:
        }
    ```
 
-3. Define the gesture data to grab using the `efl_util_gesture_xxx_new()` and `efl_util_gesture_xxx_size_set()` functions.  
+3. Define the gesture data to grab using the `efl_util_gesture_xxx_new()` and `efl_util_gesture_xxx_size_set()` functions.
 
-  Setting a size is optional. If a size is not set, the gesture is grabbed within a full-size edge.
+   Setting a size is optional. If a size is not set, the gesture is grabbed within a full-size edge.
 
    ```
        /* Define a top edge 1-finger swipe gesture */
@@ -909,6 +916,6 @@ To deactivate and re-activate gestures in a window:
    ```
 
 ## Related Information
-- Dependencies   
+- Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
