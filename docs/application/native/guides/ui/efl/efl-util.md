@@ -152,7 +152,7 @@ To create notification windows and access the current notification level of an e
 
      ```
          /* Set the NOTIFICATION level */
-         error = efl_util_set_notification_window_level(eo, EFL_UTIL_NOTIFICATION_LEVEL_1);
+         error = efl_util_set_notification_window_level(eo, EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT);
  		 if (error != EFL_UTIL_ERROR_NONE) {
              /* Error handling for each error code */
          }
