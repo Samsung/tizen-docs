@@ -37,9 +37,9 @@ APIs will be used in generated source files by TIDLC which is an Interface Defin
   Stub application can register the flag for the trusted communication to allow only trusted applications.
 
 
-## To enable your application to use the rpc_port_proxy_connect() API:
+## To enable your application to use `rpc_port_proxy_connect()` API:
 
-  To use the rpc_port_proxy_connect() API, the application has to request permission by adding the following privilege to the 'tizen-manifest.xml' file:
+  To use the `rpc_port_proxy_connect()` API, the application has to request permission by adding the following privilege to `tizen-manifest.xml` file:
 
     ```
     <privileges>
