@@ -17,7 +17,7 @@ The main features of the Media Controller API include:
 
   You can [update the playlist information](#get_playlist) on the server side, and then retrieve the playlist information on the client side.
 
-  The media controller server provides currservermetadataent information about the registered application that you can send to the client.
+  The media controller server provides current information about the registered application that you can send to the client.
 
   **Note**
 
@@ -26,8 +26,6 @@ The main features of the Media Controller API include:
 - Sending and processing commands
 
   You can [send a command](#send_command) to the server from the client side, and then process the command on the server side.
-
-  The client can request [server state](#serverstate) or [server metadata](#servermetadata) information from the server, and receive it through a callback.
 
 - Sending and processing commands to receive replies
 
@@ -102,7 +100,7 @@ To update the metadata and playback information on the server side:
 
 2. Set the metadata or playback information to be updated using the corresponding `mc_server_set_XXX()` function, and then update the metadata or playback information using the corresponding `mc_server_update_XXX()` function.
 
-  For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()` function, and then update the information using the `mc_server_update_playback_info()` function:
+For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()` function, and then update the information using the `mc_server_update_playback_info()` function:
 
   ```
   ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
@@ -110,7 +108,7 @@ To update the metadata and playback information on the server side:
   ret = mc_server_update_playback_info(g_mc_server);
   ```
 
-3. When no longer needed, destroy the media controller server handle using the `mc_server_destroy()` function:
+3. Destroy the media controller server handle using the `mc_server_destroy()` function, when media controller server handle is no longer needed.
 
   ```
   mc_server_destroy(g_server_h);
@@ -136,7 +134,7 @@ To retrieve the metadata and playback information on the client side:
 
 3. Retrieve the metadata or playback information from the server using the corresponding `mc_client_get_server_XXX()` function. Use the server name retrieved in the previous step to identify the server.
 
-  For example, to retrieve the playback information from the server, use the `mc_client_get_server_playback_info()` function:
+For example, to retrieve the playback information from the server, use the `mc_client_get_server_playback_info()` function:
 
   ```
   mc_playback_h playback = NULL;
@@ -150,7 +148,7 @@ To retrieve the metadata and playback information on the client side:
 
   The `mc_client_get_playback_state()` function retrieves the playback state from the playback information returned by the `mc_client_get_server_playback_info()` function.
 
-4. When no longer needed, destroy the media controller client handle using the `mc_client_destroy()` function:
+4. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
   ```
   mc_client_destroy(g_client_h);
@@ -195,7 +193,7 @@ To update the playlist and metadata information on the server side:
    ```
    mc_playlist_destroy(playlist_h);
    ```
-5. When no longer needed, destroy the media controller server handle using the `mc_server_destroy()` function:
+5. Destroy the media controller server handle using the `mc_server_destroy()` function, when media controller server handle is no longer needed.
 
    ```
    mc_server_destroy(g_server_h);
@@ -256,7 +254,7 @@ To retrieve the playlist and metadata information on the client side:
   mc_playlist_destroy(playlist_h);
   ```
 
-8. When no longer needed, destroy the media controller client handle using the `mc_client_destroy()` function:
+8. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
    ```
    mc_client_destroy(g_client_h);
@@ -290,7 +288,7 @@ To send a command to the server from the client side:
 
 3. Send the command to the server using the corresponding `mc_client_send_XXX()` function. Use the server name retrieved in the previous step to identify the server.
 
-   For example, to send a playback state change command to the server, use the `mc_client_send_playback_state_command()` function with the new state defined in the third parameter:
+For example, to send a playback state change command to the server, use the `mc_client_send_playback_state_command()` function with the new state defined in the third parameter:
 
    ```
    mc_playback_h playback = NULL;
@@ -301,7 +299,7 @@ To send a command to the server from the client side:
 
    If you want to define your own commands to send to the server, use the `mc_client_send_custom_command()` function.
 
-4. When no longer needed, destroy the media controller client handle using the `mc_client_destroy()` function:
+4. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
    ```
    mc_client_destroy(g_client_h);
@@ -317,7 +315,7 @@ To process the received command on the server side:
 
 2. Define the callback that is invoked when the server receives the command.
 
-   For example, to define a callback for playback state change commands:
+For example, to define a callback for playback state change commands:
 
    ```
    void
@@ -332,13 +330,13 @@ To process the received command on the server side:
    - To register a callback for playback state change commands, use the `mc_server_set_playback_state_command_received_cb()` function.
    - To register a callback for a custom command, use the `mc_server_set_custom_command_received_cb()` function.
 
-   For example, to register a callback for playback state change commands:
+For example, to register a callback for playback state change commands:
 
    ```
    ret = mc_server_set_playback_state_command_received_cb(g_mc_server, command_received_cb, NULL);
    ```
 
-4. When no longer needed, destroy the media controller server handle using the `mc_server_destroy()` function:
+4. Destroy the media controller server handle using the `mc_server_destroy()` function, when media controller server handle is no longer needed.
 
    ```
    mc_server_destroy(g_server_h);
@@ -367,7 +365,7 @@ To send a command to the server from the client side:
 
 3. Send the command to the server using the corresponding `mc_client_send_XXX_cmd()` function. Use the server name retrieved in the previous step to identify the server.
 
-  For example, to send a playback action change command to the server, use the `mc_client_send_playback_action_cmd()` function with the new action defined in the third parameter:
+For example, to send a playback action change command to the server, use the `mc_client_send_playback_action_cmd()` function with the new action defined in the third parameter:
 
   ```
   mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
@@ -379,7 +377,7 @@ To send a command to the server from the client side:
   If you want to define your own commands to send to the server, use the `mc_client_send_custom_cmd()` function.
   The request_id will be passed to the `mc_client_cmd_reply_recieved_cb()` function.
 
-4. When no longer needed, destroy the media controller client handle using the `mc_client_destroy()` function:
+4. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
   ```
   mc_client_destroy(g_client_h);
@@ -395,7 +393,7 @@ To process the received command on the server side:
 
 2. Define the callback that is invoked when the server receives the command.
 
-  For example, to define a callback for playback state change commands:
+For example, to define a callback for playback state change commands:
 
   ```
   void
@@ -414,13 +412,13 @@ To process the received command on the server side:
   - To register a callback for played item, playback state and playback position change commands in playlist, use the `mc_server_set_playlist_cmd_received_cb()` function.
   - To register a callback for a custom command, use the `mc_server_set_custom_cmd_received_cb()` function.
 
-  For example, to register a callback for playback state change commands:
+For example, to register a callback for playback state change commands:
 
   ```
   ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
   ```
 
-4. When no longer needed, destroy the media controller server handle using the `mc_server_destroy()` function:
+4. Destroy the media controller server handle using the `mc_server_destroy()` function, when media controller server handle is no longer needed.
 
   ```
   mc_server_destroy(g_server_h);
@@ -490,7 +488,7 @@ To send a custom event to the server from the client side:
    ```
 
 3. Send the event to the client using the corresponding `mc_server_send_custom_event()` function. Use the client name retrieved in the previous step to identify the client.
-   For example, to send a your own event to the client, use the `mc_server_send_custom_event()` function with the event in the third parameter:
+For example, to send a your own event to the client, use the `mc_server_send_custom_event()` function with the event in the third parameter:
 
    ```
    char *request_id = NULL;
@@ -498,7 +496,7 @@ To send a custom event to the server from the client side:
    ret = mc_server_send_custom_event(g_server_h, client_name, "evnet1", NULL, &request_id);
    ```
 
-4. When no longer needed, destroy the media controller client handle using the `mc_server_destroy()` function:
+4. Destroy the media controller server handle using the `mc_server_destroy()` function, when media controller server handle is no longer needed.
 
    ```
    mc_server_destroy(g_server_h);
@@ -514,7 +512,7 @@ To process the received event on the client side:
 
 2. Define the callback that is invoked when the client receives the event.
 
-   For example, to define a callback for a custom event:
+For example, to define a callback for a custom event:
 
    ```
    void
@@ -528,13 +526,13 @@ To process the received event on the client side:
 
    - To register a callback for a custom events, use the `mc_client_set_custom_event_received_cb()` function.
 
-   For example, to register a callback for a custom event:
+For example, to register a callback for a custom event:
 
    ```
    ret = mc_client_set_custom_event_received_cb(g_client_h, event_received_cb, NULL);
    ```
 
-4. When no longer needed, destroy the media controller client handle using the `mc_client_destroy()` function:
+4. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
    ```
    mc_client_destroy(g_client_h);
