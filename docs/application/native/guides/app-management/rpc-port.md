@@ -3,8 +3,9 @@
 Tizen applications can communicate with each other using RPC ports. Applications can send and receive data after establishing a connection.
 
 >**Note**
-APIs will be used in generated source files by TIDLC which is an Interface Definition Language (IDL) compiler for Tizen.
-**Samsung strongly recommends to use [TIDL](tidl.md) instead of using RPC Port APIs directly.**
+>
+> APIs will be used in generated source files by TIDLC which is an Interface Definition Language (IDL) compiler for Tizen.
+> **Samsung strongly recommends to use [TIDL](tidl.md) instead of using RPC Port APIs directly.**
 
 ## RPC Port APIs
 
@@ -36,8 +37,9 @@ APIs will be used in generated source files by TIDLC which is an Interface Defin
 
   Stub application can register the flag for the trusted communication to allow only trusted applications.
 
+## Prerequisites
 
-## To enable your application to use `rpc_port_proxy_connect()` API:
+To enable your application to use `rpc_port_proxy_connect()` API:
 
   To use the `rpc_port_proxy_connect()` API, the application has to request permission by adding the following privilege to `tizen-manifest.xml` file:
 
