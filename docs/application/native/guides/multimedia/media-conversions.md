@@ -173,7 +173,7 @@ After the `media_packet` is allocated with corresponding codec MIME types, fill 
        }
    }
    ```
-<a name="management></a>
+<a name="management"></a>
 ## Running the Media Codec
 
 After [preparing the medic codec](#prepare) and [filling the `media_packet` with data](#packet), run the media codec in the following loop:
