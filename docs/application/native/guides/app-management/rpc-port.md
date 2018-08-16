@@ -1,6 +1,6 @@
 # RPC Port
 
-Tizen applications can communicate with each other using RPC ports. Applications can send and receive data after establishing a connection.
+Tizen applications can communicate with each other using RPC Port APIs, which allows applications to send and receive data after a connection is established.
 
 >**Note**
 >
@@ -9,29 +9,23 @@ Tizen applications can communicate with each other using RPC ports. Applications
 
 ## RPC Port APIs
 
-- Proxy APIs
-  
-  These APIs are for an application that wants to connect to an application, invoke some functions, and return the results.
+RPC Port APIs compose of three set of APIs:
 
-- Stub APIs
+- **Proxy APIs**:  provide functions to connect a server, invoke functions in the server, and return the results from the server.
 
-  These APIs are for an application that wants to provide some methods to other processes, which includes Remote Procedure Call (RPC).
+- **Stub APIs**:  provide the way to call methods of the server, which executes the methods requested by clients.
 
-- Parcel APIs
-
-  These APIs provides methods to create marshalling and unmarshalling parcel from the native type format.
+- **Parcel APIs**:  provide interfaces to marshall and unmarshall a parcel to/from the native type format.
 
 ## Features of RPC Port API
 
 - Connection oriented communication
 
-  You must create a connection between proxy and stub application to send and receive data.
-  After the connection is disconnected, the callback for disconnected event, which was registered earlier will be called.
-  Some other events such as connected and rejected events are supported as well.
+  You must create a connection between the proxy and the stub applications to send and receive data. After the connection is disconnected, the callback for disconnected event that was registered earlier is called. Some other events such as connected and rejected events are supported as well.
 
 - Access control
 
-  Stub application can register the privileges to verify whether the application that is trying to connect has proper privileges.
+  The server application using stub APIs can register the privileges to verify whether the client that is trying to connect has proper privileges.
 
 - Trusted communication
 

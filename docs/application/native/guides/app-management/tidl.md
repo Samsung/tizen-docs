@@ -1,7 +1,7 @@
 
 # TIDL
 
-TIDL is a programming language to define interfaces for communicating among apps in Tizen.
+TIDL is a programming language to define interfaces for communicating among applications in Tizen.
 It provides methods to create a Remote Procedure Call (RPC) or Remote Method Invocation (RMI) in Tizen.
 
 ## TIDLC
@@ -26,7 +26,7 @@ Usage:
 ## TIDL Syntax
 
 ### 'interface'
-It makes an interface to communicate between proxy and stub.
+It generates an interface to communicate between proxy and stub.
 
 **Syntax**
 ```csharp
@@ -76,8 +76,9 @@ interface ITest2 {}
 It denotes one-way-call.
 
 >**Note**
-Returned type should be ‘void’
-Keyword ‘out’ is not allowed
+>
+> Returned type should be `void`
+> Keyword `out` is not allowed
 
 **Example**
 ```csharp
@@ -90,9 +91,10 @@ interface ITest {
 It denotes one-way-call from service.
 
 >**Note**
-Returned type should be ‘void’
-Keyword ‘out’ is not allowed
-Regarded as a type in methods (Cannot be used in ‘struct’ type)
+>
+> Returned type should be `void`
+> Keyword `out` is not allowed
+> Regarded as a type in methods (Cannot be used in `struct` type)
 
 **Example**
 ```csharp
@@ -105,7 +107,7 @@ interface ITest {
 
 ### 'struct'
 It allows developers to define user-defined types.
-It is also possible to be used in other user-defined types or method syntax.
+It is also possible to be used in `struct` or method syntax.
 
 **Syntax**
 ```csharp
@@ -125,7 +127,7 @@ struct Student  {
 ```
 
 ## TIDL Type System
- - Built-in type (‘in’ direction case)
+ - Built-in type (`in` direction case)
 
 	| TIDL type   |Size  |C# type |C++ type  |C type|
 	|------------|------|--------|----------|------|
