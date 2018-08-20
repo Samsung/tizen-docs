@@ -8,37 +8,37 @@ For information on how to set up the Tizen OS development environment, see [Sett
 To build the Tizen kernel for the TM1 board:
 
 1. Install and set up cross-compile tools on your system if the host has a different architecture than the target (such as x86).
-1. Prepare the kernel source code for TM1 from `profile/mobile/platform/kernel/linux-3.10-sc7730`:  
+1. Prepare the kernel source code for TM1 from `profile/mobile/platform/kernel/linux-3.10-sc7730`:
    ```
    git: https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git
    branch: accepted/tizen_mobile
    ```
 1. If your kernel source has been used to create binaries for another architecture, start by cleaning them up.
-1. Set up the `.config` file for TM1:  
-   ```bash
+1. Set up the `.config` file for TM1:
+   ```
    $ make ARCH=arm tizen_tm1_defconfig
    ```
-1. After reconfiguring your needs (such as `make ARCH=arm menuconfig`) or using the stock configuration (no modifications), build it:  
-   ```bash
+1. After reconfiguring your needs (such as `make ARCH=arm menuconfig`) or using the stock configuration (no modifications), build it:
+   ```
    $ make ARCH=arm zImage
    $ make ARCH=arm dtbs
    ```
 1. Create a `devicetree` and `zImage` merged image with the image tools:
-   ```bash
+   ```
    $ scripts/sprd_dtbtool.sh -o arch/arm/boot/merged-dtb -p scripts/dtc/ -v arch/arm/boot/dts/
    $ scripts/sprd_mkdzimage.sh -o arch/arm/boot/dzImage -k arch/arm/boot/zImage -d arch/arm/boot/merged-dtb
    ```
 1. Build and make the kernel module image as well. Note that you may need to do sudo first to let `sudo -n` work in the script:
-   ```bash
+   ```
    $ sudo ls
    $ scripts/mkmodimg.sh
    ```
 1. Make a `.tar` archive from `dzImage` and `modules.img`. You can make your own `.tar` file from the 2 files:
-   ```bash
+   ```
    $ tar cf FILENAME_YOU_WANT.tar -C arch/arm/boot dzImage -C ../../../usr/tmp-mod modules.img
    ```
-1. Send the `.tar` image to the target using `lthor`:  
-   ```bash
+1. Send the `.tar` image to the target using `lthor`:
+   ```
    $ lthor FILENAME_YOU_WANT.tar
    ```
 
@@ -64,11 +64,16 @@ The following figure shows the early boot sequence after starting the kernel.
 
 ![Early boot sequence](media/706px-boot-2.png)
 
-- `sysinit.target`  
+- `sysinit.target`
+
   Special target unit for early boot-up scripts. It has dependencies on necessary services and targets, such as `local-fs.target`. At this point, most of the file systems, such as `/opt`, `/tmp`, and `/media`, are mounted and the `systemd`-related daemons, such as `systemd-journald`, are launched.
-- `basic.target`  
+
+- `basic.target`
+
   Special target unit for basic bootup. At this point, all necessary initialization for general purpose daemons, such as mount points, sockets, timers, and path units, is completed. Tizen-specific services (such as `vconf-setup` and `tizen-debug-level`) are also executed.
-- `bootmode.target`  
+
+- `bootmode.target`
+
   Special target unit for selecting the boot mode. If the kernel boot parameter (`/proc/cmdline`) has the `charger_detect_boot` option passed by a boot loader, such as `uboot`, the platform boots up in charging mode. In this mode, the system enters the low power mode and charges the battery. If the `charger_detect_boot` option is not included as a kernel boot parameter, a normal boot is started.
 
 The following figure shows the overview of normal booting sequence in Tizen platform.
@@ -77,9 +82,12 @@ The following figure shows the overview of normal booting sequence in Tizen plat
 
 ![Tizen platform boot sequence](media/710px-boot-3.png)
 
-- `multi-user.target`  
+- `multi-user.target`
+
   Special target unit for setting up a multi-user system with non-graphical support. On the Tizen platform, this target is used for launching platform infrastructure daemons, such as `dbus` (system session), power manager, GPS manager, telephony daemon, WRT (Web Run Time) security daemon, and the media server. Some `systemd`-related daemons (such as `systemd-logind`) are also started in this phase.
-- `graphical.target`  
+
+- `graphical.target`
+
   Special target unit for setting up a graphical environment. Some important daemons (such as the access control and OMA DS agent servers) that must have root permission are launched at this point. The Tizen platform uses the `systemd` user session for App privilege daemons. Some daemons related to the graphics system, such as Enlightenment (window manager), are launched with the App privilege in this phase. The Tizen platform has its special target for middleware and mobile service: `tizen-middleware.target` starts the platform service daemons, such as calendar, contacts, email, message, sound, and download provider. `tizen-mobile-session.target` starts some service daemons related with the mobile session.
 
 ## BSP Customization
@@ -97,34 +105,34 @@ If your platform is already loaded with the compatible boot loader software, you
 To build the Tizen TM1 boot loader:
 
 1. Install and set up cross-compile tools on your system if the host has a different architecture than the target (such as x86).
-1. Start with cleaning up the `u-boot-tm1` source. Download the source from the [u-boot-tm1](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/u-boot-tm1.git;a=summary) repository.  
-   ```bash
+1. Start with cleaning up the `u-boot-tm1` source. Download the source from the [u-boot-tm1](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/u-boot-tm1.git;a=summary) repository.
+   ```
    $ make distclean`
    ```
 1. Set up the configuration for TM1.
-1. Build `u-boot`:  
-   ```bash
+1. Build `u-boot`:
+   ```
    $ make ARCH=arm
    ```
-1. Once the build is successful, the `u-boot.bin` file is created. (This step is for preventing from flashing the other `u-boot.bin` file.)  
-   ```bash
+1. Once the build is successful, the `u-boot.bin` file is created. (This step is for preventing from flashing the other `u-boot.bin` file.)
+   ```
    $ tools/mkimage_signed.sh u-boot.bin "tizen_tm1"
    ```
 
    After the script is run, the `u-boot-mmc.bin` file is created.
-1. Create a boot loader tarball to download the `u-boot` binary onto the target.  
-   ```bash
+1. Create a boot loader tarball to download the `u-boot` binary onto the target.
+   ```
    $ tar cvf bootloader.tar u-boot-mmc.bin`
    ```
->**Note**
+> **Note**
 >
->Be careful when modifying the boot loader: incorrect configuration can damage the device permanently.
+> Be careful when modifying the boot loader: incorrect configuration can damage the device permanently.
 
 #### Boot Loader Kernel Parameters
 
 Command line parameters, such as the following example, can be passed from the boot loader to the [Linux](https://wiki.tizen.org/Linux) kernel:
 
-```bash
+```
 console=ttyS1,115200n8
 mem=1024M
 loglevel=1
@@ -236,13 +244,16 @@ Based on the hotplug event handling, a notification is passed to `deviced` for d
 
 The SDHCI controller is supported in the MMC/SD/SDIO interface. The Mobile Storage Host controller is only supported in the MMC interface.
 
-- **Kernel configuration for MMC Interface**  
-  `CONFIG_MMC_BLOCK`, `CONFIG_MMC`, `CONFIG_MSHCI` (for Mobile Storage Interface enable)  
+- **Kernel configuration for MMC Interface**
+
+  `CONFIG_MMC_BLOCK`, `CONFIG_MMC`, `CONFIG_MSHCI` (for Mobile Storage Interface enable)
   `sys interface: /dev/mmcblk0pX`
-- **Kernel configuration for SD/SDIO Interface**  
-  `CONFIG_MMC_BLOCK`, `CONFIG_MMC`  
-  `CONFIG_MMC_SDHCI` (for SDHCI host Interface enable)  
-  `CONFIG_MMC_SDHCI_S3C` (for Samsung SoC)  
+
+- **Kernel configuration for SD/SDIO Interface**
+
+  `CONFIG_MMC_BLOCK`, `CONFIG_MMC`
+  `CONFIG_MMC_SDHCI` (for SDHCI host Interface enable)
+  `CONFIG_MMC_SDHCI_S3C` (for Samsung SoC)
   `sys interface: /dev/mmcblk1pX`
 
 The `X` denotes the MMC partition number. Details of the partition mount point for Tizen are covered under [Tizen Partition Layout](#tizen-partition-layout).

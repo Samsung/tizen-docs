@@ -4,7 +4,7 @@ Use the `gbs build` subcommand to build the source code and generate RPM package
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs build -help
 ```
 
@@ -13,13 +13,15 @@ $ gbs build -help
 The `gbs build` command requires the following input:
 
 - Git projects that contain RPM packaging files
-- Binary RPM repositories (remote or local)  
-The binary RPM repositories contain all the binary RPM packages used to create the chroot environment and build packages, which can be remote, like tizen release or snapshot repositories, or local. The local repository supports 2 types:
+- Binary RPM repositories (remote or local)
+
+  The binary RPM repositories contain all the binary RPM packages used to create the chroot environment and build packages, which can be remote, like tizen release or snapshot repositories, or local. The local repository supports 2 types:
 
   - Standard repository with existing repodata
   - Normal directory containing RPM packages. GBS finds all RPM packages within the directory.
 
   To configure a repository, see [GBS Configuration](gbs.conf.md).
+
 - Project build configurations (such as macros and flags)
 
 
@@ -56,7 +58,7 @@ Local repos in the GBS build root (`~/GBS-ROOT` by default) affect build results
 
 The following example shows the structure of the GBS build root directory in the workflow output:
 
-```bash
+```
 gbs output top dir
 |-- local
 | |-- cache # repodata and RPMs from remote repositories
@@ -83,7 +85,7 @@ gbs output top dir
 To perform a basic build:
 
 - Build a single package:
-  ```bash
+  ```
   $ cd package1$ gbs build -A i586
   ```
 
@@ -92,53 +94,58 @@ To perform a basic build:
    >
    > Supported architectures include x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, and mipsel.
 
-  ```bash
+  ```
   $ gbs build -A armv7l #build package for armv7l
   $ gbs build -A i586 #build package for i586
   ```
 
-- Make a clean build by deleting the old build root.  
-The `--clean` option must be specified if the repository has been changed, for example, to another release.
+- Make a clean build by deleting the old build root.
 
-  ```bash
+  The `--clean` option must be specified if the repository has been changed, for example, to another release.
+
+  ```
   $ gbs build -A armv7l --clean
   ```
 
 - Build the package with a specific commit:
-  ```bash
+  ```
   $ gbs build -A armv7l --commit=<COMMIT_ID>
   ```
 
-- Use the `--overwrite` option to trigger a rebuild.  
-If you have already built before, and want to rebuild, specify the `--overwrite` option or the packages are skipped.
-  ```bash
+- Use the `--overwrite` option to trigger a rebuild.
+
+  If you have already built before, and want to rebuild, specify the `--overwrite` option or the packages are skipped.
+  ```
   $ gbs build -A i586 --overwrite
   ```
 
   If you change the commit or specify the `--include-all` option, it always rebuilds. In these cases, the `--overwrite` option is not needed.
 
 - Output the debug info:
-  ```bash
+  ```
   $ gbs build -A i586 --debug
   ```
 
-- Build against a local repository.  
-You can configure the local repo in the `.gbs.conf` file or through the command line.
-  ```bash
+- Build against a local repository.
+
+  You can configure the local repo in the `.gbs.conf` file or through the command line.
+  ```
   $ gbs build -R /path/to/repo/dir/ -A i586
   ```
 
-- Use the `--noinit` option to build a package in offline mode.  
-This option can only be used if the build root is ready. When it is used, GBS does not connect the remote repository, and skips parsing and checking the repository and initializing the build environment. The package is built directly.
+- Use the `--noinit` option to build a package in offline mode.
 
-  ```bash
+  This option can only be used if the build root is ready. When it is used, GBS does not connect the remote repository, and skips parsing and checking the repository and initializing the build environment. The package is built directly.
+
+  ```
   $ gbs build -A i586 # build first and create build environment
   $ gbs build -A i586 --noinit # use --noinit to start building directly
   ```
 
-- Build with all uncommitted changes using the `--include-all` option.  
+- Build with all uncommitted changes using the `--include-all` option.
+
   In the following examples, the Git tree contains 1 modified file and 2 extra files:
-  ```bash
+  ```
   $ git status -s
   M ail.pc.in
   ?? base.repo
@@ -148,7 +155,7 @@ This option can only be used if the build root is ready. When it is used, GBS do
 
     Only committed files are built. None of the modified files, which are neither committed nor added, are built:
 
-    ```bash
+    ```
     $ gbs build -A i586
     warning: the following untracked files would NOT be included: base.repo main.repo
     warning: the following uncommitted changes would NOT be included: ail.pc.in
@@ -162,7 +169,7 @@ This option can only be used if the build root is ready. When it is used, GBS do
   - Build with the `--include-all` option
 
     All the files are built:
-    ```bash
+    ```
     $ gbs build -A i586
     warning: the following untracked files would NOT be included: base.repo main.repo
     warning: the following uncommitted changes would NOT be included: ail.pc.in
@@ -176,7 +183,7 @@ This option can only be used if the build root is ready. When it is used, GBS do
 
     If you want to ignore some file types, update your `.gitignore`:
 
-    ```bash
+    ```
     $ cat .gitignore
     .*
     */.*
@@ -215,7 +222,7 @@ The incremental mode has some limitations, mostly related to packaging and how t
   3. Code installation (%install)
 
 - The %prep section can only contain the %setup macro to unpack the tarball, and must not contain other source code-related operations, such as unpacking another source or applying patches.
-  
+
 - Because the %build section is run every time, if the %build script has configuration scripts (auto-tools), binaries can be regenerated, causing a complete build every time. To avoid this, use the following macros, which can be overridden using the `--no-configure` option:
 
     - %configure: runs the configure script with pre-defined paths and options.
@@ -228,7 +235,7 @@ The incremental mode has some limitations, mostly related to packaging and how t
 
 The following example uses the dlog source code. First, it builds with the `--incremental` option, then modifies 1 source file and triggers the incremental build again. You can see that only modified source code gets compiled during the incremental build.
 
-```bash
+```
 $ cd dlog
 # first build:
 $ gbs build -A i586 --incremental
@@ -282,7 +289,7 @@ From the build log, you can see that only `log.c` has been re-compiled. That is 
 
 The `--noinit` option can be used together with `--incremental` to make a build more quickly:
 
-```bash
+```
 $ gbs build --incremental --noinit
 ```
 
@@ -294,7 +301,7 @@ To perform a multiple package build:
 
 - Build all packages under a specific package directory:
 
-  ```bash
+  ```
   $ mkdir tizen-packages
   $ cp package1 package2 package3 ... tizen-packages/
   $ gbs build -A i586 tizen-packages # build all packages under tizen-packages
@@ -302,7 +309,7 @@ To perform a multiple package build:
 
 - Build multiple packages in parallel with the `--threads` option:
 
-  ```bash
+  ```
   # current directory have multiple packages, --threads can be used to set the max build worker at the same time
   $ gbs build -A armv7l --threads=4
   ```
@@ -314,7 +321,7 @@ To perform a multiple package build:
 
   When the number of packages is small and the packages can be clearly listed in the command line, use the `--binary-list` option for simplicity.
 
-  ```bash
+  ```
   $ gbs build -A i586 --binary-from-file=/path/to/packages.list
   $ gbs build -A i586 --binary-list=<pkg1>,<pkg2>
   ```
@@ -324,7 +331,7 @@ To perform a multiple package build:
   - The `--exclude` option specifies a list in which the names of packages to be ignored are separated by commas.
   - The `--exclude-from-file` option specifies a text file that contains a name list of packages to be ignored.
 
-  ```bash
+  ```
   $ gbs build -A i586 tizen-packages --exclude=<pkg1>
   $ gbs build -A i586 tizen-packages --exclude=<pkg1>,<pkg2>
   $ gbs build -A i586 tizen-packages --exclude-from-file=/path/to/packages.list
@@ -339,7 +346,7 @@ To perform a multiple package build:
 
   The `--deps` and `--rdep` options are compatible. When added at the same time, besides the specific packages, GBS builds not only the related packages on which they depend, but also all the related packages that depend on them.
 
-  ```bash
+  ```
   $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps
   $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --rdeps
   $ gbs build -A i586 --binary-list=<pkg1>,<pkg2> --deps --rdeps
@@ -353,7 +360,7 @@ The `gbs build` command offers some useful options:
 
   The `--extra-packs=<packages separated by commas>` option can be used to install extra packages:
 
-  ```bash
+  ```
   $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --deps
   $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --rdeps
   $ gbs build -A i586 --extra-packs=<pkg1>,<pkg2> --deps --rdeps
@@ -363,13 +370,13 @@ The `gbs build` command offers some useful options:
 
   Generally, the GBS build removes unnecessary packages in the build root. While transferring to build another package, you can use the `--keep-packs` option to keep all unnecessary packages, and just install missing required build packages. This option can be used to speed up building multiple packages.
 
-  ```bash
+  ```
   $ gbs build --keep-packs
   ```
 
   The `--keep-packs` option can be used to create 1 build root for building multiple packages. Once the build root is ready, you can use the `--noinit` option to build these packages quickly.
 
-  ```bash
+  ```
   $ gbs build pkg1/ --keep-packs -A i586
   $ gbs build pkg2/ --keep-packs -A i586
   $ gbs build pkg3/ --keep-packs -A i586
@@ -377,7 +384,7 @@ The `gbs build` command offers some useful options:
 
   Now, the build root (`~/GBS-ROOT/local/scratch.i586.0`) is ready for building `pkg1`, `pkg2`, and `pkg3`. You can use the `--noinit` option to build them offline, and need waste no time to check for repository updates and build root.
 
-  ```bash
+  ```
   $ gbs build pkg1 --noinit
   $ gbs build pkg2 --noinit
   $ gbs build pkg3 --noinit
@@ -391,7 +398,7 @@ Use the `--fallback-to-native` option to force GBS to perform packaging for non-
 >
 > This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, GBS always performs packaging in the native packaging mode.
 
-```bash
+```
 $ gbs build -A i586 --fallback-to-native
 ```
 
@@ -406,7 +413,7 @@ The source package file (`src.rpm`) contains everything needed to recreate a spe
 
 Adding the `--skip-srcrpm` option enables GBS to skip the building of the `src.rpm` file, speeding up the building process of huge source Git trees during development:
 
-```bash
+```
 $ cd <Path_to_crosswalk>
 $ gbs build -A i586 --skip-srcrpm
 ```
@@ -417,7 +424,7 @@ Though GBS provides the `--threads` option to speed up the build process by acti
 
 To improve the build process efficiency further, use the `--icecream` option, which activates distributed compiler networks. The option makes GBS use build workers on both the local machine and distributed networks.
 
-```bash
+```
 $ gbs build -A i586 --icecream=10
 ```
 
@@ -429,7 +436,7 @@ The project build conf describes the build configurations for the project, inclu
 
   Starting from GBS 0.7.1, by default, GBS fetches the build conf from a remote repository (if you specify the remote Tizen repository) and stores it in your temporary environment:
 
-  ```bash
+  ```
   $ gbs build -A i586
   info: generate repositories ...
   info: build conf has been downloaded at:
@@ -442,7 +449,7 @@ The project build conf describes the build configurations for the project, inclu
 
   You can save and modify the build conf, and use it for your own purposes:
 
-  ```bash
+  ```
   $ cp /var/tmp/<user>-gbs/tizen2.0.conf ~/tizen2.0.conf
   $ gbs build -A i586 -D ~/tizen2.0.conf
   ```

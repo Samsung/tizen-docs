@@ -12,13 +12,13 @@ For more information on the 2 maintenance models (orphan-packaging and joint-pac
 
 For command usage details, enter:
 
-```bash
+```
 gbs devel help
 ```
 
 The following code shows an example workflow:
 
-```bash
+```
 # maintainer: create upstream branch and packaging branch (initial packaging)
 ...
 # maintainer: push packaging and upstream branches (and tags) to Git/Gerrit
@@ -57,7 +57,7 @@ $ gbs submit
 
 Synopsis:
 
-```bash
+```
 gbs devel [-h] [--packaging-dir PACKAGING_DIR] [--spec SPEC]
                [--upstream-tag UPSTREAM_TAG] [--retain-history]
                [gitdir] <Second_Level_Subcommand>
@@ -65,7 +65,7 @@ gbs devel [-h] [--packaging-dir PACKAGING_DIR] [--spec SPEC]
 
 The following example shows the second level subcommands for different actions:
 
-```bash
+```
 gbs devel start
 gbs devel export
 gbs devel switch
@@ -89,7 +89,7 @@ To use each action:
 
   Before using the command, make sure that an orphan-packaging branch (containing all local changes as patches) and the other packaging files are available and ready for use.
 
-  ```bash
+  ```
   $ git branch
   * tizen
   upstream
@@ -123,7 +123,7 @@ To use each action:
   >
   > This command does not automatically commit the changes. The package maintainers must verify the changes and commit them manually.
 
-  ```bash
+  ```
   $ git branch
   * development/tizen/1.1
   upstream
@@ -150,7 +150,7 @@ To use each action:
 
   Switches between the packaging branch and the corresponding development branch.
 
-  ```bash
+  ```
   $ git branch
   development/tizen/1.1
   * tizen
@@ -184,7 +184,7 @@ To use each action:
 
   This command basically contains the output of the GBS export minus the source code tarball.
 
-  ```bash
+  ```
   $ git branch
   * tizen
   upstream
@@ -202,7 +202,7 @@ To use each action:
   upstream
   ```
 
-  The convert action only creates the orphan packaging branch. This means that you need to create the development branch separately with the `gbs devel start` command.  
+  The convert action only creates the orphan packaging branch. This means that you need to create the development branch separately with the `gbs devel start` command.
 
 
 ## Using gbs devel with gbs build
@@ -210,12 +210,12 @@ To use each action:
 The following example shows a recommended procedure that shows how the `gbs devel` and `gbs build` subcommands work together. The "acl" package is used as an example.
 
 1. Show the branch in the joint-packaging model:
-   ```bash
+   ```
    ~/projects/acl[common*]$ git branch* common
    ```
 
 1. Start to switch to the orphan-packaging model by creating the orphan-packaging branch:
-   ```bash
+   ```
    ~/projects/acl[common*]$ gbs devel convert --retain-history
    info: Converting package to orphan-packaging git layout
    info: Importing packaging files from branch 'common' to 'common-orphan'
@@ -228,14 +228,14 @@ The following example shows a recommended procedure that shows how the `gbs deve
 
    Show the branches to check the newly created "common-orphan" packaging branch in the orphan-packaging model:
 
-   ```bash
+   ```
    ~/projects/acl[common-orphan*]$ git branch
    common
    * common-orphan
    ```
 
 1. Continue to create and check the development branch in the orphan-packaging model:
-   ```bash
+   ```
    ~/projects/acl[common-orphan*]$ gbs devel start
    info: Switching to branch 'development/common-orphan/2.2.51'
    ...
@@ -246,7 +246,7 @@ The following example shows a recommended procedure that shows how the `gbs deve
    ```
 
 1. Perform local development and then export patches to the packaging branch:
-   ```bash
+   ```
    ~/projects/acl[development/common-orphan/2.2.51*]$ gbs devel export
    info: Exporting patches to packaging branch
    info: On branch 'development/common-orphan/2.2.51', switching to 'common-orphan'
@@ -256,28 +256,28 @@ The following example shows a recommended procedure that shows how the `gbs deve
    ```
 
 1. Commit all changes on the packaging branch:
-   ```bash
+   ```
    ~/projects/acl[common-orphan*]$ git add -A && git commit -s
    ```
 
 1. Perform building on the packaging branch:
-   ```bash
+   ```
    ~/projects/acl[common-orphan*]$ gbs build -A <Arch>
    ```
 
 1. Switch to the development branch by using the `gbs devel switch` command:
-   ```bash
+   ```
    ~/projects/acl[common-orphan*]$ gbs devel switch
    ~/projects/acl[development/common-orphan/2.2.51]$
    ```
 
 1. Perform building on the development branch:
-   ```bash
+   ```
    ~/projects/acl[development/common-orphan/2.2.51]$ gbs build -A <Arch>
    ```
 
    Make changes to the source code and build with uncommitted changes included:
 
-   ```bash
+   ```
    ~/projects/acl[development/common-orphan/2.2.51]$ gbs build -A <Arch> --include-all
    ```

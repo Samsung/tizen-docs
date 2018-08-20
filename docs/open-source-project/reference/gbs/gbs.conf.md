@@ -11,7 +11,7 @@ The GBS configuration files are all simple INI-style files that record various c
 
 When specifying the configuration file by using the `-c (--config)` option, 1 of the above files is loaded and applied by GBS. If no configuration file can be found, GBS automatically generates a `~/.gbs.conf` file. To specify a file among a hierarchy of configuration files:
 
-```bash
+```
 $ gbs -c ~/gbs-my.conf build -A ...
 ```
 
@@ -23,25 +23,37 @@ This section provides information about the profile-oriented style in a GBS conf
 
 The basic structure of a configuration file is composed of properties and sections:
 
-- Properties  
-The basic element contained in a configuration file is a property. Every property has a name and a value, delimited by an equal sign (=). The name appears to the left of the equal sign.
-- Sections  
-Properties can be grouped into various sections, named according to the [naming conventions](#naming-conventions). The section name appears on a line by itself in square brackets ([ ]). All the properties after the section declaration are associated with that section. No explicit "end of section" delimiter is needed. Sections end at the next section declaration or the end of the file. Possible sections include:
-  - **General section**  
-The default profile is defined in the general section and affect GBS behavior on a general basis. That is, upon the modification of the general section, all GBS behaviors are changed accordingly.
+- Properties
+
+  The basic element contained in a configuration file is a property. Every property has a name and a value, delimited by an equal sign (=). The name appears to the left of the equal sign.
+
+- Sections
+
+  Properties can be grouped into various sections, named according to the [naming conventions](#naming-conventions). The section name appears on a line by itself in square brackets ([ ]). All the properties after the section declaration are associated with that section. No explicit "end of section" delimiter is needed. Sections end at the next section declaration or the end of the file. Possible sections include:
+
+  - **General section**
+
+    The default profile is defined in the general section and affect GBS behavior on a general basis. That is, upon the modification of the general section, all GBS behaviors are changed accordingly.
 
     The supported properties include:
-    - `native`  
+
+    - `native`
+
       This property explicitly defines whether a package is native or non-native. Values `yes`, `on`, `1`, `true`, and `enabled` are interpreted as `True`, directing GBS to export in the native packaging mode. All other non-empty values are interpreted as `False`, making GBS export in the non-native mode.
-    - `fallback_to_native`  
+
+    - `fallback_to_native`
+
       This property serves as an emergency option for non-native packages. When enabled for non-native packages, it forces GBS to fallback to the native packaging mode if export fails in the non-native packaging mode. This means that it directs GBS to ignore the upstream branch and create a tarball from HEAD (by default) or specified commit without generating any patch.
+
     - `tmpdir`
     - `upstream_branch`
     - `upstreamtag`
     - `buildroot`
     - `packaging_dir`
-  - **Profile section**  
-Set common authentication information on the profile level, instead of repeating identical configurations in various sections. These settings can be automatically passed to OBS and repository sections.
+
+  - **Profile section**
+
+    Set common authentication information on the profile level, instead of repeating identical configurations in various sections. These settings can be automatically passed to OBS and repository sections.
 
     Add authentication information to a specific repository or OBS section only when it is unique to the corresponding OBS or repository. In addition, multiple profile sections can exist in 1 configuration file, enabling the manipulation of GBS behaviors aimed at different devices (for example, mobile phone and IVI) in a central configuration file. For more information, see [Configuring Multiple Profiles](#configuring-multiple-profiles).
 
@@ -50,14 +62,21 @@ Set common authentication information on the profile level, instead of repeating
     - `passwd`
     - `repos`
     - `obs`
-    - `buildconf`  
-The build config for the `gbs build`command to build all profiles.
-    - `exclude_packages`  
-A list of packages that do not participate in the building. This property can also be used to break the dependency circle.
-  - **OBS section**  
-The OBS section specifies the configurations of the remote build server for a remote build. The supported properties include `url`, `user`, and `password`.
-  - **Repository section**  
-As with the profile section, multiple repository sections can exist in 1 configuration file, allowing various repositories to be manipulated in "batch". The supported properties include `url`, `user`, and `password`. The `user` and `password` properties can be omitted if the corresponding repository does not need authentication information.
+    - `buildconf`
+
+       The build config for the `gbs build`command to build all profiles.
+
+    - `exclude_packages`
+
+       A list of packages that do not participate in the building. This property can also be used to break the dependency circle.
+
+  - **OBS section**
+
+    The OBS section specifies the configurations of the remote build server for a remote build. The supported properties include `url`, `user`, and `password`.
+
+  - **Repository section**
+
+    As with the profile section, multiple repository sections can exist in 1 configuration file, allowing various repositories to be manipulated in "batch". The supported properties include `url`, `user`, and `password`. The `user` and `password` properties can be omitted if the corresponding repository does not need authentication information.
 
 <a name="naming-conventions"></a>
 ### Naming Conventions
@@ -69,7 +88,7 @@ The section names must follow these naming conventions:
 - Start the OBS section name with "obs.". For example, [obs.tizen].
 - Start the repository section name with "repo.".
 
-```bash
+```
 [general]
 #Current profile name which must match a profile section name
 tmpdir = /var/tmp
@@ -111,19 +130,19 @@ Typical common properties include `buildroot`, `user`, and `password`.
 
 To configure the `buildroot` property to override the default `~/GBS-ROOT` value:
 
-```bash
+```
 buildroot=<New_Build_Root>
 ```
 
 The reason you need to configure the `passwd` property is because the password line is automatically converted to an encoded version after running the GBS:
 
-```bash
+```
 passwdx = QlpoOTFBWSZTWVyCeo8AAAKIAHJAIAAhhoGaAlNOLuSKcKEguQT1
 ```
 
 To reset the password, delete the `passwdx` line above and add a new assignment equation:
 
-```bash
+```
 passwd=<New_Password>
 ```
 
@@ -134,7 +153,7 @@ By adding configuration specifications of multiple profiles aimed at various dev
 
 To configure multiple profiles:
 
-```bash
+```
 [general]
 profile = profile.ivi
 
@@ -146,7 +165,7 @@ profile = profile.ivi
 
 When you specify the profile section with the `-P (--profile)` option in a GBS command, the specified profile configuration is applied:
 
-```bash
+```
 $ gbs build --profile=profile.mobile -A i586
 $ gbs remotebuild --profile=mobile
 ```
@@ -170,7 +189,7 @@ You can configure a repository to adapt the GBS build. The repository configurat
 
 - `passwd`
 
-```bash
+```
 [repo.tizen_latest]
 url = http://download.tizen.org/releases/trunk/daily/ivi/latest/
 user = xxx
@@ -184,7 +203,7 @@ url = <Full_Path_of_Local_Repository>
 
 Properties defined in the `[general]` section can be directly used in other sections by using shell-style variable references in GBS 0.17 and higher:
 
-```bash
+```
 [general]
 tmpdir=/var/tmp
 work_dir=~/test

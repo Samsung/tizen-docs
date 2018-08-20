@@ -2,13 +2,18 @@
 
 ## IoT Data Management
 Tizen RT manages data in the following ways:
-- File system support  
-Tizen RT supports not only the SmartFS lightweight file system, but also a virtual file system (VFS). The VFS can provide a common interface set in the form of the POSIX API. Standard libc APIs are already supported. In addition, some advanced features are also included:
+- File system support
+
+  Tizen RT supports not only the SmartFS lightweight file system, but also a virtual file system (VFS). The VFS can provide a common interface set in the form of the POSIX API. Standard libc APIs are already supported. In addition, some advanced features are also included:
+
     - Proc File System for debugging, and ROM File System for read-only data
     - SmartFS for a flash file system with wear-leveling, bad sector management, and transaction-logging-based journaling
     - MTD (Memory Technology Device) and MTD Partition
-- Database (AraStorage) support  
+
+- Database (AraStorage) support
+
 AraStorage, a lightweight database, can manipulate collected sensor data with SQL-compatible interfaces. AraStorage also provides some advanced features, such as:
+
     - b+ tree-based indexing algorithm
     - Cursor structure to improve usability for the application layer
 
@@ -88,29 +93,46 @@ Tizen RT supports:
 
 The IoTBus Framework supports system I/O APIs, including the following 5 API categories:
 
-- GPIO (General Purpose Input/Output)  
-Provides functions to control generic pins. They can be configured for input or output, because GPIO pins have no predefined purpose.
-- I2C (Inter Integrated Circuit)  
-Provides functions to read values of I2C devices or write commands to I2C devices. These APIs are typically used to connect sensor devices or for intra-board communications.
-- SPI (Serial Peripheral Interface)  
-Provides functions to communicate with SPI devices. These APIs support synchronous serial communication interfaces used for short-distance communication. Full duplex modes using a master-slave architecture with a single master are also served.
-- PWM (Pulse Width Modulation)  
-Provides functions to get and set duty cycles and periods of PWM devices. These APIs are typically used to control servo motors or LEDs.
-- UART (Universal Asynchronous Receiver/Transmitter)  
-Provides functions to read and write for asynchronous serial communication. These APIs are usually used in conjunction with communication standards, such as RS-232, RS-422, and RS-485.
+- GPIO (General Purpose Input/Output)
+
+  Provides functions to control generic pins. They can be configured for input or output, because GPIO pins have no predefined purpose.
+
+- I2C (Inter Integrated Circuit)
+
+  Provides functions to read values of I2C devices or write commands to I2C devices. These APIs are typically used to connect sensor devices or for intra-board communications.
+
+- SPI (Serial Peripheral Interface)
+
+  Provides functions to communicate with SPI devices. These APIs support synchronous serial communication interfaces used for short-distance communication. Full duplex modes using a master-slave architecture with a single master are also served.
+
+- PWM (Pulse Width Modulation)
+
+  Provides functions to get and set duty cycles and periods of PWM devices. These APIs are typically used to control servo motors or LEDs.
+
+- UART (Universal Asynchronous Receiver/Transmitter)
+
+  Provides functions to read and write for asynchronous serial communication. These APIs are usually used in conjunction with communication standards, such as RS-232, RS-422, and RS-485.
 
 ## Device Management Framework
 
 The following features are to be made available under the Device Management Framework:
 
-- Configuration  
-The LWM2M client is configured with a set of parameters that include the LWM2M bootstrap server address, bootstrap server port, and LWM2M session lifetime. Alternatively, if a direct connection to the LWM2M server is preferred, the client can be configured with the LWM2M server address and port information.
-- Temporary Halt and Resumption  
-Wireless links, especially in indoor deployments, are prone to intermittent failures, and can momentarily halt an ongoing LWM2M session. Taking this into account, the Device Management Framework must gracefully close all LWM2M sessions with their respective servers, and also logically resume the sessions once the wireless link is restored.
-- Support for Multiple Servers  
-The LWM2M specification allows multiple servers to perform device management with a registered LWM2M client. To this end, the framework must facilitate the seamless addition of LWM2M server information.
-- Device Management Services  
-Services provided under Device Management can be broadly categorized into 4 types:
+- Configuration
+
+  The LWM2M client is configured with a set of parameters that include the LWM2M bootstrap server address, bootstrap server port, and LWM2M session lifetime. Alternatively, if a direct connection to the LWM2M server is preferred, the client can be configured with the LWM2M server address and port information.
+
+- Temporary Halt and Resumption
+
+  Wireless links, especially in indoor deployments, are prone to intermittent failures, and can momentarily halt an ongoing LWM2M session. Taking this into account, the Device Management Framework must gracefully close all LWM2M sessions with their respective servers, and also logically resume the sessions once the wireless link is restored.
+
+- Support for Multiple Servers
+
+  The LWM2M specification allows multiple servers to perform device management with a registered LWM2M client. To this end, the framework must facilitate the seamless addition of LWM2M server information.
+
+- Device Management Services
+
+  Services provided under Device Management can be broadly categorized into 4 types:
+
     - Connectivity monitoring, which relates to connectivity details, such as client IP address, network type, signal strength, and effective data rate.
     - Power monitoring, which relates to the available power states of a device, its current power state, and the time spent in different power states.
     - Error reporting, which relates to out-of-memory conditions, and also temporary wireless connection losses.

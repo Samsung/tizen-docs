@@ -6,7 +6,8 @@ To build the code locally for testing:
 
 ![Local build workflow](media/build.png)
 
-1. Install TS-CLI.  
+1. Install TS-CLI.
+
    For more information on installing TS-CLI and setting up a development environment, see [Build Environment](environment.md).
 
 2. Create a local repository and pull packages into it:
@@ -18,7 +19,7 @@ To build the code locally for testing:
       >
       > Your computer must be able to access the input URL (with `wget`).
 
-      ```bash
+      ```
       $ ts-cli pull --rr http://172.21.17.55/packages/tizen_studio --lr /repository/tizen_studio -o ubuntu-64
 
       ## --rr, --remote-repo    remote repository url
@@ -29,7 +30,7 @@ To build the code locally for testing:
 
 3. Build the code with the `ts-cli build` command:
 
-   ```bash
+   ```
    $ ts-cli build -r /repository/tizen_studio -c -p
 
    ## -r, --repository      repository path. local directory path or http url.
@@ -43,7 +44,7 @@ To build the code locally for testing:
 
 4. Create a snapshot with the `ts-cli push` command:
 
-   ```bash
+   ```
    $ ts-cli push -P <package file path|list> --lr /repository/tizen_studio
 
    ## -P, --package         single package file path or package files with separator comma.
@@ -56,10 +57,11 @@ To build the code locally for testing:
    A `snapshots` folder is created in the specified location and a snapshot is created under it.
 
 
-5. Create an installation image.  
+5. Create an installation image.
+
    Currently, installation is only supported through the Package Manager. Therefore, to install the package, you must create an image.
 
-   ```bash
+   ```
    $ ts-cli create-image -r /repository/tizen_studio -u http://download.tizen.org/sdk/tizenstudio/official -O MyImage
 
    ## -r, --repository      local repository path in filesystem
@@ -68,5 +70,6 @@ To build the code locally for testing:
    ```
 
 
-6. Install the package with the Package Manager.  
+6. Install the package with the Package Manager.
+
    For more information on the Package Manager, see [Configuring the Extension SDK Repository](https://developer.tizen.org/development/tizen-studio/download/configuring-package-manager#extension).
