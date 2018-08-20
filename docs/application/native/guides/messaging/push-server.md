@@ -52,29 +52,28 @@ To send push notifications:
 
      ```
      {
-         "messages":
-         [{
-             /* Other content */
-             "message": "action=ALERT&badgeOption=INCREASE&badgeNumber=1&alertMessage=Hi",
-             "appData": "{id:asdf&passwd:1234}",
-             /* Other content */
-         ]}
+         /* Other content */
+         "message": "action=ALERT&badgeOption=INCREASE&badgeNumber=1&alertMessage=Hi",
+         "appData": "{id:asdf&passwd:1234}",
+         /* Other content */
      }
      ```
 
-   - If you have data to send to the application but no need to notify the user, use the action field on the same level as the messages field, instead of within the messages field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
+   - If you have data to send to the application but no need to notify the user right away, use the action field on the same level as the message field, instead of within the message field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
 
      ```
      {
+         /* Other content */
          "action": "backgroundLaunch",
-         "messages":
-         [{
-             /* Other content */
-             "appData": "{id:asdf&passwd:1234}",
-             /* Other content */
-         ]}
+         "appData": "{id:asdf&passwd:1234}",
+         /* do not include "message" field */
+         /* Other content */
      }
      ```
+
+     > **Note**
+     >
+     > Please don't be confused between "backgroundLaunch" option of action field in 1st depth and "BACKGROUNDLAUNCH" option of action field in message field in 2nd depth. The former is to deliver the notification with the best effort and the latter is to launch the application in the background. However, "backgroundLaunch" option also launches the application in the background.
 
 3. Create the notification message.
 

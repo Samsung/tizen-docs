@@ -81,7 +81,7 @@ To enable your application to use the push functionality:
 
    1. Internet access
 
-      To connect to the Tizen push server and receive notifications from it, the target device or emulator must be able to contact any IP address with the port 5223. If you are in an enterprise network, ensure that the proxy setting in your local network allows outgoing traffic destined for this port number.
+      To connect to the Tizen push server and receive notifications from it, the target device or emulator must be able to contact any IP address with the port 5223 and 8090. If you are in an enterprise network, ensure that the proxy setting in your local network allows outgoing traffic destined for this port number.
 
    2. Package ID
 
