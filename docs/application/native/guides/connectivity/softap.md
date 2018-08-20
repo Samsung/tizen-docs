@@ -13,16 +13,44 @@ You can manage SoftAP configuration settings, such as the Service Set Identifier
 The following table lists the attributes of SoftAP.
 
 **Table: the attributes of SoftAP**
-| attributes			| Description								|
-|----------------------|-------------------------------------------|
-| `SSID`				| SSID (Service set identifier) 			|
-| `Security type` 		| None, WPA2_PSK and WPS 					|
-| `Passphrase `		| Passphrase for wireless access			|
-| `Visibility` 		| Visibility of SSID						|
-| `IP address` 		| Local IP address							|
-| `Mode` 				| Wireless mode (B, G, A and AD)			|
-| `Channel` 			| Channel									|
-
+<table>
+    <thead>
+	    <tr>
+		   <th>Attributes</th>
+		   <th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+	    <tr>
+            <td>SSID</td>
+			<td>SSID (Service set identifier)</td>
+		</tr>
+	    <tr>
+            <td>Security type</td>
+			<td>None, WPA2_PSK and WPS</td>
+		</tr>
+	    <tr>
+            <td>Passphrase</td>
+			<td>Passphrase for wireless access</td>
+		</tr>
+	    <tr>
+            <td>Visibility</td>
+			<td>Visibility of SSID</td>
+		</tr>
+	    <tr>
+            <td>IP address</td>
+			<td>Local IP address</td>
+		</tr>
+	    <tr>
+            <td>Mode</td>
+			<td>Wireless mode (B, G, A and AD)</td>
+		</tr>
+	    <tr>
+            <td>Channel</td>
+			<td>Channel</td>
+		</tr>
+	</tbody>
+</table>
 
 - SoftAP Client
 You can get information about connected client such as name, IP address, MAC address and connection time.
