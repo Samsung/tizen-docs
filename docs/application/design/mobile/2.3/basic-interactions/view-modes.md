@@ -2,8 +2,9 @@
 
 In Tizen applications, you can use portrait, landscape, and reversed landscape view modes.
 
-> **NOTE**  
-In Tizen applications, the reversed landscape view mode is available, however, avoid using it.
+> **Note**
+>
+> In Tizen applications, the reversed landscape view mode is available, however, avoid using it.
 
 The portrait view is the default screen orientation for most application designs. For special purposes, such as games or a camera, you can specify the landscape view as the default. However, we recommend supporting both views with your application and optimizing the screen design layout for both.
 
@@ -25,17 +26,20 @@ The landscape mode provides an additional viewing mode with a purpose and functi
 
 Switching seamlessly from portrait to landscape view is a standard practice in today's mobile devices. Ensure that all functions you offer in the portrait view are also available in landscape view.
 
-**Figure: Portrait and landscape views**  
+**Figure: Portrait and landscape views**
+
 <img alt="" height="400" src="media/views.png" width="650">
 
 In the following figure, the Video app shows the same information in portrait and landscape, but the screen dimension allows for displaying more contents to be shown.
 
-**Figure: Portrait and landscape views in the Video app**  
+**Figure: Portrait and landscape views in the Video app**
+
 <img alt="" height="400" src="media/view_mode_video.png" width="650">
 
 In the following figure, the Calculator app switches between modes depending on orientation, showing a more advanced calculator in the landscape view.
 
-**Figure: Portrait and landscape views in the Calculator app**  
+**Figure: Portrait and landscape views in the Calculator app**
+
 <img alt="" height="400" src="media/view_mode_calculator.png" width="650">
 
 
@@ -43,7 +47,8 @@ In the following figure, the Calculator app switches between modes depending on 
 
 Use the full landscape view for special purposes, such as games, video player, or camera.
 
-**Figure: Full landscape view**  
+**Figure: Full landscape view**
+
 <img alt="" src="media/view_mode_camera_01.png" width="400" height="240">
 
 Consider the following when designing an application using the landscape view:
