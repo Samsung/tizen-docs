@@ -161,6 +161,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the callback for receiving custom command from client.  <a href="#gaa49cc465e962e14ea68f0facafff9109"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf167776cacf8cf246278bec5d5571996">mc_server_send_cmd_reply</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, const char *client_name, const char *request_id, int result_code, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Replies the result of the requested command to the client.  <a href="#gaf167776cacf8cf246278bec5d5571996"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga8cb060ab2d19840622865f71f2d7f2c5">mc_server_foreach_client</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga653fc04f5417a477de84f88f93e1a493">mc_activated_client_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all created clients.  <a href="#ga8cb060ab2d19840622865f71f2d7f2c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gabba042f4584070d3f2dcbbd02874892b">mc_server_send_custom_event</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, const char *client_name, const char *event, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *data, char **request_id)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the customized event with the bundle data.  <a href="#gabba042f4584070d3f2dcbbd02874892b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga29607bc18e882ab954ad30bd91d6a192">mc_server_set_event_reply_received_cb</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf219f0bc6272181e489c940f52050f16">mc_server_event_reply_received_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callback for receiving the result of the event from the media controller client.  <a href="#ga29607bc18e882ab954ad30bd91d6a192"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gacec813e23b18cb00c52a26045ef9f747">mc_server_unset_event_reply_received_cb</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the callback for receiving event reply of the media controller client.  <a href="#gacec813e23b18cb00c52a26045ef9f747"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2">mc_server_destroy</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys media controller server.  <a href="#ga45f986c8fcc873d2b6cd0a64d4ddf7e2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaee37f0176860d5bec11b9c1abca8e918">mc_server_create_playlist</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, const char *playlist_name, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga8f954ebc243085164d61e92ee8bfe3da">mc_playlist_h</a> *playlist)</td></tr>
@@ -191,8 +199,41 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the Server receives playlist command from the client.  <a href="#gaac4e08f2a68a96d856943f9278e858ba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga05768e8bb8b6af4a4cef0c0928bf96f6">mc_server_custom_cmd_received_cb</a> )(const char *client_name, const char *request_id, const char *command, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *data, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the Server receives custom command from the client.  <a href="#ga05768e8bb8b6af4a4cef0c0928bf96f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga653fc04f5417a477de84f88f93e1a493">mc_activated_client_cb</a> )(const char *client_name, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when requesting the list of created clients.  <a href="#ga653fc04f5417a477de84f88f93e1a493"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf219f0bc6272181e489c940f52050f16">mc_server_event_reply_received_cb</a> )(const char *client_name, const char *request_id, int result_code, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *data, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the result of the event from the client is received.  <a href="#gaf219f0bc6272181e489c940f52050f16"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga653fc04f5417a477de84f88f93e1a493"></a><!-- doxytag: member="media_controller_server.h::mc_activated_client_cb" ref="ga653fc04f5417a477de84f88f93e1a493" args=")(const char *client_name, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bool(* <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga653fc04f5417a477de84f88f93e1a493">mc_activated_client_cb</a>)(const char *client_name, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when requesting the list of created clients. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the main loop. <br/>
+ The <em>client_name</em> should not be released by the application. <br/>
+ The <em>client_name</em> can be used only in the callback. To use outside, make a copy.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client_name</td><td>The app_id of the created media controller client. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga8c60e76a6d0c5004e4fbb09c36e1498b" title="Retrieves all created servers.">mc_client_foreach_server()</a> function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to continue with the next iteration of the loop, otherwise <code>false</code> to break out of the loop</dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga8cb060ab2d19840622865f71f2d7f2c5" title="Retrieves all created clients.">mc_server_foreach_client()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga8cb060ab2d19840622865f71f2d7f2c5" title="Retrieves all created clients.">mc_server_foreach_client()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga05768e8bb8b6af4a4cef0c0928bf96f6"></a><!-- doxytag: member="media_controller_server.h::mc_server_custom_cmd_received_cb" ref="ga05768e8bb8b6af4a4cef0c0928bf96f6" args=")(const char *client_name, const char *request_id, const char *command, bundle *data, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -258,6 +299,43 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac2217bd3b7a75f7118723faa0e5a1556" title="Sets the callback for receiving custom command from client.">mc_server_set_custom_command_received_cb()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac2217bd3b7a75f7118723faa0e5a1556" title="Sets the callback for receiving custom command from client.">mc_server_set_custom_command_received_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf219f0bc6272181e489c940f52050f16"></a><!-- doxytag: member="media_controller_server.h::mc_server_event_reply_received_cb" ref="gaf219f0bc6272181e489c940f52050f16" args=")(const char *client_name, const char *request_id, int result_code, bundle *data, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf219f0bc6272181e489c940f52050f16">mc_server_event_reply_received_cb</a>)(const char *client_name, const char *request_id, int result_code, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *data, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the result of the event from the client is received. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop. <em>data</em> should be released using <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free()</a>. <br/>
+ The <em>client_name</em> and <em>request_id</em> should not be released by the application. <br/>
+ The <em>client_name</em> and <em>request_id</em> can be used only in the callback. To use outside, make a copy.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client_name</td><td>The app_id of the media controller client which sent the reply. It can be used only in the callback. To use outside, make a copy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">request_id</td><td>The id of the event request </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">result_code</td><td>The result code of the event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The extra data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga29607bc18e882ab954ad30bd91d6a192" title="Sets the callback for receiving the result of the event from the media controller client...">mc_server_set_event_reply_received_cb()</a> function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gabba042f4584070d3f2dcbbd02874892b" title="Sends the customized event with the bundle data.">mc_server_send_custom_event()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga29607bc18e882ab954ad30bd91d6a192" title="Sets the callback for receiving the result of the event from the media controller client...">mc_server_set_event_reply_received_cb()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gabba042f4584070d3f2dcbbd02874892b" title="Sends the customized event with the bundle data.">mc_server_send_custom_event()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga29607bc18e882ab954ad30bd91d6a192" title="Sets the callback for receiving the result of the event from the media controller client...">mc_server_set_event_reply_received_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gacec813e23b18cb00c52a26045ef9f747" title="Unsets the callback for receiving event reply of the media controller client.">mc_server_unset_event_reply_received_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -744,6 +822,69 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 
 </div>
 </div>
+<a class="anchor" id="ga8cb060ab2d19840622865f71f2d7f2c5"></a><!-- doxytag: member="media_controller_server.h::mc_server_foreach_client" ref="ga8cb060ab2d19840622865f71f2d7f2c5" args="(mc_server_h server, mc_activated_client_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga8cb060ab2d19840622865f71f2d7f2c5">mc_server_foreach_client</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a>&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga653fc04f5417a477de84f88f93e1a493">mc_activated_client_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves all created clients. </p>
+<p>This function gets all created media controller clients. The callback function will be invoked for every created media controller client. If there are no media controller clients, the callback will not be invoked. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The handle to media controller server </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked, will be called for each client </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30aeb206013b558538817cfc8f315c06b81">MEDIA_CONTROLLER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30addfdaa86e3b9af908ec7cbb08ffd7889">MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30a8e52527a482bfe48d525205ed9e558cc">MEDIA_CONTROLLER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30ae91422d5a86c007977be7868b03166d6">MEDIA_CONTROLLER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a media controller server handle by calling <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga653fc04f5417a477de84f88f93e1a493" title="Called when requesting the list of created clients.">mc_activated_client_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2" title="Destroys media controller server.">mc_server_destroy()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gac8e4a58bee9592e9e12baef21bb941f3"></a><!-- doxytag: member="media_controller_server.h::mc_server_foreach_playlist" ref="gac8e4a58bee9592e9e12baef21bb941f3" args="(mc_server_h server, mc_playlist_cb callback, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -964,6 +1105,87 @@ mc_server_command_received_cb() </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="gabba042f4584070d3f2dcbbd02874892b"></a><!-- doxytag: member="media_controller_server.h::mc_server_send_custom_event" ref="gabba042f4584070d3f2dcbbd02874892b" args="(mc_server_h server, const char *client_name, const char *event, bundle *data, char **request_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gabba042f4584070d3f2dcbbd02874892b">mc_server_send_custom_event</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a>&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>client_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>request_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sends the customized event with the bundle data. </p>
+<p>If the event is needed in the client, this function should be called. <em>data</em> is a bundle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>request_id</em> should be released using free().<br/>
+ If the <em>request_id</em> is null, the client will not send the reply of the custom event.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The handle to media controller server </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">client_name</td><td>The name of the client which receive the event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The name of the event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data can include other information associated with the event </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">request_id</td><td>The id of the event request, it will be passed to the <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf219f0bc6272181e489c940f52050f16" title="Called when the result of the event from the client is received.">mc_server_event_reply_received_cb()</a> function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30aeb206013b558538817cfc8f315c06b81">MEDIA_CONTROLLER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30addfdaa86e3b9af908ec7cbb08ffd7889">MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30a8e52527a482bfe48d525205ed9e558cc">MEDIA_CONTROLLER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30ae91422d5a86c007977be7868b03166d6">MEDIA_CONTROLLER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a media controller server handle by calling <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf219f0bc6272181e489c940f52050f16" title="Called when the result of the event from the client is received.">mc_server_event_reply_received_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga29607bc18e882ab954ad30bd91d6a192" title="Sets the callback for receiving the result of the event from the media controller client...">mc_server_set_event_reply_received_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2" title="Destroys media controller server.">mc_server_destroy()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gab4c4ef0b1be4920b82882f38cc568254"></a><!-- doxytag: member="media_controller_server.h::mc_server_set_custom_cmd_received_cb" ref="gab4c4ef0b1be4920b82882f38cc568254" args="(mc_server_h server, mc_server_custom_cmd_received_cb callback, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1078,6 +1300,69 @@ mc_server_command_received_cb() </dd></dl>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a media controller server handle by calling <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2" title="Destroys media controller server.">mc_server_destroy()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga29607bc18e882ab954ad30bd91d6a192"></a><!-- doxytag: member="media_controller_server.h::mc_server_set_event_reply_received_cb" ref="ga29607bc18e882ab954ad30bd91d6a192" args="(mc_server_h server, mc_server_event_reply_received_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga29607bc18e882ab954ad30bd91d6a192">mc_server_set_event_reply_received_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a>&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf219f0bc6272181e489c940f52050f16">mc_server_event_reply_received_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the callback for receiving the result of the event from the media controller client. </p>
+<p>The media controller server which calls this function will receive the result of the event from all media controller clients. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The handle to the media controller server </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback to be invoked when the reply is received </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30aeb206013b558538817cfc8f315c06b81">MEDIA_CONTROLLER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30addfdaa86e3b9af908ec7cbb08ffd7889">MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30a8e52527a482bfe48d525205ed9e558cc">MEDIA_CONTROLLER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30ae91422d5a86c007977be7868b03166d6">MEDIA_CONTROLLER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a media controller server handle by calling <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gacec813e23b18cb00c52a26045ef9f747" title="Unsets the callback for receiving event reply of the media controller client.">mc_server_unset_event_reply_received_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2" title="Destroys media controller server.">mc_server_destroy()</a> </dd></dl>
 
@@ -1751,6 +2036,50 @@ mc_server_command_received_cb() </dd></dl>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a media controller server handle by calling <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2" title="Destroys media controller server.">mc_server_destroy()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gacec813e23b18cb00c52a26045ef9f747"></a><!-- doxytag: member="media_controller_server.h::mc_server_unset_event_reply_received_cb" ref="gacec813e23b18cb00c52a26045ef9f747" args="(mc_server_h server)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gacec813e23b18cb00c52a26045ef9f747">mc_server_unset_event_reply_received_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a>&#160;</td>
+          <td class="paramname"><em>server</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets the callback for receiving event reply of the media controller client. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The handle to the media controller server </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30aeb206013b558538817cfc8f315c06b81">MEDIA_CONTROLLER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30addfdaa86e3b9af908ec7cbb08ffd7889">MEDIA_CONTROLLER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30a8e52527a482bfe48d525205ed9e558cc">MEDIA_CONTROLLER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gga03ecf911890df61d5764b6d9e2712a30ae91422d5a86c007977be7868b03166d6">MEDIA_CONTROLLER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a media controller client handle by calling <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9da7f1ab103ed4bcda2453a8005d07c9" title="Creates a media controller client.">mc_client_create()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga29607bc18e882ab954ad30bd91d6a192" title="Sets the callback for receiving the result of the event from the media controller client...">mc_server_set_event_reply_received_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2" title="Destroys media controller server.">mc_server_destroy()</a> </dd></dl>
 
