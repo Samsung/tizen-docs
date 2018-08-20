@@ -5,11 +5,13 @@ SoftAP means Software Access Point for local area connections without internet a
 The main features of the SoftAP API include:
 
 - Enabling and Disabling SoftAP
-You can turn SoftAP on or off.
+
+ You can turn SoftAP on or off.
 
 
 - Managing SoftAP
-You can manage SoftAP configuration settings, such as the Service Set Identifier (SSID) and passphrase.
+
+ You can manage SoftAP configuration settings, such as the Service Set Identifier (SSID) and passphrase.
 The following table lists the attributes of SoftAP.
 
 **Table: the attributes of SoftAP**
@@ -53,7 +55,8 @@ The following table lists the attributes of SoftAP.
 </table>
 
 - SoftAP Client
-You can get information about connected client such as name, IP address, MAC address and connection time.
+
+ You can get information about connected client such as name, IP address, MAC address and connection time.
 
 
 ## Prerequisites
