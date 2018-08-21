@@ -59,7 +59,7 @@ To control the volume of your application:
       #define MBUF 128
 
       static void
-      _sound_manager_volume_changed_cb(sound_type_e type, unsigned int volume, void* user_data)
+      _sound_manager_volume_changed_cb(sound_type_e type, unsigned int volume, void *user_data)
       {
           char buf[MBUF] = {0,};
 
@@ -143,6 +143,7 @@ To query sound device information:
       - `sound_manager_get_device_io_direction()`: To get the device IO direction.
       - `sound_manager_get_device_id()`: To get the device ID.
       - `sound_manager_get_device_name()`: To get the device name.
+      - `sound_manager_is_device_running()`: To verify whether the device is running. This means that a stream is running on the device.
 
       When calling the query functions, use the sound device handle as the first parameter (input) and the device information type enumerator as the second parameter (output).
 
@@ -152,17 +153,22 @@ To query sound device information:
       while ((_ret = sound_manager_get_next_device(list, &device)) == SOUND_MANAGER_ERROR_NONE) {
           ret = sound_manager_get_device_type(device, &type);
 
-          if (type == SOUND_DEVICE_BLUETOOTH)
-              /* Sound device type is Bluetooth, handle accordingly */
+          if (type == SOUND_DEVICE_BLUETOOTH_MEDIA)
+              /* Sound device type is Bluetooth Media */
           else if (type == SOUND_DEVICE_AUDIO_JACK)
-              ret = sound_manager_get_device_io_direction(device, &direction);
-          if (direction == BOTH)
-              /* Sound device has both headphone and mic, handle accordingly */
+              /* Sound device type is Audio Jack */
           else
-              /* Handle accordingly */
+              /* Do something if needed */
+
+          ret = sound_manager_get_device_io_direction(device, &direction);
+
+          if (direction == SOUND_DEVICE_IO_DIRECTION_BOTH)
+              /* Sound device has both headphone and mic */
+          else
+              /* Do something if needed */
       }
       if (_ret == SOUND_MANAGER_ERROR_NO_DATA)
-          /* End of the available devices, handle accordingly */
+          /* End of the available devices */
       ```
 
    4. Free the sound device list handle.
@@ -185,30 +191,70 @@ To query sound device information:
       ret = sound_manager_add_device_connection_changed_cb(mask, _sound_device_connection_changed_cb, NULL);
       ```
 
-      > **Note**  
-	  > The initial state of the internal sound device is connected.
+      > **Note**
+      >
+      > The initial state of the internal sound device is connected.
 
    2. Define the connection state changed callback:
 
       ```
       static void
-      _sound_device_connection_changed_cb(sound_device_h device, bool is_connected, void* user_data)
+      _sound_device_connection_changed_cb(sound_device_h device, bool is_connected, void *user_data)
       {
           int ret;
           sound_device_type_e type;
 
           if (is_connected) {
               ret = sound_manager_get_device_type(device, &type);
-              if (type == SOUND_DEVICE_BLUETOOTH)
-                  /* Connected sound device type is Bluetooth, handle accordingly */
+              if (type == SOUND_DEVICE_BLUETOOTH_MEDIA)
+                  /* Connected sound device type is Bluetooth Media */
               else
-                  /* Handle accordingly */
+                  /* Do something if needed */
           } else {
               ret = sound_manager_get_device_type(device, &type);
-              if (type == SOUND_DEVICE_BLUETOOTH)
-                  /* Disconnected sound device type is Bluetooth, handle accordingly */
+              if (type == SOUND_DEVICE_BLUETOOTH_MEDIA)
+                  /* Disconnected sound device type is Bluetooth Media */
               else
-                  /* Handle accordingly */
+                  /* Do something if needed */
+          }
+      }
+      ```
+
+3. To receive a notification whenever the running state of the sound device changes:
+
+   1. Register a callback using the `sound_manager_add_device_running_changed_cb()` function. Use the mask to filter the callback information.
+
+      ```
+      mask = SOUND_DEVICE_IO_DIRECTION_OUT_MASK | SOUND_DEVICE_IO_DIRECTION_BOTH_MASK;
+
+      ret = sound_manager_add_device_running_changed_cb(mask, _sound_device_running_changed_cb, NULL);
+      ```
+
+      > **Note**
+      >
+      > The state will be changed to **running** when the first stream goes to the device.
+
+   2. Define the running state changed callback:
+
+      ```
+      static void
+      _sound_device_running_changed_cb(sound_device_h device, bool is_running, void *user_data)
+      {
+          int ret;
+          sound_device_type_e type;
+
+          if (is_running) {
+              ret = sound_manager_get_device_type(device, &type);
+              if (type == SOUND_DEVICE_AUDIO_JACK)
+                  /* Connected sound device type is Audio Jack */
+              else
+                  /* Do something if needed */
+          } else {
+              ret = sound_manager_get_device_type(device, &type);
+              if (type == SOUND_DEVICE_AUDIO_JACK)
+                  /* Disconnected sound device type is Audio Jack */
+              else
+                  /* Do something if needed */
           }
       }
       ```
