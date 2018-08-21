@@ -2,7 +2,7 @@
 
 SoftAP means Software Access Point for local area connections without internet access.
 
-The main features of the SoftAP API include:
+The main features of the SoftAP API includes:
 
 - Enabling and Disabling SoftAP
 
@@ -11,10 +11,10 @@ The main features of the SoftAP API include:
 
 - Managing SoftAP
 
- You can manage SoftAP configuration settings, such as the Service Set Identifier (SSID) and passphrase.
-The following table lists the attributes of SoftAP.
+ You can manage the SoftAP configuration settings such as Service Set Identifier (SSID) and passphrase.
+The following table lists the attributes of SoftAP:
 
-**Table: the attributes of SoftAP**
+**Table: The attributes of SoftAP**
 <table>
     <thead>
 	    <tr>
@@ -25,11 +25,11 @@ The following table lists the attributes of SoftAP.
 	<tbody>
 	    <tr>
             <td>SSID</td>
-			<td>SSID (Service set identifier)</td>
+			<td>Service Set Identifier (SSID)</td>
 		</tr>
 	    <tr>
             <td>Security type</td>
-			<td>None, WPA2_PSK and WPS</td>
+			<td>None, WPA2_PSK, and WPS</td>
 		</tr>
 	    <tr>
             <td>Passphrase</td>
@@ -45,7 +45,7 @@ The following table lists the attributes of SoftAP.
 		</tr>
 	    <tr>
             <td>Mode</td>
-			<td>Wireless mode (B, G, A and AD)</td>
+			<td>Wireless mode (B, G, A, and AD)</td>
 		</tr>
 	    <tr>
             <td>Channel</td>
@@ -56,12 +56,12 @@ The following table lists the attributes of SoftAP.
 
 - SoftAP Client
 
- You can get information about connected client such as name, IP address, MAC address and connection time.
+ You can get information about connected client such as name, IP address, MAC address, and connection time.
 
 
 ## Prerequisites
 
-1. To use the SoftAP API (in [mobile](../../api/mobile/latest/group__CAPI_NETWORK_SOFTAP_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI_NETWORK_SOFTAP_MODULE.html) applications), the application has to request permission by adding the following privileges to the 'tizen-manifest.xml' file:
+1. To use the SoftAP API (in [mobile](../../api/mobile/latest/group__CAPI_NETWORK_SOFTAP_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI_NETWORK_SOFTAP_MODULE.html) applications), the application must request permission by adding the following privileges to the 'tizen-manifest.xml' file:
 
    ```
    <privileges>
@@ -98,7 +98,7 @@ To create SoftAP handle:
 
 To configure SoftAP settings:
 
-1. Set SSID with the `softap_set_ssid()` function. If you don't use this function, device nam is used as SSID:
+1. Set SSID with softap_set_ssid(). If you do not use this function, the device name is used as SSID:
    ```
    int ret = SOFTAP_ERROR_NONE;
    softap_h softap = NULL;
@@ -108,7 +108,7 @@ To configure SoftAP settings:
      printf("Failed to set SSID");
    ```
 
-2. Set security type and passphrase. If the passphrase is not set, random string of 8 characters is used:
+2. Set security type and passphrase. If the passphrase is not set, random string of eight characters is used:
    ```
    ret = softap_set_security_type(softap, SOFTAP_SECURITY_TYPE_WPA2_PSK);
    if (ret != SOFTAP_ERROR_NONE)
@@ -119,7 +119,7 @@ To configure SoftAP settings:
      printf("Failed to set passphrase");
    ```
 
-3. Set visibility of SSID. In this example, client can find SoftAP device from Wi-Fi scan list.
+3. Set the visibility of SSID. In this example, the SoftAP client finds the SoftAP device from the Wi-Fi scan list.
    ```
    ret = softap_set_ssid_visibility(softap, true);
    if (ret != SOFTAP_ERROR_NONE)
@@ -157,7 +157,7 @@ To register the callback:
      printf("Fail to regester the callback.");
    ```
 
-2. Define and register `disabled_cb()` callback. It will be called when the SoftAP is disabled.
+2. Define and register `disabled_cb()` callback. It is called when the SoftAP is disabled.
    `code` indicates the cause of disabling.
    ```
    static void __disabled_cb(softap_error_e error, softap_disabled_cause_e code, void *data)
@@ -184,7 +184,7 @@ To register the callback:
 
 To handle SoftAP client:
 
-1. Define and register `client_connection_state_changed_cb()`. It will be called when client is conneced or disconnected. 
+1. Define and register `client_connection_state_changed_cb()`. It is called when client is conneced or disconnected. 
    ```
    static void cliet_connection_state_changed_cb(softap_client_h client, bool open, void *data)
    {
@@ -229,8 +229,8 @@ To register the callback:
      printf("Fail to regater the callback.");
    ```
 
-2. Get all of connected clients.
-   You can obtain all of connected clients by using `softap_foreach_connected_clients()`
+2. Get the list of all connected SoftAP clients.
+   You can use softap_foreach_connected_clients() to get the list of all connected SoftAP clients.
    The second parameter is the callback function. This callback is invoked when you get the connected client repeatedly.
    ```
    ret = softap_foreach_connected_clients(softap, connected_client_cb, NULL);
@@ -305,7 +305,7 @@ To disable SoftAP:
 
 ## Releasing all resources
 
-To release all SoftAP resources:
+To release the SoftAP resources:
 
 1. Unregister callback functions.
     ```
