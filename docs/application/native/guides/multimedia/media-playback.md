@@ -850,9 +850,9 @@ To insert subtitles to a video file:
 
 To start and stop the WAV player:
 
-1. To start the WAV player, use the `wav_player_start_new()` function.
+1. Start playback using the `wav_player_start_new()` function.
 
-   The second parameter should be sound information handle which can created by sound_manager_create_stream_information().
+   The second parameter should be sound information handle which can created by `sound_manager_create_stream_information()`.
 
    The third parameter defines a callback that is invoked when the player finishes playback. Implement the callback and handle any post-playback actions in it.
 
@@ -898,11 +898,11 @@ To start and stop the WAV player:
 
 To start and stop playing a tone:
 
-1. To start playback, use the `tone_player_start_new()` function.
+1. Start playback using the `tone_player_start_new()` function.
 
-   The `tone_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications) enumerators define the available values for the tone type (first parameter).
+   The first parameter should be the tone_type_e (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications) enumerators which can define the available values for the tone type.
 
-   The second parameter should be sound information handle which can created by sound_manager_create_stream_information().
+   The second parameter should be sound information handle which can created by `sound_manager_create_stream_information()`.
 
    ```
    tone_player_start_new(TONE_TYPE_DEFAULT, stream_info, -1, &tone_player_id);
