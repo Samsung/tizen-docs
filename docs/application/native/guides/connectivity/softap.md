@@ -184,7 +184,7 @@ To register the callback:
 
 To handle SoftAP client:
 
-1. Define and register `client_connection_state_changed_cb()`. It is called when client is conneced or disconnected. 
+1. Define and register `client_connection_state_changed_cb()`. It is called when client is connected or disconnected. 
    ```
    static void cliet_connection_state_changed_cb(softap_client_h client, bool open, void *data)
    {
