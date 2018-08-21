@@ -131,7 +131,7 @@ To configure SoftAP settings:
 To enable SoftAP:
 
 1. Define and register `enabled_cb()` callback. It will be called when the SoftAP is enabled.
-   `is_requested` indicates whether this chage is requested by self or not.
+   `is_requested` indicates whether this change is requested by self or not.
 
    ```
    static void __enabled_cb(softap_error_e error, bool is_requested, void *data)
