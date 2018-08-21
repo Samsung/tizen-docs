@@ -258,7 +258,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/screen.size.normal.720.1280` | Specify this key, if the application supports the 720 x 1280 resolution on the normal screen size. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.normal.1080.1920` | Specify this key, if the application supports the 1080 x 1920 resolution on the normal screen size. | 2.2.1 |
 | `http://tizen.org/feature/security.device_certificate` | Specify this key, if the application requires the Device Certificate feature. | 5.0 |
-| `http://tizen.org/feature/security.privacy_privilege` | Specify this key, if the application requires the privacy privilege information feature to ask user to confirm the privilege status. | 5.0 |
+| `http://tizen.org/feature/security.privacy_privilege` | Specify this key, if the application requires the setting of the privacy privilege to confirm its state. | 5.0 |
 | `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.accelerometer.wakeup` | Specify this key, if the application requires the acceleration sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.activity_recognition` | Specify this key, if the application requires an activity recognition sensor. | 2.3   |
@@ -417,7 +417,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/screen.size.normal.720.1280` | Specify this key, if the application supports the 720 x 1280 resolution on the normal screen size. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.normal.1080.1920` | Specify this key, if the application supports the 1080 x 1920 resolution on the normal screen size. | 2.2.1 |
 | `http://tizen.org/feature/security.device_certificate` | Specify this key, if the application requires the Device Certificate feature. | 5.0 |
-| `http://tizen.org/feature/security.privacy_privilege` | Specify this key, if the application requires the privacy privilege information feature to ask user to confirm the privilege status. | 5.0 |
+| `http://tizen.org/feature/security.privacy_privilege` | Specify this key, if the application requires the setting of the privacy privilege to confirm its state. | 5.0 |
 | `http://tizen.org/feature/sensor.accelerometer` | Specify this key, if the application requires an acceleration sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.accelerometer.wakeup` | Specify this key, if the application requires the acceleration sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.activity_recognition` | Specify this key, if the application requires an activity recognition sensor. | 2.3   |
