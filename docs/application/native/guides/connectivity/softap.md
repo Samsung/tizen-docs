@@ -11,7 +11,7 @@ The main features of the SoftAP API includes:
 
 - Managing SoftAP
 
- You can manage the SoftAP configuration settings such as Service Set Identifier (SSID) and passphrase.
+You can manage the SoftAP configuration settings such as Service Set Identifier (SSID) and passphrase.
 The following table lists the attributes of SoftAP:
 
 **Table: The attributes of SoftAP**
@@ -56,7 +56,7 @@ The following table lists the attributes of SoftAP:
 
 - SoftAP Client
 
- You can get information about connected client such as name, IP address, MAC address, and connection time.
+You can get information about connected client such as name, IP address, MAC address, and connection time.
 
 
 ## Prerequisites
@@ -131,7 +131,7 @@ To configure SoftAP settings:
 To enable SoftAP:
 
 1. Define and register `enabled_cb()` callback. It will be called when the SoftAP is enabled.
-   `is_requested` indicates whether this change is requested by self or not.
+   `is_requested` indicates which application has requested the change.
 
    ```
    static void __enabled_cb(softap_error_e error, bool is_requested, void *data)
