@@ -573,6 +573,7 @@ The following table lists the security feature keys.
 | Key                                      | Type   | Description                              |
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/security.device_certificate` | `bool` | The platform returns `true` for this key, if the device has the Device Certificate its corresponding private key which are used for identifying the device. |
+| `http://tizen.org/feature/security.privacy_privilege` | `bool` | The platform returns `true` for this key, if the device supports the setting of the privacy privilege to confirm its state. If it is `true`, the user can turn on/off the user-settable privacy privileges for each application. |
 
 The following table lists the sensor feature keys.
 
