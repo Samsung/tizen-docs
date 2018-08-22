@@ -9,6 +9,10 @@ The main features of the Tizen.Network.WiFi namespace include:
 
     You can use the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class to control aspects of your application's wireless connection. For example, you can [activate](#activating_wifi_device) or [deactivate](#deactivating_wifi_device) Wi-Fi, [monitor connection state changes](#managing_events), and [scan for available access points](#accesspoint_scan).
 
+    - To activate or deactivate Wi-Fi, monitor connection state changes, and scan for available access points.
+    - To get BSSID asynchronosly as well as synchronously.
+    - To make connections between an AP and wireless devices faster and easier using Wi-Fi Protected Setup (WPS).
+
 - Access point management
 
     With the [Tizen.Network.WiFi.WiFiAP](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiAP.html) class, you can [connect to a specific access point](#accesspoint_connect) and manage the Wi-Fi access point and security information:
