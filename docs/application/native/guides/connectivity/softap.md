@@ -6,7 +6,7 @@ The main features of the SoftAP API includes:
 
 - Enabling and Disabling SoftAP
 
- You can turn SoftAP on or off.
+You can turn SoftAP on or off.
 
 
 - Managing SoftAP
