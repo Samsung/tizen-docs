@@ -15,7 +15,7 @@ Release Date: Aug. 31, 2018
 
 ### New and changed features
 
-- The following open-source libraries have been upgraded:
+- The following Open-source libraries have been upgraded:
   - file (5.32)
     - CVE-2018-10360
   - sqlite (3.21.0)
@@ -51,8 +51,8 @@ Release Date: Aug. 31, 2018
   - A new layer has been added for e_desk_object.
   - New hooks regarding HW compositing have been provided for vendor's enlightenment module(s) to handle HWC policy properly.
 - Tizen buffer HAL
-  - Add the tbm_dummy_display
-  - Add the tbm_surface_internal_set/get_damage
+  - Add the tbm_dummy_display.
+  - Add the tbm_surface_internal_set/get_damage.
 
 ### Fixes
 
@@ -89,7 +89,7 @@ Release Date: Aug. 31, 2018
   - Key event and input
     - Delete and return key handling has been added.
     - Shift+Left/Right keys support for text selection and Ctrl+C/V/X keys support for text copy/paste/cut have been added.
-    - The keyboard repeat information APIs have been added.
+    - The keyboard repeat information API set have been added.
   - Text
     - Support for custom font registration has been added.
     - Support for XHTML entities has been added.
@@ -112,13 +112,13 @@ Release Date: Aug. 31, 2018
     - A PropertyRetter has been added to reset only animated or constrained properties.
     - String compares in Render have been reduced.
   - Video
-    - APIs to set a codec type have been added.
-    - APIs to set a display mode have been added.
-    - APIs to set a play position have been added.
+    - API set to set a codec type have been added.
+    - API set to set a display mode have been added.
+    - API set to set a play position have been added.
   - NUI (C# interface)
-    - APIs to handle AGIF playback have been added.
+    - API set to handle AGIF playback have been added.
     - Set property of VerticalLineAlignment has been added.
-    - APIs for KeyboardRepeatInfo of Window have been added.
+    - API set for KeyboardRepeatInfo of Window have been added.
     - Protection codes to avoid the crash when the IntPtr of Key class is 0 have been added.
     - Protection codes to change Registry as concurrent collection have been added.
 - Evas Render Engine
@@ -151,7 +151,7 @@ Release Date: Aug. 31, 2018
   - Assist-panel is added.
   - Rotary Selector support edit mode.
 - Voice Framework
-  - Voice engine model is changed to a service app for supporting download (Only for mobile and TV profile)
+  - Voice engine model is changed to a service app for supporting download (Only for mobile and TV profile).
 
 
 ## Multimedia Framework
@@ -159,7 +159,7 @@ Release Date: Aug. 31, 2018
 ### New and changed features
 
 - Camera
-  - New APIs for hue setting have been added.
+  - New API set for hue setting have been added.
   - Maximum supported number of camera is changed from 2 to 10.
   - Pre-condition of setting ROI area API has been changed.
 - Media Content
@@ -168,19 +168,19 @@ Release Date: Aug. 31, 2018
     - http://tizen.org/feature/content.filter.pinyin for supporting the Pinyin Filter. 
 - Media Controller
   - In the mobile profile, repeat mode on for one media enumeration has been added.
-  - In the mobile profile, new APIs for supporting playlist have been added.
-  - In the mobile profile, new APIs for sending command and receiving command reply have been added.
-  - In the mobile profile, new APIs for sending custom event and receiving event reply have been added.
-  - In the mobile profile, the APIs for supporting metadata have been changed.
-  - In the mobile profile, the APIs for sending custom command and receiving custom reply have been changed.
+  - In the mobile profile, new API set for supporting playlist have been added.
+  - In the mobile profile, new API set for sending command and receiving command reply have been added.
+  - In the mobile profile, new API set for sending custom event and receiving event reply have been added.
+  - In the mobile profile, the API set for supporting metadata have been changed.
+  - In the mobile profile, the API set for sending custom command and receiving custom reply have been changed.
   - In the mobile profile, the callbacks for receiving update information have been changed.
   - In the mobile profile, some playback states enumerations have been changed.
 - Player
   - Pre-condition of setting ROI area API has been changed.
 - Muse
-  - Support the on-demand launching using socket activation
-  - Add initial gtest codes
-  - Update message IPC mechanism
+  - Support the on-demand launching using socket activation.
+  - Add initial gtest codes.
+  - Update message IPC mechanism.
 
 
 ## Network and Connectivity
@@ -190,17 +190,17 @@ Release Date: Aug. 31, 2018
 - Data Network
   - A memory leak in the stc-manager has been fixed.
   - The bug in stc-manager that caused a missing process in booting time has been fixed.
-  - CVE patches for open source packages have been applied
+  - CVE patches for Open-source packages have been applied.
     - curl: CVE-2017-8816, CVE-2017-8817, CVE-2017-1000101, CVE-2017-1000257, CVE-2018-1000005, CVE-2018-1000007, CVE-2018-000122, CVE-2018-1000300 and CVE-2018-1000301
     - libsoup: CVE-2017-2885
     - libcares: CVE-2017-1000381
-  - Major open-source package upgrades
-    - wpa-supplicant has been upgraded to 2.6
-    - nghttp2 has been upgraded to 1.31.1
-    - strongswan has been upgraded to 5.6.3
-    - dnsmasq has been upgraded to 2.79
-    - openvpn has been upgraded to 2.4.6
-  - The bug in download-provider that extract wrong file extension has been fixed
+  - Major Open-source package upgrades
+    - wpa-supplicant has been upgraded to 2.6.
+    - nghttp2 has been upgraded to 1.31.1.
+    - strongswan has been upgraded to 5.6.3.
+    - dnsmasq has been upgraded to 2.79.
+    - openvpn has been upgraded to 2.4.6.
+  - The bug in download-provider that extract wrong file extension has been fixed.
 - Telephony
   - The bug that caused a delay when shutdown is executed has been fixed.
 - Bluetooth
@@ -229,22 +229,22 @@ Release Date: Aug. 31, 2018
 ### Fixes
 
 - Context
-  - Removed critical information from logs
-  - Fixed potential defects
+  - Removed critical information from logs.
+  - Fixed potential defects.
 - Account
-  - Fixed Secure information leaks 
+  - Fixed Secure information leaks.
 - Email
-  - Performance enhancement fixes
+  - Performance enhancement fixes.
 - Contact
-  - Fixed graceful handling of non standard charset
+  - Fixed graceful handling of non standard charset.
 - Maps
-  - Fixed potential defects
+  - Fixed potential defects.
 - Location
-  - Fixed potential defects
+  - Fixed potential defects.
 - Sensor
-  - Fixed potential defects
+  - Fixed potential defects.
 - Calendar
-  - Fixed potential defects
+  - Fixed potential defects.
 
 
 ## Tizen .NET
@@ -253,6 +253,6 @@ Release Date: Aug. 31, 2018
 
 - Xamarin.Forms
   - Xamarin.Forms version 3.1.0 Service Release 2 is supported.
-  - New Tizen.Wearable.CircularUI APIs have been added for wearable apps.
+  - New Tizen.Wearable.CircularUI API set have been added for wearable apps.
   - New Tizen application project templates (Tizen Wearable App and Tizen Watchface App) have been added.
 
