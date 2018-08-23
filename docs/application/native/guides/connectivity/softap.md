@@ -1,6 +1,6 @@
 # SoftAP
 
-SoftAP means Software Access Point for local area connections without internet access.
+SoftAP means software access point for local area connections without internet access.
 
 The main features of the SoftAP API includes:
 
