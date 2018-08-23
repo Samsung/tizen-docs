@@ -41,6 +41,7 @@
 ## [Resources](/application/dotnet/guides/nui/resources.md)
 
 # Internationalization
+## [Localization](/application/dotnet/guides/internationalization/localization.md)
 ## [Phone Number Management](/application/dotnet/guides/internationalization/phonenumber.md)
 
 # Notifications and Content Sharing
