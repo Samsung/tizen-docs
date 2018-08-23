@@ -90,11 +90,14 @@ interface ITest {
 ### 'delegate'
 It denotes one-way-call from service.
 
->**Note**
+> **Note**
 >
-> Returned type should be `void`
-> Keyword `out` is not allowed
-> Regarded as a type in methods (Cannot be used in `struct` type)
+> Returned type should be `void`. 
+>
+> Keyword `out` is not allowed.
+>
+> Delegate type is regarded as a type in methods but you can't use it in `struct` type.
+
 
 **Example**
 ```csharp
