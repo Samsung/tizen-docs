@@ -247,7 +247,7 @@ To take a screenshot:
 
 To generate key input events:
 
-1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()` , `efl_util_input_initialize_generator_with_name()` or `efl_util_input_initialize_generator_with_sync()` function:
+1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()` , `efl_util_input_initialize_generator_with_name()` ,or `efl_util_input_initialize_generator_with_sync()` function:
 
    ```
    void
@@ -309,7 +309,7 @@ To generate key input events:
 
 To generate touch input events:
 
-1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()` , `efl_util_input_initialize_generator_with_name()` or `efl_util_input_initialize_generator_with_sync()` function:
+1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()` , `efl_util_input_initialize_generator_with_name()` ,or `efl_util_input_initialize_generator_with_sync()` function:
 
    ```
    void
