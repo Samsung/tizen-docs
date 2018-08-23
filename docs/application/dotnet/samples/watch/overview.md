@@ -1,45 +1,70 @@
 # Watch
 
+(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
 <table>
 	<tbody>
 		<tr>
 			<td><img alt="" height="180" src="media/wambientwatch.png" width="180"/></td>
 			<td>
 			<p><strong>(W) AmbientWatch</strong> [In progress]</p>
-			<p>The AmbientWatch application demonstrates how to make a watch application that supports ambient mode in Tizen wearable device.
-			To extend battery life, a watch application can display a limited UI in ambient mode by detecting ambient mode changes.<br>
+			<p>This sample application demonstrates how to create a watch application that supports ambient mode in Tizen wearable device.
+			To extend battery life, a watch application can display a limited UI in the ambient mode by detecting ambient mode changes.<br>
 			</p>
-			<p>First of all, <i>"ambient-support"</i> attribute should be set to true in <b>tizen-manifest.xml</b> file as follows:<br>
+			<p>In <b>tizen-manifest.xml</b> file, set <code>ambient-support</code> attribute to true:<br>
+			For more information, see ambient-support attribute.
+			<br>
 			<code>
 			&lt;watch-application appid&equals;&quot;org.tizen.example.AmbientWatch&quot;  exec&equals;&quot;AmbientWatch.dll&quot; type&equals;&quot;dotnet&quot;  ambient-support&equals;&quot;true&quot;&gt;</code>
 			</p>
 			<p>
-			You can get details about <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor" target="_blank">ambient-support attribute</a>.
+			You can get details about <a href="../../../tizen-studio/native-tools/manifest-text-editor.md" target="_blank">ambient-support attribute</a>.
 			</p>
 			<p>
-			To use the ambient mode, you must enable it in Settings application. Launch "Settings" App -> Select "Watch faces and styles" -> Choose "Watch always on" -> Enable it. After screen timeout, a wearable device turns into ambient mode. In addition, the ambient mode activates only when you are wearing a watch on your wrist.</p>
-			<p><a href="https://developer.tizen.org/development/sample/native/Watch/Ambient_Analog_Watch?langswitch=en" target="_blank">Native version</a></p>
-			<p><a href="https://developer.tizen.org/development/sample/web/Watch/Ambient_Watch?langswitch=en" target="_blank">Web version</a></p>
+			To use the ambient mode, you must enable it in the application settings. Launch <b>Settings</b> > <b>Watch faces and styles</b> > <b>Watch always on</b> > enable it. After screen timeout, the wearable device turns into ambient mode. In addition, the ambient mode activates only if you are wearing the watch on your wrist.</p>
+			<p>In addition, there are similar native and web sample applications.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Ambient_Analog_Watch" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Ambient_Watch" target="_blank">Web version</a></li>
+			</ul></p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wclassicwatch.png" width="180"/></td>
 			<td>
 			<p><strong>(W) ClassWatch</strong> [In progress]</p>
-			<p>The Classic Watch sample application demonstrates how to create a circular watch face, which consists of moving hands.</p>
-			<p><a href="https://developer.tizen.org/development/sample/native/Watch/Classic_Watch" target="_blank">Native version</a></p>
-			<p><a href="https://developer.tizen.org/development/sample/web/Watch/Classic_Watch" target="_blank">Web version</a></p>
+			<p>This sample application demonstrates how to create a circular watch face, which consists of moving hands.</p>
+			<p>In addition, there are similar native and web sample applications.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Classic_Watch" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Classic_Watch" target="_blank">Web version</a></li>
+			</ul></p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wchronograph.png" width="180"/></td>
 			<td>
 			<p><strong>(W) ChronographWatch</strong> [In progress]</p>
-			<p>The Chronograph Watch sample application demonstrates how to create a circular watch with continuously moving hands.
+			<p>This sample application demonstrates how to create a circular watch with continuously moving hands.
             This sample application includes the watch and stopwatch functionality.</p>
-			<p><a href="https://developer.tizen.org/development/sample/native/Watch/Chronograph_Watch" target="_blank">Native version</a></p>
-			<p><a href="https://developer.tizen.org/development/sample/web/Watch/Chronograph_Watch" target="_blank">Web version</a></p>
+			<p>In addition, there are similar native and web sample applications.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Chronograph_Watch" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Chronograph_Watch" target="_blank">Web version</a></li>
+			</ul></p>
 			</td>
 		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/wweatherwatch.png" width="180"/></td>
+			<td>
+			<p><strong>(W) WeatherWatch</strong> [In progress]</p>
+			<p>This sample application demonstrates how to make a watch face application for Tizen wearable devices.<br>
+			You can get detailed information from <a href="https://github.com/Samsung/Tizen-CSharp-Samples/blob/master/Wearable/WeatherWatch/README.md" target="_blank"><b>readme file</b> of WeatherWatch</a>.</p>
+			<p>In addition, there are similar native and web sample applications.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Weather_Watch" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Weather_Watch" target="_blank">Web version</a></li>
+			</ul></p>
+			</td>
+		</tr>		
 	</tbody>
 </table>

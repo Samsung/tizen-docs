@@ -215,42 +215,40 @@ The res.xml file is automatically generated when you build your application.
 
     ![local_res_mgr_4](media/local_res_mgr_4.png)
 
-- Resource directories are automatically created in Tizen project as:
-
-  res.xml file will be generated in res directory of Tizen project after building an application.
+- Resource directories are automatically created in Tizen project as **res.xml** file. This file is generated in **res** directory of Tizen project after building an application as:
 
     ![res.xml](media/local_res_xml.png)
 
     ![res.xml code](media/local_res_xml_code.png)
 
-> **Note**
->
->Your application can sometimes run in a locale, for which you have not provided images. In that case, Tizen loads the default image from the resource content directory (yourApp.Tizen/res/content/). If there is no default image within resource content directory and the device sets the locale, for which you have not provided images, an error occurs.
+    > **Note**
+    >
+    >Your application can sometimes run in a locale, for which you have not provided images. In that case, Tizen loads the default image from the resource content directory (yourApp.Tizen/res/content/). If there is no default image within resource content directory and the device sets the locale, for which you have not provided images, an error occurs.
 
-![default_image](media/local_res_default_image.png)
+    ![default_image](media/local_res_default_image.png)
 
-When you detect locale changes, you must update the resource culture. Then you must update the texts and images, which you want to localize.
-As for localized images, you can make custom image renderer to load the proper locale-specific images.
+    When you detect locale changes, you must update the resource culture. Then you must update the texts and images, which you want to localize.
+    As for localized images, you can make custom image renderer to load the proper locale-specific images.
 
-Tizen provides the path of locale-specific images via `ResourceManager.TryGetPath` and `ResourceManager.GetPath` methods. With this, you can change
+    Tizen provides the path of locale-specific images via `ResourceManager.TryGetPath` and `ResourceManager.GetPath` methods. With this, you can change
 
-**class LocalizedImageRenderer :ImageRenderer**
+    **class LocalizedImageRenderer :ImageRenderer**
 
-```cs
-using TizenResourceManager = Tizen.Applications.ResourceManager;
-  
-public LocalizedImageRenderer() : base()
-{
-    SystemSettings.LocaleLanguageChanged += SystemSettings_LocaleLanguageChanged;
-}
+    ```cs
+    using TizenResourceManager = Tizen.Applications.ResourceManager;
 
-// Invoked every time the language setting has been changed
-private void SystemSettings_LocaleLanguageChanged(object sender, LocaleLanguageChangedEventArgs e)
-{
-    // Get the path of a proper image based on locale and update the source of an image
-    Element.Source = TizenResourceManager.TryGetPath(TizenResourceManager.Category.Image, fileName);
-}
-```
+    public LocalizedImageRenderer() : base()
+    {
+        SystemSettings.LocaleLanguageChanged += SystemSettings_LocaleLanguageChanged;
+    }
+
+    // Invoked every time the language setting has been changed
+    private void SystemSettings_LocaleLanguageChanged(object sender, LocaleLanguageChangedEventArgs e)
+    {
+        // Get the path of a proper image based on locale and update the source of an image
+        Element.Source = TizenResourceManager.TryGetPath(TizenResourceManager.Category.Image, fileName);
+    }
+    ```
 
 ## Application Name Localization
 
