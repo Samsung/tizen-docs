@@ -5,7 +5,7 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
 - **.NET Standard API**, which implements the .NET Base Class library, and allows you to use the well-known C# language base class libraries and features, such as collections, threading, file input/output (I/O), and Language Integrated Query (LINQ).
 - **Xamarin.Forms**, which allows you to efficiently build a user interface from standard components in C# or XAML.
 - **TizenFX API**, which allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features, such as system information and status, battery status, sensor date, and account and connectivity services.  
-  For the full specification, see the [TizenFX API Reference]( tizenfx/index.html).
+  For the full specification, see the <a href="tizenfx/index.html" target="api">TizenFX API Reference</a>.
 
 ## .NET Standard API
 
@@ -36,7 +36,7 @@ The following table specifies the API Level supported by each version of the Tiz
 | ---------------- | --------- | ---------------------------------------- |
 | Tizen 4.0 M2     | 4         | [Platform Highlights](https://developer.tizen.org/tizen/tizen/tizen-4.0) |
 
-The following table lists the supported TizenFX API namespaces. For the full specification, see the [TizenFX API Reference]( tizenfx/index.html).
+The following table lists the supported TizenFX API namespaces. For the full specification, see the <a href="tizenfx/index.html" target="api">TizenFX API Reference</a>.
 
 | Namespace          | Description                              |
 | ------------------ | ---------------------------------------- |
@@ -56,4 +56,4 @@ The following table lists the supported TizenFX API namespaces. For the full spe
 | Tizen.System       | Provides device-specific services, including status, system information and settings, control of haptic devices and sensor control and access. |
 | Tizen.Telephony    | Provides call, modem, network, and SIM information. |
 | Tizen.Uix          | Provides functions to recognize the speech and to synthesize voice from text and playing synthesized sound data. |
-| Tizen.Webview      | Provides functions to access webpages and web contents. |
+| Tizen.Webview      | Provides functions to access web pages and web contents. |
