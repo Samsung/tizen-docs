@@ -262,7 +262,7 @@ To generate key input events:
           Since Tizen 4.0, you can create an input device with a given name (in this example, "Local Device"):
           inputgen = efl_util_input_initialize_generator_with_name(EFL_UTIL_INPUT_DEVTYPE_KEYBOARD, "Local_Device");
 
-          Since Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
+          From Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
           inputgen = efl_util_input_initialize_generator_with_sync(EFL_UTIL_INPUT_DEVTYPE_KEYBOARD, NULL);
        */
        if (!inputgen) {
@@ -324,7 +324,7 @@ To generate touch input events:
           Since Tizen 4.0, you can create an input device with a given name (in this example, "Local Device"):
           inputgen = efl_util_input_initialize_generator_with_name(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, "Local_Device");
 
-          Since Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
+          From Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
           inputgen = efl_util_input_initialize_generator_with_sync(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, NULL);
        */
        if (!inputgen) {
