@@ -33,16 +33,16 @@ It generates an interface to communicate between proxy and stub.
 [<attributes>]
 interface <interface_id> {
 <return_type> <method_name>(
-[<empty> | ‘in’ | ‘out’ | ‘ref’]
-<type> <parameter_id>, …) [<empty> | ‘async’ | ‘delegate’\];
-…
+[<empty> | 'in' | 'out' | 'ref']
+<type> <parameter_id>, ... [<empty> | 'async' | 'delegate'];
+...
 }
 ```
 **Example**
 ```csharp
-[privilege=“http://tizen.org/privilege/appmanager.launch”]
+[privilege="http://tizen.org/privilege/appmanager.launch"]
 interface ITest {
-	// by default, ‘in’ is used as direction keyword
+	// by default, 'in' is used as direction keyword
 	int SetVal(in  int val1, char val2);
 	char GetVal(out  int val1, out  char val2);
 }
@@ -50,25 +50,25 @@ interface ITest {
 
 ### Attributes
 It indicates required privileges and trusted signature.
-By default, ‘trusted” is ‘false’.
+By default, `trusted` is `false`.
 
 **Syntax**
 ```
-[ <key> = <value>, …]
-interface <interface_id> { … }
+[ <key> = <value>, ...]
+interface <interface_id> { ... }
 <key> :=  privilege | trusted
-<value> := <string> | “true” | “false”
+<value> := <string> | "true" | "false"
 ```
 
 **Example**
 ```csharp
 // Require launch privilege
-[privilege=“http://tizen.org/privilege/appmanager.launch”]
+[privilege="http://tizen.org/privilege/appmanager.launch"]
 interface ITest {}
 
 // Require privilege A , privilege B and trusted signature
-[privilege=“http://samsung.com/appdefined/A”,
- privilege=“http://samsung.com/appdefined/B” , trusted  = “true”]
+[privilege="http://samsung.com/appdefined/A",
+ privilege="http://samsung.com/appdefined/B" , trusted  = "true"]
 interface ITest2 {}
 ```
 
@@ -78,6 +78,7 @@ It denotes one-way-call.
 >**Note**
 >
 > Returned type should be `void`
+>
 > Keyword `out` is not allowed
 
 **Example**
@@ -92,7 +93,7 @@ It denotes one-way-call from service.
 
 > **Note**
 >
-> Returned type should be `void`. 
+> Returned type should be `void`.
 >
 > Keyword `out` is not allowed.
 >
@@ -116,7 +117,7 @@ It is also possible to be used in `struct` or method syntax.
 ```csharp
 struct <struct_id> {
     <type> <id>;
-    …
+    ...
 }
 ```
 
@@ -157,7 +158,7 @@ struct Student  {
 	| array<> | List<>|std::vector<> |Handle (pointer)|
 
   - User-defined type
-	- Name defined by ‘struct’ syntax
+	- Name defined by 'struct' syntax
 
 ## TIDL Generated Code
 
@@ -175,17 +176,17 @@ struct Foo {
 class Foo final { // Copyable and movable class
 	Foo(); // Constructor
 	Foo(int age, std::string name); // Constructor
-	int GetAge() const; // Getter for property ‘Age’
-	void SetAge(int age); // Setter for property ‘Age’
-	const std::string& GetName() const; // Getter for property ‘Name’
-	void SetName(std::string name); // Setter for property ‘Name’
+	int GetAge() const; // Getter for property 'Age'
+	void SetAge(int age); // Setter for property 'Age'
+	const std::string& GetName() const; // Getter for property 'Name'
+	void SetName(std::string name); // Setter for property 'Name'
 };
 ```
 **C#**
 ```csharp
 public selaed class Foo  { // Class for Foo
-	public  int Age { get; set; }  // Property for ‘Age’
-	public  string Name { get; set; } // Property for ‘Name’
+	public  int Age { get; set; }  // Property for 'Age'
+	public  string Name { get; set; } // Property for 'Name'
 };
 ```
 **C**
@@ -194,10 +195,10 @@ typedef struct Foo_s *rpc_port_Foo_h; // Handle for Foo
 int rpc_port_create_Foo(rpc_port_Foo_h* h); // Constructor for Foo
 int rpc_port_destroy_Foo(rpc_port_Foo_h h); // Destructor for Foo
 int rpc_port_clone_Foo(rpc_port_Foo_h h, rpc_port_Foo_h* clone); // Copy constructor for Foo
-int rpc_port_set_Foo_Age(rpc_port_Foo_h h, int Age); // Setter for property ‘Age’
-int rpc_port_set_Foo_Name(rpc_port_Foo_h h, const char* Name); // Setter for property ‘Name’
-int rpc_port_get_Foo_Age(rpc_port_Foo_h h, int* Age); // Getter for property ‘Age’
-int rpc_port_get_Foo_Name(rpc_port_Foo_h h, char** Name); // Getter for property ‘Name’
+int rpc_port_set_Foo_Age(rpc_port_Foo_h h, int Age); // Setter for property 'Age'
+int rpc_port_set_Foo_Name(rpc_port_Foo_h h, const char* Name); // Setter for property 'Name'
+int rpc_port_get_Foo_Age(rpc_port_Foo_h h, int* Age); // Getter for property 'Age'
+int rpc_port_get_Foo_Name(rpc_port_Foo_h h, char** Name); // Getter for property 'Name'
 ```
 
 ### Proxy Interface
@@ -234,12 +235,12 @@ public class Runnable : IDisposable  {
 	public Runnable(string appId); // Constructor
 	public  void Connect(); // Method for connecting service app
 	public  int Run(Foo foo); //Method  from TIDL
-	…
+	...
 };
 ```
 **C**
 ```c
-typedef struct Runnable_s* rpc_port_proxy_Runnable_h; // Handle for ‘Runnable’
+typedef struct Runnable_s* rpc_port_proxy_Runnable_h; // Handle for 'Runnable'
 typedef struct {
 	void (*connected)(rpc_port_proxy_Runnable_h h, void* user_data); // Connected event callback
 	void (*disconnected)(rpc_port_proxy_Runnable_h h, void* user_data); // Disconnected event callback
@@ -283,7 +284,7 @@ class Runnable  {
 
 	Runnable(); // Constructor
 	~Runnable(); // Destructor
-	void Listen(std::shared\_ptr<ServiceBase::Factory> service\_factory); // Method for listening
+	void Listen(std::shared_ptr<ServiceBase::Factory> service_factory); // Method for listening
 };
 ```
 
@@ -294,17 +295,17 @@ public sealed class Runnable : IDisposable {
 		public abstract void OnCreate(); // Called when service object is created
 		public abstract void OnTerminate(); // Called when service object is terminated
 		public abstract int Run(Foo foo); // Method to implement
-		…
+		...
 	};
 	public Runnable(); // Constructor
 	public  void Listen(Type serviceType); // Method for listening
-	…
+	...
 };
 ```
 
 **C**
 ```c
-// Handle for ‘Runnable’
+// Handle for 'Runnable'
 typedef struct Runnable_context_s* rpc_port_stub_Runnable_context_h;
 
 // Set extra data into the context
@@ -320,14 +321,18 @@ typedef struct {
 	// Called when service object is terminated
 	void (*terminate)(rpc_port_stub_Runnable_context_h context, void* user_data);
 
-	// Called when proxy app send the request for ‘Run’
+	// Called when proxy app send the request for 'Run'
 	int (*Run)(rpc_port_stub_Runnable_context_h context, rpc_port_Foo_h foo, void *user_data);
 } rpc_port_stub_Runnable_callback_s;
 
-// Initialize interface ‘Runnable’
+// Initialize interface 'Runnable'
 int rpc_port_stub_Runnable_register(rpc_port_stub_Runnable_callback_s* callback, void* user_data);
 
-// Deinitialize interface ‘Runnable’
+// Deinitialize interface 'Runnable'
 int rpc_port_stub_Runnable_unregister(void);
 ```
 
+## Related Information
+- Dependencies
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 5.0 and Higher for Wearable

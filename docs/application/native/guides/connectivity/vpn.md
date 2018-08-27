@@ -30,7 +30,7 @@ The main features of the VPN Service API include:
   The VPN profile provides different functions for routing management, DNS management, and firewall management:
 
   - The `vpnsvc_init()` function is used to a initialize the VPN interface and get the handle.
-  - The `vpnsvc_h` handle is used to [configure the tunnel interface](#config) before using the [VPN application control](../app-management/common-appcontrol.md#vpnservice) to ask the user permission to connect to the VPN service.
+  - The `vpnsvc_h` handle is used to [configure the tunnel interface](#config) before using the [VPN application control](../app-management/common-appcontrols.md#vpn-service) to ask the user permission to connect to the VPN service.
   - The `vpnsvc_block_networks()` function is used to [block network traffic](#block) by creating a route parameter for allowed VPN and original interface routes.
 
 - VPN statistics
@@ -213,7 +213,7 @@ To set the interface parameters:
 
 To configure the interface and connect to the VPN service through an application control:
 
-1. Define a function to launch the [VPN application control](../app-management/common-appcontrol.md#vpnservice) and a callback to handle the results:
+1. Define a function to launch the [VPN application control](../app-management/common-appcontrols.md#vpn-service) and a callback to handle the results:
 
     ```
     #include <app_control.h>

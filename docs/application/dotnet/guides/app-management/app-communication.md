@@ -9,7 +9,7 @@ You can use the following application data exchange features in your .NET applic
 
     Applications communicate with each other using message ports. You can send and receive messages using the map data format and trusted or untrusted message port instances.
 
-- [Data Control](data-control.md)
+-    [Data Control](data-control.md)
 
     You can exchange SQL- or key-value-type data between applications. All applications can request data shared by other applications, but only service applications can provide their own data.
 
