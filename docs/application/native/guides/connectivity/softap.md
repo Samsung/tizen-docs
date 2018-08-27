@@ -4,12 +4,12 @@ SoftAP means software access point for local area connections without internet a
 
 The main features of the SoftAP API includes:
 
-- Enabling and Disabling SoftAP
+- Enable or disable SoftAP
 
 You can turn SoftAP on or off.
 
 
-- Managing SoftAP
+- Manage SoftAP
 
 You can manage the SoftAP configuration settings such as Service Set Identifier (SSID) and passphrase.
 The following table lists the attributes of SoftAP:
@@ -54,7 +54,7 @@ The following table lists the attributes of SoftAP:
 	</tbody>
 </table>
 
-- SoftAP Client
+- SoftAP client
 
 You can get information about connected client such as name, IP address, MAC address, and connection time.
 
@@ -337,5 +337,5 @@ When no longer needed, destroy the handle:
 
 ## Related Information
    - Dependencies
-   - Tizen 5.0 and Higher for Mobile
-   - Tizen 5.0 and Higher for Wearable
+   - Tizen 5.0 and Higher for Mobile.
+   - Tizen 5.0 and Higher for Wearable.
