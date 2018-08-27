@@ -15,6 +15,8 @@
 ### [Message Port](/application/native/guides/app-management/message-port.md)
 ### [Data Control](/application/native/guides/app-management/data-control.md)
 ### [Data Bundle](/application/native/guides/app-management/data-bundles.md)
+### [RPC Port](/application/native/guides/app-management/rpc-port.md)
+### [TIDL](/application/native/guides/app-management/tidl.md)
 
 # User Interface
 ## [Overview](/application/native/guides/ui/overview.md)
