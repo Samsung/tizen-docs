@@ -18,7 +18,7 @@ The main uncompressed audio management features are:
 
 The Audio Output API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) applications) enables your application to play such data using output devices. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
 
-To play the audio PCM data, the application must call the `audio_out_create()` function to initialize the audio output handle.
+To play the audio PCM data, the application must call the `audio_out_create_new()` function to initialize the audio output handle.
 
 Your application must define the following PCM data settings:
 
@@ -53,7 +53,7 @@ For supporting various low-end Tizen devices, the application must follow certai
   - To reduce the processing overhead inside, use the target device-preferred PCM format (for example, signed 16-bit little endian, stereo, 44100 Hz).
   - Using the preferred format reduces internal operations, such as converting audio samples from mono to stereo or re-sampling audio frequency to fit the target device's input sample rate.
 - Do not call the Audio Output functions too frequently.
-  - The Audio Output functions require more time while repeated in the order of `audio_out_create()` > `audio_out_prepare()` > `audio_out_unprepare()` > `audio_out_destroy()`. Therefore, keep the frequency of calling these functions to a minimum. Note that the `audio_out_prepare()` and `audio_out_unprepare()` functions are much faster than `audio_out_create()` and `audio_out_destroy()`.
+  - The Audio Output functions require more time while repeated in the order of `audio_out_create_new()` > `audio_out_prepare()` > `audio_out_unprepare()` > `audio_out_destroy()`. Therefore, keep the frequency of calling these functions to a minimum. Note that the `audio_out_prepare()` and `audio_out_unprepare()` functions are much faster than `audio_out_create_new()` and `audio_out_destroy()`.
 - Reduce event delay and remove glitches.
   - The Audio Output API works recursively with events. The smaller the buffer size, the more often are events generated. If you use the Audio Output API with the smallest buffer and other resources (for example, a timer or sensor), the application is negatively influenced by the delay of the event. To prevent problems, set the write buffer size properly based on the other resources you need.
   - To guarantee the working events of the Audio Output API independently, an instance of the Audio Output API needs to be created and worked on the event thread.
@@ -105,7 +105,7 @@ To enable your application to use the uncompressed audio functionality:
    #include <sound_manager.h>
    ```
 
-2. To initialize the audio input and output devices, use the `audio_in_create()` and `audio_out_create()` functions:
+2. To initialize the audio input and output devices, use the `audio_in_create()` and `audio_out_create_new()` functions:
 
    ```
    /* Define the sample rate for recording audio */
@@ -122,7 +122,7 @@ To enable your application to use the uncompressed audio functionality:
    /* Initialize the audio output device */
    audio_out_h output;
 
-   error_code = audio_out_create(SAMPLE_RATE, AUDIO_CHANNEL_MONO, AUDIO_SAMPLE_TYPE_S16_LE, SOUND_TYPE_SYSTEM, &output);
+   error_code = audio_out_create_new(SAMPLE_RATE, AUDIO_CHANNEL_MONO, AUDIO_SAMPLE_TYPE_S16_LE, &output);
    ```
 
    The audio input and output devices support the channel types defined in the `audio_channel_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) applications), and the sample types defined in the `audio_sample_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) applications). For playing the recorded audio, use the same channel and sample type on both audio devices.

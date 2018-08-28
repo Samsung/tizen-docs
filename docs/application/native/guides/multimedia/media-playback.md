@@ -850,7 +850,9 @@ To insert subtitles to a video file:
 
 To start and stop the WAV player:
 
-1. To start the WAV player, use the `wav_player_start()` function.
+1. Start playback using the `wav_player_start_new()` function.
+
+   The second parameter should be sound information handle which can created by `sound_manager_create_stream_information()`.
 
    The third parameter defines a callback that is invoked when the player finishes playback. Implement the callback and handle any post-playback actions in it.
 
@@ -870,8 +872,11 @@ To start and stop the WAV player:
        int wav_player_id;
        wav_player_error_e ret;
        const char* wav_path = "PATH OF YOUR WAV FILE";
+       sound_stream_info_h stream_info;
 
-       ret = wav_player_start(wav_path, SOUND_TYPE_MEDIA, _playback_completed_cb, (void*)wav_path, &wav_player_id);
+       sound_manager_create_stream_information(SOUND_STREAM_TYPE_MEDIA, NULL, NULL, &stream_info);
+
+       ret = wav_player_start_new(wav_path, stream_info, _playback_completed_cb, (void*)wav_path, &wav_player_id);
    }
    ```
 
@@ -893,12 +898,14 @@ To start and stop the WAV player:
 
 To start and stop playing a tone:
 
-1. To start playback, use the `tone_player_start()` function.
+1. Start playback using the `tone_player_start_new()` function.
 
-   The `tone_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications) and `sound_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) applications) enumerators define the available values for the tone type (first parameter) and sound type (second parameter).
+   The first parameter should be the tone_type_e (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications) enumerators which can define the available values for the tone type.
+
+   The second parameter should be sound information handle which can created by `sound_manager_create_stream_information()`.
 
    ```
-   tone_player_start(TONE_TYPE_DEFAULT, SOUND_TYPE_MEDIA, -1, &tone_player_id);
+   tone_player_start_new(TONE_TYPE_DEFAULT, stream_info, -1, &tone_player_id);
    ```
 
    The player ID is assigned and returned if the function succeeds. The ID of the tone player that starts first is 0, the ID of the second one is 1, and so on. If you set the player ID parameter to `NULL`, the ID is not returned.
@@ -912,10 +919,10 @@ To start and stop playing a tone:
 <a name="duration"></a>
 ## Playing a Tone for a Specified Duration
 
-To play a tone for a specified duration, use the `tone_player_start()` function with the duration (third parameter) set to the number of milliseconds you want playback to last:
+To play a tone for a specified duration, use the `tone_player_start_new()` function with the duration (third parameter) set to the number of milliseconds you want playback to last:
 
 ```
-tone_player_start(TONE_TYPE_SUP_CONGESTION, SOUND_TYPE_CALL, 1000, &tone_player_id);
+tone_player_start_new(TONE_TYPE_SUP_CONGESTION, stream_info, 1000, &tone_player_id);
 ```
 
 When you set the duration to a specified time, playback stops automatically after that time. You can also stop playback manually using the `tone_player_stop()` function.
