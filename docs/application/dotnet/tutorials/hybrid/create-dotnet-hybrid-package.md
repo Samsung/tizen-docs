@@ -20,20 +20,24 @@ The .NET and Web hybrid application package is a type of a merge between a .NET 
 Use the following command to create hybrid application packages:
 
 ```bash
-$[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [SECURITY_PROFILE] -r [TPK_FILE_PATH] -- [WGT_FILE_PATH]
+$[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFILE_NAME] -r [TPK_FILE_PATH] -- [WGT_FILE_PATH]
 ```
+
+>**Note**
+>
+>`[CERTIFICATE_PROFILE_NAME]` means certificate profile name not certificate file name.
 
 ## Example
 
 1. Create Web Widget Sample Application
 
-![Create Web Widget 1](./media/create_web_sample_cs_1.png)
+    ![Create Web Widget 1](./media/create_web_sample_cs_1.png)
 
-![Create Web Widget 2](./media/create_web_sample_cs_2.png)
+    ![Create Web Widget 2](./media/create_web_sample_cs_2.png)
 
-![Create Web Widget 3](./media/create_web_sample_cs_3.png)
+    ![Create Web Widget 3](./media/create_web_sample_cs_3.png)
 
-![Create Web Widget 4](./media/create_web_sample_cs_4.png)
+    ![Create Web Widget 4](./media/create_web_sample_cs_4.png)
 
 2. Check manifest file of web application
 
@@ -61,9 +65,9 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [SECURITY_PROFILE] 
 
 3. Create .NET Sample Application
 
-![Create .NET App 1](./media/create_dotnet_sample_cs_1.png)
+    ![Create .NET App 1](./media/create_dotnet_sample_cs_1.png)
 
-![Create .NET App 2](./media/create_dotnet_sample_cs_2.png)
+    ![Create .NET App 2](./media/create_dotnet_sample_cs_2.png)
 
 4. Check manifest of .NET application
 

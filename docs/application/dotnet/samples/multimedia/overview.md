@@ -1,12 +1,13 @@
 # Multimedia
 
+(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
 <table>
 	<tbody>
 		<tr>
 			<td><img alt="" height="267" src="media/m54audioiosample.png" width="150"/></td>
 			<td>
 			<p><strong>(M) AudioIOSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to capture audio and play using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+			<p>This sample application demonstrates how to capture an audio and play it using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -22,16 +23,16 @@
 			</td>
 			<td>
 			<p><strong>(W) ImageReader</strong> [In progress]</p>
-			<p>The ImageReader application demonstrates how to use image in Tizen .Net application.
-			This app is based on <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">xamarin sample app</a> and is modified according to Tizen Wearable UI.</p>
-			<p>You can get details from <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a></p><br>
+			<p>This sample application demonstrates how to use an image in the Tizen .Net application.
+			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI.</p>
+			<p>For more information, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a>.</p><br>
 			<p><b>Prerequisites</b><br>
 			Network connection is required for DownloadImage.</p>
-			<p>To use network connection in application,<br>
-			the following privileges are necessary:<br>
+			<p>To use network connection in an application,<br>
+			you must have the following privileges:<br>
 			<ul>
-				<li>http://tizen.org/privilege/internet</li>
-				<li>http://tizen.org/privilege/network.get</li>
+				<li><code>http://tizen.org/privilege/internet</code></li>
+				<li><code>http://tizen.org/privilege/network.get</code></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -53,7 +54,7 @@
 			<td><img alt="" height="267" src="media/m49playersample.png" width="150"/></td>
 			<td>
 			<p><strong>(M) PlayerSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to play audio, video, and streaming using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+			<p>This sample application demonstrates how to play an audio or a video and stream it using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -88,7 +89,7 @@
 			<td><img alt="" height="267" src="media/m57visionapplicationsample.png" width="150"/></td>
 			<td>
 			<p><strong>(M) VisionApplicationSample</strong> [In progress]</p>
-			<p>This sample application shows how to implement Barcode Generation/Detection, Face Detection, and Image Recognition.</p>
+			<p>This sample application demonstrates how to implement barcode generation or detection, face detection, and image recognition.</p>
 			</td>
 		</tr>
 		<tr>
@@ -99,10 +100,17 @@
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="180" src="media/wvolumecontroller.png" width="180"/></td>
+			<td>
+			<p><strong>(W) VolumeController</strong> [In progress]</p>
+			<p>This sample application demonstrates how to retrieve and set the device volume levels.</p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="267" src="media/m42voicerecorder.png" width="150"/></td>
 			<td>
 			<p><strong>(M) VoiceRecorder</strong> [In progress]</p>
-			<p>This sample application demonstrates how to control audio recording using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
+			<p>This sample application demonstrates how to record an audio using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
 			</td>
 		</tr>
 	</tbody>

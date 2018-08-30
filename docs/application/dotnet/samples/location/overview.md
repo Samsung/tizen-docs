@@ -1,19 +1,20 @@
 # Location
 
+(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
 <table>
 	<tbody>
 		<tr>
 			<td><img alt="" height="267" src="media/m13geofence.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Geofence" target="_blank"><strong>(M) Geofence</strong></a></p>
-			<p>This sample application demonstrates how an user can use the geofence.</p>
+			<p>This sample application demonstrates how to use the geofence.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m14location.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Location" target="_blank"><strong>(M) Location</strong></a></p>
-			<p>This sample application demonstrates how an user can use the location service.</p>
+			<p>This sample application demonstrates how to use the location service.</p>
 			</td>
 		</tr>		
 		<tr>
@@ -22,14 +23,14 @@
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Location" target="_blank"><strong>(W) Location</strong></a></p>
-			<p>This sample application demonstrates how an user can use the location service.</p>
+			<p>This sample application demonstrates how to use the location service.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m15maps.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Maps" target="_blank"><strong>(M) Maps</strong></a></p>
-			<p>This sample application demonstrates how an user can use the maps.</p>
+			<p>This sample application demonstrates how to use the maps.</p>
 			</td>
 		</tr>
 		<tr>
@@ -38,7 +39,7 @@
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Maps" target="_blank"><strong>(W) Maps</strong></a></p>
-			<p>This sample application demonstrates how an user can use the maps.</p>
+			<p>This sample application demonstrates how to use the maps.</p>
 			</td>
 		</tr>
 		<tr>
@@ -47,14 +48,21 @@
 			</td>
 			<td>
 			<p><strong>(T) Maps</strong> [In progress]</p>
-			<p>This sample application demonstrates how an user can use the maps.</p>
+			<p>This sample application demonstrates how to use the maps.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m30mapsview.png" width="150"/></td>
 			<td>
 			<p><strong>(M) MapsView</strong> [In progress]</p>
-			<p>This sample application demonstrates how to display and control Map component.</p>
+			<p>This sample application demonstrates how to display and control the map components.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/wmapsview.png" width="180"/></td>
+			<td>
+			<p><strong>(W) MapsView</strong> [In progress]</p>
+			<p>This sample application demonstrates how to display and control the map components.</p>
 			</td>
 		</tr>
 		<tr>
@@ -63,7 +71,7 @@
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MapView" target="_blank"><strong>(T) MapsView</strong></a></p>
-			<p>This sample application demonstrates how to display and control Map component.</p>
+			<p>This sample application demonstrates how to display and control the map components.</p>
 			</td>
 		</tr>		
 	</tbody>

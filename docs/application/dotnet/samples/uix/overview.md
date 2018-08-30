@@ -1,5 +1,6 @@
 # UIX
 
+(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
 <table>
 	<tbody>
 		<tr>

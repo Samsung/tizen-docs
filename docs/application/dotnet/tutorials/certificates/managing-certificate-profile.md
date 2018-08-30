@@ -24,7 +24,7 @@ However, author certificates rarely needs to be changed.
 
 This section explains how to change distributor certificate.
 
-Follow the same steps to create a certificate profile as described in `4. Create new or select old profile` of [Creating Certificate Profile](creating-certificates.md#creating-certificate-profile)
+Follow the same steps to create a certificate profile as described in [create new or select old profile](creating-certificates.md#create_new_or_select_old_profile).
 
 1. Select an existing certificate profile
 
@@ -34,26 +34,26 @@ Follow the same steps to create a certificate profile as described in `4. Create
 
 2. Use the existing author certificate
 
-    Click **No** to use the existing author certificate then it moves to `1.Create new or select existing distributor certiicate` of [Create a New Distributor Certificate](creating-certificates.md#create-a-new-distributor-certificate) to register DUID.
+    If you click **No** to use the existing author certificate then move to [create new or select existing distributor certificate](creating-certificates.md#create_new_or_select_existing_distributor_certificate) to register DUID.
 
     ![Alert popup to remove author certificate](media/certification_guide20.png)
 
     > **Note**
     >
-    > If you click **Yes**, it moves to [Create a new author certificate](creating-certificates.md#create-a-new-author-certificate) step and original author certificate will be removed permanently.
+    > If you click **Yes**, it moves to [create a new author certificate](creating-certificates.md#create-a-new-author-certificate) step and original author certificate will be removed permanently.
     > It is recommended to consider the dialog box message carefully.
     > However, the SDK automatically backups the original **author.p12** file with timestamp extension such as author.p12_bak_20160806092013 in the profile directory to protect developer from unintended removal of author certificate.
 
 3. Create new Distributor for certificate profile
 
-    Follow the same steps as mentioned in `1. Create new or select existing distributor certiicate` of [Create a New Distributor Certificate](creating-certificates.md#create-a-new-distributor-certificate).
+    Follow the same steps as mentioned in [create new or select existing distributor certificate](creating-certificates.md#create_new_or_select_existing_distributor_certificate).
 
 ## Importing Existing Certificates
 
 If you already have both the **author.p12** and **distributor.p12** certificates and you do not require a new certificate from Samsung, you can import and use the available certificates to sign your application.
 In that case, create a new certificate profile and select existing certificates at each step.
 
-Follow the same steps as mentioned in creating certificate before the step `4. Create new or select old profile` of [Creating Certificate Profile](creating-certificates.md#creating-certificate-profile)
+Follow the same steps as mentioned in creating certificate before [creating a new profile or selecting an old profile](creating-certificates.md#create_new_or_select_old_profile).
 
 1. Select an existing author certificate
 
