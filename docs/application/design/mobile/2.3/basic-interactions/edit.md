@@ -76,5 +76,6 @@ The select all feature scrolls with the list. By tapping **Select all**, the use
 </video>
 
 
-> **NOTE**  
+> **Note**
+>
 > The select all functionality supported in the Native framework.

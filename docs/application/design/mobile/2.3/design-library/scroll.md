@@ -2,11 +2,10 @@
 
 The body area supports the following types of scrolling and functionality:
 
--   [Scroll bar](#scroll_bar)
--   [Screen handler](#screen_handler)
--   [Fast scroll](#fast_scroll)
+-   [Scroll bar](#scroll-bar)
+-   [Screen handler](#screen-handler)
+-   [Fast scroll](#fast-scroll)
 
-<a name="scroll_bar"></a>
 ## Scroll Bar
 
 Scrolling body content up and down displays the basic scroll bar, which offers visual information, such as the total length and location of a list.
@@ -17,7 +16,6 @@ However, the basic scroll bar disappears after a certain amount of time, and the
 
 <img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_11.png" width="240" />
 
-<a name="screen_handler"></a>
 ## Screen Handler
 You can apply additional handlers if your application requires faster scrolling.
 
@@ -27,7 +25,6 @@ However, use screen handlers only when the scrolling range is relatively long or
 
 <img alt="" height="400" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_12.png" width="240" />
 
-<a name="fast_scroll"></a>
 ## Fast Scroll
 
 The fast scroll feature allows users to scroll rapidly up and down any list that includes an index.
