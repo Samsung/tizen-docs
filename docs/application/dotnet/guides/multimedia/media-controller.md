@@ -23,10 +23,11 @@ The main media controller features include:
 
 To enable your application to use the media controller functionality:
 
-1.  To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html) and [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
+       <privilege>http://tizen.org/privilege/mediacontroller.client</privilege>
        <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
     </privileges>
     ```
@@ -71,7 +72,7 @@ To update the metadata and playback information on the server side, and to retri
     2. Retrieve the currently-active controllers and select one:
 
         ```
-        var controller = MediaControllerManager.GetActiveControllers().First();
+        var controller = mediaControllerManager.GetActiveControllers().First();
         ```
 
     3. Retrieve the metadata or playback information from the server using the `GetMetadata()`, `GetPlaybackState()`, or `GetPlaybackPosition()` methods.
