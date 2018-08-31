@@ -14,26 +14,7 @@
 			<td><img alt="" height="267" src="media/m41camera.png" width="150"/></td>
 			<td>
 			<p><strong>(M) Camera</strong> [In progress]</p>
-			<p>This sample application demonstrates how to take a picture using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen. Multimedia C# API</a>.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="180" src="media/wimagereader.png" width="180"/></p>
-			</td>
-			<td>
-			<p><strong>(W) ImageReader</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use an image in the Tizen .Net application.
-			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI.</p>
-			<p>For more information, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a>.</p><br>
-			<p><b>Prerequisites</b><br>
-			Network connection is required for DownloadImage.</p>
-			<p>To use network connection in an application,<br>
-			you must have the following privileges:<br>
-			<ul>
-				<li><code>http://tizen.org/privilege/internet</code></li>
-				<li><code>http://tizen.org/privilege/network.get</code></li>
-			</ul></p>
+			<p>This sample application demonstrates how to take a picture using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -103,7 +84,7 @@
 			<td><img alt="" height="180" src="media/wvolumecontroller.png" width="180"/></td>
 			<td>
 			<p><strong>(W) VolumeController</strong> [In progress]</p>
-			<p>This sample application demonstrates how to retrieve and set the device volume levels.</p>
+			<p>This sample application demonstrates how to retrieve and set the device volume levels. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>

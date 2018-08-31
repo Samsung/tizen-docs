@@ -21,21 +21,21 @@
 			<td><img alt="" height="180" src="media/wfeedbackapp.png" width="180"/></td>
 			<td>
 			<p><strong>(W) FeedbackApp</strong> [In progress]</p>
-			<p>This sample application demonstrates how to play sound and vibration feedback.</p>
+			<p>This sample application demonstrates how to play sound and vibration feedback and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m27heartratemonitor.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/HeartRateMonitor" target="_blank"><strong>(M) HeartRateMonitor</strong></a></p>
-			<p>This sample application demonstrates how to obtain data provided by the heart rate monitor (HRM) using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the Heart Rate Monitor (HRM) using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wheartratemonitor.png" width="180"/></td>
 			<td>
 			<p><strong>(W) HeartRateMonitor</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain data provided by the HRM sensor (heart rate sensor) using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the Heart Rate Monitor (HRM) sensor using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -70,14 +70,14 @@
 			<td><img alt="" height="180" src="media/wsystemInfo.png" width="180"/></td>
 			<td>
 			<p><strong>(W) SystemInfo</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to create Circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wsystem_info.png" width="180"/></td>
 			<td>
 			<p><strong>(W) SystemInfo</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to create Circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>

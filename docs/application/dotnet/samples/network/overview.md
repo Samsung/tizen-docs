@@ -14,22 +14,7 @@
 			<td><img alt="" height="180" src="media/wlescanner.png" width="180"/></td>
 			<td>
 			<p><strong>(W) Lescanner</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.html" target="_blank">Tizen.Network.Bluetooth C# API</a> to connect with Bluetooth Low Energy devices.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m17networkapp.png" width="150"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NetworkApp" target="_blank"><strong>(M) NetworkApp</strong></a></p>
-			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Connection.html" target="_blank">Tizen.Network.Conncetion C# API</a>, Wi-Fi, and Wi-Fi Direct.<br />
-			This application provides network information such as IP address, network state, and list of available networks Using this information, you can connect to Wi-Fi.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/wnetworkapp.png" width="180"/></td>
-			<td>
-			<p><strong>(W) NetworkApp</strong> [In progress]</p>
-			<p>This sample application demonstrates how to check info about your connection and manage your Wi-Fi settings.</p>
+			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.html" target="_blank">Tizen.Network.Bluetooth C# API</a> to connect with Bluetooth Low Energy devices. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -43,7 +28,22 @@
 			<td><img alt="" height="180" src="media/wnfc.png" width="180"/></td>
 			<td>
 			<p><strong>(W) NFCSampleApp</strong> [In progress]</p>
-			<p>This sample application demonstrates how to send and receive a NDEF message from remote Near Field Communication (NFC) device, and read NDEF message from NFC Tag.</p>
+			<p>This sample application demonstrates how to send and receive a NDEF message from remote Near Field Communication (NFC) device, and read NFC Data Exchange Format (NDEF) message from NFC Tag. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m17networkapp.png" width="150"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NetworkApp" target="_blank"><strong>(M) NetworkApp</strong></a></p>
+			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Connection.html" target="_blank">Tizen.Network.Conncetion C# API</a>, Wi-Fi, and Wi-Fi Direct.<br />
+			This application provides network information such as IP address, network state, and list of available networks. Using this information, you can connect to Wi-Fi.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/wnetworkapp.png" width="180"/></td>
+			<td>
+			<p><strong>(W) NetworkApp</strong> [In progress]</p>
+			<p>This sample application demonstrates how to verify information about your connection and manage your Wi-Fi settings. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>

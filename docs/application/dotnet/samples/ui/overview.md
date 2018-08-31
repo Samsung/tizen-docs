@@ -75,6 +75,25 @@
 		</tr>
 		<tr>
 			<td>
+			<p><img alt="" height="180" src="media/wimagereader.png" width="180"/></p>
+			</td>
+			<td>
+			<p><strong>(W) ImageReader</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use an image in the Tizen .Net application.
+			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>For more information, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a>.</p>
+			<p><strong>Prerequisites</strong><br>
+			Network connection is required for DownloadImage.</p>
+			<p>To use network connection in an application,<br>
+			you must have the following privileges:<br>
+			<ul>
+				<li><code>http://tizen.org/privilege/internet</code></li>
+				<li><code>http://tizen.org/privilege/network.get</code></li>
+			</ul></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			<p><img alt="" height="225" src="media/tv1musicplayerui.png" width="400" /></p>
 			</td>
 			<td>
@@ -108,7 +127,7 @@
 			<p>This sample application demonstrates how to configure the screen using a variety of objects.<br />
 			(This sample only demonstrates how to create your UI application only, not the functionality of your application.)</p>
 			</td>
-		</tr>		
+		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m8snsui.png" width="150"/></td>
 			<td>
@@ -131,7 +150,7 @@
 			<td><img alt="" height="180" src="media/wxstopwatch.png" width="180"/></td>
 			<td>
 			<p><strong>(W) XStopWatch</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use a stopwatch.</p>
+			<p>This sample application demonstrates how to use a stopwatch and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Stopwatch" target="_blank">Native version</a></li>
@@ -142,7 +161,7 @@
 			<td><img alt="" height="180" src="media/wxuicomponent.png" width="180"/></td>
 			<td>
 			<p><strong>(W) XUIComponents</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use various kinds of Tizen Wearable UI controls using Xamarin.Forms and Tizen.Wearable.CircularUI.Forms.</p>
+			<p>This sample application demonstrates how to use various kinds of Tizen Wearable UI controls using Xamarin.Forms and <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_UI_Components" target="_blank">Native version</a></li>
