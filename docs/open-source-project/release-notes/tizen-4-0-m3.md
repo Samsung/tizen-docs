@@ -35,9 +35,9 @@ Release Date: Aug. 31, 2018
 
 ### New and changed features
 
-- TIDL – Tizen Interface Definition Language has been added (Mobile profile)
-  - TIDL supports app-to-app RPC style IPC
-  - rpc-port API has been added to support TIDL
+- TIDL (Tizen Interface Definition Language) has been added (Mobile profile).
+  - TIDL supports app-to-app RPC style IPC.
+  - rpc-port API has been added to support TIDL.
 
 
 ## Window System
@@ -45,7 +45,7 @@ Release Date: Aug. 31, 2018
 ### New and changed features
 
 - Extended Wayland Protocols
-  - The ‘event_surface’ event has been added to tizen_keyrouter protocol for sending the surface information before sending the a key to client(s).
+  - The ‘event_surface’ event has been added to tizen_keyrouter protocol for sending the surface information before sending the key to client(s).
 - Enlightenment Wayland Display Server
   - A D-Bus policy has been updated to enhance security regarding D-Bus interface.
   - A new layer has been added for e_desk_object.
@@ -64,8 +64,8 @@ Release Date: Aug. 31, 2018
   - The bugs related with pending position move request have been fixed.
   - The bugs related with hwc cancel condition have been fixed.
   - E_Desk smart object disorder has been fixed while zooming and maximizing member object.
-  - The error of not sending touch cancel event(s) in some special conditions has been fixed.
-  - The error of not sending axis event(s) during a touchdown operation has been fixed.
+  - The error of not sending touch cancel event in some special conditions has been fixed.
+  - The error of not sending axis event during a touchdown operation has been fixed.
 
 
 ## Graphics Engine
@@ -73,7 +73,6 @@ Release Date: Aug. 31, 2018
 ### New and changed features
 
 - DALi (3D UI Toolkit)
-  - Common
   - Actor and Stage
     - Extents property type has been added.
   - Image
@@ -151,7 +150,7 @@ Release Date: Aug. 31, 2018
   - Assist-panel is added.
   - Rotary Selector support edit mode.
 - Voice Framework
-  - Voice engine model is changed to a service app for supporting download (Only for mobile and TV profile).
+  - Voice engine model is changed to a service app for supporting download (only for mobile and TV profile).
 
 
 ## Multimedia Framework
