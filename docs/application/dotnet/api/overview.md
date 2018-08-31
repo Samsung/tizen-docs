@@ -29,7 +29,7 @@ A list of limitations is available at [Current Xamarin.Forms limitations](xamari
 
 [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike the Xamarin.Forms which support cross platforms.
 
-Using these APIs, You can easily and efficiently add Tizen wearable-specific user interfaces to your Tizen wearable application. For more information about these APIs, see [Tizen.Wearable.CircularUI GitHub](https://github.com/Samsung/Tizen.CircularUI).
+Using these APIs, you can easily and efficiently add Tizen wearable-specific user interfaces to your Tizen wearable application. For more information about these APIs, see [Tizen.Wearable.CircularUI GitHub](https://github.com/Samsung/Tizen.CircularUI).
 
 ## TizenFX API
 
