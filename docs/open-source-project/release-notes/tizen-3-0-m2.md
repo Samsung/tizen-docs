@@ -247,7 +247,7 @@ As a common feature, multi-user support has been added.
     - EGL&trade; 1.4
     - OpenGL&reg; ES 1.1, 2.0, 3.0, 3.1, 3.2
   - OpenGL&reg; ES/EGL&trade; development headers are provided.
-    - Khronos OpenGL&reg; ES/EGL&trade; headers (Khronos released on Oct 24 2016).
+    - Khronos OpenGL&reg; ES/EGL&trade; headers (Khronos released on Oct 24 2016)
 - DALi (3D UI Toolkit) enhancement
   - Wearable profile support has been added.
      - Wearable watch application template has been added.
@@ -681,11 +681,11 @@ As a common feature, multi-user support has been added.
   - Yet Another Crypto API (YACA)
     - A new crypto API package, YACA, has been introduced in Tizen 3.0.
       - It provides the application with the following stable cryptographic API set:
-        - API set for encryption/decryption operations with symmetric keys and sealing and opening operations with asymmetric keys.
-        - API set for creating and verifying a signature, calculating HMAC/CMAC, and calculating a message digest.
-        - API set for key handling operations, such as generating, importing, and exporting a key, and deriving a key from a password.
-        - Simple API set for cryptographic operations.
-        - API set for low-level RSA operations.
+        - API set for encryption/decryption operations with symmetric keys and sealing and opening operations with asymmetric keys
+        - API set for creating and verifying a signature, calculating HMAC/CMAC, and calculating a message digest
+        - API set for key handling operations, such as generating, importing, and exporting a key, and deriving a key from a password
+        - Simple API set for cryptographic operations
+        - API set for low-level RSA operations
   - openssl upgrade
     - openssl has been upgraded to 1.0.2j.
     - The following risky SSLv2-related API set were removed:
