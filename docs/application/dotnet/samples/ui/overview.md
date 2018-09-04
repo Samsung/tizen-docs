@@ -129,6 +129,24 @@
 			</td>
 		</tr>
 		<tr>
+			<td>
+			<p><img alt="" height="180" src="media/wskiasharp2d.png" width="180"/></p>
+			</td>
+			<td>
+			<p><strong>(W) SkiaSharp2DSample</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use SkiaSharp API in Tizen Xamarin.Forms applications.
+			<ul>
+				<li>Drawing Basics (DrawCircle)</li>
+				<li>SkiaSharp Path (DrawPath)</li>
+				<li>SkiaSharp Transforms (Translate, Scale, RotateDegrees)</li>
+			</ul>
+			This application uses <a href="https://docs.microsoft.com/en-us/dotnet/api/SkiaSharp" target="_blank">SkiaSharp API</a>.
+			<ul>
+				<li><a href="https://docs.microsoft.com/en-us/dotnet/api/skiasharp.skcanvas" target="_blank">Class SKCanvas</a></li>
+			</ul></p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="267" src="media/m8snsui.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/SNSUI" target="_blank"><strong>(M) SNS UI</strong></a></p>
