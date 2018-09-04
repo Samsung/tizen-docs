@@ -28,8 +28,10 @@ Your application must define the following PCM data settings:
 - Audio sample type:
   - Unsigned 8-bit PCM
   - Signed 16-bit little endian PCM
+  - Signed 24-bit little endian PCM
+  - Signed 24-bit packed in 32-bit little endian PCM
 - Audio sample rate:
-  - 8000 ~ 48000 Hz
+  - 8000 ~ 192000 Hz
 
 The following figures illustrate the general audio output states, and how the state changes when the audio output is interrupted by the system.
 
@@ -79,8 +81,10 @@ Before recording audio, you must define the following PCM data settings:
 - Audio sample type:
   - Unsigned 8-bit PCM
   - Signed 16-bit little endian PCM
+  - Signed 24-bit little endian PCM
+  - Signed 24-bit packed in 32-bit little endian PCM
 - Audio sample rate:
-  - 8000 ~ 48000 Hz
+  - 8000 ~ 192000 Hz
 
 To minimize the overhead of the audio input API, use the optimal channel type, sample type and sampling rate, which can be retrieved using the `audio_in_get_channel()`, `audio_in_get_sample_type()` and `audio_in_get_sample_rate()` functions, respectively.
 
@@ -207,9 +211,14 @@ modify_sound()
     int error_code = audio_in_get_sample_type(input, &sample_type);
     if (error_code != AUDIO_IO_ERROR_NONE) {
         dlog_print(DLOG_ERROR, LOG_TAG, "audio_in_get_sample_type() failed! Error code = %d", error_code);
-
         return;
     }
+
+    if (sample_type != AUDIO_SAMPLE_TYPE_S16_LE ||
+        sample_type != AUDIO_SAMPLE_TYPE_U8) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "this example doesn't support this sample type(%d)", sample_type);
+        return;
+	}
 
     uint8_t *index = (uint8_t*)buffer;
     while (index < (((uint8_t*)buffer) + buffer_size)) {
