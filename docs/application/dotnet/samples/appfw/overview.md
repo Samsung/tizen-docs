@@ -15,7 +15,7 @@
 			<td><img alt="" height="180" src="media/walarm_list.png" width="180"/></td>
 			<td>
 			<p><strong>(W) Alarm</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create and manage several alarms and save the alarm data. It also demonstrates how to create an application using Xamarin.Forms and Tizen.Wearable.CircularUI.Forms.</p>
+			<p>This sample application demonstrates how to create and manage several alarms and save the alarm data. It also demonstrates how to create an application using Xamarin.Forms and <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Alarm" target="_blank">Native version</a></li>
@@ -34,7 +34,7 @@
 			<td><img alt="" height="180" src="media/wappinformation.png" width="180"/></td>
 			<td>
 			<p><strong>(W) AppInformation</strong> [In progress]</p>
-			<p>This sample application demonstrates how to get the application-specific information such as AppId, Package ID, shared directory path. It also demonstrates how to get the directory information such as resource, cache, app data and so on.</p>
+			<p>This sample application demonstrates how to get the specific information such as AppId, Package ID, and shared directory path. It also demonstrates how to get the directory information such as resource, cache, app data and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>This application uses Tizen.Application API.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html" target="_blank">Class ApplicationInfo</a></li>
@@ -66,8 +66,8 @@
 			<td><img alt="" height="180" src="media/wappcontrol.png" width="180"/></td>
 			<td>
 			<p><strong>(W) AppControl</strong> [In progress]</p>
-			<p>This sample application demonstrates how to launch an application and get a result for the launch request. When you press <b>Launch</b> button, AppInformation sample application will be launched.</p>
-			<p><b>Prerequisites</b><br>
+			<p>This sample application demonstrates how to launch an application, get a result for the launch request, and create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>. When you press <strong>Launch</strong> button, AppInformation sample application will be launched.</p>
+			<p><strong>Prerequisites</strong><br>
 			First of all, you need to install <a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank">AppInformation sample application</a> because it is what would be launched by AppControl sample application.
 			You can install it by using Visual Studio or the sdb command line as follows:<br>
 			<code>$ sdb install org.tizen.example.AppInformation-1.0.0.tpk</code>
@@ -99,14 +99,14 @@
 			<td><img alt="" height="180" src="media/wbadges.png" width="180"/></td>
 			<td>
 			<p><strong>(W) Badges</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use application badge.</p>
+			<p>This sample application demonstrates how to use application badge and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wbadgecounter.png" width="180"/></td>
 			<td>
 			<p><strong>(W) BadgeCounter</strong> [In progress]</p>
-			<p>This sample application demonstrates how to manage badge counter of the application using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
+			<p>This sample application demonstrates how to manage badge counter of the application using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>In addition, there is similar web sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/web/Application/Badges" target="_blank">Web version</a></li>
@@ -117,20 +117,20 @@
 			<td><img alt="" height="180" src="media/wmessageport.png" width="180"/></td>
 			<td>
 			<p><strong>(W) MessagePortSampleApp</strong> [In progress]</p>
-			<p>This sample application demonstrates how to send and receive messages between applications.</p>
+			<p>This sample application demonstrates how to send and receive messages between applications and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>
 			<ul>
-				<li>Send a message to Tizen .Net Service sample application when <b>Send a message</b> button is clicked.</li>
+				<li>Send a message to Tizen .Net Service sample application when <strong>Send a message</strong> button is clicked.</li>
 				<li>Receive a message from <a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ServiceApp" target="_blank">Tizen .Net Service sample application</a></li>
 			</ul></p>
-			<p><b>Prerequisites</b><br>
+			<p><strong>Prerequisites</strong><br>
 			First of all, you need to install and execute <a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ServiceApp" target="_blank">Tizen .Net Service sample application</a> because it is used to communicate each other.<br>
 			You can install it by using Visual Studio or the sdb command line as follows:<br>
 			<code>$ sdb install org.tizen.example.ServiceApp-1.0.0.tpk</code><br>
 			<code>$ sdb shell</code><br>
 			<code>$ app_launcher -s org.tizen.example.ServiceApp
 			</code><br>
-			If you do not install Tizen .Net service application, an exception occurs when you press <b>Send a message</b> button.
+			If you do not install Tizen .Net service application, an exception occurs when you press <strong>Send a message</strong> button.
 			</p>
 			<p>This application uses Tizen.Application.Messages API.<br>
 			<ul>
@@ -164,7 +164,7 @@
 			<td><img alt="" height="180" src="media/wpreference.png" width="180"/></td>
 			<td>
 			<p><strong>(W) Preference</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a>.</p>
+			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>		
 		<tr>

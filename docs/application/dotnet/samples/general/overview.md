@@ -7,7 +7,7 @@
 			<td><img alt="" height="180" src="media/wplayingwithhwInputs.png" width="180"/></td>
 			<td>
 			<p><strong>(W) PlayingWithHWInputs</strong> [In progress]</p>
-			<p>This sample application demonstrates how to handle rotary events from bezel of a wearable device. In addition, it shows the way how to detect when the back button is pressed.</p>
+			<p>This sample application demonstrates how to handle rotary events from bezel of a wearable device and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>. In addition, it shows the way how to detect when the back button is pressed.</p>
 			<p>This application uses Tizen.Wearable.CircularUI API.<br>
 			<ul>
 				<li><a href="https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.IRotaryEventReceiver.html" target="_blank">Interface IRotaryEventReceiver</a></li>
@@ -32,23 +32,6 @@
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/wskiasharp2d.png" width="180"/></td>
-			<td>
-			<p><strong>(W) SkiaSharp2DSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use SkiaSharp API in Tizen Xamarin.Forms applications.</p>
-			<p>This application uses Tizen.Application API.<br>
-			<ul>
-				<li>Drawing Basics (DrawCircle)</li>
-				<li>SkiaSharp Path (DrawPath)</li>
-				<li>SkiaSharp Transforms (Translate, Scale, RotateDegrees)</li>
-			</ul></p>
-			<p>This application uses <a href="https://docs.microsoft.com/en-us/dotnet/api/SkiaSharp" target="_blank">SkiaSharp API</a>.<br>
-			<ul>
-				<li><a href="https://docs.microsoft.com/en-us/dotnet/api/skiasharp.skcanvas" target="_blank">Class SKCanvas</a></li>
-			</ul></p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="180" src="media/wsqlite.png" width="180"/></td>
 			<td>
 			<p><strong>(W) SQLite.Net.Sample</strong> [In progress]</p>
@@ -68,7 +51,7 @@
 			</td>
 			<td>
 			<p><strong>(W) VoiceMemo</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create an application using Xamarin.Forms, Tizen.Wearable.CircularUI.Forms, SQLite, and Tizen FX (Tizen.Applications, Tizen.Content.MediaContent, Tizen.Multimedia, Tizen.System, Tizen.Uix.Stt, Tizen.Security, and so on).</p>
+			<p>This sample application demonstrates how to create an application using Xamarin.Forms, <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>, SQLite, and Tizen FX (Tizen.Applications, Tizen.Content.MediaContent, Tizen.Multimedia, Tizen.System, Tizen.Uix.Stt, Tizen.Security, and so on).</p>
 			<p>The sample requires network connection (for example, Wi-Fi) at runtime.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -90,7 +73,7 @@
 			</td>
 			<td>
 			<p><strong>(W) Weather</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a>.</p>
+			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
