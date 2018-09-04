@@ -17,7 +17,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 #### **IDE and Tools**
 
-**New Features        **
+**New Features**
 
 - CLI/SDB
   - When you specify commands to be executed during the pre-build or post-build steps in the build_def.prop file, you can use the PROJ_PATH, BUILD_CONFIG, and BUILD_ARCH environment variables in the commands.
@@ -27,15 +27,15 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - Native UI Builder
   - When you build the UI of a wearable application, you cannot use the Panel UI component. The component is not supported in wearable applications.
   - Support for new The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native API set, necessary to develop future Tizen compliant solutions.
- for the wearable widget have been added. Old The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native API set, necessary to develop future Tizen compliant solutions.
- in the project code of the wearable widget, which were shared with the wearable application, have been replaced with the new API set.
+ - Support for the wearable widget have been added. The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, Web API set, and Native API set necessary to develop future Tizen compliant solutions.
+ - Replaced new API set in the project code of the wearable widget, which were shared with the wearable application.
 
 **Fixed Bugs**
 
 - Web IDE
   -  The first execution of the **Build Package** command for Web application projects sometimes failed due to a JavaScript validation problem. This bug has been fixed.
 - Native IDE
-  - When you tried to debug an application running on a connected target device through the **Debug As > Tizen Native Application – Attach **menu, you could not attach the debugger to the application in the **Debug Configurations** dialog. This bug has been fixed.
+  - When you tried to debug an application running on a connected target device through the **Debug As > Tizen Native Application – Attach** menu, you could not attach the debugger to the application in the **Debug Configurations** dialog. This bug has been fixed.
   - When you exported a package with multiple projects to a CLI project, and one of the projects was a Static and Shared Library project, the information of the referenced library project was not set in the def.prop file of the reference project. This bug has been fixed.
 - Native UI Builder
   - The Tizen Store did not accept a wearable circle application developed by the native UI Builder, because some blacklist API set were used in the Builder. This bug has been fixed.
@@ -221,7 +221,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
   - To use the SDB bash completion feature, enter the **source .sdb-complete.bash** command on the bash shell. The feature runs manually from the official Tizen 2.4 release onwards due to the Installer and Update Manager issue.
 
-    ​
+    
 
 #### Tizen 2.4.0 Platform
 
@@ -312,7 +312,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 
 - Native UI Builder
-  - The **Resource View** has been replaced by the **Resource Manager View**. When you open an earlier version than 2.4 Rev5, the **Resource View** still remains in the perspective. To update to the **Resource Manager View**, click **Tizen Native** on the Perspective Toolbar, open the context menu, and click **Reset**.
+  - The **Resource View** has been replaced by the **Resource Manager View**. When you open an earlier project version than 2.4 Rev5, the **Resource View** still remains in the perspective. To update to the **Resource Manager View**, click **Tizen Native** on the Perspective Toolbar, open the context menu, and click **Reset**.
   - The drag-and-drop method of the resource file has been changed.
     - If you drag an image file from the **Project Explorer View** and drop it to the UI component which has an image property (such as image or layout), the path of image file is automatically set to the image property in the **Design** tab.
     - You can drag the resource file from the **Resource Manager View** only in a Tizen 2.4 based project.
@@ -388,7 +388,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an Intelligent Input Bus (IBus) bug. When the issue occurs, restart the ibus-daemon by entering the **ibus-daemon –drx** command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk). If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel. On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
-  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again
+  - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
   - On Windows, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
     - Close some other programs and try to launch the Emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
@@ -474,7 +474,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Known Issues**
 
 - Installer and Update Manager
-  -  The update command of the 2.4 rev1 and rev2 CLI installer has some errors. If you use the 2.4 rev1 or rev2 CLI installer, the Tizen SDK update fails.  To solve the problem, download [CLI installer patch files](https://download.tizen.org/sdk/patches/), and do the following (or upgrade your CLI installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download):
+  -  The update command of the 2.4 rev1 and rev2 CLI installer has some errors. If you use the 2.4 rev1 or rev2 CLI installer, the Tizen SDK update fails.  To solve the problem, download [CLI installer patch files](https://download.tizen.org/sdk/patches/), and do the following (or upgrade your CLI installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download)):
     - Open the terminal or command line, and go to the location where you have downloaded the patch file.
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe} command to install the patch.
@@ -720,7 +720,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - Native IDE
   - The content/code assist feature has been added for the **i18n_get_text()** function. After you complete the **i18n_get_text()** function on the C/C++ source file editor by pressing **Ctrl + Space**, you can see a candidate parameter list which consists of original untranslated strings you added to the PO file.
   - When you develop a multi-project packaged application (such as a combination of UI and service projects, or UI and shared library projects), the res.xml files of the projects are automatically merged. If a project has no res.xml file, a res.xml is automatically generated for that project and merged with the other res.xml files. 
-  - The “Export to CLI” menu has been added, and appears when multiple projects are selected, .
+  - The “Export to CLI” menu has been added, and appears when multiple projects are selected.
   - The Resource Explorer view has been added. It appears only for Tizen 2.4 based projects, not Tizen 2.3.1.
   - Multi-project packaging policy has been updated.
     - A Web UI project can be packaged with several native-widget type projects.
@@ -741,7 +741,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - If there is a multibyte character in the installation path of the Tizen SDK, some development packages cannot find the installed SDK’s location when they are working.
   - When you install packages by using the **All Packages** tab in the Update Manager, the number of the progress indicator is only changed each time a package in dependency is downloaded. While downloading, the number of the progress indicator is not changed. 
   - When you run the dynamic analyzer on Mac OS, the SDK Update Notification does not appear though there are available SDK updates.
-  - If the *SDK Update Notification* appears when you start the Tizen IDE or Emulator on Mac OS, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - If the **SDK Update Notification** appears when you start the Tizen IDE or Emulator on Mac OS, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 - Native IDE
   - When you import some projects generated from Tizen 2.3 Rev2, the import can take some time.
   - The **Restore Defaults** feature in the Native project’s **properties > C/C++ Build**, does not work properly.
@@ -883,7 +883,7 @@ New Features
 - Open source upgrade
   - EFL version has been upgraded from 1.7 to 1.13.
 - API changes
-  - Eina_Bool edje_text_class_get (const char *text_class, char* font, *Evas_Font_Size* size) has been changed to  Eina_Bool edje_text_class_get (const char *text_class, const char* font, *Evas_Font_Size* size).
+  - Eina_Bool edje_text_class_get (const char text_class, char font, Evas_Font_Size size) has been changed to  Eina_Bool edje_text_class_get (const char text_class, const char font, Evas_Font_Size size).
   - void elm_win_wm_rotation_preferred_rotation_set (Evas_Object *obj, const int rotation) has been changed to void elm_win_wm_rotation_preferred_rotation_set (const Evas_Object *obj, int rotation).
 
 #### Network Connectivity
@@ -911,7 +911,7 @@ New Features
   - New API set for SIM application lists have been added.
   - New API set for a network have been added.
 
-** Change Notes**
+**Change Notes**
 
 - Open source upgrade
   - ConnMan has been upgraded from 1.3.313 to 1.29.15.
@@ -1044,7 +1044,7 @@ New Features
   - Geofence Manager (Mobile) 
     - New Geofence Manager API has been added.
 
-**Known Issues **
+**Known Issues**
 
 - Geofence Manager 
   - This feature is optional, and is only supported is certain device models.
@@ -1192,7 +1192,7 @@ New Features
   - drm_slp so file has been removed.
   - Creation of tbm_surface with multiple buffers is allowed.
 
-**Known Issues **
+**Known Issues**
 
 - X11
   - Emulator X video driver does not support DRI3 and Present extension.
@@ -1267,7 +1267,12 @@ New Features
 
 **Change Notes**
 
-- BT privileges ([http://tizen.org/privilege/bluetooth.xx](http://tizen.org/privilege/bluetooth.xx)) have been deprecated to synchronize the privilege names between Web and native Bluetooth API set. From 2.4, [http://tizen.org/privilege/bluetooth](http://tizen.org/privilege/bluetooth) must be used instead of the listed [http://tizen.org/privilege/bluetooth.xx](http://tizen.org/privilege/bluetooth.xx) privileges.[http://tizen.org/privilege/bluetooth.xx](http://tizen.org/privilege/bluetooth.xx) -> [http://tizen.org/privilege/bluetooth](http://tizen.org/privilege/bluetooth)[http://tizen.org/privilege/bluetooth.admin](http://tizen.org/privilege/bluetooth.admin)[http://tizen.org/privilege/bluetooth.gap](http://tizen.org/privilege/bluetooth.gap)[http://tizen.org/privilege/bluetooth.health](http://tizen.org/privilege/bluetooth.health)[http://tizen.org/privilege/bluetooth.spp](http://tizen.org/privilege/bluetooth.spp)
+- BT privileges ([http://tizen.org/privilege/bluetooth.xx](http://tizen.org/privilege/bluetooth.xx)) have been deprecated to synchronize the privilege names between Web and Native Bluetooth API set. From 2.4, [http://tizen.org/privilege/bluetooth](http://tizen.org/privilege/bluetooth) must be used instead of the listed [http://tizen.org/privilege/bluetooth.xx](http://tizen.org/privilege/bluetooth.xx) privileges.
+  - [http://tizen.org/privilege/bluetooth.xx](http://tizen.org/privilege/bluetooth.xx) -> [http://tizen.org/privilege/bluetooth](http://tizen.org/privilege/bluetooth)
+  - [http://tizen.org/privilege/bluetooth.admin](http://tizen.org/privilege/bluetooth.admin)
+  - [http://tizen.org/privilege/bluetooth.gap](http://tizen.org/privilege/bluetooth.gap)
+  - [http://tizen.org/privilege/bluetooth.health](http://tizen.org/privilege/bluetooth.health
+  - [http://tizen.org/privilege/bluetooth.spp](http://tizen.org/privilege/bluetooth.spp)
 - Unnecessary and misplaced exception errors have been removed and added in the Web Device API specification.  
   - Alarm 
     - TypeMismatchError of remove() has been removed.
@@ -1433,7 +1438,7 @@ New Features
 **Sync Manager**
 
 - For API enhancement, several changes have been applied to Sync Manager. For more detailed information, see the API Reference.
-- [Changed] 2 API set may require a proper privilege to work correctly:
+- [Changed] two API set may require a proper privilege to work correctly:
   - sync_manager_add_data_change_sync_job()
     - [http://tizen.org/privilege/calendar.read](http://tizen.org/privilege/calendar.read)
     - [http://tizen.org/privilege/contact.read](http://tizen.org/privilege/contact.read)
@@ -1512,7 +1517,7 @@ New Features
 
 **Application Framework**
 
-- [Deprecated] 2 API set that are not supported since 2.4 have been deprecated:
+- [Deprecated] two API set that are not supported since 2.4 have been deprecated:
   - app_get_external_shared_data_path()
   - app_get_external_data_path()
 - [Deprecated] Non-supported operations of application control have been deprecated:
