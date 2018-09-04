@@ -154,7 +154,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - Tizen HAL
   - Tizen display HAL
     - Support has been added for the layer commit to ensure an output commit per each vblank:
-      - `TDM_COMMIT_PER_VBLANK` environment.
+      - `TDM_COMMIT_PER_VBLANK` environment
     - Support has been added for controlling the client vblank fps in runtime.
     - Support has been added for the protocol trace between the TDM server and client.
   - Tizen buffer HAL
