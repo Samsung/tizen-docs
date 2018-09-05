@@ -4,7 +4,8 @@ There are 2 important UX design features that help application users read and be
 
 To make the text legible and easy to understand, you must select the shape, size, and color of the text font, as well as the application background color. In addition, the use of appropriate graphic design enhances text legibility.
 
-> **NOTE**  
+> **Note**
+>
 > By default, Tizen displays text from left to right. However, certain languages, such as Arabic, are displayed from right to left.
 
 Using action-related labels consistently in your application keeps the user experience consistent. Use the following terms:
@@ -17,8 +18,6 @@ Use a positive tone of voice for any messaging or labels in your application. Av
 
 The language tone should provide users with the impression that they use a capable and powerful phone that is reliable and good to own. Using negative words affects the user's perception of the phone.
 
- 
-
 **Table: Phrasing for general actions**
 
 | AVOID                                | PREFER                               |
@@ -28,11 +27,7 @@ The language tone should provide users with the impression that they use a capab
 | Synchronization started              | Synchronizing…                       |
 | Organizer not accessible             | Organizer is unavailable             |
 
-
-
 Never use phrasing that blames users or makes them feel at fault. Instead, your language and tone should support the users´ view of the device as an extension of themselves. Do not use language that identifies the user as being separate from the phone. If there is a problem in performing a task, use messaging that downplays the user's role in the situation.
-
- 
 
 **Table: Phrasing for task-related user actions**
 
@@ -40,7 +35,6 @@ Never use phrasing that blames users or makes them feel at fault. Instead, your 
 |--------------------------------------|--------------------------------------|
 | You have reached the maximum number of folders | Maximum number of folders reached    |
 | You need to check for adding recipients | Select recipients                    |
-
 
 Always keep in mind that it takes time for a user to read text. Since important text messages are shown to the user at points where user interaction is interrupted (for example, in a pop-up, information or warning note, or dialog box), keep your messages short, to the point, and comprehensible.
 

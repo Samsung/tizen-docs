@@ -18,17 +18,6 @@ Tizen design principles explained in this section of the document are provided t
 - [Design Principles](mobile/design-principles.md)
 
 
-## Wearable
-
-The Gear's design principles are based on how users wear watches. Understanding the basic approaches to designing for the Gear's compact circular display will help you deliver a better user experience for your app.
-
-There are four design principles used in Werable:
-- [Scannable](wearable/design-principles/scannable.md)
-- [Easy to follow](wearable/design-principles/easy-follow.md)
-- [Responsive](wearable/design-principles/responsive.md)
-- [Desirable](wearable/design-principles/desirable.md)
-
-
 ## TV
 
 The Tizen 4.0 TV design principles provide a clear and comfortable
@@ -40,3 +29,9 @@ There are three design principles used in Tizen 4.0 TVs:
 - [Simplicity](tv/design-principles/simplicity.md)
 - [Natural intuitiveness](tv/design-principles/natural-intuitiveness.md)
 - [Breathing space](tv/design-principles/breathing-space.md)
+
+
+## Wearable
+
+You can see the Wearable design guidelines on [SAMSUNG Developers site](https://developer.samsung.com/gear/design/principle).
+

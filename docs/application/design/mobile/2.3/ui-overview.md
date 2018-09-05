@@ -14,17 +14,20 @@ Before you get started, take a moment to familiarize yourself with the fundament
 
 In Tizen, each view supports one or more primary user goals. For this reason, the number of fixed elements in the layout structure is few, and primarily includes the header area and the content area.
 
-**Figure: Screen areas**  
+**Figure: Screen areas**
+
 <img alt="" height="400" src="media/tizen-lite-ux-design-guide_uioverview_v1.2_140922_core_01.png" width="240">
 
 The header area contains a title that describes the content of the screen. It also includes tabs that support navigation within the application, and, in some cases, it can contain icons or buttons.
 
-**Figure: Header area examples**  
+**Figure: Header area examples**
+
 <img alt="" height="154" src="media/headers.png" width="240">
 
 The content area displays the application content, such as options and lists, to the user.
 
-**Figure: Content area**  
+**Figure: Content area**
+
 <img alt="" height="400" src="media/content_area.png" width="490">
 
 A variety of different information and controls can be placed in the content area.
@@ -40,7 +43,8 @@ Besides the header and content areas of the application screen, the Lock screen,
 
 For more information about additional UI components, see [Basic Interactions](./basic-interactions.md).
 
-**Figure: Application screen structure**  
+**Figure: Application screen structure**
+
 <img alt="" height="482" src="media/uioverview_app_screen.png" width="440">
 
 ### Lock Screen
@@ -49,7 +53,8 @@ The **Lock** screen is the first screen the user sees when waking up the device.
 
 Besides presenting information, such as time and date, the Tizen **Lock** screen lets the user take action on incoming events such as getting back on messages, emails, or missed calls.
 
-**Figure: Lock screen**  
+**Figure: Lock screen**
+
 <img alt="" src="media/uioverview_lock_screen.png" width="660" height="482">
 
 ------------------------------------------------------------------------
@@ -58,8 +63,9 @@ Besides presenting information, such as time and date, the Tizen **Lock** screen
 
 The **Home** screen is a customizable space that displays applications currently active on the device.
 
-**Figure: Home screen**  
-<img alt="" src="media/uioverview_home_screen.png" width="660" height="482"> 
+**Figure: Home screen**
+
+<img alt="" src="media/uioverview_home_screen.png" width="660" height="482">
 
 ------------------------------------------------------------------------
 
@@ -71,7 +77,8 @@ The Notification panel provides the user with an overview of communications and 
 
 The quick setting is a flexible shortcut area to toggle modes or settings on and off. The quick settings can be modified to ensure better efficiency for the user.
 
-**Figure: Notification panel**  
+**Figure: Notification panel**
+
 <img alt="" src="media/uioverview_noti_screen.png" width="660" height="482">
 
 ------------------------------------------------------------------------
@@ -113,5 +120,6 @@ The following table lists the Tizen gestures you can use to offer intuitive touc
 | Pinch zoom in            |<img alt="" height="114" src="media/ui_overview_zoomin.png" width="109"> | Pinching open zooms in.  |
 | Pinch zoom out           |<img alt="" height="114" src="media/ui_overview_zoomout.png" width="109"> | Pinching close zooms out.  |
 
-> **NOTE**  
+> **Note**
+>
 > The flick gesture is supported in the Native framework.

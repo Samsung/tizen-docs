@@ -27,5 +27,6 @@ The color picker provides a set of color cells. The user can select a color by t
 
 <img alt="" height="158" src="media/tizen-lite-ux-design-guide_designlibrary_v1.1_140922_core_28.png" width="480" />
 
-> **NOTE**  
+> **Note**
+>
 > The supported color picker types are different in the Tizen native and Web frameworks.

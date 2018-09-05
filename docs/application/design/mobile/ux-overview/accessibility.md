@@ -1,26 +1,23 @@
 # Accessibility
 
 Tizen provides users with a universal design, which presents the same level and quality of user experience regardless of the accessibility level of the individuals.
-
 Accessibility levels of individuals vary. Users may have impaired sight, hearing, or other impairments. All user needs must be considered to create a universal design. Tizen provides a screen reader and larger font sizes to effectively convey information to users with different needs.
 
 Developing an accessible app may not be easy. When you design an accessible app, there are many things that require your attention and consideration. However, your app design does not have to be limited by users with disabilities. Highly accessible apps are easy to use for everyone, after all.
 
 By adding accessibility features to your app, you can ensure that it conforms to accessibility related laws, regulations, and standards. We are planning on increasing and fortifying support for accessibility features with Tizen. This will open an opportunity to help you develop more and more competitive apps.
 
-
 ## Tizen Screen Reader
 
 The screen reader feature was developed to assist users with poor sights. By reading text information to the users, it enables them to use apps without struggling with the small text information on the screen.
 
-<img alt="#" height="550" src="media/3.4.1_a.png" />   <img alt="#" height="550" src="media/3.4.1_b.png" />
+<img alt="#" height="550" src="media/3.4.1_a.png" />   <img alt="#" height="550" src="media/3.4.1_b.png" />
 
 Using this feature, you can design an app to provide a pleasant user experience to users with poor eyesight. It utilizes a TTS (text-to-speech) engine to transform the text and graphics on the screen into audible information. The screen reader recognizes the selected information or user interface, and provides audible feedback if a subsequent action is required.
 
 Because Tizen 2.4 fully supports the screen reader feature, you do not have to add additional graphical elements to your app to enable it.
 
 The following are guidelines for designing apps that support the screen reader.
-
 
 ## Guidelines for Designing Reader-Compatible Content
 

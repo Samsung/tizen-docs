@@ -4,8 +4,6 @@ Tizen provides a solid framework that supports stable app designs. It provides s
 
 #### Contents
 
--   [Home Structure](ux-overview/home-structure.md)
--   [Gestures](ux-overview/gestures.md)
--   [Hardware Keys on the Device](ux-overview/hardware-keys.md)
-
- 
+-   [Home Structure](home-structure.md)
+-   [Gestures](gestures.md)
+-   [Hardware Keys on the Device](hardware-keys.md)
