@@ -26,7 +26,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Native UI Builder
   - When you build the UI of a wearable application, you cannot use the Panel UI component. The component is not supported in wearable applications.
-  - Support for new The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native API set, necessary to develop future Tizen compliant solutions.
+  - Support for new API set for the wearbale widget have been added. Old API set in the project code of the wearble widget, which were shared with the werable application, have been replaced with the new API set.
  - Support for the wearable widget have been added. The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, Web API set, and Native API set necessary to develop future Tizen compliant solutions.
  - Replaced new API set in the project code of the wearable widget, which were shared with the wearable application.
 
@@ -883,7 +883,7 @@ New Features
 - Open source upgrade
   - EFL version has been upgraded from 1.7 to 1.13.
 - API changes
-  - Eina_Bool edje_text_class_get (const char text_class, char font, Evas_Font_Size size) has been changed to  Eina_Bool edje_text_class_get (const char text_class, const char font, Evas_Font_Size size).
+  - Eina_Bool edje_text_class_get (**const char text_class**, **char font**, **Evas_Font_Size** size) has been changed to  Eina_Bool edje_text_class_get (**const char text_class**, **const char font**, **Evas_Font_Size** size).
   - void elm_win_wm_rotation_preferred_rotation_set (Evas_Object *obj, const int rotation) has been changed to void elm_win_wm_rotation_preferred_rotation_set (const Evas_Object *obj, int rotation).
 
 #### Network Connectivity
@@ -1271,7 +1271,7 @@ New Features
   - [http://tizen.org/privilege/bluetooth.xx](http://tizen.org/privilege/bluetooth.xx) -> [http://tizen.org/privilege/bluetooth](http://tizen.org/privilege/bluetooth)
   - [http://tizen.org/privilege/bluetooth.admin](http://tizen.org/privilege/bluetooth.admin)
   - [http://tizen.org/privilege/bluetooth.gap](http://tizen.org/privilege/bluetooth.gap)
-  - [http://tizen.org/privilege/bluetooth.health](http://tizen.org/privilege/bluetooth.health
+  - [http://tizen.org/privilege/bluetooth.health](http://tizen.org/privilege/bluetooth.health)
   - [http://tizen.org/privilege/bluetooth.spp](http://tizen.org/privilege/bluetooth.spp)
 - Unnecessary and misplaced exception errors have been removed and added in the Web Device API specification.  
   - Alarm 
@@ -1559,6 +1559,6 @@ New Features
 
 **Device**
 
-- [Deprecated] 2 API set have been deprecated to restrict misuse:
+- [Deprecated] two API set have been deprecated to restrict misuse:
   - device_display_change_state()
   - device_power_wakeup()
