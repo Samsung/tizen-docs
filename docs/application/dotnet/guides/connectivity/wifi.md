@@ -7,7 +7,7 @@ The main features of the Tizen.Network.WiFi namespace include:
 
 -   Wi-Fi device management
 
-    You can use the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class to control aspects of your application's wireless connection.
+    You can use the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class to control the aspects of your application's wireless connection. The aspects are:
 
     - [Activate](#activating_wifi_device) or [deactivate](#deactivating_wifi_device) Wi-Fi, [monitor connection state changes](#managing_events), and [scan for available access points](#accesspoint_scan).
     - Get BSSID asynchronously as well as synchronously.
@@ -39,7 +39,8 @@ The main features of the Tizen.Network.WiFi namespace include:
 The application uses the infrastructure mode to connect to a wireless local area network (WLAN). The infrastructure mode requires a wireless access point. To connect to a WLAN, the application client must be configured to use the same service set identifier (SSID) as the access point.
 
 
-> **Note**  
+> **Note**
+>
 > You can test the Wi-Fi functionality on a target device only. The emulator does not support this feature.
 
 
@@ -47,7 +48,7 @@ The application uses the infrastructure mode to connect to a wireless local area
 
 To enable your application to use the Wi-Fi functionality:
 
-1.  To use the [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the <b>`tizen-manifest.xml`</b> file:
 
     ```
     <privileges>
