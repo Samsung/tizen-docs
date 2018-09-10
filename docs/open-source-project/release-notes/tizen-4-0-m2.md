@@ -28,7 +28,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
     - Extended internal storage is an SD card-based storage extension feature.
   - D-Bus debugging and profiling tools (eBPF-based monitoring) have been added.
   - Supplementary group support for libdbuspolicy with KDBus backend has been added.
-  - C# PublicAPI set (device, feedback, storage, dlog, tizen-platform-config (internal)) has been added.
+  - C# Public API set (device, feedback, storage, dlog, tizen-platform-config (internal)) has been added.
   - New Public enumerators have been added to libsvi, such as FEEDBACK_PATTERN_SYSTEM_SHORT.
   - A media directory that can be shared between users (/opt/usr/home/owner/media/Shared) has been added.
 
