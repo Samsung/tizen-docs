@@ -26,7 +26,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Native UI Builder
   - When you build the UI of a wearable application, you cannot use the Panel UI component. The component is not supported in wearable applications.
-  - Support for new API set for the wearabale widget have been added. Old API set in the project code of the wearble widget, which were shared with the werable application, have been replaced with the new API set.
+  - Support for new API set for the wearable widget have been added. Old API set in the project code of the wearable widget, which were shared with the wearable application, have been replaced with the new API set.
 
 **Fixed Bugs**
 
