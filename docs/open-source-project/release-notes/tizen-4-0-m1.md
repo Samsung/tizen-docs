@@ -32,7 +32,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - Libusb has been upgraded to 1.0.21.
   - The resource management daemon has been changed to make resources lighter for IoT devices.
   - API set have been added:
-    - Dlog C#- API set.
+    - Dlog C#- internal API set.
     - Getting physical memory size API.
 
 **Fixes**
