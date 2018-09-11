@@ -86,11 +86,11 @@ To start the IME application life-cycle:
     }
     ```
 
-## Making a Floating Keyboard
+## Use Floating Keyboard
 
-To make the floating keybaord to allow the user to move the keyboard:
+To use the floating keybaord to allow the user to move the keyboard:
 
-1.  Call the `SetFloatingMode()` method.
+1.  Call the `SetFloatingMode()` method:
 
     ```
     public static void SetFloatingMode()
@@ -98,7 +98,7 @@ To make the floating keybaord to allow the user to move the keyboard:
         InputMethodEditor.SetFloatingMode(true);
     ```
 
-2.  Create a container of PanGestureRecognizer to detect a dragging event.
+2.  Create a container of PanGestureRecognizer to detect a dragging event:
 
     ```
     var panGesture = new PanGestureRecognizer ();
@@ -106,7 +106,7 @@ To make the floating keybaord to allow the user to move the keyboard:
     GestureRecognizers.Add (panGesture);
     ```
 
-3.  Call the SetFloatingDragStart() and SetFloatingDragEnd() method when a drag event is received.
+3.  Call the `SetFloatingDragStart()` and `SetFloatingDragEnd()` method when a drag event is received:
 
     ```
     void OnPanUpdated (object sender, PanUpdatedEventArgs e)
