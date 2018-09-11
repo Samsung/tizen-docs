@@ -2,7 +2,7 @@
 
 Release Date: 31 May, 2017
 
-The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native APIs.
+The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native API set.
 
 ### Release Details
 
@@ -23,7 +23,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 **New and Changed Features**
 
 - System Framework
-  - The PASS (Power Aware Service System) daemon has been added for hardware (CPU, GPU, and memory) resource management.
+  - The Power Aware Service System (PASS) daemon has been added for hardware (CPU, GPU, and memory) resource management.
   - Open-source components have been upgraded and changed:
     - Systemd has been upgraded from 219 to 231.
     - Libgudev package has been detached from Systemd.
@@ -31,14 +31,14 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - Libconfig has been upgraded to 1.6.
     - Libusb has been upgraded to 1.0.21.
   - The resource management daemon has been changed to make resources lighter for IoT devices.
-  - APIs have been added:
-    - Dlog C#-internal APIs
-    - Getting physical memory size API
+  - API set have been added:
+    - Dlog C#- internal API set.
+    - Getting physical memory size API.
 
 **Fixes**
 
 - System Framework
-  - Many Dbus/Kdbus bugs have been fixed.
+  - Many D-Bus/KDBus bugs have been fixed.
   - The systemd-journald log starvation bug has been fixed.
   - The dlogutil dump mode (nonblack) bug has been fixed.
 
@@ -130,8 +130,8 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - Support for the screen rotation has been added.
   - A commit is performed for each tdm layer instead of committing a TDM output.
   - Debugging tools have been extended for:
-    - Plane state
-    - Pending commit
+    - Plane state.
+    - Pending commit.
 - wayland-tbm
   - Support has been added for checking the hardware compositing state of the client for front buffer rendering.
 - libpepper-evdev
@@ -139,7 +139,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - The library currently only processes a key event and creates a pepper keyboard event.
 - libpepper-keyrouter
   - The libpepper-keyrouter library initializes the keyrouter in a pepper server and deals with keyrouter protocol requests from clients.
-  - The library gets a key grab request from a client and sends 1 or more grabbed keys to the clients through the `wl_keyboard` protocol interface.
+  - The library gets a key grab request from a client and sends one or more grabbed keys to the clients through the `wl_keyboard` protocol interface.
 - Tizen ws Shell
   - A `tzsh_quickpanel_extension_get()` API has been added for extensibility.
 - efl-util
@@ -166,7 +166,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - Support has been added for buffering the TBM surface queue trace when the state is changed.
     - Support has been added for the capture of the TBM surface to a file.
   - Tizen EGL porting layer
-    - New APIs have been added to wayland-egl to support the prerotation feature:
+    - New API set have been added to wayland-egl to support the prerotation feature:
       - `wl_egl_window_set_rotation()`
       - `wl_egl_window_get_capabilities()`
     - The behavior associated with the `tpl_surface_set_frontbuffer_mode()` API has been changed to proper front buffer rendering.
@@ -198,7 +198,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - An opacity property has been added to Actor.
     - Support for the enumeration setting in various properties has been added to Actor.
     - A property to allow an actor to ignore the anchor point for its position has been added to Actor.
-    - Raise and Lower APIs have been added to Actor.
+    - Raise and Lower API set have been added to Actor.
     - A visibility change signal has been added to Actor.
     - `Layer::TREE_DEPTH_MULTIPLIER` has been deprecated.
   - Property
@@ -213,7 +213,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - Support for the notification level, screen mode, and brightness has been added.
   - Key event and input
     - Support for the device name and device class of the key event has been added.
-    - Various APIs have been added to IMF Manager.
+    - Various API set have been added to IMF Manager.
   - Control and Visual
     - TextVisual has been added.
     - AnimatedImageVisual has been added.
@@ -243,7 +243,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - DisposeQueue has been added to release automatically unmanaged resources bound to DALi native objects.
     - The key navigation rule is enhanced by FocusManager and CustomKeyAlgorithmInterface.
     - High-level classes, which provide useful functionalities and easy interfacing to users, have been added. For example, Color, Size2D, and RelativeVector.
-    - The Animation APIs are revised to improve usability.
+    - The Animation API set are revised to improve usability.
     - NUIApplication has been added to inherit from the UICoreApplication class, which provides the Tizen C# application main loop and life-cycle event handling scheme.
     - The VisualView high-level class has been added to improve the DALi native Visual usability.
     - The overall class hierarchy and structure have been changed compared to native DALi.
@@ -310,7 +310,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - Package configuration has been changed:
     - The ecore package has been divided into several smaller packages (ecore-audio, ecore-avahi, ecore-buffer, ecore-con, ecore-core, ecore-drm, ecore-evas, ecore-fb, ecore-file, ecore-imf, ecore-input, ecore-ipc, ecore-wayland).
     - The unified devel package is generated regardless of the Tizen profile.
-  - edbus has been changed to support dbus only.
+  - EDBus has been changed to support D-Bus only.
   - Test application and examples are removed from the binary image.
   - A source repository path has been changed:
     - From `profile/PROFILE/platform/core/uifw/efl-ext` to `platform/core/uifw/efl-ext`
@@ -330,7 +330,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - Accessibility
   - ScreenReader functionality has not been fully tested.
 - Clipboard
-  - CBHM (ClipBoard History Manager) has not been fully tested.
+  - ClipBoard History Manager (CBHM) has not been fully tested.
 - View manager
   - View manager has not been fully tested.
 - Customization API
@@ -346,11 +346,11 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 **New and Changed Features**
 
 - Recorder
-  - APIs for getting muxed stream data have been added.
+  - API set for getting muxed stream data have been added.
 - Media Content
   - An API for getting video rotation information has been added.
   - An API for getting/setting the bookmark name has been added.
-  - APIs for updating file metadata (such as title, album, artist, and genre) have been deprecated.
+  - API set for updating file metadata (such as title, album, artist, and genre) have been deprecated.
   - The API for getting the storage name has been deprecated.
   - The cloud-related code has been deprecated.
 - Thumbnail Utility
@@ -358,7 +358,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - Open Source Upgrade
   - Tiff version has been upgraded from 4.0.6 to 4.0.7.
 - Player
-  - APIs for progressive download have been deprecated.
+  - API set for progressive download have been deprecated.
   - The display type has been replaced with a new value.
   - New error codes have been added.
 - Audio
@@ -374,28 +374,28 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 **New and Changed Features**
 
 - Data Network
-  - New features and APIs have been added:
+  - New features and API set have been added:
     - In mobile, wearable, and TV profiles, a connection API for getting the DHCP server address has been added.
     - In mobile, wearable, and TV profiles, the enum for the pdn type has been deprecated.
-    - In mobile, wearable, and TV profiles, connection APIs for adding/removing a routing table have been added.
-    - In the TV profile, connection APIs for attaching/detaching an Ethernet cable have been deprecated/added.
-    - In mobile, wearable, and TV profiles, APIs for getting/setting the DNS config type have been added.
-    - In mobile, wearable, and TV profiles, connection and wifi-manager APIs for getting/setting the prefix length have been added.
+    - In mobile, wearable, and TV profiles, connection API set for adding/removing a routing table have been added.
+    - In the TV profile, connection API set for attaching/detaching an Ethernet cable have been deprecated/added.
+    - In mobile, wearable, and TV profiles, API set for getting/setting the DNS config type have been added.
+    - In mobile, wearable, and TV profiles, connection and wifi-manager API set for getting/setting the prefix length have been added.
     - In mobile, wearable, and TV profiles, a connection and wifi-manager API for getting multiple ipv6 addresses has been added.
-    - In mobile, wearable, and TV profiles, a wifi-manager API for getting multiple ipv6 addresses has been added.
+    - In mobile, wearable, and TV profiles, a wifi-manager API for getting multiple IPv6 addresses has been added.
     - In mobile, wearable, and TV profiles, a wifi-manager API for connecting a hidden AP has been added.
     - In mobile, wearable, and TV profiles, a wifi-manager API for getting the disconnect reason has been added.
-    - In mobile, wearable, and TV profiles, wifi-manager APIs for connecting/canceling WPS-PIN/PBC without ssid have been added.
-    - In mobile, wearable, and TV profiles, wifi-manager APIs for connecting/discovering TDLS without ssid have been added.
+    - In mobile, wearable, and TV profiles, wifi-manager API set for connecting/canceling WPS-PIN/PBC without SSID have been added.
+    - In mobile, wearable, and TV profiles, wifi-manager API set for connecting/discovering TDLS without SSID have been added.
     - In mobile, wearable, and TV profiles, a wifi-manager API for switching TDLS's channel has been added.
-    - In mobile, wearable, and TV profiles, wifi-manager APIs for getting the DHCP address have been added.
-    - In mobile, wearable, and TV profiles, wifi-manager APIs for getting the scan status have been added.
+    - In mobile, wearable, and TV profiles, wifi-manager API set for getting the DHCP address have been added.
+    - In mobile, wearable, and TV profiles, wifi-manager API set for getting the scan status have been added.
     - In mobile and wearable profiles, the ASP (Application Service Platform) feature support has been added.
     - In mobile, wearable, and TV profiles, the IPv6 tethering feature support has been added.
-    - In mobile, wearable, and TV profiles, tethering APIs for getting/setting IPv6 tethering have been added.
+    - In mobile, wearable, and TV profiles, tethering API set for getting/setting IPv6 tethering have been added.
     - In the mobile profile, the default VPN (IPsec) feature support has been added.
     - In mobile and wearable profiles, the wifi-direct tethering feature support has been added.
-    - In mobile and wearable profiles, the STC (Smart Traffic Control) feature support has been added.
+    - In mobile and wearable profiles, the Smart Traffic Control (STC) feature support has been added.
   - Major open source upgrades and changes:
     - Curl has been upgraded from 7.40 to 7.53 for stability.
 - Telephony
@@ -409,15 +409,15 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - In the wearable profile, the call manager library support has been added.
   - In the wearable profile, the standalone mode telephony framework support has been added.
 - Connectivity
-  - New features and APIs have been added:
+  - New features and API set have been added:
     -  In mobile and wearable profiles, support for OMAPI 3.2 has been added.
   - Major open-source component upgrades and changes have been made.
 - Bluetooth
-  - New features and APIs have been added:
-    - In mobile, wearable, and TV profiles, IPSP (Internet Protocol Support Profile) APIs have been added.
-    - In mobile, wearable, and TV profiles, GATT MTU Exchange APIs have been added.
-    - In mobile, wearable, and TV profiles, LE Scan filtering APIs have been added.
-  - Major open-source component upgrades and changes:
+  - New features and API set have been added:
+    - In mobile, wearable, and TV profiles, Internet Protocol Support Profile (IPSP) API set have been added.
+    - In mobile, wearable, and TV profiles, GATT MTU Exchange API set have been added.
+    - In mobile, wearable, and TV profiles, LE Scan filtering API set have been added.
+  - Major Open-source component upgrades and changes:
     - Bluez has been upgraded from 5.37 to 5.43.
 - IoTCon
   - Dependency with system-settings has been removed.
@@ -472,7 +472,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - PIMS
   - Calendar
     - In the TV profile, Calendar Service has been added.
-    - APIs for event aggregation have been added.
+    - API set for event aggregation have been added.
 - Convergence
   - FIDO
     - The FIDO Platform ASM module has been added, supporting pluggable FIDO authenticators. Both Bound and Roaming type (Connectivity type: BT) are supported.
@@ -513,8 +513,8 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 **New and Changed Features**
 
-- HTML5/W3C APIs  
-  Open source chromium M56 version has been applied for the Tizen 4.0 Web browser and Web application runtime engine. The following HTML5/W3C standard feature/APIs have been applied:
+- HTML5/W3C API set  
+  Open source chromium M56 version has been applied for the Tizen 4.0 Web browser and Web application runtime engine. The following HTML5/W3C standard feature/API set have been applied:
   - Shadow DOM v1
     - A method has been added for combining multiple DOM trees into a single hierarchy and determining how these trees interact with each other within a document, thus enabling better composition of the DOM.
   - Pointer Events
@@ -535,7 +535,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 **New and Changed Features**
 
 - Xamarin.Forms
-  - Xamarin.Forms version 2.3.5 is supported and new .NET APIs have been added:
+  - Xamarin.Forms version 2.3.5 is supported and new .NET API set have been added:
     - Background
     - CalendarView
     - RadioButton
@@ -546,7 +546,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - C# 3D UI Framework
   - A new UI framework has been added.
 - C# Device API
-  - APIs have been added based on native APIs:
+  - API set have been added based on native API set:
     - account-svc
     - bundle
     - capi-appfw-application
