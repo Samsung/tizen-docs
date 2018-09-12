@@ -88,7 +88,7 @@ To create SoftAP handle:
 
    ret = softap_create(&softap);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("softap_create failed: %d", ret);
+       printf("softap_create failed: %d", ret);
    ```
 
 
@@ -105,25 +105,25 @@ To configure SoftAP settings:
 
    ret = softap_set_ssid(softap, "Tizen");
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to set SSID");
+       printf("Failed to set SSID");
    ```
 
 2. Set security type and passphrase. If the passphrase is not set, random string of eight characters is used:
    ```
    ret = softap_set_security_type(softap, SOFTAP_SECURITY_TYPE_WPA2_PSK);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to set security type");
+       printf("Failed to set security type");
 
    ret = softap_set_passphrase(softap, "1q2w3e4r!@");
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to set passphrase");
+       printf("Failed to set passphrase");
    ```
 
 3. Set the visibility of SSID. In this example, the SoftAP client finds the SoftAP device from the Wi-Fi scan list.
    ```
    ret = softap_set_ssid_visibility(softap, true);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to set visibility");
+       printf("Failed to set visibility");
    ```
 
 ## Enabling SoftAP
@@ -136,17 +136,17 @@ To enable SoftAP:
    ```
    static void enabled_cb(softap_error_e error, bool is_requested, void *data)
    {
-     if (error != SOFTAP_ERROR_NONE) {
-       if (!is_requested)
-         return;
-       printf("Failed to enable SoftAP[0x%X]", error);
-       return;
-   }   
+       if (error != SOFTAP_ERROR_NONE) {
+           if (!is_requested)
+               return;
+           printf("Failed to enable SoftAP[0x%X]", error);
+           return;
+       }   
 
-   if (is_requested)
-     printf("SoftAP is enabled successfully");
-   else
-     printf("SoftAP is enabled by other app");
+       if (is_requested)
+           printf("SoftAP is enabled successfully");
+       else
+           printf("SoftAP is enabled by other app");
    }
    ```
 
@@ -154,7 +154,7 @@ To enable SoftAP:
       ```
       ret = softap_set_enabled_cb(softap, enabled_cb, NULL);                                 
       if (ret != SOFTAP_ERROR_NONE)
-        printf("Fail to regester the callback.");
+          printf("Fail to regester the callback.");
       ```
 
 2. Define and register `disabled_cb()` callback. It is called when the SoftAP is disabled.
@@ -162,14 +162,14 @@ To enable SoftAP:
    ```
    static void disabled_cb(softap_error_e error, softap_disabled_cause_e code, void *data)
    {
-     if (error != SOFTAP_ERROR_NONE) {
-       if (code != SOFTAP_DISABLED_BY_REQUEST)
-         return;
+       if (error != SOFTAP_ERROR_NONE) {
+           if (code != SOFTAP_DISABLED_BY_REQUEST)
+             return;
 
-       printf("Failed to disable SoftAP[0x%X]", error);
-       return;
-   }
-     printf("SoftAP is disabled.");
+           printf("Failed to disable SoftAP[0x%X]", error);
+           return;
+       }
+       printf("SoftAP is disabled.");
    }	
    ```
 
@@ -177,7 +177,7 @@ To enable SoftAP:
       ```
       ret = softap_set_disabled_cb(softap, disabled_cb, NULL);                                 
       if (ret != SOFTAP_ERROR_NONE)
-        printf("Fail to regester the callback.");
+          printf("Fail to regester the callback.");
       ``` 
 
 ## Handling SoftAP client
@@ -188,37 +188,37 @@ To handle SoftAP client:
    ```
    static void client_connection_state_changed_cb(softap_client_h client, bool open, void *data)
    {
-     softap_client_h clone = NULL;
-     char *ip_address = NULL;
-     char *mac_address = NULL;
-     char *hostname = NULL;
+       softap_client_h clone = NULL;
+       char *ip_address = NULL;
+       char *mac_address = NULL;
+       char *hostname = NULL;
 
-     softap_client_clone(&clone, client);
-     if (clone == NULL) {
-       printf("Failed to clone client handle");
-       return;
-     }
+       softap_client_clone(&clone, client);
+       if (clone == NULL) {
+           printf("Failed to clone client handle");
+           return;
+       }
 
-     softap_client_get_ip_address(clone, SOFTAP_ADDRESS_FAMILY_IPV4, &ip_address);
-     softap_client_get_mac_address(clone, &mac_address);
-     softap_client_get_name(clone, &hostname);
+       softap_client_get_ip_address(clone, SOFTAP_ADDRESS_FAMILY_IPV4, &ip_address);
+       softap_client_get_mac_address(clone, &mac_address);
+       softap_client_get_name(clone, &hostname);
 
-     if (open) {
-       printf("New station IP [%s], MAC [%s], hostname [%s]",
-                                   ip_address, mac_address, hostname);
-     } else {
-       print("Disconnected station IP [%s], MAC [%s], hostname [%s]\n",
-                                           ip_address, mac_address, hostname);
-     }
+       if (open) {
+           printf("New station IP [%s], MAC [%s], hostname [%s]",
+                   ip_address, mac_address, hostname);
+       } else {
+           print("Disconnected station IP [%s], MAC [%s], hostname [%s]\n",
+                   ip_address, mac_address, hostname);
+       }
 
-     if (ip_address)
-       free(ip_address);
-     if (mac_address)
-       free(mac_address);
-     if (hostname)
-       free(hostname);
+       if (ip_address)
+           free(ip_address);
+       if (mac_address)
+           free(mac_address);
+       if (hostname)
+           free(hostname);
 
-     softap_client_destroy(clone);
+       softap_client_destroy(clone);
    }
    ```
 
@@ -226,7 +226,7 @@ To handle SoftAP client:
       ```
       ret = softap_set_client_connection_state_changed_cb(softap, client_connection_state_changed_cb, NULL);
       if (ret != SOFTAP_ERROR_NONE)
-        printf("Fail to regater the callback.");
+          printf("Fail to regater the callback.");
       ```
 
 2. Get the list of all connected SoftAP clients.
@@ -236,60 +236,60 @@ To handle SoftAP client:
    ```
    ret = softap_foreach_connected_clients(softap, connected_client_cb, NULL);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to get connected clients");
+       printf("Failed to get connected clients");
    ```
 
    Define `connected_client_cb()`:
       ```
       static bool connected_client_cb(softap_client_h client, void *data)
       {
-        softap_client_h clone = NULL;
-        char *ip_address = NULL;
-        char *mac_address = NULL;
-        char *hostname = NULL;
-        time_t timestamp;
-        struct tm t;
+          softap_client_h clone = NULL;
+          char *ip_address = NULL;
+          char *mac_address = NULL;
+          char *hostname = NULL;
+          time_t timestamp;
+          struct tm t;
 
-        if (softap_client_clone(&clone, client) != SOFTAP_ERROR_NONE) {
-          printf("softap_client_clone is failed\n");
-          return false;
-        }
+          if (softap_client_clone(&clone, client) != SOFTAP_ERROR_NONE) {
+              printf("softap_client_clone is failed\n");
+              return false;
+          }
 
-        /* Get information */
-        if (softap_client_get_ip_address(clone, SOFTAP_ADDRESS_FAMILY_IPV4, &ip_address) != SOFTAP_ERROR_NONE)
-          printf("Failed to get client IP address");
+          /* Get information */
+          if (softap_client_get_ip_address(clone, SOFTAP_ADDRESS_FAMILY_IPV4, &ip_address) != SOFTAP_ERROR_NONE)
+              printf("Failed to get client IP address");
 
-        if (softap_client_get_mac_address(clone, &mac_address) != SOFTAP_ERROR_NONE)
-          printf("Failed to get client MAC address");
+          if (softap_client_get_mac_address(clone, &mac_address) != SOFTAP_ERROR_NONE)
+              printf("Failed to get client MAC address");
 
-        if (softap_client_get_name(clone, &hostname) != SOFTAP_ERROR_NONE)
-          printf("Failed to get client name");
+          if (softap_client_get_name(clone, &hostname) != SOFTAP_ERROR_NONE)
+              printf("Failed to get client name");
 
-        if (softap_client_get_time(clone, &timestamp) != SOFTAP_ERROR_NONE)
-          printf("Failed to get connected time");
+          if (softap_client_get_time(clone, &timestamp) != SOFTAP_ERROR_NONE)
+              printf("Failed to get connected time");
 
-        localtime_r(&timestamp, &t);
+          localtime_r(&timestamp, &t);
 
-        printf("\n< Client Info. >\n");
-        printf("\tIP Address %s\n", ip_address);
-        printf("\tMAC Address : %s\n", mac_address);
-        printf("\tHostname : %s\n", hostname);
-        printf("\tTime stamp : %04d-%02d-%02d %02d:%02d:%02d",
-              t.tm_year + 1900, t.tm_mon + 1,
-              t.tm_mday, t.tm_hour,
-              t.tm_min, t.tm_sec);
+          printf("\n< Client Info. >\n");
+          printf("\tIP Address %s\n", ip_address);
+          printf("\tMAC Address : %s\n", mac_address);
+          printf("\tHostname : %s\n", hostname);
+          printf("\tTime stamp : %04d-%02d-%02d %02d:%02d:%02d",
+                  t.tm_year + 1900, t.tm_mon + 1,
+                  t.tm_mday, t.tm_hour,
+                  t.tm_min, t.tm_sec);
 
-        if (ip_address)
-          free(ip_address);
-        if (mac_address)
-          free(mac_address);
-        if (hostname)
-          free(hostname);
+          if (ip_address)
+              free(ip_address);
+          if (mac_address)
+              free(mac_address);
+          if (hostname)
+              free(hostname);
 
-        softap_client_destroy(clone);
+          softap_client_destroy(clone);
 
-        /* Continue iteration */
-        return true;
+          /* Continue iteration */
+          return true;
       }
       ```
 
@@ -301,7 +301,7 @@ To disable SoftAP:
    ```
    ret = softap_disable(softap);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to disable SoftAP");   
+       printf("Failed to disable SoftAP");   
    ```
 
 ## Releasing all resources
@@ -312,15 +312,15 @@ To release the SoftAP resources:
     ```
     ret = softap_unset_enabled_cb(softap);
     if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to unset the callback");
+       printf("Failed to unset the callback");
 
    ret = softap_unset_disabled_cb(softap);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to unset the callback");
+       printf("Failed to unset the callback");
 
    ret = softap_unset_client_connection_state_changed_cb(softap);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to unset the callback");
+       printf("Failed to unset the callback");
 
    ```
 
@@ -332,7 +332,7 @@ To release the SoftAP resources:
    ```
    ret = softap_destroy(softap);
    if (ret != SOFTAP_ERROR_NONE)
-     printf("Failed to destory the handle");
+       printf("Failed to destory the handle");
    ```
 
 
