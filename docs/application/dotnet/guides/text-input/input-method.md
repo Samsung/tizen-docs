@@ -88,7 +88,7 @@ To start the IME application life-cycle:
 
 ## Use Floating Keyboard
 
-To use the floating keybaord to allow the user to move the keyboard:
+To allow the user to move the floating keyboard:
 
 1.  Call the `SetFloatingMode()` method:
 
