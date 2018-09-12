@@ -86,7 +86,7 @@ To start the IME application life-cycle:
     }
     ```
 
-## Use Floating Keyboard
+## Using Floating Keyboard
 
 To allow the user to move the floating keyboard:
 
