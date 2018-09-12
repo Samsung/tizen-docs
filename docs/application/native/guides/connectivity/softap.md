@@ -56,7 +56,7 @@ The main features of the SoftAP API includes:
 
 - SoftAP client
 
-    You can get information about connected client such as name, IP address, MAC address, and connection time.
+    You can get the information about connected client such as name, IP address, MAC address, and connection time.
 
 
 ## Prerequisites
@@ -119,7 +119,7 @@ To configure SoftAP settings:
        printf("Failed to set passphrase");
    ```
 
-3. Set the visibility of SSID. In this example, the SoftAP client finds the SoftAP device from the Wi-Fi scan list.
+3. Set the visibility of SSID. In the following example, the SoftAP client finds the SoftAP device from the Wi-Fi scan list:
    ```
    ret = softap_set_ssid_visibility(softap, true);
    if (ret != SOFTAP_ERROR_NONE)
@@ -130,8 +130,7 @@ To configure SoftAP settings:
 
 To enable SoftAP:
 
-1. Define and register `enabled_cb()` callback. It will be called when the SoftAP is enabled.
-   `is_requested` indicates which application has requested the change.
+1. Define and register `enabled_cb()` callback. It will be called when the SoftAP is enabled:
 
    ```
    static void enabled_cb(softap_error_e error, bool is_requested, void *data)
@@ -149,6 +148,7 @@ To enable SoftAP:
            printf("SoftAP is enabled by other app");
    }
    ```
+   `is_requested` indicates which application has requested the change.
 
    To register the callback:	
       ```
@@ -157,8 +157,7 @@ To enable SoftAP:
           printf("Fail to regester the callback.");
       ```
 
-2. Define and register `disabled_cb()` callback. It is called when the SoftAP is disabled.
-   `code` indicates the cause of disabling.
+2. Define and register `disabled_cb()` callback. It is called when the SoftAP is disabled:
    ```
    static void disabled_cb(softap_error_e error, softap_disabled_cause_e code, void *data)
    {
@@ -172,6 +171,7 @@ To enable SoftAP:
        printf("SoftAP is disabled.");
    }	
    ```
+   `code` indicates the cause of disabling.
 
    To register the callback:	
       ```
@@ -184,7 +184,7 @@ To enable SoftAP:
 
 To handle SoftAP client:
 
-1. Define and register `client_connection_state_changed_cb()`. It is called when client is connected or disconnected. 
+1. Define and register `client_connection_state_changed_cb()`. It is called when client is connected or disconnected:
    ```
    static void client_connection_state_changed_cb(softap_client_h client, bool open, void *data)
    {
@@ -231,13 +231,13 @@ To handle SoftAP client:
 
 2. Get the list of all connected SoftAP clients.
 
-   You can use `softap_foreach_connected_clients()` to get the list of all connected SoftAP clients.
-   The second parameter is the callback function. This callback is invoked when you get the connected client repeatedly.
+   You can use `softap_foreach_connected_clients()` to get the list of all connected SoftAP clients:
    ```
    ret = softap_foreach_connected_clients(softap, connected_client_cb, NULL);
    if (ret != SOFTAP_ERROR_NONE)
        printf("Failed to get connected clients");
    ```
+   The second parameter is the callback function. This callback is invoked when you get the connected client repeatedly.
 
    Define `connected_client_cb()`:
       ```
@@ -308,7 +308,7 @@ To disable SoftAP:
 
 To release the SoftAP resources:
 
-1. Unregister callback functions.
+1. Unregister callback functions:
     ```
     ret = softap_unset_enabled_cb(softap);
     if (ret != SOFTAP_ERROR_NONE)
@@ -325,7 +325,7 @@ To release the SoftAP resources:
    ```
 
 
-2. Destroy SoftAP handle.
+2. Destroy SoftAP handle
 
    When no longer needed, destroy the handle:
 
