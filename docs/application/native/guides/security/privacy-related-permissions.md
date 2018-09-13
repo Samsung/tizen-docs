@@ -134,5 +134,5 @@ To check whether an application has permission to use a privilege, and to reques
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable
