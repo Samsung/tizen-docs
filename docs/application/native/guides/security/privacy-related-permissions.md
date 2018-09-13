@@ -23,7 +23,7 @@ To enable your application to use the privacy-related privileges functionality:
 
 1. To use the functions and data types of the Privacy Privilege Manager API (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) applications), include the `<privacy_privilege_manager.h>` header file in your application:
 
-    ```
+    ```c
     #include <privacy_privilege_manager.h>
     ```
 
@@ -43,7 +43,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 1. To check whether an application has permission to use a particular privilege, use the `ppm_check_permission()` function:
 
-    ```
+    ```c
     void
     app_check_and_request_permission()
     {
@@ -59,7 +59,7 @@ To check whether an application has permission to use a privilege, and to reques
 
    - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
 
-     ```
+     ```c
          if (ret == PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE) {
              switch (result) {
                  case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW:
@@ -69,7 +69,7 @@ To check whether an application has permission to use a privilege, and to reques
 
    - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API function that involves the privilege results in an error.
 
-    ```
+    ```c
                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY:
                     /* Show a message and terminate the application */
                     break;
@@ -77,7 +77,7 @@ To check whether an application has permission to use a privilege, and to reques
 
    - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK`, the application must request permission from the user with the `ppm_request_permission()` function, which displays a dialog box. You can pass user data as the third parameter of the function, as a pointer to an application context instance. When the user makes a decision, a callback defined as the second parameter is invoked.The dialog box asking for user permission is shown only if the `ppm_request_permission()` function returns without an error.
 
-    ```
+    ```c
                 case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK:
                     ret = ppm_request_permission(privilege, app_request_response_cb, NULL);
                     /* Log and handle errors */
@@ -95,7 +95,7 @@ To check whether an application has permission to use a privilege, and to reques
 
    The user decision is returned in the callback as a value of the `ppm_request_result_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) applications).
 
-   ```
+   ```c
    void
    app_request_response_cb(ppm_call_cause_e cause, ppm_request_result_e result,
                                 const char *privilege, void *user_data)
@@ -130,5 +130,5 @@ To check whether an application has permission to use a privilege, and to reques
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable
