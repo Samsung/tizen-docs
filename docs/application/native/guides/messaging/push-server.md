@@ -59,7 +59,7 @@ To send push notifications:
      }
      ```
 
-   - If you have data to send to the application but no need to notify the user right away, use the action field on the same level as the message field, instead of within the message field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
+   - If you have to send data to the application, and if the user need not be notified immediately, use the action field at the same level as the message field, and do not include the message field. In this case, the notification is delivered with the best effort.
 
      ```
      {
@@ -73,7 +73,7 @@ To send push notifications:
 
      > **Note**
      >
-     > Please don't be confused between "backgroundLaunch" option of action field in 1st depth and "BACKGROUNDLAUNCH" option of action field in message field in 2nd depth. The former is to deliver the notification with the best effort and the latter is to launch the application in the background. However, "backgroundLaunch" option also launches the application in the background.
+     > Do not confuse between "backgroundLaunch" option of action field in 1st depth and "BACKGROUNDLAUNCH" option of action field in message field in 2nd depth. The former is to deliver the notification with the best effort and the latter is to launch the application in the background. However, "backgroundLaunch" option also launches the application in the background.
 
 3. Create the notification message.
 
