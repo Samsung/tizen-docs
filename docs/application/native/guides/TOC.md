@@ -3,15 +3,17 @@
 ## [UI Applications](/application/native/guides/app-management/ui-app/index.md)
 ## [Service Applications](/application/native/guides/app-management/service-app.md)
 ## Application Information and Controls
+### [Overview](/application/native/guides/app-management/app-info-control.md)
 ### [Application Resources](/application/native/guides/app-management/app-resources.md)
 ### [Application Preferences](/application/native/guides/app-management/app-preferences.md)
 ### [Application Icons](/application/native/guides/app-management/app-icons.md)
 ### [Application Controls](/application/native/guides/app-management/app-controls.md)
-### [Common Application Controls](/application/native/guides/app-management/common-appcontrol.md)
+### [Common Application Controls](/application/native/guides/app-management/common-appcontrols.md)
 ### [Application Manager](/application/native/guides/app-management/app-manager.md)
 ### [Package Manager](/application/native/guides/app-management/package-manager.md)
 ### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
 ## Application Data Exchange
+### [Overview](/application/native/guides/app-management/app-communication.md)
 ### [Message Port](/application/native/guides/app-management/message-port.md)
 ### [Data Control](/application/native/guides/app-management/data-control.md)
 ### [Data Bundle](/application/native/guides/app-management/data-bundles.md)

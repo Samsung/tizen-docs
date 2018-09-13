@@ -17,6 +17,14 @@ You can use the following application data exchange features in your native appl
 
   You can package data with a bundle, which is a string-based dictionary abstract data type. You can create bundles, manage their content, access their content through iteration, and encode and decode them.
 
+- [PRC Port](rpc-port.md)
+
+  Tizen applications can communicate with each other using RPC Port APIs, which allows applications to send and receive data after a connection is established.
+
+- [TIDL](tidl.md)
+
+  You can define interface with TIDL, which is a programming language to define interfaces for communicating among applications in Tizen.
+
 
 ## Related Information
 - Dependencies

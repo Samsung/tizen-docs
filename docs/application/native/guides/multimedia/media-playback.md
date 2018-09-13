@@ -159,7 +159,7 @@ Tizen enables your application to play WAVE format audio in 1 of 2 ways:
 
 - Through the multimedia application control **in mobile applications only**
 
-  When using the [multimedia application control](../app-management/common-appcontrol.md#multimedia), the device standard media player application is launched to play audio.
+  When using the [multimedia application control](../app-management/common-appcontrols.md#multimedia), the device standard media player application is launched to play audio.
 
 - With the WAV player functions
 
