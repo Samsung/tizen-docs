@@ -48,7 +48,7 @@ The application uses the infrastructure mode to connect to a wireless local area
 
 To enable your application to use the Wi-Fi functionality:
 
-1.  To use the [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the <strong>`tizen-manifest.xml`</strong> file:
+1.  To use the [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
