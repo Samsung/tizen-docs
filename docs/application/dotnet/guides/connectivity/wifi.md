@@ -147,7 +147,7 @@ To scan nearby access points and get their details:
 
 2. Retrieve the scan results (the found access points) with the `GetFoundAPs()` method of the `Tizen.Network.WiFi.WiFiManager` class.
 
-    In this example, the application displays the name and connection state of each access point it finds. You can also get other information, such as the used frequency or the maximum speed the access point supports.
+    In the following example, the application displays the name and connection state of each access point it finds. You can also get other information, such as the used frequency or the maximum speed the access point supports:
 
     ```
         var apList = WiFiManager.GetFoundAPs();
