@@ -3,26 +3,26 @@
 
 To effectively protect the device system and user private data, the Tizen security architecture is based on privileges and application signing of the Linux basic security model, which includes process isolation and mandatory access control. Since Tizen, as an open platform, provides a wide range of features and experiences for users with a variety of applications, the users must be able to grant privileges for security-sensitive operations.
 
-Tizen provides API-level access control for security-sensitive operations which, if not used correctly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](process/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
+Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](process/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
 
 -   The public level is the minimum privilege level, which means that any application developed using the Tizen Studio can use these privileges.
 -   The partner level privileges require at least a partner-signed certificate which is granted to developers who have a business relationship with the vendor.
 -   The platform level is the highest privilege level, and an application that needs these privileges requires at least a  platform-signed certificate, which is granted to vendor developers.
 
-Since Tizen platform 3.0, some privileges are categorized as privacy-related and give an option to the user to switch them on and off. If an application invokes a privacy-related privileged API, the Tizen system checks whether the privilege is **allowed** for the application. For the application to use the API, the privilege must be declared in the `config.xml` file and the user must have switched it on.
+Since Tizen platform 3.0, some privileges are categorized as privacy-related and give an option to the user to switch them **on** and **off**. If an application invokes a privacy-related privileged API, the Tizen system checks whether the privilege is **allowed** for the application. For the application to use the API, the privilege must be declared in the `config.xml` file and the user must have switched it **on**.
 
 
 > **Note**  
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
-> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the Privacy Privilege API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/ppm.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/ppm.html) applications).
+> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the Privacy Privilege API (in [mobile](../api/5.0/device_api/mobile/tizen/ppm.html) and [wearable](../api/5.0/device_api/wearable/tizen/ppm.html) applications).
 
 The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
 
 <a name="API"></a>
 ## Web API Privileges
 
-The following tables list the API privileges, which you must declare when using security-sensitive API modules in Web applications.
+The following tables list the API privileges, which you must declare when using security-sensitive API modules in Web applications:
 
 **Table: Web Device API privileges**
 
@@ -39,9 +39,9 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/appmanager.launch` | public |  | The application can open other applications. |
 | `http://tizen.org/privilege/bluetooth` | public |  | The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices. |
 | `http://tizen.org/privilege/bluetooth.admin` | public |  | The application can change Bluetooth settings, such as turning Bluetooth on or off, setting the device name, and enabling or disabling AV remote control. |
-| `http://tizen.org/privilege/bluetooth.gap` | public |  | The application can use the Bluetooth Generic Access Profile (GAP) to, for example, scan for and pair with devices. |
-| `http://tizen.org/privilege/bluetooth.health` | public |  | The application can use the Bluetooth Health Device Profile (HDP) to, for example, send health information. |
-| `http://tizen.org/privilege/bluetooth.spp` | public |  | The application can use the Bluetooth Serial Port Profile (SPP) to, for example, send serial data. |
+| `http://tizen.org/privilege/bluetooth.gap` | public |  | The application can use the Bluetooth Generic Access Profile (GAP). As an example, it can scan and pair with devices. |
+| `http://tizen.org/privilege/bluetooth.health` | public |  | The application can use the Bluetooth Health Device Profile (HDP). As an example, it can send health information. |
+| `http://tizen.org/privilege/bluetooth.spp` | public |  | The application can use the Bluetooth Serial Port Profile (SPP). As an example, it can send serial data. |
 | `http://tizen.org/privilege/bluetoothmanager` | platform |  | The application can change Bluetooth system settings related to privacy and security, such as the visibility mode. |
 | `http://tizen.org/privilege/bookmark.read` | platform | Bookmark | The application can read bookmarks. |
 | `http://tizen.org/privilege/bookmark.write` | platform | Bookmark | The application can create, edit, and delete bookmarks. |
@@ -77,7 +77,7 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/package.info` | public |  | The application can receive package information. |
 | `http://tizen.org/privilege/packagemanager.install` | platform |  | The application can install or uninstall application packages. |
 | `http://tizen.org/privilege/power` | public |  | The application can control power-related settings, such as dimming the screen. |
-| `http://tizen.org/privilege/push` | public |  | The application can receive notifications via the Internet. This may result in additional charges depending on user's payment plan. |
+| `http://tizen.org/privilege/push` | public |  | The application can receive notifications via the internet. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/recorder` | public | Microphone | The application can record video and audio. |
 | `http://tizen.org/privilege/secureelement` | public |  | The application can access secure smart card chips such as UICC/SIM, embedded secure elements, and secure SD cards. |
 | `http://tizen.org/privilege/setting` | public |  | The application can change and read user settings. |
@@ -85,7 +85,7 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/systemmanager` | partner |  | The application can read secure system information. |
 | `http://tizen.org/privilege/tee.client` | partner |  | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment. |
 | `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the statuses of calls. |
-| `http://tizen.org/privilege/tv.audio` | public |  | The application can change the volume, enable and disable Silent mode, detect volume changes, and play beeps. |
+| `http://tizen.org/privilege/tv.audio` | public |  | The application can change the volume, enable and disable silent mode, detect volume changes, and play beeps. |
 | `http://tizen.org/privilege/tv.channel` | public |  | The application can change the TV channel, read information about TV channels and programmes, and receive notifications when the TV channel has been changed. |
 | `http://tizen.org/privilege/tv.display` | public |  | The application can check whether a device supports 3D and read information about 3D mode. |
 | `http://tizen.org/privilege/tv.inputdevice` | public |  | The application can capture the key events of an input device, e.g. TV remote control, and release key grabbing. |
@@ -98,7 +98,7 @@ The following tables list the API privileges, which you must declare when using 
 
 | Privilege                                | Level  | Privacy               | Description                              |
 | ---------------------------------------- | ------ | --------------------- | ---------------------------------------- |
-| `http://tizen.org/privilege/internet`    | public |                       | The application can access the Internet using the [WebSocket](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#websocket), [XMLHttpRequest](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#httpreq), [Server-Sent Events](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#serversent), [HTML5 Application caches](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#cache), and [Cross-Origin Resource Sharing](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#cross) APIs. |
+| `http://tizen.org/privilege/internet`    | public |                       | The application can access the internet using the [WebSocket](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#websocket), [XMLHttpRequest](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#httpreq), [Server-Sent Events](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#serversent), [HTML5 Application caches](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#cache), and [Cross-Origin Resource Sharing](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#cross) APIs. |
 | `http://tizen.org/privilege/location`    | public | Location              | The application can access geographic locations using the [Geolocation](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#geo) API.<br>**Privilege behavior:**<br>In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.In the remote domain, if this privilege is defined, pop-up user prompt is used. Otherwise, execution is blocked. |
 | `http://tizen.org/privilege/mediacapture` | public | Camera & Microphone | The application can manipulate streams from cameras and microphones using the [getUserMedia](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#getusermedia) API.<br> **Privilege behavior:**<br> In the local domain, if this privilege is defined, permission is granted. Otherwise, execution is blocked.In the remote domain, if this privilege is defined, pop-up user prompt is used. Otherwise, execution is blocked. |
 | `http://tizen.org/privilege/notification` | public |                       | The application can display simple notifications using the [Web Notifications](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webnoti) API.<br>**Privilege behavior:**<br>In the local domain, if this privilege is defined, permission is granted. Otherwise, pop-up user prompt is used.In the remote domain, pop-up user prompt is used. |
