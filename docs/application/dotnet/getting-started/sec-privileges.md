@@ -44,12 +44,12 @@ The Tizen Studio also provides privilege checker tools to check whether the Tize
 Privileges](../../../tizen-studio/native-tools/api-checker.md).
 
 <a name="API"></a>
-## Dotnet API Privileges
+## .NET API Privileges
 
 The following table lists the API privileges, which you must declare
 when using security-sensitive API modules in native applications:
 
-**Table: Dotnet API privileges**
+**Table: .NET API privileges**
 
 | Privilege                            | Level    | Privacy    | Description                              |
 |--------------------------------------|----------|------------|------------------------------------------|
@@ -69,7 +69,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/blocknumber.write` | partner |  | The application can write rules for blocking calls and messages. |
 | `http://tizen.org/privilege/bluetooth` | public |  | The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices. |
 | `http://tizen.org/privilege/bluetooth.admin` | platform |  | The application can change Bluetooth settings, such as turning Bluetooth on or off, setting the device name, and enabling or disabling AV remote control. |
-| `http://tizen.org/privilege/bookmark.admin` | platform | Bookmark | The application can retrieve, create, edit, and delete Internet bookmarks. |
+| `http://tizen.org/privilege/bookmark.admin` | platform | Bookmark | The application can retrieve, create, edit, and delete internet bookmarks. |
 | `http://tizen.org/privilege/calendar.read` | public | Calendar | The application can read events and tasks. |
 | `http://tizen.org/privilege/calendar.write` | public | Calendar | The application can create, update, and delete events and tasks. |
 | `http://tizen.org/privilege/call` | public | Call | The application can make phone calls to numbers when they are tapped without further confirmation. This may result in additional charges depending on user's payment plan. |
@@ -147,7 +147,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/secureelement` | public |  | The application can access secure smart card chips such as UICC/SIM, embedded secure elements, and secure SD cards. |
 | `http://tizen.org/privilege/shortcut` | public |  | The application can create and delete shortcuts. |
 | `http://tizen.org/privilege/softap` | public |  | The application can manage SoftAP configuration settings, such as the Service Set Identifier (SSID) and password. |
-| `http://tizen.org/privilege/softap.admin` | platform |  | The application can turn Soft AP on or off, and change its settings. |
+| `http://tizen.org/privilege/softap.admin` | platform |  | The application can turn SoftAP on or off, and change its settings. |
 | `http://tizen.org/privilege/systemmonitor` | public |  | The application can read system information, including information from the CPU and RAM. |
 | `http://tizen.org/privilege/systemsettings` | public |  | The application can read and write unrestricted system settings. |
 | `http://tizen.org/privilege/systemsettings.admin` | platform |  | The application can read and write all system settings. |
