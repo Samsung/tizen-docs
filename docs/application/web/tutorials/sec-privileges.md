@@ -118,7 +118,7 @@ The following tables list the API privileges, which you must declare when using 
 
 Tizen application privileges are loosely bound to APIs, so most of the privileges can be identified by the APIs that the application calls. However, there are some privileges that are not coupled with the Tizen APIs. To allow easy identification, those privileges are mapped to corresponding system resources - same as other privileges.
 
-The following table lists the non-API bound privileges.
+The following table lists the non-API bound privileges:
 
 **Table: Non-API bound privileges**
 
