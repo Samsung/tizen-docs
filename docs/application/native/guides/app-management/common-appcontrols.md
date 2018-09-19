@@ -1809,6 +1809,70 @@ retrieve_media_operation(const char* mime_type)
 }
 ```
 
+### Creates media controller to communicate with application
+
+The media controller operation is supported in mobile and wearable applications.
+To control media application, use the `APP_CONTROL_OPERATION_MEDIA_CONTROLLER` operation with the `server` and `client` launch type.
+To specify various details refer to the extras defined below.
+
+#### Operation
+
+- `http://tizen.org/appcontrol/operation/media_control` (in `.c` files and manifest file)
+- `APP_CONTROL_OPERATION_MEDIA_CONTROLLER` (in `.c` files only)
+
+#### URI Type (Optional)
+
+- `file:<path>`
+- `http:<path>`
+- `https:<path>`
+
+#### Extra Input
+
+| Key                               | Description                              | Note                  |
+|-----------------------------------|------------------------------------------|-----------------------|
+| `APP_CONTROL_DATA_TYPE` | The launch type of the media controller operation. The available values are 'server' and 'client'. This key must be passed as a string. | This key is mandatory. |
+
+#### Example Code
+
+```
+#include <app_control.h>
+#include <dlog.h>
+
+int
+media_controller_operation(const char* music_uri)
+{
+    int ret = 0;
+
+    app_control_h service = NULL;
+    app_control_create(&service);
+
+    if (service == NULL) {
+        dlog_print(DLOG_INFO, LOG_TAG, "Failed to create app control handler\n");
+
+        return -1;
+    }
+
+    app_control_set_operation(service, APP_CONTROL_OPERATION_MEDIA_CONTROLLER);
+    app_control_set_uri(service, music_uri);
+    app_control_add_extra_data(service, APP_CONTROL_DATA_TYPE, "server");
+
+    ret = app_control_send_launch_request(service, NULL, NULL);
+    app_control_destroy(service);
+
+    if (ret == APP_CONTROL_ERROR_NONE) {
+        dlog_print(DLOG_INFO, LOG_TAG, "Succeeded to request!\n");
+
+        return 0;
+    } else {
+        dlog_print(DLOG_INFO, LOG_TAG, "Failed to request!\n");
+
+        return -1;
+    }
+
+    return 0;
+}
+```
+
 ## System Settings
 
 The system settings application control is supported only in mobile applications.
