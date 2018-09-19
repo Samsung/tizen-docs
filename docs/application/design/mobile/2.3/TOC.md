@@ -1,7 +1,7 @@
 # [Design Principles](/application/design/mobile/2.3/design-principles.md)
 # [UI Overview](/application/design/mobile/2.3/ui-overview.md)
 # Basic Interactions
-## [Overview](/application/design/mobile/2.3/basic-interactions.md)
+## [Overview](/application/design/mobile/2.3/basic-interactions/overview.md)
 ## [Application Structure](/application/design/mobile/2.3/basic-interactions/application-structure.md)
 ## [View Modes](/application/design/mobile/2.3/basic-interactions/view-modes.md)
 ## [Navigation](/application/design/mobile/2.3/basic-interactions/navigation.md)
@@ -9,7 +9,7 @@
 ## [Edit](/application/design/mobile/2.3/basic-interactions/edit.md)
 ## [Settings](/application/design/mobile/2.3/basic-interactions/settings.md)
 # Design Library
-## [Overview](/application/design/mobile/2.3/design-library.md)
+## [Overview](/application/design/mobile/2.3/design-library/overview.md)
 ## [Header](/application/design/mobile/2.3/design-library/header.md)
 ## [Body](/application/design/mobile/2.3/design-library/body.md)
 ## [Scroll](/application/design/mobile/2.3/design-library/scroll.md)
@@ -21,7 +21,7 @@
 ## [Pop-up](/application/design/mobile/2.3/design-library/pop-up.md)
 ## [Search](/application/design/mobile/2.3/design-library/search.md)
 # Visual Style
-## [Overview](/application/design/mobile/2.3/visual-style.md)
+## [Overview](/application/design/mobile/2.3/visual-style/overview.md)
 ## [Terminology](/application/design/mobile/2.3/visual-style/terminology.md)
 ## [Display](/application/design/mobile/2.3/visual-style/display.md)
 ## [Icons](/application/design/mobile/2.3/visual-style/icons.md)

@@ -8,7 +8,9 @@ To flash the Tizen image to the TM1 reference device:
 1. Boot the device into download mode:
 
    1. Make sure the device is powered off.
-   1. Press the **Volume down**, **Home**, and **Power** keys simultaneously.  
+
+   1. Press the **Volume down**, **Home**, and **Power** keys simultaneously.
+
       The device boots up and the download mode image is displayed on the screen.
 
 1. Connect the device to the Linux PC with a USB cable.
@@ -16,7 +18,7 @@ To flash the Tizen image to the TM1 reference device:
 1. Flash the image.
 
    To flash the image, execute the `lthor` command in a console on the Linux PC:
-   ```bash
+   ```
    $ sudo ./lthor TM1-201609030819.tar.gz
    ```
 

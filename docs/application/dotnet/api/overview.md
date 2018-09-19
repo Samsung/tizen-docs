@@ -4,6 +4,7 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
 
 - **.NET Standard API**, which implements the .NET Base Class library, allows you to use the well known C# language base class libraries and features, such as collections, threading, file I/O, and LINQ.
 - **Xamarin.Forms**, which allows you to efficiently build a user interface from standard components in C# or XAML.
+- **Tizen.Wearable.CircularUI**, which allows you to efficiently add Tizen wearable-specific user interfaces.
 - **TizenFX API**,
    which allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features,  such as system information  and status, battery status, sensor date, and account and connectivity services.  For the full specification, see the <a href="tizenfx/index.html" target="api">TizenFX API Reference</a>
 
@@ -23,6 +24,12 @@ The Tizen.NET contains a few limitations on the Xamarin.Forms APIs; these limita
 - `OpenGLView`
 
 A list of limitations is available at [Current Xamarin.Forms limitations](xamarin.forms-limitations.html).
+
+## Tizen.Wearable.CircularUI
+
+[Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike the Xamarin.Forms which support cross platforms.
+
+Using these APIs, you can easily and efficiently add Tizen wearable-specific user interfaces to your Tizen wearable application. For more information about these APIs, see [Tizen.Wearable.CircularUI GitHub](https://github.com/Samsung/Tizen.CircularUI).
 
 ## TizenFX API
 

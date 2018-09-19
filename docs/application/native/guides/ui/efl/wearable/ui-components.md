@@ -34,7 +34,7 @@ The wearable UI components are designed to allow the user to interact with small
 | Miscellaneous         | [Plug](./component-plug.md) | The  plug component allows you to show an Evas object created by another process.  It can be used anywhere like any other Elementary UI component. |
 
 
-The following UI components are designed for specific circular wearable devices which have rotary component parts. On a circular device, you can draw round UI components, such as a slider, progressbar, and scroller. Generally, wearable UI components provide compatibility between the rectangular and circular wearable devices. However, use circular UI components for circular wearable devices only, because they have a dependency with the round UX and rotary events. For more information on the compatibility of the UI components between rectangular and circular, see the [Wearable Design](../../../../../design/wearable/design-principles.md) guidelines.
+The following UI components are designed for specific circular wearable devices which have rotary component parts. On a circular device, you can draw round UI components, such as a slider, progressbar, and scroller. Generally, wearable UI components provide compatibility between the rectangular and circular wearable devices. However, use circular UI components for circular wearable devices only, because they have a dependency with the round UX and rotary events. For more information on the compatibility of the UI components between rectangular and circular, see the [Wearable Design](https://developer.samsung.com/gear/design/principle) guidelines.
 
 **Table: Available circular UI components**
 

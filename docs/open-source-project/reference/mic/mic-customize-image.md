@@ -6,7 +6,7 @@ You can customize your image by downloading and editing the kickstart file. For 
 
 You can specify which repository must be used to create a package, including a local repository.
 
-```bash
+```
 repo --name=Tizen-main --baseurl=https://download.tizen.org/snapshots/trunk/common/@BUILD_ID@/repos/main/armv7l/packages/ --save  --ssl_verify=no
 
 repo --name=Tizen-base --baseurl=https://download.tizen.org/snapshots/trunk/common/@BUILD_ID@/repos/base/armv7l/packages/ --save  --ssl_verify=no
@@ -28,7 +28,7 @@ You can specify the packages which you plan to install in the `%packages` sectio
 
 The `%packages` section is required to end with `%end`. Also, multiple `%packages` sections are allowed. Additionally, individual packages can be specified by using globs. For example:
 
-```bash
+```
 %packages
 ...
 @Tizen Core            # add a group named Tizen Core, and all the packages in this group are added
@@ -44,7 +44,7 @@ nss-server.armv7hl     # add nss-server with arch armv7hl
 
 Use the following command:
 
-```bash
+```
 rpm -rebuilddb
 %end
 ```

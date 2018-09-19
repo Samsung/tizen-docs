@@ -13,7 +13,7 @@ To build Tizen Studio locally, use the TS-CLI tool. TS-CLI is only supported on 
 
 To install TS-CLI:
 1. Install Node.js:
-    ```bash
+    ```
     $ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     $ sudo apt-get install -y nodejs
     ```
@@ -24,7 +24,7 @@ To install TS-CLI:
     > A newer version can be available.
 
 3. Unzip and install TS-CLI:
-    ```bash
+    ```
     // install TS-CLI
     $ unzip ts-cli_3.0.23_ubuntu-64.zip
     $ mv ./data/dibs ${TS_CLI_PATH}

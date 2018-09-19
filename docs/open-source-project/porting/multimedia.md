@@ -10,11 +10,16 @@ The Multimedia camcorder framework controls the GStreamer camera plugin to captu
 
 ![Multimedia camcorder framework](media/799px-tizen3.0-mmfwcamcorder.png)
 
-- Camera source plugin for GStreamer  
+- Camera source plugin for GStreamer
+
   Gets the camera data (preview or captured image) and sets various camera commands through camera HAL interface
-- Camera HAL  
+
+- Camera HAL
+
   Common interface to control the camera device on various shipsets and used by the camera source plugin.
-- Configuration files  
+
+- Configuration files
+
   There are 3 config files for the Multimedia camcorder framework. They are provided by `mmfw- sysconf-xxx`:
   - `mmfw_camcorder.ini`
   - `mmfw_camcorder_dev_video_pri.ini`
@@ -37,7 +42,7 @@ The following list defines the major functions for the camera HAL interface:
 
   ```cpp
   /*Initializes new camera HAL handle */
-  int camera_init(void **camera_handle);	
+  int camera_init(void **camera_handle);
 
   /* Deinitializes the camera HAL handle */
   int camera_deinit(void *camera_handle);
@@ -125,7 +130,7 @@ The following list defines the major functions for the camera HAL interface:
   int camera_stop_record(void *camera_handle);
 
   /* Video buffer must be released with this function after using it */
-  int camera_release_video_buffer(void *camera_handle, int buffer_index); 
+  int camera_release_video_buffer(void *camera_handle, int buffer_index);
   ```
 - Functions for controlling the camera device:
 
@@ -284,7 +289,8 @@ The following table shows the description of the `mmfw_camcorder_dev_video_pri.i
 
 ### References
 
-- Driver configuration  
+- Driver configuration
+
   Set the kernel `.config` values for the camera:
   ```
   CONFIG_VIDEO_DEV = y
@@ -298,13 +304,17 @@ The following table shows the description of the `mmfw_camcorder_dev_video_pri.i
   CONFIG_VIDEO_MFC5X = y
   ```
 - Kernel node
+
   ```
   For Camera: /dev/video1
   Other CAMIF interfaces: /dev/video(0-3)
   ```
-- GStreamer  
+- GStreamer
+
   For more information about GStreamer, see [http://gstreamer.freedesktop.org/documentation/](http://gstreamer.freedesktop.org/documentation/) and [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html).
-- V4L2  
+
+- V4L2
+
   For more information about V4L2, see [http://v4l2spec.bytesex.org/spec-single/v4l2.html](http://v4l2spec.bytesex.org/spec-single/v4l2.html).
 
 ## Radio
@@ -353,7 +363,7 @@ The following list defines the major functions for the radio HAL interface:
   ```cpp
   /* Prepares the radio device */
   radio_error_t radio_prepare_device(void *radio_handle);
-  
+
   /* Unprepares the radio device */
   radio_error_t radio_unprepare_device(void *radio_handle);
   ```
@@ -458,8 +468,10 @@ The following figure illustrates the different audio layers.
 - Audio HAL
   - Predefined interfaces for Audio Hardware Abstraction Layer (HAL)
   - Interfaces include the following categories: volume, route, stream, PCM
-- Configuration files  
+- Configuration files
+
   Configurations for running Pulseaudio and Audio Systems which can be modified without code changes.
+
   - pulseaudio configurations (such as `daemon.conf`, `client.conf`, `system.pa`)
   - stream/device configuration (`stream-map.json`, `device-map.json`)
 
@@ -469,7 +481,7 @@ The following example defines the major functions for the audio HAL interface:
 
 ```cpp
 /* Initializes the audio HAL handle */
-audio_return_t audio_init(void **audio_handle); 
+audio_return_t audio_init(void **audio_handle);
 
 /* Deinitializes the audio HAL handle */
 audio_return_t audio_deinit(void *audio_handle);
@@ -478,31 +490,31 @@ audio_return_t audio_deinit(void *audio_handle);
 audio_return_t audio_get_volume_level_max(void *audio_handle, audio_volume_info_t *info, uint32_t *level);
 
 /* Gets the volume level specified for a particular volume information */
-audio_return_t audio_get_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t *level); 
+audio_return_t audio_get_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t *level);
 
 /* Sets the volume level specified for a particular volume information */
-audio_return_t audio_set_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t level); 
+audio_return_t audio_set_volume_level(void *audio_handle, audio_volume_info_t *info, uint32_t level);
 
 /* Gets the volume value specified for a particular volume information and level */
-audio_return_t audio_get_volume_value(void *audio_handle, audio_volume_info_t *info, uint32_t level, double *value); 
+audio_return_t audio_get_volume_value(void *audio_handle, audio_volume_info_t *info, uint32_t level, double *value);
 
 /* Gets the volume mute specified for a particular volume information */
-audio_return_t audio_get_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t *mute); 
+audio_return_t audio_get_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t *mute);
 
 /* Sets the volume mute specified for a particular volume information */
-audio_return_t audio_set_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t mute); 
+audio_return_t audio_set_volume_mute(void *audio_handle, audio_volume_info_t *info, uint32_t mute);
 
 /* Updates the audio routing according to audio route information */
-audio_return_t audio_update_route(void *audio_handle, audio_route_info_t *info); 
+audio_return_t audio_update_route(void *audio_handle, audio_route_info_t *info);
 
 /* Updates audio routing option according to audio route option */
-audio_return_t audio_update_route_option(void *audio_handle, audio_route_option_t *option); 
+audio_return_t audio_update_route_option(void *audio_handle, audio_route_option_t *option);
 
 /* Notifies when a stream is connected and disconnected */
-audio_return_t audio_notify_stream_connection_changed(void *audio_handle, audio_stream_info_t *info, uint32_t is_connected); 
+audio_return_t audio_notify_stream_connection_changed(void *audio_handle, audio_stream_info_t *info, uint32_t is_connected);
 
 /* Opens a PCM device */
-audio_return_t audio_pcm_open(void *audio_handle, void **pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods); 
+audio_return_t audio_pcm_open(void *audio_handle, void **pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods);
 
 /* Starts a PCM device */
 audio_return_t audio_pcm_start(void *audio_handle, void *pcm_handle);
@@ -517,22 +529,22 @@ audio_return_t audio_pcm_close(void *audio_handle, void *pcm_handle);
 audio_return_t audio_pcm_avail(void *audio_handle, void *pcm_handle, uint32_t *avail);
 
 /* Writes frames to a PCM device */
-audio_return_t audio_pcm_write(void *audio_handle, void *pcm_handle, const void *buffer, uint32_t frames); 
+audio_return_t audio_pcm_write(void *audio_handle, void *pcm_handle, const void *buffer, uint32_t frames);
 
 /* Reads frames from a PCM device */
-audio_return_t audio_pcm_read(void *audio_handle, void *pcm_handle, void *buffer, uint32_t frames); 
+audio_return_t audio_pcm_read(void *audio_handle, void *pcm_handle, void *buffer, uint32_t frames);
 
 /* Gets the poll descriptor for a PCM handle */
-audio_return_t audio_pcm_get_fd(void *audio_handle, void *pcm_handle, int *fd); 
+audio_return_t audio_pcm_get_fd(void *audio_handle, void *pcm_handle, int *fd);
 
 /* Recovers the PCM state */
-audio_return_t audio_pcm_recover(void *audio_handle, void *pcm_handle, int revents); 
+audio_return_t audio_pcm_recover(void *audio_handle, void *pcm_handle, int revents);
 
 /* Gets the parameters of a PCM device */
-audio_return_t audio_pcm_get_params(void *audio_handle, void *pcm_handle, uint32_t direction, void **sample_spec, uint32_t *period_size, uint32_t *periods); 
+audio_return_t audio_pcm_get_params(void *audio_handle, void *pcm_handle, uint32_t direction, void **sample_spec, uint32_t *period_size, uint32_t *periods);
 
 /* Sets the hardware and software parameters of a PCM device */
-audio_return_t audio_pcm_set_params(void *audio_handle, void *pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods); 
+audio_return_t audio_pcm_set_params(void *audio_handle, void *pcm_handle, uint32_t direction, void *sample_spec, uint32_t period_size, uint32_t periods);
 ```
 
 ### Configuration
@@ -562,7 +574,7 @@ Stream and device configuration:
               "tlength-ms":100,
               "prebuf-ms":0,
               "maxlength":-1,
-          },   
+          },
           {
               "type":"high",
               "fragsize-ms":75,
@@ -592,7 +604,7 @@ Stream and device configuration:
           {
               "type":"call",
               "is-hal-volume":1,
-          },   
+          },
       ],
       "streams":[
           {
@@ -639,7 +651,7 @@ Stream and device configuration:
               "avail-in-devices":["builtin-mic","audio-jack","bt"],
               "avail-out-devices":["builtin-receiver","builtin-speaker","audio-jack","bt"],
               "avail-frameworks":["sound-manager"],
-          },	
+          },
       ]
   }
   ```
@@ -691,7 +703,7 @@ Stream and device configuration:
               "builtin":false,
               "direction":["both", "in", "out"],
               "avail-condition":["pulse"]
-          }  
+          }
       ],
       "device-files":
       {
@@ -723,7 +735,8 @@ Stream and device configuration:
 
 ### References
 
-- Driver configuration for the Samsung chipset  
+- Driver configuration for the Samsung chipset
+
   The following list is an example of the kernel `.config` values to be set for audio when using the Samsung chipset.
   ```
   CONFIG_SOUND=y
@@ -738,10 +751,15 @@ Stream and device configuration:
   CONFIG_SND_SOC_I2C_AND_SPI = y
   CONFIG_SND_SOC_MC1N2=y
   ```
-- PulseAudio  
-  Version: 5.0  
+
+- PulseAudio
+
+  Version: 5.0
+
   Website: [http://www.freedesktop.org/wiki/Software/PulseAudio](http://www.freedesktop.org/wiki/Software/PulseAudio)
-- ALSA  
+
+- ALSA
+
   Website: [http://www.alsa-project.org](http://www.alsa-project.org/)
 
 ## Player
@@ -777,7 +795,8 @@ There is no specific OAL for the multimedia player framework. The OAL interface 
 
 ### References
 
-- Display driver configuration for the Samsung chipset  
+- Display driver configuration for the Samsung chipset
+
   The following list is an example of the kernel `.config` values to be set for display in the Samsung chipset.
   ```
   CONFIG_DRM = y
@@ -805,10 +824,13 @@ The following figure illustrates the codecs and their relations. It shows 2 type
 ![Multimedia codecs](media/800px-codec.png)
 
 - Gstreamer codec plugin
+
   - The Gstreamer codec plugin can be linked to and easily used in the Gstreamer pipeline, which is used in the multimedia framework.
   - In addition, to link a Gstreamer pipeline, the capability of the codec plugin can be negotiated with the linked element in the pipeline.
-  - To get detailed information, such as the capability of an element, use the `#gst-inspect-1.0 (element name)` command.  
+  - To get detailed information, such as the capability of an element, use the `#gst-inspect-1.0 (element name)` command.
+
     ![Gst-inspect command](media/gst-inspect.png)
+
 - OpenMAX codec plugin
   - Some of the codec vendors provide OpenMAX IL components and not Gstreamer plugins. Tizen provides the `gst-omx` plugins to use the OpenMAX IL components. The Gstreamer pipeline used in the multimedia framework can control and transfer data to OpenMAX IL component using the `gst-omx` plugin.
   - To use the OpenMAX component in Gstreamer, the `gst-omx` (open source) package is provided. By using this package, Gstreamer can recognize and use an OpenMAX component as a Gstreamer element. `gst-omx` is a Gstreamer plugin that allows communication with OpenMAX IL components. The usage of the `gst-omx` plugin is the same as other Gstreamer plugins.
@@ -848,22 +870,31 @@ The `gst-omx` plugin uses a configuration file, such as `gstomx.conf`. This file
 
 Each value needs to be changed according to the OpenMAX component vendor. When you are finished with these settings, the result is a Gstreamer type codec plugin, and you can test the codec the same way.
 
-- Using the codec plugin in the player  
+- Using the codec plugin in the player
+
   Because the player uses auto plugging, it does not need an additional setting.
+
   - If the decoder plugin has an acceptable capability, this plugin can be linked with a player pipeline in order of rank.
   - If the codec name is included in the excluded keyword in the `/usr/etc/mmfw_player.ini` file (`mmfw-sysconf` package), it is excluded in the player pipeline.
-- Using the codec plugin in the camcorder  
+
+- Using the codec plugin in the camcorder
+
   Because the camcorder clarified its audio, video, and image encoder in the `/usr/etc/mmfw_camcorder.ini` file (`mmfw-sysconf` package), you need to change this category value to set your own codec name.
 
   ![Video encoder configuration](media/videoencoder.png)
 
 ### References
 
-- `gst-omx` version: 1.2  
-  [http://gstreamer.freedesktop.org/src/gst-omx/](http://gstreamer.freedesktop.org/src/gst-omx/)  
+- `gst-omx` version: 1.2
+
+  [http://gstreamer.freedesktop.org/src/gst-omx/](http://gstreamer.freedesktop.org/src/gst-omx/)
+
   [http://www.freedesktop.org/wiki/GstOpenMAX](http://www.freedesktop.org/wiki/GstOpenMAX)
+
 - For all GStreamer documentation, see [http://gstreamer.freedesktop.org/documentation/](http://gstreamer.freedesktop.org/documentation/).
+
 - For developing GStreamer plug-ins, see [http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/pwg/html/index.html).
+
 - For more information about OpenMAX IL components, see [http://www.khronos.org/openmax/il/](http://www.khronos.org/openmax/il/).
 
 
@@ -994,13 +1025,20 @@ Waylandsink in the Muse Daemon requests rendering conditions on the `wl_subsurfa
 
 ![Tizen viewport](media/tizen-viewport.png)
 
-- Example 1:  
+- Example 1:
+
   ![Viewport example 1](media/tizen-viewport-ex1.png)
-- Example 2:  
+
+- Example 2:
+
   ![Viewport example 2](media/tizen-viewport-ex2.png)
-- Example 3:  
+
+- Example 3:
+
   ![Viewport example 3](media/tizen-viewport-ex3.png)
-- Example 4:  
+
+- Example 4:
+
   ![Viewport example 4](media/tizen-viewport-ex4.png)
 
 
@@ -1008,13 +1046,15 @@ Waylandsink in the Muse Daemon requests rendering conditions on the `wl_subsurfa
 
 Sometimes, it is necessary to return `GstBuffer` while maintaining the video frame rendered in the window. In this case, use `FlushBuffer`, which is a `wl_buffer` created after copying TBM from `GstBuffer` coming from the video codec or `Camerasrc`. Waylandsink returns the `GstBuffer` to the video codec or `Camerasrc` immediately, and a request to render the `FlushBuffer` is made to the Window Server.
 
-1. Gapless video playback  
+1. Gapless video playback
+
    Waylandsink receives the `GST_EVENT_CUSTOM_DOWNSTREAM` event from the player when it performs gapless video playback. The player creates a `FlushBuffer`.
+
    ```cpp
    #define GST_APP_EVENT_FLUSH_BUFFER_NAME "application/flush-buffer"
 
    static gboolean gst_wayland_sink_event(GstBaseSink * bsink, GstEvent * event) {
-       [...]  
+       [...]
        switch (GST_EVENT_TYPE(event)) {
        case GST_EVENT_CUSTOM_DOWNSTREAM:
            s = gst_event_get_structure(event);
@@ -1024,14 +1064,16 @@ Sometimes, it is necessary to return `GstBuffer` while maintaining the video fra
        [...]
    }
    ```
-1. `keep-camera-preview`  
+1. `keep-camera-preview`
+
    The camera sets this property when it needs to maintain the last video frame. Waylandsink copies the last TBM buffer and returns it immediately when the state changes (PAUSED_TO_READY).
    ```
    keep-camera-preview : Last tbm buffer is copied and returned to camerasrc immediately when state change(PAUSED_TO_READY)
                          flags: readable, writable
                          Boolean. Default: false
    ```
-1. `flush_request` of MMVideoBuffer  
+1. `flush_request` of MMVideoBuffer
+
    `Camerasrc` and the video codec can set a flag to request a flushbuffer in the `GstBuffer` using `MMVideoBuffer.flush_request = TRUE`.
 
 **Audio only mode**
@@ -1130,7 +1172,7 @@ static gint gst_wl_window_find_rotate_transform(guint rotate_angle) {
         break;
     case DEGREE_270:
         transform = WL_OUTPUT_TRANSFORM_270;
-        break;  
+        break;
     }
 
     return transform;
@@ -1239,33 +1281,46 @@ if (window->disp_geo_method.value == DISP_GEO_METHOD_CUSTOM_ROI) {
 
 The following examples describe the various available modes:
 
-- Letterbox mode  
-Fit the video source to the width or height of the window, aligned to the center and keeping the aspect ratio of the original video source.
-  - Window (width/height) > Video source (width/height)  
+- Letterbox mode
+
+  Fit the video source to the width or height of the window, aligned to the center and keeping the aspect ratio of the original video source.
+
+  - Window (width/height) > Video source (width/height)
 
     ![Letterbox example 1](media/letterbox-ex1.png)
 
-  - Window (width/height) < Video source (width/height)  
+  - Window (width/height) < Video source (width/height)
 
     ![Letterbox example 2](media/letterbox-ex2.png)
-- Original size mode  
-Set the video source size the same as the original video size, aligned to the center and keeping the aspect ratio of the original video source.
+
+- Original size mode
+
+  Set the video source size the same as the original video size, aligned to the center and keeping the aspect ratio of the original video source.
+
   - Window size > Video source size
 
-    ![Original size mode example 1](media/origin-mode-ex1.png)  
+    ![Original size mode example 1](media/origin-mode-ex1.png)
+
   - Window size < Video source size
 
     ![Original size mode example 2](media/origin-mode-ex2.png)
-- Cropped full screen mode  
-Fit the video source to the width and height, cropping out the area outside the window, aligned to the center and keeping the aspect ratio of the original video source.
+
+- Cropped full screen mode
+
+  Fit the video source to the width and height, cropping out the area outside the window, aligned to the center and keeping the aspect ratio of the original video source.
+
   - Window (width/height) > Video source (width/height)
 
     ![Cropped full screen mode example 1](media/cropped-full-mode-ex1.png)
-  - Window (width/height) < Video source (width/height)  
+
+  - Window (width/height) < Video source (width/height)
 
     ![Cropped full screen mode example 2](media/cropped-full-mode-ex2.png)
-- ROI mode  
-The user sets the location and size of where the video is rendered.
+
+- ROI mode
+
+  The user sets the location and size of where the video is rendered.
+
   - Window size: width(1920), height(1080), ROI size: x(100), y(100), width(800), height(400)
 
     ![ROI mode example](media/roi-ex.png)

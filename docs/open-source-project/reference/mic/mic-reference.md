@@ -22,7 +22,7 @@ MIC supports the following image formats:
 
 To create a basic image, use the following command syntax:
 
-```bash
+```
 $ mic create(cr) SUBCOMMAND <ksfile> [OPTION]
 ```
 
@@ -30,7 +30,7 @@ In the command:
 
 - `SUBCOMMAND` specifies the image format:
 
-  ```bash
+  ```
   fs                 create fs image, which is also a chroot directory
   livecd             create live CD image, used for CD booting
   liveusb            create live USB image, used for USB booting
@@ -100,7 +100,7 @@ In the command:
 
 For example, to create a loop image, use the following command:
 
-```bash
+```
 $ mic cr loop tizen.ks
 ```
 
@@ -112,7 +112,7 @@ To create a loop image:
 
    To create an image, you need a proper `.ks` file:
 
-   ```bash
+   ```
    # filename: tizen-min.ks
    lang en_US.UTF-8
    keyboard us
@@ -144,13 +144,13 @@ To create a loop image:
 
    The above file can be used to create a minimum Tizen image. For other repositories, replace the URL. For example:
 
-   ```bash
+   ```
    $ repo --name=REPO-NAME --baseurl=https://username:passwd@yourrepo.com/ia32/packages/ --save  --ssl_verify=no
    ```
 
 1. Create the loop image with the following command in the terminal:
 
-   ```bash
+   ```
    $ sudo mic create loop tizen-min.ks
    ```
 
@@ -158,7 +158,7 @@ To create a loop image:
 
 If you want to install your own RPM into the image, to be able to test your package with the image, using a local package path can be helpful. For example, if your `hello.rpm` file is under the `localpath` directory, use the following command:
 
-```bash
+```
 $ sudo mic create loop test.ks --local-pkgs-path=localpath
 ```
 
@@ -170,7 +170,7 @@ You can use MIC to archive the image with a specific format, such as `.zip`, `.t
 
 To use a specific archive format:
 
-```bash
+```
 $ sudo mic create loop test.ks --pack-to=@NAME@.tar.gz
 ```
 
@@ -180,7 +180,7 @@ The MIC `chroot` command is a great enhancement over the basic `chroot` command 
 
 To chroot inside the image, use the following command syntax:
 
-```bash
+```
 $ mic chroot(ch) [OPTION] <imgfile>
 ```
 
@@ -193,10 +193,10 @@ In the command:
                       Save the unpacked image to a specified dir
   ```
 - `<imgfile>` specifies the image file.
-  
+
 For example:
 
-```bash
+```
 $ mic ch loop.img
 $ mic ch tizen.iso
 $ mic ch -s tizenfs tizen.usbimg
@@ -206,14 +206,14 @@ $ mic ch -s tizenfs tizen.usbimg
 
 To convert an image to another format, use the following command syntax:
 
-```bash
+```
 mic convert(cv) [OPTION] <imagefile> <destformat>
 ```
 
 In the command:
 
 - `OPTION` can be used to specify various details:
-  ```bash
+  ```
   -h, --help   Show this help message and exit
   -S, --shell  Launch shell before packaging the converted image
   ```
@@ -222,7 +222,7 @@ In the command:
 
 For example:
 
-```bash
+```
 $ mic cv tizen.iso liveusb
 $ mic cv tizen.usbimg livecd
 $ mic cv --shell tizen.iso liveusb
@@ -236,7 +236,7 @@ You can set a proxy in various ways:
 
   It is common to use a proxy variable in bash. In general, you can set the following environment variables to enable proxy support:
 
-  ```bash
+  ```
   export http_proxy=http://proxy.com:port
   export https_proxy=http://proxy.com:port
   export ftp_proxy=http://proxy.com:port
@@ -261,7 +261,7 @@ You can set a proxy in various ways:
 
   The proxy environment variables can disturb other programs, so to enable proxy support only for MIC, set the proxy in the `etc/mic/mic.conf`file:
 
-  ```bash
+  ```
   [create]
   ; settings for create subcommand
   tmpdir= /var/tmp/mic
@@ -276,7 +276,7 @@ You can set a proxy in various ways:
 
   If you need to enable proxy support for a special repository URL only, leaving others at their existing proxy setting:
 
-  ```bash
+  ```
   $ repo --name=oss --baseurl=http://www.example.com/repos/oss/packages/ --proxy=http://host:port
   ```
 
@@ -285,12 +285,12 @@ You can set a proxy in various ways:
 To get help:
 
 - Use the `man`command:
-  ```bash
+  ```
   $ man mic
   ```
 
 - Use the `--help` options:
-  ```bash
+  ```
   $ mic --help
   $ mic create --help
   $ mic help create

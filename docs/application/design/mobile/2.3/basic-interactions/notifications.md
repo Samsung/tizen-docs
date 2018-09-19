@@ -94,7 +94,8 @@ Consider the following when creating badge notifications:
 -   In-app notifications are not accompanied by sound.
 -   In a list, new items typically also get a special treatment to draw the attention of the user.
 
-> **NOTE**  
+> **Note**
+>
 > You can customize badge notifications in the Web framework.
 
 
@@ -118,7 +119,7 @@ The instant notification is displayed on the indicator with an icon and text. Wh
 Use instant notifications for:
 
 -   Push notifications (such as missed call, new message, voice mail, email, SMS, or RCS IM).
--   Actions that affect the mobile storage space (such as delivery report, download, BT transfer, or progress).  
+-   Actions that affect the mobile storage space (such as delivery report, download, BT transfer, or progress).
     After finishing an action, the indicator shows only the icon. A toast pop-up should appear with the operation result.
 
 **Figure: Instant notification**

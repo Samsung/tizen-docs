@@ -102,11 +102,13 @@ The package development workflow is described in the following procedure and sho
 
 After submitting code from a source repository to OBS, the backend generates the package file in the required format, by the following steps:
 
-1. Create a tarball.  
+1. Create a tarball.
+
    Create the tarball using the `git-archive` command. The `/packaging` directory must be included in the tarball as well. The tarball version is abstracted from the spec file by **rpmbuild**.
+
 1. Take the contents of the packaging directory and put them alongside the tarball.
 
-The package files in the required form are shown in the following figure.
+   The package files in the required form are shown in the following figure.
 
 **Figure: Package files**
 

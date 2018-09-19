@@ -7,7 +7,11 @@ The main features of the Tizen.Network.WiFi namespace include:
 
 -   Wi-Fi device management
 
-    You can use the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class to control aspects of your application's wireless connection. For example, you can [activate](#activating_wifi_device) or [deactivate](#deactivating_wifi_device) Wi-Fi, [monitor connection state changes](#managing_events), and [scan for available access points](#accesspoint_scan).
+    You can use the [Tizen.Network.WiFi.WiFiManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.WiFiManager.html) class to control the aspects of your application's wireless connection. The aspects are:
+
+    - [Activate](#activating_wifi_device) or [deactivate](#deactivating_wifi_device) Wi-Fi, [monitor connection state changes](#managing_events), and [scan for available access points](#accesspoint_scan).
+    - Get BSSID asynchronously as well as synchronously.
+    - Make connections between an access point(AP) and wireless devices faster and easier using Wi-Fi Protected Setup (WPS).
 
 - Access point management
 
@@ -35,7 +39,8 @@ The main features of the Tizen.Network.WiFi namespace include:
 The application uses the infrastructure mode to connect to a wireless local area network (WLAN). The infrastructure mode requires a wireless access point. To connect to a WLAN, the application client must be configured to use the same service set identifier (SSID) as the access point.
 
 
-> **Note**  
+> **Note**
+>
 > You can test the Wi-Fi functionality on a target device only. The emulator does not support this feature.
 
 
@@ -142,7 +147,7 @@ To scan nearby access points and get their details:
 
 2. Retrieve the scan results (the found access points) with the `GetFoundAPs()` method of the `Tizen.Network.WiFi.WiFiManager` class.
 
-    In this example, the application displays the name and connection state of each access point it finds. You can also get other information, such as the used frequency or the maximum speed the access point supports.
+    In the following example, the application displays the name and connection state of each access point it finds. You can also get other information, such as the used frequency or the maximum speed the access point supports:
 
     ```
         var apList = WiFiManager.GetFoundAPs();

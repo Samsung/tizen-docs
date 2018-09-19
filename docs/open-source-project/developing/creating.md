@@ -15,7 +15,7 @@ Image creation requires a kickstart file that describes how to create an image. 
 
 1. Download the original kickstart file:
 
-   ```bash
+   ```
    $ wget <Snapshot_date_URL>/builddata/images/<Repository>/image-configurations/<kickstart_file>
    ```
 
@@ -23,19 +23,19 @@ Image creation requires a kickstart file that describes how to create an image. 
 
      - Tizen: 4.0: Unified / standard / `mobile-wayland-armv7l-tm1.ks`
 
-       ```bash
+       ```
        $ wget http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/builddata/images/standard/image-configurations/mobile-wayland-armv7l-tm1.ks
        ```
 
      - Tizen: 4.0: Unified / emulator / `tv-emulator32-wayland.ks`
 
-       ```bash
+       ```
        $ wget http://download.tizen.org/releases/daily/tizen/unified/tizen-unified_20170627.1/builddata/images/emulator/image-configurations/tv-emulator32-wayland.ks
        ```
 
      - Tizen: 3.0: Wearable / target-circle / `wearable-wayland-armv7l-circle.ks`
 
-       ```bash
+       ```
        $ wget http://download.tizen.org/releases/daily/tizen/3.0-wearable/tizen-3.0-wearable_20170627.1/builddata/images/target-circle/image-configurations/wearable-wayland-armv7l-circle.ks
        ```
 
@@ -46,7 +46,7 @@ Image creation requires a kickstart file that describes how to create an image. 
    - The `repo` section of the original kickstart file:
 
      ```
-     repo --name=unified-standard --baseurl=http://download.tizen.org/snapshots/tizen/unified/@BUILD_ID@/repos/standard/packages/ --ssl_verify=no  
+     repo --name=unified-standard --baseurl=http://download.tizen.org/snapshots/tizen/unified/@BUILD_ID@/repos/standard/packages/ --ssl_verify=no
      repo --name=base_arm --baseurl=http://download.tizen.org/snapshots/tizen/base/latest/repos/arm/packages/ --ssl_verify=no
      ```
 
@@ -68,13 +68,13 @@ Image creation requires a kickstart file that describes how to create an image. 
 
 To create a Tizen image:
 
-```bash
+```
 $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks
 ```
 
 If you have more than 4 GB of RAM available, use the `--tmpfs` option to speed up the image creation:
 
-```bash
+```
 $ gbs createimage --ks-file=mobile-wayland-armv7l-tm1.ks --tmpfs
 ```
 

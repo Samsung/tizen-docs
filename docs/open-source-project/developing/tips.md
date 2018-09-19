@@ -22,7 +22,7 @@
 
     In a typical error situation, no error message is displayed when downloading the repo tool by using curl, but connection problems occur when attempting to run the `repo init` command. In such cases, clear the Git HEAD and try running the repo commands through the `tsocks` proxy:
 
-    ```bash
+    ```
     $ tsocks curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
     $ tsocks repo init -u ssh://<Username>@review.tizen.org:29418/scm/manifest -b tizen -m ivi.xml
     $ tsocks repo init -u https://<Username>:<HTTPS_Password>@review.tizen.org/gerrit/p/scm/manifest -b tizen -m ivi.xml
@@ -30,6 +30,6 @@
 
   - When initializing and cloning through HTTP, you can be blocked by the "server certificate verification" issue. Run the following command and try again:
 
-    ```bash
+    ```
     $ export GIT_SSL_NO_VERIFY=1
     ```
