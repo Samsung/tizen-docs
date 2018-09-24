@@ -17,9 +17,9 @@ To create a new certificate to use the SmartThings&trade; service:
 
 1. In the Tizen Certificate Manager, select IoT Cloud Service tab, and click ![plus](media/rt_plus.png).
 
-    **Figure: Certificate Manager** 
+   **Figure: Certificate Manager** 
 	
-    ![Certificate Manager](media/rt_cer_mang.png)
+   ![Certificate Manager](media/rt_cer_mang.png)
 
 2. In the Certificate Signing Request Generation Dialog box, enter the required information and click **OK**.
 
@@ -32,9 +32,9 @@ To create a new certificate to use the SmartThings&trade; service:
     -   **Common Name**: Fully-qualified domain name of your server or your name
     -   **Email**: Email address used to contact your organization
 	
-        **Figure: Certificate Signing Request Generation** 
+    **Figure: Certificate Signing Request Generation** 
 	
-        ![Inputting data to the Certificate Signing Request Generation Dialog box](media/rt_cert_create.png)
+    ![Inputting data to the Certificate Signing Request Generation Dialog box](media/rt_cert_create.png)
 	
 3. In the next page of the Certificate Generation Dialog box, enter the required information and click **OK**.
 
@@ -44,15 +44,15 @@ To create a new certificate to use the SmartThings&trade; service:
     -   **UUID**: ID of the user
     -   **Device Physical Address**: Physical address of the added device
        	
-        **Figure: Certificate Generation** 
+    **Figure: Certificate Generation** 
 	
-        ![Inputting data to the Certificate Generation Dialog box](media/rt_cert_gen.png)
+    ![Inputting data to the Certificate Generation Dialog box](media/rt_cert_gen.png)
 	
 4. Sign in to the Samsung account.
 
-     **Figure: Samsung account Sign in** 
+   **Figure: Samsung account Sign in** 
 	
-     ![Account Sign in](media/rt_acco_sig.png)
+   ![Account Sign in](media/rt_acco_sig.png)
 	
 <a name="import"></a>
 ## Importing a Certificate 
@@ -60,9 +60,9 @@ To create a new certificate to use the SmartThings&trade; service:
 To import an existing certificate:
 1. In the Tizen Certificate Manager, click ![Import Certificate](media/rt_import.png).
 
-    **Figure: Import Certificate** 
+   **Figure: Import Certificate** 
 	
-    ![Import Certificate](media/rt_import_cer.png)
+   ![Import Certificate](media/rt_import_cer.png)
 
 2. In the Certificate Import Dialog box, enter the required information to import a certificate and click **OK**.
 
@@ -70,9 +70,9 @@ To import an existing certificate:
     -   **Private Key**: Private key file in the `.der` format
     -   **Certificate**: Certificate file in the `.pem` format
 
-        **Figure: Certificate Import** 
+    **Figure: Certificate Import** 
 
-        ![Certificate Import Dialog](media/rt_cert_import.png)
+    ![Certificate Import Dialog](media/rt_cert_import.png)
 
 <a name="activate"></a>
 ## Activating a Certificate
