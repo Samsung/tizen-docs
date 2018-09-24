@@ -74,6 +74,8 @@ To obtain the information, query a feature or system key.
 
    - [OpenGL&reg; ES](#opengl)
 
+   - [Peripheral-IO](#peripheralio)
+
    - [Platform](#platformfeat)
 
    - [Profile](#profile_feat)
@@ -496,6 +498,20 @@ The following table lists the OpenGL&reg; ES feature keys.
 | `http://tizen.org/feature/opengles.version.3_0` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.0. |
 | `http://tizen.org/feature/opengles.version.3_1` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.1. |
 | `http://tizen.org/feature/opengles.version.3_2` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.2. |
+
+The following table lists the Peripheral-IO feature keys.
+
+<a name="peripheralio"></a>
+**Table: Peripheral-IO feature keys**
+
+| Key                                      | Type     | Description                              |
+|------------------------------------------|----------|------------------------------------------|
+| `http://tizen.org/feature/peripheral_io.gpio` | `bool`   | The platform returns `true` for this key, if the device supports General-Purpose Input/Output (GPIO). |
+| `http://tizen.org/feature/peripheral_io.i2c` | `bool`   | The platform returns `true` for this key, if the device supports Inter-Integrated Circuit (I2C). |
+| `http://tizen.org/feature/peripheral_io.pwm` | `bool`   | The platform returns `true` for this key, if the device supports Pulse-Width Modulation (PWM). |
+| `http://tizen.org/feature/peripheral_io.adc` | `bool`   | The platform returns `true` for this key, if the device supports Analog-to-Digital Converter (ADC). |
+| `http://tizen.org/feature/peripheral_io.uart` | `bool`   | The platform returns `true` for this key, if the device supports Universal Asynchronous Receiver-Transmitter (UART). |
+| `http://tizen.org/feature/peripheral_io.spi` | `bool`   | The platform returns `true` for this key, if the device supports Serial Peripheral Interface (SPI). |
 
 The following table lists the platform feature keys.
 
