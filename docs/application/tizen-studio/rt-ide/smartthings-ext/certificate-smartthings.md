@@ -57,9 +57,9 @@ To create a new certificate to use the SmartThings&trade; service:
 ## Importing a Certificate 
 
 To import an existing certificate:
-1. In the Tizen Certificate Manager, click ![Import Certificate](media/rt_import.png).
+1. In the Certificate Manager, click ![Import Certificate](media/rt_import.png).
 
-   **Figure: Import Certificate** 
+   **Figure: Import Certificate Manager** 
 	
    ![Import Certificate](media/rt_import_cer.png)
 
@@ -80,7 +80,7 @@ To flash a project, you must have an active certificate. The Tizen RT IDE copies
 
 To activate a certificate:
 
-1.  In the Tizen Certificate Manager, double-click the certificate you want to activate.
+1.  In the Certificate Manager, double-click the certificate you want to activate.
 2.  Click ![Activation Certificate](media/rt_tick.png).
 
     **Figure: Certificate Activation** 
