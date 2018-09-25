@@ -14,7 +14,7 @@ The process of creating a new certificate requires you to generate a Certificate
 
 To create a new certificate to use the SmartThings&trade; service:
 
-1. In the Tizen Certificate Manager, select the IoT Cloud Service tab, and click ![plus](media/rt_plus.png).
+1. In the Certificate Manager, select the IoT Cloud Service tab, and click ![plus](media/rt_plus.png).
 
    **Figure: Certificate Manager** 
 	
