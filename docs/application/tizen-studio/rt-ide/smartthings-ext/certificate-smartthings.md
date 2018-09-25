@@ -63,7 +63,7 @@ To import an existing certificate:
 	
    ![Import Certificate](media/rt_import_cer.png)
 
-2. In the Certificate Import Dialog box, enter the required information to import a certificate and click **OK**:
+2. In the Certificate Import Dialog box, enter the required information to import a certificate and click **OK**.
 
     -   **Certificate Name**: Unique name for the certificate
     -   **Private Key**: Private key file in the `.der` format
