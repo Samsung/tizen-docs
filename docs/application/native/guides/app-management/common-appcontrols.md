@@ -1813,7 +1813,7 @@ retrieve_media_operation(const char* mime_type)
 
 The media controller operation is supported in mobile and wearable applications.
 To control media application, use the `APP_CONTROL_OPERATION_MEDIA_CONTROLLER` operation with the `server` and `client` launch type.
-To specify various details refer to the extras defined below.
+To specify various event details, refer to the extras defined below.
 
 #### Operation
 
@@ -1830,7 +1830,7 @@ To specify various details refer to the extras defined below.
 
 | Key                               | Description                              | Note                  |
 |-----------------------------------|------------------------------------------|-----------------------|
-| `APP_CONTROL_DATA_TYPE` | The launch type of the media controller operation. The available values are 'server' and 'client'. This key must be passed as a string. | This key is mandatory. |
+| `APP_CONTROL_DATA_TYPE` | The launch type of the media controller operation. The available values are `server` and `client`. This key must be passed as a string. | This key is mandatory. |
 
 #### Example Code
 
