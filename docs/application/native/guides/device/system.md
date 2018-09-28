@@ -423,6 +423,7 @@ The following table lists the network feature keys.
 | `http://tizen.org/feature/network.bluetooth.hid` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Human Input Device (HID). |
 | `http://tizen.org/feature/network.bluetooth.hid.device` | `bool` | The platform returns `true` for this key, if the device supports the Bluetooth Human Interface Device (HID) device feature. |
 | `http://tizen.org/feature/network.bluetooth.le` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Low Energy (BLE). |
+| `http://tizen.org/feature/network.bluetooth.le.5_0` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth 5 feature. |
 | `http://tizen.org/feature/network.bluetooth.opp` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Object Push Profile (OPP). |
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | `bool` | The platform returns `true` for this key, if the device supports the Bluetooth Phone Book Access (PBAP) client feature. |
 | `http://tizen.org/feature/network.ethernet` | `bool` | The platform returns `true` for this key, if the device supports Ethernet. |
