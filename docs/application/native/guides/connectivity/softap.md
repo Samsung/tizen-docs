@@ -78,7 +78,7 @@ The main features of the SoftAP API includes:
    ```
 
 
-## Creating SoftAP handle
+## Creating SoftAP Handle
 
 To create SoftAP handle:
 
@@ -94,7 +94,7 @@ To create SoftAP handle:
 
 
 
-## Configuring SoftAP settings
+## Configuring SoftAP Settings
 
 To configure SoftAP settings:
 
@@ -180,7 +180,7 @@ To enable SoftAP:
           printf("Fail to regester the callback.");
       ``` 
 
-## Handling SoftAP client
+## Handling SoftAP Client
 
 To handle SoftAP client:
 
@@ -304,7 +304,7 @@ To disable SoftAP:
        printf("Failed to disable SoftAP");   
    ```
 
-## Releasing all resources
+## Releasing All Resources
 
 To release the SoftAP resources:
 
