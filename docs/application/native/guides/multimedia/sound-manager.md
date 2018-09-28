@@ -181,6 +181,53 @@ To query sound device information:
           /* Failed to free the device list*/
       ```
 
+   5. More functionality for `SOUND_DEVICE_USB_AUDIO` with `SOUND_DEVICE_IO_DIRECTION_OUT` device.
+      When you found a device with above type, you can utilize more functionality with the following functions:
+
+      - `sound_manager_get_supported_sample_formats()`: To get the supported sample formats of the device.
+      - `sound_manager_set_sample_format()`: To set the sample format to the device.
+      - `sound_manager_get_sample_format()`: To get the sample format of the device.
+      - `sound_manager_get_supported_sample_rates()`: To get the supported sample rates of the device.
+      - `sound_manager_set_sample_rate()`: To set the sample rate to the device.
+      - `sound_manager_get_sample_rate()`: To get the sample rate of the device.
+      - `sound_manager_set_media_stream_only()`: To set the 'media stream only' property. With this enabled, no other stream type except `SOUND_STREAM_TYPE_MEDIA` is not allowed to this device.
+      - `sound_manager_get_media_stream_only()`: To get the 'media stream only' property.
+      - `sound_manager_set_avoid_resampling()`: To set the 'avoid resampling' property. With this enabled, this device will use the first stream's original sample format and rate without resampling if supported.
+      - `sound_manager_get_avoid_resampling()`: To get the 'avoid resampling' property.
+
+      The following example code shows how to get the supported sample rate list and to set the particular rate among them if supported:
+
+      ```
+      sound_sample_rate_e *rates;
+      int num;
+
+      /* Assume that this device is SOUND_DEVICE_USB_AUDIO with SOUND_DEVICE_IO_DIRECTION_OUT. */
+      ret = sound_manager_get_supported_sample_rates(device, &rates, &num);
+      if (ret != SOUND_MANAGER_ERROR_NONE) {
+          /* Failed to get the supported sample rates of this device */
+      } else {
+          int i;
+          for (i = 0; i < num; i++) {
+              if (rates[i] == SOUND_SAMPLE_RATE_48000) {
+                  ret = sound_manager_set_sample_rate(device, rates[i]);
+                  if (ret != SOUND_MANAGER_ERROR_NONE)
+                      /* Failed to set the sample rate to this device */
+                  break;
+              }
+          }
+          /* Need to free it */
+          free(rates);
+      }
+      ```
+      The following example code shows how to set the 'media stream only' property to the device:
+
+      ```
+      /* Assume that this device is SOUND_DEVICE_USB_AUDIO with SOUND_DEVICE_IO_DIRECTION_OUT. */
+      ret = sound_manager_set_media_stream_only(device, true);
+      if (ret != SOUND_MANAGER_ERROR_NONE)
+          /* Failed to set the media stream only property to this device */
+      ```
+
 2. To receive a notification whenever the sound device connection state changes:
 
    1. Register a callback using the `sound_manager_add_device_connection_changed_cb()` function. Use the mask to filter the callback information.
