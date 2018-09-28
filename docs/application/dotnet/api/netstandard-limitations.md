@@ -39,7 +39,7 @@ Since applications on Tizen have limitations compared to .NET desktop applicatio
 
     Your application needs http://tizen.org/privilege/mediastorage privilege to access the special folders. Except LocalApplicationData with **read** or **write** access mode.
 
-    In order to get path of the above folders, you need to call `Environment.GetFolderPath()` with Environment.SpecialFolderOption.DoNotVerify .
+    In order to get path of the above folders, you need to call `Environment.GetFolderPath()` with Environment.SpecialFolderOption.DoNotVerify.
 
 
 6. System.Security.Cryptography.X509Certificates.X509Store is not supported.
