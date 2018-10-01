@@ -37,7 +37,7 @@ Since applications on Tizen have limitations compared to .NET desktop applicatio
     - MyPictures
     - MyVideos
 
-    Your application needs http://tizen.org/privilege/mediastorage privilege to access the special folders. Except LocalApplicationData with **read** or **write** access mode.
+    Your application needs `http://tizen.org/privilege/mediastorage` privilege to access the special folders. Except LocalApplicationData with **read** or **write** access mode.
 
     In order to get path of the above folders, you need to call `Environment.GetFolderPath()` with Environment.SpecialFolderOption.DoNotVerify.
 
