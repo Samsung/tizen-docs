@@ -73,7 +73,7 @@ To send push notifications:
 
      > **Note**
      >
-     > Do not confuse between "backgroundLaunch" option of action field in 1st depth and "BACKGROUNDLAUNCH" option of action field in message field in 2nd depth. The former is to deliver the notification with the best effort and the latter is to launch the application in the background. However, "backgroundLaunch" option also launches the application in the background.
+     > Do not confuse between "backgroundLaunch" option of action field in the 1st depth and "BACKGROUNDLAUNCH" option of action field in message field in the 2nd depth. The former is to deliver the notification with the best effort and the latter is to launch the application in the background. However, "backgroundLaunch" option also launches the application in the background.
 
 3. Create the notification message.
 
