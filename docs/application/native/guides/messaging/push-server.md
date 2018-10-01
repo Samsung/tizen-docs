@@ -59,7 +59,7 @@ To send push notifications:
      }
      ```
 
-   - If you have to send data to the application, and if the user need not be notified immediately, use the action field at the same level as the message field, and do not include the message field. In this case, the notification is delivered with the best effort.
+   - If you have to send data to an application without notifying the user immediately, use the action field. The action field must be used at the same level as message field, and do not include the message field itself. In this case, the notification is delivered on best-effort basis.
 
      ```
      {
