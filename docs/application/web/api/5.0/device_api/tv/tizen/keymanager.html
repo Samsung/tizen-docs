@@ -577,6 +577,8 @@ if (aliases.length != 0)
     <a href="package.html#PackageId">PackageId</a> packageId;
 
     DOMString name;
+
+    boolean isProtected;
   };</pre>
 <p><span class="version">
             Since: </span>
@@ -608,6 +610,27 @@ If this attribute contains any spaces, the spaces will be removed. Characters wh
 <p><span class="version">
             Since: </span>
  2.4
+            </p>
+</dd>
+<dt class="member" id="KeyManagerAlias::isProtected"><span class="attrName">boolean isProtected</span></dt>
+<dd>
+<div class="brief">
+ Flag indicating whether key is password protected. This property is returned only by function <a href="#KeyManager::getDataAliasList">getDataAliasList()</a>.
+In any other cases this value is unused.
+            </div>
+<div class="description">
+            <p>
+Possible values:
+            </p>
+            <ul>
+              <li>
+<var>true</var> - data under the alias is password protected,              </li>
+              <li>
+<var>false</var> - data under the alias is not password protected.              </li>
+            </ul>
+           </div>
+<p><span class="version">Since: </span>
+ 5.0
             </p>
 </dd>
 </dl>
@@ -655,6 +678,8 @@ If this attribute contains any spaces, the spaces will be removed. Characters wh
     <a href="package.html#PackageId">PackageId</a> packageId;
 
     DOMString name;
+
+    boolean isProtected;
   };
 };</pre>
 </div>
