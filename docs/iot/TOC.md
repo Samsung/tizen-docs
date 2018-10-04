@@ -26,6 +26,8 @@
 ### [UART](/iot/guides/peripheral-io-api-uart.md)
 ## ZigBee
 ### [Overview](/iot/guides/zigbee.md)
+## Tizen Update Control Native API
+### [Update Control API Guide](/iot/guides/update-control-api.md)
 
 # API Reference
 ## [Things SDK API Reference](https://developer.tizen.org/dev-guide/things-sdk)
