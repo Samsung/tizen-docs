@@ -74,6 +74,8 @@ To obtain the information, query a feature or system key.
 
    - [OpenGL&reg; ES](#opengl)
 
+   - [Peripheral-IO](#peripheralio)
+
    - [Platform](#platformfeat)
 
    - [Profile](#profile_feat)
@@ -185,7 +187,7 @@ func(void)
 <a name="feature"></a>
 ## Feature Keys
 
-The following table lists the account feature keys.
+The following table lists the account feature keys:
 
 <a name="account"></a>
 **Table: Account feature keys**  
@@ -195,7 +197,7 @@ The following table lists the account feature keys.
 | `http://tizen.org/feature/account`      | `bool` | The platform returns `true` for this key, if the device supports the Account Manager API. |
 | `http://tizen.org/feature/account.sync` | `bool` | The platform returns `true` for this key, if the device supports the Sync Manager API. |
 
-The following table lists the application history feature keys.
+The following table lists the application history feature keys:
 
 <a name="apphistory"></a>
 **Table: Application history feature keys**  
@@ -204,7 +206,7 @@ The following table lists the application history feature keys.
 |----------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/app_history` | `bool` | The platform returns `true` for this key, if the device supports the application history feature. |
 
-The following table lists the attach panel feature keys.
+The following table lists the attach panel feature keys:
 
 <a name="attachpanel"></a>
 **Table: Attach panel feature keys**
@@ -213,7 +215,7 @@ The following table lists the attach panel feature keys.
 |-----------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/attach_panel` | `bool` | The platform returns `true` for this key, if the device supports the attach panel feature. |
 
-The following table lists the battery feature keys.
+The following table lists the battery feature keys:
 
 <a name="battery"></a>
 **Table: Battery feature keys**  
@@ -222,7 +224,7 @@ The following table lists the battery feature keys.
 |------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/battery` | `bool` | The platform returns `true` for this key, if the device has a battery. |
 
-The following table lists the camera feature keys.
+The following table lists the camera feature keys:
 
 <a name="camera"></a>
 **Table: Camera feature keys**  
@@ -235,7 +237,7 @@ The following table lists the camera feature keys.
 | `http://tizen.org/feature/camera.front`  | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/camera` key, if the device provides a front-facing camera. |
 | `http://tizen.org/feature/camera.front.flash` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/camera.front` key, if the device provides a front-facing camera with a flash. |
 
-The following table lists the consumer IR feature keys.
+The following table lists the consumer IR feature keys:
 
 <a name="consumer"></a>
 **Table: Consumer IR feature keys**  
@@ -244,7 +246,7 @@ The following table lists the consumer IR feature keys.
 |----------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/consumer_ir` | `bool` | The platform returns `true` for this key, if the device supports the Consumer Infrared (CIR) feature. |
 
-The following table lists the contextual trigger feature keys.
+The following table lists the contextual trigger feature keys:
 
 <a name="trigger"></a>
 **Table: Contextual trigger feature keys**  
@@ -253,7 +255,7 @@ The following table lists the contextual trigger feature keys.
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/contextual_trigger` | `bool` | The platform returns `true` for this key, if the device supports the contextual trigger feature. |
 
-The following table lists the database feature keys.
+The following table lists the database feature keys:
 
 <a name="database"></a>
 **Table: Database feature keys**  
@@ -262,7 +264,7 @@ The following table lists the database feature keys.
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/database.encryption` | `bool` | The platform returns `true` for this key, if the device supports database encryption. |
 
-The following table lists the download feature keys.
+The following table lists the download feature keys:
 
 <a name="download"></a>
 **Table: Download feature keys**  
@@ -271,7 +273,7 @@ The following table lists the download feature keys.
 |-------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/download` | `bool` | The platform returns `true` for this key, if the device supports the Download API. |
 
-The following table lists the vibration feedback feature keys.
+The following table lists the vibration feedback feature keys:
 
 <a name="vibration"></a>
 **Table: Vibration feedback feature keys**  
@@ -280,7 +282,7 @@ The following table lists the vibration feedback feature keys.
 |-------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/feedback.vibration` | `bool` | The platform returns `true` for this key, if the device supports the Vibration feedback API. |
 
-The following table lists the FIDO feature keys.
+The following table lists the FIDO feature keys:
 
 <a name="fido"></a>
 **Table: FIDO feature keys**  
@@ -289,7 +291,7 @@ The following table lists the FIDO feature keys.
 |-------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/fido.uaf` | `bool` | The platform returns `true` for this key, if the device supports the FIDO (Fast Identity Online) UAF (Universal Authentication Framework) client API. |
 
-The following table lists the FM radio feature keys.
+The following table lists the FM radio feature keys:
 
 <a name="fmradio"></a>
 **Table: FM radio feature keys**  
@@ -298,7 +300,7 @@ The following table lists the FM radio feature keys.
 |------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/fmradio` | `bool` | The platform returns `true` for this key, if the device supports an FM radio. |
 
-The following table lists the graphics feature keys.
+The following table lists the graphics feature keys:
 
 <a name="graphics"></a>
 **Table: Graphics feature keys**  
@@ -307,7 +309,7 @@ The following table lists the graphics feature keys.
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/graphics.acceleration` | `bool` | The platform returns `true` for this key, if the device supports graphics hardware acceleration. |
 
-The following table lists the human activity monitor feature keys.
+The following table lists the human activity monitor feature keys:
 
 <a name="ham"></a>
 **Table: Human activity monitor feature keys**  
@@ -316,7 +318,7 @@ The following table lists the human activity monitor feature keys.
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/humanactivitymonitor` | `bool` | The platform returns `true` for this key, if the device supports any of the human activity monitor sensors. |
 
-The following table lists the input feature keys.
+The following table lists the input feature keys:
 
 <a name="input"></a>
 **Table: Input feature keys**  
@@ -327,7 +329,7 @@ The following table lists the input feature keys.
 | `http://tizen.org/feature/input.keyboard.layout` | `String` | The platform returns the keyboard layout (such as `"qwerty"`) supported by the built-in keyboard for this key and returns `true` for the `http://tizen.org/feature/input.keyboard` key.<br>If the device does not provide a built-in keyboard, the platform returns an empty string for this key and returns `false` for the `http://tizen.org/feature/input.keyboard` key. |
 | `http://tizen.org/feature/input.rotating_bezel` | `bool`   | The platform returns `true` for this key, if the device supports the rotating bezel feature. |
 
-The following table lists the IOT feature keys.
+The following table lists the IOT feature keys:
 
 <a name="iot"></a>
 **Table: IOT feature keys**  
@@ -336,7 +338,7 @@ The following table lists the IOT feature keys.
 |------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/iot.ocf` | `bool` | The platform returns `true` for this key, if the device supports the Open Connectivity Foundation (OCF) framework. |
 
-The following table lists the LED feature keys.
+The following table lists the LED feature keys:
 
 <a name="led"></a>
 **Table: LED feature keys**  
@@ -345,7 +347,7 @@ The following table lists the LED feature keys.
 |--------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/led` | `bool` | The platform returns `true` for this key, if the device supports the LED. |
 
-The following table lists the location feature keys.
+The following table lists the location feature keys:
 
 <a name="location"></a>
 **Table: Location feature keys**  
@@ -359,7 +361,7 @@ The following table lists the location feature keys.
 | `http://tizen.org/feature/location.gps.satellite` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location.gps` key, if the device has a GPS chip that supports satellite information. |
 | `http://tizen.org/feature/location.wps`  | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location` key, if the device supports the Wi-Fi-based Positioning System (WPS). |
 
-The following table lists the maps feature keys.
+The following table lists the maps feature keys:
 
 <a name="maps"></a>
 **Table: Maps feature keys**  
@@ -368,7 +370,7 @@ The following table lists the maps feature keys.
 |---------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/maps` | `bool` | The platform returns `true` for this key, if the device supports the map service feature. |
 
-The following table lists the media feature keys.
+The following table lists the media feature keys:
 
 <a name="media"></a>
 **Table: Media feature keys**  
@@ -379,7 +381,7 @@ The following table lists the media feature keys.
 | `http://tizen.org/feature/media.image_capture` | `bool` | The platform returns `true` for this key, if the device supports the image capture feature. |
 | `http://tizen.org/feature/media.video_recording` | `bool` | The platform returns `true` for this key, if the device supports the video recording feature. |
 
-The following table lists the microphone feature keys.
+The following table lists the microphone feature keys:
 
 <a name="microphone"></a>
 **Table: Microphone feature keys**  
@@ -388,7 +390,7 @@ The following table lists the microphone feature keys.
 |---------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/microphone` | `bool` | The platform returns `true` for this key, if the device supports a microphone. |
 
-The following table lists the multimedia feature keys.
+The following table lists the multimedia feature keys:
 
 <a name="multimedia"></a>
 **Table: Multimedia feature keys**  
@@ -398,7 +400,7 @@ The following table lists the multimedia feature keys.
 | `http://tizen.org/feature/multimedia.transcoder` | `bool` | The platform returns `true` for this key, if the device supports the transcoder. |
 | `http://tizen.org/feature/multimedia.player.spherical_video` | `bool` | The platform returns `true` for this key, if the device supports the 360-degree video playback feature. |
 
-The following table lists the multi-point touch feature keys.
+The following table lists the multi-point touch feature keys:
 
 <a name="multipoint"></a>
 **Table: Multi-point touch feature keys**  
@@ -408,7 +410,7 @@ The following table lists the multi-point touch feature keys.
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | `bool` | The platform returns `true` for this key, if the device supports pinch zoom gestures. |
 | `http://tizen.org/feature/multi_point_touch.point_count` | `int`  | The platform returns the maximum number of supported multi-touch points for this key.<br>The platform returns a value less than 2 for this key, if the device does not support multi-point touch. |
 
-The following table lists the network feature keys.
+The following table lists the network feature keys:
 
 <a name="network"></a>
 **Table: Network feature keys**  
@@ -467,7 +469,7 @@ The following table lists the network feature keys.
 | `http://tizen.org/feature/network.wifi.direct.service_discovery` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct service discovery. |
 | `http://tizen.org/feature/network.wifi.tdls` | `bool` | The platform returns `true` for this key, if the device supports the Wi-Fi Tunneled Direct Link Setup (TDLS). |
 
-The following table lists the OAuth 2.0 feature keys.
+The following table lists the OAuth 2.0 feature keys:
 
 <a name="oauth2"></a>
 **Table: OAuth 2.0 feature keys**  
@@ -476,7 +478,7 @@ The following table lists the OAuth 2.0 feature keys.
 |-----------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/oauth2` | `bool` | The platform returns `true` for this key, if the device supports the OAuth 2.0 API. |
 
-The following table lists the OpenGL&reg; ES feature keys.
+The following table lists the OpenGL&reg; ES feature keys:
 
 <a name="opengl"></a>
 **Table: OpenGL&reg; ES feature keys**
@@ -497,7 +499,21 @@ The following table lists the OpenGL&reg; ES feature keys.
 | `http://tizen.org/feature/opengles.version.3_1` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.1. |
 | `http://tizen.org/feature/opengles.version.3_2` | `bool`   | The platform returns `true` for this key and the `http://tizen.org/feature/opengles` key, if the device supports the OpenGL&reg; ES version 3.2. |
 
-The following table lists the platform feature keys.
+The following table lists the Peripheral-IO feature keys:
+
+<a name="peripheralio"></a>
+**Table: Peripheral-IO feature keys**
+
+| Key                                      | Type     | Description                              |
+|------------------------------------------|----------|------------------------------------------|
+| `http://tizen.org/feature/peripheral_io.gpio` | `bool`   | The platform returns `true` for this key, if the device supports General-Purpose Input/Output (GPIO). |
+| `http://tizen.org/feature/peripheral_io.i2c` | `bool`   | The platform returns `true` for this key, if the device supports Inter-Integrated Circuit (I2C). |
+| `http://tizen.org/feature/peripheral_io.pwm` | `bool`   | The platform returns `true` for this key, if the device supports Pulse-Width Modulation (PWM). |
+| `http://tizen.org/feature/peripheral_io.adc` | `bool`   | The platform returns `true` for this key, if the device supports Analog-to-Digital Converter (ADC). |
+| `http://tizen.org/feature/peripheral_io.uart` | `bool`   | The platform returns `true` for this key, if the device supports Universal Asynchronous Receiver-Transmitter (UART). |
+| `http://tizen.org/feature/peripheral_io.spi` | `bool`   | The platform returns `true` for this key, if the device supports Serial Peripheral Interface (SPI). |
+
+The following table lists the platform feature keys:
 
 <a name="platformfeat"></a>
 **Table: Platform feature keys**
@@ -522,7 +538,7 @@ The following table lists the platform feature keys.
 | `http://tizen.org/feature/platform.version.name` | `String` | The platform returns the platform version name. |
 | `http://tizen.org/feature/platform.web.api.version` | `String` | The platform returns the version of the Web API in the "[Major].[Minor]" format. |
 
-The following table lists the profile feature keys.
+The following table lists the profile feature keys:
 
 <a name="profile_feat"></a>
 **Table: Profile feature keys**  
@@ -531,7 +547,7 @@ The following table lists the profile feature keys.
 |------------------------------------|----------|------------------------------------------|
 | `http://tizen.org/feature/profile` | `String` | The platform returns a compliant device profile (such as `"mobile"` or `"wearable"`) for this key. |
 
-The following table lists the screen feature keys.
+The following table lists the screen feature keys:
 
 <a name="screen"></a>
 **Table: Screen feature keys**  
@@ -566,7 +582,7 @@ The following table lists the screen feature keys.
 | `http://tizen.org/feature/screen.size.normal.1080.1920` | `bool` | The platform returns `true` for this key, if the device supports the 1080 x 1290 resolution for the normal screen size.<br>The platform can return `true` for multiple resolution keys. |
 | `http://tizen.org/feature/screen.width`  | `int`  | The platform returns the width of the screen in pixels supported by the device for this key. |
 
-The following table lists the security feature keys.
+The following table lists the security feature keys:
 
 <a name="security"></a>
 **Table: Security feature keys**
@@ -576,7 +592,7 @@ The following table lists the security feature keys.
 | `http://tizen.org/feature/security.device_certificate` | `bool` | The platform returns `true` for this key, if the device has the Device Certificate its corresponding private key which are used for identifying the device. |
 | `http://tizen.org/feature/security.privacy_privilege` | `bool` | The platform returns `true` for this key, if the device supports the setting of the privacy privilege to confirm its state. If it is `true`, the user can turn on/off the user-settable privacy privileges for each application. |
 
-The following table lists the sensor feature keys.
+The following table lists the sensor feature keys:
 
 <a name="sensor"></a>
 **Table: Sensor feature keys**  
@@ -619,7 +635,7 @@ The following table lists the sensor feature keys.
 | `http://tizen.org/feature/sensor.ultraviolet` | `bool` | The platform returns `true` for this key, if the device supports the ultraviolet sensor. |
 | `http://tizen.org/feature/sensor.wrist_up` | `bool` | The platform returns `true` for this key, if the device supports the wrist up action. |
 
-The following table lists the shell feature keys.
+The following table lists the shell feature keys:
 
 <a name="shell"></a>
 **Table: Shell feature keys**  
@@ -628,7 +644,7 @@ The following table lists the shell feature keys.
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/shell.appwidget` | `bool` | The platform returns `true` for this key, if the device supports the AppWidget. |
 
-The following table lists the sip feature keys.
+The following table lists the sip feature keys:
 
 <a name="sip"></a>
 **Table: Sip feature keys**  
@@ -637,7 +653,7 @@ The following table lists the sip feature keys.
 |-------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/sip.voip` | `bool` | The platform returns `true` for this key, if the device supports the Voice over Internet Protocol (VoIP). |
 
-The following table lists the speech feature keys.
+The following table lists the speech feature keys:
 
 <a name="speech"></a>
 **Table: Speech feature keys**  
@@ -648,7 +664,7 @@ The following table lists the speech feature keys.
 | `http://tizen.org/feature/speech.recognition` | `bool` | The platform returns `true` for this key, if the device supports speech recognition (STT). |
 | `http://tizen.org/feature/speech.synthesis` | `bool` | The platform returns `true` for this key, if the device supports speech synthesis (TTS). |
 
-The following table lists the system setting feature keys.
+The following table lists the system setting feature keys:
 
 <a name="systemsetting"></a>
 **Table: System setting feature keys**  
@@ -661,7 +677,7 @@ The following table lists the system setting feature keys.
 | `http://tizen.org/feature/systemsetting.lock_screen` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get the lock screen wallpaper. |
 | `http://tizen.org/feature/systemsetting.notification_email` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get a ringtone for all email notifications. |
 
-The following table lists the USB feature keys.
+The following table lists the USB feature keys:
 
 <a name="usb"></a>
 **Table: USB feature keys**  
@@ -671,7 +687,7 @@ The following table lists the USB feature keys.
 | `http://tizen.org/feature/usb.accessory` | `bool` | The platform returns `true` for this key, if the device supports the USB client or accessory mode. |
 | `http://tizen.org/feature/usb.host`      | `bool` | The platform returns `true` for this key, if the device supports the USB host mode. |
 
-The following table lists the vision feature keys.
+The following table lists the vision feature keys:
 
 <a name="vision"></a>
 **Table: Vision feature keys**  
@@ -685,7 +701,7 @@ The following table lists the vision feature keys.
 | `http://tizen.org/feature/vision.qrcode_generation` | `bool` | The platform returns `true` for this key, if the device supports QR code generation. |
 | `http://tizen.org/feature/vision.qrcode_recognition` | `bool` | The platform returns `true` for this key, if the device supports QR code recognition. |
 
-The following table lists the Web feature keys.
+The following table lists the Web feature keys:
 
 <a name="web"></a>
 **Table: Web feature keys**  
@@ -698,7 +714,7 @@ The following table lists the Web feature keys.
 <a name="system"></a>
 ## System Keys
 
-The following table lists the build system keys.
+The following table lists the build system keys:
 
 <a name="build"></a>
 **Table: Build system keys**  
@@ -713,7 +729,7 @@ The following table lists the build system keys.
 | `http://tizen.org/system/build.variant`  | `String` | The platform returns the variant release information. The variant release information is made when the platform image is created. |
 | `http://tizen.org/system/build.release` | `String` | The platform returns the build version information. The build version information is made when the platform image is created. |
 
-The following table lists the manufacturer keys.
+The following table lists the manufacturer keys:
 
 <a name="manufacturer"></a>
 **Table: Manufacturer keys**  
@@ -722,7 +738,7 @@ The following table lists the manufacturer keys.
 |----------------------------------------|----------|------------------------------------------|
 | `http://tizen.org/system/manufacturer` | `String` | The platform returns the manufacturer name. |
 
-The following table lists the model name system keys.
+The following table lists the model name system keys:
 
 <a name="modelname"></a>
 **Table: Model name system keys**  
@@ -731,7 +747,7 @@ The following table lists the model name system keys.
 |--------------------------------------|----------|------------------------------------------|
 | `http://tizen.org/system/model_name` | `String` | The platform returns the device model name. |
 
-The following table lists the platform system keys.
+The following table lists the platform system keys:
 
 <a name="platformsys"></a>
 **Table: Platform system keys**  
@@ -742,7 +758,7 @@ The following table lists the platform system keys.
 | `http://tizen.org/system/platform.name`  | `String` | The platform returns the platform name.  |
 | `http://tizen.org/system/platform.processor` | `String` | The platform returns the device processor name. |
 
-The following table lists the sound system keys.
+The following table lists the sound system keys:
 
 <a name="sound"></a>
 **Table: Sound system keys**  
@@ -754,7 +770,7 @@ The following table lists the sound system keys.
 | `http://tizen.org/system/sound.ringtone.volume.resolution.max` | `int` | The platform returns the maximum sound volume level of the ringtone category. |
 | `http://tizen.org/system/sound.system.volume.resolution.max` | `int` | The platform returns the maximum sound volume level of the system category. |
 
-The following table lists the TizenID system keys.
+The following table lists the TizenID system keys:
 
 <a name="tizenid"></a>
 **Table: TizenID system keys**  
