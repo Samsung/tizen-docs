@@ -3,11 +3,7 @@
 
 You can perform various media conversions through codecs. You can encode and decode video and audio data.
 
-The main features of the Media Codec API include:
-
-- Media codecs
-
-  You can prepare the [media codecs](#codecs), fill the media packet with data, and run the media codec.
+You can prepare the [media codecs](#codecs), fill the media packet with data, and run the media codec.
 
 <a name="codecs"></a>
 ## Media Codecs
