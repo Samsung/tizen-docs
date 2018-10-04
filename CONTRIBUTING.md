@@ -117,7 +117,7 @@ On a certain cadence, we push all commits from master branch into the live branc
    ```bash
    $ git push origin <new branch name>
    ```
-7. Open a pull requst on http://github.com/Samsung/tizen-docs.git.
+7. Open a pull request on http://github.com/Samsung/tizen-docs.git.
 
 
 ## DOs and DON'Ts
