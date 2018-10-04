@@ -12,6 +12,8 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
 
 One of the major components of .NET Core is the .NET Standard. The .NET APIs provided by Tizen .NET follow the .NET Standard 2.0. The column titled "2.0" in the [official list](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) of supported CoreFX APIs lists all the available .NET APIs.
 
+A list of limitations is available at [.NET Standard API limitations](netstandard-limitations.md).
+
 ## Xamarin.Forms
 
 [Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/) provides cross-platform APIs, which allow you to create user interfaces that can be shared across platforms. The Tizen.NET Visual Studio extension enables Tizen support for Xamarin.Forms.
