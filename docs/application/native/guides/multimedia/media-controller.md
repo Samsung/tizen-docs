@@ -94,65 +94,65 @@ To update the metadata and playback information on the server side:
 
 1. Create the media controller server handle using the `mc_server_create()` function:
 
-  ```
-  ret = mc_server_create(&g_server_h);
-  ```
+   ```
+   ret = mc_server_create(&g_server_h);
+   ```
 
 2. Set the metadata or playback information to be updated using the corresponding `mc_server_set_XXX()` function, and then update the metadata or playback information using the corresponding `mc_server_update_XXX()` function.
 
-For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()` function, and then update the information using the `mc_server_update_playback_info()` function:
+   For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()` function, and then update the information using the `mc_server_update_playback_info()` function:
 
-  ```
-  ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
+   ```
+   ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
 
-  ret = mc_server_update_playback_info(g_mc_server);
-  ```
+   ret = mc_server_update_playback_info(g_mc_server);
+   ```
 
 3. Destroy the media controller server handle using the `mc_server_destroy()` function, when media controller server handle is no longer needed.
 
-  ```
-  mc_server_destroy(g_server_h);
-  ```
+   ```
+   mc_server_destroy(g_server_h);
+   ```
 
 To retrieve the metadata and playback information on the client side:
 
 1. Create the media controller client handle using the `mc_client_create()` function:
 
-  ```
-  ret = mc_client_create(&g_client_h);
-  ```
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
 
 2. Retrieve the server name using the `mc_client_get_latest_server_info()` function:
 
-  ```
-  char *server_name = NULL;
-  mc_server_state_e server_state;
+   ```
+   char *server_name = NULL;
+   mc_server_state_e server_state;
 
-  ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
-  dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
-  ```
+   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
+   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
+   ```
 
 3. Retrieve the metadata or playback information from the server using the corresponding `mc_client_get_server_XXX()` function. Use the server name retrieved in the previous step to identify the server.
 
-For example, to retrieve the playback information from the server, use the `mc_client_get_server_playback_info()` function:
+   For example, to retrieve the playback information from the server, use the `mc_client_get_server_playback_info()` function:
 
-  ```
-  mc_playback_h playback = NULL;
-  mc_playback_states_e playback_state;
+   ```
+   mc_playback_h playback = NULL;
+   mc_playback_states_e playback_state;
 
-  ret = mc_client_get_server_playback_info(g_client_h, server_name, &playback);
+   ret = mc_client_get_server_playback_info(g_client_h, server_name, &playback);
 
-  ret = mc_client_get_playback_state(playback, &playback_state);
-  dlog_print(DLOG_DEBUG, LOG_TAG, "Playback State: %d\n", playback_state);
-  ```
+   ret = mc_client_get_playback_state(playback, &playback_state);
+   dlog_print(DLOG_DEBUG, LOG_TAG, "Playback State: %d\n", playback_state);
+   ```
 
-  The `mc_client_get_playback_state()` function retrieves the playback state from the playback information returned by the `mc_client_get_server_playback_info()` function.
+   The `mc_client_get_playback_state()` function retrieves the playback state from the playback information returned by the `mc_client_get_server_playback_info()` function.
 
 4. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
-  ```
-  mc_client_destroy(g_client_h);
-  ```
+   ```
+   mc_client_destroy(g_client_h);
+   ```
 
 <a name="get_playlist"></a>
 ## Updating and Retrieving Playlist
@@ -173,21 +173,21 @@ To update the playlist and metadata information on the server side:
    ```
 3. Set the metadata information in the playlist handle to be updated using the corresponding `mc_server_add_item_to_playlist()` function, and then update the playlist using the corresponding `mc_server_update_playlist_done()` function.
 
-  ```
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_TITLE, "title_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_ARTIST, "artist_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_ALBUM, "album_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_AUTHOR, "author_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_GENRE, "genre_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_DURATION, "duration_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_DATE, "date_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_COPYRIGHT, "copyright_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_DESCRIPTION, "desc_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_TRACK_NUM, "tracknum_1");
-  mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_PICTURE, "picture_1");
+   ```
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_TITLE, "title_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_ARTIST, "artist_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_ALBUM, "album_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_AUTHOR, "author_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_GENRE, "genre_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_DURATION, "duration_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_DATE, "date_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_COPYRIGHT, "copyright_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_DESCRIPTION, "desc_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_TRACK_NUM, "tracknum_1");
+   mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_PICTURE, "picture_1");
 
-  ret = mc_server_update_playlist_done(g_server_h, playlist_h);
-  ```
+   ret = mc_server_update_playlist_done(g_server_h, playlist_h);
+   ```
 4. When no longer needed, destroy the playlist handle using the `mc_playlist_destroy()` function:
 
    ```
@@ -225,34 +225,34 @@ To retrieve the playlist and metadata information on the client side:
    ```
 4. Define the callback that retreive the item from the playlist handle.
 
-  ```
-  bool
-  playlist_item_cb(const char *index, mc_metadata_h metadata, void *user_data)
-  {
-    dlog_print(DLOG_DEBUG, LOG_TAG, "Index: %s\n", index);
-  }
-  ```
+   ```
+   bool
+   playlist_item_cb(const char *index, mc_metadata_h metadata, void *user_data)
+   {
+     dlog_print(DLOG_DEBUG, LOG_TAG, "Index: %s\n", index);
+   }
+   ```
 
   If you want to use metadata handle outside, make a copy using `mc_metadata_clone()` function.
 
 5. Register the callback using the `mc_playlist_foreach_item()` function:
 
-  ```
-  ret = mc_playlist_foreach_item(playlist_h, playlist_item_cb, NULL);
-  ```
+   ```
+   ret = mc_playlist_foreach_item(playlist_h, playlist_item_cb, NULL);
+   ```
 
 6. Retreive the metadata information from the metadata handle using the `mc_metadata_get()` function:
 
-  ```
-  char *title = NULL;
-  ret = mc_metadata_get(metadata_h, MC_META_MEDIA_TITLE, &title);
-  ```
+   ```
+   char *title = NULL;
+   ret = mc_metadata_get(metadata_h, MC_META_MEDIA_TITLE, &title);
+   ```
 
 7. When no longer needed, destroy the playlist handle using the `mc_playlist_destroy()` function:
 
-  ```
-  mc_playlist_destroy(playlist_h);
-  ```
+   ```
+   mc_playlist_destroy(playlist_h);
+   ```
 
 8. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
@@ -288,7 +288,7 @@ To send a command to the server from the client side:
 
 3. Send the command to the server using the corresponding `mc_client_send_XXX()` function. Use the server name retrieved in the previous step to identify the server.
 
-For example, to send a playback state change command to the server, use the `mc_client_send_playback_state_command()` function with the new state defined in the third parameter:
+   For example, to send a playback state change command to the server, use the `mc_client_send_playback_state_command()` function with the new state defined in the third parameter:
 
    ```
    mc_playback_h playback = NULL;
@@ -315,7 +315,7 @@ To process the received command on the server side:
 
 2. Define the callback that is invoked when the server receives the command.
 
-For example, to define a callback for playback state change commands:
+   For example, to define a callback for playback state change commands:
 
    ```
    void
@@ -330,7 +330,7 @@ For example, to define a callback for playback state change commands:
    - To register a callback for playback state change commands, use the `mc_server_set_playback_state_command_received_cb()` function.
    - To register a callback for a custom command, use the `mc_server_set_custom_command_received_cb()` function.
 
-For example, to register a callback for playback state change commands:
+   For example, to register a callback for playback state change commands:
 
    ```
    ret = mc_server_set_playback_state_command_received_cb(g_mc_server, command_received_cb, NULL);
@@ -349,109 +349,109 @@ To send a command to the server from the client side:
 
 1. Create the media controller client handle using the `mc_client_create()` function:
 
-  ```
-  ret = mc_client_create(&g_client_h);
-  ```
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
 
 2. Retrieve the server name using the `mc_client_get_latest_server_info()` function:
 
-  ```
-  char *server_name = NULL;
-  mc_server_state_e server_state;
+   ```
+   char *server_name = NULL;
+   mc_server_state_e server_state;
 
-  ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
-  dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
-  ```
+   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
+   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
+   ```
 
 3. Send the command to the server using the corresponding `mc_client_send_XXX_cmd()` function. Use the server name retrieved in the previous step to identify the server.
 
-For example, to send a playback action change command to the server, use the `mc_client_send_playback_action_cmd()` function with the new action defined in the third parameter:
+   For example, to send a playback action change command to the server, use the `mc_client_send_playback_action_cmd()` function with the new action defined in the third parameter:
 
-  ```
-  mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
-  char *request_id = NULL;
+   ```
+   mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
+   char *request_id = NULL;
 
-  ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, &request_id);
-  ```
+   ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, &request_id);
+   ```
 
-  If you want to define your own commands to send to the server, use the `mc_client_send_custom_cmd()` function.
-  The request_id will be passed to the `mc_client_cmd_reply_recieved_cb()` function.
+   If you want to define your own commands to send to the server, use the `mc_client_send_custom_cmd()` function.
+   The request_id will be passed to the `mc_client_cmd_reply_recieved_cb()` function.
 
 4. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
-  ```
-  mc_client_destroy(g_client_h);
-  ```
+   ```
+   mc_client_destroy(g_client_h);
+   ```
 
 To process the received command on the server side:
 
 1. Create the media controller server handle using the `mc_server_create()` function:
 
-  ```
-  ret = mc_server_create(&g_server_h);
-  ```
+   ```
+   ret = mc_server_create(&g_server_h);
+   ```
 
 2. Define the callback that is invoked when the server receives the command.
 
-For example, to define a callback for playback state change commands:
+   For example, to define a callback for playback state change commands:
 
-  ```
-  void
-  playback_action_cmd_received_cb(const char* client_name, const char *request_id, mc_playback_action_e action, void *user_data)
-  {
-      dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request Id: %s, Playback action: %d\n", client_name, request_id, action);
-  }
-  ```
+   ```
+   void
+   playback_action_cmd_received_cb(const char* client_name, const char *request_id, mc_playback_action_e action, void *user_data)
+   {
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request Id: %s, Playback action: %d\n", client_name, request_id, action);
+   }
+   ```
 
 3. Register the callback:
 
-  - To register a callback for playback state change commands, use the `mc_server_set_playback_action_cmd_received_cb()` function.
-  - To register a callback for playback position change commands, use the `mc_server_set_playback_position_cmd_received_cb()` function.
-  - To register a callback for shuffle mode change commands, use the `mc_server_set_shuffle_mode_cmd_received_cb()` function.
-  - To register a callback for repeat mode change commands, use the `mc_server_set_repeat_mode_cmd_received_cb()` function.
-  - To register a callback for played item, playback state and playback position change commands in playlist, use the `mc_server_set_playlist_cmd_received_cb()` function.
-  - To register a callback for a custom command, use the `mc_server_set_custom_cmd_received_cb()` function.
+   - To register a callback for playback state change commands, use the `mc_server_set_playback_action_cmd_received_cb()` function.
+   - To register a callback for playback position change commands, use the `mc_server_set_playback_position_cmd_received_cb()` function.
+   - To register a callback for shuffle mode change commands, use the `mc_server_set_shuffle_mode_cmd_received_cb()` function.
+   - To register a callback for repeat mode change commands, use the `mc_server_set_repeat_mode_cmd_received_cb()` function.
+   - To register a callback for played item, playback state and playback position change commands in playlist, use the `mc_server_set_playlist_cmd_received_cb()` function.
+   - To register a callback for a custom command, use the `mc_server_set_custom_cmd_received_cb()` function.
 
-For example, to register a callback for playback state change commands:
+   For example, to register a callback for playback state change commands:
 
-  ```
-  ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
-  ```
+   ```
+   ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
+   ```
 
 4. Destroy the media controller server handle using the `mc_server_destroy()` function, when media controller server handle is no longer needed.
 
-  ```
-  mc_server_destroy(g_server_h);
-  ```
+   ```
+   mc_server_destroy(g_server_h);
+   ```
 
 <a name="send_cmd_reply"></a>
 To send the reply of completed command on the server side:
 
 1. Send the reply of completed command using the `mc_server_send_cmd_reply()` function with the request id of the command in the third parameter and the result of the command in fourth parameter:
 
-  ```
-  int result_code = 0;
+   ```
+   int result_code = 0;
 
-  ret = mc_server_send_cmd_reply(g_server_h, client_name, request_id, result_code, NULL);
-  ```
+   ret = mc_server_send_cmd_reply(g_server_h, client_name, request_id, result_code, NULL);
+   ```
 
 To receive the reply of completed command on the client side:
 
 1. Define the callback that is invoked when the client receives the reply.
 
-  ```
-  void
-  cmd_reply_received_cb(const char *server_name, const char *request_id, int result_code, bundle *data, void *user_data)
-  {
-      dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Request Id: %s, Result Code: %d\n", server_name, request_id, result_code);
-  }
-  ```
+   ```
+   void
+   cmd_reply_received_cb(const char *server_name, const char *request_id, int result_code, bundle *data, void *user_data)
+   {
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Request Id: %s, Result Code: %d\n", server_name, request_id, result_code);
+   }
+   ```
 
 2. Register the callback:
 
-  ```
-  ret = mc_client_set_cmd_reply_received_cb(g_client_h, cmd_reply_received_cb, NULL);
-  ```
+   ```
+   ret = mc_client_set_cmd_reply_received_cb(g_client_h, cmd_reply_received_cb, NULL);
+   ```
 
 **Note**
 
@@ -512,7 +512,7 @@ To process the received event on the client side:
 
 2. Define the callback that is invoked when the client receives the event.
 
-For example, to define a callback for a custom event:
+  For example, to define a callback for a custom event:
 
    ```
    void
@@ -526,11 +526,11 @@ For example, to define a callback for a custom event:
 
    - To register a callback for a custom events, use the `mc_client_set_custom_event_received_cb()` function.
 
-For example, to register a callback for a custom event:
+      For example, to register a callback for a custom event:
 
-   ```
-   ret = mc_client_set_custom_event_received_cb(g_client_h, event_received_cb, NULL);
-   ```
+      ```
+      ret = mc_client_set_custom_event_received_cb(g_client_h, event_received_cb, NULL);
+      ```
 
 4. Destroy the media controller client handle using the `mc_client_destroy()` function, when media controller client handle is no longer needed.
 
@@ -542,31 +542,31 @@ For example, to register a callback for a custom event:
 <a name="send_event_reply"></a>
 To send the reply of completed custom event on the client side:
 
-1. Send the reply of completed custom event using the `mc_server_send_cmd_reply()` function with the request id of the custom event in the third parameter and the result of the custom event in fourth parameter:
+1. Send the reply of completed custom event using the `mc_client_send_event_reply()` function with the request id of the custom event in the third parameter and the result of the custom event in fourth parameter:
 
- ```
- int result_code = 0;
+   ```
+   int result_code = 0;
 
- ret = mc_client_send_event_reply(g_server_h, server_name, request_id, result_code, NULL);
- ```
+   ret = mc_client_send_event_reply(g_server_h, server_name, request_id, result_code, NULL);
+   ```
 
 To receive the reply of processing command on the server side:
 
 1. Define the callback that is invoked when the server receives the reply.
 
- ```
- void
- event_reply_received_cb(const char *client_name, const char *request_id, int result_code, bundle *data, void *user_data)
- {
-     dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request Id: %s, Result Code: %d\n", client_name, request_id, result_code);
- }
- ```
+   ```
+   void
+   event_reply_received_cb(const char *client_name, const char *request_id, int result_code, bundle *data, void *user_data)
+   {
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request Id: %s, Result Code: %d\n", client_name, request_id, result_code);
+   }
+   ```
 
 2. Register the callback:
 
- ```
- ret = mc_server_set_event_reply_received_cb(g_server_h, event_reply_received_cb, NULL);
- ```
+   ```
+   ret = mc_server_set_event_reply_received_cb(g_server_h, event_reply_received_cb, NULL);
+   ```
 
 **Note**
 
