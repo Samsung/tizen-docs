@@ -35,8 +35,6 @@ Your application must define the following PCM data settings:
 
 The following figures illustrate the general audio output states, and how the state changes when the audio output is interrupted by the system.
 
-´
-
 **Figure: Audio output states**
 
 ![Audio output states](./media/audio_output.png)
