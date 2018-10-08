@@ -134,7 +134,6 @@ when using security-sensitive API modules in mobile native applications.
 | `http://tizen.org/privilege/packagemanager.admin` | platform | -            | 2.3   | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public   | -            | 2.4   | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public   | -            | 2.3   | The application can retrieve detailed application package information. |
-| `http://tizen.org/privilege/peripheralio` | platform   | -            | 4.0   | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
 | `http://tizen.org/privilege/power`       | public   | -            | 2.3   | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push`        | public   | -            | 2.3   | The application can receive notifications from the Internet. This can result in additional charges depending on the user's payment plan. |
 | `http://tizen.org/privilege/reboot`      | platform | -            | 2.3.1 | The application can restart the device.  |
@@ -156,8 +155,6 @@ when using security-sensitive API modules in mobile native applications.
 | `http://tizen.org/privilege/widget.viewer` | public   | -            | 2.3.1 | The application can show widgets, and information from their associated applications, on the home screen. |
 | `http://tizen.org/privilege/wifidirect`  | public   | -            | 2.3   | The application can enable and disable Wi-Fi Direct&reg;, manage Wi-Fi Direct connections, and change Wi-Fi Direct settings. |
 | `http://tizen.org/privilege/window.priority.set` | public   | -            | 2.3   | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This can prevent the user from interacting with other applications or screens until the window for the application is closed. |
-| `http://tizen.org/privilege/zigbee` | public   | -            | 4.0   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
-| `http://tizen.org/privilege/zigbee.admin` | platform   | -            | 4.0   | The application can control a connected ZigBee coordinator, e.g. turning it on or off. |
 
 <a name="wearable"></a>
 ## Wearable Native API Privileges
@@ -245,7 +242,6 @@ applications.
 | `http://tizen.org/privilege/packagemanager.admin` | platform | -            | 2.3.1 | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public   | -            | 3.0   | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public   | -            | 2.3.1 | The application can retrieve detailed application package information. |
-| `http://tizen.org/privilege/peripheralio` | platform   | -            | 4.0 | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
 | `http://tizen.org/privilege/power`       | public   | -            | 2.3.1 | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push`        | public   | -            | 2.3.1 | The application can receive notifications from the Internet. This can result in additional charges depending on the user's payment plan. |
 | `http://tizen.org/privilege/reboot`      | platform | -            | 2.3.1 | The application can restart the device.  |
@@ -261,9 +257,25 @@ applications.
 | `http://tizen.org/privilege/volume.set`  | public   | -            | 2.3.1   | The application can adjust the volume for different features, such as notification alerts, ringtones, and media. |
 | `http://tizen.org/privilege/widget.viewer` | public   | -            | 2.3.1 | The application can show widgets, and information from their associated applications, on the home screen. |
 | `http://tizen.org/privilege/window.priority.set` | public   | -            | 2.3.1   | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This can prevent the user from interacting with other applications or screens until the window for the application is closed. |
-| `http://tizen.org/privilege/zigbee`      | public   | -            | 4.0   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
-| `http://tizen.org/privilege/zigbee.admin`      | platform   | -            | 4.0   | The application can control a connected ZigBee coordinator, e.g. turning it on or off. |
 
+<a name="IoT"></a>
+## IoT Native API Privileges
+
+The following table lists the API privileges, which you must declare
+when using security-sensitive API modules in IoT native
+applications:
+
+**Table: IoT native API privileges**
+
+| Privilege                                | Level    | Privacy      | Since | Description                              |
+|----------------------------------------|--------|------------|-----|----------------------------------------|
+| `http://tizen.org/privilege/peripheralio` | platform   | -            | 4.0 | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
+| `http://tizen.org/privilege/updatecontrol.admin` | platform   | -      | 5.0   |  The application can control the firmware update procedure.       |
+| `http://tizen.org/privilege/zigbee` | public   | -            | 4.0   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
+| `http://tizen.org/privilege/zigbee.admin` | platform   | -            | 4.0   | The application can control a connected ZigBee coordinator. For example, turning it on or off. |
+
+> **Note**
+> For the other privileges, see the [Native API Privileges](#native-api-privileges).
 
 <a name="nonAPI"></a>
 ## Non-API Bound Privileges
