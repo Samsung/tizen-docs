@@ -19,7 +19,8 @@
 ## [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
 ## [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 ## [Layer](/application/dotnet/guides/nui/layer.md)
-## [UI Components](/application/dotnet/guides/nui/ui-components.md)
+## UI Components
+### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ### [View](/application/dotnet/guides/nui/view.md)
@@ -34,11 +35,18 @@
 ### [TextField](/application/dotnet/guides/nui/textfield.md)
 ### [TextEditor](/application/dotnet/guides/nui/texteditor.md)
 ### [VideoView](/application/dotnet/guides/nui/videoview.md)
-## [Animation](/application/dotnet/guides/nui/animation.md)
+## Animation
+### [Overview](/application/dotnet/guides/nui/animation.md)
 ### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 ## [Resources](/application/dotnet/guides/nui/resources.md)
 
+# Wearable Circular UI
+## [Overview](/application/dotnet/guides/wcircularui/overview.md)
+## [Quickstart](/application/dotnet/guides/wcircularui/quickstart.md)
+## [Tizen Wearable XAML App Template](/application/dotnet/guides/wcircularui/quickstart_tizenxamlapptemplate.md)
+
 # Internationalization
+## [Localization](/application/dotnet/guides/internationalization/localization.md)
 ## [Phone Number Management](/application/dotnet/guides/internationalization/phonenumber.md)
 
 # Notifications and Content Sharing
@@ -132,3 +140,7 @@
 ## [Privilege Information](/application/dotnet/guides/security/privilege.md)
 ## [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 ## [TEE Communication](/application/dotnet/guides/security/tee-client.md)
+
+# Natural Language Processing
+## [Overview](/application/dotnet/guides/nlp/overview.md)
+## [nlp](/application/dotnet/guides/nlp/nlp.md)
