@@ -16,11 +16,6 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
   The Natural User Interface (NUI) features provide various aspects of creating a visual outlook for the user application to ensure the best user experience. NUI is a rich GUI library for creating a 2-dimensional or a 3-dimensional applications. These applications run on a range of Tizen devices, such as TVs and wearables. NUI is built on a multi-threaded architecture by enabling realistic smooth animations.
 
-- [Wearable Circular UI](wcircularui/overview.md)
-
-  The Wearable Circular UI feature introduces a set of helpful extensions of the <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/" target="_blank">Xamarin.Forms</a> framework.
-  Its aim is to develop an open source software and to motivate software developers to create Tizen Wearable Xamarin.Forms application more easily and efficiently.
-
 - [Internationalization](internationalization/phonenumber.md)
 
   The localization feature ensures that your application is functional in different locations and time zones. Additionally, it also gives the formatted phone numbers and international standardized phone numbers based on the current location of your device.
@@ -74,6 +69,5 @@ Select the feature you are interested in and see what Tizen offers for your appl
   The natural language process features cover the methods you can use to handle sentense in your applications. You can get result from nlp service.
 
 ## Related Information
-
 - Dependencies
   - Tizen 4.0 and Higher
