@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Messaging">
-<div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only e-mail" src="mobile_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only e-mail" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>Messaging API</h1></div>
 <div class="brief">
  The Messaging API provides interfaces and methods for managing SMS, MMS, and email messages.
@@ -34,22 +34,26 @@ Fetching conversations and subscribing to conversation updates          </li>
 For more information on the Messaging features, see <a href="https://developer.tizen.org/development/guides/web-application/messaging/messages">Messaging Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#MessageServiceTag">MessageServiceTag</a>
+<li>
+                    1.1. <a href="#MessageServiceTag">MessageServiceTag</a>
 </li>
-<li>1.2. <a href="#MessageId">MessageId</a>
+<li>
+                    1.2. <a href="#MessageId">MessageId</a>
 </li>
-<li>1.3. <a href="#MessageAttachmentId">MessageAttachmentId</a>
+<li>
+                    1.3. <a href="#MessageAttachmentId">MessageAttachmentId</a>
 </li>
-<li>1.4. <a href="#MessageConvId">MessageConvId</a>
+<li>
+                    1.4. <a href="#MessageConvId">MessageConvId</a>
 </li>
-<li>1.5. <a href="#MessageFolderId">MessageFolderId</a>
+<li>
+                    1.5. <a href="#MessageFolderId">MessageFolderId</a>
 </li>
 </ul>
 </li>
@@ -131,76 +135,86 @@ For more information on the Messaging features, see <a href="https://developer.t
 </tr>
 <tr>
 <td><a href="#Messaging">Messaging</a></td>
-<td>void <a href="#Messaging::getMessageServices">getMessageServices</a> (<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+<td><div>void <a href="#Messaging::getMessageServices">getMessageServices</a> (<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
 </tr>
 <tr>
 <td><a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a></td>
-<td>void <a href="#MessageServiceArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageService">MessageService</a>[] services)</td>
+<td><div>void <a href="#MessageServiceArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageService">MessageService</a>[] services)</div></td>
 </tr>
 <tr>
 <td><a href="#MessageService">MessageService</a></td>
-<td>void <a href="#MessageService::sendMessage">sendMessage</a> (<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? simIndex)<br>
-    void <a href="#MessageService::loadMessageBody">loadMessageBody</a> (<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#MessageService::loadMessageAttachment">loadMessageAttachment</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    long <a href="#MessageService::sync">sync</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)<br>
-    long <a href="#MessageService::syncFolder">syncFolder</a> (<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)<br>
-    void <a href="#MessageService::stopSync">stopSync</a> (long opId)</td>
+<td>
+<div>void <a href="#MessageService::sendMessage">sendMessage</a> (<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? simIndex)</div>
+<div>void <a href="#MessageService::loadMessageBody">loadMessageBody</a> (<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MessageService::loadMessageAttachment">loadMessageAttachment</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>long <a href="#MessageService::sync">sync</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)</div>
+<div>long <a href="#MessageService::syncFolder">syncFolder</a> (<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)</div>
+<div>void <a href="#MessageService::stopSync">stopSync</a> (long opId)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#MessageRecipientsCallback">MessageRecipientsCallback</a></td>
-<td>void <a href="#MessageRecipientsCallback::onsuccess">onsuccess</a> (DOMString[] recipients)</td>
+<td><div>void <a href="#MessageRecipientsCallback::onsuccess">onsuccess</a> (DOMString[] recipients)</div></td>
 </tr>
 <tr>
 <td><a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a></td>
-<td>void <a href="#MessageBodySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a> message)</td>
+<td><div>void <a href="#MessageBodySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a> message)</div></td>
 </tr>
 <tr>
 <td><a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a></td>
-<td>void <a href="#MessageAttachmentSuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment)</td>
+<td><div>void <a href="#MessageAttachmentSuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageAttachment">MessageAttachment</a> attachment)</div></td>
 </tr>
 <tr>
 <td><a href="#MessageStorage">MessageStorage</a></td>
-<td>void <a href="#MessageStorage::addDraftMessage">addDraftMessage</a> (<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#MessageStorage::findMessages">findMessages</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)<br>
-    void <a href="#MessageStorage::removeMessages">removeMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#MessageStorage::updateMessages">updateMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#MessageStorage::findConversations">findConversations</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)<br>
-    void <a href="#MessageStorage::removeConversations">removeConversations</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#MessageStorage::findFolders">findFolders</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    long <a href="#MessageStorage::addMessagesChangeListener">addMessagesChangeListener</a> (<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)<br>
-    long <a href="#MessageStorage::addConversationsChangeListener">addConversationsChangeListener</a> (<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)<br>
-    long <a href="#MessageStorage::addFoldersChangeListener">addFoldersChangeListener</a> (<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)<br>
-    void <a href="#MessageStorage::removeChangeListener">removeChangeListener</a> (long watchId)</td>
+<td>
+<div>void <a href="#MessageStorage::addDraftMessage">addDraftMessage</a> (<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MessageStorage::findMessages">findMessages</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)</div>
+<div>void <a href="#MessageStorage::removeMessages">removeMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MessageStorage::updateMessages">updateMessages</a> (<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MessageStorage::findConversations">findConversations</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset)</div>
+<div>void <a href="#MessageStorage::removeConversations">removeConversations</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MessageStorage::findFolders">findFolders</a> (<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>long <a href="#MessageStorage::addMessagesChangeListener">addMessagesChangeListener</a> (<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)</div>
+<div>long <a href="#MessageStorage::addConversationsChangeListener">addConversationsChangeListener</a> (<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)</div>
+<div>long <a href="#MessageStorage::addFoldersChangeListener">addFoldersChangeListener</a> (<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)</div>
+<div>void <a href="#MessageStorage::removeChangeListener">removeChangeListener</a> (long watchId)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a></td>
-<td>void <a href="#MessageArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a>[] messages)</td>
+<td><div>void <a href="#MessageArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Message">Message</a>[] messages)</div></td>
 </tr>
 <tr>
 <td><a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a></td>
-<td>void <a href="#MessageConversationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations)</td>
+<td><div>void <a href="#MessageConversationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageConversation">MessageConversation</a>[] conversations)</div></td>
 </tr>
 <tr>
 <td><a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a></td>
-<td>void <a href="#MessageFolderArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageFolder">MessageFolder</a>[] folders)</td>
+<td><div>void <a href="#MessageFolderArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MessageFolder">MessageFolder</a>[] folders)</div></td>
 </tr>
 <tr>
 <td><a href="#MessagesChangeCallback">MessagesChangeCallback</a></td>
-<td>void <a href="#MessagesChangeCallback::messagesadded">messagesadded</a> (<a href="#Message">Message</a>[] addedMessages)<br>
-    void <a href="#MessagesChangeCallback::messagesupdated">messagesupdated</a> (<a href="#Message">Message</a>[] updatedMessages)<br>
-    void <a href="#MessagesChangeCallback::messagesremoved">messagesremoved</a> (<a href="#Message">Message</a>[] removedMessages)</td>
+<td>
+<div>void <a href="#MessagesChangeCallback::messagesadded">messagesadded</a> (<a href="#Message">Message</a>[] addedMessages)</div>
+<div>void <a href="#MessagesChangeCallback::messagesupdated">messagesupdated</a> (<a href="#Message">Message</a>[] updatedMessages)</div>
+<div>void <a href="#MessagesChangeCallback::messagesremoved">messagesremoved</a> (<a href="#Message">Message</a>[] removedMessages)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a></td>
-<td>void <a href="#MessageConversationsChangeCallback::conversationsadded">conversationsadded</a> (<a href="#MessageConversation">MessageConversation</a>[] addedConversations)<br>
-    void <a href="#MessageConversationsChangeCallback::conversationsupdated">conversationsupdated</a> (<a href="#MessageConversation">MessageConversation</a>[] updatedConversations)<br>
-    void <a href="#MessageConversationsChangeCallback::conversationsremoved">conversationsremoved</a> (<a href="#MessageConversation">MessageConversation</a>[] removedConversations)</td>
+<td>
+<div>void <a href="#MessageConversationsChangeCallback::conversationsadded">conversationsadded</a> (<a href="#MessageConversation">MessageConversation</a>[] addedConversations)</div>
+<div>void <a href="#MessageConversationsChangeCallback::conversationsupdated">conversationsupdated</a> (<a href="#MessageConversation">MessageConversation</a>[] updatedConversations)</div>
+<div>void <a href="#MessageConversationsChangeCallback::conversationsremoved">conversationsremoved</a> (<a href="#MessageConversation">MessageConversation</a>[] removedConversations)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a></td>
-<td>void <a href="#MessageFoldersChangeCallback::foldersadded">foldersadded</a> (<a href="#MessageFolder">MessageFolder</a>[] addedFolders)<br>
-    void <a href="#MessageFoldersChangeCallback::foldersupdated">foldersupdated</a> (<a href="#MessageFolder">MessageFolder</a>[] updatedFolders)<br>
-    void <a href="#MessageFoldersChangeCallback::foldersremoved">foldersremoved</a> (<a href="#MessageFolder">MessageFolder</a>[] removedFolders)</td>
+<td>
+<div>void <a href="#MessageFoldersChangeCallback::foldersadded">foldersadded</a> (<a href="#MessageFolder">MessageFolder</a>[] addedFolders)</div>
+<div>void <a href="#MessageFoldersChangeCallback::foldersupdated">foldersupdated</a> (<a href="#MessageFolder">MessageFolder</a>[] updatedFolders)</div>
+<div>void <a href="#MessageFoldersChangeCallback::foldersremoved">foldersremoved</a> (<a href="#MessageFolder">MessageFolder</a>[] removedFolders)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#MessageConversation">MessageConversation</a></td>
@@ -220,9 +234,8 @@ For more information on the Messaging features, see <a href="https://developer.t
  Specifies the Messaging service tags.
 The following values are supported in this release:
           </div>
-<pre class="webidl prettyprint">  enum MessageServiceTag {"messaging.sms", "messaging.mms", "messaging.email" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum MessageServiceTag { "messaging.sms", "messaging.mms", "messaging.email" };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -242,8 +255,7 @@ messaging.email, for email services            </li>
  The Message identifier.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString MessageId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -253,8 +265,7 @@ messaging.email, for email services            </li>
  The MessageAttachment identifier within a message.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString MessageAttachmentId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -264,8 +275,7 @@ messaging.email, for email services            </li>
  The MessageConversation identifier.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString MessageConvId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -275,8 +285,7 @@ messaging.email, for email services            </li>
  The identifier of an email folder.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString MessageFolderId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -292,8 +301,7 @@ messaging.email, for email services            </li>
     readonly attribute <a href="#Messaging">Messaging</a> messaging;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -309,43 +317,25 @@ There is a <em>tizen.messaging </em>object that allows access to the Messaging A
           </div>
 <pre class="webidl prettyprint">  [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
   interface Message {
-
     readonly attribute <a href="#MessageId">MessageId</a>? id;
-
     readonly attribute <a href="#MessageConvId">MessageConvId</a>? conversationId;
-
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a>? folderId;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-
     readonly attribute Date? timestamp;
-
     readonly attribute DOMString? from;
-
-    attribute DOMString[] to setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString[] cc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString[] bcc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#MessageBody">MessageBody</a> body setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute boolean isRead setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute DOMString[] to;
+    attribute DOMString[] cc;
+    attribute DOMString[] bcc;
+    attribute <a href="#MessageBody">MessageBody</a> body;
+    attribute boolean isRead;
     readonly attribute boolean hasAttachment;
-
-    attribute boolean isHighPriority setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString subject setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute boolean isHighPriority;
+    attribute DOMString subject;
+    readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo;
     readonly attribute DOMString messageStatus;
-
-    attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -361,26 +351,25 @@ of a message without the loaded body. In such situations, the method <em>Message
           </p>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 var messageSentCallback = function(recipients)
 {
-   console.log("Message sent successfully to " + recipients.length + " recipients.");
-}
+  console.log("Message sent successfully to " + recipients.length + " recipients.");
+};
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(err)
 {
-   console.log(err.name + " error: " + err.message);
+  console.log(err.name + " error: " + err.message);
 }
 
 function serviceListCB(services)
 {
-   if (services.length &gt; 0)
-   {
-      var msg = new tizen.Message("messaging.sms", {plainBody: "Tizen first SMS message."});
-      services[0].sendMessage(msg, messageSentCallback, errorCallback);
-   }
+  if (services.length &gt; 0)
+  {
+    var msg = new tizen.Message("messaging.sms", {plainBody: "Tizen first SMS message."});
+    services[0].sendMessage(msg, messageSentCallback, errorCallback);
+  }
 }
 
 tizen.messaging.getMessageServices("messaging.sms", serviceListCB, errorCallback);
@@ -407,8 +396,7 @@ For new messages created using the Message constructor, the ID is assigned on th
 By default, this attribute is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -422,8 +410,7 @@ By default, this attribute is set to <var>null</var>.
 By default, this attribute is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -450,8 +437,7 @@ DRAFTS = 3,              </li>
 SENTBOX = 4              </li>
             </ul>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -460,8 +446,7 @@ SENTBOX = 4              </li>
 </span><span class="type">MessageServiceTag </span><span class="name">type</span></span><div class="brief">
  The type of a given message.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -478,8 +463,7 @@ For a draft message, the timestamp indicates the time at which a message is adde
 By default, this attribute is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -494,8 +478,7 @@ This property is set up by the device or the web runtime environment.
 By default, this attribute is set to null.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -504,8 +487,7 @@ By default, this attribute is set to null.
                       </span><span class="name">to</span></span><div class="brief">
  The destination of a message.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -519,8 +501,7 @@ By default, this attribute is set to null.
 This property is used only for email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -534,8 +515,7 @@ This property is used only for email messages.
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -543,8 +523,7 @@ This property is used only with email messages.
 <span class="attrName"><span class="type">MessageBody </span><span class="name">body</span></span><div class="brief">
  The body of a message.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -557,8 +536,7 @@ This property is used only with email messages.
 This property is set to <var>true</var> if the message has been read. Else it is set to <var>false</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -575,8 +553,7 @@ It is set to <var>true</var> if a message has one or more attachments.
 This property is used only with email and MMS messages.(It is valid when body is loaded)
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -592,8 +569,7 @@ It is set to <var>true</var> if the message has a high priority. Else it is set 
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -606,8 +582,7 @@ This property is used only with email messages.
 This property is used only with email and MMS messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -621,8 +596,7 @@ This property is used only with email and MMS messages.
 If the message was replied to or forwarded, this property contains the ID of the original message, otherwise it is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -650,8 +624,7 @@ If the status of the current message does not correspond to any item from
 the list, an empty value is returned.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -665,21 +638,21 @@ the list, an empty value is returned.
 This array is empty if the message does not have attachments or the message body is not loaded and the attachment info is inaccessible (in this case, the <em>hasAttachment</em> attribute is checked after loading message body).
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Define the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 function serviceListCB(services)
 {
-   if (services.length &gt; 0)
-   {
-      var msg = new tizen.Message("messaging.email");
-      msg.attachments = [new tizen.MessageAttachment("images/myimage.png", "image/png"),
-                         new tizen.MessageAttachment("documents/mydoc.pdf", "text/pdf")];
-   }
+  if (services.length &gt; 0)
+  {
+    var msg = new tizen.Message("messaging.email");
+    msg.attachments = [
+      new tizen.MessageAttachment("images/myimage.png", "image/png"),
+      new tizen.MessageAttachment("documents/mydoc.pdf", "text/pdf")
+    ];
+  }
 }
 
 tizen.messaging.getMessageServices("messaging.email", serviceListCB);
@@ -696,23 +669,15 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB);
           </div>
 <pre class="webidl prettyprint">  dictionary MessageInit
   {
-
     DOMString subject;
-
     DOMString[] to;
-
     DOMString[] cc;
-
     DOMString[] bcc;
-
     DOMString plainBody;
-
     DOMString htmlBody;
-
     boolean isHighPriority;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -737,8 +702,7 @@ All the attributes are optional and are <var>undefined </var>by default, unless 
 This property is used only with email and MMS messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -747,8 +711,7 @@ This property is used only with email and MMS messages.
 <div class="brief">
  The destination addresses (or phone numbers) of a message.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -762,8 +725,7 @@ This property is used only with email and MMS messages.
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -777,8 +739,7 @@ This property is used only with email messages.
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -787,8 +748,7 @@ This property is used only with email messages.
 <div class="brief">
  The plain text representation of a message body.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -802,8 +762,7 @@ This property is used only with email messages.
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -820,8 +779,7 @@ This property is set to <var>true</var> if the message has a high priority. Else
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -834,19 +792,13 @@ This property is used only with email messages.
  The MessageBody interface describes a message body.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageBody {
-
     readonly attribute <a href="#MessageId">MessageId</a> messageId;
-
     readonly attribute boolean loaded;
-
-    attribute DOMString plainBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString htmlBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute DOMString plainBody;
+    attribute DOMString htmlBody;
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -867,8 +819,7 @@ Message body is comprised of a plain text, an HTML, and inline attachments.
 It holds the ID of the message containing this body.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -883,8 +834,7 @@ It is set to <var>true </var>if the message body is loaded, else it is set to<va
 The default value is <var>false</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -892,8 +842,7 @@ The default value is <var>false</var>.
 <span class="attrName"><span class="type">DOMString </span><span class="name">plainBody</span></span><div class="brief">
  The plain text representation of a message body.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -907,8 +856,7 @@ This attribute holds an empty string if the message does not have any HTML body 
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -927,21 +875,19 @@ To indicate where to show an inline attachment within the HTML body, a link of t
 This property is used only with email messages.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 function serviceListCB(services)
 {
-   if (services.length &gt; 0)
-   {
-      var msg = new tizen.Message("messaging.email");
-      msg.body.htmlBody = "&lt;html&gt;&lt;body&gt;&lt;img src='myimage.png'&gt;&lt;/body&gt;&lt;/html&gt;";
-      msg.body.inlineAttachments = [new tizen.MessageAttachment("images/myimage.png")];
-   }
+  if (services.length &gt; 0)
+  {
+    var msg = new tizen.Message("messaging.email");
+    msg.body.htmlBody = "&lt;html&gt;&lt;body&gt;&lt;img src='myimage.png'&gt;&lt;/body&gt;&lt;/html&gt;";
+    msg.body.inlineAttachments = [new tizen.MessageAttachment("images/myimage.png")];
+  }
 }
 
 tizen.messaging.getMessageServices("messaging.email", serviceListCB);
@@ -958,17 +904,12 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB);
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString filePath, optional DOMString? mimeType)]
   interface MessageAttachment {
-
     readonly attribute <a href="#MessageAttachmentId">MessageAttachmentId</a>? id;
-
     readonly attribute <a href="#MessageId">MessageId</a>? messageId;
-
     readonly attribute DOMString? mimeType;
-
     readonly attribute DOMString? filePath;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="constructors">
@@ -991,8 +932,7 @@ It holds the identifier of the attachment within its parent message.
 By default, this attribute is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1006,8 +946,7 @@ By default, this attribute is set to <var>null</var>.
 By default, this attribute is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1024,8 +963,7 @@ It describes the MIME type of an attachment, for example; "text/html".
 By default, this attribute is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1039,8 +977,7 @@ By default, this attribute is set to <var>null</var>.
 It holds the location path to a loaded attachment file, appropriate for the Filesystem API. It is set to <var>null</var> if the attachment is not loaded from the remote server.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1053,13 +990,10 @@ It holds the location path to a loaded attachment file, appropriate for the File
  The Messaging interface retrieves messaging services.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Messaging {
-
-    void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType,
-                            <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
+    void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -1069,24 +1003,22 @@ for concrete account.
           </p>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 function serviceListCB(services)
 {
-   if (services.length &gt; 0)
-   {
-      var msg = new tizen.Message("messaging.sms");
-   }
+  if (services.length &gt; 0)
+  {
+    var msg = new tizen.Message("messaging.sms");
+  }
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot get messaging service " + error.message);
+  console.log("Cannot get messaging service: " + error.message);
 }
 
-tizen.messaging.getMessageServices("messaging.sms", serviceListCB,
-                                   errorCallback);
+tizen.messaging.getMessageServices("messaging.sms", serviceListCB, errorCallback);
 </pre>
 </div>
 <div class="methods">
@@ -1099,10 +1031,9 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB,
 <div class="brief">
  Gets the messaging service of a given type for a given account, or all existing services supporting the given type, if <em>serviceId </em>is not given.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, 
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1122,11 +1053,11 @@ UnknownError - In any other error case.              </li>
 <ul>
           <li class="param">
 <span class="name">messageServiceType</span>:
- Type of the services to be retrieved
+ Type of the services to be retrieved.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
-    Callback function that is called when the services are successfully retrieved
+    Callback function that is called when the services are successfully retrieved.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1148,21 +1079,19 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the error callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot get messaging service " + error.message);
+  console.log("Cannot get messaging service: " + error.message);
 }
 
-/* Defines the success callback */
+/* Defines the success callback. */
 function serviceListCB(services)
 {
-   console.log("Found " + services.length + "email services");
+  console.log("Found " + services.length + "email services");
 }
 
-tizen.messaging.getMessageServices("messaging.email", serviceListCB,
-                                   errorCallback);
+tizen.messaging.getMessageServices("messaging.email", serviceListCB, errorCallback);
 </pre>
 </div>
 </dd>
@@ -1175,12 +1104,9 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB,
  The MessageServiceArraySuccessCallback interface defines callback(s) for retrieving message services.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageServiceArraySuccessCallback {
-
     void onsuccess(<a href="#MessageService">MessageService</a>[] services);
-
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -1193,10 +1119,8 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB,
 <div class="brief">
  Called when finding message services is successful.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageService">MessageService</a>[] services);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageService">MessageService</a>[] services);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -1204,7 +1128,7 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB,
 <ul>
           <li class="param">
 <span class="name">services</span>:
- Array of available <em>MessageService</em> objects on the device
+ Array of available <em>MessageService</em> objects on the device.
                 </li>
         </ul>
 </div>
@@ -1218,41 +1142,23 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB,
  The MessageService interface allows a web application to manipulate and send messages and supports the message creating, sending, and fetching capabilities.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageService {
-
     readonly attribute DOMString id;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-
     readonly attribute DOMString name;
-
-    void sendMessage(<a href="#Message">Message</a> message,
-                     optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                      optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void loadMessageBody(<a href="#Message">Message</a> message,
-                         <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment,
-                               <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
+    void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-              optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder,
-                    optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -1268,36 +1174,35 @@ The interface allows fetching of the message body for a given message using load
           </p>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 function messageSent(recipients)
 {
-   console.log("The SMS has been sent");
+  console.log("The SMS has been sent");
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function messageFailed(error)
 {
-   console.log("The SMS could not be sent " + error.message);
+  console.log("The SMS could not be sent: " + error.message);
 }
 
-/* Defines the service error callback */
+/* Defines the service error callback. */
 function serviceErrorCB(error)
 {
-   console.log("Cannot get messaging service " + error.message);
+  console.log("Cannot get messaging service: " + error.message);
 }
 
-/* Defines the success callback */
+/* Defines the success callback. */
 function serviceListCB(services)
 {
-   if (services.length &gt; 0)
-   {
-      /* SMS sending example */
-      var msg = new tizen.Message("messaging.sms", {plainBody:"I will arrive in 10 minutes.",
-                                  to:["+34666666666"]});
-      /* Sends request */
-      services[0].sendMessage(msg, messageSent, messageFailed);
-   }
+  if (services.length &gt; 0)
+  {
+    /* SMS sending example. */
+    var msg = new tizen.Message(
+        "messaging.sms", {plainBody: "I will arrive in 10 minutes.", to: ["+34666666666"]});
+    /* Sends request. */
+    services[0].sendMessage(msg, messageSent, messageFailed);
+  }
 }
 
 tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorCB);
@@ -1311,8 +1216,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorC
 </span><span class="type">DOMString </span><span class="name">id</span></span><div class="brief">
  The unique identifier of this Messaging service.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0.
             </p>
 </li>
@@ -1321,8 +1225,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorC
 </span><span class="type">MessageServiceTag </span><span class="name">type</span></span><div class="brief">
  The tag supported by this messaging service.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1331,8 +1234,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorC
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  The messaging service name taken from the messaging service.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0.
             </p>
 </li>
@@ -1346,8 +1248,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, serviceErrorC
 If the backend does not support <em>MessageStorage </em>for this messaging service, a WebAPIException is raised with error type NotSupportedError.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1363,10 +1264,9 @@ If the backend does not support <em>MessageStorage </em>for this messaging servi
 <div class="brief">
  Sends a specified message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? simIndex);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+                 optional long? simIndex);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1395,18 +1295,16 @@ method of the successCallback will be invoked with an array of recipients who re
 the sent message, as input parameter.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  <var>simIndex</var> is added for sending the SMS message through the specified SIM since Tizen 2.3.
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  Regarding the <var>simIndex</var>, you can find more information (e.g. operator name, phone number) about SIM card through <em>tizen.systeminfo.getPropertyValueArray("SIM",..)</em>. <br>The feasible use case would be showing all available SIM information and then the user selects the SIM to send a message.
             </p>
 <div class="parameters">
@@ -1414,22 +1312,22 @@ the sent message, as input parameter.
 <ul>
           <li class="param">
 <span class="name">message</span>:
-         Message to be sent
+         Message to be sent.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback function that is called when the message is successfully sent
+ Callback function that is called when the message is successfully sent.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when the sending request has failed
+   Callback function that is called when the sending request has failed.
                 </li>
           <li class="param">
 <span class="name">simIndex</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The index of SIM card used to send an SMS message.
 <em>simIndex</em> value of the first SIM card is <var>1</var>.<br>If the given <em>message</em> is not SMS message type, the <em>simIndex</em> is ignored.
 If <var>simIndex</var> is not set, the SMS message is sent through the currently enabled SIM.
-The possible <var>simIndex</var> values should be retrieved through the SystemInfo API. <br>If <var>simIndex</var> value is not valid, <em>InvalidValuesError</em> will be returned through <em>ErrorCallback</em>.
+The possible <var>simIndex</var> values should be retrieved through the System Info API. <br>If <var>simIndex</var> value is not valid, <em>InvalidValuesError</em> will be returned through <em>ErrorCallback</em>.
                 </li>
         </ul>
 </div>
@@ -1450,48 +1348,46 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 function messageSent(recipients)
 {
-   for (var i = 0; i &lt; recipients.length; i++)
-   {
-      console.log("The SMS has been sent to " + recipients[i]);
-   }
+  for (var i = 0; i &lt; recipients.length; i++)
+  {
+    console.log("The SMS has been sent to: " + recipients[i]);
+  }
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function messageFailed(error)
 {
-   console.log("The SMS could not be sent " + error.message);
+  console.log("The SMS could not be sent: " + error.message);
 }
 
-/* Defines the success callback */
+/* Defines the success callback. */
 function serviceListCB(services)
 {
-   if (services.length &gt; 0)
-   {
-      /* SMS sending example */
-      var msg = new tizen.Message("messaging.sms", {plainBody: "I will arrive in 10 minutes.",
-                                  to: ["+34666666666", "+34888888888"]});
-      /* Sends request */
-      services[0].sendMessage(msg, messageSent, messageFailed);
-   }
+  if (services.length &gt; 0)
+  {
+    /* SMS sending example. */
+    var msg = new tizen.Message("messaging.sms",
+        {plainBody: "I will arrive in 10 minutes.", to: ["+34666666666", "+34888888888"]});
+    /* Sends request. */
+    services[0].sendMessage(msg, messageSent, messageFailed);
+  }
 }
 tizen.messaging.getMessageServices("messaging.sms", serviceListCB);
 </pre>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
- // **********************************************************************************
- // *  This sample code works on a device which supports Tizen 2.3 Web Device API.   *
- // **********************************************************************************
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* ********************************************************************************** */
+/* *  This sample code works on a device which supports Tizen 2.3 Web Device API.   * */
+/* ********************************************************************************** */
 
-/* To get how many SIM cards are available in a device */
+/* To get how many SIM cards are available in a device. */
 var count = tizen.systeminfo.getCount("SIM");
-console.log("There is(are) " + count + " SIM card(s) available.");
+console.log("There is (are) " + count + " SIM card(s) available.");
 
-/* To send a message via the last SIM */
+/* To send a message via the last SIM. */
 services[0].sendMessage(msg, messageSent, messageFailed, count);
 </pre>
 </div>
@@ -1503,10 +1399,8 @@ services[0].sendMessage(msg, messageSent, messageFailed, count);
 <div class="brief">
  Loads the body for a specified message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1524,12 +1418,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -1537,15 +1429,15 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">message</span>:
-         Message with the body to be loaded
+         Message with the body to be loaded.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback function that is called when the message body is successfully loaded
+ Callback function that is called when the message body is successfully loaded.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when the loading request fails
+   Callback function that is called when the loading request fails.
                 </li>
         </ul>
 </div>
@@ -1566,33 +1458,35 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Assumes messaging service is initialized. */
 var service;
-/* Defines the success body loaded callback */
+
+/* Defines the success body loaded callback. */
 function successCallback(message)
 {
-   console.log("body for message: " + message.subject + "from: " + message.from + "loaded.");
+  console.log("Body for message: " + message.subject + " from: " + message.from + " loaded.");
 }
-/* Defines the error callback */
+
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot load message body" + error.message);
+  console.log("Cannot load message body: " + error.message);
 }
 
 function messageQueryCallback(messages)
 {
-   for (var i = 0; i &lt; messages.length; i++)
-   {
-      var message = messages[i];
-      if (!message.body.loaded)
-      {
-         service.loadMessageBody(message, successCallback, errorCallback);
-      }
-   }
+  for (var i = 0; i &lt; messages.length; i++)
+  {
+    var message = messages[i];
+    if (!message.body.loaded)
+    {
+      service.loadMessageBody(message, successCallback, errorCallback);
+    }
+  }
 }
 
-service.messageStorage.findMessages(new tizen.AttributeFilter("type", "EXACTLY", "messaging.email"), messageQueryCallback);
+service.messageStorage.findMessages(
+    new tizen.AttributeFilter("type", "EXACTLY", "messaging.email"), messageQueryCallback);
 </pre>
 </div>
 </dd>
@@ -1603,10 +1497,9 @@ service.messageStorage.findMessages(new tizen.AttributeFilter("type", "EXACTLY",
 <div class="brief">
  Loads a specified message attachment.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, 
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1623,12 +1516,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -1636,15 +1527,15 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">attachment</span>:
-      Message attachment to be loaded
+      Message attachment to be loaded.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback function that is called when the message attachment is successfully loaded
+ Callback function that is called when the message attachment is successfully loaded.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when the loading request fails
+   Callback function that is called when the loading request fails.
                 </li>
         </ul>
 </div>
@@ -1665,33 +1556,35 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Assumes messaging service is initialized. */
 var service;
-/* Defines the success body loaded callback */
+
+/* Defines the success body loaded callback. */
 function successCallback(attachment)
 {
-   console.log("attachment" + attachment.id + "is loaded to:" + attachment.filePath);
+  console.log("Attachment " + attachment.id + " is loaded to: " + attachment.filePath);
 }
-/* Defines the error callback */
+
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot load message attachment" + error.message);
+  console.log("Cannot load message attachment: " + error.message);
 }
 
 function messagesFoundCB(messages)
 {
-   for (var i = 0; i &lt; messages.length; i++)
-   {
-      var message = messages[i];
-      if (!message.attachments[0].loaded)
-      {
-         service.loadMessageAttachment(message.attachments[0], successCallback, errorCallback);
-      }
-   }
+  for (var i = 0; i &lt; messages.length; i++)
+  {
+    var message = messages[i];
+    if (!message.attachments[0].loaded)
+    {
+      service.loadMessageAttachment(message.attachments[0], successCallback, errorCallback);
+    }
+  }
 }
 
-service.messageStorage.findMessages(new tizen.AttributeFilter("hasAttachment", "EXACTLY", true), messagesFoundCB);
+service.messageStorage.findMessages(
+    new tizen.AttributeFilter("hasAttachment", "EXACTLY", true), messagesFoundCB);
 </pre>
 </div>
 </dd>
@@ -1702,10 +1595,8 @@ service.messageStorage.findMessages(new tizen.AttributeFilter("hasAttachment", "
 <div class="brief">
  Synchronizes the service content with an external mail server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1724,12 +1615,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -1737,22 +1626,26 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback function that is called when the operation is completed successfully
+ Callback function that is called when the operation is completed successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when the request fails
+   Callback function that is called when the request fails.
                 </li>
           <li class="param">
 <span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-           Maximum amount of messages retrieved within each folder
+           Maximum amount of messages retrieved within each folder.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Identifier which can be used to stop initiated sync operation
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Identifier which can be used to stop initiated sync operation.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1770,18 +1663,17 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 function serviceSynced()
 {
-   console.log("New messages are fetched!");
+  console.log("New messages are fetched!");
 }
 
-/* Defines the success callback */
+/* Defines the success callback. */
 function servicesListSuccessCB(services)
 {
-   services[0].sync(serviceSynced, null, 30);
-   /* Subscribes to MessageStorage notification */
+  services[0].sync(serviceSynced, null, 30);
+  /* Subscribes to MessageStorage notification. */
 }
 tizen.messaging.getMessageServices("messaging.email", servicesListSuccessCB);
 </pre>
@@ -1794,10 +1686,9 @@ tizen.messaging.getMessageServices("messaging.email", servicesListSuccessCB);
 <div class="brief">
  Synchronizes the folder content with an external mail server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+                optional unsigned long? limit);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1835,12 +1726,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -1848,26 +1737,30 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">folder</span>:
-          Folder to be synchronized
+          Folder to be synchronized.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback function that is called when the operation is completed successfully
+ Callback function that is called when the operation is completed successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when the request fails
+   Callback function that is called when the request fails.
                 </li>
           <li class="param">
 <span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-           The maximum amount of messages retrieved within a given folder
+           The maximum amount of messages retrieved within a given folder.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Identifier which can be used to stop initiated sync operation
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Identifier which can be used to stop initiated sync operation.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1885,33 +1778,35 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var emailService; /* Assumes email service is initialized */
-/* Defines the error callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var emailService;  /* Assumes email service is initialized. */
+
+/* Defines the error callback. */
 function errorCallback(err)
 {
-   console.log(err.name + " error: " + err.message);
+  console.log(err.name + " error: " + err.message);
 }
+
 function serviceCallback(services)
 {
-   emailService = services[0];
-   var filter = new tizen.AttributeFilter("serviceId", "EXACTLY", emailService.id);
+  emailService = services[0];
+  var filter = new tizen.AttributeFilter("serviceId", "EXACTLY", emailService.id);
 
-   emailService.messageStorage.findFolders(filter, folderQueryCallback);
+  emailService.messageStorage.findFolders(filter, folderQueryCallback);
 }
 
-/* Defines the success callback */
+/* Defines the success callback. */
 function folderSynced()
 {
-   console.log("New messages are fetched!");
+  console.log("New messages are fetched!");
 }
+
 function folderQueryCallback(folders)
 {
-   console.log(folders.length + " folders(s) found!");
-   for (var i = 0; i &lt; folders.length; i++)
-   {
-      emailService.syncFolder (folders[i], folderSynced, null, 30);
-   }
+  console.log(folders.length + " folders(s) found!");
+  for (var i = 0; i &lt; folders.length; i++)
+  {
+    emailService.syncFolder(folders[i], folderSynced, null, 30);
+  }
 }
 
 tizen.messaging.getMessageServices("messaging.email", serviceCallback, errorCallback);
@@ -1925,10 +1820,8 @@ tizen.messaging.getMessageServices("messaging.email", serviceCallback, errorCall
 <div class="brief">
  Stops sync() and syncFoler() operation.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stopSync(long opId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void stopSync(long opId);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1944,7 +1837,7 @@ If the <em>operationId </em>argument is not valid or does not correspond to a va
 <ul>
           <li class="param">
 <span class="name">opId</span>:
-  Service operation identifier
+  Service operation identifier.
                 </li>
         </ul>
 </div>
@@ -1965,12 +1858,9 @@ If the <em>operationId </em>argument is not valid or does not correspond to a va
  The MessageRecipientsCallback interface specifies the methods to be called for the sendMessage() operation.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
-
     void onsuccess(DOMString[] recipients);
-
-   };</pre>
-<p><span class="version">
-            Since: </span>
+  };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -1983,10 +1873,8 @@ If the <em>operationId </em>argument is not valid or does not correspond to a va
 <div class="brief">
  Called when the message sending is finished.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] recipients);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] recipients);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -1994,7 +1882,7 @@ If the <em>operationId </em>argument is not valid or does not correspond to a va
 <ul>
           <li class="param">
 <span class="name">recipients</span>:
- Recipients of the message
+ Recipients of the message.
                 </li>
         </ul>
 </div>
@@ -2009,11 +1897,9 @@ If the <em>operationId </em>argument is not valid or does not correspond to a va
 It is used in the loadMessageBody() asynchronous operation.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
-
-     void onsuccess(<a href="#Message">Message</a> message);
+    void onsuccess(<a href="#Message">Message</a> message);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -2026,10 +1912,8 @@ It is used in the loadMessageBody() asynchronous operation.
 <div class="brief">
  Called when the asynchronous query completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Message">Message</a> message);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Message">Message</a> message);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -2037,7 +1921,7 @@ It is used in the loadMessageBody() asynchronous operation.
 <ul>
           <li class="param">
 <span class="name">message</span>:
- Message containing the loaded body
+ Message containing the loaded body.
                 </li>
         </ul>
 </div>
@@ -2052,11 +1936,9 @@ It is used in the loadMessageBody() asynchronous operation.
 It is used in the loadMessageAttachment() asynchronous operation.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageAttachmentSuccessCallback {
-
-     void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
-   };</pre>
-<p><span class="version">
-            Since: </span>
+    void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
+  };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -2069,10 +1951,8 @@ It is used in the loadMessageAttachment() asynchronous operation.
 <div class="brief">
  Called when the asynchronous query completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -2080,7 +1960,7 @@ It is used in the loadMessageAttachment() asynchronous operation.
 <ul>
           <li class="param">
 <span class="name">attachment</span>:
- Loaded attachment
+ Loaded attachment.
                 </li>
         </ul>
 </div>
@@ -2094,55 +1974,30 @@ It is used in the loadMessageAttachment() asynchronous operation.
  The MessageStorage interface allows management capabilities using a web application to query, update, and delete messages, and subscribe to <em>MessageStorage </em>changes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageStorage {
-
-    void addDraftMessage(<a href="#Message">Message</a> message,
-                         optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
-                      <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                      optional <a href="tizen.html#SortMode">SortMode</a>? sort,
-                      optional unsigned long? limit,
-                      optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeMessages(<a href="#Message">Message</a>[] messages,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void updateMessages(<a href="#Message">Message</a>[] messages,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
-                           <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
-                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                           optional <a href="tizen.html#SortMode">SortMode</a>? sort,
-                           optional unsigned long? limit,
+    void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                      optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit,
                            optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations,
-                             optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+    void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-    void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
-                     <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback,
-                                   optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)
+                                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback,
                                         optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback,
-                                  optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)
+                                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2160,10 +2015,8 @@ In addition to simple message queries, the <em>MessageStorage </em>interface pro
 <div class="brief">
  Adds a draft message to <em>MessageStorage</em> and these messages are stored in the Drafts folder.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2177,12 +2030,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -2190,15 +2041,15 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">message</span>:
-         Draft message to add to the storage
+         Draft message to add to the storage.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback function that is called when draft messages are successfully added
+ Callback function that is called when draft messages are successfully added.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when an error occurs
+   Callback function that is called when an error occurs.
                 </li>
         </ul>
 </div>
@@ -2219,28 +2070,26 @@ is not compatible with the expected type for that parameter or if the method is 
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the success callback. */
 function successCallback()
 {
-   console.log("Draft message added");
+  console.log("Draft message added");
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot add draft message " + error.message);
+  console.log("Cannot add draft message: " + error.message);
 }
 
-/* Defines the service query success callback */
+/* Defines the service query success callback. */
 function serviceListCB(services)
 {
-   if (services.length &gt; 0)
-   {
-      var msg = new tizen.Message("messaging.sms", {plainBody: "Tizen draft SMS message."});
-      services[0].messageStorage.addDraftMessage(msg, successCallback,
-                                                 errorCallback);
-   }
+  if (services.length &gt; 0)
+  {
+    var msg = new tizen.Message("messaging.sms", {plainBody: "Tizen draft SMS message."});
+    services[0].messageStorage.addDraftMessage(msg, successCallback, errorCallback);
+  }
 }
 tizen.messaging.getMessageServices("messaging.sms", serviceListCB);
 </pre>
@@ -2253,10 +2102,9 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB);
 <div class="brief">
  Finds messages from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+                  optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2270,12 +2118,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.read
             </p>
 <div class="parameters">
@@ -2283,19 +2129,19 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">filter</span>:
-          Criteria to be used when filtering
+          Criteria to be used when filtering.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback function that is called when the invocation ends successfully
+ Callback function that is called when the invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when an error occurs
+   Callback function that is called when an error occurs.
                 </li>
           <li class="param">
 <span class="name">sort</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-            Sorting mode for the query
+            Sorting mode for the query.
                 </li>
           <li class="param">
 <span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -2324,22 +2170,22 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
+
 function messageArrayCB(messages)
 {
-   console.log(messages.length + " message(s) fetched!");
-   for (var i = 0; i &lt; messages.length; i++)
-   {
-      console.log(i + ". message from " + messages[i].from);
-   }
+  console.log(messages.length + " message(s) fetched!");
+  for (var i = 0; i &lt; messages.length; i++)
+  {
+    console.log(i + ". Message from " + messages[i].from);
+  }
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot query messages" + error.message);
+  console.log("Cannot query messages: " + error.message);
 }
 
 var filter = new tizen.AttributeFilter("from", "CONTAINS", "2593");
@@ -2354,10 +2200,8 @@ messageStorage.findMessages(filter, messageArrayCB, errorCallback);
 <div class="brief">
  Removes messages from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2371,12 +2215,10 @@ InvalidValuesError - If any of the input parameters contain an invalid value.   
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -2384,15 +2226,15 @@ InvalidValuesError - If any of the input parameters contain an invalid value.   
 <ul>
           <li class="param">
 <span class="name">messages</span>:
-        Array of messages to delete
+        Array of messages to delete.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback function that is called when messages are successfully deleted
+ Callback function that is called when messages are successfully deleted.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when an error occurs
+   Callback function that is called when an error occurs.
                 </li>
         </ul>
 </div>
@@ -2413,31 +2255,31 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the success callback */
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
+
+/* Defines the success callback. */
 function successCallback()
 {
-   console.log("Messages were deleted");
+  console.log("Messages were deleted");
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot delete messages " + error.message);
+  console.log("Cannot delete messages: " + error.message);
 }
 
 function messageArrayCB(messages)
 {
-   if (messages.length &gt; 0)
-   {
-      messageStorage.removeMessages(messages, successCallback, errorCallback);
-   }
-   else
-   {
-      console.log("No messages found");
-   }
+  if (messages.length &gt; 0)
+  {
+    messageStorage.removeMessages(messages, successCallback, errorCallback);
+  }
+  else
+  {
+    console.log("No messages found");
+  }
 }
 
 var filter = new tizen.AttributeFilter("from", "CONTAINS", "2593");
@@ -2452,10 +2294,8 @@ messageStorage.findMessages(filter, messageArrayCB);
 <div class="brief">
  Updates messages in <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void updateMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void updateMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2473,12 +2313,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -2486,15 +2324,15 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">messages</span>:
-        Array listing messages to update
+        Array listing messages to update.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback function that is called when messages are successfully updated
+ Callback function that is called when messages are successfully updated.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when an error occurs
+   Callback function that is called when an error occurs.
                 </li>
         </ul>
 </div>
@@ -2515,36 +2353,35 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
 
-/* Defines the success callback */
+/* Defines the success callback. */
 function successCallback()
 {
-   console.log("Messages were updated");
+  console.log("Messages were updated");
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot update messages " + error.message);
+  console.log("Cannot update messages: " + error.message);
 }
 
 function messageArrayCB(messages)
 {
-   if (messages.length &gt; 0)
-   {
-      messages[0].isRead = true;
-      messageStorage.updateMessages([messages[0]], successCallback, errorCallback);
-   }
-   else
-   {
-      console.log("No messages found");
-   }
+  if (messages.length &gt; 0)
+  {
+    messages[0].isRead = true;
+    messageStorage.updateMessages([messages[0]], successCallback, errorCallback);
+  }
+  else
+  {
+    console.log("No messages found");
+  }
 }
 
-var filter = new tizen.AttributeFilter('isRead', 'EXACTLY', false);
+var filter = new tizen.AttributeFilter("isRead", "EXACTLY", false);
 messageStorage.findMessages(filter, messageArrayCB);
 </pre>
 </div>
@@ -2556,10 +2393,10 @@ messageStorage.findMessages(filter, messageArrayCB);
 <div class="brief">
  Finds conversations from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, 
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, 
+                       optional unsigned long? offset);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2573,12 +2410,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.read
             </p>
 <div class="parameters">
@@ -2586,19 +2421,19 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">filter</span>:
-          Criteria to be used when filtering
+          Criteria to be used when filtering.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback function that is called when the invocation ends successfully
+ Callback function that is called when the invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when an error occurs
+   Callback function that is called when an error occurs.
                 </li>
           <li class="param">
 <span class="name">sort</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-            Sorting mode for the query
+            Sorting mode for the query.
                 </li>
           <li class="param">
 <span class="name">limit</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -2627,25 +2462,25 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
+
 function conversationsArrayCB(conversations)
 {
-   console.log(conversations.length + " conversation(s) found!");
-   for (var i = 0; i &lt; conversations.length; i++)
-   {
-      console.log(i + ". conversation preview " + conversations[i].preview);
-   }
+  console.log(conversations.length + " conversation(s) found!");
+  for (var i = 0; i &lt; conversations.length; i++)
+  {
+    console.log(i + ". Conversation preview: " + conversations[i].preview);
+  }
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot query conversations" + error.message);
+  console.log("Cannot query conversations: " + error.message);
 }
 
-var filter = new tizen.AttributeFilter('from', 'CONTAINS', '2593');
+var filter = new tizen.AttributeFilter("from", "CONTAINS", "2593");
 messageStorage.findConversations(filter, conversationsArrayCB, errorCallback);
 </pre>
 </div>
@@ -2657,10 +2492,9 @@ messageStorage.findConversations(filter, conversationsArrayCB, errorCallback);
 <div class="brief">
  Removes conversations from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2674,12 +2508,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.write
             </p>
 <div class="parameters">
@@ -2687,15 +2519,15 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">conversations</span>:
-   Array of conversations to delete
+   Array of conversations to delete.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback function that is called when conversations are successfully deleted
+ Callback function that is called when conversations are successfully deleted.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when an error occurs
+   Callback function that is called when an error occurs.
                 </li>
         </ul>
 </div>
@@ -2716,42 +2548,41 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
-/* Defines the success callback */
+
+/* Defines the success callback. */
 function successCallback()
 {
-   console.log("Conversations deleted");
+  console.log("Conversations deleted");
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(error)
 {
-   console.log("Cannot delete conversations " + error.message);
+  console.log("Cannot delete conversations: " + error.message);
 }
 
 function conversationsArrayCB(conversations)
 {
-   if (conversations.length &gt; 0)
-   {
-      messageStorage.removeConversations(conversations, successCallback,
-                                         errorCallback);
-   }
-   else
-   {
-      console.log("No conversations found");
-   }
-   console.log("Deleted " + conversations.length + " conversation(s)");
+  if (conversations.length &gt; 0)
+  {
+    messageStorage.removeConversations(conversations, successCallback, errorCallback);
+  }
+  else
+  {
+    console.log("No conversations found");
+  }
+  console.log("Deleted " + conversations.length + " conversation(s)");
 }
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function queryErrorCB(error)
 {
-   console.log("Cannot query conversations" + error.message);
+  console.log("Cannot query conversations: " + error.message);
 }
 
-var filter = new tizen.AttributeFilter('from', 'CONTAINS', '2593');
+var filter = new tizen.AttributeFilter("from", "CONTAINS", "2593");
 messageStorage.findConversations(filter, conversationsArrayCB, queryErrorCB);
 </pre>
 </div>
@@ -2763,10 +2594,8 @@ messageStorage.findConversations(filter, conversationsArrayCB, queryErrorCB);
 <div class="brief">
  Queries folders from MessageStorage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2780,12 +2609,10 @@ The errorCallback is launched with these error types:
  UnknownError: In any other error case.               </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.read
             </p>
 <div class="parameters">
@@ -2793,15 +2620,15 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">filter</span>:
-          Criteria used when filtering
+          Criteria used when filtering.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback function that is called when the invocation ends successfully
+ Callback function that is called when the invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-   Callback function that is called when an error occurs
+   Callback function that is called when an error occurs.
                 </li>
         </ul>
 </div>
@@ -2822,17 +2649,18 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
+
 function folderArrayCB(folders)
 {
-   console.log(folders.length + " folders(s) found!");
-   for (var i = 0; i &lt; folders.length; i++)
-   {
-      console.log(i + ", folder: " + folders[i].name);
-   }
+  console.log(folders.length + " folders(s) found!");
+  for (var i = 0; i &lt; folders.length; i++)
+  {
+    console.log(i + ", folder: " + folders[i].name);
+  }
 }
+
 var filter = new tizen.AttributeFilter("serviceId", "EXACTLY", service.id);
 messageStorage.findFolders(filter, folderArrayCB);
 </pre>
@@ -2845,10 +2673,8 @@ messageStorage.findFolders(filter, folderArrayCB);
 <div class="brief">
  Adds a listener to subscribe to notification for MessageStorage changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2862,12 +2688,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.               </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.read
             </p>
 <div class="parameters">
@@ -2875,18 +2699,22 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">messagesChangeCallback</span>:
- Callback function that is called when the MessageStorage is changed
+ Callback function that is called when the MessageStorage is changed.
                 </li>
           <li class="param">
 <span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-                 Criteria to be used when filtering (Message filter)
+                 Criteria to be used when filtering (Message filter).
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Subscription identifier
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Subscription identifier.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -2904,23 +2732,22 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
 var messageChangeCallback =
 {
-   messagesupdated: function(messages)
-   {
-      console.log(messages.length + " message(s) updated");
-   },
-   messagesadded: function(messages)
-   {
-      console.log(messages.length + " message(s) added");
-   },
-   messagesremoved: function(messages)
-   {
-      console.log(messages.length + " message(s) removed");
-   }
+  messagesupdated: function(messages)
+  {
+    console.log(messages.length + " message(s) updated");
+  },
+  messagesadded: function(messages)
+  {
+    console.log(messages.length + " message(s) added");
+  },
+  messagesremoved: function(messages)
+  {
+    console.log(messages.length + " message(s) removed");
+  }
 };
 
 messageStorage.addMessagesChangeListener(messageChangeCallback);
@@ -2934,10 +2761,9 @@ messageStorage.addMessagesChangeListener(messageChangeCallback);
 <div class="brief">
  Adds a listener to subscribe to notifications for MessageConversation changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, 
+                                    optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2951,12 +2777,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.read
             </p>
 <div class="parameters">
@@ -2964,18 +2788,22 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">conversationsChangeCallback</span>:
- Callback function that is called when the MessageConversation is changed
+ Callback function that is called when the MessageConversation is changed.
                 </li>
           <li class="param">
 <span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-                      Criteria to be used when filtering (MessageConversation filter)
+                      Criteria to be used when filtering (MessageConversation filter).
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Subscription identifier
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Subscription identifier.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -2993,23 +2821,22 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
 var conversationChangeCB =
 {
-   conversationsupdated: function(conversations)
-   {
-      console.log(conversations.length + " conversations(s) updated");
-   },
-   conversationsadded: function(conversations)
-   {
-      console.log(conversations.length + " conversations(s) added");
-   },
-   conversationsremoved: function(conversations)
-   {
-      console.log(conversations.length + " conversations(s) removed");
-   }
+  conversationsupdated: function(conversations)
+  {
+    console.log(conversations.length + " conversations(s) updated");
+  },
+  conversationsadded: function(conversations)
+  {
+    console.log(conversations.length + " conversations(s) added");
+  },
+  conversationsremoved: function(conversations)
+  {
+    console.log(conversations.length + " conversations(s) removed");
+  }
 };
 
 messageStorage.addConversationsChangeListener(conversationChangeCB);
@@ -3023,10 +2850,8 @@ messageStorage.addConversationsChangeListener(conversationChangeCB);
 <div class="brief">
  Adds a listener to subscribe to notifications for MessageFolder changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -3040,12 +2865,10 @@ The errorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.read
             </p>
 <div class="parameters">
@@ -3053,18 +2876,22 @@ The errorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">foldersChangeCallback</span>:
- Callback function that is called when the MessageFolder is changed
+ Callback function that is called when the MessageFolder is changed.
                 </li>
           <li class="param">
 <span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-                Criteria to be used when filtering (MessageFolder filter)
+                Criteria to be used when filtering (MessageFolder filter).
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Subscription identifier
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Subscription identifier.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -3082,23 +2909,22 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
 var folderChangeCB =
 {
-   foldersupdated: function(folders)
-   {
-      console.log(folders.length + " folders(s) updated");
-   },
-   foldersadded: function(folders)
-   {
-      console.log(folders.length + " folders(s) added");
-   },
-   foldersremoved: function(folders)
-   {
-      console.log(folders.length + " folders(s) removed");
-   }
+  foldersupdated: function(folders)
+  {
+    console.log(folders.length + " folders(s) updated");
+  },
+  foldersadded: function(folders)
+  {
+    console.log(folders.length + " folders(s) added");
+  },
+  foldersremoved: function(folders)
+  {
+    console.log(folders.length + " folders(s) removed");
+  }
 };
 
 messageStorage.addFoldersChangeListener(folderChangeCB);
@@ -3112,10 +2938,8 @@ messageStorage.addFoldersChangeListener(folderChangeCB);
 <div class="brief">
  Removes a listener to unsubscribe from receiving message notifications.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -3133,12 +2957,10 @@ If the <em>subscriptionId </em>argument is valid and corresponds to a subscripti
 If the <em>subscriptionId argument does not correspond to a valid subscription, the method will return without any further action.
 </em>            </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/messaging.read
             </p>
 <div class="parameters">
@@ -3168,27 +2990,26 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var watchId;
-var service; /* Assumes messaging service is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watchId;
+var service;  /* Assumes messaging service is initialized. */
 var messageStorage = service.messageStorage;
 var folderChangeCB =
 {
-   foldersupdated: function(folders)
-   {
-      console.log(folders.length + " folders(s) updated. Cancel watching.");
-      messageStorage.removeChangeListener(watchId);
-   },
-   foldersadded: function(folders)
-   {
-      console.log(folders.length + " folders(s) added. Cancel watching.");
-      messageStorage.removeChangeListener(watchId);
-   },
-   foldersremoved: function(folders)
-   {
-      console.log(folders.length + " folders(s) removed. Cancel watching.");
-      messageStorage.removeChangeListener(watchId)
-   }
+  foldersupdated: function(folders)
+  {
+    console.log(folders.length + " folders(s) updated, cancel watching");
+    messageStorage.removeChangeListener(watchId);
+  },
+  foldersadded: function(folders)
+  {
+    console.log(folders.length + " folders(s) added, cancel watching");
+    messageStorage.removeChangeListener(watchId);
+  },
+  foldersremoved: function(folders)
+  {
+    console.log(folders.length + " folders(s) removed, cancel watching");
+    messageStorage.removeChangeListener(watchId);
+  }
 };
 
 watchId = messageStorage.addFoldersChangeListener(folderChangeCB);
@@ -3204,11 +3025,9 @@ watchId = messageStorage.addFoldersChangeListener(folderChangeCB);
  The MessageArraySuccessCallback defines findMessages specific success callback.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageArraySuccessCallback {
-
     void onsuccess(<a href="#Message">Message</a>[] messages);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3228,10 +3047,8 @@ It is used in the findMessages asynchronous operation.
 <div class="brief">
  Called when an asynchronous query completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Message">Message</a>[] messages);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Message">Message</a>[] messages);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3239,7 +3056,7 @@ It is used in the findMessages asynchronous operation.
 <ul>
           <li class="param">
 <span class="name">messages</span>:
- Array of messages that satisfy the query
+ Array of messages that satisfy the query.
                 </li>
         </ul>
 </div>
@@ -3253,11 +3070,9 @@ It is used in the findMessages asynchronous operation.
  The MessageConversationArraySuccessCallback interface defines findConversations specific success callback.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageConversationArraySuccessCallback {
-
     void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3277,10 +3092,8 @@ It is used in the findConversations asynchronous operation.
 <div class="brief">
  Called when an asynchronous query completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3288,7 +3101,7 @@ It is used in the findConversations asynchronous operation.
 <ul>
           <li class="param">
 <span class="name">conversations</span>:
- Array of conversations that satisfy the query
+ Array of conversations that satisfy the query.
                 </li>
         </ul>
 </div>
@@ -3302,11 +3115,9 @@ It is used in the findConversations asynchronous operation.
  The MessageFolderArraySuccessCallback interface defines findFolders specific success callback.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessageFolderArraySuccessCallback {
-
     void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3326,10 +3137,8 @@ It is used in the findFolders asynchronous operation.
 <div class="brief">
  Called when an asynchronous query completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3337,7 +3146,7 @@ It is used in the findFolders asynchronous operation.
 <ul>
           <li class="param">
 <span class="name">folders</span>:
- Array of folders that satisfy the query
+ Array of folders that satisfy the query.
                 </li>
         </ul>
 </div>
@@ -3351,15 +3160,11 @@ It is used in the findFolders asynchronous operation.
  The MessagesChangeCallback defines addMessagesChangeListener callback.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessagesChangeCallback {
-
     void messagesadded(<a href="#Message">Message</a>[] addedMessages);
-
     void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
-
     void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3378,10 +3183,8 @@ invoked when messages from MessageStorage change. Each function takes a list of 
 <div class="brief">
  Called when messages are added to the MessageStorage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void messagesadded(<a href="#Message">Message</a>[] addedMessages);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void messagesadded(<a href="#Message">Message</a>[] addedMessages);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3389,7 +3192,7 @@ invoked when messages from MessageStorage change. Each function takes a list of 
 <ul>
           <li class="param">
 <span class="name">addedMessages</span>:
- Array of added messages
+ Array of added messages.
                 </li>
         </ul>
 </div>
@@ -3401,10 +3204,8 @@ invoked when messages from MessageStorage change. Each function takes a list of 
 <div class="brief">
  Called when messages are updated in MessageStorage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3412,7 +3213,7 @@ invoked when messages from MessageStorage change. Each function takes a list of 
 <ul>
           <li class="param">
 <span class="name">updatedMessages</span>:
- Array of updated messages
+ Array of updated messages.
                 </li>
         </ul>
 </div>
@@ -3424,10 +3225,8 @@ invoked when messages from MessageStorage change. Each function takes a list of 
 <div class="brief">
  Called when messages are removed from MessageStorage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void messagesremoved(<a href="#Message">Message</a>[] removedMessages);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3435,7 +3234,7 @@ invoked when messages from MessageStorage change. Each function takes a list of 
 <ul>
           <li class="param">
 <span class="name">removedMessages</span>:
- Array of removed messages
+ Array of removed messages.
 It contains only MessageId attribute.
                 </li>
         </ul>
@@ -3450,15 +3249,11 @@ It contains only MessageId attribute.
  The MessageConversationsChangeCallback interface defines addConversationsChangeListener callback.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessageConversationsChangeCallback {
-
     void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
-
     void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
-
     void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3477,10 +3272,8 @@ invoked when conversations from MessageStorage change. Each function takes a lis
 <div class="brief">
  Called when conversations are added to MessageStorage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3488,7 +3281,7 @@ invoked when conversations from MessageStorage change. Each function takes a lis
 <ul>
           <li class="param">
 <span class="name">addedConversations</span>:
- Array of added conversations
+ Array of added conversations.
                 </li>
         </ul>
 </div>
@@ -3500,10 +3293,8 @@ invoked when conversations from MessageStorage change. Each function takes a lis
 <div class="brief">
  Called when conversations are updated in MessageStorage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3511,7 +3302,7 @@ invoked when conversations from MessageStorage change. Each function takes a lis
 <ul>
           <li class="param">
 <span class="name">updatedConversations</span>:
- Array of updated conversations
+ Array of updated conversations.
                 </li>
         </ul>
 </div>
@@ -3523,10 +3314,8 @@ invoked when conversations from MessageStorage change. Each function takes a lis
 <div class="brief">
  Called when conversations are removed from MessageStorage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3550,15 +3339,11 @@ Every element contains only MessageConvId attribute.
 Each function takes a list of folders as the input argument.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
-
     void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
-
     void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
-
     void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -3571,10 +3356,8 @@ Each function takes a list of folders as the input argument.
 <div class="brief">
  Called when folders are added to <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3582,7 +3365,7 @@ Each function takes a list of folders as the input argument.
 <ul>
           <li class="param">
 <span class="name">addedFolders</span>:
- Array of added folders
+ Array of added folders.
                 </li>
         </ul>
 </div>
@@ -3594,10 +3377,8 @@ Each function takes a list of folders as the input argument.
 <div class="brief">
  Called when folders are updated in <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3605,7 +3386,7 @@ Each function takes a list of folders as the input argument.
 <ul>
           <li class="param">
 <span class="name">updatedFolders</span>:
- Array of updated folders
+ Array of updated folders.
                 </li>
         </ul>
 </div>
@@ -3617,10 +3398,8 @@ Each function takes a list of folders as the input argument.
 <div class="brief">
  Called when folders are removed from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3628,7 +3407,7 @@ Each function takes a list of folders as the input argument.
 <ul>
           <li class="param">
 <span class="name">removedFolders</span>:
- Array of removed folders
+ Array of removed folders.
 Each element contains only MessageFolderId attribute.
                 </li>
         </ul>
@@ -3643,35 +3422,21 @@ Each element contains only MessageFolderId attribute.
  The MessageConversation interface defines the message conversation (also known as the thread of messages).
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageConversation {
-
     readonly attribute <a href="#MessageConvId">MessageConvId</a> id;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-
     readonly attribute Date timestamp;
-
     readonly attribute unsigned long messageCount;
-
     readonly attribute unsigned long unreadMessages;
-
     readonly attribute DOMString preview;
-
     readonly attribute DOMString subject;
-
     readonly attribute boolean isRead;
-
     readonly attribute DOMString from;
-
     readonly attribute DOMString[] to;
-
     readonly attribute DOMString[] cc;
-
     readonly attribute DOMString[] bcc;
-
     readonly attribute <a href="#MessageId">MessageId</a> lastMessageId;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3696,8 +3461,7 @@ The conversation object represents a group of messages combined by the set of me
 The ID is locally unique and persistent property, assigned by the device or the Web runtime (WRT).
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3706,8 +3470,7 @@ The ID is locally unique and persistent property, assigned by the device or the 
 </span><span class="type">MessageServiceTag </span><span class="name">type</span></span><div class="brief">
  The type of a given conversation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3721,8 +3484,7 @@ The ID is locally unique and persistent property, assigned by the device or the 
 This property is set up by the device or the Web runtime environment.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3731,8 +3493,7 @@ This property is set up by the device or the Web runtime environment.
 </span><span class="type">unsigned long </span><span class="name">messageCount</span></span><div class="brief">
  The count of messages in a conversation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3741,8 +3502,7 @@ This property is set up by the device or the Web runtime environment.
 </span><span class="type">unsigned long </span><span class="name">unreadMessages</span></span><div class="brief">
  The count of unread messages in a conversation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3751,8 +3511,7 @@ This property is set up by the device or the Web runtime environment.
 </span><span class="type">DOMString </span><span class="name">preview</span></span><div class="brief">
  A preview of the latest message in a conversation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3761,8 +3520,7 @@ This property is set up by the device or the Web runtime environment.
 </span><span class="type">DOMString </span><span class="name">subject</span></span><div class="brief">
  The subject of a conversation (applicable for group chats, MMS, email).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3776,8 +3534,7 @@ This property is set up by the device or the Web runtime environment.
 This property is set to <var>true</var> if the message has been read, else it is set to <var>false</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3791,8 +3548,7 @@ This property is set to <var>true</var> if the message has been read, else it is
 This property is set up by the device or the Web runtime environment.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3802,8 +3558,7 @@ This property is set up by the device or the Web runtime environment.
                       </span><span class="name">to</span></span><div class="brief">
  The destination of the latest message in a conversation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3818,8 +3573,7 @@ This property is set up by the device or the Web runtime environment.
 This property is used only for email.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3834,8 +3588,7 @@ This property is used only for email.
 This property is used only for email.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3849,8 +3602,7 @@ This property is used only for email.
 This property is set up by the device or the Web runtime environment.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3863,25 +3615,16 @@ This property is set up by the device or the Web runtime environment.
  The MessageFolder interface defines the email folder.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MessageFolder {
-
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a> id;
-
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a> parentId;
-
     readonly attribute DOMString serviceId;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> contentType;
-
-    attribute DOMString name setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute DOMString name;
     readonly attribute DOMString path;
-
     readonly attribute DOMString type;
-
-    attribute boolean synchronizable setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute boolean synchronizable;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3904,8 +3647,7 @@ If the Messaging service does not represent email or an email protocol supportin
  The folder identifier.
 The ID is locally unique and persistent property, assigned by the device or the Web runtime (WRT).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3919,8 +3661,7 @@ The ID is locally unique and persistent property, assigned by the device or the 
 If this folder is a root folder, the parent folder ID is <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3929,8 +3670,7 @@ If this folder is a root folder, the parent folder ID is <var>null</var>.
 </span><span class="type">DOMString </span><span class="name">serviceId</span></span><div class="brief">
  The identifier of the service to which a specified folder belongs.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0.
             </p>
 </li>
@@ -3939,8 +3679,7 @@ If this folder is a root folder, the parent folder ID is <var>null</var>.
 </span><span class="type">MessageServiceTag </span><span class="name">contentType</span></span><div class="brief">
  The type of the messages contained within a folder.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3956,8 +3695,7 @@ Can be modified. By default, it contains the folder name from the server.
 In case the current Messaging service does not support remote folders on the server (and this folder is the only one that the current service has), this attribute contains the service name, by default.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3972,8 +3710,7 @@ If the current Messaging service does not support remote folders on the server,
 this attribute will be empty.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -4003,8 +3740,7 @@ If this folder is not a standard folder, an empty value must be returned.
 This property is unique for each type within one Messaging service.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -4017,8 +3753,7 @@ This property is unique for each type within one Messaging service.
 This attribute affects the behavior of the MessageService.sync() method.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -4028,7 +3763,7 @@ This attribute affects the behavior of the MessageService.sync() method.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -4046,310 +3781,169 @@ To guarantee that the mms application runs on a device with MMS feature, define 
 <li class="feature">http://tizen.org/feature/network.telephony.mms</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Messaging {
-
   [NoInterfaceObject] interface MessageManagerObject {
     readonly attribute <a href="#Messaging">Messaging</a> messaging;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
-
-  enum MessageServiceTag {"messaging.sms", "messaging.mms", "messaging.email" };
-
+  enum MessageServiceTag { "messaging.sms", "messaging.mms", "messaging.email" };
   typedef DOMString MessageId;
-
   typedef DOMString MessageAttachmentId;
-
   typedef DOMString MessageConvId;
-
   typedef DOMString MessageFolderId;
-
   [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
   interface Message {
-
     readonly attribute <a href="#MessageId">MessageId</a>? id;
-
     readonly attribute <a href="#MessageConvId">MessageConvId</a>? conversationId;
-
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a>? folderId;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-
     readonly attribute Date? timestamp;
-
     readonly attribute DOMString? from;
-
-    attribute DOMString[] to setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString[] cc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString[] bcc setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#MessageBody">MessageBody</a> body setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute boolean isRead setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute DOMString[] to;
+    attribute DOMString[] cc;
+    attribute DOMString[] bcc;
+    attribute <a href="#MessageBody">MessageBody</a> body;
+    attribute boolean isRead;
     readonly attribute boolean hasAttachment;
-
-    attribute boolean isHighPriority setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString subject setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute boolean isHighPriority;
+    attribute DOMString subject;
+    readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo;
     readonly attribute DOMString messageStatus;
-
-    attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments;
   };
   dictionary MessageInit
   {
-
     DOMString subject;
-
     DOMString[] to;
-
     DOMString[] cc;
-
     DOMString[] bcc;
-
     DOMString plainBody;
-
     DOMString htmlBody;
-
     boolean isHighPriority;
   };
-
   [NoInterfaceObject] interface MessageBody {
-
     readonly attribute <a href="#MessageId">MessageId</a> messageId;
-
     readonly attribute boolean loaded;
-
-    attribute DOMString plainBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString htmlBody setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute DOMString plainBody;
+    attribute DOMString htmlBody;
+    attribute <a href="#MessageAttachment">MessageAttachment</a>[] inlineAttachments;
   };
-
   [Constructor(DOMString filePath, optional DOMString? mimeType)]
   interface MessageAttachment {
-
     readonly attribute <a href="#MessageAttachmentId">MessageAttachmentId</a>? id;
-
     readonly attribute <a href="#MessageId">MessageId</a>? messageId;
-
     readonly attribute DOMString? mimeType;
-
     readonly attribute DOMString? filePath;
   };
-
   [NoInterfaceObject] interface Messaging {
-
-    void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType,
-                            <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
+    void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface MessageServiceArraySuccessCallback {
-
     void onsuccess(<a href="#MessageService">MessageService</a>[] services);
-
   };
-
-
   [NoInterfaceObject] interface MessageService {
-
     readonly attribute DOMString id;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-
     readonly attribute DOMString name;
-
-    void sendMessage(<a href="#Message">Message</a> message,
-                     optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                      optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void loadMessageBody(<a href="#Message">Message</a> message,
-                         <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment,
-                               <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
+    void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-              optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder,
-                    optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    long sync(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? limit)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
-
     void onsuccess(DOMString[] recipients);
-
-   };
-
-  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
-
-     void onsuccess(<a href="#Message">Message</a> message);
   };
-
+  [Callback=FunctionOnly, NoInterfaceObject] interface MessageBodySuccessCallback {
+    void onsuccess(<a href="#Message">Message</a> message);
+  };
   [Callback=FunctionOnly, NoInterfaceObject] interface MessageAttachmentSuccessCallback {
-
-     void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
-   };
-
+    void onsuccess(<a href="#MessageAttachment">MessageAttachment</a> attachment);
+  };
   [NoInterfaceObject] interface MessageStorage {
-
-    void addDraftMessage(<a href="#Message">Message</a> message,
-                         optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
-                      <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                      optional <a href="tizen.html#SortMode">SortMode</a>? sort,
-                      optional unsigned long? limit,
-                      optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeMessages(<a href="#Message">Message</a>[] messages,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void updateMessages(<a href="#Message">Message</a>[] messages,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
-                           <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
-                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                           optional <a href="tizen.html#SortMode">SortMode</a>? sort,
-                           optional unsigned long? limit,
+    void addDraftMessage(<a href="#Message">Message</a> message, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                      optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateMessages(<a href="#Message">Message</a>[] messages, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit,
                            optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations,
-                             optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+    void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-    void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter,
-                     <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback,
-                                   optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void findFolders(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageFolderArraySuccessCallback">MessageFolderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addMessagesChangeListener(<a href="#MessagesChangeCallback">MessagesChangeCallback</a> messagesChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)
+                                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback,
                                         optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback,
-                                  optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    long addFoldersChangeListener(<a href="#MessageFoldersChangeCallback">MessageFoldersChangeCallback</a> foldersChangeCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter)
+                                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface MessageArraySuccessCallback {
-
     void onsuccess(<a href="#Message">Message</a>[] messages);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface MessageConversationArraySuccessCallback {
-
     void onsuccess(<a href="#MessageConversation">MessageConversation</a>[] conversations);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface MessageFolderArraySuccessCallback {
-
     void onsuccess(<a href="#MessageFolder">MessageFolder</a>[] folders);
   };
-
   [Callback, NoInterfaceObject] interface MessagesChangeCallback {
-
     void messagesadded(<a href="#Message">Message</a>[] addedMessages);
-
     void messagesupdated(<a href="#Message">Message</a>[] updatedMessages);
-
     void messagesremoved(<a href="#Message">Message</a>[] removedMessages);
   };
-
   [Callback, NoInterfaceObject] interface MessageConversationsChangeCallback {
-
     void conversationsadded(<a href="#MessageConversation">MessageConversation</a>[] addedConversations);
-
     void conversationsupdated(<a href="#MessageConversation">MessageConversation</a>[] updatedConversations);
-
     void conversationsremoved(<a href="#MessageConversation">MessageConversation</a>[] removedConversations);
   };
-
   [Callback, NoInterfaceObject] interface MessageFoldersChangeCallback {
-
     void foldersadded(<a href="#MessageFolder">MessageFolder</a>[] addedFolders);
-
     void foldersupdated(<a href="#MessageFolder">MessageFolder</a>[] updatedFolders);
-
     void foldersremoved(<a href="#MessageFolder">MessageFolder</a>[] removedFolders);
   };
-
   [NoInterfaceObject] interface MessageConversation {
-
     readonly attribute <a href="#MessageConvId">MessageConvId</a> id;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
-
     readonly attribute Date timestamp;
-
     readonly attribute unsigned long messageCount;
-
     readonly attribute unsigned long unreadMessages;
-
     readonly attribute DOMString preview;
-
     readonly attribute DOMString subject;
-
     readonly attribute boolean isRead;
-
     readonly attribute DOMString from;
-
     readonly attribute DOMString[] to;
-
     readonly attribute DOMString[] cc;
-
     readonly attribute DOMString[] bcc;
-
     readonly attribute <a href="#MessageId">MessageId</a> lastMessageId;
   };
-
   [NoInterfaceObject] interface MessageFolder {
-
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a> id;
-
     readonly attribute <a href="#MessageFolderId">MessageFolderId</a> parentId;
-
     readonly attribute DOMString serviceId;
-
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> contentType;
-
-    attribute DOMString name setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute DOMString name;
     readonly attribute DOMString path;
-
     readonly attribute DOMString type;
-
-    attribute boolean synchronizable setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute boolean synchronizable;
   };
-
 };</pre>
 </div>
 <div id="page-footer">
