@@ -42,6 +42,9 @@
 ### [FAQ](/open-source-project/reference/mic/mic-faq.md)
 
 # Release Notes
+## [Tizen 5.0 Public M2](/open-source-project/release-notes/tizen-5-0-m2.md)
+## [Tizen 5.0 Public M1](/open-source-project/release-notes/tizen-5-0-m1.md)
+## [Tizen 4.0 Public M3](/open-source-project/release-notes/tizen-4-0-m3.md)
 ## [Tizen 4.0 Public M2](/open-source-project/release-notes/tizen-4-0-m2.md)
 ## [Tizen 4.0 Public M1](/open-source-project/release-notes/tizen-4-0-m1.md)
 ## [Tizen 3.0 Public M4](/open-source-project/release-notes/tizen-3-0-m4.md)
