@@ -58,6 +58,10 @@ You can use the following connectivity and wireless features in your native appl
 
   You can perform network service discoveries to announce local services and search for remote services.
 
+- [Zigbee](zigbee.md)
+
+  Zigbee delivers low-latency communication, and its framework provides hardware abstraction for application developer. Using Zigbee API set you can create, destroy and manage Zigbee network.
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
