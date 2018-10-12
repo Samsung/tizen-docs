@@ -182,7 +182,7 @@ To query sound device information:
       ```
 
    5. More functionality for `SOUND_DEVICE_USB_AUDIO` with `SOUND_DEVICE_IO_DIRECTION_OUT` device.
-      When you found a device with above type, you can utilize more functionality with the following functions:
+      When you detect a device with above type, you can utilize more functionality with the following functions:
 
       - `sound_manager_get_supported_sample_formats()`: To get the supported sample formats of the device.
       - `sound_manager_set_sample_format()`: To set the sample format to the device.
@@ -190,10 +190,10 @@ To query sound device information:
       - `sound_manager_get_supported_sample_rates()`: To get the supported sample rates of the device.
       - `sound_manager_set_sample_rate()`: To set the sample rate to the device.
       - `sound_manager_get_sample_rate()`: To get the sample rate of the device.
-      - `sound_manager_set_media_stream_only()`: To set the 'media stream only' property. With this enabled, no other stream type except `SOUND_STREAM_TYPE_MEDIA` is not allowed to this device.
-      - `sound_manager_get_media_stream_only()`: To get the 'media stream only' property.
-      - `sound_manager_set_avoid_resampling()`: To set the 'avoid resampling' property. With this enabled, this device will use the first stream's original sample format and rate without resampling if supported.
-      - `sound_manager_get_avoid_resampling()`: To get the 'avoid resampling' property.
+      - `sound_manager_set_media_stream_only()`: To set the "media stream only" property. With this enabled, no other stream type is allowed to the device except for `SOUND_STREAM_TYPE_MEDIA`.
+      - `sound_manager_get_media_stream_only()`: To get the "media stream only" property.
+      - `sound_manager_set_avoid_resampling()`: To set the "avoid resampling" property. With this enabled, the device uses the original sample format and rate of the first stream without resampling if supported by the device.
+      - `sound_manager_get_avoid_resampling()`: To get the "avoid resampling" property.
 
       The following example code shows how to get the supported sample rate list and to set the particular rate among them if supported:
 
@@ -219,7 +219,7 @@ To query sound device information:
           free(rates);
       }
       ```
-      The following example code shows how to set the 'media stream only' property to the device:
+      The following example code shows how to set the "media stream only" property to the device:
 
       ```
       /* Assume that this device is SOUND_DEVICE_USB_AUDIO with SOUND_DEVICE_IO_DIRECTION_OUT. */
