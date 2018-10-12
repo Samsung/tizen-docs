@@ -1,7 +1,7 @@
-# Natural Language Processing (Nlp)
+# Natural Language Processing (NLP)
 
 
-Nlp is a subset of natural language toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (Nlp) functionalities, such as language detection, parts of speech, word tokenize, and entity detection. For more information, see the [nltk Forum](http://www.nltk.org/).
+Nlp is a subset of natural language toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (Nlp) functionalities, such as language detection, parts of speech, word tokenize, lemmatize, and named entity detection. For more information, see the [nltk Forum](http://www.nltk.org/).
 
 The main features of the Tizen.Nlp namespace include:
 
@@ -16,6 +16,10 @@ The main features of the Tizen.Nlp namespace include:
 -   Named Entity Detection support
 
     You can get tokens and tags from a sentence, the type of return is NamedEntityRecognitionResult.
+
+-   Lemmatizing support
+
+    You can get the actual word from a word, the type of return is LemmatizeResult.
 
 -   Language Detect support
 
@@ -32,6 +36,8 @@ This method breaks up the sentence into words and punctuation with tags attribut
 ## Named Entity Detection
 This method breaks up the sentence into words and punctuation with tags attributes.
 
+## Lemmatizing
+This method is used to get the actual word from a word.
 
 ## Language Detect
 This method is used to detect the language of a sentence.
@@ -56,9 +62,10 @@ Enable your application to use the Nlp functionality:
     using Tizen.Nlp;
     ```
 
-## Receive Tokens and Tags - WordTokenize
+<h2>Receive WordTokenize Tokens</h2>
+## Receive Tokens - WordTokenize
 
-receive the tokens from sentence:
+Receive the tokens from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
 
@@ -95,10 +102,10 @@ receive the tokens from sentence:
         }
     ```
 
-
+<h2>Receive PosTag Tokens and Tags</h2>
 ## Receive Tokens and Tags - PosTag
 
-receive the tokens and tags from sentence:
+Receive the tokens and tags from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
 
@@ -135,10 +142,10 @@ receive the tokens and tags from sentence:
         }
     ```
 
-
+<h2>Receive Named Entity Tokens and Tags</h2>
 ## Receive Tokens and Tags - Named Entity
 
-receive the tokens and tags from sentence:
+Receive the tokens and tags from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
 
@@ -176,10 +183,50 @@ receive the tokens and tags from sentence:
     ```
 
 
+<h2>Receive Lemmatize ActualWord</h2>
+## Receive ActualWord - Lemmatizing
 
-## Detect Language 
+Receive the actual word from word:
 
-detect the language from sentence:
+1.  Construct an NaturalLanguageProcess object on OnCreate(), and Connect the Nlp service on init of app :
+
+    ```
+    protected override void OnCreate
+    {
+        ..
+        nlp = new NaturalLanguageProcess();
+        Task task = nlp.Connect();
+        ..
+    }
+    ```
+
+2.  Call the LemmatizeaAsync(string msg) in a async Task method:
+
+    ```
+    public async Task OnLemmButtonPressedAsync(string msg)
+    {
+        ..
+        var ret = nlp.LemmatizeaAsync(msg);
+        LemmatizeResult lr = await ret;
+        ..
+    }
+    ```
+
+3.  When it is no longer needed, call Dispose() to release resource of Nlp:
+
+    ```
+    protected override void OnTerminate()
+        {
+         ..
+         nlp.Dispose();
+         ..
+        }
+    ```
+
+<h2>Detect Language</h2>
+## Detect Language from sentence - Detect Language
+
+Detect the language from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
 
@@ -220,4 +267,4 @@ detect the language from sentence:
 
 ## Related Information
 * Dependencies
-  -   Tizen 4.0 and Higher
+  -   Tizen 5.0 and Higher
