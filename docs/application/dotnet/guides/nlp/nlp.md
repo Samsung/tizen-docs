@@ -200,7 +200,7 @@ Receive the actual word from word:
     }
     ```
 
-2.  Call the LemmatizeaAsync(string msg) in a async Task method:
+2.  Call the LemmatizeaAsync(string msg) in a async task method:
 
     ```
     public async Task OnLemmButtonPressedAsync(string msg)
@@ -267,4 +267,4 @@ Detect the language from sentence:
 
 ## Related Information
 * Dependencies
-  -   Tizen 5.0 and Higher
+  -   Tizen 4.0 and Higher

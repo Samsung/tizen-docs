@@ -10,4 +10,4 @@ You can use the following natural language processing features in your DOTNET ap
 
 ## Related Information
 * Dependencies
-  -   Tizen 5.0 and Higher
+  -   Tizen 4.0 and Higher
