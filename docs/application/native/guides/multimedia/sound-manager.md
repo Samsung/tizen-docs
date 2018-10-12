@@ -182,7 +182,7 @@ To query sound device information:
       ```
 
    5. More functionality for `SOUND_DEVICE_USB_AUDIO` with `SOUND_DEVICE_IO_DIRECTION_OUT` device.
-      When you detect a device with above type, you can utilize more functionality with the following functions:
+      When you detect a device with mentioned type, you can utilize more functionality with the following functions:
 
       - `sound_manager_get_supported_sample_formats()`: To get the supported sample formats of the device.
       - `sound_manager_set_sample_format()`: To set the sample format to the device.
