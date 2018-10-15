@@ -227,6 +227,34 @@ To check whether an application has permission to use a privilege, and to reques
         }
     }
 
+## Checking Permissions
+
+This section describes how to check privileges of the application with the specified app_id.
+
+> **Note**
+>
+> Checking permissions of the application with the specified app_id is supported from Tizen 5.0. Requesting permissions of the application with the specified app_id is not supported.
+
+To check whether the application with the specified app_id has permission to use the privileges:
+
+1. Declare the `http://tizen.org/privilege/permission.check` privilege in the manifest of the application. If the privilege is missing, the API functions that are designed to check the privileges of the application with the specified app_id, return the `PRIVACY_PRIVILEGE_MANAGER_ERROR_PERMISSION_DENIED` error.
+
+2. Check whether the application has permission to use the privileges, using the `ppm_check_app_permission()` or `ppm_check_app_permissions()`, in a way similar to `ppm_check_permission()` and `ppm_check_permissions()`. The only difference is that you need to add the app_id as the first argument of the used function. For example:
+
+    ```
+    void
+    check_app_permission()
+    {
+        ppm_check_result_e result;
+        const char *app_id = "org.tizen.camera-app";
+        const char *privilege = "http://tizen.org/privilege/camera";
+
+        int ret = ppm_check_app_permission(app_id, privilege, &result);
+    }
+    ```
+
+    The result of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) applications).
+
 ## Related Information
 - Dependencies:
   - Tizen 4.0 and Higher for Mobile
