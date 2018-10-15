@@ -89,7 +89,6 @@
 ## [VPN Connections](/application/native/guides/connectivity/vpn.md)
 ## [IoT Connectivity](/application/native/guides/connectivity/iotcon.md)
 ## [Network Service Discovery](/application/native/guides/connectivity/nsd.md)
-## [Zigbee](/application/native/guides/connectivity/zigbee.md)
 
 # Messaging
 ## [Overview](/application/native/guides/messaging/overview.md)
