@@ -1,6 +1,25 @@
 # Multimedia
 
-(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
+<!--
+For MD:
+-->
+
+<link href="../css/dotnet-samples.css" ref="stylesheet">
+
+<!--
+for TD:
+
+<style type="text/css">
+    Please copy dotnet-samples.css and paste it here
+</script>
+-->
+
+<div class="sampletab">
+<button class="tablinks" onclick="openProfile(event, 'Mobile')" id="defaultOpen">Mobile</button> <button class="tablinks" onclick="openProfile(event, 'Wearable')">Wearable</button> <button class="tablinks" onclick="openProfile(event, 'TV')">TV</button>
+</div>
+
+<!-- Tab content -->
+<div class="tabcontent" id="Mobile">
 <table>
 	<tbody>
 		<tr>
@@ -81,13 +100,6 @@
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/wvolumecontroller.png" width="180"/></td>
-			<td>
-			<p><strong>(W) VolumeController</strong> [In progress]</p>
-			<p>This sample application demonstrates how to retrieve and set the device volume levels. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="267" src="media/m42voicerecorder.png" width="150"/></td>
 			<td>
 			<p><strong>(M) VoiceRecorder</strong> [In progress]</p>
@@ -96,3 +108,34 @@
 		</tr>
 	</tbody>
 </table>
+</div>
+
+<div class="tabcontent" id="Wearable">
+<table>
+	<tbody>
+		<tr>
+			<td><img alt="" height="180" src="media/wvolumecontroller.png" width="180"/></td>
+			<td>
+			<p><strong>(W) VolumeController</strong> [In progress]</p>
+			<p>This sample application demonstrates how to retrieve and set the device volume levels. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="tabcontent" id="TV">
+</div>
+
+<!--
+For MD:
+-->
+<script src="../js/dotnet-samples.js"></script>
+
+<!--
+for TD:
+
+<script>
+  Please copy dotnet-samples.js and paste it here
+</script>
+-->
