@@ -78,7 +78,7 @@
 			<p><img alt="" height="180" src="media/wimagereader.png" width="180"/></p>
 			</td>
 			<td>
-			<p><strong>(W) ImageReader</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ImageReader" target="_blank"><strong>(W) ImageReader</strong></a></p>
 			<p>This sample application demonstrates how to use an image in the Tizen .Net application.
 			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>For more information, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a>.</p>
@@ -133,7 +133,7 @@
 			<p><img alt="" height="180" src="media/wskiasharp2d.png" width="180"/></p>
 			</td>
 			<td>
-			<p><strong>(W) SkiaSharp2DSample</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SkiaSharp2DSample" target="_blank"><strong>(W) SkiaSharp2DSample</strong></a></p>
 			<p>This sample application demonstrates how to use SkiaSharp API in Tizen Xamarin.Forms applications.
 			<ul>
 				<li>Drawing Basics (DrawCircle)</li>
