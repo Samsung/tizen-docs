@@ -195,20 +195,38 @@ for TD:
 	<tbody>
 		<tr>
 			<td>
+			<p><img alt="" height="225" src="media/tv19basiccalculator.png" width="400" /></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/BasicCalculator" target="_blank"><strong>(T) BasicCalculator</strong></a></p>
+			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv1musicplayerui.png" width="400" /></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MusicPlayerUI" target="_blank"><strong>(T) Music Player UI</strong></a></p>
+			<p>This sample application demonstrates how to use ListViews and a TabbedPage to create intuitive and complex layouts on a TV.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv13stopwatch.png" width="400" /></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Stopwatch" target="_blank"><strong>(T) Stopwatch</strong></a></p>
+			<p>This sample application demonstrates how to create an application that measures the amount of time taken for a task. This application is created using Xamarin.Forms.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			<p><img alt="" height="225" src="media/tv4animationsample.png" width="400" /></p>
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AnimationSample" target="_blank"><strong>(T) Animation Sample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to use the animation class to create and cancel animations.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv19basiccalculator.png" width="400" /></p>
-			</td>
-			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/BasicCalculator" target="_blank"><strong>(T) BasicCalculator</strong></a></p>
-			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
 			</td>
 		</tr>
 		<tr>
@@ -249,15 +267,6 @@ for TD:
 		</tr>
 		<tr>
 			<td>
-			<p><img alt="" height="225" src="media/tv1musicplayerui.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MusicPlayerUI" target="_blank"><strong>(T) Music Player UI</strong></a></p>
-			<p>This sample application demonstrates how to use ListViews and a TabbedPage to create intuitive and complex layouts on a TV.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
 			<p><img alt="" height="225" src="media/tv8scriptlayoutsample.png" width="400" /></p>
 			</td>
 			<td>
@@ -267,15 +276,6 @@ for TD:
 			Setting the appearance of each individual control can be repetitive and error prone.<br />
 			Therefore, you can create styles that customizes and controls appearance by grouping and setting properties available on the control type.
 			</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv13stopwatch.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Stopwatch" target="_blank"><strong>(T) Stopwatch</strong></a></p>
-			<p>This sample application demonstrates how to create an application that measures the amount of time taken for a task. This application is created using Xamarin.Forms.</p>
 			</td>
 		</tr>
 		<tr>

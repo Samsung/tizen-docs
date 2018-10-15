@@ -38,3 +38,16 @@ for TD:
 
 <div class="tabcontent" id="TV">
 </div>
+
+<!--
+For MD:
+-->
+<script src="../js/dotnet-samples.js"></script>
+
+<!--
+for TD:
+
+<script>
+  Please copy dotnet-samples.js and paste it here
+</script>
+-->

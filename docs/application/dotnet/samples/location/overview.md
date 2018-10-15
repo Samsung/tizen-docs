@@ -75,7 +75,13 @@ for TD:
 			<p>This sample application demonstrates how to use the maps.</p>
 			</td>
 		</tr>
-
+		<tr>
+			<td><img alt="" height="180" src="media/wmapsview.png" width="180"/></td>
+			<td>
+			<p><strong>(W) MapsView</strong> [In progress]</p>
+			<p>This sample application demonstrates how to display and control the map components and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
@@ -83,6 +89,15 @@ for TD:
 <div class="tabcontent" id="TV">
 <table>
 	<tbody>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv11maps.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Maps</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use the maps.</p>
+			</td>
+		</tr>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv15mapsview.png" width="400" /></p>
