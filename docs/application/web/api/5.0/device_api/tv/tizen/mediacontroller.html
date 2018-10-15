@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
-<div class="supported-platforms"><img title="Optional" src="../../../images/tv_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="tv-optional emulator" title="Optional, Supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>MediaController API</h1></div>
 <div class="brief">
  The Media Controller API provides functions for communication between the media
@@ -177,7 +177,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <div class="brief">
  The media controller server state.
           </div>
-<pre class="webidl prettyprint">    enum MediaControllerServerState { "ACTIVE", "INACTIVE" };</pre>
+<pre class="webidl prettyprint">  enum MediaControllerServerState { "ACTIVE", "INACTIVE" };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -187,15 +187,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <div class="brief">
  Defines media playback state.
           </div>
-<pre class="webidl prettyprint">    enum MediaControllerPlaybackState {
-        "PLAY",
-        "PAUSE",
-        "STOP",
-        "NEXT",
-        "PREV",
-        "FORWARD",
-        "REWIND"
-    };</pre>
+<pre class="webidl prettyprint">  enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -208,10 +200,10 @@ For more information on the Media Controller features, see <a href="https://deve
 <div class="brief">
  This interface defines what is instantiated by the <em>Tizen</em> object from the Tizen platform.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaControllerObject {
-        readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;</pre>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerObject {
+    readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -226,11 +218,10 @@ There is a <em>tizen.mediacontroller</em> object that allows access to the Media
 <div class="brief">
  This interface provides access to the <em>MediaControllerObject</em> object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaControllerManager {
-        <a href="#MediaControllerClient">MediaControllerClient</a> getClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#MediaControllerServer">MediaControllerServer</a> createServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerManager {
+    <a href="#MediaControllerClient">MediaControllerClient</a> getClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#MediaControllerServer">MediaControllerServer</a> createServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -337,7 +328,7 @@ and is controlled by Client.
 }
 catch (err)
 {
-  console.log (err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -350,29 +341,18 @@ catch (err)
 <div class="brief">
  Provides functions for sending the server information to the client.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaControllerServer {
-
-        readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
-
-        void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeCommandListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };</pre>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerServer {
+    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
+    void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeCommandListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -638,7 +618,7 @@ requests from client.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcServer = tizen.mediacontroller.createServer();
 
 var playbackRequestListener =
@@ -661,7 +641,7 @@ var playbackRequestListener =
   }
 };
 
-/* Registers to receive playback info change requests from client */
+/* Registers to receive playback info change requests from client. */
 watcherId = mcServer.addChangeRequestPlaybackInfoListener(playbackRequestListener);
 </pre>
 </div>
@@ -694,7 +674,7 @@ watcherId = mcServer.addChangeRequestPlaybackInfoListener(playbackRequestListene
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcServer = tizen.mediacontroller.createServer();
 
 var playbackRequestListener =
@@ -717,10 +697,10 @@ var playbackRequestListener =
   }
 };
 
-/* Registers to receive playback info change requests */
+/* Registers to receive playback info change requests. */
 watcherId = mcServer.addChangeRequestPlaybackInfoListener(playbackRequestListener);
 
-/* Cancels the watch operation */
+/* Cancels the watch operation. */
 mcServer.removeChangeRequestPlaybackInfoListener(watcherId);
 </pre>
 </div>
@@ -767,20 +747,20 @@ See <em>MediaControllerServerInfo</em> to check how to send custom commands from
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcServer = tizen.mediacontroller.createServer();
 
 var commandReceiveListener = function(clientName, command, data)
 {
-  console.log("Command " + command + " received from: " + clientName +
-              " with data: " + JSON.stringify(data));
+  console.log("Command " + command + " received from: " + clientName + " with data: " +
+              JSON.stringify(data));
 
   var reply = {myReply: "someValue"};
 
   return reply;
 };
 
-/* Registers to receive custom commands from client */
+/* Registers to receive custom commands from client. */
 watcherId = mcServer.addCommandListener(commandReceiveListener);
 </pre>
 </div>
@@ -813,18 +793,15 @@ watcherId = mcServer.addCommandListener(commandReceiveListener);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcServer = tizen.mediacontroller.createServer();
 
 var commandReceiveListener = function(clientName, command, data)
 {
-  console.log("Command " + command + " received from: " + clientName +
-              " with data: " + JSON.stringify(data));
+  console.log("Command " + command + " received from: " + clientName + " with data: " +
+              JSON.stringify(data));
 
-  var reply =
-  {
-    myReply: "someValue"
-  };
+  var reply = {myReply: "someValue"};
 
   return reply;
 };
@@ -846,14 +823,11 @@ mcServer.removeCommandListener(watcherId);
  The media controller client API and functions related with handling media control.
 Functions include operations to get the latest status of the media controller servers.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaControllerClient {
-
-        void findServers(<a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>? getLatestServerInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };</pre>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerClient {
+    void findServers(<a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>? getLatestServerInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -876,7 +850,7 @@ Functions include operations to get the latest status of the media controller se
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- The method to invoked when all of the registered media controller servers was fund.
+ The method to invoke when all of the registered media controller servers have been found.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -897,7 +871,7 @@ Functions include operations to get the latest status of the media controller se
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Media controller server should be created in application */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Media controller server should be created in application. */
 var mcClient;
 try
 {
@@ -910,7 +884,7 @@ catch (err)
 
 function successCallback(list)
 {
-  for(var s in list)
+  for (var s in list)
   {
     console.log("Found server: " + list[s].name + ", state: " + list[s].state);
   }
@@ -959,11 +933,11 @@ mcClient.findServers(successCallback, errorCallback);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Access latest server info */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Access latest server info. */
 var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
-console.log("Latest server name is: " + mcServerInfo.name +
-            ", server state: " + mcServerInfo.state);
+console.log(
+    "Latest server name is: " + mcServerInfo.name + ", server state: " + mcServerInfo.state);
 </pre>
 </div>
 </dd>
@@ -976,40 +950,25 @@ console.log("Latest server name is: " + mcServerInfo.name +
  This interface provides media controller server state and playback info.
 Provides methods to send commands to server and listen for server status change.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaControllerServerInfo {
-
-        readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
-
-        readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
-
-        readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
-
-        void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state,
-                               optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendPlaybackPosition(unsigned long long position,
-                                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeServerStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addPlaybackInfoChangeListener(<a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removePlaybackInfoChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };</pre>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerServerInfo {
+    readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
+    readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
+    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
+    void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeServerStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addPlaybackInfoChangeListener(<a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removePlaybackInfoChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -1055,7 +1014,8 @@ Provides methods to send commands to server and listen for server status change.
 <div class="brief">
  Allows to change playback state of media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -1068,7 +1028,7 @@ Provides methods to send commands to server and listen for server status change.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoked when playback state was changed.
+ The method to invoke when playback state was changed.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1092,13 +1052,15 @@ Provides methods to send commands to server and listen for server status change.
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-mcServerInfo.sendPlaybackState("STOP", function()
-{
-  console.log("Playback has stopped");
-}, function(e)
-{
-  console.log("Unable to change playback state: " + e.message);
-});
+mcServerInfo.sendPlaybackState("STOP",
+    function()
+    {
+      console.log("Playback has stopped");
+    },
+    function(e)
+    {
+      console.log("Unable to change playback state: " + e.message);
+    });
 </pre>
 </div>
 </dd>
@@ -1109,7 +1071,8 @@ mcServerInfo.sendPlaybackState("STOP", function()
 <div class="brief">
  Allows to change playback position of media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -1122,7 +1085,7 @@ mcServerInfo.sendPlaybackState("STOP", function()
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoked when playback position was changed.
+ The method to invoke when playback position was changed.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1149,13 +1112,15 @@ mcServerInfo.sendPlaybackState("STOP", function()
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-mcServerInfo.sendPlaybackPosition(164, function()
-{
-  console.log("Playback position changed");
-}, function(e)
-{
-  console.log("Unable to change playback position: " + e.message);
-});
+mcServerInfo.sendPlaybackPosition(164,
+    function()
+    {
+      console.log("Playback position changed");
+    },
+    function(e)
+    {
+      console.log("Unable to change playback position: " + e.message);
+    });
 </pre>
 </div>
 </dd>
@@ -1179,7 +1144,7 @@ mcServerInfo.sendPlaybackPosition(164, function()
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoked when shuffle mode was changed.
+ The method to invoke when shuffle mode was changed.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1203,13 +1168,15 @@ mcServerInfo.sendPlaybackPosition(164, function()
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-mcServerInfo.sendShuffleMode(true, function()
-{
-  console.log("Shuffle mode changed");
-}, function(e)
-{
-  console.log("Unable to change shuffle mode: " + e.message);
-});
+mcServerInfo.sendShuffleMode(true,
+    function()
+    {
+      console.log("Shuffle mode changed");
+    },
+    function(e)
+    {
+      console.log("Unable to change shuffle mode: " + e.message);
+    });
 </pre>
 </div>
 </dd>
@@ -1233,7 +1200,7 @@ mcServerInfo.sendShuffleMode(true, function()
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoked when repeat mode was changed.
+ The method to invoke when repeat mode was changed.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1257,13 +1224,15 @@ mcServerInfo.sendShuffleMode(true, function()
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-mcServerInfo.sendRepeatMode(false, function()
-{
-  console.log("Repeat mode changed");
-}, function(e)
-{
-  console.log("Unable to change repeat mode: " + e.message);
-});
+mcServerInfo.sendRepeatMode(false,
+    function()
+    {
+      console.log("Repeat mode changed");
+    },
+    function(e)
+    {
+      console.log("Unable to change repeat mode: " + e.message);
+    });
 </pre>
 </div>
 </dd>
@@ -1274,7 +1243,8 @@ mcServerInfo.sendRepeatMode(false, function()
 <div class="brief">
  Allows to send custom command to media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, 
+                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -1295,7 +1265,7 @@ and respond to custom commands.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- The method to invoked when server responded to custom command.
+ The method to invoke when server responded to custom command.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1319,17 +1289,16 @@ and respond to custom commands.
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-var exampleCustomCommandData =
-{
-  myFilter: "rock"
-};
-mcServerInfo.sendCommand("myPlaylistFilter", exampleCustomCommandData, function(response)
-{
-  console.log("Command executed with result: " + JSON.stringify(response));
-}, function(e)
-{
-  console.log("Error executing command: " + e.message);
-});
+var exampleCustomCommandData = {myFilter: "rock"};
+mcServerInfo.sendCommand("myPlaylistFilter", exampleCustomCommandData,
+    function(response)
+    {
+      console.log("Command executed with result: " + JSON.stringify(response));
+    },
+    function(e)
+    {
+      console.log("Error executing command: " + e.message);
+    });
 </pre>
 </div>
 </dd>
@@ -1374,11 +1343,11 @@ mcServerInfo.sendCommand("myPlaylistFilter", exampleCustomCommandData, function(
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-/* Registers to be notified when server status changes */
+/* Registers to be notified when server status changes. */
 watcherId = mcServerInfo.addServerStatusChangeListener(function(status)
 {
   console.log(mcServerInfo.name + " server status changed to " + status);
@@ -1414,17 +1383,17 @@ watcherId = mcServerInfo.addServerStatusChangeListener(function(status)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-/* Registers to be notified when server status changes */
+/* Registers to be notified when server status changes. */
 watcherId = mcServerInfo.addServerStatusChangeListener(function(status)
 {
   console.log(mcServerInfo.name + " server status changed to " + status);
 });
 
-/* Cancels the watch operation */
+/* Cancels the watch operation. */
 mcServerInfo.removeServerStatusChangeListener(watcherId);
 </pre>
 </div>
@@ -1470,7 +1439,7 @@ mcServerInfo.removeServerStatusChangeListener(watcherId);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
@@ -1495,7 +1464,7 @@ var playbackListener =
   }
 };
 
-/* Registers to be notified when playback state changes */
+/* Registers to be notified when playback state changes. */
 watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
 </pre>
 </div>
@@ -1528,11 +1497,11 @@ watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0; /* Watcher identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
 var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-/* receives playback state changes */
+/* receives playback state changes. */
 var playbackListener =
 {
   onplaybackchanged: function(state, position)
@@ -1554,11 +1523,11 @@ var playbackListener =
   }
 };
 
-/* Registers to be notified when playback state changes */
+/* Registers to be notified when playback state changes. */
 watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
 
-/* Cancels the watch operation */
- mcServerInfo.removePlaybackInfoChangeListener(watcherId);
+/* Cancels the watch operation. */
+mcServerInfo.removePlaybackInfoChangeListener(watcherId);
 </pre>
 </div>
 </dd>
@@ -1570,18 +1539,13 @@ watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
 <div class="brief">
  Current playback info.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaControllerPlaybackInfo {
-        readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
-
-        readonly attribute unsigned long long position;
-
-        readonly attribute boolean shuffleMode;
-
-        readonly attribute boolean repeatMode;
-
-        readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
-
-    };</pre>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerPlaybackInfo {
+    readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
+    readonly attribute unsigned long long position;
+    readonly attribute boolean shuffleMode;
+    readonly attribute boolean repeatMode;
+    readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -1641,31 +1605,19 @@ watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
 <div class="brief">
  Playback metadata.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MediaControllerMetadata {
-
-        attribute DOMString title;
-
-        attribute DOMString artist;
-
-        attribute DOMString album;
-
-        attribute DOMString author;
-
-        attribute DOMString genre;
-
-        attribute DOMString duration;
-
-        attribute DOMString date;
-
-        attribute DOMString copyright;
-
-        attribute DOMString description;
-
-        attribute DOMString trackNum;
-
-        attribute DOMString picture;
-
-    };</pre>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerMetadata {
+    attribute DOMString title;
+    attribute DOMString artist;
+    attribute DOMString album;
+    attribute DOMString author;
+    attribute DOMString genre;
+    attribute DOMString duration;
+    attribute DOMString date;
+    attribute DOMString copyright;
+    attribute DOMString description;
+    attribute DOMString trackNum;
+    attribute DOMString picture;
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -1769,9 +1721,9 @@ watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
  The MediaControllerServerInfoArraySuccessCallback interface that defines the success method
 for <em>MediaControllerClient.findServers()</em>.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerInfoArraySuccessCallback {
-        void onsuccess(<a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>[] servers);
-    };</pre>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerInfoArraySuccessCallback {
+    void onsuccess(<a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>[] servers);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -1808,9 +1760,9 @@ for <em>MediaControllerClient.findServers()</em>.
  The MediaControllerSendCommandSuccessCallback interface that defines the success method
 for <em>MediaControllerServerInfo.sendCommand()</em>.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSendCommandSuccessCallback {
-        void onsuccess(object? data);
-    };</pre>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSendCommandSuccessCallback {
+    void onsuccess(object? data);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -1847,9 +1799,9 @@ for <em>MediaControllerServerInfo.sendCommand()</em>.
  The MediaControllerReceiveCommandCallback interface that defines the listener
 for custom commands from client in <em>MediaControllerServer.addCommandListener()</em>.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-        object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
-    };</pre>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
+    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -1906,9 +1858,9 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
  The MediaControllerServerStatusChangeCallback interface that defines the listener
 for media controller server status changes.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerStatusChangeCallback {
-        void onsuccess(<a href="#MediaControllerServerState">MediaControllerServerState</a> status);
-    };</pre>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerStatusChangeCallback {
+    void onsuccess(<a href="#MediaControllerServerState">MediaControllerServerState</a> status);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -1945,17 +1897,12 @@ for media controller server status changes.
  The MediaControllerPlaybackInfoChangeCallback interface that defines the listeners
 object for receiving media controller playback info changes from server.
           </div>
-<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
-
-        void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
-
-        void onshufflemodechanged(boolean mode);
-
-        void onrepeatmodechanged(boolean mode);
-
-        void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
-
-    };</pre>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
+    void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
+    void onshufflemodechanged(boolean mode);
+    void onrepeatmodechanged(boolean mode);
+    void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -2059,17 +2006,12 @@ object for receiving media controller playback info changes from server.
  The MediaControllerChangeRequestPlaybackInfoCallback interface that defines the listeners
 object for receiving playback info change requests from client.
           </div>
-<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
-
-        void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);
-
-        void onplaybackpositionrequest(unsigned long long position);
-
-        void onshufflemoderequest(boolean mode);
-
-        void onrepeatmoderequest(boolean mode);
-
-    };</pre>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
+    void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);
+    void onplaybackpositionrequest(unsigned long long position);
+    void onshufflemoderequest(boolean mode);
+    void onrepeatmoderequest(boolean mode);
+  };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -2166,177 +2108,96 @@ object for receiving playback info change requests from client.
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module MediaController {
-
-    enum MediaControllerServerState { "ACTIVE", "INACTIVE" };
-
-    enum MediaControllerPlaybackState {
-        "PLAY",
-        "PAUSE",
-        "STOP",
-        "NEXT",
-        "PREV",
-        "FORWARD",
-        "REWIND"
-    };
-
-    [NoInterfaceObject] interface MediaControllerObject {
-        readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
-
-    [NoInterfaceObject] interface MediaControllerManager {
-        <a href="#MediaControllerClient">MediaControllerClient</a> getClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#MediaControllerServer">MediaControllerServer</a> createServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [NoInterfaceObject] interface MediaControllerServer {
-
-        readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
-
-        void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeCommandListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };
-
-    [NoInterfaceObject] interface MediaControllerClient {
-
-        void findServers(<a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>? getLatestServerInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };
-
-    [NoInterfaceObject] interface MediaControllerServerInfo {
-
-        readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
-
-        readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
-
-        readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
-
-        void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state,
-                               optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendPlaybackPosition(unsigned long long position,
-                                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeServerStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addPlaybackInfoChangeListener(<a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removePlaybackInfoChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };
-
-    [NoInterfaceObject] interface MediaControllerPlaybackInfo {
-        readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
-
-        readonly attribute unsigned long long position;
-
-        readonly attribute boolean shuffleMode;
-
-        readonly attribute boolean repeatMode;
-
-        readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
-
-    };
-
-    [NoInterfaceObject] interface MediaControllerMetadata {
-
-        attribute DOMString title;
-
-        attribute DOMString artist;
-
-        attribute DOMString album;
-
-        attribute DOMString author;
-
-        attribute DOMString genre;
-
-        attribute DOMString duration;
-
-        attribute DOMString date;
-
-        attribute DOMString copyright;
-
-        attribute DOMString description;
-
-        attribute DOMString trackNum;
-
-        attribute DOMString picture;
-
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerInfoArraySuccessCallback {
-        void onsuccess(<a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>[] servers);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSendCommandSuccessCallback {
-        void onsuccess(object? data);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-        object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerStatusChangeCallback {
-        void onsuccess(<a href="#MediaControllerServerState">MediaControllerServerState</a> status);
-    };
-
-    [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
-
-        void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
-
-        void onshufflemodechanged(boolean mode);
-
-        void onrepeatmodechanged(boolean mode);
-
-        void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
-
-    };
-
-    [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
-
-        void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);
-
-        void onplaybackpositionrequest(unsigned long long position);
-
-        void onshufflemoderequest(boolean mode);
-
-        void onrepeatmoderequest(boolean mode);
-
-    };
-
+  enum MediaControllerServerState { "ACTIVE", "INACTIVE" };
+  enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
+  [NoInterfaceObject] interface MediaControllerObject {
+    readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
+  [NoInterfaceObject] interface MediaControllerManager {
+    <a href="#MediaControllerClient">MediaControllerClient</a> getClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#MediaControllerServer">MediaControllerServer</a> createServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface MediaControllerServer {
+    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
+    void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeCommandListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface MediaControllerClient {
+    void findServers(<a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>? getLatestServerInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface MediaControllerServerInfo {
+    readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
+    readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
+    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
+    void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeServerStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addPlaybackInfoChangeListener(<a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removePlaybackInfoChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface MediaControllerPlaybackInfo {
+    readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
+    readonly attribute unsigned long long position;
+    readonly attribute boolean shuffleMode;
+    readonly attribute boolean repeatMode;
+    readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
+  };
+  [NoInterfaceObject] interface MediaControllerMetadata {
+    attribute DOMString title;
+    attribute DOMString artist;
+    attribute DOMString album;
+    attribute DOMString author;
+    attribute DOMString genre;
+    attribute DOMString duration;
+    attribute DOMString date;
+    attribute DOMString copyright;
+    attribute DOMString description;
+    attribute DOMString trackNum;
+    attribute DOMString picture;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerInfoArraySuccessCallback {
+    void onsuccess(<a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>[] servers);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSendCommandSuccessCallback {
+    void onsuccess(object? data);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
+    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerStatusChangeCallback {
+    void onsuccess(<a href="#MediaControllerServerState">MediaControllerServerState</a> status);
+  };
+  [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
+    void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
+    void onshufflemodechanged(boolean mode);
+    void onrepeatmodechanged(boolean mode);
+    void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
+  };
+  [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
+    void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);
+    void onplaybackpositionrequest(unsigned long long position);
+    void onshufflemoderequest(boolean mode);
+    void onrepeatmoderequest(boolean mode);
+  };
 };</pre>
 </div>
 <div id="page-footer">
