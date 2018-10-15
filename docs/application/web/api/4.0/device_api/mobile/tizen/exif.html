@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Exif">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Exif API</h1></div>
 <div class="brief">
  The Exif API provides interfaces and methods for manipulating <a href="http://en.wikipedia.org/wiki/Exchangeable_image_file_format">Exif</a> data from a JPEG file.
@@ -20,19 +20,33 @@ the saveExifInfo() method of the <em>ExifManager</em> object should be called wi
         </div>
 <div class="description">
         <p>
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+          <li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+          <li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+          <li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+        </ul>
+        <p>
 For more information about how to use Exif API, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/jpeg-file-exif-information">Exif Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#WhiteBalanceMode">WhiteBalanceMode</a>
+<li>
+                    1.1. <a href="#WhiteBalanceMode">WhiteBalanceMode</a>
 </li>
-<li>1.2. <a href="#ExposureProgram">ExposureProgram</a>
+<li>
+                    1.2. <a href="#ExposureProgram">ExposureProgram</a>
 </li>
 </ul>
 </li>
@@ -68,9 +82,11 @@ For more information about how to use Exif API, see <a href="https://developer.t
 </tr>
 <tr>
 <td><a href="#ExifManager">ExifManager</a></td>
-<td>void <a href="#ExifManager::getExifInfo">getExifInfo</a> (DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#ExifManager::saveExifInfo">saveExifInfo</a> (<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#ExifManager::getThumbnail">getThumbnail</a> (DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+<td>
+<div>void <a href="#ExifManager::getExifInfo">getExifInfo</a> (DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ExifManager::saveExifInfo">saveExifInfo</a> (<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ExifManager::getThumbnail">getThumbnail</a> (DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#ExifInit">ExifInit</a></td>
@@ -82,11 +98,11 @@ For more information about how to use Exif API, see <a href="https://developer.t
 </tr>
 <tr>
 <td><a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a></td>
-<td>void <a href="#ExifInformationSuccessCallback::onsuccess">onsuccess</a> (<a href="#ExifInformation">ExifInformation</a> exifInfo)</td>
+<td><div>void <a href="#ExifInformationSuccessCallback::onsuccess">onsuccess</a> (<a href="#ExifInformation">ExifInformation</a> exifInfo)</div></td>
 </tr>
 <tr>
 <td><a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a></td>
-<td>void <a href="#ExifThumbnailSuccessCallback::onsuccess">onsuccess</a> (DOMString? uri)</td>
+<td><div>void <a href="#ExifThumbnailSuccessCallback::onsuccess">onsuccess</a> (DOMString? uri)</div></td>
 </tr>
 </tbody>
 </table>
@@ -97,9 +113,8 @@ For more information about how to use Exif API, see <a href="https://developer.t
 <div class="brief">
  Specifies a white balance mode for an image.
           </div>
-<pre class="webidl prettyprint">    enum WhiteBalanceMode { "AUTO", "MANUAL" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum WhiteBalanceMode { "AUTO", "MANUAL" };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -116,9 +131,9 @@ MANUAL - Manual White Balance mode            </li>
 <div class="brief">
  Specifies an exposure balance program for an image.
           </div>
-<pre class="webidl prettyprint">    enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM", "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM",
+    "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -154,12 +169,11 @@ LANDSCAPE_MODE - Landscape modes use a small aperture to gain depth of a field  
  The ExifManagerObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
 The <em>tizen.exif</em> object allows access to the Exif data of a JPEG file.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface ExifManagerObject {
-        readonly attribute <a href="#ExifManager">ExifManager</a> exif;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ExifManagerObject {
+    readonly attribute <a href="#ExifManager">ExifManager</a> exif;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 </div>
@@ -168,22 +182,15 @@ The <em>tizen.exif</em> object allows access to the Exif data of a JPEG file.
 <div class="brief">
  The ExifManager interface provides methods to retrieve the <em>ExifInformation</em> object and save the Exif data of the <em>ExifInformation</em> object in a JPEG file.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface ExifManager {
-
-        void getExifInfo(DOMString uri,
-                         <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback ) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo,
-                          optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getThumbnail(DOMString uri,
-                          <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ExifManager {
+    void getExifInfo(DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getThumbnail(DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -201,10 +208,8 @@ It provides access to the API functionalities through the <em>tizen.exif</em> in
 <div class="brief">
  Gets the <em>ExifInformation</em> object to manipulate the Exif data in a JPEG file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getExifInfo(DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getExifInfo(DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -230,49 +235,53 @@ UnknownError: In any other error case              </li>
 <ul>
           <li class="param">
 <span class="name">uri</span>:
- URI of the JPEG file, as available in ImageContent::contentURI or returned by File::toURI()
+ URI of the JPEG file, as available in ImageContent::contentURI or returned by File::toURI().
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method to be invoked when Exif information has been retrieved successfully
+ Callback method to be invoked when Exif information has been retrieved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
  with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li></ul>
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+</ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Preconditions: provide images/tizen.jpg file with present Exif data */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Preconditions: please provide images/tizen.jpg file with present Exif data. */
 
-/* Defines success callback */
+/* Defines success callback. */
 function onSuccess(exifInfo)
 {
-   console.log("success to get Exif information object");
+  console.log("Success to get Exif information object");
 }
 
-/* Defines error callback */
+/* Defines error callback. */
 function onError(error)
 {
-   console.log("error occurred: " + error.name);
+  console.log("Error occurred: " + error.name);
 }
 
 function resolveSuccess(file)
 {
-   tizen.exif.getExifInfo(file.toURI(), onSuccess, onError);
+  tizen.exif.getExifInfo(file.toURI(), onSuccess, onError);
 }
 
 function resolveFail(error)
 {
-   console.log("error occurred: " + error.name);
+  console.log("Error occurred: " + error.name);
 }
 
 tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
@@ -286,10 +295,8 @@ tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
 <div class="brief">
  Saves the Exif data of the <em>ExifInformation</em> object into the JPEG file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -310,63 +317,67 @@ UnknownError: In any other error case              </li>
 <ul>
           <li class="param">
 <span class="name">exifInfo</span>:
- Exif information object that contains the Exif data in the JPEG file
+ Exif information object that contains the Exif data in the JPEG file.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when Exif data has been saved successfully
+ Callback method to be invoked when Exif data has been saved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
  with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li></ul>
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+</ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Preconditions: provide images/tizen.jpg file with present Exif data */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Preconditions: please provide images/tizen.jpg file with present Exif data. */
 
-/* Defines success callback */
+/* Defines success callback. */
 function onSaveSuccess()
 {
-   console.log("success to save Exif information");
+  console.log("success to save Exif information");
 }
 
-/* Defines error callback */
+/* Defines error callback. */
 function onSaveError(error)
 {
-   console.log("error occur" + error.name);
+  console.log("Error occured: " + error.name);
 }
 
-/* Defines success callback */
+/* Defines success callback. */
 function onSuccess(exifInfo)
 {
-   console.log("success to get Exif information object");
-   exifInfo.orientation = "ROTATE_90";
-   tizen.exif.saveExifInfo(exifInfo, onSaveSuccess, onSaveError);
+  console.log("success to get Exif information object");
+  exifInfo.orientation = "ROTATE_90";
+  tizen.exif.saveExifInfo(exifInfo, onSaveSuccess, onSaveError);
 }
 
-/* Defines error callback */
+/* Defines error callback. */
 function onError(error)
 {
-   console.log("error occur" + error.name);
+  console.log("Error occurred: " + error.name);
 }
 
 function resolveSuccess(file)
 {
-   tizen.exif.getExifInfo(file.toURI(), onSuccess, onError);
+  tizen.exif.getExifInfo(file.toURI(), onSuccess, onError);
 }
 
 function resolveFail(error)
 {
-   console.log("error occurred: " + error.name);
+  console.log("Error occurred: " + error.name);
 }
 
 tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
@@ -380,10 +391,8 @@ tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
 <div class="brief">
  Gets the thumbnail of the specified JPEG file. If there is no thumbnail in the JPEG file, <var>null</var> is returned.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getThumbnail(DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getThumbnail(DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -411,55 +420,59 @@ UnknownError: In any other error case              </li>
 <ul>
           <li class="param">
 <span class="name">uri</span>:
- URI of the JPEG file
+ URI of the JPEG file.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method to be invoked when thumbnail data has been retrieved successfully
+ Callback method to be invoked when thumbnail data has been retrieved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
  with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li></ul>
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+</ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Preconditions: provide images/tizen.jpg file with present Exif data */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Preconditions: please provide images/tizen.jpg file with present Exif data. */
 
-/* Defines success callback */
+/* Defines success callback. */
 function onSuccess(thumbData)
 {
-   console.log("got thumbnail data of JPEG file");
-   if (thumbData)
-   {
-      var img = new Image();
-      img.src = thumbData;
-      document.body.appendChild(img);
-   }
+  console.log("got thumbnail data of JPEG file");
+  if (thumbData)
+  {
+    var img = new Image();
+    img.src = thumbData;
+    document.body.appendChild(img);
+  }
 }
 
-/* Defines error callback */
+/* Defines error callback. */
 function onError(error)
 {
-   console.log("error occur" + error.name);
+  console.log("Error occurred: " + error.name);
 }
 
 function resolveSuccess(file)
 {
-   tizen.exif.getThumbnail(file.toURI(), onSuccess, onError);
+  tizen.exif.getThumbnail(file.toURI(), onSuccess, onError);
 }
 
 function resolveFail(error)
 {
-   console.log("error occurred: " + error.name);
+  console.log("Error occurred: " + error.name);
 }
 
 tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
@@ -474,29 +487,28 @@ tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
 <div class="brief">
  Dictionary for specifying <em>ExifInformation</em> attributes upon <em>ExifInformation</em> creation.
           </div>
-<pre class="webidl prettyprint">    dictionary ExifInit {
-        DOMString uri;
-        unsigned long width;
-        unsigned long height;
-        DOMString deviceMaker;
-        DOMString deviceModel;
-        Date originalTime;
-        <a href="content.html#ImageContentOrientation">ImageContentOrientation</a> orientation;
-        double fNumber;
-        unsigned short[] isoSpeedRatings;
-        DOMString exposureTime;
-        <a href="#ExposureProgram">ExposureProgram</a> exposureProgram;
-        boolean flash;
-        double focalLength;
-        <a href="#WhiteBalanceMode">WhiteBalanceMode</a> whiteBalance;
-        <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a> gpsLocation;
-        double gpsAltitude;
-        DOMString gpsProcessingMethod;
-        Date gpsTime;
-        DOMString userComment;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  dictionary ExifInit {
+    DOMString uri;
+    unsigned long width;
+    unsigned long height;
+    DOMString deviceMaker;
+    DOMString deviceModel;
+    Date originalTime;
+    <a href="content.html#ImageContentOrientation">ImageContentOrientation</a> orientation;
+    double fNumber;
+    unsigned short[] isoSpeedRatings;
+    DOMString exposureTime;
+    <a href="#ExposureProgram">ExposureProgram</a> exposureProgram;
+    boolean flash;
+    double focalLength;
+    <a href="#WhiteBalanceMode">WhiteBalanceMode</a> whiteBalance;
+    <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a> gpsLocation;
+    double gpsAltitude;
+    DOMString gpsProcessingMethod;
+    Date gpsTime;
+    DOMString userComment;
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -511,49 +523,29 @@ For description of attributes please see the corresponding attributes in the <em
 <div class="brief">
  The ExifInformation interface implements the <em>ExifInformation</em> object.
           </div>
-<pre class="webidl prettyprint">    [Constructor(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict)]
-    interface ExifInformation {
-        attribute DOMString uri;
-
-        attribute unsigned long? width;
-
-        attribute unsigned long? height;
-
-        attribute DOMString? deviceMaker;
-
-        attribute DOMString? deviceModel;
-
-        attribute Date? originalTime;
-
-        attribute <a href="content.html#ImageContentOrientation">ImageContentOrientation</a>? orientation;
-
-        attribute double? fNumber;
-
-        attribute unsigned short[]? isoSpeedRatings;
-
-        attribute DOMString? exposureTime;
-
-        attribute <a href="#ExposureProgram">ExposureProgram</a>? exposureProgram;
-
-        attribute boolean? flash;
-
-        attribute double? focalLength;
-
-        attribute <a href="#WhiteBalanceMode">WhiteBalanceMode</a>? whiteBalance;
-
-        attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? gpsLocation;
-
-        attribute double? gpsAltitude;
-
-        attribute DOMString? gpsProcessingMethod;
-
-        attribute <a href="time.html#TZDate">TZDate</a>? gpsTime;
-
-        attribute DOMString? userComment;
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Constructor(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict)]
+  interface ExifInformation {
+    attribute DOMString uri;
+    attribute unsigned long? width;
+    attribute unsigned long? height;
+    attribute DOMString? deviceMaker;
+    attribute DOMString? deviceModel;
+    attribute Date? originalTime;
+    attribute <a href="content.html#ImageContentOrientation">ImageContentOrientation</a>? orientation;
+    attribute double? fNumber;
+    attribute unsigned short[]? isoSpeedRatings;
+    attribute DOMString? exposureTime;
+    attribute <a href="#ExposureProgram">ExposureProgram</a>? exposureProgram;
+    attribute boolean? flash;
+    attribute double? focalLength;
+    attribute <a href="#WhiteBalanceMode">WhiteBalanceMode</a>? whiteBalance;
+    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? gpsLocation;
+    attribute double? gpsAltitude;
+    attribute DOMString? gpsProcessingMethod;
+    attribute <a href="time.html#TZDate">TZDate</a>? gpsTime;
+    attribute DOMString? userComment;
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -581,8 +573,7 @@ By setting an attribute to null and saving <em>ExifInformation</em> one can remo
 The path to the file from which <em>ExifInformation</em> data is collected.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -595,8 +586,7 @@ The path to the file from which <em>ExifInformation</em> data is collected.
 Note if the value of this attribute is changed, the new value is not verified against the actual size of the image.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -609,8 +599,7 @@ Note if the value of this attribute is changed, the new value is not verified ag
 Note if the value of this attribute is changed, the new value is not verified against the actual size of the image.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -618,8 +607,7 @@ Note if the value of this attribute is changed, the new value is not verified ag
 <span class="attrName"><span class="type">DOMString </span><span class="name">deviceMaker</span><span class="optional"> [nullable]</span></span><div class="brief">
  Name of the camera manufacturer.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -627,8 +615,7 @@ Note if the value of this attribute is changed, the new value is not verified ag
 <span class="attrName"><span class="type">DOMString </span><span class="name">deviceModel</span><span class="optional"> [nullable]</span></span><div class="brief">
  Model name or model number of the camera or input device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -636,8 +623,7 @@ Note if the value of this attribute is changed, the new value is not verified ag
 <span class="attrName"><span class="type">Date </span><span class="name">originalTime</span><span class="optional"> [nullable]</span></span><div class="brief">
  Date and time when the picture was taken.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -651,8 +637,7 @@ This attribute shows the relation between the stored image data and the visual c
 In other words - how a stored image should be oriented when presented to the user.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -670,8 +655,7 @@ F-number is also called focal ratio, f-ratio, f-stop, or relative aperture.
 Example values: 1.4, 2, 2.8, 4, 5.6, 8, 11 ...
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -685,8 +669,7 @@ Example values: 1.4, 2, 2.8, 4, 5.6, 8, 11 ...
 Example values: 80, 100, 200, 400, 800, 1600, 3200 ..
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -700,8 +683,7 @@ If exposure time is below one second it is expressed as 1/x.
 For example: 1 second exposure is "1", 0.25s is "1/4".
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -709,8 +691,7 @@ For example: 1 second exposure is "1", 0.25s is "1/4".
 <span class="attrName"><span class="type">ExposureProgram </span><span class="name">exposureProgram</span><span class="optional"> [nullable]</span></span><div class="brief">
  Exposure balance program used by the camera to set exposure when the picture was taken.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -718,8 +699,7 @@ For example: 1 second exposure is "1", 0.25s is "1/4".
 <span class="attrName"><span class="type">boolean </span><span class="name">flash</span><span class="optional"> [nullable]</span></span><div class="brief">
  Boolean value that indicates whether flash was fired when the picture was taken (true: flash fired).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -727,8 +707,7 @@ For example: 1 second exposure is "1", 0.25s is "1/4".
 <span class="attrName"><span class="type">double </span><span class="name">focalLength</span><span class="optional"> [nullable]</span></span><div class="brief">
  Focal length of the lens, given in mm.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -736,8 +715,7 @@ For example: 1 second exposure is "1", 0.25s is "1/4".
 <span class="attrName"><span class="type">WhiteBalanceMode </span><span class="name">whiteBalance</span><span class="optional"> [nullable]</span></span><div class="brief">
  White balance mode set when the picture was taken.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -745,8 +723,7 @@ For example: 1 second exposure is "1", 0.25s is "1/4".
 <span class="attrName"><span class="type">SimpleCoordinates </span><span class="name">gpsLocation</span><span class="optional"> [nullable]</span></span><div class="brief">
  Latitude and longitude of the camera (from GPS) when the picture was taken.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -759,8 +736,7 @@ For example: 1 second exposure is "1", 0.25s is "1/4".
 This value is expressed in meters above sea level (can be negative).
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -768,8 +744,7 @@ This value is expressed in meters above sea level (can be negative).
 <span class="attrName"><span class="type">DOMString </span><span class="name">gpsProcessingMethod</span><span class="optional"> [nullable]</span></span><div class="brief">
  Name of the method used for finding the location.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -777,8 +752,7 @@ This value is expressed in meters above sea level (can be negative).
 <span class="attrName"><span class="type">TZDate </span><span class="name">gpsTime</span><span class="optional"> [nullable]</span></span><div class="brief">
  Date and time information relative to UTC (Universal Time Coordinated) provided by GPS when the photo was taken.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -786,8 +760,7 @@ This value is expressed in meters above sea level (can be negative).
 <span class="attrName"><span class="type">DOMString </span><span class="name">userComment</span><span class="optional"> [nullable]</span></span><div class="brief">
  User comment.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -800,11 +773,10 @@ This value is expressed in meters above sea level (can be negative).
  The ExifInformationSuccessCallback interface provides a success callback that is invoked when the Exif information object has been retrieved.
 This callback interface specifies a success method with an <em>ExifInformation</em> object as an input parameter. It is used in exif.getExifInfo().
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface ExifInformationSuccessCallback {
-        void onsuccess(<a href="#ExifInformation">ExifInformation</a> exifInfo);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ExifInformationSuccessCallback {
+    void onsuccess(<a href="#ExifInformation">ExifInformation</a> exifInfo);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -817,10 +789,8 @@ This callback interface specifies a success method with an <em>ExifInformation</
 <div class="brief">
  Called when the Exif information object has been successfully retrieved.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ExifInformation">ExifInformation</a> exifInfo);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ExifInformation">ExifInformation</a> exifInfo);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -828,7 +798,7 @@ This callback interface specifies a success method with an <em>ExifInformation</
 <ul>
           <li class="param">
 <span class="name">exifInfo</span>:
- <em>ExifInformation</em> to be retrieved
+ <em>ExifInformation</em> to be retrieved.
                 </li>
         </ul>
 </div>
@@ -842,11 +812,10 @@ This callback interface specifies a success method with an <em>ExifInformation</
  The ExifThumbnailSuccessCallback interface provides a success callback that is invoked when the Exif thumbnail has been retrieved.
 This callback interface specifies a success method with the URI for the thumbnail as an input parameter. It is used in exif.getThumbnail().
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface ExifThumbnailSuccessCallback {
-        void onsuccess(DOMString? uri);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ExifThumbnailSuccessCallback {
+    void onsuccess(DOMString? uri);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -859,10 +828,8 @@ This callback interface specifies a success method with the URI for the thumbnai
 <div class="brief">
  Called when the thumbnail of the JPEG file has been successfully retrieved.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString? uri);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString? uri);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -881,103 +848,70 @@ This callback interface specifies a success method with the URI for the thumbnai
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Exif {
-
-    enum WhiteBalanceMode { "AUTO", "MANUAL" };
-
-    enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM", "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };
-
-    [NoInterfaceObject] interface ExifManagerObject {
-        readonly attribute <a href="#ExifManager">ExifManager</a> exif;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;
-
-    [NoInterfaceObject] interface ExifManager {
-
-        void getExifInfo(DOMString uri,
-                         <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback ) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo,
-                          optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getThumbnail(DOMString uri,
-                          <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    dictionary ExifInit {
-        DOMString uri;
-        unsigned long width;
-        unsigned long height;
-        DOMString deviceMaker;
-        DOMString deviceModel;
-        Date originalTime;
-        <a href="content.html#ImageContentOrientation">ImageContentOrientation</a> orientation;
-        double fNumber;
-        unsigned short[] isoSpeedRatings;
-        DOMString exposureTime;
-        <a href="#ExposureProgram">ExposureProgram</a> exposureProgram;
-        boolean flash;
-        double focalLength;
-        <a href="#WhiteBalanceMode">WhiteBalanceMode</a> whiteBalance;
-        <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a> gpsLocation;
-        double gpsAltitude;
-        DOMString gpsProcessingMethod;
-        Date gpsTime;
-        DOMString userComment;
-    };
-
-    [Constructor(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict)]
-    interface ExifInformation {
-        attribute DOMString uri;
-
-        attribute unsigned long? width;
-
-        attribute unsigned long? height;
-
-        attribute DOMString? deviceMaker;
-
-        attribute DOMString? deviceModel;
-
-        attribute Date? originalTime;
-
-        attribute <a href="content.html#ImageContentOrientation">ImageContentOrientation</a>? orientation;
-
-        attribute double? fNumber;
-
-        attribute unsigned short[]? isoSpeedRatings;
-
-        attribute DOMString? exposureTime;
-
-        attribute <a href="#ExposureProgram">ExposureProgram</a>? exposureProgram;
-
-        attribute boolean? flash;
-
-        attribute double? focalLength;
-
-        attribute <a href="#WhiteBalanceMode">WhiteBalanceMode</a>? whiteBalance;
-
-        attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? gpsLocation;
-
-        attribute double? gpsAltitude;
-
-        attribute DOMString? gpsProcessingMethod;
-
-        attribute <a href="time.html#TZDate">TZDate</a>? gpsTime;
-
-        attribute DOMString? userComment;
-
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface ExifInformationSuccessCallback {
-        void onsuccess(<a href="#ExifInformation">ExifInformation</a> exifInfo);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface ExifThumbnailSuccessCallback {
-        void onsuccess(DOMString? uri);
-    };
-
+  enum WhiteBalanceMode { "AUTO", "MANUAL" };
+  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM",
+    "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };
+  [NoInterfaceObject] interface ExifManagerObject {
+    readonly attribute <a href="#ExifManager">ExifManager</a> exif;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;
+  [NoInterfaceObject] interface ExifManager {
+    void getExifInfo(DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getThumbnail(DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  dictionary ExifInit {
+    DOMString uri;
+    unsigned long width;
+    unsigned long height;
+    DOMString deviceMaker;
+    DOMString deviceModel;
+    Date originalTime;
+    <a href="content.html#ImageContentOrientation">ImageContentOrientation</a> orientation;
+    double fNumber;
+    unsigned short[] isoSpeedRatings;
+    DOMString exposureTime;
+    <a href="#ExposureProgram">ExposureProgram</a> exposureProgram;
+    boolean flash;
+    double focalLength;
+    <a href="#WhiteBalanceMode">WhiteBalanceMode</a> whiteBalance;
+    <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a> gpsLocation;
+    double gpsAltitude;
+    DOMString gpsProcessingMethod;
+    Date gpsTime;
+    DOMString userComment;
+  };
+  [Constructor(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict)]
+  interface ExifInformation {
+    attribute DOMString uri;
+    attribute unsigned long? width;
+    attribute unsigned long? height;
+    attribute DOMString? deviceMaker;
+    attribute DOMString? deviceModel;
+    attribute Date? originalTime;
+    attribute <a href="content.html#ImageContentOrientation">ImageContentOrientation</a>? orientation;
+    attribute double? fNumber;
+    attribute unsigned short[]? isoSpeedRatings;
+    attribute DOMString? exposureTime;
+    attribute <a href="#ExposureProgram">ExposureProgram</a>? exposureProgram;
+    attribute boolean? flash;
+    attribute double? focalLength;
+    attribute <a href="#WhiteBalanceMode">WhiteBalanceMode</a>? whiteBalance;
+    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? gpsLocation;
+    attribute double? gpsAltitude;
+    attribute DOMString? gpsProcessingMethod;
+    attribute <a href="time.html#TZDate">TZDate</a>? gpsTime;
+    attribute DOMString? userComment;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ExifInformationSuccessCallback {
+    void onsuccess(<a href="#ExifInformation">ExifInformation</a> exifInfo);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ExifThumbnailSuccessCallback {
+    void onsuccess(DOMString? uri);
+  };
 };</pre>
 </div>
 <div id="page-footer">

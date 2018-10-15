@@ -7,14 +7,14 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::WidgetService">
-<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+ <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>WidgetService API</h1></div>
 <div class="brief">
- The WidgetService API provides information about installed widgets.
+ The Widget Service API provides information about installed widgets.
         </div>
 <div class="description">
         <p>
-For more information on the Widget service features, see the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/widget-information">Widget Information Guide</a>.
+For more information on the Widget service features, see the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/widget-information">Widget Service Guide</a>.
         </p>
        </div>
 <div class="description">
@@ -22,8 +22,7 @@ For more information on the Widget service features, see the <a href="https://de
 Do not use "widget" as name for one of your global variables, as it is a global W3C object's name.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
         </p>
 <h2>Table of Contents</h2>
@@ -155,8 +154,7 @@ Do not use "widget" as name for one of your global variables, as it is a global 
  The unique ID of the installed widget.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString WidgetId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 </div>
@@ -166,8 +164,7 @@ Do not use "widget" as name for one of your global variables, as it is a global 
  ID of the widget instance, this value is volatile and may change after reboot.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString WidgetInstanceId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 </div>
@@ -176,13 +173,8 @@ Do not use "widget" as name for one of your global variables, as it is a global 
 <div class="brief">
  The WidgetSizeType enumeration lists supported widget size types.
           </div>
-<pre class="webidl prettyprint">  enum WidgetSizeType {
-    "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6",
-    "EASY_1x1", "EASY_3x1", "EASY_3x3",
-    "FULL"
-  };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum WidgetSizeType { "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6", "EASY_1x1", "EASY_3x1", "EASY_3x3", "FULL" };</pre>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="description">
@@ -310,9 +302,8 @@ Mobile              </td>
 <div class="brief">
  Enumeration for types of lifetime events of a Widget.
           </div>
-<pre class="webidl prettyprint">  enum WidgetStateType {"CREATE", "DESTROY", "PAUSE", "RESUME"};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum WidgetStateType { "CREATE", "DESTROY", "PAUSE", "RESUME" };</pre>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="description">
@@ -341,16 +332,15 @@ of the Widget interface.
  This interface defines what is instantiated by the <em>Tizen</em> object on the Tizen Platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface WidgetServiceManagerObject {
-      readonly attribute <a href="#WidgetServiceManager">WidgetServiceManager</a> widget;
+    readonly attribute <a href="#WidgetServiceManager">WidgetServiceManager</a> widgetservice;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WidgetServiceManagerObject">WidgetServiceManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="description">
           <p>
-The <em>tizen.widgetservice</em> object provides access to the Widget service API's functionality.
+The <em>tizen.widgetservice</em> object provides access to the Widget Service API's functionality.
           </p>
          </div>
 </div>
@@ -361,15 +351,12 @@ The <em>tizen.widgetservice</em> object provides access to the Widget service AP
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface WidgetServiceManager {
     <a href="#Widget">Widget</a> getWidget(<a href="#WidgetId">WidgetId</a> widgetId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#WidgetId">WidgetId</a> getPrimaryWidgetId((<a href="package.html#PackageId">PackageId</a> or <a href="application.html#ApplicationId">ApplicationId</a>) id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#WidgetSize">WidgetSize</a> getSize(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="methods">
@@ -382,18 +369,14 @@ The <em>tizen.widgetservice</em> object provides access to the Widget service AP
 <div class="brief">
  Retrieves a Widget object with a given <em>widgetId</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Widget">Widget</a> getWidget(<a href="#WidgetId">WidgetId</a> widgetId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Widget">Widget</a> getWidget(<a href="#WidgetId">WidgetId</a> widgetId);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/widget.viewer
             </p>
 <div class="parameters">
@@ -401,14 +384,18 @@ The <em>tizen.widgetservice</em> object provides access to the Widget service AP
 <ul>
           <li class="param">
 <span class="name">widgetId</span>:
- The ID of the Widget to retrieve
+ The ID of the Widget to retrieve.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Widget The Widget object
-              </div>
+<ul>
+<span class="return">Widget:
+                  </span>
+ The Widget object.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -428,31 +415,30 @@ The <em>tizen.widgetservice</em> object provides access to the Widget service AP
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable id should contain valid id of the installed widget */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable id should contain valid id of the installed widget. */
 var id = "org.tizen.gallery.widget";
 try
 {
-   var myWidget = tizen.widgetservice.getWidget(id);
-   console.log("Widget id is " + myWidget.id);
-   console.log("Widget details:");
-   console.log("Main application id: " + myWidget.applicationId);
-   console.log("Package id: " + myWidget.packageId);
-   console.log("Is hidden in the list of widgets: " + myWidget.noDisplay);
+  var myWidget = tizen.widgetservice.getWidget(id);
+  console.log("Widget id is " + myWidget.id);
+  console.log("Widget details:");
+  console.log("Main application id: " + myWidget.applicationId);
+  console.log("Package id: " + myWidget.packageId);
+  console.log("Is hidden in the list of widgets: " + myWidget.noDisplay);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Widget id is org.tizen.gallery.widget
- Widget details:
- Main application id: org.tizen.gallery
- Package id: org.tizen.gallery
- Is hidden in the list of widgets: false
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Widget id is org.tizen.gallery.widget
+Widget details:
+Main application id: org.tizen.gallery
+Package id: org.tizen.gallery
+Is hidden in the list of widgets: false
+</pre>
 </div>
 </dd>
 <dt class="method" id="WidgetServiceManager::getWidgets">
@@ -462,10 +448,8 @@ catch (error)
 <div class="brief">
  Retrieves a list of all widgets. If package id is provided returned list contains widgets included in a given package only.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="description">
@@ -481,12 +465,10 @@ AbortError - If the operation cannot be finished properly.              </li>
 NotFoundError - If the device has no widgets or if a widget with the given id does not exist              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/widget.viewer
             </p>
 <div class="parameters">
@@ -494,15 +476,15 @@ NotFoundError - If the device has no widgets or if a widget with the given id do
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- A function to call when widgets are retrieved successfully
+ A function to call when widgets are retrieved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- A function to call when an error occurs
+ A function to call when an error occurs.
                 </li>
           <li class="param">
 <span class="name">packageId</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- If this parameter is given, then only widgets belonging to the given package are returned
+ If this parameter is given, then only widgets belonging to the given package are returned.
                 </li>
         </ul>
 </div>
@@ -519,19 +501,20 @@ NotFoundError - If the device has no widgets or if a widget with the given id do
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-tizen.widgetservice.getWidgets(function(widgets)
-{
-   console.log("There are " + widgets.length + " available widgets");
-}, function(error)
-{
-   console.log("Error: " + error.message);
-});
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.widgetservice.getWidgets(
+    function(widgets)
+    {
+      console.log("There are " + widgets.length + " available widgets");
+    },
+    function(error)
+    {
+      console.log("Error: " + error.message);
+    });
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> There are 3 available widgets
- </pre>
+<span class="title"><p>Output example:</p></span><pre>There are 3 available widgets
+</pre>
 </div>
 </dd>
 <dt class="method" id="WidgetServiceManager::getPrimaryWidgetId">
@@ -541,18 +524,14 @@ tizen.widgetservice.getWidgets(function(widgets)
 <div class="brief">
  Returns the primary widget ID of the specified package or application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetId">WidgetId</a> getPrimaryWidgetId((PackageId or ApplicationId) id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetId">WidgetId</a> getPrimaryWidgetId((PackageId or ApplicationId) id);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/widget.viewer
             </p>
 <div class="parameters">
@@ -560,14 +539,18 @@ tizen.widgetservice.getWidgets(function(widgets)
 <ul>
           <li class="param">
 <span class="name">id</span>:
- Package or Application ID
+ Package or Application ID.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- WidgetId The ID of the widget
-              </div>
+<ul>
+<span class="return">WidgetId:
+                  </span>
+ The ID of the widget.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -587,23 +570,22 @@ tizen.widgetservice.getWidgets(function(widgets)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable id should contain valid id of the application or package */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable id should contain valid id of the application or package. */
 var id = "org.tizen.gallery";
 try
 {
-   var widgetId = tizen.widgetservice.getPrimaryWidgetId(id);
-   console.log("Widget id is " + widgetId);
+  var widgetId = tizen.widgetservice.getPrimaryWidgetId(id);
+  console.log("Widget id is " + widgetId);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Widget id is org.tizen.gallery.widget
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Widget id is org.tizen.gallery.widget
+</pre>
 </div>
 </dd>
 <dt class="method" id="WidgetServiceManager::getSize">
@@ -613,10 +595,8 @@ catch (error)
 <div class="brief">
  Returns the size corresponding to the given sizeType.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetSize">WidgetSize</a> getSize(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetSize">WidgetSize</a> getSize(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -630,8 +610,12 @@ catch (error)
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- WidgetSize An object which contains width and height.
-              </div>
+<ul>
+<span class="return">WidgetSize:
+                  </span>
+ An object which contains width and height.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -640,23 +624,22 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable sizeType should contain supported size type */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable sizeType should contain supported size type. */
 var sizeType = "4x4";
 try
 {
-   var widgetSize = tizen.widgetservice.getSize(sizeType);
-   console.log("Widget size width: " + widgetSize.width + ", height: " + widgetSize.height);
+  var widgetSize = tizen.widgetservice.getSize(sizeType);
+  console.log("Widget size width: " + widgetSize.width + ", height: " + widgetSize.height);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Widget size width: 712, height: 712
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Widget size width: 712, height: 712
+</pre>
 </div>
 </dd>
 </dl>
@@ -669,29 +652,18 @@ catch (error)
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Widget {
     readonly attribute <a href="#WidgetId">WidgetId</a> id;
-
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> applicationId;
-
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a>? setupApplicationId;
-
     readonly attribute <a href="package.html#PackageId">PackageId</a> packageId;
-
     readonly attribute boolean noDisplay;
-
     DOMString getName(optional DOMString? locale) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void getInstances(<a href="#WidgetInstancesCallback">WidgetInstancesCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#WidgetVariant">WidgetVariant</a> getVariant(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void getVariants(<a href="#WidgetVariantsCallback">WidgetVariantsCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addStateChangeListener(<a href="#WidgetChangeCallback">WidgetChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeStateChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="attributes">
@@ -702,8 +674,7 @@ catch (error)
 </span><span class="type">WidgetId </span><span class="name">id</span></span><div class="brief">
  Widget ID.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -712,8 +683,7 @@ catch (error)
 </span><span class="type">ApplicationId </span><span class="name">applicationId</span></span><div class="brief">
  Main application ID.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -722,8 +692,7 @@ catch (error)
 </span><span class="type">ApplicationId </span><span class="name">setupApplicationId</span><span class="optional"> [nullable]</span></span><div class="brief">
  Setup application ID.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -732,8 +701,7 @@ catch (error)
 </span><span class="type">PackageId </span><span class="name">packageId</span></span><div class="brief">
  The ID of the package this widget was installed with.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -747,8 +715,7 @@ catch (error)
 Precondition: Widget tag in the config.xml file includes the "nodisplay" attribute.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -764,10 +731,8 @@ Precondition: Widget tag in the config.xml file includes the "nodisplay" attribu
 <div class="brief">
  Returns a name of the widget in a given locale.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">DOMString getName(optional DOMString? locale);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getName(optional DOMString? locale);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -781,8 +746,12 @@ Precondition: Widget tag in the config.xml file includes the "nodisplay" attribu
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- DOMString The name of the widget.
-              </div>
+<ul>
+<span class="return">DOMString:
+                  </span>
+ The name of the widget.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -791,25 +760,24 @@ Precondition: Widget tag in the config.xml file includes the "nodisplay" attribu
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable id should contain valid id of the installed widget */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable id should contain valid id of the installed widget. */
 var id = "org.tizen.gallery.widget";
 
 try
 {
-   var myWidget = tizen.widgetservice.getWidget(id);
-   var name = myWidget.getName("en-us");
-   console.log("Widget name is " + name);
+  var myWidget = tizen.widgetservice.getWidget(id);
+  var name = myWidget.getName("en-us");
+  console.log("Widget name is " + name);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Widget name is Gallery
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Widget name is Gallery
+</pre>
 </div>
 </dd>
 <dt class="method" id="Widget::getInstances">
@@ -819,10 +787,8 @@ catch (error)
 <div class="brief">
  Retrieves Widget instances (elements that have been added to the screen). Widget instance as opposed to the widget interface (which is abstarct of application), is a specified application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getInstances(<a href="#WidgetInstancesCallback">WidgetInstancesCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getInstances(<a href="#WidgetInstancesCallback">WidgetInstancesCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="description">
@@ -838,7 +804,7 @@ NotFoundError - If the Web application which is calling this method did not add 
 SecurityError - If the widget does not belong to the package of the web application which is calling this method.              </li>
             </ul>
            </div>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  This method can only be used with widgets and applications which belong to the same package. Therefore, the widget should belong to the package of the Web application which calls this method.
             </p>
 <div class="parameters">
@@ -846,11 +812,11 @@ SecurityError - If the widget does not belong to the package of the web applicat
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- A function to call when widgets are retrieved successfully
+ A function to call when widgets are retrieved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- A function to call when an error occurs
+ A function to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -862,34 +828,33 @@ SecurityError - If the widget does not belong to the package of the web applicat
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-widgetSuccessCb = function(instances)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">widgetSuccessCb = function(instances)
 {
-   console.log("Instances array size: " + instances.length);
-}
+  console.log("Instances array size: " + instances.length);
+};
 
 widgetErrorCb = function(error)
 {
-   console.log("Error occurred: " + error.name + ": " + error.message);
-}
+  console.log("Error occurred: " + error.name + ": " + error.message);
+};
 
-/* Variable id should contain valid id of the installed widget */
+/* Variable id should contain valid id of the installed widget. */
 var id = "org.tizen.gallery.widget";
 
 try
 {
-   var myWidget = tizen.widgetservice.getWidget(id);
-   myWidget.getInstances(widgetSuccessCb, widgetErrorCb);
+  var myWidget = tizen.widgetservice.getWidget(id);
+  myWidget.getInstances(widgetSuccessCb, widgetErrorCb);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Instances array size: 3
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Instances array size: 3
+</pre>
 </div>
 </dd>
 <dt class="method" id="Widget::getVariant">
@@ -899,10 +864,8 @@ catch (error)
 <div class="brief">
  Returns object representing widget information related to a given sizeType.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetVariant">WidgetVariant</a> getVariant(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#WidgetVariant">WidgetVariant</a> getVariant(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -916,8 +879,12 @@ catch (error)
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- WidgetVariant Size variant info
-              </div>
+<ul>
+<span class="return">WidgetVariant:
+                  </span>
+ Size variant info.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -931,25 +898,24 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable id should contain valid id of the installed widget */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable id should contain valid id of the installed widget. */
 var id = "org.tizen.gallery.widget";
 
 try
 {
-   var myWidget = tizen.widgetservice.getWidget(id);
-   var variant = myWidget.getVariant("4x4");
-   console.log("Variant preview image path is " + variant.previewImagePath);
+  var myWidget = tizen.widgetservice.getWidget(id);
+  var variant = myWidget.getVariant("4x4");
+  console.log("Variant preview image path is " + variant.previewImagePath);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Variant preview image path is /usr/share/icons/default/small/preview_gallery_4x4.png
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Variant preview image path is /usr/share/icons/default/small/preview_gallery_4x4.png
+</pre>
 </div>
 </dd>
 <dt class="method" id="Widget::getVariants">
@@ -959,10 +925,8 @@ catch (error)
 <div class="brief">
  Retrieves Wiget Variants representing all of the supported widget size types.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getVariants(<a href="#WidgetVariantsCallback">WidgetVariantsCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getVariants(<a href="#WidgetVariantsCallback">WidgetVariantsCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="description">
@@ -979,11 +943,11 @@ AbortError - If the operation cannot be finished properly.              </li>
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- A function to call when widgets are retrieved successfully
+ A function to call when widgets are retrieved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- A function to call when an error occurs
+ A function to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -995,34 +959,33 @@ AbortError - If the operation cannot be finished properly.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-widgetSuccessCb = function(variants)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">widgetSuccessCb = function(variants)
 {
-   console.log("Variants array size: " + variants.length);
-}
+  console.log("Variants array size: " + variants.length);
+};
 
 widgetErrorCb = function(error)
 {
-   console.log("Error occurred: " + error.name + ": " + error.message);
-}
+  console.log("Error occurred: " + error.name + ": " + error.message);
+};
 
-/* Variable id should contain valid id of the installed widget */
+/* Variable id should contain valid id of the installed widget. */
 var id = "org.tizen.gallery.widget";
 
 try
 {
-   var myWidget = tizen.widgetservice.getWidget(id);
-   myWidget.getVariants(widgetSuccessCb, widgetErrorCb);
+  var myWidget = tizen.widgetservice.getWidget(id);
+  myWidget.getVariants(widgetSuccessCb, widgetErrorCb);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Variants array size: 4
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Variants array size: 4
+</pre>
 </div>
 </dd>
 <dt class="method" id="Widget::addStateChangeListener">
@@ -1032,25 +995,30 @@ catch (error)
 <div class="brief">
  Registers a callback which will be called whenever any of this widget instances state changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addStateChangeListener(<a href="#WidgetChangeCallback">WidgetChangeCallback</a> listener);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addStateChangeListener(<a href="#WidgetChangeCallback">WidgetChangeCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
+            </p>
+<p><span class="remark">Remark: </span>
+ This method can only be used with widgets and applications which belong to the same package. Therefore, the widget should belong to the package of the Web application which calls this method.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
 <span class="name">listener</span>:
- The callback
+ The callback.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long The watch ID used to unregister the callback
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ The watch ID used to unregister the callback.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1064,31 +1032,30 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-widgetChangeCb = function(instance, event)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">widgetChangeCb = function(instance, event)
 {
-   console.log("Instance " + instance.id + " is " + event);
-}
+  console.log("Instance " + instance.id + " is " + event);
+};
 
-/* Variable id should contain valid id of the installed widget */
+/* Variable id should contain valid id of the installed widget. */
 var id = "org.tizen.music-player.widget";
 
 try
 {
-   var myWidget = tizen.widgetservice.getWidget(id);
-   var watchId = myWidget.addStateChangeListener(widgetChangeCb);
-   console.log("Listener with id " + watchId + " has been added");
+  var myWidget = tizen.widgetservice.getWidget(id);
+  var watchId = myWidget.addStateChangeListener(widgetChangeCb);
+  console.log("Listener with id " + watchId + " has been added");
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Listener with id 1 has been added.
- Instance org.tizen.music-player.widget is RESUME
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Listener with id 1 has been added
+Instance org.tizen.music-player.widget is RESUME
+</pre>
 </div>
 </dd>
 <dt class="method" id="Widget::removeStateChangeListener">
@@ -1098,18 +1065,19 @@ catch (error)
 <div class="brief">
  Unregisters a callback registered under the given watchId.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeStateChangeListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeStateChangeListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
+            </p>
+<p><span class="remark">Remark: </span>
+ This method can only be used with widgets and applications which belong to the same package. Therefore, the widget should belong to the package of the Web application which calls this method.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
 <span class="name">watchId</span>:
- The ID of the registered listener
+ The ID of the registered listener.
                 </li>
         </ul>
 </div>
@@ -1121,32 +1089,31 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-widgetChangeCb = function(instance, event)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">widgetChangeCb = function(instance, event)
 {
-   console.log("Instance " + instance.id + " is " + event);
-   myWidget.removeStateChangeListener(watchId);
-   console.log("Listener with id " + watchId + " has been removed");
-}
+  console.log("Instance " + instance.id + " is " + event);
+  myWidget.removeStateChangeListener(watchId);
+  console.log("Listener with id " + watchId + " has been removed");
+};
 
-/* Variable id should contain valid id of the installed widget */
+/* Variable id should contain valid id of the installed widget. */
 var id = "org.tizen.music-player.widget";
 var watchId;
 
 try
 {
-   var myWidget = tizen.widgetservice.getWidget(id);
-   watchId = myWidget.addStateChangeListener(widgetChangeCb);
+  var myWidget = tizen.widgetservice.getWidget(id);
+  watchId = myWidget.addStateChangeListener(widgetChangeCb);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Listener with id 1 has been removed.
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Listener with id 1 has been removed
+</pre>
 </div>
 </dd>
 </dl>
@@ -1161,8 +1128,7 @@ catch (error)
     readonly attribute long width;
     readonly attribute long height;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="attributes">
@@ -1173,8 +1139,7 @@ catch (error)
 </span><span class="type">long </span><span class="name">width</span></span><div class="brief">
  The horizontal dimension of the area in pixels.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1183,8 +1148,7 @@ catch (error)
 </span><span class="type">long </span><span class="name">height</span></span><div class="brief">
  The vertical dimension of the area in pixels.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1198,21 +1162,14 @@ catch (error)
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface WidgetVariant {
     readonly attribute <a href="#WidgetSizeType">WidgetSizeType</a> sizeType;
-
     readonly attribute long width;
-
     readonly attribute long height;
-
     readonly attribute DOMString previewImagePath;
-
     readonly attribute boolean needsMouseEvents;
-
     readonly attribute boolean needsTouchEffect;
-
     readonly attribute boolean needsFrame;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="attributes">
@@ -1223,8 +1180,7 @@ catch (error)
 </span><span class="type">WidgetSizeType </span><span class="name">sizeType</span></span><div class="brief">
  The WidgetSizeType this WidgetVariant describes.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1233,8 +1189,7 @@ catch (error)
 </span><span class="type">long </span><span class="name">width</span></span><div class="brief">
  Pixel width.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1243,8 +1198,7 @@ catch (error)
 </span><span class="type">long </span><span class="name">height</span></span><div class="brief">
  Pixel height.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1253,8 +1207,7 @@ catch (error)
 </span><span class="type">DOMString </span><span class="name">previewImagePath</span></span><div class="brief">
  The preview image path.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1263,8 +1216,7 @@ catch (error)
 </span><span class="type">boolean </span><span class="name">needsMouseEvents</span></span><div class="brief">
  <var>true</var> if the widget was designed to receive mouse events.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1273,8 +1225,7 @@ catch (error)
 </span><span class="type">boolean </span><span class="name">needsTouchEffect</span></span><div class="brief">
  <var>true</var> if the widget expects the system to show touch effect.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1283,8 +1234,7 @@ catch (error)
 </span><span class="type">boolean </span><span class="name">needsFrame</span></span><div class="brief">
  <var>true</var> if the widget expects the system to draw a frame.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1298,17 +1248,12 @@ catch (error)
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface WidgetInstance {
     readonly attribute <a href="#Widget">Widget</a> widget;
-
     readonly attribute <a href="#WidgetInstanceId">WidgetInstanceId</a> id;
-
     void changeUpdatePeriod(double seconds) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void sendContent(Object data, boolean updateIfPaused) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void getContent(<a href="#WidgetContentCallback">WidgetContentCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="description">
@@ -1324,8 +1269,7 @@ Every visual widget element added to the home screen is a single instance of som
 </span><span class="type">Widget </span><span class="name">widget</span></span><div class="brief">
  The Widget this instance belongs to.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1334,8 +1278,7 @@ Every visual widget element added to the home screen is a single instance of som
 </span><span class="type">WidgetInstanceId </span><span class="name">id</span></span><div class="brief">
  ID of the widget instance, this value is volatile and may change after reboot.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 </li>
@@ -1349,15 +1292,13 @@ Every visual widget element added to the home screen is a single instance of som
 </dt>
 <dd>
 <div class="brief">
- Changes the interval between automatic update of the widget instance data. Minimum value is 1 second.
+ Changes the interval between automatic update of the widget instance data. Minimum value is <var>1</var> second.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void changeUpdatePeriod(double seconds);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void changeUpdatePeriod(double seconds);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  This method is not supported by Web Widget.
             </p>
 <div class="parameters">
@@ -1365,7 +1306,7 @@ Every visual widget element added to the home screen is a single instance of som
 <ul>
           <li class="param">
 <span class="name">seconds</span>:
- The interval in seconds
+ The interval in seconds.
                 </li>
         </ul>
 </div>
@@ -1376,7 +1317,7 @@ Every visual widget element added to the home screen is a single instance of som
  with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if any input parameters do not contain a valid value. Minimum value is 1 second.
+ with error type InvalidValuesError, if any input parameters do not contain a valid value. Minimum value is <var>1</var> second.
                 </p></li>
 <li class="list"><p>
  with error type AbortError, if the operation cannot be finished properly.
@@ -1385,25 +1326,24 @@ Every visual widget element added to the home screen is a single instance of som
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable instance should contain valid WidgetInstance object obtained by getInstances() method */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable instance should contain valid WidgetInstance object obtained by getInstances() method. */
 var instance;
 var period = 2;
 
 try
 {
-   instance.changeUpdatePeriod(period);
-   console.log("Update period has been set to " + period + " seconds");
+  instance.changeUpdatePeriod(period);
+  console.log("Update period has been set to " + period + " seconds");
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Update period has been set to 2 seconds.
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Update period has been set to 2 seconds
+</pre>
 </div>
 </dd>
 <dt class="method" id="WidgetInstance::sendContent">
@@ -1413,10 +1353,8 @@ catch (error)
 <div class="brief">
  Sends a new content data to the Widget Instance.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendContent(Object data, boolean updateIfPaused);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void sendContent(Object data, boolean updateIfPaused);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="description">
@@ -1424,7 +1362,7 @@ catch (error)
 This function does not wait for a confirmation that the data was updated.
             </p>
            </div>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  This method is not supported by Web Widget.
             </p>
 <div class="parameters">
@@ -1432,11 +1370,11 @@ This function does not wait for a confirmation that the data was updated.
 <ul>
           <li class="param">
 <span class="name">data</span>:
- The new content data
+ The new content data.
                 </li>
           <li class="param">
 <span class="name">updateIfPaused</span>:
- <var>true</var> if you want to update your widget even if the provider is paused
+ <var>true</var> if you want to update your widget even if the provider is paused.
                 </li>
         </ul>
 </div>
@@ -1456,30 +1394,25 @@ This function does not wait for a confirmation that the data was updated.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable instance should contain valid WidgetInstance object obtained by getInstances() method */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable instance should contain valid WidgetInstance object obtained by getInstances() method. */
 var instance;
 
-var data =
-{
-   data1: 'test1',
-   data2: 'test2'
-};
+var data = {data1: "test1", data2: "test2"};
 
 try
 {
-   instance.sendContent(data, true);
-   console.log("Data has been successfully sent");
+  instance.sendContent(data, true);
+  console.log("Data has been successfully sent");
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Data has been successfully sent
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Data has been successfully sent
+</pre>
 </div>
 </dd>
 <dt class="method" id="WidgetInstance::getContent">
@@ -1489,10 +1422,8 @@ catch (error)
 <div class="brief">
  Retrieves content data from the Widget Instance.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getContent(<a href="#WidgetContentCallback">WidgetContentCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getContent(<a href="#WidgetContentCallback">WidgetContentCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="description">
@@ -1506,7 +1437,7 @@ IOError - If a DB operation has failed              </li>
 AbortError - If the operation cannot be finished properly.              </li>
             </ul>
            </div>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  This method is not supported by Web Widget.
             </p>
 <div class="parameters">
@@ -1514,11 +1445,11 @@ AbortError - If the operation cannot be finished properly.              </li>
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- A function to call when data is retrieved successfully
+ A function to call when data is retrieved successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span>:
- A function to call when an error occurs
+ A function to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -1530,39 +1461,38 @@ AbortError - If the operation cannot be finished properly.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Variable instance should contain valid WidgetInstance object obtained by getInstances() method */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable instance should contain valid WidgetInstance object obtained by getInstances() method. */
 var instance;
 
 contentSuccessCb = function(data)
 {
-   console.log("Data has been obtained successfully");
-   for (var prop in data)
-   {
-      console.log(prop + ": " + data[prop]);
-   }
-}
+  console.log("Data has been obtained successfully");
+  for (var prop in data)
+  {
+    console.log(prop + ": " + data[prop]);
+  }
+};
 
 contentErrorCb = function(error)
 {
-   console.log("Error occurred: " + error.name + ":" + error.message);
-}
+  console.log("Error occurred: " + error.name + ": " + error.message);
+};
 
 try
 {
-   instance.getContent(contentSuccessCb, contentErrorCb);
+  instance.getContent(contentSuccessCb, contentErrorCb);
 }
 catch (error)
 {
-   console.log("Error: " + error.message);
+  console.log("Error: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Data has been obtained successfully
- data1: test1
- data2: test2
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Data has been obtained successfully
+data1: test1
+data2: test2
+</pre>
 </div>
 </dd>
 </dl>
@@ -1576,8 +1506,7 @@ catch (error)
 <pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface WidgetArraySuccessCallback {
     void onsuccess(<a href="#Widget">Widget</a>[] widgets);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="methods">
@@ -1590,10 +1519,8 @@ catch (error)
 <div class="brief">
  Called when the array of <em>Widget</em> objects is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Widget">Widget</a>[] widgets);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Widget">Widget</a>[] widgets);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -1617,8 +1544,7 @@ catch (error)
 <pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface WidgetInstancesCallback {
     void onsuccess(<a href="#WidgetInstance">WidgetInstance</a>[] instances);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="methods">
@@ -1631,10 +1557,8 @@ catch (error)
 <div class="brief">
  Called when the array of <em>WidgetInstance</em> objects is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#WidgetInstance">WidgetInstance</a>[] instances);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#WidgetInstance">WidgetInstance</a>[] instances);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -1658,8 +1582,7 @@ catch (error)
 <pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface WidgetVariantsCallback {
     void onsuccess(<a href="#WidgetVariant">WidgetVariant</a>[] instances);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="methods">
@@ -1672,10 +1595,8 @@ catch (error)
 <div class="brief">
  Called when the array of <em>WidgetVariants</em> objects is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#WidgetVariant">WidgetVariant</a>[] instances);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#WidgetVariant">WidgetVariant</a>[] instances);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -1698,8 +1619,7 @@ catch (error)
 <pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface WidgetContentCallback {
     void onsuccess(Object data);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="methods">
@@ -1712,10 +1632,8 @@ catch (error)
 <div class="brief">
  Called when the content of the widget instance is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(Object data);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(Object data);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -1739,8 +1657,7 @@ catch (error)
 <pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface WidgetChangeCallback {
     void onchange(<a href="#WidgetInstance">WidgetInstance</a> instance, <a href="#WidgetStateType">WidgetStateType</a> event);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.2
           </p>
 <div class="methods">
@@ -1753,10 +1670,8 @@ catch (error)
 <div class="brief">
  Called when the instance state was changed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onchange(<a href="#WidgetInstance">WidgetInstance</a> instance, <a href="#WidgetStateType">WidgetStateType</a> event);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onchange(<a href="#WidgetInstance">WidgetInstance</a> instance, <a href="#WidgetStateType">WidgetStateType</a> event);</pre></div>
+<p><span class="version">Since: </span>
  2.3.2
             </p>
 <div class="parameters">
@@ -1779,7 +1694,7 @@ catch (error)
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1789,110 +1704,70 @@ To guarantee that the widget application runs on a system which supports Widgets
 <li class="feature">http://tizen.org/feature/shell.appwidget</li>
 </div>
 <p></p>
-                    For more information, see <a href="../../../../../org.tizen.gettingstarted/html/web/details/app_filtering_w.htm">Application Filtering.</a>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module WidgetService {
   typedef DOMString WidgetId;
-
   typedef DOMString WidgetInstanceId;
-
-  enum WidgetSizeType {
-    "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6",
-    "EASY_1x1", "EASY_3x1", "EASY_3x3",
-    "FULL"
-  };
-
-  enum WidgetStateType {"CREATE", "DESTROY", "PAUSE", "RESUME"};
-
+  enum WidgetSizeType { "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6", "EASY_1x1", "EASY_3x1", "EASY_3x3", "FULL" };
+  enum WidgetStateType { "CREATE", "DESTROY", "PAUSE", "RESUME" };
   [NoInterfaceObject] interface WidgetServiceManagerObject {
-      readonly attribute <a href="#WidgetServiceManager">WidgetServiceManager</a> widget;
+    readonly attribute <a href="#WidgetServiceManager">WidgetServiceManager</a> widgetservice;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WidgetServiceManagerObject">WidgetServiceManagerObject</a>;
-
   [NoInterfaceObject] interface WidgetServiceManager {
     <a href="#Widget">Widget</a> getWidget(<a href="#WidgetId">WidgetId</a> widgetId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#WidgetId">WidgetId</a> getPrimaryWidgetId((<a href="package.html#PackageId">PackageId</a> or <a href="application.html#ApplicationId">ApplicationId</a>) id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#WidgetSize">WidgetSize</a> getSize(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface Widget {
     readonly attribute <a href="#WidgetId">WidgetId</a> id;
-
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> applicationId;
-
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a>? setupApplicationId;
-
     readonly attribute <a href="package.html#PackageId">PackageId</a> packageId;
-
     readonly attribute boolean noDisplay;
-
     DOMString getName(optional DOMString? locale) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void getInstances(<a href="#WidgetInstancesCallback">WidgetInstancesCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#WidgetVariant">WidgetVariant</a> getVariant(<a href="#WidgetSizeType">WidgetSizeType</a> sizeType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void getVariants(<a href="#WidgetVariantsCallback">WidgetVariantsCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addStateChangeListener(<a href="#WidgetChangeCallback">WidgetChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeStateChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface WidgetSize {
     readonly attribute long width;
     readonly attribute long height;
   };
-
   [NoInterfaceObject] interface WidgetVariant {
     readonly attribute <a href="#WidgetSizeType">WidgetSizeType</a> sizeType;
-
     readonly attribute long width;
-
     readonly attribute long height;
-
     readonly attribute DOMString previewImagePath;
-
     readonly attribute boolean needsMouseEvents;
-
     readonly attribute boolean needsTouchEffect;
-
     readonly attribute boolean needsFrame;
   };
-
   [NoInterfaceObject] interface WidgetInstance {
     readonly attribute <a href="#Widget">Widget</a> widget;
-
     readonly attribute <a href="#WidgetInstanceId">WidgetInstanceId</a> id;
-
     void changeUpdatePeriod(double seconds) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void sendContent(Object data, boolean updateIfPaused) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void getContent(<a href="#WidgetContentCallback">WidgetContentCallback</a> successCallback, <a href="tizen.html#ErrorCallback">ErrorCallback</a> errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject, Callback=FunctionOnly] interface WidgetArraySuccessCallback {
     void onsuccess(<a href="#Widget">Widget</a>[] widgets);
   };
-
   [NoInterfaceObject, Callback=FunctionOnly] interface WidgetInstancesCallback {
     void onsuccess(<a href="#WidgetInstance">WidgetInstance</a>[] instances);
   };
-
   [NoInterfaceObject, Callback=FunctionOnly] interface WidgetVariantsCallback {
     void onsuccess(<a href="#WidgetVariant">WidgetVariant</a>[] instances);
   };
-
   [NoInterfaceObject, Callback=FunctionOnly] interface WidgetContentCallback {
     void onsuccess(Object data);
   };
-
   [NoInterfaceObject, Callback=FunctionOnly] interface WidgetChangeCallback {
     void onchange(<a href="#WidgetInstance">WidgetInstance</a> instance, <a href="#WidgetStateType">WidgetStateType</a> event);
   };

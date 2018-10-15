@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Calendar">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Calendar API</h1></div>
 <div class="brief">
  The Calendar API provides interfaces and methods for users to manage their schedule.
@@ -24,42 +24,56 @@ This API provides functionality to read, create, delete, and update items in spe
 For more information on the Calendar features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/calendar">Calendar Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#CalendarId">CalendarId</a>
+<li>
+                    1.1. <a href="#CalendarId">CalendarId</a>
 </li>
-<li>1.2. <a href="#CalendarTaskId">CalendarTaskId</a>
+<li>
+                    1.2. <a href="#CalendarTaskId">CalendarTaskId</a>
 </li>
-<li>1.3. <a href="#CalendarItemId">CalendarItemId</a>
+<li>
+                    1.3. <a href="#CalendarItemId">CalendarItemId</a>
 </li>
-<li>1.4. <a href="#CalendarType">CalendarType</a>
+<li>
+                    1.4. <a href="#CalendarType">CalendarType</a>
 </li>
-<li>1.5. <a href="#CalendarTextFormat">CalendarTextFormat</a>
+<li>
+                    1.5. <a href="#CalendarTextFormat">CalendarTextFormat</a>
 </li>
-<li>1.6. <a href="#AlarmMethod">AlarmMethod</a>
+<li>
+                    1.6. <a href="#AlarmMethod">AlarmMethod</a>
 </li>
-<li>1.7. <a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a>
+<li>
+                    1.7. <a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a>
 </li>
-<li>1.8. <a href="#ByDayValue">ByDayValue</a>
+<li>
+                    1.8. <a href="#ByDayValue">ByDayValue</a>
 </li>
-<li>1.9. <a href="#EventAvailability">EventAvailability</a>
+<li>
+                    1.9. <a href="#EventAvailability">EventAvailability</a>
 </li>
-<li>1.10. <a href="#AttendeeType">AttendeeType</a>
+<li>
+                    1.10. <a href="#AttendeeType">AttendeeType</a>
 </li>
-<li>1.11. <a href="#AttendeeStatus">AttendeeStatus</a>
+<li>
+                    1.11. <a href="#AttendeeStatus">AttendeeStatus</a>
 </li>
-<li>1.12. <a href="#AttendeeRole">AttendeeRole</a>
+<li>
+                    1.12. <a href="#AttendeeRole">AttendeeRole</a>
 </li>
-<li>1.13. <a href="#CalendarItemPriority">CalendarItemPriority</a>
+<li>
+                    1.13. <a href="#CalendarItemPriority">CalendarItemPriority</a>
 </li>
-<li>1.14. <a href="#CalendarItemVisibility">CalendarItemVisibility</a>
+<li>
+                    1.14. <a href="#CalendarItemVisibility">CalendarItemVisibility</a>
 </li>
-<li>1.15. <a href="#CalendarItemStatus">CalendarItemStatus</a>
+<li>
+                    1.15. <a href="#CalendarItemStatus">CalendarItemStatus</a>
 </li>
 </ul>
 </li>
@@ -123,26 +137,33 @@ For more information on the Calendar features, see <a href="https://developer.ti
 </tr>
 <tr>
 <td><a href="#CalendarManager">CalendarManager</a></td>
-<td>void <a href="#CalendarManager::getCalendars">getCalendars</a> (<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    <a href="#Calendar">Calendar</a> <a href="#CalendarManager::getUnifiedCalendar">getUnifiedCalendar</a> (<a href="#CalendarType">CalendarType</a> type)<br>
-    <a href="#Calendar">Calendar</a> <a href="#CalendarManager::getDefaultCalendar">getDefaultCalendar</a> (<a href="#CalendarType">CalendarType</a> type)<br>
-    void <a href="#CalendarManager::addCalendar">addCalendar</a> (<a href="#Calendar">Calendar</a> calendar)<br>
-    void <a href="#CalendarManager::removeCalendar">removeCalendar</a> (<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id)<br>
-    <a href="#Calendar">Calendar</a> <a href="#CalendarManager::getCalendar">getCalendar</a> (<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id)</td>
+<td>
+<div>void <a href="#CalendarManager::getCalendars">getCalendars</a> (<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>
+<a href="#Calendar">Calendar</a> <a href="#CalendarManager::getUnifiedCalendar">getUnifiedCalendar</a> (<a href="#CalendarType">CalendarType</a> type)</div>
+<div>
+<a href="#Calendar">Calendar</a> <a href="#CalendarManager::getDefaultCalendar">getDefaultCalendar</a> (<a href="#CalendarType">CalendarType</a> type)</div>
+<div>void <a href="#CalendarManager::addCalendar">addCalendar</a> (<a href="#Calendar">Calendar</a> calendar)</div>
+<div>void <a href="#CalendarManager::removeCalendar">removeCalendar</a> (<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id)</div>
+<div>
+<a href="#Calendar">Calendar</a> <a href="#CalendarManager::getCalendar">getCalendar</a> (<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#Calendar">Calendar</a></td>
 <td>
-<a href="#CalendarItem">CalendarItem</a> <a href="#Calendar::get">get</a> (<a href="#CalendarItemId">CalendarItemId</a> id)<br>
-    void <a href="#Calendar::add">add</a> (<a href="#CalendarItem">CalendarItem</a> item)<br>
-    void <a href="#Calendar::addBatch">addBatch</a> (<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#Calendar::update">update</a> (<a href="#CalendarItem">CalendarItem</a> item, optional boolean? updateAllInstances)<br>
-    void <a href="#Calendar::updateBatch">updateBatch</a> (<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? updateAllInstances)<br>
-    void <a href="#Calendar::remove">remove</a> (<a href="#CalendarItemId">CalendarItemId</a> id)<br>
-    void <a href="#Calendar::removeBatch">removeBatch</a> (<a href="#CalendarItemId">CalendarItemId</a>[] ids, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#Calendar::find">find</a> (<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode)<br>
-    long <a href="#Calendar::addChangeListener">addChangeListener</a> (<a href="#CalendarChangeCallback">CalendarChangeCallback</a> successCallback)<br>
-    void <a href="#Calendar::removeChangeListener">removeChangeListener</a> (long watchId)</td>
+<div>
+<a href="#CalendarItem">CalendarItem</a> <a href="#Calendar::get">get</a> (<a href="#CalendarItemId">CalendarItemId</a> id)</div>
+<div>void <a href="#Calendar::add">add</a> (<a href="#CalendarItem">CalendarItem</a> item)</div>
+<div>void <a href="#Calendar::addBatch">addBatch</a> (<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#Calendar::update">update</a> (<a href="#CalendarItem">CalendarItem</a> item, optional boolean? updateAllInstances)</div>
+<div>void <a href="#Calendar::updateBatch">updateBatch</a> (<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? updateAllInstances)</div>
+<div>void <a href="#Calendar::remove">remove</a> (<a href="#CalendarItemId">CalendarItemId</a> id)</div>
+<div>void <a href="#Calendar::removeBatch">removeBatch</a> (<a href="#CalendarItemId">CalendarItemId</a>[] ids, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#Calendar::find">find</a> (<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode)</div>
+<div>long <a href="#Calendar::addChangeListener">addChangeListener</a> (<a href="#CalendarChangeCallback">CalendarChangeCallback</a> successCallback)</div>
+<div>void <a href="#Calendar::removeChangeListener">removeChangeListener</a> (long watchId)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#CalendarItemInit">CalendarItemInit</a></td>
@@ -158,8 +179,11 @@ For more information on the Calendar features, see <a href="https://developer.ti
 </tr>
 <tr>
 <td><a href="#CalendarItem">CalendarItem</a></td>
-<td>DOMString <a href="#CalendarItem::convertToString">convertToString</a> (<a href="#CalendarTextFormat">CalendarTextFormat</a> format)<br>
-    <a href="#CalendarItem">CalendarItem</a> <a href="#CalendarItem::clone">clone</a> ()</td>
+<td>
+<div>DOMString <a href="#CalendarItem::convertToString">convertToString</a> (<a href="#CalendarTextFormat">CalendarTextFormat</a> format)</div>
+<div>
+<a href="#CalendarItem">CalendarItem</a> <a href="#CalendarItem::clone">clone</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#CalendarTask">CalendarTask</a></td>
@@ -167,7 +191,7 @@ For more information on the Calendar features, see <a href="https://developer.ti
 </tr>
 <tr>
 <td><a href="#CalendarEvent">CalendarEvent</a></td>
-<td>void <a href="#CalendarEvent::expandRecurrence">expandRecurrence</a> (<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+<td><div>void <a href="#CalendarEvent::expandRecurrence">expandRecurrence</a> (<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
 </tr>
 <tr>
 <td><a href="#CalendarAttendeeInit">CalendarAttendeeInit</a></td>
@@ -195,21 +219,23 @@ For more information on the Calendar features, see <a href="https://developer.ti
 </tr>
 <tr>
 <td><a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a></td>
-<td>void <a href="#CalendarEventArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#CalendarEvent">CalendarEvent</a>[] events)</td>
+<td><div>void <a href="#CalendarEventArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#CalendarEvent">CalendarEvent</a>[] events)</div></td>
 </tr>
 <tr>
 <td><a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a></td>
-<td>void <a href="#CalendarItemArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#CalendarItem">CalendarItem</a>[] items)</td>
+<td><div>void <a href="#CalendarItemArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#CalendarItem">CalendarItem</a>[] items)</div></td>
 </tr>
 <tr>
 <td><a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a></td>
-<td>void <a href="#CalendarArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Calendar">Calendar</a>[] calendars)</td>
+<td><div>void <a href="#CalendarArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#Calendar">Calendar</a>[] calendars)</div></td>
 </tr>
 <tr>
 <td><a href="#CalendarChangeCallback">CalendarChangeCallback</a></td>
-<td>void <a href="#CalendarChangeCallback::onitemsadded">onitemsadded</a> (<a href="#CalendarItem">CalendarItem</a>[] items)<br>
-    void <a href="#CalendarChangeCallback::onitemsupdated">onitemsupdated</a> (<a href="#CalendarItem">CalendarItem</a>[] items)<br>
-    void <a href="#CalendarChangeCallback::onitemsremoved">onitemsremoved</a> (<a href="#CalendarItemId">CalendarItemId</a>[] ids)</td>
+<td>
+<div>void <a href="#CalendarChangeCallback::onitemsadded">onitemsadded</a> (<a href="#CalendarItem">CalendarItem</a>[] items)</div>
+<div>void <a href="#CalendarChangeCallback::onitemsupdated">onitemsupdated</a> (<a href="#CalendarItem">CalendarItem</a>[] items)</div>
+<div>void <a href="#CalendarChangeCallback::onitemsremoved">onitemsremoved</a> (<a href="#CalendarItemId">CalendarItemId</a>[] ids)</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -221,8 +247,7 @@ For more information on the Calendar features, see <a href="https://developer.ti
  The calendar identifier.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString CalendarId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -232,8 +257,7 @@ For more information on the Calendar features, see <a href="https://developer.ti
  The calendar task identifier.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString CalendarTaskId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -243,8 +267,7 @@ For more information on the Calendar features, see <a href="https://developer.ti
  The calendar item identifier, which can either be a <em>CalendarEventId </em>or a <em>CalendarTaskId</em>.
           </div>
 <pre class="webidl prettyprint">  typedef (<a href="#CalendarEventId">CalendarEventId</a> or <a href="#CalendarTaskId">CalendarTaskId</a>) CalendarItemId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -254,8 +277,7 @@ For more information on the Calendar features, see <a href="https://developer.ti
  Specifies the calendar types.
           </div>
 <pre class="webidl prettyprint">  enum CalendarType { "EVENT", "TASK" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -276,8 +298,7 @@ TASK - if a calendar contains tasks (VTODO objects)            </li>
  Specifies the types of textual format of a Calendar.
           </div>
 <pre class="webidl prettyprint">  enum CalendarTextFormat { "ICALENDAR_20", "VCALENDAR_10" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -298,8 +319,7 @@ VCALENDAR_10 -  if the textual format is vCalendar v1.0            </li>
  Specifies the alarm types.
           </div>
 <pre class="webidl prettyprint">  enum AlarmMethod { "SOUND", "DISPLAY" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -320,8 +340,7 @@ DISPLAY - if display on screen without any sound is used to alert the user      
  Specifies the types of frequency for the recurrence of an event.
           </div>
 <pre class="webidl prettyprint">  enum RecurrenceRuleFrequency { "DAILY", "WEEKLY", "MONTHLY", "YEARLY" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -346,8 +365,7 @@ YEARLY - if the event occurs yearly            </li>
  Specifies the values for <em>CalendarRecurrenceRule.daysOfWeek</em>.
           </div>
 <pre class="webidl prettyprint">  enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -361,9 +379,8 @@ YEARLY - if the event occurs yearly            </li>
 <div class="brief">
  Specifies the availability types of time for an event.
           </div>
-<pre class="webidl prettyprint">  enum EventAvailability { "BUSY", "FREE" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum EventAvailability { "BUSY", "FREE", "BUSY_UNAVAILABLE", "BUSY_TENTATIVE" };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -375,8 +392,15 @@ The following values are supported:
 FREE - if the specified time slot is vacant            </li>
             <li>
 BUSY - if the specified time slot is not vacant            </li>
+            <li>
+BUSY_UNAVAILABLE - if the specified time slot is not vacant and can not be scheduled            </li>
+            <li>
+BUSY_TENTATIVE - if the specified time slot is not vacant because one or more events have been tentatively scheduled for that interval            </li>
           </ul>
          </div>
+<p><span class="remark">Remark: </span>
+ <em>BUSY_UNAVAILABLE</em> and <em>BUSY_TENTATIVE</em> are supported since Tizen 5.0
+          </p>
 </div>
 <div class="enum" id="AttendeeType">
 <a class="backward-compatibility-anchor" name="::Calendar::AttendeeType"></a><h3>1.10. AttendeeType</h3>
@@ -384,8 +408,7 @@ BUSY - if the specified time slot is not vacant            </li>
  Specifies the types of attendee.
           </div>
 <pre class="webidl prettyprint">  enum AttendeeType { "INDIVIDUAL", "GROUP", "RESOURCE", "ROOM", "UNKNOWN" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -412,8 +435,7 @@ UNKNOWN - Unknown            </li>
  Specifies the attendance status types of a participant.
           </div>
 <pre class="webidl prettyprint">  enum AttendeeStatus { "PENDING", "ACCEPTED", "DECLINED", "TENTATIVE", "DELEGATED", "COMPLETED", "IN_PROCESS" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -444,8 +466,7 @@ IN_PROCESS - if the participant's event is currently in process            </li>
  Specifies the role of an attendee.
           </div>
 <pre class="webidl prettyprint">  enum AttendeeRole { "REQ_PARTICIPANT", "OPT_PARTICIPANT", "NON_PARTICIPANT", "CHAIR" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -470,8 +491,7 @@ CHAIR - if the attendee is the chairperson of the event.            </li>
  Specifies the priority of a calendar item.
           </div>
 <pre class="webidl prettyprint">  enum CalendarItemPriority { "HIGH", "MEDIUM", "LOW", "NONE" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -495,9 +515,8 @@ NONE - if item priority is not set            </li>
 <div class="brief">
  Specifies the visibility types of a calendar item.
           </div>
-<pre class="webidl prettyprint">   enum CalendarItemVisibility { "PUBLIC", "PRIVATE", "CONFIDENTIAL" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CalendarItemVisibility { "PUBLIC", "PRIVATE", "CONFIDENTIAL" };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -519,9 +538,8 @@ CONFIDENTIAL - if item visibility is confidential            </li>
 <div class="brief">
  Specifies the status of a calendar item.
           </div>
-<pre class="webidl prettyprint">   enum CalendarItemStatus {"NONE", "TENTATIVE", "CONFIRMED", "CANCELLED", "NEEDS_ACTION", "IN_PROCESS", "COMPLETED" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CalendarItemStatus { "NONE", "TENTATIVE", "CONFIRMED", "CANCELLED", "NEEDS_ACTION", "IN_PROCESS", "COMPLETED" };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -567,8 +585,7 @@ CANCELLED -  if the task has been cancelled            </li>
     readonly attribute <a href="#CalendarManager">CalendarManager</a> calendar;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -579,22 +596,15 @@ CANCELLED -  if the task has been cancelled            </li>
 Once a calendar object is obtained, it is possible to add, remove, or update the information it contains through the Calendar interface methods.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface CalendarManager {
-    void getCalendars(<a href="#CalendarType">CalendarType</a> type,
-                      <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getCalendars(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Calendar">Calendar</a> getUnifiedCalendar(<a href="#CalendarType">CalendarType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Calendar">Calendar</a> getDefaultCalendar(<a href="#CalendarType">CalendarType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void addCalendar(<a href="#Calendar">Calendar</a> calendar) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Calendar">Calendar</a> getCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -607,10 +617,8 @@ Once a calendar object is obtained, it is possible to add, remove, or update the
 <div class="brief">
  Gets an array of Calendar objects.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getCalendars(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getCalendars(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -630,12 +638,10 @@ InvalidValuesError - if any of the input parameters contain an invalid value.   
 UnknownError - if any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -643,15 +649,15 @@ UnknownError - if any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">type</span>:
- Type of a calendar
+ Type of a calendar.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when the invocation ends successfully
+ Callback method that is invoked when the invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -671,51 +677,50 @@ UnknownError - if any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var calendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var calendar;
 
 function eventFoundCallback(events)
 {
-   /* Event has been successfully found */
-   /* Changes the summary */
-   events[0].summary = 'HTML6 Webinar';
-   calendar.update(events[0]);
-   console.log('First event was updated!');
+  /* Event has been successfully found. */
+  /* Changes the summary. */
+  events[0].summary = "HTML6 Webinar";
+  calendar.update(events[0]);
+  console.log("First event was updated!");
 }
 
-/* Defines the error callback for all the asynchronous calls */
+/* Defines the error callback for all the asynchronous calls. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Defines the success callback for retrieving the list of calendars */
+/* Defines the success callback for retrieving the list of calendars. */
 function calendarListCallback(calendars)
 {
-   if (calendars.length &gt; 0)
-   {
-      calendar = calendars[0];
-      console.log('The calendar id is ' + calendar.id + ' and name ' + calendar.name);
+  if (calendars.length &gt; 0)
+  {
+    calendar = calendars[0];
+    console.log("The calendar id is " + calendar.id + " and name " + calendar.name);
 
-      var ev = new tizen.CalendarEvent(
-      {
-         description:'HTML5 Introduction',
-         summary:'HTML5 Webinar',
-         startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-         duration: new tizen.TimeDuration(1, "HOURS"),
-         location:'Huesca'
-      });
-      calendar.add(ev);
+    var ev = new tizen.CalendarEvent(
+    {
+      description: "HTML5 Introduction",
+      summary: "HTML5 Webinar",
+      startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+      duration: new tizen.TimeDuration(1, "HOURS"),
+      location: "Huesca"
+    });
+    calendar.add(ev);
 
-      /* Event has been successfully added */
-      /* Checks whether the added event can be retrieved from the calendar */
-      /* If the calendar was empty, only the item added through add() should be returned */
-      var filter = new tizen.AttributeFilter('summary', 'CONTAINS', 'HTML5');
-      calendar.find(eventFoundCallback, errorCallback, filter);
-   }
+    /* Event has been successfully added. */
+    /* Checks whether the added event can be retrieved from the calendar. */
+    /* If the calendar was empty, only the item added through add() should be returned. */
+    var filter = new tizen.AttributeFilter("summary", "CONTAINS", "HTML5");
+    calendar.find(eventFoundCallback, errorCallback, filter);
+  }
 }
 
-/* Gets a list of available calendars */
+/* Gets a list of available calendars. */
 tizen.calendar.getCalendars("EVENT", calendarListCallback, errorCallback);
 </pre>
 </div>
@@ -727,10 +732,8 @@ tizen.calendar.getCalendars("EVENT", calendarListCallback, errorCallback);
 <div class="brief">
  The unified calendar is the aggregation of all calendars that are obtained from <em>getCalendars</em> and contains all events or tasks. It does not have the calendar ID nor name which are set to <var>null</var>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Calendar">Calendar</a> getUnifiedCalendar(<a href="#CalendarType">CalendarType</a> type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Calendar">Calendar</a> getUnifiedCalendar(<a href="#CalendarType">CalendarType</a> type);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -738,12 +741,10 @@ tizen.calendar.getCalendars("EVENT", calendarListCallback, errorCallback);
 If an item is added to the unified calendar, it will be saved in the default calendar.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -751,14 +752,18 @@ If an item is added to the unified calendar, it will be saved in the default cal
 <ul>
           <li class="param">
 <span class="name">type</span>:
- Type of a calendar
+ Type of a calendar.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Calendar The unified Calendar object.
-              </div>
+<ul>
+<span class="return">Calendar:
+                  </span>
+ The unified Calendar object.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -781,42 +786,41 @@ If an item is added to the unified calendar, it will be saved in the default cal
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var unifiedCalendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var unifiedCalendar;
 
-/* Defines the error callback for all the asynchronous calls */
+/* Defines the error callback for all the asynchronous calls. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
 function eventFoundCallback(events)
 {
-   /* Event has been successfully found */
-   /* Changes the summary */
-   events[0].summary = 'HTML6 Webinar';
-   unifiedCalendar.update(events[0]);
-   console.log('First event was updated!');
+  /* Event has been successfully found. */
+  /* Changes the summary. */
+  events[0].summary = "HTML6 Webinar";
+  unifiedCalendar.update(events[0]);
+  console.log("First event was updated!");
 }
 
-/* Gets the unified calendar */
+/* Gets the unified calendar. */
 unifiedCalendar = tizen.calendar.getUnifiedCalendar("EVENT");
 
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 
 unifiedCalendar.add(ev);
 
-/* Event has been added */
-/* Checks whether the added event can be retrieved from the calendar */
-/* If the calendar was empty, only the item added through add() should be returned */
-var filter = new tizen.AttributeFilter('summary', 'CONTAINS', 'HTML5');
+/* Event has been added. */
+/* Checks whether the added event can be retrieved from the calendar. */
+/* If the calendar was empty, only the item added through add() should be returned. */
+var filter = new tizen.AttributeFilter("summary", "CONTAINS", "HTML5");
 unifiedCalendar.find(eventFoundCallback, errorCallback, filter);
 </pre>
 </div>
@@ -828,18 +832,14 @@ unifiedCalendar.find(eventFoundCallback, errorCallback, filter);
 <div class="brief">
  Gets the default calendar, which is used for new items.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Calendar">Calendar</a> getDefaultCalendar(<a href="#CalendarType">CalendarType</a> type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Calendar">Calendar</a> getDefaultCalendar(<a href="#CalendarType">CalendarType</a> type);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -847,14 +847,18 @@ unifiedCalendar.find(eventFoundCallback, errorCallback, filter);
 <ul>
           <li class="param">
 <span class="name">type</span>:
- Type of a calendar
+ Type of a calendar.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Calendar The default Calendar object
-              </div>
+<ul>
+<span class="return">Calendar:
+                  </span>
+ The default Calendar object.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -877,42 +881,41 @@ unifiedCalendar.find(eventFoundCallback, errorCallback, filter);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var myCalendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myCalendar;
 
-/* Defines the error callback for all the asynchronous calls */
+/* Defines the error callback for all the asynchronous calls. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
 function eventFoundCallback(events)
 {
-   /* Event has been successfully found */
-   /* Changes the summary */
-   events[0].summary = 'HTML6 Webinar';
-   myCalendar.update(events[0]);
-   console.log('First event was updated!');
+  /* Event has been successfully found. */
+  /* Changes the summary. */
+  events[0].summary = "HTML6 Webinar";
+  myCalendar.update(events[0]);
+  console.log("First event was updated!");
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 myCalendar = tizen.calendar.getDefaultCalendar("EVENT");
 
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 
 myCalendar.add(ev);
 
-/* Event has been added */
-/* Checks whether the added event can be retrieved from the calendar */
-/* If the calendar was empty, only the item added through add() should be returned */
-var filter = new tizen.AttributeFilter('summary', 'CONTAINS', 'HTML5');
+/* Event has been added. */
+/* Checks whether the added event can be retrieved from the calendar. */
+/* If the calendar was empty, only the item added through add() should be returned. */
+var filter = new tizen.AttributeFilter("summary", "CONTAINS", "HTML5");
 myCalendar.find(eventFoundCallback, errorCallback, filter);
 </pre>
 </div>
@@ -924,10 +927,8 @@ myCalendar.find(eventFoundCallback, errorCallback, filter);
 <div class="brief">
  Adds a calendar to the calendar database synchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addCalendar(<a href="#Calendar">Calendar</a> calendar);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void addCalendar(<a href="#Calendar">Calendar</a> calendar);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -936,12 +937,10 @@ If the calendar is successfully inserted in the database, the Calendar object
 will have its identifier (id attribute) set when the function returns.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
 <div class="parameters">
@@ -949,7 +948,7 @@ will have its identifier (id attribute) set when the function returns.
 <ul>
           <li class="param">
 <span class="name">calendar</span>:
- Calendar to be added
+ Calendar to be added.
                 </li>
         </ul>
 </div>
@@ -972,21 +971,22 @@ will have its identifier (id attribute) set when the function returns.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var appId = tizen.application.getCurrentApplication().appInfo.id;
-tizen.account.getAccounts(function(accounts)
-{
-   var account = accounts[0];
-   if (account)
-   {
-      var calendar = new tizen.Calendar(account.id,
-                                        'remote calendar', 'TASK');
-      tizen.calendar.addCalendar(calendar);
-   }
-}, function(e)
-{
-   console.log('Error: ' + e.message);
-}, appId);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(
+    function(accounts)
+    {
+      var account = accounts[0];
+      if (account)
+      {
+        var calendar = new tizen.Calendar(account.id, "remote calendar", "TASK");
+        tizen.calendar.addCalendar(calendar);
+      }
+    },
+    function(e)
+    {
+      console.log("Error: " + e.message);
+    },
+    appId);
 </pre>
 </div>
 </dd>
@@ -997,10 +997,8 @@ tizen.account.getAccounts(function(accounts)
 <div class="brief">
  Removes a calendar from the calendar database synchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1009,12 +1007,10 @@ Removes the calendar that corresponds to the specified identifier from the datab
 The function will throw an exception if it failed to remove the specified calendar.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
 <div class="parameters">
@@ -1022,11 +1018,11 @@ The function will throw an exception if it failed to remove the specified calend
 <ul>
           <li class="param">
 <span class="name">type</span>:
- Type of a calendar
+ Type of a calendar.
                 </li>
           <li class="param">
 <span class="name">id</span>:
- Identifier (id attribute) of the calendar object to delete
+ Identifier (id attribute) of the calendar object to delete.
                 </li>
         </ul>
 </div>
@@ -1055,22 +1051,23 @@ The function will throw an exception if it failed to remove the specified calend
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var appId = tizen.application.getCurrentApplication().appInfo.id;
-tizen.account.getAccounts(function(accounts)
-{
-   var account = accounts[0];
-   if (account)
-   {
-      var calendar = new tizen.Calendar(account.id,
-                                        'remote calendar', 'TASK');
-      tizen.calendar.addCalendar(calendar);
-      tizen.calendar.removeCalendar('TASK', calendar.id);
-   }
-}, function(e)
-{
-   console.log('Error: ' + e.message);
-}, appId);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(
+    function(accounts)
+    {
+      var account = accounts[0];
+      if (account)
+      {
+        var calendar = new tizen.Calendar(account.id, "remote calendar", "TASK");
+        tizen.calendar.addCalendar(calendar);
+        tizen.calendar.removeCalendar("TASK", calendar.id);
+      }
+    },
+    function(e)
+    {
+      console.log("Error: " + e.message);
+    },
+    appId);
 </pre>
 </div>
 </dd>
@@ -1081,18 +1078,14 @@ tizen.account.getAccounts(function(accounts)
 <div class="brief">
  Gets the calendar with the specified identifier and type.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Calendar">Calendar</a> getCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Calendar">Calendar</a> getCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -1100,18 +1093,22 @@ tizen.account.getAccounts(function(accounts)
 <ul>
           <li class="param">
 <span class="name">type</span>:
- Type of a calendar
+ Type of a calendar.
                 </li>
           <li class="param">
 <span class="name">id</span>:
- Identifier (id attribute) of the calendar object to get
+ Identifier (id attribute) of the calendar object to get.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Calendar The matching Calendar object
-              </div>
+<ul>
+<span class="return">Calendar:
+                  </span>
+ The matching Calendar object.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1137,16 +1134,15 @@ tizen.account.getAccounts(function(accounts)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var calendarId; /* calendarId supposed to be initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var calendarId;  /* calendarId supposed to be initialized. */
 try
 {
-   var calendar = tizen.calendar.getCalendar("EVENT", calendarId);
-   console.log("Successfully retrieved event calendar with id: " + calendarId);
+  var calendar = tizen.calendar.getCalendar("EVENT", calendarId);
+  console.log("Successfully retrieved event calendar with id: " + calendarId);
 }
 catch (err)
 {
-   console.log("Error: " + err.name);
+  console.log("Error: " + err.name);
 }
 </pre>
 </div>
@@ -1161,47 +1157,26 @@ catch (err)
           </div>
 <pre class="webidl prettyprint">  [Constructor(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name, <a href="#CalendarType">CalendarType</a> type)]
   interface Calendar {
-
     readonly attribute <a href="#CalendarId">CalendarId</a> id;
-
     readonly attribute DOMString name;
-
     readonly attribute <a href="account.html#AccountId">AccountId</a>? accountId;
-
     <a href="#CalendarItem">CalendarItem</a> get(<a href="#CalendarItemId">CalendarItemId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void add(<a href="#CalendarItem">CalendarItem</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items,
-                  optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback,
+    void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback,
                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void update(<a href="#CalendarItem">CalendarItem</a> item,
-                optional boolean? updateAllInstances) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-     void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    void update(<a href="#CalendarItem">CalendarItem</a> item, optional boolean? updateAllInstances) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                      optional boolean? updateAllInstances) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void remove(<a href="#CalendarItemId">CalendarItemId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeBatch(<a href="#CalendarItemId">CalendarItemId</a>[] ids,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-              optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
+    void removeBatch(<a href="#CalendarItemId">CalendarItemId</a>[] ids, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
               optional <a href="tizen.html#SortMode">SortMode</a>? sortMode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addChangeListener(<a href="#CalendarChangeCallback">CalendarChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
- 2.3
+<p><span class="version">Since: </span>
+ 1.0
           </p>
 <div class="description">
           <p>
@@ -1221,22 +1196,23 @@ This interface offers the following methods to manage events in a calendar:
           </ul>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var appId = tizen.application.getCurrentApplication().appInfo.id;
-tizen.account.getAccounts(function(accounts)
-{
-   var account = accounts[0];
-   if (account)
-   {
-      var calendar = new tizen.Calendar(account.id,
-                                        'remote calendar', 'TASK');
-      /* 'calendar' variable is not available until it is inserted into the database */
-      tizen.calendar.addCalendar(calendar);
-   }
-}, function(e)
-{
-   console.log('Error: ' + e.message);
-}, appId);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appId = tizen.application.getCurrentApplication().appInfo.id;
+tizen.account.getAccounts(
+    function(accounts)
+    {
+      var account = accounts[0];
+      if (account)
+      {
+        var calendar = new tizen.Calendar(account.id, "remote calendar", "TASK");
+        /* calendar variable is not available until it is inserted into the database. */
+        tizen.calendar.addCalendar(calendar);
+      }
+    },
+    function(e)
+    {
+      console.log("Error: " + e.message);
+    },
+    appId);
 </pre>
 </div>
 <div class="constructors">
@@ -1251,8 +1227,7 @@ tizen.account.getAccounts(function(accounts)
 </span><span class="type">CalendarId </span><span class="name">id</span></span><div class="brief">
  Calendar identifier.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1261,15 +1236,13 @@ tizen.account.getAccounts(function(accounts)
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  Readable (descriptive) name for a calendar, such as work or personal.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the default calendar and shows its name */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the default calendar and shows its name. */
 var calendar = tizen.calendar.getDefaultCalendar("EVENT");
-console.log('The calendar name is ' + calendar.name);
+console.log("The calendar name is " + calendar.name);
 </pre>
 </div>
 </li>
@@ -1278,8 +1251,7 @@ console.log('The calendar name is ' + calendar.name);
 </span><span class="type">AccountId </span><span class="name">accountId</span><span class="optional"> [nullable]</span></span><div class="brief">
  Account identifier.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1295,18 +1267,14 @@ console.log('The calendar name is ' + calendar.name);
 <div class="brief">
  Gets the calendar item with the specified identifier.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#CalendarItem">CalendarItem</a> get(<a href="#CalendarItemId">CalendarItemId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#CalendarItem">CalendarItem</a> get(<a href="#CalendarItemId">CalendarItemId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -1314,14 +1282,18 @@ console.log('The calendar name is ' + calendar.name);
 <ul>
           <li class="param">
 <span class="name">id</span>:
- Calendar item identifier
+ Calendar item identifier.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- CalendarItem The matching <em>CalendarItem </em>object.
-              </div>
+<ul>
+<span class="return">CalendarItem:
+                  </span>
+ The matching <em>CalendarItem </em>object.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1347,17 +1319,16 @@ console.log('The calendar name is ' + calendar.name);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var myCalendar; /* Calendar supposed to be initialized */
-var itemId; /* Calendar item identifier */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myCalendar;  /* Calendar supposed to be initialized. */
+var itemId;      /* Calendar item identifier. */
 try
 {
-   var item = myCalendar.get(itemId);
-   console.log("Successfully retrieved item with id: " + itemId);
+  var item = myCalendar.get(itemId);
+  console.log("Successfully retrieved item with id: " + itemId);
 }
 catch (err)
 {
-   console.log("Error: " + err.name);
+  console.log("Error: " + err.name);
 }
 </pre>
 </div>
@@ -1369,10 +1340,8 @@ catch (err)
 <div class="brief">
  Adds an item to the calendar synchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#CalendarItem">CalendarItem</a> item);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#CalendarItem">CalendarItem</a> item);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1383,12 +1352,10 @@ If the item is successfully inserted in the calendar, the <em>CalendarItem </em>
 To update an existing item, call the <em>update() </em>method instead. If you wish to add a copy of an existing <em>CalendarItem </em>object, call <em>CalendarItem.clone()</em> method first and pass the clone to the <em>add()</em> method.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
 <div class="parameters">
@@ -1396,7 +1363,7 @@ To update an existing item, call the <em>update() </em>method instead. If you wi
 <ul>
           <li class="param">
 <span class="name">item</span>:
- Calendar item to be added
+ Calendar item to be added.
                 </li>
         </ul>
 </div>
@@ -1422,21 +1389,20 @@ To update an existing item, call the <em>update() </em>method instead. If you wi
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the default calendar */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the default calendar. */
 var calendar = tizen.calendar.getDefaultCalendar("EVENT");
 
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 
 calendar.add(ev);
-console.log('Event added with uid ' + ev.id.uid);
+console.log("Event added with uid " + ev.id.uid);
 </pre>
 </div>
 </dd>
@@ -1447,10 +1413,9 @@ console.log('Event added with uid ' + ev.id.uid);
 <div class="brief">
  Adds an array of items to the calendar asynchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback, 
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1462,7 +1427,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-InvalidValuesError - if any of the input parameters contain an invalid value, the item has any invalid value or the calendar has some restrictions that cause the attempted insertion of the calendar items to fail (for example, limitations in the size of text attributes)              </li>
+InvalidValuesError - if any of the input parameters contain an invalid value, the item has any invalid value or the calendar has some restrictions that cause the attempted insertion of the calendar items to fail (for example, limitations in the size of text attributes).              </li>
               <li>
 UnknownError - if any other error occurs.               </li>
             </ul>
@@ -1470,12 +1435,10 @@ UnknownError - if any other error occurs.               </li>
 If you wish to update an existing item, call the <em>update() </em>method instead. If you wish to add a copy of an existing <em>CalendarItem </em>object, call CalendarItem.clone() method first and pass the clone to the add() method.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
 <div class="parameters">
@@ -1483,15 +1446,15 @@ If you wish to update an existing item, call the <em>update() </em>method instea
 <ul>
           <li class="param">
 <span class="name">items</span>:
- List of calendar items to add
+ List of calendar items to add.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the invocation ends successfully
+ Callback method that is invoked when the invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the request fails
+ Callback method that is invoked when the request fails.
                 </li>
         </ul>
 </div>
@@ -1511,28 +1474,27 @@ If you wish to update an existing item, call the <em>update() </em>method instea
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the error callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
 function addEventsSuccess(events)
 {
-   console.log("Successfully added " + events.length + " events!");
+  console.log("Successfully added " + events.length + " events!");
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 var calendar = tizen.calendar.getDefaultCalendar("EVENT");
 
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 
 calendar.addBatch([ev], addEventsSuccess, errorCallback);
@@ -1546,10 +1508,8 @@ calendar.addBatch([ev], addEventsSuccess, errorCallback);
 <div class="brief">
  Updates an existing item in the calendar synchronously with the one specified in the argument.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#CalendarItem">CalendarItem</a> item, optional boolean? updateAllInstances);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#CalendarItem">CalendarItem</a> item, optional boolean? updateAllInstances);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1557,12 +1517,10 @@ calendar.addBatch([ev], addEventsSuccess, errorCallback);
 In case of recurring events, the default behavior is to update all their instances (including their detached ones), as well. If you do not want that, the <em>updateAllInstances</em> flag should be set to <var>false</var>.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
 <div class="parameters">
@@ -1570,7 +1528,7 @@ In case of recurring events, the default behavior is to update all their instanc
 <ul>
           <li class="param">
 <span class="name">item</span>:
- Item object to update
+ Item object to update.
                 </li>
           <li class="param">
 <span class="name">updateAllInstances</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1600,28 +1558,27 @@ In case of recurring events, the default behavior is to update all their instanc
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var myCalendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myCalendar;
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Defines the event success callback */
+/* Defines the event success callback. */
 function eventSearchSuccessCallback(events)
 {
-   events[0].description = 'New Description';
-   /* Updates the first existing event */
-   myCalendar.update(events[0]);
-   console.log("The first item description was updated!");
+  events[0].description = "New Description";
+  /* Updates the first existing event. */
+  myCalendar.update(events[0]);
+  console.log("The first item description was updated!");
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 myCalendar = tizen.calendar.getDefaultCalendar("EVENT");
 
-/* Finds all events in a Calendar */
+/* Finds all events in a Calendar. */
 myCalendar.find(eventSearchSuccessCallback, errorCallback);
 </pre>
 </div>
@@ -1633,10 +1590,9 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 <div class="brief">
  Updates an array of existing items in the calendar asynchronously with the specified values in the argument.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? updateAllInstances);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+                 optional boolean? updateAllInstances);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1653,12 +1609,10 @@ InvalidValuesError - if parameters such as the calendar item has any invalid val
 UnknownError - if any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
 <div class="parameters">
@@ -1666,15 +1620,15 @@ UnknownError - if any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">items</span>:
- List of calendar item objects to update
+ List of calendar item objects to update.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the <em>updateEvents() </em>request succeeds
+ Callback method that is invoked when the <em>updateEvents() </em>request succeeds.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the <em>updateEvents() </em>request fails
+ Callback method that is invoked when the <em>updateEvents() </em>request fails.
                 </li>
           <li class="param">
 <span class="name">updateAllInstances</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1698,34 +1652,33 @@ UnknownError - if any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var myCalendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myCalendar;
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Defines the success callback */
+/* Defines the success callback. */
 function updateEventsSuccess()
 {
-   console.log("Successfully updated !");
+  console.log("Successfully updated !");
 }
 
-/* Defines the event success callback */
+/* Defines the event success callback. */
 function eventSearchSuccessCallback(events)
 {
-   events[0].description = 'New Description 1';
-   events[1].description = 'New Description 2';
-   /* Updates the first two existing events */
-   myCalendar.updateBatch(events.slice(0,2), updateEventsSuccess, errorCallback);
+  events[0].description = "New Description 1";
+  events[1].description = "New Description 2";
+  /* Updates the first two existing events. */
+  myCalendar.updateBatch(events.slice(0, 2), updateEventsSuccess, errorCallback);
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 myCalendar = tizen.calendar.getDefaultCalendar("EVENT");
 
-/* Finds all events in Calendar */
+/* Finds all events in calendar. */
 myCalendar.find(eventSearchSuccessCallback, errorCallback);
 </pre>
 </div>
@@ -1737,21 +1690,17 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 <div class="brief">
  Removes an item from the calendar that corresponds to the specified identifier. This method will throw an exception if it fails to remove the specified calendar item.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#CalendarItemId">CalendarItemId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#CalendarItemId">CalendarItemId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  <b>For (recurring) events:</b> In the case of calendar events, if the recurrence ID (<em>rid</em> attribute) is set to <var>null</var>, this method will remove the event identified by <em>uid</em>, and all of its possible detached instances.
             </p>
 <div class="parameters">
@@ -1759,7 +1708,7 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 <ul>
           <li class="param">
 <span class="name">id</span>:
- The identifier (id attribute) of the item object to delete
+ The identifier (id attribute) of the item object to delete.
                 </li>
         </ul>
 </div>
@@ -1788,27 +1737,26 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var myCalendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myCalendar;
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Defines the event success callback */
+/* Defines the event success callback. */
 function eventSearchSuccessCallback(events)
 {
-   /* Deletes the first existing event */
-   myCalendar.remove(events[0].id);
-   console.log('The first event was removed');
+  /* Deletes the first existing event. */
+  myCalendar.remove(events[0].id);
+  console.log("The first event was removed");
 }
 
-/* Gets default calendar */
+/* Gets default calendar. */
 myCalendar = tizen.calendar.getDefaultCalendar("EVENT");
 
-/* Finds all events in Calendar */
+/* Finds all events in Calendar. */
 myCalendar.find(eventSearchSuccessCallback, errorCallback);
 </pre>
 </div>
@@ -1820,10 +1768,8 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 <div class="brief">
  Removes several items from the calendar asynchronously depending on the specified identifiers.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeBatch(<a href="#CalendarItemId">CalendarItemId</a>[] ids, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeBatch(<a href="#CalendarItemId">CalendarItemId</a>[] ids, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1839,15 +1785,13 @@ InvalidValuesError - if any of the input parameters contain an invalid value.   
 UnknownError - if any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.write
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  <b>For (recurring) events:</b> In the case of calendar events, if the recurrence id, <em>rid</em>, is set to <var>null</var>, this method will remove the event identified by <em>uid</em>, as well as all its possible detached instances.
             </p>
 <div class="parameters">
@@ -1855,15 +1799,15 @@ UnknownError - if any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">ids</span>:
- The identifiers (<em>id </em>attribute) of the items to delete
+ The identifiers (<em>id </em>attribute) of the items to delete.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the <em>removeBatch()</em> request succeeds
+ Callback method that is invoked when the <em>removeBatch()</em> request succeeds.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the <em>removeBatch()</em> request fails
+ Callback method that is invoked when the <em>removeBatch()</em> request fails.
                 </li>
         </ul>
 </div>
@@ -1883,33 +1827,31 @@ UnknownError - if any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var myCalendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myCalendar;
 
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Defines the removeBatch callback */
+/* Defines the removeBatch callback. */
 function removeBatchCallback()
 {
-   console.log("Requested events were successfully removed.");
+  console.log("Requested events were successfully removed");
 }
 
-/* Defines the event search success callback */
+/* Defines the event search success callback. */
 function eventSearchSuccessCallback(events)
 {
-   /* Deletes the first two existing events */
-   myCalendar.removeBatch([events[0].id, events[1].id],
-                          removeBatchCallback, errorCallback);
+  /* Deletes the first two existing events. */
+  myCalendar.removeBatch([events[0].id, events[1].id], removeBatchCallback, errorCallback);
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 myCalendar = tizen.calendar.getDefaultCalendar("EVENT");
 
-/* Retrieves all the events in Calendar */
+/* Retrieves all the events in Calendar. */
 myCalendar.find(eventSearchSuccessCallback, errorCallback);
 </pre>
 </div>
@@ -1921,10 +1863,9 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 <div class="brief">
  Finds and fetches an array of <em>CalendarItem </em>objects for items stored in the calendar according to the supplied filter if it is valid else it will return all the items stored.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
+          optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -1952,12 +1893,10 @@ For event filtering based on the identifier, the identifier type should be Calen
 If no recurrence ID is given, the filter will match both the parent event and all its detached instances.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -1965,19 +1904,19 @@ If no recurrence ID is given, the filter will match both the parent event and al
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when the invocation ends successfully
+ Callback method that is invoked when the invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
           <li class="param">
 <span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Supplied data used to filter the results of the <em>find() </em>method
+ Supplied data used to filter the results of the <em>find() </em>method.
                 </li>
           <li class="param">
 <span class="name">sortMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Sort order in which the items return
+ Sort order in which the items return.
                 </li>
         </ul>
 </div>
@@ -1997,27 +1936,26 @@ If no recurrence ID is given, the filter will match both the parent event and al
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the error callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Defines the event search success callback */
+/* Defines the event search success callback. */
 function eventSearchSuccessCallback(events)
 {
-   console.log(events.length + ' results found.');
+  console.log(events.length + " results found");
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 var calendar = tizen.calendar.getDefaultCalendar("EVENT");
 
-/* Finds all events the calendar that contain in the summary the string Tizen */
-var filter = new tizen.AttributeFilter('summary', 'CONTAINS', 'Tizen');
+/* Finds all events the calendar that contain in the summary the string Tizen. */
+var filter = new tizen.AttributeFilter("summary", "CONTAINS", "Tizen");
 
-/* Events returned by the find() query will be sorted by ascending summary */
-var sortingMode = new tizen.SortMode('summary', 'ASC');
+/* Events returned by the find() query will be sorted by ascending summary. */
+var sortingMode = new tizen.SortMode("summary", "ASC");
 
 calendar.find(eventSearchSuccessCallback, errorCallback, filter, sortingMode);
 </pre>
@@ -2030,10 +1968,8 @@ calendar.find(eventSearchSuccessCallback, errorCallback, filter, sortingMode);
 <div class="brief">
  Adds a listener to receive notifications about calendar changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addChangeListener(<a href="#CalendarChangeCallback">CalendarChangeCallback</a> successCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addChangeListener(<a href="#CalendarChangeCallback">CalendarChangeCallback</a> successCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2041,12 +1977,10 @@ calendar.find(eventSearchSuccessCallback, errorCallback, filter, sortingMode);
 When executed, the implementation must immediately return a subscription identifier that identifies the watch operation. After returning the identifier, the watcher methods are invoked asynchronously.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -2054,14 +1988,18 @@ When executed, the implementation must immediately return a subscription identif
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback methods that is invoked on receiving calendar change notifications
+ Callback methods that is invoked on receiving calendar change notifications.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long The identifier used to clear the watch subscription
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ The identifier used to clear the watch subscription.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -2084,27 +2022,26 @@ When executed, the implementation must immediately return a subscription identif
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var watcherId = 0; /* Watcher identifier */
-var calendar; /* This example assumes calendar is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
+var calendar;       /* This example assumes calendar is initialized. */
 
 var watcher =
 {
-   onitemsadded: function(items)
-   {
-      console.log(items.length + ' items were added');
-   },
-   onitemsupdated: function(items)
-   {
-      console.log(items.length + ' items were updated');
-   },
-   onitemsremoved: function(ids)
-   {
-      console.log(ids.length + ' items were removed');
-   }
+  onitemsadded: function(items)
+  {
+    console.log(items.length + " items were added");
+  },
+  onitemsupdated: function(items)
+  {
+    console.log(items.length + " items were updated");
+  },
+  onitemsremoved: function(ids)
+  {
+    console.log(ids.length + " items were removed");
+  }
 };
 
-/* Registers to be notified when the calendar changes */
+/* Registers to be notified when the calendar changes. */
 watcherId = calendar.addChangeListener(watcher);
 </pre>
 </div>
@@ -2116,10 +2053,8 @@ watcherId = calendar.addChangeListener(watcher);
 <div class="brief">
  Unsubscribes from receiving notification for a calendar item change.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2127,12 +2062,10 @@ watcherId = calendar.addChangeListener(watcher);
 If the <em>watchId </em>argument is valid and corresponds to a subscription already in place, the watch process must immediately stop and no further callbacks must be invoked. If the <em>watchId </em>argument is not valid or does not correspond to a valid subscription, the method should return without any further action.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -2140,7 +2073,7 @@ If the <em>watchId </em>argument is valid and corresponds to a subscription alre
 <ul>
           <li class="param">
 <span class="name">watchId</span>:
- Subscription identifier
+ Subscription identifier.
                 </li>
         </ul>
 </div>
@@ -2160,31 +2093,30 @@ If the <em>watchId </em>argument is valid and corresponds to a subscription alre
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var watcherId = 0; /* Watcher identifier */
-var calendar; /* This example assumes calendar is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
+var calendar;       /* This example assumes calendar is initialized. */
 
-/* Receives calendar changes */
+/* Receives calendar changes. */
 var watcher =
 {
-   onitemsadded: function(items)
-   {
-      console.log(items.length + ' items were added');
-   },
-   onitemsupdated: function(items)
-   {
-      console.log(evitemsents.length + ' items were updated');
-   },
-   onitemsremoved: function(ids)
-   {
-      console.log(ids.length + ' items were removed');
-   }
+  onitemsadded: function(items)
+  {
+    console.log(items.length + " items were added");
+  },
+  onitemsupdated: function(items)
+  {
+    console.log(evitemsents.length + " items were updated");
+  },
+  onitemsremoved: function(ids)
+  {
+    console.log(ids.length + " items were removed");
+  }
 };
 
-/* Registers to be notified when the calendar changes */
+/* Registers to be notified when the calendar changes. */
 watcherId = calendar.addChangeListener(watcher);
 
-/* Cancels the watch operation */
+/* Cancels the watch operation. */
 calendar.removeChangeListener(watcherId);
 </pre>
 </div>
@@ -2213,8 +2145,7 @@ calendar.removeChangeListener(watcherId);
     DOMString[] categories;
     <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2233,8 +2164,7 @@ These attributes are shared by both calendar events and tasks.
     <a href="time.html#TZDate">TZDate</a> completedDate;
     short progress;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2257,8 +2187,7 @@ All the attributes are optional and are undefined by default.
     <a href="#EventAvailability">EventAvailability</a> availability;
     <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a> recurrenceRule;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2279,45 +2208,26 @@ These attributes are shared by both events and tasks.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface CalendarItem {
     readonly attribute <a href="#CalendarItemId">CalendarItemId</a>? id;
-
     readonly attribute <a href="#CalendarId">CalendarId</a>? calendarId;
-
     readonly attribute <a href="time.html#TZDate">TZDate</a>? lastModificationDate;
-
-    attribute DOMString? description setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString? summary setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute boolean isAllDay setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TZDate">TZDate</a>? startDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TimeDuration">TimeDuration</a>? duration setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString? location setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString? organizer setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarItemVisibility">CalendarItemVisibility</a> visibility setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarItemStatus">CalendarItemStatus</a> status setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarItemPriority">CalendarItemPriority</a> priority setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarAlarm">CalendarAlarm</a>[] alarms setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString[] categories setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute DOMString? description;
+    attribute DOMString? summary;
+    attribute boolean isAllDay;
+    attribute <a href="time.html#TZDate">TZDate</a>? startDate;
+    attribute <a href="time.html#TimeDuration">TimeDuration</a>? duration;
+    attribute DOMString? location;
+    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+    attribute DOMString? organizer;
+    attribute <a href="#CalendarItemVisibility">CalendarItemVisibility</a> visibility;
+    attribute <a href="#CalendarItemStatus">CalendarItemStatus</a> status;
+    attribute <a href="#CalendarItemPriority">CalendarItemPriority</a> priority;
+    attribute <a href="#CalendarAlarm">CalendarAlarm</a>[] alarms;
+    attribute DOMString[] categories;
+    attribute <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees;
     DOMString convertToString(<a href="#CalendarTextFormat">CalendarTextFormat</a> format) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#CalendarItem">CalendarItem</a> clone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="attributes">
@@ -2336,8 +2246,7 @@ Includes a UID and a possible recurrence ID that is needed to identify a particu
 By default, this attribute is set to null.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2351,8 +2260,7 @@ By default, this attribute is set to null.
 By default, this attribute is set to null.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -2367,8 +2275,7 @@ This attribute is automatically populated and cannot be edited by the client.
 (See RFC 5545 - Section 3.8.7.3).
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2385,13 +2292,11 @@ It is usually used to provide a more complete description of the item and any su
 The default value is an empty string.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.description = 'Tizen Codefest';
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.description = "Tizen Codefest";
 </pre>
 </div>
 </li>
@@ -2405,13 +2310,11 @@ event.description = 'Tizen Codefest';
 The default value is an empty string.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.summary = 'Launching the Tizen reference implementation';
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.summary = "Launching the Tizen reference implementation";
 </pre>
 </div>
 </li>
@@ -2427,13 +2330,11 @@ If set to <var>true</var>, then the time and time zone of the <em>startDate </em
 The default value for this attribute is <var>false</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.isAllDay = true; /* All-day event */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.isAllDay = true;  /* All-day event. */
 </pre>
 </div>
 </li>
@@ -2455,13 +2356,11 @@ The default value for this attribute is <var>null</var>.
 This attribute is precise to the second. Milliseconds are ignored.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* 2010-04-30 09:00 */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* 2010-04-30 09:00 */
 event.startDate = new tizen.TZDate(2010, 3, 30, 9, 0);
 </pre>
 </div>
@@ -2482,16 +2381,14 @@ By default, this attribute is set to <var>null</var>.
 This attribute is precise to the second. Milliseconds are ignored.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  Note that the implementation may not save the duration itself, rather convert it to the corresponding endDate/dueDate attribute and save it. For example, if you set the startDate and the duration attributes and save the item, you may see that the duration is <var>null</var> while endDate/dueDate is non-null after retrieving it because the implementation has calculated the endDate/dueDate based on the duration and the startDate then saved it, not the duration.
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* 1 hour meeting */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* 1 hour meeting. */
 event.duration = new tizen.TimeDuration(1, "HOURS");
 </pre>
 </div>
@@ -2506,13 +2403,11 @@ event.duration = new tizen.TimeDuration(1, "HOURS");
 The default value for this attribute is an empty string.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.location = 'Huesca';
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.location = "Huesca";
 </pre>
 </div>
 </li>
@@ -2521,13 +2416,11 @@ event.location = 'Huesca';
  The global position latitude and longitude of the location where the event is planned to take place.
 (See RFC 5545 - Section 3.8.1.6).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.geolocation = new tizen.SimpleCoordinates(60.175, 24.934);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.geolocation = new tizen.SimpleCoordinates(60.175, 24.934);
 </pre>
 </div>
 </li>
@@ -2541,13 +2434,11 @@ event.geolocation = new tizen.SimpleCoordinates(60.175, 24.934);
 By default, this attribute is initialized to an empty string.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.organizer = 'Mr. Jones';
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.organizer = "Mr. Jones";
 </pre>
 </div>
 </li>
@@ -2561,8 +2452,7 @@ event.organizer = 'Mr. Jones';
 The default value is <var>PUBLIC</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2576,13 +2466,11 @@ The default value is <var>PUBLIC</var>.
 The default value for this attribute is <var>NONE</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.status = "TENTATIVE";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.status = "TENTATIVE";
 </pre>
 </div>
 </li>
@@ -2607,13 +2495,11 @@ If the native item database supports another priority schema (such as a range fr
 6-9 to LOW.              </li>
             </ul>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-task.priority = "HIGH";
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">task.priority = "HIGH";
 </pre>
 </div>
 </li>
@@ -2622,16 +2508,13 @@ task.priority = "HIGH";
                       </span><span class="name">alarms</span></span><div class="brief">
  The array of the alarms (or reminders) associated to an item.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-ev.startDate = new tizen.TZDate(2011, 2, 11, 8, 0, 0);
-/* Gives a sound notification 30 minutes before the item's start time */
-var alarm = new tizen.CalendarAlarm(new tizen.TimeDuration(30, "MINS"),
-                                    "SOUND");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">ev.startDate = new tizen.TZDate(2011, 2, 11, 8, 0, 0);
+/* Gives a sound notification 30 minutes before the item's start time. */
+var alarm = new tizen.CalendarAlarm(new tizen.TimeDuration(30, "MINS"), "SOUND");
 ev.alarms = [alarm];
 </pre>
 </div>
@@ -2650,13 +2533,11 @@ Examples of categories are personal, work, vacation, travel, and so on.
 By default, this attribute is set to an empty array.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-event.categories = ['Personal'];
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">event.categories = ["Personal"];
 </pre>
 </div>
 </li>
@@ -2671,14 +2552,11 @@ event.categories = ['Personal'];
 By default, this attribute is set to an empty array.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var attendee = new tizen.CalendarAttendee('mailto:bob@domain.com',
-                                          {role: "CHAIR", RSVP: true});
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var attendee = new tizen.CalendarAttendee("mailto:bob@domain.com", {role: "CHAIR", RSVP: true});
 event.attendees = [attendee];
 </pre>
 </div>
@@ -2696,18 +2574,14 @@ event.attendees = [attendee];
  Converts the calendar item to a string format that will be generated and returned synchronously.
 The export format is set using the format parameter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">DOMString convertToString(<a href="#CalendarTextFormat">CalendarTextFormat</a> format);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">DOMString convertToString(<a href="#CalendarTextFormat">CalendarTextFormat</a> format);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -2715,14 +2589,18 @@ The export format is set using the format parameter.
 <ul>
           <li class="param">
 <span class="name">format</span>:
- Format to use for exporting
+ Format to use for exporting.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- DOMString The representation of the Calendar item
-              </div>
+<ul>
+<span class="return">DOMString:
+                  </span>
+ The representation of the Calendar item.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -2745,25 +2623,24 @@ The export format is set using the format parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the event search success callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the event search success callback. */
 function eventSearchSuccessCallback(events)
 {
-   /* Converts the first event to iCalendar 2.0 format (default) */
-   var vevent = events[0].convertToString("ICALENDAR_20");
-   console.log('iCalendar 2.0 representation of the event is: ' + vevent);
+  /* Converts the first event to iCalendar 2.0 format (default). */
+  var vevent = events[0].convertToString("ICALENDAR_20");
+  console.log("iCalendar 2.0 representation of the event is: " + vevent);
 }
 
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 var myCalendar = tizen.calendar.getDefaultCalendar("EVENT");
 
-/* Finds all events in the first calendar that contain in the summary the string Tizen */
-var filter = new tizen.AttributeFilter('summary', 'CONTAINS', 'Tizen');
+/* Finds all events in the first calendar that contain in the summary the string Tizen. */
+var filter = new tizen.AttributeFilter("summary", "CONTAINS", "Tizen");
 myCalendar.find(eventSearchSuccessCallback, errorCallback, filter);
 </pre>
 </div>
@@ -2775,10 +2652,8 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback, filter);
 <div class="brief">
  Clones the <em>CalendarItem </em>object, detached from any calendar.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#CalendarItem">CalendarItem</a> clone();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#CalendarItem">CalendarItem</a> clone();</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -2786,18 +2661,20 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback, filter);
 The <em>CalendarItem </em>object returned by the <em>clone()</em> method will have its identifier set to <var>null </var>and will be detached from any calendar.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- CalendarItem New clone of the <em>CalendarItem </em>object
-              </div>
+<ul>
+<span class="return">CalendarItem:
+                  </span>
+ New clone of the <em>CalendarItem </em>object.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -2814,13 +2691,15 @@ The <em>CalendarItem </em>object returned by the <em>clone()</em> method will ha
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the default calendar */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the default calendar. */
 var calendar = tizen.calendar.getDefaultCalendar();
 
-var html5seminar = new tizen.CalendarEvent({startDate: new tizen.TZDate(2012, 3, 4),
-                                           duration: new tizen.TimeDuration(3, "DAYS"),
-                                           summary: "HTML5 Seminar"});
+var html5seminar = new tizen.CalendarEvent(
+{
+  startDate: new tizen.TZDate(2012, 3, 4),
+  duration: new tizen.TimeDuration(3, "DAYS"),
+  summary: "HTML5 Seminar"
+});
 
 calendar.add(html5seminar);
 var tizenseminar = html5seminar.clone();
@@ -2840,60 +2719,57 @@ calendar.add(tizenseminar);
 <pre class="webidl prettyprint">  [Constructor(optional <a href="#CalendarTaskInit">CalendarTaskInit</a>? taskInitDict),
    Constructor(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format)]
   interface CalendarTask : <a href="#CalendarItem">CalendarItem</a> {
-    attribute <a href="time.html#TZDate">TZDate</a>? dueDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TZDate">TZDate</a>? completedDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute unsigned short progress setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute <a href="time.html#TZDate">TZDate</a>? dueDate;
+    attribute <a href="time.html#TZDate">TZDate</a>? completedDate;
+    attribute unsigned short progress;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var taskCalendar, task;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var taskCalendar, task;
 
 try
 {
-   var task = new tizen.CalendarTask("BEGIN:VCALENDAR\r\n" +
-                                     "VERSION:2.0\r\n" +
-                                     "BEGIN:VTODO\r\n" +
-                                     "DTSTAMP:TZID=CET:20110902T110000Z\r\n" +
-                                     "DTSTART;TZID=CET:20110906T140000Z\r\n" +
-                                     "DUE;TZID=CET:20110906T150000Z\r\n" +
-                                     "SUMMARY:Discuss the schedule\r\n" +
-                                     "DESCRIPTION:Find the feasible schedule\r\n" +
-                                     "CATEGORIES:HUMAN RESOURCES\r\n" +
-                                     "END:VTODO\r\n" +
-                                     "END:VCALENDAR", "ICALENDAR_20");
+  var stringRepresentation = "BEGIN:VCALENDAR\r\n" +
+                             "VERSION:2.0\r\n" +
+                             "BEGIN:VTODO\r\n" +
+                             "DTSTAMP:TZID=CET:20110902T110000Z\r\n" +
+                             "DTSTART;TZID=CET:20110906T140000Z\r\n" +
+                             "DUE;TZID=CET:20110906T150000Z\r\n" +
+                             "SUMMARY:Discuss the schedule\r\n" +
+                             "DESCRIPTION:Find the feasible schedule\r\n" +
+                             "CATEGORIES:HUMAN RESOURCES\r\n" +
+                             "END:VTODO\r\n" +
+                             "END:VCALENDAR";
+  var format = "ICALENDAR_20";
+  var task = new tizen.CalendarTask(stringRepresentation, format);
 
-   taskCalendar = tizen.calendar.getDefaultCalendar("TASK");
-   taskCalendar.add(task);
-   console.log("Task added with ID " + task.id);
+  taskCalendar = tizen.calendar.getDefaultCalendar("TASK");
+  taskCalendar.add(task);
+  console.log("Task added with ID " + task.id);
 }
 catch (err)
 {
-   console.log("Failed to add VTODO to the calendar, error: " + err.name);
+  console.log("Failed to add VTODO to the calendar, error: " + err.name);
 }
 </pre>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var taskInit =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var taskInit =
 {
-   description: "HTML5 Introduction",
-   summary: "HTML5 Webinar",
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   dueDate: new tizen.TZDate(2011, 5, 30, 10, 0),
-   completedDate: new tizen.TZDate(2011, 4, 30, 10, 0),
-   progress: "0"
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  dueDate: new tizen.TZDate(2011, 5, 30, 10, 0),
+  completedDate: new tizen.TZDate(2011, 4, 30, 10, 0),
+  progress: "0"
 };
 
 var ev = new tizen.CalendarTask(taskInit);
 </pre>
 </div>
-
+        
       <div class="constructors">
 <h4 id="CalendarTask::constructor">Constructors</h4>
 <dl>
@@ -2919,13 +2795,11 @@ This attribute is precise to the second. Milliseconds are ignored.
 The default value is <var>null</var>. If no value is provided, the task does not have a due date.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-task.dueDate = new tizen.TZDate(2011, 2, 11);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">task.dueDate = new tizen.TZDate(2011, 2, 11);
 </pre>
 </div>
 </li>
@@ -2942,13 +2816,11 @@ This attribute is precise to the second. Milliseconds are ignored.
 The default value is <var>null</var>. If no value is provided, the task is not completed yet.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-task.completedDate = new tizen.TZDate(2011, 2, 11);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">task.completedDate = new tizen.TZDate(2011, 2, 11);
 </pre>
 </div>
 </li>
@@ -2968,13 +2840,11 @@ Integer values in between indicate the percent partially complete.
 The default value is <var>0</var>, implies that the task has not been started.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-task.progress = 50; /* 50% done */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">task.progress = 50;  /* 50% done. */
 </pre>
 </div>
 </li>
@@ -2990,63 +2860,56 @@ task.progress = 50; /* 50% done */
    Constructor(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format)]
   interface CalendarEvent : <a href="#CalendarItem">CalendarItem</a> {
     readonly attribute boolean isDetached;
-
-    attribute <a href="time.html#TZDate">TZDate</a>? endDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#EventAvailability">EventAvailability</a> availability setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a>? recurrenceRule setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate,
-                          <a href="time.html#TZDate">TZDate</a> endDate,
-                          <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback,
+    attribute <a href="time.html#TZDate">TZDate</a>? endDate;
+    attribute <a href="#EventAvailability">EventAvailability</a> availability;
+    attribute <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a>? recurrenceRule;
+    void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the default calendar */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the default calendar. */
 var calendar = tizen.calendar.getDefaultCalendar("EVENT");
 
 try
 {
-   var ev = new tizen.CalendarEvent("BEGIN:VCALENDAR\r\n" +
-                                    "BEGIN:VEVENT\r\n" +
-                                    "DTSTAMP:19970901T1300Z\r\n" +
-                                    "DTSTART:19970903T163000Z\r\n" +
-                                    "DTEND:19970903T190000Z\r\n" +
-                                    "SUMMARY:Annual Employee Review\r\n" +
-                                    "CATEGORIES:BUSINESS,HUMAN RESOURCES\r\n" +
-                                    "END:VEVENT\r\n" +
-                                    "END:VCALENDAR", "ICALENDAR_20");
+  var stringRepresentation = "BEGIN:VCALENDAR\r\n" +
+                             "BEGIN:VEVENT\r\n" +
+                             "DTSTAMP:19970901T1300Z\r\n" +
+                             "DTSTART:19970903T163000Z\r\n" +
+                             "DTEND:19970903T190000Z\r\n" +
+                             "SUMMARY:Annual Employee Review\r\n" +
+                             "CATEGORIES:BUSINESS,HUMAN RESOURCES\r\n" +
+                             "END:VEVENT\r\n" +
+                             "END:VCALENDAR";
+  var format = "ICALENDAR_20";
+  var ev = new tizen.CalendarEvent(stringRepresentation, format);
 
-   calendar.add(ev);
-   console.log('Event added with UID ' + ev.id.uid);
+  calendar.add(ev);
+  console.log("Event added with UID " + ev.id.uid);
 }
 catch (err)
 {
-   console.log("Failed to add VEVENT to the calendar, error: " + err.name);
+  console.log("Failed to add VEVENT to the calendar, error: " + err.name);
 }
 </pre>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var eventInit =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var eventInit =
 {
-   description: "HTML5 Introduction",
-   summary: "HTML5 Webinar",
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location: "Huesca"
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 };
 
 var ev = new tizen.CalendarEvent(eventInit);
 </pre>
 </div>
-
+        
       <div class="constructors">
 <h4 id="CalendarEvent::constructor">Constructors</h4>
 <dl>
@@ -3062,8 +2925,7 @@ var ev = new tizen.CalendarEvent(eventInit);
 </span><span class="type">boolean </span><span class="name">isDetached</span></span><div class="brief">
  The flag that indicates whether an instance of a recurring event is detached and if it has been modified and saved to the calendar.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3086,13 +2948,11 @@ This attribute is precise to the second. Milliseconds are ignored.
 The default value for this attribute is <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* 2010-04-30 09:00 */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* 2010-04-30 09:00. */
 event.endDate = new tizen.TZDate(2010, 3, 30, 9, 0);
 </pre>
 </div>
@@ -3107,8 +2967,7 @@ event.endDate = new tizen.TZDate(2010, 3, 30, 9, 0);
 The default value is <var>BUSY</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3125,13 +2984,11 @@ The detached instances (specific instances that have been modified as saved to t
 (See RFC 5545, Section 3.3.10.)
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Repeats daily for 7 days */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Repeats daily for 7 days. */
 var rule = new tizen.CalendarRecurrenceRule("DAILY", {occurrenceCount: 7});
 event.recurrenceRule = rule;
 </pre>
@@ -3149,10 +3006,9 @@ event.recurrenceRule = rule;
 <div class="brief">
  Expands a recurring event and returns asynchronously the list of instances occurring in a given time interval (inclusive).
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback, 
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -3172,12 +3028,10 @@ InvalidValuesError - if the event in operation is not recurring.              </
 UnknownError - if any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/calendar.read
             </p>
 <div class="parameters">
@@ -3185,19 +3039,19 @@ UnknownError - if any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">startDate</span>:
- Start date/ time of an event(inclusive)
+ Start date/ time of an event(inclusive).
                 </li>
           <li class="param">
 <span class="name">endDate</span>:
- End date/ time of an event (inclusive)
+ End date/ time of an event (inclusive).
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when the invocation ends successfully
+ Callback method that is invoked when the invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -3217,19 +3071,18 @@ UnknownError - if any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* eventId should be set to ID of event obtained with the find function */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* eventId should be set to ID of event obtained with the find function. */
 var eventId;
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* Defines the event expanding success callback */
+/* Defines the event expanding success callback. */
 function eventExpandingSuccessCallback(events)
 {
-   console.log(events.length + ' event instances were returned.');
+  console.log(events.length + " event instances were returned");
 }
 
 var calendar = tizen.calendar.getDefaultCalendar();
@@ -3237,9 +3090,9 @@ var event = calendar.get(eventId);
 
 if (event.recurrenceRule != null)
 {
-   /* This is a recurring event. Expands all the instances during August 2011 */
-   event.expandRecurrence(new tizen.TZDate(2011, 7, 1), new tizen.TZDate(2011, 7, 31),
-                          eventExpandingSuccessCallback, errorCallback);
+  /* This is a recurring event. Expands all the instances during August 2011. */
+  event.expandRecurrence(new tizen.TZDate(2011, 7, 1), new tizen.TZDate(2011, 7, 31),
+      eventExpandingSuccessCallback, errorCallback);
 }
 </pre>
 </div>
@@ -3263,8 +3116,7 @@ if (event.recurrenceRule != null)
     DOMString delegateURI;
     <a href="contact.html#ContactRef">ContactRef</a> contactRef;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3282,27 +3134,17 @@ See <em>CalendarAttendee </em>interface for more information about the members.
   interface CalendarAttendee
   {
     attribute DOMString uri;
-
     attribute DOMString? name;
-
     attribute <a href="#AttendeeRole">AttendeeRole</a> role;
-
     attribute <a href="#AttendeeStatus">AttendeeStatus</a> status;
-
     attribute boolean RSVP;
-
     attribute <a href="#AttendeeType">AttendeeType</a> type;
-
     attribute DOMString? group;
-
     attribute DOMString? delegatorURI;
-
     attribute DOMString? delegateURI;
-
     attribute <a href="contact.html#ContactRef">ContactRef</a>? contactRef;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3314,9 +3156,7 @@ By default, each of the attributes of this interface are undefined.
           </p>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var attendee = new tizen.CalendarAttendee('mailto:bob@domain.com',
-                                          {role: "CHAIR", RSVP: true});
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var attendee = new tizen.CalendarAttendee("mailto:bob@domain.com", {role: "CHAIR", RSVP: true});
 event.attendees = [attendee];
 </pre>
 </div>
@@ -3333,11 +3173,10 @@ event.attendees = [attendee];
             </div>
 <div class="description">
             <p>
-This is often an email in the form 'mailto:name@domain.com'.
+This is often an email in the form "mailto:name@domain.com".
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3345,8 +3184,7 @@ This is often an email in the form 'mailto:name@domain.com'.
 <span class="attrName"><span class="type">DOMString </span><span class="name">name</span><span class="optional"> [nullable]</span></span><div class="brief">
  The name of an attendee.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3362,8 +3200,7 @@ This is often an email in the form 'mailto:name@domain.com'.
 The default value is <var>REQ_PARTICIPANT</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3377,8 +3214,7 @@ The default value is <var>REQ_PARTICIPANT</var>.
 The default value is <var>PENDING</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3392,8 +3228,7 @@ The default value is <var>PENDING</var>.
 By default, this attribute is set to <var>FALSE</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3407,8 +3242,7 @@ By default, this attribute is set to <var>FALSE</var>.
 The default value is <var>INDIVIDUAL</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3417,8 +3251,7 @@ The default value is <var>INDIVIDUAL</var>.
  The participant's group or list membership.
 (See RFC 5545, Section 3.2.11.)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3427,8 +3260,7 @@ The default value is <var>INDIVIDUAL</var>.
  The URI of the person who has delegated their participation to this attendee.
 (See RFC 5545, Section 3.2.4.)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3437,8 +3269,7 @@ The default value is <var>INDIVIDUAL</var>.
  The URI of the attendee to whom the person has delegated his participation.
 (See RFC 5545, Section 3.2.5.)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3452,8 +3283,7 @@ If the contact is not resolved, this attribute will be set to<var> null</var>.
 For more information, see the <a href="contact.html">Contact API</a>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3473,8 +3303,7 @@ For more information, see the <a href="contact.html">Contact API</a>.
     short[] setPositions;
     <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3493,27 +3322,19 @@ For more information about the members, see <em>CalendarRecurrenceRule </em>inte
   interface CalendarRecurrenceRule
   {
     attribute <a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency;
-
     attribute unsigned short interval;
-
     attribute <a href="time.html#TZDate">TZDate</a>? untilDate;
-
     attribute long occurrenceCount;
-
     attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
-
     attribute short[] setPositions;
-
     attribute <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Repeats daily for 7 days */
-var rule = new tizen.CalendarRecurrenceRule("DAILY", {occurrenceCount:7});
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Repeats daily for 7 days. */
+var rule = new tizen.CalendarRecurrenceRule("DAILY", {occurrenceCount: 7});
 event.recurrenceRule = rule;
 </pre>
 </div>
@@ -3533,8 +3354,7 @@ event.recurrenceRule = rule;
 This property corresponds to <em>FREQ</em> in RFC 5545.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3556,8 +3376,7 @@ The default interval value is <var>1</var>, that is, every day if the <em>Calend
 This property corresponds to <em>INTERVAL</em> in RFC 5545.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3576,9 +3395,11 @@ This attribute is precise to the second. Milliseconds are ignored.
 This property corresponds to <em>UNTIL</em> in RFC 5545.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
+            </p>
+<p><span class="remark">Remark: </span>
+ In accordance with RFC 5545, <em>UNTIL</em> and <em>COUNT</em> cannot be used together. If both <em>untilDate</em> and <em>occurrenceCount</em> attributes are set, only <em>untilDate</em> will be used.
             </p>
 </li>
 <li class="attribute" id="CalendarRecurrenceRule::occurrenceCount">
@@ -3596,9 +3417,11 @@ By default, this attribute is set to <var>-1</var>, meaning that the event recur
 This property corresponds to <em>COUNT</em> in RFC 5545.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
+            </p>
+<p><span class="remark">Remark: </span>
+ In accordance with RFC 5545, <em>UNTIL</em> and <em>COUNT</em> cannot be used together. If both <em>untilDate</em> and <em>occurrenceCount</em> attributes are set, only <em>untilDate</em> will be used.
             </p>
 </li>
 <li class="attribute" id="CalendarRecurrenceRule::daysOfTheWeek">
@@ -3617,8 +3440,7 @@ This property corresponds to <em>BYDAY</em> in RFC 5545.
 By default, this attribute is set to an empty array.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3645,8 +3467,7 @@ This property corresponds to <em>BYSETPOS</em> in RFC 5545.
 By default, this attribute is set to an empty array.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3667,8 +3488,7 @@ This property corresponds to <em>EXDATE</em> in RFC 5545.
 By default, this attribute is set to an empty array.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3683,11 +3503,9 @@ By default, this attribute is set to an empty array.
 <pre class="webidl prettyprint">  [Constructor(DOMString uid, optional DOMString? rid)]
   interface CalendarEventId {
     attribute DOMString uid;
-
     attribute DOMString? rid;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -3715,8 +3533,7 @@ See RFC 5545 (section 3.8.4.7) for more details about this parameter and algorit
 This value is assigned by the platform when the <em>add()</em> method is successfully invoked.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3736,8 +3553,7 @@ By default, this attribute is set to <var>null</var>.
 (See RFC 5545 (section 3.8.4.4) for more details about this parameter.)
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3752,24 +3568,19 @@ By default, this attribute is set to <var>null</var>.
 <pre class="webidl prettyprint">  [Constructor(<a href="time.html#TZDate">TZDate</a> absoluteDate, <a href="#AlarmMethod">AlarmMethod</a> method, optional DOMString? description),
    Constructor(<a href="time.html#TimeDuration">TimeDuration</a> before, <a href="#AlarmMethod">AlarmMethod</a> method, optional DOMString? description)]
   interface CalendarAlarm {
-    attribute <a href="time.html#TZDate">TZDate</a>? absoluteDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TimeDuration">TimeDuration</a>? before setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#AlarmMethod">AlarmMethod</a> method setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute <a href="time.html#TZDate">TZDate</a>? absoluteDate;
+    attribute <a href="time.html#TimeDuration">TimeDuration</a>? before;
+    attribute <a href="#AlarmMethod">AlarmMethod</a> method;
     attribute DOMString? description;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Creates a sound alarm at the specified time */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a sound alarm at the specified time. */
 var alarm1 = new tizen.CalendarAlarm(new tizen.TZDate(2011, 3, 30, 10, 0), "SOUND");
 
-/* Creates a sound alarm before an event starts */
+/* Creates a sound alarm before an event starts. */
 var alarm2 = new tizen.CalendarAlarm(new tizen.TimeDuration(1, "MINS"), "SOUND");
 </pre>
 </div>
@@ -3795,8 +3606,7 @@ var alarm2 = new tizen.CalendarAlarm(new tizen.TimeDuration(1, "MINS"), "SOUND")
 This attribute is precise to the second. Milliseconds are ignored.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3815,8 +3625,7 @@ The duration should be positive.
 This attribute is precise to the second. Milliseconds are ignored.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3824,8 +3633,7 @@ This attribute is precise to the second. Milliseconds are ignored.
 <span class="attrName"><span class="type">AlarmMethod </span><span class="name">method</span></span><div class="brief">
  The notification method used by an alarm.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3841,8 +3649,7 @@ When the method is <var>DISPLAY</var>, the alarm must also include a description
 The default value is an empty string.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -3858,8 +3665,7 @@ The default value is an empty string.
   interface CalendarEventArraySuccessCallback {
     void onsuccess(<a href="#CalendarEvent">CalendarEvent</a>[] events);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -3872,10 +3678,8 @@ The default value is an empty string.
 <div class="brief">
  Called when the list of calendar events is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CalendarEvent">CalendarEvent</a>[] events);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CalendarEvent">CalendarEvent</a>[] events);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3883,24 +3687,23 @@ The default value is an empty string.
 <ul>
           <li class="param">
 <span class="name">events</span>:
- Array of <em>CalendarEvent </em>objects
+ Array of <em>CalendarEvent </em>objects.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* eventId should be set to ID of event obtained with the find function */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* eventId should be set to ID of event obtained with the find function. */
 var eventId;
-/* Defines the error callback */
+/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* CalendarEventArraySuccessCallback instance */
+/* CalendarEventArraySuccessCallback instance. */
 function calendarEventArraySuccessCB(events)
 {
-   console.log(events.length + ' event instances were returned.');
+  console.log(events.length + " event instances were returned");
 }
 
 var calendar = tizen.calendar.getDefaultCalendar();
@@ -3908,9 +3711,9 @@ var event = calendar.get(eventId);
 
 if (event.recurrenceRule != null)
 {
-   /* This is a recurring event. Expands all the instances during August 2011 */
-   event.expandRecurrence(new tizen.TZDate(2011, 7, 1), new tizen.TZDate(2011, 7, 31),
-                          calendarEventArraySuccessCB, errorCallback);
+  /* This is a recurring event. Expands all the instances during August 2011. */
+  event.expandRecurrence(new tizen.TZDate(2011, 7, 1), new tizen.TZDate(2011, 7, 31),
+      calendarEventArraySuccessCB, errorCallback);
 }
 </pre>
 </div>
@@ -3927,8 +3730,7 @@ if (event.recurrenceRule != null)
   interface CalendarItemArraySuccessCallback {
     void onsuccess(<a href="#CalendarItem">CalendarItem</a>[] items);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -3941,10 +3743,8 @@ if (event.recurrenceRule != null)
 <div class="brief">
  Called when the list of calendar items is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CalendarItem">CalendarItem</a>[] items);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#CalendarItem">CalendarItem</a>[] items);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -3952,34 +3752,33 @@ if (event.recurrenceRule != null)
 <ul>
           <li class="param">
 <span class="name">items</span>:
- Array of <em>CalendarItem </em>objects
+ Array of <em>CalendarItem </em>objects.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Defines the error callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* CalendarItemArraySuccessCallback instance */
+/* CalendarItemArraySuccessCallback instance. */
 function calendarItemArraySuccessCB(events)
 {
-   console.log("Successfully added " + events.length + " events!");
+  console.log("Successfully added " + events.length + " events!");
 }
 
-/* Gets the default calendar */
+/* Gets the default calendar. */
 var calendar = tizen.calendar.getDefaultCalendar("EVENT");
 
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 
 calendar.addBatch([ev], calendarItemArraySuccessCB, errorCallback);
@@ -3998,8 +3797,7 @@ calendar.addBatch([ev], calendarItemArraySuccessCB, errorCallback);
   interface CalendarArraySuccessCallback {
     void onsuccess(<a href="#Calendar">Calendar</a>[] calendars);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -4012,10 +3810,8 @@ calendar.addBatch([ev], calendarItemArraySuccessCB, errorCallback);
 <div class="brief">
  Called when the array of <em>Calendar </em>objects is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Calendar">Calendar</a>[] calendars);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Calendar">Calendar</a>[] calendars);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -4023,56 +3819,55 @@ calendar.addBatch([ev], calendarItemArraySuccessCB, errorCallback);
 <ul>
           <li class="param">
 <span class="name">calendars</span>:
- Array of <em>Calendar </em>objects
+ Array of <em>Calendar </em>objects.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var calendar;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var calendar;
 
 function eventFoundCallback(events)
 {
-   /* Event has been successfully found */
-   /* Changes the summary */
-   events[0].summary = 'HTML6 Webinar';
-   calendar.update(events[0]);
-   console.log('First event was updated!');
+  /* Event has been successfully found. */
+  /* Changes the summary. */
+  events[0].summary = "HTML6 Webinar";
+  calendar.update(events[0]);
+  console.log("First event was updated!");
 }
 
-/* Defines the error callback for all the asynchronous calls */
+/* Defines the error callback for all the asynchronous calls. */
 function errorCallback(response)
 {
-   console.log('The following error occurred: ' + response.name);
+  console.log("The following error occurred: " + response.name);
 }
 
-/* CalendarArraySuccessCallback instance */
+/* CalendarArraySuccessCallback instance. */
 function calendarArraySuccessCB(calendars)
 {
-   if (calendars.length &gt; 0)
-   {
-      calendar = calendars[0];
-      console.log('The calendar id is ' + calendar.id + ' and name ' + calendar.name);
+  if (calendars.length &gt; 0)
+  {
+    calendar = calendars[0];
+    console.log("The calendar id is " + calendar.id + " and name " + calendar.name);
 
-      var ev = new tizen.CalendarEvent(
-      {
-         description:'HTML5 Introduction',
-         summary:'HTML5 Webinar',
-         startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-         duration: new tizen.TimeDuration(1, "HOURS"),
-         location:'Huesca'
-      });
-      calendar.add(ev);
+    var ev = new tizen.CalendarEvent(
+    {
+      description: "HTML5 Introduction",
+      summary: "HTML5 Webinar",
+      startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+      duration: new tizen.TimeDuration(1, "HOURS"),
+      location: "Huesca"
+    });
+    calendar.add(ev);
 
-      /* Event has been successfully added */
-      /* Checks whether the added event can be retrieved from the calendar */
-      /* If the calendar was empty, only the item added through add() should be returned */
-      var filter = new tizen.AttributeFilter('summary', 'CONTAINS', 'HTML5');
-      calendar.find(eventFoundCallback, errorCallback, filter);
-   }
+    /* Event has been successfully added. */
+    /* Checks whether the added event can be retrieved from the calendar. */
+    /* If the calendar was empty, only the item added through add() should be returned. */
+    var filter = new tizen.AttributeFilter("summary", "CONTAINS", "HTML5");
+    calendar.find(eventFoundCallback, errorCallback, filter);
+  }
 }
 
-/* Gets a list of available calendars */
+/* Gets a list of available calendars. */
 tizen.calendar.getCalendars("EVENT", calendarArraySuccessCB, errorCallback);
 </pre>
 </div>
@@ -4087,13 +3882,10 @@ tizen.calendar.getCalendars("EVENT", calendarArraySuccessCB, errorCallback);
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface CalendarChangeCallback {
     void onitemsadded(<a href="#CalendarItem">CalendarItem</a>[] items);
-
     void onitemsupdated(<a href="#CalendarItem">CalendarItem</a>[] items);
-
     void onitemsremoved(<a href="#CalendarItemId">CalendarItemId</a>[] ids);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="methods">
@@ -4106,10 +3898,8 @@ tizen.calendar.getCalendars("EVENT", calendarArraySuccessCB, errorCallback);
 <div class="brief">
  Called when items are added to the calendar.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onitemsadded(<a href="#CalendarItem">CalendarItem</a>[] items);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onitemsadded(<a href="#CalendarItem">CalendarItem</a>[] items);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -4117,41 +3907,40 @@ tizen.calendar.getCalendars("EVENT", calendarArraySuccessCB, errorCallback);
 <ul>
           <li class="param">
 <span class="name">items</span>:
- List of items that were added
+ List of items that were added.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var watcherId = 0; /* Watcher identifier */
-var calendar; /* This example assumes calendar is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
+var calendar;       /* This example assumes calendar is initialized. */
 
 var watcher =
 {
-   onitemsadded: function(items)
-   {
-      console.log('New item ' + items[0].id + ' added');
-   },
-   onitemsupdated: function(items)
-   {
-      /* Do something */
-   },
-   onitemsremoved: function(ids)
-   {
-      /* Do something */
-   }
+  onitemsadded: function(items)
+  {
+    console.log("New item " + items[0].id + " added");
+  },
+  onitemsupdated: function(items)
+  {
+    /* Do something. */
+  },
+  onitemsremoved: function(ids)
+  {
+    /* Do something. */
+  }
 };
 
-/* Registers to be notified when the calendar changes */
+/* Registers to be notified when the calendar changes. */
 watcherId = calendar.addChangeListener(watcher);
 
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 </pre>
 </div>
@@ -4163,10 +3952,8 @@ var ev = new tizen.CalendarEvent(
 <div class="brief">
  Called when items are updated in the calendar.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onitemsupdated(<a href="#CalendarItem">CalendarItem</a>[] items);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onitemsupdated(<a href="#CalendarItem">CalendarItem</a>[] items);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -4174,44 +3961,43 @@ var ev = new tizen.CalendarEvent(
 <ul>
           <li class="param">
 <span class="name">items</span>:
- List of items that were updated
+ List of items that were updated.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var watcherId = 0; /* Watcher identifier */
-var calendar; /* This example assumes calendar is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
+var calendar;       /* This example assumes calendar is initialized. */
 
 var watcher =
 {
-   onitemsadded: function(items)
-   {
-      if (calendar.update)
-      {
-         items[0].location = 'New York';
-         calendar.update(items[0]);
-      }
-   },
-   onitemsupdated: function(items)
-   {
-      console.log('Item updated');
-   },
-   onitemsremoved: function(ids)
-   {
-      /* Do something */
-   }
+  onitemsadded: function(items)
+  {
+    if (calendar.update)
+    {
+      items[0].location = "New York";
+      calendar.update(items[0]);
+    }
+  },
+  onitemsupdated: function(items)
+  {
+    console.log("Item updated");
+  },
+  onitemsremoved: function(ids)
+  {
+    /* Do something. */
+  }
 };
 
-/* Registers to be notified when the calendar changes */
+/* Registers to be notified when the calendar changes. */
 watcherId = calendar.addChangeListener(watcher);
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 </pre>
 </div>
@@ -4223,10 +4009,8 @@ var ev = new tizen.CalendarEvent(
 <div class="brief">
  Called when item are removed from the calendar.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onitemsremoved(<a href="#CalendarItemId">CalendarItemId</a>[] ids);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onitemsremoved(<a href="#CalendarItemId">CalendarItemId</a>[] ids);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -4234,44 +4018,43 @@ var ev = new tizen.CalendarEvent(
 <ul>
           <li class="param">
 <span class="name">ids</span>:
- List of identifiers for the items that were removed
+ List of identifiers for the items that were removed.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var watcherId = 0; /* Watcher identifier */
-var calendar; /* This example assumes calendar is initialized */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;  /* Watcher identifier. */
+var calendar;       /* This example assumes calendar is initialized. */
 
 var watcher =
 {
-   onitemsadded: function(items)
-   {
-      if (calendar.remove)
-      {
-         calendar.remove(items[0].id);
-      }
-   },
-   onitemsupdated: function(items)
-   {
-      /* Do something */
-   },
-   onitemsremoved: function(ids)
-   {
-      console.log('Item removed');
-   }
+  onitemsadded: function(items)
+  {
+    if (calendar.remove)
+    {
+      calendar.remove(items[0].id);
+    }
+  },
+  onitemsupdated: function(items)
+  {
+    /* Do something. */
+  },
+  onitemsremoved: function(ids)
+  {
+    console.log("Item removed");
+  }
 };
 
-/* Registers to be notified when the calendar changes */
+/* Registers to be notified when the calendar changes. */
 watcherId = calendar.addChangeListener(watcher);
 
 var ev = new tizen.CalendarEvent(
 {
-   description:'HTML5 Introduction',
-   summary:'HTML5 Webinar ',
-   startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
-   duration: new tizen.TimeDuration(1, "HOURS"),
-   location:'Huesca'
+  description: "HTML5 Introduction",
+  summary: "HTML5 Webinar",
+  startDate: new tizen.TZDate(2011, 3, 30, 10, 0),
+  duration: new tizen.TimeDuration(1, "HOURS"),
+  location: "Huesca"
 });
 </pre>
 </div>
@@ -4282,7 +4065,7 @@ var ev = new tizen.CalendarEvent(
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -4313,98 +4096,53 @@ To guarantee the running of the application on a device with Contact feature, de
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Calendar {
   typedef DOMString CalendarId;
-
   typedef DOMString CalendarTaskId;
-
   typedef (<a href="#CalendarEventId">CalendarEventId</a> or <a href="#CalendarTaskId">CalendarTaskId</a>) CalendarItemId;
-
   enum CalendarType { "EVENT", "TASK" };
-
   enum CalendarTextFormat { "ICALENDAR_20", "VCALENDAR_10" };
-
   enum AlarmMethod { "SOUND", "DISPLAY" };
-
-
   enum RecurrenceRuleFrequency { "DAILY", "WEEKLY", "MONTHLY", "YEARLY" };
-
   enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };
-
-  enum EventAvailability { "BUSY", "FREE" };
-
+  enum EventAvailability { "BUSY", "FREE", "BUSY_UNAVAILABLE", "BUSY_TENTATIVE" };
   enum AttendeeType { "INDIVIDUAL", "GROUP", "RESOURCE", "ROOM", "UNKNOWN" };
-
   enum AttendeeStatus { "PENDING", "ACCEPTED", "DECLINED", "TENTATIVE", "DELEGATED", "COMPLETED", "IN_PROCESS" };
-
   enum AttendeeRole { "REQ_PARTICIPANT", "OPT_PARTICIPANT", "NON_PARTICIPANT", "CHAIR" };
-
   enum CalendarItemPriority { "HIGH", "MEDIUM", "LOW", "NONE" };
-
-   enum CalendarItemVisibility { "PUBLIC", "PRIVATE", "CONFIDENTIAL" };
-
-   enum CalendarItemStatus {"NONE", "TENTATIVE", "CONFIRMED", "CANCELLED", "NEEDS_ACTION", "IN_PROCESS", "COMPLETED" };
-
+  enum CalendarItemVisibility { "PUBLIC", "PRIVATE", "CONFIDENTIAL" };
+  enum CalendarItemStatus { "NONE", "TENTATIVE", "CONFIRMED", "CANCELLED", "NEEDS_ACTION", "IN_PROCESS", "COMPLETED" };
   [NoInterfaceObject] interface CalendarManagerObject{
     readonly attribute <a href="#CalendarManager">CalendarManager</a> calendar;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;
-
   [NoInterfaceObject] interface CalendarManager {
-    void getCalendars(<a href="#CalendarType">CalendarType</a> type,
-                      <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getCalendars(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Calendar">Calendar</a> getUnifiedCalendar(<a href="#CalendarType">CalendarType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Calendar">Calendar</a> getDefaultCalendar(<a href="#CalendarType">CalendarType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void addCalendar(<a href="#Calendar">Calendar</a> calendar) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Calendar">Calendar</a> getCalendar(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarId">CalendarId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Constructor(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name, <a href="#CalendarType">CalendarType</a> type)]
   interface Calendar {
-
     readonly attribute <a href="#CalendarId">CalendarId</a> id;
-
     readonly attribute DOMString name;
-
     readonly attribute <a href="account.html#AccountId">AccountId</a>? accountId;
-
     <a href="#CalendarItem">CalendarItem</a> get(<a href="#CalendarItemId">CalendarItemId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void add(<a href="#CalendarItem">CalendarItem</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items,
-                  optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback,
+    void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback,
                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void update(<a href="#CalendarItem">CalendarItem</a> item,
-                optional boolean? updateAllInstances) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-     void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    void update(<a href="#CalendarItem">CalendarItem</a> item, optional boolean? updateAllInstances) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                      optional boolean? updateAllInstances) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void remove(<a href="#CalendarItemId">CalendarItemId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeBatch(<a href="#CalendarItemId">CalendarItemId</a>[] ids,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-              optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
+    void removeBatch(<a href="#CalendarItemId">CalendarItemId</a>[] ids, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
               optional <a href="tizen.html#SortMode">SortMode</a>? sortMode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addChangeListener(<a href="#CalendarChangeCallback">CalendarChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   dictionary CalendarItemInit {
     DOMString description;
     DOMString summary;
@@ -4421,86 +4159,54 @@ To guarantee the running of the application on a device with Contact feature, de
     DOMString[] categories;
     <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees;
   };
-
   dictionary CalendarTaskInit: <a href="#CalendarItemInit">CalendarItemInit</a> {
     <a href="time.html#TZDate">TZDate</a> dueDate;
     <a href="time.html#TZDate">TZDate</a> completedDate;
     short progress;
   };
-
   dictionary CalendarEventInit: <a href="#CalendarItemInit">CalendarItemInit</a> {
     <a href="time.html#TZDate">TZDate</a> endDate;
     <a href="#EventAvailability">EventAvailability</a> availability;
     <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a> recurrenceRule;
   };
-
   [NoInterfaceObject] interface CalendarItem {
     readonly attribute <a href="#CalendarItemId">CalendarItemId</a>? id;
-
     readonly attribute <a href="#CalendarId">CalendarId</a>? calendarId;
-
     readonly attribute <a href="time.html#TZDate">TZDate</a>? lastModificationDate;
-
-    attribute DOMString? description setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString? summary setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute boolean isAllDay setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TZDate">TZDate</a>? startDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TimeDuration">TimeDuration</a>? duration setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString? location setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString? organizer setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarItemVisibility">CalendarItemVisibility</a> visibility setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarItemStatus">CalendarItemStatus</a> status setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarItemPriority">CalendarItemPriority</a> priority setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarAlarm">CalendarAlarm</a>[] alarms setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute DOMString[] categories setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute DOMString? description;
+    attribute DOMString? summary;
+    attribute boolean isAllDay;
+    attribute <a href="time.html#TZDate">TZDate</a>? startDate;
+    attribute <a href="time.html#TimeDuration">TimeDuration</a>? duration;
+    attribute DOMString? location;
+    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+    attribute DOMString? organizer;
+    attribute <a href="#CalendarItemVisibility">CalendarItemVisibility</a> visibility;
+    attribute <a href="#CalendarItemStatus">CalendarItemStatus</a> status;
+    attribute <a href="#CalendarItemPriority">CalendarItemPriority</a> priority;
+    attribute <a href="#CalendarAlarm">CalendarAlarm</a>[] alarms;
+    attribute DOMString[] categories;
+    attribute <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees;
     DOMString convertToString(<a href="#CalendarTextFormat">CalendarTextFormat</a> format) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#CalendarItem">CalendarItem</a> clone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Constructor(optional <a href="#CalendarTaskInit">CalendarTaskInit</a>? taskInitDict),
    Constructor(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format)]
   interface CalendarTask : <a href="#CalendarItem">CalendarItem</a> {
-    attribute <a href="time.html#TZDate">TZDate</a>? dueDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TZDate">TZDate</a>? completedDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute unsigned short progress setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    attribute <a href="time.html#TZDate">TZDate</a>? dueDate;
+    attribute <a href="time.html#TZDate">TZDate</a>? completedDate;
+    attribute unsigned short progress;
   };
-
   [Constructor(optional <a href="#CalendarEventInit">CalendarEventInit</a>? eventInitDict),
    Constructor(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format)]
   interface CalendarEvent : <a href="#CalendarItem">CalendarItem</a> {
     readonly attribute boolean isDetached;
-
-    attribute <a href="time.html#TZDate">TZDate</a>? endDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#EventAvailability">EventAvailability</a> availability setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a>? recurrenceRule setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate,
-                          <a href="time.html#TZDate">TZDate</a> endDate,
-                          <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback,
+    attribute <a href="time.html#TZDate">TZDate</a>? endDate;
+    attribute <a href="#EventAvailability">EventAvailability</a> availability;
+    attribute <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a>? recurrenceRule;
+    void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   dictionary CalendarAttendeeInit {
     DOMString name;
     <a href="#AttendeeRole">AttendeeRole</a> role;
@@ -4512,31 +4218,20 @@ To guarantee the running of the application on a device with Contact feature, de
     DOMString delegateURI;
     <a href="contact.html#ContactRef">ContactRef</a> contactRef;
   };
-
   [Constructor(DOMString uri, optional <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>? attendeeInitDict)]
   interface CalendarAttendee
   {
     attribute DOMString uri;
-
     attribute DOMString? name;
-
     attribute <a href="#AttendeeRole">AttendeeRole</a> role;
-
     attribute <a href="#AttendeeStatus">AttendeeStatus</a> status;
-
     attribute boolean RSVP;
-
     attribute <a href="#AttendeeType">AttendeeType</a> type;
-
     attribute DOMString? group;
-
     attribute DOMString? delegatorURI;
-
     attribute DOMString? delegateURI;
-
     attribute <a href="contact.html#ContactRef">ContactRef</a>? contactRef;
   };
-
   dictionary CalendarRecurrenceRuleInit {
     short interval;
     <a href="time.html#TZDate">TZDate</a> untilDate;
@@ -4545,64 +4240,45 @@ To guarantee the running of the application on a device with Contact feature, de
     short[] setPositions;
     <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };
-
   [Constructor(<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency, optional <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>? ruleInitDict)]
   interface CalendarRecurrenceRule
   {
     attribute <a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency;
-
     attribute unsigned short interval;
-
     attribute <a href="time.html#TZDate">TZDate</a>? untilDate;
-
     attribute long occurrenceCount;
-
     attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
-
     attribute short[] setPositions;
-
     attribute <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };
-
   [Constructor(DOMString uid, optional DOMString? rid)]
   interface CalendarEventId {
     attribute DOMString uid;
-
     attribute DOMString? rid;
   };
-
   [Constructor(<a href="time.html#TZDate">TZDate</a> absoluteDate, <a href="#AlarmMethod">AlarmMethod</a> method, optional DOMString? description),
    Constructor(<a href="time.html#TimeDuration">TimeDuration</a> before, <a href="#AlarmMethod">AlarmMethod</a> method, optional DOMString? description)]
   interface CalendarAlarm {
-    attribute <a href="time.html#TZDate">TZDate</a>? absoluteDate setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="time.html#TimeDuration">TimeDuration</a>? before setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    attribute <a href="#AlarmMethod">AlarmMethod</a> method setraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    attribute <a href="time.html#TZDate">TZDate</a>? absoluteDate;
+    attribute <a href="time.html#TimeDuration">TimeDuration</a>? before;
+    attribute <a href="#AlarmMethod">AlarmMethod</a> method;
     attribute DOMString? description;
   };
-
   [Callback=FunctionOnly, NoInterfaceObject]
   interface CalendarEventArraySuccessCallback {
     void onsuccess(<a href="#CalendarEvent">CalendarEvent</a>[] events);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject]
   interface CalendarItemArraySuccessCallback {
     void onsuccess(<a href="#CalendarItem">CalendarItem</a>[] items);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject]
   interface CalendarArraySuccessCallback {
     void onsuccess(<a href="#Calendar">Calendar</a>[] calendars);
   };
-
   [Callback, NoInterfaceObject] interface CalendarChangeCallback {
     void onitemsadded(<a href="#CalendarItem">CalendarItem</a>[] items);
-
     void onitemsupdated(<a href="#CalendarItem">CalendarItem</a>[] items);
-
     void onitemsremoved(<a href="#CalendarItemId">CalendarItemId</a>[] ids);
   };
 };</pre>
