@@ -7,40 +7,24 @@ The main features of the Tizen.Nlp namespace include:
 
 -   Word Tokenize suppport
 
-    You can get tokens from a sentence, the type of return is WordTokenizeResult.
+    You can get tokens from a sentence, the type of return is [WordTokenizeResult](#wordtokenize). 
+    This method breaks up the sentence into words and punctuation.
 
 -   Part of Speech support
 
-    You can get tokens and tags from a sentence, the type of return is PosTagResult.
+    You can get tokens and tags from a sentence, the type of return is [PosTagResult](#postag). This method breaks up the sentence into words and punctuation with tags attributes.
 
 -   Named Entity Detection support
 
-    You can get tokens and tags from a sentence, the type of return is NamedEntityRecognitionResult.
+    You can get tokens and tags from a sentence, the type of return is [NamedEntityRecognitionResult](#nechunk). This method breaks up the sentence into words and punctuation with tags attributes.
 
 -   Lemmatizing support
 
-    You can get the actual word from a word, the type of return is LemmatizeResult.
+    You can get the actual word from a word, the type of return is [LemmatizeResult](#lemmatize). This method is used to get the actual word from a word.
 
 -   Language Detect support
 
-    You can get language from a sentence, the type of return is LanguageDetectedResult.
-
-## Word Tokenize
-This method break up the sentence into words and punctuation.
-
-
-## Part of Speech
-This method breaks up the sentence into words and punctuation with tags attributes.
-
-
-## Named Entity Detection
-This method breaks up the sentence into words and punctuation with tags attributes.
-
-## Lemmatizing
-This method is used to get the actual word from a word.
-
-## Language Detect
-This method is used to detect the language of a sentence.
+    You can get language from a sentence, the type of return is [LanguageDetectedResult](#langdetect). This method is used to detect the language of a sentence.
 
 
 ## Prerequisites
@@ -61,13 +45,12 @@ Enable your application to use the Nlp functionality:
     ```
     using Tizen.Nlp;
     ```
+<a name="wordtokenize"></a>
+## Receive WordTokenize Tokens
 
-<h2>Receive WordTokenize Tokens</h2>
-## Receive Tokens - WordTokenize
+To receive the tokens from sentence:
 
-Receive the tokens from sentence:
-
-1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
+1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
     ```
     protected override void OnCreate
@@ -102,12 +85,12 @@ Receive the tokens from sentence:
         }
     ```
 
-<h2>Receive PosTag Tokens and Tags</h2>
-## Receive Tokens and Tags - PosTag
+<a name="postag"></a>
+## Receive PosTag Tokens and Tags
 
-Receive the tokens and tags from sentence:
+To receive the tokens and tags from sentence:
 
-1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
+1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
     ```
     protected override void OnCreate
@@ -131,7 +114,7 @@ Receive the tokens and tags from sentence:
     }
     ```
 
-3.  When nlp object is no longer needed, call Dispose() to release the resource of Nlp:
+3.  When nlp object is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -142,12 +125,12 @@ Receive the tokens and tags from sentence:
         }
     ```
 
-<h2>Receive Named Entity Tokens and Tags</h2>
-## Receive Tokens and Tags - Named Entity
+<a name="nechunk"></a>
+## Receive Named Entity Tokens and Tags
 
-Receive the tokens and tags from sentence:
+To receive the tokens and tags info from sentence:
 
-1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
+1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
     ```
     protected override void OnCreate
@@ -171,7 +154,7 @@ Receive the tokens and tags from sentence:
     }
     ```
 
-3.  When it is no longer needed, call Dispose() to release the resource of Nlp:
+3.  When it is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -183,12 +166,12 @@ Receive the tokens and tags from sentence:
     ```
 
 
-<h2>Receive Lemmatize ActualWord</h2>
-## Receive ActualWord - Lemmatizing
+<a name="lemmatize"></a>
+## Receive Lemmatize ActualWord
 
-Receive the actual word from word:
+To receive the actual word from word:
 
-1.  Construct an NaturalLanguageProcess object on OnCreate(), and Connect the Nlp service on init of app :
+1.  Construct an NaturalLanguageProcess object on OnCreate(), and Connect the NLP service on init of app :
 
     ```
     protected override void OnCreate
@@ -212,7 +195,7 @@ Receive the actual word from word:
     }
     ```
 
-3.  When it is no longer needed, call Dispose() to release resource of Nlp:
+3.  When it is no longer needed, call Dispose() to release resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -223,12 +206,12 @@ Receive the actual word from word:
         }
     ```
 
-<h2>Detect Language</h2>
-## Detect Language from sentence - Detect Language
+<a name="langdetect"></a>
+## Detect Language
 
-Detect the language from sentence:
+To detect the language from sentence:
 
-1.  Construct NaturalLanguageProcess on OnCreate(), and connect the Nlp service on init of app:
+1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
     ```
     protected override void OnCreate
@@ -252,7 +235,7 @@ Detect the language from sentence:
     }
     ```
 
-3.  When it is no longer needed, call Dispose() to release the resource of Nlp:
+3.  When it is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -262,7 +245,6 @@ Detect the language from sentence:
          ..
         }
     ```
-
 
 
 ## Related Information
