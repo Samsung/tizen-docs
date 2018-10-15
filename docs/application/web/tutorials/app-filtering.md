@@ -169,6 +169,7 @@ application package.
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
 | `http://tizen.org/feature/datasync`      | Specify this key, if the application requires the DataSync feature. | 2.3   |
+| `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/fmradio`       | Specify this key, if the application requires an FM radio. | 2.2.1 |
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires any of the Human Activity Monitor features. | 2.3   |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
@@ -246,6 +247,7 @@ Tizen 4.0.
 | `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar feature. | 4.0   |
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 2.3   |
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [Human Activity Monitor](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html) API.If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`PEDOMETER: `http://tizen.org/feature/sensor.pedometer`WRIST_UP: `http://tizen.org/feature/sensor.wrist_up`GPS: `http://tizen.org/feature/location.batch` | 2.3   |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
@@ -327,6 +329,7 @@ Tizen 4.0.
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
+| `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/tv.audio`      | Specify this key, if the application requires the audio control functionality for using the [TV Audio Control](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvaudiocontrol.html) API. | 3.0   |
 | `http://tizen.org/feature/tv.tuner`      | Specify this key, if the application requires the channel tuner functionality for using the [TV Channel](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvchannel.html) API. | 3.0   |
 | `http://tizen.org/feature/tv.display`    | Specify this key, if the application requires the screen display functionality for using the [TV Display Control](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/tvdisplaycontrol.html) API. | 3.0   |
