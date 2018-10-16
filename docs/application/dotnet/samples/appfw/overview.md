@@ -110,7 +110,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wappcontrol.png" width="180"/></td>
 			<td>
-                        <p><a href=" https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppControl" target="_blank"><strong>(W) AppControl</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppControl" target="_blank"><strong>(W) AppControl</strong></a></p>
 			<p>This sample application demonstrates how to launch an application, get a result for the launch request, and create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>. When you press <strong>Launch</strong> button, AppInformation sample application will be launched.</p>
 			<p><strong>Prerequisites</strong><br>
 			First of all, you need to install <a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank">AppInformation sample application</a> because it is what would be launched by AppControl sample application.
