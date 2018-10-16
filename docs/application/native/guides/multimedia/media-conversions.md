@@ -1,9 +1,7 @@
 # Media Conversions
 
 
-You can perform various media conversions through codecs. You can encode and decode video and audio data.
-
-You can prepare the [media codecs](#codecs), fill the media packet with data, and run the media codec.
+You can perform various media conversions through codecs. You can encode and decode video and audio data. To do so, you can prepare the [media codecs](#codecs), fill the media packet with data, and run the media codec.
 
 <a name="codecs"></a>
 ## Media Codecs
