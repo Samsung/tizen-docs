@@ -1,7 +1,25 @@
 # AppFW
 
-(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
+<!--
+For MD:
+-->
 
+<link href="../css/dotnet-samples.css" ref="stylesheet">
+
+<!--
+for TD:
+
+<style type="text/css">
+    Please copy dotnet-samples.css and paste it here
+</script>
+-->
+
+<div class="sampletab">
+<button class="tablinks" onclick="openProfile(event, 'Mobile')" id="defaultOpen">Mobile</button> <button class="tablinks" onclick="openProfile(event, 'Wearable')">Wearable</button> <button class="tablinks" onclick="openProfile(event, 'TV')">TV</button>
+</div>
+
+<!-- Tab content -->
+<div class="tabcontent" id="Mobile">
 <table>
 	<tbody>
 		<tr>
@@ -12,6 +30,56 @@
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="267" src="media/m1appcommon.png" width="150"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/AppCommon" target="_blank"><strong>(M) App-common</strong></a></p>
+			<p>This sample application demonstrates how to work with app-common APIs to obtain application-specific information.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m2applicationcontrol.png" width="150"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/ApplicationControl" target="_blank"><strong>(M) Application Control</strong></a></p>
+			<p>This sample application demonstrates how to call operations of other applications. It also provides operations such as pick, view, or compose.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m36badges.png" width="150"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Badges" target="_blank"><strong>(M) Badges</strong></a></p>
+			<p>This sample application demonstrates how to manage the application badge counter using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
+			<p>In addition, there is similar native sample application.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Badges" target="_blank">Native version</a></li>
+			</ul></p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m47notificationmanager.png" width="150"/></td>
+			<td>
+			<p><strong>(M) NotificationManager</strong> [In progress]</p>
+			<p>This sample application demonstrates how to create and manage notifications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Notifications.html" target="_blank">Tizen.Applications.Notifications C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m31preference.png" width="150"/></td>
+			<td>
+			<p><strong>(M) Preference</strong> [In progress]</p>
+			<p>This sample application demonstrates how to store and retrieve application specific data and preferences using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a>.</p>
+			<p>In addition, there is similar native sample application.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Preference" target="_blank">Native version</a></li>
+			</ul></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="tabcontent" id="Wearable">
+<table>
+	<tbody>
+		<tr>
 			<td><img alt="" height="180" src="media/walarm_list.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Alarm" target="_blank"><strong>(W) Alarm</strong></a></p>
@@ -21,13 +89,6 @@
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Alarm" target="_blank">Native version</a></li>
 				<li><a href="https://developer.tizen.org/development/sample/web/UI/Alarm_UI" target="_blank">Web version</a></li>
 			</ul></p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m1appcommon.png" width="150"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/AppCommon" target="_blank"><strong>(M) App-common</strong></a></p>
-			<p>This sample application demonstrates how to work with app-common APIs to obtain application-specific information.</p>
 			</td>
 		</tr>
 		<tr>
@@ -44,22 +105,6 @@
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/App-common" target="_blank">Native version</a></li>
 			</ul></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv18appinfo.png" width="400" /></p>
-			</td>
-			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>(T) AppInfo</strong></a></p>
-			<p>This sample application demonstrates how to obtain information about installed applications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m2applicationcontrol.png" width="150"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/ApplicationControl" target="_blank"><strong>(M) Application Control</strong></a></p>
-			<p>This sample application demonstrates how to call operations of other applications. It also provides operations such as pick, view, or compose.</p>
 			</td>
 		</tr>
 		<tr>
@@ -82,17 +127,6 @@
 				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Application_control" target="_blank">Native version</a></li>
 				<li><a href="https://developer.tizen.org/development/sample/web/Application/App_Control" target="_blank">Web version</a>
 			</li></p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m36badges.png" width="150"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Badges" target="_blank"><strong>(M) Badges</strong></a></p>
-			<p>This sample application demonstrates how to manage the application badge counter using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
-			<p>In addition, there is similar native sample application.<br>
-			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Badges" target="_blank">Native version</a></li>
-			</ul></p>
 			</td>
 		</tr>
 		<tr>
@@ -143,37 +177,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="267" src="media/m47notificationmanager.png" width="150"/></td>
-			<td>
-			<p><strong>(M) NotificationManager</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create and manage notifications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Notifications.html" target="_blank">Tizen.Applications.Notifications C# API</a>.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m31preference.png" width="150"/></td>
-			<td>
-			<p><strong>(M) Preference</strong> [In progress]</p>
-			<p>This sample application demonstrates how to store and retrieve application specific data and preferences using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a>.</p>
-			<p>In addition, there is similar native sample application.<br>
-			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Preference" target="_blank">Native version</a></li>
-			</ul></p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="180" src="media/wpreference.png" width="180"/></td>
 			<td>
 			<p><strong>(W) Preference</strong> [In progress]</p>
 			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
-			</td>
-		</tr>		
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv16preference.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Preference" target="_blank"><strong>(T) Preference</strong></a></p>
-			<p>This sample application demonstrates how to store and retrieve an application specific data and preference using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -209,3 +216,41 @@
 		</tr>
 	</tbody>
 </table>
+</div>
+<div class="tabcontent" id="TV">
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv18appinfo.png" width="400" /></p>
+			</td>
+			<td>
+            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>(T) AppInfo</strong></a></p>
+			<p>This sample application demonstrates how to obtain information about installed applications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv16preference.png" width="400" /></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Preference" target="_blank"><strong>(T) Preference</strong></a></p>
+			<p>This sample application demonstrates how to store and retrieve an application specific data and preference using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a>.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<!--
+For MD:
+-->
+<script src="../js/dotnet-samples.js"></script>
+
+<!--
+for TD:
+
+<script>
+  Please copy dotnet-samples.js and paste it here
+</script>
+-->

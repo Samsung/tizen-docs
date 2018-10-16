@@ -885,8 +885,8 @@ For more information on the relationship between the elements, see the [element 
 **For example:**
 
 ```xml
-<feature name="http://tizen.org/feature/camera">true</privilege>
-<feature name="http://tizen.org/feature/fmradio">true</privilege>
+<feature name="http://tizen.org/feature/camera">true</feature>
+<feature name="http://tizen.org/feature/fmradio">true</feature>
 ```
 
 ## Related information

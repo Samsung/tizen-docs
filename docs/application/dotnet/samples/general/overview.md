@@ -1,6 +1,39 @@
 # General
 
-(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
+<!--
+For MD:
+-->
+
+<link href="../css/dotnet-samples.css" ref="stylesheet">
+
+<!--
+for TD:
+
+<style type="text/css">
+    Please copy dotnet-samples.css and paste it here
+</script>
+-->
+
+<div class="sampletab">
+<button class="tablinks" onclick="openProfile(event, 'Mobile')" id="defaultOpen">Mobile</button> <button class="tablinks" onclick="openProfile(event, 'Wearable')">Wearable</button> <button class="tablinks" onclick="openProfile(event, 'TV')">TV</button>
+</div>
+
+<!-- Tab content -->
+<div class="tabcontent" id="Mobile">
+<table>
+	<tbody>
+		<tr>
+			<td><img alt="" height="267" src="media/m37weather.png" width="150"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Weather" target="_blank"><strong>(M) Weather</strong></a></p>
+			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a>.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="tabcontent" id="Wearable">
 <table>
 	<tbody>
 		<tr>
@@ -59,13 +92,6 @@
 				<li><a href="https://developer.tizen.org/ko/development/sample/web/UI/Voice_Memo_UI" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
-		</tr>		
-		<tr>
-			<td><img alt="" height="267" src="media/m37weather.png" width="150"/></td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Weather" target="_blank"><strong>(M) Weather</strong></a></p>
-			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a>.</p>
-			</td>
 		</tr>
 		<tr>
 			<td>
@@ -87,3 +113,19 @@
 		</tr>
 	</tbody>
 </table>
+</div>
+<div class="tabcontent" id="TV">
+</div>
+
+<!--
+For MD:
+-->
+<script src="../js/dotnet-samples.js"></script>
+
+<!--
+for TD:
+
+<script>
+  Please copy dotnet-samples.js and paste it here
+</script>
+-->
