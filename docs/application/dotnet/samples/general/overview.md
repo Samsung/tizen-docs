@@ -39,7 +39,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wplayingwithhwInputs.png" width="180"/></td>
 			<td>
-			<p><strong>(W) PlayingWithHWInputs</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/PlayingWithHWInputs" target="_blank"><strong>(W) PlayingWithHWInputs</strong></a></p>
 			<p>This sample application demonstrates how to handle rotary events from bezel of a wearable device and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>. In addition, it shows the way how to detect when the back button is pressed.</p>
 			<p>This application uses Tizen.Wearable.CircularUI API.<br>
 			<ul>
@@ -67,7 +67,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wsqlite.png" width="180"/></td>
 			<td>
-			<p><strong>(W) SQLite.Net.Sample</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SQLite.NET.Sample" target="_blank"><strong>(W) SQLite.Net.Sample</strong></a></p>
 			<p>This sample application demonstrates how to create and connect to an SQLite database and use it in Tizen .Net application.</p>
 			<p>This application uses Tizen.Application API.<br>
 			<ul>
@@ -83,7 +83,7 @@ for TD:
 			<p><img alt="" height="180" src="media/w4voicememo.png" width="180" /></p>
 			</td>
 			<td>
-			<p><strong>(W) VoiceMemo</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/VoiceMemo" target="_blank"><strong>(W) VoiceMemo</strong></a></p>
 			<p>This sample application demonstrates how to create an application using Xamarin.Forms, <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>, SQLite, and Tizen FX (Tizen.Applications, Tizen.Content.MediaContent, Tizen.Multimedia, Tizen.System, Tizen.Uix.Stt, Tizen.Security, and so on).</p>
 			<p>The sample requires network connection (for example, Wi-Fi) at runtime.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
@@ -107,14 +107,13 @@ for TD:
 			<p><img alt="" height="180" src="media/wwebwidgethybrid.png" width="180" /></p>
 			</td>
 			<td>
-			<p><strong>(W) WebWidgetHybrid</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WebWidgetHybrid" target="_blank"><strong>(W) WebWidgetHybrid</strong></a></p>
 			<p>This sample application demonstrates how to create Tizen hybrid application which is packaged with Tizen Web and .Net applications.</p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 </div>
-
 <div class="tabcontent" id="TV">
 </div>
 

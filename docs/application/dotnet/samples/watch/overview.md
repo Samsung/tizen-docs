@@ -28,7 +28,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wambientwatch.png" width="180"/></td>
 			<td>
-			<p><strong>(W) AmbientWatch</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AmbientWatch" target="_blank"><strong>(W) AmbientWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a watch application that supports ambient mode in Tizen wearable device. It also demonstrates how to create a circular watch face using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.<br>
 			To extend battery life, a watch application can display a limited UI in the ambient mode by detecting ambient mode changes.<br>
 			</p>
@@ -53,7 +53,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wclassicwatch.png" width="180"/></td>
 			<td>
-			<p><strong>(W) ClassWatch</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ClassicWatch" target="_blank"><strong>(W) ClassicWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a circular watch face, which consists of moving hands. It also demonstrates how to use watch face API using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -65,7 +65,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wchronograph.png" width="180"/></td>
 			<td>
-			<p><strong>(W) ChronographWatch</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ChronographWatch" target="_blank"><strong>(W) ChronographWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a circular watch with continuously moving hands. It also demonstrates how to use watch face API using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.<br>
             This sample application includes the watch and stopwatch functionality.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
@@ -78,7 +78,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wweatherwatch.png" width="180"/></td>
 			<td>
-			<p><strong>(W) WeatherWatch</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WeatherWatch" target="_blank"><strong>(W) WeatherWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a watch face application with weather information for Tizen wearable devices. It also demonstrates how to use watch face API using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.<br>
 			You can get detailed information from <a href="https://github.com/Samsung/Tizen-CSharp-Samples/blob/master/Wearable/WeatherWatch/README.md" target="_blank"><strong>readme file</strong> of WeatherWatch</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
@@ -91,7 +91,6 @@ for TD:
 	</tbody>
 </table>
 </div>
-
 <div class="tabcontent" id="TV">
 </div>
 

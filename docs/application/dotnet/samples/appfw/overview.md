@@ -82,7 +82,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/walarm_list.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Alarm</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Alarm" target="_blank"><strong>(W) Alarm</strong></a></p>
 			<p>This sample application demonstrates how to create and manage several alarms and save the alarm data. It also demonstrates how to create an application using Xamarin.Forms and <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -94,7 +94,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wappinformation.png" width="180"/></td>
 			<td>
-			<p><strong>(W) AppInformation</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank"><strong>(W) AppInformation</strong></a></p>
 			<p>This sample application demonstrates how to get the specific information such as AppId, Package ID, and shared directory path. It also demonstrates how to get the directory information such as resource, cache, app data and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>This application uses Tizen.Application API.<br>
 			<ul>
@@ -110,7 +110,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wappcontrol.png" width="180"/></td>
 			<td>
-			<p><strong>(W) AppControl</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppControl" target="_blank"><strong>(W) AppControl</strong></a></p>
 			<p>This sample application demonstrates how to launch an application, get a result for the launch request, and create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>. When you press <strong>Launch</strong> button, AppInformation sample application will be launched.</p>
 			<p><strong>Prerequisites</strong><br>
 			First of all, you need to install <a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank">AppInformation sample application</a> because it is what would be launched by AppControl sample application.
@@ -150,7 +150,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wmessageport.png" width="180"/></td>
 			<td>
-			<p><strong>(W) MessagePortSampleApp</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MessagePortSampleApp" target="_blank"><strong>(W) MessagePortSampleApp</strong></a></p>
 			<p>This sample application demonstrates how to send and receive messages between applications and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>
 			<ul>
@@ -186,7 +186,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wserviceapp.png" width="180"/></td>
 			<td>
-			<p><strong>(W) ServiceApp</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ServiceApp" target="_blank"><strong>(W) ServiceApp</strong></a></p>
 			<p>This sample application demonstrates how to create a service application which has no UI.</p>
 			<p>This application uses Tizen.Application API.<br>
 			<ul>
@@ -217,7 +217,6 @@ for TD:
 	</tbody>
 </table>
 </div>
-
 <div class="tabcontent" id="TV">
 <table>
 	<tbody>
