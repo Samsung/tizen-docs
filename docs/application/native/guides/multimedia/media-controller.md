@@ -19,9 +19,9 @@ The main features of the Media Controller API include:
 
   The media controller server provides current information about the registered application that you can send to the client.
 
-  **Note**
-
-  This feature supports Tizen 4.0 and higher for Mobile.
+  > **Note**
+  >
+  > This feature supports Tizen 4.0 and higher for Mobile.
 
 - Sending and processing commands
 
@@ -33,9 +33,9 @@ The main features of the Media Controller API include:
 
   You can [send a reply of the command](#send_cmd_reply) to the client from the server side, and then receive the reply on the client side.
 
-  **Note**
-
-  This feature supports Tizen 4.0 and higher for Mobile.
+  > **Note**
+  >
+  > This feature supports Tizen 4.0 and higher for Mobile.
 
 - Sending and processing a custom event
 
@@ -43,9 +43,9 @@ The main features of the Media Controller API include:
 
   You can [send a reply of the custom event](#send_event_reply) to the server from the client side, and then receive the reply on the server side.
 
-  **Note**
-
-  This feature supports Tizen 4.0 and higher for Mobile.
+  > **Note**
+  >
+  > This feature supports Tizen 4.0 and higher for Mobile.
 
 ## Prerequisites
 
@@ -233,7 +233,7 @@ To retrieve the playlist and metadata information on the client side:
    }
    ```
 
-  If you want to use metadata handle outside, make a copy using `mc_metadata_clone()` function.
+   If you want to use metadata handle outside, make a copy using `mc_metadata_clone()` function.
 
 5. Register the callback using the `mc_playlist_foreach_item()` function:
 
@@ -260,9 +260,9 @@ To retrieve the playlist and metadata information on the client side:
    mc_client_destroy(g_client_h);
    ```
 
-**Note**
-
-This feature supports Tizen 4.0 and higher for Mobile.
+> **Note**
+>
+> This feature supports Tizen 4.0 and higher for Mobile.
 
 
 <a name="send_command"></a>
@@ -453,14 +453,14 @@ To receive the reply of completed command on the client side:
    ret = mc_client_set_cmd_reply_received_cb(g_client_h, cmd_reply_received_cb, NULL);
    ```
 
-**Note**
-
-This feature supports Tizen 4.0 and higher for Mobile.
+> **Note**
+>
+> This feature supports Tizen 4.0 and higher for Mobile.
 
 <a name="send_event"></a>
 ## Sending and Processing A Custom Event
 
-To send a custom event to the server from the client side:
+To send a custom event to the client from the server side:
 
 1. Create the media controller server handle using the `mc_server_create()` function:
 
@@ -512,7 +512,7 @@ To process the received event on the client side:
 
 2. Define the callback that is invoked when the client receives the event.
 
-  For example, to define a callback for a custom event:
+   For example, to define a callback for a custom event:
 
    ```
    void
@@ -568,9 +568,9 @@ To receive the reply of processing command on the server side:
    ret = mc_server_set_event_reply_received_cb(g_server_h, event_reply_received_cb, NULL);
    ```
 
-**Note**
-
-This feature supports Tizen 4.0 and higher for Mobile.
+> **Note**
+>
+> This feature supports Tizen 4.0 and higher for Mobile.
 
 <a name="serverstate"></a>
 ## Media Controller Server State Attributes
@@ -617,9 +617,9 @@ The following table lists all the playback action attributes the client can send
 | `MC_PLAYBACK_ACTION_REWIND`      | Playback action of rewind                |
 | `MC_PLAYBACK_ACTION_TOGGLE_PLAY_PAUSE` | Playback action of toggle between play and pause |
 
-**Note**
-
-This Attributes support Tizen 4.0 and higher for Mobile.
+> **Note**
+>
+> This Attributes support Tizen 4.0 and higher for Mobile.
 
 <a name="shufflemode"></a>
 ## Media Controller Shuffle Mode Attributes
@@ -682,9 +682,9 @@ The following table lists all the playlist update mode attributes the client can
 | `MC_PLAYLIST_UPDATED`            | Create or updated playlist               |
 | `MC_PLAYBACK_REMOVED`            | Remove playlist                          |
 
-**Note**
-
-This Attributes support Tizen 4.0 and higher for Mobile.
+> **Note**
+>
+> This Attributes support Tizen 4.0 and higher for Mobile.
 
 ## Related Information
 - Dependencies
