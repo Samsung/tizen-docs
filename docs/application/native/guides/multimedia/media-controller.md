@@ -223,7 +223,7 @@ To retrieve the playlist and metadata information on the client side:
    ```
    ret = mc_client_set_playlist_updated_cb(g_client_h, playlist_updated_cb, NULL);
    ```
-4. Define the callback that retreive the item from the playlist handle.
+4. Define the callback that retrieve the item from the playlist handle.
 
    ```
    bool
@@ -241,7 +241,7 @@ To retrieve the playlist and metadata information on the client side:
    ret = mc_playlist_foreach_item(playlist_h, playlist_item_cb, NULL);
    ```
 
-6. Retreive the metadata information from the metadata handle using the `mc_metadata_get()` function:
+6. Retrieve the metadata information from the metadata handle using the `mc_metadata_get()` function:
 
    ```
    char *title = NULL;
