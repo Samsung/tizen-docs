@@ -3,7 +3,7 @@
 
 Minicontrol is a small application view that can be shown on the quick panel or lock screen.
 
-This feature is supported in mobile applications only.
+This feature is supported in mobile and wearable applications only.
 
 The main features of the Minicontrol API include:
 
@@ -107,3 +107,4 @@ To hide the quick panel:
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
+  - Tizen 5.0 and Higher for Wearable
