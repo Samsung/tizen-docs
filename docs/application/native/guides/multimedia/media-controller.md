@@ -13,7 +13,7 @@ The main features of the Media Controller API include:
 
   When the client requests the information, the media controller server updates the state information of an active application before transferring the data. If the application is not running when the client request arrives, the media controller server transfers the latest information.
 
-- Update and retrieving playlist
+- Updating and retrieving playlist
 
   You can [update the playlist information](#get_playlist) on the server side, and then retrieve the playlist information on the client side.
 
