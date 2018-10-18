@@ -66,7 +66,7 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
 - [Natural Language Processing](nlp/overview.md)
 
-  The natural language process features explains the methods by which you can handle all the sentences in your applications. You can get the results using the Nlp service.
+  The natural language process features explains the methods by which you can handle all the sentences in your applications. You can get the results using the NLP service.
 
 ## Related Information
 - Dependencies

@@ -1,7 +1,7 @@
 # Natural Language Processing (NLP)
 
 
-Nlp is a subset of natural language toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (Nlp) functionalities, such as language detection, parts of speech, word tokenize, lemmatize, and named entity detection. For more information, see the [nltk Forum](http://www.nltk.org/).
+NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenize, lemmatize, and named entity detect   ion. For more information, see the [NLTK Forum](http://www.nltk.org/).
 
 The main features of the Tizen.Nlp namespace include:
 
@@ -14,7 +14,7 @@ The main features of the Tizen.Nlp namespace include:
 
     You can get tokens and tags from a sentence, the type of return is [PosTagResult](#postag). This method breaks up the sentence into words and punctuation with tags attributes.
 
--   Named Entity Detection support
+-   Named Entity Recognizer support
 
     You can get tokens and tags from a sentence, the type of return is [NamedEntityRecognitionResult](#nechunk). This method breaks up the sentence into words and punctuation with tags attributes.
 
@@ -29,7 +29,7 @@ The main features of the Tizen.Nlp namespace include:
 
 ## Prerequisites
 
-Enable your application to use the Nlp functionality:
+To enable your application to use the NLP functionality:
 
 1.  Using the [Tizen.Nlp](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -74,7 +74,7 @@ To receive the tokens from sentence:
     }
     ```
 
-3.  When nlp object is no longer needed, call Dispose() to release the resource of Nlp:
+3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -114,7 +114,7 @@ To receive the tokens and tags from sentence:
     }
     ```
 
-3.  When nlp object is no longer needed, call Dispose() to release the resource of NLP:
+3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -128,7 +128,7 @@ To receive the tokens and tags from sentence:
 <a name="nechunk"></a>
 ## Receive Named Entity Tokens and Tags
 
-To receive the tokens and tags info from sentence:
+To receive the tokens and tags information from sentence:
 
 1.  Construct NaturalLanguageProcess on OnCreate(), and connect the NLP service on init of app:
 
@@ -154,7 +154,7 @@ To receive the tokens and tags info from sentence:
     }
     ```
 
-3.  When it is no longer needed, call Dispose() to release the resource of NLP:
+3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -167,7 +167,7 @@ To receive the tokens and tags info from sentence:
 
 
 <a name="lemmatize"></a>
-## Receive Lemmatize ActualWord
+## Receive Lemmatized Actual Word
 
 To receive the actual word from word:
 
@@ -195,7 +195,7 @@ To receive the actual word from word:
     }
     ```
 
-3.  When it is no longer needed, call Dispose() to release resource of NLP:
+3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -235,7 +235,7 @@ To detect the language from sentence:
     }
     ```
 
-3.  When it is no longer needed, call Dispose() to release the resource of NLP:
+3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
 
     ```
     protected override void OnTerminate()
@@ -248,5 +248,5 @@ To detect the language from sentence:
 
 
 ## Related Information
-* Dependencies
-  -   Tizen 4.0 and Higher
+- Dependencies
+  -   Tizen 5.0 and Higher

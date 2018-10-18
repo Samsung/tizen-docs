@@ -135,4 +135,4 @@
 
 # Natural Language Processing
 ## [Overview](/application/dotnet/guides/nlp/overview.md)
-## [nlp](/application/dotnet/guides/nlp/nlp.md)
+## [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
