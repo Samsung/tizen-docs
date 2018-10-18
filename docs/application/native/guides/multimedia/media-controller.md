@@ -7,7 +7,7 @@ The main features of the Media Controller API include:
 
 - Updating and retrieving information
 
-  You can [update the metadata and playback information](#get_media) on the server side, and then retrieve the metadata and playback information on the client side.
+  You can [update the metadata and playback information](#Updating-and-Retrieving-Information) on the server side, and then retrieve the metadata and playback information on the client side.
 
   The media controller server provides current information about the registered application that you can send to the client.
 
@@ -15,7 +15,7 @@ The main features of the Media Controller API include:
 
 - Updating and retrieving playlist
 
-  You can [update the playlist information](#get_playlist) on the server side, and then retrieve the playlist information on the client side.
+  You can [update the playlist information](#Updating-and-Retrieving-Playlist) on the server side, and then retrieve the playlist information on the client side.
 
   The media controller server provides current information about the registered application that you can send to the client.
 
@@ -25,13 +25,13 @@ The main features of the Media Controller API include:
 
 - Sending and processing commands
 
-  You can [send a command](#send_command) to the server from the client side, and then process the command on the server side.
+  You can [send a command](#Sending-and-Processing-Commands) to the server from the client side, and then process the command on the server side.
 
 - Sending and processing commands to receive replies
 
-  You can [send a command](#send_cmd) to the server from the client side, and then process the command on the server side.
+  You can [send a command](#Sending-and-Processing-Commands-To-Receive-Replies) to the server from the client side, and then process the command on the server side.
 
-  You can [send a reply of the command](#send_cmd_reply) to the client from the server side, and then receive the reply on the client side.
+  You can [send a reply of the command](#To-send-the-reply-of-completed-command-on-the-server-side) to the client from the server side, and then receive the reply on the client side.
 
   > **Note**
   >
@@ -39,9 +39,9 @@ The main features of the Media Controller API include:
 
 - Sending and processing a custom event
 
-  You can [send a custom event](#send_event) to the client from the server side, and then process the event on the client side.
+  You can [send a custom event](#Sending-and-Processing-A-Custom-Event) to the client from the server side, and then process the event on the client side.
 
-  You can [send a reply of the custom event](#send_event_reply) to the server from the client side, and then receive the reply on the server side.
+  You can [send a reply of the custom event](#To-send-the-reply-of-completed-custom-event-on-the-client-side) to the server from the client side, and then receive the reply on the server side.
 
   > **Note**
   >
@@ -87,7 +87,7 @@ To enable your application to use the media controller functionality:
 
      This guide uses a global variable for the handle.
 
-<a name="get_media"></a>
+
 ## Updating and Retrieving Information
 
 To update the metadata and playback information on the server side:
@@ -154,7 +154,7 @@ To retrieve the metadata and playback information on the client side:
    mc_client_destroy(g_client_h);
    ```
 
-<a name="get_playlist"></a>
+
 ## Updating and Retrieving Playlist
 
 To update the playlist and metadata information on the server side:
@@ -265,7 +265,7 @@ To retrieve the playlist and metadata information on the client side:
 > This feature supports Tizen 4.0 and higher for Mobile.
 
 
-<a name="send_command"></a>
+
 ## Sending and Processing Commands
 
 To send a command to the server from the client side:
@@ -342,7 +342,7 @@ To process the received command on the server side:
    mc_server_destroy(g_server_h);
    ```
 
-<a name="send_cmd"></a>
+
 ## Sending and Processing Commands To Receive Replies
 
 To send a command to the server from the client side:
@@ -424,7 +424,7 @@ To process the received command on the server side:
    mc_server_destroy(g_server_h);
    ```
 
-<a name="send_cmd_reply"></a>
+
 To send the reply of completed command on the server side:
 
 1. Send the reply of completed command using the `mc_server_send_cmd_reply()` with the request id of the command in the third parameter and the result of the command in fourth parameter:
@@ -457,7 +457,7 @@ To receive the reply of completed command on the client side:
 >
 > This feature supports Tizen 4.0 and higher for Mobile.
 
-<a name="send_event"></a>
+
 ## Sending and Processing A Custom Event
 
 To send a custom event to the client from the server side:
@@ -539,7 +539,7 @@ To process the received event on the client side:
    ```
 
 
-<a name="send_event_reply"></a>
+
 To send the reply of completed custom event on the client side:
 
 1. Send the reply of completed custom event using the `mc_client_send_event_reply()` with the request id of the custom event in the third parameter and the result of the custom event in fourth parameter:
@@ -572,7 +572,7 @@ To receive the reply of processing command on the server side:
 >
 > This feature supports Tizen 4.0 and higher for Mobile.
 
-<a name="serverstate"></a>
+
 ## Media Controller Server State Attributes
 
 The following table lists all the server state attributes the client can receive.
@@ -598,7 +598,7 @@ The following table lists all the server state attributes the client can receive
 | `MC_PLAYBACK_STATE_FAST_FORWARDING` | Playback state of fast forwarding (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewinding (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 
-<a name="playbackaction"></a>
+
 ## Media Controller Playback Action Attributes
 
 The following table lists all the playback action attributes the client can send command and the server can receive.
@@ -621,7 +621,7 @@ The following table lists all the playback action attributes the client can send
 >
 > This Attributes support Tizen 4.0 and higher for Mobile.
 
-<a name="shufflemode"></a>
+
 ## Media Controller Shuffle Mode Attributes
 
 The following table lists all the shuffle mode attributes the client can receive and send command.
@@ -634,7 +634,7 @@ The following table lists all the shuffle mode attributes the client can receive
 | `MC_SHUFFLE_MODE_ON`             | Shuffle mode is on                       |
 | `MC_SHUFFLE_MODE_OFF`            | Shuffle mode is off                      |
 
-<a name="repeatmode"></a>
+
 ## Media Controller Repeat Mode Attributes
 
 The following table lists all the repeat mode attributes the client can receive and send command.
@@ -648,7 +648,7 @@ The following table lists all the repeat mode attributes the client can receive 
 | `MC_REPEAT_MODE_OFF`             | Repeat mode is off                       |
 | `MC_REPEAT_MODE_ONE_MEDIA`       | Repeat mode is on for one media (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 
-<a name="servermetadata"></a>
+
 ## Media Controller Server Metadata Attributes
 
 The following table lists all the server metadata attributes the client can receive.
@@ -669,7 +669,7 @@ The following table lists all the server metadata attributes the client can rece
 | `MC_META_MEDIA_TRACK_NUM`   | Track number of the latest content in the media controller server |
 | `MC_META_MEDIA_PICTURE`     | Album art of the latest content in the media controller server |
 
-<a name="playlist_updatemode"></a>
+
 ## Media Controller Playlist Update Mode Attributes
 
 The following table lists all the playlist update mode attributes the client can receive.
