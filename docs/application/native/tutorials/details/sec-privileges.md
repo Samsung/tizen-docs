@@ -4,7 +4,7 @@
 To effectively protect the device system and user private data, the
 Tizen security architecture is based on privileges and application
 signing of the Linux basic security model, which includes process
-isolation and mandatory access control. Since Tizen, as an open mobile
+isolation and mandatory access control. Since Tizen, as an open 
 platform, provides a wide range of features and experiences for users
 with a variety of applications, the users must be able to grant
 privileges for security-sensitive operations.
@@ -39,7 +39,7 @@ switched it **on**.
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../../guides/security/privacy-related-permissions.md) using the Privacy Privilege Manager API (in
-[mobile](../../api/mobile/5.0/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/5.0/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
+[mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
 applications).
 
 The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
@@ -62,13 +62,12 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/antivirus.admin` | platform |  | The application can enable or disable antivirus programs and manage detected malware. |
 | `http://tizen.org/privilege/antivirus.scan` | partner |  | The application can request to scan files in any other applications or on the device to detect harmful content. |
 | `http://tizen.org/privilege/antivirus.webprotect` | partner |  | The application can check the reputation of a web address and determine whether or not accessing it could put user's device at risk. |
-| `http://tizen.org/privilege/appdir.shareddata` | public |  | The application can create a shared directory and files within it, which all other applications can read. |
 | `http://tizen.org/privilege/apphistory.read` | public | User history | The application can read the statistics of application usage, such as which applications have been used frequently or recently. |
 | `http://tizen.org/privilege/appmanager.kill` | platform |  | The application can close other applications. |
 | `http://tizen.org/privilege/appmanager.kill.bgapp` | public |  | The application can request to close applications running in the background. |
 | `http://tizen.org/privilege/appmanager.launch` | public |  | The application can open other applications. |
-| `http://tizen.org/privilege/blocknumber.read` | partner |  | The application can read rules for blocking calls and messages. |
-| `http://tizen.org/privilege/blocknumber.write` | partner |  | The application can write rules for blocking calls and messages. |
+| `http://tizen.org/privilege/blocknumber.read` | partner |  | The application can read rules for blocking calls and messages.<br>**Allowed to licensed partners.** |
+| `http://tizen.org/privilege/blocknumber.write` | partner |  | The application can write rules for blocking calls and messages.<br>**Allowed to licensed partners.** |
 | `http://tizen.org/privilege/bluetooth` | public |  | The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices. |
 | `http://tizen.org/privilege/bluetooth.admin` | platform |  | The application can change Bluetooth settings, such as turning Bluetooth on or off, setting the device name, and enabling or disabling AV remote control. |
 | `http://tizen.org/privilege/bookmark.admin` | platform | Bookmark | The application can retrieve, create, edit, and delete internet bookmarks. |
@@ -104,8 +103,6 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/dpm.zone` | partner |  | The application can create and remove containers. Containers are private workspaces which provide separate app runtime environments and data storage.<br>**Allowed to licensed partners.** |
 | `http://tizen.org/privilege/email` | public |  | The application can manage user's email accounts, including user's folders and emails, POP3 and IMAP downloads, and SMTP uploads. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/email.admin` | platform |  | The application can manage the settings of email applications. |
-| `http://tizen.org/privilege/externalstorage` | public | Storage | The application can read and write files that are saved to external storage, such as SD cards. |
-| `http://tizen.org/privilege/externalstorage.appdata` | public |  | The application can read and write its own files in external storage, such as SD cards. |
 | `http://tizen.org/privilege/fido.client` | public |  | The application can trigger authenticators in user's device and it may request to use user's PIN or biometrics (fingerprints or irises) for authentication. |
 | `http://tizen.org/privilege/gestureactivation` | platform |  | The application can allow and block special touch gestures. |
 | `http://tizen.org/privilege/gesturegrab` | platform |  | The application can read special touch gestures, even while it is running in the background. |
@@ -114,11 +111,10 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/ime` | public |  | The application can provide users with a way to enter characters and symbols into an associated text field. |
 | `http://tizen.org/privilege/imemanager` | public |  | The application can manage installed input methods. |
 | `http://tizen.org/privilege/inputgenerator` | platform |  | The application can simulate keys being pressed and touch interactions with the screen. |
-| `http://tizen.org/privilege/internet` | public |  | The application can access the internet. This may result in additional charges depending on user's payment plan. |
-| `http://tizen.org/privilege/keygrab` | platform |  | The application can read actions involving special keys, such as the volume keys on this or other devices (e.g. TV remote controls), even when it is running in the background. |
+| `http://tizen.org/privilege/keygrab` | platform |  | The application can read actions involving special keys, such as the volume keys on this or other devices (for example, TV remote controls), even when it is running in the background. |
 | `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/keymanager.admin` | platform |  | The application can lock and unlock password-protected storage, and manage password changes for it. |
-| `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off. For example, the LED found on the front of the device and the camera flash can be turned on or off. |
+| `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off. For example, the LED on the front of the device and the camera flash can be turned on or off. |
 | `http://tizen.org/privilege/location` | public | Location | The application can use user's location data. |
 | `http://tizen.org/privilege/location.coarse` | public | Location | The application can determine user's approximate location including user's device's Cell ID, LAC (Location Area Code), and TAC (Tracking Area Code). |
 | `http://tizen.org/privilege/location.enable` | platform |  | The application can control user's location service settings. |
@@ -126,7 +122,6 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/mediacontroller.client` | public |  | The application can receive information about currently playing media from applications that are allowed to send it, and can control those applications remotely. |
 | `http://tizen.org/privilege/mediacontroller.server` | public |  | The application can send information about currently playing media to applications that are allowed to receive it, and can be controlled remotely by those applications. |
 | `http://tizen.org/privilege/mediahistory.read` | public | User history | The application can read the statistics concerning the music and videos played on the device, such as the peak times for playing music or videos. |
-| `http://tizen.org/privilege/mediastorage` | public | Storage | The application can read and write files in media folders. |
 | `http://tizen.org/privilege/message.read` | public | Message | The application can read text and multimedia messages, and any information related to them. |
 | `http://tizen.org/privilege/message.write` | public | Message | The application can write, send, delete, move text and multimedia messages, download multimedia messages, and change the settings and statuses of messages, such as read or unread. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/minicontrol.provider` | public |  | The application can show a small toolbar on the notification panel or lock screen while it is open. |
@@ -153,12 +148,12 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/systemmonitor` | public |  | The application can read system information, including information from the CPU and RAM. |
 | `http://tizen.org/privilege/systemsettings` | public |  | The application can read and write unrestricted system settings. |
 | `http://tizen.org/privilege/systemsettings.admin` | platform |  | The application can read and write all system settings. |
-| `http://tizen.org/privilege/tee.client` | partner |  | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment. |
+| `http://tizen.org/privilege/tee.client` | partner |  | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment.<br>**Allowed to licensed partners.** |
 | `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the statuses of calls. |
 | `http://tizen.org/privilege/telephony.admin` | platform |  | The application can manage telephony settings, such as those for incoming and outgoing calls, forwarding and holding calls, networks, and SIM cards. |
 | `http://tizen.org/privilege/tethering.admin` | platform |  | The application can enable and disable tethering services. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/use_ir` | public |  | The application can use the infrared transmitter. |
-| `http://tizen.org/privilege/voicecontrol.manager` | platform |  | The application can record user's voice and recognise it so that voice commands can be used to control this app. It can also give responses to user's commands. |
+| `http://tizen.org/privilege/voicecontrol.manager` | platform |  | The application can record user's voice and recognize it so that voice commands can be used to control this app. It can also give responses to user's commands. |
 | `http://tizen.org/privilege/volume.set` | public |  | The application can adjust the volume for different features, such as notification alerts, ringtones, and media. |
 | `http://tizen.org/privilege/vpnservice` | public |  | The application can manage the Virtual Private Network (VPN) and change its settings. |
 | `http://tizen.org/privilege/web-history.admin` | platform | User history | The application can manage user's internet history. |
