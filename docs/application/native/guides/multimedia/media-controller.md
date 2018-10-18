@@ -100,7 +100,7 @@ To update the metadata and playback information on the server side:
 
 2. Set the metadata or playback information to be updated using the corresponding `mc_server_set_XXX()`, and then update the metadata or playback information using the corresponding `mc_server_update_XXX()`.
 
-   For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()` function, and then update the information using the `mc_server_update_playback_info()` function:
+   For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()`, and then update the information using the `mc_server_update_playback_info()`:
 
    ```
    ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
@@ -212,7 +212,7 @@ To retrieve the playlist and metadata information on the client side:
    void
    playlist_updated_cb(const char *server_name, mc_playlist_update_mode_e mode, const char *playlist_name, mc_playlist_h playlist, void *user_data)
    {
-     dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Playlist Update Mode: %d, Playlist Name: %s\n", server_name, mode, playlist_name);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Playlist Update Mode: %d, Playlist Name: %s\n", server_name, mode, playlist_name);
    }
    ```
 
