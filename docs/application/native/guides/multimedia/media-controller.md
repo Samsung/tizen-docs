@@ -7,7 +7,7 @@ The main features of the Media Controller API include:
 
 - Updating and retrieving information
 
-  You can [update the metadata and playback information](#Updating-and-Retrieving-Information) on the server side, and then retrieve the metadata and playback information on the client side.
+  You can [update the metadata and playback information](#updating-and-retrieving-information) on the server side, and then retrieve the metadata and playback information on the client side.
 
   The media controller server provides current information about the registered application that you can send to the client.
 
@@ -15,7 +15,7 @@ The main features of the Media Controller API include:
 
 - Updating and retrieving playlist
 
-  You can [update the playlist information](#Updating-and-Retrieving-Playlist) on the server side, and then retrieve the playlist information on the client side.
+  You can [update the playlist information](#updating-and-retrieving-playlist) on the server side, and then retrieve the playlist information on the client side.
 
   The media controller server provides current information about the registered application that you can send to the client.
 
@@ -25,13 +25,13 @@ The main features of the Media Controller API include:
 
 - Sending and processing commands
 
-  You can [send a command](#Sending-and-Processing-Commands) to the server from the client side, and then process the command on the server side.
+  You can [send a command](#sending-and-processing-commands) to the server from the client side, and then process the command on the server side.
 
 - Sending and processing commands to receive replies
 
-  You can [send a command](#Sending-and-Processing-Commands-To-Receive-Replies) to the server from the client side, and then process the command on the server side.
+  You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side, and then process the command on the server side.
 
-  You can [send a reply of the command](#To-send-the-reply-of-completed-command-on-the-server-side) to the client from the server side, and then receive the reply on the client side.
+  You can [send a reply of the command](#to-send-the-reply-of-completed-command-on-the-server-side) to the client from the server side, and then receive the reply on the client side.
 
   > **Note**
   >
@@ -39,9 +39,9 @@ The main features of the Media Controller API include:
 
 - Sending and processing a custom event
 
-  You can [send a custom event](#Sending-and-Processing-A-Custom-Event) to the client from the server side, and then process the event on the client side.
+  You can [send a custom event](#sending-and-processing-a-custom-event) to the client from the server side, and then process the event on the client side.
 
-  You can [send a reply of the custom event](#To-send-the-reply-of-completed-custom-event-on-the-client-side) to the server from the client side, and then receive the reply on the server side.
+  You can [send a reply of the custom event](#to-send-the-reply-of-completed-custom-event-on-the-client-side) to the server from the client side, and then receive the reply on the server side.
 
   > **Note**
   >
