@@ -4,7 +4,7 @@
 To effectively protect the device system and user private data, the
 Tizen security architecture is based on privileges and application
 signing of the Linux basic security model, which includes process
-isolation and mandatory access control. Since Tizen, as an open mobile
+isolation and mandatory access control. Since Tizen, as an open 
 platform, provides a wide range of features and experiences for users
 with a variety of applications, the users must be able to grant
 privileges for security-sensitive operations.
