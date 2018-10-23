@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>NetworkInformation API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::NetworkInformation">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="title"><h1>NetworkInformation API</h1></div>
+<div class="brief">
+ This plugin provides information about the device's cellular and wifi connection, and whether the device has an internet connection.
+        </div>
+<div class="description">
+        <p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-network-information">Cordova Network Information</a>.
+        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a>
+</li>
+<li>1.2. <a href="#NetworkInformationManager">NetworkInformationManager</a>
+</li>
+<li>1.3. <a href="#Connection">Connection</a>
+</li>
+<li>1.4. <a href="#OnlineEventCallback">OnlineEventCallback</a>
+</li>
+<li>1.5. <a href="#OfflineEventCallback">OfflineEventCallback</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#api-features">Related Feature</a>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#NetworkInformationManager">NetworkInformationManager</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Connection">Connection</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#OnlineEventCallback">OnlineEventCallback</a></td>
+<td><div>void <a href="#OnlineEventCallback::online">online</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#OfflineEventCallback">OfflineEventCallback</a></td>
+<td><div>void <a href="#OfflineEventCallback::offline">offline</a> ()</div></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="NetworkInformationManagerObject">
+<a class="backward-compatibility-anchor" name="::NetworkInformation::NetworkInformationManagerObject"></a><h3>1.1. NetworkInformationManagerObject</h3>
+<div class="brief">
+ The <em>NetworkInformationManagerObject</em> interface defines what is instantiated in the <em>Navigator</em> object.
+          </div>
+<pre class="webidl prettyprint"> [NoInterfaceObject] interface NetworkInformationManagerObject {
+   readonly attribute <a href="#NetworkInformationManager">NetworkInformationManager</a> connection;
+ };</pre>
+<pre class="webidl prettyprint">  implements <a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <em>navigator.connection</em> object allows access to the NetworkInformation API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="NetworkInformationManager">
+<a class="backward-compatibility-anchor" name="::NetworkInformation::NetworkInformationManager"></a><h3>1.2. NetworkInformationManager</h3>
+<div class="brief">
+ The <em>NetworkInformationManager</em> interface provides methods for global operations related to notifications to the user.
+          </div>
+<pre class="webidl prettyprint"> [NoInterfaceObject] interface NetworkInformationManager {
+   readonly attribute DOMString type;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NetworkInformationManager::type">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ Returns the current connection type. The value returned is one of the following strings, case-sensitively: unknown, ethernet, wifi, 2g, 3g, 4g, none.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/telephony
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function checkConnection()
+{
+  var networkState = navigator.connection.type;
+
+  var states = {};
+  states[Connection.UNKNOWN] = 'Unknown connection';
+  states[Connection.ETHERNET] = 'Ethernet connection';
+  states[Connection.WIFI] = 'WiFi connection';
+  states[Connection.CELL_2G] = 'Cell 2G connection';
+  states[Connection.CELL_3G] = 'Cell 3G connection';
+  states[Connection.CELL_4G] = 'Cell 4G connection';
+  states[Connection.CELL] = 'Cell generic connection';
+  states[Connection.NONE] = 'No network connection';
+  alert('Connection type: ' + states[networkState]);
+}
+
+checkConnection();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Connection type: Cell 3G connection
+</pre>
+</div>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="Connection">
+<a class="backward-compatibility-anchor" name="::NetworkInformation::Connection"></a><h3>1.3. Connection</h3>
+<div class="brief">
+ The <em>Connection</em> is available as window attribute.
+          </div>
+<pre class="webidl prettyprint"> interface Connection {
+  readonly attribute DOMString UNKNOWN;
+  readonly attribute DOMString ETHERNET;
+  readonly attribute DOMString WIFI;
+  readonly attribute DOMString CELL_2G;
+  readonly attribute DOMString CELL_3G;
+  readonly attribute DOMString CELL_4G;
+  readonly attribute DOMString CELL;
+  readonly attribute DOMString NONE;
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Connection::UNKNOWN">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">UNKNOWN</span></span><div class="brief">
+ The value returned is 'unknown'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.UNKNOWN);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>unknown
+</pre>
+</div>
+</li>
+<li class="attribute" id="Connection::ETHERNET">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">ETHERNET</span></span><div class="brief">
+ The value returned is 'ethernet'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.ETHERNET);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>ethernet
+</pre>
+</div>
+</li>
+<li class="attribute" id="Connection::WIFI">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">WIFI</span></span><div class="brief">
+ The value returned is 'wifi'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.WIFI);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>wifi
+</pre>
+</div>
+</li>
+<li class="attribute" id="Connection::CELL_2G">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">CELL_2G</span></span><div class="brief">
+ The value returned is '2g'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_2G);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>2g
+</pre>
+</div>
+</li>
+<li class="attribute" id="Connection::CELL_3G">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">CELL_3G</span></span><div class="brief">
+ The value returned is '3g'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_3G);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>3g
+</pre>
+</div>
+</li>
+<li class="attribute" id="Connection::CELL_4G">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">CELL_4G</span></span><div class="brief">
+ The value returned is '4g'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL_4G);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>4g
+</pre>
+</div>
+</li>
+<li class="attribute" id="Connection::CELL">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">CELL</span></span><div class="brief">
+ The value returned is 'cellular'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.CELL);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>cellular
+</pre>
+</div>
+</li>
+<li class="attribute" id="Connection::NONE">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">NONE</span></span><div class="brief">
+ The value returned is 'none'.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(Connection.NONE);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>none
+</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="OnlineEventCallback">
+<a class="backward-compatibility-anchor" name="::NetworkInformation::OnlineEventCallback"></a><h3>1.4. OnlineEventCallback</h3>
+<div class="brief">
+ Callback for the event when an application goes online, and the device becomes connected to the Internet.
+          </div>
+<pre class="webidl prettyprint"> [NoInterfaceObject, Callback=FunctionOnly]
+ interface OnlineEventCallback {
+   void online();
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <var>online</var> event fires when an application goes online, and the device becomes connected to the Internet.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="events.html#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-network-information#online">Cordova online event</a>          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('online', onOnline, false);
+}
+
+function onOnline()
+{
+  /* Handle the online event */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="OfflineEventCallback">
+<a class="backward-compatibility-anchor" name="::NetworkInformation::OfflineEventCallback"></a><h3>1.5. OfflineEventCallback</h3>
+<div class="brief">
+ Callback for the event when an application goes offline, and the device is not connected to the Internet.
+          </div>
+<pre class="webidl prettyprint"> [NoInterfaceObject, Callback=FunctionOnly]
+ interface OfflineEventCallback {
+   void offline();
+ };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <var>online</var> event fires when an application goes online, and the device becomes connected to the Internet.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="events.html#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-network-information#offline">Cordova offline event</a>          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('offline', onOffline, false);
+}
+
+function onOffline()
+{
+  /* Handle the offline event */
+}
+</pre>
+</div>
+</div>
+</div>
+<h2 id="api-features">2. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the NetworkInformation application runs on a device with the NetworkInformation feature declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.telephony</li>
+</div>
+<p></p>
+                    For more information, see <a href="../../org.tizen.gettingstarted/html/tizen_overview/application_filtering.htm">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module NetworkInformation {
+ [NoInterfaceObject] interface NetworkInformationManagerObject {
+   readonly attribute <a href="#NetworkInformationManager">NetworkInformationManager</a> connection;
+ };
+  implements <a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a>;
+ [NoInterfaceObject] interface NetworkInformationManager {
+   readonly attribute DOMString type;
+ };
+ interface Connection {
+  readonly attribute DOMString UNKNOWN;
+  readonly attribute DOMString ETHERNET;
+  readonly attribute DOMString WIFI;
+  readonly attribute DOMString CELL_2G;
+  readonly attribute DOMString CELL_3G;
+  readonly attribute DOMString CELL_4G;
+  readonly attribute DOMString CELL;
+  readonly attribute DOMString NONE;
+ };
+
+ [NoInterfaceObject, Callback=FunctionOnly]
+ interface OnlineEventCallback {
+   void online();
+ };
+ [NoInterfaceObject, Callback=FunctionOnly]
+ interface OfflineEventCallback {
+   void offline();
+ };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

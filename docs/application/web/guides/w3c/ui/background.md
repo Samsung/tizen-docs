@@ -95,7 +95,9 @@ You can create a multilayer background with a parallax effect using the [CSS box
 
 ![Background with the parallax effect](./media/css_bg_tutorial1.png)
 
-1. Prepare 3 images (`tizen.png`, `tizen2.png`, and `dot.png`), each with a transparent background.![tizen.png, tizen2.png, and dot.png images](./media/css_bg_tutorial2.png)
+1. Prepare 3 images (`tizen.png`, `tizen2.png`, and `dot.png`), each with a transparent background.
+
+   ![tizen.png, tizen2.png, and dot.png images](./media/css_bg_tutorial2.png)
 
 2. Create a `div` element with `id="parallelexample"` and a slider input element with the minimum, maximum, and initial value:
 
@@ -104,7 +106,9 @@ You can create a multilayer background with a parallax effect using the [CSS box
    <input id="position" type="range" min="1" max="200" value="50">
    ```
 
-3. Define the needed styles for the  `div` element in the `<head>` section using the `parallelexample` ID.Define a background using the prepared images in the correct order. The images are shown in the order they have been added, with the first image on the topmost layer. Use the same order when defining the background position for each image.
+3. Define the needed styles for the  `div` element in the `<head>` section using the `parallelexample` ID.
+
+   Define a background using the prepared images in the correct order. The images are shown in the order they have been added, with the first image on the topmost layer. Use the same order when defining the background position for each image.
 
    ```
    #parallelexample {

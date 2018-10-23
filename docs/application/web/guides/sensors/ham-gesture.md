@@ -18,7 +18,7 @@ The main gesture recognition features of the Human Activity Monitor API include:
 
 Some gestures are not supported on all devices because the devices lack the necessary sensors.
 
-To check whether a specific gesture type is supported on the current device, use the `isGestureSupported()` method of the `HumanActivityMonitorManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
+To check whether a specific gesture type is supported on the current device, use the `isGestureSupported()` method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
 
 ```
 try {
@@ -33,7 +33,7 @@ try {
 
 Learning how to register a listener for gesture recognition allows you to receive notifications about different gestures the user performs with a device:
 
-1. To register a listener, use the `addGestureRecognitionListener()`  method of the `HumanActivityMonitorManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
+1. To register a listener, use the `addGestureRecognitionListener()`  method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
 
    ```
    var listenerId;

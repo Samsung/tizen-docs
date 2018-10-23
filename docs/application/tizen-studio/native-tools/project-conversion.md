@@ -7,7 +7,10 @@ You can build a project, originally created with the Tizen Studio, using the Com
 To build a Tizen Studio project on the CLI, you must convert the project to a CLI project:
 
 1. In the Tizen Studio, open the project you want to convert.
-2. Right-click the project and select **Export to CLI Project**.An info dialog appears, and the `project_def.prop` and `build_def.prop` files and the `Build` directory are created.
+
+2. Right-click the project and select **Export to CLI Project**.
+
+   An info dialog appears, and the `project_def.prop` and `build_def.prop` files and the `Build` directory are created.
 
 The Tizen Studio and CLI differ in how they describe the project properties and build configuration. The CLI uses the `project_def.prop` file for the project properties and the `build_def.prop` file for the build configurations. During export, the `project_def.prop`, `build_def.prop`, and the makefiles are added to the converted CLI project automatically.
 
@@ -19,9 +22,9 @@ The Tizen Studio and CLI differ in how they describe the project properties and 
 
 The `project_def.prop` file describes the project properties, such as project type and list of source files. When you edit the properties in the `project_def.prop` file to manipulate the build or packaging process, use the following characters:
 
-- "/" is a path separator character (in Windows®, Ubuntu, and macOS).
-- "\" is a multi-line character, which is used at the end of each line.
-- "\ " (backslash + space) is a space character, used in a path name that contains a space.
+- "/" is a path separator character (in Windows&reg;, Ubuntu, and macOS).
+- "\\" is a multi-line character, which is used at the end of each line.
+- "\\ " (backslash + space) is a space character, used in a path name that contains a space.
 - "#" is a comment character.
 
 **Table: Project properties**

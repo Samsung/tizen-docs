@@ -1,0 +1,1314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Selectors Utility</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Selectors Utility</h1>
+
+<p>The selectors utility contains functions to get HTML elements by different selectors.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#html-code">Using Selectors in the Web UI framework</a>
+						</li>
+		<li><a href="#methods-list">Methods</a>
+			
+				
+			
+		</li>
+	
+</ol>
+
+
+
+
+<h2><a id="html-code"></a>Using Selectors in the Web UI framework</h2>
+
+<p>To use selectors in Web UI framework, use the following code:</p>
+
+<pre class="prettyprint">
+tau.util.selectors.getChildrenByClass(HTMLElement, &quot;className&quot;);
+</pre>
+
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getAllByDataNS">getAllByDataNS</a> ( HTMLElement context, string dataSelector ) </pre>
+					</td>
+					<td><p>Returns an array of elements from the context with a given data-selector.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getChildrenByClass">getChildrenByClass</a> ( HTMLElement context, string className ) </pre>
+					</td>
+					<td><p>Returns an array with children with a given class name.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getChildrenByDataNS">getChildrenByDataNS</a> ( HTMLElement context, string dataSelector ) </pre>
+					</td>
+					<td><p>Returns an array with children passed by a given data-namespace-selector.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getChildrenBySelector">getChildrenBySelector</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns an array with children passed by a given selector.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getChildrenByTag">getChildrenByTag</a> ( HTMLElement context, string tagName ) </pre>
+					</td>
+					<td><p>Returns an array with children with a given tag name.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement <a href="#method-getClosestByClass">getClosestByClass</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns the first element from the parents of an element with a given class name.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement <a href="#method-getClosestBySelector">getClosestBySelector</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns the first element from the parents of an element passed by a selector.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement <a href="#method-getClosestBySelectorNS">getClosestBySelectorNS</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns the first element from the parents of an element passed by a selector with a namespace.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">HTMLElement <a href="#method-getClosestByTag">getClosestByTag</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns the first element from the parents of an element with a given tag name.</p></td>
+				</tr>
+			
+		
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getParents">getParents</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns an array with all the parents of an element.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getParentsByClass">getParentsByClass</a> ( HTMLElement context, string className ) </pre>
+					</td>
+					<td><p>Returns an array with all the parents of an element with a given class name.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getParentsBySelector">getParentsBySelector</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns an array with all the parents of an element passed by a given selector.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getParentsBySelectorNS">getParentsBySelectorNS</a> ( HTMLElement context, string selector ) </pre>
+					</td>
+					<td><p>Returns an array with all the parents of an element passed by a given selector with a namespace.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Array <a href="#method-getParentsByTag">getParentsByTag</a> ( HTMLElement context, string tagName ) </pre>
+					</td>
+					<td><p>Returns an array with all the parents of an element with a given tag name.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">boolean <a href="#method-matchesSelector">matchesSelector</a> ( HTMLElement element, string selector ) </pre>
+					</td>
+					<td><p>Runs the match implementation of the matchesSelector method on a specified element.</p></td>
+				</tr>
+			
+		
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getAllByDataNS">getAllByDataNS</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array of elements from the context with a given data-selector.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getAllByDataNS ( HTMLElement context, string dataSelector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">dataSelector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getChildrenByClass">getChildrenByClass</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with children with a given class name.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getChildrenByClass ( HTMLElement context, string className) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">className</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getChildrenByDataNS">getChildrenByDataNS</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with children passed by a given data-namespace-selector.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getChildrenByDataNS ( HTMLElement context, string dataSelector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">dataSelector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getChildrenBySelector">getChildrenBySelector</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with children passed by a given selector.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getChildrenBySelector ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getChildrenByTag">getChildrenByTag</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with children with a given tag name.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getChildrenByTag ( HTMLElement context, string tagName) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">tagName</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getClosestByClass">getClosestByClass</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the first element from the parents of an element with a given class name.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement getClosestByClass ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getClosestBySelector">getClosestBySelector</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the first element from the parents of an element passed by a selector.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement getClosestBySelector ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getClosestBySelectorNS">getClosestBySelectorNS</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the first element from the parents of an element passed by a selector with a namespace.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement getClosestBySelectorNS ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getClosestByTag">getClosestByTag</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns the first element from the parents of an element with a given tag name.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">HTMLElement getClosestByTag ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>HTMLElement</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getParents">getParents</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with all the parents of an element.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getParents ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getParentsByClass">getParentsByClass</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with all the parents of an element with a given class name.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getParentsByClass ( HTMLElement context, string className) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">className</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getParentsBySelector">getParentsBySelector</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with all the parents of an element passed by a given selector.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getParentsBySelector ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getParentsBySelectorNS">getParentsBySelectorNS</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with all the parents of an element passed by a given selector with a namespace.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getParentsBySelectorNS ( HTMLElement context, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-getParentsByTag">getParentsByTag</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Returns an array with all the parents of an element with a given tag name.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Array getParentsByTag ( HTMLElement context, string tagName) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">context</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">tagName</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Array</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-matchesSelector">matchesSelector</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Runs the match implementation of the matchesSelector method on a specified element.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">boolean matchesSelector ( HTMLElement element, string selector) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">element</span></td>
+						<td>HTMLElement</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">selector</span></td>
+						<td>string</td>
+						<td>Required</td>
+						<td></td>
+						<td></td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>boolean</td>
+									<td></td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+				</dd>
+			
+		
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

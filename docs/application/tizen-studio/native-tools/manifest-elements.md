@@ -2,7 +2,7 @@
 
 The following sections summarize some of the common child elements used in the `tizen-manifest.xml` file of a native application.
 
-## &lt;app-control&gt; Element
+## \<app-control\> Element
 
 This element represents Tizen application control configuration information.
 
@@ -30,7 +30,7 @@ For more information on the relationship between the elements, see the [element 
 </app-control>
 ```
 
-### &lt;operation&gt; Element
+### \<operation\> Element
 
 This element represents the operation type of the application control.
 
@@ -46,7 +46,7 @@ For more information on the expected values, see [Common Application Controls](.
 <operation name="http://tizen.org/appcontrol/operation/compose"/>
 ```
 
-### &lt;uri&gt; Element
+### \<uri\> Element
 
 This element represents the URI scheme of the application control.
 
@@ -61,7 +61,7 @@ Name of the URI scheme (string)
 <uri name="testuristring"/>
 ```
 
-### &lt;mime&gt; Element
+### \<mime\> Element
 
 This element represents the MIME type of the application control.
 
@@ -76,7 +76,7 @@ Name of the MIME type (string)
 <mime name="application/pdf"/>
 ```
 
-## &lt;background-category&gt; Element
+## \<background-category\> Element
 
 This element represents the category of an application that runs in the background.
 
@@ -104,7 +104,7 @@ Value of the background category (string)
 <metadata key="http://tizen.org/metadata/background-category/download"/>
 ```
 
-## &lt;datacontrol&gt; Element
+## \<datacontrol\> Element
 
 This element represents configuration information for the Tizen data controls.
 
@@ -131,7 +131,7 @@ Type of the data control (string)
 <datacontrol access="WriteOnly" providerid="http://uiapp.com/datacontrol/provider/uiapp" type="Sql"/>
 ```
 
-## &lt;icon&gt; Element
+## \<icon\> Element
 
 This element represents the icon relative or absolute file path for the Tizen application.
 
@@ -144,7 +144,7 @@ For more information on the relationship between the elements, see the [element 
 **Attributes:**
 
 - `xml:lang`  
-Language with which the icon is used (available value: "&lt;2-letter lowercase language code (ISO 639-1)&gt;-&lt;2-letter lowercase country code (ISO 3166-1 alpha-2)&gt;")
+Language with which the icon is used (available value: "\<2-letter lowercase language code (ISO 639-1)\>-\<2-letter lowercase country code (ISO 3166-1 alpha-2)\>")
 
 **Expected value:**
 
@@ -157,11 +157,11 @@ Language with which the icon is used (available value: "&lt;2-letter lowercase l
 <icon xml:lang="en-gb">testicon.png</icon>
 ```
 
-## &lt;label&gt; Element
+## \<label\> Element
 
 This element represents the label value for the Tizen application. It is a set of human readable names for the Tizen application according to the language.
 
-For more information on the relationship between the elements, see the [element hierarchy](manifest-text-editor-n.md#hierarchy).
+For more information on the relationship between the elements, see the [element hierarchy](manifest-text-editor.md#hierarchy).
 
 **Occurrences:**
 
@@ -170,7 +170,7 @@ For more information on the relationship between the elements, see the [element 
 **Attributes:**
 
 - `xml:lang`  
-Language of the label (available value: "&lt;2-letter lowercase language code (ISO 639-1)&gt;-&lt;2-letter lowercase country code (ISO 3166-1 alpha-2)&gt;")
+Language of the label (available value: "\<2-letter lowercase language code (ISO 639-1)\>-\<2-letter lowercase country code (ISO 3166-1 alpha-2)\>")
 
 **Expected value:**
 
@@ -183,7 +183,7 @@ Language of the label (available value: "&lt;2-letter lowercase language code (I
 <label xml:lang="en-gb">testlabel</label>
 ```
 
-## &lt;metadata&gt; Element
+## \<metadata\> Element
 
 This element represents user-defined key-value pairs for the application.
 
@@ -206,6 +206,71 @@ Value of metadata (string)
 ```
 <metadata key="testkey" value="testvalue"/>
 ```
+
+## \<splash-screens\> Element
+
+This element represents Tizen splash-screen configuration information.
+
+For more information on the relationship between the elements, see the [element hierarchy](manifest-text-editor.md#hierarchy).
+
+**Occurrences:**
+
+- 1 or more (optional)
+
+**Expected children:**
+
+| Child element     | Occurrences |
+|-------------------|-------------|
+| `<splash-screen>` | 1 or more   |
+
+**For example:**
+
+```
+<splash-screens>
+   <splash-screen src="test1.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"\>
+   <splash-screen src="test2.edj" type="edj" dpi="hdpi" orientation="landscape" indicator-display="false"\>
+</splash-screens>
+```
+
+### \<splash-screen\> Element
+
+This element represents a splash-screen of the application. The splash-screen is an image that covers the entire screen. It is displayed when the application is launched, and disappears after the application main screen is loaded.
+
+**Attributes:**
+
+- `src`
+
+  Source of the splash-screen (string)
+
+- `type`
+
+  Type of the splash-screen (available values: `img`, `edj`)
+
+- `dpi`
+
+  Resolution of the splash-screen (available values: `ldpi`, `mdpi`, `hdpi`, `xhdpi`, `xxhdpi`)
+
+- `orientation`
+
+  Orientation of the splash-screen (available values: `portrait`, `landscape`)
+
+- `indicator-display`
+
+  Indicates whether the indicator area is visible on the splash-screen (available values: `true`, `false`)
+
+- `app-control-operation`
+
+  Application control operation of the splash-screen (string)
+
+  If this value is defined, the splash-screen image is shown when the application is launched by the application control operation.
+
+**For example:**
+
+```
+<splash-screen src="test1.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"
+               app-control-operation="http://tizen.org/appcontrol/operation/default"\>
+```
+
 
 ## Related information
 * Dependencies

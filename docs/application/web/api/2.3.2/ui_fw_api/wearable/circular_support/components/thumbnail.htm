@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>How to support Thumbnail</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>How to support Thumbnail</h1>
+
+Circular UI provides circle shaped thumbnail.<p>
+The following explains how to implement the thumbnail which can support both Rectangular UI and Circular UI.<p>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#layout">Layout</a></li>
+	<li><a href="#htmlCode">HTML code</a></li>
+	<li><a href="#cssCode">CSS code</a></li>
+	<li><a href="#jsCode">Javascript code</a></li>
+</ol>
+
+<h2><a id='layout'></a>Layout</h2>
+
+<table id='circularsupport'>
+	<tbody>
+		<tr>
+			<td><img src="../../../../images/rectangular_thumbnail.png" /></td>
+			<td><img src="../../../../images/round_thumbnail.png" /></td>
+		</tr>
+		<tr>
+			<td align="center">in Rectangular UI</td>
+			<td align="center">in Circular UI</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id='htmlCode'></a>HTML code</h2>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;sectionChangerPage&quot; data-enable-page-scroll=&quot;false&quot; &gt;
+	&lt;div id=&quot;sectionChanger&quot; class=&quot;ui-content ui-section-changer&quot;&gt;
+		&lt;div id=&quot;scroller&quot;&gt;
+			&lt;section class=&quot;ui-section-active&quot;&gt;
+				&lt;div class=&quot;thumbnail&quot;&gt;1&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;section&gt;
+				&lt;div class=&quot;thumbnail&quot;&gt;2&lt;/div&gt;
+			&lt;/section&gt;
+			&lt;section&gt;
+				&lt;div class=&quot;thumbnail&quot;&gt;3&lt;/div&gt;
+			&lt;/section&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id='cssCode'></a>CSS code</h2>
+
+<pre class="prettyprint">
+section {
+	padding: 0 10px 0 10px;
+	height: 100%;
+}
+.thumbnail {
+	height: 300px;
+	width: 200px;
+	background-color: #80482f;
+	top: 50%;
+	transform: translate3d(0, -50%, 0);
+	position: relative;
+	text-align: center;
+	line-height: 300px;
+}
+.ui-section-active .thumbnail{
+	background-color: #000000;
+	border: 1px solid #a06322;
+}
+
+@media all and (-tizen-geometric-shape: circle) {
+	section {
+		padding: 0;
+	}
+	.thumbnail {
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		background-color: #802532;
+		top: 50%;
+		position: relative;
+		text-align: center;
+		line-height: 200px;
+		transform: scale(0.8) translate3d(0, -60%, 0);
+		transition: transform 300ms;
+	}
+	.ui-section-active .thumbnail{
+		transform: scale(1) translate3d(0, -50%, 0);
+	}
+}
+</pre>
+
+<h2><a id='jsCode'></a>Javascript code</h2>
+
+<pre class="prettyprint">
+(function(){
+	var page = document.getElementById("sectionChangerPage"),
+		sectionChanger = document.getElementById("sectionChanger");
+
+	page.addEventListener( "pagebeforeshow", function() {
+		tau.widget.SectionChanger(sectionChanger, {
+			orientation: "horizontal",
+			fillContent: false
+		});
+	});
+})();
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

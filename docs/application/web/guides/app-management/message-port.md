@@ -8,11 +8,11 @@ The main features of the Message Port API include:
 
 - Sending messages
 
-  A Tizen Web application can [send messages](#managing-message-ports) to another application using the `sendMessage()` method of the `RemoteMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#RemoteMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#RemoteMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#RemoteMessagePort) applications).
+  A Tizen Web application can [send messages](#managing-message-ports) to another application using the `sendMessage()` method of the `RemoteMessagePort` interface (in [mobile](../../api/latest/device_api/mobile/tizen/messageport.html#RemoteMessagePort), [wearable](../../api/latest/device_api/wearable/tizen/messageport.html#RemoteMessagePort), and [TV](../../api/latest/device_api/tv/tizen/messageport.html#RemoteMessagePort) applications).
 
 - Receiving messages
 
-  To [receive response messages](#managing-message-ports) from another application, your application can specify a local message port when it sends a message. You can receive response messages using the callback method which is registered through the `addMessagePortListener()` method of the `LocalMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#LocalMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#LocalMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#LocalMessagePort) applications).
+  To [receive response messages](#managing-message-ports) from another application, your application can specify a local message port when it sends a message. You can receive response messages using the callback method which is registered through the `addMessagePortListener()` method of the `LocalMessagePort` interface (in [mobile](../../api/latest/device_api/mobile/tizen/messageport.html#LocalMessagePort), [wearable](../../api/latest/device_api/wearable/tizen/messageport.html#LocalMessagePort), and [TV](../../api/latest/device_api/tv/tizen/messageport.html#LocalMessagePort) applications).
 
   You can mostly receive message from applications implemented as Tizen native or Web applications. To implement a native application, see the native [Message Port Communication](../../../native/guides/app-management/message-port.md) guide.
 
@@ -32,8 +32,13 @@ The main features of the Message Port API include:
 
 You can send and receive messages through 2 types of message ports:
 
-- The `LocalMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#LocalMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#LocalMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#LocalMessagePort) applications) is used to register your message port and prepare to receive messages from other applications.To receive messages from other applications, you must register a callback to the local message port.
-- The `RemoteMessagePort` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messageport.html#RemoteMessagePort), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/messageport.html#RemoteMessagePort), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/messageport.html#RemoteMessagePort) applications) is used to send messages to other applications.The local message port information can be sent to another application for bi-directional communication, to enable the other application to send response messages.
+- The `LocalMessagePort` interface (in [mobile](../../api/latest/device_api/mobile/tizen/messageport.html#LocalMessagePort), [wearable](../../api/latest/device_api/wearable/tizen/messageport.html#LocalMessagePort), and [TV](../../api/latest/device_api/tv/tizen/messageport.html#LocalMessagePort) applications) is used to register your message port and prepare to receive messages from other applications.
+
+   To receive messages from other applications, you must register a callback to the local message port.
+
+- The `RemoteMessagePort` interface (in [mobile](../../api/latest/device_api/mobile/tizen/messageport.html#RemoteMessagePort), [wearable](../../api/latest/device_api/wearable/tizen/messageport.html#RemoteMessagePort), and [TV](../../api/latest/device_api/tv/tizen/messageport.html#RemoteMessagePort) applications) is used to send messages to other applications.
+
+   The local message port information can be sent to another application for bi-directional communication, to enable the other application to send response messages.
 
 You can retrieve the instances of the `LocalMessagePort` and `RemoteMessagePort` interfaces with the `requestLocalMessagePort()` and `requestRemoteMessagePort()` methods of the `tizen.messageport` object.
 

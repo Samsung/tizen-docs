@@ -18,12 +18,12 @@ To access GBS help:
 
 - For global options and the command list:
 
-  ```bash
+  ```
   $ gbs  -h | --help
   ```
 
 - For each sub-command:
 
-  ```bash
+  ```
   $ gbs <sub-command> --help
   ```

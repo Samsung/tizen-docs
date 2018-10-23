@@ -1,4 +1,5 @@
 # CSS Transforms
+
 Transforms allow you to modify the coordinate space where each element is positioned. The elements can be translated, rotated, and scaled in 2- or 3-dimensional space. According to the API, the coordinate system is a visual formatting model, and positions and sizes in the coordinate space are expressed in pixels, starting in the origin of point with positive values proceeding to the right and down.
 
 The main features of the CSS Transforms API include:
@@ -28,20 +29,19 @@ The main features of the CSS Transforms API include:
 You can define various properties to control the elements within the coordinate space:
 
 - `transform-origin`  
-This property changes the location of the transformed element. It can only be used with elements for whom the `transform` property has been declared.
+  This property changes the location of the transformed element. It can only be used with elements for whom the `transform` property has been declared.
 
 - `transform-style`  
-This property defines the rendering of the inherited element in the 3D space. Animation property has been added in the example for easier comprehension.
+  This property defines the rendering of the inherited element in the 3D space. Animation property has been added in the example for easier comprehension.
 
 - `perspective`  
-This property changes the perspective of the element being expressed. A 3D transform element must be used together with this property to emphasize the expression of the X axis.
+  This property changes the perspective of the element being expressed. A 3D transform element must be used together with this property to emphasize the expression of the X axis.
 
 - `perspective-origin`  
-This property defines the location facing the element.
+  This property defines the location facing the element.
 
 - `backface-visibility`  
-This property defines whether the backside of the transformed element is expressed.
-
+  This property defines whether the backside of the transformed element is expressed.
 
 ```
 <head>
@@ -53,7 +53,7 @@ This property defines whether the backside of the transformed element is express
          animation: trans-ani 10s infinite linear;
          backface-visibility: visible;
 
-         /* Google Chrome&trade; and Safari browsers */
+         /* Google Chrome and Safari browsers */
          -webkit-transform: rotate(30deg);
          -webkit-transform-origin: 30% 30%;
          -webkit-perspective: 220;
@@ -64,7 +64,7 @@ This property defines whether the backside of the transformed element is express
          transform-style: preserve-3d;
          perspective-origin: 30% 30%;
 
-         /* Google Chrome&trade; and Safari browsers */
+         /* Google Chrome and Safari browsers */
          -webkit-transform-style: preserve-3d;
          -webkit-perspective-origin: 30% 30%;
       }
@@ -139,7 +139,9 @@ In 2D transforms, all transform methods are expressed based on a matrix. The X a
 In 3D transforms, the Z axis has been added (for example, `translateZ(number)` and `scale3dZ(number)`). When handling 3D transforms, pay attention to the following:
 
 - If a transform method is used together with the `perspective` property, the Z axis is emphasized.
+
 - The X, Y, and Z values of the `translate3d()`, `scale3d()`, and `rotate3d()` methods can be expressed in individual methods.
+
 - In the `rotate3d(number, number, number, angle)` method, the element rotates according to the assigned parameter (angle) with the X, Y, and Z directional vectors as the center. Each vector can be expressed as an individual method: for example, the `rotateX(<angle>)` and `rotate3d(1, 0, 0, <angle>)` methods perform the same task.
 
 The following code snippet demonstrates how to implement a 3D transform. For a complete source code, see [3d_transform.html](http://download.tizen.org/misc/examples/w3c_html5/dom_forms_and_styles/css_3d_transforms_module_level_3).
@@ -209,7 +211,9 @@ The following code snippet demonstrates how to implement a 3D transform. For a c
 You can create an animation with transforms. The following example uses the animation from the [Creating a Logo Animation](./animation.md#creating-a-logo-animation) use case as a basis, and adds a more diverse visual effect to it with the `transform` property. In the modified animation:
 
 - As in the original animation, no elements are initially shown on the screen.
+
 - The Tizen logo gradually appears in the middle of the screen, and as it moves to the right, it becomes smaller. With the `transform` property, the logo is made to rotate.
+
 - Each letter in the word "TIZEN" consecutively comes in from the left of the screen and moves to the right to its correct location. With the `transform` property, the letters are translated in the 3D space and rotated around the Y axis.
 
 **Figure: Tizen logo to be transformed**
@@ -230,36 +234,37 @@ You can create an animation with transforms. The following example uses the anim
    </div>
    ```
 
-2. Define the basic style of the animation elements. Add the `perspective` property to increase the Z axis effect of the 3D transform.  
-  ```
-  .animation-holder {
-    -webkit-perspective: 1000px;   
-    height: 88px;   
-    left: 50%;   
-    margin: -54px 0px 0px -140px;   
-    position: absolute;   
-    top: 50%;   
-    width: 280px;
-    }
-    .tizen-txt,
-    .tizen-logo {   
-      background-position: 50% 50%;   
-      background-repeat: no-repeat;   
-      display: block;   
+2. Define the basic style of the animation elements. Add the `perspective` property to increase the Z axis effect of the 3D transform.
+
+   ```
+   .animation-holder {
+      -webkit-perspective: 1000px;
+      height: 88px;
+      left: 50%;
+      margin: -54px 0px 0px -140px;
       position: absolute;
-    }
-    .tizen-txt.t {   
-      background-image: url("images/txt_t.png");   
-      height: 56px;   
-      left: 0px;   
-      top: 31px;   
+      top: 50%;
+      width: 280px;
+   }
+   .tizen-txt,
+   .tizen-logo {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      display: block;
+      position: absolute;
+   }
+   .tizen-txt.t {
+      background-image: url("images/txt_t.png");
+      height: 56px;
+      left: 0px;
+      top: 31px;
       width: 48px;
-    }
-      ```
+   }
+    ```
 
 3. Create the animation:
 
-   a. Assign keyframes for the logo element to transform it. In order to rotate the logo, use the `-webkit-transform: rotate()` method, which defines the angle of the rotation.
+   1. Assign keyframes for the logo element to transform it. In order to rotate the logo, use the `-webkit-transform: rotate()` method, which defines the angle of the rotation.
 
       ```
       @-webkit-keyframes tizen-logo {
@@ -300,10 +305,12 @@ You can create an animation with transforms. The following example uses the anim
       }
       ```
 
-	> **Note**  
-	> For a rotation, the image has to be carefully created to ensure the correct end result. The rotation occurs with the center of the element as the center. If the rotation center must be moved because the image center is not aligned, use the `transform-origin` property to adjust the rotation location.
+      > **Note**  
+      > For a rotation, the image has to be carefully created to ensure the correct end result. The rotation occurs with the center of the element as the center. If the rotation center must be moved because the image center is not aligned, use the `transform-origin` property to adjust the rotation location.
 
-   b. Create the keyframes for the first letter in the word "TIZEN". In the animation, due to the `translate3d()` and `rotateY()` methods, each letter transforms slightly from the right to the left as it comes in.![Animation](./media/css_transforms2.png)
+   2. Create the keyframes for the first letter in the word "TIZEN". In the animation, due to the `translate3d()` and `rotateY()` methods, each letter transforms slightly from the right to the left as it comes in.
+   
+      ![Animation](./media/css_transforms2.png)
 
       ```
       @-webkit-keyframes tizen-txt-t {
@@ -323,7 +330,7 @@ You can create an animation with transforms. The following example uses the anim
       }
       ```
 
-   c. To emphasize the fact that the letters are being created on the right, change the location of the transform. If the `transform-origin` property is declared for the entire animation element, the logo rotation changes. Consequently, you must only declared it for the letters.
+   3. To emphasize the fact that the letters are being created on the right, change the location of the transform. If the `transform-origin` property is declared for the entire animation element, the logo rotation changes. Consequently, you must only declared it for the letters.
 
       ```
       .tizen-txt {
@@ -331,7 +338,7 @@ You can create an animation with transforms. The following example uses the anim
       }
       ```
 
-   d. Create the keyframes for the other letters similarly:
+   4. Create the keyframes for the other letters similarly:
 
       ```
       @-webkit-keyframes tizen-txt-i {
@@ -374,10 +381,10 @@ For the complete source code related to this use case, see the following files:
 
 You can create fade animation effects using a modal layer pop-up. The modal layer pop-up can be used to, for example, show enlarged thumbnail images or notice messages. The modal layer pop-up has the following basic properties:
 
-The modal layer pop-up can be used to, for example, show enlarged thumbnail images or notice messages. The modal layer pop-up has the following basic properties:
-
 - If an event is fired, it gradually becomes visible. This is known as the Fade In effect.
+
 - The existing background is covered with a translucent layer to make the user focus on the pop-up.
+
 - When the pop-up is closed, it gradually becomes transparent. This is known as the Fade Out effect.
 
 **Figure: Fade effect**
@@ -387,6 +394,7 @@ The modal layer pop-up can be used to, for example, show enlarged thumbnail imag
 You can control UI events and change the DOM elements in the following ways:
 
 - Events can be controlled with JavaScript, and DOM elements can be devised with CSS.
+
 - You can use JavaScript frameworks, such as jQuery, Prototype, and Dojo.
 
 To create fade effects:
@@ -513,7 +521,7 @@ The following figures illustrate the difference in memory performance, when usin
 When the styles are applied using JavaScript, the UI thread is used to create the pop-up. The UI thread increases the usage of CPU memory in proportion to the number of pop-ups used.
 
 > **Note**  
-> Tizen provides remote debugging through the [JavaScript Debugger tool](../../../../org.tizen.studio/html/web_tools/web_inspector_w.htm).  
+> Tizen provides remote debugging through the [JavaScript Debugger tool](../../../../tizen-studio/web-tools/web-inspector.md).  
 
 
 > **Note**  

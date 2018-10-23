@@ -128,7 +128,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 - Tools
   - Added “—strip” option to native “package” command.
   - Removed Default Author Certificate.
-  - Added web privilege [“http://tizen.org/privilege/internet”](https://tizen.org/privilege/internet%E2%80%9D).
+  - Added web privilege "[http://tizen.org/privilege/internet](https://tizen.org/privilege/internet)".
 
 ##### Fixed Bugs
 

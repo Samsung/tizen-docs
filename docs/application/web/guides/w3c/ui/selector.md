@@ -52,9 +52,9 @@ To use selectors for handling page elements and selecting a single node:
    var targetObj = obj.querySelector('tbody > tr:nth-child(2) :last-child');
    ```
 
-**Figure: Single node selection (in mobile applications only)**
+   **Figure: Single node selection (in mobile applications only)**
 
-![Single node selection (in mobile applications only)](./media/single_node_selection.png)
+   ![Single node selection (in mobile applications only)](./media/single_node_selection.png)
 
 ### Source Code
 
@@ -72,7 +72,7 @@ To use selectors for handling page elements and selecting multiple nodes in a no
    var obj = document.querySelector('table:nth-child(2)');
    ```
 
-   The `querySelectorAll()` method returns an array containing all matching element nodes within the subtrees of the context node, in the document order, and saves the elements in a node list. If there are no matching nodes, the method returns an empty array. The query above selects the `<th>` elements in the table head and the `<td>` elements in the table body.
+   The `querySelector()` method returns the first matching element node within the subtrees of the context node. If no matching element is found, the method returns `null`. The query above selects the second `<table>` element in the document as a single element.
 
 2. Select multiple elements in the node list using the `querySelectorAll()` method, and define a variable to represent the length of the `targetObj` node list:
 
@@ -81,7 +81,7 @@ To use selectors for handling page elements and selecting multiple nodes in a no
    var i = targetObj.length;
    ```
 
-   The `querySelectorAll()` method returns an array containing all of the matching element nodes within the subtrees of the context node, in the document order, and saves the elements in a node list. If there are no matching nodes, the method returns an empty array. The query above selects the `<th>` elements in the table head and the `<td>` elements in the table body.
+   The `querySelectorAll()` method returns an array containing all matching element nodes within the subtrees of the context node, in the document order, and saves the elements in a node list. If there are no matching nodes, the method returns an empty array. The query above selects the `<th>` elements in the table head and the `<td>` elements in the table body.
 
 3. Apply a defined style to all elements stored in the `targetObj` node list:
 
@@ -93,9 +93,9 @@ To use selectors for handling page elements and selecting multiple nodes in a no
    }
    ```
 
-**Figure: Multiple node selection (in mobile applications only)**
+   **Figure: Multiple node selection (in mobile applications only)**
 
-![Multiple node selection (in mobile applications only)](./media/multi_node_selection.png)
+   ![Multiple node selection (in mobile applications only)](./media/multi_node_selection.png)
 
 ### Source Code
 
@@ -107,7 +107,7 @@ For the complete source code related to this use case, see the following file:
 
 You can retrieve element nodes from the DOM tree and create a simple accordion menu.
 
-The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#basicui), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#basicui), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
+The accordion menu is created using the CSS3 Basic User Interface Module Level 3 API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#basicui), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#basicui), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#basicui) applications). When a title is touched, the relevant content is shown, and other content is hidden.
 
 1. Create the HTML layout:
 
@@ -186,9 +186,9 @@ The accordion menu is created using the CSS3 Basic User Interface Module Level 3
    testAccordion('.accordion');
    ```
 
-**Figure: Accordion menu (in mobile applications only)**
+   **Figure: Accordion menu (in mobile applications only)**
 
-![Accordion menu (in mobile applications only)](./media/accordion_menu.png)
+   ![Accordion menu (in mobile applications only)](./media/accordion_menu.png)
 
 ### Source Code
 

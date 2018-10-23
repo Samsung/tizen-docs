@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../../snippet.js"></script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" /> 
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" /> 
+  <title>Checkbox and Radio Button</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Checkbox and Radio Button</h1>
+
+<p>Checkbox and Radio Button components shows selectable items:</p>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+
+		<li><a href="#html-example">HTML Examples</a>
+			<ol class="toc">
+
+						<li><a href="#checkbox">How to use Checkbox</a>
+						</li>
+						<li><a href="#radio">How to use Radio button</a>
+						</li>
+
+
+				</ol>
+		</li>
+
+		<li><a href="#html-example-list">Using checkbox/radio in Listview</a></li>
+
+	
+</ol>
+
+
+<h2 id="html-example">HTML Examples</h2>
+<h3 id="checkbox">How to use Checkbox</h3>
+<p>The checkbox component shows on the screen a list of options where 1 or more can be selected. To add a checkbox component to the application, use the following code:</p>
+
+<pre class="prettyprint">&lt;input type=&quot;checkbox&quot; name=&quot;mycheck&quot; id=&quot;check-test&quot; checked=&quot;checked&quot;/&gt;
+&lt;label for=&quot;check-test&quot;&gt;Checkbox&lt;/label&gt;
+</pre>
+
+<h3 id="radio">How to use Radio button</h3>
+<p>The radio button component shows a list of options on the screen where only 1 option can be selected. To add a radio button component to the application, use the following code:</p>
+
+<pre class="prettyprint">
+&lt;input type=&quot;radio&quot; name=&quot;radioset&quot; id=&quot;radio-1&quot; /&gt;
+&lt;label for=&quot;radio-1&quot;&gt;Radio&lt;/label&gt;
+</pre>
+
+<h2 id="html-example-list">Using checkbox/radio in Listview</h2>
+
+<p>To add a checkbox or radio button to a list, use the following code:</p>
+<pre class="prettyprint">
+&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;li-has-radio&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Radio checked
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;radio&quot; name=&quot;radioset&quot; checked=&quot;checked&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;li-has-radio&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Radio button
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;radio&quot; name=&quot;radioset&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;li-has-radio disabled&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Radio disabled
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;radio&quot; name=&quot;radioset&quot; disabled=&quot;disabled&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p>Use the following code in the <span style="font-family: Courier New,Courier,monospace">style.css</span> file of your application to support a wide label tap area:</p>
+
+<pre class="prettyprint">
+.ui-listview li input[type=&quot;checkbox&quot;]:not(.ui-switch-input), 
+.ui-listview li input[type=&quot;radio&quot;]
+{
+&nbsp;&nbsp;&nbsp;position: absolute;
+&nbsp;&nbsp;&nbsp;right: 30px;
+&nbsp;&nbsp;&nbsp;top: 0px;
+&nbsp;&nbsp;&nbsp;margin-top: 25px;
+}
+.ui-listview li.li-has-checkbox label, 
+.ui-listview li.li-has-radio label
+{
+&nbsp;&nbsp;&nbsp;display: block;
+&nbsp;&nbsp;&nbsp;padding: 31.5px 94px 31.5px 40px;
+&nbsp;&nbsp;&nbsp;margin: -30px -8px -21px -38px;
+}
+</pre>
+
+
+
+
+<h2>Where to Go Next</h2>
+<ul>
+ <li><a href="widget_reference.htm">UI Component Reference</a></li>
+
+</ul>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

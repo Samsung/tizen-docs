@@ -32,7 +32,7 @@ There are 2 different ways to access the Emulator Manager from Visual Studio:
 
 
 <a name="create"></a>
-## Creating Emulator Instances 
+## Creating Emulator Instances
 
 The Emulator Manager can help you to select the recommended platform and template. When you need another device environment, you can edit an existing emulator instance, or create a new one with a more suitable platform and template. You can also create new platforms and templates to suit your needs.
 
@@ -53,7 +53,8 @@ To view the emulator instance details, right-click the instance and select **Det
 
 > **Note**  
 > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, see [Increasing the Application Execution Speed](../../tizen-studio/common-tools/emulator.md#speed) for more information. If GPU is disabled, install the latest vendor-provided graphic driver.
-The mobile emulator supports HD (720x1280) and WVGA (480x800) resolutions.
+>
+> The mobile emulator supports HD (720x1280) and WVGA (480x800) resolutions.
 
 
 ## Creating Platforms
@@ -121,7 +122,7 @@ You can create a custom template in 2 ways:
 
 To manage the created templates:
 
-- To edit a template, click **edit template** (![Modify icon](media/em-modify.png)), make the desired changes, and click **OK**. You can only modify the custom templates you have created.
+- To edit a template, click **edit template** (![Modify icon](media/em-modify.png)), make the desired changes, and click **OK**. You can only edit the custom templates you have created.
 - To delete a template, click **delete** (![Delete icon](media/em-delete.png)). You can only delete the custom templates you have created.
 
 ## Managing and Launching Emulator Instances

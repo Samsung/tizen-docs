@@ -6,7 +6,7 @@ The import supports the following formats: source rpm, specfile, and tarball.
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs import --help
 ```
 
@@ -22,7 +22,7 @@ You can import from:
 
 - Source rpm:
 
-  ```bash
+  ```
   $ gbs import sed-4.1.5-1/sed-4.1.5-1.src.rpm
   info: No git repository found, creating one.
   Initialized empty Git repository in /home/test/sed/.git/
@@ -44,7 +44,7 @@ You can import from:
 
 - Spec file:
 
-  ```bash
+  ```
   $ gbs import sed-4.1.5-1/sed.spec
   info: No git repository found, creating one.
   Initialized empty Git repository in /home/test/sed/.git/
@@ -66,14 +66,14 @@ You can import from:
 
 The source package import supports some special options:
 
-- `--no-patch-import` disables the automatic patch import, so that GBS does not try to apply patches on top of the master branch. Apply patches manually or mark them as manually maintained (see [Manually Maintained Patches](../../porting/maintenance-models.md#manually-maintained-patches)).
+- `--no-patch-import` disables the automatic patch import, so that GBS does not try to apply patches on top of the master branch. Apply patches manually or mark them as manually maintained (see [Manually Maintained Patches](gbs-maintenance-models.md#manually-maintained-patches)).
 - `--native` specifies the package as a native package, with no separate upstream. No upstream Git branch is created and it is assumed that all content, including packaging files, are found in the source tarball inside the source package.
 - `--allow-same-version` re-imports an already imported version of the package. It does not re-import the upstream sources, but only re-imports the packaging files to the master branch.
 - `--packaging-dir` defines the directory for packaging files (default is `packaging/`). This can be needed if the upstream sources already have a directory named `packaging`. If you use this option, also define this setting in the package-specific `.gbs.conf` file (in all relevant branches) so that the remote repository and all other users get the correct setting, too.
 
 If the source package contains patches, GBS tries to apply patches on top of the master branch:
 
-```bash
+```
 Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
 Source1001: packaging/sed.manifest
 Patch0:     0001-hello.patch
@@ -109,7 +109,7 @@ Source1001: packaging/sed.manifest
 
 An import tar ball can be used to upgrade a package. GBS import only works if the upstream branch exists. Once the import succeeds, the new tar ball is unpacked and imported to the upstream branch. If a pristine-tar branch exists, the tar ball is also imported to that branch.
 
-```bash
+```
 $ gbs import ../sed-4.2.0-1/sed-4.2.0.tar.gz
 What is the upstream version? [4.2.0]
 info: Importing '/home/test/sed-4.2.0-1/sed-4.2.0.tar.gz' to branch 'upstream'...
@@ -139,7 +139,7 @@ The upstream source import supports some special options:
 - `--upstream-vcs-tag` is used in case you track an upstream Git directly, but still want to import the official release tarballs. Using this option, you get the complete Git history of the upstream Git into your upstream branch. The difference between the real upstream Git tag and the release tarball (added autotools macros) is shown as 1 commit on top of the real upstream Git tag.
 - `--merge` allows you to merge the imported upstream branch to the master automatically:
 
-  ```bash
+  ```
   $ gbs import --merge ../sed-4.2.0-1/sed-4.2.0.tar.gz
   What is the upstream version? [4.2.0]
   info: Importing '/home/test/sed-4.2.0-1/sed-4.2.0.tar.gz' to branch 'upstream'...

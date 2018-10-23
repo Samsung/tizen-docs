@@ -21,7 +21,8 @@ The `navigator.onLine` attribute returns `false`, if the browser cannot establis
 
 To enhance the user interaction with the device, you must learn to retrieve the browser state:
 
-1. The `updateIndicator()` method updates the browser connection state information on the screen to reflect the current state.To retrieve the current state, use the return value of the `onLine` attribute of the `navigator` interface:
+1. The `updateIndicator()` method updates the browser connection state information on the screen to reflect the current state.  
+   To retrieve the current state, use the return value of the `onLine` attribute of the `navigator` interface:
 
    ```
    <!DOCTYPE HTML>

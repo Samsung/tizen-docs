@@ -30,7 +30,7 @@ The main features of the Iotcon API include:
 
 To enable your application to use the IoT functionality:
 
-1. To use the Iotcon API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+1. To use the Iotcon API (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
    ```
    <tizen:privilege name="http://tizen.org/privilege/internet"/>
@@ -70,7 +70,7 @@ To create a new resource:
       var cborPath = 'path_to_my_app_storage/iotcon-server-test.dat';
       ```
 
-   2. Initialize Iotcon and set a human friendly name:
+   2. Initialize Iotcon and set a human-friendly name:
 
       ```
       tizen.iotcon.initialize(cborPath);
@@ -110,8 +110,8 @@ To create a new resource:
 
       To send a response to the client:
 
-      1. Create a new `Response` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#Response), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#Response), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#Response) applications) from the `Request` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#Request), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#Request), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#Request) applications): `new tizen.Response(request)`
-      2. Create a new `Representation` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#Representation) applications), to be sent inside the response: `new tizen.Representation(doorResource.uriPath)`
+      1. Create a new `Response` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Response), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Response), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Response) applications) from the `Request` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Request), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Request), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Request) applications): `new tizen.Response(request)`
+      2. Create a new `Representation` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Representation) applications), to be sent inside the response: `new tizen.Representation(doorResource.uriPath)`
       3. Fill the `Representation` object with values from the resource object.
       4. Send the response: `response.send()`
 
@@ -162,7 +162,7 @@ To find remote resources:
       var cborPath = 'path_to_my_app_storage/iotcon-client-test.dat';
       ```
 
-   2. Initialize Iotcon and set a human friendly name:
+   2. Initialize Iotcon and set a human-friendly name:
 
       ```
       tizen.iotcon.initialize(cborPath);
@@ -200,7 +200,7 @@ To find remote resources:
       var query = {resourceType: 'core.door'};
       ```
 
-      For more information, see the Query interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#Query), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#Query), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#Query) applications).
+      For more information, see the Query interface (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Query), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Query), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Query) applications).
 
    4. Find a resource:
 
@@ -281,7 +281,7 @@ On the client side, you can get device and platform information from the server 
      client.findPlatformInfo(hostAddress, query, connectivityType, foundSuccess, onerror);
      ```
 
-     The success callback is called with the `PlatformInfo` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#PlatformInfo), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#PlatformInfo), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#PlatformInfo) applications) as a parameter. You can access the platform information in the object attributes.
+     The success callback is called with the `PlatformInfo` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#PlatformInfo), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#PlatformInfo), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#PlatformInfo) applications) as a parameter. You can access the platform information in the object attributes.
 
    - Get the device information from the remote server:
 
@@ -289,7 +289,7 @@ On the client side, you can get device and platform information from the server 
      client.findDeviceInfo(hostDeviceIpAddress, query, connectivityType, foundSuccess, onerror);
      ```
 
-     The success callback is called with the `DeviceInfo` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#DeviceInfo), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#DeviceInfo), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#DeviceInfo) applications) as a parameter. You can access the device information in the object attributes.
+     The success callback is called with the `DeviceInfo` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#DeviceInfo), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#DeviceInfo), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#DeviceInfo) applications) as a parameter. You can access the device information in the object attributes.
 
 ## Sending GET Requests
 
@@ -316,7 +316,7 @@ On the client side, you can read resource attributes:
 
 2. [Find a remote resource](#finding-remote-resources).
 
-3. Once you have a `RemoteResource` object, use the `methodGet()` method to send a request to the server. For a list of resource attributes you can request, see the API Reference (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#RemoteResource) applications).
+3. Once you have a `RemoteResource` object, use the `methodGet()` method to send a request to the server. For a list of resource attributes you can request, see the API Reference (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications).
 
    ```
    /* filter results, query = null means no filter */
@@ -341,7 +341,7 @@ On the client side, you can modify remote resource attributes using the PUT meth
 
 2. [Find a remote resource](#finding-remote-resources).
 
-3. Once you have a `RemoteResource` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#RemoteResource) applications), use the success callback to create a `Representation` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#Representation) applications). This object represents the changes in attributes, types, and interfaces.
+3. Once you have a `RemoteResource` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications), use the success callback to create a `Representation` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#Representation), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#Representation), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#Representation) applications). This object represents the changes in attributes, types, and interfaces.
 
    ```
    representation = new tizen.Representation(uriPath);
@@ -377,7 +377,7 @@ On the client side, you can observe remote resource attribute changes with the `
    }
    ```
 
-3. Register a listener on the `RemoteResource` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/iotcon.html#RemoteResource) applications):
+3. Register a listener on the `RemoteResource` object (in [mobile](../../api/latest/device_api/mobile/tizen/iotcon.html#RemoteResource), [wearable](../../api/latest/device_api/wearable/tizen/iotcon.html#RemoteResource), and [TV](../../api/latest/device_api/tv/tizen/iotcon.html#RemoteResource) applications):
 
    ```
    resource.setResourceStateChangeListener(onchanged);

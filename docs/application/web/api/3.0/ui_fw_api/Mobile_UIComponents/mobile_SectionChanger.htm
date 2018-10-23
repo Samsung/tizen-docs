@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+	 <script type="text/javascript" src="../snippet.js"></script>
+	 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	 <link href="../styles.css" rel="StyleSheet" type="text/css">
+	 <link href="../snippet.css" rel="StyleSheet" type="text/css">
+  <title>Section Changer</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Section Changer</h1>
+
+<p>The section changer component provides an application architecture, which has multiple sections on one page.<br>
+With Section changer on one page, you can scroll the <span style="font-family: Courier New,Courier,monospace">&lt;section&gt;</span> elements horizontally or vertically without changing current page to another.</p><p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since Tizen 2.4.</td>
+	</tr>
+	</tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+
+<ol class="toc">
+
+	<li><a href="#default-selectors0.14516900992020965">Default Selectors</a>
+
+
+	</li>
+
+	<li><a href="#manual-constructor0.69354601460509">Manual Constructor</a>
+
+	</li>
+	<li><a href="#options">Options</a></li>
+
+	<li><a href="#events-list">Events</a></li>
+
+	<li><a href="#methods0.7043644052464515">Methods</a>
+
+	</li>
+
+</ol>
+
+<h2><a id="default-selectors0.14516900992020965"></a>Default Selectors</h2>
+
+<p>By default, all HTML elements with the <code>class="ui-section-changer"</code> or <code>data-role="section-changer"</code> attribute are displayed as SectionChanger.</p>
+
+<h3><a id="basic"></a>HTML Example</h3>
+<p>To create a simple SectionChanger with Header.</p>
+
+<pre class="prettyprint">&lt;div id="hasSectionchangerPage" class="ui-page"&gt;
+   &lt;header class="ui-header"&gt;
+      &lt;h2 class="ui-title"&gt;SectionChanger&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div class="ui-section-changer" id="sectionchanger"&gt;
+      &lt;div&gt;
+         &lt;section&gt;
+            &lt;h3&gt;LEFT1 PAGE&lt;/h3&gt;
+         &lt;/section&gt;
+         &lt;section class="ui-section-active"&gt;
+            &lt;h3&gt;MAIN PAGE&lt;/h3&gt;
+         &lt;/section&gt;
+         &lt;section&gt;
+            &lt;h3&gt;RIGHT1 PAGE&lt;/h3&gt;
+         &lt;/section&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="manual-constructor0.69354601460509"></a>Manual Constructor</h2>
+
+<p>To manually create a SectionChanger component, use the component constructor from the <code>tau</code> namespace</p>
+
+<pre class="prettyprint">
+var sectionChangerEl = document.getElementById("sectionchanger"),
+    sectionChangerWidget = tau.widget.SectionChanger(sectionChangerEl);
+</pre>
+
+
+
+<h2 id="options">Options</h2>
+
+<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-orientation</span></td>
+				<td class="option">"horizontal"|"vertical"</td>
+				<td class="option">"horizontal"</td>
+				<td class="option"><p>Sets the section changer orientation</p></td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-circular</span></td>
+				<td class="option">Boolean</td>
+				<td class="option">false</td>
+				<td class="option">Presents the sections in a circular scroll fashion.</td>
+			</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-use-bouncing-effect</span></td>
+				<td class="option">Boolean</td>
+				<td class="option">false</td>
+				<td class="option">Shows a scroll end effect on the scroll edge.</td>
+			</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-items</span></td>
+				<td class="option">String</td>
+				<td class="option">"section"</td>
+				<td class="option">Defines the section element selector.</td>
+			</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-active-class</span></td>
+				<td class="option">String</td>
+				<td class="option">"ui-section-active"</td>
+				<td class="option">Specifies the CSS classes which define the active section element.<br>Add the specified class (<span style="font-family: Courier New,Courier,monospace">section-active</span>) to a <span style="font-family: Courier New,Courier,monospace">&lt;section&gt;</span> element to indicate which section must be shown first.<br>By default, the first section is shown first.</td>
+			</tr>
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-fill-content</span></td>
+				<td class="option">Boolean</td>
+				<td class="option">true</td>
+				<td class="option">Declares width of section tag to fill content or not. If fillContent value is set to false, you must set the width of each section tag.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-use-tab</span></td>
+				<td class="option">Boolean</td>
+				<td class="option">false</td>
+				<td class="option">Defines use tab indicator on top of section changer.</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+<h2 id="events-list">Events</h2>
+
+<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">sectionchange</span></td>
+				<td><p>Triggered when the section is changed.</p></td>
+			</tr>
+
+		
+		</tbody>
+	</table>
+
+<p>To use the <span style="font-family: Courier New,Courier,monospace">sectionchange</span> event, use the following code:</p>
+<pre class="prettyprint">
+(function() 
+{
+   var changer = document.getElementById("sectionchanger");
+   changer.addEventListener("sectionchange", function(evt) 
+   {
+      console.debug(evt.detail.active + " section is active.");
+   });
+})();
+</pre>
+
+
+<h2 id="methods0.7043644052464515">Methods</h2>
+
+<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th style="width:40%">Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-setActive">setActiveSection</a>(number index) </pre>
+					</td>
+					<td><p>Changes the currently active section element (index).
+		<br>For smooth scrolling, the <span style="font-family: Courier New,Courier,monospace">duration</span> parameter must be in milliseconds.</p></td>
+				</tr>
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-getActiveSectionIndex">getActiveSectionIndex</a>() </pre>
+					</td>
+					<td><p>Gets the currently active section element's index.
+		<br>The return value is a number (<span style="font-family: Courier New,Courier,monospace">activeIndex</span>).</p></td>
+				</tr>
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-refresh">refresh</a>() </pre>
+					</td>
+					<td><p>Updates the section changer form.
+		<br>When you add new section dynamically through JavaScript, you must call the <span style="font-family: Courier New,Courier,monospace">refresh()</span> method to update section information.</p></td>
+				</tr>
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-setActive">setActiveSection</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Changes the currently active section element (index).
+		<br>For smooth scrolling, the <span style="font-family: Courier New,Courier,monospace">duration</span> parameter must be in milliseconds.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">setActiveSection(number index) </pre>
+					</div>
+
+					<div class="description">
+						<p>
+
+						</p>
+					</div>
+
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required / optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+
+
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+						<td>number</td>
+						<td>required</td>
+						<td></td>
+						<td>index which is set be active state.</td>
+					</tr>
+
+
+					</tbody>
+					</table>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No Return Value
+
+					</div>
+					<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id="sectionChanger"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("sectionChanger"),
+       sectionChangerWidget = tau.widget.SectionChanger(element);
+
+   sectionChangerWidget.setActiveSection(2);
+&lt;/script&gt;
+</pre>
+					</div>
+
+				</dd>
+
+
+		</dl>
+
+
+<dt class="method"><code><b><span class="methodName"
+																   id="method-getActiveSectionIndex">getActiveSectionIndex</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets the currently active section element's index.
+		<br>The return value is a number (<span style="font-family: Courier New,Courier,monospace">activeIndex</span>).</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">getActiveSectionIndex() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+
+						</p>
+					</div>
+<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>index of active section</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id="sectionChanger"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("sectionChanger"),
+       sectionChangerWidget = tau.widget.SectionChanger(element),
+       activeSectionIndex;
+
+   activeSectionIndex = sectionChangerWidget.getActiveSectionIndex();
+&lt;/script&gt;
+</pre>
+					</div>
+				</dd>
+
+
+		</dl>
+
+<dt class="method"><code><b><span class="methodName"
+																   id="method-refresh">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Updates the section changer form.
+		<br>When you add new section dynamically through JavaScript, you must call the <span style="font-family: Courier New,Courier,monospace">refresh()</span> method to update section information.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">refresh() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+
+						</p>
+					</div>
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+
+							No Return Value
+
+					</div>
+					<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;div id="sectionChanger"&gt;&lt;/div&gt;
+&lt;script&gt;
+   var element = document.getElementById("sectionChanger"),
+       sectionChangerWidget = tau.widget.SectionChanger(element);
+
+   /* Do some DOM changes dynamically */
+
+   sectionChangerWidget.refresh();
+&lt;/script&gt;
+</pre>
+					</div>
+
+				</dd>
+
+
+		</dl>
+
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

@@ -31,7 +31,7 @@ The following table shows whether the core and reference versions of the preload
 
 ## Configuration
 
-You can switch a preloaded sample application between core and reference applications using the [MIC image creator](../tools/mic/mic-overview.md). To switch the application, remove the preloaded application package and add the new package image with the correct name. The following table shows the core and reference application image names of the preloaded sample applications.
+You can switch a preloaded sample application between core and reference applications using the [MIC image creator](../reference/mic/mic-overview.md). To switch the application, remove the preloaded application package and add the new package image with the correct name. The following table shows the core and reference application image names of the preloaded sample applications.
 
 **Table: Sample application image names**
 

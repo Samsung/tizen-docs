@@ -5,7 +5,9 @@ Tizen works in many environments with different countries, regions, languages, a
 This topic helps you localize text strings. Text string localization is the process of translating the strings used by your application into different languages.
 
 > **Note**  
-> Internationalization is the process of making your application able to adapt to different languages, regions, and cultures.Localization is the process of translating your application into multiple languages.
+> Internationalization is the process of making your application able to adapt to different languages, regions, and cultures.
+>
+> Localization is the process of translating your application into multiple languages.
 
 The PO file editor is a visual editor for [.po files](https://www.gnu.org/software/gettext/). It allows you to easily add, edit, and remove supported languages and strings. You can also check all strings of a supported language at a glance.
 

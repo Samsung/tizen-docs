@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>Cordova API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Cordova">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="title"><h1>Cordova API</h1></div>
+<div class="brief">
+ This API provides common Cordova functionality.
+        </div>
+<div class="description">
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#CordovaManagerObject">CordovaManagerObject</a>
+</li>
+<li>1.2. <a href="#Cordova">Cordova</a>
+</li>
+<li>1.3. <a href="#SuccessCallback">SuccessCallback</a>
+</li>
+<li>1.4. <a href="#ErrorCallback">ErrorCallback</a>
+</li>
+<li>1.5. <a href="#DOMException">DOMException</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#CordovaManagerObject">CordovaManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Cordova">Cordova</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SuccessCallback">SuccessCallback</a></td>
+<td><div>void <a href="#SuccessCallback::onsuccess">onsuccess</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#ErrorCallback">ErrorCallback</a></td>
+<td><div>void <a href="#ErrorCallback::onerror">onerror</a> (<a href="#DOMException">DOMException</a> error)</div></td>
+</tr>
+<tr>
+<td><a href="#DOMException">DOMException</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="CordovaManagerObject">
+<a class="backward-compatibility-anchor" name="::Cordova::CordovaManagerObject"></a><h3>1.1. CordovaManagerObject</h3>
+<div class="brief">
+ CordovaManagerObject implemented in Window
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface CordovaManagerObject {
+    readonly attribute <a href="#Cordova">Cordova</a> cordova;
+  };</pre>
+<pre class="webidl prettyprint">  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+</div>
+<div class="interface" id="Cordova">
+<a class="backward-compatibility-anchor" name="::Cordova::Cordova"></a><h3>1.2. Cordova</h3>
+<div class="brief">
+ The Cordova interface defines what is instantiated by the cordova object
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Cordova {
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+</div>
+<div class="interface" id="SuccessCallback">
+<a class="backward-compatibility-anchor" name="::Cordova::SuccessCallback"></a><h3>1.3. SuccessCallback</h3>
+<div class="brief">
+ Basic success callback, no parameters.
+          </div>
+<pre class="webidl prettyprint">[Callback=FunctionOnly,NoInterfaceObject]
+interface SuccessCallback {
+  void onsuccess();
+};</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="SuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Cordova::SuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Success
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ErrorCallback">
+<a class="backward-compatibility-anchor" name="::Cordova::ErrorCallback"></a><h3>1.4. ErrorCallback</h3>
+<div class="brief">
+ Basic error callback.
+          </div>
+<pre class="webidl prettyprint">[Callback=FunctionOnly,NoInterfaceObject]
+interface ErrorCallback {
+  void onerror(<a href="#DOMException">DOMException</a> error);
+};</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ErrorCallback::onerror">
+<a class="backward-compatibility-anchor" name="::Cordova::ErrorCallback::onerror"></a><code><b><span class="methodName">onerror</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Success
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#DOMException">DOMException</a> error);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">error</span>: 
+ Error object containing some information about the error.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="DOMException">
+<a class="backward-compatibility-anchor" name="::Cordova::DOMException"></a><h3>1.5. DOMException</h3>
+<div class="brief">
+ See <a href="https://developer.mozilla.org/en/docs/Web/API/DOMException">DOMException</a>.
+          </div>
+<pre class="webidl prettyprint">interface DOMException {
+  readonly attribute short code;
+
+  readonly attribute DOMString name;
+
+  readonly attribute DOMString message;
+};</pre>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="DOMException::code">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">short </span><span class="name">code</span></span><div class="brief">
+ The number representing the type of the error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="DOMException::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+ The short text representing the type of the error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="DOMException::message">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">message</span></span><div class="brief">
+ A text containing information about the error.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">2. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Cordova {
+
+  [NoInterfaceObject] interface CordovaManagerObject {
+    readonly attribute <a href="#Cordova">Cordova</a> cordova;
+  };
+  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
+
+  [NoInterfaceObject] interface Cordova {
+  };
+
+
+
+[Callback=FunctionOnly,NoInterfaceObject]
+interface SuccessCallback {
+  void onsuccess();
+};
+
+[Callback=FunctionOnly,NoInterfaceObject]
+interface ErrorCallback {
+  void onerror(<a href="#DOMException">DOMException</a> error);
+};
+
+interface DOMException {
+  readonly attribute short code;
+
+  readonly attribute DOMString name;
+
+  readonly attribute DOMString message;
+};
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -45,24 +45,24 @@ The following table lists the `WebHelperClient` methods that you can invoke in y
 
 | Method                                   | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| `initialize(handler)`                    | Initializes the WebHelperClient object by registering a handler object. Before using the `WebHelperClient` functionalities, make sure to call this method passing the handler object as its parameter, which implements the event handlers that must be handled by the IME.	 `handler` parameter: Handler object implementing the `on*` event handlers.	 The following example shows how to initialize the `WebHelperClient` by passing a customized handler object.`var WebHelperClientHandler = {    onInit: function() {        /* Do what you want when your IME gets the INIT message */    }};WebHelperClient.initialize(WebHelperClientHandler);` |
-| `log(str)`                               | Leaves a dlog message.	 `str` parameter: Log message to display. |
-| `commitString(str)`                      | Commits a UTF-8 string to the client application directly.	 `str` parameter: Byte array of the UTF-8 string to be committed. |
-| `updatePreeditString(str)`               | Updates a new UTF-8 string for pre-edit.	`str` parameter: Byte array of the UTF-8 string to be updated. |
-| `sendKeyEvent(code)`                     | Sends a key event to a client application.	 `code` parameter: Key event to be sent. |
-| `setKeyboardSizes(portraitWidth, portraitHeight, landscapeWidth, landscapeHeight)` | Updates the keyboard window geometry information.	 You must specify the portrait and landscape sizes of the Web IME using this method, or the Web IME cannot be displayed correctly as the Input Service Engine process cannot resize the IME window to the desired size.	 `portraitWidth` parameter: Width of the keyboard, when in portrait mode.	   `portraitHeight` parameter: Height of the keyboard, when in portrait mode.	   `landscapeWidth` parameter: Width of the keyboard, when in landscape mode.	   `landscapeHeight` parameter: Height of the keyboard, when in landscape mode. |
-| `setSelection(start_index, end_index)`   | Selects text.        `start_index` parameter: Text start position.          `end_index` parameter: Text end position. |
+| `initialize(handler)`                    | Initializes the WebHelperClient object by registering a handler object. Before using the `WebHelperClient` functionalities, make sure to call this method passing the handler object as its parameter, which implements the event handlers that must be handled by the IME.<br><br>`handler` parameter: Handler object implementing the `on*` event handlers.<br><br>The following example shows how to initialize the `WebHelperClient` by passing a customized handler object.<br><br>var WebHelperClientHandler = {<br>&nbsp;&nbsp;&nbsp;&nbsp;onInit: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Do what you want when your IME gets the INIT message */<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>};<br>WebHelperClient.initialize(WebHelperClientHandler); |
+| `log(str)`                               | Leaves a dlog message.<br><br>`str` parameter: Log message to display. |
+| `commitString(str)`                      | Commits a UTF-8 string to the client application directly.<br><br>`str` parameter: Byte array of the UTF-8 string to be committed. |
+| `updatePreeditString(str)`               | Updates a new UTF-8 string for pre-edit.<br><br>`str` parameter: Byte array of the UTF-8 string to be updated. |
+| `sendKeyEvent(code)`                     | Sends a key event to a client application.<br><br>`code` parameter: Key event to be sent. |
+| `setKeyboardSizes(portraitWidth, portraitHeight, landscapeWidth, landscapeHeight)` | Updates the keyboard window geometry information.<br><br>You must specify the portrait and landscape sizes of the Web IME using this method, or the Web IME cannot be displayed correctly as the Input Service Engine process cannot resize the IME window to the desired size.<br><br>`portraitWidth` parameter: Width of the keyboard, when in portrait mode.<br>`portraitHeight` parameter: Height of the keyboard, when in portrait mode.<br>`landscapeWidth` parameter: Width of the keyboard, when in landscape mode.<br>`landscapeHeight` parameter: Height of the keyboard, when in landscape mode. |
+| `setSelection(start_index, end_index)`   | Selects text.<br><br>`start_index` parameter: Text start position.<br>`end_index` parameter: Text end position. |
 | `getSelection()`                         | Gets the selected text.                  |
-| `getSurroundingText(maxlen_before, maxlen_after)` | Selects the surrounding text.        `maxlen_before` parameter: Max length before.          `maxlen_after` parameter: Max length after. |
-| `deleteSurroundingText(offset, len)`     | Deletes the surrounding text.        `offset` parameter: Cursor position offset.          `len` parameter: Length of the text deletion. |
+| `getSurroundingText(maxlen_before, maxlen_after)` | Selects the surrounding text.<br><br>`maxlen_before` parameter: Max length before.<br>`maxlen_after` parameter: Max length after. |
+| `deleteSurroundingText(offset, len)`     | Deletes the surrounding text.<br><br>`offset` parameter: Cursor position offset.<br>`len` parameter: Length of the text deletion. |
 
 The following table lists the `WebHelperClient` enumerations that you can use when invoking the `sendKeyEvent()` and `forwardKeyEvent()` methods of the `WebHelperClient` object.
 
 **Table: WebHelperClient enumerations**
 
-| Enumeration | Description                              |
-| ----------- | ---------------------------------------- |
-| `Keycode`   | Enumeration values used when invoking the `sendKeyEvent()` and `forwardKeyEvent()` methods.	  Keycode example:`Keycode: {    BACKSPACE:0xff08,    TAB:0xff09,    RETURN:0xff0d,    ASCIITILDE:0x07e},` |
+| Enumeration                                   | Description                              |
+| ---------------------------------------- | ---------------------------------------- |
+| `Keycode`                    | Enumeration values used when invoking the `sendKeyEvent()` and `forwardKeyEvent()` methods.<br><br>Keycode example:<br><br>Keycode: {<br>&nbsp;&nbsp;&nbsp;&nbsp;BACKSPACE:0xff08,<br>&nbsp;&nbsp;&nbsp;&nbsp;TAB:0xff09,<br>&nbsp;&nbsp;&nbsp;&nbsp;RETURN:0xff0d,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;ASCIITILDE:0x07e<br>}, |
 
 You can display event notifications, such as client application requesting the IME, on the screen. In these cases, implement the event handlers in your handler  object, which you pass as a parameter of the `WebHelperClient` object `initialize()` method.
 
@@ -74,25 +74,25 @@ The following table lists the events that you can implement in your handler obje
 | ---------------------------------------- | ---------------------------------------- |
 | `onInit()`                               | Handler for the initialization signal, used when the Web IME framework initialization is finished. |
 | `onExit()`                               | Handler for the exit signal, used when this Web IME is about to be terminated. |
-| `onFocusIn(inputContext)`                | Handler for the focus in signal, used to do something when the input context is focused in.	 `inputContext` parameter: Handle of the client input context that sent this event. |
-| `onFocusOut(inputContext)`               | Handler for the focus out signal, used to do something when the input context is focused out.	  `inputContext` parameter: Handle of the client input context that sent this event. |
-| `onShow(inputContext)`                   | Handler for the show signal, used to show the keyboard.	   `inputContext` parameter: Handle of the client input context that sent this event. |
-| `onHide(inputContext)`                   | Handler for the hide signal, used to hide the keyboard.	   `inputContext` parameter: Handle of the client input context that sent this event. |
-| `onSetRotation(degree)`                  | Handler for the rotation signal, used to notify that the keyboard is being rotated.	   `degree` parameter: Angle that this keyboard is being rotated to. |
-| `onUpdateCursorPosition(inputContext, position)` | Handler for the update cursor position signal, used to let the keyboard get the cursor position information.	   `inputContext` parameter: Handle of the client input context that sent this event. |
-| `onSetLanguage(language)`                | Handler for the set language signal, used to set the input language.	   `language` parameter: Language to be set. |
-| `onSetImdata(imdata)`                    | Handler for the set IM data signal, used to send IM data to the keyboard.	   `imdata` parameter: IM data to be set. |
-| `onGetImdata()`                          | Handler for the get IM data signal, used to get IM data from the keyboard.	   This method returns the current IM data value. |
-| `onSetReturnKeyType(type)`               | Handler for the set return key type signal, used to set the return key type to the keyboard.	   `type` parameter: Type of the return key to be set; the following values are acceptable:`"default""done""go""join""login""next""search""send""signin"` |
-| `onGetReturnKeyType()`                   | Handler for the get return key type signal, used to get the return key type from the keyboard.	   This method returns the current return key type value, which is one of the values introduced in the `onSetReturnKeyType()` event. |
-| `onSetReturnKeyDisable(disabled)`        | Handler for the set return key disable signal, used to set the return key disabled state to the keyboard.	   `disabled` parameter: Value that indicates whether the return key must be disabled. |
-| `onGetReturnKeyDisable()`                | Handler for the get return key disable signal, used to get the return key disabled state from the keyboard.	   This method returns the current return key disabled state value. |
-| `onSetLayout(layout)`                    | Handler for the set virtual keyboard layout signal, used to set the virtual keyboard layout.	   `layout` parameter: Virtual keyboard layout value to be set; the following values are acceptable:`"normal""number""email""url""phonenumber""ip""month""numberonly""password""datetime"` |
-| `onGetLayout()`                          | Handler for the get virtual keyboard layout signal, used to get the virtual keyboard layout.	   This method returns the current virtual keyboard layout value, which is one of the values introduced in `onSetLayout()` event. |
-| `onResetInputContext(inputContext)`      | Handler for the reset input context signal, used to reset the keyboard input context.	   `inputContext` parameter: Handle of the client input context that sent this event. |
-| `onProcessKeyEvent(code, mask, layout)`  | Handler for the process key event signal.	   	   `code` parameter: Key code of the current key event.	   `mask` parameter: Modifier mask of the current key event.	   `layout` parameter: Hardware keyboard layout identifier.	   	   This method returns `true` if the event is processed; otherwise it is forwarded to the client application. |
-| `onUpdateSurroundingText(cursor, text)`  | Handler for the surrounding text signal update.                    `cursor` parameter: Cursor position.          `text` parameter: Surrounding text near the cursor. |
-| `onUpdateSelection(text)`                | Handler for the selection signal update.                    `text` parameter: Currently selected text. |
+| `onFocusIn(inputContext)`                | Handler for the focus in signal, used to do something when the input context is focused in.<br><br>`inputContext` parameter: Handle of the client input context that sent this event. |
+| `onFocusOut(inputContext)`               | Handler for the focus out signal, used to do something when the input context is focused out.<br><br>`inputContext` parameter: Handle of the client input context that sent this event. |
+| `onShow(inputContext)`                   | Handler for the show signal, used to show the keyboard.<br><br>`inputContext` parameter: Handle of the client input context that sent this event. |
+| `onHide(inputContext)`                   | Handler for the hide signal, used to hide the keyboard.<br><br>`inputContext` parameter: Handle of the client input context that sent this event. |
+| `onSetRotation(degree)`                  | Handler for the rotation signal, used to notify that the keyboard is being rotated.<br><br>`degree` parameter: Angle that this keyboard is being rotated to. |
+| `onUpdateCursorPosition(inputContext, position)` | Handler for the update cursor position signal, used to let the keyboard get the cursor position information.<br><br>`inputContext` parameter: Handle of the client input context that sent this event. |
+| `onSetLanguage(language)`                | Handler for the set language signal, used to set the input language.<br><br>`language` parameter: Language to be set. |
+| `onSetImdata(imdata)`                    | Handler for the set IM data signal, used to send IM data to the keyboard.<br><br>`imdata` parameter: IM data to be set. |
+| `onGetImdata()`                          | Handler for the get IM data signal, used to get IM data from the keyboard.<br><br>This method returns the current IM data value. |
+| `onSetReturnKeyType(type)`               | Handler for the set return key type signal, used to set the return key type to the keyboard.<br><br>`type` parameter: Type of the return key to be set; the following values are acceptable:<br><br>`"default"`<br>`"done"`<br>`"go"`<br>`"join"`<br>`"login"`<br>`"next"`<br>`"search"`<br>`"send"`<br>`"signin"` |
+| `onGetReturnKeyType()`                   | Handler for the get return key type signal, used to get the return key type from the keyboard.<br>This method returns the current return key type value, which is one of the values introduced in the `onSetReturnKeyType()` event. |
+| `onSetReturnKeyDisable(disabled)`        | Handler for the set return key disable signal, used to set the return key disabled state to the keyboard.<br>`disabled` parameter: Value that indicates whether the return key must be disabled. |
+| `onGetReturnKeyDisable()`                | Handler for the get return key disable signal, used to get the return key disabled state from the keyboard.<br>This method returns the current return key disabled state value. |
+| `onSetLayout(layout)`                    | Handler for the set virtual keyboard layout signal, used to set the virtual keyboard layout.<br>`layout` parameter: Virtual keyboard layout value to be set; the following values are acceptable:<br><br>`"normal"`<br>`"number"`<br>`"email"`<br>`"url"`<br>`"phonenumber"`<br>`"ip"`<br>`"month"`<br>`"numberonly"`<br>`"password"`<br>`"datetime"` |
+| `onGetLayout()`                          | Handler for the get virtual keyboard layout signal, used to get the virtual keyboard layout.<br><br>This method returns the current virtual keyboard layout value, which is one of the values introduced in `onSetLayout()` event. |
+| `onResetInputContext(inputContext)`      | Handler for the reset input context signal, used to reset the keyboard input context.<br><br>`inputContext` parameter: Handle of the client input context that sent this event. |
+| `onProcessKeyEvent(code, mask, layout)`  | Handler for the process key event signal.<br><br>`code` parameter: Key code of the current key event.<br>`mask` parameter: Modifier mask of the current key event.<br>`layout` parameter: Hardware keyboard layout identifier.<br><br>This method returns `true` if the event is processed; otherwise it is forwarded to the client application. |
+| `onUpdateSurroundingText(cursor, text)`  | Handler for the surrounding text signal update.<br><br>`cursor` parameter: Cursor position.<Br>`text` parameter: Surrounding text near the cursor. |
+| `onUpdateSelection(text)`                | Handler for the selection signal update.<br><br>`text` parameter: Currently selected text. |
 
 > **Note**  
 > The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
@@ -105,22 +105,25 @@ Internally, the application package manager is responsible for installing, unins
 
 Tizen has the following additional configuration elements:
 
-- ​    `tizen:category`	To identify with other IMEs, the Web IME application must contain the UUID information.
+- `tizen:category`  
+   To identify with other IMEs, the Web IME application must contain the UUID information.
 
   ```
   <tizen:category name="http://tizen.org/category/ime"/>
   ```
 
-- ​    `tizen:uuid`	Added to identify the Web IME application type. If this element is defined, the application type is IME.
+- `tizen:uuid`  
+   Added to identify the Web IME application type. If this element is defined, the application type is IME.
 
-> **Note**
-> The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
+  > **Note**  
+  > The Device APIs are currently not supported in Web IME applications. Device API support is expected to be included in the next version.
 
   ```
   <tizen:uuid>6153122a-a429-40d2-ef21-a75f468c202c</tizen:uuid>
   ```
 
-- ​    `tizen:languages`	The locale string in the `<tizen:language>` element can be used to display the input language the specific Input Method Editor supports. The `<tizen:languages>` parent element can have more than 1 `<tizen:language>` child element.
+- `tizen:languages`  
+    The locale string in the `<tizen:language>` element can be used to display the input language the specific Input Method Editor supports. The `<tizen:languages>` parent element can have more than 1 `<tizen:language>` child element.
 
   ```
   <tizen:languages>
@@ -130,7 +133,9 @@ Tizen has the following additional configuration elements:
   ```
 
 > **Note**  
-> 2-letter primary codes are reserved for [ISO639] language abbreviations. 2-letter codes include `fr` (French), `de` (German), `it` (Italian), `nl` (Dutch), `el` (Greek), `es` (Spanish), `pt` (Portuguese), `ar` (Arabic), `he` (Hebrew), `ru` (Russian), `zh` (Chinese), `ja` (Japanese), `hi` (Hindi), `ur` (Urdu), and `sa` (Sanskrit).Any 2-letter subcode is understood to be a [ISO3166] country code. For more information, see [http://www.w3.org/TR/html401/struct/dirlang.html](http://www.w3.org/TR/html401/struct/dirlang.html).
+> 2-letter primary codes are reserved for [ISO639] language abbreviations. 2-letter codes include `fr` (French), `de` (German), `it` (Italian), `nl` (Dutch), `el` (Greek), `es` (Spanish), `pt` (Portuguese), `ar` (Arabic), `he` (Hebrew), `ru` (Russian), `zh` (Chinese), `ja` (Japanese), `hi` (Hindi), `ur` (Urdu), and `sa` (Sanskrit).  
+> 
+> Any 2-letter subcode is understood to be a [ISO3166] country code. For more information, see [http://www.w3.org/TR/html401/struct/dirlang.html](http://www.w3.org/TR/html401/struct/dirlang.html).
 
 ## Hardware Key Events
 
@@ -198,14 +203,11 @@ To display a pre-edit string (a string that has not been finalized and can be su
 
 ```
 /*
-   Show the pre-edit string 'abc', usually marked with an underline or highlight,
-   such as 'abc' or 'abc'
+   Show the pre-edit string 'abc', usually marked with an underline or highlight
 */
 WebHelperClient.updatePreeditString('abc');
 /*
-   Substitute the 'abc' pre-edit string with a new pre-edit string 'def',
-   erasing the existing 'abc' pre-edit string and displaying 'def'
-   or 'def' string on the editable widget
+   Substitute the 'abc' pre-edit string with a new pre-edit string 'def' on the editable widget
 */
 WebHelperClient.updatePreeditString('def');
 ```

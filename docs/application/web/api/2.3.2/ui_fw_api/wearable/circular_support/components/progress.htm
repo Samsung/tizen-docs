@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>How to support Circle Progress Bar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>How to support Circle Progress Bar</h1>
+
+Circular UI provides full size circle progress bar component.
+<p>The following explains how to support the full size circle progress bar component with rotary event in Circular UI.<p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#layout">Layout</a></li>
+	<li><a href="#htmlCode">HTML code</a></li>
+	<li><a href="#cssCode">CSS code</a></li>
+	<li><a href="#jsCode">Javascript code</a></li>
+</ol>
+
+<h2><a id='layout'></a>Layout</h2>
+
+<table id='circularsupport'>
+	<tbody>
+		<tr>
+			<td><img src="../../../../images/rectangular_progress.png" /></td>
+			<td><img src="../../../../images/round_progress.png" /></td>
+		</tr>
+		<tr>
+			<td align="center">in Rectangular UI</td>
+			<td align="center">in Circular UI</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id='htmlCode'></a>HTML code</h2>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;pageCircleProgressBar&quot; data-enable-page-scroll=&quot;false&quot;&gt;
+	&lt;header class=&quot;ui-header&quot;&gt;
+		&lt;h2 class=&quot;ui-title&quot;&gt;Circle Progress&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class=&quot;ui-content content-padding&quot;&gt;
+		&lt;div class=&quot;result&quot; id=&quot;result&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;footer class=&quot;ui-footer ui-grid-col-2&quot;&gt;
+		&lt;a href=&quot;#&quot; class=&quot;ui-btn&quot; id=&quot;minus&quot;&gt;-10%&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;ui-btn&quot; id=&quot;plus&quot;&gt;+10%&lt;/a&gt;
+	&lt;/footer&gt;
+	&lt;progress class=&quot;ui-circle-progress&quot; id=&quot;circleprogress&quot; max=&quot;100&quot; value=&quot;20&quot;&gt;&lt;/progress&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id='cssCode'></a>CSS code</h2>
+
+<pre class="prettyprint">
+.ui-progressbar-large {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+}
+.result {
+	font-size:35px;
+	text-align:center;
+	top: 33%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	position: absolute;
+}
+
+@media all and (-tizen-geometric-shape: circle) {
+	.result {
+		top: 50%;
+		margin: 0;
+	}
+	.ui-footer {
+		display: none;
+	}
+}
+</pre>
+
+<h2><a id='jsCode'></a>Javascript code</h2>
+
+<pre class="prettyprint">
+(function(){
+	var page = document.getElementById("pageCircleProgressBar"),
+	progressBar = document.getElementById("circleprogress"),
+	minusBtn = document.getElementById("minus"),
+	plusBtn = document.getElementById("plus"),
+	resultDiv = document.getElementById("result"),
+	isCircle = tau.support.shape.circle,
+	progressBarWidget,
+	resultText,
+	i;
+
+	function printResult() {
+		resultText = progressBarWidget.value();
+		resultDiv.innerHTML = resultText + "%";
+	};
+
+	function clearVariables() {
+		page = null;
+		progressBar = null;
+		minusBtn = null;
+		plusBtn = null;
+		resultDiv = null;
+	};
+
+	function unbindEvents() {
+		page.removeEventListener("pageshow", pageBeforeShowHandler);
+		page.removeEventListener("pagehide", pageHideHandler);
+		if (isCircle) {
+			document.removeEventListener("rotarydetent", rotaryDetentHandler);
+		} else {
+			minusBtn.removeEventListener("click", minusBtnClickHandler);
+			plusBtn.removeEventListener("click", plusBtnClickHandler);
+		}
+	};
+
+	function minusBtnClickHandler() {
+		i = i-10;
+		if (i < 0) {
+			i=0;
+		}
+		progressBarWidget.value(i);
+		printResult();
+	};
+
+	function plusBtnClickHandler() {
+		i = i+10;
+		if (i > 100) {
+			i=100;
+		}
+		progressBarWidget.value(i);
+		printResult();
+	};
+
+	function rotaryDetentHandler() {
+		// Get rotary direction
+		var direction = event.detail.direction,
+		value = parseInt(progressBarWidget.value());
+
+		if (direction === "CW") {
+			// Right direction
+			if (value < 100) {
+				value++;
+			} else {
+				value = 100;
+			}
+		} else if (direction === "CCW") {
+			// Left direction
+			if (value > 0) {
+				value--;
+			} else {
+				value = 0;
+			}
+		}
+
+		progressBarWidget.value(value);
+		printResult();
+	}
+
+	function pageBeforeShowHandler() {
+		if (isCircle) {
+		// make Circle Progressbar object
+			progressBarWidget = new tau.widget.CircleProgressBar(progressBar, {size: "full"});
+			document.addEventListener("rotarydetent", rotaryDetentHandler);
+		} else {
+			progressBarWidget = new tau.widget.CircleProgressBar(progressBar, {size: "large"});
+			minusBtn.addEventListener("click", minusBtnClickHandler);
+			plusBtn.addEventListener("click", plusBtnClickHandler);
+		}
+
+		i = parseInt(progressBarWidget.value());
+		resultDiv.innerHTML = i + "%";
+	};
+
+	function pageHideHandler() {
+		unbindEvents();
+		clearVariables();
+		// release object
+		progressBarWidget.destroy();
+	};
+
+	page.addEventListener("pagebeforeshow", pageBeforeShowHandler);
+	page.addEventListener("pagehide", pageHideHandler);
+}());
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

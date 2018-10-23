@@ -1,0 +1,2100 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MapView
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MapView
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../tizen_favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../tizen_logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tizen.Maps.MapView">
+  
+  
+  <h1 id="Tizen_Maps_MapView" data-uid="Tizen.Maps.MapView" class="text-break">Class MapView
+  </h1>
+  <div class="markdown level0 summary"><p>Map View class to show a map on the screen.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="ElmSharp.EvasObject.html">EvasObject</a></div>
+    <div class="level2"><a class="xref" href="ElmSharp.Accessible.AccessibleObject.html">AccessibleObject</a></div>
+    <div class="level3"><a class="xref" href="ElmSharp.Widget.html">Widget</a></div>
+    <div class="level4"><a class="xref" href="ElmSharp.Container.html">Container</a></div>
+    <div class="level5"><a class="xref" href="ElmSharp.Layout.html">Layout</a></div>
+    <div class="level6"><span class="xref">MapView</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_LanguageChanged">Layout.LanguageChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_ThemeChanged">Layout.ThemeChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_EdjeObject">Layout.EdjeObject</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_TextBlockAccessibility">Layout.TextBlockAccessibility</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_Freeze">Layout.Freeze()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_Thaw">Layout.Thaw()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_Resizing">Layout.Resizing()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_Resizing_System_Boolean_System_Boolean_">Layout.Resizing(Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_GetEdjeData_System_String_">Layout.GetEdjeData(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_GetPartText_System_String_">Layout.GetPartText(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_SetPartText_System_String_System_String_">Layout.SetPartText(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_BoxAppend_System_String_ElmSharp_EvasObject_">Layout.BoxAppend(String, EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_BoxPrepend_System_String_ElmSharp_EvasObject_">Layout.BoxPrepend(String, EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_BoxRemove_System_String_ElmSharp_EvasObject_">Layout.BoxRemove(String, EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_BoxRemoveAll_System_String_System_Boolean_">Layout.BoxRemoveAll(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_BoxInsertAt_System_String_ElmSharp_EvasObject_System_UInt32_">Layout.BoxInsertAt(String, EvasObject, UInt32)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_BoxInsertBefore_System_String_ElmSharp_EvasObject_ElmSharp_EvasObject_">Layout.BoxInsertBefore(String, EvasObject, EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_SetPartContent_System_String_ElmSharp_EvasObject_">Layout.SetPartContent(String, EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_SetPartContent_System_String_ElmSharp_EvasObject_System_Boolean_">Layout.SetPartContent(String, EvasObject, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_SetTheme_System_String_System_String_System_String_">Layout.SetTheme(String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_SetFile_System_String_System_String_">Layout.SetFile(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_BackgroundColor">Layout.BackgroundColor</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_SetVerticalTextAlignment_System_String_System_Double_">Layout.SetVerticalTextAlignment(String, Double)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_GetVerticalTextAlignment_System_String_">Layout.GetVerticalTextAlignment(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_OnRealized">Layout.OnRealized()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Layout.html#ElmSharp_Layout_CreateHandle_ElmSharp_EvasObject_">Layout.CreateHandle(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Container.html#ElmSharp_Container_AddChild_ElmSharp_EvasObject_">Container.AddChild(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Container.html#ElmSharp_Container_RemoveChild_ElmSharp_EvasObject_">Container.RemoveChild(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Container.html#ElmSharp_Container_ClearChildren">Container.ClearChildren()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_UpdatePartContents_ElmSharp_EvasObject_System_String_">Widget.UpdatePartContents(EvasObject, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_Focused">Widget.Focused</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_Unfocused">Widget.Unfocused</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_IsEnabled">Widget.IsEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_Style">Widget.Style</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_IsFocused">Widget.IsFocused</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_IsFocusAllowed">Widget.IsFocusAllowed</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_Text">Widget.Text</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_Opacity">Widget.Opacity</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_AllowTreeFocus">Widget.AllowTreeFocus</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_IsMirroredMode">Widget.IsMirroredMode</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_IsAutoMirroredMode">Widget.IsAutoMirroredMode</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_SetFocus_System_Boolean_">Widget.SetFocus(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_AllowFocus_System_Boolean_">Widget.AllowFocus(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_FocusNext_ElmSharp_FocusDirection_">Widget.FocusNext(FocusDirection)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_SetNextFocusObject_ElmSharp_EvasObject_ElmSharp_FocusDirection_">Widget.SetNextFocusObject(EvasObject, FocusDirection)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_SetContent_ElmSharp_EvasObject_">Widget.SetContent(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_SetContent_ElmSharp_EvasObject_System_Boolean_">Widget.SetContent(EvasObject, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_SetPartColor_System_String_ElmSharp_Color_">Widget.SetPartColor(String, Color)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_GetPartColor_System_String_">Widget.GetPartColor(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_SetPartOpacity_System_String_System_Int32_">Widget.SetPartOpacity(String, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_GetPartOpacity_System_String_">Widget.GetPartOpacity(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Widget.html#ElmSharp_Widget_SignalEmit_System_String_System_String_">Widget.SignalEmit(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_ReadingInfoType">AccessibleObject.IAccessibleObject.ReadingInfoType</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_Role">AccessibleObject.IAccessibleObject.Role</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_CanHighlight">AccessibleObject.IAccessibleObject.CanHighlight</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_TranslationDomain">AccessibleObject.IAccessibleObject.TranslationDomain</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_Name">AccessibleObject.IAccessibleObject.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_Description">AccessibleObject.IAccessibleObject.Description</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_NameProvider">AccessibleObject.IAccessibleObject.NameProvider</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_DescriptionProvider">AccessibleObject.IAccessibleObject.DescriptionProvider</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_AppendRelation_ElmSharp_Accessible_IAccessibleRelation_">AccessibleObject.IAccessibleObject.AppendRelation(IAccessibleRelation)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_ElmSharp_Accessible_IAccessibleObject_RemoveRelation_ElmSharp_Accessible_IAccessibleRelation_">AccessibleObject.IAccessibleObject.RemoveRelation(IAccessibleRelation)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_Highlight">AccessibleObject.Highlight()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.Accessible.AccessibleObject.html#ElmSharp_Accessible_AccessibleObject_Unhighlight">AccessibleObject.Unhighlight()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Handle">EvasObject.Handle</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Parent">EvasObject.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_RealHandle">EvasObject.RealHandle</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Deleted">EvasObject.Deleted</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_KeyUp">EvasObject.KeyUp</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_KeyDown">EvasObject.KeyDown</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_BackButtonPressed">EvasObject.BackButtonPressed</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_MoreButtonPressed">EvasObject.MoreButtonPressed</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Moved">EvasObject.Moved</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Resized">EvasObject.Resized</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_RenderPost">EvasObject.RenderPost</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_IsRealized">EvasObject.IsRealized</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_EvasCanvas">EvasObject.EvasCanvas</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_ClassName">EvasObject.ClassName</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_WeightX">EvasObject.WeightX</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_WeightY">EvasObject.WeightY</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_AlignmentX">EvasObject.AlignmentX</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_AlignmentY">EvasObject.AlignmentY</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_MinimumWidth">EvasObject.MinimumWidth</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_MinimumHeight">EvasObject.MinimumHeight</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_IsVisible">EvasObject.IsVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Geometry">EvasObject.Geometry</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Color">EvasObject.Color</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_IsMapEnabled">EvasObject.IsMapEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_EvasMap">EvasObject.EvasMap</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_RepeatEvents">EvasObject.RepeatEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_PropagateEvents">EvasObject.PropagateEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_PassEvents">EvasObject.PassEvents</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_TooltipStyle">EvasObject.TooltipStyle</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_TooltipOrientation">EvasObject.TooltipOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_TooltipWindowMode">EvasObject.TooltipWindowMode</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_TooltipContentDelegate">EvasObject.TooltipContentDelegate</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_TooltipMoveFreezeCount">EvasObject.TooltipMoveFreezeCount</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_AllEventsFrozen">EvasObject.AllEventsFrozen</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Layer">EvasObject.Layer</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_SetClip_ElmSharp_EvasObject_">EvasObject.SetClip(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_SetAlignment_System_Double_System_Double_">EvasObject.SetAlignment(Double, Double)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_SetWeight_System_Double_System_Double_">EvasObject.SetWeight(Double, Double)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_SetTooltipText_System_String_">EvasObject.SetTooltipText(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_UnsetTooltip">EvasObject.UnsetTooltip()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_PushTooltipMoveFreeze">EvasObject.PushTooltipMoveFreeze()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_PopTooltipMoveFreeze">EvasObject.PopTooltipMoveFreeze()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_HideTooltip">EvasObject.HideTooltip()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_ShowTooltip">EvasObject.ShowTooltip()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Show">EvasObject.Show()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Hide">EvasObject.Hide()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Resize_System_Int32_System_Int32_">EvasObject.Resize(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Move_System_Int32_System_Int32_">EvasObject.Move(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Lower">EvasObject.Lower()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_KeyGrab_System_String_System_Boolean_">EvasObject.KeyGrab(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_KeyUngrab_System_String_">EvasObject.KeyUngrab(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_MarkChanged">EvasObject.MarkChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Calculate">EvasObject.Calculate()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_SetSizeHintAspect_ElmSharp_AspectControl_System_Int32_System_Int32_">EvasObject.SetSizeHintAspect(AspectControl, Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_GetSizeHintAspect_ElmSharp_AspectControl__System_Int32__System_Int32__">EvasObject.GetSizeHintAspect(AspectControl, Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_StackBelow_ElmSharp_EvasObject_">EvasObject.StackBelow(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_StackAbove_ElmSharp_EvasObject_">EvasObject.StackAbove(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_RaiseTop">EvasObject.RaiseTop()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_GetTextBlockGeometryByLineNumber_System_Int32_System_Int32__System_Int32__System_Int32__System_Int32__">EvasObject.GetTextBlockGeometryByLineNumber(Int32, Int32, Int32, Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_OnInvalidate">EvasObject.OnInvalidate()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_OnInstantiated">EvasObject.OnInstantiated()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_OnUnrealize">EvasObject.OnUnrealize()</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Realize_ElmSharp_EvasObject_">EvasObject.Realize(EvasObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="ElmSharp.EvasObject.html#ElmSharp_EvasObject_Unrealize">EvasObject.Unrealize()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.Maps.html">Tizen.Maps</a></h6>
+  <h6><strong>Assembly</strong>: Tizen.Maps.dll</h6>
+  <h5 id="Tizen_Maps_MapView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MapView : Layout, IAccessibleObject, IDisposable</code></pre>
+  </div>
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="Tizen_Maps_MapView__ctor_" data-uid="Tizen.Maps.MapView.#ctor*"></a>
+  <h4 id="Tizen_Maps_MapView__ctor_ElmSharp_EvasObject_Tizen_Maps_MapService_" data-uid="Tizen.Maps.MapView.#ctor(ElmSharp.EvasObject,Tizen.Maps.MapService)">MapView(EvasObject, MapService)</h4>
+  <div class="markdown level1 summary"><p>Creates a view and links it to the instance of a map service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MapView(EvasObject parent, MapService service)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ElmSharp.EvasObject.html">EvasObject</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td><p>An instance of <a class="xref" href="ElmSharp.EvasObject.html">EvasObject</a> object for which a map view will be drawn.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.MapService.html">MapService</a></td>
+        <td><span class="parametername">service</span></td>
+        <td><p>An instance of <a class="xref" href="Tizen.Maps.MapService.html">MapService</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView__ctor_ElmSharp_EvasObject_Tizen_Maps_MapService__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView__ctor_ElmSharp_EvasObject_Tizen_Maps_MapService__privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when parameters are invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when a native operation failed to allocate memory, and connect to the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Tizen_Maps_MapView_BuildingsEnabled_" data-uid="Tizen.Maps.MapView.BuildingsEnabled*"></a>
+  <h4 id="Tizen_Maps_MapView_BuildingsEnabled" data-uid="Tizen.Maps.MapView.BuildingsEnabled">BuildingsEnabled</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the map should show the 3D buildings layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool BuildingsEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_BuildingsEnabled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_BuildingsEnabled_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_Center_" data-uid="Tizen.Maps.MapView.Center*"></a>
+  <h4 id="Tizen_Maps_MapView_Center" data-uid="Tizen.Maps.MapView.Center">Center</h4>
+  <div class="markdown level1 summary"><p>Gets or sets geographical coordinates for map view&apos;s center.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Geocoordinates Center { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.Geocoordinates.html">Geocoordinates</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Center_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_Center_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the value is invalid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_Children_" data-uid="Tizen.Maps.MapView.Children*"></a>
+  <h4 id="Tizen_Maps_MapView_Children" data-uid="Tizen.Maps.MapView.Children">Children</h4>
+  <div class="markdown level1 summary"><p>Gets a list of the map object added to map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;MapObject&gt; Children { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Tizen.Maps.MapObject.html">MapObject</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Children_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_Maps_MapView_Language_" data-uid="Tizen.Maps.MapView.Language*"></a>
+  <h4 id="Tizen_Maps_MapView_Language" data-uid="Tizen.Maps.MapView.Language">Language</h4>
+  <div class="markdown level1 summary"><p>Sets language of map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Language { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The display language in the map.
+A language is specified as an ISO 3166 alpha-2 two letter country-code
+followed by ISO 639-1 for the two-letter language code.
+Each language tag is composed of one or more &quot;subtags&quot; separated by hyphens (-).
+Each subtag is composed of basic Latin letters or digits only.
+For example, &quot;ko-KR&quot; for Korean, &quot;en-US&quot; for American English.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Language_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_Language_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the value is invalid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_MapType_" data-uid="Tizen.Maps.MapView.MapType*"></a>
+  <h4 id="Tizen_Maps_MapView_MapType" data-uid="Tizen.Maps.MapView.MapType">MapType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets theme type of the map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MapTypes MapType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.MapTypes.html">MapTypes</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_MapType_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_MapType_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_MaximumZoomLevel_" data-uid="Tizen.Maps.MapView.MaximumZoomLevel*"></a>
+  <h4 id="Tizen_Maps_MapView_MaximumZoomLevel" data-uid="Tizen.Maps.MapView.MaximumZoomLevel">MaximumZoomLevel</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the maximum zoom level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaximumZoomLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>It is an integer value that limits maximum zoom level within a range of the current map plug-in support.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_MaximumZoomLevel_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_MaximumZoomLevel_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_MinimumZoomLevel_" data-uid="Tizen.Maps.MapView.MinimumZoomLevel*"></a>
+  <h4 id="Tizen_Maps_MapView_MinimumZoomLevel" data-uid="Tizen.Maps.MapView.MinimumZoomLevel">MinimumZoomLevel</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the minimum zoom level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinimumZoomLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>It is an integer value that limits minimal zoom level within a range of the current map plug-in support.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_MinimumZoomLevel_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_MinimumZoomLevel_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_Orientation_" data-uid="Tizen.Maps.MapView.Orientation*"></a>
+  <h4 id="Tizen_Maps_MapView_Orientation" data-uid="Tizen.Maps.MapView.Orientation">Orientation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the orientation on the map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Orientation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>It is an integer value from 0 to 360 that indicates the orientation of the map view.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Orientation_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_Orientation_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_PublicTransitEnabled_" data-uid="Tizen.Maps.MapView.PublicTransitEnabled*"></a>
+  <h4 id="Tizen_Maps_MapView_PublicTransitEnabled" data-uid="Tizen.Maps.MapView.PublicTransitEnabled">PublicTransitEnabled</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the map should show the public transit layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PublicTransitEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_PublicTransitEnabled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_PublicTransitEnabled_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_ScaleBarEnabled_" data-uid="Tizen.Maps.MapView.ScaleBarEnabled*"></a>
+  <h4 id="Tizen_Maps_MapView_ScaleBarEnabled" data-uid="Tizen.Maps.MapView.ScaleBarEnabled">ScaleBarEnabled</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the scale-bar is enabled or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ScaleBarEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_ScaleBarEnabled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  <h5 id="Tizen_Maps_MapView_ScaleBarEnabled_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_TrafficEnabled_" data-uid="Tizen.Maps.MapView.TrafficEnabled*"></a>
+  <h4 id="Tizen_Maps_MapView_TrafficEnabled" data-uid="Tizen.Maps.MapView.TrafficEnabled">TrafficEnabled</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the map should show the traffic layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrafficEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_TrafficEnabled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_TrafficEnabled_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_ZoomLevel_" data-uid="Tizen.Maps.MapView.ZoomLevel*"></a>
+  <h4 id="Tizen_Maps_MapView_ZoomLevel" data-uid="Tizen.Maps.MapView.ZoomLevel">ZoomLevel</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the current zoom level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ZoomLevel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>It is an integer value representing the current zoom level.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_ZoomLevel_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_ZoomLevel_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a><br>
+<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a><br>
+<a href="http://tizen.org/privilege/network.get">http://tizen.org/privilege/network.get</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Tizen_Maps_MapView_Add_" data-uid="Tizen.Maps.MapView.Add*"></a>
+  <h4 id="Tizen_Maps_MapView_Add_Tizen_Maps_MapObject_" data-uid="Tizen.Maps.MapView.Add(Tizen.Maps.MapObject)">Add(MapObject)</h4>
+  <div class="markdown level1 summary"><p>Adds a map object to map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(MapObject child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.MapObject.html">MapObject</a></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>An instance of the map object to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Add_Tizen_Maps_MapObject__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_Add_Tizen_Maps_MapObject__privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the value is invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when a native operation failed to allocate memory and connect to the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_CaptureSnapshot_" data-uid="Tizen.Maps.MapView.CaptureSnapshot*"></a>
+  <h4 id="Tizen_Maps_MapView_CaptureSnapshot_Tizen_Maps_SnapshotType_System_Int32_System_String_" data-uid="Tizen.Maps.MapView.CaptureSnapshot(Tizen.Maps.SnapshotType,System.Int32,System.String)">CaptureSnapshot(SnapshotType, Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Captures a snapshot of the map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CaptureSnapshot(SnapshotType type, int quality, string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.SnapshotType.html">SnapshotType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>Type of file format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">quality</span></td>
+        <td><p>An integer value representing the quality for encoding from 1 to 100.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A string representing the file path for a snapshot.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_CaptureSnapshot_Tizen_Maps_SnapshotType_System_Int32_System_String__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_CaptureSnapshot_Tizen_Maps_SnapshotType_System_Int32_System_String__privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the value is invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when a native operation failed to allocate memory and connect to the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_Dispose_" data-uid="Tizen.Maps.MapView.Dispose*"></a>
+  <h4 id="Tizen_Maps_MapView_Dispose" data-uid="Tizen.Maps.MapView.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Releases all the resources used by this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose">IDisposable.Dispose()</a></div>
+  
+  <h5 id="Tizen_Maps_MapView_Dispose_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_Maps_MapView_Dispose_" data-uid="Tizen.Maps.MapView.Dispose*"></a>
+  <h4 id="Tizen_Maps_MapView_Dispose_System_Boolean_" data-uid="Tizen.Maps.MapView.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p>If true, managed and unmanaged resources can be disposed, otherwise only unmanaged resources can be disposed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Dispose_System_Boolean__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <a id="Tizen_Maps_MapView_Finalize_" data-uid="Tizen.Maps.MapView.Finalize*"></a>
+  <h4 id="Tizen_Maps_MapView_Finalize" data-uid="Tizen.Maps.MapView.Finalize">Finalize()</h4>
+  <div class="markdown level1 summary"><p>Destroy the MapView object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
+  </div>
+  
+  
+  <a id="Tizen_Maps_MapView_GeolocationToScreen_" data-uid="Tizen.Maps.MapView.GeolocationToScreen*"></a>
+  <h4 id="Tizen_Maps_MapView_GeolocationToScreen_Tizen_Maps_Geocoordinates_" data-uid="Tizen.Maps.MapView.GeolocationToScreen(Tizen.Maps.Geocoordinates)">GeolocationToScreen(Geocoordinates)</h4>
+  <div class="markdown level1 summary"><p>Changes the geographical coordinates to screen coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Point GeolocationToScreen(Geocoordinates coordinates)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.Geocoordinates.html">Geocoordinates</a></td>
+        <td><span class="parametername">coordinates</span></td>
+        <td><p>Geographical coordinates.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ElmSharp.Point.html">Point</a></td>
+        <td><p>Returns an instance of the screen coordinates on the current screen.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_GeolocationToScreen_Tizen_Maps_Geocoordinates__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_GeolocationToScreen_Tizen_Maps_Geocoordinates__privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the value is invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when a native operation failed to allocate memory and connect to the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_Remove_" data-uid="Tizen.Maps.MapView.Remove*"></a>
+  <h4 id="Tizen_Maps_MapView_Remove_Tizen_Maps_MapObject_" data-uid="Tizen.Maps.MapView.Remove(Tizen.Maps.MapObject)">Remove(MapObject)</h4>
+  <div class="markdown level1 summary"><p>Removes a map object from the map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(MapObject child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.MapObject.html">MapObject</a></td>
+        <td><span class="parametername">child</span></td>
+        <td><p>An instance of the map object to be removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Tizen_Maps_MapView_Remove_Tizen_Maps_MapObject__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Once removed, the child object will be become invalid.</p>
+</div>
+  
+  <h5 id="Tizen_Maps_MapView_Remove_Tizen_Maps_MapObject__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_Remove_Tizen_Maps_MapObject__privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the value is invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when native operation failed to allocate memory and connect to the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_RemoveAll_" data-uid="Tizen.Maps.MapView.RemoveAll*"></a>
+  <h4 id="Tizen_Maps_MapView_RemoveAll" data-uid="Tizen.Maps.MapView.RemoveAll">RemoveAll()</h4>
+  <div class="markdown level1 summary"><p>Removes all map objects from the map view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAll()</code></pre>
+  </div>
+  
+  <h5 id="Tizen_Maps_MapView_RemoveAll_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_RemoveAll_privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when a native operation failed to allocate memory and connect to the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Maps_MapView_ScreenToGeolocation_" data-uid="Tizen.Maps.MapView.ScreenToGeolocation*"></a>
+  <h4 id="Tizen_Maps_MapView_ScreenToGeolocation_ElmSharp_Point_" data-uid="Tizen.Maps.MapView.ScreenToGeolocation(ElmSharp.Point)">ScreenToGeolocation(Point)</h4>
+  <div class="markdown level1 summary"><p>Changes the screen coordinates to geographical coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Geocoordinates ScreenToGeolocation(Point screenCoordinates)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ElmSharp.Point.html">Point</a></td>
+        <td><span class="parametername">screenCoordinates</span></td>
+        <td><p>Screen coordinates.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Maps.Geocoordinates.html">Geocoordinates</a></td>
+        <td><p>Returns an instance of the geographical coordinates object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_ScreenToGeolocation_ElmSharp_Point__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  <h5 id="Tizen_Maps_MapView_ScreenToGeolocation_ElmSharp_Point__privilege" class="privilege">Privilege</h5>
+  <div class="markdown level1 privilege"><p><a href="http://tizen.org/privilege/mapservice">http://tizen.org/privilege/mapservice</a></p>
+</div>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></td>
+        <td><p>Thrown when application does not have some privilege to access this method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the value is invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when a native operation failed to allocate memory and connect to the service.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="Tizen_Maps_MapView_Clicked" data-uid="Tizen.Maps.MapView.Clicked">Clicked</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver a clicked gesture event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;MapGestureEventArgs&gt; Clicked</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Tizen.Maps.MapGestureEventArgs.html">MapGestureEventArgs</a>&gt;</td>
+        <td><p>Event handlers to get a clicked gesture event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Clicked_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Maps_MapView_DoubleClicked" data-uid="Tizen.Maps.MapView.DoubleClicked">DoubleClicked</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver a double-clicked gesture event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;MapGestureEventArgs&gt; DoubleClicked</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Tizen.Maps.MapGestureEventArgs.html">MapGestureEventArgs</a>&gt;</td>
+        <td><p>Event handlers to get a double-clicked gesture event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_DoubleClicked_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Maps_MapView_LongPressed" data-uid="Tizen.Maps.MapView.LongPressed">LongPressed</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver a long-pressed gesture event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;MapGestureEventArgs&gt; LongPressed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Tizen.Maps.MapGestureEventArgs.html">MapGestureEventArgs</a>&gt;</td>
+        <td><p>Event handlers to get a long-pressed gesture event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_LongPressed_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Maps_MapView_Scrolled" data-uid="Tizen.Maps.MapView.Scrolled">Scrolled</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver a scrolled gesture event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;MapGestureEventArgs&gt; Scrolled</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Tizen.Maps.MapGestureEventArgs.html">MapGestureEventArgs</a>&gt;</td>
+        <td><p>Event handlers to get a scrolled gesture event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_Scrolled_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Maps_MapView_TwoFingerClicked" data-uid="Tizen.Maps.MapView.TwoFingerClicked">TwoFingerClicked</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver a clicked gesture event with two-fingers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;MapGestureEventArgs&gt; TwoFingerClicked</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Tizen.Maps.MapGestureEventArgs.html">MapGestureEventArgs</a>&gt;</td>
+        <td><p>Event handlers to get a clicked gesture event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_TwoFingerClicked_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Maps_MapView_TwoFingerRotated" data-uid="Tizen.Maps.MapView.TwoFingerRotated">TwoFingerRotated</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver a rotated gesture event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;MapGestureEventArgs&gt; TwoFingerRotated</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Tizen.Maps.MapGestureEventArgs.html">MapGestureEventArgs</a>&gt;</td>
+        <td><p>Event handlers to get a rotated gesture event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_TwoFingerRotated_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Maps_MapView_TwoFingerZoomed" data-uid="Tizen.Maps.MapView.TwoFingerZoomed">TwoFingerZoomed</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver a zoomed gesture event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;MapGestureEventArgs&gt; TwoFingerZoomed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Tizen.Maps.MapGestureEventArgs.html">MapGestureEventArgs</a>&gt;</td>
+        <td><p>Event handlers to get a zoomed gesture event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_TwoFingerZoomed_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Maps_MapView_ViewReady" data-uid="Tizen.Maps.MapView.ViewReady">ViewReady</h4>
+  <div class="markdown level1 summary"><p>Adds or removes event handlers to deliver an event representing a view ready to be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler ViewReady</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td><p>Event handlers to get a view ready event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h5 id="Tizen_Maps_MapView_ViewReady_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">3 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td><p>Thrown when the required feature is not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="ElmSharp.Wearable.RotaryEventExtensions.html#ElmSharp_Wearable_RotaryEventExtensions_AddRotaryEventHandler_ElmSharp_EvasObject_ElmSharp_Wearable_RotaryEventHandler_">RotaryEventExtensions.AddRotaryEventHandler(EvasObject, RotaryEventHandler)</a>
+  </div>
+  <div>
+      <a class="xref" href="ElmSharp.Wearable.RotaryEventExtensions.html#ElmSharp_Wearable_RotaryEventExtensions_RemoveRotaryEventHandler_ElmSharp_EvasObject_ElmSharp_Wearable_RotaryEventHandler_">RotaryEventExtensions.RemoveRotaryEventHandler(EvasObject, RotaryEventHandler)</a>
+  </div>
+  <div>
+      <a class="xref" href="ElmSharp.Wearable.RotaryEventExtensions.html#ElmSharp_Wearable_RotaryEventExtensions_Activate_ElmSharp_EvasObject_">RotaryEventExtensions.Activate(EvasObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="ElmSharp.Wearable.RotaryEventExtensions.html#ElmSharp_Wearable_RotaryEventExtensions_Deactivate_ElmSharp_EvasObject_">RotaryEventExtensions.Deactivate(EvasObject)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2016-2017 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

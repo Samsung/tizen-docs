@@ -23,7 +23,7 @@ To launch the Log Viewer, in the Visual Studio menu, go to **Tools &gt; Tizen &g
 
 **Figure: Log Viewer launch**
 
-![Launching the Log Viewer](media/logviewer-entry-point.png)
+![Log Viewer launch](media/logviewer-entry-point.png)
 
 
 ## Understanding and Filtering Logs
@@ -35,7 +35,7 @@ In the log table, you have the following options and functions:
 - Keyword filtering option  
   You can filter the log messages by selecting one of the **PID**, **Tag**, and **Message** options, or entering keywords in the bottom of the Log Viewer. The keywords must be separated by a space.
 - Scroll lock  
-  The log table shows the latest logs by default. While the application is running, the log table scrolls as new logs are added to the table. To stop the table from scrolling while you are checking a specific log, click the **Scroll Lock** button (![Scroll Lock](media/logviewer-scroll-lock.png)).
+  The log table shows the latest logs by default. While the application is running, the log table scrolls as new logs are added to the table. To stop the table from scrolling while you are checking a specific log, click the **Scroll Lock** button (![Scroll lock button](media/logviewer-scroll-lock.png)).
 - Clearing the table  
   You can remove all log messages from the log tab by clicking **Clear**.
 - Exporting logs to a file  

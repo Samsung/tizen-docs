@@ -2,17 +2,16 @@
 
 This is the first stage of registering an application in Tizen Store Seller Office. If you register your application's title and a binary file, you can save application information temporarily. When you update an application which is on sale after the registration, you can register multiple binaries. Refer to the 'Registering Multiple Binaries' guide for details on how to register and manage multiple binaries.
 
- 
 
+<a name="application-title"> </a>
 ## Application Title (in Default Language)
 
 ![img](media/1_.png)
 
 1. Select the Default Language to be used in Tizen Store. If you want to sell your application in multiple countries, English is recommended.
-2. Enter the application's title in the Default Language. 
+2. Enter the application's title in the Default Language.
 
- 
-
+<a name="binary-file"></a>
 ## Binary File & Supported Device
 
 ![img](media/2_.png)
@@ -21,13 +20,12 @@ This is the first stage of registering an application in Tizen Store Seller Offi
 
    - Before selecting a file to upload
 
-   ![img](media/distribution_binary_00.jpg)
+     ![img](media/distribution_binary_00.jpg)
 
    - After selecting a file to upload
 
-   ![img](media/distribution_binary_01.jpg)
+     ![img](media/distribution_binary_01.jpg)
 
-    
 
 2. Click the [Save] button to complete the upload of the binary.
 
@@ -40,67 +38,50 @@ This is the first stage of registering an application in Tizen Store Seller Offi
 
    ![img](media/distribution_binary_02.jpg)
 
-    
-
 4. If saving is properly processed after the [Save] button is clicked, the information of the uploaded binary are automatically detected from the manifest.xml or config.xml file. If you click the text link in Features, Permissions, or Screen size, the window as below will pop up and you can check detailed information.
 
    ![img](media/6.png)
 
-    
-
 5. Content Type: The Content Type of a binary is automatically detected and displayed
-
-    
 
 6. If there is language information in the uploaded binary file, supported languages are automatically detected and sellers can manually add supported languages. (The Supported Language of the currently on sale binary file cannot be modified.)
 
    ![img](media/7.png)
 
-    
-
 7. When you click the number of supported devices shown in Supported Devices at the top, a pop-up window which shows the details of all devices available for release will appear. From this pop-up window, you can select or deselect supported devices based in their suitability for the application. However, the number of devices selected and the number of devices that the application can actually be sold on may differ depending on the result of validation, so you must check the list of devices from the Application Details Page. The countries where the application can be sold are automatically configured based on the supported device settings.
 
    ![img](media/distribution_binary_03.jpg)
-
-    
 
    - Example of device settings
      - If 10 devices are recommended at the time of initial registration and 5 devices are selected for application registration, then additional devices may be added after the start of sales (distribution) or after update, and deletion of devices is possible (if a device is deleted, re-download by users who previously purchased the application from that device is not possible).
      - If an application is submitted for validation and "Rejected" before sales begin, it is possible to both add to and delete devices from the list of 5 devices for which validation is requested. Also, if the application is only "Rejected" for validation on some devices, approval will be granted for re-registration after the rejected devices are excluded.
      - "Rejected" will be displayed in the Supported Y/N column for unsupported devices of which binaries did not pass the validation.
 
-    
-
 8. For multiple binaries, click the number of supported devices in Supported Devices in the auto detection area of each binary file, and you can check the devices supported by each binary in a pop-up window.
 
 9. If you want to apply the DRM option for your binary, select 'Yes' as the DRM option when you register an application.
 
+<a name="expansion"></a>
 ## Expansion File Upload
 
 Expansion files are supported only in API 2.4 or higher versions. After uploading binary files, you can upload up to 2 GB of expansion files.
 
 - After registering binary files, before registering expansion files.
- 
 
   ![img](media/distribution_binary_04.jpg)
-  
-  
+
 - After registering binary files and expansion files
- 
 
   ![img](media/distribution_binary_05.jpg)
-  
-  
+
 - Binary files and expansion files have been uploaded
- 
 
   ![img](media/distribution_binary_06.jpg)
-  
+
 
 ## Validation Information
 
-- Enter any notes that should be considered when the application is validated. You can add a file attachment or a URL to be used for reference during validation.
-
+Enter any notes that should be considered when the application is validated. You can add a file attachment or a URL to be used for reference during validation.
 
   ![img](media/distribution_binary_07.jpg)
 

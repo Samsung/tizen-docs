@@ -192,9 +192,9 @@ foreach(string ex in ext)
 
 The following table lists the metadata you can edit.
 
-****Table: Editable metadata attributes**
+**Table: Editable metadata attributes**
 
-| Attribute     | Description                        | Property or method of the Tizen.Multimedia.MetadataEditor (https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataEditor.html)class |
+| Attribute     | Description                        | Property or method of the Tizen.Multimedia.MetadataEditor class |
 |-------------|----------------------------------|----------------------------------------|
 | Artist        | Artist of the audio content        | `Artist`                                 |
 | Title         | Title of the audio content         | `Title`                                  |
@@ -206,7 +206,7 @@ The following table lists the metadata you can edit.
 | Description   | Description of the audio content   | `Description`                            |
 | Comment       | Comment of the audio content       | `Comment`                                |
 | TrackNumber   | Track number of the audio content  | `TrackNumber`                            |
-| Picture       | Picture of the audio content       | `PictureCount``GetPicture()``AddPicture()``RemovePicture()` |
+| Picture       | Picture of the audio content       | `PictureCount`<br>`GetPicture()`<br>`AddPicture()`<br>`RemovePicture()` |
 | Conductor     | Conductor of the audio content     | `Conductor`                              |
 | Unsync lyrics | Unsync lyrics of the audio content | `UnsyncLyrics`                           |
 
@@ -217,7 +217,7 @@ The following table lists the extractable metadata.
 
 The metadata is available with the properties and methods of the [Tizen.Multimedia.AudioMetadata](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioMetadata.html), [Tizen.Multimedia.Metadata](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Metadata.html), [Tizen.Multimedia.MetadataExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataExtractor.html), [Tizen.Multimedia.SyncLyrics](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.SyncLyrics.html), and [Tizen.Multimedia.VideoMetadata](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.VideoMetadata.html) classes.
 
-****Table: Metadata extractor attributes**
+**Table: Metadata extractor attributes**
 
 | Attribute            | Description                            | Property or method                       |
 |--------------------|--------------------------------------|----------------------------------------|
@@ -226,7 +226,7 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Video FPS            | FPS of the video content               | `VideoMetadata.Fps`                      |
 | Video codec          | Codec of the video content             | `VideoMetadata.Codec`                    |
 | Video stream count   | Number of streams of the video content | `VideoMetadata.StreamCount`              |
-| Video resolution     | Resolution of the video content        | `VideoMetadata.Width``VideoMetadata.Height` |
+| Video resolution     | Resolution of the video content        | `VideoMetadata.Width`<br>`VideoMetadata.Height` |
 | Audio bit rate       | Bit rate of the audio content          | `AudioMetadata.BitRate`                  |
 | Audio channels       | Channel of the audio content           | `AudioMetadata.Channels`                 |
 | Audio sample rate    | Sample rate of the audio content       | `AudioMetadata.SampleRate`               |
@@ -252,8 +252,8 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Conductor            | Conductor of the content               | `Metadata.Conductor`                     |
 | Unsync lyrics        | Asynchronous lyrics of the content     | `Metadata.UnsyncLyrics`                  |
 | Sync lyrics          | Synchronous lyrics of the content      | `Metadata.SyncLyricsCount`<br>`MetadataExtractor.GetSyncLyrics()`<br>`SyncLyrics.Lyrics`<br>`SyncLyrics.Timestamp` |
-| Recorded date        | Description                            | Property or method                       |
-| Duration             | Duration of the content                | `Metadata.Duration`                      |
+| Recorded date        | Recorded date of the content           | `Metadata.DateRecorded`                  |
+| Duration             | Orientation of the content             | `Metadata.Rotation`                      |
 
 
 ## Related Information

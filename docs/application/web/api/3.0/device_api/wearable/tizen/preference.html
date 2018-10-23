@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>Preference API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Preference">
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="title"><h1>Preference API</h1></div>
+<div class="brief">
+ The Preference API provides functions to store and retrieve small pieces of data which can be for application preferences.
+        </div>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#PreferenceValueType">PreferenceValueType</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#PreferenceManagerObject">PreferenceManagerObject</a>
+</li>
+<li>2.2. <a href="#PreferenceData">PreferenceData</a>
+</li>
+<li>2.3. <a href="#PreferenceManager">PreferenceManager</a>
+</li>
+<li>2.4. <a href="#PreferenceChangeCallback">PreferenceChangeCallback</a>
+</li>
+<li>2.5. <a href="#PreferenceGetAllCallback">PreferenceGetAllCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#PreferenceManagerObject">PreferenceManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#PreferenceData">PreferenceData</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#PreferenceManager">PreferenceManager</a></td>
+<td>
+<div>void <a href="#PreferenceManager::getAll">getAll</a> (<a href="#PreferenceGetAllCallback">PreferenceGetAllCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PreferenceManager::setValue">setValue</a> (DOMString key, <a href="#PreferenceValueType">PreferenceValueType</a> value)</div>
+<div>
+<a href="#PreferenceValueType">PreferenceValueType</a> <a href="#PreferenceManager::getValue">getValue</a> (DOMString key)</div>
+<div>void <a href="#PreferenceManager::remove">remove</a> (DOMString key)</div>
+<div>void <a href="#PreferenceManager::removeAll">removeAll</a> ()</div>
+<div>boolean <a href="#PreferenceManager::exists">exists</a> (DOMString key)</div>
+<div>void <a href="#PreferenceManager::setChangeListener">setChangeListener</a> (DOMString key, <a href="#PreferenceChangeCallback">PreferenceChangeCallback</a> listener)</div>
+<div>void <a href="#PreferenceManager::unsetChangeListener">unsetChangeListener</a> (DOMString key)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#PreferenceChangeCallback">PreferenceChangeCallback</a></td>
+<td><div>void <a href="#PreferenceChangeCallback::onsuccess">onsuccess</a> (<a href="#PreferenceData">PreferenceData</a> data)</div></td>
+</tr>
+<tr>
+<td><a href="#PreferenceGetAllCallback">PreferenceGetAllCallback</a></td>
+<td><div>void <a href="#PreferenceGetAllCallback::onsuccess">onsuccess</a> (<a href="#PreferenceData">PreferenceData</a>[] preferences)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="PreferenceValueType">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceValueType"></a><h3>1.1. PreferenceValueType</h3>
+<div class="brief">
+ Specifies the type of a preference value.
+          </div>
+<pre class="webidl prettyprint">  typedef (DOMString or long or double or boolean) PreferenceValueType;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="PreferenceManagerObject">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManagerObject"></a><h3>2.1. PreferenceManagerObject</h3>
+<div class="brief">
+ This interface defines what is instantiated by the <em>Tizen</em> object on the Tizen Platform.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PreferenceManagerObject {
+      readonly attribute <a href="#PreferenceManager">PreferenceManager</a> preference;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PreferenceManagerObject">PreferenceManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="description">
+          <p>
+The <em>tizen.preference</em> object provides access to the Preference service API's functionality.
+          </p>
+         </div>
+</div>
+<div class="interface" id="PreferenceData">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceData"></a><h3>2.2. PreferenceData</h3>
+<div class="brief">
+ The PreferenceData interface stores data of application preferences.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PreferenceData {
+    readonly attribute DOMString key;
+    readonly attribute <a href="#PreferenceValueType">PreferenceValueType</a> value;
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="PreferenceData::key">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">key</span></span><div class="brief">
+ The key name of the preferences data value.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+<li class="attribute" id="PreferenceData::value">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PreferenceValueType </span><span class="name">value</span></span><div class="brief">
+ The value associated with a given key.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="PreferenceManager">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager"></a><h3>2.3. PreferenceManager</h3>
+<div class="brief">
+ The Preference API provides functions to store and retrieve small pieces of data which can be for application preferences.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PreferenceManager {
+    void getAll(<a href="#PreferenceGetAllCallback">PreferenceGetAllCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setValue(DOMString key, <a href="#PreferenceValueType">PreferenceValueType</a> value) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#PreferenceValueType">PreferenceValueType</a> getValue(DOMString key) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void remove(DOMString key) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeAll() raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean exists(DOMString key) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setChangeListener(DOMString key, <a href="#PreferenceChangeCallback">PreferenceChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetChangeListener(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PreferenceManager::getAll">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::getAll"></a><code><b><span class="methodName">getAll</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets all preferences data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getAll(<a href="#PreferenceGetAllCallback">PreferenceGetAllCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span>:
+ The callback method to be invoked when all preferences are got.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The callback method to be invoked when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var successCB = function(preferences)
+{
+   if (preferences.length)
+   {
+      console.log('The first preference - key: ' + preferences[0].key + ' value: ' + preferences[0].value);
+   }
+};
+
+tizen.preference.getAll(successCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The first preference - key: key1 value: Sample value
+ </pre>
+</div>
+</dd>
+<dt class="method" id="PreferenceManager::setValue">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::setValue"></a><code><b><span class="methodName">setValue</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the preference value.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setValue(DOMString key, <a href="#PreferenceValueType">PreferenceValueType</a> value);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ The key name of the preference value to set.
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ The new value for the given key.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type IOError, if a write error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if out of memory.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.preference.setValue('key1', 'New value');
+</pre>
+</div>
+</dd>
+<dt class="method" id="PreferenceManager::getValue">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::getValue"></a><code><b><span class="methodName">getValue</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets a preference value.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#PreferenceValueType">PreferenceValueType</a> getValue(DOMString key);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ The key name of the preference value to retrieve.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ PreferenceValueType The value associated with the given key
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type IOError, if a read error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if required key not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if out of memory.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var currentValue = tizen.preference.getValue('key1');
+console.log('The current value of the preference key1 is: ' + currentValue);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> The current value of the preference key1 is: New value
+ </pre>
+</div>
+</dd>
+<dt class="method" id="PreferenceManager::remove">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::remove"></a><code><b><span class="methodName">remove</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes a value with the given key from the preferences.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void remove(DOMString key);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ The key name of the preference to remove.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type IOError, if a write error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if required key not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if out of memory.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.preference.remove('key1');
+</pre>
+</div>
+</dd>
+<dt class="method" id="PreferenceManager::removeAll">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::removeAll"></a><code><b><span class="methodName">removeAll</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes all key-value pairs from the preferences.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeAll();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type IOError, if a write error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if out of memory.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+tizen.preference.removeAll();
+</pre>
+</div>
+</dd>
+<dt class="method" id="PreferenceManager::exists">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::exists"></a><code><b><span class="methodName">exists</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks whether the preference with given key exists.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean exists(DOMString key);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ The key name of the preference to check.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ boolean If true the key exists in the  application preference, otherwise false
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type IOError, if a read error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if out of memory.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+if (tizen.preference.exists('key1'))
+{
+   console.log('Preference with the key key1 exists');
+}
+else
+{
+   console.log('Preference with the key key1 doesn't exist');
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Preference with the key key1 exists
+ </pre>
+</div>
+</dd>
+<dt class="method" id="PreferenceManager::setChangeListener">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::setChangeListener"></a><code><b><span class="methodName">setChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the listener to receive notifications about changes of the preference value with the given key.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setChangeListener(DOMString key, <a href="#PreferenceChangeCallback">PreferenceChangeCallback</a> listener);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ The key name of the preference to listen.
+                </li>
+          <li class="param">
+<span class="name">listener</span>:
+ The preference value change listener to set
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li>
+<li class="list"><p>
+ with error type IOError, if a read error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if required key not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if out of memory.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var listener = function(data)
+{
+   console.log('Preference with the key: ' + data.key + ' has a new value: ' + data.value);
+};
+
+tizen.preference.setChangeListener('key1', listener);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> Preference with the key: key1 has a new value: Sample value
+ </pre>
+</div>
+</dd>
+<dt class="method" id="PreferenceManager::unsetChangeListener">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceManager::unsetChangeListener"></a><code><b><span class="methodName">unsetChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets the listener, so stop receiving notifications about changes of the preference with the given key.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetChangeListener(DOMString key);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ The key name of the preference to stop listen.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type IOError, if a read error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type NotFoundError, if required key not available.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if out of memory.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var listener = function(data)
+{
+   tizen.preference.unsetChangeListener(data.key);
+};
+
+tizen.preference.setChangeListener('key1', listener);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PreferenceChangeCallback">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceChangeCallback"></a><h3>2.4. PreferenceChangeCallback</h3>
+<div class="brief">
+ The callback function to be used as a change listener for a preference with the given key.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PreferenceChangeCallback {
+    void onsuccess(<a href="#PreferenceData">PreferenceData</a> data);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PreferenceChangeCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceChangeCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the preference with the given key changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PreferenceData">PreferenceData</a> data);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The PreferenceData object with the new value of a preference.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var listener = function(data)
+{
+   tizen.preference.unsetChangeListener(data.key);
+};
+
+tizen.preference.setChangeListener('key1', listener);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PreferenceGetAllCallback">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceGetAllCallback"></a><h3>2.5. PreferenceGetAllCallback</h3>
+<div class="brief">
+ The callback function used to get data of the all preferences.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PreferenceGetAllCallback {
+    void onsuccess(<a href="#PreferenceData">PreferenceData</a>[] preferences);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PreferenceGetAllCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Preference::PreferenceGetAllCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called with all preferences' data as an argument.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PreferenceData">PreferenceData</a>[] preferences);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3.2
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">preferences</span>:
+ The array of PreferenceData objects for all preferences.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
+var successCB = function(preferences)
+{
+   if (preferences.length)
+   {
+      console.log('First preference - key: ' + preferences[0].key + ' value: ' + preferences[0].value);
+   }
+};
+
+tizen.preference.getAll(successCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre> First preference - key: key1 value: Sample value
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Preference {
+  [NoInterfaceObject] interface PreferenceManagerObject {
+      readonly attribute <a href="#PreferenceManager">PreferenceManager</a> preference;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PreferenceManagerObject">PreferenceManagerObject</a>;
+
+  typedef (DOMString or long or double or boolean) PreferenceValueType;
+
+  [NoInterfaceObject] interface PreferenceData {
+    readonly attribute DOMString key;
+    readonly attribute <a href="#PreferenceValueType">PreferenceValueType</a> value;
+  };
+
+  [NoInterfaceObject] interface PreferenceManager {
+    void getAll(<a href="#PreferenceGetAllCallback">PreferenceGetAllCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setValue(DOMString key, <a href="#PreferenceValueType">PreferenceValueType</a> value) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    <a href="#PreferenceValueType">PreferenceValueType</a> getValue(DOMString key) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void remove(DOMString key) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void removeAll() raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    boolean exists(DOMString key) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void setChangeListener(DOMString key, <a href="#PreferenceChangeCallback">PreferenceChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+    void unsetChangeListener(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface PreferenceChangeCallback {
+    void onsuccess(<a href="#PreferenceData">PreferenceData</a> data);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface PreferenceGetAllCallback {
+    void onsuccess(<a href="#PreferenceData">PreferenceData</a>[] preferences);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

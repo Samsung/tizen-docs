@@ -1,6 +1,6 @@
 # Calendar
 
-You can manage your schedule and tasks in calendars. A calendar is a collection of events or tasks, depending upon the calendar type. Each event or task has a series of attributes, such as purpose, starting time, and duration.
+You can manage your schedule and tasks in calendars. A calendar is a collection of events or tasks, depending on the calendar type. Each event or task has a series of attributes, such as purpose, starting time, and duration.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -8,18 +8,18 @@ The main features of the Calendar API include:
 
 - Calendar management   
 
-  You can [create a new calendar](#creating-a-calendar) using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications) (you also need the Account API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html) applications)).
+  You can [create a new calendar](#creating-a-calendar) using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications) (you also need the Account API (in [mobile](../../api/latest/device_api/mobile/tizen/account.html) and [wearable](../../api/latest/device_api/wearable/tizen/account.html) applications)).
 
 - Calendar item management   
 
-  You can manage calendar items (add a new [event](#adding-events-to-a-calendar) or [task](#adding-tasks-to-a-calendar) to a calendar, or manage a single calendar [event](#managing-a-single-event) or [task](#managing-a-single-task)) by using the applicable methods of the `Calendar` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications). You can also delete or [update a single instance of a recurring event](#updating-recurring-events).
+  You can manage calendar items (add a new [event](#adding-events-to-a-calendar) or [task](#adding-tasks-to-a-calendar) to a calendar, or manage a single calendar [event](#managing-a-single-event) or [task](#managing-a-single-task)) by using the applicable methods of the `Calendar` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications). You can also delete or [update a single instance of a recurring event](#updating-recurring-events).
 
-  When creating an important event or task, such as a monthly meeting or a task of paying a utility bill, you can set an alarm for it by using the `CalendarAlarm` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarAlarm) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarAlarm) applications). The alarm is triggered at a defined time to remind the user of the event or task.
+  When creating an important event or task, such as a monthly meeting or a task of paying a utility bill, you can set an alarm for it by using the `CalendarAlarm` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarAlarm) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarAlarm) applications). The alarm is triggered at a defined time to remind the user of the event or task.
 
-  You can create multiple [events](#adding-events-to-a-calendar-in-the-batch-mode) or [tasks](#adding-tasks-to-a-calendar-in-the-batch-node), and manage multiple calendar [events](#managing-multiple-events-in-the-batch-mode) or [tasks](#managing-multiple-tasks-in-the-batch-mode) simultaneously by using the applicable batch methods. The batch mode provides faster, optimized processing of multiple calendar items.
+  You can create multiple [events](#adding-events-to-a-calendar-in-the-batch-mode) or [tasks](#adding-tasks-to-a-calendar-in-the-batch-mode), and manage multiple calendar [events](#managing-multiple-events-in-the-batch-mode) or [tasks](#managing-multiple-tasks-in-the-batch-mode) simultaneously by using the applicable batch methods. The batch mode provides faster, optimized processing of multiple calendar items.
 
-> **Note**  
-> The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
+  > **Note**  
+  > The batch mode does not provide progress information about operations. To ensure that you can view the progress, break the batch operation down into multiple smaller batch operations. For example, break down a batch of 100 update requests into 10 batch operations that update 10 records at a time. Breaking down a batch operation also helps you avoid blocking other database operations, such as add or remove.
 
 - iCalendar 2.0 format conversions
 
@@ -29,7 +29,7 @@ The main features of the Calendar API include:
 
   You can keep the calendar in your application synchronized with user-specific calendars, such as a calendar on a social networking Web site, by [receiving notifications](#receiving-notifications-on-calendar-changes) in your application when calendar items change.
 
-The Calendar API uses the `TZDate` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html#TZDate) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html#TZDate) applications) of the Time API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/time.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/time.html) applications) and not the standard JavaScript `Date` object to handle difficult issues related to the time zone, because the `TZDate` object handles exact time and provides various utility methods.
+The Calendar API uses the `TZDate` object (in [mobile](../../api/latest/device_api/mobile/tizen/time.html#TZDate) and [wearable](../../api/latest/device_api/wearable/tizen/time.html#TZDate) applications) of the Time API (in [mobile](../../api/latest/device_api/mobile/tizen/time.html) and [wearable](../../api/latest/device_api/wearable/tizen/time.html) applications) and not the standard JavaScript `Date` object to handle difficult issues related to the time zone, because the `TZDate` object handles exact time and provides various utility methods.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ To enable your application to use the calendar functionality:
    </widget>
    ```
 
-   Additionally, to double-check the Calendar API support (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html) applications) while the application is running, use the `tizen.systeminfo.getCapability()` method and enable or disable the code that needs the API, as needed.
+   Additionally, to double-check the Calendar API support (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html) applications) while the application is running, use the `tizen.systeminfo.getCapability()` method and enable or disable the code that needs the API, as needed.
 
 2. To use the Calendar API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
@@ -65,7 +65,8 @@ To create a new calendar:
    var myCalendar = null;
    ```
 
-2. Define a success callback for the `getAccounts()` method. The callback receives a list of `Account` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/account.html#Account) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/account.html#Account) applications). Use the first account ID to construct a new `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications).   Add the new calendar to the system using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
+2. Define a success callback for the `getAccounts()` method. The callback receives a list of `Account` objects (in [mobile](../../api/latest/device_api/mobile/tizen/account.html#Account) and [wearable](../../api/latest/device_api/wearable/tizen/account.html#Account) applications). Use the first account ID to construct a new `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications).  
+   Add the new calendar to the system using the `addCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
 
    ```
    function getAccountsSuccess(accounts) {
@@ -91,19 +92,22 @@ You must retrieve the calendar object of the applicable type from the applicable
 
 To access the device calendars and retrieve calendar objects:
 
-- To retrieve the default calendar, use the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications). The following example retrieves the event-type default calendar:
+- To retrieve the default calendar, use the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).  
+  The following example retrieves the event-type default calendar:
 
   ```
   tizen.calendar.getDefaultCalendar('EVENT');
   ```
 
-- To retrieve all the available calendars as an array, use the `getCalendars()` method. The following example retrieves all event-type calendars:
+- To retrieve all the available calendars as an array, use the `getCalendars()` method.  
+  The following example retrieves all event-type calendars:
 
   ```
   tizen.calendar.getCalendars('EVENT', calendarListCallback, errorCallback);
   ```
 
-- To retrieve a special calendar, which combines events (or tasks) from all calendars of the same type, use the `getUnifiedCalendar()` method of the `CalendarManager` interface. The following example retrieves a unified event-type calendar:
+- To retrieve a special calendar, which combines events (or tasks) from all calendars of the same type, use the `getUnifiedCalendar()` method of the `CalendarManager` interface.  
+   The following example retrieves a unified event-type calendar:
 
   ```
   tizen.calendar.getUnifiedCalendar('EVENT');
@@ -111,12 +115,12 @@ To access the device calendars and retrieve calendar objects:
 
 ## Events
 
-The events are identified using the `CalendarEventId`, which is a `CalendarItemId` typedef (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarItemId) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarItemId) applications). In recurring events, the `CalendarEventId` contains a recurrence ID (`rid`) in addition to the actual event ID, to separately identify each occurrence of the recurring event.
+The events are identified using the `CalendarEventId`, which is a `CalendarItemId` typedef (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarItemId) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarItemId) applications). In recurring events, the `CalendarEventId` contains a recurrence ID (`rid`) in addition to the actual event ID, to separately identify each occurrence of the recurring event.
 
 > **Note**  
 > Depending on the time zone and daylight saving time, an event for "today" can actually occur in the past or in the future.
 
-Using the `CalendarEvent` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarEvent) applications), you can:
+Using the `CalendarEvent` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarEvent) applications), you can:
 
 - Add events to a calendar one by one or in a batch mode.
 - Update or delete events one by one or in a batch mode.
@@ -127,7 +131,7 @@ Using the `CalendarEvent` object (in [mobile](../../../../org.tizen.web.apirefer
 
 To add events to a calendar:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
    With the parameter, specify the calendar type as an event.
 
@@ -135,7 +139,7 @@ To add events to a calendar:
    var calendar = tizen.calendar.getDefaultCalendar('EVENT');
    ```
 
-2. Create a `CalendarEvent` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarEvent) applications) and define the event properties:
+2. Create a `CalendarEvent` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarEvent) applications) and define the event properties:
 
    ```
    var ev = new tizen.CalendarEvent({
@@ -155,7 +159,7 @@ To add events to a calendar:
    });
    ```
 
-4. To set up an alarm to remind the user about the event, create an alarm with the `CalendarAlarm` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarAlarm) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarAlarm) applications), and add the alarm to the event:
+4. To set up an alarm to remind the user about the event, create an alarm with the `CalendarAlarm` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarAlarm) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarAlarm) applications), and add the alarm to the event:
 
    ```
    /* Alarm is triggered with sound 30 minutes before the event start time */
@@ -164,7 +168,7 @@ To add events to a calendar:
    ev.alarms = [alarm];
    ```
 
-5. Add the `CalendarEvent` object to the default calendar with the `add()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications).
+5. Add the `CalendarEvent` object to the default calendar with the `add()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications).
 
    ```
    calendar.add(ev); /* ev.id attribute is generated */
@@ -176,7 +180,7 @@ You can create multiple events simultaneously by using the `addBatch()` method.
 
 To add events to a calendar in the batch mode:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
 
    ```
    var calendar = tizen.calendar.getDefaultCalendar('EVENT');
@@ -194,23 +198,23 @@ To add events to a calendar in the batch mode:
    });
    ```
 
-> **Note**  
-> To keep the example as simple as possible, the array above includes only 1 event.
+   > **Note**  
+   > To keep the example as simple as possible, the array above includes only 1 event.
 
-3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the events in the array to the calendar:
+3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the events in the array to the calendar:
 
    ```
    calendar.addBatch([ev]);
    ```
 
-> **Note**  
-> The `addBatch()` method is asynchronous, and its callbacks must be used to react to the success or failure of the operation.
+   > **Note**  
+   > The `addBatch()` method is asynchronous, and its callbacks must be used to react to the success or failure of the operation.
 
 ### Managing a Single Event
 
 To manage a single event:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
    With the parameter, specify the calendar type as event.
 
@@ -218,7 +222,7 @@ To manage a single event:
    var myCalendar = tizen.calendar.getDefaultCalendar('EVENT');
    ```
 
-2. Retrieve all events stored in the calendar by using the `find()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications):
+2. Retrieve all events stored in the calendar by using the `find()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications):
 
    ```
    myCalendar.find(eventSearchSuccessCallback);
@@ -244,11 +248,11 @@ To manage a single event:
 
 ### Updating Recurring Events
 
-If you need to delete or update a single instance of a recurring event, get the list of event instances first with the `expandRecurrence()` method of the `CalendarEvent` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarEvent) applications). Then, delete the applicable event instance, or update it by calling the `update()` method with the `updateAllInstances` parameter set to `false`.
+If you need to delete or update a single instance of a recurring event, get the list of event instances first with the `expandRecurrence()` method of the `CalendarEvent` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarEvent) applications). Then, delete the applicable event instance, or update it by calling the `update()` method with the `updateAllInstances` parameter set to `false`.
 
 To update recurring events:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
    Retrieve the event using the `get()` method by specifying the event ID.
 
@@ -286,7 +290,7 @@ You can manage multiple events simultaneously by using the applicable batch meth
 
 To manage multiple events in the batch mode:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
    With the parameter, specify the calendar type as event.
 
@@ -294,7 +298,7 @@ To manage multiple events in the batch mode:
    var myCalendar = tizen.calendar.getDefaultCalendar('EVENT');
    ```
 
-2. Retrieve all events stored in the calendar by using the `find()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications):
+2. Retrieve all events stored in the calendar by using the `find()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications):
 
    ```
    myCalendar.find(eventSearchSuccessCallback, errorCallback);
@@ -331,7 +335,7 @@ To manage multiple events in the batch mode:
 
 ### Converting Event Formats
 
-You can make event exchange more efficient in your application by converting an event to the iCalendar format (or back) using the `CalendarEvent` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarEvent) applications) constructor and the `convertToString()` method of the `CalendarItem` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarItem) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarItem) applications).
+You can make event exchange more efficient in your application by converting an event to the iCalendar format (or back) using the `CalendarEvent` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarEvent) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarEvent) applications) constructor and the `convertToString()` method of the `CalendarItem` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarItem) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarItem) applications).
 
 The conversion allows you to exchange calendar data between applications by sharing files with the `.ics` extension. The iCalendar format is independent of the underlying transport protocol, meaning that calendar items can be exchanged using a variety of transports, including HTTP, SMTP, and infrared. The iCalendar format can be used to store calendar item information and exchange calendar data over the Internet.
 
@@ -351,7 +355,7 @@ To convert the events to iCalendar format and back:
 
 - To convert an iCalendar string to an event:    
 
-  1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+  1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
      With the parameter, specify the calendar type as event.
 
@@ -409,9 +413,9 @@ To convert the events to iCalendar format and back:
 
 ## Tasks
 
-The tasks are identified using the `CalendarTaskId`, which is a `CalendarItemId` typedef (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarItemId) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarItemId) applications).
+The tasks are identified using the `CalendarTaskId`, which is a `CalendarItemId` typedef (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarItemId) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarItemId) applications).
 
-Using the `CalendarTask` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarTask) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarTask) applications), you can:
+Using the `CalendarTask` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarTask) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarTask) applications), you can:
 
 - Add tasks to a calendar one by one or in a batch mode.
 - Update or delete tasks one by one or in a batch mode.
@@ -421,7 +425,7 @@ Using the `CalendarTask` object (in [mobile](../../../../org.tizen.web.apirefere
 
 To add tasks to a calendar:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
    With the parameter, specify the calendar type as task.
 
@@ -429,7 +433,7 @@ To add tasks to a calendar:
    var calendar = tizen.calendar.getDefaultCalendar('TASK');
    ```
 
-2. Create a `CalendarTask` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarTask) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarTask) applications) and define the task properties:
+2. Create a `CalendarTask` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarTask) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarTask) applications) and define the task properties:
 
    ```
    var task = new tizen.CalendarTask({
@@ -442,7 +446,7 @@ To add tasks to a calendar:
    });
    ```
 
-3. To set up an alarm to remind the user about the task, create an alarm with the `CalendarAlarm` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarAlarm) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarAlarm) applications), and add the alarm to the task:
+3. To set up an alarm to remind the user about the task, create an alarm with the `CalendarAlarm` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarAlarm) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarAlarm) applications), and add the alarm to the task:
 
    ```
    /* Alarm is triggered with sound 30 minutes before the task start time */
@@ -451,7 +455,7 @@ To add tasks to a calendar:
    task.alarms = [alarm];
    ```
 
-4. Add the `CalendarTask` object to the default calendar with the `add()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications):
+4. Add the `CalendarTask` object to the default calendar with the `add()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications):
 
    ```
    calendar.add(task); /* task.id attribute is generated */
@@ -463,7 +467,7 @@ You can create multiple tasks simultaneously by using the `addBatch()` method.
 
 To add tasks to a calendar in the batch mode:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications):
 
    ```
    var calendar = tizen.calendar.getDefaultCalendar('TASK');
@@ -482,23 +486,23 @@ To add tasks to a calendar in the batch mode:
    });
    ```
 
-> **Note**  
-> To keep the example as simple as possible, the array above includes only 1 task.
+   > **Note**  
+   > To keep the example as simple as possible, the array above includes only 1 task.
 
-3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the tasks in the array to the calendar:
+3. Use the `addBatch()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications) to add the tasks in the array to the calendar:
 
    ```
    calendar.addBatch([task]);
    ```
 
-> **Note**  
-> The `addBatch()` method is asynchronous, and its callbacks must be used if you want to react to the success or failure of the operation.
+   > **Note**  
+   > The `addBatch()` method is asynchronous, and its callbacks must be used if you want to react to the success or failure of the operation.
 
 ### Managing a Single Task
 
 To manage a single task:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
    With the parameter, specify the calendar type as task.
 
@@ -506,7 +510,7 @@ To manage a single task:
    var myCalendar = tizen.calendar.getDefaultCalendar('TASK');
    ```
 
-2. Retrieve all tasks stored in the calendar by using the `find()` method of the `Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications):
+2. Retrieve all tasks stored in the calendar by using the `find()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications):
 
    ```
    myCalendar.find(taskSearchSuccessCallback);
@@ -536,7 +540,7 @@ You can manage multiple tasks simultaneously by using the applicable batch metho
 
 To manage multiple tasks in the batch mode:
 
-1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
    With the parameter, specify the calendar type as task.
 
@@ -544,7 +548,7 @@ To manage multiple tasks in the batch mode:
    var myCalendar = tizen.calendar.getDefaultCalendar('TASK');
    ```
 
-2. Retrieve all tasks stored in the calendar by using the `find()` method of the`Calendar` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#Calendar) applications):
+2. Retrieve all tasks stored in the calendar by using the `find()` method of the `Calendar` object (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#Calendar) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#Calendar) applications):
 
    ```
    myCalendar.find(taskSearchSuccessCallback);
@@ -581,7 +585,7 @@ To manage multiple tasks in the batch mode:
 
 ### Converting Task Formats
 
-You can make task exchange more efficient in your application by converting a task to the iCalendar format (or back) using the `CalendarTask` object constructor (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarTask) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarTask) applications) and the `convertToString()` method of the `CalendarItem` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarItem) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarItem) applications).
+You can make task exchange more efficient in your application by converting a task to the iCalendar format (or back) using the `CalendarTask` object constructor (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarTask) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarTask) applications) and the `convertToString()` method of the `CalendarItem` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarItem) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarItem) applications).
 
 The conversion allows you to exchange calendar data between applications by sharing files with the `.ics` extension. The iCalendar format is independent of the underlying transport protocol, meaning that calendar items can be exchanged using a variety of transports, including HTTP, SMTP, and Infrared. The iCalendar format can be used to store calendar item information and exchange calendar data over the Internet.
 
@@ -602,7 +606,7 @@ To convert the task to iCalendar format and back:
 
 - To convert an iCalendar string to a task:    
 
-  1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
+  1. Retrieve the default system calendar using the `getDefaultCalendar()` method of the `CalendarManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarManager) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarManager) applications).
 
      With the parameter, specify the calendar type as task.
 
@@ -662,7 +666,7 @@ To convert the task to iCalendar format and back:
 
 You can keep the calendar in your application synchronized with user-specific calendars by receiving notifications in your application when calendar items are added, updated, or deleted. Every change made to the calendar database triggers an event for which you can define a notification. For batch mode operations, each operation generates only a single event. A recurring event is treated as one event.
 
-The `addChangeListener()` method of the `Calendar` interface registers an event listener, which starts asynchronously once the `addChangeListener()` method returns the subscription identifier for the listener. You can use the `CalendarChangeCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarChangeCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarChangeCallback) applications) to define listener event handlers for receiving the notifications.
+The `addChangeListener()` method of the `Calendar` interface registers an event listener, which starts asynchronously once the `addChangeListener()` method returns the subscription identifier for the listener. You can use the `CalendarChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarChangeCallback) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarChangeCallback) applications) to define listener event handlers for receiving the notifications.
 
 To receive notifications when calendar items are added, updated, or removed:
 
@@ -676,7 +680,7 @@ To receive notifications when calendar items are added, updated, or removed:
    var calendar;
    ```
 
-2. Define the event handlers for different notifications using the `CalendarChangeCallback` listener interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html#CalendarChangeCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/calendar.html#CalendarChangeCallback) applications):
+2. Define the event handlers for different notifications using the `CalendarChangeCallback` listener interface (in [mobile](../../api/latest/device_api/mobile/tizen/calendar.html#CalendarChangeCallback) and [wearable](../../api/latest/device_api/wearable/tizen/calendar.html#CalendarChangeCallback) applications):
 
    ```
    var watcher = {

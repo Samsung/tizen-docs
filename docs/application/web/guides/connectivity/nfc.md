@@ -39,14 +39,14 @@ NFC provides the following advantages over short-range communication technologie
 
 ## NFC Tags and NDEF Messages
 
-An **NFC tag** is a chip which can securely store personal information, such as debit card numbers or contact details. The methods of the `NFCTag` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCTag) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCTag) applications) are used to access an NFC tag for reading or writing information. NFC tag types are identified using the `type` attribute of the `NFCTagType` type definition (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCTagType) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCTagType) applications).
+An **NFC tag** is a chip which can securely store personal information, such as debit card numbers or contact details. The methods of the `NFCTag` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCTag) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCTag) applications) are used to access an NFC tag for reading or writing information. NFC tag types are identified using the `type` attribute of the `NFCTagType` type definition (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCTagType) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCTagType) applications).
 
-> **Note**
+> **Note**  
 > Tizen supports the following NFC tag types: `GENERIC_TARGET`, `ISO14443_A`, `ISO14443_4A`, `ISO14443_3A`, `MIFARE_MINI`, `MIFARE_1K`, `MIFARE_4K`, `MIFARE_ULTRA`, `MIFARE_DESFIRE`, `ISO14443_B`, `ISO14443_4B`, `ISO14443_BPRIME`, `FELICA`, `JEWEL`, `ISO15693`, and `UNKNOWN_TARGET`.
 
-The NFC forum defines the NFC data exchange format (NDEF) for encapsulating the data exchanged between 2 NFC-enabled devices or an NFC-enabled device and an NFC tag. An **NDEF message** can store data in various formats, such as text, Multipurpose Internet Mail Extension (MIME) type object, or ultra-short RagTime Document (RTD). The NFC tags use NDEF for exchanging messages. Tizen provides the `NDEFMessage` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFMessage) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFMessage) applications) to define an NDEF message.
+The NFC forum defines the NFC data exchange format (NDEF) for encapsulating the data exchanged between 2 NFC-enabled devices or an NFC-enabled device and an NFC tag. An **NDEF message** can store data in various formats, such as text, Multipurpose Internet Mail Extension (MIME) type object, or ultra-short RagTime Document (RTD). The NFC tags use NDEF for exchanging messages. Tizen provides the `NDEFMessage` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFMessage) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFMessage) applications) to define an NDEF message.
 
-An NDEF message is composed of multiple records. An NDEF record is created using the `NDEFRecord` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecord) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecord) applications) and is identified by record type, ID, and payload. The following figure shows the conceptual structure of an NDEF message.
+An NDEF message is composed of multiple records. An NDEF record is created using the `NDEFRecord` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecord) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecord) applications) and is identified by record type, ID, and payload. The following figure shows the conceptual structure of an NDEF message.
 
 **Figure: Structure of an NDEF message**
 
@@ -58,23 +58,23 @@ A record in an NDEF message can be created by using the following payload types:
 
   The NDEF record content is created using text format.
 
-  The `NDEFRecordText` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecordText) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecordText) applications) is used to create the text format payload using the `text`, `languageCode`, and `encoding` attributes.
+  The `NDEFRecordText` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecordText) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecordText) applications) is used to create the text format payload using the `text`, `languageCode`, and `encoding` attributes.
 
 - URI   
 
   The NDEF record content is created using a URI.
 
-  The `NDEFRecordURI` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecordURI) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecordURI) applications) is used to create the URI type payload using the `uri` attribute.
+  The `NDEFRecordURI` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecordURI) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecordURI) applications) is used to create the URI type payload using the `uri` attribute.
 
 - Media   
 
   The NDEF record content is created using a media format.
 
-  The `NDEFRecordMedia` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecordMedia) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecordMedia) applications) is used to create the media format payload using the `mimeType` attribute.
+  The `NDEFRecordMedia` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecordMedia) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecordMedia) applications) is used to create the media format payload using the `mimeType` attribute.
 
 ## Prerequisites
 
-To use the Application (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) applications) and NFC (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html) applications) APIs, the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/application.html) and [wearable](../../api/latest/device_api/wearable/tizen/application.html) applications) and NFC (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html) applications) APIs, the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
@@ -86,14 +86,14 @@ To use the Application (in [mobile](../../../../org.tizen.web.apireference/html/
 
 ## Managing NFC Connectivity
 
-To use NFC, retrieve the default NFC adapter using the `getDefaultAdapter()` method of the `NFCAdapter` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCAdapter) applications).
+To use NFC, retrieve the default NFC adapter using the `getDefaultAdapter()` method of the `NFCAdapter` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCAdapter) applications).
 
-> **Note**
+> **Note**  
 > The NFC API does not provide methods to directly enable or disable the NFC adapter of the device. When NFC is required, you must request the built-in Settings application to let the user enable or disable NFC.
 
 To enable or disable the NFC service:
 
-1. To get the default NFC adapter, use the `getDefaultAdapter()` method and prepare an `ApplicationControl` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationControl) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationControl) applications) to request the NFC switching operation:
+1. To get the default NFC adapter, use the `getDefaultAdapter()` method and prepare an `ApplicationControl` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl) and [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl) applications) to request the NFC switching operation:
 
    ```
     var nfcSwitchAppControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/nfc');
@@ -111,7 +111,7 @@ To enable or disable the NFC service:
    }
    ```
 
-3. Define the event handler for an application control, which implements the `ApplicationControlDataArrayReplyCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html#ApplicationControlDataArrayReplyCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/application.html#ApplicationControlDataArrayReplyCallback) applications):
+3. Define the event handler for an application control, which implements the `ApplicationControlDataArrayReplyCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControlDataArrayReplyCallback) and [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControlDataArrayReplyCallback) applications):
 
    ```
    var serviceReply = {
@@ -144,7 +144,7 @@ To enable or disable the NFC service:
 
 ## Detecting NFC Tags and Peer Devices
 
-To receive notifications when an NFC tag or peer device has been detected, register event listeners with the `setTagListener()` and `setPeerListener()` methods of the `NFCAdapter` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCAdapter) applications). You can use the `NFCTagDetectCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCTagDetectCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCTagDetectCallback) applications) and `NFCPeerDetectCallback` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCPeerDetectCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCPeerDetectCallback) applications) interfaces to define event handlers for receiving the notifications about attaching and detaching NFC tags and peers, respectively.
+To receive notifications when an NFC tag or peer device has been detected, register event listeners with the `setTagListener()` and `setPeerListener()` methods of the `NFCAdapter` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCAdapter) applications). You can use the `NFCTagDetectCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCTagDetectCallback) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCTagDetectCallback) applications) and `NFCPeerDetectCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCPeerDetectCallback) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCPeerDetectCallback) applications) interfaces to define event handlers for receiving the notifications about attaching and detaching NFC tags and peers, respectively.
 
 To detect NFC tags and peer devices:
 
@@ -192,13 +192,13 @@ NFC peers are detected similarly as NFC tags, except that the `setPeerListener()
 
 ## Handling NDEF Messages
 
-You can handle NDEF messages by first creating NDEF records using the `NDEFRecord` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecord) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecord) applications), and then adding the records to an NDEF message using the `records` attribute of the `NDEFMessage` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFMessage) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFMessage) applications).
+You can handle NDEF messages by first creating NDEF records using the `NDEFRecord` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecord) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecord) applications), and then adding the records to an NDEF message using the `records` attribute of the `NDEFMessage` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFMessage) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFMessage) applications).
 
 To create NDEF messages:
 
-1. To create an NDEF URI record, create an `NDEFRecordURI` interface instance (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecordURI) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecordURI) applications) and specify the URI parameter.
+1. To create an NDEF URI record, create an `NDEFRecordURI` interface instance (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecordURI) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecordURI) applications) and specify the URI parameter.
 
-   Additionally, you can create instances of the `NDEFRecord`, `NDEFRecordText` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecordText) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecordText) applications), or `NDEFRecordMedia` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFRecordMedia) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFRecordMedia) applications) interfaces based on the record type to be created.
+   Additionally, you can create instances of the `NDEFRecord`, `NDEFRecordText` (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecordText) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecordText) applications), or `NDEFRecordMedia` (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFRecordMedia) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFRecordMedia) applications) interfaces based on the record type to be created.
 
    ```
    var newRecord = new tizen.NDEFRecordURI('https://www.tizen.org/');
@@ -218,9 +218,9 @@ To create NDEF messages:
 
 ## Exchanging NDEF Data with Peers
 
-To exchange data between peers, the `setReceiveNDEFListener()` method of the `NFCPeer` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCPeer) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCPeer) applications) registers an event listener, which triggers an event when an NDEF message is received from a peer.
+To exchange data between peers, the `setReceiveNDEFListener()` method of the `NFCPeer` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCPeer) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCPeer) applications) registers an event listener, which triggers an event when an NDEF message is received from a peer.
 
-You can use the `NDEFMessageReadCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFMessageReadCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFMessageReadCallback) applications) to define event handlers for reading NDEF messages from peer devices.
+You can use the `NDEFMessageReadCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFMessageReadCallback) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFMessageReadCallback) applications) to define event handlers for reading NDEF messages from peer devices.
 
 To exchange NDEF messages:
 
@@ -246,18 +246,18 @@ To exchange NDEF messages:
    Peer.sendNDEF(newMessage);
    ```
 
-	> **Note**
-	> If an application is in the background and uses the `sendNDEF()` method, an error callback is launched. This method can only be used on the foreground.
+> **Note**  
+> If an application is in the background and uses the `sendNDEF()` method, an error callback is launched. This method can only be used on the foreground.
 
 ## Exchanging NDEF Data with Tags
 
 To exchange data between tags, you can read from tags and write to tags using the `readNDEF()` and `writeNDEF()` methods.
 
-You can use the `NDEFMessageReadCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NDEFMessageReadCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NDEFMessageReadCallback) applications) to define event handlers for reading NDEF messages from tags.
+You can use the `NDEFMessageReadCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NDEFMessageReadCallback) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NDEFMessageReadCallback) applications) to define event handlers for reading NDEF messages from tags.
 
 To exchange NDEF data with tags:
 
-1. To read data from an NFC tag, use the `readNDEF()` method of the `NFCTag` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCTag) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCTag) applications).
+1. To read data from an NFC tag, use the `readNDEF()` method of the `NFCTag` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCTag) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCTag) applications).
 
    The `readNDEF()` method registers the `NDEFMessageReadCallback` listener interface, which is invoked when an NDEF message is read.
 
@@ -286,16 +286,16 @@ To exchange NDEF data with tags:
 
    You can use the `transceive()` method to transfer raw data as a byte array to an NFC tag without knowing the underlying details of the tag.
 
-	> **Note**
-	> If an application is in the background and uses the `writeNDEF()` or `transceive()` method, an error callback is launched. These methods can only be used on the foreground.
+> **Note**  
+> If an application is in the background and uses the `writeNDEF()` or `transceive()` method, an error callback is launched. These methods can only be used on the foreground.
 
 ## Using NFC Card Emulation
 
-You can enable NFC card emulation and monitor the secure element transaction taking place using the `NFCAdapter` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCAdapter) applications). The secure element transaction is carried out by the device. The Tizen application can detect the transaction, but does not take part in it. Interpreting the transaction data requires knowledge about the data protocol the transaction uses. With the required knowledge, the application can detect whether the transaction was successful.
+You can enable NFC card emulation and monitor the secure element transaction taking place using the `NFCAdapter` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCAdapter) applications). The secure element transaction is carried out by the device. The Tizen application can detect the transaction, but does not take part in it. Interpreting the transaction data requires knowledge about the data protocol the transaction uses. With the required knowledge, the application can detect whether the transaction was successful.
 
 To enable or disable the NFC card emulation and detect secure element transactions:
 
-1. Declare the required variables and obtain the `NFCAdapter` object using the `getDefaultAdapter()` method of the `NFCManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCManager) applications):
+1. Declare the required variables and obtain the `NFCAdapter` object using the `getDefaultAdapter()` method of the `NFCManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCManager) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCManager) applications):
 
    ```
    var adapter = tizen.nfc.getDefaultAdapter();
@@ -346,7 +346,7 @@ To enable or disable the NFC card emulation and detect secure element transactio
 
 ## Using NFC Host-based Card Emulation
 
-You can handle HCE (host-based card emulation) events and transactions taking place using the `NFCAdapter` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCAdapter) applications). HCE is an on-device technology that permits a phone to perform card emulation on an NFC-enabled device without relying on access to a secure element. The transaction data is routed to the host application directly, instead of routing to a secure element. The Tizen application can detect the transaction and can take part in it.
+You can handle HCE (host-based card emulation) events and transactions taking place using the `NFCAdapter` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCAdapter) applications). HCE is an on-device technology that permits a phone to perform card emulation on an NFC-enabled device without relying on access to a secure element. The transaction data is routed to the host application directly, instead of routing to a secure element. The Tizen application can detect the transaction and can take part in it.
 
 To detect NFC HCE events and manage AID (Application ID):
 
@@ -374,8 +374,14 @@ To detect NFC HCE events and manage AID (Application ID):
       </widget>
       ```
 
-      - The `tizen:app-control` element must contain the `tizen:src` and `tizen:operation`  and `tizen:uri` elements:The `tizen:src` element must contain the `name` attribute that defines the page to be handled. The `reload` attribute is optional.The `tizen:operation` element must be `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service`.The `tizen:uri` element must be `nfc://secure/HCE/aid/<specific AID>`.
-      - The `tizen:metadata` element must contain the `key` and `value` attributes:The `key` attribute must be `http://tizen.org/metadata/nfc_cardemulation`.The `value` attribute must contain the AID XML file path.The `value` attribute is a relative path starting from the application root path.
+      - The `tizen:app-control` element must contain the `tizen:src` and `tizen:operation`  and `tizen:uri` elements:
+         - The `tizen:src` element must contain the `name` attribute that defines the page to be handled. The `reload` attribute is optional.
+         - The `tizen:operation` element must be `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service`.
+         - The `tizen:uri` element must be `nfc://secure/HCE/aid/<specific AID>`.
+      - The `tizen:metadata` element must contain the `key` and `value` attributes:
+         - The `key` attribute must be `http://tizen.org/metadata/nfc_cardemulation`.
+         - The `value` attribute must contain the AID XML file path.  
+           The `value` attribute is a relative path starting from the application root path.
 
    2. The metadata element points to an AID XML file. The following is an example of the file with an AID declaration:
 
@@ -399,10 +405,15 @@ To detect NFC HCE events and manage AID (Application ID):
       - Each `aid-group` element must contain 1 or more `aid` elements, each of which contains a single AID. The `aid-group` can have as many `aid` elements as you want.
       - The `aid` element must contain the `aid`, `se_type`, `unlock`, and `power` attributes.
       - The `se_type` attribute must contain `hce`, `ese`, or `uicc`. The `se_type` value can be added later.
-      - The `unlock` attribute must contain one of the following:`true`: The card cannot work when the device is locked.`false`: The card can work when the device is locked.
-      - The `power` must contain one of the following:`on`: The card can work when the device is on.`off`: The card can work when the device is off.`sleep`: The card can work when the device is in the sleep mode.
+      - The `unlock` attribute must contain one of the following:
+         - `true`: The card cannot work when the device is locked.
+         - `false`: The card can work when the device is locked.
+      - The `power` must contain one of the following:
+         - `on`: The card can work when the device is on.
+         - `off`: The card can work when the device is off.
+         - `sleep`: The card can work when the device is in the sleep mode.
 
-2. Declare the required variables and obtain the `NFCAdapter` object using the `getDefaultAdapter()` method of the `NFCManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html#NFCManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCManager) applications).
+2. Declare the required variables and obtain the `NFCAdapter` object using the `getDefaultAdapter()` method of the `NFCManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/nfc.html#NFCManager) and [wearable](../../api/latest/device_api/wearable/tizen/nfc.html#NFCManager) applications).
 
    To enable NFC card emulation, change the value of the `cardEmulationMode` attribute.
 
@@ -481,13 +492,13 @@ To detect NFC HCE events and manage AID (Application ID):
 
 Since Tizen 4.0, you can change the routing priority of NFC card emulation events. The card emulation events can be sent to the application currently on the foreground (instead of the application chosen in NFC settings), as long as the application stays on the foreground.
 
-To set your application as preferred for HCE events, call the `setPreferredApp()` method of the `NFCAdapter` interface. When the application leaves the foreground, it loses the preferred application status, and when it enters the foreground again, it regains the status. For more information on this behavior, see the `setPreferredApp()` method in the [NFCAdapter](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/nfc.html#NFCAdapter) interface.
+To set your application as preferred for HCE events, call the `setPreferredApp()` method of the `NFCAdapter` interface. When the application leaves the foreground, it loses the preferred application status, and when it enters the foreground again, it regains the status. For more information on this behavior, see the `setPreferredApp()` method in the [NFCAdapter](../../api/latest/device_api/wearable/tizen/nfc.html#NFCAdapter) interface.
 
 When an application no longer needs to receive card emulation events, change the routing priority back to the default setting by calling the `unsetPreferredApp()` method.
 
 ## NFC Application Control Operations
 
-You can launch NFC applications based on the NDEF message content using the [application control](./app-management/app-controls.md) functionalities:
+You can launch NFC applications based on the NDEF message content using the [application control](../app-management/app-controls.md) functionalities:
 
 - NFC application can be launched by the receipt of an NDEF message or by the reading of an NFC tag.
 
@@ -507,18 +518,82 @@ The following table lists the NFC operations, URI scheme and MIME.
 
 **Table: NFC operations**
 
-| Operation                                | URI scheme                               | MIME                                     |
-| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `http://tizen.org/appcontrol/operation/nfc/empty` | `NULL`                                   | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/wellknown` | `<scheme>:<host>/<path>` URL, for example:             `http`       `http://tizen.org/`       `http://tizen.org/about/devices`       `http://tizen.org/about/*`       URN, for example:             `tel`       `mailto`       `mailto:tommy@tizen.org` | `U/<protocol_code>` For example: `U/0x03, U/0x05, U/*` |
-| `NULL`                                   | `<type_string>/*` For example: `T/*, sp/*, */*` |                                          |
-| `http://tizen.org/appcontrol/operation/nfc/mime` | `NULL`                                   | `<type_string>/<subtype_string>` (case-insensitive) For example: `text/x-vard, text/*, */*` |
-| `http://tizen.org/appcontrol/operation/nfc/uri` | `<uri>` For example: `http://tizen.org/about/devices` | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/external` | `<scheme>:<string>` (case-insensitive) For example: `nfc:ext.tizen.org.ABC` | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/transaction` | `nfc://secure/<SE name>/aid/<aid>`For example:          `nfc://secure/SIM1/aid/123456789`     `nfc://secure/SIM1/aid/1234*`     `nfc://secure/SIM1/aid/*` | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service` | `NULL`                                   | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service` | `NULL`                                   | `NULL`                                   |
-| `http://tizen.org/appcontrol/operation/nfc/card_emulation/default_changed` | `NULL`                                   | `NULL`                                   |
+<table border="1">
+	<tbody>
+		<tr>
+			<th>Operation</th>
+			<th>URI scheme</th>
+			<th>MIME</th>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/empty</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td rowspan="2"><code>http://tizen.org/appcontrol/operation/nfc/wellknown</code></td>
+			<td><code>&lt;scheme&gt;:&lt;host&gt;/&lt;path&gt;</code> <p>URL, for example:</p>
+				<ul>
+					<li><code>http</code></li>
+					<li><code>http://tizen.org/</code></li>
+					<li><code>http://tizen.org/about/devices</code></li>
+					<li><code>http://tizen.org/about/*</code></li>
+				</ul> <p>URN, for example:</p>
+				<ul>
+					<li><code>tel</code></li>
+					<li><code>mailto</code></li>
+					<li><code>mailto:tommy@tizen.org</code></li>
+				</ul>
+			</td>
+			<td><code>U/&lt;protocol_code&gt;</code> <p>For example: <code>U/0x03, U/0x05, U/*</code></p> </td>
+		</tr>
+		<tr>
+			<td><code>NULL</code></td>
+			<td><code>&lt;type_string&gt;/*</code> <p>For example: <code>T/*, sp/*, */*</code></p> </td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/mime</code></td>
+			<td><code>NULL</code></td>
+			<td><code>&lt;type_string&gt;/&lt;subtype_string&gt;</code> (case-insensitive) <p>For example: <code>text/x-vard, text/*, */*</code></p> </td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/uri</code></td>
+			<td><code>&lt;uri&gt;</code> <p>For example: <code>http://tizen.org/about/devices</code></p> </td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/external</code></td>
+			<td><code>&lt;scheme&gt;:&lt;string&gt;</code> (case-insensitive) <p>For example: <code>nfc:ext.tizen.org.ABC</code></p> </td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/transaction</code></td>
+			<td><code>nfc://secure/&lt;SE name&gt;/aid/&lt;aid&gt;</code><p>For example:</p>
+				<ul>
+					<li><code>nfc://secure/SIM1/aid/123456789</code></li>
+					<li><code>nfc://secure/SIM1/aid/1234*</code></li>
+					<li><code>nfc://secure/SIM1/aid/*</code></li>
+				</ul>
+			</td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/card_emulation/host_apdu_service</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/card_emulation/off_host_apdu_service</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+		<tr>
+			<td><code>http://tizen.org/appcontrol/operation/nfc/card_emulation/default_changed</code></td>
+			<td><code>NULL</code></td>
+			<td><code>NULL</code></td>
+		</tr>
+	</tbody>
+</table>
 
 \* The `<protocol_code>` and `<scheme>` must be in sync. See [NFCForum-TS-RTD_URI_1.0](http://members.nfc-forum.org/apps/group_public/document.php?document_id=5078) and NFC RTD (Record Type Definition) documentation on the NFC forum.
 

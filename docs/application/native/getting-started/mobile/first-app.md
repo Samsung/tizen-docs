@@ -6,9 +6,9 @@ A mobile native application is created using the C language, and can be run on T
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile native application, which displays some text on the screen with no user interaction:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
-    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/installing-sdk.md).
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
 2. [Create a mobile native project](#create) using the Tizen Studio.
 
@@ -26,7 +26,7 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/cover-native.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -103,7 +103,8 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_mn.png)
 
-> **Note** 
+> **Note**
+>
 > You can [view and modify the application configuration](#configuration) in the manifest editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
@@ -119,7 +120,7 @@ To view and modify the application configuration:
 
     ![Configuring the application](media/basic_app_config_n.png)
 
-    -   **Overview**: Define general information, such as the package, label, and icon of the application.
+    - **Overview**: Define general information, such as the package, label, and icon of the application.
 
     - **Features**: Define required software and hardware features. This information is used for application filtering in the Tizen Store.
 
@@ -131,7 +132,8 @@ To view and modify the application configuration:
 
     - **Source**: View and edit the source code of the `tizen-manifest.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-        > **Note** 
+        > **Note**
+        >
         > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3. To save any changes, in the Tizen Studio menu, select **File > Save All**.
@@ -223,7 +225,7 @@ You can build the application in the following ways:
     -   In the Tizen Studio menu, select **Project &gt; Build Project**.
     -   Press the **F10** key.
 
-You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations > Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
+You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations &gt; Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
 
 After you have built the application, run it.
 
@@ -274,7 +276,8 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_mn.png)
 
-        > **Note** 
+        > **Note**
+        >
         > If the emulator display has switched off, you cannot see the application launch. To see the application on the emulator screen:
         > 1.  To switch the display on, in the key window next to the emulator screen, click `Power`.
         > 2.  On the home screen, swipe left.
@@ -284,7 +287,7 @@ To run the application on the emulator:
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 <a name="target"></a>
-### Running on a Target Device 
+### Running on a Target Device
 
 To run the application on a target device:
 
@@ -310,7 +313,8 @@ To run the application on a target device:
 
     3. Confirm that the application launches on the target device.
 
-    > **Note** 
+    > **Note**
+    >
     > The application is launched using the default debug run configuration. To create and use another configuration:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
@@ -319,7 +323,7 @@ To run the application on a target device:
 <a name="build_ui"></a>
 ## Designing a Simple UI 
 
-The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/efl.md).
+The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/index.md).
 
 **Figure: User interface in the Basic UI template**
 

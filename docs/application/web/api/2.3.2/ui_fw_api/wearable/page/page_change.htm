@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../../snippet.js"></script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../../styles.css" rel="StyleSheet" type="text/css" /> 
+  <link href="../../snippet.css" rel="StyleSheet" type="text/css" /> 
+  <title>Changing Pages</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Changing Pages</h1>
+<p>The following table lists the methods you can use to change the active page.</p>
+<table>
+<caption>Table: Page changing methods</caption>
+<tbody>
+	<tr>
+		<th style="width:40%;">Method</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">tau.changePage(to)</span></td>
+		<td>Programmatically change to another page. The <span style="font-family: Courier New,Courier,monospace">to</span> argument is a page object or string.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">tau.back()</span></td>
+		<td>Loads the previous page in the history list.</td>
+	</tr>
+</tbody>
+</table>
+
+<p>When changing the active page, you can use a page transition. <p>Tizen wearable Web UI framework does not apply transitions by default. To set a custom transition effect, you must add the <span style="font-family: Courier New,Courier,monospace">data-transition</span> attribute to a link:</p>
+<pre class="prettyprint">&lt;a href=&quot;index.html&quot; data-transition=&quot;slideup&quot;&gt;I&#39;ll slide up&lt;/a&gt;</pre>
+
+<p>To set a default custom transition effect for all pages, use the <span style="font-family: Courier New,Courier,monospace">pageTransition</span> property:</p>
+<pre class="prettyprint">/* JavaScript code */
+tau.defaults.pageTransition = &quot;slideup&quot;;
+</pre>
+
+<p>The following table lists the page transition properties.</p>
+<table>
+<caption>Table: Transition properties</caption>
+<tbody>
+	<tr>
+		<th style="width:40%;">Property</th>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td rowspan="3"><span style="font-family: Courier New,Courier,monospace">data-transition</span></td>
+		<td><span style="font-family: Courier New,Courier,monospace">none</span></td>
+		<td>Default value, no transition.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">slideup</span></td>
+		<td>Makes the content of the next page slide up, appearing to conceal the content of the previous page.</td>
+	</tr>
+<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">pop</span></td>
+		<td>Makes the content of the next page pop, appearing to conceal the content of the previous page.<br>In Circular UI, this is default.</td>
+	</tr>
+	
+</tbody>
+</table>
+
+
+
+<h2>Where to Go Next</h2>
+<ul>
+<li><a href="app_page_layout.htm">Application Page Layout</a></li></ul>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

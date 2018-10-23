@@ -66,8 +66,8 @@ To assign size and alignment to a flex container:
 
      - `space-around`: Creates equal gaps between all items.
 
-	> **Note**
-	> This property is similar to `text-align`, but the alignment direction and the starting point are based on the `flex-direction` and `flex-wrap` properties.   
+      > **Note**  
+      > This property is similar to `text-align`, but the alignment direction and the starting point are based on the `flex-direction` and `flex-wrap` properties.   
 
    - `align-content` property sets the handling of gaps between the flex items on the cross axis. It has the same values as the `justify-content` property, and 1 additional value:
 
@@ -85,8 +85,8 @@ To assign size and alignment to a flex container:
 
      - `stretch`: Extends the height of the flex items and aligns them without gaps.
 
-	> **Note**
-	> If the `flex-wrap` property is set to `wrap-reverse`, the start and end points of the alignment are reversed.
+      > **Note**  
+      > If the `flex-wrap` property is set to `wrap-reverse`, the start and end points of the alignment are reversed.
 
 The following figure shows examples of flex containers and how their flex items have been aligned.
 
@@ -126,8 +126,8 @@ To assign size and alignment to the flex items in a flex container:
 
    - `align-self` property is similar as the [align-items](#using-the-flex-container) property of the flex container.
 
-		> **Note**
-		> If both the `align-self` and `align-items` properties are used simultaneously, the `align-items` property is ignored.
+      > **Note**  
+      > If both the `align-self` and `align-items` properties are used simultaneously, the `align-items` property is ignored.
 
    - `flex` property is a shorthand expression defining the flex item size handling:
 
@@ -228,7 +228,13 @@ To create a flexible box layout with CSS3:
 
 3. Define a flexible alignment for the article areas to support screen orientation changes and ensure that the content fills up the entire available screen area regardless of the orientation:
 
-   a. Define the text list items and the icon list as flex containers using the `display: -webkit-flex;` property:For the text list items, align them vertically in the middle, define a 0 margin at the top for the first item, and center-align the text for the date box.For the icon list, align the icon list so that the first and last icon are placed at the ends and the gaps between the rest of the icons are equal.(The following figure applies to mobile applications only.)
+   1. Define the text list items and the icon list as flex containers using the `display: -webkit-flex;` property:
+   
+      - For the text list items, align them vertically in the middle, define a 0 margin at the top for the first item, and center-align the text for the date box.
+
+      - For the icon list, align the icon list so that the first and last icon are placed at the ends and the gaps between the rest of the icons are equal.
+
+      (The following figure applies to mobile applications only.)
 
       ```
       <!--Flexible alignment of text list-->
@@ -254,7 +260,7 @@ To create a flexible box layout with CSS3:
 
       ![Article areas with a flexible box layout defined (in mobile applications only)](./media/flexible_box_alignment.png)
 
-   b. Special consideration can be given for some screen sizes. The following example defines a specific layout for small screens (where the screen width is less than 390 pixels). (The following figure applies to mobile applications only.)
+   2. Special consideration can be given for some screen sizes. The following example defines a specific layout for small screens (where the screen width is less than 390 pixels). (The following figure applies to mobile applications only.)
 
       ```
       @media screen and (min-width: 390px) {

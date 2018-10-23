@@ -1,27 +1,27 @@
 # Display
 
-## Application Detail
+Enter the application's display information to be shown on Tizen Store.
 
-- Enter details such as Application Title, Description and Tags.
-- If you are running or planning to run a promotion, Seller Promotion must be entered in English only.
+## Application Details
 
-  ![img](media/distribution_display01.jpg)
+Enter details such as Application Title, Description and Tags.
 
-1. Application Title: At first, the application title entered in the Default Language will be displayed. If you click the [Edit Languages] button and add a language, you can enter the title in that language. You can only enter 200 bytes or less. 
-2. Description: Enter a description of the application. The size of the description must be equal to or less than 4,000 bytes.
-3. Tag: Enter any tags that you wish to add. Each tag must be separated by comma, and you may enter up to 10 tags. However, certain words are not allowed to be used as tags in Tizen Store.
-4. If you want to enter application details in languages other than the Default Language, click the [Edit Languages] button and add/modify languages in the Display Languages pop-up window.
+If you are running or planning to run a promotion, Seller Promotion must be entered in English only.
 
+![img](media/distribution_display01.jpg)
 
-   [![img](media/display_2-600x403.png)](media/display_2.png)
+  1. Application Title: At first, the application title entered in the Default Language will be displayed. If you click the [Edit Languages] button and add a language, you can enter the title in that language. You can only enter 200 bytes or less. 
+  2. Description: Enter a description of the application. The size of the description must be equal to or less than 4,000 bytes.
+  3. Tag: Enter any tags that you wish to add. Each tag must be separated by comma, and you may enter up to 10 tags. However, certain words are not allowed to be used as tags in Tizen Store.
+  4. If you want to enter application details in languages other than the Default Language, click the [Edit Languages] button and add/modify languages in the Display Languages pop-up window.
 
-   
-5. You must enter the Application Title, Description and Tags in the selected language in order to submit the application. The languages in which you provided such information will be displayed in Completed as below.
+     [![img](media/display_2-600x403.png)](media/display_2.png)
 
-- Display Language list
+  5. You must enter the Application Title, Description and Tags in the selected language in order to submit the application. The languages in which you provided such information will be displayed in Completed as below.
 
+     - Display Language list
 
-  ![img](media/display_3.png)
+       ![img](media/display_3.png)
 
 
 ## Icon Image
@@ -30,8 +30,7 @@
 2. The image size must be 512x512 pixels and the file size must be less than 1,024 KB; in PNG format only.
 3. The main icon represents the application and it is recommended to be a circular shape.
 
-
-	[![img](media/display_4-450x149.png)](media/display_4.png)
+   [![img](media/display_4-450x149.png)](media/display_4.png)
 
 
 ## Screenshots
@@ -41,8 +40,7 @@
 3. You can upload both landscape and portrait images.
 4. You can drag registered image file to move them into a different order.
 
-
-	![img](media/distribution_display02.jpg)
+   ![img](media/distribution_display02.jpg)
 
 ## YouTube URL
 

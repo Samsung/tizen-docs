@@ -1,0 +1,733 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ImageTransformCollection
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ImageTransformCollection
+   ">
+    <meta name="generator" content="docfx 2.23.1.0">
+    
+    <link rel="shortcut icon" href="../tizen_favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../tizen_logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tizen.Multimedia.Util.ImageTransformCollection">
+  
+  
+  <h1 id="Tizen_Multimedia_Util_ImageTransformCollection" data-uid="Tizen.Multimedia.Util.ImageTransformCollection" class="text-break">Class ImageTransformCollection
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a collection of <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> objects that can be individually accessed by index.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ImageTransformCollection</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.Multimedia.Util.html">Tizen.Multimedia.Util</a></h6>
+  <h6><strong>Assembly</strong>: Tizen.Multimedia.Util.dll</h6>
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ImageTransformCollection : IList&lt;ImageTransform&gt;, ICollection&lt;ImageTransform&gt;, IEnumerable&lt;ImageTransform&gt;, IEnumerable</code></pre>
+  </div>
+  
+  
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection__ctor_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.#ctor*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection__ctor" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.#ctor">ImageTransformCollection()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the ImageTransformCollection class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImageTransformCollection()</code></pre>
+  </div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection__ctor_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_Count_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Count*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_Count" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of items contained in the TransformCollection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1.count#System_Collections_Generic_ICollection_1_Count">ICollection&lt;T&gt;.Count</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Count_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_Item_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Item*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_Item_System_Int32_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImageTransform this[int index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The zero-based index of the <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> to get or set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a></td>
+        <td><p>The <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> at the specified index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1.item#System_Collections_Generic_IList_1_Item_System_Int32_">IList&lt;T&gt;.Item[Int32]</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Item_System_Int32__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>index is less than 0.<br>
+-or-<br>
+index is equal to or greater than <a class="xref" href="Tizen.Multimedia.Util.ImageTransformCollection.html#Tizen_Multimedia_Util_ImageTransformCollection_Count">Count</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_Add_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Add*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_Add_Tizen_Multimedia_Util_ImageTransform_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Add(Tizen.Multimedia.Util.ImageTransform)">Add(ImageTransform)</h4>
+  <div class="markdown level1 summary"><p>Adds a <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> to the end of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(ImageTransform item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1.add#System_Collections_Generic_ICollection_1_Add__0_">ICollection&lt;T&gt;.Add(T)</a></div>
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Add_Tizen_Multimedia_Util_ImageTransform__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a class="xref" href="Tizen.Multimedia.Util.ImageTransformCollection.html">ImageTransformCollection</a> accepts null as a valid value for reference types and allows duplicate elements.</p>
+</div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Add_Tizen_Multimedia_Util_ImageTransform__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_Clear_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Clear*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_Clear" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Removes all items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1.clear#System_Collections_Generic_ICollection_1_Clear">ICollection&lt;T&gt;.Clear()</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Clear_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_Contains_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Contains*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_Contains_Tizen_Multimedia_Util_ImageTransform_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Contains(Tizen.Multimedia.Util.ImageTransform)">Contains(ImageTransform)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="Tizen.Multimedia.Util.ImageTransformCollection.html">ImageTransformCollection</a> contains the specified item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(ImageTransform item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> to locate in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> is found in the collection; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1.contains#System_Collections_Generic_ICollection_1_Contains__0_">ICollection&lt;T&gt;.Contains(T)</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Contains_Tizen_Multimedia_Util_ImageTransform__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_CopyTo_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.CopyTo*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_CopyTo_Tizen_Multimedia_Util_ImageTransform___System_Int32_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.CopyTo(Tizen.Multimedia.Util.ImageTransform[],System.Int32)">CopyTo(ImageTransform[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Copies the items of the collection to an array, starting at the specified array index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(ImageTransform[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a>[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The one-dimensional array that is the destination of the items copied from the collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td><p>The zero-based index in array at which copying begins.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1.copyto#System_Collections_Generic_ICollection_1_CopyTo__0___System_Int32_">ICollection&lt;T&gt;.CopyTo(T[], Int32)</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_CopyTo_Tizen_Multimedia_Util_ImageTransform___System_Int32__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">array</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">arrayIndex</code> is less than 0.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The number of elements in the source collection is greater than the available space from arrayIndex to the end of the destination array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_GetEnumerator_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.GetEnumerator*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_GetEnumerator" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that can iterate through the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;ImageTransform&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;<a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a>&gt;</td>
+        <td><p>An enumerator that can be used to iterate through the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator#System_Collections_Generic_IEnumerable_1_GetEnumerator">IEnumerable&lt;T&gt;.GetEnumerator()</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_GetEnumerator_sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_IndexOf_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.IndexOf*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_IndexOf_Tizen_Multimedia_Util_ImageTransform_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.IndexOf(Tizen.Multimedia.Util.ImageTransform)">IndexOf(ImageTransform)</h4>
+  <div class="markdown level1 summary"><p>Determines the index of the specified item in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IndexOf(ImageTransform item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> to locate in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>The index of value if found in the <a class="xref" href="Tizen.Multimedia.Util.ImageTransformCollection.html">ImageTransformCollection</a>; otherwise, -1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1.indexof#System_Collections_Generic_IList_1_IndexOf__0_">IList&lt;T&gt;.IndexOf(T)</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_IndexOf_Tizen_Multimedia_Util_ImageTransform__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_Insert_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Insert*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_Insert_System_Int32_Tizen_Multimedia_Util_ImageTransform_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Insert(System.Int32,Tizen.Multimedia.Util.ImageTransform)">Insert(Int32, ImageTransform)</h4>
+  <div class="markdown level1 summary"><p>Inserts a <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> into the collection at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(int index, ImageTransform item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The zero-based index at which <code data-dev-comment-type="paramref" class="paramref">item</code> should be inserted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> to insert into the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1.insert#System_Collections_Generic_IList_1_Insert_System_Int32__0_">IList&lt;T&gt;.Insert(Int32, T)</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Insert_System_Int32_Tizen_Multimedia_Util_ImageTransform__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">item</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>index is less than 0.<br>
+-or-<br>
+index is greater than <a class="xref" href="Tizen.Multimedia.Util.ImageTransformCollection.html#Tizen_Multimedia_Util_ImageTransformCollection_Count">Count</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_Remove_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Remove*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_Remove_Tizen_Multimedia_Util_ImageTransform_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.Remove(Tizen.Multimedia.Util.ImageTransform)">Remove(ImageTransform)</h4>
+  <div class="markdown level1 summary"><p>Removes the first occurrence of the specified <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> from the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(ImageTransform item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">item</code> was removed from the collection; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1.remove#System_Collections_Generic_ICollection_1_Remove__0_">ICollection&lt;T&gt;.Remove(T)</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_Remove_Tizen_Multimedia_Util_ImageTransform__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_RemoveAt_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.RemoveAt*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_RemoveAt_System_Int32_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.RemoveAt(System.Int32)">RemoveAt(Int32)</h4>
+  <div class="markdown level1 summary"><p>Removes the <a class="xref" href="Tizen.Multimedia.Util.ImageTransform.html">ImageTransform</a> at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAt(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The zero-based index to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1.removeat#System_Collections_Generic_IList_1_RemoveAt_System_Int32_">IList&lt;T&gt;.RemoveAt(Int32)</a></div>
+  
+  <h5 id="Tizen_Multimedia_Util_ImageTransformCollection_RemoveAt_System_Int32__sinceTizen" class="sinceTizen">API Version</h5>
+  <span class="level1 sinceTizen">4 </span>
+  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>index is less than 0.<br>
+-or-<br>
+index is equal to or greater than <a class="xref" href="Tizen.Multimedia.Util.ImageTransformCollection.html#Tizen_Multimedia_Util_ImageTransformCollection_Count">Count</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_System_Collections_Generic_ICollection_Tizen_Multimedia_Util_ImageTransform__IsReadOnly_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.System#Collections#Generic#ICollection{Tizen#Multimedia#Util#ImageTransform}#IsReadOnly*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_System_Collections_Generic_ICollection_Tizen_Multimedia_Util_ImageTransform__IsReadOnly" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.System#Collections#Generic#ICollection{Tizen#Multimedia#Util#ImageTransform}#IsReadOnly">ICollection&lt;ImageTransform&gt;.IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;ImageTransform&gt;.IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1.isreadonly#System_Collections_Generic_ICollection_1_IsReadOnly">ICollection&lt;T&gt;.IsReadOnly</a></div>
+  
+  
+  <a id="Tizen_Multimedia_Util_ImageTransformCollection_System_Collections_IEnumerable_GetEnumerator_" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="Tizen_Multimedia_Util_ImageTransformCollection_System_Collections_IEnumerable_GetEnumerator" data-uid="Tizen.Multimedia.Util.ImageTransformCollection.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="implements">Implements</h5>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable.getenumerator#System_Collections_IEnumerable_GetEnumerator">IEnumerable.GetEnumerator()</a></div>
+  
+  
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2016-2017 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

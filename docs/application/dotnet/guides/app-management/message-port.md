@@ -44,13 +44,13 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
     {
         class App : CoreUIApplication
         {
-            private static MessagePort _remotePort;
+            private static MessagePort _msgPort;
             private string TAG;
 
             protected override void OnTerminate()
             {
                 base.OnTerminate();
-                Log.Debug(TAG, "@@@@@@@ Terminate");
+                Log.Debug(TAG, "Terminate");
             }
             protected override void OnCreate()
             {
@@ -58,9 +58,9 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
                 TAG = "LOCALMSGPORTAPP";
 
-                Log.Debug(TAG, "@@@@@@@ Create");
-                _remotePort = new MessagePort("my_port", false);
-                Log.Debug(TAG, "@@@@@@@ MessagePort Create: " + _remotePort.PortName + "Trusted: " + _remotePort.Trusted);
+                Log.Debug(TAG, "Create");
+                _msgPort = new MessagePort("my_port", false);
+                Log.Debug(TAG, "MessagePort Create: " + _msgPort.PortName + "Trusted: " + _msgPort.Trusted);
             }
     }
     ```
@@ -72,26 +72,24 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
     {
         class App : CoreUIApplication
         {
-            private static MessagePort _myPort;
+            private static MessagePort _rmtPort;
             private string TAG;
 
             protected override void OnTerminate()
             {
                 base.OnTerminate();
-                Log.Debug(TAG, "@@@@@@@ Terminate");
+                Log.Debug(TAG, "Terminate");
             }
             protected override void OnCreate()
             {
                 base.OnCreate();
                 Initialize();
 
-                _confirmMsg = new Bundle();
-                _confirmMsg.AddItem("ConfirmMessage", "Message is received");
                 TAG = "REMOTEMSGPORTAPP";
 
-                Log.Debug(TAG, "@@@@@@@ Create");
-                _myPort = new MessagePort("my_port", false);
-                Log.Debug(TAG, "@@@@@@@ MessagePort Create: " + _myPort.PortName + "Trusted: " + _myPort.Trusted);
+                Log.Debug(TAG, "Create");
+                _rmtPort = new MessagePort("my_port", false);
+                Log.Debug(TAG, "MessagePort Create: " + _rmtPort.PortName + "Trusted: " + _rmtPort.Trusted);
             }
     }
     ```
@@ -104,31 +102,39 @@ To send a message from one application (`LocPortApp.Tizen`) to another (`RmtPort
 
     ```
     {
-        _myPort.MessageReceived += MessageReceived_Callback;
-        _myPort.Listen();
+        _rmtPort.MessageReceived += MessageReceived_Callback;
+        _rmtPort.Listen();
     }
 
     private void MessageReceived_Callback(object sender, MessageReceivedEventArgs e)
     {
-        Log.Debug(TAG, "@@@@@@@ Message Received");
-        Log.Debug(TAG, "@@@@@@@ App ID: " + e.Remote.AppId);
-        Log.Debug(TAG, "@@@@@@@ PortName: " + e.Remote.PortName);
-        Log.Debug(TAG, "@@@@@@@ Trusted: " + e.Remote.Trusted);
-        Log.Debug(TAG, "@@@@@@@ message: " + e.Message.GetItem <string> ("message"));
-
-        _remotePort.Send(_confirmMsg, "Tizen.Applications.Tests", "LocalPort");
+        Log.Debug(TAG, "Message Received");
+        Log.Debug(TAG, "App ID: " + e.Remote.AppId);
+        Log.Debug(TAG, "PortName: " + e.Remote.PortName);
+        Log.Debug(TAG, "Trusted: " + e.Remote.Trusted);
+        Log.Debug(TAG, "message: " + e.Message.GetItem <string> ("message"));
     }
     ```
 
-3.  In the sending application, send the message with the `Send()` method of the `Tizen.Applications.Messages.MessagePort` class, providing the message to be sent as an instance of the [Tizen.Applications.Bundle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Bundle.html) class:
+3.  In the sending application, to send the message, follow the steps:
+
+    a. You must register to a local port.
+
+    b. Call the `Listen()` method `Tizen.Applications.Messages.MessagePort` class.
+
+    c. Use `Send()` method `Tizen.Applications.Messages.MessagePort` class to send the message.
+
+    d. Provide the message to be sent as an instance of the [Tizen.Applications.Bundle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Bundle.html) class as shown in the below code:
 
     ```
     string remoteAppId = "RmtPortApp.Tizen";
     string remotePort = "my_port";
 
+    _msgPort.Listen();
+
     var msg = new Bundle();
     msg.AddItem("message", "Send_A_MESSAGE_TO_A_REMOTE_APP");
-    _messagePort.Send(msg, remoteAppId, remotePort);
+    _msgPort.Send(msg, remoteAppId, remotePort);
 
     Log.Debug(LogTag, "send !! ");
     ```
@@ -161,7 +167,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
             protected override void OnTerminate()
             {
                 base.OnTerminate();
-                Log.Debug(TAG, "@@@@@@@ Terminate");
+                Log.Debug(TAG, "Terminate");
             }
             protected override void OnCreate()
             {
@@ -169,9 +175,9 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
 
                 TAG = "LOCALMSGPORTAPP";
 
-                Log.Debug(TAG, "@@@@@@@ Create");
+                Log.Debug(TAG, "Create");
                 _remotePort = new RemotePort(MyRemoteAppId, PortName, false);
-                Log.Debug(TAG, "@@@@@@@ RemotePort Create: " + _remotePort.AppId + _remotePort.PortName + "Trusted: " + _remotePort.Trusted);
+                Log.Debug(TAG, "RemotePort Create: " + _remotePort.AppId + _remotePort.PortName + "Trusted: " + _remotePort.Trusted);
             }
         }
     }
@@ -183,7 +189,7 @@ To check whether the receiving application (`RmtPortApp.Tizen`) is running and r
     bool isRunning = false;
     isRunning = _remotePort.IsRunning();
 
-    Log.Debug(TAG, "@@@@@@@ RmtPortApp.Tizen is running: " + isRunning);
+    Log.Debug(TAG, "RmtPortApp.Tizen is running: " + isRunning);
     ```
 
 3.  To receive events about the registration status of the remote port, register an event handler for the `RemotePortStateChanged` event of the `Tizen.Applications.Messages.RemotePort` class.

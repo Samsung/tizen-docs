@@ -45,26 +45,25 @@ To use the voice control:
    1. Initialize a voice control client instance using the `getVoiceControlClient()` function:
 
       ```csharp
-       var initializeVoiceCOntrolClient()
-       {
-           var client = tizen.voicecontrol.getVoiceControlClient();
-       }
-       ```
+      var initializeVoiceControlClient()
+      {
+          var client = tizen.voicecontrol.getVoiceControlClient();
+      }
+      ```
 
    2. When voice control is no longer needed, deinitialize the instance:
 
       ```csharp
       var releaseVoiceControlClient()
       {
-          var client = tizen.voicecontrol.getvoicecontrolClient();
+          var client = tizen.voicecontrol.getVoiceControlClient();
 
-          clietn.release();
+          client.release();
       }
       ```
 
-
-  > **Note**  
-  >    Do not call the `release()` function in a listener.
+      > **Note**  
+      > Do not call the `release()` function in a listener.
 
 <a name="callback"></a>
 ## Managing Listeners
@@ -73,29 +72,29 @@ To set and unset listeners to get notifications about recognition results and la
 
 * Add the current language change listener to be invoked when the system or application language changes:
 
-```csharp
-      /* Listener */
-     var languageChangeListenerCallback = function(previous, current)
-     {
-         console.log("Language change callback " + previous + "->" + current);
-     }
+   ```csharp
+   /* Listener */
+   var languageChangeListenerCallback = function(previous, current)
+   {
+       console.log("Language change callback " + previous + "->" + current);
+   }
 
-     /* Add */
-     var addCurrentLanguageChanged()
-     {
-         var client = tizen.voicecontrol.getVoiceControlClient();
-         var id = client.addLanguageChangeListener(languageChangeListenerCallback);
-     }
+   /* Add */
+   var addCurrentLanguageChanged()
+   {
+       var client = tizen.voicecontrol.getVoiceControlClient();
+       var id = client.addLanguageChangeListener(languageChangeListenerCallback);
+   }
 
-     /* Remove */
-     var removeCurrentLanguageChanged()
-     {
-         var client = tizen.voicecontrol.getVoiceControlClient();
-         var id = client.addLanguageChangeListener(languageChangeListenerCallback);
+   /* Remove */
+   var removeCurrentLanguageChanged()
+   {
+       var client = tizen.voicecontrol.getVoiceControlClient();
+       var id = client.addLanguageChangeListener(languageChangeListenerCallback);
 
-         client.removeLanguageChangeListener(id);
-     }
-```
+       client.removeLanguageChangeListener(id);
+   }
+   ```
 
 * Add the recognition result listener to be invoked when a voice command is recognized.
 
@@ -104,30 +103,29 @@ To set and unset listeners to get notifications about recognition results and la
 
    To get the command, check the `list` parameter in the recognition result listener. The parameter is an array of recognized `VoiceControlCommand` instances. The `result` parameter contains the recognized text.
 
-```csharp
-     /* Listener */
-     var resultListenerCallback = function(event, list, result)
-     {
-         console.log("Result callback - event: " + event + ", result: " + result);
-     }
+   ```csharp
+   /* Listener */
+   var resultListenerCallback = function(event, list, result)
+   {
+       console.log("Result callback - event: " + event + ", result: " + result);
+   }
 
-     /* Add */
-     var addResultListener()
-     {
-         var client = tizen.voicecontrol.getVoiceControlClient();
-         var id = client.addResultListener(resultListenerCallback);
-     }
+   /* Add */
+   var addResultListener()
+   {
+       var client = tizen.voicecontrol.getVoiceControlClient();
+       var id = client.addResultListener(resultListenerCallback);
+   }
 
-     /* Remove */
-     var removeResultListener()
-     {
-         var client = tizen.voicecontrol.getVoiceControlClient();
-         var id = client.addResultListener(resultListenerCallback);
+   /* Remove */
+   var removeResultListener()
+   {
+       var client = tizen.voicecontrol.getVoiceControlClient();
+       var id = client.addResultListener(resultListenerCallback);
 
-         client.removeResultListener(id);
-     }
-
-```
+       client.removeResultListener(id);
+   }
+   ```
 
 <a name="info"></a>
 ## Retrieving the Current Language
@@ -135,17 +133,17 @@ To set and unset listeners to get notifications about recognition results and la
 To get the current language, use the `getCurrentLanguage()` function. The voice control recognition works for the current (default) language. To be notified of language changes, use the language change listener.
 
 ```csharp
-     var getCurrentLang()
-     {
-         var client = tizen.voicecontrol.getVoiceControlClient();
-         var currentLanguage = client.getCurrentLanguage();
-         console.log("Current language is: " + currentLanguage);
+var getCurrentLang()
+{
+    var client = tizen.voicecontrol.getVoiceControlClient();
+    var currentLanguage = client.getCurrentLanguage();
+    console.log("Current language is: " + currentLanguage);
 
-         /*
-            Expected output:
-            Current language is: en_US
-         */
-     }
+    /*
+       Expected output:
+       Current language is: en_US
+    */
+}
 ```
 
 <a name="commands"></a>
@@ -155,41 +153,40 @@ To create a command list and commands:
 
 1. Create a command.  
 
- Create a command with a command text and a command type. The command type is optional and the default command type is <code>FOREGROUND</code>.
-```csharp
-var createCommandList()
-{
-    var command1 = new tizen.VoiceControlCommand("alpha");
-    var command2 = new tizen.VoiceControlCommand("bravo", "FOREGROUND");
-    var command3 = new tizen.VoiceControlCommand("charlie")];
-```
+   Create a command with a command text and a command type. The command type is optional and the default command type is <code>FOREGROUND</code>.
+   ```csharp
+   var createCommandList()
+   {
+       var command1 = new tizen.VoiceControlCommand("alpha");
+       var command2 = new tizen.VoiceControlCommand("bravo", "FOREGROUND");
+       var command3 = new tizen.VoiceControlCommand("charlie")];
+   ```
 
-2.  Create a command list.  
+2. Create a command list.  
 
- The command list can include many commands, each with their own command text and type. The list can have <code>FOREGROUND</code> type commands, which are valid when the application is in a visible state.
+   The command list can include many commands, each with their own command text and type. The list can have <code>FOREGROUND</code> type commands, which are valid when the application is in a visible state.
 
- You can access the command list after you set it to the voice control and when you get the recognition result.
- ```csharp
-    var commands = [command1, command2, command3];
- ```
+   You can access the command list after you set it to the voice control and when you get the recognition result.
+   ```csharp
+       var commands = [command1, command2, command3];
+   ```
 
 3. Set and unset the command list.  
 
- You can set the command list with commands using the `setCommandList()` function.
+   You can set the command list with commands using the `setCommandList()` function.
 
- If you want to update the registered commands, set the command list again with the updated commands using the `setCommandList()` function.
+   If you want to update the registered commands, set the command list again with the updated commands using the `setCommandList()` function.
 
- ```csharp
-    client.setCommandList(commands, "FOREGROUND");
- ```
+   ```csharp
+       client.setCommandList(commands, "FOREGROUND");
+   ```
 
- When no longer needed, unset the command list using the `unsetCommandList()` function:  
- ```csharp
-    if ("FOREGROUND" == type)
-        client.unsetCommandList("FOREGROUND");
-}
-
- ```
+   When no longer needed, unset the command list using the `unsetCommandList()` function:  
+   ```csharp
+       if ("FOREGROUND" == type)
+           client.unsetCommandList("FOREGROUND");
+   }
+   ```
 
 ## Related Information
 * Dependencies

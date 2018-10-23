@@ -16,7 +16,7 @@ The JavaScript Debugger supports the following panels:
 
 ![JavaScript Debugger panels](./media/jsdebugger_panels.png)
 
-When debugging with the [emulator](../common-tools/emulator.md), the emulator communicates with the Google Chrome™ browser through the HTTP protocol.
+When debugging with the [emulator](../common-tools/emulator.md), the emulator communicates with the Google Chrome&trade; browser through the HTTP protocol.
 
 When the JavaScript Debugger is started, the **Network** panel is off. To enable the **Network** panel and start monitoring the resource loading status, press the F5 key. This reloads the current page and displays the load time on the **Network** panel.
 

@@ -146,7 +146,7 @@ Images can be used in Web applications in the following ways:
 
 - `IMG` element linking images directly to HTML
 - CSS `background` property expressing images as a background in HTML
-- [SVG (Scalable Vector Graphics)](../graphics/svg.md), [Canvas](../graphics/canvas.md), and [WebGL™](http://www.khronos.org/registry/webgl/specs/latest/) APIs implementing graphics in HTML
+- [SVG (Scalable Vector Graphics)](../graphics/svg.md), [Canvas](../graphics/canvas.md), and [WebGL&trade;](http://www.khronos.org/registry/webgl/specs/latest/) APIs implementing graphics in HTML
 
 When selecting an option from the list above, consider the type of the image resource you are going to use.
 
@@ -166,7 +166,7 @@ An image can be added to an application using the HTML `img` element, or CSS `ba
 
 <!--CSS-->
 .photo {
-   background: url(./media/sample.jpg) 0 0 no-repeat;
+   background: url(../images/sample.jpg) 0 0 no-repeat;
    background-size: 100%;
    width: 100%;
    height: 200px;
@@ -209,7 +209,7 @@ Icons generally have a fixed size. Size icon images as 2 times bigger than their
 }
 
 .prev_icon.icon1 {
-   background-image: url(./media/page_navi_arrow_left_01.png);
+   background-image: url(../images/page_navi_arrow_left_01.png);
 }
 ```
 
@@ -224,7 +224,7 @@ You can use the sprite image technique (grouping multiple images as one and show
 ```
 .prev_icon, .next_icon {
    background-size: 20px auto; <!--Full HD Display-->
-   background-image: url(./media/page_navi_arrow.png);
+   background-image: url(../images/page_navi_arrow.png);
 }
 
 .prev_icon.icon1 {
@@ -312,7 +312,7 @@ The following example shows how JavaScript animation can be implemented:
 </script>
 ```
 
-You can use the `requestAnimationFrame()` method of the [Timing control for script-based animations](../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#timing) API to prevent animation freezes that occur occasionally:
+You can use the `requestAnimationFrame()` method of the [Timing control for script-based animations](../../../api/latest/w3c_api/w3c_api_m.html#timing) API to prevent animation freezes that occur occasionally:
 
 ```
 <script>
@@ -354,7 +354,7 @@ The following example shows how CSS3 animation can be implemented:
    .css_animation {
       width: 50px;
       height: 70px;
-      background-image: url(./media/sprite.png);
+      background-image: url(../images/sprite.png);
       -webkit-animation: cssAni .8s steps(10) infinite;
    }
 

@@ -1,0 +1,274 @@
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Checkbox</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Checkbox</h1>
+
+<p>The Checkbox component changes theme of browser-default checkboxes to a form more adapted to the mobile environment.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>Tizen 2.4.</strong></td>
+	</tr>
+	<tr>
+		<td class="note">It was renamed from <i>CheckboxRadio</i> component of Tizen 2.3.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.9922445809934288">Default Selectors</a></li>
+
+		<li><a href="#html-examples0.3427857731003314">HTML Examples</a></li>
+
+		<li><a href="#methods-list">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selectors0.9922445809934288"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type="checkbox"</code> or <code>class="ui-checkbox"are displayed as checkbox.</p>
+
+<h2><a id="html-examples0.3427857731003314"></a>HTML Examples</h2>
+
+<p>To create a checkbox component, please refer following example:</p>
+
+<pre class="prettyprint">&lt;input type="checkbox" name="checkbox-1" id="checkbox-1"/&gt;
+&lt;label for="checkbox-1"&gt;Apple&lt;/label&gt;
+&lt;input type="checkbox" name="checkbox-2" id="checkbox-2" checked="checked"/&gt;
+&lt;label for="checkbox-2"&gt;Banana&lt;/label&gt;
+</pre>
+
+<h2><a id="methods-list"></a>Methods</h2>
+
+<h3>Summary</h3>
+<table class="informaltable">
+	<thead>
+	<tr>
+		<th>Method</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tbody>
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+		</td>
+		<td><p>Disables the component.</p></td>
+	</tr>
+
+
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+		</td>
+		<td><p>Enables the component.</p></td>
+	</tr>
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-value">value</a>() </pre>
+		</td>
+		<td><p>Set/Return a value from checkbox element.</p></td>
+	</tr>
+
+	</tbody>
+</table>
+<dl>
+
+
+	<dt class="method" id="addidp28072"><code><b><span class="methodName"
+													   id="method-disable">disable</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Disables the component.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">disable() </pre>
+		</div>
+
+		<div class="description">
+			<p>
+
+			</p>
+		</div>
+
+
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+			<table>
+				<tbody>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>Checkbox</td>
+					<td>Returns Checkbox.</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input type="checkbox" name="checkbox-1" id="checkbox-1"/&gt;
+&lt;label for="checkbox-1"&gt;Normal&lt;/label&gt;
+&lt;script&gt;
+   var element = document.getElementById("checkbox-1"),
+       checkboxWidget = tau.widget.Checkbox(element);
+   checkboxWidget.disable();
+&lt;/script&gt;
+</pre>
+		</div>
+
+
+	</dd>
+
+
+
+	<dt class="method" id="addidp28072"><code><b><span class="methodName"
+													   id="method-enable">enable</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Enables the component.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">enable() </pre>
+		</div>
+
+		<div class="description">
+			<p>
+
+			</p>
+		</div>
+
+
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+			<table>
+				<tbody>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>Checkbox</td>
+					<td>Returns Checkbox.</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input type="checkbox" name="checkbox-1" id="checkbox-1"/&gt;
+&lt;label for="checkbox-1"&gt;Normal&lt;/label&gt;
+&lt;script&gt;
+   var element = document.getElementById("checkbox-1"),
+       checkboxWidget = tau.widget.Checkbox(element);
+   checkboxWidget.enable();
+&lt;/script&gt;
+</pre>
+		</div>
+
+	</dd>
+
+
+
+	<dt class="method" id="addidp28072"><code><b><span class="methodName"
+													   id="method-value">value</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Set/Return a value from checkbox element.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">{string | number} value() </pre>
+		</div>
+
+		<div class="description">
+			<p>
+
+			</p>
+		</div>
+
+
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+			<table>
+				<tbody>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>String | number</td>
+					<td>When method do not have value parameter, it returns value of element.</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input type="checkbox" name="checkbox-1" id="checkbox-1"/&gt;
+&lt;label for="checkbox-1"&gt;Normal&lt;/label&gt;
+&lt;script&gt;
+   var element = document.getElementById("checkbox-1"),
+       checkboxWidget = tau.widget.Checkbox(element);
+
+   /* Set value to checkbox element */
+   checkboxWidget.value("checkbox-value");
+   /* Return checked checkbox element */
+   console.log(checkboxWidget.value());
+&lt;/script&gt;
+</pre>
+		</div>
+
+
+	</dd>
+
+
+</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

@@ -19,7 +19,7 @@ Q. What is the action in this sentence?
 A. Muting the calls.
 
 Q. Does the subject (the calls) do the muting?  
-A. No, placing your hand on the screen mutes the calls. As the original subject doesn’t take any direct action, the sentence is passive and must be changed to active voice.
+A. No, placing your hand on the screen mutes the calls. As the original subject doesn't take any direct action, the sentence is passive and must be changed to active voice.
 
 > **CHANGE :** Incoming calls, alarms, or media can be muted by placing your hand on the  screen while the screen is on. (passive voice)  
 > **TO :** Place your hand over the screen to mute or pause media. (active voice)
@@ -31,7 +31,7 @@ Be wary of any voice shift in your sentencing.
 <a name="p_"></a>
 ## Positive Language
 
-Think positively, emphasise user control, and don’t blame the user. Develop language that enhances the user’s interaction with the product, and avoid words that might have any negative connotation.
+Think positively, emphasise user control, and don't blame the user. Develop language that enhances the user's interaction with the product, and avoid words that might have any negative connotation.
 
 Conversely, it is not always easy to remain positive. Indeed, trying to put a positive spin on a recurring error message can become a cause of irritation and annoyance for the end user. In these instances, simply leave out unnecessary details and simply describe the recovery action – using a neutral language without blaming the user.
 
@@ -41,11 +41,11 @@ Conversely, it is not always easy to remain positive. Indeed, trying to put a po
 <a name="f_"></a>
 ## Friendly and Informal Tone
 
-Establish and nurture a rapport between the device and user by developing an informal and personal tone within your writing. Avoid slang and dialect, and selectively use contractions (don’t, can’t, etc.) to enhance flow and cadence within your communication.
+Establish and nurture a rapport between the device and user by developing an informal and personal tone within your writing. Avoid slang and dialect, and selectively use contractions (don't, can't, etc.) to enhance flow and cadence within your communication.
 
 Aim to create a natural, relaxed, and personal dialog with the user. Without impairing the coherence of the message, use elliptical sentencing to carefully remove any unnecessary words and reduce wordiness.
 
-Without fawning unnecessary attention, find a polite balance in your communications with restricted use of the words: please, sorry and thank you. The general rule of practice should be to use “please” only if its omission would make the text sound rude, impolite, or overly demanding.
+Without fawning unnecessary attention, find a polite balance in your communications with restricted use of the words: please, sorry and thank you. The general rule of practice should be to use "please" only if its omission would make the text sound rude, impolite, or overly demanding.
 
 > **CHANGE :** Downloading content. Wait….  
 > **TO :** Downloading content. Please wait…
@@ -66,7 +66,7 @@ Also, consider the contextual nature of information within the UI flow to determ
 
 -   Articles (a, an, the)
 -   Determiners (this, that, their)
--   Forms of the verb “to be”, i.e., I am, you are, he/she/it is, etc.
+-   Forms of the verb "to be", i.e., I am, you are, he/she/it is, etc.
 
 > **FULL :** A subscription may be required to allow your mobile device to use this feature. This may result in additional charges.  
 > **REDUCED :** Subscription may be required. Extra charges may apply.
@@ -79,9 +79,9 @@ Use full grammar in all UI strings that are unhindered by space constraints, lik
 Make your text strings as understandable as possible by using both the correct point of view and verb tense in your messaging:
 
 -   First person. Avoid using the first person pronouns I, we, me, us, mine and our.
--   Second person. “You” encourages use of the active voice and enhances the personal and informal tone synonymous with the Tizen brand. This point of view is also appropriate for instructions and procedural descriptions. Writing in the imperative form implies “you” without having to state it specifically.
+-   Second person. "You" encourages use of the active voice and enhances the personal and informal tone synonymous with the Tizen brand. This point of view is also appropriate for instructions and procedural descriptions. Writing in the imperative form implies "you" without having to state it specifically.
 
- > **CHANGE :** It’s then possible for us to change our parameters in the settings menu. (First person)    
+ > **CHANGE :** It's then possible for us to change our parameters in the settings menu. (First person)    
  > **TO :** Change your parameters in the settings menu. (Second person imperative)
 
 -   Third person. As a general rule, avoid using gender-specific pronouns in the third person, like he/she, him/her in favor of neuter pronouns like it (singular), they, them, their (plural).
@@ -90,8 +90,8 @@ Ensure that the information is as usable as possible by developing a common prod
 
 Avoid some of the common grammatical pitfalls that might otherwise confuse user:
 
--   False subjects : Avoid using there or it as substitutes for the real subject in your sentencing. These so-called “false subjects” are irritating because they immediately force the reader to search for the subject in the previous sentence.
--   Don’t hyphenate or separate phrasal verbs. Verbs that consist of two words should never be hyphenated, and the two words should be kept together to avoid translation issues. For example, use “turn on GPS”, not “turn GPS on”.
+-   False subjects : Avoid using there or it as substitutes for the real subject in your sentencing. These so-called "false subjects" are irritating because they immediately force the reader to search for the subject in the previous sentence.
+-   Don't hyphenate or separate phrasal verbs. Verbs that consist of two words should never be hyphenated, and the two words should be kept together to avoid translation issues. For example, use "turn on GPS", not "turn GPS on".
 -   Third person. As a general rule, avoid using gender-specific pronouns in the third person, like he/she, him/her in favor of neuter pronouns like it (singular), they, them, their (plural).
 
 > **CHANGE :** The memory is full, delete some messages.  

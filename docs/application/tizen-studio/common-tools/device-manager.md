@@ -9,7 +9,7 @@ The Device Manager provides a graphical user interface that is more convenient t
 To use the Device Manager with a specific device, you must connect the device over SDB (Smart Development Bridge). Physical devices can be connected with a USB cable, and emulators can be connected through the Emulator Manager. When the device is connected over SDB, it is automatically displayed in the Device Manager and its directory structure and logs are shown in the **File Explorer** and **Log** views, respectively.
 
 > **Note**  
-> If you do not have the Device Manager installed, open the [Package Manager](../setup/updating-sdk.md), go to the **Main SDK** tab, and locate the **Device Manager** under **Tizen SDK Tools > Baseline SDK**. To install the tool, click **Install**.
+> If you do not have the Device Manager installed, open the [Package Manager](../setup/update-sdk.md), go to the **Main SDK** tab, and locate the **Device Manager** under **Tizen SDK Tools > Baseline SDK**. To install the tool, click **Install**.
 
 <a name="access"></a>
 ## Accessing Device Manager
@@ -18,15 +18,13 @@ To use the Device Manager with a specific device, you must connect the device ov
 
     - Click the Device Manager icon on the desktop or in the **Start** menu.
 
-      | Ubuntu                                   | Windows®                                 | macOS                                    |
+      | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
       |----------------------------------------|----------------------------------------|----------------------------------------|
       | **Desktop > Applications > Device Manager:**![Device Manager in Ubuntu](media/device_manager_icon_ubuntu.png) | **Start > All Programs > Tizen Studio > Tools > Device Manager:**![Device Manager in Windows](media/device_manager_icon_windows.png) | **Finder > Applications > Tizen Studio > Device Manager:**![Device Manager in macOS](media/device_manager_icon_macos.png) |
 
     - Run the Device Manager from the command line.
 
-      ​
-
-      | Ubuntu                                   | Windows®                                 | macOS                                    |
+      | Ubuntu                                   | Windows&reg;                                 | macOS                                    |
       |----------------------------------------|----------------------------------------|----------------------------------------|
       | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager` | `<TIZEN_STUDIO>\tools\device-manager\bin\device-manager.exe` | `<TIZEN_STUDIO>/tools/device-manager/bin/device-manager.app/Contents/MacOS/device-manager` |
 
@@ -155,12 +153,8 @@ You can perform a variety of actions in the **Log** view:
     -   To delete a single tab, click the **X** next to the name of the log tab.
     -   To delete all tabs for a device, right-click it in the Device Manager and select **Delete log tabs**. Confirm the deletion by clicking **OK**.
 
-    ​
-
     > **Note**  
 	> Any filters created for a log tab are deleted when the tab is removed.
-
-    ​
 
 - Filtering log messages
 
@@ -177,9 +171,8 @@ You can perform a variety of actions in the **Log** view:
 
     To export logs to a file, click the **Export Logs** button (![Export Logs](./media/device_manager_export_logs_icon.png)), select the file storage location and file name for the exported log, and click **OK**.
 
-    ​
-
-    *Note** If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
+   > **Note**  
+   > If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
 
 <a name="settings"></a>
 ## Configuring Device Manager
@@ -199,11 +192,9 @@ You can set the following settings for the Device Manager:
 - File transfer timeout
 
     This is the maximum wait time for push and pull operations in the **File Explorer** view. To set the timeout value, select the **Device** tab, change the value, and click **OK**.
-    ​
 
     > **Note**  
     > Only values between 30 000 and 600 000 (milliseconds) are allowed.
-    ​
 
 - Log buffer size
 

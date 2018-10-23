@@ -4,7 +4,7 @@ Use the `gbs export` subcommand to export a Git tree to a tarball and spec file.
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs export --help
 ```
 
@@ -12,7 +12,7 @@ Examples:
 
 - Export source code to a default packaging directory:
 
-  ```bash
+  ```
   $ gbs export
   info: Generating patches from git (upstream/4.1.5..HEAD)
   info: Didn't find any old 'Patch' tags, adding new patches after the last 'Source' tag.
@@ -33,19 +33,19 @@ Examples:
 
 - Use the `-o` option to generate packaging files to a specified path:
 
-  ```bash
+  ```
   $ gbs export -o ~/
   ```
 
 - Use the `--source-rpm` option to generate a source RPM package:
 
-  ```bash
+  ```
   $ gbs export -o ~/ --source-rpm
   ```
 
 - Use the `--spec` option, if there are multiple spec files:
 
-  ```bash
+  ```
   $ gbs export --spec=dlog.spec
   ```
 
@@ -57,6 +57,6 @@ Examples:
   >
   > This option serves as a work-around solution for solving export failures of some non-native packages caused by a tricky engineering problem. For Tizen native packages, the `gbs export` command always performs packaging in the native packaging mode.
 
-  ```bash
+  ```
   $ gbs export --fallback-to-native
   ```

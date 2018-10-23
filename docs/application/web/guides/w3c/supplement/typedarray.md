@@ -1,6 +1,6 @@
 # Typed Array - Khronos
 
-Typed Array - Khronos is an HTML5 feature that allows you to access binary data in JavaScript. It is designed to effectively handle the complex binary data of WebGL&trade;. It provides better performance than the WebGL - Khronos API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webgl), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#webgl), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#webgl) applications) when manipulating binary data and handling the data of other HTML APIs.
+Typed Array - Khronos is an HTML5 feature that allows you to access binary data in JavaScript. It is designed to effectively handle the complex binary data of WebGL&trade;. It provides better performance than the WebGL - Khronos API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#webgl), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#webgl), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#webgl) applications) when manipulating binary data and handling the data of other HTML APIs.
 
 The main features of the Typed Array - Khronos API include:
 
@@ -65,9 +65,9 @@ To handle binary data in your application with JavaScript, you must learn to cre
    </script>
    ```
 
-**Figure: Creating and slicing array buffers (in mobile applications only)**
+   **Figure: Creating and slicing array buffers (in mobile applications only)**
 
-![Creating and slicing array buffers (in mobile applications only)](./media/arraybuffer.png)
+   ![Creating and slicing array buffers (in mobile applications only)](./media/arraybuffer.png)
 
 ### Source Code
 
@@ -87,11 +87,11 @@ The array buffer view shares information between views of all types, and has the
 
   **Table: Typed array view types**
 
-| Type                 | Size1 | Description                          | Equivalent C type |
+  | Type                 | Size<sup>1</sup> | Description                          | Equivalent C type |
   | -------------------- | ----- | ------------------------------------ | ----------------- |
   | `Int8Array`          | 1     | 8-bit 2's complement signed integer  | signed char       |
   | `Uint8Array`         | 1     | 8-bit unsigned integer               | unsigned char     |
-  | `Uint8ClampedArray`2 | 1     | 8-bit unsigned integer (clamped)     | unsigned char     |
+  | `Uint8ClampedArray`<sup>2</sup> | 1     | 8-bit unsigned integer (clamped)     | unsigned char     |
   | `Int16Array`         | 2     | 16-bit 2's complement signed integer | short             |
   | `Uint16Array`        | 2     | 16-bit unsigned integer              | unsigned short    |
   | `Int32Array`         | 4     | 32-bit 2's complement signed integer | int               |
@@ -99,12 +99,12 @@ The array buffer view shares information between views of all types, and has the
   | `Float32Array`       | 4     | 32-bit IEEE floating point           | float             |
   | `Float64Array`       | 8     | 64-bit IEEE floating point           | double            |
 
-  1 The size unit is bytes, and it corresponds to the `BYTES_PER_ELEMENT` constant for the given type.
+  <sup>1</sup> The size unit is bytes, and it corresponds to the `BYTES_PER_ELEMENT` constant for the given type.
 
-  2 The `Uint8ClampedArray` is a special view, and it replaces the `CanvasPixelArray`.
+  <sup>2</sup> The `Uint8ClampedArray` is a special view, and it replaces the `CanvasPixelArray`.
 
-> **Note**  
-> There are no restrictions related to sorting the typed array view types.
+  > **Note**  
+  > There are no restrictions related to sorting the typed array view types.
 
 - DataView view types
 
@@ -230,7 +230,7 @@ For the complete source code related to this use case, see the following files:
 
 To handle binary data in your application with JavaScript, you must learn to deliver binary data effectively in other HTML5 APIs that employ a typed array:
 
-1. For the WebGL - Khronos API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#webgl), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#webgl), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#webgl) applications), import the `gl.bufferData()` method to set the buffer object to deliver texture data:
+1. For the WebGL - Khronos API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#webgl), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#webgl), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#webgl) applications), import the `gl.bufferData()` method to set the buffer object to deliver texture data:
 
    ```
    <script>
@@ -249,11 +249,11 @@ To handle binary data in your application with JavaScript, you must learn to del
    </script>
    ```
 
-2. For the HTML5 canvas element API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#canvas), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#canvas), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#canvas) applications), use the typed array with the following steps:
+2. For the HTML5 canvas element API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#canvas), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#canvas), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#canvas) applications), use the typed array with the following steps:
 
-   a. Create an `ImageData` object of the canvas internally.
+   1. Create an `ImageData` object of the canvas internally.
 
-   b. Deliver the pixel expression of the canvas element:
+   2. Deliver the pixel expression of the canvas element:
 
      ```
      <script>
@@ -268,7 +268,7 @@ To handle binary data in your application with JavaScript, you must learn to del
 	> **Note**  
 	> The pixel array of a canvas can be created and edited without direct manipulation of the canvas element.  
 
-3. For the XMLHttpRequest API (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#httpreq), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#httpreq), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#httpreq) applications), set the response type of the `XMLHttpRequest` object as `arraybuffer` to receive a typed array response. This allows you to parse the binary file through the network.
+3. For the XMLHttpRequest API (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#httpreq), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#httpreq), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#httpreq) applications), set the response type of the `XMLHttpRequest` object as `arraybuffer` to receive a typed array response. This allows you to parse the binary file through the network.
 
    ```
    this.setSound = function() {

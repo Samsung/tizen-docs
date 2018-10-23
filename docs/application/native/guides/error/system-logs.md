@@ -1,7 +1,5 @@
 # System Logs
-## Dependencies
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
+
 
 To generate and view system logs in Tizen, you can use the dlog logging service. It consists of the dlogutil dlog library, which sends log messages to a log device. The log device is a circular buffer used to collect log messages from various applications and the system.
 
@@ -17,8 +15,17 @@ The main features of the dlog API include:
 
   You can view the log output from the circular buffer in 2 ways:
 
-  - In the device sdb shell (when testing with a target device), [use the logutil commands](#dlogutil).You can use the message priority and tag to filter the output and only view specific messages.
-  - In the Tizen Studio (when testing with an emulator), use the **Log** view.You can filter the messages by their priority level. You can also search the messages by keywords, such as pid, tid, tag, and message.**Figure: Messages in the Log view**![Messages in the Log view](./media/debugging.png)
+  - In the device sdb shell (when testing with a target device), [use the logutil commands](#dlogutil).
+
+    You can use the message priority and tag to filter the output and only view specific messages.
+
+  - In the Tizen Studio (when testing with an emulator), use the **Log** view.
+
+    You can filter the messages by their priority level. You can also search the messages by keywords, such as pid, tid, tag, and message.
+
+    **Figure: Messages in the Log view**
+
+    ![Messages in the Log view](./media/debugging.png)
 
 The following figure illustrates the general architecture of the dlog logging service.
 
@@ -26,6 +33,7 @@ The following figure illustrates the general architecture of the dlog logging se
 
 ![Architecture](./media/dlog_architecture.png)
 
+<a name="message"></a>
 ## Log Message Content
 
 The log message contains a priority level, tag, and the actual message text:
@@ -35,7 +43,7 @@ The log message contains a priority level, tag, and the actual message text:
   **Table: Priority levels**
 
   | Priority     | Description                              |
-  | ------------ | ---------------------------------------- |
+  |--------------|------------------------------------------|
   | `DLOG_DEBUG` | Debugging message for an unexpected exception that needs to be checked |
   | `DLOG_INFO`  | Information message describing normal operation |
   | `DLOG_WARN`  | Warning message, which means that an error is likely to occur if no action is taken |
@@ -64,7 +72,7 @@ if (result != LOCATIONS_ERROR_NONE) {
 }
 ```
 
-To [create and send a log message](#send), use the `dlog_print()` and `dlog_vprint()` functions. The first parameter defines the priority level, and the second parameter defines the tag. Both functions return a value from the `dlog_error_e` enumerator (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17)applications).
+To [create and send a log message](#send), use the `dlog_print()` and `dlog_vprint()` functions. The first parameter defines the priority level, and the second parameter defines the tag. Both functions return a value from the `dlog_error_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DLOG.html#ga75b37fc3103da74bb4122d98968d8c17) applications).
 
 ```
 /* dlog_print */
@@ -133,6 +141,7 @@ The priority level for the log message can be defined using macros. The followin
     dlog_print(DLOG_WARN, "MyTag", "warning!");
     ```
 
+<a name="dlogutil"></a>
 ## Logutil Commands
 
 You can [collect, filter, and view the content of the log buffers](#check) with logutil using the following command:
@@ -148,16 +157,16 @@ dlogutil <option> <filter-spec>
   **Table: Command options**
 
   | Option          | Description                              |
-  | --------------- | ---------------------------------------- |
+  |-----------------|------------------------------------------|
   | `-b <buffer>`   | Alternates the log buffer. The main buffer is used by the default buffer. |
   | `-c`            | Clears the entire log and exits.         |
   | `-d`            | Dumps the log and exits.                 |
-  | `-f <filename>` | Writes the log to <filename>. The default filename is `stdout`. |
+  | `-f <filename>` | Writes the log to \<filename\>. The default filename is `stdout`. |
   | `-g`            | Prints the size of the specified log buffer and exits. |
-  | `-n <count>`    | Sets the maximum number of rotated logs to <count>. The default value is 4. Requires the `-r` option. |
-  | `-r <Kbytes>`   | Rotates the log file every <Kbytes> of output. The default value is 16. Requires the `-f` option. |
+  | `-n <count>`    | Sets the maximum number of rotated logs to \<count\>. The default value is 4. Requires the `-r` option. |
+  | `-r <Kbytes>`   | Rotates the log file every \<Kbytes\> of output. The default value is 16. Requires the `-f` option. |
   | `-s`            | Sets the default filter spec to silent.  |
-  | `-v <format>`   | Sets the output format for log messages.The log messages contain a number of metadata fields in addition to tag and priority. This option modifies the output format for messages so that they display a specific metadata field. The supported output formats are:`brief` (default): Displays the priority/tag and PID of the originating process.`process`: Displays the PID only.`tag`: Displays the priority/tag only.`thread`: Displays the process:thread and priority/tag only.`raw`: Displays the raw log message, with no other metadata fields.`time`: Displays the date, invocation time, priority/tag, and PID of the originating process.`long`: Displays all metadata fields and separates messages with blank lines. |
+  | `-v <format>`   | Sets the output format for log messages.<br> The log messages contain a number of metadata fields in addition to tag and priority. This option modifies the output format for messages so that they display a specific metadata field. The supported output formats are:<br> - `brief` (default): Displays the priority/tag and PID of the originating process. <br> - `process`: Displays the PID only.<br> - `tag`: Displays the priority/tag only.<br> - `thread`: Displays the process:thread and priority/tag only.<br> - `raw`: Displays the raw log message, with no other metadata fields <br> - `time`: Displays the date, invocation time, priority/tag, and PID of the originating process.<br> - `long`: Displays all metadata fields and separates messages with blank lines. |
 
   For example, to print out all log messages using a format that only includes the message PID:
 
@@ -192,7 +201,7 @@ dlogutil <option> <filter-spec>
 
 To enable your application to use the dlog functionality:
 
-1. To use the functions and data types of the dlog API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__DLOG.html) and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__DLOG.html) applications), include the `<dlog.h>` header file in your application:
+1. To use the functions and data types of the dlog API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__DLOG.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__DLOG.html) applications), include the `<dlog.h>` header file in your application:
 
    ```
    #include <dlog.h>
@@ -200,10 +209,17 @@ To enable your application to use the dlog functionality:
 
 2. Make sure you have the necessary tools:
 
-   - dlog library: `libdlog.so`The dlog library provides a logging function to send log messages to the kernel log device.
-   - dlogutil: `dlogutil`dlogutil enables you to view log messages in the log device, and provides filtered message output.
+   - dlog library: `libdlog.so`
+
+     The dlog library provides a logging function to send log messages to the kernel log device.
+
+   - dlogutil: `dlogutil`
+
+     dlogutil enables you to view log messages in the log device, and provides filtered message output.
+
    - linux-2.6.32 kernel
 
+<a name="send"></a>
 ## Sending a Log Message
 
 To send a log message with the `MY_APP` tag with various priorities, use the `dlog_print()` function:
@@ -227,11 +243,12 @@ main(void)
 }
 ```
 
+<a name="check"></a>
 ## Checking the Output Logs
 
 To check the content of the output log, execute dlogutil in the device sdb shell. The following code snippet shows examples of the various available commands and their output.
 
-For information on connecting to the target and using it with SDB, see [Connecting Devices over Smart Development Bridge](../../../../org.tizen.studio/html/common_tools/smart_development_bridge.htm).
+For information on connecting to the target and using it with SDB, see [Connecting Devices over Smart Development Bridge](../../../tizen-studio/common-tools/smart-development-bridge.md).
 
 ```
 Desktop:~$ sdb shell
@@ -319,3 +336,8 @@ W/MY_APP  (11097): warning message
 E/MY_APP  (11097): error message
 I/MY_APP  (11097): test dlog, 21
 ```
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

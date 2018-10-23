@@ -1,6 +1,6 @@
 # Device Sensors
 
-Tizen provides interfaces and methods to manage sensor data from [various sensors on the device](#supported-sensors). The main purpose of a sensor is to provide a value for the relevant environment parameter.
+You can access and manage sensor data from [various sensors on the device](#supported-sensors). The main purpose of a sensor is to provide a value for the relevant environment parameter.
 
 This feature is supported in mobile and wearable applications only.
 
@@ -23,7 +23,7 @@ The main features of the Sensor API include:
 Learning how to start, read and stop a sensor is a basic sensor management skill:
 
 <a name="support"></a>
-1. Check that the sensor is supported by the device using the `getCapability()` method of the `SystemInfo` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfo) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html#SystemInfo) applications) for the proper [capability](#capability) related to the sensor:
+1. Check that the sensor is supported by the device using the `getCapability()` method of the `SystemInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo) and [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo) applications) for the proper [capability](#capability) related to the sensor:
 
    ```
    var proximityCapability = tizen.systeminfo.getCapability('http://tizen.org/feature/sensor.proximity');
@@ -41,7 +41,7 @@ Learning how to start, read and stop a sensor is a basic sensor management skill
    console.log('Available sensor: ' + sensors.toString());
    ```
 
-3. Obtain the `Sensor` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/sensor.html#Sensor) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/sensor.html#Sensor) applications) using the `getDefaultSensor()` method of the `SensorService` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/sensor.html#SensorService) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/sensor.html#SensorService) applications). Enable the sensor using the `start()` method:
+3. Obtain the `Sensor` object (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#Sensor) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#Sensor) applications) using the `getDefaultSensor()` method of the `SensorService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#SensorService) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#SensorService) applications). Enable the sensor using the `start()` method:
 
    ```
    var proximitySensor = tizen.sensorservice.getDefaultSensor('PROXIMITY');
@@ -53,7 +53,7 @@ Learning how to start, read and stop a sensor is a basic sensor management skill
    proximitySensor.start(onsuccessCB);
    ```
 
-4. To get data from the sensor, use the appropriate method of the sensor object. For example, for the `LightSensor` (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/sensor.html#LightSensor) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/sensor.html#LightSensor) applications), use the `getLightSensorData()` method:
+4. To get data from the sensor, use the appropriate method of the sensor object. For example, for the `LightSensor` (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#LightSensor) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#LightSensor) applications), use the `getLightSensorData()` method:
 
    ```
    var lightSensor = tizen.sensorservice.getDefaultSensor('LIGHT');
@@ -81,7 +81,7 @@ Learning how to start, read and stop a sensor is a basic sensor management skill
 
 Learning how to register a change event handler for sensor data enables your application to react to changes without the need to check current values constantly:
 
-1. Define an event handler for sensor data changes by implementing the `SensorDataSuccessCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/sensor.html#SensorDataSuccessCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/sensor.html#SensorDataSuccessCallback) applications):
+1. Define an event handler for sensor data changes by implementing the `SensorDataSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#SensorDataSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#SensorDataSuccessCallback) applications):
 
    ```
    function onchangedCB(sensorData) {
@@ -91,7 +91,7 @@ Learning how to register a change event handler for sensor data enables your app
 
 2. Register a change listener to be called when the sensor data changes.
 
-   To register a  change listener, use the `setChangeListener()` method of the `Sensor` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/sensor.html#Sensor) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/sensor.html#Sensor) applications).
+   To register a  change listener, use the `setChangeListener()` method of the `Sensor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#Sensor) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#Sensor) applications).
 
    This command requires 3 parameters:
 
@@ -142,7 +142,7 @@ Learning how to register a change event handler for sensor data enables your app
 
 Learning how to retrieve information about the sensor hardware enables your application to know the sensor's technical limits:
 
-1. Define a success callback for handling a `SensorHardwareInfo` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/sensor.html#SensorHardwareInfo) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/sensor.html#SensorHardwareInfo) applications). You can also define an optional error callback.
+1. Define a success callback for handling a `SensorHardwareInfo` object (in [mobile](../../api/latest/device_api/mobile/tizen/sensor.html#SensorHardwareInfo) and [wearable](../../api/latest/device_api/wearable/tizen/sensor.html#SensorHardwareInfo) applications). You can also define an optional error callback.
 
    ```
    function onsuccessCB(hwInfo) {
