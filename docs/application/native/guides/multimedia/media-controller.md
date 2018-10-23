@@ -31,7 +31,7 @@ The main features of the Media Controller API include:
 
   You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side and then process the command on the server side.
 
-  You can [send a reply of the command](#to-send-the-reply-of-completed-command-on-the-server-side) to the client from the server side and then receive the reply on the client side.
+  You can [send a reply of the command](#send_command_reply) to the client from the server side and then receive the reply on the client side.
 
   > **Note**
   >
@@ -41,7 +41,7 @@ The main features of the Media Controller API include:
 
   You can [send a custom event](#sending-and-processing-a-custom-event) to the client from the server side and then process the event on the client side.
 
-  You can [send a reply of the custom event](#to-send-the-reply-of-completed-custom-event-on-the-client-side) to the server from the client side and then receive the reply on the server side.
+  You can [send a reply of the custom event](#send_event_reply) to the server from the client side and then receive the reply on the server side.
 
   > **Note**
   >
@@ -435,7 +435,8 @@ To send the reply of completed command on the server side:
    ret = mc_server_send_cmd_reply(g_server_h, client_name, request_id, result_code, NULL);
    ```
 
-##### To receive the reply of completed command on the client side:
+<a name="send_command_reply"></a>
+To receive the reply of completed command on the client side:
 
 1. Define the callback that is invoked when the client receives the reply:
 
@@ -538,9 +539,8 @@ To process the received event on the client side:
    mc_client_destroy(g_client_h);
    ```
 
-
-
-##### To send the reply of completed custom event on the client side:
+<a name="send_event_reply"></a>
+To send the reply of completed custom event on the client side:
 
 1. Send the reply of completed custom event using the `mc_client_send_event_reply()` with the request id of the custom event in the third parameter and the result of the custom event in fourth parameter:
 
