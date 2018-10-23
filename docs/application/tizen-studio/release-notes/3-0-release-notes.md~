@@ -67,7 +67,7 @@
 	-   When you launch the Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
 	-   Basic Web applications does not install on SD cards.
 -	CLI and SDB
-	-   The Tizen Studio does not support the [Smart Development Bridge](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/sdb)(SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
+	-   The Tizen Studio does not support the ([Smart Development Bridge](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/sdb))(SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 -	Dynamic Analyzer
 	-   When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
 	    -   The Core Frequency information is not shown.
