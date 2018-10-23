@@ -79,7 +79,7 @@ application list.
 If you do not specify a proper screen size in the `tizen-manifest.xml`
 file, your application can be rejected from the Tizen Store.
 
-The following table lists the available screen size features.
+The following table lists the available screen size features:
 
 **Table: Available screen size features**
 
@@ -142,9 +142,7 @@ for the application `tizen-manifest.xml` file:
     The manifest file (`tizen-manifest.xml`) is updated automatically.
 
 The following tables show the available requirements for an application
-package. If you want to check which features are necessary for using a
-specific API, see the related feature in the native [API
-Reference](../../../../org.tizen.native.mobile.apireference/index.html).
+package:
 
 **Table: Available mobile native requirements**
 
@@ -235,11 +233,11 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
-| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
-| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/peripheral_io.gpio` | Specify this key, if the application requires General-Purpose Input/Output (GPIO) API to communicate with peripheral devices. | 4.0   |
 | `http://tizen.org/feature/peripheral_io.i2c` | Specify this key, if the application requires Inter-Integrated Circuit (I2C) API to communicate with peripheral devices. | 4.0   |
 | `http://tizen.org/feature/peripheral_io.pwm` | Specify this key, if the application requires Pulse-Width Modulation (PWM) API to communicate with peripheral devices. | 4.0   |
@@ -322,6 +320,10 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/vision.image_recognition` | Specify this key, if the application requires the image recognition feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.qrcode_generation` | Specify this key, if the application requires the QR code generation feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.qrcode_recognition` | Specify this key, if the application requires the QR code recognition feature. | 2.2.1 |
+
+If you want to verify which features are necessary for using a
+specific API, see the related feature in the native [API
+Reference](../../api/overview.md).
 
 **Table: Available wearable native requirements**
 
