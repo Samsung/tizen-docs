@@ -1,7 +1,7 @@
 # Natural Language Processing (NLP)
 
 
-NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenize, lemmatize, and named entity detect   ion. For more information, see the [NLTK Forum](http://www.nltk.org/).
+NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenize, lemmatize, and named entity detection. For more information, see the [NLTK Forum](http://www.nltk.org/).
 
 The main features of the Tizen.Nlp namespace include:
 
@@ -29,7 +29,7 @@ The main features of the Tizen.Nlp namespace include:
 
 ## Prerequisites
 
-To enable your application to use the NLP functionality:
+To use your application to use the NLP functionality:
 
 1.  Using the [Tizen.Nlp](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
@@ -40,7 +40,7 @@ To enable your application to use the NLP functionality:
     </privileges>
     ```
 
-2.  Using the methods and properties of the `Tizen.Nlp` namespace, include it in your application:
+2.  To use the methods and properties of the `Tizen.Nlp` namespace, include it in your application:
 
     ```
     using Tizen.Nlp;
