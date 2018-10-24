@@ -69,6 +69,9 @@ Check the following prerequisites before installing the Tizen Studio for RT:
 
   `$ sudo apt-get install libwebkitgtk-1.0-0`
 
+- Docker CE for Ubuntu
+  
+  To install Docker CE on Ubuntu, see [Get Docker CE for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
 ## Related Information
 * Dependencies  
