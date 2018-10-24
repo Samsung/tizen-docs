@@ -23,7 +23,7 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 
   ![Text Editor](./media/manifest_text.png)
 
-> **Note**  
+> **Note**
 > The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
 
 <a name="hierarchy"></a>
@@ -119,7 +119,7 @@ For more information on the relationship between the elements, see the [element 
 
   Installation location for the application (available value: `"auto"`)
 
-  > **Note**  
+  > **Note**
   > This attribute is read-only. Do not attempt to modify it.
 
 - `package`
@@ -132,7 +132,7 @@ For more information on the relationship between the elements, see the [element 
 
   Package type of the application (available value: `"tpk"`)
 
-  > **Note**  
+  > **Note**
   > This attribute is read-only. Do not attempt to modify it.
 
 - `version`
@@ -283,12 +283,12 @@ For more information on the relationship between the elements, see the [element 
 
   Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
 
-  > **Note**  
+  > **Note**
   > This attribute is read-only. Do not attempt to modify it.
 - `nodisplay`Indicates whether the application is shown in the app tray (available values: `true`, `false`)
 - `taskmanage`Indicates whether the application is shown in the task manager (available values: `true`, `false`)
 - `type`Tizen application type (available values: `capp`, `c++app`, `webapp`)
-  > **Note**  
+  > **Note**
   > This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
@@ -346,7 +346,7 @@ For more information on the relationship between the elements, see the [element 
 
   If the value is not defined, `false` is used.
 
- > **Note**  
+ > **Note**
  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 
 - `exec`
@@ -357,7 +357,7 @@ For more information on the relationship between the elements, see the [element 
 
   Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
 
-  > **Note**  
+  > **Note**
   > This attribute is read-only. Do not attempt to modify it.
 
 - `on-boot`
@@ -366,7 +366,7 @@ For more information on the relationship between the elements, see the [element 
 
   If the value is not defined, `false` is used.
 
-  > **Note**  
+  > **Note**
   > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 
 - `taskmanage`
@@ -377,7 +377,7 @@ For more information on the relationship between the elements, see the [element 
 
   Tizen application type (available values: `capp`, `c++app`, `webapp`)
 
-  > **Note**  
+  > **Note**
   > This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
@@ -430,6 +430,15 @@ For more information on the relationship between the elements, see the [element 
 - `exec
 
   Watch application executable file path (string)
+
+- `setup-appid`
+
+  Watch application setup application ID (string)
+
+  If the value is 'watchface-editor', the system default editor is shown when the device enters the editing mode.
+
+
+**For example:**
 
 ```xml
 <watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample">
