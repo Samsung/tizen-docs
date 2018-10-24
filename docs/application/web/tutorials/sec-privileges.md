@@ -62,8 +62,11 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/filesystem.write` | public |  | The application can write to file systems. |
 | `http://tizen.org/privilege/healthinfo` | public | Sensor | The application can read health information gathered by the device sensors, such as the pedometer and the heart rate monitor. |
 | `http://tizen.org/privilege/ime` | public |  | The application can provide users with a way to enter characters and symbols into an associated text field. |
+| `http://tizen.org/privilege/internet` | public | | The application can access the Internet. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off, such as the LED on the front of the device and the camera flash. |
+| `http://tizen.org/privilege/location` | public | | The application can use user's location data. |
+| `http://tizen.org/privilege/mediacapture` | public | Camera & Microphone | The application can capture video and audio data.  |
 | `http://tizen.org/privilege/mediacontroller.client` | public |  | The application can receive information about currently playing media from applications that are allowed to send it, and can control those applications remotely. |
 | `http://tizen.org/privilege/mediacontroller.server` | public |  | The application can send information about currently playing media to applications that are allowed to receive it, and can be controlled remotely by those applications. |
 | `http://tizen.org/privilege/messaging.read` | public | Message & Storage | The application can retrieve emails, text messages, and multimedia messages from the server or receive them directly. This may result in additional charges depending on user's payment plan. |
@@ -74,6 +77,7 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/nfc.common` | public |  | The application can use NFC common features. |
 | `http://tizen.org/privilege/nfc.p2p` | public |  | The application can push NFC messages to other devices. |
 | `http://tizen.org/privilege/nfc.tag` | public |  | The application can read and write NFC tag information. |
+| `http://tizen.org/privilege/notification` | public | | The application can show and hide its own notifications and badges. |
 | `http://tizen.org/privilege/package.info` | public |  | The application can receive package information. |
 | `http://tizen.org/privilege/packagemanager.install` | platform |  | The application can install or uninstall application packages. |
 | `http://tizen.org/privilege/power` | public |  | The application can control power-related settings, such as dimming the screen. |
