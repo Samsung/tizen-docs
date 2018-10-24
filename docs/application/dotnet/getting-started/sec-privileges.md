@@ -13,7 +13,7 @@ Tizen provides API-level access control for security-sensitive
 operations which, if not used properly, can harm user privacy and
 system stability. Therefore, applications that use such sensitive APIs
 must declare the required privileges in the
-[tizen-manifest.xml](../process/setting-properties.md#setting-the-application-manifest) file.
+tizen-manifest.xml file.
 Privileges are categorized into public, partner, and platform levels
 according to their hierarchy:
 
@@ -41,13 +41,13 @@ switched it **on**.
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/requesting-permissions.md) using the [Privacy Privilege Manager API](../api/tizenfx/api/Tizen.Security.PrivacyPrivilegeManager.html).
 
 The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
-Privileges](../../../tizen-studio/native-tools/api-checker.md).
+Privileges](../../tizen-studio/native-tools/api-checker.md).
 
 <a name="API"></a>
 ## .NET API Privileges
 
 The following table lists the API privileges, which you must declare
-when using security-sensitive API modules in native applications:
+when using security-sensitive API modules in .net applications:
 
 **Table: .NET API privileges**
 
@@ -60,7 +60,6 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/antivirus.admin` | platform |  | The application can enable or disable antivirus programs and manage detected malware. |
 | `http://tizen.org/privilege/antivirus.scan` | partner |  | The application can request to scan files in any other applications or on the device to detect harmful content. |
 | `http://tizen.org/privilege/antivirus.webprotect` | partner |  | The application can check the reputation of a web address and determine whether or not accessing it could put user's device at risk. |
-| `http://tizen.org/privilege/appdir.shareddata` | public |  | The application can create a shared directory and files within it, which all other applications can read. |
 | `http://tizen.org/privilege/apphistory.read` | public | User history | The application can read the statistics of application usage, such as which applications have been used frequently or recently. |
 | `http://tizen.org/privilege/appmanager.kill` | platform |  | The application can close other applications. |
 | `http://tizen.org/privilege/appmanager.kill.bgapp` | public |  | The application can request to close applications running in the background. |
@@ -83,27 +82,25 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/devicecertificate` | platform |  | The application can use a device certificate and its private key to communicate securely with a remote server. |
 | `http://tizen.org/privilege/display` | public |  | The application can manage display settings, such as the brightness. This may increase battery consumption. |
 | `http://tizen.org/privilege/download` | public |  | The application can manage HTTP downloads. This may result in additional charges depending on user's payment plan. |
-| `http://tizen.org/privilege/dpm.bluetooth` | partner |  | The application can restrict Bluetooth connections. This may prevent applications that use Bluetooth from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.browser` | partner |  | The application can prevent the use of browser applications. This may prevent applications that use browser applications from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.camera` | partner |  | The application can restrict the use of the camera. This may prevent applications that use the camera from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.clipboard` | partner |  | The application can restrict the use of the clipboard. This may prevent applications that use the clipboard from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.debugging` | partner |  | The application can restrict the use of debugging. This may prevent applications that use debugging from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.email` | partner |  | The application can restrict POP and IMAP email access. This may prevent applications that use email services from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.location` | partner |  | The application can restrict the use of location functions. This may prevent applications that use location functions from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.lock` | partner |  | The application can lock the device.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.message` | partner |  | The application can restrict the use of text, multimedia, and chat messaging services. This may prevent applications that use messaging services from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.microphone` | partner |  | The application can restrict the use of the microphone. This may prevent applications that use the microphone from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.password` | partner |  | The application can manage password policies and reset the passwords used to unlock the phone and recover data.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.security` | partner |  | The application can change security settings such as those for certificate installation, data encryption, and factory data resets.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.storage` | partner |  | The application can prevent the use of external storage such as SD cards and USB storage devices. This may prevent applications that use external storage from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.usb` | partner |  | The application can prevent USB connections, including the use of USB tethering. This may prevent applications that use USB connections from working properly.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.wifi` | partner |  | The application can restrict the use of Wi-Fi networks and Mobile Hotspots. If the phone can not connect to a Wi-Fi network, it may connect to a mobile network. This may result in additional charges depending on user's payment plan.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.wipe` | partner |  | The application can erase all data from user's device and reset user's device to its factory default settings.<br>**Allowed to licensed partners.** |
-| `http://tizen.org/privilege/dpm.zone` | partner |  | The application can create and remove containers. Containers are private workspaces which provide separate app runtime environments and data storage.<br>**Allowed to licensed partners.** |
+| `http://tizen.org/privilege/dpm.bluetooth` | partner |  | The application can restrict Bluetooth connections. This may prevent applications that use Bluetooth from working properly. |
+| `http://tizen.org/privilege/dpm.browser` | partner |  | The application can prevent the use of browser applications. This may prevent applications that use browser applications from working properly. |
+| `http://tizen.org/privilege/dpm.camera` | partner |  | The application can restrict the use of the camera. This may prevent applications that use the camera from working properly. |
+| `http://tizen.org/privilege/dpm.clipboard` | partner |  | The application can restrict the use of the clipboard. This may prevent applications that use the clipboard from working properly. |
+| `http://tizen.org/privilege/dpm.debugging` | partner |  | The application can restrict the use of debugging. This may prevent applications that use debugging from working properly. |
+| `http://tizen.org/privilege/dpm.email` | partner |  | The application can restrict POP and IMAP email access. This may prevent applications that use email services from working properly. |
+| `http://tizen.org/privilege/dpm.location` | partner |  | The application can restrict the use of location functions. This may prevent applications that use location functions from working properly. |
+| `http://tizen.org/privilege/dpm.lock` | partner |  | The application can lock the device. |
+| `http://tizen.org/privilege/dpm.message` | partner |  | The application can restrict the use of text, multimedia, and chat messaging services. This may prevent applications that use messaging services from working properly. |
+| `http://tizen.org/privilege/dpm.microphone` | partner |  | The application can restrict the use of the microphone. This may prevent applications that use the microphone from working properly. |
+| `http://tizen.org/privilege/dpm.password` | partner |  | The application can manage password policies and reset the passwords used to unlock the phone and recover data. |
+| `http://tizen.org/privilege/dpm.security` | partner |  | The application can change security settings such as those for certificate installation, data encryption, and factory data resets. |
+| `http://tizen.org/privilege/dpm.storage` | partner |  | The application can prevent the use of external storage such as SD cards and USB storage devices. This may prevent applications that use external storage from working properly. |
+| `http://tizen.org/privilege/dpm.usb` | partner |  | The application can prevent USB connections, including the use of USB tethering. This may prevent applications that use USB connections from working properly. |
+| `http://tizen.org/privilege/dpm.wifi` | partner |  | The application can restrict the use of Wi-Fi networks and Mobile Hotspots. If the phone can not connect to a Wi-Fi network, it may connect to a mobile network. This may result in additional charges depending on user's payment plan. |
+| `http://tizen.org/privilege/dpm.wipe` | partner |  | The application can erase all data from user's device and reset user's device to its factory default settings. |
+| `http://tizen.org/privilege/dpm.zone` | partner |  | The application can create and remove containers. Containers are private workspaces which provide separate app runtime environments and data storage. |
 | `http://tizen.org/privilege/email` | public |  | The application can manage user's email accounts, including user's folders and emails, POP3 and IMAP downloads, and SMTP uploads. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/email.admin` | platform |  | The application can manage the settings of email applications. |
-| `http://tizen.org/privilege/externalstorage` | public | Storage | The application can read and write files that are saved to external storage, such as SD cards. |
-| `http://tizen.org/privilege/externalstorage.appdata` | public |  | The application can read and write its own files in external storage, such as SD cards. |
 | `http://tizen.org/privilege/fido.client` | public |  | The application can trigger authenticators in user's device and it may request to use user's PIN or biometrics (fingerprints or irises) for authentication. |
 | `http://tizen.org/privilege/gestureactivation` | platform |  | The application can allow and block special touch gestures. |
 | `http://tizen.org/privilege/gesturegrab` | platform |  | The application can read special touch gestures, even while it is running in the background. |
@@ -112,7 +109,6 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/ime` | public |  | The application can provide users with a way to enter characters and symbols into an associated text field. |
 | `http://tizen.org/privilege/imemanager` | public |  | The application can manage installed input methods. |
 | `http://tizen.org/privilege/inputgenerator` | platform |  | The application can simulate keys being pressed and touch interactions with the screen. |
-| `http://tizen.org/privilege/internet` | public |  | The application can access the internet. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/keygrab` | platform |  | The application can read actions involving special keys, such as the volume keys on this or other devices (e.g. TV remote controls), even when it is running in the background. |
 | `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/keymanager.admin` | platform |  | The application can lock and unlock password-protected storage, and manage password changes for it. |
@@ -124,7 +120,6 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/mediacontroller.client` | public |  | The application can receive information about currently playing media from applications that are allowed to send it, and can control those applications remotely. |
 | `http://tizen.org/privilege/mediacontroller.server` | public |  | The application can send information about currently playing media to applications that are allowed to receive it, and can be controlled remotely by those applications. |
 | `http://tizen.org/privilege/mediahistory.read` | public | User history | The application can read the statistics concerning the music and videos played on the device, such as the peak times for playing music or videos. |
-| `http://tizen.org/privilege/mediastorage` | public | Storage | The application can read and write files in media folders. |
 | `http://tizen.org/privilege/message.read` | public | Message | The application can read text and multimedia messages, and any information related to them. |
 | `http://tizen.org/privilege/message.write` | public | Message | The application can write, send, delete, move text and multimedia messages, download multimedia messages, and change the settings and statuses of messages, such as read or unread. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/minicontrol.provider` | public |  | The application can show a small toolbar on the notification panel or lock screen while it is open. |
