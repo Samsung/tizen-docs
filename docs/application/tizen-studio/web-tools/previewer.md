@@ -30,10 +30,14 @@ To use the HTML and CSS previewer:
 
 You can configure the previewer to suit your own preferences.
 
-You can [set the preview](IDE-preferences.md#live) in **Window > Preferences > Tizen Studio > Web > Live Editing**.
+You can [set the preview](ide-preferences.md#live) in **Window > Preferences > Tizen Studio > Web > Live Editing**.
 
 > **Note**  
-> The previewer is based on the Google Chrome™ browser. The CSS preview can differ from the actual product. It allows you to see the overall outline.Some selectors and elements do not work on the CSS previewer.
+> The previewer is based on the Google Chrome&trade; browser.
+>
+> The CSS preview can differ from the actual product. It allows you to see the overall outline.
+>
+> Some selectors and elements do not work on the CSS previewer.
 
 ## Related Information
 * Dependencies

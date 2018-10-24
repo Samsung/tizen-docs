@@ -403,7 +403,7 @@ In the control panel, you can model user actions, such as shaking, throwing, and
 
     -   Magnetic
 
-        In the **Magnetic** tab, you can control the magnetic field values of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 µT (microtesla). You can control the magnetic field 3-axis values from -2000 µT to 2000 µT, using the sliders.
+        In the **Magnetic** tab, you can control the magnetic field values of the instance along the coordinate axes. When the emulated device is stationary and vertical in portrait orientation, the Y axis is at true north and the magnetic field strength values are 1, 0, and -10 &micro;T (microtesla). You can control the magnetic field 3-axis values from -2000 &micro;T to 2000 &micro;T, using the sliders.
 
     -   Gyro
 

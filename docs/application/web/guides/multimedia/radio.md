@@ -18,7 +18,7 @@ The main features of the FM Radio API include:
 
   The Tizen system has a feature to prevent interference between the radio and other sound sources. The radio sound is interrupted in reaction to various events, such as an incoming call or notification. You can use the `oninterrupted` event handler to [detect the reason for the interruption](#getting-information-about-interruptions).
 
-The available operations depend on the current radio state. To get information about the current radio state, read the `state` attribute of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface (the [RadioState](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#RadioState) enumeration specifies the possible state values). The following figure illustrates the radio states and transitions between them.
+The available operations depend on the current radio state. To get information about the current radio state, read the `state` attribute of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface (the [RadioState](../../api/latest/device_api/mobile/tizen/fmradio.html#RadioState) enumeration specifies the possible state values). The following figure illustrates the radio states and transitions between them.
 
 **Figure: FM radio states and transitions**
 
@@ -28,9 +28,10 @@ The available operations depend on the current radio state. To get information a
 
 Starting and stopping an FM radio and changing the frequency is a basic FM radio management skill:
 
-1. To start the FM radio, use the `start()` method of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface:
-> **Note**
-> Always check the current state before using any state-dependent functions.
+1. To start the FM radio, use the `start()` method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface:
+
+   > **Note**  
+   > Always check the current state before using any state-dependent functions.
 
    ```
    var radioState = tizen.fmradio.state;
@@ -67,7 +68,7 @@ Starting and stopping an FM radio and changing the frequency is a basic FM radio
 
 To create an application with FM radio features, you must provide a scanning capability:
 
-1. To find a radio channel at a higher frequency than the current one, use the `seekUp()`method of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface. This method is available only in `PLAYING` radio state.
+1. To find a radio channel at a higher frequency than the current one, use the `seekUp()`method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface. This method is available only in `PLAYING` radio state.
 
    ```
    if (tizen.fmradio.state === 'PLAYING') {
@@ -139,7 +140,7 @@ Retrieving information about FM radio interruptions is a useful FM radio managem
    tizen.fmradio.setFMRadioInterruptedListener(interruptCallback);
    ```
 
-2. To stop receiving information about interruptions, use the `unsetFMRadioInterruptedListener()` method of the [FMRadioManager](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface.
+2. To stop receiving information about interruptions, use the `unsetFMRadioInterruptedListener()` method of the [FMRadioManager](../../api/latest/device_api/mobile/tizen/fmradio.html#FMRadioManager) interface.
 
 
 ## Related Information

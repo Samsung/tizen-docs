@@ -1,0 +1,1046 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>Media API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Media">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="title"><h1>Media API</h1></div>
+<div class="brief">
+ This plugin provides the ability to record and play back audio files on a device.
+        </div>
+<div class="description">
+        <p>
+This plugin defines a global Media Constructor.
+        </p>
+        <p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-media">Cordova Media</a>.
+        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#Media">Media</a>
+</li>
+<li>1.2. <a href="#MediaError">MediaError</a>
+</li>
+<li>1.3. <a href="#MediaErrorCallback">MediaErrorCallback</a>
+</li>
+<li>1.4. <a href="#StatusChangeCallback">StatusChangeCallback</a>
+</li>
+<li>1.5. <a href="#PositionSuccessCallback">PositionSuccessCallback</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#api-features">Related Feature</a>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#Media">Media</a></td>
+<td>
+<div>void <a href="#Media::getCurrentPosition">getCurrentPosition</a> (<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback)</div>
+<div>double <a href="#Media::getDuration">getDuration</a> ()</div>
+<div>void <a href="#Media::pause">pause</a> ()</div>
+<div>void <a href="#Media::play">play</a> ()</div>
+<div>void <a href="#Media::release">release</a> ()</div>
+<div>void <a href="#Media::seekTo">seekTo</a> (double position)</div>
+<div>void <a href="#Media::setVolume">setVolume</a> (double volume)</div>
+<div>void <a href="#Media::startRecord">startRecord</a> ()</div>
+<div>void <a href="#Media::stopRecord">stopRecord</a> ()</div>
+<div>void <a href="#Media::stop">stop</a> ()</div>
+</td>
+</tr>
+<tr>
+<td><a href="#MediaError">MediaError</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MediaErrorCallback">MediaErrorCallback</a></td>
+<td><div>void <a href="#MediaErrorCallback::onerror">onerror</a> (<a href="#MediaError">MediaError</a> error)</div></td>
+</tr>
+<tr>
+<td><a href="#StatusChangeCallback">StatusChangeCallback</a></td>
+<td><div>void <a href="#StatusChangeCallback::onchanged">onchanged</a> (short status)</div></td>
+</tr>
+<tr>
+<td><a href="#PositionSuccessCallback">PositionSuccessCallback</a></td>
+<td><div>void <a href="#PositionSuccessCallback::onsuccess">onsuccess</a> (double position)</div></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="Media">
+<a class="backward-compatibility-anchor" name="::Media::Media"></a><h3>1.1. Media</h3>
+<div class="brief">
+ The Media interface provides the audio object.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus)]
+   interface Media {
+       const short MEDIA_NONE = 0;
+       const short MEDIA_STARTING = 1;
+       const short MEDIA_RUNNING = 2;
+       const short MEDIA_PAUSED = 3;
+       const short MEDIA_STOPPED = 4;
+
+       attribute DOMString src;
+
+       attribute <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback;
+
+       attribute <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback;
+
+       attribute <a href="#StatusChangeCallback">StatusChangeCallback</a>? statusCallback;
+
+       void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);
+
+       double getDuration();
+
+       void pause();
+
+       void play();
+
+       void release();
+
+       void seekTo(double position);
+
+       void setVolume(double volume);
+
+       void startRecord();
+
+       void stopRecord();
+
+       void stop();
+   };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myMedia = new Media(src, successCallback, errorCallback, statusCallback);
+</pre>
+</div>
+<div class="constructors">
+<h4 id="Media::constructor">Constructors</h4>
+<dl>
+<div class="brief">
+ The Media interface provides interface and functions to manage audio objects.
+              </div>
+<pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus);</pre>
+<div class="description">
+              <ul>
+                <li>
+<b>TypeError</b>                  <ul>
+                    <li>
+                      <p>
+ Is thrown if any of the input parameters has incorrect type.                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+             </div>
+</dl>
+</div>
+<div class="consts">
+<h4>Constants</h4>
+<dl>
+<li class="const" id="Media::MEDIA_NONE">
+<a class="backward-compatibility-anchor" name="::Media::Media::MEDIA_NONE"></a><span class="name">MEDIA_NONE</span><br><br>
+</li>
+<li class="const" id="Media::MEDIA_STARTING">
+<a class="backward-compatibility-anchor" name="::Media::Media::MEDIA_STARTING"></a><span class="name">MEDIA_STARTING</span><br><br>
+</li>
+<li class="const" id="Media::MEDIA_RUNNING">
+<a class="backward-compatibility-anchor" name="::Media::Media::MEDIA_RUNNING"></a><span class="name">MEDIA_RUNNING</span><br><br>
+</li>
+<li class="const" id="Media::MEDIA_PAUSED">
+<a class="backward-compatibility-anchor" name="::Media::Media::MEDIA_PAUSED"></a><span class="name">MEDIA_PAUSED</span><br><br>
+</li>
+<li class="const" id="Media::MEDIA_STOPPED">
+<a class="backward-compatibility-anchor" name="::Media::Media::MEDIA_STOPPED"></a><span class="name">MEDIA_STOPPED</span><div class="brief">
+ Above constants are reported as the only parameter to the mediaStatus callback.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<br><br>
+</li>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="Media::src">
+<span class="attrName"><span class="type">DOMString </span><span class="name">src</span></span><div class="brief">
+ A URI containing the audio content.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Media::successCallback">
+<span class="attrName"><span class="type">SuccessCallback </span><span class="name">successCallback</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The callback that executes after a Media object has completed the current play, record, or stop action.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Media::errorCallback">
+<span class="attrName"><span class="type">MediaErrorCallback </span><span class="name">errorCallback</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The callback that executes if an error occurs.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+<li class="attribute" id="Media::statusCallback">
+<span class="attrName"><span class="type">StatusChangeCallback </span><span class="name">statusCallback</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The callback that executes to indicate status changes.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Media::getCurrentPosition">
+<a class="backward-compatibility-anchor" name="::Media::Media::getCurrentPosition"></a><code><b><span class="methodName">getCurrentPosition</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns the current position within an audio file in seconds.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">positionSuccessCallback</span>: 
+ The callback that is passed the current position in seconds.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span>: 
+ The callback to execute if an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been played back');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+positionSuccessCallback = function(position)
+{
+  console.log('Current position is ' + position);
+}
+
+var src = 'file:///home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback);
+
+myMedia.play();
+
+setTimeout(function()
+{
+  myMedia.getCurrentPosition(positionSuccessCallback);
+}, 2000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Audio file has been played back
+Current position is 2.000
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::getDuration">
+<a class="backward-compatibility-anchor" name="::Media::Media::getDuration"></a><code><b><span class="methodName">getDuration</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns the duration of an audio file in seconds. If the duration is unknown, it returns a value of -1.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">double getDuration();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been played back');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+var src = 'file:///home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback);
+
+var duration = myMedia.getDuration();
+console.log('Audio duration is ' + duration);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Audio duration is 281.035
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::pause">
+<a class="backward-compatibility-anchor" name="::Media::Media::pause"></a><code><b><span class="methodName">pause</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Pauses playing an audio file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void pause();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been played back');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+statusCallback = function(status)
+{
+  if (status == Media.MEDIA_PAUSED)
+  {
+    console.log('Audio file has been paused');
+  }
+}
+
+var src = 'file:///home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback, statusCallback);
+
+myMedia.play();
+
+/* Pause after 2 seconds */
+setTimeout(function()
+{
+  myMedia.pause();
+}, 2000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Audio file has been paused
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::play">
+<a class="backward-compatibility-anchor" name="::Media::Media::play"></a><code><b><span class="methodName">play</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts or resumes playing an audio file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void play();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been played back');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+var src = 'file:///home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback);
+
+myMedia.play();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Audio file has been played back
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::release">
+<a class="backward-compatibility-anchor" name="::Media::Media::release"></a><code><b><span class="methodName">release</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Releases the underlying operating system's audio resources.
+Applications should call the release function for any Media resource that is no longer needed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void release();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been stopped or released');
+}
+
+errorCallback = function(err)
+{
+  console.log('An error occurred: ' + err.message);
+}
+
+var src = 'file://home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback);
+
+myMedia.play();
+myMedia.stop();
+myMedia.release();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Audio file has been stopped or released
+Audio file has been stopped or released
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::seekTo">
+<a class="backward-compatibility-anchor" name="::Media::Media::seekTo"></a><code><b><span class="methodName">seekTo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the current position within an audio file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void seekTo(double position);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">position</span>: 
+ The position to set the playback position within the audio, in milliseconds.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been played back');
+}
+
+errorCallback = function(err)
+{
+  console.log('An error occurred: ' + err.message);
+}
+
+var src = 'file://home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback);
+
+myMedia.play();
+
+/* SeekTo to 10 seconds after 5 seconds */
+setTimeout(function()
+{
+  myMedia.seekTo(10000);
+  console.log('Playback position has been set to 10 seconds');
+}, 5000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Playback position has been set to 10 seconds
+Audio file has been played back
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::setVolume">
+<a class="backward-compatibility-anchor" name="::Media::Media::setVolume"></a><code><b><span class="methodName">setVolume</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Set the volume for an audio file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setVolume(double volume);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/volume.set
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">volume</span>: 
+ The volume to set for playback. The value must be within the range of 0.0 to 1.0.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been played back');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+var src = 'file://home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback);
+
+myMedia.play();
+
+/* Mute volume after 2 seconds */
+setTimeout(function()
+{
+  myMedia.setVolume(0.0);
+  console.log('Playback volume has been muted');
+}, 2000);
+
+/* Set volume to 1.0 after 5 seconds */
+setTimeout(function()
+{
+  myMedia.setVolume(1.0);
+  console.log('Playback volume has been set to 1.0');
+}, 5000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Playback volume has been muted
+Playback volume has been set to 1.0
+Audio file has been played back
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::startRecord">
+<a class="backward-compatibility-anchor" name="::Media::Media::startRecord"></a><code><b><span class="methodName">startRecord</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts recording an audio file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void startRecord();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/mediacapture
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Started recording an audio file');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+var src = 'recordAudio.mp3';
+var myRecMedia = new Media(src, successCallback, errorCallback);
+
+myRecMedia.startRecord();
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Started recording an audio file
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::stopRecord">
+<a class="backward-compatibility-anchor" name="::Media::Media::stopRecord"></a><code><b><span class="methodName">stopRecord</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops recording an audio file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stopRecord();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/mediacapture
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Started recording an audio file');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+var src = 'recordAudio.mp3';
+var myRecMedia = new Media(src, successCallback, errorCallback);
+
+myRecMedia.startRecord();
+
+/* Stop recording after 10 seconds */
+setTimeout(function()
+{
+  myRecMedia.stopRecord();
+  console.log('Stopped recording an audio file');
+}, 10000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Started recording an audio file
+Stopped recording an audio file
+</pre>
+</div>
+</dd>
+<dt class="method" id="Media::stop">
+<a class="backward-compatibility-anchor" name="::Media::Media::stop"></a><code><b><span class="methodName">stop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops playing an audio file.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop();</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
+{
+  console.log('Audio file has been stopped');
+}
+
+errorCallback = function(err)
+{
+  console.log('Error occurred ' + err.message);
+}
+
+var src = 'file://home/app/content/Documents/play.mp3';
+var myMedia = new Media(src, successCallback, errorCallback);
+
+myMedia.play();
+
+/* Stop after 10 seconds */
+setTimeout(function()
+{
+  myMedia.stop();
+}, 10000);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Audio playback has been stopped
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MediaError">
+<a class="backward-compatibility-anchor" name="::Media::MediaError"></a><h3>1.2. MediaError</h3>
+<div class="brief">
+ A <em>MediaError</em> object is returned to the <a href="media.html#MediaErrorCallback">MediaErrorCallback</a> function when an error occurs.
+          </div>
+<pre class="webidl prettyprint">  interface MediaError {
+      const short MEDIA_ERR_ABORTED = 1;
+      const short MEDIA_ERR_NETWORK = 2;
+      const short MEDIA_ERR_DECODE = 3;
+      const short MEDIA_ERR_NONE_SUPPORTED = 4;
+
+      readonly attribute short code;
+  };</pre>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="MediaError::code">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">short </span><span class="name">code</span></span><div class="brief">
+ One of the predefined error codes listed above.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="MediaErrorCallback">
+<a class="backward-compatibility-anchor" name="::Media::MediaErrorCallback"></a><h3>1.3. MediaErrorCallback</h3>
+<div class="brief">
+ Basic error callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
+       void onerror(<a href="#MediaError">MediaError</a> error);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MediaErrorCallback::onerror">
+<a class="backward-compatibility-anchor" name="::Media::MediaErrorCallback::onerror"></a><code><b><span class="methodName">onerror</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Success
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#MediaError">MediaError</a> error);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">error</span>: 
+ Error object containing some information about the error.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="StatusChangeCallback">
+<a class="backward-compatibility-anchor" name="::Media::StatusChangeCallback"></a><h3>1.4. StatusChangeCallback</h3>
+<div class="brief">
+ The callback function used to return status of the Media object.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface StatusChangeCallback {
+       void onchanged(short status);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="StatusChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::Media::StatusChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the status of the <em>Media</em> object has been changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(short status);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">status</span>: 
+ The status of the <a href="media.html#Media">Media</a> object. It is equal to one of the Media interface constant: MEDIA_NONE, MEDIA_STARTING, MEDIA_RUNNING, MEDIA_PAUSED or MEDIA_STOPPED.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="PositionSuccessCallback">
+<a class="backward-compatibility-anchor" name="::Media::PositionSuccessCallback"></a><h3>1.5. PositionSuccessCallback</h3>
+<div class="brief">
+ The callback function used to return current position of the Media object.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PositionSuccessCallback {
+       void onsuccess(double position);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="PositionSuccessCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Media::PositionSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when getting current position of the media file is retrieved successfully.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(double position);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">position</span>: 
+ The current position of the media file.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">2. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+If an application uses startRecord() or stopRecord(), declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/microphone</li>
+</div>
+<div class="def-api-feature">
+<p></p>
+<li class="feature">http://tizen.org/feature/camera</li>
+</div>
+<div class="def-api-feature">
+<p></p>
+<li class="feature">http://tizen.org/feature/media.audio_recording</li>
+</div>
+<p></p>
+                    For more information, see <a href="../../org.tizen.gettingstarted/html/tizen_overview/application_filtering.htm">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Media {
+  [Constructor(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus)]
+   interface Media {
+       const short MEDIA_NONE = 0;
+       const short MEDIA_STARTING = 1;
+       const short MEDIA_RUNNING = 2;
+       const short MEDIA_PAUSED = 3;
+       const short MEDIA_STOPPED = 4;
+
+       attribute DOMString src;
+
+       attribute <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback;
+
+       attribute <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback;
+
+       attribute <a href="#StatusChangeCallback">StatusChangeCallback</a>? statusCallback;
+
+       void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);
+
+       double getDuration();
+
+       void pause();
+
+       void play();
+
+       void release();
+
+       void seekTo(double position);
+
+       void setVolume(double volume);
+
+       void startRecord();
+
+       void stopRecord();
+
+       void stop();
+   };
+
+  interface MediaError {
+      const short MEDIA_ERR_ABORTED = 1;
+      const short MEDIA_ERR_NETWORK = 2;
+      const short MEDIA_ERR_DECODE = 3;
+      const short MEDIA_ERR_NONE_SUPPORTED = 4;
+
+      readonly attribute short code;
+  };
+
+  [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
+       void onerror(<a href="#MediaError">MediaError</a> error);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface StatusChangeCallback {
+       void onchanged(short status);
+  };
+
+  [Callback=FunctionOnly, NoInterfaceObject] interface PositionSuccessCallback {
+       void onsuccess(double position);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

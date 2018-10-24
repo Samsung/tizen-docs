@@ -7,16 +7,11 @@ When you design your apps, make sure you match the gestures in your app with tho
 > -   DO NOT use the basic touch gestures defined in this guideline for different actions.
 > -   DO NOT assign custom gestures for the basic actions that already have common gestures assigned to them.
 
-
-
 The basic touch gestures provided with the Tizen SDK will work just fine with most of the apps you design. However, if you are designing unique apps such as games, you may want to invent more creative touch interactions.
 
 Also, provide appropriate feedback for all interactions to make your app responsive.
 
 The following table lists the basic Tizen gestures you can use to offer intuitive touch interactions.
-
- 
-
 
   |Name        |     Symbol              |                                   Description|
   |------------|-------------------------|----------------------------------------------|

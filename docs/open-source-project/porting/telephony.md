@@ -103,16 +103,16 @@ struct tcore_plugin_define_desc {
     enum tcore_plugin_priority priority;
 
     /* Plugin version */
-    int version; 
+    int version;
 
     /* Plugin 'load' function reference */
-    gboolean(*load)(); 
+    gboolean(*load)();
 
     /* Plugin 'init' function reference */
     gboolean(*init)(TcorePlugin *);
 
     /* Plugin 'unload' function reference */
-    void (*unload)(TcorePlugin *); 
+    void (*unload)(TcorePlugin *);
 };
 ```
 
@@ -127,30 +127,30 @@ OEMs need to specifically implement the modem and modem interface plugins to sup
 To provide call services, the following functions must be implemented:
 
 ```cpp
-struct tcore_call_operations {  
+struct tcore_call_operations {
     /* Call 'dial' function reference */
-    TReturn (*dial)(CoreObject *o, UserRequest *ur); 
-    
+    TReturn (*dial)(CoreObject *o, UserRequest *ur);
+
     /* Call 'answer' function reference */
-    TReturn (*answer)(CoreObject *o, UserRequest *ur); 
-    
+    TReturn (*answer)(CoreObject *o, UserRequest *ur);
+
     /* Call 'end' function reference */
-    TReturn (*end)(CoreObject *o, UserRequest *ur); 
+    TReturn (*end)(CoreObject *o, UserRequest *ur);
 
     /* Call 'hold' function reference */
-    TReturn (*hold)(CoreObject *o, UserRequest *ur); 
-    
+    TReturn (*hold)(CoreObject *o, UserRequest *ur);
+
     /* Call 'active' function reference */
-    TReturn (*active)(CoreObject *o, UserRequest *ur); 
-    
+    TReturn (*active)(CoreObject *o, UserRequest *ur);
+
     /* Call 'swap' function reference */
     TReturn (*swap)(CoreObject *o, UserRequest *ur);
-    
+
     /* Call 'join' function reference */
-    TReturn (*join)(CoreObject *o, UserRequest *ur); 
-    
+    TReturn (*join)(CoreObject *o, UserRequest *ur);
+
     /* Call 'split' function reference */
-    TReturn (*split)(CoreObject *o, UserRequest *ur); 
+    TReturn (*split)(CoreObject *o, UserRequest *ur);
 };
 ```
 
@@ -162,30 +162,30 @@ To provide SMS services, the following functions must be implemented:
 struct tcore_sms_operations {
     /* For UMTS, SMS 'send' function reference */
     TReturn (*send_umts_msg)(CoreObject *o, UserRequest *ur);
-  
+
     /* For CDMA, SMS 'read' function reference */
     TReturn (*send_cdma_msg)(CoreObject *o, UserRequest *ur);
-  
+
     /* SMS 'read' function reference */
-    TReturn (*read_msg)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*read_msg)(CoreObject *o, UserRequest *ur);
+
     /* SMS 'save' function reference */
-    TReturn (*save_msg)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*save_msg)(CoreObject *o, UserRequest *ur);
+
     /* SMS 'delete' function reference */
-    TReturn (*delete_msg)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*delete_msg)(CoreObject *o, UserRequest *ur);
+
     /* SMS 'get sca' function reference */
-    TReturn (*get_sca)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*get_sca)(CoreObject *o, UserRequest *ur);
+
     /* SMS 'set sca' function reference */
-    TReturn (*set_sca)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*set_sca)(CoreObject *o, UserRequest *ur);
+
     /* SMS 'get sms params' function reference */
-    TReturn (*get_sms_params)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*get_sms_params)(CoreObject *o, UserRequest *ur);
+
     /* SMS 'set sms params' function reference */
-    TReturn (*set_sms_params)(CoreObject *o, UserRequest *ur); 
+    TReturn (*set_sms_params)(CoreObject *o, UserRequest *ur);
 };
 ```
 
@@ -196,25 +196,25 @@ To provide network services, the following functions must be implemented:
 ```cpp
 struct tcore_network_operations {
     /* Network 'search' function reference */
-    TReturn (*search)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*search)(CoreObject *o, UserRequest *ur);
+
     /* Network 'set plmn selection mode' function reference */
-    TReturn (*set_plmn_selection_mode)(CoreObject *o, UserRequest *ur); 
-    
+    TReturn (*set_plmn_selection_mode)(CoreObject *o, UserRequest *ur);
+
     /* Network 'get plmn selection mode'' function reference */
-    TReturn (*get_plmn_selection_mode)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*get_plmn_selection_mode)(CoreObject *o, UserRequest *ur);
+
     /* Network 'set service domain' function reference */
-    TReturn (*set_service_domain)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*set_service_domain)(CoreObject *o, UserRequest *ur);
+
     /* Network 'get service domain' function reference */
-    TReturn (*get_service_domain)(CoreObject *o, UserRequest *ur); 
-  
+    TReturn (*get_service_domain)(CoreObject *o, UserRequest *ur);
+
     /* Network 'set band' function reference */
     TReturn (*set_band)(CoreObject *o, UserRequest *ur);
-   
+
     /* Network 'get band' function reference */
-    TReturn (*get_band)(CoreObject *o, UserRequest *ur); 
+    TReturn (*get_band)(CoreObject *o, UserRequest *ur);
 };
 ```
 
@@ -225,11 +225,11 @@ To provide HAL operations, the following functions must be implemented:
 ```cpp
 struct tcore_hal_operations {
     /* HAL 'power' function reference */
-    TReturn (*power)(TcoreHal *hal, gboolean flag); 
-  
+    TReturn (*power)(TcoreHal *hal, gboolean flag);
+
     /* HAL 'send' function reference */
-    TReturn (*send)(TcoreHal *hal, unsigned int data_len, void *data); 
-  
+    TReturn (*send)(TcoreHal *hal, unsigned int data_len, void *data);
+
     /* Network 'set up network interface' function reference */
     TReturn (*setup_netif)(CoreObject *co,
                            TcoreHalSetupNetifCallback func, void *user_data,

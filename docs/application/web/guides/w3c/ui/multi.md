@@ -101,7 +101,7 @@ article {
 
 ![Column rule](./media/column_rule.png)
 
-> **Note**
+> **Note**  
 > In Tizen 2.2, to avoid displaying the rules incorrectly, do not use the `column-rule` (or `-webkit-column-rule`) property with horizontal scrolling of the columns.
 
 ## Setting the Column Span
@@ -187,7 +187,7 @@ To create a basic layout for your application using CSS, providing consistent be
 
 2. Set the CSS column properties:
 
-   a. The `article` element acts as a multi-column container. Set the `column-width` (or `-webkit-column-width`) property to enable the multi-column layout:
+   1. The `article` element acts as a multi-column container. Set the `column-width` (or `-webkit-column-width`) property to enable the multi-column layout:
 
       ```
       article {
@@ -204,14 +204,14 @@ To create a basic layout for your application using CSS, providing consistent be
 
       For example, on a 480 x 800 display in portrait orientation, the device width is 123 px, whereas on a 720 x 1280 display in landscape orientation, the width is 120 px. The space available for columns is the `width` attribute value reduced by `padding`, in this case 80vw - (2 * 5vw) = 70vw, which means 70/100 width of the device display.
 
-   b. Use the `column-gap` (or `-webkit-column-gap`) property to set the distance between columns:
+   2. Use the `column-gap` (or `-webkit-column-gap`) property to set the distance between columns:
 
       ```
          column-gap: 10px;
          -webkit-column-gap: 10px;
       ```
 
-   c. Use the `column-rule` (or `-webkit-column-rule`) property to draw a vertical line between columns. Define the width, color, and style of the rule:
+   3. Use the `column-rule` (or `-webkit-column-rule`) property to draw a vertical line between columns. Define the width, color, and style of the rule:
 
       ```
          -webkit-column-rule-width: 1px;
@@ -309,7 +309,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
 
 2. Set the CSS properties:
 
-   a. Define the CSS display and column properties:
+   1. Define the CSS display and column properties:
 
       ```
       body {
@@ -321,7 +321,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
       }
       ```
 
-   b. Set the `article`, `nav` and `footer` elements in one column using the flexible box layout.
+   2. Set the `article`, `nav` and `footer` elements in one column using the flexible box layout.
 
       The `nav` element is also a flexible box layout container to set UI elements in.
 
@@ -340,13 +340,13 @@ To use CSS to create a layout that provides varying amounts of content, providin
          -webkit-justify-content: space-around;
          align-items: center;
          -webkit-align-items: center;
-         background: url(./media/white_logo.png) no-repeat;
+         background: url(../images/white_logo.png) no-repeat;
          background-position: 2%;
          background-size: auto 70%;
       }
       ```
 
-   c. Define the styles for the `a` elements within the `nav` element to make them appear as buttons:
+   3. Define the styles for the `a` elements within the `nav` element to make them appear as buttons:
 
       ```
       nav a {
@@ -361,7 +361,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
 
       When the user taps the **Add images** button, the images and their descriptions are displayed.
 
-   d. Define the `input` element (with the property type set to `number`) style with an increased height to match the buttons around it:
+   4. Define the `input` element (with the property type set to `number`) style with an increased height to match the buttons around it:
 
       ```
       nav input {
@@ -370,7 +370,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
       }
       ```
 
-   e. The `article` element contains the column properties. Use the `-webkit-column-width` property to set the column width. The real width is calculated based on available space.
+   5. The `article` element contains the column properties. Use the `-webkit-column-width` property to set the column width. The real width is calculated based on available space.
 
       ```
       article {
@@ -383,7 +383,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
       }
       ```
 
-   f. Set the images within the `article` element with a block display to separate them from text:
+   6. Set the images within the `article` element with a block display to separate them from text:
 
       ```
       article img {
@@ -392,7 +392,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
       }
       ```
 
-   g. Define the `column-span` property as `all` for the `h1` elements:
+   7. Define the `column-span` property as `all` for the `h1` elements:
 
       ```
       article > h1 {
@@ -407,7 +407,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
 
        As a result, the `h1` elements are spread across the columns. When the `column-span` property is used, you cannot have more columns than can fit in the available horizontal space.
 
-   h. Define the `break-inside` property as `avoid` to avoid breaking elements between columns:
+   8. Define the `break-inside` property as `avoid` to avoid breaking elements between columns:
 
       ```
       article > section {
@@ -419,7 +419,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
       }
       ```
 
-   i. Set the `footer` size:
+   9. Set the `footer` size:
 
       ```
       footer {
@@ -431,7 +431,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
 
 3. Add the JavaScript code to make the content dynamic:
 
-   a. Declare a variable for the images. Elements included in the variable amount to data displayed in a column layout, such as a newsfeed:
+   1. Declare a variable for the images. Elements included in the variable amount to data displayed in a column layout, such as a newsfeed:
 
       ```
       var images = ['images/pinwheel_green.png',
@@ -440,13 +440,13 @@ To use CSS to create a layout that provides varying amounts of content, providin
                     'images/pinwheel_yellow.png'];
       ```
 
-   b. Declare a variable for the input element for selecting the number of images added to the content:
+   2. Declare a variable for the input element for selecting the number of images added to the content:
 
       ```
       var howManyInput;
       ```
 
-   c. Use the `addGroup()` method with the input parameter value to add random images to the column layout and initialize the button events:
+   3. Use the `addGroup()` method with the input parameter value to add random images to the column layout and initialize the button events:
 
       ```
       window.onload = function() {
@@ -467,7 +467,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
       };
       ```
 
-   d. Declare the `h1No` variable containing the number of `h1` elements included in the `article` elements, and one added to next lines.
+   4. Declare the `h1No` variable containing the number of `h1` elements included in the `article` elements, and one added to next lines.
 
       Declare the `newHTML` variable to add new content to the column layout. Each added element contains an `h1` element as a header, and `section` elements. Include an `img` element with a text description in each `section` element to display a random image. The `art` variable is initialized, and new HTML code (`newHTML`) is concatenated with the existing one (`innerHTML`):
 
@@ -487,7 +487,7 @@ To use CSS to create a layout that provides varying amounts of content, providin
       }
       ```
 
-   e. When the user taps the **Remove last Group** button, the `removeGroup()` method is called to remove the group of images that was added last. Use the `all` variable to select all  `h1` elements in the content using the `querySelectorAll()` method. If the `last` value is less than 0, there is no element to remove. Use the `removeNextSibling()` method to recursively delete the next sibling element, and the  `removeChild()` method to remove the `h1` elements from its parent.
+   5. When the user taps the **Remove last Group** button, the `removeGroup()` method is called to remove the group of images that was added last. Use the `all` variable to select all  `h1` elements in the content using the `querySelectorAll()` method. If the `last` value is less than 0, there is no element to remove. Use the `removeNextSibling()` method to recursively delete the next sibling element, and the  `removeChild()` method to remove the `h1` elements from its parent.
 
       ```
       function removeGroup() {

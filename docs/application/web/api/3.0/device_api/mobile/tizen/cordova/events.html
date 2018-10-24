@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>Events API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Events">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="title"><h1>Events API</h1></div>
+<div class="brief">
+ This plugin provides information about events defined in cordova.
+        </div>
+<div class="description">
+        <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html">Cordova Events</a>.
+        </p>
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<div class="description">
+        <table>
+          <tr>
+            <th>
+Event name            </th>
+            <th>
+Event handler callback            </th>
+          </tr>
+          <tr>
+            <td>
+deviceready            </td>
+            <td>
+<a href="#DeviceReadyEventCallback">DeviceReadyEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+pause            </td>
+            <td>
+<a href="#PauseEventCallback">PauseEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+resume            </td>
+            <td>
+<a href="#ResumeEventCallback">ResumeEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+backbutton            </td>
+            <td>
+<a href="#BackButtonEventCallback">BackButtonEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+menubutton            </td>
+            <td>
+<a href="#MenuButtonEventCallback">MenuButtonEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+searchbutton            </td>
+            <td>
+<a href="#SearchButtonEventCallback">SearchButtonEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+startcallbutton            </td>
+            <td>
+<a href="#StartCallEventCallback">StartCallEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+endcallbutton            </td>
+            <td>
+<a href="#EndCallButtonEventCallback">EndCallButtonEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+volumedownbutton            </td>
+            <td>
+<a href="#VolumeDownButtonEventCallback">VolumeDownButtonEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+volumeupbutton            </td>
+            <td>
+<a href="#VolumeUpButtonEventCallback">VolumeUpButtonEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <th colspan="2">
+Network Information events            </th>
+          </tr>
+          <tr>
+            <td>
+online            </td>
+            <td>
+<a href="networkInformation.html#OnlineEventCallback">OnlineEventCallback</a>            </td>
+          </tr>
+          <tr>
+            <td>
+offline            </td>
+            <td>
+<a href="networkInformation.html#OfflineEventCallback">OfflineEventCallback</a>            </td>
+          </tr>
+        </table>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#DeviceReadyEventCallback">DeviceReadyEventCallback</a>
+</li>
+<li>1.2. <a href="#PauseEventCallback">PauseEventCallback</a>
+</li>
+<li>1.3. <a href="#ResumeEventCallback">ResumeEventCallback</a>
+</li>
+<li>1.4. <a href="#BackButtonEventCallback">BackButtonEventCallback</a>
+</li>
+<li>1.5. <a href="#MenuButtonEventCallback">MenuButtonEventCallback</a>
+</li>
+<li>1.6. <a href="#SearchButtonEventCallback">SearchButtonEventCallback</a>
+</li>
+<li>1.7. <a href="#StartCallEventCallback">StartCallEventCallback</a>
+</li>
+<li>1.8. <a href="#EndCallButtonEventCallback">EndCallButtonEventCallback</a>
+</li>
+<li>1.9. <a href="#VolumeDownButtonEventCallback">VolumeDownButtonEventCallback</a>
+</li>
+<li>1.10. <a href="#VolumeUpButtonEventCallback">VolumeUpButtonEventCallback</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#DeviceReadyEventCallback">DeviceReadyEventCallback</a></td>
+<td><div>void <a href="#DeviceReadyEventCallback::ondeviceready">ondeviceready</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#PauseEventCallback">PauseEventCallback</a></td>
+<td><div>void <a href="#PauseEventCallback::onpause">onpause</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#ResumeEventCallback">ResumeEventCallback</a></td>
+<td><div>void <a href="#ResumeEventCallback::onresume">onresume</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#BackButtonEventCallback">BackButtonEventCallback</a></td>
+<td><div>void <a href="#BackButtonEventCallback::onbackbutton">onbackbutton</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#MenuButtonEventCallback">MenuButtonEventCallback</a></td>
+<td><div>void <a href="#MenuButtonEventCallback::onmenubutton">onmenubutton</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#SearchButtonEventCallback">SearchButtonEventCallback</a></td>
+<td><div>void <a href="#SearchButtonEventCallback::onsearchbutton">onsearchbutton</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#StartCallEventCallback">StartCallEventCallback</a></td>
+<td><div>void <a href="#StartCallEventCallback::onstartcallbutton">onstartcallbutton</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#EndCallButtonEventCallback">EndCallButtonEventCallback</a></td>
+<td><div>void <a href="#EndCallButtonEventCallback::onendcallbutton">onendcallbutton</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#VolumeDownButtonEventCallback">VolumeDownButtonEventCallback</a></td>
+<td><div>void <a href="#VolumeDownButtonEventCallback::onvolumedownbutton">onvolumedownbutton</a> ()</div></td>
+</tr>
+<tr>
+<td><a href="#VolumeUpButtonEventCallback">VolumeUpButtonEventCallback</a></td>
+<td><div>void <a href="#VolumeUpButtonEventCallback::onvolumeupbutton">onvolumeupbutton</a> ()</div></td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="DeviceReadyEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::DeviceReadyEventCallback"></a><h3>1.1. DeviceReadyEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when Cordova is fully loaded
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface DeviceReadyEventCallback {
+  void ondeviceready();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <var>domready</var> event is essential to any application. It signals that Cordova's device APIs have loaded and are ready to access.
+          </p>
+          <p>
+Cordova consists of two code bases: native and JavaScript. While the native code loads, a custom loading image displays. However, JavaScript only loads once the DOM loads. This means the web app may potentially call a Cordova JavaScript function before the corresponding native code becomes available.
+          </p>
+          <p>
+The deviceready event fires once Cordova has fully loaded. Once the event fires, you can safely make calls to Cordova APIs. Applications typically attach an event listener with document.addEventListener once the HTML document's DOM has loaded.
+          </p>
+          <p>
+The deviceready event behaves somewhat differently from others. Any event handler registered after the deviceready event fires has its callback function called immediately.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready">Cordova deviceready event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  /* Now safe to use device APIs */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="PauseEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::PauseEventCallback"></a><h3>1.2. PauseEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when an application is put into the background
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface PauseEventCallback {
+  void onpause();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <var>pause</var> event fires when the native platform puts the application into the background, typically when the user switches to a different application.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#pause">Cordova pause event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('pause', onPause, false);
+}
+
+function onPause()
+{
+  /* Handle the pause event */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="ResumeEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::ResumeEventCallback"></a><h3>1.3. ResumeEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when an application is retrieved from the background
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface ResumeEventCallback {
+  void onresume();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <var>resume</var> event fires when the native platform pulls the application out from the background.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#resume">Cordova resume event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('resume', onResume, false);
+}
+
+function onResume()
+{
+  /* Handle the resume event */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="BackButtonEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::BackButtonEventCallback"></a><h3>1.4. BackButtonEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when the user presses the back button
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface BackButtonEventCallback {
+  void onbackbutton();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+To override the default back-button behavior, register an event listener for the backbutton event, typically by calling document.addEventListener() once you receive the <a href="#DeviceReadyEventCallback">deviceready</a> event.
+It is no longer necessary to call any other method to override the back-button behavior.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#backbutton">Cordova backbutton event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('backbutton', onBackKeyDown, false);
+}
+
+function onBackKeyDown()
+{
+   /* Handle the back button */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="MenuButtonEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::MenuButtonEventCallback"></a><h3>1.5. MenuButtonEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when the user presses the menu button
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface MenuButtonEventCallback {
+  void onmenubutton();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+Applying an event handler for the <var>menubutton</var> event overrides the default menu button behavior.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#menubutton">Cordova menubutton event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('menubutton', onMenuKeyDown, false);
+}
+
+function onMenuKeyDown()
+{
+  /* Handle the menu button */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="SearchButtonEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::SearchButtonEventCallback"></a><h3>1.6. SearchButtonEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when the user presses the search button
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface SearchButtonEventCallback {
+  void onsearchbutton();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+If you need to override the default search button behavior on Android you can register an event listener for the <var>searchbutton</var> event.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#searchbutton">Cordova searchbutton event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('searchbutton', onSearchKeyDown, false);
+}
+
+function onSearchKeyDown()
+{
+  /* Handle the search button */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="StartCallEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::StartCallEventCallback"></a><h3>1.7. StartCallEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when the user presses the start call button
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface StartCallEventCallback {
+  void onstartcallbutton();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+If you need to override the default start call behavior you can register an event listener for the <var>startcallbutton</var> event.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#startcallbutton">Cordova startcallbutton event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('startcallbutton', onStartCallKeyDown, false);
+}
+
+function onStartCallKeyDown()
+{
+  /* Handle the start call button */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="EndCallButtonEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::EndCallButtonEventCallback"></a><h3>1.8. EndCallButtonEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when the user presses the end call button
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface EndCallButtonEventCallback {
+  void onendcallbutton();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The <var>endcallbutton</var> event overrides the default end call behavior.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#endcallbutton">Cordova endcallbutton event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('endcallbutton', onEndCallKeyDown, false);
+}
+
+function onEndCallKeyDown()
+{
+  /* Handle the end call button */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="VolumeDownButtonEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::VolumeDownButtonEventCallback"></a><h3>1.9. VolumeDownButtonEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when the user presses the volume down button
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface VolumeDownButtonEventCallback {
+  void onvolumedownbutton();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+If you need to override the default volume down behavior you can register an event listener for the <var>volumedownbutton</var> event.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#volumedownbutton">Cordova volumedownbutton event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('volumedownbutton', onVolumeDownKeyDown, false);
+}
+
+function onVolumeDownKeyDown()
+{
+  /* Handle the volume down button */
+}
+</pre>
+</div>
+</div>
+<div class="interface" id="VolumeUpButtonEventCallback">
+<a class="backward-compatibility-anchor" name="::Events::VolumeUpButtonEventCallback"></a><h3>1.10. VolumeUpButtonEventCallback</h3>
+<div class="brief">
+ Callback for the event which fires when the user presses the volume up button
+          </div>
+<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
+interface VolumeUpButtonEventCallback {
+  void onvolumeupbutton();
+};</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+If you need to override the default volume up behavior you can register an event listener for the <var>volumeupbutton</var> event.
+          </p>
+          <p>
+Applications typically should use document.addEventListener() to attach an event listener once the <a href="#DeviceReadyEventCallback">deviceready</a> event fires.
+          </p>
+          <p>
+Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#volumeupbutton">Cordova volumeupbutton event</a>          </p>
+         </div>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+
+function onDeviceReady()
+{
+  document.addEventListener('volumeupbutton', onVolumeUpKeyDown, false);
+}
+
+function onVolumeUpKeyDown()
+{
+  /* Handle the volume up button */
+}
+</pre>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">2. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Events {
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface DeviceReadyEventCallback {
+  void ondeviceready();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface PauseEventCallback {
+  void onpause();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface ResumeEventCallback {
+  void onresume();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface BackButtonEventCallback {
+  void onbackbutton();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface MenuButtonEventCallback {
+  void onmenubutton();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface SearchButtonEventCallback {
+  void onsearchbutton();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface StartCallEventCallback {
+  void onstartcallbutton();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface EndCallButtonEventCallback {
+  void onendcallbutton();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface VolumeDownButtonEventCallback {
+  void onvolumedownbutton();
+};
+
+[NoInterfaceObject, Callback=FunctionOnly]
+interface VolumeUpButtonEventCallback {
+  void onvolumeupbutton();
+};
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

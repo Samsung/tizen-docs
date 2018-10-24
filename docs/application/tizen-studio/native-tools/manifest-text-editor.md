@@ -1,6 +1,6 @@
 # Configuring the Application Manifest
 
-A Tizen native application package contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information. The manifest file is composed of XML elements, which include the root [&lt;manifest&gt;](#manifest) element and child elements representing application information, such as `<version>`, and `<privileges>`. The [child elements are organized into a specific hierarchy](#hierarchy). The elements can have attributes associated with them, providing more information on the element.
+A Tizen native application package contains a manifest file, called `tizen-manifest.xml`, which is used to describe the application information. The manifest file is composed of XML elements, which include the root [\<manifest\>](#manifest) element and child elements representing application information, such as `<version>`, and `<privileges>`. The [child elements are organized into a specific hierarchy](#hierarchy). The elements can have attributes associated with them, providing more information on the element.
 
 ## Editing the Manifest File
 
@@ -32,7 +32,7 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 The Tizen native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
 
 | `<manifest>` |                         |                         |                  |
-|------------|-----------------------|-----------------------|----------------|
+|--------------|-------------------------|-------------------------|------------------|
 |              | `<author>`              |                         |                  |
 |              | `<description>`         |                         |                  |
 |              | `<profile>`             |                         |                  |
@@ -79,7 +79,7 @@ The Tizen native application manifest file consists of XML elements organized in
 
 The following sections summarize the elements used in the `tizen-manifest.xml` file of a native application.
 
-### &lt;manifest&gt; Element
+### \<manifest\> Element
 
 This element contains the manifest information for a Tizen native application. The `<manifest>` element is an easily readable description of the Tizen package and serves as a container for the other elements of the configuration document.
 
@@ -154,7 +154,7 @@ For more information on the relationship between the elements, see the [element 
 </manifest>
 ```
 
-### &lt;author&gt; Element
+### \<author\> Element
 
 This element represents the creator of the Tizen package.
 
@@ -184,7 +184,7 @@ For more information on the relationship between the elements, see the [element 
 <author email="email@email.com" href="http://test.com">author</author>
 ```
 
-### &lt;description&gt; Element
+### \<description\> Element
 
 This element contains an easily readable description of the Tizen package.
 
@@ -196,8 +196,9 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `xml:lang`  
-Language and country code (available value: "&lt;2-letter lowercase language code (ISO 639-1)&gt;-&lt;2-letter lowercase country code (ISO 3166-1 alpha-2)&gt;")
+- `xml:lang`
+
+  Language and country code (available value: "\<2-letter lowercase language code (ISO 639-1)\>-\<2-letter lowercase country code (ISO 3166-1 alpha-2)\>")
 
 **Expected value:**
 
@@ -209,7 +210,7 @@ Language and country code (available value: "&lt;2-letter lowercase language cod
 <description xml:lang="en-us">This is a sample</description>
 ```
 
-### &lt;profile&gt; Element
+### \<profile\> Element
 
 This element contains the targeted requirements for specific device categories, which layer on top of the Tizen Common Platform, including additional components for devices, APIs, and hardware requirements. The platform must conform to the Tizen common requirements as well as at least 1 profile.
 
@@ -221,8 +222,9 @@ The `<profile>` element determines on which kind of device the Tizen package ope
 
 **Attributes:**
 
-- `name`  
-Profile name (available values: `mobile`, `wearable`)
+- `name`
+
+  Profile name (available values: `mobile`, `wearable`)
 
 **For example:**
 
@@ -230,7 +232,7 @@ Profile name (available values: `mobile`, `wearable`)
 <profile name="mobile"/>
 ```
 
-### &lt;ui-application&gt; Element
+### \<ui-application\> Element
 
 This element contains the manifest information for a Tizen native UI application with a graphical user interface (GUI).
 
@@ -253,22 +255,33 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)  
-This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `exec`  
-Application executable file path (string)
+  Application unique ID (string)
 
-- `hw-acceleration`  
-Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))By default, this value is not defined.
+  This can be used for launching or terminating the application explicitly.
 
-- `launch_mode`  
-Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))  
-By default, this value is set to `single`.
+  You can use the a~z, A~Z, 0~9, ".", "-", and "_" characters, and the value must be shorter than 50 characters.
 
-- `multiple`  
-Indicates whether the application can be launched as a multiple (available values: `true`, `false`)  
+- `exec`
+
+  Application executable file path (string)
+
+- `hw-acceleration`
+
+  Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))
+
+  By default, this value is not defined.
+
+- `launch_mode`
+
+  Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))
+
+  By default, this value is set to `single`.
+
+- `multiple`
+
+  Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
 
   > **Note**  
   > This attribute is read-only. Do not attempt to modify it.
@@ -296,7 +309,7 @@ Indicates whether the application can be launched as a multiple (available value
 </ui-application>
 ```
 
-### &lt;service-application&gt; Element
+### \<service-application\> Element
 
 This element contains the manifest information for a Tizen native service application without a graphical user interface (GUI).
 
@@ -311,47 +324,58 @@ For more information on the relationship between the elements, see the [element 
 **Expected children (in the following order):**
 
 | Child element           | Occurrences          |
-|-----------------------|--------------------|
+|-------------------------|----------------------|
 | `<label>`               | 1 or more (optional) |
-| `<icon>`                |                      |
-| `<app-control>`         |                      |
-| `<metadata>`            |                      |
-| `<datacontrol>`         |                      |
-| `<background-category>` |                      |
+| `<icon>`                | 1 or more (optional) |
+| `<app-control>`         | 1 or more (optional) |
+| `<metadata>`            | 1 or more (optional) |
+| `<datacontrol>`         | 1 or more (optional) |
+| `<background-category>` | 1 or more (optional) |
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)  
-This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `auto-restart`  
-Indicates whether the application is relaunched automatically if it is terminated abnormally (available values: `true`, `false`)  
-If the value is not defined, `false` is used.  
+  Application unique ID (string)
+
+  This can be used for launching or terminating the application explicitly.
+
+- `auto-restart`
+
+  Indicates whether the application is relaunched automatically if it is terminated abnormally (available values: `true`, `false`)
+
+  If the value is not defined, `false` is used.
 
  > **Note**  
  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 
-- `exec`  
-Application executable file path (string)
+- `exec`
 
-- `multiple`  
-Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
+  Application executable file path (string)
+
+- `multiple`
+
+  Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
+
   > **Note**  
   > This attribute is read-only. Do not attempt to modify it.
 
-- `on-boot`  
-Indicates whether the application is launched automatically on device boot or application installation (available values: `true`, `false`)  
-If the value is not defined, `false` is used.  
+- `on-boot`
 
- > **Note**  
- > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
+  Indicates whether the application is launched automatically on device boot or application installation (available values: `true`, `false`)
 
-- `taskmanage`  
-Indicates whether the application is shown in the task manager (available values: `true`, `false`)
+  If the value is not defined, `false` is used.
 
-- `type`  
-Tizen application type (available values: `capp`, `c++app`, `webapp`)
+  > **Note**  
+  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
+
+- `taskmanage`
+
+  Indicates whether the application is shown in the task manager (available values: `true`, `false`)
+
+- `type`
+
+  Tizen application type (available values: `capp`, `c++app`, `webapp`)
 
   > **Note**  
   > This attribute is read-only. Do not attempt to modify it.
@@ -374,7 +398,7 @@ Tizen application type (available values: `capp`, `c++app`, `webapp`)
 </service-application>
 ```
 
-### &lt;watch-application&gt; Element
+### \<watch-application\> Element
 
 This element contains the settings for a watch application.
 
@@ -387,21 +411,25 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences |
-|-------------|-----------|
+|---------------|-------------|
 | `<label>`     | 1 or more   |
-| `<icon>`      |             |
+| `<icon>`      | 1 or more   |
 
 **Attributes:**
 
-- `ambient-support`  
-Indicates whether the application draws the ambient mode UI itself (available values: `true`, `false`)  
-If the value is `false`, the system default ambient mode UI is shown when the device enters the ambient mode.
+- `ambient-support`
 
-- `appid`  
-Watch application unique ID (string)
+  Indicates whether the application draws the ambient mode UI itself (available values: `true`, `false`)
 
-- `exec`  
-Watch application executable file path (string)
+  If the value is `false`, the system default ambient mode UI is shown when the device enters the ambient mode.
+
+- `appid`
+
+  Watch application unique ID (string)
+
+- `exec
+
+  Watch application executable file path (string)
 
 ```xml
 <watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample">
@@ -410,7 +438,7 @@ Watch application executable file path (string)
 </watch-application>
 ```
 
-#### &lt;label&gt; Element
+#### \<label\> Element
 
 This element contains the watch application text.
 
@@ -428,7 +456,7 @@ This element contains the watch application text.
 <label>watchsample</label>
 ```
 
-#### &lt;icon&gt; Element
+#### \<icon\> Element
 
 This element contains the watch application icon image.
 
@@ -444,7 +472,7 @@ This element contains the watch application icon image.
 <icon>watchsample.png</icon>
 ```
 
-### &lt;widget-application&gt; Element
+### \<widget-application\> Element
 
 This element contains the settings for a widget application.
 
@@ -457,28 +485,35 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element    | Occurrences          |
-|----------------|--------------------|
+|------------------|----------------------|
 | `<label>`        | 1 or more            |
-| `<icon>`         |                      |
+| `<icon>`         | 1 or more            |
 | `<support-size>` | 1                    |
 | `<widget-class>` | 1 or more (optional) |
 
 **Attributes:**
 
-- `appid`  
-Widget application unique ID (string)
+- `appid`
 
-- `exec`  
-Widget application executable file name (string)
+  Widget application unique ID (string)
 
-- `main`  
-Indicates which widget application is the main application (available values: `true`, `false`)
+- `exec`
 
-- `update-period`  
-Indicates the update period in seconds (available values: time in seconds)Multiples of 1800 only allowed
+  Widget application executable file name (string)
 
-- `max-instance`  
-Indicates the maximum number of widget instances that can be created in the widget application
+- `main`
+
+  Indicates which widget application is the main application (available values: `true`, `false`)
+
+- `update-period`
+
+  Indicates the update period in seconds (available values: time in seconds)
+
+  Multiples of 1800 only allowed
+
+- `max-instance`
+
+  Indicates the maximum number of widget instances that can be created in the widget application
 
 **For example:**
 
@@ -491,7 +526,7 @@ Indicates the maximum number of widget instances that can be created in the widg
 </widget-application>
 ```
 
-#### &lt;label&gt; Element
+#### \<label\> Element
 
 This element contains the widget application text.
 
@@ -509,7 +544,7 @@ This element contains the widget application text.
 <label>test</label>
 ```
 
-#### &lt;icon&gt; Element
+#### \<icon\> Element
 
 This element contains the widget application icon image.
 
@@ -527,7 +562,7 @@ This element contains the widget application icon image.
 <icon>icon.png</icon>
 ```
 
-#### &lt;support-size&gt; Element
+#### \<support-size\> Element
 
 This element contains the size supported by the widget application.
 
@@ -537,9 +572,11 @@ This element contains the size supported by the widget application.
 
 **Attributes:**
 
-- `preview`  
-Relative path to the preview image (available values: file name)  
-The image is shown on the home screen when the user tries to select the widget.
+- `preview`
+
+  Relative path to the preview image (available values: file name)
+
+  The image is shown on the home screen when the user tries to select the widget.
 
 **Expected value:**
 
@@ -555,7 +592,7 @@ The image is shown on the home screen when the user tries to select the widget.
 <support-size preview="preview.png">2x2</support-size>
 ```
 
-#### &lt;widget-class&gt; Element
+#### \<widget-class\> Element
 
 This element contains the settings for the widget class. After adding this element, you can use the `widget_app_class_add()` function to create widget instances in the widget application (maximum number of instances is defined in the `max-instance` attribute of the `<widget-application>` element).
 
@@ -566,18 +603,20 @@ This element contains the settings for the widget class. After adding this eleme
 **Expected children:**
 
 | Child element    | Occurrences |
-|----------------|-----------|
+|------------------|---------------|
 | `<label>`        | 1 or more   |
-| `<icon>`         |             |
+| `<icon>`         | 1 or more   |
 | `<support-size>` | 1           |
 
 **Attributes:**
 
-- `classid`  
-Widget application class unique ID (string)
+- `classid`
 
-- `update-period`  
-Indicates the update period in seconds (available values: time in seconds)Multiples of 1800 only allowed
+  Widget application class unique ID (string)
+
+- `update-period`
+
+  Indicates the update period in seconds (available values: time in seconds)Multiples of 1800 only allowed
 
 **For example:**
 
@@ -589,7 +628,7 @@ Indicates the update period in seconds (available values: time in seconds)Multip
 </widget-class>
 ```
 
-### &lt;shortcut-list&gt; Element
+### \<shortcut-list\> Element
 
 This element contains the shortcut template list used for adding a shortcut to the home screen.
 
@@ -602,7 +641,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element | Occurrences |
-|-------------|-----------|
+|---------------|-------------|
 | `<shortcut>`  | 1 or more   |
 
 **For example:**
@@ -613,7 +652,7 @@ For more information on the relationship between the elements, see the [element 
 </shortcut-list>
 ```
 
-#### &lt;shortcut&gt; Element
+#### \<shortcut\> Element
 
 This element contains the information that indicates the shortcut for the application on the home screen.
 
@@ -624,20 +663,29 @@ This element contains the information that indicates the shortcut for the applic
 **Expected children:**
 
 | Child element | Occurrences |
-|-------------|-----------|
+|---------------|-------------|
 | `<icon>`      | 1 or more   |
-| `<label>`     |             |
+| `<label>`     | 1 or more   |
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `extra_data`  
-Data for user content (string)Shortcut element property in the manifest file
+  Application unique ID (string)
 
-- `extra_key`  
-Key for user content (string)Shortcut element property in the manifest file
+  This can be used for launching or terminating the application explicitly.
+
+- `extra_data`
+
+  Data for user content (string)
+
+  Shortcut element property in the manifest file
+
+- `extra_key`
+
+  Key for user content (string)
+
+  Shortcut element property in the manifest file
 
 **For example:**
 
@@ -649,7 +697,7 @@ Key for user content (string)Shortcut element property in the manifest file
 </shortcut>
 ```
 
-### &lt;account&gt; Element
+### \<account\> Element
 
 This element contains a set of user accounts and account provider-related information for a Tizen application.
 
@@ -662,7 +710,7 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element        | Occurrences |
-|--------------------|-----------|
+|----------------------|-------------|
 | `<account-provider>` | 1 or more   |
 
 **For example:**
@@ -673,28 +721,33 @@ For more information on the relationship between the elements, see the [element 
 </account>
 ```
 
-#### &lt;account-provider&gt; Element
+#### \<account-provider\> Element
 
 This element contains specific service provider or user account protocol-related information.
 
 **Expected children:**
 
 | Child element  | Occurrences          |
-|--------------|--------------------|
+|----------------|----------------------|
 | `<icon>`       | 1 or more            |
-| `<label>`      |                      |
+| `<label>`      | 1 or more            |
 | `<capability>` | 1 or more (optional) |
 
 **Attributes:**
 
-- `appid`  
-Application unique ID (string)This can be used for launching or terminating the application explicitly.
+- `appid`
 
-- `multiple-accounts-support`  
-Indicates whether multiple accounts are supported (available values: `true`, `false`)
+  Application unique ID (string)
 
-- `providerid`  
-ID of the account provider (string)
+  This can be used for launching or terminating the application explicitly.
+
+- `multiple-accounts-support`
+
+  Indicates whether multiple accounts are supported (available values: `true`, `false`)
+
+- `providerid`
+
+  ID of the account provider (string)
 
 **For example:**
 
@@ -706,14 +759,15 @@ ID of the account provider (string)
 </account-provider>
 ```
 
-#### &lt;icon&gt; Element
+#### \<icon\> Element
 
 This element contains the account provider icon image. Since the icons are used on the device under **Settings > Accounts**, place them in a shared directory.
 
 **Attributes:**
 
-- `section`  
-Usage information for the icon image (available values: `account` (image size: 72 x 72 for density xhigh and 48 x 48 for density high), `account-small` (image size: 45 x 45 for density xhigh and 30 x 30 for density high))
+- `section`
+
+  Usage information for the icon image (available values: `account` (image size: 72 x 72 for density xhigh and 48 x 48 for density high), `account-small` (image size: 45 x 45 for density xhigh and 30 x 30 for density high))
 
 **Expected value:**
 
@@ -726,7 +780,7 @@ Usage information for the icon image (available values: `account` (image size: 7
 <icon section="account-small">uiapp.png</icon>
 ```
 
-#### &lt;capability&gt; Element
+#### \<capability\> Element
 
 This element contains the account provider capability. The capabilities are defined as `http://<VENDOR_INFORMATION>/account/capability/<NAME>`.
 
@@ -740,7 +794,7 @@ This element contains the account provider capability. The capabilities are defi
 <capability>http://tizen.org/account/capability/calendar</capability>
 ```
 
-### &lt;privileges&gt; Element
+### \<privileges\> Element
 
 This element contains the set of required privileges for a Tizen application.
 
@@ -761,8 +815,8 @@ For more information on the relationship between the elements, see the [element 
 **Expected children:**
 
 | Child element             | Occurrences          |
-|-------------------------|--------------------|
-| [`privilege`](#privilege) | 1 or more (optional) |
+|---------------------------|----------------------|
+| `privilege`               | 1 or more (optional) |
 
 **For example:**
 
@@ -772,7 +826,7 @@ For more information on the relationship between the elements, see the [element 
 </privileges>
 ```
 
-#### &lt;privilege&gt; Element
+#### \<privilege\> Element
 
 This element contains a required privilege for a Tizen application.
 
@@ -800,7 +854,7 @@ For more information on the expected values, see [Security and API Privileges](.
 <privilege>http://tizen.org/privilege/account.read</privilege>
 ```
 
-### &lt;feature&gt; Element
+### \<feature\> Element
 
 This element contains a list of required features for feature-based filtering in the Tizen Store.
 
@@ -818,8 +872,9 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `name` (mandatory, a feature key URI)  
-Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`  
+- `name` (mandatory, a feature key URI)
+
+  Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
 
   For more information on the expected values and the application filtering mechanism, see [Application Filtering](../../native/tutorials/details/app-filtering.md).
 
@@ -830,8 +885,8 @@ Item name used in feature-based filtering in the Tizen Store, for example, `"htt
 **For example:**
 
 ```xml
-<feature name="http://tizen.org/feature/camera">true</privilege>
-<feature name="http://tizen.org/feature/fmradio">true</privilege>
+<feature name="http://tizen.org/feature/camera">true</feature>
+<feature name="http://tizen.org/feature/fmradio">true</feature>
 ```
 
 ## Related information

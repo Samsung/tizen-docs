@@ -8,7 +8,9 @@ The Server-Sent Events API defines a simple data structure and interface, and a 
 
 The main features of the Server-Sent Events API include:
 
-- Creating an [EventSource](http://www.w3.org/TR/2015/REC-eventsource-20150203/#the-eventsource-interface) instanceThe `EventSource` interface is the core object of server-sent event implementation. [Creating a new EventSource instance](#triggering-server-push-requests) triggers repeated server request automatically, and allows you to use the receiving data event. When creating the `EventSource` instance, you must use the URL of the server page sending the event stream as a parameter.
+- Creating an [EventSource](http://www.w3.org/TR/2015/REC-eventsource-20150203/#the-eventsource-interface) instance
+
+  The `EventSource` interface is the core object of server-sent event implementation. [Creating a new EventSource instance](#triggering-server-push-requests) triggers repeated server request automatically, and allows you to use the receiving data event. When creating the `EventSource` instance, you must use the URL of the server page sending the event stream as a parameter.
 
 - Receiving server push data
 
@@ -28,8 +30,8 @@ To take advantage of the server push feature, you must learn to connect to the s
        var eventSource = new EventSource(serverPage);
    ```
 
-> **Note**  
-> For the server push to work, the `serverPage` parameter must contain the actual push server URL.
+   > **Note**  
+   > For the server push to work, the `serverPage` parameter must contain the actual push server URL.
 
 2. Implement the event handler for the [open](http://www.w3.org/TR/2015/REC-eventsource-20150203/#handler-eventsource-onopen) event:
 

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Tizen Mobile Web UI Framework Reference</title>
+</head>
+<body onload="prettyPrint()" id="content" marginwidth="0" marginheight="0">
+
+<h1>Tizen Mobile Web UI Framework Reference</h1>
+
+<p><b>The Web UI framework is called Tizen Advanced UI (TAU) framework.</b> It provides tools, such as UI components, events, effects, and animations, for Web application development. You can leverage these tools by just selecting the required screen elements and creating the applications.</p>
+
+<table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">Tizen Advaced UI framework(TAU) is <strong>optional</strong>, but recommended for making web applications for Tizen.
+			</td>
+		</tr>
+		<tr>
+			<td class="note"><strong>TAU</strong> is the new name of tizen-web-ui-fw.
+			</td>
+		</tr>
+		</tbody>
+</table>
+
+<table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note <i>(important!)</i></th>
+		</tr>
+		<tr>
+			<td class="note"><p><strong>Since 2.3,</strong> tizen-web-ui-fw has been <i><strong>deprecated</strong></i> (include tizen-web-ui-fw.js, tizen-web-ui-fw-libs.js, tizen-web-ui-fw.css). <br>So, in all documents and source code, TAU is used instead of tizen-web-ui-fw.</p>
+<p><strong>Since 2.4</strong>, tizen-web-ui-fw <span style="color:red">will be fully deleted</span> and we will <strong>not support</strong> old version anymore.</p> 
+			</td>
+		</tr>
+		</tbody>
+</table>
+
+<h2>Using TAU in your application</h2>
+<p>Since tizen-web-ui-fw has changed to TAU, we need to modify code in <code>index.html</code> if application is using old tizen-web-ui-fw library.</p>
+<span class="example">before <i>(DEPRECATED)</i>:</span>
+<pre class="prettyprint">
+&lt;html&gt;    
+    &lt;head&gt;
+        &lt;script src=&quot;tizen-web-ui-fw/latest/js/jquery.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;tizen-web-ui-fw/latest/js/tizen-web-ui-fw-libs.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;tizen-web-ui-fw/latest/js/tizen-web-ui-fw.min.js&quot;
+                data-framework-theme=&quot;tizen-black&quot;
+                data-framework-viewport-width=&quot;device-width&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- HTML body content --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<span class="example">after <i>(SINCE 2.3)</i>:</span>
+<pre class="prettyprint">
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;../lib/tau/mobile/js/tau.js&quot;&gt;&lt;/script&gt;
+        &lt;link rel=&quot;stylesheet&quot;  href=&quot;../lib/tau/mobile/theme/default/tau.css&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot;  href=&quot;css/custom.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- HTML body content --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>If you want to get some more guide, please refer <a href="../../../../org.tizen.guides/html/web/tizen/uifw/uifw_guide_w.htm">this page(guide for Web UI Framework).</a></p>
+
+<h2>TAU for Mobile profile</h2>
+<p>The Web UI Framework service is based on a template and works on a Web browser, which runs on the WebKit engine. You can code Web applications using the Web UI Framework, standard HTML5, and Tizen device APIs. You can also use different UI components with CSS animations and rendering optimized for Tizen Web browsers.</p>
+
+<p>The Web UI Framework in mobile Web applications consists of the followings:</p>
+<ul>
+	<li><a href="exit_application/exit_application.htm">H/W Back key</a>
+	<p>Using h/w back key, user can show previous page or exit application through device api.
+	</p></li>
+	<li><a href="page/app_page_layout.htm">Page structure and navigation</a>
+	<p>A Web application using Web UI Framework has a basic page structure. Smooth navigation between Web UI Framework-based application pages is provided with a navigation JavaScript library.</p></li>
+	<li><a href="widget_reference.htm">Web UI components</a> and themes
+	<p>The Tizen mobile Web UI Framework supports APIs and CSS themes for Tizen mobile Web UI components.</p></li>
+	<li><a href="util/util.htm">Utilities</a>
+	<p>Some useful special utilities that support easy DOM methods for the Web applications are available with Tizen mobile Web UI Framework.</p></li>
+</ul>
+
+<table class="note">
+		<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">The Web UI Framework runs only on browsers supporting the HTML5 and CSS standards. The draft version of the W3C specification is not fully supported.</td>
+		</tr>
+		</tbody>
+</table>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+	<!--start-->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-25976949-1']);
+		_gaq.push(['_trackPageview']);
+		(function () {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<!--end-->
+</div>
+</body>
+</html>

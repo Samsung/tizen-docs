@@ -52,7 +52,8 @@ To take advantage of the camera features, you must learn to access the camera de
 
 To take advantage of the camera features, you must learn to manage the camera:
 
-- You can record videos with the `cameraControl` object.   Use the `start()` to start the recording, and the `stop()` method to stop the recording:
+- You can record videos with the `cameraControl` object.   
+  Use the `start()` to start the recording, and the `stop()` method to stop the recording:
 
   ```
   cameraControl.recorder.start(recordingStartSuccess, recordingStartError);
@@ -61,9 +62,9 @@ To take advantage of the camera features, you must learn to manage the camera:
 
 - Use the `takePicture()` method to capture an image and write it in a file:
 
- ```
- cameraControl.image.takePicture(takePictureSuccess, takePictureError);
- ```
+  ```
+  cameraControl.image.takePicture(takePictureSuccess, takePictureError);
+  ```
 
 - Use the `applySettings()` method to modify the camera settings (to set the file name of the recorded video or captured image):
 

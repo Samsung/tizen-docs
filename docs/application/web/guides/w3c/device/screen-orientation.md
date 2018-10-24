@@ -86,10 +86,12 @@ To enhance the user interaction with the device, learn to manage the screen orie
    </script>
    ```
 
-> **Note**  
-> When using the screen orientation lock:When the `portrait` value is used to lock the orientation, the orientation can change between `portrait-primary` and `portrait-secondary`. The `landscape` value behaves similarly.Depending on the browser, unlocking the screen orientation may have no visual effect.
+   > **Note**  
+   > When using the screen orientation lock:  
+   > - When the `portrait` value is used to lock the orientation, the orientation can change between `portrait-primary` and `portrait-secondary`. The `landscape` value behaves similarly.  
+   > - Depending on the browser, unlocking the screen orientation may have no visual effect.
 
-4. Define CSS styles in the <head> section of the document to make the application more eye-catching.
+4. Define CSS styles in the &lt;head&gt; section of the document to make the application more eye-catching.
 
    ```
    <style type="text/css">

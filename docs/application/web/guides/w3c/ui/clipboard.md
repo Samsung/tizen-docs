@@ -24,13 +24,13 @@ The most common way of providing clipboard features in an application is to crea
 
 To copy content using the `copy` event:
 
-1.  Add an event listener to detect the `copy` event:
+1. Add an event listener to detect the `copy` event:
 
    ```
-   script>
+   <script>
        document.addEventListener('copy', function(e) {
            copyHandler(e);
-       }, false);   
+       }, false);
    ```
 
 2. When you start copying, the `copy` event is fired and the `copyHandler()` method is called.
@@ -44,8 +44,8 @@ To copy content using the `copy` event:
            var range = window.getSelection();
    ```
 
- > **Note**  
- > If the current selection is not influenced and there is no selected range, the clipboard imports the `setData()` method. The copied content cannot be edited apart from adding a [DataTransferItemList](http://www.w3.org/TR/2014/WD-html51-20140617/editing.html#the-datatransferitemlist-interface) item.
+   > **Note**  
+   > If the current selection is not influenced and there is no selected range, the clipboard imports the `setData()` method. The copied content cannot be edited apart from adding a [DataTransferItemList](http://www.w3.org/TR/2014/WD-html51-20140617/editing.html#the-datatransferitemlist-interface) item.
 
 3. Store the data of the selected range:
 
@@ -65,13 +65,13 @@ For the complete source code related to this use case, see the following file:
 
 To cut content using the `cut` event:
 
-1.  Add an event listener to detect the `cut` event:
+1. Add an event listener to detect the `cut` event:
 
    ```
    <script>
        document.addEventListener('cut', function(e) {
            cutHandler(e);
-       }, false);   
+       }, false);
    ```
 
 2. When you start cutting, the `cut` event is fired and the `cutHandler()` method is called.
@@ -93,8 +93,8 @@ To cut content using the `cut` event:
    </script>
    ```
 
- > **Note**	 
- > Before the `setData()` method is imported, the basic motion of the system event must be cancelled using the `preventDefault()` method. Otherwise, the data to be allocated to the clipboard is overwritten by the system clipboard.
+   > **Note**  
+   > Before the `setData()` method is imported, the basic motion of the system event must be cancelled using the `preventDefault()` method. Otherwise, the data to be allocated to the clipboard is overwritten by the system clipboard.
 
 ### Source Code
 
@@ -106,7 +106,7 @@ For the complete source code related to this use case, see the following file:
 
 To paste content using the `paste` event:
 
-1.  Add an event listener to detect the `paste` event:
+1. Add an event listener to detect the `paste` event:
 
    ```
    <script>

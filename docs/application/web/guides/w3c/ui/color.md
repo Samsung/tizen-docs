@@ -100,7 +100,8 @@ To enhance the coloring of the UI elements in your application, you must learn t
 
    - The first input has a range of 0 - 360 and represents hue.
    - The second and third inputs have a range of 0 - 100 and represent saturation and lightness.
-   - The last input has a range of 0 - 10 and represents alpha transparency.The range should be 0.1 - 1, but the minimum value of the `min` attribute is 0 so the value can be divided by 10.
+   - The last input has a range of 0 - 10 and represents alpha transparency.  
+      The range should be 0.1 - 1, but the minimum value of the `min` attribute is 0 so the value can be divided by 10.
 
    ```
    <div id="color-generator">

@@ -31,12 +31,14 @@ When you create a new project with a specific template, the Project Wizard autom
 To create a Tizen .NET application project:
 
 1.  To open the Project Wizard:
-    a.  In the Visual Studio menu, go to **File &gt; New &gt; Project &gt; Templates &gt; Visual C\# &gt; Tizen**.
-    b.  Select a template for your project.
+
+    1.  In the Visual Studio menu, go to **File &gt; New &gt; Project &gt; Templates &gt; Visual C\# &gt; Tizen**.
+
+    2.  Select a template for your project.
 
         The Project Wizard creates the project based on the selected template.
 
-    c.  Set the basic project properties, such as the project name and its location in your local repository, and click **OK**.
+    3.  Set the basic project properties, such as the project name and its location in your local repository, and click **OK**.
 
 2.  If you selected the **Blank App (Xamarin.Forms)** template, the Tizen Project Wizard dialog opens.
 

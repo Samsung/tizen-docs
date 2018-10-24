@@ -2,18 +2,26 @@
 
 The Tizen Compliance Program consists of the following parts:
 
-- [Tizen Compliance Specification (TCS)](compliance-specification.md)  
-A definitive set of requirements for Tizen compliant devices.
-- [Tizen Compliance Tests (TCT)](compliance-test.md)  
-A suite of tests that verify each of the requirements in the TCS.
-- Tizen Compliance certification  
-A formal review and acceptance of a device that has passed all of the tests and is fully Tizen compliant.
+- [Tizen Compliance Specification (TCS)](compliance-specification.md)
+
+  A definitive set of requirements for Tizen compliant devices.
+
+- [Tizen Compliance Tests (TCT)](compliance-test.md)
+
+  A suite of tests that verify each of the requirements in the TCS.
+
+- Tizen Compliance certification
+
+  A formal review and acceptance of a device that has passed all of the tests and is fully Tizen compliant.
 
 The Tizen Compliance Program ensures that devices and applications work correctly together, by setting out requirements for common behavior and providing a validation mechanism to show that the requirements are followed. The Tizen Compliance Program is valuable to the following audiences:
 
 - **Application developers:** Know how to create compatible applications that work across multiple devices, and how Tizen devices behave.
+
 - **Tizen device implementers:** Know how to implement a Tizen-compliant device by satisfying software and hardware requirements.
+
 - **Carriers:** Know how to customize and enhance a device, while remaining within compliance guidelines.
+
 - **End users:** Know that applications work on their device and are assured of a consistent user experience among compliant devices and applications.
 
 To become Tizen compliant, a device must obtain the Tizen Compliance certification.

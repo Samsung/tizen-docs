@@ -1,6 +1,6 @@
 # File
 
-You can access local storage to read file information. In mobile applications, you can also manipulate files by accessing sandboxed file systems.
+You can access a local storage to read file information. In mobile applications, you can also manipulate files by accessing sandboxed file systems.
 
 The main features of the File API include:
 
@@ -105,6 +105,8 @@ Reading a local image file in a Web application is a useful file management skil
    ```
 
 2. Create a `FileReader` instance (in [mobile](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader), [wearable](http://www.w3.org/TR/2011/WD-FileAPI-20111020/#FileReader-interface), and [TV](http://www.w3.org/TR/2015/WD-FileAPI-20150421/#dfn-filereader) applications) to read the content of the local image file. Use the `readAsDataURL()` method to read data in the `dataURL` format.
+
+   If the data is loaded, an `onload` event is fired. Create an `img` element to allocate the event result property value for rendering:
 
    ```
    <script>
@@ -251,8 +253,10 @@ Requesting access to sandboxed sections of a local file system is a useful file 
    </script>
    ```
 
- > **Note**  
- > The `requestFileSystem()` method is created in the Web application program when it is initially called.The directory file in the file system root can be searched, created and deleted by accessing local file system.
+   > **Note**  
+   > The `requestFileSystem()` method is created in the Web application program when it is initially called.
+ 
+   The directory file in the file system root can be searched, created and deleted by accessing local file system.
 
 ### Source Code
 
@@ -287,40 +291,40 @@ Reading a file or directory in a sandboxed section of a local file system is a u
 3. Use the `readEntries()` method of the [DirectoryReader](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-directoryreader-interface) interface to read all entries:
 
    ```
-    dirReader.readEntries(function(entries) {
+           dirReader.readEntries(function(entries) {
    ```
 
 4. Display the list of the relevant entries using the [Entry](http://www.w3.org/TR/2011/WD-file-system-api-20110419/#the-entry-interface) interface:
 
- ```
-             if (!entries.length) {
-                 objResultSection.innerHTML = 'Filesystem is empty.';
-             } else {
-                 var fragment = document.createDocumentFragment();
-                 var entry, i;
+   ```
+               if (!entries.length) {
+                   objResultSection.innerHTML = 'Filesystem is empty.';
+               } else {
+                   var fragment = document.createDocumentFragment();
+                   var entry, i;
 
-                 for (i = 0; i < entries.length; i++) {
-                     entry = entries[i];
+                   for (i = 0; i < entries.length; i++) {
+                       entry = entries[i];
 
-                     var img = entry.isDirectory ?
-                               '<img class="icon-img" src="img/icon_folder.png" alt="folder">' :
-                               '<img class="icon-img" src="img/icon_file.png" alt="file">';
+                       var img = entry.isDirectory ?
+                                 '<img class="icon-img" src="img/icon_folder.png" alt="folder">' :
+                                 '<img class="icon-img" src="img/icon_file.png" alt="file">';
 
-                     var li = document.createElement('li');
-                     /* Display entry name */
-                     li.innerHTML = [img, '<span>', entry.name, '</span>'].join('');
-                     objResultSection.innerHTML = '';
-                     fragment.appendChild(li);
-                 }
-                 objResultSection.appendChild(fragment);
-             }
-         }, errorHandler);
-     }
- </script>
- ```
+                       var li = document.createElement('li');
+                       /* Display entry name */
+                       li.innerHTML = [img, '<span>', entry.name, '</span>'].join('');
+                       objResultSection.innerHTML = '';
+                       fragment.appendChild(li);
+                   }
+                   objResultSection.appendChild(fragment);
+               }
+           }, errorHandler);
+       }
+   </script>
+    ```
 
-	> **Note**	
-	> For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file.md#access).
+> **Note**  
+> For error handling, see [Accessing a Sandboxed File System](#accessing-a-sandboxed-file-system-in-mobile-applications).
 
 **Figure: Displaying files**
 
@@ -340,14 +344,14 @@ Creating a directory or file in a sandboxed section of a local file system is a 
 
 1. Create the `select` element for selecting the type of entry to be added, `<input type="text">` element for entering the entry name, and `<input type="button>"` element for creating the entry:
 
- ```
- <select id="selType">
-    <option value="dir">Directory</option>
-    <option value="file">File</option>
- </select>
- <input type="text" id="txtName" name="txtName" style="width: 200px;" maxlength="20"/>
- <input type="button" value="Add File or Directory" onclick="AddFile();"/>
- ```
+   ```
+   <select id="selType">
+      <option value="dir">Directory</option>
+      <option value="file">File</option>
+   </select>
+   <input type="text" id="txtName" name="txtName" style="width: 200px;" maxlength="20"/>
+   <input type="button" value="Add File or Directory" onclick="AddFile();"/>
+   ```
 
 2. To create a directory, use the `getDirectory()` method. To create a file, use the `getFile()` method:
 
@@ -376,8 +380,8 @@ Creating a directory or file in a sandboxed section of a local file system is a 
     </script>
     ```
 
- > **Note**  
- > For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file.md#access).
+    > **Note**  
+    > For error handling, see [Accessing a Sandboxed File System](#accessing-a-sandboxed-file-system-in-mobile-applications).
 
     **Figure: Adding a file**  
     ![Adding a file](./media/file5.png)
@@ -394,9 +398,9 @@ Deleting a directory or file in a sandboxed section of a local file system is a 
 
 1. Create the `<input type="button">` element for deleting the entry (directory or file):
 
- ```
- <input type="button" value="Remove all files" onclick="RemoveFile();"/>
- ```
+   ```
+   <input type="button" value="Remove all files" onclick="RemoveFile();"/>
+   ```
 
 2. To delete a directory and all the files in it, use the `removeRecursively()` method. To delete an individual file, use the `remove()` method:
 
@@ -423,8 +427,8 @@ Deleting a directory or file in a sandboxed section of a local file system is a 
    </script>
    ```
 
- > **Note**  
- > For error handling, see [Accessing a Sandboxed File System](./w3c/storage/file.md#access).
+   > **Note**  
+   > For error handling, see [Accessing a Sandboxed File System](#accessing-a-sandboxed-file-system-in-mobile-applications).
 
    **Figure: Deleting files**  
    ![Deleting files](./media/file6.png)

@@ -97,8 +97,8 @@ To set the magnetic field, enter the X, Y, and Z axis values.
 ![Accelerometer and gyro sensors](./media/simulator_panel_accelerometer_gyro.png)
 
 > **Note**  
-> If the computer does not fully support WebGL™, the simulated device in the **Sensors** panel looks like in the following figure.    
-**Figure: Sensor without WebGL™**
+> If the computer does not fully support WebGL&trade;, the simulated device in the **Sensors** panel looks like in the following figure.    
+**Figure: Sensor without WebGL&trade;**
 
 ![Sensor without WebGL](./media/simulator_sensor_webgl.png)
 

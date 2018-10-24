@@ -24,7 +24,7 @@ The main features of the Sound API include:
 
 ## Prerequisites
 
-To use the Sound API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/sound.html) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/sound.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
+To use the Sound API (in [mobile](../../api/latest/device_api/mobile/tizen/sound.html) and [wearable](../../api/latest/device_api/wearable/tizen/sound.html) applications), the application has to request permission by adding the following privilege to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/volume.set"/>
@@ -133,7 +133,7 @@ Learning how to monitor changes in the sound device state makes it easier for yo
    ```
    tizen.sound.removeDeviceStateChangeListener(listenerId);
    ```
-   
+
 ## Related Information
 * Dependencies
   - Tizen 2.4 and Higher for Mobile

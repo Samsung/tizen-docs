@@ -1,11 +1,6 @@
 # Table
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Table.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Table.html) applications).
+The table container acts like a box container, but with 2 dimensions. It provides the same kind of APIs as a box. An item inside a table can span multiple columns and rows, and even overlap with other items. For more information, see the Table API (in [mobile](../../../api/mobile/latest/group__Elm__Table.html) and [wearable](../../../api/wearable/latest/group__Elm__Table.html) applications).
 
 **Figure: Table component structure**
 
@@ -21,10 +16,11 @@ To build a layout with a table:
    Evas_Object *table;
 
    table = elm_table_add(parent);
-
    ```
 
-2. Add an object to the table using the `elm_table_pack()` function.The function takes as parameters the table, the item to add to the table, and the position where to add the item: column, row, and the size of the item in number of rows and columns (colspan and rowspan).
+2. Add an object to the table using the `elm_table_pack()` function.
+
+   The function takes as parameters the table, the item to add to the table, and the position where to add the item: column, row, and the size of the item in number of rows and columns (colspan and rowspan).
 
    ```
    Evas_Object *btn;
@@ -37,9 +33,7 @@ The following example shows a simple use case of the table component, where 5 bu
 
 **Example: Table use case**
 
-| ![Table](./media/table1.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Table](./media/table1.png)
 
 ```
 Evas_Object *win;
@@ -119,3 +113,8 @@ To manage the table items:
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -20,7 +20,7 @@ The main package information features are:
 
 ## Prerequisites
 
-To use the Package API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/package.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/package.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Package API (in [mobile](../../api/latest/device_api/mobile/tizen/package.html), [wearable](../../api/latest/device_api/wearable/tizen/package.html), and [TV](../../api/latest/device_api/tv/tizen/package.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/package.info"/>
@@ -32,8 +32,8 @@ To use the Package API (in [mobile](../../../../org.tizen.web.apireference/html/
 
 You can retrieve information about packages in various ways:
 
-- Retrieve information about installed packages using the `getPackageInfo()` and `getPackagesInfo()` methods of the `PackageManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/package.html#PackageManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html#PackageManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/package.html#PackageManager) applications).
-- Use the `PackageInformation` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/package.html#PackageInformation), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html#PackageInformation), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/package.html#PackageInformation) applications) to retrieve information about installed packages, such as name, icon path, and version.
+- Retrieve information about installed packages using the `getPackageInfo()` and `getPackagesInfo()` methods of the `PackageManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/package.html#PackageManager), [wearable](../../api/latest/device_api/wearable/tizen/package.html#PackageManager), and [TV](../../api/latest/device_api/tv/tizen/package.html#PackageManager) applications).
+- Use the `PackageInformation` interface (in [mobile](../../api/latest/device_api/mobile/tizen/package.html#PackageInformation), [wearable](../../api/latest/device_api/wearable/tizen/package.html#PackageInformation), and [TV](../../api/latest/device_api/tv/tizen/package.html#PackageInformation) applications) to retrieve information about installed packages, such as name, icon path, and version.
 
 Learning how to retrieve information about installed packages allows you to manage device packages from your application:
 
@@ -58,7 +58,7 @@ Learning how to retrieve information about installed packages allows you to mana
 <a name="manage"></a>
 ## Managing Packages
 
-You can manage the package installation using the `install()` and `uninstall()` methods of the `PackageManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/package.html#PackageManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html#PackageManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/package.html#PackageManager) applications). Additionally, you can receive notifications of the installation and uninstallation progress using the `PackageProgressCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/package.html#PackageProgressCallback), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html#PackageProgressCallback), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/package.html#PackageProgressCallback) applications).
+You can manage the package installation using the `install()` and `uninstall()` methods of the `PackageManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/package.html#PackageManager), [wearable](../../api/latest/device_api/wearable/tizen/package.html#PackageManager), and [TV](../../api/latest/device_api/tv/tizen/package.html#PackageManager) applications). Additionally, you can receive notifications of the installation and uninstallation progress using the `PackageProgressCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/package.html#PackageProgressCallback), [wearable](../../api/latest/device_api/wearable/tizen/package.html#PackageProgressCallback), and [TV](../../api/latest/device_api/tv/tizen/package.html#PackageProgressCallback) applications).
 
 Learning how to install and uninstall packages is a basic package management skill:
 
@@ -97,7 +97,7 @@ Learning how to install and uninstall packages is a basic package management ski
 <a name="receive"></a>
 ## Receiving Package Change Notifications
 
-You can receive notifications of changes in the list of installed packages. The `setPackageInfoEventListener()` method of the `PackageManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/package.html#PackageManager) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html#PackageManager) applications) registers an event listener for changes in the installed packages list. To unsubscribe the listener, use the `unsetPackageInfoEventListener()` method. You can use the `PackageInformationEventCallback` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/package.html#PackageInformationEventCallback) and [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/package.html#PackageInformationEventCallback) applications) to define listeners for receiving notifications.
+You can receive notifications of changes in the list of installed packages. The `setPackageInfoEventListener()` method of the `PackageManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/package.html#PackageManager), [wearable](../../api/latest/device_api/wearable/tizen/package.html#PackageManager), and [TV](../../api/latest/device_api/tv/tizen/package.html#PackageManager) applications) registers an event listener for changes in the installed packages list. To unsubscribe the listener, use the `unsetPackageInfoEventListener()` method. You can use the `PackageInformationEventCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/package.html#PackageInformationEventCallback), [wearable](../../api/latest/device_api/wearable/tizen/package.html#PackageInformationEventCallback), and [TV](../../api/latest/device_api/tv/tizen/package.html#PackageInformationEventCallback) applications) to define listeners for receiving notifications.
 
 Learning to receive notifications when the list of installed packages changes allows you to manage device packages from your application:
 

@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>How to support Footer Button</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>How to support Footer Button</h1>
+
+The following explains how to make the footer button which can support both Rectangular UI and Circular UI.<p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#layout">Layout</a></li>
+	<li><a href="#htmlCode">HTML code</a></li>
+	<li><a href="#layout2">Layout (multiple buttons)</a></li>
+	<li><a href="#htmlCode2">HTML code (multiple buttons)</a></li>
+	<li><a href="#cssCode2">CSS code (multiple buttons)</a></li>
+	<li><a href="#jsCode">Javascript code (multiple buttons)</a></li>
+</ol>
+
+<h2><a id='layout'></a>Layout</h2>
+
+<table id='circularsupport'>
+	<tbody>
+		<tr>
+			<td><img src="../../../../images/rectangular_footer.png"/></td>
+			<td><img src="../../../../images/round_footer.png"/></td>
+		</tr>
+		<tr>
+			<td align="center">in Rectangular UI</td>
+			<td align="center">in Circular UI</td>
+		</tr>
+	</tbody>
+</table><br>
+
+<p>Bottom button of Circular UI has "ui-bottom-button" class.</p>
+
+<h2><a id='htmlCode'></a>HTML code</h2>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;bottomButtonPage&quot; &gt;
+	&lt;header class=&quot;ui-header&quot;&gt;
+		&lt;h2 class=&quot;ui-title&quot;&gt;Bottom Button&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class=&quot;ui-content content-padding&quot;&gt;
+		It was a real pleasure for me to finally get to meet you. My colleagues join me in sending you our holiday greetings.
+	&lt;/div&gt;
+	&lt;footer class=&quot;ui-footer ui-bottom-button&quot;&gt;
+		&lt;a href=&quot;#&quot; class=&quot;ui-btn&quot;&gt;Button&lt;/a&gt;
+	&lt;/footer&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id='layout2'></a>Layout (multiple buttons)</h2>
+
+<table>
+	<tbody>
+		<tr>
+			<td><img src="../../../../images/rectangular_multibtn.png"/></td>
+			<td><img src="../../../../images/round_multibtn.png"/></td>
+		</tr>
+		<tr>
+			<td align="center">in Rectangular UI</td>
+			<td align="center">in Circular UI</td>
+		</tr>
+	</tbody>
+</table><br>
+
+<p>When there are multiple buttons, the buttons except for the first button use drawer in Circular UI.</p>
+
+<h2><a id='htmlCode2'></a>HTML code (multiple buttons)</h2>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;bottomButtonWithMorePage&quot; &gt;
+	&lt;header class=&quot;ui-header&quot;&gt;
+		&lt;h2 class=&quot;ui-title&quot;&gt;Multiple Buttons&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class=&quot;ui-content content-padding&quot;&gt;
+		It was a real pleasure for me to finally get to meet you. My colleagues join me in sending you our holiday greetings.
+	&lt;/div&gt;
+
+	&lt;a class=&quot;popup-handler&quot;&gt;&lt;/a&gt;
+	&lt;div id=&quot;moreButtonPopup&quot; class=&quot;ui-popup&quot;&gt;
+		&lt;div id=&quot;selector&quot; class=&quot;ui-selector&quot;&gt;
+			&lt;div class=&quot;ui-item show-icon&quot; data-title=&quot;2&quot;&gt;&lt;/div&gt;
+			&lt;div class=&quot;ui-item human-icon&quot; data-title=&quot;3&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;footer class=&quot;ui-footer ui-grid-col-3 ui-bottom-button&quot;&gt;
+		&lt;a href=&quot;#&quot; class=&quot;ui-btn&quot;&gt;1&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;ui-btn&quot;&gt;2&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;ui-btn&quot;&gt;3&lt;/a&gt;
+	&lt;/footer&gt;
+&lt;/div&gt;
+</pre>
+
+
+<h2><a id='cssCode2'></a>CSS code (multiple buttons)</h2>
+
+<pre class="prettyprint">
+.popup-handler {
+	display: none;
+}
+
+@media all and (-tizen-geometric-shape: circle) {
+	.popup-handler {
+		display: block;
+		width: 24px;
+		height: 70px;
+		position: fixed;
+		top: 50%;
+		right: 0;
+		color: transparent;
+		background-color: #a4a4a4;
+		transform: translate(0, -50%);
+		-webkit-mask-image: /* Your image URL */;
+		-webkit-mask-repeat: no-repeat;
+	}
+	.ui-bottom-button a + a {
+		display: none;
+	}
+}
+</pre>
+
+<h2><a id='jsCode'></a>Javascript code (multiple buttons)</h2>
+
+<pre class="prettyprint">
+(function(){
+	var page = document.querySelector("#bottomButtonWithMorePage"),
+		handler = page.querySelector(".popup-handler"),
+		popup = page.querySelector("#moreButtonPopup"),
+		elSelector = page.querySelector("#selector"),
+		selector,
+		clickHandlerBound;
+
+	function clickHandler() {
+		tau.openPopup(popup);
+	}
+
+	page.addEventListener( "pagebeforeshow", function() {
+		var radius = window.innerHeight / 2 * 0.8;
+
+		clickHandlerBound = clickHandler.bind(null);
+		if (tau.support.shape.circle) {
+			handler.addEventListener("click", clickHandlerBound);
+			selector = tau.widget.Selector(elSelector, {itemRadius: radius});
+		}
+	});
+
+	page.addEventListener( "pagebehide", function() {
+		if (tau.support.shape.circle) {
+			handler.removeEventListener("click", clickHandlerBound);
+			selector.destroy();
+		}
+	});
+})();
+</pre>
+
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

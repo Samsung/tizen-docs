@@ -7,7 +7,7 @@ The Tizen Web Simulator:
 - Supports running and debugging modern HTML5 Web applications.
 - Simulates Tizen Web APIs using a JavaScript backend. For more information on the Tizen Web APIs supported by the simulator, see [Tizen API Coverage](#api).
 - Includes configuration panels for sending in events and messages to debug features, such as Geolocation, Accelerometer, and Messaging.
-- Runs on the Google Chrome™ browser.
+- Runs on the Google Chrome&trade; browser.
 - Provides [preferences](#pref) to allow you to customize how it works.
 
 The Tizen Web Simulator is based on the [Ripple-UI Framework](https://github.com/blackberry-webworks/Ripple-UI) and is licensed under Apache Software License v.2.0.
@@ -91,10 +91,16 @@ You can modify the following configuration settings in the Web Simulator configu
 
   You can modify the following system configuration settings on the **SYSTEM SETTINGS** tab:
 
-  - **CONFIG** Manage the device vibration and screen lock status.
-  - **CPU** Manually set the CPU load. If the value is set to 0, the CPU is idle. If the value is set to 1, the CPU usage is 100%.
-  - **BUILD**, **LOCALE**, **DEVICE ORIENTATION**, **STORAGE**, and **DISPLAY**Display the build type, language, country, display orientation, dots per inch (DPI), and device width and height. You can also set the display brightness and storage attributes.
-  - **PERIPHERAL** Display and set the video output.
+  - **CONFIG**  
+    Manage the device vibration and screen lock status.
+
+  - **CPU**  
+    Manually set the CPU load. If the value is set to 0, the CPU is idle. If the value is set to 1, the CPU usage is 100%.
+
+  - **BUILD**, **LOCALE**, **DEVICE ORIENTATION**, **STORAGE**, and **DISPLAY**  
+    Display the build type, language, country, display orientation, dots per inch (DPI), and device width and height. You can also set the display brightness and storage attributes.
+  - **PERIPHERAL**  
+     Display and set the video output.
 
 - Network settings
 
@@ -106,18 +112,18 @@ You can modify the following configuration settings in the Web Simulator configu
 To view the Tizen Web Simulator preferences, select **Window > Preferences > Tizen Studio > Web > Simulator** in the Tizen Studio.
 
 <a name="google"></a>
-### Google Chrome™ Browser Settings
+### Google Chrome&trade; Browser Settings
 
-In this section, you can modify Google Chrome™ browser-related preferences.
+In this section, you can modify Google Chrome&trade; browser-related preferences.
 
 <a name="chrome"></a>
-#### Google Chrome™ Browser Location
+#### Google Chrome&trade; Browser Location
 
-Enter the full path to the Google Chrome™ browser program. When first started, the Tizen Studio attempts to discover the location. However, it can be necessary to enter or modify this value manually.
+Enter the full path to the Google Chrome&trade; browser program. When first started, the Tizen Studio attempts to discover the location. However, it can be necessary to enter or modify this value manually.
 
 - For Linux: `/opt/google/chrome/google-chrome`.
-- For Windows® 64-bit: ` C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`
-- For Windows® 32-bit: ` C:\Program Files\Google\Chrome\Application\chrome.exe`
+- For Windows&reg; 64-bit: ` C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`
+- For Windows&reg; 32-bit: ` C:\Program Files\Google\Chrome\Application\chrome.exe`
 
 <a name="extra"></a>
 #### Extra Parameters
@@ -139,7 +145,7 @@ To add more start-up parameters, enter them in this field.
 Enter the full directory path for the simulator to store user preferences and Web application data.
 
 > **Note**  
-> Linux users must manually define this parameter instead of using the default value, since the total length of the directory path in Linux is very limited for this parameter. Using the default value can prevent you from launching more than 1 application concurrently. There is no such restriction in the Windows® version.
+> Linux users must manually define this parameter instead of using the default value, since the total length of the directory path in Linux is very limited for this parameter. Using the default value can prevent you from launching more than 1 application concurrently. There is no such restriction in the Windows&reg; version.
 
 <a name="simulator"></a>
 ### Simulator Settings
@@ -155,7 +161,7 @@ In this section, you can modify simulator-related preferences:
 <a name="api"></a>
 ## Tizen API Coverage
 
-Below is a summary of the Tizen APIs supported in this release. Some APIs are supported with a JavaScript backend and others are provided by the Google Chrome™ browser. Tizen also supports [W3C/HTML5 Specifications](#spec).
+Below is a summary of the Tizen APIs supported in this release. Some APIs are supported with a JavaScript backend and others are provided by the Google Chrome&trade; browser. Tizen also supports [W3C/HTML5 Specifications](#spec).
 
 <a name="support"></a>
 ### Supported Tizen Web Device API

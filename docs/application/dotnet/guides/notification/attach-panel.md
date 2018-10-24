@@ -68,6 +68,8 @@ To enable your application to use the attach panel functionality:
        <privilege>http://tizen.org/privilege/mediastorage</privilege>
        <!--To add the camera UI gadget in the attach panel-->
        <privilege>http://tizen.org/privilege/camera</privilege>
+       <!--To launch the camera, verify that the video call status is not active-->
+       <privilege>http://tizen.org/privilege/telephony</privilege>
        <!--To add the voice recorder UI gadget in the attach panel-->
        <privilege>http://tizen.org/privilege/recorder</privilege>
        <!--To launch apps from the More tab-->
@@ -152,6 +154,9 @@ To create an attach panel:
 
     attachPanel.Show();
     ```
+    > **Note**
+    >
+    > To use the camera content category `attachPanel.AddCategory(ContentCategory.Camera, null)`, you must verify the video call status. To launch the camera, the video call status must not be active. To verify the status of video call, Telephony API `telephony_call_get_type()`  is called, ensure that the telephony privilege is added to the tizen-manifest.xml file.
 
 3.  Register the needed event handlers:
 

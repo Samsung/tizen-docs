@@ -22,17 +22,19 @@ Cordova defines a common interface for success and error callbacks:
   - `name`: Short text representing the type of the error
   - `message`: Text containing information about the error
 
-> **Note**
+> **Note**  
 > To perform any Cordova-related operations, you must wait until Cordova is fully set up (the `deviceready` event occurs):
+> ```
+> document.addEventListener('deviceready', onDeviceReady, false);
+>
+> function onDeviceReady() {
+>    console.log('Cordova features now available');
+>    console.log('Connection type: ' + navigator.connection.type);
+> }
+> ```
 
-```
-document.addEventListener('deviceready', onDeviceReady, false);
 
-function onDeviceReady() {
-    console.log('Cordova features now available');
-    console.log('Connection type: ' + navigator.connection.type);
-}
-```
+
 ## Related Information
 * Dependencies
   - Tizen 3.0 and Higher for Mobile

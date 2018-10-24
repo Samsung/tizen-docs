@@ -1,0 +1,1083 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>FMRadio API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::FMRadio">
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="title"><h1>FMRadio API</h1></div>
+<div class="brief">
+ The FMRadio API provides interfaces and methods for accessing FM Radio.
+        </div>
+<div class="description">
+        <p>
+The following functionality is provided:
+        </p>
+        <ul>
+          <li>
+ Start and stop radio          </li>
+          <li>
+ Seek radio frequency          </li>
+        </ul>
+        <p>
+FM Radio works according to the following state table:
+        </p>
+        <p>
+<img src="fmradio-state.png">        </p>
+        <p>
+<em>tizen.fmradio.seekUp()</em> and <em>tizen.fmradio.seekDown()</em> work when the radio is in playing state. <em>InvalidStateError</em> is thrown when they are called in other states. <br>        </p>
+        <p>
+For more information about how to use FMRadio API, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/radio">Radio Guide</a>.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#RadioState">RadioState</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#FMRadioObject">FMRadioObject</a>
+</li>
+<li>2.2. <a href="#FMRadioManager">FMRadioManager</a>
+</li>
+<li>2.3. <a href="#FMRadioScanCallback">FMRadioScanCallback</a>
+</li>
+<li>2.4. <a href="#FMRadioInterruptCallback">FMRadioInterruptCallback</a>
+</li>
+<li>2.5. <a href="#AntennaChangeCallback">AntennaChangeCallback</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#FMRadioObject">FMRadioObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#FMRadioManager">FMRadioManager</a></td>
+<td>void <a href="#FMRadioManager::start">start</a> (optional double? frequency)<br>
+    void <a href="#FMRadioManager::stop">stop</a> ()<br>
+    void <a href="#FMRadioManager::seekUp">seekUp</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#FMRadioManager::seekDown">seekDown</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#FMRadioManager::scanStart">scanStart</a> (<a href="#FMRadioScanCallback">FMRadioScanCallback</a> radioScanCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#FMRadioManager::scanStop">scanStop</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#FMRadioManager::setFMRadioInterruptedListener">setFMRadioInterruptedListener</a> (<a href="#FMRadioInterruptCallback">FMRadioInterruptCallback</a> interruptCallback)<br>
+    void <a href="#FMRadioManager::unsetFMRadioInterruptedListener">unsetFMRadioInterruptedListener</a> ()<br>
+    void <a href="#FMRadioManager::setAntennaChangeListener">setAntennaChangeListener</a> (<a href="#AntennaChangeCallback">AntennaChangeCallback</a> changeCallback)<br>
+    void <a href="#FMRadioManager::unsetAntennaChangeListener">unsetAntennaChangeListener</a> ()</td>
+</tr>
+<tr>
+<td><a href="#FMRadioScanCallback">FMRadioScanCallback</a></td>
+<td>void <a href="#FMRadioScanCallback::onfrequencyfound">onfrequencyfound</a> (double frequency)<br>
+    void <a href="#FMRadioScanCallback::onfinished">onfinished</a> (double[] frequencies)</td>
+</tr>
+<tr>
+<td><a href="#FMRadioInterruptCallback">FMRadioInterruptCallback</a></td>
+<td>void <a href="#FMRadioInterruptCallback::oninterrupted">oninterrupted</a> (DOMString reason)<br>
+    void <a href="#FMRadioInterruptCallback::oninterruptfinished">oninterruptfinished</a> ()</td>
+</tr>
+<tr>
+<td><a href="#AntennaChangeCallback">AntennaChangeCallback</a></td>
+<td>void <a href="#AntennaChangeCallback::onchanged">onchanged</a> (boolean isAntennaConnected)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="RadioState">
+<a class="backward-compatibility-anchor" name="::FMRadio::RadioState"></a><h3>1.1. RadioState</h3>
+<div class="brief">
+ Specifies the state of the radio.
+          </div>
+<pre class="webidl prettyprint">    enum RadioState { "PLAYING", "SCANNING", "READY"};</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The states defined by this enumerator are:
+          </p>
+          <ul>
+            <li>
+READY - Indicates that the radio is ready to play or scan            </li>
+            <li>
+PLAYING - Indicates that the radio is playing            </li>
+            <li>
+SCANNING - Indicates that the radio is scanning radio channels in the range from <em>tizen.fmradio.frequencyLowerBound</em> to <em>tizen.fmradio.frequencyUpperBound</em>            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="FMRadioObject">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioObject"></a><h3>2.1. FMRadioObject</h3>
+<div class="brief">
+ The FMRadioObject interface defines what is instantiated in the Tizen object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface FMRadioObject {
+       readonly attribute <a href="#FMRadioManager">FMRadioManager</a> fmradio;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FMRadioObject">FMRadioObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="description">
+          <p>
+The tizen.fmradio object provides access to the functionality of the FM Radio API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="FMRadioManager">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager"></a><h3>2.2. FMRadioManager</h3>
+<div class="brief">
+ The FMRadioManager interface is the top-level interface for the FM Radio API.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface FMRadioManager {
+        readonly attribute double frequency;
+
+        readonly attribute double frequencyUpperBound;
+
+        readonly attribute double frequencyLowerBound;
+
+        readonly attribute long signalStrength;
+
+        readonly attribute <a href="#RadioState">RadioState</a> state;
+
+        readonly attribute boolean isAntennaConnected;
+
+        attribute boolean mute;
+
+        void start(optional double? frequency) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void seekUp(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void seekDown(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void scanStart(<a href="#FMRadioScanCallback">FMRadioScanCallback</a> radioScanCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void scanStop(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setFMRadioInterruptedListener (<a href="#FMRadioInterruptCallback">FMRadioInterruptCallback</a> interruptCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetFMRadioInterruptedListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setAntennaChangeListener(<a href="#AntennaChangeCallback">AntennaChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetAntennaChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="FMRadioManager::frequency">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">frequency</span></span><div class="brief">
+ Current frequency (MHz) of the radio.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="FMRadioManager::frequencyUpperBound">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">frequencyUpperBound</span></span><div class="brief">
+ Maximum frequency (MHz) available on the radio device.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="FMRadioManager::frequencyLowerBound">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">double </span><span class="name">frequencyLowerBound</span></span><div class="brief">
+ Minimum frequency (MHz) available on the radio device.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="FMRadioManager::signalStrength">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">signalStrength</span></span><div class="brief">
+ Strength of the radio signal ranging between <var>-128</var> and <var>127</var> (dBm).
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="FMRadioManager::state">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">RadioState </span><span class="name">state</span></span><div class="brief">
+ State of the radio.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+<li class="attribute" id="FMRadioManager::isAntennaConnected">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isAntennaConnected</span></span><div class="brief">
+ Indicates if the FM Radio antenna is connected.
+            </div>
+<div class="description">
+            <p>
+If the system detects that the radio antenna is disconnected then the <em>isAntennaConnected </em>is <var>false</var>.
+            </p>
+            <p>
+For example, an earphone cable is commonly used as a FM antenna in mobile phones. In that case, the <em>isAntennaConnected </em>attribute can be used to check if the FM antenna is connected or not.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> if (!tizen.fmradio.isAntennaConnected) {
+    console.log("Please plug in the earphones to listen to the radio");
+ }
+ </pre>
+</div>
+</li>
+<li class="attribute" id="FMRadioManager::mute">
+<span class="attrName"><span class="type">boolean </span><span class="name">mute</span></span><div class="brief">
+ Mute state of the radio. If the value is <var>true</var>, there is no sound from the radio (muted). If the values is <var>false</var>, sound is playing. The default value is <var>false</var>.
+            </div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FMRadioManager::start">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::start"></a><code><b><span class="methodName">start</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts playing the radio. This method is available in the <em>READY</em> or <em>PLAYING</em> state. After <em>start()</em>, the radio state is <em>PLAYING</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void start(optional double? frequency);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method allows the user to set the radio frequency between <em>frequencyUpperBound</em> and <em>frequencyLowerBound</em>.
+If the user calls this method without any frequency value, <em>frequencyLowerBound</em> is set.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">frequency</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Frequency(MHz) of FM radio waves to set
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type ServiceNotAvailableError, if the radio hardware is not available because another application is using it.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if the frequency is out of bounds.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidStateError, if the radio state is not <em>READY</em> or <em>PLAYING</em>.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var radioState = tizen.fmradio.state;
+
+ if(radioState == "READY") {
+   tizen.fmradio.start(87.5);
+ }
+ // jump to your favorite radio station (95.9MHz) and start playing
+ //tizen.fmradio.start(95.9);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::stop">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::stop"></a><code><b><span class="methodName">stop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops playing the radio. This method is only available in the <em>PLAYING</em> state. After the radio stops, the state is <em>READY</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the radio state is not <em>PLAYING</em>                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the radio cannot be stopped because of a platform error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var radioState = tizen.fmradio.state;
+
+ if(radioState == "PLAYING") {
+   tizen.fmradio.stop();
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::seekUp">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::seekUp"></a><code><b><span class="methodName">seekUp</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Finds a radio channel at a higher frequency than the current one while the radio is playing, asynchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void seekUp(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method is only available in the <em>PLAYING</em> state. There is no change of <var>state</var>. <br>When the next valid frequency is successfully found, <em>successCallback</em> is invoked.
+After the search, the radio begins playing the new channel automatically. <br>If the highest frequency (<em>frequencyUpperBound</em>) has been reached, it finds the lowest frequency (<em>frequencyLowerBound</em>) channel.
+            </p>
+           </div>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidStateError - This error occurs when the radio state is not <em>PLAYING</em>              </li>
+              <li>
+UnknownError - If any other error occurs              </li>
+            </ul>
+           </div>
+<p><span class="remark"> Remark : </span>
+ It is not allowed to call a seek method in quick succession (e.g. calling <em>seekUp()</em> or <em>seekDown()</em> twice in one second).
+If a user calls <em>seekUp()</em> while the radio is seeking, the errorCallback will be invoked.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when the radio successfully finds a radio channel
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var radioState = tizen.fmradio.state;
+
+ function successCallback() {
+    console.log("The radio found a new frequency successfully");
+ }
+ function errorCallback(err) {
+    console.log("The following error occurred : " + err.name);
+ }
+
+ if(radioState == "PLAYING") {
+   tizen.fmradio.seekUp(successCallback, errorCallback);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::seekDown">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::seekDown"></a><code><b><span class="methodName">seekDown</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Finds a radio channel at a lower frequency than the current one while the radio is playing, asynchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void seekDown(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method is only available in the <em>PLAYING</em> state. There is no change of <var>state</var>. <br>When the next valid frequency is successfully found, <em>successCallback</em> is invoked.
+After the search, the radio begins playing the new channel automatically. <br>If the lowest frequency (<em>frequencyLowerBound</em>) has been reached, it finds the highest frequency (<em>frequencyUpperBound</em>) channel.
+            </p>
+           </div>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidStateError - This error occurs when the radio state is not <em>PLAYING</em>              </li>
+              <li>
+UnknownError - If any other error occurs              </li>
+            </ul>
+           </div>
+<p><span class="remark"> Remark : </span>
+ It is not allowed to call a seek method in quick succession (e.g. calling <em>seekUp()</em> or <em>seekDown()</em> twice in one second).
+If a user call <em>seekDown()</em> while the radio is seeking, the errorCallback will be invoked.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when the radio successfully finds a radio channel
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var radioState = tizen.fmradio.state;
+
+ function successCallback() {
+    console.log("The radio found a new frequency successfully");
+ }
+ function errorCallback(err) {
+    console.log("The following error occurred : " + err.name);
+ }
+
+ if(radioState == "PLAYING") {
+   tizen.fmradio.seekDown(successCallback, errorCallback);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::scanStart">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::scanStart"></a><code><b><span class="methodName">scanStart</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts scanning all radio channels, asynchronously.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void scanStart(<a href="#FMRadioScanCallback">FMRadioScanCallback</a> radioScanCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method is only available in the <em>READY</em> state. While the radio is scanning the channels, the radio state is <em>SCANNING</em>. After the scanning is completed, the radio state is changed to <em>READY</em>.
+            </p>
+            <p>
+It scans all available channels from <em>frequencyLowerBound</em> to <em>frequencyUpperBound</em>.
+Once the scan has started, it is not possible to call <a href="#FMRadioManager::start">start()</a>, <a href="#FMRadioManager::seekUp">seekUp()</a>,
+or <a href="#FMRadioManager::seekDown">seekDown()</a> until the scan completes.<br>The scan can be cancelled any time, by calling <a href="#FMRadioManager::scanStop">scanStop()</a>. The radio frequency will not be changed by the scan.
+            </p>
+            <p>
+The following methods are invoked depending on the progress of this process :
+            </p>
+            <ul>
+              <li>
+<a href="#FMRadioScanCallback::onfrequencyfound">onfrequencyfound()</a> - This method is invoked with the frequency value when a new frequency is found while scanning radio channels              </li>
+              <li>
+<a href="#FMRadioScanCallback::onfinished">onfinished()</a> - This method is invoked with the array of frequencies found when the scan is completed              </li>
+            </ul>
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidStateError - This error occurs when the radio state is not <em>READY</em>              </li>
+              <li>
+UnknownError - If any other error occurs              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">radioScanCallback</span>: 
+ Callback method to be invoked when a radio channel is found
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var radioState = tizen.fmradio.state;
+
+ var radioScanCallback = {
+    onfrequencyfound: function(frequency) {
+       console.log("A new frequency found: " + frequency);
+    },
+    onfinished: function(frequencies) {
+       console.log(frequencies.length + "frequencies found!");
+       for (var i = 0; i &lt; frequencies.length; i++) {
+          console.log(i + ": " + frequencies[i]);
+       }
+    }
+ };
+ function errorCallback(err) {
+    console.log("The following error occurred : " + err.name);
+ }
+
+ if(radioState == "READY") {
+   tizen.fmradio.scanStart(radioScanCallback, errorCallback);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::scanStop">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::scanStop"></a><code><b><span class="methodName">scanStop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops scanning radio channels, asynchronously.
+This method is only available in the <em>SCANNING</em> state. After the scan stops, the radio state is <em>READY</em>.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void scanStop(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method can be used in the middle of scanning. After the scan has stopped, the radio restores the frequency played before the scan.
+            </p>
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+InvalidStateError - This error occurs when the radio state is not <em>SCANNING</em>              </li>
+              <li>
+UnknownError - If any other error occurs              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when scanning radio channels stops successfully
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when an error occurs
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var radioState = tizen.fmradio.state;
+
+ function successCallback() {
+    console.log("The scanning stops");
+ }
+ function errorCallback(err) {
+    console.log("The following error occurred : " + err.name);
+ }
+
+ if (radioState == "SCANNING") {
+   tizen.fmradio.scanStop(successCallback, errorCallback);
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::setFMRadioInterruptedListener">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::setFMRadioInterruptedListener"></a><code><b><span class="methodName">setFMRadioInterruptedListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets a listener to receive a notification when the radio is interrupted.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setFMRadioInterruptedListener(<a href="#FMRadioInterruptCallback">FMRadioInterruptCallback</a> interruptCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+This method sets a <em>FMRadioInterruptCallback</em> type callback that is triggered when the radio is interrupted.
+The callback lasts until the <em>unsetFMRadioInterruptedListener()</em> method is called.
+            </p>
+           </div>
+<p><span class="remark"> Remark : </span>
+ When an audio interrupt occurs, the radio loses an audio focus and stops.
+Interrupts may occur for an incoming call, launching another audio player, or another player which also uses audio.
+To resume playing the radio, user interaction with the device is required. This is to avoid the occurrence of a race condition among applications that try to play without user interaction.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">interruptCallback</span>: 
+ Callback method to be invoked when the radio is interrupted
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var interruptCallback = {
+       oninterrupted: function(reason) {
+           console.log(reason);
+       },
+       oninterruptfinished: function() {
+           console.log("The radio interruption finished.");
+       }
+ };
+ tizen.fmradio.setFMRadioInterruptedListener(interruptCallback);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::unsetFMRadioInterruptedListener">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::unsetFMRadioInterruptedListener"></a><code><b><span class="methodName">unsetFMRadioInterruptedListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets the listener to stop receiving a notification when the radio is interrupted.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetFMRadioInterruptedListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of a platform error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> tizen.fmradio.unsetFMRadioInterruptListener();
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::setAntennaChangeListener">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::setAntennaChangeListener"></a><code><b><span class="methodName">setAntennaChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the listener which is called when the status of antenna has been changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setAntennaChangeListener(<a href="#AntennaChangeCallback">AntennaChangeCallback</a> changeCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param"><span class="name">changeCallback</span></li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not of the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of a platform error.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function antennaCallback(isAntennaConnected) {
+    alert("Antenna status has been changed. It is now " + (isAntennaConnected ? "connected" : "disconnected"));
+ }
+ tizen.fmradio.setAntennaChangeListener(antennaCallback);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="FMRadioManager::unsetAntennaChangeListener">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager::unsetAntennaChangeListener"></a><code><b><span class="methodName">unsetAntennaChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets the listener set with the <a href="#FMRadioManager::setAntennaChangeListener">setAntennaChangeListener()</a> method.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetAntennaChangeListener();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if the method cannot be completed because of a platform error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // When you don't want to detect a change in the antenna status
+ tizen.fmradio.unsetAntennaChangeListener();
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FMRadioScanCallback">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioScanCallback"></a><h3>2.3. FMRadioScanCallback</h3>
+<div class="brief">
+ The FMRadioScanCallback interface defines notification callbacks for scanning radio channels.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface FMRadioScanCallback {
+       void onfrequencyfound(double frequency);
+
+       void onfinished(double[] frequencies);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FMRadioScanCallback::onfrequencyfound">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioScanCallback::onfrequencyfound"></a><code><b><span class="methodName">onfrequencyfound</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a new radio channel is discovered in the process of scanning.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onfrequencyfound(double frequency);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">frequency</span>: 
+ Channel frequency found during the scan
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="FMRadioScanCallback::onfinished">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioScanCallback::onfinished"></a><code><b><span class="methodName">onfinished</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the scan is complete.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onfinished(double[] frequencies);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">frequencies</span>: 
+ Array of channel frequencies found during the scan
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="FMRadioInterruptCallback">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioInterruptCallback"></a><h3>2.4. FMRadioInterruptCallback</h3>
+<div class="brief">
+ The FMRadioInterruptCallback interface defines notification callback when the radio is interrupted.
+          </div>
+<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface FMRadioInterruptCallback {
+       void oninterrupted(DOMString reason);
+
+       void oninterruptfinished();
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="FMRadioInterruptCallback::oninterrupted">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioInterruptCallback::oninterrupted"></a><code><b><span class="methodName">oninterrupted</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the FM radio is interrupted.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void oninterrupted(DOMString reason);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">reason</span>: 
+ Reason why FM radio is interrupted (e.g. interrupted by an incoming call, alarm, notifications)
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="FMRadioInterruptCallback::oninterruptfinished">
+<a class="backward-compatibility-anchor" name="::FMRadio::FMRadioInterruptCallback::oninterruptfinished"></a><code><b><span class="methodName">oninterruptfinished</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the cause of the interrupt ends.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void oninterruptfinished();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="description">
+            <p>
+Note that after it is invoked, you can turn on FM radio by invoking <var>tizen.fmradio.start()</var>.
+            </p>
+           </div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="AntennaChangeCallback">
+<a class="backward-compatibility-anchor" name="::FMRadio::AntennaChangeCallback"></a><h3>2.5. AntennaChangeCallback</h3>
+<div class="brief">
+ The AntennaChangeCallback interface defines notification callback to be called when system detects connecting or disconnecting of FM Radio antenna.
+          </div>
+<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface AntennaChangeCallback {
+       void onchanged(boolean isAntennaConnected);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.3
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="AntennaChangeCallback::onchanged">
+<a class="backward-compatibility-anchor" name="::FMRadio::AntennaChangeCallback::onchanged"></a><code><b><span class="methodName">onchanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the antenna is connected or disconnected which causes value of <a href="#FMRadioManager::isAntennaConnected">isAntennaConnected</a> attribute to change.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(boolean isAntennaConnected);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.3
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">isAntennaConnected</span>: 
+ New value of the <a href="#FMRadioManager::isAntennaConnected">isAntennaConnected</a> attribute
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the FM radio application runs on a device with FM radio, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/fmradio</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
+<pre class="webidl prettyprint">module FMRadio {
+    enum RadioState { "PLAYING", "SCANNING", "READY"};
+
+    [NoInterfaceObject] interface FMRadioObject {
+       readonly attribute <a href="#FMRadioManager">FMRadioManager</a> fmradio;
+    };
+
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FMRadioObject">FMRadioObject</a>;
+
+    [NoInterfaceObject] interface FMRadioManager {
+        readonly attribute double frequency;
+
+        readonly attribute double frequencyUpperBound;
+
+        readonly attribute double frequencyLowerBound;
+
+        readonly attribute long signalStrength;
+
+        readonly attribute <a href="#RadioState">RadioState</a> state;
+
+        readonly attribute boolean isAntennaConnected;
+
+        attribute boolean mute;
+
+        void start(optional double? frequency) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void seekUp(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void seekDown(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void scanStart(<a href="#FMRadioScanCallback">FMRadioScanCallback</a> radioScanCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void scanStop(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setFMRadioInterruptedListener (<a href="#FMRadioInterruptCallback">FMRadioInterruptCallback</a> interruptCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetFMRadioInterruptedListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void setAntennaChangeListener(<a href="#AntennaChangeCallback">AntennaChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unsetAntennaChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface FMRadioScanCallback {
+       void onfrequencyfound(double frequency);
+
+       void onfinished(double[] frequencies);
+    };
+
+    [Callback, NoInterfaceObject] interface FMRadioInterruptCallback {
+       void oninterrupted(DOMString reason);
+
+       void oninterruptfinished();
+    };
+
+    [Callback=FunctionOnly, NoInterfaceObject] interface AntennaChangeCallback {
+       void onchanged(boolean isAntennaConnected);
+    };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

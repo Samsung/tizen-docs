@@ -11,20 +11,43 @@ The certificate profile consists of an author certificate and 1 or 2 distributor
 
 ## Creating a Certificate Profile
 
+>**Note**
+>
+>It is recommended to keep your certificates and password safe in the local repo to prevent it from being compromised.
+
+
 You can create a new certificate profile with the Certificate Manager:
 
-1. In the Tizen Studio menu, select **Tools > Certificate Manager**.![Certificate Manager](./media/cert_reg_cert_manager.png)
+1. In the Tizen Studio menu, select **Tools > Certificate Manager**.
 
-2. In the Certificate Manager window, click **+** to create a new profile.![Creating a new certificate profile](./media/cert_reg_create_new.png)  
-The certificate profile creation wizard opens.
+   ![Certificate Manager](./media/cert_reg_cert_manager.png)
 
-3. Enter a name for the profile and click **Next**.![Certificate profile creation wizard](./media/cert_reg_creation_wizard.png)
+2. In the Certificate Manager window, click **+** to create a new profile.
+
+   ![Creating a new certificate profile](./media/cert_reg_create_new.png)
+
+   The certificate profile creation wizard opens.
+
+3. Enter a name for the profile and click **Next**.
+
+   ![Certificate profile creation wizard](./media/cert_reg_creation_wizard.png)
 
 4. Add the author and distributor certificates:
-   1. Select whether to create a new author certificate or use a previously created author certificate, and click **Next**.![Author certificate](./media/cert_reg_author_cert.png)  
-   Define the existing author certificate or enter the required information for a new certificate, and click **Next**.![Author information](./media/cert_reg_author_info.png)
-   2. You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level of the distributor certificate (in [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/details/sec-privileges.md) applications).![Distributor certificate](./media/cert_reg_dist_cert.png)
+
+   1. Select whether to create a new author certificate or use a previously created author certificate, and click **Next**.
+
+      ![Author certificate](./media/cert_reg_author_cert.png)
+
+      Define the existing author certificate or enter the required information for a new certificate, and click **Next**.
+
+      ![Author information](./media/cert_reg_author_info.png)
+
+   2. You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level of the distributor certificate (in [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/sec-privileges.md) applications).
+
+      ![Distributor certificate](./media/cert_reg_dist_cert.png)
+
    3. Click **Finish**.
+
 
 ## Managing Certificate Profiles
 
@@ -58,6 +81,24 @@ To manage a certificate profile:
 
   ![Removing the certificate profile](./media/cert_reg_remove_cert.png)
 
+
+## Migrating Certificate Profiles
+
+You can migrate existing certificate profiles by importing a `profiles.xml` file.
+
+To migrate a certificate profile:
+
+1. Click the migrate button (![Migrate](media/cert_reg_migrate.png)) in the Certificate Manager.
+
+2. Select the profile file you want to import and click **OK**.
+
+   ![Migrating certificate profiles](media/cert_reg_migrate_cert.png)
+
+3. If the certificate profile being imported has the same name as one already in use, you can select 1 of 3 ways of resolving the situation: overwrite the existing profile with the imported one, preserve the existing profile, or keep both profiles. Select the option you want and click **OK**.
+
+   ![Migrating certificate profiles](media/cert_reg_migrate_duplicate.png)
+
+
 ## Related Informatioin
-* Dependencies  
+- Dependencies  
   - Tizen Studio 1.0 and Higher

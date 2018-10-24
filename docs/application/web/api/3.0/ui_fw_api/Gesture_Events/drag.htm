@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head> 
+  <script type="text/javascript" src="../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="../styles.css" rel="StyleSheet" type="text/css" />
+  <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+  <title>Drag Event</title> 
+ </head> 
+ <body onload="prettyPrint()" id="content"> 
+
+<h1>Drag Event</h1>
+<p>Drag event is a set of events that are triggered when the user drags on a gesture-enabled element. The following table defines the triggered events.
+</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+		<li><a href="#dragevent">Drag Events</a></li>
+
+		<li><a href="#dragevent-option">Options</a></li>
+
+		<li><a href="#example">Example</a></li>
+</ol>
+
+
+<h2><a id='dragevent'></a>Drag Events</h2><p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Event</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">dragstart</span></td>
+		<td>Triggered when a touch point is placed on the touch surface.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">drag</span></td>
+		<td>Triggered when a touch point is moved along the touch surface.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">dragend</span></td>
+		<td>Triggered when a touch point is removed from the touch surface.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">dragcancel</span></td>
+		<td>Triggered when the touch is cancelled or another gesture is triggered.</td>
+	</tr>
+</tbody>
+</table>
+
+<h2><a id='dragevent-option'></a>Options</h2><p>
+<table>
+<tbody>
+	<tr>
+		<th>Option</th>
+		<th>Type</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">blockHorizontal</span></td>
+		<td>Boolean</td>
+		<td>Prevents the default browser behavior when horizontal dragging movement occurs with care. This makes the element a blocking element.
+		<p>When using the drag gesture, set this to <span style="font-family: Courier New,Courier,monospace">true</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">blockVertical</span></td>
+		<td>Boolean</td>
+		<td>Prevents the default browser behavior when vertical dragging movement occurs with care. This makes the element a blocking element.
+		<p>When using the drag gesture, set this to <span style="font-family: Courier New,Courier,monospace">true</span>.</p></td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">threshold</span></td>
+		<td>Integer</td>
+		<td>Minimum required movement before the drag event is triggered.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">delay</span></td>
+		<td>Integer</td>
+		<td>Delay used for the drag lock.
+<p>The drag lock kicks in when the delta timestamp is bigger than the delay. This ensures that locking occurs only when the direction can be reliably determined.</p></td>
+	</tr>
+</tbody>
+</table>
+
+
+<h2><a id='example'></a>Example</h2><p>
+<p>The following shows how to use drag events.</p>
+
+<h3>HTML</h3>
+
+<pre class="prettyprint">
+&lt;div class="ui-page ui-page-active" id="pageDrag"&gt;
+   &lt;header class="ui-header"&gt;
+      &lt;h2 class="ui-title"&gt;Drag Event&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div id="content" class="ui-content content-padding"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>Javascript</h3>
+
+<pre class="prettyprint">
+(function()
+{
+   var page = document.getElementById("pageDrag");
+   page.addEventListener("pagebeforeshow", function()
+   {
+      var content = document.getElementById("content");
+      tau.event.enableGesture(content, new tau.event.gesture.Drag(
+      {
+         blockVertical: true
+      }));
+
+      content.addEventListener("dragstart", function(e)
+      {
+         console.log("drag start");
+      });
+
+      content.addEventListener("drag", function(e)
+      {
+         console.log("direction = " + e.detail.direction);
+      });
+
+      content.addEventListener("dragend", function(e)
+      {
+         console.log("drag end");
+      });
+   });
+}());
+</pre>
+
+ <div id="footer"> 
+   <hr size="1" /> 
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font> 
+  </div> 
+   
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script> 
+    
+ </body>
+</html>

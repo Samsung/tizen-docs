@@ -56,7 +56,8 @@ To get information about a network connection, use the [Tizen.Network.Connection
 <a name="events"></a>
 ## Monitoring Connection Changes
 
-You can monitor changes in the IP address, proxy address, Ethernet cable state, and connection type.
+You can monitor changes in the IP address, proxy address, Ethernet cable state, and connection type.  
+
 To monitor for changes in connection information, such as IP address and connection type:
 
 1.  To receive notifications on specific connection changes, register event handlers using the related `XXXChanged` events of the [Tizen.Network.Connection.ConnectionManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Connection.ConnectionManager.html) class:

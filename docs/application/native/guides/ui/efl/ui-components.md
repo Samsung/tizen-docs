@@ -1,13 +1,8 @@
 # UI Components
 
-## Dependencies
+Elementary library provides a set of pre-built UI components that allow you to build a rich graphical user interface for your applications. Each profile provides a different set of UI components, as you can see in [Mobile UI Components](mobile/ui-components.md) and [Wearable UI Components](wearable/ui-components.md).
 
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-Elementary library provides a set of pre-built UI components that allow you to build a rich graphical user interface for your applications. Each profile provides a different set of UI components, as you can see in [Mobile UI Components](./ui-components-mn.md) and [Wearable UI Components](./ui-components-wn.md).
-
-The preconditions of using Elementary UI components are covered in [Getting Started with EFL UI Programming](./getting-started-n.md). Elementary UI components share the same APIs for general features. For more information, see the General API (in [mobile](http://org.tizen.native.mobile.apireference/group__Elm__General.html) and [wearable](http://org.tizen.native.wearable.apireference/group__Elm__General.html) applications).
+The preconditions of using Elementary UI components are covered in [Getting Started with EFL UI Programming](./getting-started.md). Elementary UI components share the same APIs for general features. For more information, see the General API (in [mobile](../../../api/mobile/latest/group__Elm__General.html) and [wearable](../../../api/wearable/latest/group__Elm__General.html) applications).
 
 **Figure: Mobile UI components**
 
@@ -18,15 +13,20 @@ The preconditions of using Elementary UI components are covered in [Getting Star
 You can use all UI components as follows:
 
 1. Add an object with the `elm_<UI_component>_add()` function.
-2. Set a style to the object with the `elm_object_style_set()` function and fill the layout of the style with a text or an image, if necessary.    You can skip this step and use the default style.   
-3. Arrange the object in the [UI layout](./ui-layouts-n.md) you have built.
+
+2. Set a style to the object with the `elm_object_style_set()` function and fill the layout of the style with a text or an image, if necessary.
+
+   You can skip this step and use the default style.
+
+3. Arrange the object in the [UI layout](./ui-layouts.md) you have built.
+
 4. Register callback functions with the `evas_object_smart_callback_call()` function.
 
 ## Styles
 
 The style of a UI component refers to its graphical appearance determined by the layout, shapes, fonts, and colors. Every UI component has a distinguished layout according to its function and feature, and the layout of a UI component varies somewhat according to the styles.
 
-In the layout, there are spaces for texts or images which sometimes remain empty for you to fill. In EFL, that space is a "part" (the term comes from [part](./learn-edc-part-n.md) in [EDC](./learn-edc-intro-n.md)). A layout of a UI component has 2 types of parts: a text part and a swallow part. A swallow part is a blank you can fill with any kind of object.
+In the layout, there are spaces for texts or images which sometimes remain empty for you to fill. In EFL, that space is a "part" (the term comes from [part](./learn-edc-part.md) in [EDC](./learn-edc-intro.md)). A layout of a UI component has 2 types of parts: a text part and a swallow part. A swallow part is a blank you can fill with any kind of object.
 
 The following figure shows a default style button. The default style of a button has 1 swallow part and 1 text part. If you create a button and do not set a text or an image, the button looks like the left side. If you set a text and an image to the button, it looks like the right side.
 
@@ -95,16 +95,33 @@ _down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 }
 ```
 
-For more information on event handling, see [Event Handling](./event-handling-n.md).
+For more information on event handling, see [Event Handling](./event-handling.md).
 
 ## Topics on UI Components
 
 For more information on UI components in general, see the following topics:
 
-- [Configuring UI Components](./configuring-n.md)   UI components are under the influence of the Elementary configuration. The Elementary configuration consists of a set of preconfigured options, which are linked to form an Elementary profile. The configuration affects the entire look and feel of an application.   
-- [Customizing UI Components](./component-custom-n.md)   Besides the predefined styles of each UI component, EFL provides a way to customize the graphical user interface with the Edje library.   
-- [Managing UI Component Focus](./component-focus-n.md)   The Elementary user interface has the concept of "focus". A UI component receives input from the user when it is focused.   
-- [Scaling](./ui-scalability-n.md)   To ensure that your application works well on diverse devices, you must consider scalability when designing the application layout.   
+- [Configuring UI Components](./configuring.md)
+
+  UI components are under the influence of the Elementary configuration. The Elementary configuration consists of a set of preconfigured options, which are linked to form an Elementary profile. The configuration affects the entire look and feel of an application.
+
+- [Customizing UI Components](./component-custom.md)
+
+  Besides the predefined styles of each UI component, EFL provides a way to customize the graphical user interface with the Edje library.
+
+- [Managing UI Component Focus](./component-focus.md)
+
+  The Elementary user interface has the concept of "focus". A UI component receives input from the user when it is focused.
+
+- [Scaling](./ui-scalability.md)
+
+  To ensure that your application works well on diverse devices, you must consider scalability when designing the application layout.
 
 > **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable

@@ -6,7 +6,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Connection Explorer shortcuts**
 
-| Command  | Ubuntu          | Windows®        | macOS           |
+| Command  | Ubuntu          | Windows&reg;        | macOS           |
 |--------|---------------|---------------|---------------|
 | Delete   | **Delete**      | **Delete**      | **Delete**      |
 | Rename   | **F2**          | **F2**          | **F2**          |
@@ -17,7 +17,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Build and run shortcuts**
 
-| Command             | Ubuntu         | Windows®       | macOS             |
+| Command             | Ubuntu         | Windows&reg;       | macOS             |
 |-------------------|--------------|--------------|-----------------|
 | Build all           | **Ctrl + B**   | **Ctrl + B**   | **Command + B**   |
 | Make target build   | **Shift + F9** | **Shift + F9** | **Shift + F9**    |
@@ -29,7 +29,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Debug shortcuts**
 
-| Command           | Ubuntu               | Windows®             | macOS                   |
+| Command           | Ubuntu               | Windows&reg;             | macOS                   |
 |-----------------|--------------------|--------------------|-----------------------|
 | Step into         | **F5**               | **F5**               | **F5**                  |
 | Step over         | **F6**               | **F6**               | **F6**                  |
@@ -42,7 +42,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Content assist shortcuts**
 
-| Command        | Ubuntu           | Windows®         | macOS               |
+| Command        | Ubuntu           | Windows&reg;         | macOS               |
 |--------------|----------------|----------------|-------------------|
 | Content assist | **Ctrl + Space** | **Ctrl + Space** | **Command + Space** |
 
@@ -50,7 +50,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Project management shortcuts**
 
-| Command                               | Ubuntu               | Windows®             | macOS                    |
+| Command                               | Ubuntu               | Windows&reg;             | macOS                    |
 |-------------------------------------|--------------------|--------------------|------------------------|
 | New project and file using the Wizard | **Ctrl + N**         | **Ctrl + N**         | **Command + N**          |
 | New project and file                  | **Ctrl + Alt + N**   | **Ctrl + Alt + N**   | **Command + Option + N** |
@@ -67,7 +67,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Editor shortcuts**
 
-| Command                  | Ubuntu               | Windows®             | macOS                   |
+| Command                  | Ubuntu               | Windows&reg;             | macOS                   |
 |------------------------|--------------------|--------------------|-----------------------|
 | Find and replace         | **Ctrl + F**         | **Ctrl + F**         | **Command + F**         |
 | Quick fix                | **Ctrl + 1**         | **Ctrl + 1**         | **Command + 1**         |
@@ -93,7 +93,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Refactor shortcuts**
 
-| Command                 | Ubuntu              | Windows®            | macOS                    |
+| Command                 | Ubuntu              | Windows&reg;            | macOS                    |
 |-----------------------|-------------------|-------------------|------------------------|
 | Rename-refactoring      | **Alt + Shift + R** | **Alt + Shift + R** | **Command + Option + R** |
 | Move-refactoring        | **Alt + Shift + V** | **Alt + Shift + V** | **Command + Option + V** |
@@ -105,7 +105,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Native IDE shortcuts**
 
-| Command                  | Ubuntu                | Windows®              | macOS                      |
+| Command                  | Ubuntu                | Windows&reg;              | macOS                      |
 |------------------------|---------------------|---------------------|--------------------------|
 | Insert snippet           | **Ctrl + Shift + I**  | **Ctrl + Shift + I**  | **Command + Shift + I**    |
 | New launch configuration | **Alt + Shift + F12** | **Alt + Shift + F12** | **Command + Option + F12** |
@@ -115,24 +115,79 @@ The following tables introduce the keyboard shortcuts available for the various 
 ## Web IDE
 
 **Table: Web IDE shortcuts**
-
-| Command                       |                    | Ubuntu                 | Windows®               | macOS                     |
-|-----------------------------|------------------|----------------------|----------------------|-------------------------|
-| HTML editor                   | Vertical layout    | **Ctrl + Shift + F9**  | **Ctrl + Shift + F9**  | **Command + Shift + F9**  |
-|                               | Graphical designer | **Ctrl + Shift + F10** | **Ctrl + Shift + F10** | **Command + Shift + F10** |
-|                               | Horizontal layout  | **Ctrl + Shift + F11** | **Ctrl + Shift + F11** | **Command + Shift + F11** |
-|                               | Source code        | **Ctrl + Shift + F12** | **Ctrl + Shift + F12** | **Command + Shift + F12** |
-| Preview                       |                    | **Ctrl + 4**           | **Ctrl + 4**           | **Command + 4**           |
-| Code minifier                 |                    | **Ctrl + 5**           | **Ctrl + 5**           | **Command + 5**           |
-| Code beautifier               |                    | **Ctrl + 6**           | **Ctrl + 6**           | **Command + 6**           |
-| Assignment tracing - next     |                    | **Ctrl + ]**           | **Ctrl + ]**           | **Command + ]**           |
-| Assignment tracing - previous |                    | **Ctrl + [**           | **Ctrl + [**           | **Command + [**           |
+<table>
+	<thead>
+		<tr>
+			<th colspan="2">Command</th>
+			<th>Ubuntu</th>
+			<th>Windows&reg;</th>
+			<th>macOS</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="4">HTML editor</td>
+			<td>Vertical layout</td>
+			<td><strong>Ctrl + Shift + F9</strong></td>
+			<td><strong>Ctrl + Shift + F9</strong></td>
+			<td><strong>Command + Shift + F9</strong></td>
+		</tr>
+		<tr>
+			<td>Graphical designer</td>
+			<td><strong>Ctrl + Shift + F10</strong></td>
+			<td><strong>Ctrl + Shift + F10</strong></td>
+			<td><strong>Command + Shift + F10</strong></td>
+		</tr>
+		<tr>
+			<td>Horizontal layout</td>
+			<td><strong>Ctrl + Shift + F11</strong></td>
+			<td><strong>Ctrl + Shift + F11</strong></td>
+			<td><strong>Command + Shift + F11</strong></td>
+		</tr>
+		<tr>
+			<td>Source code</td>
+			<td><strong>Ctrl + Shift + F12</strong></td>
+			<td><strong>Ctrl + Shift + F12</strong></td>
+			<td><strong>Command + Shift + F12</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Preview</td>
+			<td><strong>Ctrl + 4</strong></td>
+			<td><strong>Ctrl + 4</strong></td>
+			<td><strong>Command + 4</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Code minifier</td>
+			<td><strong>Ctrl + 5</strong></td>
+			<td><strong>Ctrl + 5</strong></td>
+			<td><strong>Command + 5</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Code beautifier</td>
+			<td><strong>Ctrl + 6</strong></td>
+			<td><strong>Ctrl + 6</strong></td>
+			<td><strong>Command + 6</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Assignment tracing - next</td>
+			<td><strong>Ctrl + ]</strong></td>
+			<td><strong>Ctrl + ]</strong></td>
+			<td><strong>Command + ]</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Assignment tracing - previous</td>
+			<td><strong>Ctrl + [</strong></td>
+			<td><strong>Ctrl + [</strong></td>
+			<td><strong>Command + [</strong></td>
+		</tr>
+	</tbody>
+</table>
 
 ## Dynamic Analyzer
 
 **Table: Dynamic analyzer shortcuts**
 
-| Command                                  | Ubuntu       | Windows®     | macOS           |
+| Command                                  | Ubuntu       | Windows&reg;     | macOS           |
 |----------------------------------------|------------|------------|---------------|
 | About the analyzer                       | **F1**       | **F1**       | **F1**          |
 | Configuration                            | **F2**       | **F2**       | **F2**          |
@@ -155,7 +210,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Emulator Manager shortcuts**
 
-| Command                | Ubuntu        | Windows®      | macOS           |
+| Command                | Ubuntu        | Windows&reg;      | macOS           |
 |----------------------|-------------|-------------|---------------|
 | Delete virtual machine | **Delete**    | **Delete**    | **Fn + Delete** |
 | Launch virtual machine | **Enter**     | **Enter**     | **Enter**       |
@@ -166,7 +221,7 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: Emulator shortcuts**
 
-| Command       | Ubuntu                   | Windows®                 | macOS                       |
+| Command       | Ubuntu                   | Windows&reg;                 | macOS                       |
 |-------------|------------------------|------------------------|---------------------------|
 | Detailed info | **Ctrl + Shift + F1**    | **Ctrl + Shift + F1**    | **Command + Shift + F1**    |
 | Always on top | **Ctrl + Shift + T**     | **Ctrl + Shift + T**     | **Command + Shift + T**     |
@@ -191,56 +246,279 @@ The following tables introduce the keyboard shortcuts available for the various 
 
 **Table: ECP shortcuts**
 
-| Command  | Ubuntu                                   | Windows®        | macOS           |                 |
-|--------|----------------------------------------|---------------|---------------|---------------|
-| Common   | Move focus to upper card                 | **Up**          | **Up**          | **Up**          |
-|          | Move focus to card underneath            | **Down**        | **Down**        | **Down**        |
-|          | Move focus to left card (including page movement) | **Left**        | **Left**        | **Left**        |
-|          | Move focus to right card (including page movement) | **Right**       | **Right**       | **Right**       |
-|          | Move focus to next control               | **Tab**         | **Tab**         | **Tab**         |
-|          | Move focus to previous control           | **Shift + Tab** | **Shift + Tab** | **Shift + Tab** |
-|          | Menu selection                           | **Enter**       | **Enter**       | **Enter**       |
-|          | Close pop-up dialog                      | **ESC**         | **ESC**         | **ESC**         |
-|          | Move to previous page                    | **Page Up**     | **Page Up**     | **Page Up**     |
-|          | Move to next page                        | **Page Down**   | **Page Down**   | **Page Down**   |
-| Mobile   | Battery                                  | **Alt + B**     | **Alt + B**     | **Option + B**  |
-|          | RSSI                                     | **Alt + R**     | **Alt + R**     | **Option + R**  |
-|          | 3-axis sensor                            | **Alt + A**     | **Alt + A**     | **Option + A**  |
-|          | Light                                    | **Alt + I**     | **Alt + I**     | **Option + I**  |
-|          | Proximity                                | **Alt + X**     | **Alt + X**     | **Option + X**  |
-|          | Pressure                                 | **Alt + E**     | **Alt + E**     | **Option + E**  |
-|          | Ultraviolet                              | **Alt + V**     | **Alt + V**     | **Option + V**  |
-|          | Heart rate monitor                       | **Alt + M**     | **Alt + M**     | **Option + M**  |
-|          | Earjack                                  | **Alt + K**     | **Alt + K**     | **Option + K**  |
-|          | USB                                      | **Alt + S**     | **Alt + S**     | **Option + S**  |
-|          | SD card                                  | **Alt + D**     | **Alt + D**     | **Option + D**  |
-|          | Location                                 | **Alt + L**     | **Alt + L**     | **Option + L**  |
-|          | Telephony                                | **Alt + T**     | **Alt + T**     | **Option + T**  |
-|          | NFC                                      | **Alt + F**     | **Alt + F**     | **Option + F**  |
-|          | Network                                  | **Alt + N**     | **Alt + N**     | **Option + N**  |
-|          | HDS                                      | **Alt + H**     | **Alt + H**     | **Option + H**  |
-|          | Memory                                   | **Alt + O**     | **Alt + O**     | **Option + O**  |
-| Wearable | Battery                                  | **Alt + B**     | **Alt + B**     | **Option + B**  |
-|          | 3-axis sensor                            | **Alt + A**     | **Alt + A**     | **Option + A**  |
-|          | Light                                    | **Alt + I**     | **Alt + I**     | **Option + I**  |
-|          | Proximity                                | **Alt + X**     | **Alt + X**     | **Option + X**  |
-|          | Pressure                                 | **Alt + E**     | **Alt + E**     | **Option + E**  |
-|          | Ultraviolet                              | **Alt + V**     | **Alt + V**     | **Option + V**  |
-|          | Heart rate monitor                       | **Alt + M**     | **Alt + M**     | **Option + M**  |
-|          | Touch gesture                            | **Alt + G**     | **Alt + G**     | **Option + G**  |
-|          | USB                                      | **Alt + S**     | **Alt + S**     | **Option + S**  |
-|          | Memory                                   | **Alt + O**     | **Alt + O**     | **Option + O**  |
-|          | Telephony                                | **Alt + T**     | **Alt + T**     | **Option + T**  |
-|          | NFC                                      | **Alt + F**     | **Alt + F**     | **Option + F**  |
-|          | Network                                  | **Alt + N**     | **Alt + N**     | **Option + N**  |
-|          | HDS                                      | **Alt + H**     | **Alt + H**     | **Option + H**  |
-|          | App Manager                              | **Alt + U**     | **Alt + U**     | **Option + U**  |
+<table>
+	<thead>
+		<tr>
+			<th colspan="2">Command</th>
+			<th>Ubuntu</th>
+			<th>Windows&reg;</th>
+			<th>macOS</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="10">Common</td>
+			<td>Move focus to upper card</td>
+			<td><strong>Up</strong></td>
+			<td><strong>Up</strong></td>
+			<td><strong>Up</strong></td>
+		</tr>
+		<tr>
+			<td>Move focus to card underneath</td>
+			<td><strong>Down</strong></td>
+			<td><strong>Down</strong></td>
+			<td><strong>Down</strong></td>
+		</tr>
+		<tr>
+			<td>Move focus to left card (including page movement)</td>
+			<td><strong>Left</strong></td>
+			<td><strong>Left</strong></td>
+			<td><strong>Left</strong></td>
+		</tr>
+		<tr>
+			<td>Move focus to right card (including page movement)</td>
+			<td><strong>Right</strong></td>
+			<td><strong>Right</strong></td>
+			<td><strong>Right</strong></td>
+		</tr>
+		<tr>
+			<td>Move focus to next control</td>
+			<td><strong>Tab</strong></td>
+			<td><strong>Tab</strong></td>
+			<td><strong>Tab</strong></td>
+		</tr>
+		<tr>
+			<td>Move focus to previous control</td>
+			<td><strong>Shift + Tab</strong></td>
+			<td><strong>Shift + Tab</strong></td>
+			<td><strong>Shift + Tab</strong></td>
+		</tr>
+		<tr>
+			<td>Menu selection</td>
+			<td><strong>Enter</strong></td>
+			<td><strong>Enter</strong></td>
+			<td><strong>Enter</strong></td>
+		</tr>
+		<tr>
+			<td>Close pop-up dialog</td>
+			<td><strong>ESC</strong></td>
+			<td><strong>ESC</strong></td>
+			<td><strong>ESC</strong></td>
+		</tr>
+		<tr>
+			<td>Move to previous page</td>
+			<td><strong>Page Up</strong></td>
+			<td><strong>Page Up</strong></td>
+			<td><strong>Page Up</strong></td>
+		</tr>
+		<tr>
+			<td>Move to next page</td>
+			<td><strong>Page Down</strong></td>
+			<td><strong>Page Down</strong></td>
+			<td><strong>Page Down</strong></td>
+		</tr>
+		<tr>
+			<td rowspan="17">Mobile</td>
+			<td>Battery</td>
+			<td><strong>Alt + B</strong></td>
+			<td><strong>Alt + B</strong></td>
+			<td><strong>Option + B</strong></td>
+		</tr>
+		<tr>
+			<td>RSSI</td>
+			<td><strong>Alt + R</strong></td>
+			<td><strong>Alt + R</strong></td>
+			<td><strong>Option + R</strong></td>
+		</tr>
+		<tr>
+			<td>3-axis sensor</td>
+			<td><strong>Alt + A</strong></td>
+			<td><strong>Alt + A</strong></td>
+			<td><strong>Option + A</strong></td>
+		</tr>
+		<tr>
+			<td>Light</td>
+			<td><strong>Alt + I</strong></td>
+			<td><strong>Alt + I</strong></td>
+			<td><strong>Option + I</strong></td>
+		</tr>
+		<tr>
+			<td>Proximity</td>
+			<td><strong>Alt + X</strong></td>
+			<td><strong>Alt + X</strong></td>
+			<td><strong>Option + X</strong></td>
+		</tr>
+		<tr>
+			<td>Pressure</td>
+			<td><strong>Alt + E</strong></td>
+			<td><strong>Alt + E</strong></td>
+			<td><strong>Option + E</strong></td>
+		</tr>
+		<tr>
+			<td>Ultraviolet</td>
+			<td><strong>Alt + V</strong></td>
+			<td><strong>Alt + V</strong></td>
+			<td><strong>Option + V</strong></td>
+		</tr>
+		<tr>
+			<td>Heart rate monitor</td>
+			<td><strong>Alt + M</strong></td>
+			<td><strong>Alt + M</strong></td>
+			<td><strong>Option + M</strong></td>
+		</tr>
+		<tr>
+			<td>Earjack</td>
+			<td><strong>Alt + K</strong></td>
+			<td><strong>Alt + K</strong></td>
+			<td><strong>Option + K</strong></td>
+		</tr>
+		<tr>
+			<td>USB</td>
+			<td><strong>Alt + S</strong></td>
+			<td><strong>Alt + S</strong></td>
+			<td><strong>Option + S</strong></td>
+		</tr>
+		<tr>
+			<td>SD card</td>
+			<td><strong>Alt + D</strong></td>
+			<td><strong>Alt + D</strong></td>
+			<td><strong>Option + D</strong></td>
+		</tr>
+		<tr>
+			<td>Location</td>
+			<td><strong>Alt + L</strong></td>
+			<td><strong>Alt + L</strong></td>
+			<td><strong>Option + L</strong></td>
+		</tr>
+		<tr>
+			<td>Telephony</td>
+			<td><strong>Alt + T</strong></td>
+			<td><strong>Alt + T</strong></td>
+			<td><strong>Option + T</strong></td>
+		</tr>
+		<tr>
+			<td>NFC</td>
+			<td><strong>Alt + F</strong></td>
+			<td><strong>Alt + F</strong></td>
+			<td><strong>Option + F</strong></td>
+		</tr>
+		<tr>
+			<td>Network</td>
+			<td><strong>Alt + N</strong></td>
+			<td><strong>Alt + N</strong></td>
+			<td><strong>Option + N</strong></td>
+		</tr>
+		<tr>
+			<td>HDS</td>
+			<td><strong>Alt + H</strong></td>
+			<td><strong>Alt + H</strong></td>
+			<td><strong>Option + H</strong></td>
+		</tr>
+		<tr>
+			<td>Memory</td>
+			<td><strong>Alt + O</strong></td>
+			<td><strong>Alt + O</strong></td>
+			<td><strong>Option + O</strong></td>
+		</tr>
+		<tr>
+			<td rowspan="15">Wearable</td>
+			<td>Battery</td>
+			<td><strong>Alt + B</strong></td>
+			<td><strong>Alt + B</strong></td>
+			<td><strong>Option + B</strong></td>
+		</tr>
+		<tr>
+			<td>3-axis sensor</td>
+			<td><strong>Alt + A</strong></td>
+			<td><strong>Alt + A</strong></td>
+			<td><strong>Option + A</strong></td>
+		</tr>
+		<tr>
+			<td>Light</td>
+			<td><strong>Alt + I</strong></td>
+			<td><strong>Alt + I</strong></td>
+			<td><strong>Option + I</strong></td>
+		</tr>
+		<tr>
+			<td>Proximity</td>
+			<td><strong>Alt + X</strong></td>
+			<td><strong>Alt + X</strong></td>
+			<td><strong>Option + X</strong></td>
+		</tr>
+		<tr>
+			<td>Pressure</td>
+			<td><strong>Alt + E</strong></td>
+			<td><strong>Alt + E</strong></td>
+			<td><strong>Option + E</strong></td>
+		</tr>
+		<tr>
+			<td>Ultraviolet</td>
+			<td><strong>Alt + V</strong></td>
+			<td><strong>Alt + V</strong></td>
+			<td><strong>Option + V</strong></td>
+		</tr>
+		<tr>
+			<td>Heart rate monitor</td>
+			<td><strong>Alt + M</strong></td>
+			<td><strong>Alt + M</strong></td>
+			<td><strong>Option + M</strong></td>
+		</tr>
+		<tr>
+			<td>Touch gesture</td>
+			<td><strong>Alt + G</strong></td>
+			<td><strong>Alt + G</strong></td>
+			<td><strong>Option + G</strong></td>
+		</tr>
+		<tr>
+			<td>USB</td>
+			<td><strong>Alt + S</strong></td>
+			<td><strong>Alt + S</strong></td>
+			<td><strong>Option + S</strong></td>
+		</tr>
+		<tr>
+			<td>Memory</td>
+			<td><strong>Alt + O</strong></td>
+			<td><strong>Alt + O</strong></td>
+			<td><strong>Option + O</strong></td>
+		</tr>
+		<tr>
+			<td>Telephony</td>
+			<td><strong>Alt + T</strong></td>
+			<td><strong>Alt + T</strong></td>
+			<td><strong>Option + T</strong></td>
+		</tr>
+		<tr>
+			<td>NFC</td>
+			<td><strong>Alt + F</strong></td>
+			<td><strong>Alt + F</strong></td>
+			<td><strong>Option + F</strong></td>
+		</tr>
+		<tr>
+			<td>Network</td>
+			<td><strong>Alt + N</strong></td>
+			<td><strong>Alt + N</strong></td>
+			<td><strong>Option + N</strong></td>
+		</tr>
+		<tr>
+			<td>HDS</td>
+			<td><strong>Alt + H</strong></td>
+			<td><strong>Alt + H</strong></td>
+			<td><strong>Option + H</strong></td>
+		</tr>
+		<tr>
+			<td>App Manager</td>
+			<td><strong>Alt + U</strong></td>
+			<td><strong>Alt + U</strong></td>
+			<td><strong>Option + U</strong></td>
+		</tr>
+	</tbody>
+</table>
 
 ## EDC Editor
 
 **Table: EDC Editor shortcuts**
 
-| Command                                  | Ubuntu                      | Windows®                    | macOS                          |
+| Command                                  | Ubuntu                      | Windows&reg;                    | macOS                          |
 |----------------------------------------|---------------------------|---------------------------|------------------------------|
 | Close the menu                           | **Esc**                     | **Esc**                     | **Esc**                        |
 | Show shortcut keys                       | **F1**                      | **F1**                      | **F1**                         |

@@ -1,401 +1,389 @@
-# Styling Controls with JSON
+# Styling Components with JSON
 
-You can style a toolkit control with JSON. This topic uses a PushButton as an example control.
+You can style a toolkit component with a JSON stylesheet. When styling a component, you can use visuals, which are the main building block of UI components. A component is built from visuals with properties set as required. For more information on how to create, register, and use visuals, and the properties associated with each visual type, see [Visuals](visuals.md).
 
-## Visuals
-
-Visuals are the main building block of controls. A control is built from visuals with properties set as required.
-
-The following Visual types are available:
-
-
-
-| Type      | Example                                  |
-|---------|----------------------------------------|
-| Border    | ![Border visual](media/border-visual.png) |
-| Color     | ![Color visual](media/color-visual.png)  |
-| Gradient  | ![Gradient visual](media/linear-gradient-visual.png) |
-| Image     | ![Image visual](media/image-visual.png)  |
-| Mesh      | ![Mesh visual](media/mesh-visual.png)    |
-| Primitive | ![Primitive visual](media/cube.png)      |
-| Text      | **Hello there**                          |
-
-For more information on how to create, register, and use visuals, and lists all properties associated with each visual type, see [Visuals](visuals.md).
+The examples in this topic illustrate the styling of a push button control.
 
 <a name="newview"></a>
-## Styling a New View
+## Inherited Styles
 
-Styling is inherited, so styling a parent automatically affects its child, unless overridden.
+Styling is inherited. This means that styling a parent automatically affects its child, unless overridden.
 
-The following table describes the Style properties offered by View and PushButton.
+The following table describes the style properties of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class that automatically affect a push button, as it is a child of the view.
 
+**Table: View style properties affecting a push button**
 
-
-| Name                 | Type      | Description                              |
-|--------------------|---------|----------------------------------------|
-| `heightResizePolicy` | `string`  | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation). |
-| `widthResizePolicy`  | `string`  | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation). |
-| `sizeModeFactor`     | `vector3` | Gets/sets the relative to the parent size factor of the view. |
-| `minimumSize`        | `Size2D`  | Gets/sets the minimum size a view can be assigned in size negotiation. |
-| `maximumSize`        | `Size2D`  | Gets/sets the maximum size a view can be assigned in size negotiation. |
-
-> **Note**   
-> `sizeModeFactor` is only used when `ResizePolicyType` is set to either `ResizePolicyType.SizeRelativeToParent` or `ResizePolicyType.SizeFixedOffsetFromParent`. The view's size is set to the view's size multiplied by or added to this factor, depending on `ResizePolicyType`.
+| Name                     | Type                     | Description              |
+|----------------|--------------------|----------------|
+| `HeightResizePolicy`     | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
+| `WidthResizePolicy`      | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
+| `SizeModeFactor`         | `vector3`                | Factor used to calculate the view size<br><br> **Note**<br> This property is used only when `ResizePolicyType` is set to `ResizePolicyType.SizeRelativeToParent` or `ResizePolicyType.SizeFixedOffsetFromParent`.<br> The view's size is accordingly set by  multiplying the view size by this factor, or by adding the factor to the view size.           |
+| `MinimumSize`            | `Size2D`                 | Minimum size a view can  be assigned in size negotiation  |
+| `MaximumSize`            | `Size2D`                 | Maximum size a view can  be assigned in size negotiation              |
 
 <a name="state"></a>
-## Styling for State
+## Styling for States
 
-A control has 3 states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, a button has 2 substates, `SELECTED` and `UNSELECTED`, applicable for each of the 3 main states. Each state must have the required visuals, either as its own set of visuals or as a visual shared between states.
+Every control has three states: `NORMAL`, `FOCUSED`, and `DISABLED`. In addition, buttons have two substates for each state: `SELECTED` and `UNSELECTED`.
 
-A different `backgroundVisual` can be supplied for `NORMAL`, `FOCUSED`, and `DISABLED`, if required. A different `backgroundVisual` can also be defined for the `SELECTED` and `UNSELECTED` states.
+You can provide a different style for each state using visuals. When using visuals, you must define a visual for each state and substate (although you can share the same visual across multiple states). The control's current state and substate determines which visuals are shown.
+
+In addition to the basic icon and label visuals, you can define a different background visual for the `NORMAL`, `FOCUSED`, and `DISABLED` states. A different background visual can also be defined for the `SELECTED` and `UNSELECTED` substates.
 
 In the following example:
 
--   **"inherit"** means that the Push Button inherits any styles defined for Button.
--   **"visuals"** means that specific visual types can be put in that section.
--   **"states"** means that visuals for specific states can be put in that section.
+-   `inherit` means that the `PushButton` element inherits any styles defined for the `Button` element.
+-   `visuals` means that specific visual types can be put in that section.
+-   `states` means that visuals for specific states can be put in that section.
 
 ```
 "styles":
 {
-  "PushButton":
-  {
-    "inherit":["Button"],
-    "visuals":
-    {
-      "iconVisual": { "visualType":"IMAGE", "url":"icon1.png" },
-      "labelVisual": { "visualType":"TEXT", "text":"OK", "fontWeight":"bold" }
-    },
-    "states":
-    {
+   "PushButton":
+   {
+      "inherit": ["Button"],
+      "visuals":
+      {
+         "iconVisual": {"visualType": "IMAGE", "url": "icon1.png"},
+         "labelVisual": {"visualType": "TEXT", "text": "OK", "fontWeight": "bold"}
+      },
+      "states":
+      {
 
-    }
-  }
+      }
+   }
 }
 ```
 
-The following process shows how you can build up a stylesheet, state by state:
+The following process shows how you can build up a JSON stylesheet, state by state:
 
-1.  The following example defines the states common to all controls:
+1.  Define the states common to all controls:
 
     ```
     "states":
     {
-      "NORMAL":
-      {
-      },
-      "DISABLED":
-      {
-      },
-      "FOCUSED":
-      {
-      },
+       "NORMAL":
+       {
+       },
+       "DISABLED":
+       {
+       },
+       "FOCUSED":
+       {
+       },
     }
     ```
 
     At this point, the states have been defined, but no visuals are provided.
 
-2. The following example adds the button substates (`UNSELECTED` and `SELECTED`) to the stylesheet, but still provides no visuals.
+2.  Add the button substates (`UNSELECTED` and `SELECTED`) to the stylesheet.
+
+    Still, no visuals are provided.
 
     ```
     "states":
     {
-      "NORMAL":
-      {
-        "states":
-        {
-          "UNSELECTED":
+       "NORMAL":
+       {
+          "states":
           {
-          },
-          "SELECTED":
-          {
+             "UNSELECTED":
+             {
+             },
+             "SELECTED":
+             {
+             }
           }
-        },
-      "DISABLED":
-      {
-        "states":
-        {
-          "UNSELECTED":
+       },
+       "DISABLED":
+       {
+          "states":
           {
-          },
-          "SELECTED":
-          {
+             "UNSELECTED":
+             {
+             },
+             "SELECTED":
+             {
+             }
           }
-        }
-      },
+       },
     }
     ```
 
-3. The following example defines a background visual for each substate in the `NORMAL` state. The same can be done for `FOCUSED` and `DISABLED`.
+3.  Define a background visual for each substate in the `NORMAL` state.
+
+    You can do the same for the `FOCUSED` and `DISABLED` states too.
 
     ```
     "states":
     {
-      "NORMAL":
-      {
-        "states":
-        {
-          "UNSELECTED":
+       "NORMAL":
+       {
+          "states":
           {
-            "visuals":
-            {
-              "backgroundVisual":
-               {
-                 "visualType":"IMAGE",
-                 "url":"backgroundUnSelected.png"
-               }
-            }
-          },
-          "SELECTED":
-          {
-            "visuals":
-            {
-              "backgroundVisual":
-               {
-                 "visualType":"IMAGE",
-                 "url":"backgroundSelected.png"
-               }
-            }
+             "UNSELECTED":
+             {
+                "visuals":
+                {
+                   "backgroundVisual":
+                   {
+                      "visualType": "IMAGE",
+                      "url": "backgroundUnSelected.png"
+                   }
+                }
+             },
+             "SELECTED":
+             {
+                "visuals":
+                {
+                   "backgroundVisual":
+                   {
+                      "visualType": "IMAGE",
+                      "url": "backgroundSelected.png"
+                   }
+                }
+             }
           }
-        }
-      },
+       },
     }
     ```
 
 ## Transitions
 
-The control (Button) changes states based on user interaction. All controls can move between the `NORMAL`, `FOCUSED`, and `DISABLED` states. In addition, a button can have the `UNSELECTED` and `SELECTED` substates.
+Controls change states based on user interaction. As a control moves between states and substates, transition animations can be used to show visually how the control state changes.
 
-To move between states and substates, transition animations can be defined. Each state and substate can have an "entry" and "exit" transition.
+In addition to animations, you can use a predefined effect during the transition. Currently, only a `CROSSFADE` effect is available, animating the opacity of visuals fading in and out. In time, further effects can be provided.
 
-To make defining common transitions easier, an effect can be used with a "from" and "to" state. One such effect is CROSSFADE, which animates the opacity of visuals fading in and out to give a nice transition. Initially, only CROSSFADE is available, but in time further effects can be provided.
+You can implement transitions in two ways:
 
-The transition can be placed in the state section, such as `NORMAL`. In the following example, the transition cross-fades between unselected and selected visuals:
+-   You can define a transition between two specific states, by using the `from` and `to` properties.
 
-```
-"transitions":
-[
-  {
-     "from":"UNSELECTED",
-     "to":"SELECTED",
-     "visualName":"*",
-     "effect":"CROSSFADE",
-     "animator":
-     {
-       "alphaFunction":"EASE_OUT",
-       "duration":"0.2,
-       "delay":0
-     }
-  }
-]
-```
+    The following example defines a transition from the `UNSELECTED` state to the `SELECTED` state, cross-fading all visuals with the `CROSSFADE` effect:
 
-The following example uses the entry and exit transition for the `UNSELECTED` substate:
-
-```
-"states":
-  {
-    "NORMAL":
-    {
-      "states":
-      {
-        "UNSELECTED":
-        {
-          "visuals":
+    ```
+    "transitions":
+    [
+       {
+          "from": "UNSELECTED",
+          "to": "SELECTED",
+          "visualName": "*",
+          "effect": "CROSSFADE",
+          "animator":
           {
-            "backgroundVisual":
-             {
-               "visualType":"IMAGE",
-               "url":"backgroundUnSelected.png"
-             }
-          },
-          "entryTransition":
-          {
-            "target":"backgroundVisual",
-            "property":"mixColor",
-            "targetValue":[1,1,1,1],
-            "animator":
-            {
-              "alphaFunction":"LINEAR",
-              "duration":0.3,
-              "delay":0.0
-            }
-         },
-         "exitTransition":
-         {
-            "target":"backgroundVisual",
-            "property":"mixColor",
-            "targetValue":[1,1,1,0.0],
-            "animator":
-            {
-              "alphaFunction":"LINEAR",
-              "duration":0.3,
-              "delay":0.0
-            }
-         }
+             "alphaFunction": "EASE_OUT",
+             "duration": 0.2,
+             "delay": 0
+          }
        }
-     }
-   }
-  }
-]
-```
+    ]
+    ```
+
+-   You can define an "entry" and "exit" transition for each state and substate. The transition animations are run as the control enters or exits a specific state. The transitions can be placed in a state section, such as `NORMAL`.
+
+    The following example defines an entry and exit transition for the `UNSELECTED` substate:
+
+    ```
+    "states":
+       {
+          "NORMAL":
+          {
+             "states":
+             {
+                "UNSELECTED":
+                {
+                   "visuals":
+                   {
+                      "backgroundVisual":
+                      {
+                         "visualType": "IMAGE",
+                         "url": "backgroundUnSelected.png"
+                      }
+                   },
+                   "entryTransition":
+                   {
+                      "target": "backgroundVisual",
+                      "property": "mixColor",
+                      "targetValue": [1,1,1,1],
+                      "animator":
+                      {
+                         "alphaFunction": "LINEAR",
+                         "duration": 0.3,
+                         "delay": 0.0
+                      }
+                   },
+                   "exitTransition":
+                   {
+                      "target": "backgroundVisual",
+                      "property": "mixColor",
+                      "targetValue": [1,1,1,0.0],
+                      "animator":
+                      {
+                         "alphaFunction": "LINEAR",
+                         "duration": 0.3,
+                         "delay": 0.0
+                      }
+                   }
+                }
+             }
+          }
+       }
+    ]
+    ```
 
 <a name="example"></a>
-## Example Stylesheet
+## Example JSON Stylesheet
 
-The following example shows a button stylesheet covering all states and various transitions:
+The following example shows a push button stylesheet covering all states and various transitions:
 
 ```
 {
-  "styles":
-  {
-    "PushButton":
-    {
-      "inherit":["Button"],
-      "visuals":
+   "styles":
+   {
+      "PushButton":
       {
-        "iconVisual":
-        {
-          "visualType":"IMAGE",
-          "url":"icon1.png"
-        },
-        "label":
-        {
-          "visualType":"TEXT",
-          "text":"OK",
-          "fontWeight":"bold"
-        }
-      },
-      "states":
-      {
-        "NORMAL":
-        {
-          "states":
-          {
-            "UNSELECTED":
+         "inherit": ["Button"],
+         "visuals":
+         {
+            "iconVisual":
             {
-              "visuals":
-              {
-                "backgroundVisual":
-                {
-                  "visualType":"IMAGE",
-                  "url":"backgroundSelected.png"
-                }
-              }
+               "visualType": "IMAGE",
+               "url": "icon1.png"
             },
-            "SELECTED":
+            "label":
             {
-              "visuals":
-              {
-                "backgroundVisual":
-                {
-                  "visualType":"IMAGE",
-                  "url":"backgroundUnselected.png"
-                }
-              }
+               "visualType": "TEXT",
+               "text": "OK",
+               "fontWeight": "bold"
             }
-          },
-          "transitions":
-          [
+         },
+         "states":
+         {
+            "NORMAL":
             {
-              "from":"UNSELECTED",
-              "to":"SELECTED",
-              "visualName":"*",
-              "effect":"CROSSFADE",
-              "animator":
-              {
-                "alphaFunction":"EASE_OUT",
-                "duration":0.2,
-                "delay":0
-              }
-            }
-          ]
-        },
-        "FOCUSED":
-        {
-          "visuals":
-          {
-            "labelVisual":
-            {
-              "visualType":"TEXT",
-              "text":"OK",
-              "fontWeight":"bold"
-            }
-          },
-          "states":
-          {
-            "SELECTED":
-            {
+               "states":
+               {
+                  "UNSELECTED":
+                  {
+                     "visuals":
+                     {
+                        "backgroundVisual":
+                        {
+                            "visualType": "IMAGE",
+                            "url": "backgroundSelected.png"
+                        }
+                     }
+                  },
+                  "SELECTED":
+                  {
+                     "visuals":
+                     {
+                        "backgroundVisual":
+                        {
+                           "visualType": "IMAGE",
+                           "url": "backgroundUnselected.png"
+                        }
+                     }
+                  }
+               },
+               "transitions":
+               [
+                  {
+                     "from": "UNSELECTED",
+                     "to": "SELECTED",
+                     "visualName": "*",
+                     "effect": "CROSSFADE",
+                     "animator":
+                     {
+                        "alphaFunction": "EASE_OUT",
+                        "duration": 0.2,
+                        "delay": 0
+                     }
+                  }
+               ]
             },
-            "UNSELECTED":
+            "FOCUSED":
             {
-            }
-          }
-        },
-        "DISABLED":
-        {
-          "states":
-          {
-            "SELECTED":
-            {
-              "visuals":
-              {
-                "backgroundVisual":
-                {
-                  "visualType": "IMAGE",
-                  "url": "{DALI_IMAGE_DIR}button-down-disabled.9.png"
-                }
-              }
+               "visuals":
+               {
+                  "labelVisual":
+                  {
+                     "visualType": "TEXT",
+                     "text": "OK",
+                     "fontWeight": "bold"
+                  }
+               },
+               "states":
+               {
+                  "SELECTED":
+                  {
+                  },
+                  "UNSELECTED":
+                  {
+                  }
+               }
             },
-            "UNSELECTED":
+            "DISABLED":
             {
-              "visuals":
-              {
-                "backgroundVisual":
-                {
-                  "visualType": "IMAGE",
-                  "url": "{DALI_IMAGE_DIR}button-disabled.9.png"
-                }
-              }
+               "states":
+               {
+                  "SELECTED":
+                  {
+                     "visuals":
+                     {
+                        "backgroundVisual":
+                        {
+                           "visualType": "IMAGE",
+                           "url": "{DALI_IMAGE_DIR}button-down-disabled.9.png"
+                        }
+                     }
+                  },
+                  "UNSELECTED":
+                  {
+                     "visuals":
+                     {
+                        "backgroundVisual":
+                        {
+                           "visualType": "IMAGE",
+                           "url": "{DALI_IMAGE_DIR}button-disabled.9.png"
+                        }
+                     }
+                  }
+               },
+               "transitions":
+               {
+                  "visualName": "*",
+                  "effect": "CROSSFADE",
+                  "animator":
+                  {
+                     "alphaFunction": "EASE_IN_OUT",
+                     "duration": 0.3
+                  }
+               }
             }
-          },
-          "transitions":
-          {
-            "visualName":"*",
-            "effect":"CROSSFADE",
-            "animator":
+         },
+         "autoRepeating": false,
+         "togglable": false,
+         "labelPadding": [12.0, 12.0, 12.0, 12.0],
+         "transitions":
+         [
             {
-              "alphaFunction":"EASE_IN_OUT",
-              "duration":0.3
+               "from": "NORMAL",
+               "to": "DISABLED",
+               "visualName": "*",
+               "effect": "CROSSFADE",
+               "animator":
+               {
+                  "alphaFunction": "EASE_OUT",
+                  "duration": 0.2,
+                  "delay": 0
+               }
             }
-          }
-        }
-      },
-      "autoRepeating":false,
-      "togglable":false,
-      "labelPadding":[ 12.0, 12.0, 12.0, 12.0 ],
-
-      "transitions":
-      [
-        {
-          "from":"NORMAL",
-          "to":"DISABLED",
-          "visualName":"*",
-          "effect":"CROSSFADE",
-          "animator":
-          {
-            "alphaFunction":"EASE_OUT",
-            "duration":0.2,
-            "delay":0
-          }
-        }
-      ]
-    }
-  }
+         ]
+      }
+   }
 }
 ```
 
-
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

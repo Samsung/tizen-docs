@@ -2,7 +2,7 @@
 
 Before installing your application on a device or submitting it to the Tizen Store, it must be signed with a certificate profile. The signature verifies the source of the application and makes sure it has not been tampered with since its publication. A certificate profile is a combination of the certificates used for signing.
 
-## Selecting the Certificate
+## Selecting the Certificates
 
 
 To select the certificates used to package your application:
@@ -36,6 +36,10 @@ To select the certificates used to package your application:
 <a name="creating"></a>
 ## Creating a Certificate Profile
 
+>**Note**
+>
+>It is recommended to keep your certificates and password safe in the local repo to prevent it from being compromised.
+
 A certificate profile consists of an author certificate and 1 or 2 distributor certificates:
 
 -   An author certificate includes information about the author of the application. It is used to create an author signature, which ensures the integrity of the application from the author since the publication of the application.
@@ -63,11 +67,11 @@ To distribute your application, you must create a certificate profile and sign t
 
         ![Author information](media/cert_reg_author_info.png)
 
-    2.  You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level of the distributor certificate (needed if the same certificate is used for signing [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/details/sec-privileges.md) applications).
+    2.  You can use the default Tizen distributor certificate or another distributor certificate if you have one. In general, the default Tizen distributor certificate is used and you do not need to modify the distributor certificates. You can also select the privilege level of the distributor certificate (needed if the same certificate is used for signing [native](../../native/tutorials/details/sec-privileges.md) and [Web](../../web/tutorials/sec-privileges.md) applications).
 
         ![Distributor certificate](media/cert_reg_dist_cert2.png)
 
-    3.  Click **Finish**.
+5.  Click **Finish**.
 
 ## Managing Certificate Profiles
 

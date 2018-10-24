@@ -2,7 +2,7 @@
 
 You can [access the files and directories](#file-and-directory-access) in the device file system.
 
-The Filesystem API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported in all mobile and wearable devices. All mandatory APIs are supported on the Tizen Emulators.
+The Filesystem API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
 
 The Filesystem API provides access to accessible parts of the file system, which are represented as [virtual root locations](#supported-virtual-roots).
 
@@ -24,20 +24,21 @@ The main features of the Filesystem API include:
 
 ## File and Directory Access
 
-You can access the virtual file system using the `FileSystemManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#FileSystemManager) applications):
+You can access the virtual file system using the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications):
 
 - To access a file or directory within the virtual file system, you must use the fully qualified path, `<root name>/<path>`, where `<rootname>` is the name of the virtual root and `<path>` is the relative path to the file or directory within the root.
 
-> **Note**
-> When you use a path to access the device file system, make sure that the file path encoding uses the default encoding of the platform.
+   > **Note**  
+   > When you use a path to access the device file system, make sure that the file path encoding uses the default encoding of the platform.
 
-- To access a file or directory, you must also retrieve a file handle using the `resolve()` method of the `FileSystemManager` interface.A file handle is a reference object that points to and represents a file or directory.
+- To access a file or directory, you must also retrieve a file handle using the `resolve()` method of the `FileSystemManager` interface.  
+  A file handle is a reference object that points to and represents a file or directory.
 
-The `isFile` and `isDirectory` attributes of the `File` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#File) applications) identify the type of the object: for example, for a file, the `isFile` attribute is set to `true` and the `isDirectory` attribute to `false`.
+The `isFile` and `isDirectory` attributes of the `File` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#File), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#File), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#File) applications) identify the type of the object: for example, for a file, the `isFile` attribute is set to `true` and the `isDirectory` attribute to `false`.
 
 ## Prerequisites
 
-To use the Filesystem API (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
@@ -46,7 +47,7 @@ To use the Filesystem API (in [mobile](../../../../org.tizen.web.apireference/ht
 
 ## Managing File Storages
 
-You can manage different storages on the device with the `FileSystemManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#FileSystemManager) applications).
+You can manage different storages on the device with the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications).
 
 You can retrieve additional information about the storages, including listing available storages and receiving storage change notifications with the `listStorages()` and `addStorageStateChangeListener()` methods provided by the `FileSystemManager` interface.
 
@@ -54,7 +55,7 @@ To manage file storages:
 
 1. To list available storages, use the `listStorages()` method of the `FileSystemManager` interface to search for the storages available on the device.
 
-   If the search is successful, a list of found `FileSystemStorage` objects (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#FileSystemStorage), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#FileSystemStorage), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#FileSystemStorage) applications) is passed to the success event handler.
+   If the search is successful, a list of found `FileSystemStorage` objects (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemStorage), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemStorage), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemStorage) applications) is passed to the success event handler.
 
    ```
    /* Success event handler */
@@ -112,12 +113,12 @@ To manage file storages:
 
 You can create files and directories using the `createFile()` and `createDirectory()` methods. The file or directory is created relative to the current directory that the operation is performed on.
 
-> **Note**
+> **Note**  
 > Do not use "." or ".." characters in the directory or file path components.
 
 To create and delete files and directories:
 
-1. To create a file in the current directory, use the `createFile()` method of the `File` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#File) applications):
+1. To create a file in the current directory, use the `createFile()` method of the `File` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#File), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#File), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#File) applications):
 
    ```
    var documentsDir, newFile;
@@ -163,15 +164,23 @@ You can retrieve file content as a `DOMString` with the `readAsText()` method. T
 
 To get files and file details from the file system:
 
-1. To access a specific file or directory within the file system, retrieve a file handle using the `resolve()` method of the `FileSystemManager` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#FileSystemManager) applications):
+1. To access a specific file or directory within the file system, retrieve a file handle using the `resolve()` method of the `FileSystemManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileSystemManager), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileSystemManager), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileSystemManager) applications):
 
    ```
    tizen.filesystem.resolve('documents', onResolveSuccess, null, 'r');
    ```
 
-   The `File` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#File) applications) is returned in the success event handler.
+   The `File` object (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#File), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#File), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#File) applications) is returned in the success event handler.
 
-2. To retrieve a list of all the files and their directories located in a specified directory, use the `listFiles()` method of the `File` object:`function onResolveSuccess(dir) {    dir.listFiles(onsuccess);}`The method returns an array of `File` objects.
+2. To retrieve a list of all the files and their directories located in a specified directory, use the `listFiles()` method of the `File` object:
+
+   ```
+   function onResolveSuccess(dir) {
+       dir.listFiles(onsuccess);
+   }
+   ```
+   
+   The method returns an array of `File` objects.
 
 3. To retrieve the file URI, use the `toURI()` method:
 
@@ -200,14 +209,16 @@ To get files and file details from the file system:
 
 You can manage files and directories in many ways:
 
-- You can read and write to a file by first using the `openStream()` method to open the file. You can specify the file mode and encoding.The `openStream()` method returns a `FileStream` object (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#FileStream), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#FileStream), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#FileStream) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileStream` object based on a position attribute, which represents the current position in the file.
- - You can copy and move files and directories within the virtual file system with the `copyTo()` and `moveTo()` methods.If a file or directory of the same name already exists in the target location, the overwrite input parameter of the method defines whether the existing file is overwritten.
-	> **Note**
+- You can read and write to a file by first using the `openStream()` method to open the file. You can specify the file mode and encoding.  
+   The `openStream()` method returns a `FileStream` object (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#FileStream), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#FileStream), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#FileStream) applications), which is a handle to the opened file. All actual operations, such as read, write, or close, on the file are performed through the `FileStream` object based on a position attribute, which represents the current position in the file.
+ - You can copy and move files and directories within the virtual file system with the `copyTo()` and `moveTo()` methods.  
+    If a file or directory of the same name already exists in the target location, the overwrite input parameter of the method defines whether the existing file is overwritten.
+	> **Note**  
 	> The file or directory to be copied or moved must be located under the current directory.
 
 To read and write to files, and move and copy files and directories:
 
-1. To open a file, use the `openStream()` method of the `File` interface (in [mobile](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html#File), [wearable](../../../../org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html#File), and [TV](../../../../org.tizen.web.apireference/html/device_api/tv/tizen/filesystem.html#File) applications).
+1. To open a file, use the `openStream()` method of the `File` interface (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html#File), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html#File), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html#File) applications).
 
    The method returns a `FileStream` object, which is a handle to the opened file.
 
@@ -224,7 +235,22 @@ To read and write to files, and move and copy files and directories:
    }
    ```
 
-2. Perform all actual operations, such as reading, writing, or closing, on the file through the `FileStream` object based on a position attribute, which represents the current position in the file:`function onOpenSuccess(fs) {    /* Write HelloWorld to the file */    fs.write('HelloWorld');    /* Move pointer to the beginning */    fs.position = 0;    /* Read the file content from the beginning */    fs.read(testFile.fileSize);    /* Close the file */    fs.close();}`
+2. Perform all actual operations, such as reading, writing, or closing, on the file through the `FileStream` object based on a position attribute, which represents the current position in the file:
+   ```
+   function onOpenSuccess(fs) {
+       /* Write HelloWorld to the file */
+       fs.write('HelloWorld');
+
+       /* Move pointer to the beginning */
+       fs.position = 0;
+
+       /* Read the file content from the beginning */
+       fs.read(testFile.fileSize);
+
+       /* Close the file */
+       fs.close();
+   }
+   ```
 
 3. To copy a file or directory, use the `copyTo()` method. The following example copies the files to the `images/backup/` directory. Since the third parameter is set to `true`, any existing files with the same name in the target directory are overwritten.
 
@@ -264,7 +290,7 @@ The virtual roots form a collection of locations that function as a single virtu
 | `downloads`       | Location for storing downloaded items.   |
 | `images`          | Location for storing images.             |
 | `music`           | Location for storing audio files.        |
-| `ringtones`       | Location for ringtones (read-only location).              **Note**       The `ringtones` virtual root is not supported on TV devices. |
+| `ringtones`       | Location for ringtones (read-only location).<br>**Note**<br>The `ringtones` virtual root is not supported on TV devices. |
 | `videos`          | Location for storing videos.             |
 | `wgt-package`     | Location for storing Web application packages (read-only location). |
 | `wgt-private`     | Location for the Web application private storage. |

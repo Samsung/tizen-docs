@@ -1,7 +1,7 @@
 # Tizen Native Application
 
-The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__APPLICATION__MODULE.html)
-and [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__APPLICATION__MODULE.html)
+The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](api/mobile/latest/group__CAPI__APPLICATION__MODULE.html)
+and [wearable](api/wearable/latest/group__CAPI__APPLICATION__MODULE.html)
 applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
 
 Tizen supports both UI applications (which have a graphical user interface) and service applications (which have no graphical user
@@ -28,7 +28,7 @@ A Tizen native application can be in one of several different states.
 Typically, the application is launched by the user from the Launcher, or by another application. When the application is starting, the `app_create_cb()` function is executed and the main event loop starts.  The application normally at the top window, with focus.
 
 When the application loses the focus status, the `app_pause_cb()` callback is invoked. The application can go into the pause state, which means that your application is not terminated but continues to run in
-the background, when: 
+the background, when:
 -   A new application is launched by the request of your application.
 -   The user requests to go to the home screen.
 -   A system event (such as an incoming phone call) occurs and causes a resident application with a higher priority to become active and temporarily hide your application.
@@ -36,7 +36,7 @@ the background, when:
     topmost window and hides your application.
 
 Since Tizen 2.4, an application in the background goes into a suspended state. In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of the background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the
-background. In this case, the application can [designate their background category as an allowed category](../../../guides/native/app-management/efl-ui-app-n.md#allow_bg) to avoid going into the suspended state.
+background. In this case, the application can [designate their background category as an allowed category](guides/app-management/ui-app/efl-ui-app.md#allow_bg) to avoid going into the suspended state.
 
 When your application becomes visible again, the `app_resume_cb()` callback is invoked. The visibility returns, when:
 
@@ -52,7 +52,7 @@ When your application starts exiting, the `app_terminate_cb()` callback is invok
 
 Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, a service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
 
-Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](../../../guides/native/app-management/efl-ui-app-n.md#state_trans).
+Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](guides/app-management/ui-app/efl-ui-app.md#state_trans).
 
 <a name="start"></a>
 ## Starting the Tizen Native Application
@@ -61,7 +61,7 @@ Application state changes are managed by the underlying framework. For more info
 An application can be launched by the user from the Launcher or by another application. Either way, the Application Framework starts the
 application by creating a new process and calling the application entry point. Like in a conventional Linux application, the application main
 function is the entry point. For more information on launching native applications, see [Application
-Controls](../../../guides/native/app-management/app-controls-n.md).
+Controls](guides/app-management/app-controls.md).
 
 <a name="packageID"></a>
 ## Package ID and Application ID
@@ -79,7 +79,7 @@ When developing a Tizen application, you must define a package and application I
 
     The application ID (`appid`) is the application identifier. Multiple applications are allowed in a package and the application ID is used to identify the different applications.
 
-    The application ID must be the same as the package ID if the package contains a single application. If [the package contains multiple applications](../process/app-dev-process-n.md#develop), the application ID must be assigned with the package ID as a prefix. For example, if the `org.tizen.message` package contains 2 applications, the main application is named as `org.tizen.message`, and the second application is named as `org.tizen.message.app2`.
+    The application ID must be the same as the package ID if the package contains a single application. If [the package contains multiple applications](tutorials/process/app-dev-process.md#develop), the application ID must be assigned with the package ID as a prefix. For example, if the `org.tizen.message` package contains 2 applications, the main application is named as `org.tizen.message`, and the second application is named as `org.tizen.message.app2`.
 
     The application ID functions as a unit for launching and terminating applications, and for App Control.
 
@@ -220,24 +220,18 @@ You can use shell commands to install, uninstall, update, and launch application
 ![Tizen Studio interactions](./media/ide_interactions.png)
 
 
-
 ## Native Applications Tutorials
 
 The introduction to native applications documentation provides overall information you need to become familiar with native-specific Tizen programming and the Tizen application model:
 
-- [Getting Started](getting-started/first-app.md)
+- [Getting Started](getting-started/overview.md)
 
     Demonstrates how you can create your first simple native application.
 
-
-- [Overview of Tizen UI Development](feature/ui-builder-overview-mn.md)
+- [Overview of Tizen UI Development](tutorials/ui-builder/ui-builder-overview.md)
 
     Describes the basic characteristics and components of UI development with EFL.
 
-- [Designing Your Native Application](feature/ui-builder-app-design-mn.md)
+- [Designing Your Native Application](tutorials/ui-builder/ui-builder-app-design.md)
 
     Teaches you how to develop a native application using the native UI Builder tool.
-
-- [Understanding Tizen Programming](details/details-n.md)
-
-    Introduces the Tizen platform, its architecture, and some useful programming concepts you need to take into account when designing Tizen applications.

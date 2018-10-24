@@ -4,7 +4,7 @@ Use the `gbs remotebuild` subcommand to push local Git code to a remote OBS buil
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs remotebuild --help
 ```
 
@@ -18,7 +18,7 @@ To perform  a remote build:
 
    The following code gives some command examples:
 
-   ```bash
+   ```
    $ gbs remotebuild
    $ gbs remotebuild -B Tizen:Main
    $ gbs remotebuild -B Tizen:Main -T home:<userid>:gbs
@@ -33,7 +33,7 @@ You can check the build log and build status during the remote build with the `-
 
    For example, to submit a package to home:user:gbs:Tizen:Main and build against Tizen:Main:
 
-   ```bash
+   ```
    test@test-desktop:~/ail$ gbs remotebuild -B Tizen:Main --include-all
    info: Creating (native) source archive ail-0.2.29.tar.gz from 'c7309adbc60eae08782b51470c20aef6fdafccc0'
    info: checking status of obs project: home:test:gbs:Tizen:Main ...
@@ -45,7 +45,7 @@ You can check the build log and build status during the remote build with the `-
 
 1. Check the build status:
 
-   ```bash
+   ```
    # -B or -T options is needed if your target project is not home:user:gbs:Tizen:Main
    test@test-desktop:~/ail$ gbs remotebuild --status
    info: build results from build server:
@@ -57,7 +57,7 @@ You can check the build log and build status during the remote build with the `-
 
 1. Check the build log for specific repository and architecture:
 
-   ```bash
+   ```
    test@test-desktop:~/ail$ gbs remotebuild --buildlog
    error: please specify arch(-A) and repository(-R)
    test@test-desktop:~/ail$ gbs remotebuild --buildlog -A i586 -R standard

@@ -26,9 +26,21 @@ The Tizen Studio provides various project templates and samples for mobile and w
 
 The **Template** option provides a list of templates with a basic structure where you can start the Web application project:
 
-- **Common** **Basic UI**: Empty template project for developing basic UI applications.
-- **Mobile** **TAU MasterDetail**: Empty template project for developing UI applications using TAU (Tizen Web UI Framework).**TAU MultiPage/SinglePage**: Empty template projects for developing multiple page and single page applications using TAU.
-- **Wearable** **TAU Basic**: Empty template project for developing basic circular UI applications using TAU.**TAU List**: Empty template project for developing UI applications using a TAU list. **Web Input Method Editor**: Empty template project for developing Web-based IME (Input Method Editor) applications using HTML, CSS, and JavaScript code. **Widget**: Empty template project for developing widget applications.
+- **Common**
+
+  - **Basic UI**: Empty template project for developing basic UI applications.
+
+- **Mobile**
+
+  - **TAU MasterDetail**: Empty template project for developing UI applications using TAU (Tizen Web UI Framework).  
+  - **TAU MultiPage/SinglePage**: Empty template projects for developing multiple page and single page applications using TAU.
+
+- **Wearable**
+
+  - **TAU Basic**: Empty template project for developing basic circular UI applications using TAU.  
+  - **TAU List**: Empty template project for developing UI applications using a TAU list.  
+  - **Web Input Method Editor**: Empty template project for developing Web-based IME (Input Method Editor) applications using HTML, CSS, and JavaScript code.  
+  - **Widget**: Empty template project for developing widget applications.
 
 The **Sample** option provides a list of sample applications demonstrating various API usage and UI design.
 
@@ -50,7 +62,7 @@ To move to the next step, select the profile and version, and click **Next**.
 <a name="app_type"></a>
 ## Application Type
 
-You can select the Web or native application type for your project. For more information, see [Web Application](../../web/tutorials/index.md) and [Native Application](../../native/tutorials/index.md).
+You can select the Web or native application type for your project. For more information, see [Web Application](../../web/index.md) and [Native Application](../../native/index.md).
 
 Based on the selected application type, a list of templates is shown in the template selection step.
 
@@ -88,7 +100,7 @@ The options you can set are listed in the following table.
 |------------------------|----------------------------------------|
 | **Project name**         | A name for the project to be created.    |
 | **Use default location** | If you check this option, the project is created in the `$<workspace_location>/<project_name>` directory. |
-| **Location**             | Manually select the location of the project.  If you check the **Use default location** checkbox, this option is disabled. |
+| **Location**             | Manually select the location of the project.<br> If you check the **Use default location** checkbox, this option is disabled. |
 | **Working sets**         | If you want to include the project to a specific working set, select a [working set](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm). |
 
 After specifying the options, click **Finish** to create the new project.

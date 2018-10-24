@@ -94,20 +94,24 @@ $ dpkg -l | grep libv4l-0
 ```
 
 > **Note**  
-> The Webcam must support video4linux2. (Currently, only `/dev/video0` is supported.)Multiple instances of the emulator can be launched, but only a single emulator instance can use the camera feature.Depending on the Webcam in use, the emulator camera feature may not work properly.
+> The Webcam must support video4linux2. (Currently, only `/dev/video0` is supported.)
+>
+> Multiple instances of the emulator can be launched, but only a single emulator instance can use the camera feature.
+>
+> Depending on the Webcam in use, the emulator camera feature may not work properly.
 
 The following table lists the host Webcam features.
 
 **Table: Webcam features**
 
 | Feature              | Detail                                   | Notes                                    |
-|--------------------|----------------------------------------|----------------------------------------|
+|----------------------|------------------------------------------|------------------------------------------|
 | FPS                  | 30 fps                                   | -                                        |
-| Preview image format | YUYVI420YV12                             |                                          |
-| Capture image format | YUYVI420YV12JPEG                         |                                          |
-| Preview resolution   | QSIF: 160 x 120QCIF: 176 x 144QVGA: 320 x 240CIF: 352 x 288VGA: 640 x 480 |                                          |
-| Capture resolution   | QSIF: 160 x 120QCIF: 176 x 144QVGA: 320 x 240CIF: 352 x 288VGA: 640 x 480 |                                          |
-| Attributes           | BrightnessContrast                       | Unsupported attributes can return an error. For example, the `camera_start_focusing()` method returns an error. |
+| Preview image format | YUYV<br> I420<br> YV12                   |                                          |
+| Capture image format | YUYV<br> I420<br> YV12<br> JPEG          |                                          |
+| Preview resolution   | QSIF: 160 x 120<br> QCIF: 176 x 144<br> QVGA: 320 x 240<br> CIF: 352 x 288<br> VGA: 640 x 480 |                                          |
+| Capture resolution   | QSIF: 160 x 120<br> QCIF: 176 x 144<br> QVGA: 320 x 240<br> CIF: 352 x 288<br> VGA: 640 x 480 |                                          |
+| Attributes           | Brightness<br> Contrast                  | Unsupported attributes can return an error. For example, the `camera_start_focusing()` method returns an error. |
 
 <a name="net"></a>
 ## Using Network Features
@@ -129,6 +133,7 @@ The emulator provides 3 methods of proxy configuration. They can be configured i
 > - Localhost
 > - 127.0.0.1/8
 > - 10.0.2.0/24
+>
 >  Automatic proxy configuration is not supported due to licensing issues.
 
 ### NAT (Network Address Translation)
@@ -299,7 +304,7 @@ EventCast provides the following features:
 
 ### Prerequisites
 
-When connecting through USB, ADB is required to make a connection. If you have already installed the Android™ SDK on the computer, ADB is located in the `<installed Android SDK>/sdk/platform-tools` folder. Otherwise, you can download only ADB or install the Android SDK.
+When connecting through USB, ADB is required to make a connection. If you have already installed the Android&trade; SDK on the computer, ADB is located in the `<installed Android SDK>/sdk/platform-tools` folder. Otherwise, you can download only ADB or install the Android SDK.
 
 To install ADB:
 
@@ -307,7 +312,7 @@ To install ADB:
 
    For more information, see [ADB Fastboot Install](http://code.google.com/p/adb-fastboot-install/).
 
-2. Windows®: Download ADB and install it in the `C:\ADB` folder.
+2. Windows&reg;: Download ADB and install it in the `C:\ADB` folder.
 
    For more information, see [ADB Fastboot for Windows](http://rubenalamina.mx/custom-installers/android-adb-fastboot/).
 
@@ -342,24 +347,36 @@ To connect the EventCaster application to the emulator:
 
   5. Start the server using a default port (7000) or enter the port number.
 
-  6. Forward a TCP port using the `adb forward` command.For example, to forward the 7000 port in the application to the 1234 port in your computer: `adb forward tcp:1234 tcp:7000`
+  6. Forward a TCP port using the `adb forward` command.
+
+     For example, to forward the 7000 port in the application to the 1234 port in your computer: `adb forward tcp:1234 tcp:7000`
 
   7. Launch the Tizen emulator, and open the Emulator Control Panel (ECP) from the emulator context menu.
 
   8. Select the **USB** checkbox on the **EventCast** tab of the ECP.
 
-  9. Enter the forwarded port number and click **Connection** on the ECP.If the emulator connects to the application successfully, the **Show Event** button in the application is activated.
+  9. Enter the forwarded port number and click **Connection** on the ECP.
+
+     If the emulator connects to the application successfully, the **Show Event** button in the application is activated.
 
   10. Click **Show Event**. You can now send a sensor or touch value to the emulator.
 
 - Connect through Wi-Fi:
 
   1. Enable Wi-Fi on device and select the Wi-Fi network.
+
   2. Connect the Android device to a network where you also have a computer running the emulator.
+
   3. Launch EventCaster and click **Read WiFi**.The application gets the IP address of the connected network.
+
   4. Click **Start Server**.
+
   5. Select the **Wi-Fi** checkbox on the **EventCast** tab of the ECP.
-  6. Enter the IP address and port number using EventCaster and then click **Connect** on the ECP.If the emulator connects to the application successfully, the **Show Event** button in the application is activated.
+
+  6. Enter the IP address and port number using EventCaster and then click **Connect** on the ECP.
+
+     If the emulator connects to the application successfully, the **Show Event** button in the application is activated.
+
   7. Click **Show Event**. You can now send a sensor or touch value to the emulator.
 
 <a name="startup"></a>
@@ -383,12 +400,13 @@ The configuration file consists of 2 sections:
 You can override the defined qemu values on the emulator starting time. For example, to override the guest RAM size:
 
 1. The `-m` qemu option (which sets the guest RAM size) and its value are written in the configuration file:
- ```
-[[VARIABLE]]
-ram=512     # define variable ram
-[[QEMU_OPTIONS]]
--m ${ram}   # use variable ram
- ```
+   ```
+   [[VARIABLE]]
+   ram=512     # define variable ram
+
+   [[QEMU_OPTIONS]]
+   -m ${ram}   # use variable ram
+    ```
 2. To override the guest RAM size, start the emulator with the following command:
 
    ```

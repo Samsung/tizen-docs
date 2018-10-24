@@ -32,7 +32,7 @@ The main features of the Messaging API include:
 
 ## Prerequisites
 
-To use the [Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the [Messaging](../../api/latest/device_api/mobile/tizen/messaging.html) API, the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/messaging.read"/>
@@ -41,9 +41,9 @@ To use the [Messaging](../../../../org.tizen.web.apireference/html/device_api/mo
 
 ## Creating and Sending Messages
 
-You can create a message by using the [Message](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Message) object constructor, and you can set the message attributes and parameters using a [MessageInit](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageInit) object (for example, you can set the message service type - SMS, MMS or email - by using the `type` parameter).
+You can create a message by using the [Message](../../api/latest/device_api/mobile/tizen/messaging.html#Message) object constructor, and you can set the message attributes and parameters using a [MessageInit](../../api/latest/device_api/mobile/tizen/messaging.html#MessageInit) object (for example, you can set the message service type - SMS, MMS or email - by using the `type` parameter).
 
-> **Note**
+> **Note**  
 > The system assigns a unique read-only message ID to each message the first time it is processed, such as when sending it or creating a draft message for it.
 
 To create and send messages:
@@ -58,9 +58,9 @@ To create and send messages:
    tizen.messaging.getMessageServices('messaging.sms', serviceListCB, errorCallback);
    ```
 
-2. In the success callback of the `getMessageServices()` method, use the `Message` interface to define the content and attributes of the message, and then send the message using the `sendMessage()` method of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface. The `sendMessage()` method requires both success and error event handlers. Depending on the result of the sending operation, the message is moved to the device's Sent Items or Drafts folder, and additionally stored in the message storage database.
+2. In the success callback of the `getMessageServices()` method, use the `Message` interface to define the content and attributes of the message, and then send the message using the `sendMessage()` method of the [MessageService](../../api/latest/device_api/mobile/tizen/messaging.html#MessageService) interface. The `sendMessage()` method requires both success and error event handlers. Depending on the result of the sending operation, the message is moved to the device's Sent Items or Drafts folder, and additionally stored in the message storage database.
 
-   If the message is not ready to be sent yet, save the message draft using the `addDraftMessage()` method of the [MessageStorage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageStorage) interface.
+   If the message is not ready to be sent yet, save the message draft using the `addDraftMessage()` method of the [MessageStorage](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage) interface.
 
    ```
    function onAddSuccess() {
@@ -86,7 +86,7 @@ To create and send messages:
    }
    ```
 
-   If sending MMS or email messages with attachments, add the attachments as an array of [MessageAttachment](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageAttachment) objects with the file path and the MIME type (`image/png`, `text/pdf`, or `text/html`) defined for each object.
+   If sending MMS or email messages with attachments, add the attachments as an array of [MessageAttachment](../../api/latest/device_api/mobile/tizen/messaging.html#MessageAttachment) objects with the file path and the MIME type (`image/png`, `text/pdf`, or `text/html`) defined for each object.
 
    Assign the array to the `attachments` attribute of the `Message` object.
 
@@ -116,7 +116,7 @@ If there are multiple SIM cards in the device, by default the system determines 
 
 To add the dual SIM feature to your messaging application, you must learn to retrieve information on available SIM cards and select the SIM card to send SMS and MMS messages:
 
-1. To check how many SIM cards are available, call the `getCount()` method of the [SystemInfo](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html#SystemInfo) interface.
+1. To check how many SIM cards are available, call the `getCount()` method of the [SystemInfo](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo) interface.
 
    ```
    var count = tizen.systeminfo.getCount('SIM');
@@ -138,7 +138,7 @@ To add the dual SIM feature to your messaging application, you must learn to ret
 
    The information can be presented to the user to let them select the SIM card they want.
 
-3. To send the message using the second SIM card, call the `sendMessage()` method of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface specifying the SIM index as `2`:
+3. To send the message using the second SIM card, call the `sendMessage()` method of the [MessageService](../../api/latest/device_api/mobile/tizen/messaging.html#MessageService) interface specifying the SIM index as `2`:
 
    ```
    function sendSuccess() {
@@ -159,7 +159,7 @@ To add the dual SIM feature to your messaging application, you must learn to ret
 
 ## Managing Messages
 
-You can find, update, and delete stored messages with methods provided by the [MessageStorage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageStorage) interface: `findMessages()`, `updateMessages()`, and `removeMessages()`. The interface allows you to manage message storages.
+You can find, update, and delete stored messages with methods provided by the [MessageStorage](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage) interface: `findMessages()`, `updateMessages()`, and `removeMessages()`. The interface allows you to manage message storages.
 
 To work with messages in the message store:
 
@@ -179,9 +179,9 @@ To work with messages in the message store:
    tizen.messaging.getMessageServices('messaging.email', serviceListCB);
    ```
 
-   The `findMessages()` method returns an array of [Message](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Message) objects as the search result.
+   The `findMessages()` method returns an array of [Message](../../api/latest/device_api/mobile/tizen/messaging.html#Message) objects as the search result.
 
-   The search result does not contain the actual bodies of the messages. To [load a message body](#synchronizing-with-the-server), call the `loadMessageBody()` method of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface.
+   The search result does not contain the actual bodies of the messages. To [load a message body](#synchronizing-with-the-server), call the `loadMessageBody()` method of the [MessageService](../../api/latest/device_api/mobile/tizen/messaging.html#MessageService) interface.
 
 2. To update a message in the message storage, use the `updateMessages()` method. The method uses an array of `Message` objects found previously by the `findMessages()` method as a parameter.
 
@@ -208,9 +208,9 @@ To work with messages in the message store:
 
 ## Finding Folders
 
-To find message folders, use the `findFolders()` method of the [MessageStorage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageStorage) interface:
+To find message folders, use the `findFolders()` method of the [MessageStorage](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage) interface:
 
-1. To retrieve the messaging service, use the `getMessageServices()` method of the [Messaging](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Messaging) interface:
+1. To retrieve the messaging service, use the `getMessageServices()` method of the [Messaging](../../api/latest/device_api/mobile/tizen/messaging.html#Messaging) interface:
 
    ```
    var service;
@@ -223,7 +223,7 @@ To find message folders, use the `findFolders()` method of the [MessageStorage](
    tizen.messaging.getMessageServices('messaging.email', serviceListCB);
    ```
 
-2. Define a success handler implementing the [MessageFolderArraySuccessCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageFolderArraySuccessCallback) interface, and optionally an error handler too:
+2. Define a success handler implementing the [MessageFolderArraySuccessCallback](../../api/latest/device_api/mobile/tizen/messaging.html#MessageFolderArraySuccessCallback) interface, and optionally an error handler too:
 
    ```
    function onFindFolders(folders) {
@@ -255,7 +255,7 @@ To find message folders, use the `findFolders()` method of the [MessageStorage](
 
 To keep your email service accounts up-to-date, synchronize them with their respective external servers, such as Gmail and Microsoft Exchange, with the `sync()` method. You can also synchronize a single folder, such as the Inbox, with the `syncFolder()` method. You can specify the maximum number of messages that can be retrieved in each folder.
 
-It is possible that an email message is accessible through the [Message](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#Message) object, but its full body or attachment has not been downloaded yet. You can load email messages and attachments from the email service with the `loadMessageBody()` and `loadMessageAttachment()` methods of the [MessageService](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageService) interface.
+It is possible that an email message is accessible through the [Message](../../api/latest/device_api/mobile/tizen/messaging.html#Message) object, but its full body or attachment has not been downloaded yet. You can load email messages and attachments from the email service with the `loadMessageBody()` and `loadMessageAttachment()` methods of the [MessageService](../../api/latest/device_api/mobile/tizen/messaging.html#MessageService) interface.
 
 To load email messages and attachments and synchronize email:
 
@@ -265,7 +265,7 @@ To load email messages and attachments and synchronize email:
    tizen.messaging.getMessageServices('messaging.email', serviceListCB, errorCallback);
    ```
 
-2. Search for all email messages with attachments using the `findMessages()` method of the [MessageStorage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageStorage) interface:
+2. Search for all email messages with attachments using the `findMessages()` method of the [MessageStorage](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage) interface:
 
    ```
    service.messageStorage.findMessages(new tizen.AttributeFilter('hasAttachment', 'EXACTLY', true),
@@ -336,7 +336,7 @@ To load email messages and attachments and synchronize email:
 
 You can register event listeners to monitor changes in the message storage, a particular conversation, or a particular message folder.
 
-The `addMessagesChangeListener()`, `addConversationsChangeListener()`, and `addFoldersChangeListener()` methods of the [MessageStorage](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageStorage) interface register an event listener, which starts asynchronously once the method returns the subscription identifier for the listener. You can use the [MessagesChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessagesChangeCallback), [MessageConversationsChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageConversationsChangeCallback), and [MessageFoldersChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessageFoldersChangeCallback) interfaces to define listener event handlers for receiving notifications about the changes.
+The `addMessagesChangeListener()`, `addConversationsChangeListener()`, and `addFoldersChangeListener()` methods of the [MessageStorage](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage) interface register an event listener, which starts asynchronously once the method returns the subscription identifier for the listener. You can use the [MessagesChangeCallback](../../api/latest/device_api/mobile/tizen/messaging.html#MessagesChangeCallback), [MessageConversationsChangeCallback](../../api/latest/device_api/mobile/tizen/messaging.html#MessageConversationsChangeCallback), and [MessageFoldersChangeCallback](../../api/latest/device_api/mobile/tizen/messaging.html#MessageFoldersChangeCallback) interfaces to define listener event handlers for receiving notifications about the changes.
 
 To receive notifications when messages and message folders are added, updated, or removed:
 
@@ -347,7 +347,7 @@ To receive notifications when messages and message folders are added, updated, o
    var watchId;
    ```
 
-2. Define the event handlers for different notifications by implementing the [MessagesChangeCallback](../../../../org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html#MessagesChangeCallback) listener interface:
+2. Define the event handlers for different notifications by implementing the [MessagesChangeCallback](../../api/latest/device_api/mobile/tizen/messaging.html#MessagesChangeCallback) listener interface:
 
    ```
    var messageChangeCallback = {

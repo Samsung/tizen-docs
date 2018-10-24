@@ -12,10 +12,16 @@ You can use media queries in 3 ways:
   @media only screen and (max-width: 480px) {styles}
   ```
 
-	> **Note**
-	> This approach is popular since it can reduce style overlapping; however, if all the styles are applied to 1 CSS, the maintenance work efficiency decreases.
+   > **Note**  
+   > This approach is popular since it can reduce style overlapping; however, if all the styles are applied to 1 CSS, the maintenance work efficiency decreases.
 
-- In an `@import` rule in CSSYou can import from CSS a file that matches the condition:`@import url(example.css) not screen and (min-width: 480px)`
+- In an `@import` rule in CSS
+
+  You can import from CSS a file that matches the condition:
+  
+  ```
+  @import url(example.css) not screen and (min-width: 480px)
+  ```
 
 - In HTML
 
@@ -25,8 +31,8 @@ You can use media queries in 3 ways:
   <link rel="stylesheet" media="all and (max-width: 480px)" href="example.css">
   ```
 
-	> **Note**
-	> The disadvantage of this approach is that every time the condition is expanded, the HTML file must be edited. However, since this approach only imports the CSS files that match the condition, the file transmission amount can be reduced.
+   > **Note**  
+   > The disadvantage of this approach is that every time the condition is expanded, the HTML file must be edited. However, since this approach only imports the CSS files that match the condition, the file transmission amount can be reduced.
 
 For more information on the CSS priorities when different media queries are used, see [Media Query Priorities](#media-query-priorities).
 
@@ -82,8 +88,8 @@ You can define the following conditions for the media queries:
   }
   ```
 
-	> **Note**
-	> The device aspect ratio is a reliable way to distinguish the portrait and landscape modes of a smart phone. However, because the aspect ratio of all the devices has to be specified, a precise rule is hard to define. (Currently wildly used screen ratios are 15:9, 16:10, 16:9, 3:2, and 4:3, but devices with other screen ratios may be added in the future.)
+  > **Note**  
+  > The device aspect ratio is a reliable way to distinguish the portrait and landscape modes of a smart phone. However, because the aspect ratio of all the devices has to be specified, a precise rule is hard to define. (Currently wildly used screen ratios are 15:9, 16:10, 16:9, 3:2, and 4:3, but devices with other screen ratios may be added in the future.)
 
 ## Media Query Priorities
 
@@ -189,7 +195,7 @@ You can use media queries to determine the styles to be used in a Web document. 
    </div>
    ```
 
-2. Define basic styles for the page, using a flexible box (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#flexi), [wearable](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_w.html#flexi), and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../../../org.tizen.web.apireference/html/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
+2. Define basic styles for the page, using a flexible box (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#flexi), [wearable](../../../api/latest/w3c_api/w3c_api_w.html#flexi), and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#flexi) applications) and multi-column (in [mobile](../../../api/latest/w3c_api/w3c_api_m.html#multicolumn) and [TV](../../../api/latest/w3c_api/w3c_api_tv.html#multicolumn) applications only) layout with 2 columns. (The following figure applies to mobile applications only.)
 
    ```
    .container {

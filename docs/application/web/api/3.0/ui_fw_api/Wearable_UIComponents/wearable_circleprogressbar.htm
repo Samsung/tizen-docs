@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>CircleProgressBar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>CircleProgressBar</h1>
+
+
+<p>Shows a control that indicates the progress percentage of an on-going operation by circular shape.</p>
+<p>The circle progress component shows a control that indicates the progress percentage of an on-going operation.<br>This component can be scaled to be fit inside a parent container.</p>
+
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>2.3</strong>.</td>
+	</tr>
+	<tr>
+		<td class="note">This component is optimized for circular UI. The component may not be shown properly in rectangular UI.</td>
+	</tr>
+	</tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#simple-progress bar0.9435037684161216">How to Create CircleProgressBar</a></li>
+		<li><a href="#options-list">Options</a></li>
+		<li><a href="#events-list">Events</a></li>
+		<li><a href="#methods-list">Methods</a></li>
+</ol>
+
+<h2><a id='simple-progress bar0.9435037684161216'></a>How to Create CircleProgressBar</h2>
+
+<h3>Default CircleProgressBar</h3>
+
+<p>If you don't make any "circleprogress" with &lt;progress&gt; element, you can show default progress style.<br>
+To add a CircleProgressBar component to the application, use the following code:</p>
+
+<pre class="prettyprint">
+&lt;div class="ui-page" id="pageCircleProgressBar"&gt;
+   &lt;header class="ui-header"&gt;&lt;/header&gt;
+   &lt;div class="ui-content"&gt;
+      &lt;progress class="ui-circle-progress" id="circleprogress" max="20" value="2"&gt;&lt;/progress&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   (function()
+   {
+      var page = document.getElementById("pageCircleProgressBar"),
+          progressBar = document.getElementById("circleprogress"),
+          progressBarWidget;
+
+      page.addEventListener("pageshow", function()
+      {
+         /* Make Circle Progressbar object */
+         progressBarWidget = new tau.widget.CircleProgressBar(progressBar);
+      });
+
+      page.addEventListener("pagehide", function()
+      {
+         /* Release object */
+         progressBarWidget.destroy();
+      });
+   }());
+&lt;/script&gt;
+</pre>
+
+<h3>Full(screen) size CircleProgressBar</h3>
+<p>To add a circular shape(page size) progressbar in your application, you have to declare &lt;progress&gt; tag in "ui-page" element.
+	<br> And in your javascript code, you have to add option "size: full".
+	<br> Be sure to place the &lt;progress&gt; element outside of content element.
+</p>
+<pre class="prettyprint">
+&lt;div class="ui-page" id="pageCircleProgressBar"&gt;
+   &lt;header class="ui-header"&gt;&lt;/header&gt;
+   &lt;div class="ui-content"&gt;&lt;/div&gt;
+   &lt;progress class="ui-circle-progress" id="circleprogress" max="20" value="2"&gt;&lt;/progress&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   (function()
+   {
+      var page = document.getElementById("pageCircleProgressBar"),
+          progressBar = document.getElementById("circleprogress"),
+          progressBarWidget;
+
+      page.addEventListener("pageshow", function()
+      {
+         /* Make Circle Progressbar object */
+         progressBarWidget = new tau.widget.CircleProgressBar(progressBar, {size: "full"});
+      });
+
+      page.addEventListener("pagehide", function()
+      {
+         /* Release object */
+         progressBarWidget.destroy();
+      });
+   }());
+&lt;/script&gt;
+</pre>
+
+<h3>Using event</h3>
+
+<p>Circle progress bar triggers "progresschange" event. The description is <a href="#events-list">here</a>.<br>
+The following shows how to use "progresschange" event.
+
+<pre class="prettyprint">
+progressBar.addEventListener("progresschange", function()
+{
+   /* Do something when the value of progress changes */
+   console.log(progressBarWidget.value());
+});
+</pre>
+
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">containerClassName</span></td>
+				<td class="option">string</td>
+				<td class="option">null</td>
+				<td class="option">Sets the class name of CircleProgressBar container.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">size</span></td>
+				<td class="option">number | "full" | "large" | "medium" | "small"</td>
+				<td class="option">"medium"</td>
+				<td class="option">Sets the size of CircleProgressBar.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">thickness</span></td>
+				<td class="option">number</td>
+				<td class="option">null</td>
+				<td class="option">Sets the border width of CircleProgressBar.</td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+	<h2><a id="events-list"></a>Events</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">progresschange</span></td>
+				<td><p>Triggered when the section is changed.</p></td>
+			</tr>
+		
+		</tbody>
+	</table>
+
+
+
+	<h2><a id="methods-list"></a>Methods</h2>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string <a href="#method-value">value</a>() </pre>
+					</td>
+					<td><p>Get or Set value of the widget</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+				<dt class="method"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Get or Set value of the widget</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">string value() </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>Return element value or set the value</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>string</td>
+									<td>In get mode return element value</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+<pre name="code" class="examplecode prettyprint">
+&lt;div class="ui-page" id="pageCircleProgressBar"&gt;
+   &lt;header class="ui-header"&gt;
+      &lt;h2 class="ui-title"&gt;Circle Progress Bar&lt;/h2&gt;
+   &lt;/header&gt;
+   &lt;div class="ui-content content-padding"&gt;Circle Progress Bar
+      &lt;progress class="ui-circle-progress" id="circleprogress" max="20" value="2"&gt;&lt;/progress&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+   var page = document.getElementById("pageCircleProgressBar");
+
+   page.addEventListener("pageshow", function()
+   {
+      var progressbar = document.getElementById("circleprogress"),
+          progressbarWidget = tau.widget.CircleProgressBar(progressbar),
+          /* Return value in progress tag */
+          value = progressbarWidget.value();
+      /* Set the value for the progress */
+      progressbarWidget.value("15");
+   });
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+		</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

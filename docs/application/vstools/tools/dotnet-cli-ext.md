@@ -47,9 +47,23 @@ dotnet tizen cli-config [arguments] [options]
 
 **Examples:**
 - Display a list of all configurations for which values are set:
-  - Windows&reg;, Ubuntu, and macOS:
+  - Windows&reg;:
     ```sh
     > dotnet tizen cli-config -l
+    default.build.architecture=x86
+    default.build.compiler=llvm
+    default.build.configuration=Debug
+    default.csharp.buildtool.path=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\msbuild.exe
+    default.csharp.toolchain=dotnet-cli
+    default.dotnet.tool.path=C:/Program Files/dotnet/dotnet.exe
+    default.profiles.path=D:\tizen-install-data\profile\profiles.xml
+    default.sdb.timeout=60000
+    ```
+  - Ubuntu and macOS:
+    ```sh
+    > dotnet tizen cli-config -l
+    default.build.architecture=x86
+    default.build.compiler=llvm
     default.build.configuration=Debug
     default.csharp.buildtool.path=C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe
     default.csharp.toolchain=dotnet-cli
@@ -119,7 +133,7 @@ dotnet tizen new [arguments] [options]
 - Create a Tizen .NET project with a specific template:
   - Windows&reg;:
     ```sh
-    > dotnet tizen new Tizen.Template.BlankAppCorporate -n blank -o C:\workspace
+    > dotnet tizen new Tizen.NUI.Template.Single -n blank -o C:\workspace
     > cd C:\workspace\blank
     ```
 
@@ -279,11 +293,6 @@ dotnet tizen certificate [options]
 
 ## Managing Security Profiles
 The `security-profiles` command manages the security profiles, which are sets of signing certificates for Tizen applications.
-The command consists of 3 sub-commands:
-
-- The `add` command adds the specified security profile, which can contain several certificates.
-- The `list` command displays the security profiles. If you specify the name of the security profile, details about the specified profile are displayed.
-- The `remove` command removes the specified security profile.
 
 **Syntax:**
 ```
@@ -294,20 +303,20 @@ dotnet tizen security-profiles <sub-command> [options]
 | Sub-command | Option | Description |
 | ------ | ------ | ------ |
 | `add [options]` |`-n`, `--name <PROFILE_NAME>` | Specifies the name of the security profile to add. (Required) |
-|| `-a`, `--author <AUTHOR_PATH>` | Specifies the directory path where the author certificate file is located. The format of the certificate is PKCS#12, and the file extension is `.p12`. (Required) |
+|| `-a`, `--author <AUTHOR_PATH>` | Specifies the file path where the author certificate file is located. The format of the certificate is PKCS#12, and the file extension is `.p12`. (Required) |
 || `-pw`, `--password <AUTHOR_PASSWORD>` | Specifies the password used to access the author certificate. (Required) |
-|| `-c`, `--ca <AUTHOR_CA_PATH>` | Specifies the directory path where the author CA certificate file is located. The file extension of the CA certificate is `.cer`. |
-|| `-r`, `--rootca <AUTHOR_ROOT_CA_PATH>` | Specifies the directory path where the author root CA certificate file is located. The file extension of the root CA certificate is `.cer`. |
-|| `-d`, `--dist <DIST_PATH>` | Specifies the directory path where the distributor certificate file is located. If you omit this option, the default distributor certificate file embedded in the Tizen Baseline SDK is used. |
+|| `-c`, `--ca <AUTHOR_CA_PATH>` | Specifies the file path where the author CA certificate file is located. The file extension of the CA certificate is `.cer`. |
+|| `-r`, `--rootca <AUTHOR_ROOT_CA_PATH>` | Specifies the file path where the author root CA certificate file is located. The file extension of the root CA certificate is `.cer`. |
+|| `-d`, `--dist <DIST_PATH>` | Specifies the file path where the distributor certificate file is located. If you omit this option, the default distributor certificate file embedded in the Tizen Baseline SDK is used. |
 || `-dp`, `--dist-password <DIST_PASSWORD>` | Specifies the distributor certificate password. |
-|| `-dc`, `--dist-ca <DIST_CA_PATH>` | Specifies the directory path where the distributor CA certificate file is located. |
-|| `-dr`, `--dist-rootca <DIST_ROOT_CA_PATH>` | Specifies the directory path where the distributor root CA certificate file is located.
+|| `-dc`, `--dist-ca <DIST_CA_PATH>` | Specifies the file path where the distributor CA certificate file is located. |
+|| `-dr`, `--dist-rootca <DIST_ROOT_CA_PATH>` | Specifies the file path where the distributor root CA certificate file is located.
 || `--force`| If there is no `profiles.xml` file, generates the file. |
-|| `-p`, `--path <PROFILE_PATH>` | Specifies the directory path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
+|| `-p`, `--path <PROFILE_PATH>` | Specifies the file path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
 | `list [options]` | `-n, --name <PROFILE_NAME>` | Specifies the name of the security profile to list. If you omit this option, a list of the security profile names in the `profiles.xml` file is displayed. |
-|| `-p`, `--path <PROFILE_PATH>` | Specifies the directory path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
+|| `-p`, `--path <PROFILE_PATH>` | Specifies the file path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
 | `remove [options]` | `-n`, `--name <PROFILE_NAME>` | Specifies the name of the security profile to remove. (Required) |
-|| `-p`, `--path <PROFILE_PATH>` | Specifies the directory path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
+|| `-p`, `--path <PROFILE_PATH>` | Specifies the file path where the `profiles.xml` file is located. If you omit this option, the value of the `default.profiles.path` key in the CLI configuration is used to find the `profiles.xml` file, which consists of new security profiles that are generated in the `<TIZEN_BASELINE_SDK_DATA>/keystore/` directory. The directory path is added to the CLI configuration. |
 
 **Examples:**
 - Add a security profile:
@@ -324,7 +333,9 @@ dotnet tizen security-profiles <sub-command> [options]
     Wrote to 'C:\tizen-studio-data\ide\keystore\profiles.xml'.
     Succeed to add 'MyProfile' profile.
     If want to sign by this, add the file of security profiles in CLI configuration like 'tizen cli-config "default.profiles.path=C:\tizen-studio-data\ide\keystore\profiles.xml"'.
-    Ubuntu and macOS:
+    ```
+  - Ubuntu and macOS:
+    ```sh
     $ dotnet tizen security-profiles add -n MyProfile -a ~/tizen-studio-data/keystore/author/mycert.p12 -pw 1234
     No exist the default path of security profiles.
     author path: ~/tizen-studio-data/keystore/author/mycert.p12

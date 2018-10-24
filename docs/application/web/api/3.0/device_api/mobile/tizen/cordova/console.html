@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
+<script type="text/javascript" src="../snippet.js"></script><title>Console API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Console">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="title"><h1>Console API</h1></div>
+<div class="brief">
+ the Console module provides function to access the console.
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-console">Cordova Console</a>.
+        </div>
+<div class="description">
+        <p>
+<b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>1.1. <a href="#ConsoleManagerObject">ConsoleManagerObject</a>
+</li>
+<li>1.2. <a href="#ConsoleManager">ConsoleManager</a>
+</li>
+</ul>
+</li>
+<li>2. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#ConsoleManagerObject">ConsoleManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ConsoleManager">ConsoleManager</a></td>
+<td>
+<div>void <a href="#ConsoleManager::log">log</a> (DOMString text)</div>
+<div>void <a href="#ConsoleManager::error">error</a> (DOMString text)</div>
+<div>void <a href="#ConsoleManager::warn">warn</a> (DOMString text)</div>
+<div>void <a href="#ConsoleManager::info">info</a> (DOMString text)</div>
+<div>void <a href="#ConsoleManager::debug">debug</a> (DOMString text)</div>
+<div>void <a href="#ConsoleManager::assert">assert</a> (boolean expression, DOMString message)</div>
+<div>void <a href="#ConsoleManager::dir">dir</a> (Object obj)</div>
+<div>void <a href="#ConsoleManager::dirxml">dirxml</a> (Object obj)</div>
+<div>void <a href="#ConsoleManager::time">time</a> (DOMString label)</div>
+<div>void <a href="#ConsoleManager::timeEnd">timeEnd</a> (DOMString label)</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="interfaces" id="interfaces-section">
+<h2>1. Interfaces</h2>
+<div class="interface" id="ConsoleManagerObject">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManagerObject"></a><h3>1.1. ConsoleManagerObject</h3>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ConsoleManagerObject {
+    readonly attribute <a href="#ConsoleManager">ConsoleManager</a> console;
+  };</pre>
+<pre class="webidl prettyprint">  Window implements <a href="#ConsoleManagerObject">ConsoleManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<div class="description">
+          <p>
+The ConsoleManagerObject interface.
+          </p>
+         </div>
+</div>
+<div class="interface" id="ConsoleManager">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager"></a><h3>1.2. ConsoleManager</h3>
+<div class="brief">
+ the ConsoleManager interface embodies Console module methods.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ConsoleManager {
+    void log(DOMString text);
+
+    void error(DOMString text);
+
+    void warn(DOMString text);
+
+    void info(DOMString text);
+
+    void debug(DOMString text);
+
+    void assert(boolean expression, DOMString message);
+
+    void dir(Object obj);
+
+    void dirxml(Object obj);
+
+    void time(DOMString label);
+
+    void timeEnd(DOMString label);
+  };</pre>
+<p><span class="version">
+            Since: </span>
+ 3.0
+          </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+          </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ConsoleManager::log">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::log"></a><code><b><span class="methodName">log</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Prints a line of text to a standard output.
+The text will be logged as a standard message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void log(DOMString text);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">text</span>: 
+ The text to be printed.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log('A is for Alice');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>A is for Alice
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::error">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::error"></a><code><b><span class="methodName">error</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Prints a line of text to a standard output.
+The text will be logged as an error message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void error(DOMString text);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">text</span>: 
+ The text to be printed.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.error('B is for Bob');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>B is for Bob
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::warn">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::warn"></a><code><b><span class="methodName">warn</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Prints a line of text to a standard output.
+The text will be logged as a warning message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void warn(DOMString text);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">text</span>: 
+ The text to be printed.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.warn('C is for Christopher');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>C is for Christopher
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::info">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::info"></a><code><b><span class="methodName">info</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Prints a line of text to a standard output.
+The text will be logged as an info message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void info(DOMString text);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">text</span>: 
+ The text to be printed.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.info('D is for Dorothy');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>D is for Dorothy
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::debug">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::debug"></a><code><b><span class="methodName">debug</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Prints a line of text to a standard output.
+The text will be logged as a debug message.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void debug(DOMString text);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">text</span>: 
+ The text to be printed.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.debug('E is for Eve');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>E is for Eve
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::assert">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::assert"></a><code><b><span class="methodName">assert</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ If the specified expression is false,
+the message is written to the console.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void assert(boolean expression, DOMString message);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">expression</span>: 
+ The expression to be evaluated.
+                </li>
+          <li class="param">
+<span class="name">message</span>: 
+ The message to be displayed if an expression is false.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var felix = 'Felix';
+
+/* This assertion checks whether the first letter in name 'Felix' is 'A' */
+console.assert(felix.charAt(0) === 'A', felix + ' does not start with A');
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Felix does not start with A
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::dir">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::dir"></a><code><b><span class="methodName">dir</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Prints a JavaScript representation of the specified object.
+If the object being logged is an HTML element, the JavaScript
+Object view is forced.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void dir(Object obj);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">obj</span>: 
+ An object whose JavaScript representation will be printed.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var john = {name: "John", surname: "Doe"};
+console.dir(john.name);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>John
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::dirxml">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::dirxml"></a><code><b><span class="methodName">dirxml</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Prints an XML/HTML Element representation of the specified object
+if possible or the JavaScript Object if it is not.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void dirxml(Object obj);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">obj</span>: 
+ An object whose XML/HTML Element representation will be printed.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var john = {name: "John", surname: "Doe"};
+console.dirxml(john.surname);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Doe
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::time">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::time"></a><code><b><span class="methodName">time</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts a new timer with an associated label. When <var>console.timeEnd()
+</var> is called with the same label, the timer is stopped and the elapsed time
+is displayed in the console. Timer values are accurate to the sub-millisecond.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void time(DOMString label);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">label</span>: 
+ The label to start timing with.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.time("Big array initialization");
+var array = new Array(1000000);
+for (var i = array.length - 1; i &gt;= 0; i -= 1)
+{
+  array[i] = new Object();
+};
+console.timeEnd("Big array initialization");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Big array initialization: 461.989ms
+</pre>
+</div>
+</dd>
+<dt class="method" id="ConsoleManager::timeEnd">
+<a class="backward-compatibility-anchor" name="::Console::ConsoleManager::timeEnd"></a><code><b><span class="methodName">timeEnd</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops the timer with the specified label and prints the elapsed time.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void timeEnd(DOMString label);</pre></div>
+<p><span class="version">
+            Since: </span>
+ 3.0
+            </p>
+<p><span class="privilegelevel">
+            Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">
+            Privilege: </span>
+ http://tizen.org/privilege/filesystem.read
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">label</span>: 
+ The label associated to the timing (with the use of <var>console.time()</var>method).
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.time("Big array initialization");
+var array = new Array(1000000);
+for (var i = array.length - 1; i &gt;= 0; i -= 1)
+{
+  array[i] = new Object();
+};
+console.timeEnd("Big array initialization");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Big array initialization: 461.989ms
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">2. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Console {
+  [NoInterfaceObject] interface ConsoleManagerObject {
+    readonly attribute <a href="#ConsoleManager">ConsoleManager</a> console;
+  };
+
+  Window implements <a href="#ConsoleManagerObject">ConsoleManagerObject</a>;
+
+  [NoInterfaceObject] interface ConsoleManager {
+    void log(DOMString text);
+
+    void error(DOMString text);
+
+    void warn(DOMString text);
+
+    void info(DOMString text);
+
+    void debug(DOMString text);
+
+    void assert(boolean expression, DOMString message);
+
+    void dir(Object obj);
+
+    void dirxml(Object obj);
+
+    void time(DOMString label);
+
+    void timeEnd(DOMString label);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

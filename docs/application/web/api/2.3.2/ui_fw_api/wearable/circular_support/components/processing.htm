@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../../snippet.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../../styles.css" rel="StyleSheet" type="text/css" />
+	<link href="../../../snippet.css" rel="StyleSheet" type="text/css" />
+	<title>How to support Processing</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>How to support Processing</h1>
+
+Circular UI provides full size processing component.
+<p>The following explains how to support the full size processing component with former processing component.<p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#layout">Layout</a></li>
+	<li><a href="#htmlCode">HTML code</a></li>
+	<li><a href="#cssCode">CSS code</a></li>
+</ol>
+
+<h2><a id='layout'></a>Layout</h2>
+
+<table id='circularsupport'>
+	<tbody>
+		<tr>
+			<td><img src="../../../../images/rectangular_processing.png" /></td>
+			<td><img src="../../../../images/round_processing.png" /></td>
+		</tr>
+		<tr>
+			<td align="center">in Rectangular UI</td>
+			<td align="center">in Circular UI</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id='htmlCode'></a>HTML code</h2>
+
+<pre class="prettyprint">
+&lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;pageProcessing&quot; data-enable-page-scroll=&quot;false&quot;&gt;
+	&lt;header class=&quot;ui-header&quot;&gt;
+		&lt;h2 class=&quot;ui-title&quot;&gt;Processing&lt;/h2&gt;
+	&lt;/header&gt;
+	&lt;div class=&quot;ui-content content-padding&quot;&gt;
+		&lt;div class=&quot;ui-processing&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;ui-processing-text&quot;&gt;
+			Description about progress
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;ui-processing ui-processing-full-size&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id='cssCode'></a>CSS code</h2>
+
+<pre class="prettyprint">
+.ui-processing-full-size {
+	display: none;
+}
+
+@media all and (-tizen-geometric-shape: circle) {
+	.ui-processing {
+		display: none;
+	}
+	.ui-processing.ui-processing-full-size {
+		display: block;
+	}
+}
+</pre>
+
+<h2>Where to Go Next</h2>
+<ul>
+	<li><a href="../circular_support.htm">Support for Circular UI</a></li>
+
+</ul>
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

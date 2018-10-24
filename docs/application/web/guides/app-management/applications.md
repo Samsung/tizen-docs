@@ -1,4 +1,4 @@
-# Applications
+# Web Applications
 
 The [Tizen Studio](../../../tizen-studio/index.md) enables you to create Web applications for mobile and wearable devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device. A [Web application package](../../tutorials/process/app-dev-process.md#package) includes all the support files that are needed by the Web application. Therefore, a Web application can run without any additional external resources or network connectivity after installation.
 
@@ -16,17 +16,18 @@ Tizen provides various application models to allow you to create applications ta
 
   The UI application is the most common Tizen application model.
 
-- [Service Application](./service-app.md)
+  - [Widget Application](web-widget.md) **in wearable applications only**
 
- The service application is a Tizen Web application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
+    The widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
 
-- [Widget Application](./web-widget.md) **in wearable applications only**
+  - [Watch Application](watch-app.md) **in wearable applications only**
 
-   The widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
+    The watch application provides a watch face as its user interface, showing the current time and updating it every second. The watch application can be shown on the idle screen of the wearable device.
 
-- Watch Application **in wearable applications only**
+- [Service Application](service-app.md)
 
- The watch application provides a watch face as its user interface, showing the current time and updating it every second. The watch application can be shown on the idle screen of the wearable device.
+  The service application is a Tizen Web application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
+
 
 ## Application Package Manager
 
@@ -38,10 +39,12 @@ The application package manager module is expandable to support various types of
 
 ![Application package manager](./media/application_package_manager.png)
 
-Tizen supports both Web application packages and hybrid application packages, which combine a Web application and 1 or more native service applications. Applications in the same package follow the same installation life-cycle, handled by the application package manager.
+Tizen supports both Web application packages and hybrid application packages, which combine a Web application and one or more native service applications. Applications in the same package follow the same installation life-cycle, handled by the application package manager.
+
 
 ## Related Infromation
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
+

@@ -2,7 +2,7 @@
 
 Release Date: 01 Nov, 2017
 
-The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs.
+The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native API set.
 
 ## Release Details
 
@@ -26,9 +26,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - System Framework
   - Extended internal storage support, without on-demand device encryption, has been added:
     - Extended internal storage is an SD card-based storage extension feature.
-  - Dbus debugging and profiling tools (eBPF-based monitoring) have been added.
-  - Supplementary group support for libdbuspolicy with Kdbus backend has been added.
-  - C# Public APIs (device, feedback, storage, dlog, tizen-platform-config (internal)) has been added.
+  - D-Bus debugging and profiling tools (eBPF-based monitoring) have been added.
+  - Supplementary group support for libdbuspolicy with KDBus backend has been added.
+  - C# Public API set (device, feedback, storage, dlog, tizen-platform-config (internal)) has been added.
   - New Public enumerators have been added to libsvi, such as FEEDBACK_PATTERN_SYSTEM_SHORT.
   - A media directory that can be shared between users (/opt/usr/home/owner/media/Shared) has been added.
 
@@ -41,7 +41,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 #### Known Issues
 
-- ODE (on-demand device encryption) for extended internal storage has not been fully implemented.
+- on-demand device encryption (ODE) for extended internal storage has not been fully implemented.
 
 ### System (IoT System)
 
@@ -57,7 +57,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - A TDM/TBM-based recovery UI engine has been added.
 - System Information
   - A per-runtime system information engine has been added.
-  - Additional APIs for smart management (per-application system resource usage information) have been added.
+  - Additional API set for smart management (per-application system resource usage information) have been added.
 - Crash Manager
   - A ptrace-based callstack generator has been added.
 - Resource Management
@@ -74,7 +74,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 #### New and Changed Features
 
-- The following open-source libraries have been upgraded:
+- The following Open-source libraries have been upgraded:
   - augeas (1.7.0)
   - file (5.31)
   - icu (58.2)
@@ -130,7 +130,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - Applications can be installed on an encrypted extended SD card.
   - Applications can store their private runtime data on an extended SD card.
 - Application IPC
-  - Access control with privileges for app-control and data-control APIs has been added.
+  - Access control with privileges for app-control and data-control API set has been added.
 - Application Launchers
   - The amd daemon has been refactored to support low-power IoT devices:
     - A modular structure has been introduced. Each functionality can be enabled or disabled by installing or removing amd-mod-* packages.
@@ -157,7 +157,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - Window rotation information has been added to `wl_surface.set_buffer_transform()`.
   - DPMS, eom, screenshooter, and video functionalities have been moved from Enlightenment modules to the Enlightenment core.
   - The ecore-drm dependency has been removed by using libtdm.
-  - A dbus signal can be broadcast when the screen is rotated.
+  - A D-Bus signal can be broadcast when the screen is rotated.
   - The video window alpha handling rule has been changed.
   - Support for screen dumps has been added for debugging.
   - A new layer has been added to support the cursor.
@@ -165,26 +165,26 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - The `sd_notify()` function call has been added to the main function for sending systemd start-up notifications, since the `ecore_main_loop_begin()` function in EFL no longer calls it.
   - Creating the keymap cache file is now processed before initializing the DRM.
   - A remote surface client check has been added to permit access only to processes with a privileged UID.
-  - A dbus policy check has been added to permit access only to processes with a privileged UID.
+  - A D-Bus policy check has been added to permit access only to processes with a privileged UID.
   - Auxiliary hints have been added for:
     - wm.policy.win.deiconify.update: to support clients which need to defer deiconify rendering.
     - wm.policy.win.iconify.buffer.flush: to support clients which need to change the buffer flush feature use when iconified.
   - Configuration values have been added for:
-    - deiconify_approve: wait for render commit when deiconifying the client
-    - rsm_buffer_release_mode: change the buffer flush mode for remote_surface
-    - hold_prev_win_img: keep saved window image files
+    - deiconify_approve: wait for render commit when deiconifying the client.
+    - rsm_buffer_release_mode: change the buffer flush mode for remote_surface.
+    - hold_prev_win_img: keep saved window image files.
   - The debugging tool has been extended with support for:
-    - shutdown: exit the Enlightenment display server
-    - module: load/unload Enlightenment submodules
-    - accepts_focus information
+    - shutdown: exit the Enlightenment display server.
+    - module: load/unload Enlightenment submodules.
+    - accepts_focus information.
 - wayland-tbm
   - Support has been added for the wl_tbm_queue reserved memory detach protocol.
   - Support has been added for the buffer transform protocol and API.
   - A scale factor option for the dump buffer has been added to wayland-tbm-monitor.
 - Tizen ws Shell
-  - The `tzsh_quickpanel_show()` and `tzsh_quickpanel_hide()` APIs have been changed to work in a synchronous manner.
+  - The `tzsh_quickpanel_show()` and `tzsh_quickpanel_hide()` API set have been changed to work in a synchronous manner.
 - efl-util
-  - efl-util gesture APIs have been added to handle global gestures, such as edge swipe, tap, and palm cover.
+  - efl-util gesture API set have been added to handle global gestures, such as edge swipe, tap, and palm cover.
 - pepper
   - The doctor server has been added as a reference implementation of a headless server. It is designed to have minimal library dependencies.
 - Tizen HAL
@@ -275,7 +275,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
     - A config section has been added to stylesheet.
   - 3D rendering and animation
     - The `Animation::PlayAfter()` API has been added.
-    - The `Animation::SetLoopMode()` and `Animation::GetLoopMode()` APIs have been added.
+    - The `Animation::SetLoopMode()` and `Animation::GetLoopMode()` API set have been added.
     - An environment variable to set the multi-sampling level has been added.
   - Performance
     - Unnecessary glClear calls have been reduced.
@@ -289,8 +289,8 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
     - Support for TTS player has been added.
     - The dependency for Tizen.Applications.dll has been removed.
     - Support for group animation has been added to VisualView.
-    - 3D rendering APIs, such as Renderer, Geometry, Shader, and Texture, have been added.
-    - ImfManager APIs have been added.
+    - 3D rendering API set, such as Renderer, Geometry, Shader, and Texture, have been added.
+    - ImfManager API set have been added.
     - The ResourceLoaded signal has been added to View.
     - Background color animation has been added to View.
     - Support for the 'as' keyword has been added.
@@ -340,13 +340,13 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 #### New and Changed Features
 
 - EFL
-  - Edbus has been deprecated for security reasons.
+  - EDBus has been deprecated for security reasons.
   - Some source repositories have been changed:
     - From profile/PROFILE/platform/core/efl-config to platform/core/uifw/efl-config
     - From profile/PROFILE/platform/core/efl-misc to platform/core/uifw/efl-misc
     - From profile/PROFILE/platform/core/efl-modules to platform/core/uifw/efl-modules
 - Text Input
-  - New features and APIs:
+  - New features and API set:
     - In the TV profile, support for voice recognition on IME has been added.
     - Support for smart reply in inputdelegator and IME has been added.
     - In mobile and TV profiles, support for inputdelegator has been added.
@@ -357,8 +357,8 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
     - An Inputmethod API for sending private commands has been added.
     - An Inputmethod API for getting prediction hints has been added.
 - Voice Framework
-  - New features and APIs:
-    - C# APIs for the STT and TTS engines have been added.
+  - New features and API set:
+    - C# API set for the STT and TTS engines have been added.
     - Support for a voice control hybrid engine has been added.
 
 #### Fixes
@@ -373,7 +373,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - Accessibility
   - The ScreenReader functionality has not been fully tested.
 - Clipboard
-  - The CBHM (ClipBoard History Manager) has not been fully tested.
+  - The ClipBoard History Manager (CBHM) has not been fully tested.
 - View Manager
   - The View Manager has not been fully tested.
 - Customization API
@@ -387,23 +387,23 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 #### New and Changed Features
 
 - Camera
-  - The "[http://tizen.org/privilege/camera](http://tizen.org/privilege/camera)" privilege requirement has been removed from some APIs.
-  - New APIs for interrupting a started callback have been added.
+  - The "[http://tizen.org/privilege/camera](http://tizen.org/privilege/camera)" privilege requirement has been removed from some API set.
+  - New API set for interrupting a started callback have been added.
   - The preview callback can now be set and unset while previewing.
 - Recorder
-  - The "[http://tizen.org/privilege/recorder](http://tizen.org/privilege/recorder)" privilege requirement has been removed from some APIs.
-  - New APIs for interrupting a started callback have been added.
+  - The "[http://tizen.org/privilege/recorder](http://tizen.org/privilege/recorder)" privilege requirement has been removed from some API set.
+  - New API set for interrupting a started callback have been added.
   - A new thread for a muxed stream callback has been added.
 - Media Content
   - A new API for bookmark and face searching has been added.
-  - APIs for updating file metadata (such as description, display name, added_time, rating, and content name) have been deprecated.
+  - API set for updating file metadata (such as description, display name, added_time, rating, and content name) have been deprecated.
   - The API for getting/setting folder metadata (such as order, name, parent folder ID, and modified time) has been deprecated.
 - Audio
   - A new Sound-Pool API set has been added.
-  - New APIs for acquiring/releasing all focuses at once have been added.
+  - New API set for acquiring/releasing all focuses at once have been added.
   - A new API for delivering focus to another stream info handle has been added.
   - A new API for removing all devices from the stream information handle has been added.
-  - Device state APIs have been deprecated.
+  - Device state API set have been deprecated.
 - Player
   - A new API for getting/setting the maximum limit of the streaming variant has been added.
   - A new API for getting/setting the audio-only mode has been added.
@@ -415,7 +415,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - A new API for configuration by media format has been added to MediaCodec.
   - Logic for sequences that have top/bottom crop has been added.
 - MediaMuxer
-  - A new API for registering/unregistering an EOS (end of stream) callback function that is invoked when an EOS occurs has been added.
+  - A new API for registering/unregistering an end of stream (EOS) callback function that is invoked when an EOS occurs has been added.
 - MediaStreamer
   - A new type for adaptive sink to generate fragmented files has been added.
   - HTTP streaming service using HTTP server has been added.
@@ -435,7 +435,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 #### New and Changed Features
 
 - Data Network
-  - New features and APIs in mobile, wearable, and TV profiles:
+  - New features and API set in mobile, wearable, and TV profiles:
     - A wifi-manager API for getting the Wi-Fi module state has been added.
     - A wifi-manager API to get the Wi-Fi scan results for WPS (Wi-Fi Positioning System) has been added.
     - A wifi-manager API for getting the raw SSID has been added.
@@ -451,11 +451,11 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
     - iptables has been upgraded from 1.4.21 to 1.6.1.
     - openvpn has been upgraded from 2.3.2 to 2.4.2.
 - Bluetooth
-  - New features and APIs:
+  - New features and API set:
     - The C# Public OPP Client API has been added.
     - The C# Public OPP Server API has been added.
 - Telephony
-  - New features and APIs:
+  - New features and API set:
     - In mobile, wearable and TV profiles, the is_metered field is now provided through profile data.
     - In mobile and wearable profiles, support for the call blocking feature in the call manager has been added.
     - In mobile and wearable profiles, support for unknown call blocking in the call manager has been added.
@@ -468,13 +468,13 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - A memory leak in the connman and net-config has been fixed.
   - A memory leak in the libnet-client and wifi-manager has been fixed.
 - Telephony
-  - A memory leak in the telephony manager plugin and telephony dbus handling plugin has been fixed.
+  - A memory leak in the telephony manager plugin and telephony D-Bus handling plugin has been fixed.
   - The bugs in tapitest have been fixed.
 - MTP
   - A memory leak in the MTP daemon has been fixed.
 - NFC
   - The bug that caused a crash during UTC testing has been fixed.
-  - The bug that caused a crash when launched by dbus activation has been fixed.
+  - The bug that caused a crash when launched by D-Bus activation has been fixed.
   - A memory leak in the NFC daemon has been fixed.
 - Bluetooth
   - Memory corruption in a GATT operation has been fixed.
@@ -492,7 +492,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - License Manager
   - When using app-defined privileges, a way to check consumer validity has been added.
 - Privacy Privilege Manager API
-  - New third-party APIs for privacy privilege usage have been added for native and C#.
+  - New third-party API set for privacy privilege usage have been added for native and C#.
 - Privilege List
   - In the wearable profile, the following privileges have been added:
     - Native
@@ -531,16 +531,16 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 - PIMS
   - Phonenumber Utils
-    - In mobile and wearable profiles, new APIs for number blocking have been added.
+    - In mobile and wearable profiles, new API set for number blocking have been added.
 - Location
   - Fused Location
-    - New APIs for fused location have been added.
+    - New API set for fused location have been added.
 - Sensor
   - A new API for the significant motion sensor has been added.
 - Context
   - Contextual History
     - In the mobile profile, several history data type enumerations have been deprecated.
-    - In the wearable profile, Contextual History APIs have been added.
+    - In the wearable profile, Contextual History API set have been added.
     - In mobile and wearable profiles, an API for checking history data type support has been added.
   - Contextual Trigger
     - In the mobile profile, several trigger event and condition type enumerations have been deprecated.
@@ -556,9 +556,9 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 #### Fixes
 
 - Account Manager
-  - Account feature exception has been added for offline APIs.
-  - Unused D-bus policy rules have been removed.
-  - The D-bus policy rule has been fixed from system_fw to service_fw.
+  - Account feature exception has been added for offline API set.
+  - Unused D-Bus policy rules have been removed.
+  - The D-Bus policy rule has been fixed from system_fw to service_fw.
 - Push
   - The bug related to waking up a service application has been fixed.
   - The bug related to push_request_unread_notification for root/system daemon has been fixed.
@@ -570,7 +570,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 - FIDO
   - On-demand timeout for the fido-service daemon has been added.
   - fido-service has been changed to be used in the system daemon.
-  - fido-asm.service has been changed to use on-demand dbus activation.
+  - fido-asm.service has been changed to use on-demand D-Bus activation.
   - Coding rules and memory leaks have been fixed.
 - Sync Manager
   - In mobile and wearable profiles, sync data storage has changed from XML to DB.
@@ -580,7 +580,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
 
 #### New and Changed Features
 
-- New APIs have been added:
+- New API set have been added:
   - ewk_view_original_url_get
   - ewk_context_background_music_(get|set)
   - ewk_context_block_multimedia_on_call_(get|set)
@@ -608,8 +608,8 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
     - Major performance improvements in the runtime and framework.
     - Implements .NET Standard 2.0.
   - .NET Standard 2.0.0 support
-    - .NET Standard is a set of APIs that all .NET implementations must provide to conform to the standard. This unifies the .NET implementations and prevents future fragmentation.
-    - There more than 32,000 APIs in .NET Standard 2.0. These additions make it much easier to port existing code to .NET Standard.
+    - .NET Standard is a set of API set that all .NET implementations must provide to conform to the standard. This unifies the .NET implementations and prevents future fragmentation.
+    - There more than 32,000 API set in .NET Standard 2.0. These additions make it much easier to port existing code to .NET Standard.
     - .NET Standard 2.0 is supported on the following platforms as well as Tizen:
       - .NET Framework 4.6.1
       - .NET Core 2.0
@@ -624,7 +624,7 @@ The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, devic
   - Now supports Tizen wearable profile (Preview).
 - TizenFX
   - Included in the official release of Tizen API Version 4.
-  - New APIs based on native APIs have been added:
+  - New API set based on native API set have been added:
     - capi-media-image-util
     - contacts-service2
     - phonenumber-utils

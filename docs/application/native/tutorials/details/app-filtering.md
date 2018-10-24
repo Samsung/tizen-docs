@@ -25,9 +25,9 @@ application is using, do one of the following:
     For example, if an application wants to use location information, it
     can check the device capability by using the `system_info_get_XXX()`
     function of the System Information API (in
-    [mobile](../../../../org.tizen.native.mobile.apireference/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html)
+    [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html)
     and
-    [wearable](../../../../org.tizen.native.wearable.apireference/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) applications).
+    [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html) applications).
     If the device supports GPS, the application uses GPS information,
     and if the device supports WPS only, the application uses WPS
     information instead of GPS.
@@ -84,7 +84,7 @@ The following table lists the available screen size features.
 **Table: Available screen size features**
 
 | Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
+|----------------------------------------|----------------------------------------|-----|
 | `http://tizen.org/feature/screen.size.normal` | Specify this key, if the application supports all possible current and future resolutions on the normal screen size.<br><br>You cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously. If you do, only the most specific resolution key is considered and the less specific resolution keys are ignored. For example, if you specify both `http://tizen.org/feature/screen.size.normal` and `http://tizen.org/feature/screen.size.normal.320.480` keys, only the `http://tizen.org/feature/screen.size.normal.320.480` key is applied.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.normal.240.400` | Specify this key, if the application supports the 240 x 400 resolution on the normal screen size.<br><br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.normal.320.320` | Specify this key, if the application supports the 320 x 320 resolution on the normal screen size.<br><br>You can specify multiple `http://tizen.org/feature/screen.size.normal.*` keys, if your application supports multiple screen resolutions on the normal screen size. However, you cannot specify keys on both `screen.size.*` and `screen.size.normal.*` levels simultaneously.<br><br>If no screen size key is declared, it is assumed that the application supports only `screen.size.normal.720.1280`. To avoid this, specify at least 1 screen size key. | 2.3   |
@@ -135,8 +135,8 @@ for the application `tizen-manifest.xml` file:
     `tizen-manifest.xml` file in the **Project Explorer** view.
 2. Select the features you need, one at a time:
 
-    a.  In the **Features** tab, click **+**.  
-    b.  Select a feature.  
+    a.  In the **Features** tab, click **+**.
+    b.  Select a feature.
     c.  Click **OK**.
 
     The manifest file (`tizen-manifest.xml`) is updated automatically.
@@ -149,7 +149,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 **Table: Available mobile native requirements**
 
 | Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
+|----------------------------------------|----------------------------------------|-----|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
@@ -179,11 +179,13 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
+| `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
+| `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone. | 2.2.1 |
 | `http://tizen.org/feature/minicontrol`   | Specify this key, if the application requires the minicontrol feature. | 4.0   |
-| `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | Specify this key, if the application requires a pinch-zoom gesture feature. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.point_count` | Specify this key with a specific number (`int` type), if the application requires the minimum of specified number of simultaneous touches in a multi-point touch. | 2.2.1 |
+| `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. | 3.0   |
@@ -215,6 +217,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/network.tethering.bluetooth` | Specify this key, if the application requires the tethering over Bluetooth feature. | 2.3   |
 | `http://tizen.org/feature/network.tethering.usb` | Specify this key, if the application requires the tethering over USB connection feature. | 2.3   |
 | `http://tizen.org/feature/network.tethering.wifi` | Specify this key, if the application requires the tethering over Wi-Fi feature. | 2.3   |
+| `http://tizen.org/feature/network.tethering.wifi.direct` | Specify this key, if the application requires the tethering over Wi-Fi Direct feature. | 4.0   |
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.direct` | Specify this key, if the application requires the Wi-Fi Direct&reg; feature. | 2.2.1 |
@@ -227,11 +230,11 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
-| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
-| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
@@ -261,9 +264,9 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.gesture_recognition` | Specify this key, if the application requires a gesture recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gravity` | Specify this key, if the application requires a gravity sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor. | 2.2.1 |
-| `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
+| `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
@@ -285,7 +288,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.temperature` | Specify this key, if the application requires a temperature sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.tiltmeter` | Specify this key, if the application requires a tilt sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.tiltmeter.wakeup` | Specify this key, if the application requires the tilt sensor wake-up feature. | 2.2.1 |
-| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires an ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/shortcut`      | Specify this key, if the application requires the shortcut feature. | 4.0   |
@@ -305,7 +308,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 **Table: Available wearable native requirements**
 
 | Feature key                              | Description                              | Since |
-| ---------------------------------------- | ---------------------------------------- | ----- |
+|------------------------------------------|------------------------------------------|-------|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
@@ -334,10 +337,13 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
+| `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
+| `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone. | 2.2.1 |
-| `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | Specify this key, if the application requires a pinch-zoom gesture feature. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.point_count` | Specify this key with a specific number (`int` type), if the application requires the minimum of specified number of simultaneous touches in a multi-point touch. | 2.2.1 |
+| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
+| `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. | 3.0   |
@@ -376,9 +382,9 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
@@ -410,9 +416,9 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.gesture_recognition` | Specify this key, if the application requires a gesture recognition sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gravity` | Specify this key, if the application requires a gravity sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.gyroscope` | Specify this key, if the application requires a gyro sensor. | 2.2.1 |
-| `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
+| `http://tizen.org/feature/sensor.gyroscope_rotation_vector` | Specify this key, if the application requires a gyroscope-based rotation vector sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
@@ -431,7 +437,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/sensor.temperature` | Specify this key, if the application requires a temperature sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.tiltmeter` | Specify this key, if the application requires a tilt sensor. | 2.2.1 |
 | `http://tizen.org/feature/sensor.tiltmeter.wakeup` | Specify this key, if the application requires the tilt sensor wake-up feature. | 2.2.1 |
-| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires an ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
@@ -447,7 +453,6 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/vision.qrcode_generation` | Specify this key, if the application requires the QR code generation feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.qrcode_recognition` | Specify this key, if the application requires the QR code recognition feature. | 2.2.1 |
 | `http://tizen.org/feature/watch_app`     | Specify this key, if the application requires the watch application feature. | 4.0   |
-| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
 
 <a name="profile_n"></a>
 ## Profile-based Filtering
@@ -469,7 +474,7 @@ attributes.
 **Table: Tizen profiles and profile name attributes**
 
 | Tizen profile | Profile name attribute |
-| ------------- | ---------------------- |
+|-------------|----------------------|
 | Mobile        | `mobile`               |
 | Wearable      | `wearable`             |
 

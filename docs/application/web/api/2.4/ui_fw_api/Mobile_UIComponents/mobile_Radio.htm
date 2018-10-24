@@ -1,0 +1,271 @@
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Radio</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Radio</h1>
+
+<p>The Radio component changes theme of browser-default radio buttons to a form more adapted to the mobile environment.</p>
+
+<table class="note">
+	<tbody>
+	<tr>
+		<th class="note">Note</th>
+	</tr>
+	<tr>
+		<td class="note">This component is supported since <strong>Tizen 2.4.</strong></td>
+	</tr>
+	<tr>
+		<td class="note">It was renamed from <i>CheckboxRadio</i> component of Tizen 2.3.</td>
+	</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+	<li><a href="#default-selectors0.9922445809934287">Default Selectors</a></li>
+
+	<li><a href="#html-examples0.3427857731003315">HTML Examples</a></li>
+
+	<li><a href="#methods-list">Methods</a></li>
+</ol>
+
+<h2><a id="default-selectors0.9922445809934287"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;input&gt;</code> elements with <code>type=&quot;radio&quot;</code> or <code>class=&quot;ui-radio&quot;</code> are displayed as radio button.</p>
+
+<h2><a id="html-examples0.3427857731003315"></a>HTML Examples</h2>
+
+<p>To create a radio component, please refer following example:</p>
+
+<pre class="prettyprint">&lt;input type=&quot;radio&quot; name=&quot;radio-choice&quot; id=&quot;radio-choice-1&quot; value=&quot;choice-1&quot; checked=&quot;checked&quot; /&gt;
+&lt;label for=&quot;radio-choice-1&quot;&gt;Cat&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;radio-choice&quot; id=&quot;radio-choice-2&quot; value=&quot;choice-2&quot;  /&gt;
+&lt;label for=&quot;radio-choice-2&quot;&gt;Dog&lt;/label&gt;
+</pre>
+
+
+<h2><a id="methods-list"></a>Methods</h2>
+
+<h3>Summary</h3>
+<table class="informaltable">
+	<thead>
+	<tr>
+		<th>Method</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tbody>
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-disable">disable</a> (  ) </pre>
+		</td>
+		<td><p>Disables the component.</p></td>
+	</tr>
+
+
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-enable">enable</a> (  ) </pre>
+		</td>
+		<td><p>Enables the component.</p></td>
+	</tr>
+
+	<tr>
+		<td>
+			<pre class="intable prettyprint"><a href="#method-value">value</a> ( ) </pre>
+		</td>
+		<td><p>Sets/Gets the value from radio element.</p></td>
+	</tr>
+
+	</tbody>
+</table>
+<dl>
+
+
+	<dt class="method" id="addidp28072"><code><b><span class="methodName"
+													   id="method-disable">disable</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Disables the component.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">disable ( ) </pre>
+		</div>
+
+		<div class="description">
+			<p>
+
+			</p>
+		</div>
+
+
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+			<table>
+				<tbody>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>Radio</td>
+					<td>The disabled Radio component.</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input type=&quot;radio&quot; name=&quot;radio-1&quot; id=&quot;radio-1&quot;/&gt;&lt;label for=&quot;radio-1&quot;&gt;Normal&lt;/label&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;radio-1&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radioWidget = tau.widget.Radio(element);
+&nbsp;&nbsp;&nbsp;radioWidget.disable();
+&lt;/script&gt;
+</pre>
+		</div>
+
+
+	</dd>
+
+
+
+	<dt class="method" id="addidp28072"><code><b><span class="methodName"
+													   id="method-enable">enable</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Enables the component.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">enable ( ) </pre>
+		</div>
+
+		<div class="description">
+			<p>
+
+			</p>
+		</div>
+
+
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+			<table>
+				<tbody>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>Radio</td>
+					<td>The enabled Radio component.</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input type=&quot;radio&quot; name=&quot;radio-1&quot; id=&quot;radio-1&quot;/&gt;&lt;label for=&quot;radio-1&quot;&gt;Normal&lt;/label&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;radio-1&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radioWidget = tau.widget.Radio(element);
+&nbsp;&nbsp;&nbsp;radioWidget.enable();
+&lt;/script&gt;
+</pre>
+		</div>
+
+	</dd>
+
+
+
+	<dt class="method" id="addidp28072"><code><b><span class="methodName"
+													   id="method-value">value</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Sets/Gets the value from the radio element.</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">{ string | number } value ( ) </pre>
+		</div>
+
+		<div class="description">
+			<p>
+
+			</p>
+		</div>
+
+
+
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+
+			<table>
+				<tbody>
+				<tr>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>String | number</td>
+					<td>When the method does not have a value parameter, it returns value of element.</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+		</div>
+		<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input type=&quot;radio&quot; name=&quot;radio-1&quot; id=&quot;radio-1&quot;/&gt;&lt;label for=&quot;radio-1&quot;&gt;Normal&lt;/label&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;radio-1&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radioWidget = tau.widget.Radio(element);
+
+&nbsp;&nbsp;&nbsp;// Sets value to radio element
+&nbsp;&nbsp;&nbsp;radioWidget.value("radio-value");
+&nbsp;&nbsp;&nbsp;// Gets checked radio element
+&nbsp;&nbsp;&nbsp;console.log(radioWidget.value());
+&lt;/script&gt;
+</pre>
+		</div>
+
+
+	</dd>
+
+
+</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Drawer</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Drawer</h1>
+
+<p>The drawer component allows you to open and close a drawer to show or hide the content inside it.</p>
+
+<table class="note">
+	<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This component is supported since Tizen 2.3.</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selector0.8635590926278383">Default Selector</a></li>
+	
+        <li><a href="#html-examples0.06990464706905186">HTML Examples</a></li>
+
+		<li><a href="#drawer-options0.0814934759400785">Options</a></li>
+
+		<li><a href="#drawer-methods0.08396544051356614">Methods</a></li>
+
+</ol>
+
+<h2><a id="default-selector0.8635590926278383"></a>Default Selector</h2>
+
+<p>By default, all <code>&lt;div&gt;</code> elements with the <code>class=&quot;ui-drawer&quot;</code> or <code>data-role=&quot;drawer&quot;</code> attribute are displayed as drawers.</p>
+
+<h2><a id="html-examples0.06990464706905186"></a>HTML Examples</h2>
+
+<p>To create a drawer using the <code>class</code> attribute, use the following code:</p>
+
+<pre class="prettyprint">&lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-sub-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="drawer-options0.0814934759400785"></a>Options</h2>
+
+    <h3>Summary</h3>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-duration</span></td>
+				<td class="option">number</td>
+				<td class="option">300</td>
+				<td class="option">Drawer duration in milliseconds.</td>
+			</tr>		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-position</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;left&quot;</td>
+				<td class="option">Drawer position.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-width</span></td>
+				<td class="option">number</td>
+				<td class="option">240</td>
+				<td class="option">Drawer width in pixels.</td>
+			</tr>
+			
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-close-on-click</span></td>
+				<td class="option">boolean</td>
+				<td class="option">true</td>
+				<td class="option">Binds a click event at overlay and closes the drawer.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-overlay</span></td>
+				<td class="option">boolean</td>
+				<td class="option">true</td>
+				<td class="option">Sets the drawer overlay when the drawer is opened.</td>
+			</tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-drawer-target</span></td>
+                <td class="option">String</td>
+                <td class="option">&quot;.ui-page&quot;</td>
+                <td class="option">Sets drawer target element as the CSS selector.</td>
+            </tr>
+			</tbody></table>
+
+<h3><a id="drawer-positioning0.7145300961565226"></a>Drawer Position</h3>
+
+<p>You can set the drawer position manually with the <code>data-position</code> attribute:</p>
+
+<pre class="prettyprint">&lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;</pre>
+
+<p>The possible values for the attribute are:</p>
+
+<ul>
+<li><code>&quot;left&quot;</code>: Drawer appears from the left side.</li>
+<li><code>&quot;right&quot;</code>: Drawer appears from the right side.</li>
+</ul>
+
+
+<h2><a id="drawer-methods0.08396544051356614"></a>Methods</h2>
+
+
+	<h3>Summary</h3>
+
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-close">close</a> (  ) </pre>
+					</td>
+					<td><p>Closes the drawer.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-isOpen">isOpen</a> (  ) </pre>
+					</td>
+					<td><p>Checks the drawer status.</p></td>
+				</tr>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint"><a href="#method-open">open</a> (  ) </pre>
+					</td>
+					<td><p>Opens the drawer.</p></td>
+				</tr>
+			
+		
+			
+		
+		</tbody>
+	</table>
+	<dl>
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-close">close</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Closes the drawer.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">close ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					<div class="example">
+						<span class="example"><p>Code
+								example:</p><p></p></span>
+						<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-sub-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drawer = tau.widget.Drawer(drawerElement);
+&nbsp;&nbsp;&nbsp;drawer.close();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-isOpen">isOpen</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Checks the drawer status.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">isOpen ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							The boolean value that indicates whether the drawer is open.
+						
+					</div>
+					<div class="example">
+						<span class="example"><p>Code
+								example:</p><p></p></span>
+						<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-sub-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drawer = tau.widget.Drawer(drawerElement),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isOpen = drawer.isOpen();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-open">open</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Opens the drawer.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">open ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+						
+							No return value
+						
+					</div>
+					<div class="example">
+						<span class="example"><p>Code
+								example:</p><p></p></span>
+						<pre name="code" class="examplecode
+							prettyprint">
+&lt;div class=&quot;ui-drawer&quot; data-position=&quot;left&quot; id=&quot;leftdrawer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;ul class=&quot;ui-listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-main-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;List item 2&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li class=&quot;ui-drawer-sub-list&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sub item 1&lt;/a&gt;&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&lt;/div&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var drawerElement = document.getElementById(&quot;leftdrawer&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drawer = tau.widget.Drawer(drawerElement);
+&nbsp;&nbsp;&nbsp;drawer.open();
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

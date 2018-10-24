@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
+<script type="text/javascript" src="snippet.js"></script><title>InputDevice API</title>
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::InputDevice">
+<div class="title"><h1>InputDevice API</h1></div>
+<div class="brief">
+ The Input Device API provides functions to subscribe key events of the input device.
+        </div>
+<div class="description">
+        <p>
+The Tizen Device may provide depending on a particular input device.
+An application can handle device dependent key events after registration.
+        </p>
+       </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#InputDeviceKeyName">InputDeviceKeyName</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>
+</li>
+<li>2.2. <a href="#InputDeviceKey">InputDeviceKey</a>
+</li>
+<li>2.3. <a href="#InputDeviceManager">InputDeviceManager</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#InputDeviceManagerObject">InputDeviceManagerObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#InputDeviceKey">InputDeviceKey</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#InputDeviceManager">InputDeviceManager</a></td>
+<td>
+<a href="#InputDeviceKey">InputDeviceKey</a>[] <a href="#InputDeviceManager::getSupportedKeys">getSupportedKeys</a> ()<br>
+    <a href="#InputDeviceKey">InputDeviceKey</a>? <a href="#InputDeviceManager::getKey">getKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)<br>
+    void <a href="#InputDeviceManager::registerKey">registerKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)<br>
+    void <a href="#InputDeviceManager::unregisterKey">unregisterKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)<br>
+    void <a href="#InputDeviceManager::registerKeyBatch">registerKeyBatch</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
+    void <a href="#InputDeviceManager::unregisterKeyBatch">unregisterKeyBatch</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="typedef" id="InputDeviceKeyName">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceKeyName"></a><h3>1.1. InputDeviceKeyName</h3>
+<div class="brief">
+ Name which identifies the key
+          </div>
+<pre class="webidl prettyprint">    typedef DOMString InputDeviceKeyName;</pre>
+<div class="description">
+          <p>
+Name of the key may be, for example:
+          </p>
+          <ul>
+            <li>
+VolumeUp            </li>
+            <li>
+VolumeDown            </li>
+          </ul>
+          <p>
+The actual list of supported keys depends on the platform.
+          </p>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="InputDeviceManagerObject">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManagerObject"></a><h3>2.1. InputDeviceManagerObject</h3>
+<div class="brief">
+ The InputDeviceManager interface defines what is instantiated in the Tizen object.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface InputDeviceManagerObject {
+        readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
+    };</pre>
+<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <p>
+There is a tizen.inputdevice object that allows accessing the functionality of the Input Device API.
+          </p>
+         </div>
+</div>
+<div class="interface" id="InputDeviceKey">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceKey"></a><h3>2.2. InputDeviceKey</h3>
+<div class="brief">
+ The InputDeviceKey interface stores information about the key.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface InputDeviceKey {
+        readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
+
+        readonly attribute long code;
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="InputDeviceKey::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">InputDeviceKeyName </span><span class="name">name</span></span><div class="brief">
+ The name of the key, for example <var>"VolumeUp"</var> or <var>"VolumeDown"</var>.
+            </div>
+<div class="description">
+            <p>
+If the key is listed in the <a href="http://www.w3.org/TR/2014/WD-DOM-Level-3-Events-key-20140612">DOM Level 3 KeyboardEvent key Values</a> specification, the <em>name</em> attribute is equal to the <em>key value</em> specified there. (The <a href="http://www.w3.org/TR/2014/WD-DOM-Level-3-Events-key-20140612/#keys-media-controller">Media Controller Keys</a> section is the most relevant to the Input Device API)
+            </p>
+            <p>
+If the "DOM Level 3 KeyboardEvent key Value" does not contain appropriate entry for the key, then the Input Device provides a device specific <em>name</em>.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</li>
+<li class="attribute" id="InputDeviceKey::code">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">long </span><span class="name">code</span></span><div class="brief">
+ The numeric code of the key, like <var>37</var> or <var>13</var>.
+            </div>
+<div class="description">
+            <p>
+This is the <em>keyCode</em> attribute value of the Key Event generated by the key.
+            </p>
+           </div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="InputDeviceManager">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManager"></a><h3>2.3. InputDeviceManager</h3>
+<div class="brief">
+ The InputDeviceManager interface provides the features to check for availability and register for input device events.
+          </div>
+<pre class="webidl prettyprint">    [NoInterfaceObject] interface InputDeviceManager {
+        <a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };</pre>
+<p><span class="version">
+            Since: </span>
+ 2.4
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="InputDeviceManager::getSupportedKeys">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManager::getSupportedKeys"></a><code><b><span class="methodName">getSupportedKeys</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Retrieves the list of keys that can be registered with the <em>registerKey()</em> method.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys();
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="description">
+            <p>
+Mandatory keys will not be retrieved by this method.
+            </p>
+           </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError in case of any error.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var i, keyCode = {}, supportedKeys;
+ supportedKeys = tizen.inputdevice.getSupportedKeys();
+ for (i = 0; i &lt; supportedKeys.length; i++) {
+     keyCode[supportedKeys[i].name] = supportedKeys[i].code;
+ }
+ if(keyCode.hasOwnProperty("VolumeUp")) {
+     tizen.inputdevice.registerKey("VolumeUp");
+ }
+ window.addEventListener("keydown", function(keyEvent) {
+     // identify the key by the numeric code from the keyEvent
+     if(keyEvent.keyCode === keyCode.VolumeUp) {
+         console.log("The VOLUME UP was pressed");
+     }
+ });
+
+ </pre>
+</div>
+</dd>
+<dt class="method" id="InputDeviceManager::getKey">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManager::getKey"></a><code><b><span class="methodName">getKey</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns information about the key which has the given name.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">keyName</span>: 
+ The name of the key to retrieve
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+ InputDeviceKey InputDeviceKey object for the given key name, or null if the key is not supported
+              </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError if the given keyName is invalid (e.g. name is empty string)
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+</dd>
+<dt class="method" id="InputDeviceManager::registerKey">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManager::registerKey"></a><code><b><span class="methodName">registerKey</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers an input device key to receive DOM keyboard event when it is pressed or released.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="description">
+            <p>
+When an application wants to react to the Input Device keys being pressed, it should register this key.
+            </p>
+            <p>
+An application can not register the mandatory keys (ArrowLeft, ArrowRight, ArrowUp, ArrowDown, Enter, Back).
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">keyName</span>: 
+ The name of the key which should generate DOM key events when pressed
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the given keyName is invalid or not supported (e.g. name is empty string).
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var keys = ["VolumeUp", "VolumeDown"], i;
+ for (i = 0; i &lt; keys.length; i++) {
+     try {
+         tizen.inputdevice.registerKey(keys[i]);
+     } catch(error) {
+         console.log("failed to register " + keys[i] + ": " + error);
+     }
+ }
+ </pre>
+</div>
+</dd>
+<dt class="method" id="InputDeviceManager::unregisterKey">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManager::unregisterKey"></a><code><b><span class="methodName">unregisterKey</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters an input device key.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">keyName</span>: 
+ The name of the key which should not be monitored any longer
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if the given keyName is invalid or not supported (e.g. name is empty string).
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> tizen.inputdevice.unregisterKey("VolumeDown");
+ </pre>
+</div>
+</dd>
+<dt class="method" id="InputDeviceManager::registerKeyBatch">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManager::registerKeyBatch"></a><code><b><span class="methodName">registerKeyBatch</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a batch of input device keys to receive DOM keyboard event when any of them is pressed or released.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with this error type:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError: If any of the given keyNames is invalid or not supported              </li>
+              <li>
+UnknownError: In case of any other error              </li>
+            </ul>
+            <p>
+When an application wants to react to the input device keys being pressed, it should register those keys.
+            </p>
+            <p>
+An application can not register the mandatory keys (ArrowLeft, ArrowRight, ArrowUp, ArrowDown, Enter, Back).
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">keyNames</span>: 
+ The array with key names of keys which should generate DOM key events when pressed
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when keys are registered.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the given keyNames is invalid or not supported (e.g. name is empty string).
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any other error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function errorCB(err) {
+     console.log( 'The following error occurred: ' +  err.name);
+ }
+
+ function successCB() {
+     console.log('Registsered successfully');
+ }
+
+ var keys = ["VolumeUp", "VolumeDown"];
+ tizen.inputdevice.registerKeyBatch(keys, successCB, errorCB);
+ </pre>
+</div>
+</dd>
+<dt class="method" id="InputDeviceManager::unregisterKeyBatch">
+<a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceManager::unregisterKeyBatch"></a><code><b><span class="methodName">unregisterKeyBatch</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters a batch of input device keys.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+             </pre></div>
+<p><span class="version">
+            Since: </span>
+ 2.4
+            </p>
+<div class="description">
+            <p>
+The errorCallback is launched with this error type:
+            </p>
+            <ul>
+              <li>
+InvalidValuesError: If any of the given keyNames is invalid or not supported              </li>
+              <li>
+UnknownError: In case of any other error              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">keyNames</span>: 
+ The array containing names of keys which should not be monitored any longer
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when keys are unregistered.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+ Callback method to be invoked when an error has occurred.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the given keyNames is invalid or not supported (e.g. name is empty string).
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError in any error case.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function errorCB(err) {
+     console.log( 'The following error occurred: ' +  err.name);
+ }
+
+ function successCB() {
+     console.log('Unregistsered successfully');
+ }
+ var keys = ["VolumeUp", "VolumeDown"];
+ tizen.inputdevice.unregisterKeyBatch(keys, successCB, errorCB);
+ </pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module InputDevice {
+    typedef DOMString InputDeviceKeyName;
+
+    [NoInterfaceObject] interface InputDeviceManagerObject {
+        readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
+    };
+    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;
+
+    [NoInterfaceObject] interface InputDeviceKey {
+        readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
+
+        readonly attribute long code;
+    };
+
+    [NoInterfaceObject] interface InputDeviceManager {
+        <a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        <a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+
+        void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    };
+
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

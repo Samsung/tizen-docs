@@ -1,0 +1,568 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Search Bar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Search Bar</h1>
+
+<p>The search bar component is used to search for page content. It can be placed in the header or within the page content.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	
+		<li><a href="#default-selectors0.5337990545667708">Default Selectors</a>
+			
+		</li>
+	
+		<li><a href="#manual-constructor0.7136435771826655">Manual Constructor</a>
+			
+		</li>
+	
+	<li><a href="#html-examples0.6614409978501499">HTML Examples</a>
+						</li>
+	
+
+	
+		<li><a href="#options-list">Options</a>
+			
+		</li>
+
+		<li><a href="#methods0.952881425851956">Methods</a>
+			
+		</li>
+	
+</ol>
+
+
+
+<h2><a id="default-selectors0.5337990545667708"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type=&quot;search&quot;</code> or <code>type=&quot;tizen-search&quot;</code> attribute are displayed as search bars. In addition, all elements with the <code>data-type=&quot;search&quot;</code>, <code>data-type=&quot;tizen-search&quot;</code>, or <code>class=&quot;ui-searchbar&quot;</code> attribute are displayed as search bars.</p>
+
+
+
+<h2><a id="manual-constructor0.7136435771826655"></a>Manual Constructor</h2>
+
+<p>To manually create a search bar component, use the component constructor from the <code>tau</code> namespace (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; id=&quot;search-bar-page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;search-bar&quot;&gt;Search Input:&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input name=&quot;search&quot; id=&quot;search-bar&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;content&quot; id=&quot;search-bar-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hairston&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hansbrough&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Allred&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hanrahan&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Egan&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dare&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(function (document) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var inputElement = document.getElementById(&quot;search-bar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentElement = document.getElementById(&quot;search-bar-content&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentChildren = contentElement.getElementsByTagName(&quot;li&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentChildrenLength = contentChildren.length,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pageElement = document.getElementById(&quot;search-bar-page&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;searchBar;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function changeHandle(event) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var i,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childText,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = searchBar.value();
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; contentChildrenLength; i++) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child = contentChildren.item(i);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childText = child.textContent.toLowerCase();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!value || ~childText.indexOf(value)) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.style.display = &quot;block&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.style.display = &quot;none&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function createPageHandle() 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;searchBar = tau.widget.SearchBar(inputElement, {icon: &quot;call&quot;});
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;searchBar.on(&quot;change keyup&quot;, changeHandle);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pageElement.addEventListener(&quot;pagecreate&quot;, createPageHandle);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}(document));
+&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+&lt;/div&gt;
+</pre>
+
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+
+<p>If the jQuery library is loaded, you can use its method (<strong>support for backward compatibility</strong>):</p>
+
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; id=&quot;search-bar-page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;search-bar&quot;&gt;Search Input:&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input name=&quot;search&quot; id=&quot;search-bar&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;content&quot; id=&quot;search-bar-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hairston&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hansbrough&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Allred&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hanrahan&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Egan&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dare&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(function (document) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var inputElement = document.getElementById(&quot;search-bar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentElement = document.getElementById(&quot;search-bar-content&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentChildren = contentElement.getElementsByTagName(&quot;li&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentChildrenLength = contentChildren.length,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pageElement = document.getElementById(&quot;search-bar-page&quot;);
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function changeHandle(event) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var i,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childText,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = inputElement.value;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; contentChildrenLength; i++) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child = contentChildren.item(i);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childText = child.textContent.toLowerCase();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!value || ~childText.indexOf(value)) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.style.display = &quot;block&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.style.display = &quot;none&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function createPageHandle() 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#search-bar&quot;).searchbar(inputElement, {icon: &quot;call&quot;}).on(&quot;change keyup&quot;, changeHandle);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&quot;#search-bar-page&quot;).on(&quot;pagecreate&quot;, createPageHandle);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}(document));
+&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id="html-examples0.6614409978501499"></a>HTML Examples</h2>
+
+<p>To create a search bar in the header:</p>
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; id=&quot;search-bar-page&quot;&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;header&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;search-bar&quot;&gt;Search Input:&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;search&quot; name=&quot;search&quot; id=&quot;search-bar&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;div data-role=&quot;content&quot; id=&quot;search-bar-content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul data-role=&quot;listview&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hairston&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hansbrough&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Allred&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hanrahan&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Egan&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Dare&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(function (document) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var inputElement = document.getElementById(&quot;search-bar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentElement = document.getElementById(&quot;search-bar-content&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentChildren = contentElement.getElementsByTagName(&quot;li&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentChildrenLength = contentChildren.length;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function changeHandle(event) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var i,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childText,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value = inputElement.value;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; contentChildrenLength; i++) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child = contentChildren.item(i);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;childText = child.textContent.toLowerCase();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!value || ~childText.indexOf(value)) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.style.display = &quot;block&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;child.style.display = &quot;none&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputElement.addEventListener(&quot;change&quot;, changeHandle);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputElement.addEventListener(&quot;keyup&quot;, changeHandle);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}(document));
+&nbsp;&nbsp;&nbsp;&lt;/script&gt;
+&lt;/div&gt;
+</pre>
+
+	<h2><a id="options-list"></a>Options</h2>
+<p>The following table lists the options for the search bar component.</p>
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-cancel-btn</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">Sets whether the cancel button is shown.</td>
+			</tr>
+		
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-icon</span></td>
+				<td class="option">string | null</td>
+				<td class="option">null</td>
+				<td class="option">Icon type on the action button.<br/>
+				Possible values are the same as in the <a href="ns_widget_mobile_Button.htm">button component.</a> If the option is not set, the action button is not shown.</td>
+			</tr>
+
+		
+		</tbody>
+	</table>
+
+<h2><a id="methods0.952881425851956"></a>Methods</h2>
+
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+<ul><li><p>TAU API (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var searchBarElement = document.getElementById(&#39;search-bar&#39;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;searchBar = tau.widget.SearchBar(searchBarElement);
+
+&nbsp;&nbsp;&nbsp;searchBar.methodName(methodArgument1, methodArgument2, ...);
+&lt;/script&gt;
+</pre></li>
+
+<li><p>jQuery API (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;.selector&quot;).searchbar(&#39;methodName&#39;, methodArgument1, methodArgument2, ...);
+&lt;/script&gt;
+</pre></li></ul>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+	
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">SearchBar <a href="#method-disable">disable</a> (  ) </pre>
+					</td>
+					<td><p>Disables the search bar.</p></td>
+				</tr>
+			
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">SearchBar <a href="#method-enable">enable</a> (  ) </pre>
+					</td>
+					<td><p>Enables the search bar.</p></td>
+				</tr>
+			
+		
+			
+	
+
+		
+			
+				<tr>
+					<td>
+						<pre class="intable prettyprint">string <a href="#method-value">value</a> ( string? value ) </pre>
+					</td>
+					<td><p>Gets or sets an input text value.</p></td>
+				</tr>
+			
+		
+		</tbody>
+	</table>
+	<dl>
+
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-disable">disable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Disables the search bar.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">SearchBar disable ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method sets the disabled attribute for the search bar and changes the look of the search bar to the disabled state.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>SearchBar</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+					
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;searchbar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;searchBarWidget = tau.widget.SearchBar(element);
+&nbsp;&nbsp;&nbsp;searchBarWidget.disable();
+&lt;/script&gt;
+</pre>
+						</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#searchbar&quot;).searchbar(&quot;disable&quot;);
+&lt;/script&gt;
+</pre>
+						</div>					
+				</dd>
+			
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-enable">enable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Enables the search bar.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">SearchBar enable ( ) </pre>
+					</div>
+					
+					<div class="description">
+						<p>
+							<p>The method removes the disabled attribute from the search bar and changes the look of the search bar to the enabled state.</p>
+
+
+						</p>
+					</div>
+					
+					
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>SearchBar</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;var element = document.getElementById(&quot;searchbar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;searchBarWidget = tau.widget.SearchBar(element);
+&nbsp;&nbsp;&nbsp;searchBarWidget.enable();
+&lt;/script&gt;
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;$(&quot;#searchbar&quot;).searchbar(&quot;enable&quot;);
+&lt;/script&gt;
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+
+		
+			
+	
+		
+			
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets an input text value.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">string value ( string? value) </pre>
+					</div>
+					
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+					
+					<div class="description">
+						<p>
+							<p>If you call the method with a parameter, it is set as the new input text value. Otherwise, the method returns the input text value.</p>
+
+
+						</p>
+					</div>
+					
+					<div class="parameters">
+						<p><span class="param">Parameters:</span></p>
+					<table>
+					<tbody>
+					<tr>
+						<th>Parameter</th>
+						<th>Type</th>
+						<th>Required/optional</th>
+						<th>Default value</th>
+						<th>Description</th>
+					</tr>
+					
+					
+					<tr>
+						<td><span style="font-family: Courier New,Courier,monospace">value</span></td>
+						<td>string</td>
+						<td>Optional</td>
+						<td></td>
+						<td>New input text value.</td>
+					</tr>
+					
+					
+					</tbody>
+					</table>
+					</div>
+					
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+						
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>string</td>
+									<td>In the get mode, returns the input text value.</td>
+								</tr>
+								</tbody>
+							</table>
+						
+						
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example (TAU API <strong>RECOMMENDED</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+var searchBarElement = document.getElementById(&quot;searchbar&quot;),
+&nbsp;&nbsp;&nbsp;&nbsp;searchBarWidget = tau.widget.SearchBar(searchBarElement),
+&nbsp;&nbsp;&nbsp;&nbsp;value = searchBarWidget.value();
+</pre>
+						</div>					
+						<div class="example">
+							<span class="example"><p>Code
+								example (jQuery API <strong>support for backward compatibility</strong>):</p><p></p></span>
+							<pre name="code" class="examplecode
+							prettyprint">
+// Value contains the input text
+$(&quot;#searchbar&quot;).searchbar(&quot;value&quot;);
+    
+// &quot;New text&quot; is the new input value
+$(&quot;#searchbar&quot;).searchbar(&quot;value&quot;, &quot;New text&quot;);   
+</pre>
+						</div>
+					
+				</dd>
+			
+		
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

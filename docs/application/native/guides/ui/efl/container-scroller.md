@@ -1,11 +1,6 @@
 # Scroller
 
-## Dependencies
-
-- Tizen 2.4 and Higher for Mobile
-- Tizen 2.3.1 and Higher for Wearable
-
-The scroller container holds and clips a single object and allows you to scroll across it. This means that the user can use a scroll bar or a finger to drag the viewable region across the object, moving through a much larger area than is contained in the viewport. A scroller always has a default minimum size that is not limited by its content. For more information, see the Scroller API (in [mobile](../../../../../org.tizen.native.mobile.apireference/group__Elm__Scroller.html) and [wearable](../../../../../org.tizen.native.wearable.apireference/group__Elm__Scroller.html) applications).
+The scroller container holds and clips a single object and allows you to scroll across it. This means that the user can use a scroll bar or a finger to drag the viewable region across the object, moving through a much larger area than is contained in the viewport. A scroller always has a default minimum size that is not limited by its content. For more information, see the Scroller API (in [mobile](../../../api/mobile/latest/group__Elm__Scroller.html) and [wearable](../../../api/wearable/latest/group__Elm__Scroller.html) applications).
 
 ## Basic Usage
 
@@ -19,7 +14,7 @@ To build a layout with a scroller:
    scroller = elm_scroller_add(parent);
    ```
 
-2. Set a [style](#style) to the scroller with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
+2. Set a [style](#styles) to the scroller with the `elm_object_style_set()` function. If you use the default style, you can skip this step.
 
    ```
    elm_object_style_set(scroller, "handler");
@@ -35,7 +30,9 @@ To build a layout with a scroller:
 
    The content object must have a minimum size bigger than the scroller size to be scrollable.
 
-4. Register the [callback](#callback) functions.The following example shows how to define and register a callback for the `scroll,drag,start` signal:
+4. Register the [callback](#callbacks) functions.  
+
+ The following example shows how to define and register a callback for the `scroll,drag,start` signal:
 
    ```
    evas_object_smart_callback_add(scroller, "scroll,drag,start", _scroll_start_cb, NULL);
@@ -51,9 +48,7 @@ The following example shows a simple use case of the scroller component, where a
 
 **Example: Scroller use case**
 
-| ![Scroller](./media/scroller1.png) ![Scroller](./media/scroller2.png) ![Scroller](./media/scroller3.png) |
-| ---------------------------------------- |
-|                                          |
+ ![Scroller](./media/scroller1.png) ![Scroller](./media/scroller2.png) ![Scroller](./media/scroller3.png)
 
 ```
 Evas_Object *win;
@@ -85,7 +80,7 @@ The following table lists the available component styles.
 **Table: Scroller styles**
 
 | Style     | Sample                                   |
-| --------- | ---------------------------------------- |
+|---------|----------------------------------------|
 | `default` | ![elm/scroller/base/default](./media/scroller_default.png) |
 | `handler` | ![elm/scroller/base/handler](./media/scroller_handler.png) |
 
@@ -96,7 +91,7 @@ You can register callback functions connected to the following signals for a scr
 **Table: Scroller callback signals**
 
 | Signal                | Description                              | `event_info` |
-| --------------------- | ---------------------------------------- | ------------ |
+|---------------------|----------------------------------------|------------|
 | `edge,left`           | The left edge of the content is reached. | `NULL`       |
 | `edge,right`          | The right edge of the content is reached. | `NULL`       |
 | `edge,top`            | The top edge of the content is reached.  | `NULL`       |
@@ -185,3 +180,8 @@ To create a picture slideshow:
 
 > **Note**  
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
+
+## Related Information
+- Dependencies
+  - Tizen 2.4 and Higher for Mobile
+  - Tizen 2.3.1 and Higher for Wearable
