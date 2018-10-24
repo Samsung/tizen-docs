@@ -40,7 +40,7 @@
 	-   From Tizen Studio 2.0 onwards, the Connection Explorer is replaced with the Device Manager, this can cause errors in the Connection Explorer view. You can fix this in two ways:
 	    -   Reset the perspective.
             In the Tizen Studio menu, select Window > Perspective > Reset Perspective
-	    -   After updating to the Tizen Studio 2.0, run the *eclipse.exe -clean -clearPersistedState* command. Then launch the Tizen Studio normally.
+	    -   After updating to the Tizen Studio 2.0, run the **eclipse.exe -clean -clearPersistedState** command. Then launch the Tizen Studio normally.
 	-   You can create unit tests for Tizen 2.3.2 and higher version projects only. Now the Tizen Studio does not support unit testing for older versions.
 -	Web IDE
 	-   The preview tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the preview tab in the Web Page Editor, use the preview feature **Ctrl + 4** of the Web SDK HTML Editor.
@@ -66,6 +66,7 @@
 	-   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, the emulator can unexpectedly terminate when you execute the emulator with OpenGL ES version 1.1 or 2.0. Verify the emulator configuration in the Emulator Manager and on the general tab in the emulator configuration window, set OpenGL ES version to version 2.0 or to version 3.0.
 	-   When you launch the Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
 	-   Basic Web applications does not install on SD cards.
+	-   Samsung Certificate cannot be used to sign application while launching application on 5.0 Emulator.
 -	CLI and SDB
 	-   The Tizen Studio does not support the [Smart Development Bridge](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/sdb)(SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 -	Dynamic Analyzer
