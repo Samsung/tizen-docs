@@ -367,7 +367,7 @@ For more information on the relationship between the elements, see the [element 
     If the value is 'watchface-editor', the system default editor is shown when the device enters the editing mode.
 
 ```
-<watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample.dll" type="dotnet">
+<watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample.dll" type="dotnet" setup-appid="watchface-editor">
    <label>.....</label>
    <icon>.....</icon>
 </watch-application>
