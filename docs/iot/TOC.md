@@ -24,6 +24,8 @@
 ### [SPI](/iot/guides/peripheral-io-api-spi.md)
 ### [I2C](/iot/guides/peripheral-io-api-i2c.md)
 ### [UART](/iot/guides/peripheral-io-api-uart.md)
+## ZigBee
+### [Overview](/iot/guides/zigbee.md)
 
 # API Reference
 ## [Things SDK API Reference](https://developer.tizen.org/dev-guide/things-sdk)

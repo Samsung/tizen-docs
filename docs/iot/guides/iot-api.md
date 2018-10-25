@@ -15,3 +15,4 @@ The following table lists the IoT-specific Tizen platform API group.
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Things SDK API](things-api.md) | The SmartThings&trade; Things SDK APIs help you to create new Things applications on IoT devices. For the full specification, see the [Things SDK API Reference](https://developer.tizen.org/dev-guide/things-sdk). |
 | [Peripheral I/O API](peripheral-io-api.md) | The Peripheral I/O native APIs are designed specifically for making  IoT devices control peripherals, such as actuators and sensors. For the  full specification, see the [Tizen Common Headed API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headed) and [Tizen Common Headless API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headless). |
+| [ZigBee API](zigbee.md) | The Zigbee native APIs help you to create, destroy, and manage the Zigbee network. |
