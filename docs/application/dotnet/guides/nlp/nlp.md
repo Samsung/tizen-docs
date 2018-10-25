@@ -1,7 +1,7 @@
 # Natural Language Processing (NLP)
 
 
-NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenize, lemmatize, and named entity detection. For more information, see the [NLTK Forum](http://www.nltk.org/).
+NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenization, lemmatization, and named entity detection. For more information, see the NLTK Forum.
 
 The main features of the Tizen.Nlp namespace include:
 
