@@ -2,6 +2,10 @@
 
 **Welcome to Tizen wearable native watch application development!**
 
+> **Note**
+>
+> Watch template is not supported since Tizen Studio 3.0
+
 A wearable native watch application is created using the C language, and can be run on Tizen wearable devices to display a customized watch face to the user.
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native watch application, which displays some text and the current time on the screen:
@@ -13,7 +17,6 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 2. [Create a wearable native watch project](#create) using the Tizen Studio.
 
    This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
-
 
 3. [Build the application](#build).
 
@@ -44,19 +47,13 @@ To create the application project:
 
 1.  Launch the Tizen Studio.
 
-2. Make sure the **Native** perspective is selected in the upper-right corner of the Tizen Studio window.
-
-    ![Checking the perspective](media/change_perspective_n.png)
-
-    If not, select it. If the perspective is not visible, in the Tizen Studio menu, select **Window &gt; Perspective &gt; Open Perspective &gt; Other &gt; Native**, and click **OK**.
-
-3. In the Tizen Studio menu, select **File &gt; New &gt; Tizen Project**.
+2. In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
     ![Creating a new Tizen Native project](media/create_project_1.png)
 
     The Project Wizard opens.
 
-4. In the Project Wizard, define the project details.
+3. In the Project Wizard, define the project details.
 
     The Project Wizard is used to create the basic application skeleton with the required folder structure and mandatory files. You can easily create different applications by selecting an applicable template or sample for the Project Wizard to use.
 
@@ -104,7 +101,8 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_wn_watch.png)
 
-> **Note**  
+> **Note**
+>
 > You can [view and modify the application configuration](#configuration) in the manifest editor. In this example, no configuration changes are required.
 
 
@@ -133,10 +131,11 @@ To view and modify the application configuration:
 
     - **Source**: View and edit the source code of the `tizen-manifest.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-        > **Note**  
+        > **Note**
+        >
         > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
-3. To save any changes, in the Tizen Studio menu, select **File &gt; Save All**.
+3. To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
 For more information on configuring the application, see [Setting the Application Manifest](../../tutorials/process/setting-properties.md#manifest).
 
@@ -213,14 +212,15 @@ Pay attention to the following main issues in the application source code (in th
         }
         ```
 
-    > **Note**  
+    > **Note**
+    >
     > For more information on the application life-cycle callbacks, see [Applications](../../guides/app-management/applications.md).
 
 - An ambient mode is available on a low-powered wearable device. In this mode, the watch application shows a limited UI and receives only the ambient tick event every minute to reduce power consumption.
 
     The details of the limited UI drawn in the ambient mode depend on the device. In addition, due to the ambient mode being a low power mode, there are limits to the colors that can be shown on the screen. Usually, when designing the ambient mode UI, draw it with limited colors (cyan, magenta, yellow, red, green, blue, black and white), and use less than 15% of the pixels on the screen. If you do not want to draw your own ambient mode UI, set the `ambient-support` attribute to `false` in the watch application manifest file to allow the platform to show a default ambient mode UI.
 
-    > **Note**  
+    > **Note**
     >
     > To use the ambient mode, the user must enable it in the device settings. In addition, on the Gear S2 device, the ambient mode activates only when you are wearing the watch on the wrist.
 
@@ -265,13 +265,13 @@ You can build the application in the following ways:
     To use the automatic build:
 
     1.  Select the project in the **Project Explorer** view.
-    2. In the Tizen Studio menu, select **Project &gt; Build Automatically**.
+    2. In the Tizen Studio menu, select **Project \> Build Automatically**.
 
         ![Using the automatic build](media/build_automatic_wn_watch.png)
 
         A check mark appears next to the menu option.
 
-    You can toggle the automatic build on and off by reselecting **Project &gt; Build Automatically**.
+    You can toggle the automatic build on and off by reselecting **Project \> Build Automatically**.
 
 - **Manually**
 
@@ -285,10 +285,10 @@ You can build the application in the following ways:
 
     Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:
 
-    -   In the Tizen Studio menu, select **Project &gt; Build Project**.
+    -   In the Tizen Studio menu, select **Project \> Build Project**.
     -   Press the **F10** key.
 
-You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations &gt; Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
+You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
 
 After you have built the application, run it.
 
@@ -303,7 +303,7 @@ You can run the application on the emulator or a real target device.
 To run the application on the emulator:
 
 1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-    1.  In the Tizen Studio menu, select **Tools &gt; Emulator Manager**.
+    1.  In the Tizen Studio menu, select **Tools \> Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
@@ -322,7 +322,7 @@ To run the application on the emulator:
     Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in the Tizen Studio.
 
 3. Run the application:
-    1.  In the **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Native Application**.
+    1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Native Application**.
 
         ![Running the application](media/app_run_n.png)
 
@@ -339,7 +339,8 @@ To run the application on the emulator:
 
         ![Successful installation](media/watch_run_face_wn.png)
 
-        > **Note**  
+        > **Note**
+        >
         > If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
     3. Change the watch face.<a name="watchface"></a>
@@ -350,7 +351,7 @@ To run the application on the emulator:
 
         1. If the emulator display has been switched off, activate it by pressing the **Power** key (in the lower-right corner of the emulator).
         2. On the home screen (showing the default watch face), press the **Power** key.
-        3. In the Recent Apps screen, select **Settings &gt; Watch faces and styles &gt; Watch faces**.
+        3. In the Recent Apps screen, select **Settings \> Watch faces and styles \> Watch faces**.
         4. Swipe right until you find your application icon, and select it.
 
            The **Clock changed** message is displayed.
@@ -359,7 +360,7 @@ To run the application on the emulator:
 
            ![Application running in the emulator](media/watch_run_face_wn.png)
 
-        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window &gt; Show View &gt; Log**.
+        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
 
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
@@ -370,13 +371,13 @@ To run the application on a target device:
 
 1.  Connect the wearable target device to your computer:
     1.  Define settings on the device:
-        -   Go to **Settings &gt; Connections**, and switch on Bluetooth.
+        -   Go to **Settings \> Connections**, and switch on Bluetooth.
 
             ![Switch on Bluetooth](media/emulator_target_bt.png)
 
             ![Switch on Bluetooth](media/emulator_target_bt2.png)
 
-        - Go to **Settings &gt; Connections**, and switch on Wi-Fi.
+        - Go to **Settings \> Connections**, and switch on Wi-Fi.
 
             The device and the computer must be connected to the same Wi-Fi network.
 
@@ -384,7 +385,7 @@ To run the application on a target device:
 
             ![Switch on Wi-Fi](media/emulator_target_wifi.png)
 
-        - Go to **Settings &gt; Gear info**, and switch on the debugging mode.
+        - Go to **Settings \> Gear info**, and switch on the debugging mode.
 
             ![Switch on debugging](media/emulator_target_debug.png)
 
@@ -413,7 +414,7 @@ To run the application on a target device:
 
 3. Run the application:
     1.  In the **Device Manager**, select the device.
-    2. In **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Native Application**.
+    2. In **Project Explorer** view, right-click the project and select **Run As \> Tizen Native Application**.
 
         ![Run the application on a target device](media/app_run_n.png)
 
@@ -430,7 +431,8 @@ To run the application on a target device:
 
         Like with the [emulator](#watchface), you can change the watch face in the device settings to see the watch application on the home screen.
 
-    > **Note**  
+    > **Note**
+    >
     > The application is launched using the default debug run configuration. To create and use another configuration:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
