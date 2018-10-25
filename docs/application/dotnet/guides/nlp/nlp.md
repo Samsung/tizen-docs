@@ -171,7 +171,7 @@ To receive the tokens and tags information from sentence:
 
 To receive the actual word from word:
 
-1.  Construct an NaturalLanguageProcess object on OnCreate(), and Connect the NLP service on init of app :
+1.  Construct an NaturalLanguageProcess object on OnCreate(), and connect the NLP service on init of app:
 
     ```
     protected override void OnCreate
