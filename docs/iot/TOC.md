@@ -14,6 +14,10 @@
 # API Guides
 ## [Overview](/iot/guides/iot-api.md)
 ## Things SDK API
+### [Overview](/iot/guides/things-api-5.0.md)
+### [Device Definition](/iot/guides/things-api-device-5.0.md)
+### [API Usage](/iot/guides/things-api-guide-5.0.md)
+## Things SDK API for Tizen IoT Preview 2(Legacy)
 ### [Overview](/iot/guides/things-api.md)
 ### [Device Definition](/iot/guides/things-api-device.md)
 ### [API Usage](/iot/guides/things-api-guide.md)
