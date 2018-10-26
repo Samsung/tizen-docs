@@ -41,6 +41,10 @@ Generate the IoT certificate and private key using the Certificate Manager:
 4.  In the next page of Certificate Generation Dialog, fill the requested Device and Manufacturer information and click **OK**.
 
     ![Certificate Generation Dialog](media/certificate_generation_device_dialog.png)
+   
+   > **NOTE**
+   > 
+   > "Device Name" should be the same as what was defined when the application was created.
 
 5.  Sign in to Samsung account.
 
