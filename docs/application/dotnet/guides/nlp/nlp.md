@@ -1,7 +1,7 @@
 # Natural Language Processing (NLP)
 
 
-NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenization, lemmatization, and named entity detection. For more information, see the [NLTK Forum](http://www.nltk.org/).
+NLP is a subset of Natural Language Toolkit that specifies an interface and a protocol for basic natural language processing. Tizen enables you to use Natural Language Process (NLP) functionalities, such as language detection, parts of speech, word tokenization, and named entity detection. For more information, see the [NLTK Forum](http://www.nltk.org/).
 
 The main features of the Tizen.Nlp namespace include:
 
@@ -17,10 +17,6 @@ The main features of the Tizen.Nlp namespace include:
 -   Named Entity Recognizer support
 
     You can get tokens and tags from a sentence, the type of return is [NamedEntityRecognitionResult](#nechunk). This method breaks up the sentence into words and punctuation with tags attributes.
-
--   Lemmatizing support
-
-    You can get the actual word from a word, the type of return is [LemmatizeResult](#lemmatize). This method is used to get the actual word from a word.
 
 -   Language Detect support
 
@@ -150,47 +146,6 @@ To receive the tokens and tags information from sentence:
         ..
         var ret = nlp.NamedEntityRecognitionAsync(msg);
         NamedEntityRecognitionResult nr = await ret;
-        ..
-    }
-    ```
-
-3.  When NLP object is no longer needed, call Dispose() to release the resource of NLP:
-
-    ```
-    protected override void OnTerminate()
-        {
-         ..
-         nlp.Dispose();
-         ..
-        }
-    ```
-
-
-<a name="lemmatize"></a>
-## Receive Lemmatized Actual Word
-
-To receive the actual word from word:
-
-1.  Construct an NaturalLanguageProcess object on OnCreate(), and connect the NLP service on init of app:
-
-    ```
-    protected override void OnCreate
-    {
-        ..
-        nlp = new NaturalLanguageProcess();
-        Task task = nlp.Connect();
-        ..
-    }
-    ```
-
-2.  Call the LemmatizeaAsync(string msg) in a async task method:
-
-    ```
-    public async Task OnLemmButtonPressedAsync(string msg)
-    {
-        ..
-        var ret = nlp.LemmatizeaAsync(msg);
-        LemmatizeResult lr = await ret;
         ..
     }
     ```
