@@ -19,15 +19,15 @@ Release date: Oct. 31, 2018
     - Native and C# API set for storage device types has been added.
     - A new storage cleanup policy has been developed.
   - Compressed fs
-    - Btrfs, Squashfs, and Overlayfs have been supported for rootfs.
+    - Btrfs, Squashfs, and Overlayfs support has been added for rootfs.
 - Refactoring and Maintenance
   - Systemd/Multi-user
     - Lazy mount units and API set has been added for improving developer experience.
     - Passwd files have been divided into read-only and read-write files for better reliability and security.
     - Hashing for the root password has been reinforced from MD5 to SHA-512.
   - Open source Upgrade
-    - Squashfs has been upgraded to the version of 4.3.
-    - Btrfs-progs has been upgraded to the version of 4.16.1.
+    - Squashfs has been upgraded to version 4.3.
+    - Btrfs-progs has been upgraded to version 4.16.1.
 - Testsuite
   - Deviced HAL TC
     - A new testsuite for Deviced HAL API set has been developed.
@@ -53,8 +53,8 @@ Release date: Oct. 31, 2018
 
 - Debugging tools have been enhanced to obtain stability and reliability quickly during development, the tools help to reduce product development period for bringing up new devices:
   - Mini Coredump has been provided by reducing unnecessary sections from default coredump for transmitting through network and for reducing truncated coredumps by sudden process cleanup.
-  - Linux-based callstack symbol resolution tools have been provided to integrate into CI/CD infrastructure.
-  - Thread-based self watchdog system (except of systemd based watchdog) has been added.
+  - Linux based callstack symbol resolution tools have been provided to integrate into CI/CD infrastructure.
+  - Thread based self watchdog system (except of systemd based watchdog) has been added.
 - The SW upgrade has been enhanced to apply on more devices such as headless device:
   - For small company that does not have SW upgrade infra, SW upgrade infra has been provided on basis of Samsung Smartthings DeviceManager (https://console.smartthingsdm.com). Now, it is available on Beta services.
   - Remote update control for updating headless device has been provided. The OCF based update protocol and reference agents have been provided. In addition, remote update control framework has been provided to support several devices. The framework provides update control API set and update control plugins. The default plugin is available on the Tizen IoT homepage.
@@ -62,7 +62,7 @@ Release date: Oct. 31, 2018
 - Low Memory Management for headless devices has been enhanced:
   - Applications can be excluded from low memory killer by defining Out of Memory (OOM) exception in manifest file.
   - OOM Score control interface has been provided for controlling active application like sound-focused application.
-- Swap system has been enhanced to support multiple swap types and devices.
+- Swap system has been enhanced to support multiple swap types and devices:
   - File-based swap and Zswap-based swap has been added.
   - Early memory reclaiming (to swap) feature has been added.
 
@@ -113,7 +113,7 @@ Release date: Oct. 31, 2018
 - Wayland
   - The open source wayland has been upgraded to the 1.15.0 version.
 - Extended Wayland Protocols
-  - tizen_move_resize protocol has been added to support move and resize wl_surface at the same time by passing x,y,w,h geometry parameters.
+  - tizen_move_resize protocol has been added to support moving and resizing wl_surface at the same time by passing x,y,w,h geometry parameters.
 - libinput
   - The ABS_MT_PRESSURE event type has been handled to support pressure-based input devices.
   - The following libinput API set has been added to set udev monitor's event source and buffer size:
@@ -134,14 +134,14 @@ Release date: Oct. 31, 2018
   - Enhanced the TCT for window system.
     - The following test cases have been added to verify the software regressions of the enlightenment display server:
       - D-Bus message system for server
-      - window stacking
-      - various cases for normal and alpha windows
-      - multi windows stacking
-      - size and stacking for floating window
-      - transient for window, notification type window
-      - screen saver function, window rotation
-      - various cases for window focus
-      - input events for keygrab feature
+      - Window stacking
+      - Various cases for normal and alpha windows
+      - Multi windows stacking
+      - Size and stacking for floating window
+      - Transient for window, notification type window
+      - Screen saver function, window rotation
+      - Various cases for window focus
+      - Input events for keygrab feature
   - The debugging tool has been extended with support for:
     - kill -pid [pid] -f: Immediately kills the pid of the client.
 - efl-util
@@ -207,15 +207,15 @@ Release date: Oct. 31, 2018
     - API set to pause and resume the timer has been added.
   - Control and Visual
     - WebView control has been added.
-    - Support for FlexLayout, AbsoluteLayout and GridLayout has been added.
+    - Support for FlexLayout, AbsoluteLayout, and GridLayout has been added.
   - 3D Model
-    - Support for GL Transmission Format (glTF) has been added.
+    - Support for GL Transmission Format (glTF) has been added for 3D watchface.
   - Performance
     - Changed not to render transparent texts.
   - NUI (C# Interface)
     - Added support for WebView.
 - Simple DirectMedia Layer (SDL)
-  - Upgrade to 2.0.8.
+  - Upgraded to 2.0.8.
   - Added SDL sub-module as SDL-ttf.
   - Added new features.
     - Auxiliary Hint.
@@ -225,7 +225,7 @@ Release date: Oct. 31, 2018
 
 - DALi (3D UI Toolkit)
   - Actor and Renderer
-    - RenderTask bug to waiting forever has been fixed.
+    - RenderTask bug (to waiting forever) has been fixed.
     - Depth buffer clear bug has been fixed.
     - BlendFunc has been fixed in case of a non-premultiplied format.
   - Window
@@ -233,7 +233,7 @@ Release date: Oct. 31, 2018
   - Control
     - Some bugs about layout have been fixed.
   - NUI (C# Interface)
-    - Minor bugs (For example wrong position, not shown) of Layout have been fixed.
+    - Minor bugs (For example, wrong position, not shown) of Layout have been fixed.
     - RaiseToTop in View class bug has been fixed.
     - XamlResource memory leak error has been fixed.
     - VisualFittingMode bug in VisualMaps has been fixed.
@@ -241,9 +241,9 @@ Release date: Oct. 31, 2018
   - Bug of rotation is fixed in Evas GL Engine.
   - Added thread safety patch to Evas TBM Engine.
   - Bug of image downscaling is fixed in Evas GL Engine.
-  - Added the patch is TBM Queue is used per TBM surface in Evas TBM Engine.
+  - Bug of deadlock for multiple TBM Surfaces is fixed in Evas TBM Engine.
 -  Simple DirectMedia Layer (SDL)
-  - Bug of pause/resume in multi-windows is fixed.
+  - Bug in pause or resume in multi-windows is fixed.
 
 
 ## UI framework
@@ -261,7 +261,7 @@ Release date: Oct. 31, 2018
 - Voice interaction
   - Added new API set to support multiple assistant.
   - Added API set, which has platform privileges to support voice panel app. 
-  - Added API set to support sending and receiving specific engine result.
+  - Added Service Framework API set, which sends and receives data for supporting specific engine (For example, Bixby 2.0).
 
 ### Fixes
 
@@ -277,7 +277,7 @@ Release date: Oct. 31, 2018
   - Tizen Allocator and Bufferpool has been added.
 - Media Player
   - Playback time related API set in nanoseconds has been added.
-  - Setting zoom level with fov about spherical video API has been added.
+  - Setting zoom level with Field of View (FOV) for spherical video API has been added.
   - Video region of interest (ROI) API has been added.
   - Support for resuming HTTP playback during buffering has been added.
   - Support for cancellation of asynchronous preparing has been allowed.
@@ -346,10 +346,10 @@ Release date: Oct. 31, 2018
 - Bluetooth
   - Added BT 5.0 API set for getting 2M Phy support.
     - Added feature for BLE 5.0.
-      - http://tizen.org/feature/network.bluetooth.le.5_0
+      - `http://tizen.org/feature/network.bluetooth.le.5_0`
   - Added support for fd GATT based data transfer.
 - Multi-path TCP (MPTCP)
-  - Added Multi-path TCP, which implemented in Kernel and API.
+  - Added Multi-path TCP, which is implemented in Kernel and API.
     - Added support for Multi-path TCP functions.
 
 
@@ -360,20 +360,21 @@ Release date: Oct. 31, 2018
 - Security-manager
   - DB recovery logic has been added.
 - Privilege
-  - The following privileges have been added.
-    - permission.check, updatecontrol.admin
+  - The following privileges have been added:
+    - permission.check
+    - updatecontrol.admin
   - The default web privilege policy has been changed.
-    - From 5.0, web applications should declare media/externalstorage privilege if needed.
+    - From 5.0, web applications must declare media/externalstorage privilege if needed.
 - Default-ac-domains
   - The System::Tools label has been added.
     - This label will be used for system tools.
 - Askuser
   - New API set has been added.
-    - Getting multiple privileges as parameter.
-    - Checking permission of other application.
+    - Gets multiple privileges as parameter.
+    - Checks permission of other application.
 - Security-analyzer
   - The security module guide documents have been added.
-    - Security-manager, Cynara, Privilege
+    - Security-manager, Cynara, and Privilege
 
 
 ## Service framework
@@ -392,15 +393,14 @@ Release date: Oct. 31, 2018
 - LBS Server 
   - Removed Wi-Fi dependency and added wifi-manager dependency.
 - Maps-plugin-here 
-  - Updated.
+  - Updated Maps-plugin-here and user consent.
   - Fixed memory leak and potential defects.
-  - Updated user consent.
 - Sensor 
   - Fixed memory leak and potential defects.
 - Email 
   - Fixed memory leak and potential defects.
 - Contact
-  - Disable unsupported charset.
+  - Disabled unsupported charset.
   - Fixed potential defect.
 
 
@@ -409,9 +409,9 @@ Release date: Oct. 31, 2018
 ### New and changed features
 
 - Added feature of App control with URI scheme.
-  - Supports feature, which is similar to android chrome intent.
-  - Tizen native app implicit or explicit launch using [app-control:// ].
-  - Supports fallback url.
+  - Similar to android chrome intent.
+  - Launches Tizen native app implicitly or explicitly using [app-control:// ].
+  - Supports fallback URL.
 - Implemented alternative TBM back-end for web page rendering.
   - By setting chromium-efl’s layout, the result can be rendered to memory surface.
   - Using the path, WebView can be merged with given UI framework.
@@ -452,7 +452,7 @@ Release date: Oct. 31, 2018
   - Added new Multimedia API set to set zoom level with the field of view.
   - Added new Multimedia API set to set or get replaygain.
   - Added new Multimedia API set to set or get adaptive variants and property for buffering time.
-  - Added new Nlp API set of new Namespace and Class.
+  - Added new Nlp API set for new Namespace and Class.
   - Added new InputMethod API set for floating keyboard and to hide or launch IME.
   - Added new Wi-Fi API set for forgetting access point (AP), BssidScan, RawSsid, CountryCode, and WPS connection cancellation.
   - Added new Applications API set for rpc-port to support Remote Procedure Call (RPC).
