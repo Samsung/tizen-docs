@@ -426,6 +426,10 @@ url = http://download.tizen.org/releases/daily/tizen/3.0-ivi/latest/repos/arm/de
 >
 > The file contains the GBS configuration for all profiles and repositories in Tizen version 3.0, Tizen version 4.0 and Tizen version 5.0. In the near future in new GBS versions, the above default configuration file (`~/.gbs.conf`) is automatically installed when GBS is installed.
 
+> **Note**
+>
+> If "scm/meta/build-config" git is not cloned in your working directory, every line which starts with "buildconf=./scm/meta/build-config" should be removed.
+
 The default profile used in GBS is specified in the `[general]` section:
 
 ```
