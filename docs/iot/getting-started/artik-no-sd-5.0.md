@@ -150,8 +150,8 @@ Most of the flashing steps mentioned in this section for ARTIK 530 and ARTIK 530
 
 4.  Flash the boot image:
     -   **ARTIK 530**
-        1.  Download the `tar.gz` file from [flash_boot_artik530_tizen5.0.zip](embedded-files/flash_boot_artik530_tizen5.0.zip.)
-        2.  Unzip the `flash_boot_artik530_tizen5.0.zip` file to get the `flash_boot_for_tizen.sh` file in the `flash_boot_artik530_tizen5.0` directory.
+        1.  Make a temporary directory (e.g. Migration_ARTIK530_tizen) and download the `tar.gz` file from [scripts_tizen_artik530_os_3.0.0_Migration_ARTIK530_20181026.tar.gz](https://review.tizen.org/git/?p=profile/common/platform/kernel/u-boot-artik7.git;a=blob;f=scripts/tizen/artik530/os_3.0.0/Migration_ARTIK530_20181026.tar.gz;h=027cb55434677b05210306d71e31adeb95496cd6;hb=refs/heads/tizen)
+        2.  Unzip the `scripts_tizen_artik530_os_3.0.0_Migration_ARTIK530_20181026.tar.gz` file to get the `flash_boot_for_tizen.sh` file in the `temporary directory (e.g. Migration_ARTIK530_tizen).
 
 
         3.  In the serial shell, enter `fastboot 0`:
@@ -180,8 +180,8 @@ Most of the flashing steps mentioned in this section for ARTIK 530 and ARTIK 530
             ```
 
     -   **ARTIK 530s**
-        1.  Download the `tar.gz` file from [flash_boot_artik530s_tizen5.0.zip](embedded-files/flash_boot_artik530s_tizen5.0.zip.)
-        2.  Unzip the `flash_boot_artik530_tizen5.0.zip` file to get the `flash_boot_for_tizen.sh` file in the `flash_boot_artik530s_tizen5.0` directory.
+        1.  Make a temporary directory (e.g. Migration_ARTIK530S_tizen) and download the `tar.gz` file from [scripts_tizen_artik530s_os_3.0.0_Migration_ARTIK530S_20181026.tar.gz](https://review.tizen.org/git/?p=profile/common/platform/kernel/u-boot-artik7.git;a=blob;f=scripts/tizen/artik530s/os_3.0.0/Migration_ARTIK530S_20181026.tar.gz;h=e42e4ce8aac603fe2a65928a566038f23a75290f;hb=refs/heads/tizen)
+        2.  Unzip the `flash_boot_artik530_tizen5.0.zip` file to get the `flash_boot_for_tizen.sh` file in the `Migration_ARTIK530S_tizen` directory.
         3.  In the serial shell, enter `fastboot 0`:
             ```
             artik530# fastboot 0
@@ -202,7 +202,7 @@ Most of the flashing steps mentioned in this section for ARTIK 530 and ARTIK 530
             $ lthor tizen-unified_YYYYMMDD.V_iot-boot-armv7l-artik530.tar.gz
             ```
 
-For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On_ARTIK530>.
+For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On_ARTIK530#Migration_to_Tizen_Platform_from_other_platform>.
 
 6.  Open the Smart Development Bridge (SDB) connection:
     1.  Verify whether SDB is connected, in the Linux shell of the host computer:
@@ -218,10 +218,6 @@ For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On
         > `sdb` execution file is available in the `tools` sub-directory of the directory where Tizen Studio is installed.
 
     3.  Enter the `sdb help` command in the Linux shell of the host computer, for more information.
-
-    > **Note**
-    >
-    >  Repeat `sdb-mode.sh --on` in the serial shell whenever you power cycle the device, in order to reconnect the SDB tool.
 
 
 7.  Install connectivity drivers, see the next section..

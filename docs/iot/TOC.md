@@ -11,6 +11,7 @@
 #### [ARTIK530/ARTIK530S with SD card based on Tizen 4.0](/iot/getting-started/artik-sd-4.0.md)
 #### [Raspberry Pi3 based on Tizen 5.0](/iot/getting-started/rpi3-4.0.md)
 ## [Developing Applications with the things sdk api](/iot/getting-started/things-app-development-5.0.md)
+### [Developing Applications with the things sdk api(legacy)](/iot/getting-started/things-app-development.md)
 ## [setting up the smartthings cloud](/iot/getting-started/things-cloud-setup.md)
 ## [testing with smartthings app](/iot/getting-started/cloud-app-test.md)
 
