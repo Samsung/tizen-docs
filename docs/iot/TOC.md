@@ -2,14 +2,13 @@
 
 # Getting Started
 ## [Tizen IoT](/iot/getting-started/overview.md)
+### [Customized Platform Guide](/iot/customized-platform/overview.md)
 ## [Installing Tizen Studio](/iot/getting-started/tizen-studio-install.md)
 ## [Flashing Tizen Images](/iot/getting-started/tizen-image-download-flash.md)
 ## [Hardware Configuration](/iot/getting-started/hardware-configuration.md)
 ## [Developing Applications with the things sdk api](/iot/getting-started/things-app-development.md)
 ## [setting up the smartthings cloud](/iot/getting-started/things-cloud-setup.md)
 ## [testing with smartthings app](/iot/getting-started/cloud-app-test.md)
-
-# [Customized Platform Guide](/iot/customized-platform/overview.md)
 
 # API Guides
 ## [Overview](/iot/guides/iot-api.md)

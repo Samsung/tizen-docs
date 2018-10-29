@@ -1,4 +1,4 @@
-# Customized Platform Guide
+# Customized Platform Guide (Only for Tizen 4.0)
 
 ## Introduction
 
