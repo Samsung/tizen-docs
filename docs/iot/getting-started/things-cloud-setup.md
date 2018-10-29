@@ -44,7 +44,7 @@ Generate the IoT certificate and private key using the Certificate Manager:
    
    > **NOTE**
    > 
-   > "Device Name" should be the same as what was defined when the application was created.
+   > "Device Name" should be the same as what was defined when the application was created in Tizen Studio.
 
 5.  Sign in to Samsung account.
 
