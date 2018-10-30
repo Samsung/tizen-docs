@@ -109,10 +109,10 @@ when using security-sensitive API modules in .net applications:
 | `http://tizen.org/privilege/ime` | public |  | The application can provide users with a way to enter characters and symbols into an associated text field. |
 | `http://tizen.org/privilege/imemanager` | public |  | The application can manage installed input methods. |
 | `http://tizen.org/privilege/inputgenerator` | platform |  | The application can simulate keys being pressed and touch interactions with the screen. |
-| `http://tizen.org/privilege/keygrab` | platform |  | The application can read actions involving special keys, such as the volume keys on this or other devices (e.g. TV remote controls), even when it is running in the background. |
+| `http://tizen.org/privilege/keygrab` | platform |  | The application can read actions involving special keys, such as the volume keys on this or other devices (for example, TV remote controls), even when it is running in the background. |
 | `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/keymanager.admin` | platform |  | The application can lock and unlock password-protected storage, and manage password changes for it. |
-| `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off. For example, the LED found on the front of the device and the camera flash can be turned on or off. |
+| `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off. For example, the LED on the front of the device and the camera flash can be turned on or off. |
 | `http://tizen.org/privilege/location` | public | Location | The application can use user's location data. |
 | `http://tizen.org/privilege/location.coarse` | public | Location | The application can determine user's approximate location including user's device's Cell ID, LAC (Location Area Code), and TAC (Tracking Area Code). |
 | `http://tizen.org/privilege/location.enable` | platform |  | The application can control user's location service settings. |
@@ -151,7 +151,7 @@ when using security-sensitive API modules in .net applications:
 | `http://tizen.org/privilege/telephony.admin` | platform |  | The application can manage telephony settings, such as those for incoming and outgoing calls, forwarding and holding calls, networks, and SIM cards. |
 | `http://tizen.org/privilege/tethering.admin` | platform |  | The application can enable and disable tethering services. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/use_ir` | public |  | The application can use the infrared transmitter. |
-| `http://tizen.org/privilege/voicecontrol.manager` | platform |  | The application can record user's voice and recognise it so that voice commands can be used to control this app. It can also give responses to user's commands. |
+| `http://tizen.org/privilege/voicecontrol.manager` | platform |  | The application can record user's voice and recognize it so that voice commands can be used to control this app. It can also give responses to user's commands. |
 | `http://tizen.org/privilege/volume.set` | public |  | The application can adjust the volume for different features, such as notification alerts, ringtones, and media. |
 | `http://tizen.org/privilege/vpnservice` | public |  | The application can manage the Virtual Private Network (VPN) and change its settings. |
 | `http://tizen.org/privilege/web-history.admin` | platform | User history | The application can manage user's internet history. |
