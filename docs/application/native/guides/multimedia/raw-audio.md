@@ -23,17 +23,17 @@ To play the audio PCM data, the application must call the `audio_out_create_new(
 Your application must define the following PCM data settings:
 
 - Audio channels:
-  - Mono (1 channel)
-  - Stereo (2 channels)
+  - `AUDIO_CHANNEL_MONO` : 1 channel
+  - `AUDIO_CHANNEL_STEREO` : 2 channels
 - Audio sample type:
-  - Unsigned 8-bit PCM
-  - Signed 16-bit little endian PCM
+  - `AUDIO_SAMPLE_TYPE_U8` : Unsigned 8 bit integer PCM
+  - `AUDIO_SAMPLE_TYPE_S16_LE` : Signed 16 integer bit PCM, little endian
+  - `AUDIO_SAMPLE_TYPE_S24_LE` : Signed 24 bit integer PCM packed, little endian
+  - `AUDIO_SAMPLE_TYPE_S24_32LE` : Signed 24 bit integer PCM in LSB of 32 bit words, little endian
 - Audio sample rate:
-  - 8000 ~ 48000 Hz
+  - 8000 ~ 192000 Hz
 
 The following figures illustrate the general audio output states, and how the state changes when the audio output is interrupted by the system.
-
-´
 
 **Figure: Audio output states**
 
@@ -69,18 +69,7 @@ The Audio Input API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUD
 
 Audio data is captured periodically, so to receive the audio PCM data from the input device, you must implement the audio input interface to notify the application of audio data events, such as the end of filling audio data.
 
-Before recording audio, you must define the following PCM data settings:
-
-- Input device type:
-  - Microphone
-- Audio channels:
-  - Mono (1 channel)
-  - Stereo (2 channels)
-- Audio sample type:
-  - Unsigned 8-bit PCM
-  - Signed 16-bit little endian PCM
-- Audio sample rate:
-  - 8000 ~ 48000 Hz
+Before recording audio, you must define the PCM data settings. For more information, see [Audio Output](#play_pcm).
 
 To minimize the overhead of the audio input API, use the optimal channel type, sample type and sampling rate, which can be retrieved using the `audio_in_get_channel()`, `audio_in_get_sample_type()` and `audio_in_get_sample_rate()` functions, respectively.
 
@@ -207,9 +196,14 @@ modify_sound()
     int error_code = audio_in_get_sample_type(input, &sample_type);
     if (error_code != AUDIO_IO_ERROR_NONE) {
         dlog_print(DLOG_ERROR, LOG_TAG, "audio_in_get_sample_type() failed! Error code = %d", error_code);
-
         return;
     }
+
+    if (sample_type != AUDIO_SAMPLE_TYPE_S16_LE ||
+        sample_type != AUDIO_SAMPLE_TYPE_U8) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "this example doesn't support this sample type(%d)", sample_type);
+        return;
+	}
 
     uint8_t *index = (uint8_t*)buffer;
     while (index < (((uint8_t*)buffer) + buffer_size)) {

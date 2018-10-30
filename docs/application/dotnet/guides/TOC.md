@@ -132,3 +132,7 @@
 ## [Privilege Information](/application/dotnet/guides/security/privilege.md)
 ## [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 ## [TEE Communication](/application/dotnet/guides/security/tee-client.md)
+
+# Natural Language Processing
+## [Overview](/application/dotnet/guides/nlp/overview.md)
+## [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)

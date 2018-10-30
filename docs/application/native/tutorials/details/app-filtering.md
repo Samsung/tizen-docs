@@ -79,7 +79,7 @@ application list.
 If you do not specify a proper screen size in the `tizen-manifest.xml`
 file, your application can be rejected from the Tizen Store.
 
-The following table lists the available screen size features.
+The following table lists the available screen size features:
 
 **Table: Available screen size features**
 
@@ -142,9 +142,7 @@ for the application `tizen-manifest.xml` file:
     The manifest file (`tizen-manifest.xml`) is updated automatically.
 
 The following tables show the available requirements for an application
-package. If you want to check which features are necessary for using a
-specific API, see the related feature in the native [API
-Reference](../../../../org.tizen.native.mobile.apireference/index.html).
+package:
 
 **Table: Available mobile native requirements**
 
@@ -165,6 +163,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
 | `http://tizen.org/feature/email`         | Specify this key, if the application requires the email feature. | 3.0   |
 | `http://tizen.org/feature/feedback.vibration` | Specify this key, if the application requires the vibration feedback feature. | 5.0   |
@@ -196,6 +195,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.hid` | Specify this key, if the application requires the Bluetooth Human Input Device feature (HID). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
 | `http://tizen.org/feature/network.mtp`   | Specify this key, if the application requires the Media Transfer Protocol (MTP) Host (Initiator) feature. | 3.0   |
@@ -233,11 +233,17 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/opengles.texture_format.ptc` | Specify this key, if the application requires the PTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.pvrtc` | Specify this key, if the application requires the PVRTC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.utc` | Specify this key, if the application requires the UTC texture format for OpenGL&reg; ES. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
-| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
-| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
-| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
+| `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
+| `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.gpio` | Specify this key, if the application requires General-Purpose Input/Output (GPIO) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.i2c` | Specify this key, if the application requires Inter-Integrated Circuit (I2C) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.pwm` | Specify this key, if the application requires Pulse-Width Modulation (PWM) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.adc` | Specify this key, if the application requires Analog-to-Digital Converter (ADC) API to communicate with peripheral devices. | 5.0   |
+| `http://tizen.org/feature/peripheral_io.uart` | Specify this key, if the application requires Universal Asynchronous Receiver-Transmitter (UART) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.spi` | Specify this key, if the application requires Serial Peripheral Interface (SPI) API to communicate with peripheral devices. | 4.0   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
@@ -315,6 +321,10 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/vision.qrcode_generation` | Specify this key, if the application requires the QR code generation feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.qrcode_recognition` | Specify this key, if the application requires the QR code recognition feature. | 2.2.1 |
 
+If you want to verify which features are necessary for using a
+specific API, see the related feature in the native [API
+Reference](../../api/overview.md).
+
 **Table: Available wearable native requirements**
 
 | Feature key                              | Description                              | Since |
@@ -333,6 +343,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
 | `http://tizen.org/feature/feedback.vibration` | Specify this key, if the application requires the vibration feedback feature. | 5.0   |
 | `http://tizen.org/feature/fido.uaf`      | Specify this key, if the application requires the FIDO (Fast Identity Online) UAF (Universal Authentication Framework) client API. | 3.0   |
@@ -363,6 +374,7 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/network.bluetooth.hid` | Specify this key, if the application requires the Bluetooth Human Input Device feature (HID). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.hid.device` | Specify this key, if the application requires the Bluetooth Human Interface Device (HID) device feature. | 3.0   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | Specify this key, if the application requires the Bluetooth Phone Book Access (PBAP) client feature. | 3.0   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
@@ -472,6 +484,19 @@ Reference](../../../../org.tizen.native.mobile.apireference/index.html).
 | `http://tizen.org/feature/vision.qrcode_recognition` | Specify this key, if the application requires the QR code recognition feature. | 2.2.1 |
 | `http://tizen.org/feature/watch_app`     | Specify this key, if the application requires the watch application feature. | 4.0   |
 | `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
+
+**Table: Available IoT-only native requirements**
+
+| Feature key                              | Description                              | Since |
+|----------------------------------------|----------------------------------------|-----|
+| `http://tizen.org/feature/device_update` | Specify this key, if the application requires Device Update API to control the system software update of the device. | 5.0   |
+| `http://tizen.org/feature/peripheral_io.adc` | Specify this key, if the application requires Analog-to-Digital Converter (ADC) API to communicate with peripheral devices. | 5.0   |
+| `http://tizen.org/feature/peripheral_io.gpio` | Specify this key, if the application requires General-Purpose Input/Output (GPIO) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.i2c` | Specify this key, if the application requires Inter-Integrated Circuit (I2C) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.pwm` | Specify this key, if the application requires Pulse-Width Modulation (PWM) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.spi` | Specify this key, if the application requires Serial Peripheral Interface (SPI) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/peripheral_io.uart` | Specify this key, if the application requires Universal Asynchronous Receiver-Transmitter (UART) API to communicate with peripheral devices. | 4.0   |
+| `http://tizen.org/feature/network.zigbee` | Specify this key, if the application requires Zigbee API to control Zigbee end-devices. | 5.0  |
 
 <a name="profile_n"></a>
 ## Profile-based Filtering

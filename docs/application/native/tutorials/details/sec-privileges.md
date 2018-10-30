@@ -135,7 +135,6 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/packagemanager.admin` | platform |  | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public |  | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public |  | The application can retrieve detailed application package information. |
-| `http://tizen.org/privilege/peripheralio` | platform |  | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
 | `http://tizen.org/privilege/power` | public |  | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push` | public |  | The application can receive notifications via the internet. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/reboot` | platform |  | The application can restart the device. |
@@ -160,8 +159,25 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/widget.viewer` | public |  | The application can show widgets, and information from their associated applications, on the home screen. |
 | `http://tizen.org/privilege/wifidirect` | public |  | The application can enable and disable Wi-Fi Direct, manage Wi-Fi Direct connections, and change Wi-Fi Direct settings. |
 | `http://tizen.org/privilege/window.priority.set` | public |  | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This may prevent user from interacting with other applications or screens until the window for this application is closed. |
-| `http://tizen.org/privilege/zigbee` | public |  | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
-| `http://tizen.org/privilege/zigbee.admin` | platform |  | The application can control a connected ZigBee coordinator, for example, turning it on or off. |
+
+<a name="IoT"></a>
+## IoT Native API Privileges
+
+The following table lists the API privileges, which you must declare
+when using security-sensitive API modules in IoT native
+applications:
+
+**Table: IoT native API privileges**
+
+| Privilege                                | Level    | Privacy      | Description                              |
+|----------------------------------------|--------|------------|----------------------------------------|
+| `http://tizen.org/privilege/peripheralio` | platform   |   | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
+| `http://tizen.org/privilege/updatecontrol.admin` | platform   |   | The application can control the firmware update procedure.       |
+| `http://tizen.org/privilege/zigbee` | public   |   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
+| `http://tizen.org/privilege/zigbee.admin` | platform   |   | The application can control a connected ZigBee coordinator. For example, turning it on or off. |
+
+> **Note**
+> For the other privileges, see the [Native API Privileges](#native-api-privileges).
 
 <a name="nonAPI"></a>
 ## Non-API Bound Privileges

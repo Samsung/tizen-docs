@@ -11,6 +11,7 @@
 #### [Overview](/application/native/guides/app-management/dali-app.md)
 #### [Basic UI Application](/application/native/guides/app-management/dali-basic-app.md)
 #### [Watch Application](/application/native/guides/app-management/dali-watch-app.md)
+#### [Widget Application](/application/native/guides/app-management/dali-widget-app.md)
 ## [Service Applications](/application/native/guides/app-management/service-app.md)
 
 # Application Information and Controls

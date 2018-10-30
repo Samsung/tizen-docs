@@ -86,6 +86,41 @@ To start the IME application life-cycle:
     }
     ```
 
+## Using Floating Keyboard
+
+To allow the user to move the floating keyboard:
+
+1.  Call the `SetFloatingMode()` method:
+
+    ```
+    public static void SetFloatingMode()
+    {
+        InputMethodEditor.SetFloatingMode(true);
+    ```
+
+2.  Create a container of PanGestureRecognizer to detect a dragging event:
+
+    ```
+    var panGesture = new PanGestureRecognizer ();
+    panGesture.PanUpdated += OnPanUpdated;
+    GestureRecognizers.Add (panGesture);
+    ```
+
+3.  Call the `SetFloatingDragStart()` and `SetFloatingDragEnd()` method when a drag event is received:
+
+    ```
+    void OnPanUpdated (object sender, PanUpdatedEventArgs e)
+    {
+        switch (e.StatusType) {
+            case GestureStatus.Running:
+                InputMethodEditor.SetFloatingDragStart();
+                break;
+            case GestureStatus.Completed:
+                InputMethodEditor.SetFloatingDragEnd();
+                break;
+        }
+    }
+    ```
 
 ## Related Information
 * Dependencies
