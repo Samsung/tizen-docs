@@ -218,7 +218,7 @@ To play an audio file:
 1.  After creating the player, specify the audio file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
 
     ```
-    player.SetSource(new MediaUriSource(audioPath);
+    player.SetSource(new MediaUriSource(audioPath));
     ```
 
 2. Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
@@ -250,7 +250,7 @@ To play a video file:
 
 2. To set the display on which the video is played, use the `Display` property of the `Tizen.Multimedia.Player` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(ex. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
     ```
     var mediaView = new VideoView();

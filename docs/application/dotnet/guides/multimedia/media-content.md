@@ -114,8 +114,8 @@ To enable your application to use the media content functionality:
 2. When you no longer want to receive notifications, deregister the event handlers:
 
     ```
-    MediDatabase.MediaInfoUpdated -= OnMediaInfoUpdated;
-    MediDatabase.FolderUpdated -= OnFolderUpdated;
+    MediaDatabase.MediaInfoUpdated -= OnMediaInfoUpdated;
+    MediaDatabase.FolderUpdated -= OnFolderUpdated;
     ```
 
 <a name="findingall"></a>
@@ -650,7 +650,7 @@ The following tables list the available media file information.
 
 | Metadata name    | Description                              |
 |----------------|----------------------------------------|
-| `Id`             | ID of the media content                  |
+| `Id`             | Id of the media content                  |
 | `Path`           | Path of the media content                |
 | `DisplayName`    | Display name of the media content        |
 | `MediaType`      | Media type of the media content          |
@@ -667,10 +667,9 @@ The following tables list the available media file information.
 | `Rating`         | Rating of the media content              |
 | `IsFavorite`     | Favorite status of the media content     |
 | `Title`          | Title of the media content               |
-| `StorageId`      | Storage ID of the media content          |
+| `StorageId`      | The storage Id of the storage that the media is stored on          |
 | `IsDrm`          | The media is DRM-protected or not        |
-| `StorageType`      | Storage ID of the media content        |
-| `StorageId`      | The storage type of the storage that the media is stored on |
+| `StorageType`    | The storage type of the storage that the media is stored on        |
 
 **Table: Audio metadata (only for audio files)**
 
@@ -698,8 +697,8 @@ The following tables list the available media file information.
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
 | `ExposureTime`  | Exposure time of the image               |
-| `FNumber`       | F-number of the image                    |
-| `Iso`           | ISO of the image                         |
+| `FNumber`       | FNumber of the image                    |
+| `Iso`           | Iso of the image                         |
 | `Model`         | Model name of the camera that created the image |
 | `Orientation`   | Orientation of the image                 |
 | `DateTaken`     | Time the image was created<br>You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |

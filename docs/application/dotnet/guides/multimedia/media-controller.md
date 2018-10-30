@@ -23,11 +23,18 @@ The main media controller features include:
 
 To enable your application to use the media controller functionality:
 
-1.  To use the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html) and [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
+- To use the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html) class
     ```
     <privileges>
        <privilege>http://tizen.org/privilege/mediacontroller.client</privilege>
+    </privileges>
+    ```
+
+- To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class
+	```
+    <privileges>
        <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
     </privileges>
     ```

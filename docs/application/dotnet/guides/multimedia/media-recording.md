@@ -197,7 +197,7 @@ To initialize the video recorder for use:
 
 2. To set the display on which the video is recorded, use the `Display` property of the `Tizen.Multimedia.Camera` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(ex. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
     ```
     var mediaView = new VideoView();
