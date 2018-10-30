@@ -1,8 +1,8 @@
-# Watchface Complications
+# Watch Face Complications
 
 
-Watchface complications are UI components on a watchface which shows specific information in addition to displaying current time.
-Watchface application creates and draws the complication on the watchface, and the data is provided from complication provider.
+Watchface complications are features on a watchface which shows specific information in addition to displaying current time.
+Watchface application creates and draws the complication on the watchface. And complication provider application provides the data for the complication.
 
 You can use the following watchface complication and complication provider features in your native applications:
 
@@ -12,7 +12,7 @@ You can use the following watchface complication and complication provider featu
 
 - [Complication Provider](watchface-complication-provider.md)
 
-  You can provide the data for complication. If the watchface complication requsts to update the data, complication provider should give the updated data. And If the complication data is updated, complication provider can notify to the complication.
+  You can provide the data for complication. If the watchface application requsts to update the data, complication provider must give the updated data. In addition, if the complication data is updated, complication provider can notify to the complication.
 
 ## Related Information
 - Dependencies

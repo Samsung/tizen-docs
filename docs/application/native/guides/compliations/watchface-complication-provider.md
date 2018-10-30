@@ -1,30 +1,32 @@
-# Watchface complication provider
+# Watchface Complication Provider
 
 The watchface complication provider application is a service application to provide complication data.
 Complication provider application provides only data. The watchface application decides how to display the complications.
-The Complication Provider app provides the complication data by using the watchface complication provider api to the watchface app.
+The complication provider application provides the complication data by using the watchface complication provider api to the watchface application.
  
-# Prerequisites
+## Prerequisites
 
-1. To use the Watchface Complication API to communicate with the watchface app, the application has to request permission by adding 
-the following privilege to the tizen-manifest.xml file.
+To enable your application to use the watchface complication functionality:
 
-```xml
-<privileges>
-	<privilege>http://tizen.org/privilege/datasharing</privilege>
-</privileges>
-```
+1. To use the Watchface Complication API to communicate with the watchface application, this application has to request permission by adding
+the following privilege to the `tizen-manifest.xml` file:
 
-2. To use the functions and data types for the Watchface Complication Provider API, include the <watchface-complication-provider.h>.
+    ```xml
+    <privileges>
+    	<privilege>http://tizen.org/privilege/datasharing</privilege>
+    </privileges>
+    ```
 
-```cpp
-#include <watchface-complication-provider.h>
-```
+2. To use the functions and data types for the Watchface Complication Provider API, include the `<watchface-complication-provider.h>` header file in your application:
 
-# Complication Data Update
+    ```cpp
+    #include <watchface-complication-provider.h>
+    ```
 
-When the request occurs to update the complication data, complication provider app can receive the update request by adding 
-watchface_complication_provider_update_requested_cb(). The watchface app can send the update reqeust and the request also occurs after the 
+## Updating the Complication Data
+
+When the request occurs to update the complication data, complication provider app can receive the request by adding
+`watchface_complication_provider_update_requested_cb()`. The watchface application can send the update reqeust and the request also occurs after the
 complication provider app notifies that the complication data is changed.
 
 ```cpp
@@ -41,22 +43,22 @@ bool app_create(void *data)
 }
 ```
 
-The complication provider app should be set the updated complication data to shared_data in the update requested callback.
-And it is possible to check the data is valid or not using watchface_complication_provider_data_is_valid() fundtion.
-If the data is invalid, watchface_complication_updated_cb of the complication will not be called.
+The complication provider application must set the updated complication data to `shared_data` in the update requested callback.
+And it is possible to verify whether the data is valid or not using `watchface_complication_provider_data_is_valid()`.
+If the data is invalid, `watchface_complication_updated_cb()` of the complication will not be called.
 
-The complication data can be set using following APIs. These APIs can be used only in watchface_complication_provider_update_requested_cb().
+The complication data can be set using following APIs. These APIs can be used only in `watchface_complication_provider_update_requested_cb()`:
 
 | API | Description |
 |--------|-----------------|
-| watchface_complication_provider_data_set_title() | Set the complication title |
-| watchface_complication_provider_data_set_short_text() | Set the short text type data |
-| watchface_complication_provider_data_set_long_text() | Set the long text type data |
-| watchface_complication_provider_data_set_image_path() | Set the image path type data |
-| watchface_complication_provider_data_set_ranged_value() | Set the ranged value type data |
-| watchface_complication_provider_data_set_icon_path() | Set the icon path type data |
-| watchface_complication_provider_data_set_timestamp() | Set the timestamp type data |
-| watchface_complication_provider_data_set_extra_data() | Set the extra data |
+| `watchface_complication_provider_data_set_title()` | Set the complication title. |
+| `watchface_complication_provider_data_set_short_text()` | Set the short text type data. |
+| `watchface_complication_provider_data_set_long_text()` | Set the long text type data. |
+| `watchface_complication_provider_data_set_image_path()` | Set the image path type data. |
+| `watchface_complication_provider_data_set_ranged_value()` | Set the ranged value type data. |
+| `watchface_complication_provider_data_set_icon_path()` | Set the icon path type data. |
+| `watchface_complication_provider_data_set_timestamp()` | Set the timestamp type data. |
+| `watchface_complication_provider_data_set_extra_data()` | Set the extra data. |
 
 
 ```cpp
@@ -74,8 +76,7 @@ void _watchface_complication_provider_update_requested_cb(const char *provider_i
 }
 ```
 
-If the callback is not nessary, it can be removed by using 
-watchface_complication_provider_remove_update_request_cb().
+If the callback is not necessary, it can be removed by using `watchface_complication_provider_remove_update_requested_cb()`.
 
 ```cpp
 {
@@ -84,10 +85,10 @@ watchface_complication_provider_remove_update_request_cb().
 }
 ```
 
-# Notify the Complication Data Update
+## Notifying the Complication Data Update
 
-When the complication data is changed, the complication provider app can notify that the complication data is updated.
-If the notification is successfully transfer to the complication, the complication data update request will be occured.
+When the complication data is changed, the complication provider application can notify that the complication data is updated.
+If the notification is successfully transfer to the complication, the complication data update request will occure:
 
 
 ```cpp
@@ -96,34 +97,36 @@ If the notification is successfully transfer to the complication, the complicati
 }
 ```
 
-# Transfered Event Action
+## Transferring Event Action
 
 Complication can provide additional action for touching when the complication is touched.
-In this case, Complication provider is launched with touch event and information of touched provider.
+In this case, complication provider is launched with touch event and information of provider that has touched.
 
-There are following event types.
+There are following event types:
 
 | Event type | Description |
 |-------------|-------------|
-| WATCHFACE_COMPLICATION_EVENT_NONE | Not tapped |
-| WATCHFACE_COMPLICATION_EVENT_TAP | Tap event |
-| WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP | Double tap event |
+| `WATCHFACE_COMPLICATION_EVENT_NONE` | The complication is not tapped. |
+| `WATCHFACE_COMPLICATION_EVENT_TAP` | The complication is tapped. |
+| `WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP` | The compliation is double tapped. |
 
-1. Complication provider can set the support events in tizen-manifest.xml using <support-event>.
+The complication provider provides followings:
 
-2. Complication provider can get the transferred event from `app_control_h` that is the parameter of the app_control life cycle callback
-by using watchface_comlication_provider_get_event() function.
+1. The complication provider can set the support events in `tizen-manifest.xml` using `<support-event>`.
+
+2. The complication provider can get the transferred event from `app_control_h` that is the parameter of the `app_control` life cycle callback
+by using `watchface_complication_provider_get_event()`.
 And if the touch event is transferred from watchface, the information of the complication is also transfred.
 
-To get the information, following functions are used to get the informations.
+To get the information, the following functions are used to get the information:
 
 | API | Information |
 |-----|-----------|
-| watchface_complication_provider_event_get_provider_id() | provider id |
-| watchface_complication_provider_event_launch_get_comlication_type() | complication type |
-| watchface_complication_provider_event_launch_get_context() | context |
+| `watchface_complication_provider_event_get_provider_id()` | Gets the provider id of touched complication. |
+| `watchface_complication_provider_event_launch_get_complication_type()` | Gets the complication type of touched complication. |
+| `watchface_complication_provider_event_launch_get_context()` | Gets the context information of touched complication. |
 
-Then Complication provider can define the action according to the event and touched complication information.
+Then complication provider can define the action according to the event and the information of complication that is touched.
 
 
 ```cpp
@@ -150,24 +153,24 @@ void app_control(app_control_h app_control, void *data)
 ```
 
 
-# Complication Provider XML schema
+## Providing XML Schema to Create Complication Provider Application
 
-To make the complication provider app, complication provider tags are provided in tizen-manifest.xml file.
-It is possible to provide multiple complication provider in a complication provider application.
+To create the complication provider application, complication provider tags are provided in `tizen-manifest.xml` file.
+It is possible to provide multiple complication provider in a complication provider application:
 
 ```xml
 <complication provider-id="mycomplicationid" setup-appid="org.tizen.watch_setting">
 </complication>
 ```
 
-The attribute "provider-id" is the id of complication, and it is mandatory.
-If it is necessary to set the options to provide the specific data (like world clock), it can provide the complication setting application.
-In this case, "setup-appid" is the appid of the complication setting app.
+It is mandatory to use attribute "provider-id" that is the id of the complication.
+If it is necessary to set the options to provide the specific data (such as, world clock), it can provide the complication setting application.
+In this case, "setup-appid" is the appid of the complication setting application.
 
-The "trusted" attribute value "true" means the complication provider do not send data to the complications which have different certificate.
+If the "trusted" attribute value is "true", the complication provider do not send data to the complications which have different certificate.
 
-At least one `<support-type>` is necessary to make the complication provider app, it is possible to support multiple types.
-Support type means the data types that can be provided from the complication provider. It is not able to declare duplicated data type for
+At least one `<support-type>` is necessary to create the complication provider application. Also, it is possible to support multiple types.
+These support type means data type and the complication provider provides data types that are defined in xml. It is not possible to declare duplicated data type for
 one complication provider id.
 
 ```xml
@@ -175,9 +178,9 @@ one complication provider id.
 </support-type>
 ```
 
-And the specific default value is mandatory depending on each support types.
+And, the specific default value is mandatory depending on each support types:
 
-| Support Types | Mandatory default values | Optional default values |
+| Support types | Mandatory default values | Optional default values |
 |---------------|--------------------------|---------------------------|
 | `<short-text-type>` | `<default-short-text>` | `<default-title>` |
 |                     |                        | `<default-icon>` |
@@ -197,14 +200,14 @@ And the specific default value is mandatory depending on each support types.
 
 
 `<label>` is the name of the complication provider.
-If it is necessary to support the multiple language, multiple language tag should be provided.
+If it is necessary to support the multiple language, "multiple language" tag must be provided:
 
 ```xml
 <label>MyComplication</label>
 <label xml:lang="en-us">EngComplication</label>
 ```
 
-`<period>` is the period to update complication provider data automatically, and unit is second.
+`<period>` is used to update complication provider data automatically, and in unit seconds:
 
 ```xml
 <period>60</period>
@@ -213,10 +216,10 @@ If it is necessary to support the multiple language, multiple language tag shoul
 In this case, the complication will send data update request to the complication provider every 60 seconds.
 
 `<support-event>` is the type of event that can be supported. It is possible to set "tap", "double-tap"
-or both event.
+events or both.
 
 And it is possible to add `<privileges>` to restrict to get the complication data.
-Watchface should be add the specific privileges to get the complication data in tizen-manifext.xml.
+In this case, watchface must add the specific privileges to get the complication data in `tizen-manifext.xml`.
 
 
 ```xml
@@ -244,4 +247,3 @@ Watchface should be add the specific privileges to get the complication data in 
 	</privileges>
 </complication> 
 ```
-
