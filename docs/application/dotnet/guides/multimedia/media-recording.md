@@ -190,18 +190,25 @@ To record audio:
 
 To initialize the video recorder for use:
 
-1.  Create an instance of the [Tizen.Xamarin.Forms.Extension.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Xamarin.Forms.Extension.MediaView.html) class, which provides a view of the camera on the screen.
-
-    Create an instance of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class and set the display of the camera to the `NativeView` property of the `Tizen.Xamarin.Forms.Extension.MediaView` instance:
-
+1.  Create an instance of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class.
     ```
-    /// Create a MediaView object and set the display of camera
-    var formMediaView = new Tizen.Xamarin.Forms.Extension.MediaView();
     var camera = new Camera(CameraDevice.Rear);
-    camera.Display = new Display((Tizen.Multimedia.MediaView)formMediaView.NativeView);
     ```
 
-2.  Check which video codecs and file formats the device supports:
+2. To set the display on which the video is recorded, use the `Display` property of the `Tizen.Multimedia.Camera` class.
+
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+
+    ```
+    var mediaView = new VideoView();
+
+    mediaView.NativeViewCreated += (s, e) =>
+    {
+        camera.Display = new Display((Tizen.Multimedia.MediaView)(s as VideoView).NativeView);
+    };
+    ```
+
+3.  Check which video codecs and file formats the device supports:
 
     -   To check which video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) class. The possible video codec values are defined in the [Tizen.Multimedia.RecorderVideoCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderVideoCodec.html) enumeration.
     -   To check which file formats the device supports, use the `GetSupportedFileFormats()` method of the `Tizen.Multimedia.Recorder` class. The possible file format values are defined in the [Tizen.Multimedia.RecorderFileFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
@@ -211,7 +218,7 @@ To initialize the video recorder for use:
     var fileFormat = VideoRecorder.GetSupportedFileFormats().FirstOrDefault();
     ```
 
-3.  Create an instance of the [Tizen.Multimedia.VideoRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.VideoRecorder.html) class by passing the `Tizen.Multimedia.Camera` instance, and the video codec and file format of the recording to the class constructor.
+4.  Create an instance of the [Tizen.Multimedia.VideoRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.VideoRecorder.html) class by passing the `Tizen.Multimedia.Camera` instance, and the video codec and file format of the recording to the class constructor.
 
     Make sure the file format matches the video codec.
 
@@ -221,7 +228,7 @@ To initialize the video recorder for use:
 
     The recorder state is set to `Idle`.
 
-4.  Set various video recorder settings, such as the file size limit, video/audio encoder bitrate, video motion rate, audio sample rate, and resolution:
+5.  Set various video recorder settings, such as the file size limit, video/audio encoder bitrate, video motion rate, audio sample rate, and resolution:
 
     ```
     /// Set the maximum file size to 1024 (kB)
@@ -240,7 +247,7 @@ To initialize the video recorder for use:
     videoRecorder.AudioSampleRate = 44100;
     ```
 
-5.  To receive a notification when the video recorder reaches its recording limit:
+6.  To receive a notification when the video recorder reaches its recording limit:
 
     1.  Register an event handler for the `RecordingLimitReached` event of the `Tizen.Multimedia.Recorder` class:
 

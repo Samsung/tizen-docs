@@ -91,7 +91,7 @@ byte[] rawbuffer; /// Data to be passed for recording
 var videoFormat = new VideoMediaFormat(MediaFormatVideoMimeType.Mpeg4SP, new Size(640, 480));
 var mediaPacket = MediaPacket.Create(videoFormat);
 
-mediaPacket.CopyFrom(rawbuffer, 0, rawbuffer.length);
+mediaPacket.Buffer.CopyFrom(rawbuffer, 0, rawbuffer.length);
 ```
 
 The media packet must be created for each buffer captured from the source and passed to the `PushBuffer()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class when the stream recorder is prepared to record.
