@@ -1,8 +1,8 @@
-# Setting up the SmartThings Cloud
+# Setting up SmartThings Cloud
 
 To develop applications that integrate with the SmartThings Cloud, you must register the function of your device (called a resource or capability in the SmartThings Cloud) and generate a private key and a cloud certificate.
 
-## Registering Your Device
+## Registering your Device
 
 To register the function of your device:
 
@@ -11,7 +11,7 @@ To register the function of your device:
     -   Create a unique VID (vendor ID) for each device you develop.
     -   Select the **Switch** and **Audio Volume** capabilities in the **Device Profile** field, for the Network Audio sample application.
 
-    ![Web Console VID Example](media/devworkspace_vid.png)
+        ![Web Console VID Example](media/devworkspace_vid.png)
 
 2.  After the cloud-connected device is created, check the device information by clicking the new device.
 3.  Note the **VID**, the **MNID**, and the **Device Onboarding Id** field value, shown in the device information, must be updated in the device definition JSON file.
@@ -26,7 +26,7 @@ SmartThings&trade; uses OpenSSL for security. To begin development, you need to 
 
 Generate the IoT certificate and private key using the Certificate Manager:
 
-1.  In the Tizen Studio menu, open the Certificate Manager by going to **Tools &gt; Certificate Manager**.
+1.  In Tizen Studio menu, open the Certificate Manager by going to **Tools &gt; Certificate Manager**.
 
     ![Certificate Manager menu Item](media/certificate_manager_menu_item.png)
 
@@ -44,7 +44,7 @@ Generate the IoT certificate and private key using the Certificate Manager:
    
    > **NOTE**
    > 
-   > "Device Name" should be the same as what was defined when the application was created in Tizen Studio.
+   > "Device Name" must be the same as the "device name", which you define in `master.json`.
 
 5.  Sign in to Samsung account.
 
@@ -60,7 +60,7 @@ The IoT certificate and key pair generated in the previous section needs to be c
 
 To add the IoT certificate to the application:
 
-1.  In the Tizen Studio **Project Explorer** view, **right-click** the project and select **Build Signed Package**.
+1.  In Tizen Studio **Project Explorer** view, **right-click** the project and select **Build Signed Package**.
 
     ![Build signed package](media/build_signed_package.png)
 

@@ -4,22 +4,22 @@
 
 [Flashing Tizen Images with IoT Setup Manager](#Flashing-Tizen-Images-with-IoT-Setup-Manager)
 
-[ARTIK 530 Set-up](#ARTIK-530-Set-up)
+[Setting up ARTIK 530](#Setting-up-ARTIK-530)
 
 [Tips](#Tips)
 
 # Installing Tizen Studio
 
-If you already installed the Tizen Studio 3.0 and installed the **4.0 Mobile** profile for the **Main SDK** and the **IOT-Headed-4.0** and **IOT-Headless-4.0** profiles for the **Extension SDK**, you can skip this section.
+If you have already installed Tizen Studio 3.0 and installed the **4.0 Mobile** profile for the **Main SDK** and the **IOT-Headed-4.0** and **IOT-Headless-4.0** profiles for the **Extension SDK**, you can skip this section.
 
-Otherwise, to install the Tizen Studio and the required profiles for IoT development:
+Otherwise, to install Tizen Studio and the required profiles for IoT development:
 
-1.  Download the correct version of Tizen Studio 2.0 (or later) for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download) and install it.
-2.  Open the Tizen Studio Package Manager, select the **Main SDK** tab, and install the **4.0 Mobile** profile:
+1.  Download and install the correct version of Tizen Studio 2.0 (or later) for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download).
+2.  Open the **Tizen Studio Package Manager**, select the **Main SDK** tab, and install the **4.0 Mobile** profile:
 
     ![Install the mobile profile](media/package_manager_mobile_4.0.png)
 
-3.  Select the **Extension SDK** tab and install the **Extras** which includes **IOT-Headed-4.0** and **IOT-Headless-4.0** profiles:
+3.  Select the **Extension SDK** tab and install **Extras**. **Extras** includes **IOT-Headed-4.0** and **IOT-Headless-4.0** profiles:
 
     ![Install the headless profile](media/package_manager_iot_4.0.png)
 
@@ -28,7 +28,7 @@ Otherwise, to install the Tizen Studio and the required profiles for IoT develop
 
 IoT Setup Manager helps you to easily install Tizen on your IoT device using your computer. It helps to get your device running and connected to the local network. After your device is connected to the local network, you can start developing and testing the Tizen IoT applications.
 
-## Prerequisite and Overview
+## Prerequisites
 
 You must have the binary images in your computer. You can download the binary images from:
 
@@ -37,13 +37,13 @@ You must have the binary images in your computer. You can download the binary im
 
        -   ARTIK 530s: None
 -   Platform image:
-       -   Headleass (without display): [tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headless-2parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz)
+       -   Headless (without display): [tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headless-2parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz)
        -   Headed (with display): [iot-headed-3parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headed-3parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headed-3parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headed-3parts-armv7l-artik530_710.tar.gz)
        -   Customized image: Create and download the customized image as explained in the [Customized Platform Guide](../customized-platform/overview.md).
 
 To make a device with a display, select **Headed** image, which consists of the UI framework. To make a device without a display, select **Headless** image. 
 
-Most of the flashing steps mentioned in this section only for ARTIK 530.
+The flashing steps mentioned in this section are only for ARTIK 530.
 
 
 
@@ -78,13 +78,13 @@ To flash Tizen on your SD card using the IoT Setup Manager:
 1.  Create a profile:
     1.  Click **Create** to create a profile. The **Edit Profile** window appears.
 
-       ![IoT Setup Manager Edit](media/iot_setup_manager_edit_window.png)
+        ![IoT Setup Manager Edit](media/iot_setup_manager_edit_window.png)
 
     2.  Provide the required information such as target, local paths to boot and platform image, and so on.
 
         -   Profile name: Enter a profile name, for example, ARTIK530_Headless or ARTIK530_Headed
         -   Target: ARTIK530_HEADLESS for headless image or ARTIK530_HEADED for headed image
-        -   Boot image or platform image: The local paths to boot and platform images, which you download from [Prerequisite and Overview](#prerequisite-and-overview).
+        -   Boot image or platform image: The local paths to boot and platform images, which you download from [Prerequisites](#prerequisites).
         -   ROM bundles: Left as blank
         -   WiFi: Clear
         -   Ethernet: Clear
@@ -105,7 +105,7 @@ To flash Tizen on your SD card using the IoT Setup Manager:
     -   Click **Burn** to burn Tizen to your SD Card. This takes about two minutes to complete.
 
 
-# ARTIK 530 Set-up
+# Setting up ARTIK 530
 
 ## Connecting the board to the PC
 
@@ -115,7 +115,7 @@ To configure the ARTIK 530 hardware board:
 
     ![ARTIK 530 power and micro SD slots](media/artik_power_sd.png)
 
-2.  Set the DIP switch on the board as shown in the following figure (top view of the board).
+2.  Set the DIP switch on the board as shown in the following figure (top view of the board):
 
      ![ARTIK 530 DIP switch](media/artik_dip_switch.png)
 
@@ -215,13 +215,13 @@ To configure the ARTIK 530 hardware board:
 
             ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530.png)
 
-        2.  For the case of the Linux shell(Linux), run the `sh` script given in the instructions. For example:
+        2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 
             ```
             $ ./ARTIK_530_plugin_tizen4.0.sh
             ```
 
-        3.  For the case of the Command window(Windows), run the `bat` script given in the instructions. For example:
+        3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
 
             ```
             > ARTIK_530_plugin_tizen4.0.bat
@@ -295,7 +295,7 @@ To install the IoT Setup Manager using the Package Manager available in Tizen St
 1.  Open Tizen Studio and go to **Tools > Package Manager**.
 2.  Click **Extension SDK** and verify whether the IoT Setup Manager appears in the list of available packages.
 3.  Click **install** for **IoT Setup Manager** to install the IoT Setup Manager Extension.
-4.  Start Tizen Studio. If the Tizen Studio is already running, close and restart it.
+4.  Start Tizen Studio. If Tizen Studio is already running, close and restart it.
 
 
 ### IoT Setup Manager fields
@@ -346,11 +346,11 @@ The IoT Setup Manager edit view contains the following fields:
     -   ARTIK530_HEADED_INSTALLABLE: eMMC-bootable headled binary for ARTIK 530 board. When you start the board with SD card, the image is installed into eMMC.
 -   **Boot image**
 
-    Browse for the Tizen Boot image available on your hard drive. You must select proper images depending on the board. For more information, see [Prerequisite and Overview](#prerequisite-and-overview).
+    Browse for the Tizen Boot image available on your hard drive. You must select proper images depending on the board. 
 
 -   **Platform image**
 
-    Browse for the Tizen Platform image available on your hard drive. You must select proper images depending on the board. For more information, see [Prerequisite and Overview](#prerequisite-and-overview).
+    Browse for the Tizen Platform image available on your hard drive. You must select proper images depending on the board. 
 
 -   **RPM bundles** (optional)
 
@@ -366,7 +366,7 @@ The IoT Setup Manager edit view contains the following fields:
 -   While creating or editing a profile, ensure that the boot images, platform images, and the rpms (if selected) match the target device.
 -   Ensure that there are no white spaces in the boot image, platform image, and the rpm folder paths.
 -   Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
--   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530\_HEADED\_INSTALLABLE profiles are used for writing images from SD Card to eMMC..
+-   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530\_HEADED\_INSTALLABLE profiles are used for writing images from SD Card to eMMC.
 
 
 

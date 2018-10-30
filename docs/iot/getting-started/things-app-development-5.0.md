@@ -1,8 +1,8 @@
 # Developing Applications with Things SDK API
 
-To create a new application project using Things SDK API:
+To create a new application project using SmartThings&trade; (ST) SDK API:
 
-1.  In the Tizen Studio, select **File > New > Tizen Project**.
+1.  In Tizen Studio, select **File > New > Tizen Project**.
 2.  Select **Template**, and click **Next**.
 
     ![Tizen Project Wizard](media/thingsapp_sample.png)
@@ -21,14 +21,14 @@ To create a new application project using Things SDK API:
 
 6.  Define the project properties, and click **Next**.
 
-    You can enter the project name (3-50 characters) and the unique package ID. You can also select the location and working sets by clicking **More properties**.
+    You can enter a project name (3-50 characters) and a unique package ID. You can also select the location and working sets by clicking **More properties**.
 
     ![Enter the project name](media/thingsapp_project_name.png)
 
 7.  In the **Device/Platform** list:
     1.  Select **\[network audio\]**.
-    2.  Uncheck the resources except **x.com.st.powerswitch** and **x.com.st.audiovolume**.
-    3.  Enter **Vendor Id**, **Manufacturer Name**, and **setup Id** as **VID**, **MNID**, and **Device Onboarding ID** values. For details, see [Developer Workspace](https://devworkspace.developer.samsung.com) site and also [Setting up the SmartThings Cloud](things-cloud-setup.md).
+    2.  Clear the resources except **x.com.st.powerswitch** and **x.com.st.audiovolume**.
+    3.  Enter **Vendor Id**, **Manufacturer Name**, and **Setup Id** as **VID**, **MNID**, and **Device Onboarding ID** values. For details, see [Developer Workspace](https://devworkspace.developer.samsung.com) site and also [Setting up the SmartThings Cloud](things-cloud-setup.md).
     4.  Click **Finish**.
 
         ![Select a native project](media/guitool.png)
@@ -43,12 +43,12 @@ To create a new application project using Things SDK API:
 
     Instead of using an existing sample as a basis for your application, you can use the **IoT** template that makes use of the Things SDK API:
 
-    1.  In the Tizen Studio, select **File > New > Tizen Project**.
+    1.  In Tizen Studio, select **File > New > Tizen Project**.
     2.  Select **Template**, click **Next**, select **Custom > Iot-headless v4.0**, and click **Next**.
     3.  Select **Native Application**, click **Next**, select the **IoT** template, and click **Finish**.
 
-9.  You need a certificate to make the device work correctly. You only have to create the certificate once, when you first install the Tizen Studio.
-    1.  In the Tizen Studio menu, open the Certificate Manager by going to **Tools > Certificate Manager**.
+9.  You need a certificate to make the device work correctly. You only have to create the certificate once, when you first install Tizen Studio.
+    1.  In Tizen Studio menu, open the Certificate Manager by going to **Tools > Certificate Manager**.
 
         ![Open the Certificate Manager](media/certificate_manager.png)
 
@@ -66,11 +66,11 @@ To create a new application project using Things SDK API:
 
         > **Note**
         >
-        > If Samsung Extension SDK is installed, you are prompted "Select the type of profile" with two choices: "Tizen" and "Samsung".To develop Tizen IoT, select "Tizen".
+        > If Samsung Extension SDK is installed, you are prompted **Select the type of profile** with two choices: **Tizen** and **Samsung**.To develop Tizen IoT, select **Tizen**.
 
         ![Create a new certificate](media/cm_new.png)
 
-    5.  Enter the Certificate profile name and click **Next**.
+    5.  Enter the **Certificate profile name** and click **Next**.
 
         ![Enter certificate name](media/cm_profile.png)
 
@@ -78,11 +78,11 @@ To create a new application project using Things SDK API:
 
         ![Create authot certificate](media/cm_new_author.png)
 
-    7.  Enter the details in the **Key filename**, **Author Name**, and **Password** fields, and click **Next**.
+    7.  Enter the details in the **Key filename**, **Author Name**, **Password**, and **Confirm Password** fields, and click **Next**.
 
         ![Enter author details](media/cm_author.png)
 
-    8.  In the **Distributor Certificate** tab, select **Use the default Tizen distributor certificate** and select **Platform** in the **Privilege level** drop-down menu.
+    8.  In the **Distributor Certificate** tab, select **Use the default Tizen distributor certificate** and select **Platform** in the **Privilege level** drop-down list.
 
         ![Create distributor certificate](media/cm_privilege.png)
 
@@ -100,30 +100,30 @@ To create a new application project using Things SDK API:
     (For more information, see [Setting up the SmartThings Cloud](things-cloud-setup.md)).
 
 
-   > **Note**
-   >
-   > -   **MNID:** A unique ID assigned to each developer. When you log in the SmartThings Server, a unique MNID is generated for you.
-   > -   **VID:** A device ID assigned to a developer. You need to assign a unique, alphanumerical ID for each device you develop.
-   > -   **Private key and cloud certificate:** The key and certificate to certify that you are allowed to access the SmartThings Cloud.
+    > **Note**
+    >
+    > -   **MNID:** A unique ID assigned to each developer. When you log in the SmartThings Server, a unique MNID is generated for you.
+    > -   **VID:** A device ID assigned to a developer. You need to assign a unique, alphanumerical ID for each device you develop.
+    > -   **Private key and cloud certificate:** The key and certificate to certify that you are allowed to access the SmartThings Cloud.
 
-   1.  In the `platform` section of the `shared/res/device_def.json` file, check if the `mnid` and `vid` are correct. Also check if `setupId` is the same as the 'Device Onboarding ID' of [SmartThings deveolopers workspace](https://devworkspace.developer.samsung.com).
+    1.  In the `platform` section of the `shared/res/device_def.json` file, check if the `mnid` and `vid` are correct. Also check if `setupId` is the same as the 'Device Onboarding ID' of [SmartThings deveolopers workspace](https://devworkspace.developer.samsung.com).
 
        ![Device Definition JSON File](media/device-definition-json-mnid-vid-5.0.png)
 
-   2.  Generate the IoT certificate following the [Generating cloud certificates](things-cloud-setup.md#generating-cloud-certificates).
+    2.  Generate the IoT certificate following the [Generating cloud certificates](things-cloud-setup.md#generating-cloud-certificates).
 
 
 11. Connect the ARTIK 530 or Raspberry Pi 3 board to a Linux computer with a USB cable and make SDB connection.
 
     For more information, see [Hardware Configuration](hardware-configuration.md).
 
-12. Confirm that "artik" or "rpi3" is shown in the Tizen Studio toolbar.(This will be shown when SDB is connected.)
+12. Confirm that **artik** or **rpi3** is shown in Tizen Studio toolbar.(This will be shown when SDB is connected.)
 
-    ![Artik connected to the Tizen Studio](media/tizen_studio_artik.png)
+    ![Artik connected to Tizen Studio](media/tizen_studio_artik.png)
 
-    ![Raspberry Pi 3 connected to the Tizen Studio](media/tizen_studio_rpi3.png)
+    ![Raspberry Pi 3 connected to Tizen Studio](media/tizen_studio_rpi3.png)
 
-13. In the Tizen Studio **Project Explorer** view, right-click the project and select **Run As > Tizen Native Project**.
+13. In Tizen Studio **Project Explorer** view, right-click the project and select **Run As > Tizen Native Project**.
 
     ![Running the project](media/thingsapp_runas.png)
 
@@ -132,4 +132,4 @@ To create a new application project using Things SDK API:
 
 > **Note**
 >
-> For "Developing Applications with Things SDK API" for Tizen 4.0, see this [link](things-app-development.md)
+> For *Developing Applications with Things SDK API* for Tizen 4.0, see [here](things-app-development.md)
