@@ -28,7 +28,7 @@ The followings are types of watchface complication:
 | Support type name | Mandatory data | Optional data   |
 |-------------------|----------------|-----------------|
 | short text type   | short text     | title           |
-|                   |                | icon path       |
+|                   |                | icon path       |docs/application/native/guides/compliations/watchface-complication.md
 |                   |                | extra data      |
 | long text type    | long text      | title           |
 |                   |                | icon path       |
@@ -192,14 +192,14 @@ The watchface application can provide the changeable features(such as, compliati
 
 The features can be changed by watchface editor application:
 
-    ![Complication_editor](media/editor_1.png)
+![Complication_editor](media/editor_1.png)
 
 
 To use the functions and data types for the watchface_editable API, include the `<watchface-editable.h>` header file in your application:
 
-    ```cpp
-    #include <watchface-editable.h>
-    ```
+```cpp
+#include <watchface-editable.h>
+```
 
 1. When the editor is ready to edit, it notifies that it is ready. To receive the notification from the editor, `watchface_editable_edit_ready_cb()` must be added:
 
@@ -222,7 +222,7 @@ Watchface can request to edit the features by using `watchface_editable_request_
 To inform the position of editable features, `watchface_editable_highlight_h` must be used.
 The highlight handle can be created by `watchface_editable_highlight_create()` with watchface shape type.
 
-There are following shape types:
+    There are following shape types:
 
     | Shape types | Description |
     |-------------|-------------|
@@ -230,8 +230,8 @@ There are following shape types:
     | `WATCHFACE_EDITABLE_SHAPE_TYPE_RECT` | rectangle |
 
 
-The position of editable feature can be set by using `watchface_editable_highlight_set_geometry()`.
-The parameters of this function means the position(x,y) and size(width, height).
+    The position of editable feature can be set by using `watchface_editable_highlight_set_geometry()`.
+    The parameters of this function means the position(x,y) and size(width, height).
 
 
     > **Note**
