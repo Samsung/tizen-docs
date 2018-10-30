@@ -184,15 +184,13 @@ In This case, watchface supports complications only in allowed complication list
 	watchface_complication_allowed_list_destroy(allowed_list);
 }
 ```
- 
- 
+
 
 ## Watchface Edit with Editable Feature
 
 The watchface application can provide the changeable features(such as, compliation, color, font and so on) with watchface editable APIs.
 
 The features can be changed by watchface editor application:
-
 
     ![Complication_editor](media/editor_1.png)
 
