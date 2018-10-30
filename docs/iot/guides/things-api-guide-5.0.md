@@ -1,10 +1,11 @@
 # API Usage
 
-SmartThings Thing API is a service that provides connection to SmartThings Cloud. Also, it acts as an interface for resource applications to be controlled by the SmartThings applications.
+SmartThings Thing API is a service that provides connection to SmartThings Cloud. In addition, it acts as an interface for resource applications to be controlled by the SmartThings applications.
+
+![SmartThings Thing overall architecture](./media/smartthings_thing_overall_architecture.png)
 
 **Figure: SmartThings Thing overall architecture**
 
-![SmartThings Thing overall architecture](./media/smartthings_thing_overall_architecture.png)
 
 The main SmartThings Thing API features include:
 
@@ -37,8 +38,6 @@ Update the following pages on the SmartThings cloud:
 >
 > For some fields, the values entered in the pages must match with the values specified in your JSON file.
 
-  **Table: Device information - page fields matching with Master.json**
-
   Field|master.json
   :---:|----
   Device type|deviceType
@@ -47,24 +46,31 @@ Update the following pages on the SmartThings cloud:
   VID|vid
   Device onboarding ID|setupId
 
-  **Table: Self-publish - page fields matching with Resource.json**
+  **Table: Device information - page fields matching with Master.json**
+
 
   Field|resource.json
   :---:|----
   Capabilities|resources > uri
   Resources|resourceTypes > type
 
-**Figure: SmartThings Thing device information**
+  **Table: Self-publish - page fields matching with Resource.json**
+
 
 ![SmartThings Thing Device info](./media/smartthings_thing_device_info.png)
 
-**Figure: SmartThings Thing add capabilities**
+**Figure: SmartThings Thing device information**
+
 
 ![SmartThings Thing Add capabilities](./media/smartthings_thing_add_capabilities.png)
 
-**Figure: SmartThings Thing self publish**
+**Figure: SmartThings Thing add capabilities**
+
 
 ![SmartThings Thing Self publish](./media/smartthings_thing_self_publish.png)
+
+**Figure: SmartThings Thing self publish**
+
 
 - Setup the background categories
 
