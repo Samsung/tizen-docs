@@ -13,7 +13,7 @@ Tizen provides API-level access control for security-sensitive
 operations which, if not used properly, can harm user privacy and
 system stability. Therefore, applications that use such sensitive APIs
 must declare the required privileges in the
-[tizen-manifest.xml](../process/setting-properties.md#setting-the-application-manifest) file.
+tizen-manifest.xml file.
 Privileges are categorized into public, partner, and platform levels
 according to their hierarchy:
 
@@ -28,7 +28,7 @@ according to their hierarchy:
     platform-signed certificate, which is granted to vendor developers.
 
 Since Tizen platform 3.0, some privileges are categorized as
-privacy-related and give an option to the user to switch them **on** and
+privacy-related and gives an option to the user to switch them **on** and
 **off**. If an application invokes a privacy-related privileged API, the
 Tizen system checks whether the privilege is **allowed** for the
 application. For the application to use the API, the privilege must be
@@ -38,20 +38,18 @@ switched it **on**.
 > **Note**  
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
-> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../../guides/security/privacy-related-permissions.md) using the Privacy Privilege Manager API (in
-[mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
-applications).
+> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/requesting-permissions.md) using the [Privacy Privilege Manager API](../api/tizenfx/api/Tizen.Security.PrivacyPrivilegeManager.html).
 
 The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
-Privileges](../../../tizen-studio/native-tools/api-checker.md).
+Privileges](../../tizen-studio/native-tools/api-checker.md).
 
 <a name="API"></a>
-## Native API Privileges
+## .NET API Privileges
 
 The following table lists the API privileges, which you must declare
-when using security-sensitive API modules in native applications:
+when using security-sensitive API modules in .net applications:
 
-**Table: Native API privileges**
+**Table: .NET API privileges**
 
 | Privilege                            | Level    | Privacy    | Description                              |
 |--------------------------------------|----------|------------|------------------------------------------|
@@ -135,6 +133,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/packagemanager.admin` | platform |  | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public |  | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public |  | The application can retrieve detailed application package information. |
+| `http://tizen.org/privilege/peripheralio` | platform |  | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
 | `http://tizen.org/privilege/power` | public |  | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push` | public |  | The application can receive notifications via the internet. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/reboot` | platform |  | The application can restart the device. |
@@ -159,25 +158,8 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/widget.viewer` | public |  | The application can show widgets, and information from their associated applications, on the home screen. |
 | `http://tizen.org/privilege/wifidirect` | public |  | The application can enable and disable Wi-Fi Direct, manage Wi-Fi Direct connections, and change Wi-Fi Direct settings. |
 | `http://tizen.org/privilege/window.priority.set` | public |  | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This may prevent user from interacting with other applications or screens until the window for this application is closed. |
-
-<a name="IoT"></a>
-## IoT Native API Privileges
-
-The following table lists the API privileges, which you must declare
-when using security-sensitive API modules in IoT native
-applications:
-
-**Table: IoT native API privileges**
-
-| Privilege                                | Level    | Privacy      | Description                              |
-|----------------------------------------|--------|------------|----------------------------------------|
-| `http://tizen.org/privilege/peripheralio` | platform   |   | The application can communicate with peripherals using industry standard protocols and interfaces, such as GPIO, I2C, PWM, UART, and SPI. |
-| `http://tizen.org/privilege/updatecontrol.admin` | platform   |   | The application can control the firmware update procedure.       |
-| `http://tizen.org/privilege/zigbee` | public   |   | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
-| `http://tizen.org/privilege/zigbee.admin` | platform   |   | The application can control a connected ZigBee coordinator. For example, turning it on or off. |
-
-> **Note**
-> For the other privileges, see the [Native API Privileges](#native-api-privileges).
+| `http://tizen.org/privilege/zigbee` | public |  | The application can connect a ZigBee coordinator to end devices and control connected end devices. |
+| `http://tizen.org/privilege/zigbee.admin` | platform |  | The application can control a connected ZigBee coordinator, for example, turning it on or off. |
 
 <a name="nonAPI"></a>
 ## Non-API Bound Privileges
@@ -195,8 +177,8 @@ The following table lists the non-API bound privileges:
 
 | Privilege                                | Level  | Privacy  | Description                              |
 |----------------------------------------|------|------|----------------------------------------|
-| `http://tizen.org/privilege/internet`    | public |  | Most of the mobile and wearable devices use a cellular network for IP communication. However, the cellular network can cause data costs and an application that sends data through the internet can be crucial for user privacy. Due to the importance of the functionality, a privilege for controlling application internet access has been added.<br><br>The new privilege is coupled with IP addresses of the destination and source of the IP packets. If your socket is connecting or listening to any IP address except 127.0.0.1, this privilege is required to communicate properly. If your application does not have this privilege, the connection is blocked in the kernel layer and returns an error in the `connect()` function as the permission is denied. If you are listening to a socket, you never receive any packets from the outside without errors on the socket functions.<br><br>If you are using the `listen()` and `connect()` functions between the local loopback interface (127.0.0.1), you cannot connect to a random application (due to sandboxing) no matter how you add this privilege. However, you can connect between multiple processes of the same application binary. |
+| `http://tizen.org/privilege/internet`    | public |  | Most of the mobile and wearable devices use a cellular network for IP communication. However, the cellular network can cause data costs and an application that sends data through the internet can be crucial for user privacy. Due to the importance of the functionality, a privilege for controlling application internet access has been added.<br><br>The new privilege is coupled with IP addresses of the destination and source of the IP packets. If your socket is connecting or listening to any IP address except 127.0.0.1, this privilege is required to communicate properly. If your application does not have this privilege, the connection is blocked in the kernel layer. If you are listening to a socket, you never receive any packets from the outside without errors on the socket functions.<br><br>You cannot connect to a random application (due to sandboxing) no matter how you add this privilege but you can connect between multiple processes of the same application binary. |
 | `http://tizen.org/privilege/mediastorage` | public | Storage | When you connect the device to a computer (Windows&reg; or macOS) through USB, you can access a dedicated media storage area shown as massive media storage. This region of the storage is called media storage and is usually used for multimedia files, such as photos, videos, and music files. Since this storage area is used for user private data, access to it must be protected with a privilege.<br>If your application does not have this privilege, no file operations into the media storage area succeed and you receive a permission denied error. If you have this privilege, you can read and write directories and files, create new files, and delete files in the storage area.<br><br>This privilege is treated as privacy privilege since platform version 4.0. |
-| `http://tizen.org/privilege/externalstorage` | public | Storage | Similar to the media storage, many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege. You can find the absolute path of the external storage with the [Storage](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) API functions, such as `storage_get_root_directory()` function.<br>If your application does not have this privilege, all file operations fail with a permission denied error. If you have this privilege, you have full access to the external storage.<br><br>This privilege is treated as privacy privilege since platform version 4.0. |
-| `http://tizen.org/privilege/externalstorage.appdata` | public |  | Many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege.<br><br>If your application does not have this privilege, no file operations with the application data stored in the external storage area succeed and you receive a permission denied error. If you have this privilege, you can store data in the application-specific directory of the external storage. For example, you can find the path for storing data in the external storage with, the `app_get_external_data_path()`, `app_get_external_cache_path()`, and `app_get_external_shared_data_path()` functions. |
-| `http://tizen.org/privilege/appdir.shareddata` | public |  | Since Tizen 3.0, the application must have this privilege to support the `shared/data` directory.<br><br>The `app_get_shared_data_path()` and `app_manager_get_shared_data_path()` functions return an error when the application does not have this privilege. Note that the `shared/data` directory is writable for the application itself and readable for all other applications. You must be careful when you use this privilege and share data through the `shared/data` directory. For a more secure way of sharing files with another application, try to pass the file path through an application control. |
+| `http://tizen.org/privilege/externalstorage` | public | Storage | Similar to the media storage, many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege. You can find the absolute path of the external storage with the [Storage](../api/tizenfx/api/Tizen.System.Storage.html) API functions, such as `GetAbsolutePath()` method.<br>If your application does not have this privilege, all file operations fail with a permission denied error. If you have this privilege, you have full access to the external storage.<br><br>This privilege is treated as privacy privilege since platform version 4.0. |
+| `http://tizen.org/privilege/externalstorage.appdata` | public |  | Many devices support external storages, such as MicroSD card or USB memory. As with the media storage, the access to an external storage must be protected with a privilege.<br><br>If your application does not have this privilege, no file operations with the application data stored in the external storage area succeed and you receive a permission denied error. If you have this privilege, you can store data in the application-specific directory of the external storage. You can get the absolute path to the application's external data directory with `ExternalData` property of `Tizen.Applications.DirectoryInfo`. |
+| `http://tizen.org/privilege/appdir.shareddata` | public |  | Since Tizen 3.0, the application must have this privilege to support the `shared/data` directory.<br><br>You can get share directory path with `SharedDataPath` property of `Tizen.Applications.ApplicationInfo` if the application have shared/data directory. Note that the `shared/data` directory is writable for the application itself and readable for all other applications. You must be careful when you use this privilege and share data through the `shared/data` directory. For a more secure way of sharing files with another application, try to pass the file path through an application control. |
