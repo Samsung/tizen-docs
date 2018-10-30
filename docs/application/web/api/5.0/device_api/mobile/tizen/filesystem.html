@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Filesystem">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Filesystem API</h1></div>
 <div class="brief">
  The Filesystem API provides access to a device's filesystem.
@@ -17,8 +17,7 @@
 The filesystem is represented as an abstract collection of disjointed filesystem virtual
 root locations, each corresponding to a specific location in the device
 filesystem. The filesystem API exposes the hierarchies below these root
-locations as a single virtual filesystem, but provides no access to other
-parts of the device filesystem.
+locations as autonomous virtual filesystems.
         </p>
         <p>
 Each virtual root has a string name. Each file or directory within the virtual
@@ -52,11 +51,11 @@ wgt-private - the location for a widget's private storage           </li>
           <li>
 wgt-private-tmp - the location for a widget's private volatile storage          </li>
           <li>
-removable_<em>...</em> - the location for external storages. The <em>"..."</em> suffix is an unique identifier of an external storage.
+removable_<em>...</em> - the location for external storages. The <em>"..."</em> suffix is a unique identifier of an external storage.
 To obtain list of available external storages use <a href="#FileSystemManager::listStorages">listStorages</a>.          </li>
         </ul>
         <p>
-The file URI path is also supported. To access other paths out of virtual root, for example "file:///tmp" can be used as location parameter.
+The file URI path is also supported. To access paths out of virtual root, for example "file:///tmp" can be used as location parameter.
         </p>
         <p>
 The implementation must support the use of the following characters in file names:
@@ -65,7 +64,7 @@ The implementation must support the use of the following characters in file name
           <li>
 Letters (a-z, A-Z)          </li>
           <li>
-Numbers (0-9)          </li>
+Digits (0-9)          </li>
           <li>
 Blank space          </li>
           <li>
@@ -170,7 +169,7 @@ For more information on the Filesystem features, see <a href="https://developer.
 </li>
 <li>2.16. <a href="#ReadDataSuccessCallback">ReadDataSuccessCallback</a>
 </li>
-<li>2.17. <a href="#FileStringSuccessCallback">FileStringSuccessCallback</a>
+<li class="deprecated">2.17. <a href="#FileStringSuccessCallback">FileStringSuccessCallback</a>
 </li>
 <li class="deprecated">2.18. <a href="#FileStreamSuccessCallback">FileStreamSuccessCallback</a>
 </li>
@@ -288,12 +287,8 @@ For more information on the Filesystem features, see <a href="https://developer.
 <td><div>void <a href="#ReadDataSuccessCallback::onsuccess">onsuccess</a> (<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data)</div></td>
 </tr>
 <tr>
-<td><a href="#FileStringSuccessCallback">FileStringSuccessCallback</a></td>
-<td><div>void <a href="#FileStringSuccessCallback::onsuccess">onsuccess</a> (DOMString fileStr)</div></td>
-</tr>
-<tr>
 <td><a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a></td>
-<td><div>void <a href="#ListDirectorySuccessCallback::onsuccess">onsuccess</a> (DOMString[] names)</div></td>
+<td><div>void <a href="#ListDirectorySuccessCallback::onsuccess">onsuccess</a> (DOMString[] names, <a href="#Path">Path</a> path)</div></td>
 </tr>
 </tbody>
 </table>
@@ -332,13 +327,13 @@ The file modes defined by this enumerator are:
           </p>
           <ul>
             <li>
-<var>a</var> - append access            </li>
+<var>a</var> - append access.            </li>
             <li>
-<var>r</var> - read-only access            </li>
+<var>r</var> - read-only access.            </li>
             <li>
 <var>rw</var> - read and write access.            </li>
             <li>
-<var>rwo</var> - read and write access. Original file contents are deleted.            </li>
+<var>rwo</var> - read and write access. Original file content are deleted.            </li>
             <li>
 <var>w</var> - write access.            </li>
           </ul>
@@ -361,7 +356,7 @@ The file modes defined by this enumerator are:
             <li>
 INTERNAL - Internal storage is a storage that cannot be removed, such as a flash memory.            </li>
             <li>
-EXTERNAL - External storage is removable storage, such as a USB drive or memory cards.            </li>
+EXTERNAL - External storage is removable storage, such as a USB drive or a memory card.            </li>
           </ul>
          </div>
 </div>
@@ -401,9 +396,7 @@ See: <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface</a
 <div class="brief">
  Specifies starting point for seek operation.
           </div>
-<pre class="webidl prettyprint">  enum BaseSeekPosition {
-    "BEGIN", "CURRENT", "END"
-  };</pre>
+<pre class="webidl prettyprint">  enum BaseSeekPosition { "BEGIN", "CURRENT", "END" };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
@@ -458,51 +451,36 @@ There is a <em>tizen.filesystem </em>object that allows accessing the functional
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface FileSystemManager {
     readonly attribute long maxNameLength;
-
     readonly attribute long maxPathLength;
-
     <a href="#FileHandle">FileHandle</a> openFile(<a href="#Path">Path</a> path, <a href="#FileMode">FileMode</a> openMode, optional boolean makeParents) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void deleteFile(<a href="#Path">Path</a> path, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-    void rename(<a href="#Path">Path</a> path, DOMString newName, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#FileFilter">FileFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void deleteFile(<a href="#Path">Path</a> path, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite,
+                       optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite,
+                       optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void rename(<a href="#Path">Path</a> path, DOMString newName, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                       optional <a href="#FileFilter">FileFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString toURI(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     boolean isFile(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     boolean isDirectory(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     boolean pathExists(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
     DOMString getDirName(DOMString path);
-
-    void getStorage(DOMString label,
-                    <a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void listStorages(<a href="#FileSystemStorageArraySuccessCallback">FileSystemStorageArraySuccessCallback</a> onsuccess,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addStorageStateChangeListener(<a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess,
-                                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getStorage(DOMString label, <a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void listStorages(<a href="#FileSystemStorageArraySuccessCallback">FileSystemStorageArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addStorageStateChangeListener(<a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeStorageStateChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -510,50 +488,10 @@ There is a <em>tizen.filesystem </em>object that allows accessing the functional
           </p>
 <div class="description">
           <p>
-This manager interface exposes the Filesystem base API, and provides functionalities, such
-as determining root and default locations, resolving a given location into a file handle, and registering filesystem listeners for filesystem events.
+This manager interface exposes the Filesystem base API and provides functionalities, such
+as determining root and default locations, resolving a given location into a file handle and registering filesystem listeners for filesystem events.
           </p>
          </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var documentsDir;
-function onsuccess(files)
-{
-  for (var i = 0; i &lt; files.length; i++)
-  {
-    console.log("File Name is " + files[i].name); /* Displays file name */
-  }
-
-  var testFile = documentsDir.createFile("test.txt");
-
-  if (testFile != null)
-  {
-    testFile.openStream("w", function(fs)
-    {
-      fs.write("HelloWorld");
-      fs.close();
-    }, function(e)
-    {
-      console.log("Error " + e.message);
-    }, "UTF-8");
-  }
-}
-
-function onerror(error)
-{
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
-}
-
-tizen.filesystem.resolve("documents", function(dir)
-{
-  documentsDir = dir;
-  dir.listFiles(onsuccess, onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
-</pre>
-</div>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -570,7 +508,7 @@ tizen.filesystem.resolve("documents", function(dir)
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>The maximum name length is 4096
+<span class="title"><p>Output example:</p></span><pre>The maximum name length is 255
 </pre>
 </div>
 </li>
@@ -601,7 +539,7 @@ tizen.filesystem.resolve("documents", function(dir)
 </dt>
 <dd>
 <div class="brief">
- Opens file or creates file pointed by <em>path</em>.
+ Opens a file or creates a file pointed by <em>path</em>.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#FileHandle">FileHandle</a> openFile(<a href="#Path">Path</a> path, <a href="#FileMode">FileMode</a> openMode, optional boolean makeParents);</pre></div>
 <p><span class="version">Since: </span>
@@ -609,22 +547,22 @@ tizen.filesystem.resolve("documents", function(dir)
             </p>
 <div class="description">
             <p>
-If the operation succeeds, file handle to the newly created or opened file is returned, otherwise an exception is thrown.
+If the operation succeeds, a file handle to the newly created or opened file is returned, otherwise an exception is thrown.
             </p>
             <p>
 Following file open modes are supported:
             </p>
             <ul>
               <li>
-<var>a</var> - append mode. File position indicator is always set to the first position after the last character of the file and cannot be modified with seek operations. Write operations always append contents to the end of the file. Original file contents are not modified. Read operations cannot be performed. If the file does not exist, it is created.              </li>
+<var>a</var> - append mode. File position indicator is always set to the first position after the last character of the file and cannot be modified with seek operations. Write operations always append content to the end of the file. Original file content are not modified. Read operations cannot be performed. If the file does not exist, it is created.              </li>
               <li>
-<var>r</var> - read mode. File position indicator is initially set to the beginning of the file and may be changed with seek operations. Write operations cannot be performed. Original file contents may be read in this mode. If the file does not exist, NotFoundError is thrown.              </li>
+<var>r</var> - read mode. File position indicator is initially set to the beginning of the file and may be changed with seek operations. Write operations cannot be performed. Original file content may be read in this mode. If the file does not exist, NotFoundError is thrown.              </li>
               <li>
-<var>rw</var> - read and write mode. File position indicator is initially set to the beginning of the file and may be changed with seek operations. Original file contents may be read or modified in this mode. If the file does not exist, NotFoundError will be thrown.              </li>
+<var>rw</var> - read and write mode. File position indicator is initially set to the beginning of the file and may be changed with seek operations. Original file content may be read or modified in this mode. If the file does not exist, NotFoundError will be thrown.              </li>
               <li>
-<var>rwo</var> - read and write mode, overwriting existing file contents. File position indicator is initially set to the beginning of the file. Read and write operations may be performed. Original file contents are deleted before opening the file. If the file does not exist, it is created.              </li>
+<var>rwo</var> - read and write mode, overwriting existing file content. File position indicator is initially set to the beginning of the file. Read and write operations may be performed. Original file content are deleted before opening the file. If the file does not exist, it is created.              </li>
               <li>
-<var>w</var> - write mode. File position indicator is initially set to the beginning of the file and may be changed with seek operations. Read operations cannot be performed. Original file contents are deleted before opening the file. If the file does not exist, it is created.              </li>
+<var>w</var> - write mode. File position indicator is initially set to the beginning of the file and may be changed with seek operations. Read operations cannot be performed. Original file content are deleted before opening the file. If the file does not exist, it is created.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -687,7 +625,7 @@ By default, <em>makeParents</em> is equal to <var>true</var>. Its value is ignor
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 console.log("File opened for writing");
 fileHandleWrite.writeString("Lorem ipsum dolor sit amet...");
@@ -695,11 +633,11 @@ console.log("String has been written to the file");
 fileHandleWrite.close();
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
 console.log("File opened for reading");
-var fileContents = fileHandleRead.readString();
-console.log("File contents: " + fileContents);
+var fileContent = fileHandleRead.readString();
+console.log("File content: " + fileContent);
 fileHandleRead.close();
 </pre>
 </div>
@@ -707,7 +645,7 @@ fileHandleRead.close();
 <span class="title"><p>Output example:</p></span><pre>File opened for writing
 String has been written to the file
 File opened for reading
-File contents: Lorem ipsum dolor sit amet...
+File content: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -718,7 +656,8 @@ File contents: Lorem ipsum dolor sit amet...
 <div class="brief">
  Creates directory pointed by <em>path</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -790,12 +729,13 @@ By default, <em>makeParents</em> is equal to <var>true</var>.
 function successCallback(path)
 {
   console.log("The directory has been created, path to created directory: " + path);
-  /* Directory can now be accessed */
+  /* Directory can now be accessed. */
 }
 
 try
 {
-  tizen.filesystem.createDirectory("documents/foo_dir/bar_dir", true, successCallback, errorCallback);
+  tizen.filesystem.createDirectory(
+      "documents/foo_dir/bar_dir", true, successCallback, errorCallback);
 }
 catch (error)
 {
@@ -904,7 +844,8 @@ catch (error)
 <div class="brief">
  Deletes directory or directory tree under the current directory pointed by <em>path</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -999,7 +940,8 @@ catch (error)
 <div class="brief">
  Copies file from location pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -1077,7 +1019,7 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 function successCallback(path)
 {
   console.log("The file has been copied, path to copied file: " + path);
-  /* File copy can now be accessed */
+  /* File copy can now be accessed. */
 }
 
 try
@@ -1086,7 +1028,7 @@ try
 }
 catch (error)
 {
-  console.log("Copy operation cannot be performed: " + error.message)
+  console.log("Copy operation cannot be performed: " + error.message);
 }
 </pre>
 </div>
@@ -1102,13 +1044,15 @@ catch (error)
 <div class="brief">
  Recursively copies directory pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, 
+                   optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
 <div class="description">
             <p>
 The method merges content of the directory pointed by <em>sourcePath</em> with content of the directory pointed by <em>destinationPath</em>, if exists.
+If the directory pointed by <em>destinationPath</em> does not exist, it is created.
             </p>
             <p>
 Successful directory copying invokes <em>successCallback</em> function, if specified. In case of failure <em>errorCallback</em> function is invoked, if specified.
@@ -1183,21 +1127,82 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 function successCallback(path)
 {
   console.log("The directory has been copied, path to copied directory: " + path);
-  /* Directory copy can now be accessed */
+  /* Directory copy can now be accessed. */
 }
 
 try
 {
-  tizen.filesystem.copyDirectory("documents/foo_dir", "documents/bar_dir", true, successCallback, errorCallback);
+  tizen.filesystem.copyDirectory(
+      "documents/foo_dir", "documents/bar_dir", true, successCallback, errorCallback);
 }
 catch (error)
 {
-  console.log("Copy operation cannot be performed: " + error.message)
+  console.log("Copy operation cannot be performed: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>The directory has been copied, path to copied directory: documents/bar_dir
+</pre>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
+{
+  console.log("An error occured: " + error.message);
+}
+
+function createFooDirCallback()
+{
+  tizen.filesystem.createDirectory(
+      "documents/foo_dir/dir_2", true, createFileCallback, errorCallback);
+}
+
+function listCallback(files, path)
+{
+  console.log("Found inside " + path + " directory:");
+  for (var i = 0; i &lt; files.length; i++)
+  {
+    console.log(files[i]);
+  }
+}
+
+function successCallback(path)
+{
+  console.log("The directory has been created and copied, path to directory: " + path);
+  /* Directory 'documents/bar_dir' content is as below: */
+  /* documents/bar_dir/dir_1 */
+  /* documents/bar_dir/dir_2 */
+  /* documents/bar_dir/dir_1/file */
+  tizen.filesystem.listDirectory("documents/bar_dir", listCallback, errorCallback);
+  tizen.filesystem.listDirectory("documents/bar_dir/dir_1", listCallback, errorCallback);
+}
+
+function createFileCallback()
+{
+  tizen.filesystem.openFile("documents/foo_dir/dir_1/file", "w").close();
+
+  try
+  {
+    tizen.filesystem.copyDirectory(
+        "documents/foo_dir", "documents/bar_dir", true, successCallback, errorCallback);
+  }
+  catch (error)
+  {
+    console.log("Copy operation cannot be performed: " + error.message);
+  }
+}
+
+tizen.filesystem.createDirectory(
+    "documents/foo_dir/dir_1", true, createFooDirCallback, errorCallback);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>The directory has been created and copied, path to directory: documents/bar_dir
+Found inside documents/bar_dir directory:
+dir_1
+dir_2
+Found inside documents/bar_dir/dir_1 directory:
+file
 </pre>
 </div>
 </dd>
@@ -1208,7 +1213,8 @@ catch (error)
 <div class="brief">
  Moves file pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -1286,16 +1292,17 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 function successCallback(path)
 {
   console.log("The file has been moved, path to moved file: " + path);
-  /* Moved file can now be accessed */
+  /* Moved file can now be accessed. */
 }
 
 try
 {
-  tizen.filesystem.moveFile("documents/foo", "documents/foo_dir/", false, successCallback, errorCallback);
+  tizen.filesystem.moveFile(
+      "documents/foo", "documents/foo_dir/", false, successCallback, errorCallback);
 }
 catch (error)
 {
-  console.log("Move operation cannot be performed: " + error.message)
+  console.log("Move operation cannot be performed: " + error.message);
 }
 </pre>
 </div>
@@ -1311,7 +1318,8 @@ catch (error)
 <div class="brief">
  Recursively moves directory pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, 
+                   optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -1392,16 +1400,17 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 function successCallback(path)
 {
   console.log("The directory has been moved, path to moved directory: " + path);
-  /* Moved directory can now be accessed */
+  /* Moved directory can now be accessed. */
 }
 
 try
 {
-  tizen.filesystem.moveDirectory("documents/foo_dir", "documents/bar_dir/", false, successCallback, errorCallback);
+  tizen.filesystem.moveDirectory(
+      "documents/foo_dir", "documents/bar_dir/", false, successCallback, errorCallback);
 }
 catch (error)
 {
-  console.log("Move operation cannot be performed: " + error.message)
+  console.log("Move operation cannot be performed: " + error.message);
 }
 </pre>
 </div>
@@ -1430,9 +1439,9 @@ The <em>ErrorCallback</em> is launched with these error types:
             </p>
             <ul>
               <li>
-IOError, if any of the input/output error occurs.              </li>
+IOError, if a file or a directory with conflicting name already exists or any of the input/output error occurs.              </li>
               <li>
-NotFoundError, if file or directory with conflicting name already exists or any input/output error occurs.              </li>
+NotFoundError, if the <em>path</em> does not point to an existing file or directory.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1494,7 +1503,7 @@ try
 }
 catch (error)
 {
-  console.log("Rename operation cannot be performed: " + error.message)
+  console.log("Rename operation cannot be performed: " + error.message);
 }
 </pre>
 </div>
@@ -1510,7 +1519,8 @@ catch (error)
 <div class="brief">
  Lists directory content located in <em>path</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#FileFilter">FileFilter</a>? filter);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+                   optional <a href="#FileFilter">FileFilter</a>? filter);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -1523,15 +1533,12 @@ If the filter is passed and contains valid values, only those directories or fil
 If the filter is <var>null</var> or <var>undefined</var> the implementation must return the full list of files in the directory.
             </p>
             <p>
-If the directory does not contain any files or directories, or the filter criteria does not match with any files or directories, the <em>successCallback</em> is invoked with an empty array.
+If the directory does not contain any files or directories, or the filter criteria do not match with any files or directories, the <em>successCallback</em> is invoked with an empty array.
             </p>
             <p>
 The <em>ErrorCallback</em> is launched with these error types:
             </p>
             <ul>
-              <li>
-InvalidValuesError, if any of the input parameters contains an invalid value.
-For example, the <em>path</em> is invalid.              </li>
               <li>
 IOError, if any of the input/output error occurs.              </li>
               <li>
@@ -1569,6 +1576,9 @@ NotFoundError, if the <em>path</em> does not point to an existing directory.    
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value. For example, the <em>path</em> is invalid.
+                </p></li>
+<li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 <li class="list"><p>
@@ -1583,10 +1593,10 @@ NotFoundError, if the <em>path</em> does not point to an existing directory.    
   console.log("An error occured, during directory listing: " + error.message);
 }
 
-function successCallback(files)
+function successCallback(files, path)
 {
-  console.log("Found directories:");
-  for (var i = 0; i  files.length; i++)
+  console.log("Found directories in " + path + " directory:");
+  for (var i = 0; i &lt; files.length; i++)
   {
     console.log(files[i]);
   }
@@ -1595,16 +1605,17 @@ function successCallback(files)
 try
 {
   var start = new Date("Jan 01 2018 00:00:00");
-  tizen.filesystem.listDirectory("documents/", successCallback, errorCallback, {name: "foo_%", isDirectory: true, startModified: start});
+  tizen.filesystem.listDirectory("documents/", successCallback, errorCallback,
+      {name: "foo_%", isDirectory: true, startModified: start});
 }
 catch (error)
 {
-  console.log("Directory listing cannot be performed: " + error.message)
+  console.log("Directory listing cannot be performed: " + error.message);
 }
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Found directories:
+<span class="title"><p>Output example:</p></span><pre>Found directories in documents/ directory:
 foo_dir_c
 foo_dir_b
 foo_dir_d
@@ -1631,7 +1642,7 @@ foo_dir_a
 <ul>
           <li class="param">
 <span class="name">path</span>:
- A path to file or directory.
+ A path to a file or a directory.
                 </li>
         </ul>
 </div>
@@ -1654,7 +1665,7 @@ foo_dir_a
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var path1 = tizen.filesystem.toURI("documents/directory/file.ext");
 var path2 = tizen.filesystem.toURI("/opt/usr/media/Documents/directory/file.ext");
 var path3 = tizen.filesystem.toURI("file:///opt/usr/media/Documents/directory/file.ext");
-/* All above paths point to the same file */
+/* All above paths point to the same file. */
 
 console.log(path1);
 console.log(path2);
@@ -1725,7 +1736,8 @@ file:///mnt/media/SDCardA1/Documents/directory/file.ext
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("documents/foo_file is " + (tizen.filesystem.isFile("documents/foo_file") ? "file" : "directory"));
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("documents/foo_file is " +
+            (tizen.filesystem.isFile("documents/foo_file") ? "file" : "directory"));
 </pre>
 </div>
 <div class="output">
@@ -1786,7 +1798,8 @@ file:///mnt/media/SDCardA1/Documents/directory/file.ext
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("documents/foo_dir is " + (tizen.filesystem.isDirectory("documents/foo_dir") ? "directory" : "file"));
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("documents/foo_dir is " +
+            (tizen.filesystem.isDirectory("documents/foo_dir") ? "directory" : "file"));
 </pre>
 </div>
 <div class="output">
@@ -1844,7 +1857,8 @@ file:///mnt/media/SDCardA1/Documents/directory/file.ext
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("documents/foo " + (tizen.filesystem.pathExists("documents/foo") ? "exists" : "does not exist"));
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("documents/foo " +
+            (tizen.filesystem.pathExists("documents/foo") ? "exists" : "does not exist"));
 </pre>
 </div>
 <div class="output">
@@ -1914,7 +1928,7 @@ Strips trailing '/', then breaks <em>path</em> into two components by last <em>p
             <p>
 A <em>location</em> can contain a virtual path like "<var>documents/some_file.txt</var>"
 or a file URI like "<var>file:///my_strange_path/some_file.png</var>".
-A <em>location</em> is not allowed to contain the "." or ".." substrings in its value.
+A <em>location</em> is not allowed to contain the "." or ".." directory entries inside its value.
             </p>
             <p>
 The list of root locations that must be supported by a compliant implementation are:
@@ -1931,7 +1945,7 @@ videos - The default folder in which video clips (in formats including avi, mp4,
               <li>
 downloads - The default folder in which downloaded files (from sources including browser, e-mail client, etc.) are stored by default in the device. For example, in some platforms it corresponds to the "Downloads" folder.              </li>
               <li>
-ringtones: The default folder in which ringtones (such as mp3, etc) are stored in the device.              </li>
+ringtones - The default folder in which ringtones (such as mp3, etc.) are stored in the device.              </li>
               <li>
 camera - The default folder in which pictures and videos taken by a device are stored.              </li>
               <li>
@@ -1942,7 +1956,7 @@ wgt-private - The private folder in which a widget stores its information. This 
 wgt-private-tmp - Temporary, the private folder in which a widget can store data that is available during a widget execution cycle. Content of this folder can be removed from this directory when the widget is closed or the Web Runtime is restarted. This folder must be accessible only to the same widget and other widgets or applications must not be able to access it.              </li>
             </ul>
             <p>
-The <em>mode </em>parameter specifies whether the resulting <em>File </em>object has read-only access ("r" access), read and write access (<var>rw</var> access), append access (<var>a</var> access), or write access (<var>w</var> access) to the root location containing directory tree.
+The <em>mode </em>parameter specifies whether the resulting <em>File </em>object has read-only access (<var>r</var> access), read and write access (<var>rw</var> access), append access (<var>a</var> access), or write access (<var>w</var> access) to the root location containing directory tree.
 Permission for the requested access is obtained from the security framework. Once the resulting <em>File </em>object has access, access is inherited by any other <em>File </em>objects that are derived from this instance without any further reference to the security framework, as noted in descriptions of certain methods of <em>File</em>.
             </p>
             <p>
@@ -1984,7 +1998,7 @@ UnknownError - If any other error occurs.              </li>
                 </li>
           <li class="param">
 <span class="name">mode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
-      Optional value to indicate the file access mode on all files and directories that can be reached from the <em>File </em>object passed to onsuccess <br>Default value of this parameter is <var>rw</var> if absent or <var>null</var>.
+      Optional value to indicate the file access mode on all files and directories that can be reached from the <em>File </em>object passed to onsuccess. <br>Default value of this parameter is <var>rw</var> if absent or <var>null</var>.
                 </li>
         </ul>
 </div>
@@ -2004,13 +2018,16 @@ UnknownError - If any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.filesystem.resolve("images", function(dir)
-{
-  console.log("Mount point Name is " +  dir.path);
-}, function(e)
-{
-  console.log("Error: " + e.message);
-}, "r");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.filesystem.resolve("images",
+    function(dir)
+    {
+      console.log("Images are stored in " + dir.path);
+    },
+    function(e)
+    {
+      console.log("Error: " + e.message);
+    },
+    "r");
 </pre>
 </div>
 </dd>
@@ -2056,7 +2073,7 @@ UnknownError - If any other error occurs.               </li>
                 </li>
           <li class="param">
 <span class="name">onsuccess</span>:
- Callback method to be invoked when the list of storage is available, passing the storage list to the callback.
+ Callback method to be invoked when the list of storages is available, passing the storage list to the callback.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -2079,7 +2096,7 @@ UnknownError - If any other error occurs.               </li>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onStorage(storage)
 {
-  /* Do something */
+  /* Do something. */
 }
 
 function onStorageError(e)
@@ -2132,7 +2149,7 @@ UnknownError - If any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">onsuccess</span>:
- Callback method to be invoked when a list of storage is available, and passing the storage list to the callback.
+ Callback method to be invoked when a list of storage is available and passing the storage list to the callback.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -2157,8 +2174,7 @@ UnknownError - If any other error occurs.              </li>
 {
   for (var i = 0; i &lt; storages.length; i++)
   {
-    if (storages[i].type != "EXTERNAL")
-      continue;
+    if (storages[i].type != "EXTERNAL") continue;
     if (storages[i].state == "UNMOUNTABLE")
       console.log("External drive " + storages[i].label + " is corrupted");
   }
@@ -2236,8 +2252,7 @@ The watch operation must continue until the removeStorageStateChangeListener() m
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watchID;
 function onStorageStateChanged(storage)
 {
-  if (storage.state == "MOUNTED")
-    console.log("Storage " + storage.label + " was added!");
+  if (storage.state == "MOUNTED") console.log("Storage " + storage.label + " was added!");
 }
 
 watchID = tizen.filesystem.addStorageStateChangeListener(onStorageStateChanged);
@@ -2292,8 +2307,7 @@ Otherwise, the method call has no effect.
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watchID;
 function onStorageStateChanged(storage)
 {
-  if (storage.state == "MOUNTED")
-    console.log("Storage " + storage.label + " was added!");
+  if (storage.state == "MOUNTED") console.log("Storage " + storage.label + " was added!");
   tizen.filesystem.removeStorageStateChangeListener(watchID);
 }
 
@@ -2311,9 +2325,7 @@ watchID = tizen.filesystem.addStorageStateChangeListener(onStorageStateChanged);
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface FileSystemStorage {
     readonly attribute DOMString label;
-
     readonly attribute <a href="#FileSystemStorageType">FileSystemStorageType</a> type;
-
     readonly attribute <a href="#FileSystemStorageState">FileSystemStorageState</a> state;
   };</pre>
 <p><span class="version">Since: </span>
@@ -2368,51 +2380,33 @@ This attribute is used as an input for methods such as getStorage() and also use
  Object representing file, used for read/write operations.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface FileHandle {
-    readonly attribute DOMString path;
-
+    readonly attribute <a href="#Path">Path</a> path;
     long long seek(long long offset, optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess,
-      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+                         optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString readString(optional long long? count, optional DOMString inputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void readStringNonBlocking(optional <a href="#ReadStringSuccessCallback">ReadStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-      optional long long count, optional DOMString inputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+                               optional long long count, optional DOMString inputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long long writeString(DOMString inputString, optional DOMString outputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void writeStringNonBlocking(DOMString inputString, optional <a href="#WriteStringSuccessCallback">WriteStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-      optional DOMString outputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+                                optional DOMString outputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Blob">Blob</a> readBlob(optional long long size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void readBlobNonBlocking(optional <a href="#ReadBlobSuccessCallback">ReadBlobSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void readBlobNonBlocking(optional <a href="#ReadBlobSuccessCallback">ReadBlobSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size)
+                             raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void writeBlob(<a href="#Blob">Blob</a> blob) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void writeBlobNonBlocking(<a href="#Blob">Blob</a> blob, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> readData(optional long long size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void readDataNonBlocking(optional <a href="#ReadDataSuccessCallback">ReadDataSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void readDataNonBlocking(optional <a href="#ReadDataSuccessCallback">ReadDataSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size)
+                             raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void writeData(<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void writeDataNonBlocking(<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void writeDataNonBlocking(<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void flush() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void flushNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void sync() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void syncNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void closeNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
   };</pre>
 <p><span class="version">Since: </span>
  5.0
@@ -2431,7 +2425,7 @@ Be aware about using seek and write methods together. It can result in writing i
 <h4>Attributes</h4>
 <ul><li class="attribute" id="FileHandle::path">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">DOMString </span><span class="name">path</span></span><div class="brief">
+</span><span class="type">Path </span><span class="name">path</span></span><div class="brief">
  Path, as passed to <a href="#FileSystemManager::openFile">openFile</a>.
             </div>
 <p><span class="version">Since: </span>
@@ -2494,22 +2488,23 @@ Note, that current position indicator value, can be obtained by calling <var>see
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataToWrite = new Uint8Array([11, 21, 31, 44, 55, 66, 71, 81, 91]);
 /* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 fileHandleWrite.writeData(dataToWrite);
 fileHandleWrite.close();
 console.log("Data has been written");
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
 var firstThreeBytes = fileHandleRead.readData(3);
 console.log("First three bytes: " + firstThreeBytes);
-var position = fileHandleRead.seek(-3, "END"); /* Moving to position three bytes to the end of file */
+var position =
+    fileHandleRead.seek(-3, "END");  /* Moving to position three bytes to the end of file. */
 var lastThreeBytes = fileHandleRead.readData(3);
 console.log("Last three bytes: " + lastThreeBytes);
-fileHandleRead.seek(3, "BEGIN"); /* Moving to position at third byte */
-var bytesBetween = fileHandleRead.readData(position-3);
+fileHandleRead.seek(3, "BEGIN");  /* Moving to position at third byte. */
+var bytesBetween = fileHandleRead.readData(position - 3);
 console.log("Bytes between: " + bytesBetween);
 fileHandleRead.close();
 </pre>
@@ -2529,7 +2524,8 @@ Bytes between: 44,55,66
 <div class="brief">
  Sets position indicator in file stream to <var>offset</var>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+                     optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -2581,75 +2577,91 @@ seekNonBlocking is executed in background and does not block further instruction
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
-fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...", function(bytesCount)
-  {
-    console.log("Number of bytes written: " + bytesCount);
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...",
+    function(bytesCount)
+    {
+      console.log("Number of bytes written: " + bytesCount);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
-/* Moving to position 3 bytes to the end of file to alter three dots ("...") */
-fileHandleWrite.seekNonBlocking(-3, function(new_position)
-  {
-    console.log("Moved to position: " + new_position);
-  }, function(error)
-  {
-    console.log(error);
-  }, "END");
+/* Moving to position 3 bytes to the end of file to alter three dots ("..."). */
+fileHandleWrite.seekNonBlocking(-3,
+    function(new_position)
+    {
+      console.log("Moved to position: " + new_position);
+    },
+    function(error)
+    {
+      console.log(error);
+    },
+    "END");
 fileHandleWrite.writeStringNonBlocking(", consectetur adipiscing elit...",
-  function(bytesCount)
-  {
-    console.log("Number of bytes written: " + bytesCount);
-  }, function(error)
-  {
-    console.log(error);
-  });
+    function(bytesCount)
+    {
+      console.log("Number of bytes written: " + bytesCount);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
-/* Moving to position 3 bytes to the end of file to alter three dots ("...") */
-fileHandleWrite.seekNonBlocking(-3, function(new_position)
-  {
-    console.log("Moved to position: " + new_position);
-  }, function(error)
-  {
-    console.log(error);
-  }, "END");
-fileHandleWrite.writeStringNonBlocking(", sed do eiusmod...", function(bytesCount)
-  {
-    console.log("Number of bytes written: " + bytesCount);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+/* Moving to position 3 bytes to the end of file to alter three dots ("..."). */
+fileHandleWrite.seekNonBlocking(-3,
+    function(new_position)
+    {
+      console.log("Moved to position: " + new_position);
+    },
+    function(error)
+    {
+      console.log(error);
+    },
+    "END");
+fileHandleWrite.writeStringNonBlocking(", sed do eiusmod...",
+    function(bytesCount)
+    {
+      console.log("Number of bytes written: " + bytesCount);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-/* ReadStringSuccessCallback should be executed */
+/* ReadStringSuccessCallback should be executed. */
 fileHandleRead.readStringNonBlocking(
-  function(output)
-  {
-    console.log("File contents: " + output);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+    function(output)
+    {
+      console.log("File content: " + output);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
@@ -2659,7 +2671,7 @@ Number of bytes written: 32
 Moved to position: 55
 Number of bytes written: 19
 File handle closed
-File contents: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...
+File content: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...
 File handle closed
 </pre>
 </div>
@@ -2669,7 +2681,7 @@ File handle closed
 </dt>
 <dd>
 <div class="brief">
- Reads file contents as string.
+ Reads file content as string.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">DOMString readString(optional long long? count, optional DOMString inputEncoding);</pre></div>
 <p><span class="version">Since: </span>
@@ -2708,7 +2720,7 @@ Reads given number of characters.
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError if <em>count</em> given is equal or exceeds maximum long long value.
+ with error type InvalidValuesError if given <em>count</em> exceeds maximum value supported by the device.
                 </p></li>
 <li class="list"><p>
  with error type IOError, if read fails or any error related to file handle occurs.
@@ -2724,7 +2736,7 @@ Reads given number of characters.
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 console.log("File opened for writing");
 fileHandleWrite.writeString("Lorem ipsum dolor sit amet...");
@@ -2732,11 +2744,11 @@ console.log("String has been written to the file");
 fileHandleWrite.close();
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
 console.log("File opened for reading");
-var fileContents = fileHandleRead.readString();
-console.log("File contents: " + fileContents);
+var fileContent = fileHandleRead.readString();
+console.log("File content: " + fileContent);
 fileHandleRead.close();
 </pre>
 </div>
@@ -2744,7 +2756,7 @@ fileHandleRead.close();
 <span class="title"><p>Output example:</p></span><pre>File opened for writing
 String has been written to the file
 File opened for reading
-File contents: Lorem ipsum dolor sit amet...
+File content: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -2753,9 +2765,10 @@ File contents: Lorem ipsum dolor sit amet...
 </dt>
 <dd>
 <div class="brief">
- Reads file contents as string.
+ Reads file content as string.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void readStringNonBlocking(optional <a href="#ReadStringSuccessCallback">ReadStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long count, optional DOMString inputEncoding);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void readStringNonBlocking(optional <a href="#ReadStringSuccessCallback">ReadStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+                           optional long long count, optional DOMString inputEncoding);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -2773,9 +2786,7 @@ The <em>ErrorCallback</em> is launched with these error types:
             </p>
             <ul>
               <li>
-IOError, if read fails.              </li>
-              <li>
-NotSupportedError, if the given encoding is not supported.              </li>
+IOError, if read fails or any error related to file handle occurs.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -2802,10 +2813,10 @@ NotSupportedError, if the given encoding is not supported.              </li>
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if <em>count</em> given is equal or exceeds maximum long long value.
+ with error type InvalidValuesError if given <em>count</em> exceeds maximum value supported by the device.
                 </p></li>
 <li class="list"><p>
- with error type IOError, if any error related to file handle occurs.
+ with error type NotSupportedError, if the given encoding is not supported.
                 </p></li>
 <li class="list"><p>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
@@ -2815,50 +2826,57 @@ NotSupportedError, if the given encoding is not supported.              </li>
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 console.log("File opened for writing");
-fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...", function(bytesCount)
-  {
-    console.log("Number of bytes written: " + bytesCount);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...",
+    function(bytesCount)
+    {
+      console.log("Number of bytes written: " + bytesCount);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - below code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-/* ReadStringSuccessCallback should be executed */
+/* ReadStringSuccessCallback should be executed. */
 fileHandleRead.readStringNonBlocking(
-  function(output)
-  {
-    console.log("File contents: " + output);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+    function(output)
+    {
+      console.log("File content: " + output);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>File opened for writing
 Number of bytes written: 29
 File handle closed
-File contents: Lorem ipsum dolor sit amet...
+File content: Lorem ipsum dolor sit amet...
 File handle closed
 </pre>
 </div>
@@ -2868,7 +2886,7 @@ File handle closed
 </dt>
 <dd>
 <div class="brief">
- Writes <var>inputString</var> contents to a file.
+ Writes <var>inputString</var> content to a file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">long long writeString(DOMString inputString, optional DOMString outputEncoding);</pre></div>
 <p><span class="version">Since: </span>
@@ -2896,7 +2914,7 @@ Sets file handle position indicator at the end of written data.
 <ul>
 <span class="return">long long:
                   </span>
- Number of bytes written (can be more than <em>inputString</em> length for multibyte encodings, and will never be less)
+ Number of bytes written (can be more than <em>inputString</em> length for multibyte encodings and will never be less)
               </ul>
 </div>
 <div class="exceptionlist">
@@ -2913,7 +2931,7 @@ Sets file handle position indicator at the end of written data.
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 console.log("File opened for writing");
 fileHandleWrite.writeString("Lorem ipsum dolor sit amet...");
@@ -2921,11 +2939,11 @@ console.log("String has been written to the file");
 fileHandleWrite.close();
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
 console.log("File opened for reading");
-var fileContents = fileHandleRead.readString();
-console.log("File contents: " + fileContents);
+var fileContent = fileHandleRead.readString();
+console.log("File content: " + fileContent);
 fileHandleRead.close();
 </pre>
 </div>
@@ -2933,7 +2951,7 @@ fileHandleRead.close();
 <span class="title"><p>Output example:</p></span><pre>File opened for writing
 String has been written to the file
 File opened for reading
-File contents: Lorem ipsum dolor sit amet...
+File content: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -2942,9 +2960,10 @@ File contents: Lorem ipsum dolor sit amet...
 </dt>
 <dd>
 <div class="brief">
- Writes <var>inputString</var> contents to a file.
+ Writes <var>inputString</var> content to a file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void writeStringNonBlocking(DOMString inputString, optional <a href="#WriteStringSuccessCallback">WriteStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional DOMString outputEncoding);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void writeStringNonBlocking(DOMString inputString, optional <a href="#WriteStringSuccessCallback">WriteStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+                            optional DOMString outputEncoding);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -2998,48 +3017,55 @@ IOError, if write fails or any error related to file handle occurs.             
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
-fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...", function(bytesCount)
-  {
-    console.log("Number of bytes written: " + bytesCount);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...",
+    function(bytesCount)
+    {
+      console.log("Number of bytes written: " + bytesCount);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - below code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-/* ReadStringSuccessCallback should be executed */
+/* ReadStringSuccessCallback should be executed. */
 fileHandleRead.readStringNonBlocking(
-  function(output)
-  {
-    console.log("File contents: " + output);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+    function(output)
+    {
+      console.log("File content: " + output);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Number of bytes written: 29
 File handle closed
-File contents: Lorem ipsum dolor sit amet...
+File content: Lorem ipsum dolor sit amet...
 File handle closed
 </pre>
 </div>
@@ -3049,7 +3075,7 @@ File handle closed
 </dt>
 <dd>
 <div class="brief">
- Reads file contents as <a href="#Blob">Blob</a>.
+ Reads file content as <a href="#Blob">Blob</a>.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Blob">Blob</a> readBlob(optional long long size);</pre></div>
 <p><span class="version">Since: </span>
@@ -3074,14 +3100,14 @@ Sets file handle position indicator at the end of read data.
 <ul>
 <span class="return">Blob:
                   </span>
- Blob object with file contents.
+ Blob object with file content.
               </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if <em>size</em> given is equal or exceeds maximum long long value.
+ with error type InvalidValuesError if given <em>size</em> exceeds maximum value supported by the device.
                 </p></li>
 <li class="list"><p>
  with error type IOError, if read fails or any error related to file handle occurs.
@@ -3091,33 +3117,33 @@ Sets file handle position indicator at the end of read data.
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 var b = new Blob(["Lorem ipsum dolor sit amet..."], {type: "text/plain"});
 fileHandleWrite.writeBlob(b);
 fileHandleWrite.close();
-console.log("Blob contents has been written to file");
+console.log("Blob content has been written to file");
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-var fileContentsInBlob = fileHandleRead.readBlob();
+var fileContentInBlob = fileHandleRead.readBlob();
 fileHandleRead.close();
 const reader = new FileReader();
-/* Event fires after the blob has been read/loaded */
-reader.addEventListener("loadend", function(contents)
-  {
-    const text = contents.srcElement.result;
-    console.log("File contents: " + text);
-  });
+/* Event fires after the blob has been read/loaded. */
+reader.onloadend = function(content)
+{
+  const text = content.srcElement.result;
+  console.log("File content: " + text);
+};
 
-/* Start reading the blob as text */
-reader.readAsText(fileContentsInBlob);
+/* Starts reading the blob as text. */
+reader.readAsText(fileContentInBlob);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Blob contents has been written to file
-File contents: Lorem ipsum dolor sit amet...
+<span class="title"><p>Output example:</p></span><pre>Blob content has been written to file
+File content: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -3126,7 +3152,7 @@ File contents: Lorem ipsum dolor sit amet...
 </dt>
 <dd>
 <div class="brief">
- Reads file contents as <a href="#Blob">Blob</a>.
+ Reads file content as <a href="#Blob">Blob</a>.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void readBlobNonBlocking(optional <a href="#ReadBlobSuccessCallback">ReadBlobSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size);</pre></div>
 <p><span class="version">Since: </span>
@@ -3145,7 +3171,7 @@ The <em>ErrorCallback</em> is launched with these error types:
             </p>
             <ul>
               <li>
-IOError, if read fails.              </li>
+IOError, if read fails or any error related to file handle occurs.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -3169,10 +3195,7 @@ IOError, if read fails.              </li>
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if <em>size</em> given is equal or exceeds maximum long long value.
-                </p></li>
-<li class="list"><p>
- with error type IOError, any error related to file handle occurs.
+ with error type InvalidValuesError if given <em>size</em> exceeds maximum value supported by the device.
                 </p></li>
 <li class="list"><p>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
@@ -3182,60 +3205,66 @@ IOError, if read fails.              </li>
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 var b = new Blob(["Lorem ipsum dolor sit amet..."], {type: "text/plain"});
-fileHandleWrite.writeBlobNonBlocking(b, function()
-  {
-    console.log("Blob contents has been written to file");
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeBlobNonBlocking(b,
+    function()
+    {
+      console.log("Blob content has been written to file");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-/* Creation of a reader capable of extracting Blob contents */
+/* Creation of a reader capable of extracting Blob content. */
 const reader = new FileReader();
 
-/* Event fires after the blob has been read/loaded */
-reader.addEventListener("loadend", function(contents)
-  {
-    const text = contents.srcElement.result;
-    console.log("File contents: " + text);
-  });
-function readBlobCallback (fileContentsInBlob) {
-  reader.readAsText(fileContentsInBlob);
+/* Event fires after the blob has been read/loaded. */
+reader.onloadend = function(content)
+{
+  const text = content.srcElement.result;
+  console.log("File content: " + text);
+};
+function readBlobCallback(fileContentInBlob)
+{
+  reader.readAsText(fileContentInBlob);
 }
 
-/* readBlobCallback should be executed */
-fileHandleRead.readBlobNonBlocking(readBlobCallback,
-  function(error)
-  {
-    console.log(error);
-  });
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+/* readBlobCallback should be executed. */
+fileHandleRead.readBlobNonBlocking(readBlobCallback, function(error)
+{
+  console.log(error);
+});
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Blob contents has been written to file
+<span class="title"><p>Output example:</p></span><pre>Blob content has been written to file
 File handle closed
 File handle closed
-Blob contents: Lorem ipsum dolor sit amet...
+File content: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -3260,7 +3289,7 @@ Sets file handle position indicator at the end of written data.
 <ul>
           <li class="param">
 <span class="name">blob</span>:
- Object of type Blob, which contents will be written to a file.
+ Object of type Blob, which content will be written to a file.
                 </li>
         </ul>
 </div>
@@ -3278,36 +3307,36 @@ Sets file handle position indicator at the end of written data.
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 var b = new Blob(["Lorem ipsum dolor sit amet..."], {type: "text/plain"});
 fileHandleWrite.writeBlob(b);
 fileHandleWrite.close();
-console.log("Blob contents has been written to file");
+console.log("Blob content has been written to file");
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-var fileContentsInBlob = fileHandleRead.readBlob();
+var fileContentInBlob = fileHandleRead.readBlob();
 fileHandleRead.close();
-console.log("File contents has been readed from file");
+console.log("File content has been read from file");
 const reader = new FileReader();
 
-/* Event fires after the blob has been read/loaded */
-reader.addEventListener("loadend", function(contents)
-  {
-    const text = contents.srcElement.result;
-    console.log("File contents: " + text);
-  });
+/* Event fires after the blob has been read/loaded. */
+reader.onloadend = function(content)
+{
+  const text = content.srcElement.result;
+  console.log("File content: " + text);
+};
 
-/* Start reading the blob as text */
-reader.readAsText(fileContentsInBlob);
+/* Starts reading the blob as text. */
+reader.readAsText(fileContentInBlob);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Blob contents has been written to file
-File contents has been readed from file
-Blob contents: Lorem ipsum dolor sit amet...
+<span class="title"><p>Output example:</p></span><pre>Blob content has been written to file
+File content has been read from file
+File content: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -3343,7 +3372,7 @@ IOError, if write fails or any error related to file handle occurs.             
 <ul>
           <li class="param">
 <span class="name">blob</span>:
- Object of type Blob, which contents will be written to a file.
+ Object of type Blob, which content will be written to a file.
                 </li>
           <li class="param">
 <span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -3364,56 +3393,63 @@ IOError, if write fails or any error related to file handle occurs.             
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 var b = new Blob(["Lorem ipsum dolor sit amet..."], {type: "text/plain"});
-fileHandleWrite.writeBlobNonBlocking(b, function()
-  {
-    console.log("Blob contents has been written to file");
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeBlobNonBlocking(b,
+    function()
+    {
+      console.log("Blob content has been written to file");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-/* Creation of a reader capable of extracting Blob contents */
+/* Creation of a reader capable of extracting Blob content. */
 const reader = new FileReader();
 
-/* Event fires after the blob has been read/loaded */
-reader.addEventListener("loadend", function(contents)
-  {
-    const text = contents.srcElement.result;
-    console.log("File contents: " + text);
-  });
-function readBlobCallback (fileContentsInBlob) {
-  reader.readAsText(fileContentsInBlob);
+/* Event fires after the blob has been read/loaded. */
+reader.onloadend = function(content)
+{
+  const text = content.srcElement.result;
+  console.log("File content: " + text);
+};
+function readBlobCallback(fileContentInBlob)
+{
+  reader.readAsText(fileContentInBlob);
 }
 
-/* readBlobCallback should be executed */
+/* readBlobCallback should be executed. */
 fileHandleRead.readBlobNonBlocking(readBlobCallback);
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>Blob contents has been written to file
+<span class="title"><p>Output example:</p></span><pre>Blob content has been written to file
 File handle closed
 File handle closed
-File contents: Lorem ipsum dolor sit amet...
+File content: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -3422,7 +3458,7 @@ File contents: Lorem ipsum dolor sit amet...
 </dt>
 <dd>
 <div class="brief">
- Reads file contents as binary data.
+ Reads file content as binary data.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> readData(optional long long size);</pre></div>
 <p><span class="version">Since: </span>
@@ -3455,7 +3491,7 @@ Sets file handle position indicator at the end of read data.
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if <em>size</em> given is equal or exceeds maximum long long value.
+ with error type InvalidValuesError if given <em>size</em> exceeds maximum value supported by the device.
                 </p></li>
 <li class="list"><p>
  with error type IOError, if read fails or any error related to file handle occurs.
@@ -3466,18 +3502,18 @@ Sets file handle position indicator at the end of read data.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataToWrite = new Uint8Array([11, 21, 31, 71, 81, 91]);
 /* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 fileHandleWrite.writeData(dataToWrite);
 fileHandleWrite.close();
 console.log("Data has been written");
 
 /* Opening file for read - below code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-var fileContentsInUint8Array = fileHandleRead.readData();
+var fileContentInUint8Array = fileHandleRead.readData();
 fileHandleRead.close();
-console.log("Data read from file: " + fileContentsInUint8Array);
+console.log("Data read from file: " + fileContentInUint8Array);
 </pre>
 </div>
 <div class="output">
@@ -3491,7 +3527,7 @@ Data read from file: 11,21,31,71,81,91
 </dt>
 <dd>
 <div class="brief">
- Reads file contents as binary data.
+ Reads file content as binary data.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void readDataNonBlocking(optional <a href="#ReadDataSuccessCallback">ReadDataSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size);</pre></div>
 <p><span class="version">Since: </span>
@@ -3535,10 +3571,7 @@ IOError, if read fails or any error related to file handle occurs.              
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if <em>size</em> given is equal or exceeds maximum long long value.
-                </p></li>
-<li class="list"><p>
- with error type IOError, if any error related to file handle occurs.
+ with error type InvalidValuesError if given <em>size</em> exceeds maximum value supported by the device.
                 </p></li>
 <li class="list"><p>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
@@ -3549,40 +3582,48 @@ IOError, if read fails or any error related to file handle occurs.              
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataToWrite = new Uint8Array([11, 21, 31, 71, 81, 91]);
 /* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
-fileHandleWrite.writeDataNonBlocking(dataToWrite, function(dataRead)
-  {
-    console.log("Write done");
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeDataNonBlocking(dataToWrite,
+    function(dataRead)
+    {
+      console.log("Write done");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - below code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-fileHandleRead.readDataNonBlocking(function(dataRead)
-  {
-    console.log("Data read from file: " + dataRead);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleRead.readDataNonBlocking(
+    function(dataRead)
+    {
+      console.log("Data read from file: " + dataRead);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
@@ -3615,7 +3656,7 @@ Sets file handle position indicator at the end of written data.
 <ul>
           <li class="param">
 <span class="name">data</span>:
- An Array of type Uint8Array, which contents will be written to file as binary data.
+ An array of type Uint8Array, which content will be written to file as binary data.
                 </li>
         </ul>
 </div>
@@ -3634,18 +3675,18 @@ Sets file handle position indicator at the end of written data.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataToWrite = new Uint8Array([11, 21, 31, 71, 81, 91]);
 /* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 fileHandleWrite.writeData(dataToWrite);
 fileHandleWrite.close();
 console.log("Data has been written");
 
 /* Opening file for read - below code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-var fileContentsInUint8Array = fileHandleRead.readData();
+var fileContentInUint8Array = fileHandleRead.readData();
 fileHandleRead.close();
-console.log("Data read from file: " + fileContentsInUint8Array);
+console.log("Data read from file: " + fileContentInUint8Array);
 </pre>
 </div>
 <div class="output">
@@ -3687,7 +3728,7 @@ IOError, if write fails or any error related to file handle occurs.             
 <ul>
           <li class="param">
 <span class="name">data</span>:
- An Array of type Uint8Array, which contents will be written to file as binary data.
+ An array of type Uint8Array, which content will be written to file as binary data.
                 </li>
           <li class="param">
 <span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -3709,40 +3750,48 @@ IOError, if write fails or any error related to file handle occurs.             
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataToWrite = new Uint8Array([11, 21, 31, 71, 81, 91]);
 /* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
-fileHandleWrite.writeDataNonBlocking(dataToWrite, function(dataRead)
-  {
-    console.log("Write done");
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeDataNonBlocking(dataToWrite,
+    function(dataRead)
+    {
+      console.log("Write done");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - below code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-fileHandleRead.readDataNonBlocking(function(dataRead)
-  {
-    console.log("Data read from file: " + dataRead);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleRead.readDataNonBlocking(
+    function(dataRead)
+    {
+      console.log("Data read from file: " + dataRead);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
@@ -3769,7 +3818,7 @@ File handle closed
 For file handles with permission to write, flush writes any changes made to file content to underlying buffer.
             </p>
             <p>
-Flush does not ensure that data is written on storage device, it only synchronizes operational memory with file descriptor.
+Flush does not ensure that data is written on storage device, it only synchronizes RAM with file descriptor.
 To ensure storage synchronization use <em>sync</em>, <em>close</em> or their asynchronous equivalent methods, which guarantee such synchronization.
             </p>
            </div>
@@ -3782,26 +3831,27 @@ To ensure storage synchronization use <em>sync</em>, <em>close</em> or their asy
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
 fileHandleWrite.writeString("Lorem ipsum dolor sit amet...");
 console.log("Data has been written to file");
 
-/* Calling flush() ensures that contents has been written to file descriptor and can be read by any process */
+/* Calling flush() ensures that content has been written to file descriptor and can be read by any */
+/* process. */
 fileHandleWrite.flush();
-console.log("Data has been flushed to system file buffer and now can be readed");
+console.log("Data has been flushed to system file buffer and now can be read");
 
-var fileContents = fileHandleRead.readString();
-console.log("Readed data: " + fileContents);
+var fileContent = fileHandleRead.readString();
+console.log("Read data: " + fileContent);
 fileHandleWrite.close();
 fileHandleRead.close();
 </pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Data has been written to file
-Data has been flushed to system file buffer and now can be readed
-Readed data: Lorem ipsum dolor sit amet...
+Data has been flushed to system file buffer and now can be read
+Read data: Lorem ipsum dolor sit amet...
 </pre>
 </div>
 </dd>
@@ -3821,7 +3871,7 @@ Readed data: Lorem ipsum dolor sit amet...
 For file handles with permission to write, flush writes any changes made to file content to underlying buffer.
             </p>
             <p>
-Flush does not ensure that data is written on storage device, it only synchronizes operational memory with file descriptor.
+Flush does not ensure that data is written on storage device, it only synchronizes RAM with file descriptor.
 To ensure storage synchronization use <em>sync</em>, <em>close</em> or their asynchronous equivalent methods, which guarantee such synchronization.
             </p>
             <p>
@@ -3862,57 +3912,66 @@ This method is asynchronous. Its execution will occur in background and after al
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
-fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...", function(bytesCount)
-  {
-    console.log("Number of bytes written: " + bytesCount);
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...",
+    function(bytesCount)
+    {
+      console.log("Number of bytes written: " + bytesCount);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
-/* Calling flushNonBlocking() ensures that contents will be written to file descriptor */
-/* and can be read by any process */
-fileHandleWrite.flushNonBlocking(function()
-  {
-    console.log("Data has been flushed to system file buffer and now can be readed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+/* Calling flushNonBlocking() ensures that content will be written to file descriptor */
+/* and can be read by any process. */
+fileHandleWrite.flushNonBlocking(
+    function()
+    {
+      console.log("Data has been flushed to system file buffer and now can be read");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
 fileHandleRead.readStringNonBlocking(
-  function(output)
-  {
-    console.log("File contents: " + output);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+    function(output)
+    {
+      console.log("File content: " + output);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Number of bytes written: 29
-Data has been flushed to system file buffer and now can be readed
-File contents: Lorem ipsum dolor sit amet...
+Data has been flushed to system file buffer and now can be read
+File content: Lorem ipsum dolor sit amet...
 File handle closed
 File handle closed
 </pre>
@@ -3931,7 +3990,7 @@ File handle closed
             </p>
 <div class="description">
             <p>
-The sync function is intended to force a physical write of data from the buffer cache, and to assure that after a system crash or other failure that all data up to the time of the sync() call is recorded on the disk.
+The sync function is intended to force a physical write of data from the buffer cache and to assure that after a system crash or other failure that all data up to the time of the sync() call is recorded on the disk.
             </p>
            </div>
 <div class="exceptionlist">
@@ -3944,16 +4003,16 @@ The sync function is intended to force a physical write of data from the buffer 
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataToWrite = new Uint8Array([11, 21, 31, 71, 81, 91]);
 /* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 fileHandleWrite.writeData(dataToWrite);
 
-/* Calling sync() forces a physical write of data, so it is safe even */
-/* after system crash or power shut down */
+/* Calling sync() forces a physical write of data, so it is safe */
+/* even after system crash or power shut down. */
 fileHandleWrite.sync();
 console.log("Data has been synced");
 
-/* close() method provides the same functionality as sync() and ends access to file */
+/* close() method provides the same functionality as sync() and ends access to file. */
 fileHandleWrite.close();
 </pre>
 </div>
@@ -3975,7 +4034,7 @@ fileHandleWrite.close();
             </p>
 <div class="description">
             <p>
-The syncNonBlocking function is intended to force a physical write of data from the buffer cache, and to assure that after a system crash or other failure that all data up to the time of the syncNonBlocking() execution is recorded on the disk.
+The syncNonBlocking function is intended to force a physical write of data from the buffer cache and to assure that after a system crash or other failure that all data up to the time of the syncNonBlocking() execution is recorded on the disk.
             </p>
             <p>
 Successful syncing invokes <em>onsuccess</em> function, if specified. In case of failure <em>onerror</em> function is invoked, if specified.
@@ -4016,34 +4075,40 @@ This method is asynchronous. Its execution will occur in background and after al
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataToWrite = new Uint8Array([11, 21, 31, 71, 81, 91]);
 /* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
-fileHandleWrite.writeDataNonBlocking(dataToWrite, function(dataRead)
-  {
-    console.log("Write done");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeDataNonBlocking(dataToWrite,
+    function(dataRead)
+    {
+      console.log("Write done");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
-/* Calling syncNonBlocking() will force a physical write of data, so it will be safe even */
-/* after system crash or power shut down */
-fileHandleWrite.syncNonBlocking(function()
-  {
-    console.log("Data has been synced");
-  }, function(error)
-  {
-    console.log(error);
-  });
+/* Calling syncNonBlocking() will force a physical write of data, so it will be safe */
+/* even after system crash or power shut down. */
+fileHandleWrite.syncNonBlocking(
+    function()
+    {
+      console.log("Data has been synced");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
-/* close() method provides the same functionality as sync() and ends access to file */
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+/* close() method provides the same functionality as sync() and ends access to file. */
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
@@ -4082,14 +4147,14 @@ Note, that if file handle functions are put into any callbacks and this callback
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
 fileHandleWrite.writeString("Lorem ipsum dolor sit amet...");
 fileHandleWrite.close();
 console.log("String has been written to the file");
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
 var positionOfFileEnd = fileHandleRead.seek(0, "END");
 console.log("Seek operation done. Position of file end: " + positionOfFileEnd);
@@ -4157,40 +4222,49 @@ This method is asynchronous. Its execution will occur in background and after al
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Opening file for write - file is created if not exists, */
-/* otherwise existing file is truncated */
+/* otherwise existing file is truncated. */
 var fileHandleWrite = tizen.filesystem.openFile("documents/file", "w");
-fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...", function(bytesCount)
-  {
-    console.log("Number of bytes written: " + bytesCount);
-  }, function(error)
-  {
-    console.log(error);
-  });
-fileHandleWrite.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+fileHandleWrite.writeStringNonBlocking("Lorem ipsum dolor sit amet...",
+    function(bytesCount)
+    {
+      console.log("Number of bytes written: " + bytesCount);
+    },
+    function(error)
+    {
+      console.log(error);
+    });
+fileHandleWrite.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 
 /* Opening file for read - this code assumes that there is */
-/* a file named "file" in documents directory */
+/* a file named "file" in documents directory. */
 var fileHandleRead = tizen.filesystem.openFile("documents/file", "r");
-var positionOfFileEnd = fileHandleRead.seekNonBlocking(0, function(new_position)
-  {
-    console.log("Moved to position: " + new_position);
-  }, function(error)
-  {
-    console.log(error);
-  }, "END");
-fileHandleRead.closeNonBlocking(function()
-  {
-    console.log("File handle closed");
-  }, function(error)
-  {
-    console.log(error);
-  });
+var positionOfFileEnd = fileHandleRead.seekNonBlocking(0,
+    function(new_position)
+    {
+      console.log("Moved to position: " + new_position);
+    },
+    function(error)
+    {
+      console.log(error);
+    },
+    "END");
+fileHandleRead.closeNonBlocking(
+    function()
+    {
+      console.log("File handle closed");
+    },
+    function(error)
+    {
+      console.log(error);
+    });
 </pre>
 </div>
 <div class="output">
@@ -4220,7 +4294,7 @@ File handle closed
 <div class="description">
           <p>
 The file object permissions for the file object location and tree rooted
-at that location depends upon the mode defined in the resolve method.
+at that location depend upon the mode defined in the resolve method.
 When a File object creates a child File object,
 the new File object inherits its access rights from
 the parent object without any reference to the security framework, as
@@ -4255,18 +4329,18 @@ files and directories rooted as the file handle location.
 {
   for (var i = 0; i &lt; files.length; i++)
   {
-    /* Alerts each name of dir's contents */
+    /* Alerts each name of dir's content. */
     console.log(files[i].name);
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 
-/* List directory contents */
+/* List directory content. */
 dir.listFiles(onsuccess, onerror);
 </pre>
 </div>
@@ -4289,15 +4363,8 @@ This attribute is set to <var>null</var> if there is no parent directory. This a
 <p><span class="version">Since: </span>
  1.0
             </p>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
-                </p></li></ul>
-</li></ul>
-        </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* List directory contents */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* List directory content. */
 dir.listFiles(onsuccess, onerror);
 
 function onsuccess(files)
@@ -4305,16 +4372,15 @@ function onsuccess(files)
   for (var i = 0; i &lt; files.length; i++)
   {
     /* Prints the file parent, must contain the */
-    /* same value for all the files in the loop */
-    console.log("All the files should have the same parent " +
-                files[i].parent);
+    /* same value for all the files in the loop. */
+    console.log("All the files should have the same parent " + files[i].parent);
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 </pre>
 </div>
@@ -4345,7 +4411,7 @@ This attribute represents the actual state of a file or directory in the filesys
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Lists directory contents */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Lists directory content. */
 dir.listFiles(onsuccess, onerror);
 
 function onsuccess(files)
@@ -4361,8 +4427,8 @@ function onsuccess(files)
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 </pre>
 </div>
@@ -4462,7 +4528,7 @@ timestamp changes when a file is moved.
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(file.modified); /* Displays the modification timestamp */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(file.modified);  /* Displays the modification timestamp. */
 </pre>
 </div>
 </li>
@@ -4499,7 +4565,7 @@ For example, if the root is music, then the path is music. If the root is docume
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(file.path); /* Must be music/ if the file is music/foo.mp3 */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(file.path);  /* Must be music/ if the file is music/foo.mp3. */
 </pre>
 </div>
 </li>
@@ -4531,7 +4597,7 @@ For the special case of the root itself, the <em>name </em> is an empty string.
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Must be foo.mp3 if the file path is music/foo.mp3 */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Must be foo.mp3 if the file path is music/foo.mp3. */
 console.log(file.name);
 </pre>
 </div>
@@ -4566,7 +4632,7 @@ The <em>fullPath </em>is always equal to path + name.
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Must be music/track1.mp3 if the file is music/track1.mp3 */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Must be music/track1.mp3 if the file is music/track1.mp3. */
 console.log(file.fullPath);
 </pre>
 </div>
@@ -4587,15 +4653,8 @@ If an attempt to read this attribute for a directory is made, <var>undefined</va
 <p><span class="version">Since: </span>
  1.0
             </p>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
-                </p></li></ul>
-</li></ul>
-        </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Displays the file size */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Displays the file size. */
 console.log(file.fileSize);
 </pre>
 </div>
@@ -4617,7 +4676,7 @@ If an attempt to read this attribute for a file is made, <var>undefined</var> is
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* "3" if the directory contains two files and one sub-directory */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* "3" if the directory contains two files and one sub-directory. */
 console.log(file.length);
 </pre>
 </div>
@@ -4645,7 +4704,7 @@ The URI has no specific expiration, it should be valid at least as long as the f
 <div class="description">
             <p>
 If that URI corresponds to any of the public virtual roots (that is
-images, videos, music, documents, and downloads) the URI
+images, videos, music, documents and downloads) the URI
 must be globally unique and could be used by any widget.
             </p>
             <p>
@@ -4681,8 +4740,7 @@ These URIs must not be accessible to other widgets, apart from the one invoking 
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.filesystem.resolve("music/ramones/RockawayBeach.mp3",
-function(file)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.filesystem.resolve("music/ramones/RockawayBeach.mp3", function(file)
 {
   var audio = new Audio(file.toURI());
   audio.play();
@@ -4713,7 +4771,7 @@ The list of files is passed as a File[] in onsuccess() and contains directories 
 If the filter is passed and contains valid values, only those directories and files in the directory that match the filter criteria specified in the <em>FileFilter </em>interface must be returned in the onsuccess() method. If no filter is passed, the filter is <var>null </var>or <var>undefined</var>, or the filter contains invalid values, the implementation must return the full list of files in the directory.
             </p>
             <p>
-If the directory does not contain any files or directories, or the filter criteria does not matched with any files or directories, the onsuccess() is invoked with an empty array.
+If the directory does not contain any files or directories, or the filter criteria do not match any files or directories, the onsuccess() is invoked with an empty array.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
@@ -4765,22 +4823,25 @@ UnknownError - If any other error occurs.              </li>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onsuccess(files)
 {
-  console.log("There are " + files.length  + " in the selected folder");
+  console.log("There are " + files.length + " in the selected folder");
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 
-tizen.filesystem.resolve("documents", function(dir)
-{
-  dir.listFiles(onsuccess, onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "r");
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      dir.listFiles(onsuccess, onerror);
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "r");
 </pre>
 </div>
 </dd>
@@ -4858,36 +4919,43 @@ function onsuccess(files)
 {
   for (var i = 0; i &lt; files.length; i++)
   {
-    console.log("File Name is " + files[i].name); /* Displays file name */
+    console.log("File Name is " + files[i].name);  /* Displays file name. */
   }
 
   var testFile = documentsDir.createFile("test.txt");
   if (testFile != null)
   {
-    testFile.openStream("w", function(fs)
-    {
-      fs.write("HelloWorld");
-      fs.close();
-    }, function(e)
-    {
-      console.log("Error " + e.message);
-    }, "UTF-8");
+    testFile.openStream("w",
+        function(fs)
+        {
+          fs.write("HelloWorld");
+          fs.close();
+        },
+        function(e)
+        {
+          console.log("Error " + e.message);
+        },
+        "UTF-8");
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 
-tizen.filesystem.resolve("documents", function(dir)
-{
-  documentsDir = dir; dir.listFiles(onsuccess,onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      documentsDir = dir;
+      dir.listFiles(onsuccess, onerror);
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "rw");
 </pre>
 </div>
 </dd>
@@ -4962,34 +5030,40 @@ function onsuccess(files)
 {
   for (var i = 0; i &lt; files.length; i++)
   {
-    console.log("File Name is " + files[i].name); /* Displays file name */
+    console.log("File Name is " + files[i].name);  /* Displays file name. */
     if (files[i].isDirectory == false)
     {
-      files[i].readAsText(function(str)
-      {
-        console.log("The file content " + str);
-      }, function(e)
-      {
-        console.log("Error " + e.message);
-      }, "UTF-8");
+      files[i].readAsText(
+          function(str)
+          {
+            console.log("The file content " + str);
+          },
+          function(e)
+          {
+            console.log("Error " + e.message);
+          },
+          "UTF-8");
     }
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 
-tizen.filesystem.resolve("documents", function(dir)
-{
-  documentsDir = dir;
-  dir.listFiles(onsuccess,onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      documentsDir = dir;
+      dir.listFiles(onsuccess, onerror);
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "rw");
 </pre>
 </div>
 </dd>
@@ -5004,7 +5078,8 @@ directory from a specified location to another specified location.
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void copyTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void copyTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
             </p>
@@ -5083,27 +5158,31 @@ function onsuccess(files)
   {
     if (files[i].isDirectory == false)
     {
-      documentsDir.copyTo(files[i].fullPath,
-                          "images/backup/" + files[i].name, false,
-                          function() {console.log("File copied");});
+      documentsDir.copyTo(files[i].fullPath, "images/backup/" + files[i].name, false, function()
+      {
+        console.log("File copied");
+      });
     }
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 
-tizen.filesystem.resolve("documents", function(dir)
-{
-  documentsDir = dir;
-  dir.listFiles(onsuccess, onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      documentsDir = dir;
+      dir.listFiles(onsuccess, onerror);
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "rw");
 </pre>
 </div>
 </dd>
@@ -5118,7 +5197,8 @@ This operation is different from instantiating copyTo() and then deleting the or
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void moveTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void moveTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
             </p>
@@ -5157,7 +5237,7 @@ UnknownError - If any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">originFilePath</span>:
-      Origin full virtual file or directory path, and it must be under the current directory.
+      Origin full virtual file or directory path and it must be under the current directory.
                 </li>
           <li class="param">
 <span class="name">destinationFilePath</span>:
@@ -5197,27 +5277,32 @@ function onsuccess(files)
   {
     if (files[i].isDirectory == false)
     {
-      documentsDir.moveTo(files[i].fullPath,
-                          "images/newFolder/" + files[i].name, false,
-                          function() {console.log("File moved");});
+      documentsDir.moveTo(
+          files[i].fullPath, "images/newFolder/" + files[i].name, false, function()
+          {
+            console.log("File moved");
+          });
     }
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred during listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred during listing the files in the selected folder");
 }
 
-tizen.filesystem.resolve("documents", function(dir)
-{
-  documentsDir = dir;
-  dir.listFiles(onsuccess, onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      documentsDir = dir;
+      dir.listFiles(onsuccess, onerror);
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "rw");
 </pre>
 </div>
 </dd>
@@ -5243,7 +5328,7 @@ create all necessary sub-directories specified in the dirPath, as well. The use 
 or ".." in path components is not supported.
             </p>
             <p>
-This operation can only be performed on file handlers that represent a directory (that is, <em>isDirectory</em> == <var>true</var>).
+This operation can only be performed on file handles that represent directories (that is, <em>isDirectory</em> == <var>true</var>).
             </p>
             <p>
 If the directory is successfully created, it will be returned.
@@ -5263,7 +5348,7 @@ In case the directory cannot be created, an error must be thrown with the approp
 <ul>
           <li class="param">
 <span class="name">dirPath</span>:
- Relative directory path, and it only contains characters supported by the underlying filesystem.
+ Relative directory path and it only contains characters supported by the underlying filesystem.
                 </li>
         </ul>
 </div>
@@ -5298,7 +5383,7 @@ The new <em>File </em>object has "rw" access rights, as it inherits this from th
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dir; /* Directory object obtained from filesystem API */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dir;  /* Directory object obtained from filesystem API. */
 var newDir = dir.createDirectory("newDir");
 var anotherNewDir = dir.createDirectory("newDir1/subNewDir1");
 </pre>
@@ -5323,7 +5408,7 @@ var anotherNewDir = dir.createDirectory("newDir1/subNewDir1");
 The use of "." or ".." in path components is not supported. This operation can only be performed on file handlers that represent a directory (that is, <em>isDirectory </em>== <var>true</var>).
             </p>
             <p>
-If the file is successfully created, a file handler must be returned by this method.
+If the file is successfully created, a file handle must be returned by this method.
             </p>
             <p>
 In case the file cannot be created, an error must be thrown with the appropriate error type.
@@ -5340,7 +5425,7 @@ In case the file cannot be created, an error must be thrown with the appropriate
 <ul>
           <li class="param">
 <span class="name">relativeFilePath</span>:
- New file path and it should only contain characters supported by the underlying Filesystem.
+ New file path and it should only contain characters supported by the underlying filesystem.
                 </li>
         </ul>
 </div>
@@ -5350,18 +5435,18 @@ In case the file cannot be created, an error must be thrown with the appropriate
 <span class="return">File:
                   </span>
  File handle for the new empty file.
-The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File <em>object on which the createFile() method is
+The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File </em>object on which the createFile() method is
 called.
-</em></em>              </ul>
+              </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type IOError, if the filePath already exists, if the <em>File </em>in which the createFile() method is invoked is a file (not a directory).
+ with error type IOError, if relativeFilePath already exists, if the <em>File </em>in which the createFile() method is invoked is a file (not a directory).
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if the filePath contains an invalid value.
+ with error type InvalidValuesError, if relativeFilePath contains an invalid value.
                 </p></li>
 <li class="list"><p>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
@@ -5385,7 +5470,7 @@ called.
 </dt>
 <dd class="deprecated">
 <div class="brief">
- Resolves an existing file or directory relative to the current directory this operation is performed on, and returns a file handle for it.
+ Resolves an existing file or directory relative to the current directory this operation is performed on and returns a file handle for it.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
@@ -5396,7 +5481,7 @@ called.
             </p>
 <div class="description">
             <p>
-The <em>filePath</em> is not allowed to contain the "." or ".." substrings in its value.
+The <em>filePath</em> is not allowed to contain the "." or ".." directory entries inside its value.
             </p>
             <p>
 The encoding of file paths is <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a>.
@@ -5453,14 +5538,17 @@ The new <em>File </em>object inherits its access rights from the <em>File </em>o
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var file;
 /* Resolves helloWorld.doc file that is located in the */
-/* documents root location */
-tizen.filesystem.resolve("documents", function(dir)
-{
-  file = dir.resolve("helloWorld.doc");
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
+/* documents root location. */
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      file = dir.resolve("helloWorld.doc");
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "rw");
 </pre>
 </div>
 </dd>
@@ -5474,7 +5562,8 @@ tizen.filesystem.resolve("documents", function(dir)
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
             </p>
@@ -5550,31 +5639,36 @@ function onsuccess(files)
   {
     if (files[i].isDirectory)
     {
-      documentsDir.deleteDirectory(files[i].fullPath, false, function()
-      {
-        console.log("Directory Deleted");
-      }, function(e)
-      {
-        console.log("Error " + e.message);
-      });
+      documentsDir.deleteDirectory(files[i].fullPath, false,
+          function()
+          {
+            console.log("Directory Deleted");
+          },
+          function(e)
+          {
+            console.log("Error " + e.message);
+          });
     }
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 
-tizen.filesystem.resolve("documents", function(dir)
-{
-  documentsDir = dir;
-  dir.listFiles(onsuccess,onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      documentsDir = dir;
+      dir.listFiles(onsuccess, onerror);
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "rw");
 </pre>
 </div>
 </dd>
@@ -5653,31 +5747,36 @@ function onsuccess(files)
   {
     if (!files[i].isDirectory)
     {
-      documentsDir.deleteFile(files[i].fullPath, function()
-      {
-        console.log("File Deleted");
-      }, function(e)
-      {
-        console.log("Error " + e.message);
-      });
+      documentsDir.deleteFile(files[i].fullPath,
+          function()
+          {
+            console.log("File Deleted");
+          },
+          function(e)
+          {
+            console.log("Error " + e.message);
+          });
     }
   }
 }
 
 function onerror(error)
 {
-  console.log("The error " + error.message +
-              " occurred when listing the files in the selected folder");
+  console.log(
+      "The error " + error.message + " occurred when listing the files in the selected folder");
 }
 
-tizen.filesystem.resolve("documents", function(dir)
-{
-  documentsDir = dir;
-  dir.listFiles(onsuccess,onerror);
-}, function(e)
-{
-  console.log("Error " + e.message);
-}, "rw");
+tizen.filesystem.resolve("documents",
+    function(dir)
+    {
+      documentsDir = dir;
+      dir.listFiles(onsuccess, onerror);
+    },
+    function(e)
+    {
+      console.log("Error " + e.message);
+    },
+    "rw");
 </pre>
 </div>
 </dd>
@@ -5691,17 +5790,11 @@ tizen.filesystem.resolve("documents", function(dir)
           </div>
 <pre class="webidl prettyprint">  dictionary FileFilter {
     DOMString name;
-
     boolean isFile;
-
     boolean isDirectory;
-
     Date startModified;
-
     Date endModified;
-
     Date startCreated;
-
     Date endCreated;
   };</pre>
 <p><span class="version">Since: </span>
@@ -5874,7 +5967,7 @@ If set to <var>false</var>, this attribute indicates that the file pointer is no
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">if (stream.eof)
 {
-  /* File has been read completely */
+  /* File has been read completely. */
 }
 </pre>
 </div>
@@ -5895,9 +5988,9 @@ The stream position is an offset of bytes from the start of the file stream. Whe
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(stream.position); /* Displays current stream position */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(stream.position);  /* Displays current stream position. */
 /* Alters current stream position to the begin of the file, */
-/* like seek() in C */
+/* like seek() in C. */
 stream.position = 0;
 </pre>
 </div>
@@ -5923,7 +6016,7 @@ It corresponds to the number of bytes available after the file pointer denoted b
  1.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(stream.bytesAvailable); /* Displays the available bytes to be read */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log(stream.bytesAvailable);  /* Displays the available bytes to be read. */
 </pre>
 </div>
 </li>
@@ -5959,7 +6052,7 @@ Note that pending writes might not succeed.
       http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">stream.close(); /* Closes this stream, no subsequent access to stream allowed */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">stream.close();  /* Closes this stream, no subsequent access to stream allowed. */
 </pre>
 </div>
 </dd>
@@ -6081,11 +6174,11 @@ stream.close();
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Reads up to 256 bytes from the stream */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Reads up to 256 bytes from the stream. */
 var raw = stream.readBytes(256);
 for (var i = 0; i &lt; raw.length; i++)
 {
-  /* raw[i] contains the i-th byte of the current data chunk */
+  /* raw[i] contains the i-th byte of the current data chunk. */
 }
 </pre>
 </div>
@@ -6146,7 +6239,7 @@ for (var i = 0; i &lt; raw.length; i++)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Reads up to 256 bytes from the stream */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Reads up to 256 bytes from the stream. */
 var base64 = stream.readBase64(256);
 </pre>
 </div>
@@ -6237,8 +6330,7 @@ stream.write(text);
  with error type IOError, if a write error occurs.
                 </p></li>
 <li class="list"><p>
- with error type TypeMismatchError, if the input parameter
-is not compatible with the expected type for that parameter.
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method. For more information, see <a href="#StorageRemark">Storage privileges</a>.
@@ -6247,8 +6339,8 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bytes = in.readBytes(256);
-/* Writes the bytes read from in to out */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bytes = in .readBytes(256);
+/* Writes the bytes read from in to out. */
 out.writeBytes(bytes);
 </pre>
 </div>
@@ -6299,8 +6391,8 @@ out.writeBytes(bytes);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var base64 = in.readBase64(256);
-/* Writes the base64 data read from in to out */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var base64 = in .readBase64(256);
+/* Writes the base64 data read from in to out. */
 out.writeBase64(base64);
 </pre>
 </div>
@@ -6323,7 +6415,7 @@ out.writeBase64(base64);
           </p>
 <div class="description">
           <p>
-It is used in asynchronous operations, such as FileSystemManager.resolve(), copying, moving, and deleting files.
+It is used in asynchronous operations, such as FileSystemManager.resolve(), copying, moving and deleting files.
           </p>
          </div>
 <div class="methods">
@@ -6606,7 +6698,7 @@ It is used in asynchronous operation FileHandle.writeStringNonBlocking().
 <ul>
           <li class="param">
 <span class="name">bytesCount</span>:
- Number of bytes written (can be more than inputString length for multibyte encodings, and will never be less).
+ Number of bytes written (can be more than inputString length for multibyte encodings and will never be less).
                 </li>
         </ul>
 </div>
@@ -6649,7 +6741,7 @@ It is used in asynchronous operation FileHandle.readBlobNonBlocking().
 <ul>
           <li class="param">
 <span class="name">blob</span>:
- Blob object with file contents.
+ Blob object with file content.
                 </li>
         </ul>
 </div>
@@ -6692,7 +6784,7 @@ It is used in asynchronous operation FileHandle.readDataNonBlocking().
 <ul>
           <li class="param">
 <span class="name">data</span>:
- A TypedArray with file contents.
+ A TypedArray with file content.
                 </li>
         </ul>
 </div>
@@ -6700,13 +6792,15 @@ It is used in asynchronous operation FileHandle.readDataNonBlocking().
 </dl>
 </div>
 </div>
-<div class="interface" id="FileStringSuccessCallback">
+<div class="interface deprecated" id="FileStringSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Filesystem::FileStringSuccessCallback"></a><h3>2.17. FileStringSuccessCallback</h3>
 <div class="brief">
  The FileStringSuccessCallback callback interface specifies a success callback with a DOMString object as input argument.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since 5.0
+          </p>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileStringSuccessCallback {
-    void onsuccess(DOMString fileStr);
   };</pre>
 <p><span class="version">Since: </span>
  1.0
@@ -6719,13 +6813,16 @@ It is used in asynchronous operation File.readAsText().
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="FileStringSuccessCallback::onsuccess">
+<dt class="deprecated method" id="FileStringSuccessCallback::onsuccess">
 <a class="backward-compatibility-anchor" name="::Filesystem::FileStringSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when the asynchronous call completes successfully.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since 5.0
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString fileStr);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -6797,7 +6894,7 @@ It is used in asynchronous operation File.openStream().
  The ListDirectorySuccessCallback interface defines success callback for listing methods.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ListDirectorySuccessCallback {
-    void onsuccess(DOMString[] names);
+    void onsuccess(DOMString[] names, <a href="#Path">Path</a> path);
   };</pre>
 <p><span class="version">Since: </span>
  5.0
@@ -6817,7 +6914,7 @@ This callback interface specifies a success callback with a function taking an a
 <div class="brief">
  Called when the asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] names);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] names, <a href="#Path">Path</a> path);</pre></div>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -6827,6 +6924,10 @@ This callback interface specifies a success callback with a function taking an a
           <li class="param">
 <span class="name">names</span>:
  File or directory names resulting from the asynchronous call.
+                </li>
+          <li class="param">
+<span class="name">path</span>:
+ Path to listed directory.
                 </li>
         </ul>
 </div>
@@ -6886,186 +6987,119 @@ This callback interface specifies a success callback with a function taking an a
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Filesystem {
   typedef DOMString Path;
-
   enum FileMode { "a", "r", "rw", "rwo", "w" };
-
   enum FileSystemStorageType { "INTERNAL", "EXTERNAL" };
-
   enum FileSystemStorageState { "MOUNTED", "REMOVED", "UNMOUNTABLE" };
-
   typedef <a href="#Blob">Blob</a> Blob;
-
-  enum BaseSeekPosition {
-    "BEGIN", "CURRENT", "END"
-  };
-
+  enum BaseSeekPosition { "BEGIN", "CURRENT", "END" };
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> filesystem;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
-
   [NoInterfaceObject] interface FileSystemManager {
     readonly attribute long maxNameLength;
-
     readonly attribute long maxPathLength;
-
     <a href="#FileHandle">FileHandle</a> openFile(<a href="#Path">Path</a> path, <a href="#FileMode">FileMode</a> openMode, optional boolean makeParents) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void deleteFile(<a href="#Path">Path</a> path, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-    void rename(<a href="#Path">Path</a> path, DOMString newName, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#FileFilter">FileFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void deleteFile(<a href="#Path">Path</a> path, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite,
+                       optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
+                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite,
+                       optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void rename(<a href="#Path">Path</a> path, DOMString newName, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+                       optional <a href="#FileFilter">FileFilter</a>? filter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString toURI(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     boolean isFile(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     boolean isDirectory(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     boolean pathExists(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
     DOMString getDirName(DOMString path);
-
-    void getStorage(DOMString label,
-                    <a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void listStorages(<a href="#FileSystemStorageArraySuccessCallback">FileSystemStorageArraySuccessCallback</a> onsuccess,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addStorageStateChangeListener(<a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess,
-                                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getStorage(DOMString label, <a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void listStorages(<a href="#FileSystemStorageArraySuccessCallback">FileSystemStorageArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addStorageStateChangeListener(<a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeStorageStateChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface FileSystemStorage {
     readonly attribute DOMString label;
-
     readonly attribute <a href="#FileSystemStorageType">FileSystemStorageType</a> type;
-
     readonly attribute <a href="#FileSystemStorageState">FileSystemStorageState</a> state;
   };
-
   [NoInterfaceObject] interface FileHandle {
-    readonly attribute DOMString path;
-
+    readonly attribute <a href="#Path">Path</a> path;
     long long seek(long long offset, optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess,
-      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+                         optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString readString(optional long long? count, optional DOMString inputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void readStringNonBlocking(optional <a href="#ReadStringSuccessCallback">ReadStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-      optional long long count, optional DOMString inputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+                               optional long long count, optional DOMString inputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long long writeString(DOMString inputString, optional DOMString outputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void writeStringNonBlocking(DOMString inputString, optional <a href="#WriteStringSuccessCallback">WriteStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-      optional DOMString outputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+                                optional DOMString outputEncoding) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Blob">Blob</a> readBlob(optional long long size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void readBlobNonBlocking(optional <a href="#ReadBlobSuccessCallback">ReadBlobSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void readBlobNonBlocking(optional <a href="#ReadBlobSuccessCallback">ReadBlobSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size)
+                             raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void writeBlob(<a href="#Blob">Blob</a> blob) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void writeBlobNonBlocking(<a href="#Blob">Blob</a> blob, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> readData(optional long long size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void readDataNonBlocking(optional <a href="#ReadDataSuccessCallback">ReadDataSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void readDataNonBlocking(optional <a href="#ReadDataSuccessCallback">ReadDataSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional long long? size)
+                             raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void writeData(<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void writeDataNonBlocking(<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void writeDataNonBlocking(<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void flush() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void flushNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void sync() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void syncNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void closeNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
   };
-
   dictionary FileFilter {
     DOMString name;
-
     boolean isFile;
-
     boolean isDirectory;
-
     Date startModified;
-
     Date endModified;
-
     Date startCreated;
-
     Date endCreated;
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemStorageArraySuccessCallback {
     void onsuccess(<a href="#FileSystemStorage">FileSystemStorage</a>[] storages);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemStorageSuccessCallback {
     void onsuccess(<a href="#FileSystemStorage">FileSystemStorage</a> storage);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface PathSuccessCallback {
     void onsuccess(<a href="#Path">Path</a> path);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface SeekSuccessCallback {
     void onsuccess(long long position);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ReadStringSuccessCallback {
     void onsuccess(DOMString string);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface WriteStringSuccessCallback {
     void onsuccess(long long bytesCount);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ReadBlobSuccessCallback {
     void onsuccess(<a href="#Blob">Blob</a> blob);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ReadDataSuccessCallback {
     void onsuccess(<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> data);
   };
-
-  [Callback=FunctionOnly, NoInterfaceObject] interface FileStringSuccessCallback {
-    void onsuccess(DOMString fileStr);
-  };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ListDirectorySuccessCallback {
-    void onsuccess(DOMString[] names);
+    void onsuccess(DOMString[] names, <a href="#Path">Path</a> path);
   };
-
 };</pre>
 </div>
 <div id="page-footer">
