@@ -312,7 +312,7 @@ static void _watchface_editable_update_requested_cb(const watchface_editable_h h
 Complication can provide additional action for touching when the complication is touched.
 To trigger the complication touch action,  watchface must transfer the touch event to complication provider when the complication is touched.
 
-There are following event types.
+There are following event types:
 
 | Event type | Description |
 |------------|-------------|
