@@ -21,7 +21,7 @@ The main features of the Media Controller API include:
 
   > **Note**
   >
-  > This feature supports Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable.
+  > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
 - Sending and processing commands
 
@@ -35,7 +35,7 @@ The main features of the Media Controller API include:
 
   > **Note**
   >
-  > This feature supports Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable.
+  > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
 - Sending and processing a custom event
 
@@ -45,7 +45,7 @@ The main features of the Media Controller API include:
 
   > **Note**
   >
-  > This feature supports Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable.
+  > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
 ## Prerequisites
 
@@ -262,7 +262,7 @@ To retrieve the playlist and metadata information on the client side:
 
 > **Note**
 >
-> This feature supports Tizen 4.0 and higher for Mobile.
+> This feature supports Tizen 4.0 and Higher for Mobile.
 
 
 
@@ -424,7 +424,6 @@ To process the received command on the server side:
    mc_server_destroy(g_server_h);
    ```
 
-
 To send the reply of completed command on the server side:
 
 1. Send the reply of completed command using the `mc_server_send_cmd_reply()` with the request id of the command in the third parameter and the result of the command in fourth parameter:
@@ -435,7 +434,7 @@ To send the reply of completed command on the server side:
    ret = mc_server_send_cmd_reply(g_server_h, client_name, request_id, result_code, NULL);
    ```
 
-<a name=""></a>
+<a name="send_command_reply"></a>
 To receive the reply of completed command on the client side:
 
 1. Define the callback that is invoked when the client receives the reply:
@@ -456,7 +455,7 @@ To receive the reply of completed command on the client side:
 
 > **Note**
 >
-> This feature supports Tizen 4.0 and higher for Mobile.
+> This feature supports Tizen 4.0 and Higher for Mobile.
 
 
 ## Sending and Processing a Custom Event
@@ -540,8 +539,8 @@ To process the received event on the client side:
    ```
 
 
-
-##### To send the reply of completed custom event on the client side:
+<a name="send_event_reply"></a>
+To send the reply of completed custom event on the client side:
 
 1. Send the reply of completed custom event using the `mc_client_send_event_reply()` with the request id of the custom event in the third parameter and the result of the custom event in fourth parameter:
 
@@ -571,12 +570,12 @@ To receive the reply of processing command on the server side:
 
 > **Note**
 >
-> This feature supports Tizen 4.0 and higher for Mobile.
+> This feature supports Tizen 4.0 and Higher for Mobile.
 
 
 ## Media Controller Server State Attributes
 
-The following table lists all the server state attributes the client can receive.
+The following table lists all the server state attributes the client can receive:
 
 **Table: Media controller server state attributes**
 
@@ -594,15 +593,15 @@ The following table lists all the server state attributes the client can receive
 | `MC_PLAYBACK_STATE_PREV_FILE`    | Playback state of previous file          |
 | `MC_PLAYBACK_STATE_FAST_FORWARD` | Playback state of fast forward           |
 | `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewind                 |
-| `MC_PLAYBACK_STATE_MOVING_TO_NEXT` | Playback state of moving to next media (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
-| `MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS` | Playback state of moving to previous media (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
-| `MC_PLAYBACK_STATE_FAST_FORWARDING` | Playback state of fast forwarding (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
-| `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewinding (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
+| `MC_PLAYBACK_STATE_MOVING_TO_NEXT` | Playback state of moving to next media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
+| `MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS` | Playback state of moving to previous media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
+| `MC_PLAYBACK_STATE_FAST_FORWARDING` | Playback state of fast forwarding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
+| `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewinding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 
 
 ## Media Controller Playback Action Attributes
 
-The following table lists all the playback action attributes the client can send command and the server can receive.
+The following table lists all the playback action attributes the client can send command and the server can receive:
 
 **Table: Media controller playback action attributes**
 
@@ -620,12 +619,12 @@ The following table lists all the playback action attributes the client can send
 
 > **Note**
 >
-> This Attributes support Tizen 4.0 and higher for Mobile.
+> This Attributes support Tizen 4.0 and Higher for Mobile.
 
 
 ## Media Controller Shuffle Mode Attributes
 
-The following table lists all the shuffle mode attributes the client can receive and send command.
+The following table lists all the shuffle mode attributes the client can receive and send command:
 
 **Table: Media controller shuffle mode attributes**
 
@@ -638,7 +637,7 @@ The following table lists all the shuffle mode attributes the client can receive
 
 ## Media Controller Repeat Mode Attributes
 
-The following table lists all the repeat mode attributes the client can receive and send command.
+The following table lists all the repeat mode attributes the client can receive and send command:
 
 **Table: Media controller repeat mode attributes**
 
@@ -647,12 +646,12 @@ The following table lists all the repeat mode attributes the client can receive 
 | **Repeat mode states**           |                                          |
 | `MC_REPEAT_MODE_ON`              | Repeat mode is on                        |
 | `MC_REPEAT_MODE_OFF`             | Repeat mode is off                       |
-| `MC_REPEAT_MODE_ONE_MEDIA`       | Repeat mode is on for one media (Tizen 4.0 and higher for Mobile and Tizen 5.0 and Higher for Wearable) |
+| `MC_REPEAT_MODE_ONE_MEDIA`       | Repeat mode is on for one media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 
 
 ## Media Controller Server Metadata Attributes
 
-The following table lists all the server metadata attributes the client can receive.
+The following table lists all the server metadata attributes the client can receive:
 
 **Table: Media controller server metadata attributes**
 
@@ -673,7 +672,7 @@ The following table lists all the server metadata attributes the client can rece
 
 ## Media Controller Playlist Update Mode Attributes
 
-The following table lists all the playlist update mode attributes the client can receive.
+The following table lists all the playlist update mode attributes the client can receive:
 
 **Table: Media controller playlist update mode attributes**
 
@@ -685,7 +684,7 @@ The following table lists all the playlist update mode attributes the client can
 
 > **Note**
 >
-> This Attributes support Tizen 4.0 and higher for Mobile.
+> This Attributes support Tizen 4.0 and Higher for Mobile.
 
 ## Related Information
 - Dependencies
