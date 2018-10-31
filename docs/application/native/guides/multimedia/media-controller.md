@@ -1,13 +1,13 @@
 # Media Controller
 
 
-You can establish communication between a media controller server and a media controller client. You can send commands from the client to the server and the client can request updated metadata and playback information from the server.
+You can establish communication between a media controller server and a media controller client. You can send commands from the client to the server, and the client can request updated metadata and playback information from the server.
 
 The main features of the Media Controller API include:
 
 - Updating and retrieving information
 
-  You can [update the metadata and playback information](#updating-and-retrieving-information) on the server side and then retrieve the metadata and playback information on the client side.
+  You can [update the metadata and playback information](#updating-and-retrieving-information) on the server side, and then retrieve the metadata and playback information on the client side.
 
   The media controller server provides current information about the registered application that you can send to the client.
 
@@ -15,7 +15,7 @@ The main features of the Media Controller API include:
 
 - Updating and retrieving playlist
 
-  You can [update the playlist information](#updating-and-retrieving-playlist) on the server side and then retrieve the playlist information on the client side.
+  You can [update the playlist information](#updating-and-retrieving-playlist) on the server side, and then retrieve the playlist information on the client side.
 
   The media controller server provides current information about the registered application that you can send to the client.
 
@@ -29,9 +29,9 @@ The main features of the Media Controller API include:
 
 - Sending and processing commands to receive replies
 
-  You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side and then process the command on the server side.
+  You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side, and then process the command on the server side.
 
-  You can [send a reply of the command](#send_command_reply) to the client from the server side and then receive the reply on the client side.
+  You can [send a reply of the command](#send_command_reply) to the client from the server side, and then receive the reply on the client side.
 
   > **Note**
   >
@@ -65,7 +65,7 @@ To enable your application to use the media controller functionality:
      static mc_server_h g_server_h = NULL;
      ```
 
-     The server updates the metadata and playback information and processes the requests and commands sent by the client.
+     The server updates the metadata and playback information, and processes the requests and commands sent by the client.
 
      This guide uses a global variable for the handle.
 
@@ -83,7 +83,7 @@ To enable your application to use the media controller functionality:
      static mc_client_h g_client_h = NULL;
      ```
 
-     The client requests metadata and playback information from the server and sends playback commands to server.
+     The client requests metadata and playback information from the server, and sends playback commands to server.
 
      This guide uses a global variable for the handle.
 
@@ -223,7 +223,7 @@ To retrieve the playlist and metadata information on the client side:
    ```
    ret = mc_client_set_playlist_updated_cb(g_client_h, playlist_updated_cb, NULL);
    ```
-4. Define the callback that retreive the item from the playlist handle:
+4. Define the callback that retrieve the item from the playlist handle:
 
    ```
    bool
@@ -241,7 +241,7 @@ To retrieve the playlist and metadata information on the client side:
    ret = mc_playlist_foreach_item(playlist_h, playlist_item_cb, NULL);
    ```
 
-6. Retreive the metadata information from the metadata handle using the `mc_metadata_get()`:
+6. Retrieve the metadata information from the metadata handle using the `mc_metadata_get()`:
 
    ```
    char *title = NULL;
@@ -343,7 +343,7 @@ To process the received command on the server side:
    ```
 
 
-## Sending and Processing Commands To Receive Replies
+## Sending and Processing Commands to Receive Replies
 
 To send a command to the server from the client side:
 
@@ -435,7 +435,7 @@ To send the reply of completed command on the server side:
    ret = mc_server_send_cmd_reply(g_server_h, client_name, request_id, result_code, NULL);
    ```
 
-<a name="send_command_reply"></a>
+<a name=""></a>
 To receive the reply of completed command on the client side:
 
 1. Define the callback that is invoked when the client receives the reply:
@@ -459,7 +459,7 @@ To receive the reply of completed command on the client side:
 > This feature supports Tizen 4.0 and higher for Mobile.
 
 
-## Sending and Processing A Custom Event
+## Sending and Processing a Custom Event
 
 To send a custom event to the client from the server side:
 
@@ -539,8 +539,9 @@ To process the received event on the client side:
    mc_client_destroy(g_client_h);
    ```
 
-<a name="send_event_reply"></a>
-To send the reply of completed custom event on the client side:
+
+
+##### To send the reply of completed custom event on the client side:
 
 1. Send the reply of completed custom event using the `mc_client_send_event_reply()` with the request id of the custom event in the third parameter and the result of the custom event in fourth parameter:
 
