@@ -34,9 +34,13 @@ Visual Studio Tools for Tizen provides Tizen-specific tools to improve your prod
 
   The Log Viewer allows you to check the logs of your application based on the logging methods you have inserted into your code. It helps you to debug your application by capturing all the events logged by the platform and your application.
 
-- [Profiler](tools/profiler.md)
+- [Profiler](tools/profiler-user-manual.md)
 
   The Profiler allows you to analyze the performance of your application. You can record, manage, and view profiling sessions.
+
+- [Memory Profiler](tools/memory-profiler-user-manual.md)
+
+  This is a utility which collects memory profiling data and save them to a file, this part of the Memory Profiler runs on the target side. Also it analyzes the resulting data, the command-line one and the GUI-based one, these analyzing tools run on the host side.
 
 If you prefer a command line interface to the graphical Visual Studio window, you can use the [Command Line Interface (CLI) tool](tools/dotnet-cli-ext.md) during the entire development process.
 

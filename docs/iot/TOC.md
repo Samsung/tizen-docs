@@ -1,18 +1,30 @@
 # [IoT and Tizen IoT](/iot/index.md)
 
 # Getting Started
-## [Tizen IoT](/iot/getting-started/overview.md)
+## Tizen IoT
+### [Overview](/iot/getting-started/overview.md)
 ### [Customized Platform Guide](/iot/customized-platform/overview.md)
-## [Installing Tizen Studio](/iot/getting-started/tizen-studio-install.md)
-## [Flashing Tizen Images](/iot/getting-started/tizen-image-download-flash.md)
-## [Hardware Configuration](/iot/getting-started/hardware-configuration.md)
-## [Developing Applications with the things sdk api](/iot/getting-started/things-app-development.md)
-## [setting up the smartthings cloud](/iot/getting-started/things-cloud-setup.md)
-## [testing with smartthings app](/iot/getting-started/cloud-app-test.md)
+## Setting up Board
+### [Overview](/iot/getting-started/setting-up-board.md)
+### [ARTIK530/ARTIK530S with no SD card based on Tizen 5.0](/iot/getting-started/artik-no-sd-5.0.md)
+### [ARTIK530/ARTIK530S with SD card based on Tizen 5.0](/iot/getting-started/artik-sd-5.0.md)
+### [Raspberry Pi3 based on Tizen 5.0](/iot/getting-started/rpi3-5.0.md)
+### Tizen IoT Preview 2
+#### [Overview](/iot/getting-started/iot_preview_2.md)
+#### [ARTIK530/ARTIK530S with no SD card based on Tizen 4.0](/iot/getting-started/artik-no-sd-4.0.md)
+#### [ARTIK530/ARTIK530S with SD card based on Tizen 4.0](/iot/getting-started/artik-sd-4.0.md)
+#### [Raspberry Pi3 based on Tizen 5.0](/iot/getting-started/rpi3-4.0.md)
+## Developing Applications
+### [Developing Applications with Things SDK API](/iot/getting-started/things-app-development-5.0.md)
+### [Developing Applications with Things SDK API for Tizen 4.0](/iot/getting-started/things-app-development.md)
 
 # API Guides
 ## [Overview](/iot/guides/iot-api.md)
 ## Things SDK API
+### [Overview](/iot/guides/things-api-5.0.md)
+### [Device Definition](/iot/guides/things-api-device-5.0.md)
+### [API Usage](/iot/guides/things-api-guide-5.0.md)
+## Things SDK API for Tizen IoT Preview 2(Legacy)
 ### [Overview](/iot/guides/things-api.md)
 ### [Device Definition](/iot/guides/things-api-device.md)
 ### [API Usage](/iot/guides/things-api-guide.md)

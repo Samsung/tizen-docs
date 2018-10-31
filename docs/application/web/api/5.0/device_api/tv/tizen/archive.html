@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Archive">
-<div class="supported-platforms"><img title="Mandatory" src="../../../images/tv_s_w.png"></div>
+ <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
 <div class="title"><h1>Archive API</h1></div>
 <div class="brief">
  The Archive API provides functions to create and manage archive files.
@@ -29,8 +29,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 For more information about how to use Archive API, see <a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/file-archiving">File Archiving Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
         </p>
 <h2>Table of Contents</h2>
@@ -137,9 +136,8 @@ For more information about how to use Archive API, see <a href="https://develope
  File reference for an archive file.
 It can be either a <var>File</var> object or a virtual path.
           </div>
-<pre class="webidl prettyprint">    typedef (DOMString or <a href="filesystem.html#File">File</a>) FileReference;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  typedef (DOMString or <a href="filesystem.html#File">File</a>) FileReference;</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 </div>
@@ -148,9 +146,8 @@ It can be either a <var>File</var> object or a virtual path.
 <div class="brief">
  Enumeration for the compression level.
           </div>
-<pre class="webidl prettyprint">    enum ArchiveCompressionLevel {"STORE", "FAST", "NORMAL", "BEST"};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum ArchiveCompressionLevel { "STORE", "FAST", "NORMAL", "BEST" };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -174,12 +171,11 @@ BEST - Choose the best compression method, compression may be slow.            <
 <div class="brief">
  The ArchiveManagerObject interface defines what is instantiated in the <em>Tizen</em> object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface ArchiveManagerObject {
-        readonly attribute <a href="#ArchiveManager">ArchiveManager</a> archive;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ArchiveManagerObject {
+    readonly attribute <a href="#ArchiveManager">ArchiveManager</a> archive;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -193,12 +189,10 @@ The <em>tizen.archive</em> object allows access to the Archive API.
 <div class="brief">
  The ArchiveFileOptions dictionary represents the option to decide if an archive file can be overwritten when an archive file is opened.
           </div>
-<pre class="webidl prettyprint">    dictionary ArchiveFileOptions {
-        boolean overwrite;
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  dictionary ArchiveFileOptions {
+    boolean overwrite;
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -222,8 +216,7 @@ The default value is <var>false</var>            </p>
 See description of the <em>mode</em> argument of the <em>open()</em> method.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
@@ -235,16 +228,12 @@ See description of the <em>mode</em> argument of the <em>open()</em> method.
 <div class="brief">
  The ArchiveFileEntryOptions dictionary controls behavior when adding a file to an archive.
           </div>
-<pre class="webidl prettyprint">    dictionary ArchiveFileEntryOptions {
-        DOMString destination;
-
-        boolean stripSourceDirectory;
-
-        <a href="#ArchiveCompressionLevel">ArchiveCompressionLevel</a> compressionLevel;
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  dictionary ArchiveFileEntryOptions {
+    DOMString destination;
+    boolean stripSourceDirectory;
+    <a href="#ArchiveCompressionLevel">ArchiveCompressionLevel</a> compressionLevel;
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -255,11 +244,10 @@ See description of the <em>mode</em> argument of the <em>open()</em> method.
 <div class="brief">
  Path where <em>ArchiveFileEntry</em> should be stored in an archive file.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  If destination is not set, then the root directory of archive will be used (equivalent to <var>destination = ""</var>).
             </p>
 </dd>
@@ -282,9 +270,9 @@ Target file name when <em>destination</em> is "mypackage"                </th>
               </tr>
               <tr>
                 <th>
-stripSourceDirectory: <em>true</em>                </th>
+stripSourceDirectory: <var>true</var>                </th>
                 <th>
-stripSourceDirectory: <em>false</em>                </th>
+stripSourceDirectory: <var>false</var>                </th>
               </tr>
               <tr>
                 <td>
@@ -312,11 +300,10 @@ mypackage/test.c                </td>
               </tr>
             </table>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  The default value is <var>false</var>.
             </p>
 </dd>
@@ -325,11 +312,10 @@ mypackage/test.c                </td>
 <div class="brief">
  Compression level.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  The default compression level is <var>NORMAL</var>.
             </p>
 </dd>
@@ -341,17 +327,12 @@ mypackage/test.c                </td>
 <div class="brief">
  The ArchiveManager interface provides methods for global operations related to ArchiveFile.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface ArchiveManager {
-        long open(<a href="#FileReference">FileReference</a> file,
-                  <a href="filesystem.html#FileMode">FileMode</a> mode,
-                  <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                  optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void abort(long operationIdentifier) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ArchiveManager {
+    long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+              optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void abort(long operationIdentifier) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -364,10 +345,9 @@ mypackage/test.c                </td>
 <div class="brief">
  Opens the archive file. After this operation, it is possible to add or get files to and from the archive.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+          optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -424,12 +404,10 @@ In this mode, <em>getEntries()</em>, <em>getEntryByName()</em>, and <em>extractA
               </tr>
             </table>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.write
             </p>
 <div class="parameters">
@@ -437,30 +415,34 @@ In this mode, <em>getEntries()</em>, <em>getEntryByName()</em>, and <em>extractA
 <ul>
           <li class="param">
 <span class="name">file</span>:
- File to open
+ File to open.
                 </li>
           <li class="param">
 <span class="name">mode</span>:
- File mode for the opened archive. Determines which operations are available
+ File mode for the opened archive. Determines which operations are available.
                 </li>
           <li class="param">
 <span class="name">onsuccess</span>:
- Callback method to be invoked when archive is opened successfully
+ Callback method to be invoked when archive is opened successfully.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
           <li class="param">
 <span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Additional options for initializing the ArchiveFile instance
+ Additional options for initializing the ArchiveFile instance.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Task ID which can be used to cancel the operation with abort()
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Task ID which can be used to cancel the operation with abort().
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -474,15 +456,14 @@ In this mode, <em>getEntries()</em>, <em>getEntryByName()</em>, and <em>extractA
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successCallback(archive)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCallback(archive)
 {
-   console.log("Success, can now read from archive " + archive);
+  console.log("Success, can now read from archive " + archive);
 }
 
 function errorCallback(error)
 {
-   console.log(error);
+  console.log(error);
 }
 
 tizen.archive.open("downloads/some_archive.zip", "r", successCallback, errorCallback);
@@ -496,10 +477,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", successCallback, errorCall
 <div class="brief">
  Cancels an operation with the given identifier.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void abort(long operationIdentifier);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void abort(long operationIdentifier);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -507,7 +486,7 @@ tizen.archive.open("downloads/some_archive.zip", "r", successCallback, errorCall
 <ul>
           <li class="param">
 <span class="name">operationIdentifier</span>:
- Task ID returned by an asynchronous function from this module
+ Task ID returned by an asynchronous function from this module.
                 </li>
         </ul>
 </div>
@@ -519,11 +498,10 @@ tizen.archive.open("downloads/some_archive.zip", "r", successCallback, errorCall
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function openSuccess(archive)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function openSuccess(archive)
 {
-   operationId = archive.extractAll("downloads/extracted");
-   tizen.archive.abort(operationId);
+  operationId = archive.extractAll("downloads/extracted");
+  tizen.archive.abort(operationId);
 }
 
 tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
@@ -538,34 +516,19 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
 <div class="brief">
  The ArchiveFile interface provides access to member files of the archive file.
           </div>
-<pre class="webidl prettyprint">    interface ArchiveFile {
-        readonly attribute <a href="filesystem.html#FileMode">FileMode</a> mode;
-
-        readonly attribute unsigned long long? decompressedSize;
-
-        long add(<a href="#FileReference">FileReference</a> sourceFile,
-                 optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
-                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                 optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress,
-                 optional <a href="#ArchiveFileEntryOptions">ArchiveFileEntryOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                        optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress,
-                        optional boolean? overwrite) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long getEntries(<a href="#ArchiveFileEntryArraySuccessCallback">ArchiveFileEntryArraySuccessCallback</a> onsuccess,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long getEntryByName(DOMString name,
-                            <a href="#ArchiveFileEntrySuccessCallback">ArchiveFileEntrySuccessCallback</a> onsuccess,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  interface ArchiveFile {
+    readonly attribute <a href="filesystem.html#FileMode">FileMode</a> mode;
+    readonly attribute unsigned long long? decompressedSize;
+    long add(<a href="#FileReference">FileReference</a> sourceFile, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+             optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional <a href="#ArchiveFileEntryOptions">ArchiveFileEntryOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+                    optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? overwrite) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getEntries(<a href="#ArchiveFileEntryArraySuccessCallback">ArchiveFileEntryArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getEntryByName(DOMString name, <a href="#ArchiveFileEntrySuccessCallback">ArchiveFileEntrySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -576,8 +539,7 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
 </span><span class="type">FileMode </span><span class="name">mode</span></span><div class="brief">
  attribute File mode when it is opened.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -591,8 +553,7 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
 The size is <var>null</var> until the archive is opened.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -608,10 +569,9 @@ The size is <var>null</var> until the archive is opened.
 <div class="brief">
  Adds a new member file to <em>ArchiveFile</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long add(<a href="#FileReference">FileReference</a> sourceFile, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional <a href="#ArchiveFileEntryOptions">ArchiveFileEntryOptions</a>? options);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long add(<a href="#FileReference">FileReference</a> sourceFile, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+         optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional <a href="#ArchiveFileEntryOptions">ArchiveFileEntryOptions</a>? options);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -689,12 +649,10 @@ report3/justName.ext                </td>
               </tr>
             </table>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.write
             </p>
 <div class="parameters">
@@ -702,15 +660,15 @@ report3/justName.ext                </td>
 <ul>
           <li class="param">
 <span class="name">sourceFile</span>:
- File or directory to be added to archive
+ File or directory to be added to archive.
                 </li>
           <li class="param">
 <span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when this operation is completed successfully
+ Callback method to be invoked when this operation is completed successfully.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
           <li class="param">
 <span class="name">onprogress</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -719,14 +677,18 @@ If the source file is big then the callback can also be called while the file is
                 </li>
           <li class="param">
 <span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Additional options used to control how the sourceFile will be compressed and stored in the archive
+ Additional options used to control how the sourceFile will be compressed and stored in the archive.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Task ID which can be used to cancel the operation with abort()
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Task ID which can be used to cancel the operation with abort().
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -746,25 +708,24 @@ If the source file is big then the callback can also be called while the file is
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function errorCallback(error)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-   console.log(error);
+  console.log(error);
 }
 
 function successCallback()
 {
-   console.log("done");
+  console.log("done");
 }
 
 function progressCallback(opId, val, name)
 {
-   console.log("opId: " + opId + " with progress val: " + val);
+  console.log("opId: " + opId + " with progress val: " + val);
 }
 
 function createSuccess(archive)
 {
-   archive.add("downloads/file.txt", successCallback, errorCallback, progressCallback);
+  archive.add("downloads/file.txt", successCallback, errorCallback, progressCallback);
 }
 
 tizen.archive.open("downloads/new_archive.zip", "w", createSuccess);
@@ -778,10 +739,9 @@ tizen.archive.open("downloads/new_archive.zip", "w", createSuccess);
 <div class="brief">
  Extracts every file from this <em>ArchiveFile</em> to a given directory.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? overwrite);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+                optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? overwrite);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -806,12 +766,10 @@ have to be overwritten and the <em>overwrite</em> argument is <var>false</var>  
 UnknownError: In any other error case              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.write
             </p>
 <div class="parameters">
@@ -823,11 +781,11 @@ UnknownError: In any other error case              </li>
                 </li>
           <li class="param">
 <span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an archive is extracted successfully
+ Callback method to be invoked when an archive is extracted successfully.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
           <li class="param">
 <span class="name">onprogress</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -841,8 +799,12 @@ UnknownError: In any other error case              </li>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Task ID which can be used to cancel the operation with abort()
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Task ID which can be used to cancel the operation with abort().
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -862,25 +824,25 @@ UnknownError: In any other error case              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function errorCallback(error)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-   console.log(error);
+  console.log(error);
 }
 
 function successCallback()
 {
-   console.log("done");
+  console.log("done");
 }
 
 function progressCallback(opId, val, name)
 {
-   console.log("extracting operation (: " + opId + ") is in progress (" + (val * 100).toFixed(1) + "%)");
+  console.log(
+      "extracting operation (: " + opId + ") is in progress (" + (val * 100).toFixed(1) + "%)");
 }
 
 function openSuccess(archive)
 {
-   archive.extractAll("music", successCallback, errorCallback, progressCallback);
+  archive.extractAll("music", successCallback, errorCallback, progressCallback);
 }
 
 tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
@@ -894,10 +856,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
 <div class="brief">
  Retrieves information about the member files in <em>ArchiveFile</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long getEntries(<a href="#ArchiveFileEntryArraySuccessCallback">ArchiveFileEntryArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long getEntries(<a href="#ArchiveFileEntryArraySuccessCallback">ArchiveFileEntryArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -909,12 +869,10 @@ The errorCallback is launched with these error types:
 UnknownError: In case of any error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -922,18 +880,22 @@ UnknownError: In case of any error              </li>
 <ul>
           <li class="param">
 <span class="name">onsuccess</span>:
- Callback method to be invoked when information about all the files in the archive is successfully retrieved
+ Callback method to be invoked when information about all the files in the archive is successfully retrieved.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Task ID which can be used to cancel the operation with abort()
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Task ID which can be used to cancel the operation with abort().
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -947,30 +909,29 @@ UnknownError: In case of any error              </li>
  with error type InvalidAccessError, if the file mode is <var>"w"</var> or <var>"a"</var>.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function errorCallback(error)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-   console.log(error);
+  console.log(error);
 }
 
 function getEntriesSuccess(entries)
 {
-   console.log("Entries length: " + entries.length);
-   for (var i = 0; i &lt; entries.length; i++)
-   {
-      console.log(entries[i].name);
-   }
+  console.log("Entries length: " + entries.length);
+  for (var i = 0; i &lt; entries.length; i++)
+  {
+    console.log(entries[i].name);
+  }
 }
 
 function openSuccess(archive)
 {
-   archive.getEntries(getEntriesSuccess, errorCallback);
+  archive.getEntries(getEntriesSuccess, errorCallback);
 }
 
 tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback);
@@ -984,10 +945,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  Retrieves information about <em>ArchiveFileEntry</em> with the specified name in <em>ArchiveFile</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long getEntryByName(DOMString name, <a href="#ArchiveFileEntrySuccessCallback">ArchiveFileEntrySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long getEntryByName(DOMString name, <a href="#ArchiveFileEntrySuccessCallback">ArchiveFileEntrySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1001,12 +960,10 @@ NotFoundError: If <em>ArchiveFileEntry</em> with the specific name does not exis
 UnknownError: In case of any other error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -1014,22 +971,26 @@ UnknownError: In case of any other error              </li>
 <ul>
           <li class="param">
 <span class="name">name</span>:
- Name of <em>ArchiveFileEntry</em> to extract
+ Name of <em>ArchiveFileEntry</em> to extract.
                 </li>
           <li class="param">
 <span class="name">onsuccess</span>:
- Callback method to be invoked when a file matched with the given name is found
+ Callback method to be invoked when a file matched with the given name is found.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Task ID which can be used to cancel the operation with abort()
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Task ID which can be used to cancel the operation with abort().
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1043,26 +1004,25 @@ UnknownError: In case of any other error              </li>
  with error type InvalidAccessError, if the file mode is <var>"w"</var> or <var>"a"</var>.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
+ with error type SecurityError, if the application does not have the privilege to call this method or the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function errorCallback(error)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-   console.log(error);
+  console.log(error);
 }
 
 function getEntrySuccess(entry)
 {
-   console.log("Entry: " + entry.name + " size: " + entry.size);
+  console.log("Entry: " + entry.name + " size: " + entry.size);
 }
 
 function openSuccess(archive)
 {
-   archive.getEntryByName("arch/my_file.txt", getEntrySuccess, errorCallback);
+  archive.getEntryByName("arch/my_file.txt", getEntrySuccess, errorCallback);
 }
 
 tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
@@ -1076,10 +1036,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
 <div class="brief">
  Closes the <em>ArchiveFile</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void close();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void close();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1103,25 +1061,16 @@ Call this method when the archive file is not used any more. Once you call this 
 <div class="brief">
  The ArchiveFileEntry interface provides access to ArchiveFile member information and file data.
           </div>
-<pre class="webidl prettyprint">    interface ArchiveFileEntry {
-        readonly attribute DOMString name;
-
-        readonly attribute unsigned long long size;
-
-        readonly attribute unsigned long long? compressedSize;
-
-        readonly attribute Date modified;
-
-        long extract(<a href="#FileReference">FileReference</a> destinationDirectory,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                     optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress,
-                     optional boolean? stripName,
-                     optional boolean? overwrite) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  interface ArchiveFileEntry {
+    readonly attribute DOMString name;
+    readonly attribute unsigned long long size;
+    readonly attribute unsigned long long? compressedSize;
+    readonly attribute Date modified;
+    long extract(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+                 optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? stripName, optional boolean? overwrite)
+                 raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -1132,8 +1081,7 @@ Call this method when the archive file is not used any more. Once you call this 
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  Path identifying the member file of ArchiveFile. <br>This is a full path with the directory and base name of the entry.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1147,8 +1095,7 @@ Call this method when the archive file is not used any more. Once you call this 
 If the ArchiveFileEntry member is a folder, the attribute value will be the sum of sizes of all files in this directory.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1164,8 +1111,7 @@ If ArchiveFileEntry member is a folder, the attribute will be sum of the sizes o
             <p>
 Until a new entry is added to the archive, the compressedSize is <var>null</var>            </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1175,8 +1121,7 @@ Until a new entry is added to the archive, the compressedSize is <var>null</var>
  Date and time stored with the member file.
 This is usually the modification date of the file.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1192,10 +1137,9 @@ This is usually the modification date of the file.
 <div class="brief">
  Extracts ArchiveFileEntry to the given location.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long extract(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? stripName, optional boolean? overwrite);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long extract(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+             optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? stripName, optional boolean? overwrite);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1213,12 +1157,10 @@ IOError: If destinationDirectory can not be written to              </li>
 UnknownError: In case of any other error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.write
             </p>
 <div class="parameters">
@@ -1230,11 +1172,11 @@ UnknownError: In case of any other error              </li>
                 </li>
           <li class="param">
 <span class="name">onsuccess</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an extract operation is completed
+ Callback method to be invoked when an extract operation is completed.
                 </li>
           <li class="param">
 <span class="name">onerror</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
           <li class="param">
 <span class="name">onprogress</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1252,8 +1194,12 @@ UnknownError: In case of any other error              </li>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Task ID which can be used to cancel the operation with abort()
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Task ID which can be used to cancel the operation with abort().
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1270,25 +1216,24 @@ UnknownError: In case of any other error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function errorCallback(error)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-   console.log(error);
+  console.log(error);
 }
 
 function extractSuccessCallback()
 {
-   console.log("done");
+  console.log("done");
 }
 
 function getEntrySuccess(entry)
 {
-   entry.extract("downloads/extract", extractSuccessCallback, errorCallback);
+  entry.extract("downloads/extract", extractSuccessCallback, errorCallback);
 }
 
 function openSuccess(archive)
 {
-   archive.getEntryByName("my_file.txt", getEntrySuccess, errorCallback);
+  archive.getEntryByName("my_file.txt", getEntrySuccess, errorCallback);
 }
 
 tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback);
@@ -1303,11 +1248,10 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  The ArchiveFileSuccessCallback interface provides a SuccessCallback for the ArchiveManager::open() method.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileSuccessCallback {
-        void onsuccess(<a href="#ArchiveFile">ArchiveFile</a> archive);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileSuccessCallback {
+    void onsuccess(<a href="#ArchiveFile">ArchiveFile</a> archive);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -1320,10 +1264,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  Called when the archive file with the given name is ready to use.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ArchiveFile">ArchiveFile</a> archive);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ArchiveFile">ArchiveFile</a> archive);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -1331,7 +1273,7 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <ul>
           <li class="param">
 <span class="name">archive</span>:
- Archive file object
+ Archive file object.
                 </li>
         </ul>
 </div>
@@ -1344,11 +1286,10 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  The ArchiveFileEntrySuccessCallback interface provides a SuccessCallback for the ArchiveFile::getEntryByName() method.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntrySuccessCallback {
-        void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a> entry);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntrySuccessCallback {
+    void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a> entry);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -1361,10 +1302,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  Called when the file with the given name through getEntryByName() is found successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a> entry);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a> entry);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -1372,7 +1311,7 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <ul>
           <li class="param">
 <span class="name">entry</span>:
- ArchiveFileEntry object representing the file found in ArchiveFile
+ ArchiveFileEntry object representing the file found in ArchiveFile.
                 </li>
         </ul>
 </div>
@@ -1385,11 +1324,10 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  The ArchiveFileEntryArraySuccessCallback interface provides a SuccessCallback for the ArchiveFile::getEntries() method.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntryArraySuccessCallback {
-        void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a>[] entries);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntryArraySuccessCallback {
+    void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a>[] entries);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -1402,10 +1340,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  Called when all file entries in the archive file are retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a>[] entries);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a>[] entries);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -1413,7 +1349,7 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <ul>
           <li class="param">
 <span class="name">entries</span>:
- List of ArchiveFileEntry objects found in ArchiveFile
+ List of ArchiveFileEntry objects found in ArchiveFile.
                 </li>
         </ul>
 </div>
@@ -1426,11 +1362,10 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  The ArchiveFileProgressCallback interface provides a ProgressCallback for ArchiveFile and ArchiveFileEntry methods.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileProgressCallback {
-        void onprogress(long operationIdentifier, double value, DOMString filename);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileProgressCallback {
+    void onprogress(long operationIdentifier, double value, DOMString filename);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -1443,10 +1378,8 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <div class="brief">
  Called to signal compressing or extracting operation progress.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onprogress(long operationIdentifier, double value, DOMString filename);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onprogress(long operationIdentifier, double value, DOMString filename);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -1454,15 +1387,15 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <ul>
           <li class="param">
 <span class="name">operationIdentifier</span>:
- Operation identifier for which progress is reported
+ Operation identifier for which progress is reported.
                 </li>
           <li class="param">
 <span class="name">value</span>:
- Progress of the operation, value between 0.0 and 1.0 where 1.0 is 100% progress
+ Progress of the operation, value between 0.0 and 1.0 where 1.0 is 100% progress.
                 </li>
           <li class="param">
 <span class="name">filename</span>:
- Name of the compressed or extracted file
+ Name of the compressed or extracted file.
                 </li>
         </ul>
 </div>
@@ -1473,101 +1406,58 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Archive {
-
-    typedef (DOMString or <a href="filesystem.html#File">File</a>) FileReference;
-
-    enum ArchiveCompressionLevel {"STORE", "FAST", "NORMAL", "BEST"};
-
-    [NoInterfaceObject] interface ArchiveManagerObject {
-        readonly attribute <a href="#ArchiveManager">ArchiveManager</a> archive;
-    };
-
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;
-
-    dictionary ArchiveFileOptions {
-        boolean overwrite;
-
-    };
-
-    dictionary ArchiveFileEntryOptions {
-        DOMString destination;
-
-        boolean stripSourceDirectory;
-
-        <a href="#ArchiveCompressionLevel">ArchiveCompressionLevel</a> compressionLevel;
-
-    };
-
-    [NoInterfaceObject] interface ArchiveManager {
-        long open(<a href="#FileReference">FileReference</a> file,
-                  <a href="filesystem.html#FileMode">FileMode</a> mode,
-                  <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                  optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void abort(long operationIdentifier) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    interface ArchiveFile {
-        readonly attribute <a href="filesystem.html#FileMode">FileMode</a> mode;
-
-        readonly attribute unsigned long long? decompressedSize;
-
-        long add(<a href="#FileReference">FileReference</a> sourceFile,
-                 optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
-                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                 optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress,
-                 optional <a href="#ArchiveFileEntryOptions">ArchiveFileEntryOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                        optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress,
-                        optional boolean? overwrite) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long getEntries(<a href="#ArchiveFileEntryArraySuccessCallback">ArchiveFileEntryArraySuccessCallback</a> onsuccess,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long getEntryByName(DOMString name,
-                            <a href="#ArchiveFileEntrySuccessCallback">ArchiveFileEntrySuccessCallback</a> onsuccess,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    interface ArchiveFileEntry {
-        readonly attribute DOMString name;
-
-        readonly attribute unsigned long long size;
-
-        readonly attribute unsigned long long? compressedSize;
-
-        readonly attribute Date modified;
-
-        long extract(<a href="#FileReference">FileReference</a> destinationDirectory,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
-                     optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress,
-                     optional boolean? stripName,
-                     optional boolean? overwrite) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileSuccessCallback {
-        void onsuccess(<a href="#ArchiveFile">ArchiveFile</a> archive);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntrySuccessCallback {
-        void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a> entry);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntryArraySuccessCallback {
-        void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a>[] entries);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileProgressCallback {
-        void onprogress(long operationIdentifier, double value, DOMString filename);
-    };
+  typedef (DOMString or <a href="filesystem.html#File">File</a>) FileReference;
+  enum ArchiveCompressionLevel { "STORE", "FAST", "NORMAL", "BEST" };
+  [NoInterfaceObject] interface ArchiveManagerObject {
+    readonly attribute <a href="#ArchiveManager">ArchiveManager</a> archive;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;
+  dictionary ArchiveFileOptions {
+    boolean overwrite;
+  };
+  dictionary ArchiveFileEntryOptions {
+    DOMString destination;
+    boolean stripSourceDirectory;
+    <a href="#ArchiveCompressionLevel">ArchiveCompressionLevel</a> compressionLevel;
+  };
+  [NoInterfaceObject] interface ArchiveManager {
+    long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+              optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void abort(long operationIdentifier) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  interface ArchiveFile {
+    readonly attribute <a href="filesystem.html#FileMode">FileMode</a> mode;
+    readonly attribute unsigned long long? decompressedSize;
+    long add(<a href="#FileReference">FileReference</a> sourceFile, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+             optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional <a href="#ArchiveFileEntryOptions">ArchiveFileEntryOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+                    optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? overwrite) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getEntries(<a href="#ArchiveFileEntryArraySuccessCallback">ArchiveFileEntryArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long getEntryByName(DOMString name, <a href="#ArchiveFileEntrySuccessCallback">ArchiveFileEntrySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  interface ArchiveFileEntry {
+    readonly attribute DOMString name;
+    readonly attribute unsigned long long size;
+    readonly attribute unsigned long long? compressedSize;
+    readonly attribute Date modified;
+    long extract(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
+                 optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? stripName, optional boolean? overwrite)
+                 raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileSuccessCallback {
+    void onsuccess(<a href="#ArchiveFile">ArchiveFile</a> archive);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntrySuccessCallback {
+    void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a> entry);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileEntryArraySuccessCallback {
+    void onsuccess(<a href="#ArchiveFileEntry">ArchiveFileEntry</a>[] entries);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ArchiveFileProgressCallback {
+    void onprogress(long operationIdentifier, double value, DOMString filename);
+  };
 };</pre>
 </div>
 <div id="page-footer">
