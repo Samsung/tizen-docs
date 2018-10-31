@@ -28,7 +28,7 @@ The followings are types of watchface complication:
 | Support type name | Mandatory data | Optional data   |
 |-------------------|----------------|-----------------|
 | short text type   | short text     | title           |
-|                   |                | icon path       |docs/application/native/guides/compliations/watchface-complication.md
+|                   |                | icon path       |
 |                   |                | extra data      |
 | long text type    | long text      | title           |
 |                   |                | icon path       |
