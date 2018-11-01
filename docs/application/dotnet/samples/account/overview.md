@@ -53,7 +53,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/waccounts.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Accounts</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Accounts" target="_blank"><strong>(W) Accounts</strong></a></p>
 			<p>This sample application demonstrates how to implement an account provider, which can add and configure an account. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
