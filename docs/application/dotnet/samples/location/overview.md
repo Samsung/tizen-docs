@@ -78,7 +78,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wmapsview.png" width="180"/></td>
 			<td>
-			<p><strong>(W) MapsView</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MapsView" target="_blank"><strong>(W) MapsView</strong></a></p>
 			<p>This sample application demonstrates how to display and control the map components and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>

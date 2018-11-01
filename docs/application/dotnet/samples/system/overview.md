@@ -67,7 +67,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wcompass.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Compass</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Compass" target="_blank"><strong>(W) Compass</strong></a></p>
 			<p>This sample application demonstrates how to retrieve information about the physical orientation of the device using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.OrientationSensor.html"  target="_blank"> Tizen Orientation Sensor API</a>.</p>
 			</td>
 		</tr>
@@ -81,29 +81,29 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wheartratemonitor.png" width="180"/></td>
 			<td>
-			<p><strong>(W) HeartRateMonitor</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/HeartRateMonitor" target="_blank"><strong>(W) HeartRateMonitor</strong></a></p>
 			<p>This sample application demonstrates how to obtain data provided by the Heart Rate Monitor (HRM) sensor using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/metaldetector.png" width="180"/></td>
 			<td>
-			<p><strong>(W) MetalDetector</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MetalDetector" target="_blank"><strong>(W) MetalDetector</strong></a></p>
 			<p>This sample application demonstrates how to obtain the magnetometer sensor data using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wsystemInfo.png" width="180"/></td>
 			<td>
-			<p><strong>(W) SystemInfo</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to create CircleListView using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SystemInfo" target="_blank"><strong>(W) SystemInfo</strong></a></p>
+			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to use CirclePage of <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wsystem_info.png" width="180"/></td>
 			<td>
-			<p><strong>(W) SystemInfo</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to create IndexPage using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p><strong>(W) SystemInfo2</strong> [In progress]</p>
+			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to use IndexPage of <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 	</tbody>
