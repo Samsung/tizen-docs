@@ -303,7 +303,7 @@ To run the application on a target device:
     2.  Use the Remote Device Manager to connect the wearable device:
         1.  In the **Device Manager**, launch the Remote Device Manager by clicking the related icon.
 
-            ![Launch the Remote Device Manager](media/remote_conn_mgr_ww.png)
+            ![Launch the Remote Device Manager](media/remote_conn_mgr.png)
 
         2.  In the **Remote Device Manager** window, click **+**.
 

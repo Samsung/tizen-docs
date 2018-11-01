@@ -4,7 +4,7 @@
 
 > **Note**
 >
-> Watch template is not supported since Tizen Studio 3.0
+> Watch template is not supported since Tizen Studio 3.0.
 
 A wearable native watch application is created using the C language, and can be run on Tizen wearable devices to display a customized watch face to the user.
 
