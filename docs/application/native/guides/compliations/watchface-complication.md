@@ -1,4 +1,4 @@
-# Watchface Complication
+# Watch Face Complication
 
 The complication shows key information from an application in an economical way. You can tap complications to open the corresponding application and see more detailed information.
 
@@ -7,7 +7,7 @@ The watchface can select the complication and request to update the complication
 
 There are two ways to update the complication data.
 
-1. Watchface can request to update complication data to complication provider application. The complication provider application receives the request and update the complication data. Then, the complication update callback is called in watchface.
+1. Watch Face can request to update complication data to complication provider application. The complication provider application receives the request and update the complication data. Then, the complication update callback is called in watchface.
 
     ![Complication](media/complication_1.png)
  
@@ -17,11 +17,11 @@ There are two ways to update the complication data.
     ![Complication_update](media/complication_2.png)
  
 
-## Types of Watchface Complication
+## Types of Watch Face Complication
 
 The complication support type is the types of data that can be provided from complication provider.
 The complication provider have to support at least one type. In addition, one complication provider can support multiple types.
-Watchface can set the complication support types to support specific type of complications.
+Watch Face can set the complication support types to support specific type of complications.
 
 The followings are types of watchface complication:
 
@@ -46,7 +46,7 @@ The followings are types of watchface complication:
  
 ## Prerequisites
 
-1. To use the Watchface Complication API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Watch Face Complication API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>
@@ -55,16 +55,16 @@ The followings are types of watchface complication:
     </privileges>
     ```
  
-2. To use the functions and data types for the Watchface Complication API, include the `<watchface-complication.h>` header file in application:
+2. To use the functions and data types for the Watch Face Complication API, include the `<watchface-complication.h>` header file in application:
 
     ```cpp
     #include <watchface-complication.h>
     ```
 
  
-## Creating Watchface Complication
+## Creating Watch Face Complication
 
-Watchface must create the complication handle to add the default complication.
+Watch Face must create the complication handle to add the default complication.
 You can choose the support types of complication that can be selected in the position of complication.
 And also choose the touch event type that can be supported.
 
@@ -82,13 +82,13 @@ And also choose the touch event type that can be supported.
 }
 ```
 
-The default "provider id" and "type" are the items to set for initial display. As the default provider they must not be `null`.
+The default **provider id** and **type** are the items to set for initial display. As the default provider they must not be `null`.
 If they are null, the complication receives an error. Also, if you select the other provider and type, that they are no longer used.
  
   
 ## Updating Complication Data
 
-To receive the updated complication data, `watchface_complication_updated_cb()` must be added in the watchface by using `watchface_complication_add_updated_cb()`. And, if complication provider is not avaliable(disabled, uninstalled), `watchface_complication_error_cb()` is called. In this case, watchface can add fallback logic in error callback such as display error message or launch editor interface.
+To receive the updated complication data, `watchface_complication_updated_cb()` must be added in the watchface by using `watchface_complication_add_updated_cb()`. And, if complication provider is not available (disabled, uninstalled), `watchface_complication_error_cb()` is called. In this case, watchface can add fallback logic in error callback such as display error message or launch editor interface.
 
 ```cpp
 void _watchface_complication_updated_cb(int complication_id,
@@ -116,9 +116,9 @@ static void _init_complication()
 ```
  
 When the complication provider data is updated, `watchface_complication_updated_cb()` is called.
-Watchface can get the information from the bundle parameter of callback by using `watchface_complication_data_get_*`.
+Watch Face can get the information from the bundle parameter of callback by using `watchface_complication_data_get_*`.
 
-To get the complication provider data, following functions can be used:
+To get the complication provider data, the following functions can be used:
 
 
 | Function name | Data type |
@@ -146,7 +146,7 @@ void _watchface_complication_updated_cb(int complication_id,
 ```
 
 
-If the callback is not used any more, it should be be removed by using `watchface_complication_remove_updated_cb()`:
+If the callback is not used any more, it must be removed by using `watchface_complication_remove_updated_cb()`:
 
 ```cpp
 {
@@ -156,7 +156,7 @@ If the callback is not used any more, it should be be removed by using `watchfac
 ```
 
 
-If the watchface want to get the updated complication data, watchface can request to update the data to the complication provider:
+If the watchface wants the updated complication data, watchface can request to update the data to the complication provider:
 
 ```cpp
 {
@@ -167,7 +167,7 @@ If the watchface want to get the updated complication data, watchface can reques
 
 ## Specifying to Support only Specific Complication Providers
 
-Watchface can support the specific complication provider by using `allowed_list`.
+Watch Face can support the specific complication provider by using `allowed_list`.
 In This case, watchface supports complications only in allowed complication list:
 
 ```cpp
@@ -186,9 +186,9 @@ In This case, watchface supports complications only in allowed complication list
 ```
 
 
-## Watchface Edit with Editable Feature
+## Watch Face Edit with Editable Feature
 
-The watchface application can provide the changeable features(such as, compliation, color, font and so on) with watchface editable APIs.
+The watchface application can provide the changeable features (such as, complication, color, font and so on) with watchface editable APIs.
 
 The features can be changed by watchface editor application:
 
@@ -215,14 +215,14 @@ To use the functions and data types for the watchface_editable API, include the 
     }
     ```
  
-2. Watchface can create the `complication_candidates_list_h` to identify the editable features to request to editor.
-Watchface can request to edit the features by using `watchface_editable_request_edit()`.
+2. Watch Face can create the `complication_candidates_list_h` to identify the editable features to request to editor.
+Watch Face can request to edit the features by using `watchface_editable_request_edit()`.
 
 3. The watchface editor can draw highlight to give the information about editing.
 To inform the position of editable features, `watchface_editable_highlight_h` must be used.
 The highlight handle can be created by `watchface_editable_highlight_create()` with watchface shape type.
 
-    There are following shape types:
+    The following are shape types:
 
     | Shape types | Description |
     |-------------|-------------|
@@ -235,7 +235,6 @@ The highlight handle can be created by `watchface_editable_highlight_create()` w
 
 
     > **Note**
-    >
     > `watchface_editable_highlight_h` must be released after used by using `watchface_editable_highlight_destroy()`.
 
 
@@ -281,9 +280,9 @@ The highlight handle can be created by `watchface_editable_highlight_create()` w
     ```
 
 5. If some features are changed from editor, `watchface_editable_update_requested_cb()` is called.
-Watchface can verify the `watchface_editable_edit_state_e` from the parameter of that callback to get the edit state.
+Watch Face can verify the `watchface_editable_edit_state_e` from the parameter of that callback to get the edit state.
 
-There are following edit state:
+The following are the edit state:
 
 | Edit state | Description |
 |------------|-------------|
@@ -310,9 +309,9 @@ static void _watchface_editable_update_requested_cb(const watchface_editable_h h
 ## Transferring Touch Event
 
 Complication can provide additional action for touching when the complication is touched.
-To trigger the complication touch action,  watchface must transfer the touch event to complication provider when the complication is touched.
+To trigger the complication touch action, watchface must transfer the touch event to complication provider when the complication is touched.
 
-There are following event types:
+The following are event types:
 
 | Event type | Description |
 |------------|-------------|
@@ -320,7 +319,7 @@ There are following event types:
 | `WATCHFACE_COMPLICATION_EVENT_TAP` | The complication is tapped. |
 | `WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP` | The complication is double tapped. |
 
-Watchface transfers by using `watchface_complication_transfer_event()`.
+Watch Face transfers by using `watchface_complication_transfer_event()`.
 
 ```cpp
 void _on_complication_clicked(complication_h handle)
