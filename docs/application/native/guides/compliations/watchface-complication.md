@@ -234,7 +234,7 @@ The highlight handle can be created by `watchface_editable_highlight_create()` w
     The parameters of this function means the position(x,y) and size(width, height).
 
 
-    > **Note**
+    > **Note**  
     > `watchface_editable_highlight_h` must be released after used by using `watchface_editable_highlight_destroy()`.
 
 
