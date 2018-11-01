@@ -237,22 +237,21 @@ To configure the Raspberry Pi 3 board:
 
 1.  Connect Smart Development Bridge (SDB) as described in [Connecting the board to the PC](#Connecting-the-board-to-the-PC).
 2.  Install the connectivity drivers for each board:
-    -   **Raspberry Pi 3**
-        1.  Download the plugin zip file from the **Raspberry Pi 3(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
+    1.  Download the plugin zip file from the **Raspberry Pi 3(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-            ![Raspberry Pi 3(4.0) Plugin section](media/wifi_driver_rpi3.png)
+        ![Raspberry Pi 3(4.0) Plugin section](media/wifi_driver_rpi3.png)
 
-        2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
+    2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 
-            ```
-            $ ./RPI3_plugin_tizen4.0.sh
-            ```
+        ```
+        $ ./RPI3_plugin_tizen4.0.sh
+        ```
 
-        3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+    3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
 
-            ```
-            > RPI3_plugin_tizen4.0.bat
-            ```
+        ```
+        > RPI3_plugin_tizen4.0.bat
+        ```
 
 # Tips
 
@@ -318,7 +317,7 @@ sudo apt-get install package-name
 
 ### Installing IoT Setup Manager
 
-Ensure that you have installed [Tizen Studio](tizen-studio-install.md).
+Ensure that you have installed [Tizen Studio]((#Installing-Tizen-Studio).
 
 To install the IoT Setup Manager using the Package Manager available in Tizen Studio:
 

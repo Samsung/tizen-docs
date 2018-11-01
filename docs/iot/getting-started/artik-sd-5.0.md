@@ -201,24 +201,23 @@ To configure the ARTIK 530 hardware board:
 
 ## Installing Drivers
 
-1.  Connect Smart Development Bridge (SDB) as described in [#ARTIK-530-or-ARTIK-530s-Set-up.](#ARTIK-530-or-ARTIK-530s-Set-up)
+1.  Connect Smart Development Bridge (SDB) as described in the previous section.
 2.  Install the connectivity drivers for each board:
-    -   **ARTIK 530**
-        1.  Download the plugin zip file from the **ARTIK530(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
+    1.  Download the plugin zip file from the **ARTIK530(5.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-            ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530.png)
+        ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530_5.0.png)
 
-        2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
+    2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 
-            ```
-            $ ./ARTIK_530_plugin_tizen4.0.sh
-            ```
+        ```
+        $ ./ARTIK_530_plugin_tizen5.0.sh
+        ```
 
-        3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+    3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
 
-            ```
-            > ARTIK_530_plugin_tizen4.0.bat
-            ```
+        ```
+        > ARTIK_530_plugin_tizen5.0.bat
+        ```
 
 # Tips
 
@@ -277,7 +276,7 @@ sudo apt-get install package-name
 
 ### Installing IoT Setup Manager
 
-Ensure that you have installed [Tizen Studio](tizen-studio-install.md).
+Ensure that you have installed [Tizen Studio](#Installing-Tizen-Studio).
 
 To install the IoT Setup Manager using the Package Manager available in Tizen Studio:
 
@@ -355,7 +354,7 @@ The IoT Setup Manager edit view contains the following fields:
 -   While creating or editing a profile, ensure that the boot images, platform images, and the rpms (if selected) match the target device.
 -   Ensure that there are no white spaces in the boot image, platform image, and the rpm folder paths.
 -   Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
--   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530\_HEADED\_INSTALLABLE profiles are used for writing images from SD Card to eMMC.
+-   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530_HEADED_INSTALLABLE profiles are used for writing images from SD Card to eMMC.
 
 
 

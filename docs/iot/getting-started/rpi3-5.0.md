@@ -238,24 +238,23 @@ To configure the Raspberry Pi 3 board:
 
 ## Installing Drivers
 
-1.  Connect Smart Development Bridge (SDB) as described in [Connecting the board to the PC](#Connecting-the-board-to-the-PC).
-2.  Install the connectivity drivers for each board:
-    -   **Raspberry Pi 3**
-        1.  Download the plugin zip file from the **Raspberry Pi 3(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
+1.  Connect Smart Development Bridge (SDB) as described in the previous section.
+2.  Install the connectivity drivers:
+    1.  Download the plugin zip file from the **Raspberry Pi 3(5.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-            ![Raspberry Pi 3(4.0) Plugin section](media/wifi_driver_rpi3.png)
+        ![Raspberry Pi 3(5.0) Plugin section](media/wifi_driver_rpi3_5.0.png)
 
-        2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
+    2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 
-            ```
-            $ ./RPI3_plugin_tizen4.0.sh
-            ```
+        ```
+        $ ./RPI3_plugin_tizen5.0.sh
+        ```
 
-        3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+    3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
 
-            ```
-            > RPI3_plugin_tizen4.0.bat
-            ```
+        ```
+        > RPI3_plugin_tizen5.0.bat
+        ```
 
 # Tips
 
@@ -321,7 +320,7 @@ sudo apt-get install package-name
 
 ### Installing IoT Setup Manager
 
-Ensure that you have installed [Tizen Studio](tizen-studio-install.md).
+Ensure that you have installed [Tizen Studio](#Installing-Tizen-Studio).
 
 To install the IoT Setup Manager using the Package Manager available in Tizen Studio:
 
@@ -398,7 +397,7 @@ The IoT Setup Manager edit view contains the following fields:
 -   While creating or editing a profile, ensure that the boot images, platform images, and the rpms (if selected) match the target device.
 -   Ensure that there are no white spaces in the boot image, platform image, and the rpm folder paths.
 -   Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
--   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530\_HEADED\_INSTALLABLE profiles are used for writing images from SD Card to eMMC.
+-   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530_HEADED_INSTALLABLE profiles are used for writing images from SD Card to eMMC.
 
 ## Flashing through Command Line
 

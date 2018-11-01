@@ -263,21 +263,22 @@ For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On
 
 1.  Connect Smart Development Bridge (SDB) as described in the previous section.
 2.  Install the connectivity drivers:
-        1.  Download the plugin zip file from the **ARTIK530(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-        ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530.png)
+    1.  Download the plugin zip file from the **ARTIK530(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-        2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
+    ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530.png)
 
-            ```
-            $ ./ARTIK_530_plugin_tizen4.0.sh
-            ```
+    2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 
-        3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+        ```
+        $ ./ARTIK_530_plugin_tizen4.0.sh
+        ```
 
-            ```
-            > ARTIK_530_plugin_tizen4.0.bat
-            ```
+    3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+
+        ```
+        > ARTIK_530_plugin_tizen4.0.bat
+        ```
 
 # Tips
 

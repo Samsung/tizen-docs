@@ -115,7 +115,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
 
 11. Connect the ARTIK 530 or Raspberry Pi 3 board to a Linux computer with a USB cable and make SDB connection.
 
-    For more information, see [Hardware Configuration](hardware-configuration.md).
+    For more information, see [Setting up the board](setting-up-board.md).
 
 12. Confirm that **artik** or **rpi3** is shown in Tizen Studio toolbar.(This will be shown when SDB is connected.)
 

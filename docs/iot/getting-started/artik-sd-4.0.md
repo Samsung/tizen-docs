@@ -209,23 +209,23 @@ To configure the ARTIK 530 hardware board:
 ## Installing Drivers
 
 1.  Connect Smart Development Bridge (SDB) as described in [Connecting the board to the PC.](#Connecting-the-board-to-the-PC)
-2.  Install the connectivity drivers for each board:
-    -   **ARTIK 530**
-        1.  Download the plugin zip file from the **ARTIK530(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
+2.  Install the connectivity drivers:
 
-            ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530.png)
+    1.  Download the plugin zip file from the **ARTIK530(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-        2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
+        ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530.png)
 
-            ```
-            $ ./ARTIK_530_plugin_tizen4.0.sh
-            ```
+    2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 
-        3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+        ```
+        $ ./ARTIK_530_plugin_tizen4.0.sh
+        ```
 
-            ```
-            > ARTIK_530_plugin_tizen4.0.bat
-            ```
+    3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+
+        ```
+        > ARTIK_530_plugin_tizen4.0.bat
+        ```
 
 # Tips
 
@@ -288,7 +288,7 @@ sudo apt-get install package-name
 
 ### Installing IoT Setup Manager
 
-Ensure that you have installed [Tizen Studio](tizen-studio-install.md).
+Ensure that you have installed [Tizen Studio]((#Installing-Tizen-Studio).
 
 To install the IoT Setup Manager using the Package Manager available in Tizen Studio:
 
