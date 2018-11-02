@@ -1,14 +1,14 @@
 # Watch Face Complication Provider
 
-The watchface complication provider application is a service application to provide complication data.
-Complication provider application provides only data. The watchface application decides how to display the complications.
-The complication provider application provides the complication data by using the watchface complication provider API to the watchface application.
+The watch face complication provider application is a service application to provide complication data.
+Complication provider application provides only data. The watch face application decides how to display the complications.
+The complication provider application provides the complication data by using the watch face complication provider API to the watch face application.
  
 ## Prerequisites
 
-To enable your application to use the watchface complication functionality:
+To enable your application to use the watch face complication functionality:
 
-1. To use the Watch Face Complication API to communicate with the watchface application, this application has to request permission by adding
+1. To use the Watch Face Complication API to communicate with the watch face application, this application has to request permission by adding
 the following privilege to the `tizen-manifest.xml` file:
 
     ```xml
@@ -25,7 +25,7 @@ the following privilege to the `tizen-manifest.xml` file:
 
 ## Updating Complication Data
 
-When the request occurs to update the complication data, the complication provider application can receive the request by adding `watchface_complication_provider_update_requested_cb()`. The watchface application can send the update request and this request also occurs after the complication provider application notifies that the complication data is changed.
+When the request occurs to update the complication data, the complication provider application can receive the request by adding `watchface_complication_provider_update_requested_cb()`. The watch face application can send the update request and this request also occurs after the complication provider application notifies that the complication data is changed.
 
 ```cpp
 void _watchface_complication_provider_update_requested_cb(const char *provider_id,
