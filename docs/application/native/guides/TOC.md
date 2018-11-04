@@ -100,7 +100,8 @@
 ## [Smart Card](/application/native/guides/connectivity/smartcard.md)
 ## [Wi-Fi](/application/native/guides/connectivity/wifi.md)
 ## [Wi-Fi Direct&reg;](/application/native/guides/connectivity/wifi-direct.md)
-## [STC (Smart Traffic Control)](/application/native/guides/connectivity/stc.md)
+## [SoftAP](/application/native/guides/connectivity/softap.md)
+## [Smart Traffic Control (STC)](/application/native/guides/connectivity/stc.md)
 ## [Telephony Information](/application/native/guides/connectivity/telephony.md)
 ## [USB Host](/application/native/guides/connectivity/usb-host.md)
 ## Internet and Content Downloads

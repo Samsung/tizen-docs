@@ -1,16 +1,18 @@
 # Tizen .NET API Reference
 
-Tizen .NET provides a rich set of interfaces allowing you to build compelling TV, mobile, and wearable(preview) applications which achieve native performance. The programming environment includes the following:
+Tizen .NET provides a rich set of interfaces allowing you to build compelling TV, mobile, and wearable (preview) applications which achieve native performance. The programming environment includes the following:
 
-- **.NET Standard API**, which implements the .NET Base Class library, allows you to use the well known C# language base class libraries and features, such as collections, threading, file I/O, and LINQ.
+- **.NET Standard API**, which implements the .NET Base Class library, and allows you to use the well-known C# language base class libraries and features, such as collections, threading, file input/output (I/O), and Language Integrated Query (LINQ).
 - **Xamarin.Forms**, which allows you to efficiently build a user interface from standard components in C# or XAML.
 - **Tizen.Wearable.CircularUI**, which allows you to efficiently add Tizen wearable-specific user interfaces.
 - **TizenFX API**,
-   which allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features,  such as system information  and status, battery status, sensor date, and account and connectivity services.  For the full specification, see the <a href="tizenfx/index.html" target="api">TizenFX API Reference</a>
+   which allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features, such as system information and status, battery status, sensor date, and account and connectivity services. For the full specification, see the <a href="tizenfx/index.html" target="api">TizenFX API Reference</a>.
 
 ## .NET Standard API
 
-One of the major components of .NET Core is the .NET Standard. The .NET APIs provided by Tizen .NET follow the .NET Standard 2.0. The column titled "2.0" in the [official list](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) of supported CoreFX APIs lists all the available .NET APIs.
+One of the major components of .NET Core is the .NET Standard. The .NET APIs provided by Tizen .NET follow the .NET Standard 2.0. The column titled as 2.0 in the [official list](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) of the supported CoreFX APIs lists all the available .NET APIs.
+
+A list of limitations is available at [.NET Standard API limitations](netstandard-limitations.md).
 
 ## Xamarin.Forms
 
@@ -33,25 +35,26 @@ Using these APIs, you can easily and efficiently add Tizen wearable-specific use
 
 ## TizenFX API
 
-The Tizen Platform-Specific API allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
+The TizenFX API allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
 
-The following table specifies the API Level supported by each version of the Tizen platform.
+The following table specifies the API Level supported by each version of the Tizen platform:
 
 | Platform Version | API Level | Notes                                    |
 | ---------------- | --------- | ---------------------------------------- |
 | Tizen 4.0 M2     | 4         | [Platform Highlights](https://developer.tizen.org/tizen/tizen/tizen-4.0) |
 
-The following table lists the supported Tizen platform-specific API namespaces. For the full specification, see the <a href="tizenfx/index.html" target="api">TizenFX API Reference</a>
+The following table lists the supported TizenFX API namespaces. 
+For the full specification, see the <a href="tizenfx/index.html" target="api">TizenFX API Reference</a>:
 
 | Namespace          | Description                              |
 | ------------------ | ---------------------------------------- |
-| Tizen.Account      | Provides CRUD (Create, Read, Update, Delete) account management functionality and the OAuth Core RFC 6749 protocol. |
+| Tizen.Account      | Provides Create, Read, Update, Delete (CRUD) account management functionality and the OAuth Core RFC 6749 protocol. |
 | Tizen.Applications | Provides the Tizen application framework, including application state change events, inter-application messaging, and notification services. |
 | Tizen.Common       | Provides predefined color names.         |
 | Tizen.Content      | Provides content management services, such as file and media downloads, storing and indexing audio and video content, and associating content types with helper applications. |
 | Tizen.Location     | Manages geographical location services and geofencing. |
 | Tizen.Maps         | Maps API provides a developer with a set of functions, helping to create Maps aware applications. |
-| Tizen.Messaging    | Provides functions to receive push notifications, email, and messages |
+| Tizen.Messaging    | Provides functions to receive push notifications, email, and messages. |
 | Tizen.Multimedia   | Interacts with media services, including audio playback, recording and device policy, cameras, and video players. |
 | Tizen.Network      | Provides APIs to control connectivity devices, such as Bluetooth, NFC, Wi-Fi, and an IoT interface service. |
 | Tizen.NUI          | The Natural User Interface (NUI) is a toolkit for creating applications with rich GUI. These applications can run on a range of Tizen devices. NUI is built on a multi-threaded architecture enabling realistic smooth animations. In addition a range of optimisation techniques are utilised to obtain low CPU and GPU usage, further increasing graphics performance. |

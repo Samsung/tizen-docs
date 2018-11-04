@@ -1,6 +1,25 @@
 # Content
 
-(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
+<!--
+For MD:
+-->
+
+<link href="../css/dotnet-samples.css" ref="stylesheet">
+
+<!--
+for TD:
+
+<style type="text/css">
+    Please copy dotnet-samples.css and paste it here
+</script>
+-->
+
+<div class="sampletab">
+<button class="tablinks" onclick="openProfile(event, 'Mobile')" id="defaultOpen">Mobile</button> <button class="tablinks" onclick="openProfile(event, 'Wearable')">Wearable</button> <button class="tablinks" onclick="openProfile(event, 'TV')">TV</button>
+</div>
+
+<!-- Tab content -->
+<div class="tabcontent" id="Mobile">
 <table>
 	<tbody>
 		<tr>
@@ -11,19 +30,36 @@
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="267" src="media/m34gallery.png" width="150"/></td>
+			<td>
+			<p><strong>(M) Gallery</strong> [In progress]</p>
+			<p>This sample application demonstrates how to create an image viewer using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m48mediacontent.png" width="150"/></td>
+			<td>
+			<p><strong>(M) MediaContent</strong> [In progress]</p>
+			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent C# API﻿</a>.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="tabcontent" id="Wearable">
+</div>
+
+<div class="tabcontent" id="TV">
+<table>
+	<tbody>
+		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv21filedownloader.png" width="400" /></p>
 			</td>
 			<td>
 			<p><strong>(T) File Downloader</strong> [In progress]</p>
 			<p>This sample application demonstrates how to download a file using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent C# API</a>.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m34gallery.png" width="150"/></td>
-			<td>
-			<p><strong>(M) Gallery</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create an image viewer using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -36,13 +72,6 @@
 			It also shows how to change the layout depending on the device type.</p>
 			</td>
 		</tr>		
-		<tr>
-			<td><img alt="" height="267" src="media/m48mediacontent.png" width="150"/></td>
-			<td>
-			<p><strong>(M) MediaContent</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent C# API﻿</a>.</p>
-			</td>
-		</tr>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv22mediacontent.png" width="400" /></p>
@@ -63,3 +92,17 @@
 		</tr>
 	</tbody>
 </table>
+</div>
+
+<!--
+For MD:
+-->
+<script src="../js/dotnet-samples.js"></script>
+
+<!--
+for TD:
+
+<script>
+  Please copy dotnet-samples.js and paste it here
+</script>
+-->

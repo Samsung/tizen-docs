@@ -7,26 +7,26 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::DataControl">
-<div class="supported-platforms"><img title="Mandatory" src="../../../images/tv_s_w.png"></div>
+ <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
 <div class="title"><h1>DataControl API</h1></div>
 <div class="brief">
- This specification defines a DataControl API for applications.
+ This specification defines a Data Control API for applications.
         </div>
 <div class="description">
         <p>
-The DataControl functionality provides a way to access specific data that is exported by other applications.
+The Data Control functionality provides a way to access specific data that is exported by other applications.
         </p>
         <p>
-Please read the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-data-exchange/data-control">Native DataControl API</a> to know how to share own application data with other applications.
+Please read the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-data-exchange/data-control">Data Control guide</a> to know how to share own application data with other applications.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
-<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
+<li>
                     1.1. <a href="#DataType">DataType</a>
 </li>
 <li>
@@ -143,9 +143,8 @@ Please read the <a href="https://developer.tizen.org/development/guides/web-appl
 <div class="brief">
  Data types.
           </div>
-<pre class="webidl prettyprint">    enum DataType { "MAP", "SQL"};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum DataType { "MAP", "SQL" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 </div>
@@ -154,9 +153,8 @@ Please read the <a href="https://developer.tizen.org/development/guides/web-appl
 <div class="brief">
  Specifies the data change event types. The possible values are:
           </div>
-<pre class="webidl prettyprint">    enum EventType { "SQL_UPDATE", "SQL_INSERT", "SQL_DELETE", "MAP_SET", "MAP_ADD", "MAP_REMOVE"};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum EventType { "SQL_UPDATE", "SQL_INSERT", "SQL_DELETE", "MAP_SET", "MAP_ADD", "MAP_REMOVE" };</pre>
+<p><span class="version">Since: </span>
  4.0
           </p>
 <div class="description">
@@ -184,18 +182,17 @@ MAP_REMOVE - Map remove event            </li>
 <div class="brief">
  Defines what is instantiated in the <em>Tizen</em> object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface DataControlManagerObject {
-        readonly attribute <a href="#DataControlManager">DataControlManager</a> datacontrol;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataControlManagerObject">DataControlManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DataControlManagerObject {
+    readonly attribute <a href="#DataControlManager">DataControlManager</a> datacontrol;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataControlManagerObject">DataControlManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
           <p>
 The <em>tizen.datacontrol</em> object allows access to the
-DataControl API.
+Data Control API.
           </p>
          </div>
 </div>
@@ -204,11 +201,10 @@ DataControl API.
 <div class="brief">
  This interface provides access to the <em>DataControlManager </em>object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface DataControlManager {
-        <a href="#DataControlConsumerObject">DataControlConsumerObject</a> getDataControlConsumer(DOMString providerId, DOMString dataId, <a href="#DataType">DataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DataControlManager {
+    <a href="#DataControlConsumerObject">DataControlConsumerObject</a> getDataControlConsumer(DOMString providerId, DOMString dataId, <a href="#DataType">DataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -221,18 +217,14 @@ DataControl API.
 <div class="brief">
  Gets <em>DataControlConsumerObject</em> with a given DataType.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#DataControlConsumerObject">DataControlConsumerObject</a> getDataControlConsumer(DOMString providerId, DOMString dataId, <a href="#DataType">DataType</a> type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#DataControlConsumerObject">DataControlConsumerObject</a> getDataControlConsumer(DOMString providerId, DOMString dataId, <a href="#DataType">DataType</a> type);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -254,8 +246,12 @@ DataControl API.
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- DataControlConsumerObject The local <em>DataControlConsumerObject</em>.
-              </div>
+<ul>
+<span class="return">DataControlConsumerObject:
+                  </span>
+ The local <em>DataControlConsumerObject</em>.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -272,32 +268,31 @@ DataControl API.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/*
-   The data provider, a native application, should be pre-installed and launched
-   The same provider ID should be defined for the use of this API between a native application(provider) and a web application(consumer)
-   In this example, the DictionaryDataControlProvider native sample application is used as a data control provider
-*/
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* The data provider, a native application, should be pre-installed and launched. */
+/* The same provider ID should be defined for the use of this API between a native */
+/* application(provider) and a web application(consumer). */
+/* In this example, the DictionaryDataControlProvider native sample application is used as a data */
+/* control provider. */
 
-/* Gets SQL type DataControlConsumerObject */
+/* Gets SQL type DataControlConsumerObject. */
 try
 {
-   var globalSQLConsumer = tizen.datacontrol.getDataControlConsumer(
+  var globalSQLConsumer = tizen.datacontrol.getDataControlConsumer(
       "http://tizen.org/datacontrol/provider/DictionaryDataControlProvider", "Dictionary", "SQL");
 }
 catch (err)
 {
-   console.log(err.name +": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
-/* Gets MAP type DataControlConsumerObject */
+/* Gets MAP type DataControlConsumerObject. */
 try
 {
-   globalMappedConsumer = tizen.datacontrol.getDataControlConsumer(
+  globalMappedConsumer = tizen.datacontrol.getDataControlConsumer(
       "http://tizen.org/datacontrol/provider/DictionaryDataControlProvider", "Dictionary", "MAP");
 }
 catch (err)
 {
-   console.log(err.name +": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -310,18 +305,15 @@ catch (err)
 <div class="brief">
  This interface provides common attributes and methods for other derived DataControlConsumerObject.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface DataControlConsumerObject {
-        readonly attribute <a href="#DataType">DataType</a> type;
-        readonly attribute DOMString providerId;
-        readonly attribute DOMString dataId;
-
-        long addChangeListener(<a href="#DataControlChangeCallback">DataControlChangeCallback</a> dataChangeCallback,
-                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DataControlConsumerObject {
+    readonly attribute <a href="#DataType">DataType</a> type;
+    readonly attribute DOMString providerId;
+    readonly attribute DOMString dataId;
+    long addChangeListener(<a href="#DataControlChangeCallback">DataControlChangeCallback</a> dataChangeCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="attributes">
@@ -332,8 +324,7 @@ catch (err)
 </span><span class="type">DataType </span><span class="name">type</span></span><div class="brief">
  An attribute to store the DataType.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
@@ -343,8 +334,7 @@ catch (err)
  An attribute to hold a provider identifier of the application with whom it shares the DataControl.
 This attribute should be known to users who want to interact with the application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
@@ -352,10 +342,9 @@ This attribute should be known to users who want to interact with the applicatio
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">dataId</span></span><div class="brief">
  The dataId identifies specific data, usually a database table to process(insert, delete, update).
-The string consists of one or more components, separated by a slash('/').
+The string consists of one or more components, separated by a slash("/").
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
@@ -371,10 +360,8 @@ The string consists of one or more components, separated by a slash('/').
 <div class="brief">
  Adds a listener to receive notifications about provider data changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addChangeListener(<a href="#DataControlChangeCallback">DataControlChangeCallback</a> dataChangeCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addChangeListener(<a href="#DataControlChangeCallback">DataControlChangeCallback</a> dataChangeCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  4.0
             </p>
 <div class="description">
@@ -386,19 +373,16 @@ The <em>ErrorCallback</em> method is launched with these error types:
 IOError - If a DB operation has failed.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datasharing
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/appmanager.launch
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  To monitor DataControl provider data changes, it is not enough to implement a listener in the DataControl consumer. You also need to implement the data change sending functionality in the DataControl provider.
 The data sending implementation determines the actual change data returned to the DataControl consumer. For more information on the DataControl provider implementation, see <a href="https://developer.tizen.org/development/guides/native-application/application-management/application-data-exchange/data-control#map3">Monitoring Data Changes</a>.
             </p>
@@ -417,8 +401,12 @@ The data sending implementation determines the actual change data returned to th
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long An identifier used to clear the watch subscription.
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ An identifier used to clear the watch subscription.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -436,52 +424,49 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var watcherId = 0;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;
 
- function dataChangeSuccessCallback(eventType, rowData)
- {
-   console.log("Operation " + eventType + " was performed");
-   console.log("Data changed:");
-   for (var i = 0; i &lt; rowData.columns.length; i++)
-   {
-     console.log("column " + rowData.columns[i] + " value " + rowData.values[i]);
-   }
- }
+function dataChangeSuccessCallback(eventType, rowData)
+{
+  console.log("Operation " + eventType + " was performed");
+  console.log("Data changed: ");
+  for (var i = 0; i &lt; rowData.columns.length; i++)
+  {
+    console.log("Column " + rowData.columns[i] + " value " + rowData.values[i]);
+  }
+}
 
- function errorCallback(error)
- {
-   console.log("The following error occurred: " +  error.name);
- }
+function errorCallback(error)
+{
+  console.log("The following error occurred: " + error.name);
+}
 
- try
- {
-   var rowData =
-   {
-     columns : ["WORD", "WORD_DESC"] ,
-     values  : ["'tizen1'", "'tizen2'"]
-   };
+try
+{
+  var rowData = {columns: ["WORD", "WORD_DESC"], values: ["'tizen1'", "'tizen2'"]};
 
-   watcherId = globalSQLConsumer.addChangeListener(dataChangeSuccessCallback, errorCallback);
-   console.log("Change listener has been added with watchId = " + watcherId);
+  watcherId = globalSQLConsumer.addChangeListener(dataChangeSuccessCallback, errorCallback);
+  console.log("Change listener has been added with watchId = " + watcherId);
 
-   /* Define globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalSQLConsumer.insert(globalReqId, rowData);
- }
- catch (err)
- {
-   console.log(err.name + ": " + err.message);
- }
- </pre>
+  /* Define globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalSQLConsumer.insert(globalReqId, rowData);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Change listener has been added with watchId = 1
- Operation SQL_INSERT was performed
- Data changed:
- column WORD value 'tizen1'
- column WORD_DESC value 'tizen2'
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Change listener has been added with watchId = 1
+Operation SQL_INSERT was performed
+Data changed:
+column WORD value 'tizen1'
+column WORD_DESC value 'tizen2'
+</pre>
 </div>
 </dd>
 <dt class="method" id="DataControlConsumerObject::removeChangeListener">
@@ -491,10 +476,8 @@ is not compatible with the expected type for that parameter.
 <div class="brief">
  Removes data change listener.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  4.0
             </p>
 <div class="description">
@@ -505,16 +488,13 @@ invoked. If the watchId argument is not valid or does not correspond to a
 valid subscription, the method should return without any further action.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datasharing
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/appmanager.launch
             </p>
 <div class="parameters">
@@ -539,46 +519,45 @@ valid subscription, the method should return without any further action.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var watcherId = 0;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var watcherId = 0;
 
- function dataChangeSuccessCallback(type, rowData)
- {
-   console.log("Operation " + type + " was performed");
-   console.log("Data changed:");
-   for (var i = 0; i &lt; rowData.columns.length; i++)
-   {
-     console.log("column " + rowData.columns[i] + " value " + rowData.values[i]);
-   }
- }
+function dataChangeSuccessCallback(type, rowData)
+{
+  console.log("Operation " + type + " was performed");
+  console.log("Data changed: ");
+  for (var i = 0; i &lt; rowData.columns.length; i++)
+  {
+    console.log("Column " + rowData.columns[i] + " value " + rowData.values[i]);
+  }
+}
 
- try
- {
-   var rowData =
-   {
-     columns : ["WORD", "WORD_DESC"] ,
-     values  : ["'tizen1'", "'tizen2'"]
-   };
+try
+{
+  var rowData = {columns: ["WORD", "WORD_DESC"], values: ["'tizen1'", "'tizen2'"]};
 
-   watcherId = globalSQLConsumer.addChangeListener(dataChangeSuccessCallback);
-   console.log("Change listener has been added with watchId = " + watcherId);
-   /* Remove addChangeListener */
-   globalSQLConsumer.removeChangeListener(watcherId);
-   console.log("removeChangeListener was invoked");
-   /* Define globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalSQLConsumer.insert(globalReqId, rowData);
- }
- catch (err)
- {
-   console.log(err.name +": " + err.message);
- }
- </pre>
+  watcherId = globalSQLConsumer.addChangeListener(dataChangeSuccessCallback);
+  console.log("Change listener has been added with watchId = " + watcherId);
+
+  /* Removes addChangeListener. */
+  globalSQLConsumer.removeChangeListener(watcherId);
+  console.log("RemoveChangeListener was invoked");
+
+  /* Define globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalSQLConsumer.insert(globalReqId, rowData);
+}
+catch (err)
+{
+  console.log(err.name + ": " + err.message);
+}
+</pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Change listener has been added with watchId = 1
- removeChangeListener was invoked
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Change listener has been added with watchId = 1
+removeChangeListener was invoked
+</pre>
 </div>
 </dd>
 </dl>
@@ -589,28 +568,21 @@ valid subscription, the method should return without any further action.
 <div class="brief">
  This interface defines SQL data type operators.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface SQLDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
-        void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData,
-                    optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback,
-                    optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where,
-                    optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
-                    optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void remove(unsigned long reqId, DOMString where,
-                    optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
-                    optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void select(unsigned long reqId, DOMString[] columns, DOMString where,
-                    <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback,
-                    optional unsigned long? page, optional unsigned long? maxNumberPerPage, optional DOMString? order) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SQLDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
+    void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page,
+                optional unsigned long? maxNumberPerPage, optional DOMString? order) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
-
+        
       <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -621,18 +593,15 @@ valid subscription, the method should return without any further action.
 <div class="brief">
  Inserts new rows into a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback, 
+            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -675,32 +644,29 @@ valid subscription, the method should return without any further action.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successcb(id, insertRowId)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successcb(id, insertRowId)
 {
-   console.log("ok: reqid " + id);
+  console.log("Ok: reqid " + id);
 }
 
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   var rowData =
-   {
-      columns: ["WORD", "WORD_DESC"] ,
-      values: ["'tizen1'", "'tizen2'"]
-   };
-   /* Defines globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalSQLConsumer.insert(globalReqId, rowData, successcb, errorcb);
+  var rowData = {columns: ["WORD", "WORD_DESC"], values: ["'tizen1'", "'tizen2'"]};
+
+  /* Define globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalSQLConsumer.insert(globalReqId, rowData, successcb, errorcb);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -712,18 +678,15 @@ catch (err)
 <div class="brief">
  Updates values of a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -770,32 +733,29 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successcb(id)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successcb(id)
 {
-   console.log("ok: reqid " + id);
+  console.log("Ok: reqid " + id);
 }
 
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   var rowData =
-   {
-      columns: ["WORD", "WORD_DESC"] ,
-      values: ["'tizen1'", "'Web apps platform!'"]
-   };
-   /* Defines globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalSQLConsumer.update(globalReqId, rowData, "WORD='tizen1'", successcb, errorcb);
+  var rowData = {columns: ["WORD", "WORD_DESC"], values: ["'tizen1'", "'Web apps platform!'"]};
+
+  /* Define globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalSQLConsumer.update(globalReqId, rowData, "WORD='tizen1'", successcb, errorcb);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -807,18 +767,15 @@ catch (err)
 <div class="brief">
  Delete rows from a table that is owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -861,27 +818,27 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successcb(id)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successcb(id)
 {
-   console.log("ok: reqid " + id);
+  console.log("Ok: reqid " + id);
 }
 
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   /* Defines globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalSQLConsumer.remove(globalReqId, "WORD='tizen1'", successcb, errorcb);
+  /* Defines globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalSQLConsumer.remove(globalReqId, "WORD='tizen1'", successcb, errorcb);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -893,22 +850,23 @@ catch (err)
 <div class="brief">
  Selects the specified columns to be queried. The result set of the specified columns is retrieved from a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page, optional unsigned long? maxNumberPerPage, optional DOMString? order);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback, 
+            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page, 
+            optional unsigned long? maxNumberPerPage, optional DOMString? order);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  <em>order</em> is supported since Tizen 3.0
+            </p>
+<p><span class="remark">Remark: </span>
+ If <em>page</em> and <em>maxNumberPerPage</em> parameters are not specified and result set contains more than 20 rows, only first 20 rows are included in the result.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -939,7 +897,7 @@ catch (err)
                 </li>
           <li class="param">
 <span class="name">maxNumberPerPage</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The maximum number of rows on a page. The maximum allowed value is equal to 1024.
+ The maximum number of rows on a page. The maximum allowed value is equal to <var>1024</var>.
                 </li>
           <li class="param">
 <span class="name">order</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -966,47 +924,47 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function getValueSuccessCB(result, id)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function getValueSuccessCB(result, id)
 {
-   console.log("getValueSuccessCB result.length: " + result.length);
-   var length = result.length;
-   for (var i = 0; i &lt; length; i++)
-   {
-      var rowData = "| ";
-      var j = 0;
-      for (j = 0; j &lt; result[i].columns.length; j++)
-      {
-         rowData += "column: " + result[i].columns[j] + ", value: " + result[i].values[j] + " | ";
-      }
-      console.log(rowData);
-   }
+  console.log("getValueSuccessCB result.length: " + result.length);
+  var length = result.length;
+  for (var i = 0; i &lt; length; i++)
+  {
+    var rowData = "| ";
+    var j = 0;
+    for (j = 0; j &lt; result[i].columns.length; j++)
+    {
+      rowData += "column: " + result[i].columns[j] + ", value: " + result[i].values[j] + " | ";
+    }
+    console.log(rowData);
+  }
 }
+
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   /* globalSQLConsumer and globalReqId should be defined before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   var columns = ["WORD", "WORD_DESC"];
-   var whereClause = "1";
-   console.log("----- Calling for ascending order -----");
-   globalSQLConsumer.select(globalReqId, columns, whereClause, getValueSuccessCB, errorcb,
-                            null, null, "WORD_DESC ASC");
-   setTimeout(function()
-   {
-      console.log("----- Calling descending order -----");
-      globalSQLConsumer.select(globalReqId, columns, whereClause, getValueSuccessCB, errorcb,
-                               null, null, "WORD_DESC DESC");
-   }, 1000);
+  /* globalSQLConsumer and globalReqId should be defined before. */
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  var columns = ["WORD", "WORD_DESC"];
+  var whereClause = "1";
+  console.log("----- Calling for ascending order -----");
+  globalSQLConsumer.select(
+      globalReqId, columns, whereClause, getValueSuccessCB, errorcb, null, null, "WORD_DESC ASC");
+  setTimeout(function()
+  {
+    console.log("----- Calling descending order -----");
+    globalSQLConsumer.select(globalReqId, columns, whereClause, getValueSuccessCB, errorcb, null,
+        null, "WORD_DESC DESC");
+  }, 1000);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1019,28 +977,21 @@ catch (err)
 <div class="brief">
  This interface defines MAP data type operators.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface MappedDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
-        void addValue(unsigned long reqId, DOMString key, DOMString value,
-                     optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MappedDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
+    void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+                  optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
                      optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-         void removeValue(unsigned long reqId, DOMString key, DOMString value,
-                          <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
-                          optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-         void getValue(unsigned long reqId, DOMString key,
-                       <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback,
-                       optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-         void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue,
-                          <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
-                          optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+    void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback,
+                  optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue,
+                     <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
-
+        
       <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -1051,18 +1002,15 @@ catch (err)
 <div class="brief">
  Adds the value associated with the specified key to a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+              optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -1109,27 +1057,27 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successcb(id)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successcb(id)
 {
-   console.log("ok: reqid " + id);
+  console.log("Ok: reqid " + id);
 }
 
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   /* Defines globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalMappedConsumer.addValue(globalReqId, "tizen", "Foo", successcb, errorcb);
+  /* Define globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalMappedConsumer.addValue(globalReqId, "tizen", "Foo", successcb, errorcb);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1141,18 +1089,15 @@ catch (err)
 <div class="brief">
  Removes the value associated with the specified key from a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, 
+                 optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -1202,27 +1147,27 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successcb(id)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successcb(id)
 {
-   console.log("ok: reqid " + id);
+  console.log("Ok: reqid " + id);
 }
 
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   /* Defines globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalMappedConsumer.removeValue(globalReqId, "tizen", "Foo", successcb, errorcb);
+  /* Defines globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalMappedConsumer.removeValue(globalReqId, "tizen", "Foo", successcb, errorcb);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1234,18 +1179,15 @@ catch (err)
 <div class="brief">
  Gets the value associated with the specified key, from a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback, 
+              optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -1291,27 +1233,27 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function getValueSuccessCB(result, id)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function getValueSuccessCB(result, id)
 {
-   console.log(result.length + ":" + result[0]);
+  console.log(result.length + ": " + result[0]);
 }
 
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   /* Defines globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalMappedConsumer.getValue(globalReqId, "tizen", getValueSuccessCB, errorcb);
+  /* Define globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalMappedConsumer.getValue(globalReqId, "tizen", getValueSuccessCB, errorcb);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1323,18 +1265,15 @@ catch (err)
 <div class="brief">
  Sets the value associated with the specified key to a new value.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue, 
+                 <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/datacontrol.consumer
             </p>
 <div class="parameters">
@@ -1388,27 +1327,27 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successcb(id)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successcb(id)
 {
-   console.log("ok: reqid " + id);
+  console.log("Ok: reqid " + id);
 }
 
 function errorcb(id, error)
 {
-   console.log("error id: " + id + ", error msg: " + error.message);
+  console.log("Error id: " + id + ", error msg: " + error.message);
 }
 
 try
 {
-   /* Defines globalReqId before */
-   /* Increases globalReqId for uniqueness */
-   globalReqId++;
-   globalMappedConsumer.updateValue(globalReqId, "tizen", "Foo", "Bar", successcb, errorcb);
+  /* Define globalReqId before. */
+
+  /* Increases globalReqId for uniqueness. */
+  globalReqId++;
+  globalMappedConsumer.updateValue(globalReqId, "tizen", "Foo", "Bar", successcb, errorcb);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1421,11 +1360,10 @@ catch (err)
 <div class="brief">
  This interface provides a SuccessCallback for DataControlConsumerObject.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSuccessCallback {
-        void onsuccess(unsigned long reqId);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSuccessCallback {
+    void onsuccess(unsigned long reqId);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -1438,10 +1376,8 @@ catch (err)
 <div class="brief">
  Called on success.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(unsigned long reqId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(unsigned long reqId);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1462,11 +1398,10 @@ catch (err)
 <div class="brief">
  This interface provides an ErrorCallback for DataControlConsumerObject.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlErrorCallback {
-        void onerror(unsigned long reqId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlErrorCallback {
+    void onerror(unsigned long reqId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -1479,10 +1414,8 @@ catch (err)
 <div class="brief">
  Called on error.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onerror(unsigned long reqId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onerror(unsigned long reqId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1505,13 +1438,12 @@ catch (err)
 <div class="interface" id="DataControlInsertSuccessCallback">
 <a class="backward-compatibility-anchor" name="::DataControl::DataControlInsertSuccessCallback"></a><h3>2.8. DataControlInsertSuccessCallback</h3>
 <div class="brief">
- This interface provides a SuccessCallback for SQLDataControlConsumer.insert().
+ This interface provides a SuccessCallback for <em>SQLDataControlConsumer.insert()</em>.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlInsertSuccessCallback {
-        void onsuccess(unsigned long reqId, long insertRowId);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlInsertSuccessCallback {
+    void onsuccess(unsigned long reqId, long insertRowId);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -1524,10 +1456,8 @@ catch (err)
 <div class="brief">
  Called on success.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(unsigned long reqId, long insertRowId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(unsigned long reqId, long insertRowId);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1550,13 +1480,12 @@ catch (err)
 <div class="interface" id="DataControlSelectSuccessCallback">
 <a class="backward-compatibility-anchor" name="::DataControl::DataControlSelectSuccessCallback"></a><h3>2.9. DataControlSelectSuccessCallback</h3>
 <div class="brief">
- This interface provides a SuccessCallback for SQLDataControlConsumer.select().
+ This interface provides a SuccessCallback for <em>SQLDataControlConsumer.select()</em>.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSelectSuccessCallback {
-        void onsuccess(<a href="#RowData">RowData</a>[] rows, unsigned long reqId);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSelectSuccessCallback {
+    void onsuccess(<a href="#RowData">RowData</a>[] rows, unsigned long reqId);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -1569,10 +1498,8 @@ catch (err)
 <div class="brief">
  Called on success.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#RowData">RowData</a>[] rows, unsigned long reqId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#RowData">RowData</a>[] rows, unsigned long reqId);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1580,7 +1507,7 @@ catch (err)
 <ul>
           <li class="param">
 <span class="name">rows</span>:
- Rows of SQL selection results from another application.<br>The array operation of rows would be different from general JavaScript array behavior depending on platform implementation. For example, Array.isArray(rows) returns <em>false</em>.
+ Rows of SQL selection results from another application.<br>The array operation of rows would be different from general JavaScript array behavior depending on platform implementation. For example, <em>Array.isArray(rows)</em> returns <var>false</var>.
                 </li>
           <li class="param">
 <span class="name">reqId</span>:
@@ -1595,13 +1522,12 @@ catch (err)
 <div class="interface" id="DataControlGetValueSuccessCallback">
 <a class="backward-compatibility-anchor" name="::DataControl::DataControlGetValueSuccessCallback"></a><h3>2.10. DataControlGetValueSuccessCallback</h3>
 <div class="brief">
- This interface provides a SuccessCallback for MapDataControlConsumer.getValue().
+ This interface provides a SuccessCallback for <em>MapDataControlConsumer.getValue()</em>.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlGetValueSuccessCallback {
-        void onsuccess(DOMString[] values, unsigned long reqid);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlGetValueSuccessCallback {
+    void onsuccess(DOMString[] values, unsigned long reqid);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -1614,10 +1540,8 @@ catch (err)
 <div class="brief">
  Called on success.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] values, unsigned long reqid);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString[] values, unsigned long reqid);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1642,11 +1566,10 @@ catch (err)
 <div class="brief">
  This interface provides a DataControlChangeCallback for addChangeListener method.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlChangeCallback {
-        void onsuccess(<a href="#EventType">EventType</a> type, <a href="#RowData">RowData</a> data);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlChangeCallback {
+    void onsuccess(<a href="#EventType">EventType</a> type, <a href="#RowData">RowData</a> data);
+  };</pre>
+<p><span class="version">Since: </span>
  4.0
           </p>
 <div class="methods">
@@ -1659,10 +1582,8 @@ catch (err)
 <div class="brief">
  Called when the data is modified.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#EventType">EventType</a> type, <a href="#RowData">RowData</a> data);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#EventType">EventType</a> type, <a href="#RowData">RowData</a> data);</pre></div>
+<p><span class="version">Since: </span>
  4.0
             </p>
 <div class="parameters">
@@ -1687,12 +1608,11 @@ catch (err)
 <div class="brief">
  The dictionary represents RowData holding 1 row of SQL selection results from another application.
           </div>
-<pre class="webidl prettyprint">    dictionary RowData {
-        DOMString[] columns;
-        DOMString[] values;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  dictionary RowData {
+    DOMString[] columns;
+    DOMString[] values;
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="attributes">
@@ -1703,8 +1623,7 @@ catch (err)
 <div class="brief">
  An attribute to hold column names to select, update, and insert.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </dd>
@@ -1713,8 +1632,7 @@ catch (err)
 <div class="brief">
  An attribute to hold values of columns to select, update, and insert.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </dd>
@@ -1724,97 +1642,67 @@ catch (err)
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module DataControl {
-    enum DataType { "MAP", "SQL"};
-
-    enum EventType { "SQL_UPDATE", "SQL_INSERT", "SQL_DELETE", "MAP_SET", "MAP_ADD", "MAP_REMOVE"};
-
-    [NoInterfaceObject] interface DataControlManagerObject {
-        readonly attribute <a href="#DataControlManager">DataControlManager</a> datacontrol;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataControlManagerObject">DataControlManagerObject</a>;
-
-    [NoInterfaceObject] interface DataControlManager {
-        <a href="#DataControlConsumerObject">DataControlConsumerObject</a> getDataControlConsumer(DOMString providerId, DOMString dataId, <a href="#DataType">DataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-
-    [NoInterfaceObject] interface DataControlConsumerObject {
-        readonly attribute <a href="#DataType">DataType</a> type;
-        readonly attribute DOMString providerId;
-        readonly attribute DOMString dataId;
-
-        long addChangeListener(<a href="#DataControlChangeCallback">DataControlChangeCallback</a> dataChangeCallback,
-                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [NoInterfaceObject] interface SQLDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
-        void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData,
-                    optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback,
-                    optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where,
-                    optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
-                    optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void remove(unsigned long reqId, DOMString where,
-                    optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
-                    optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void select(unsigned long reqId, DOMString[] columns, DOMString where,
-                    <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback,
-                    optional unsigned long? page, optional unsigned long? maxNumberPerPage, optional DOMString? order) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [NoInterfaceObject] interface MappedDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
-        void addValue(unsigned long reqId, DOMString key, DOMString value,
-                     optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+  enum DataType { "MAP", "SQL" };
+  enum EventType { "SQL_UPDATE", "SQL_INSERT", "SQL_DELETE", "MAP_SET", "MAP_ADD", "MAP_REMOVE" };
+  [NoInterfaceObject] interface DataControlManagerObject {
+    readonly attribute <a href="#DataControlManager">DataControlManager</a> datacontrol;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataControlManagerObject">DataControlManagerObject</a>;
+  [NoInterfaceObject] interface DataControlManager {
+    <a href="#DataControlConsumerObject">DataControlConsumerObject</a> getDataControlConsumer(DOMString providerId, DOMString dataId, <a href="#DataType">DataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface DataControlConsumerObject {
+    readonly attribute <a href="#DataType">DataType</a> type;
+    readonly attribute DOMString providerId;
+    readonly attribute DOMString dataId;
+    long addChangeListener(<a href="#DataControlChangeCallback">DataControlChangeCallback</a> dataChangeCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface SQLDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
+    void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback,
+                optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page,
+                optional unsigned long? maxNumberPerPage, optional DOMString? order) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface MappedDataControlConsumer : <a href="#DataControlConsumerObject">DataControlConsumerObject</a> {
+    void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
+                  optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
                      optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-         void removeValue(unsigned long reqId, DOMString key, DOMString value,
-                          <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
-                          optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-         void getValue(unsigned long reqId, DOMString key,
-                       <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback,
-                       optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-         void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue,
-                          <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
-                          optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSuccessCallback {
-        void onsuccess(unsigned long reqId);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlErrorCallback {
-        void onerror(unsigned long reqId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlInsertSuccessCallback {
-        void onsuccess(unsigned long reqId, long insertRowId);
-    };
-
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSelectSuccessCallback {
-        void onsuccess(<a href="#RowData">RowData</a>[] rows, unsigned long reqId);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlGetValueSuccessCallback {
-        void onsuccess(DOMString[] values, unsigned long reqid);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface DataControlChangeCallback {
-        void onsuccess(<a href="#EventType">EventType</a> type, <a href="#RowData">RowData</a> data);
-    };
-
-
-    dictionary RowData {
-        DOMString[] columns;
-        DOMString[] values;
-    };
+    void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback,
+                  optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue,
+                     <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSuccessCallback {
+    void onsuccess(unsigned long reqId);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlErrorCallback {
+    void onerror(unsigned long reqId, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlInsertSuccessCallback {
+    void onsuccess(unsigned long reqId, long insertRowId);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlSelectSuccessCallback {
+    void onsuccess(<a href="#RowData">RowData</a>[] rows, unsigned long reqId);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlGetValueSuccessCallback {
+    void onsuccess(DOMString[] values, unsigned long reqid);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface DataControlChangeCallback {
+    void onsuccess(<a href="#EventType">EventType</a> type, <a href="#RowData">RowData</a> data);
+  };
+  dictionary RowData {
+    DOMString[] columns;
+    DOMString[] values;
+  };
 };</pre>
 </div>
 <div id="page-footer">
