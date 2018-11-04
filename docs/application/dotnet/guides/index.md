@@ -64,6 +64,9 @@ Select the feature you are interested in and see what Tizen offers for your appl
 
   The security features ensure that private information remains private, and that the user knows when they are trying to access privileged information. You can use a repository to manage keys, certificates, and sensitive user data. When the user tries to access privileged information, you can display information about the data.
 
+- [Natural Language Processing](nlp/overview.md)
+
+  The natural language process features explains the methods by which you can handle all the sentences in your applications. You can get the results using the NLP service.
 
 ## Related Information
 - Dependencies

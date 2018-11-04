@@ -7,13 +7,12 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVInfo">
-<div class="supported-platforms"><img title="Optional" src="../../../images/tv_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="tv-optional" title="Optional, Not supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>TVInfo API</h1></div>
 <div class="brief">
  The TVInfo API provides functions to get settings values that are provided by the Tizen TV.
         </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
         </p>
 <h2>Table of Contents</h2>
@@ -57,7 +56,9 @@
 </li>
 </ul>
 </li>
-<li>3. <a href="#full-webidl">Full WebIDL</a>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
 </li>
 </ul>
 <hr>
@@ -94,11 +95,10 @@
 <div class="brief">
  Available keys for the caption menu.
           </div>
-<pre class="webidl prettyprint">    enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
-        "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY",
-        "CAPTION_EDGE_TYPE_KEY", "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
+    "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY", "CAPTION_EDGE_TYPE_KEY",
+    "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -135,9 +135,8 @@ CAPTION_WINDOW_OPACITY_KEY - caption window opacity mode (only US)            </
 <div class="brief">
  Available values for the caption state.
           </div>
-<pre class="webidl prettyprint">    enum CaptionState { "CAPTION_OFF", "CAPTION_ON" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionState { "CAPTION_OFF", "CAPTION_ON" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -157,12 +156,10 @@ CAPTION_ON - caption menu is turned on            </li>
 <div class="brief">
  Available values for the caption menu mode.
           </div>
-<pre class="webidl prettyprint">    enum CaptionMode { "CAPTION_MODE_DEFAULT", "CAPTION_MODE_SERVICE1", "CAPTION_MODE_SERVICE2", "CAPTION_MODE_SERVICE3",
-        "CAPTION_MODE_SERVICE4", "CAPTION_MODE_SERVICE5", "CAPTION_MODE_SERVICE6", "CAPTION_MODE_CC1", "CAPTION_MODE_CC2",
-        "CAPTION_MODE_CC3", "CAPTION_MODE_CC4", "CAPTION_MODE_TEXT1", "CAPTION_MODE_TEXT2", "CAPTION_MODE_TEXT3",
-        "CAPTION_MODE_TEXT4" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionMode { "CAPTION_MODE_DEFAULT", "CAPTION_MODE_SERVICE1", "CAPTION_MODE_SERVICE2", "CAPTION_MODE_SERVICE3",
+    "CAPTION_MODE_SERVICE4", "CAPTION_MODE_SERVICE5", "CAPTION_MODE_SERVICE6", "CAPTION_MODE_CC1", "CAPTION_MODE_CC2",
+    "CAPTION_MODE_CC3", "CAPTION_MODE_CC4", "CAPTION_MODE_TEXT1", "CAPTION_MODE_TEXT2", "CAPTION_MODE_TEXT3", "CAPTION_MODE_TEXT4" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -208,10 +205,9 @@ CAPTION_MODE_TEXT4 - Text Service 4            </li>
 <div class="brief">
  Available values for the caption menu font size.
           </div>
-<pre class="webidl prettyprint">    enum CaptionFontSize { "CAPTION_SIZE_DEFAULT", "CAPTION_SIZE_SMALL", "CAPTION_SIZE_STANDARD", "CAPTION_SIZE_LARGE",
-        "CAPTION_SIZE_EXTRA_LARGE" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionFontSize { "CAPTION_SIZE_DEFAULT", "CAPTION_SIZE_SMALL", "CAPTION_SIZE_STANDARD", "CAPTION_SIZE_LARGE",
+    "CAPTION_SIZE_EXTRA_LARGE" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -237,10 +233,9 @@ CAPTION_SIZE_EXTRA_LARGE - extra large font size            </li>
 <div class="brief">
  Available values for the caption menu font style.
           </div>
-<pre class="webidl prettyprint">    enum CaptionFontStyle { "CAPTION_FONT_DEFAULT", "CAPTION_FONT_STYLE0", "CAPTION_FONT_STYLE1", "CAPTION_FONT_STYLE2",
-        "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionFontStyle { "CAPTION_FONT_DEFAULT", "CAPTION_FONT_STYLE0", "CAPTION_FONT_STYLE1", "CAPTION_FONT_STYLE2",
+    "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -272,10 +267,9 @@ CAPTION_FONT_STYLE7 - Small capitals (similar to Engravers Gothic)            </
 <div class="brief">
  Available values for the caption menu color.
           </div>
-<pre class="webidl prettyprint">    enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED",
-        "CAPTION_COLOR_GREEN", "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED", "CAPTION_COLOR_GREEN",
+    "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -289,10 +283,9 @@ These values may be returned for keys CAPTION_FONT_COLOR_KEY, CAPTION_BG_COLOR_K
 <div class="brief">
  Available values for the caption menu opacity.
           </div>
-<pre class="webidl prettyprint">    enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
-        "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
+    "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -306,10 +299,9 @@ These values may be returned for keys CAPTION_FONT_OPACITY_KEY, CAPTION_BG_OPACI
 <div class="brief">
  Available values for the caption menu edge type.
           </div>
-<pre class="webidl prettyprint">    enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
-        "CAPTION_EDGE_DROP_SHADOWED" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
+    "CAPTION_EDGE_DROP_SHADOWED" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -335,10 +327,9 @@ CAPTION_EDGE_DROP_SHADOWED - drop shadowed edge            </li>
 <div class="brief">
  All available values for the caption menu.
           </div>
-<pre class="webidl prettyprint">    typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
-        <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
+           <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 </div>
@@ -350,12 +341,11 @@ CAPTION_EDGE_DROP_SHADOWED - drop shadowed edge            </li>
 <div class="brief">
  The TVInfoManagerObject interface defines what is instantiated in the tizen object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface TVInfoManagerObject {
-         readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TVInfoManagerObject {
+    readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -369,16 +359,12 @@ There is a tizen.tvinfo object that allows accessing the functionality of the TV
 <div class="brief">
  The TVInfoManager interface provides the functionalities to get setting values provided by Tizen TV.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface TVInfoManager {
-
-        <a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeCaptionValueChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TVInfoManager {
+    <a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeCaptionValueChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -391,22 +377,18 @@ There is a tizen.tvinfo object that allows accessing the functionality of the TV
 <div class="brief">
  Method returns the value for corresponding caption menu key.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param"><span class="name">key</span></li>
-        </ul>
-</div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">CaptionValue:
+                  </span>
  CaptionValue value for given caption menu key
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -420,8 +402,8 @@ There is a tizen.tvinfo object that allows accessing the functionality of the TV
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-console.log("Caption menu turned on: " + (tizen.tvinfo.getCaptionValue("CAPTION_ONOFF_KEY") === "CAPTION_ON"));
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Caption menu turned on: " +
+            (tizen.tvinfo.getCaptionValue("CAPTION_ONOFF_KEY") === "CAPTION_ON"));
 </pre>
 </div>
 </dd>
@@ -432,10 +414,8 @@ console.log("Caption menu turned on: " + (tizen.tvinfo.getCaptionValue("CAPTION_
 <div class="brief">
  Adds a listener to be called when given caption menu key value changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -453,8 +433,12 @@ console.log("Caption menu turned on: " + (tizen.tvinfo.getCaptionValue("CAPTION_
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:
+                  </span>
  long Subscription identifier
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -471,10 +455,9 @@ console.log("Caption menu turned on: " + (tizen.tvinfo.getCaptionValue("CAPTION_
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", function(value)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", function(value)
 {
-   console.log("Caption menu state changed: " + value);
+  console.log("Caption menu state changed: " + value);
 });
 </pre>
 </div>
@@ -486,10 +469,8 @@ var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", functio
 <div class="brief">
  Removes a listener.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeCaptionValueChangeListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeCaptionValueChangeListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -509,8 +490,7 @@ var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", functio
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", function() {});
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var id = tizen.tvinfo.addCaptionValueChangeListener("CAPTION_ONOFF_KEY", function() {});
 tizen.tvinfo.removeCaptionValueChangeListener(id);
 </pre>
 </div>
@@ -523,11 +503,10 @@ tizen.tvinfo.removeCaptionValueChangeListener(id);
 <div class="brief">
  The CaptionValueChangeCallback interface specifies event callback for getting notified when event occurs.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface CaptionValueChangeCallback {
-        void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CaptionValueChangeCallback {
+    void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -540,10 +519,8 @@ tizen.tvinfo.removeCaptionValueChangeListener(id);
 <div class="brief">
  Called when the caption menu value changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -564,55 +541,53 @@ tizen.tvinfo.removeCaptionValueChangeListener(id);
 </div>
 </div>
 </div>
-<h2 id="full-webidl">3. Full WebIDL</h2>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of this application on a device with a caption and so on, define the following requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/tv.information</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVInfo {
-
-    enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
-        "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY",
-        "CAPTION_EDGE_TYPE_KEY", "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };
-
-    enum CaptionState { "CAPTION_OFF", "CAPTION_ON" };
-
-    enum CaptionMode { "CAPTION_MODE_DEFAULT", "CAPTION_MODE_SERVICE1", "CAPTION_MODE_SERVICE2", "CAPTION_MODE_SERVICE3",
-        "CAPTION_MODE_SERVICE4", "CAPTION_MODE_SERVICE5", "CAPTION_MODE_SERVICE6", "CAPTION_MODE_CC1", "CAPTION_MODE_CC2",
-        "CAPTION_MODE_CC3", "CAPTION_MODE_CC4", "CAPTION_MODE_TEXT1", "CAPTION_MODE_TEXT2", "CAPTION_MODE_TEXT3",
-        "CAPTION_MODE_TEXT4" };
-
-    enum CaptionFontSize { "CAPTION_SIZE_DEFAULT", "CAPTION_SIZE_SMALL", "CAPTION_SIZE_STANDARD", "CAPTION_SIZE_LARGE",
-        "CAPTION_SIZE_EXTRA_LARGE" };
-
-    enum CaptionFontStyle { "CAPTION_FONT_DEFAULT", "CAPTION_FONT_STYLE0", "CAPTION_FONT_STYLE1", "CAPTION_FONT_STYLE2",
-        "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };
-
-    enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED",
-        "CAPTION_COLOR_GREEN", "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };
-
-    enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
-        "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };
-
-    enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
-        "CAPTION_EDGE_DROP_SHADOWED" };
-
-    typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
-        <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;
-
-    [NoInterfaceObject] interface TVInfoManagerObject {
-         readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;
-
-    [NoInterfaceObject] interface TVInfoManager {
-
-        <a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeCaptionValueChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface CaptionValueChangeCallback {
-        void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
-    };
+  enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
+    "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY", "CAPTION_EDGE_TYPE_KEY",
+    "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };
+  enum CaptionState { "CAPTION_OFF", "CAPTION_ON" };
+  enum CaptionMode { "CAPTION_MODE_DEFAULT", "CAPTION_MODE_SERVICE1", "CAPTION_MODE_SERVICE2", "CAPTION_MODE_SERVICE3",
+    "CAPTION_MODE_SERVICE4", "CAPTION_MODE_SERVICE5", "CAPTION_MODE_SERVICE6", "CAPTION_MODE_CC1", "CAPTION_MODE_CC2",
+    "CAPTION_MODE_CC3", "CAPTION_MODE_CC4", "CAPTION_MODE_TEXT1", "CAPTION_MODE_TEXT2", "CAPTION_MODE_TEXT3", "CAPTION_MODE_TEXT4" };
+  enum CaptionFontSize { "CAPTION_SIZE_DEFAULT", "CAPTION_SIZE_SMALL", "CAPTION_SIZE_STANDARD", "CAPTION_SIZE_LARGE",
+    "CAPTION_SIZE_EXTRA_LARGE" };
+  enum CaptionFontStyle { "CAPTION_FONT_DEFAULT", "CAPTION_FONT_STYLE0", "CAPTION_FONT_STYLE1", "CAPTION_FONT_STYLE2",
+    "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };
+  enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED", "CAPTION_COLOR_GREEN",
+    "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };
+  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
+    "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };
+  enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
+    "CAPTION_EDGE_DROP_SHADOWED" };
+  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
+           <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;
+  [NoInterfaceObject] interface TVInfoManagerObject {
+    readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;
+  [NoInterfaceObject] interface TVInfoManager {
+    <a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeCaptionValueChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface CaptionValueChangeCallback {
+    void onchanged(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValue">CaptionValue</a> value);
+  };
 };</pre>
 </div>
 <div id="page-footer">
