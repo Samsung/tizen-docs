@@ -12,7 +12,7 @@ There are two ways to update the complication data.
     ![Complication](media/complication_1.png)
  
 
-2. If the complication data is changed, the complication provider application can notify to the watch face. If the complication received the notification, it requsts to update automatically. Then, the update request comes to the complication provider. The complication provider must set the updated data in update requested callback. After the complication data is updated, the complication update callback is called in the watch face.
+2. If the complication data is changed, the complication provider application can notify to the watch face. If the complication received the notification, it requests to update automatically. Then, the update request comes to the complication provider. The complication provider must set the updated data in update requested callback. After the complication data is updated, the complication update callback is called in the watch face.
 
     ![Complication_update](media/complication_2.png)
  
@@ -88,7 +88,7 @@ If they are null, the complication receives an error. Also, if you select the ot
   
 ## Updating Complication Data
 
-To receive the updated complication data, `watchface_complication_updated_cb()` must be added in the watch face by using `watchface_complication_add_updated_cb()`. And, if complication provider is not available (disabled, uninstalled), `watchface_complication_error_cb()` is called. In this case, watchface can add fallback logic in error callback such as display error message or launch editor interface.
+To receive the updated complication data, `watchface_complication_updated_cb()` must be added in the watch face by using `watchface_complication_add_updated_cb()`. And, if complication provider is not available (disabled, uninstalled), `watchface_complication_error_cb()` is called. In this case, watch face can add fallback logic in error callback such as display error message or launch editor interface.
 
 ```cpp
 void _watchface_complication_updated_cb(int complication_id,
@@ -165,7 +165,7 @@ If the watch face wants the updated complication data, watch face can request to
 ```
 
 
-## Specifying to Support only Specific Complication Providers
+## Specifying to Support only Specific Complication Provider
 
 Watch Face can support the specific complication provider by using `allowed_list`.
 In This case, watch face supports complications only in allowed complication list:
@@ -188,14 +188,14 @@ In This case, watch face supports complications only in allowed complication lis
 
 ## Watch Face Edit with Editable Feature
 
-The watch face application can provide the changeable features (such as, complication, color, font and so on) with watch face editable APIs.
+The watch face application can provide the changeable features (such as, complication, color, font, and so on) with watch face editable APIs.
 
 The features can be changed by watch face editor application:
 
 ![Complication_editor](media/editor_1.png)
 
 
-To use the functions and data types for the watchface_editable API, include the `<watchface-editable.h>` header file in your application:
+To use the functions and data types for the Watch Face Editable API, include the `<watchface-editable.h>` header file in your application:
 
 ```cpp
 #include <watchface-editable.h>
@@ -234,8 +234,9 @@ The highlight handle can be created by `watchface_editable_highlight_create()` w
     The parameters of this function means the position(x,y) and size(width, height).
 
 
-    >**Note**  
-    >`watchface_editable_highlight_h` must be released after used by using `watchface_editable_highlight_destroy()`.
+    >**Note**
+    >
+    >`watchface_editable_highlight_h` must be released. It can be released by using `watchface_editable_highlight_destroy()`.
 
 
 4. According to the editable feature, `watchface_editable_add_design_element()` and `watchface_editable_add_complication()` are used to add editable features to the `watchface_editable_container_h`.
@@ -319,7 +320,7 @@ The following are event types:
 | `WATCHFACE_COMPLICATION_EVENT_TAP` | The complication is tapped. |
 | `WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP` | The complication is double tapped. |
 
-Watch Face transfers by using `watchface_complication_transfer_event()`.
+Watch Face transfers by using `watchface_complication_transfer_event()`:
 
 ```cpp
 void _on_complication_clicked(complication_h handle)

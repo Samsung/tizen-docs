@@ -25,7 +25,7 @@ the following privilege to the `tizen-manifest.xml` file:
 
 ## Updating Complication Data
 
-When the request occurs to update the complication data, the complication provider application can receive the request by adding `watchface_complication_provider_update_requested_cb()`. The watch face application can send the update request and this request also occurs after the complication provider application notifies that the complication data is changed.
+When the request occurs to update the complication data, the complication provider application can receive the request by adding `watchface_complication_provider_update_requested_cb()`. The watch face application can send the update request, and this request also occurs after the complication provider application notifies that the complication data is changed.
 
 ```cpp
 void _watchface_complication_provider_update_requested_cb(const char *provider_id,
@@ -74,7 +74,7 @@ void _watchface_complication_provider_update_requested_cb(const char *provider_i
 }
 ```
 
-If the callback is not necessary, it can be removed by using `watchface_complication_provider_remove_update_requested_cb()`.
+If the callback is not necessary, it can be removed by using `watchface_complication_provider_remove_update_requested_cb()`:
 
 ```cpp
 {
@@ -113,7 +113,7 @@ The complication provider provides followings:
 
 2. The complication provider can get the transferred event from `app_control_h` that is the parameter of the `app_control` life cycle callback
 by using `watchface_complication_provider_get_event()`.
-And if the touch event is transferred from watchface, the information of the complication is also transfred.
+And if the touch event is transferred from watchface, the information of the complication is also transferred.
 
 To get the information, the following functions are used to get the information:
 
@@ -164,7 +164,7 @@ It is mandatory to use attribute **provider-id** that is the id of the complicat
 If it is necessary to set the options to provide the specific data (such as, world clock), it can provide the complication setting application.
 In this case, **setup-appid** is the appid of the complication setting application.
 
-If the **trusted** attribute value is **true**, the complication provider do not send data to the complications which have different certificate.
+If the **trusted** attribute value is `true`, the complication provider do not send data to the complications which have different certificate.
 
 At least one `<support-type>` is necessary to create the complication provider application. Also, it is possible to support multiple types.
 These support type means data type and the complication provider provides data types that are defined in xml. It is not possible to declare duplicated data type for
