@@ -115,20 +115,21 @@ The complication provider provides followings:
 by using `watchface_complication_provider_get_event()`.
 And if the touch event is transferred from watchface, the information of the complication is also transferred.
 
-To get the information, the following functions are used to get the information:
+    To get the information, the following functions are used to get the information:
 
-| API | Information |
-|-----|-----------|
-| `watchface_complication_provider_event_get_provider_id()` | Gets the provider id of touched complication. |
-| `watchface_complication_provider_event_launch_get_complication_type()` | Gets the complication type of touched complication. |
-| `watchface_complication_provider_event_launch_get_context()` | Gets the context information of touched complication. |
-
-Then complication provider can define the action according to the event and the information of complication that is touched.
+    | API | Information |
+    |-----|-----------|
+    | `watchface_complication_provider_event_get_provider_id()` | Gets the provider id of touched complication. |
+    | `watchface_complication_provider_event_launch_get_complication_type()` | Gets the complication type of touched complication. |
+    | `watchface_complication_provider_event_launch_get_context()` | Gets the context information of touched complication. |
 
 
-```cpp
-void app_control(app_control_h app_control, void *data)
-{
+    Then complication provider can define the action according to the event and the information of complication that is touched.
+
+
+    ```cpp
+    void app_control(app_control_h app_control, void *data)
+    {
         watchface_complication_event_type_e event_type;
         char *provider_id;
         watchface_complication_type_e type;
@@ -146,8 +147,8 @@ void app_control(app_control_h app_control, void *data)
 
                 /* Do something */
         }
-}
-```
+    }
+    ```
 
 
 ## Providing XML Schema to Create Complication Provider Application

@@ -195,13 +195,13 @@ The features can be changed by watch face editor application:
 ![Complication_editor](media/editor_1.png)
 
 
-To use the functions and data types for the Watch Face Editable API, include the `<watchface-editable.h>` header file in your application:
+1. To use the functions and data types for the Watch Face Editable API, include the `<watchface-editable.h>` header file in your application:
 
-```cpp
-#include <watchface-editable.h>
-```
+    ```cpp
+    #include <watchface-editable.h>
+    ```
 
-1. When the editor is ready to edit, it notifies that it is ready. To receive the notification from the editor, `watchface_editable_edit_ready_cb()` must be added:
+2. When the editor is ready to edit, it notifies that it is ready. To receive the notification from the editor, `watchface_editable_edit_ready_cb()` must be added:
 
     ```cpp
     void _watchface_editable_edit_ready_cb(watchface_editable_container_h handle,
@@ -215,10 +215,10 @@ To use the functions and data types for the Watch Face Editable API, include the
     }
     ```
  
-2. Watch Face can create the `complication_candidates_list_h` to identify the editable features to request to editor.
+3. Watch Face can create the `complication_candidates_list_h` to identify the editable features to request to editor.
 Watch Face can request to edit the features by using `watchface_editable_request_edit()`.
 
-3. The watch face editor can draw highlight to give the information about editing.
+4. The watch face editor can draw highlight to give the information about editing.
 To inform the position of editable features, `watchface_editable_highlight_h` must be used.
 The highlight handle can be created by `watchface_editable_highlight_create()` with watch face shape type.
 
@@ -239,7 +239,7 @@ The highlight handle can be created by `watchface_editable_highlight_create()` w
     >`watchface_editable_highlight_h` must be released. It can be released by using `watchface_editable_highlight_destroy()`.
 
 
-4. According to the editable feature, `watchface_editable_add_design_element()` and `watchface_editable_add_complication()` are used to add editable features to the `watchface_editable_container_h`.
+5. According to the editable feature, `watchface_editable_add_design_element()` and `watchface_editable_add_complication()` are used to add editable features to the `watchface_editable_container_h`.
 
 
     ```cpp
@@ -280,31 +280,31 @@ The highlight handle can be created by `watchface_editable_highlight_create()` w
     }
     ```
 
-5. If some features are changed from editor, `watchface_editable_update_requested_cb()` is called.
+6. If some features are changed from editor, `watchface_editable_update_requested_cb()` is called.
 Watch Face can verify the `watchface_editable_edit_state_e` from the parameter of that callback to get the edit state.
 
-The following are the edit state:
+    The following are the edit state:
 
-| Edit state | Description |
-|------------|-------------|
-| `WATCHFACE_EDITABLE_EDIT_STATE_COMPLETE` | edit complete |
-| `WATCHFACE_EDITABLE_EDIT_STATE_ONGOING` | ongoing edit |
-| `WATCHFACE_EDITABLE_EDIT_STATE_CANCEL` | edit canceled |
+    | Edit state | Description |
+    |------------|-------------|
+    | `WATCHFACE_EDITABLE_EDIT_STATE_COMPLETE` | edit complete |
+    | `WATCHFACE_EDITABLE_EDIT_STATE_ONGOING` | ongoing edit |
+    | `WATCHFACE_EDITABLE_EDIT_STATE_CANCEL` | edit canceled |
 
-```cpp
-static void _watchface_editable_update_requested_cb(const watchface_editable_h handle,
-		int selected_idx,
-		const watchface_editable_edit_state_e state,
-		void *user_data)
-{
-	bundle *data;
-	int ed_id;
+    ```cpp
+    static void _watchface_editable_update_requested_cb(const watchface_editable_h handle,
+    		int selected_idx,
+    		const watchface_editable_edit_state_e state,
+    		void *user_data)
+    {
+    	bundle *data;
+    	int ed_id;
 
-	watchface_editable_get_current_data(handle, &data);
-	watchface_editable_get_editable_id(handle, &ed_id);
+    	watchface_editable_get_current_data(handle, &data);
+    	watchface_editable_get_editable_id(handle, &ed_id);
 
-}
-```
+    }
+    ```
 
 
 ## Transferring Touch Event
