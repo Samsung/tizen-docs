@@ -328,3 +328,7 @@ void _on_complication_clicked(complication_h handle)
 	watchface_complication_transfer_event(handle, WATCHFACE_COMPLICATION_EVENT_TAP);
 }
 ```
+
+## Related Information
+- Dependencies
+  - Tizen 5.0 and Higher for Wearable
