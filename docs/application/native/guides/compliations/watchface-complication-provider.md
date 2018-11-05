@@ -130,23 +130,23 @@ And if the touch event is transferred from watchface, the information of the com
     ```cpp
     void app_control(app_control_h app_control, void *data)
     {
-        watchface_complication_event_type_e event_type;
-        char *provider_id;
-        watchface_complication_type_e type;
-        bundle *context;
+    	watchface_complication_event_type_e event_type;
+    	char *provider_id;
+    	watchface_complication_type_e type;
+    	bundle *context;
 
-        watchface_complication_provider_get_event(app_control, &event_type);
+    	watchface_complication_provider_get_event(app_control, &event_type);
 
-        if (event_type == WATCHFACE_COMPLICATION_EVENT_TAP) {
-                watchface_complication_provider_event_get_provider_id(app_control,
-                        &provider_id);
-                watchface_complication_provider_event_launch_get_complication_type(
-                        app_control, &type);
-                watchface_complication_provider_event_launch_get_context(app_control,
-                        &context);
+    	if (event_type == WATCHFACE_COMPLICATION_EVENT_TAP) {
+    		watchface_complication_provider_event_get_provider_id(app_control,
+    				&provider_id);
+    		watchface_complication_provider_event_launch_get_complication_type(
+    				app_control, &type);
+    		watchface_complication_provider_event_launch_get_context(app_control,
+    				&context);
 
-                /* Do something */
-        }
+    		/* Do something */
+    	}
     }
     ```
 
