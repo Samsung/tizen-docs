@@ -17,6 +17,8 @@
 ## Developing Applications
 ### [Developing Applications with Things SDK API](/iot/getting-started/things-app-development-5.0.md)
 ### [Developing Applications with Things SDK API for Tizen 4.0](/iot/getting-started/things-app-development.md)
+### [Setting up Smartthings Cloud](/iot/getting-started/things-cloud-setup.md)
+### [Testing with Smartthings App](/iot/getting-started/cloud-app-test.md)
 
 # API Guides
 ## [Overview](/iot/guides/iot-api.md)
