@@ -204,6 +204,27 @@ Most of the flashing steps mentioned in this section for ARTIK 530 and ARTIK 530
 
 For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On_ARTIK530#Migration_to_Tizen_Platform_from_other_platform>.
 
+5. Flash the platform image:
+
+    1. Reboot the board and enter the bootloader mode again.
+    2. In the serial shell, enter `thordown 0 mmc 0`:
+
+        ```
+        artik530# thordown 0 mmc 0
+        ```
+
+    3. In the Linux shell, run lthor to flash the platform image:
+
+        ```
+        $ lthor tizen-unified_YYYYMMDD.V_iot-headless-2parts-armv7l-artik530_710.tar.gz
+       ```
+
+        or
+
+        ```
+        $ lthor tizen-unified_YYYYMMDD.V_iot-headed-3parts-armv7l-artik530_710.tar.gz
+        ```
+
 6.  Open the Smart Development Bridge (SDB) connection:
     1.  Verify whether SDB is connected, in the Linux shell of the host computer:
 
@@ -227,20 +248,23 @@ For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On
 ## Installing Drivers
 
 1.  Connect Smart Development Bridge (SDB) as described in the previous section.
-2.  Install the connectivity drivers
-        1.  Download the plugin zip file from the **ARTIK530(5.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-        2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
+2.  Install the connectivity drivers:
+    1.  Download the plugin zip file from the **ARTIK530(5.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
 
-            ```
-            $ ./ARTIK_530_plugin_tizen5.0.sh
-            ```
+        ![ARTIK530(5.0) Plugin section](media/wifi_driver_artik530_5.0.png)
 
-        3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+    2.  For the case of the Linux shell (Linux), run the `sh` script given in the instructions. For example:
 
-            ```
-            > ARTIK_530_plugin_tizen5.0.bat
-            ```
+        ```
+        $ ./ARTIK_530_plugin_tizen5.0.sh
+        ```
+
+    3.  For the case of the Command window (Windows), run the `bat` script given in the instructions. For example:
+
+        ```
+        > ARTIK_530_plugin_tizen5.0.bat
+        ```
 
 # Tips
 

@@ -38,7 +38,7 @@
 ### [Tizen Common Headed API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headed/latest)
 ### [Tizen Common Headless API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headless/latest)
 
-# Preview 2
+# Tizen IoT Preview 2
 
 ## Getting Started
 ### [Tizen IoT](/iot/preview2/getting-started/overview.md)

@@ -7,23 +7,23 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
 
     ![Tizen Project Wizard](media/thingsapp_sample.png)
 
-3.  Select **Custom > Iot-headless v4.0**, and click **Next**.
+3.  Select **Custom > Iot-headless v5.0**, and click **Next**.
 
-    ![Tizen Project Wizard](media/thingsapp_profile_select.png)
+    ![Tizen Project Wizard](media/thingsapp_profile_select_5.0.png)
 
 4.  Select **Native Application**, and click **Next**.
 
-    ![Select a native project](media/thingsapp_native.png)
+    ![Select a native project](media/thingsapp_native_5.0.png)
 
 5.  Select **Headless things app**, and click **Next**.
 
-    ![Select a native project](media/thingsapp_serviceapp.png)
+    ![Select a native project](media/thingsapp_serviceapp_5.0.png)
 
 6.  Define the project properties, and click **Next**.
 
     You can enter a project name (3-50 characters) and a unique package ID. You can also select the location and working sets by clicking **More properties**.
 
-    ![Enter the project name](media/thingsapp_project_name.png)
+    ![Enter the project name](media/thingsapp_project_name_5.0.png)
 
 7.  In the **Device/Platform** list:
     1.  Select **\[network audio\]**.
@@ -44,7 +44,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
     Instead of using an existing sample as a basis for your application, you can use the **IoT** template that makes use of the Things SDK API:
 
     1.  In Tizen Studio, select **File > New > Tizen Project**.
-    2.  Select **Template**, click **Next**, select **Custom > Iot-headless v4.0**, and click **Next**.
+    2.  Select **Template**, click **Next**, select **Custom > Iot-headless v5.0**, and click **Next**.
     3.  Select **Native Application**, click **Next**, select the **IoT** template, and click **Finish**.
 
 9.  You need a certificate to make the device work correctly. You only have to create the certificate once, when you first install Tizen Studio.
@@ -115,7 +115,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
 
 11. Connect the ARTIK 530 or Raspberry Pi 3 board to a Linux computer with a USB cable and make SDB connection.
 
-    For more information, see [Hardware Configuration](hardware-configuration.md).
+    For more information, see [Setting up the board](setting-up-board.md).
 
 12. Confirm that **artik** or **rpi3** is shown in Tizen Studio toolbar.(This will be shown when SDB is connected.)
 

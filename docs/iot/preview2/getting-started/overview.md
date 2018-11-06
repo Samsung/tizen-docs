@@ -1,5 +1,9 @@
 # Tizen IoT
 
+> **Note**
+> Tizen IoT Preview 2 is working only on Tizen 4.0. 
+>
+
 Tizen is commercialized for smart TV, smart phone, smart watch, and smart home appliances with three profiles: TV, mobile, and wearable. Tizen IoT supports any type of special-purpose IoT devices based on the Linux kernel.
 
 Tizen IoT Preview 2 is released from Tizen Studio 2.3. Tizen IoT Preview 1 was the first preview release of Tizen for the development of IoT devices, which are connected easily and securely with legacy IoT ecosystems such as SmartThings&trade;. In addtion to the features of Tizen IoT Preview 1, Tizen IoT Preview 2 provides the customized platform features and the support for ARTIK 530s. Tizen IoT Preview 2 consists of platform images, development environments, samples for getting started, and customized platform.
@@ -19,6 +23,10 @@ Tizen IoT Preview 2 is released from Tizen Studio 2.3. Tizen IoT Preview 1 was t
 
     -   [IoT API](../guides/iot-api.md)
         -   Things SDK for SmartThings&trade;: Using Things SDK API for [SmartThings&trade;](https://smartthings.developer.samsung.com/), you can create your IoT devices with the SmartThings Cloud. The Things SDK API enables you to integrate, control, and monitor your IoT devices through the SmartThings Cloud with the SmartThings application.
+
+        > **Note**
+        >
+        > The API set of Tizen IoT Extension SDK version 1 based on Tizen 5.0 is not compatible with that of Tizen IoT Preview 2 based on Tizen 4.0.
 
         -   Peripheral I/O: Using the Tizen Peripheral I/O Native API for IoT devices, you can control peripherals, such as sensors and actuators, using industry-standard protocols and interfaces.
 
