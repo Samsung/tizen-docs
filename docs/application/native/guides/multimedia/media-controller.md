@@ -47,6 +47,14 @@ The main features of the Media Controller API include:
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
+- Sending and processing a search command
+
+  You can [send a search command](#sending-and-processing-a-search-command) to the server from the client side, and then process the command on the server side.
+
+  > **Note**
+  >
+  > This feature supports Tizen 5.0 and Higher for Mobile and Wearable.
+
 ## Prerequisites
 
 To enable your application to use the media controller functionality:
@@ -573,6 +581,132 @@ To receive the reply of processing command on the server side:
 > This feature supports Tizen 4.0 and Higher for Mobile.
 
 
+## Sending and Processing a Search Command
+
+To send a search command to the client from the server side:
+
+1. Create the media controller client handle using the `mc_client_create()`:
+
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
+
+2. Retrieve the server name using the `mc_client_foreach_server()`:
+
+   ```
+   bool
+   activated_server_cb(const char *server_name, void *user_data)
+   {
+     GList **server_list = (GList **)user_data;
+
+     if (!server_list || !server_name) return FALSE;
+     *server_list = g_list_append(*client_list, g_strdup(server_name));
+
+     return TRUE;
+   }
+
+   GList *server_list = NULL;
+
+   ret = mc_client_foreach_server(g_client_h, activated_server_cb, &server_list);
+   ```
+
+3. Create the search handle using the `mc_search_create()`:
+
+   ```
+   ret = mc_search_create(&g_search_h);
+   ```
+
+4. Set the condition with [a content type](#media-controller-content-type-attributes), [a search category](#media-controller-search-category-attributes) and a search keyword using the `mc_search_set_condition()`:
+
+   ```
+   ret = mc_search_set_condition(g_search_h, MC_CONTENT_TYPE_MUSIC, MC_SEARCH_TITLE, "keyword", NULL);
+   ```
+
+5. Send the search command to the server using the corresponding `mc_client_send_search_cmd()`. Use the server name retrieved in the previous step to identify the server.
+For example, to send a your own event to the client, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
+
+   ```
+   char *request_id = NULL;
+
+   ret = mc_client_send_search_cmd(g_client_h, server_name, g_search_h, &request_id);
+   ```
+
+6. Destroy the search handle using the `mc_search_destroy()`, when search handle is no longer needed:
+
+   ```
+   mc_search_destroy(g_search_h);
+   ```
+
+7. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
+
+   ```
+   mc_client_destroy(g_client_h);
+   ```
+
+To process the received search command on the server side:
+
+1. Create the media controller client handle using the `mc_server_create()`:
+
+   ```
+   ret = mc_server_create(&g_server_h);
+   ```
+
+2. Define the callback that is invoked when the server receives the search command.
+
+   For example, to define a callback for a search command:
+
+   ```
+   void
+   search_command_received_cb(const char* client_name, const char *request_id, mc_search_h search, void *user_data)
+   {
+      mc_search_h *get_search = mc_search_h *(user_data);
+      dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request id: %s\n", client_name, request_id);
+      ret = mc_search_clone(search, get_search);
+   }
+   ```
+
+3. Register the callback:
+
+   - To register a callback for a search command, use the `mc_server_set_search_cmd_received_cb()`.
+
+      For example, to register a callback for a search command:
+
+      ```
+      mc_search_h g_search_h = NULL;
+      ret = mc_server_set_search_cmd_received_cb(g_server_h, search_command_received_cb, &g_search);
+      ```
+
+4. Retrieve the search condition using the `mc_search_foreach_condition()`:
+
+   ```
+   bool
+   search_condition_cb(mc_content_type_e content_type, mc_search_category_e category, const char *search_keyword, bundle *data, void *user_data)
+   {
+      dlog_print(DLOG_DEBUG, LOG_TAG, "Content Type: %d, Search Category: %d, Search Keyword: %s\n", content_type, category, search_keyword);
+
+      return TRUE;
+   }
+
+   ret = mc_search_foreach_condition(g_search_h, search_condition_cb, NULL);
+   ```
+
+5. Destroy the search handle using the `mc_search_destroy()`, when search handle is no longer needed:
+
+   ```
+   mc_search_destroy(g_search_h);
+   ```
+
+6. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
+
+   ```
+   mc_server_destroy(g_server_h);
+   ```
+
+> **Note**
+>
+> This feature supports Tizen 5.0 and Higher for Mobile and Wearable.
+
+
 ## Media Controller Server State Attributes
 
 The following table lists all the server state attributes the client can receive:
@@ -685,6 +819,45 @@ The following table lists all the playlist update mode attributes the client can
 > **Note**
 >
 > This Attributes support Tizen 4.0 and Higher for Mobile.
+
+## Media Controller Content Type Attributes
+
+The following table lists all the content type attributes the server can receive.
+
+**Table: Media controller content type attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Content types**        |                                          |
+| `MC_CONTENT_TYPE_IMAGE`          | Image content type                       |
+| `MC_CONTENT_TYPE_VIDEO`          | Video content type                       |
+| `MC_CONTENT_TYPE_MUSIC`          | Music content type                       |
+| `MC_CONTENT_TYPE_OTHER`          | Other content type                       |
+| `MC_CONTENT_TYPE_UNDECIDED`      | Content type is not decided              |
+
+> **Note**
+>
+> This Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+
+## Media Controller Search Category Attributes
+
+The following table lists all the search category attributes the server can receive.
+
+**Table: Media controller search category attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Search categories**        |                                          |
+| `MC_SEARCH_NO_CATEGORY`          | No search category                       |
+| `MC_SEARCH_TITLE`                | Search by content title                  |
+| `MC_SEARCH_ARTIST`               | Search by content artist                 |
+| `MC_SEARCH_ALBUM`                | Search by content album                  |
+| `MC_SEARCH_GENRE`                | Search by content genre                  |
+| `MC_SEARCH_TPO`                  | Search by Time Place Occasion            |
+
+> **Note**
+>
+> This Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies
