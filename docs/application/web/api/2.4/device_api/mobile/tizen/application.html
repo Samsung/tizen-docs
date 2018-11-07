@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Application">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Application API</h1></div>
 <div class="brief">
  This API provides a way to launch other applications and access
@@ -35,22 +35,26 @@ Since Tizen 2.4 the <em>Application</em> interface provides application event br
 For more information on the Application features, see <a href="https://developer.tizen.org/development/guides/web-application/application-management/applications">Application Guide</a>, <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-groups">Application Group Guide</a> or <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls">Application Control Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#ApplicationId">ApplicationId</a>
+<li>
+                    1.1. <a href="#ApplicationId">ApplicationId</a>
 </li>
-<li>1.2. <a href="#ApplicationContextId">ApplicationContextId</a>
+<li>
+                    1.2. <a href="#ApplicationContextId">ApplicationContextId</a>
 </li>
-<li>1.3. <a href="#UserEventData">UserEventData</a>
+<li>
+                    1.3. <a href="#UserEventData">UserEventData</a>
 </li>
-<li>1.4. <a href="#EventData">EventData</a>
+<li>
+                    1.4. <a href="#EventData">EventData</a>
 </li>
-<li>1.5. <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>
+<li>
+                    1.5. <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>
 </li>
 </ul>
 </li>
@@ -93,7 +97,9 @@ For more information on the Application features, see <a href="https://developer
 </li>
 </ul>
 </li>
-<li>3. <a href="#full-webidl">Full WebIDL</a>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
 </li>
 </ul>
 <hr>
@@ -111,30 +117,37 @@ For more information on the Application features, see <a href="https://developer
 <tr>
 <td><a href="#ApplicationManager">ApplicationManager</a></td>
 <td>
-<a href="#Application">Application</a> <a href="#ApplicationManager::getCurrentApplication">getCurrentApplication</a> ()<br>
-    void <a href="#ApplicationManager::kill">kill</a> (<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#ApplicationManager::launch">launch</a> (<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#ApplicationManager::launchAppControl">launchAppControl</a> (<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback)<br>
-    void <a href="#ApplicationManager::findAppControl">findAppControl</a> (<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#ApplicationManager::getAppsContext">getAppsContext</a> (<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    <a href="#ApplicationContext">ApplicationContext</a> <a href="#ApplicationManager::getAppContext">getAppContext</a> (optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId)<br>
-    void <a href="#ApplicationManager::getAppsInfo">getAppsInfo</a> (<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    <a href="#ApplicationInformation">ApplicationInformation</a> <a href="#ApplicationManager::getAppInfo">getAppInfo</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)<br>
-    <a href="#ApplicationCertificate">ApplicationCertificate</a>[] <a href="#ApplicationManager::getAppCerts">getAppCerts</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)<br>
-    DOMString <a href="#ApplicationManager::getAppSharedURI">getAppSharedURI</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)<br>
-    <a href="#ApplicationMetaData">ApplicationMetaData</a>[] <a href="#ApplicationManager::getAppMetaData">getAppMetaData</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)<br>
-    long <a href="#ApplicationManager::addAppInfoEventListener">addAppInfoEventListener</a> (<a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a> eventCallback)<br>
-    void <a href="#ApplicationManager::removeAppInfoEventListener">removeAppInfoEventListener</a> (long watchId)</td>
+<div>
+<a href="#Application">Application</a> <a href="#ApplicationManager::getCurrentApplication">getCurrentApplication</a> ()</div>
+<div>void <a href="#ApplicationManager::kill">kill</a> (<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ApplicationManager::launch">launch</a> (<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ApplicationManager::launchAppControl">launchAppControl</a> (<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback)</div>
+<div>void <a href="#ApplicationManager::findAppControl">findAppControl</a> (<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#ApplicationManager::getAppsContext">getAppsContext</a> (<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>
+<a href="#ApplicationContext">ApplicationContext</a> <a href="#ApplicationManager::getAppContext">getAppContext</a> (optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId)</div>
+<div>void <a href="#ApplicationManager::getAppsInfo">getAppsInfo</a> (<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>
+<a href="#ApplicationInformation">ApplicationInformation</a> <a href="#ApplicationManager::getAppInfo">getAppInfo</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+<div>
+<a href="#ApplicationCertificate">ApplicationCertificate</a>[] <a href="#ApplicationManager::getAppCerts">getAppCerts</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+<div>DOMString <a href="#ApplicationManager::getAppSharedURI">getAppSharedURI</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+<div>
+<a href="#ApplicationMetaData">ApplicationMetaData</a>[] <a href="#ApplicationManager::getAppMetaData">getAppMetaData</a> (optional <a href="#ApplicationId">ApplicationId</a>? id)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#Application">Application</a></td>
-<td>void <a href="#Application::exit">exit</a> ()<br>
-    void <a href="#Application::hide">hide</a> ()<br>
-    <a href="#RequestedApplicationControl">RequestedApplicationControl</a> <a href="#Application::getRequestedAppControl">getRequestedAppControl</a> ()<br>
-    long <a href="#Application::addEventListener">addEventListener</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback)<br>
-    void <a href="#Application::removeEventListener">removeEventListener</a> (long watchId)<br>
-    void <a href="#Application::broadcastEvent">broadcastEvent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data)<br>
-    void <a href="#Application::broadcastTrustedEvent">broadcastTrustedEvent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data)</td>
+<td>
+<div>void <a href="#Application::exit">exit</a> ()</div>
+<div>void <a href="#Application::hide">hide</a> ()</div>
+<div>
+<a href="#RequestedApplicationControl">RequestedApplicationControl</a> <a href="#Application::getRequestedAppControl">getRequestedAppControl</a> ()</div>
+<div>long <a href="#Application::addEventListener">addEventListener</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback)</div>
+<div>void <a href="#Application::removeEventListener">removeEventListener</a> (long watchId)</div>
+<div>void <a href="#Application::broadcastEvent">broadcastEvent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data)</div>
+<div>void <a href="#Application::broadcastTrustedEvent">broadcastTrustedEvent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#ApplicationInformation">ApplicationInformation</a></td>
@@ -154,8 +167,10 @@ For more information on the Application features, see <a href="https://developer
 </tr>
 <tr>
 <td><a href="#RequestedApplicationControl">RequestedApplicationControl</a></td>
-<td>void <a href="#RequestedApplicationControl::replyResult">replyResult</a> (optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data)<br>
-    void <a href="#RequestedApplicationControl::replyFailure">replyFailure</a> ()</td>
+<td>
+<div>void <a href="#RequestedApplicationControl::replyResult">replyResult</a> (optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data)</div>
+<div>void <a href="#RequestedApplicationControl::replyFailure">replyFailure</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#ApplicationCertificate">ApplicationCertificate</a></td>
@@ -167,26 +182,30 @@ For more information on the Application features, see <a href="https://developer
 </tr>
 <tr>
 <td><a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a></td>
-<td>void <a href="#ApplicationInformationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray)</td>
+<td><div>void <a href="#ApplicationInformationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray)</div></td>
 </tr>
 <tr>
 <td><a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a></td>
-<td>void <a href="#FindAppControlSuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl)</td>
+<td><div>void <a href="#FindAppControlSuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl)</div></td>
 </tr>
 <tr>
 <td><a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a></td>
-<td>void <a href="#ApplicationContextArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationContext">ApplicationContext</a>[] contexts)</td>
+<td><div>void <a href="#ApplicationContextArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#ApplicationContext">ApplicationContext</a>[] contexts)</div></td>
 </tr>
 <tr>
 <td><a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a></td>
-<td>void <a href="#ApplicationControlDataArrayReplyCallback::onsuccess">onsuccess</a> (optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data)<br>
-    void <a href="#ApplicationControlDataArrayReplyCallback::onfailure">onfailure</a> ()</td>
+<td>
+<div>void <a href="#ApplicationControlDataArrayReplyCallback::onsuccess">onsuccess</a> (optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data)</div>
+<div>void <a href="#ApplicationControlDataArrayReplyCallback::onfailure">onfailure</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a></td>
-<td>void <a href="#ApplicationInformationEventCallback::oninstalled">oninstalled</a> (<a href="#ApplicationInformation">ApplicationInformation</a> info)<br>
-    void <a href="#ApplicationInformationEventCallback::onupdated">onupdated</a> (<a href="#ApplicationInformation">ApplicationInformation</a> info)<br>
-    void <a href="#ApplicationInformationEventCallback::onuninstalled">onuninstalled</a> (<a href="#ApplicationId">ApplicationId</a> id)</td>
+<td>
+<div>void <a href="#ApplicationInformationEventCallback::oninstalled">oninstalled</a> (<a href="#ApplicationInformation">ApplicationInformation</a> info)</div>
+<div>void <a href="#ApplicationInformationEventCallback::onupdated">onupdated</a> (<a href="#ApplicationInformation">ApplicationInformation</a> info)</div>
+<div>void <a href="#ApplicationInformationEventCallback::onuninstalled">onuninstalled</a> (<a href="#ApplicationId">ApplicationId</a> id)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#SystemEventData">SystemEventData</a></td>
@@ -194,7 +213,7 @@ For more information on the Application features, see <a href="https://developer
 </tr>
 <tr>
 <td><a href="#EventCallback">EventCallback</a></td>
-<td>void <a href="#EventCallback::onevent">onevent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data)</td>
+<td><div>void <a href="#EventCallback::onevent">onevent</a> (<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data)</div></td>
 </tr>
 <tr>
 <td><a href="#EventInfo">EventInfo</a></td>
@@ -210,8 +229,7 @@ For more information on the Application features, see <a href="https://developer
  The unique ID for an installed application.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString ApplicationId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -221,8 +239,7 @@ For more information on the Application features, see <a href="https://developer
  The unique ID for a running application.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString ApplicationContextId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -232,8 +249,7 @@ For more information on the Application features, see <a href="https://developer
  Specifies the user event data.
           </div>
 <pre class="webidl prettyprint">  typedef object UserEventData;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
           </p>
 </div>
@@ -243,8 +259,7 @@ For more information on the Application features, see <a href="https://developer
  Specifies the user or system defined event data.
           </div>
 <pre class="webidl prettyprint">  typedef (<a href="#SystemEventData">SystemEventData</a> or <a href="#UserEventData">UserEventData</a>) EventData;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
           </p>
 </div>
@@ -254,8 +269,7 @@ For more information on the Application features, see <a href="https://developer
  Specifies the application launch mode when it is launched by <em>launchAppControl()</em>. This value may be overriden if application launched by <em>launchAppControl()</em> has value <em>SINGLE</em> configured in application manifest.
           </div>
 <pre class="webidl prettyprint">  enum ApplicationControlLaunchMode { "SINGLE", "GROUP" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -282,8 +296,7 @@ GROUP - Launch application in subgroup            </li>
     readonly attribute <a href="#ApplicationManager">ApplicationManager</a> application;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ApplicationManagerObject">ApplicationManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -298,49 +311,27 @@ The <em>tizen.application </em>object allows access to the Application API's fun
  The ApplicationManager interface provides methods to retrieve application information, launch, install application, etc.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationManager {
-
     <a href="#Application">Application</a> getCurrentApplication() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId,
-              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void launch(<a href="#ApplicationId">ApplicationId</a> id,
-                optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
-                          optional <a href="#ApplicationId">ApplicationId</a>? id,
-                          optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                          optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
-                        <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback,
+    void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void launch(<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback)
+                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#ApplicationInformation">ApplicationInformation</a> getAppInfo(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addAppInfoEventListener(<a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeAppInfoEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="methods">
@@ -353,16 +344,21 @@ The <em>tizen.application </em>object allows access to the Application API's fun
 <div class="brief">
  Gets the <em>Application </em>object defining the current application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Application">Application</a> getCurrentApplication();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Application">Application</a> getCurrentApplication();</pre></div>
+<p><span class="version">Since: </span>
  2.0
+            </p>
+<p><span class="remark">Remark: </span>
+ This method is not supported by Web Widget.
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Application The data structure that defines the current application.
-              </div>
+<ul>
+<span class="return">Application:
+                  </span>
+ The data structure that defines the current application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -371,9 +367,9 @@ The <em>tizen.application </em>object allows access to the Application API's fun
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var app = tizen.application.getCurrentApplication();
- console.log("Current application's app id is " + app.appInfo.id);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var app = tizen.application.getCurrentApplication();
+console.log("Current application's app id is " + app.appInfo.id);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::kill">
@@ -383,10 +379,8 @@ The <em>tizen.application </em>object allows access to the Application API's fun
 <div class="brief">
  Kills an application with the specified application context ID.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -403,28 +397,26 @@ or if the specified context ID matches the context ID of the calling application
 UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  partner
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/appmanager.kill
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">contextId</span>: 
- The identifier of the application to kill
+<span class="name">contextId</span>:
+ The identifier of the application to kill.
                 </li>
           <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- The method to invoke when an application is killed successfully
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an application is killed successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- The method to invoke when an error occurs
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs.
                 </li>
         </ul>
 </div>
@@ -441,23 +433,27 @@ UnknownError - If any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onKillSuccess() {
-     console.log("Application terminated successfully");
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onKillSuccess()
+{
+  console.log("Application terminated successfully");
+}
 
- function onRunningAppsContext(contexts) {
-    // let's assume that the application "targetApp0.main" has been installed.
-    var targetId = "targetApp0.main";
+function onRunningAppsContext(contexts)
+{
+  /* Let's assume that the application "targetApp0.main" has been installed. */
+  var targetId = "targetApp0.main";
 
-    for (var i = 0; i &lt; contexts.length; i++) {
-        if (contexts[i].appId == targetId) {
-            tizen.application.kill(contexts[i].id, onKillSuccess);
-        }
+  for (var i = 0; i &lt; contexts.length; i++)
+  {
+    if (contexts[i].appId == targetId)
+    {
+      tizen.application.kill(contexts[i].id, onKillSuccess);
     }
- }
+  }
+}
 
- tizen.application.getAppsContext(onRunningAppsContext);
- </pre>
+tizen.application.getAppsContext(onRunningAppsContext);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::launch">
@@ -467,10 +463,8 @@ UnknownError - If any other error occurs.              </li>
 <div class="brief">
  Launches an application with the given application ID.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void launch(<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void launch(<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -481,33 +475,32 @@ The <em>ErrorCallback</em> method is launched with these error types:
               <li>
 NotFoundError - If the application is not found with the specified ID.              </li>
               <li>
-InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
-              <li>
 UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/application.launch
+            </p>
+<p><span class="remark">Remark: </span>
+ Since Tizen 2.4, the launch request of the service application from other package is restricted by the platform.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span>: 
- A unique string representing the application ID
+<span class="name">id</span>:
+ A unique string representing the application ID.
                 </li>
           <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to call when the invocation ends successfully
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when the invocation ends successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to call when an error occurs
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -524,13 +517,14 @@ UnknownError - If any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onsuccess() {
-     console.log("The application has launched successfully");
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onsuccess()
+{
+  console.log("The application has launched successfully");
+}
 
- // let's assume that application "targetApp0.main" has been installed
- tizen.application.launch("targetApp0.main", onsuccess);
- </pre>
+/* Let's assume that application "targetApp0.main" has been installed. */
+tizen.application.launch("targetApp0.main", onsuccess);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::launchAppControl">
@@ -540,10 +534,9 @@ UnknownError - If any other error occurs.              </li>
 <div class="brief">
  Launches an application with the specified application control.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -566,6 +559,8 @@ information about what the application is doing. The launched application
 can send a result to the caller application with the <em>replyResult() </em>method of the
 <em>RequestedApplicationControl</em> interface.
             </p>
+           </div>
+<div class="description">
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
             </p>
@@ -573,43 +568,43 @@ The <em>ErrorCallback</em> method is launched with these error types:
               <li>
 NotFoundError - If the system cannot find the application that matches the specified application control.              </li>
               <li>
-InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
-              <li>
 SecurityError - If the application does not have the privilege to call the specified application control operation.              </li>
               <li>
-UnknownError - If any other error occurs.              </li>
+UnknownError: If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/application.launch
+            </p>
+<p><span class="remark">Remark: </span>
+ Since Tizen 2.4, the launch request of the service application from other package is restricted by the platform.
+Also, implicit launch requests are NOT delivered to service applications since 2.4. To launch a service application, an explicit launch request with <em>ApplicationId id</em> MUST be sent.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">appControl</span>: 
- The data structure describing application control details
+<span class="name">appControl</span>:
+ The data structure describing application control details.
                 </li>
           <li class="param">
-<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- An identifier of the application to be launched. If the ID is <var>null </var>or not specified, then the system tries to find the application to be launched for the requested application control
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An identifier of the application to be launched. If the ID is <var>null </var>or not specified, then the system tries to find the application to be launched for the requested application control.
                 </li>
           <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to call when the invocation ends successfully
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when the invocation ends successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to invoke when an error occurs
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs.
                 </li>
           <li class="param">
-<span class="name">replyCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to invoke when the application gets back results from the launched application
+<span class="name">replyCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when the application gets back results from the launched application.
                 </li>
         </ul>
 </div>
@@ -626,34 +621,40 @@ UnknownError - If any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appControl = new tizen.ApplicationControl(
-     "http://tizen.org/appcontrol/operation/pick",
-     null,
-     "image/jpeg",
-     null);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appControl = new tizen.ApplicationControl(
+    "http://tizen.org/appcontrol/operation/pick", null, "image/jpeg", null);
 
- var appControlReplyCallback = {
-     // callee sent a reply
-     onsuccess: function(data) {
-         for (var i = 0; i &lt; data.length; i++) {
-             if (data[i].key == "http://tizen.org/appcontrol/data/selected") {
-                 console.log('Selected image is ' + data[i].value[0]);
-             }
-         }
-     },
-     // callee returned failure
-     onfailure: function() {
-         console.log('The launch application control failed');
-     }
- }
+var appControlReplyCallback =
+{
+  /* Callee sent a reply. */
+  onsuccess: function(data)
+  {
+    for (var i = 0; i &lt; data.length; i++)
+    {
+      if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+      {
+        console.log("Selected image is " + data[i].value[0]);
+      }
+    }
+  },
+  /* Callee returned failure. */
+  onfailure: function()
+  {
+    console.log("The launch application control failed");
+  }
+};
 
- tizen.application.launchAppControl(
-     appControl,
-     null,
-     function() {console.log("launch application control succeed"); },
-     function(e) {console.log("launch application control failed. reason: " + e.message); },
-     appControlReplyCallback );
- </pre>
+tizen.application.launchAppControl(appControl, null,
+    function()
+    {
+      console.log("Launch application control succeed");
+    },
+    function(e)
+    {
+      console.log("Launch application control failed, reason: " + e.message);
+    },
+    appControlReplyCallback);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::findAppControl">
@@ -663,10 +664,9 @@ UnknownError - If any other error occurs.              </li>
 <div class="brief">
  Finds which applications can be launched with the given application control.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback, 
+                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -678,7 +678,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-InvalidValuesError - If any of the input parameters contain an invalid value.              </li>
+NotFoundError - If the application is not found with the given Appcontrol.              </li>
               <li>
 UnknownError - If any other error occurs.              </li>
             </ul>
@@ -687,16 +687,16 @@ UnknownError - If any other error occurs.              </li>
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">appControl</span>: 
- A data structure describing application control details
+<span class="name">appControl</span>:
+ A data structure describing application control details.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback method to call that returns a list of application information
+<span class="name">successCallback</span>:
+ The method to call that returns a list of application information.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to call when an error occurs
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -708,42 +708,48 @@ UnknownError - If any other error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appControl = new tizen.ApplicationControl(
-     "http://tizen.org/appcontrol/operation/pick",
-     null,
-     "image/jpeg",
-     null);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appControl = new tizen.ApplicationControl(
+    "http://tizen.org/appcontrol/operation/pick", null, "image/jpeg", null);
 
- function successCB(appInfos, appControl)
- {
-     // appControl is same object with the value passed as first parameter to findAppControl()
-     var appControlReplyCallback = {
-         // callee sent a reply
-         onsuccess: function(data) {
-             for (var i = 0; i &lt; data.length; i++) {
-                 if (data[i].key == "http://tizen.org/appcontrol/data/selected") {
-                     console.log('Selected image is ' + data[i].value[0]);
-                 }
-             }
-         },
-         // callee returned failure
-         onfailure: function() {
-             console.log('The launch application control failed');
-         }
-     }
+function successCB(appInfos, appControl)
+{
+  /* appControl is same object with the value passed as first parameter to findAppControl(). */
+  var appControlReplyCallback =
+  {
+    /* Callee sent a reply. */
+    onsuccess: function(data)
+    {
+      for (var i = 0; i &lt; data.length; i++)
+      {
+        if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+        {
+          console.log("Selected image is " + data[i].value[0]);
+        }
+      }
+    },
+    /* Callee returned failure. */
+    onfailure: function()
+    {
+      console.log("The launch application control failed");
+    }
+  };
 
-     var appId = appInfos[0].id; // select first app's id
+  var appId = appInfos[0].id;  /* Select first app's id. */
 
-     tizen.application.launchAppControl(
-         appControl,
-         appId,
-         function() {console.log("launch application control succeed"); },
-        function(e) {console.log("launch application control failed. reason: " + e.message); },
-        appControlReplyCallback );
- }
+  tizen.application.launchAppControl(appControl, appId,
+      function()
+      {
+        console.log("Launch application control succeed");
+      },
+      function(e)
+      {
+        console.log("Launch application control failed, reason: " + e.message);
+      },
+      appControlReplyCallback);
+}
 
- tizen.application.findAppControl(appControl, successCB);
- </pre>
+tizen.application.findAppControl(appControl, successCB);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::getAppsContext">
@@ -754,10 +760,8 @@ UnknownError - If any other error occurs.              </li>
  Gets a list of application contexts for applications that are currently running on a device.
 The information contained for each application corresponds to the application state at the time when the list had been generated.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -773,12 +777,12 @@ UnknownError - If an unknown error occurs.              </li>
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span>: 
- The method to call when the invocation ends successfully
+<span class="name">successCallback</span>:
+ The method to call when the invocation ends successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- The method to call when an error occurs
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -790,13 +794,16 @@ UnknownError - If an unknown error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onRunningAppsContext(contexts) {
-     for (var i = 0; i &lt; contexts.length; i++)
-         console.log("ID : " + contexts[i].id);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onRunningAppsContext(contexts)
+{
+  for (var i = 0; i &lt; contexts.length; i++)
+  {
+    console.log("ID: " + contexts[i].id);
+  }
+}
 
- tizen.application.getAppsContext(onRunningAppsContext);
- </pre>
+tizen.application.getAppsContext(onRunningAppsContext);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::getAppContext">
@@ -808,25 +815,27 @@ UnknownError - If an unknown error occurs.              </li>
 If the ID is set to<var> null</var> or is not set at all, the method returns the application context of the current application.
 The list of running applications and their application IDs is obtained with <em>getAppsContext()</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">contextId</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">contextId</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  A string representing an application context ID<br>If the ID is not provided, the application context of the calling application is returned.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- ApplicationContext A data structure that lists running application details.
-              </div>
+<ul>
+<span class="return">ApplicationContext:
+                  </span>
+ A data structure that lists running application details.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -840,9 +849,9 @@ The list of running applications and their application IDs is obtained with <em>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appContext = tizen.application.getAppContext(null);
- console.log("Application context retrieved for app " + appContext.appId);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appContext = tizen.application.getAppContext(null);
+console.log("Application context retrieved for app " + appContext.appId);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::getAppsInfo">
@@ -853,10 +862,8 @@ The list of running applications and their application IDs is obtained with <em>
  Gets the list of installed applications' information on a device.
 The information contained on each application corresponds to the application state at the time when the list had been generated.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -872,12 +879,12 @@ UnknownError - If an unknown error occurs.              </li>
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback method to call when the invocation ends successfully
+<span class="name">successCallback</span>:
+ The method to call when the invocation ends successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to call when an error occurs
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -889,13 +896,16 @@ UnknownError - If an unknown error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onListInstalledApps(applications) {
-     for (var i = 0; i &lt; applications.length; i++)
-         console.log("ID : " + applications[i].id);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onListInstalledApps(applications)
+{
+  for (var i = 0; i &lt; applications.length; i++)
+  {
+    console.log("ID: " + applications[i].id);
+  }
+}
 
- tizen.application.getAppsInfo(onListInstalledApps);
- </pre>
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::getAppInfo">
@@ -905,10 +915,8 @@ UnknownError - If an unknown error occurs.              </li>
 <div class="brief">
  Gets application information for a specified application ID.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationInformation">ApplicationInformation</a> getAppInfo(optional <a href="#ApplicationId">ApplicationId</a>? id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationInformation">ApplicationInformation</a> getAppInfo(optional <a href="#ApplicationId">ApplicationId</a>? id);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -921,15 +929,19 @@ The list of installed applications and their application IDs is obtained with <e
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  A string representing an application ID<br>If the ID is not provided, the application information of the calling application is returned.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- ApplicationInformation The information of an application.
-              </div>
+<ul>
+<span class="return">ApplicationInformation:
+                  </span>
+ The information of an application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -943,9 +955,9 @@ The list of installed applications and their application IDs is obtained with <e
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appInfo = tizen.application.getAppInfo(null);
- console.log("Current application name : " + appInfo.name);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appInfo = tizen.application.getAppInfo(null);
+console.log("Current application name: " + appInfo.name);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::getAppCerts">
@@ -955,10 +967,8 @@ The list of installed applications and their application IDs is obtained with <e
 <div class="brief">
  Gets application certificates for a specified application ID.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -989,27 +999,29 @@ The certificate types are listed below:
  DISTRIBUTOR2_SIGNER - Distributor2 Signer Certificate               </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  partner
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/appmanager.certificate
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  A string representing an application ID. If the ID is not provided, the application certificate of the calling application is returned.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- ApplicationCertificate[] Array of certificate information of a specified application
-              </div>
+<ul>
+<span class="return">ApplicationCertificate[]:
+                  </span>
+ Array of certificate information of a specified application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1026,13 +1038,14 @@ The certificate types are listed below:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appCerts = tizen.application.getAppCerts(null);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appCerts = tizen.application.getAppCerts(null);
 
- for (var i = 0; i &lt; appCerts.length; i++) {
-    console.log("#" + i + " type:" + appCerts[i].type);
-    console.log("#" + i + " value:" + appCerts[i].value);
- }
- </pre>
+for (var i = 0; i &lt; appCerts.length; i++)
+{
+  console.log("#" + i + " type: " + appCerts[i].type);
+  console.log("#" + i + " value: " + appCerts[i].value);
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::getAppSharedURI">
@@ -1042,10 +1055,8 @@ The certificate types are listed below:
 <div class="brief">
  Gets the URI of the read-only shared directory of an application for a specified application ID.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -1058,15 +1069,19 @@ If the ID is set to <var>null</var> or not set at all, it returns the shared dir
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  A string representing an application ID. If the ID is not provided, the shared directory URI of the calling application is returned.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- DOMString The shared directory URI of an application
-              </div>
+<ul>
+<span class="return">DOMString:
+                  </span>
+ The shared directory URI of an application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1080,9 +1095,9 @@ If the ID is set to <var>null</var> or not set at all, it returns the shared dir
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var sharedDir = tizen.application.getAppSharedURI(null);
- console.log("shared directory : " + sharedDir);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var sharedDir = tizen.application.getAppSharedURI(null);
+console.log("Shared directory: " + sharedDir);
+</pre>
 </div>
 </dd>
 <dt class="method" id="ApplicationManager::getAppMetaData">
@@ -1092,10 +1107,8 @@ If the ID is set to <var>null</var> or not set at all, it returns the shared dir
 <div class="brief">
  Gets the application meta data array for a specified application ID.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id);</pre></div>
+<p><span class="version">Since: </span>
  2.2
             </p>
 <div class="description">
@@ -1103,28 +1116,30 @@ If the ID is set to <var>null</var> or not set at all, it returns the shared dir
 If the ID is set to <var>null</var> or not set at all, it returns the application meta data array for the current application.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/application.info
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">id</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  A string representing an application ID. If the ID is not provided, the application metadata array of the calling application is returned.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- ApplicationMetaData[] Array of meta data of a specified application. If there are no meta data for a specified application,
+<ul>
+<span class="return">ApplicationMetaData[]:
+                  </span>
+ Array of meta data of a specified application. If there are no meta data for a specified application,
 an empty array is returned
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1141,27 +1156,24 @@ an empty array is returned
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var metaDataArray = tizen.application.getAppMetaData(null);
- console.log("size of metadata : " + metaDataArray.length);
-
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var metaDataArray = tizen.application.getAppMetaData(null);
+console.log("Size of metadata: " + metaDataArray.length);
+</pre>
 </div>
 </dd>
-<dt class="method" id="ApplicationManager::addAppInfoEventListener">
+<dt class="deprecated method" id="ApplicationManager::addAppInfoEventListener">
 <a class="backward-compatibility-anchor" name="::Application::ApplicationManager::addAppInfoEventListener"></a><code><b><span class="methodName">addAppInfoEventListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Adds a listener for receiving any notification for changes in the list of installed applications
 on a device.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.4. Instead, <a href="./package.html#PackageManager::setPackageInfoEventListener">tizen.package.setPackageInfoEventListener()</a> allows the app developers to set a listener for getting notified for the changes (add/remove/update) of applications on a device.
+ Deprecated since 2.4. Instead, <a href="./package.html#PackageManager::setPackageInfoEventListener">tizen.package.setPackageInfoEventListener()</a> allows the app developers to set a listener for getting notified for the changes(add/remove/update) of applications on a device.
             </p>
-<div class="synopsis"><pre class="signature prettyprint">long addAppInfoEventListener(<a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a> eventCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addAppInfoEventListener(<a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a> eventCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -1188,15 +1200,19 @@ with the corresponding listener identifier.
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">eventCallback</span>: 
- Callback method to call when a change on the installed applications is made
+<span class="name">eventCallback</span>:
+ The method to call when a change on the installed applications is made
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:
+                  </span>
  long ID of the listener that can be used to remove the listener later.
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1210,25 +1226,29 @@ with the corresponding listener identifier.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appEventCallback = {
-    oninstalled: function(appInfo) {
-       console.log('The application ' + appInfo.name + ' is installed');
-    },
-    onupdated: function(appInfo) {
-       console.log('The application ' + appInfo.name + ' is updated');
-    },
-    onuninstalled: function(appid) {
-       console.log('The application ' + appid + ' is uninstalled');
-    }
- };
- var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appEventCallback =
+{
+  oninstalled: function(appInfo)
+  {
+    console.log("The application " + appInfo.name + " is installed");
+  },
+  onupdated: function(appInfo)
+  {
+    console.log("The application " + appInfo.name + " is updated");
+  },
+  onuninstalled: function(appid)
+  {
+    console.log("The application " + appid + " is uninstalled");
+  }
+};
+var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
+</pre>
 </div>
 </dd>
-<dt class="method" id="ApplicationManager::removeAppInfoEventListener">
+<dt class="deprecated method" id="ApplicationManager::removeAppInfoEventListener">
 <a class="backward-compatibility-anchor" name="::Application::ApplicationManager::removeAppInfoEventListener"></a><code><b><span class="methodName">removeAppInfoEventListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Removes the listener to stop receiving notifications for changes on the list of installed
 applications on a device.
@@ -1236,17 +1256,15 @@ applications on a device.
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 2.4. Instead, use <a href="./package.html#PackageManager::unsetPackageInfoEventListener">tizen.package.unsetPackageInfoEventListener()</a>.
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void removeAppInfoEventListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeAppInfoEventListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">watchId</span>: 
+<span class="name">watchId</span>:
  An ID that identifies the listener
                 </li>
         </ul>
@@ -1254,9 +1272,6 @@ applications on a device.
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
-                </p></li>
 <li class="list"><p>
  with error type NotFoundError, if the listener is not found with the specified ID.
                 </p></li>
@@ -1267,20 +1282,24 @@ applications on a device.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appEventCallback = {
-   oninstalled: function(appInfo) {
-     console.log('The application ' + appInfo.name + ' is installed');
-   },
-   onupdated: function(appInfo) {
-     console.log('The application ' + appInfo.name + ' is updated');
-   },
-   onuninstalled: function(appid) {
-     console.log('The application ' + appid + ' is uninstalled');
-   }
- };
- var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
- tizen.application.removeAppInfoEventListener(watchId);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appEventCallback =
+{
+  oninstalled: function(appInfo)
+  {
+    console.log("The application " + appInfo.name + " is installed");
+  },
+  onupdated: function(appInfo)
+  {
+    console.log("The application " + appInfo.name + " is updated");
+  },
+  onuninstalled: function(appid)
+  {
+    console.log("The application " + appid + " is uninstalled");
+  }
+};
+var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
+tizen.application.removeAppInfoEventListener(watchId);
+</pre>
 </div>
 </dd>
 </dl>
@@ -1293,27 +1312,17 @@ applications on a device.
 the basic operations (such as exit or hide) for the current application.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Application {
-
     readonly attribute <a href="#ApplicationInformation">ApplicationInformation</a> appInfo;
-
     readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> contextId;
-
     void exit() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void hide() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#RequestedApplicationControl">RequestedApplicationControl</a> getRequestedAppControl() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addEventListener(<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void broadcastEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void broadcastTrustedEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
@@ -1322,20 +1331,18 @@ the basic operations (such as exit or hide) for the current application.
 <li class="attribute" id="Application::appInfo">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ApplicationInformation </span><span class="name">appInfo</span></span><div class="brief">
- The application information for the current application.
+ An attribute to store the application information for the current application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="Application::contextId">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ApplicationContextId </span><span class="name">contextId</span></span><div class="brief">
- The ID of a running application.
+ An attribute to store the ID of a running application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1351,24 +1358,25 @@ the basic operations (such as exit or hide) for the current application.
 <div class="brief">
  Exits the current application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void exit();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void exit();</pre></div>
+<p><span class="version">Since: </span>
  2.0
+            </p>
+<p><span class="remark">Remark: </span>
+ This method is not supported by Web Widget.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var app = tizen.application.getCurrentApplication();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var app = tizen.application.getCurrentApplication();
 
- app.exit();
- </pre>
+app.exit();
+</pre>
 </div>
 </dd>
 <dt class="method" id="Application::hide">
@@ -1378,24 +1386,25 @@ the basic operations (such as exit or hide) for the current application.
 <div class="brief">
  Hides the current application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void hide();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void hide();</pre></div>
+<p><span class="version">Since: </span>
  2.0
+            </p>
+<p><span class="remark">Remark: </span>
+ This method is not supported by Web Widget.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var app = tizen.application.getCurrentApplication();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var app = tizen.application.getCurrentApplication();
 
- app.hide();
- </pre>
+app.hide();
+</pre>
 </div>
 </dd>
 <dt class="method" id="Application::getRequestedAppControl">
@@ -1405,10 +1414,8 @@ the basic operations (such as exit or hide) for the current application.
 <div class="brief">
  Gets the requested application control passed to the current application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#RequestedApplicationControl">RequestedApplicationControl</a> getRequestedAppControl();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#RequestedApplicationControl">RequestedApplicationControl</a> getRequestedAppControl();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -1423,10 +1430,17 @@ responsible for checking the contents of the application control and responding
 appropriately when it is launched.
             </p>
            </div>
+<p><span class="remark">Remark: </span>
+ This method is not supported by Web Widget.
+            </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- RequestedApplicationControl The details of a requested application control
-              </div>
+<ul>
+<span class="return">RequestedApplicationControl:
+                  </span>
+ The details of a requested application control.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -1435,12 +1449,13 @@ appropriately when it is launched.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
 
- if (reqAppControl) {
-     console.log("Requester AppID : " + reqAppControl.callerAppId);
- }
- </pre>
+if (reqAppControl)
+{
+  console.log("Requester AppID: " + reqAppControl.callerAppId);
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="Application::addEventListener">
@@ -1450,10 +1465,8 @@ appropriately when it is launched.
 <div class="brief">
  Adds a listener which will invoke a callback function when an event occurs.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addEventListener(<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addEventListener(<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -1465,19 +1478,23 @@ System events do not require an application identifier to be specified. Therefor
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">event</span>: 
- Event which will invoke the callback
+<span class="name">event</span>:
+ Event which will invoke the callback.
                 </li>
           <li class="param">
-<span class="name">callback</span>: 
- Callback function to be invoked when the event occurs
+<span class="name">callback</span>:
+ Callback function to be invoked when the event occurs.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Listener identifier
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Listener identifier.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1491,29 +1508,35 @@ System events do not require an application identifier to be specified. Therefor
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var app = tizen.application.getCurrentApplication();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var app = tizen.application.getCurrentApplication();
 
- // for user events: sender's application ID and event name must be provided by using a dictionary
- // Let's assume that at least two applications are installed
- function onListInstalledApps(appsInfo) {
-   var appId = null;
+/* For user events: sender's application ID and event name must be provided by using a dictionary. */
+/* Let's assume that at least two applications are installed. */
+function onListInstalledApps(appsInfo)
+{
+  var appId = null;
 
-   if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id) {
-     appId = appsInfo[0].id;
-   } else if (appsInfo.length &gt; 1) {
-     appId = appsInfo[1].id;
-   }
+  if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id)
+  {
+    appId = appsInfo[0].id;
+  }
+  else if (appsInfo.length &gt; 1)
+  {
+    appId = appsInfo[1].id;
+  }
 
-   if (appId) {
-     var watchId = app.addEventListener({"appId": appId, "name": "custom_user_event"}, function(event, data) {
-       console.log("Data: " + JSON.stringify(data));
-       // do something
-     });
-   }
- }
- tizen.application.getAppsInfo(onListInstalledApps);
-
- </pre>
+  if (appId)
+  {
+    var watchId =
+        app.addEventListener({"appId": appId, "name": "custom_user_event"}, function(event, data)
+        {
+          console.log("Data: " + JSON.stringify(data));
+          /* Do something. */
+        });
+  }
+}
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
 </div>
 </dd>
 <dt class="method" id="Application::removeEventListener">
@@ -1523,18 +1546,16 @@ System events do not require an application identifier to be specified. Therefor
 <div class="brief">
  Removes an event listener with a specified listener identifier.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeEventListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeEventListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">watchId</span>: 
- Listener identifier
+<span class="name">watchId</span>:
+ Listener identifier.
                 </li>
         </ul>
 </div>
@@ -1546,31 +1567,39 @@ System events do not require an application identifier to be specified. Therefor
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var app = tizen.application.getCurrentApplication();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var app = tizen.application.getCurrentApplication();
 
- // for user events: sender's application ID and event name must be provided by using a dictionary
- // Let's assume that at least two applications are installed
- function onListInstalledApps(appsInfo) {
-   var appId = null;
-   var watchId = null;
+/* For user events: sender's application ID and event name must be provided by using a dictionary. */
+/* Let's assume that at least two applications are installed. */
+function onListInstalledApps(appsInfo)
+{
+  var appId = null;
+  var watchId = null;
 
-   if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id) {
-     appId = appsInfo[0].id;
-   } else if (appsInfo.length &gt; 1) {
-     appId = appsInfo[1].id;
-   }
+  if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id)
+  {
+    appId = appsInfo[0].id;
+  }
+  else if (appsInfo.length &gt; 1)
+  {
+    appId = appsInfo[1].id;
+  }
 
-   if (appId) {
-     watchId = app.addEventListener({"appId": appId, "name": "custom_user_event"}, function(event, data) {
-       if (watchId) {
-         app.removeEventListener(watchId);
-         watchId = null;
-       }
-     });
-   }
- }
+  if (appId)
+  {
+    watchId =
+        app.addEventListener({"appId": appId, "name": "custom_user_event"}, function(event, data)
+        {
+          if (watchId)
+          {
+            app.removeEventListener(watchId);
+            watchId = null;
+          }
+        });
+  }
+}
 tizen.application.getAppsInfo(onListInstalledApps);
- </pre>
+</pre>
 </div>
 </dd>
 <dt class="method" id="Application::broadcastEvent">
@@ -1580,10 +1609,8 @@ tizen.application.getAppsInfo(onListInstalledApps);
 <div class="brief">
  Broadcasts a user defined event to all the listeners which are listening for this event.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void broadcastEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void broadcastEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -1595,12 +1622,12 @@ An application can listen to events from other applications. However, it can onl
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">event</span>:  
- Event to broadcast
+<span class="name">event</span>:
+ Event to broadcast.
                 </li>
           <li class="param">
-<span class="name">data</span>: 
- User defined event data to broadcast
+<span class="name">data</span>:
+ User defined event data to broadcast.
                 </li>
         </ul>
 </div>
@@ -1611,23 +1638,18 @@ An application can listen to events from other applications. However, it can onl
  with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
-                </p></li>
-<li class="list"><p>
  with error type UnknownError in any other error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var myCustomData = {
-   foo: 'bar'
- };
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myCustomData = {foo: "bar"};
 
- var app = tizen.application.getCurrentApplication();
+var app = tizen.application.getCurrentApplication();
 
- app.broadcastEvent({"name": "custom_user_event"}, myCustomData);
- </pre>
+app.broadcastEvent({"name": "custom_user_event"}, myCustomData);
+</pre>
 </div>
 </dd>
 <dt class="method" id="Application::broadcastTrustedEvent">
@@ -1637,10 +1659,8 @@ An application can listen to events from other applications. However, it can onl
 <div class="brief">
  Broadcasts a user defined event to all the trusted listeners which are listening for this event. Applications which have the same certificate as the sending application can receive the event.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void broadcastTrustedEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void broadcastTrustedEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -1652,12 +1672,12 @@ An application can listen to events from other applications. However, it can onl
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">event</span>: 
- Trusted event to broadcast
+<span class="name">event</span>:
+ Trusted event to broadcast.
                 </li>
           <li class="param">
-<span class="name">data</span>: 
- User defined trusted event data to broadcast
+<span class="name">data</span>:
+ User defined trusted event data to broadcast.
                 </li>
         </ul>
 </div>
@@ -1668,23 +1688,18 @@ An application can listen to events from other applications. However, it can onl
  with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
-                </p></li>
-<li class="list"><p>
  with error type UnknownError in any other error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var myTrustedCustomData = {
-   foo: 'bar'
- };
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myTrustedCustomData = {foo: "bar"};
 
- var app = tizen.application.getCurrentApplication();
+var app = tizen.application.getCurrentApplication();
 
- app.broadcastTrustedEvent({"name": "custom_user_event"}, myTrustedCustomData);
- </pre>
+app.broadcastTrustedEvent({"name": "custom_user_event"}, myTrustedCustomData);
+</pre>
 </div>
 </dd>
 </dl>
@@ -1696,27 +1711,17 @@ An application can listen to events from other applications. However, it can onl
  This interface defines the general information available to an installed application.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationInformation {
-
     readonly attribute <a href="#ApplicationId">ApplicationId</a> id;
-
     readonly attribute DOMString name;
-
     readonly attribute DOMString iconPath;
-
     readonly attribute DOMString version;
-
     readonly attribute boolean show;
-
     readonly attribute DOMString[] categories;
-
     readonly attribute Date installDate;
-
     readonly attribute long size raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute <a href="package.html#PackageId">PackageId</a> packageId;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="attributes">
@@ -1725,51 +1730,46 @@ An application can listen to events from other applications. However, it can onl
 <li class="attribute" id="ApplicationInformation::id">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ApplicationId </span><span class="name">id</span></span><div class="brief">
- The identifier of an application for application management.
+ An attribute to store the identifier of an application for application management.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
 <li class="attribute" id="ApplicationInformation::name">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
- The name of an application.
+ An attribute to store the name of an application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
 <li class="attribute" id="ApplicationInformation::iconPath">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">iconPath</span></span><div class="brief">
- The icon path of an application.
+ An attribute to store the icon path of an application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
 <li class="attribute" id="ApplicationInformation::version">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">version</span></span><div class="brief">
- The version of an application.
+ An attribute to store the version of an application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
 <li class="attribute" id="ApplicationInformation::show">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">show</span></span><div class="brief">
- Indicates whether the application information should
+ An attribute that determines whether the application information should
 be shown (such as in menus).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1779,36 +1779,31 @@ be shown (such as in menus).
                       </span><span class="name">categories</span></span><div class="brief">
  An array of attributes to store the categories that the app belongs to.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationInformation::installDate">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">Date </span><span class="name">installDate</span></span><div class="brief">
- The application install/update time.
+ An attribute to store the application install/update time.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationInformation::size">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">size</span></span><div class="brief">
- The application size (installed space).
+ An attribute to store the application size (installed space).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/application.info
             </p>
 <div class="exceptionlist">
@@ -1822,10 +1817,9 @@ be shown (such as in menus).
 <li class="attribute" id="ApplicationInformation::packageId">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">PackageId </span><span class="name">packageId</span></span><div class="brief">
- The package ID of an application.
+ An attribute to store the package ID of an application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1839,13 +1833,10 @@ be shown (such as in menus).
 application.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationContext {
-
     readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> id;
-
     readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="attributes">
@@ -1854,20 +1845,18 @@ application.
 <li class="attribute" id="ApplicationContext::id">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ApplicationContextId </span><span class="name">id</span></span><div class="brief">
- The ID of a running application.
+ An attribute to store the ID of a running application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
 <li class="attribute" id="ApplicationContext::appId">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ApplicationId </span><span class="name">appId</span></span><div class="brief">
- The ID of an installed application.
+ An attribute to store the ID of an installed application.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -1882,18 +1871,15 @@ between applications through the <em>ApplicationControl </em>interface.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString key, DOMString[] value)]
   interface ApplicationControlData {
-
     attribute DOMString key;
-
     attribute DOMString[] value;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appControlData = new tizen.ApplicationControlData("image", [imagedata1]);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appControlData = new tizen.ApplicationControlData("image", [imagedata1]);
+</pre>
 </div>
 <div class="constructors">
 <h4 id="ApplicationControlData::constructor">Constructors</h4>
@@ -1904,20 +1890,18 @@ between applications through the <em>ApplicationControl </em>interface.
 <ul>
 <li class="attribute" id="ApplicationControlData::key">
 <span class="attrName"><span class="type">DOMString </span><span class="name">key</span></span><div class="brief">
- The name of a key.
+ An attribute to store the name of a key.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationControlData::value">
 <span class="attrName"><span class="type">DOMString[]
                       </span><span class="name">value</span></span><div class="brief">
- The value associated with a key.
+ An attribute to store the value associated with a key.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1934,79 +1918,62 @@ If the system gets the application control request, it finds
 the corresponding application to be launched with the delivered application control
 and launches the selected application.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString operation, optional DOMString? uri,
-               optional DOMString? mime, optional DOMString? category,
+<pre class="webidl prettyprint">  [Constructor(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category,
                optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode)]
   interface ApplicationControl {
-
     attribute DOMString operation;
-
     attribute DOMString? uri;
-
     attribute DOMString? mime;
-
     attribute DOMString? category;
-
     attribute <a href="#ApplicationControlData">ApplicationControlData</a>[] data;
-
     attribute <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a> launchMode;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appControl =
-       new tizen.ApplicationControl(
-                  "http://tizen.org/appcontrol/operation/view",
-                  null,
-                  "image/jpeg",
-                  null,
-                  [new tizen.ApplicationControlData("images",
-                                                    [imagedata1, imagedata2])] );
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view", null,
+    "image/jpeg", null, [new tizen.ApplicationControlData("images", [imagedata1, imagedata2])]);
+</pre>
 </div>
 <div class="constructors">
 <h4 id="ApplicationControl::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ApplicationControl(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category, optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode);</pre></dl>
+<dl><pre class="webidl prettyprint">ApplicationControl(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category, 
+                   optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode);</pre></dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
 <li class="attribute" id="ApplicationControl::operation">
 <span class="attrName"><span class="type">DOMString </span><span class="name">operation</span></span><div class="brief">
- The string that defines the action to be
+ An attribute to store the string that defines the action to be
 performed by an application control.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationControl::uri">
 <span class="attrName"><span class="type">DOMString </span><span class="name">uri</span><span class="optional"> [nullable]</span></span><div class="brief">
- The URI needed by an application control.
+ An attribute to store the URI needed by an application control.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationControl::mime">
 <span class="attrName"><span class="type">DOMString </span><span class="name">mime</span><span class="optional"> [nullable]</span></span><div class="brief">
- The MIME type of content.
+ An attribute to store the MIME type of content.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationControl::category">
 <span class="attrName"><span class="type">DOMString </span><span class="name">category</span><span class="optional"> [nullable]</span></span><div class="brief">
- The category of the application to be launched.
+ An attribute to store the category of the application to be launched.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2015,17 +1982,15 @@ performed by an application control.
                       </span><span class="name">data</span></span><div class="brief">
  An array of attributes to store the data needed for an application control.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationControl::launchMode">
 <span class="attrName"><span class="type">ApplicationControlLaunchMode </span><span class="name">launchMode</span></span><div class="brief">
- The launch mode. Default application launch mode is <em>SINGLE</em>.
+ An attribute to specify launch mode. Default application launch mode is <em>SINGLE</em>.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
@@ -2042,41 +2007,33 @@ to the calling application through the <em>replyResult()</em> method after perfo
 required action requested by the calling application.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface RequestedApplicationControl {
-
     readonly attribute <a href="#ApplicationControl">ApplicationControl</a> appControl;
-
     readonly attribute <a href="#ApplicationId">ApplicationId</a> callerAppId;
-
     void replyResult(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void replyFailure() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
-
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
 <li class="attribute" id="RequestedApplicationControl::appControl">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ApplicationControl </span><span class="name">appControl</span></span><div class="brief">
- The application control object that describes the caller application's request.
+ An attribute to store the application control object that describes the caller application's request.
 It contains the information that the calling application passed to <em>launchAppControl</em>.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="RequestedApplicationControl::callerAppId">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ApplicationId </span><span class="name">callerAppId</span></span><div class="brief">
- The caller application's ID.
+ An attribute to store the caller application's ID.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -2092,18 +2049,16 @@ It contains the information that the calling application passed to <em>launchApp
 <div class="brief">
  Sends the results to the caller application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void replyResult(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void replyResult(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">data</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- An array of ApplicationControlData objects
+<span class="name">data</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An array of ApplicationControlData objects.
                 </li>
         </ul>
 </div>
@@ -2123,19 +2078,21 @@ It contains the information that the calling application passed to <em>launchApp
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
- if (reqAppControl) {
-     console.log("Requester AppID : " + reqAppControl.callerAppId);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
+if (reqAppControl)
+{
+  console.log("Requester AppID: " + reqAppControl.callerAppId);
 
-     var appControl = reqAppControl.appControl;
-     if (appControl.operation == "http://tizen.org/appcontrol/operation/pick") {
-         var data = new tizen.ApplicationControlData("http://tizen.org/appcontrol/data/selected", ["Image1.jpg"]);
-         reqAppControl.replyResult([data]);
-     }
- }
- </pre>
+  var appControl = reqAppControl.appControl;
+  if (appControl.operation == "http://tizen.org/appcontrol/operation/pick")
+  {
+    var data = new tizen.ApplicationControlData(
+        "http://tizen.org/appcontrol/data/selected", ["Image1.jpg"]);
+    reqAppControl.replyResult([data]);
+  }
+}
+</pre>
 </div>
-
 </dd>
 <dt class="method" id="RequestedApplicationControl::replyFailure">
 <a class="backward-compatibility-anchor" name="::Application::RequestedApplicationControl::replyFailure"></a><code><b><span class="methodName">replyFailure</span></b></code>
@@ -2145,10 +2102,8 @@ It contains the information that the calling application passed to <em>launchApp
  Notifies the calling application that the application failed
 to perform the requested action.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void replyFailure();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void replyFailure();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="exceptionlist">
@@ -2164,18 +2119,19 @@ to perform the requested action.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
- if (reqAppControl) {
-     console.log("Requester AppID : " + reqAppControl.callerAppId);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
+if (reqAppControl)
+{
+  console.log("Requester AppID: " + reqAppControl.callerAppId);
 
-     var appControl = reqAppControl.appControl;
-     if (appControl.operation == "http://tizen.org/appcontrol/operation/pick") {
-         reqAppControl.replyFailure();
-     }
- }
- </pre>
+  var appControl = reqAppControl.appControl;
+  if (appControl.operation == "http://tizen.org/appcontrol/operation/pick")
+  {
+    reqAppControl.replyFailure();
+  }
+}
+</pre>
 </div>
-
 </dd>
 </dl>
 </div>
@@ -2186,13 +2142,10 @@ to perform the requested action.
  This interface defines the certificate information of an installed application.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationCertificate {
-
     readonly attribute DOMString type;
-
     readonly attribute DOMString value;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
@@ -2201,20 +2154,18 @@ to perform the requested action.
 <li class="attribute" id="ApplicationCertificate::type">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
- The type of the application certificate
+ An attribute to store the type of the application certificate
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="ApplicationCertificate::value">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">value</span></span><div class="brief">
- The value of the application certificate
+ An attribute to store the value of the application certificate
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2227,13 +2178,10 @@ to perform the requested action.
  This interface defines the meta data of an installed application
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ApplicationMetaData {
-
     readonly attribute DOMString key;
-
     readonly attribute DOMString value;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
           </p>
 <div class="attributes">
@@ -2242,20 +2190,18 @@ to perform the requested action.
 <li class="attribute" id="ApplicationMetaData::key">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">key</span></span><div class="brief">
- The key of the application meta data
+ An attribute to store the key of the application meta data
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 </li>
 <li class="attribute" id="ApplicationMetaData::value">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">value</span></span><div class="brief">
- The value of the application meta data
+ An attribute to store the value of the application meta data
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 </li>
@@ -2270,8 +2216,7 @@ to perform the requested action.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationInformationArraySuccessCallback {
     void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2290,31 +2235,31 @@ This callback interface specifies a success method with an array of
 <div class="brief">
  Called when the asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">informationArray</span>: 
- A list of installed applications
+<span class="name">informationArray</span>:
+ A list of installed applications.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onListInstalledApps(applications) {
-     for (var i = 0; i &lt; applications.length; i++)
-         console.log("ID : " + applications[i].id);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onListInstalledApps(applications)
+{
+  for (var i = 0; i &lt; applications.length; i++)
+  {
+    console.log("ID: " + applications[i].id);
+  }
+}
 
- tizen.application.getAppsInfo(onListInstalledApps);
- </pre>
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
 </div>
-
 </dd>
 </dl>
 </div>
@@ -2327,8 +2272,7 @@ This callback interface specifies a success method with an array of
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FindAppControlSuccessCallback {
     void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -2348,64 +2292,67 @@ It is used in <em>ApplicationManager.findAppControl()</em>.
 <div class="brief">
  Called when the asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">informationArray</span>: 
- A list of installed applications
+<span class="name">informationArray</span>:
+ A list of installed applications.
                 </li>
           <li class="param">
-<span class="name">appControl</span>: 
+<span class="name">appControl</span>:
  The application control that is passed to <em>ApplicationManager.findAppControl()</em>                </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appControl = new tizen.ApplicationControl(
-     "http://tizen.org/appcontrol/operation/pick",
-     null,
-     "image/jpeg",
-     null);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appControl = new tizen.ApplicationControl(
+    "http://tizen.org/appcontrol/operation/pick", null, "image/jpeg", null);
 
- // FindAppControlSuccessCallback instance
- function successCB(appInfos, appControl)
- {
-     // appControl is same object with the value passed as first parameter to findAppControl()
-     var appControlReplyCallback = {
-         // callee sent a reply
-         onsuccess: function(data) {
-             for (var i = 0; i &lt; data.length; i++) {
-                 if (data[i].key == "http://tizen.org/appcontrol/data/selected") {
-                     console.log('Selected image is ' + data[i].value[0]);
-                 }
-             }
-         },
-         // callee returned failure
-         onfailure: function() {
-             console.log('The launch application control failed');
-         }
-     }
+/* FindAppControlSuccessCallback instance. */
+function successCB(appInfos, appControl)
+{
+  /* appControl is same object with the value passed as first parameter to findAppControl(). */
+  var appControlReplyCallback =
+  {
+    /* Callee sent a reply. */
+    onsuccess: function(data)
+    {
+      for (var i = 0; i &lt; data.length; i++)
+      {
+        if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+        {
+          console.log("Selected image is " + data[i].value[0]);
+        }
+      }
+    },
+    /* Callee returned failure. */
+    onfailure: function()
+    {
+      console.log("The launch application control failed");
+    }
+  };
 
-     var appId = appInfos[0].id; // select first app's id
+  var appId = appInfos[0].id;  /* Select first app's id. */
 
-     tizen.application.launchAppControl(
-         appControl,
-         appId,
-         function() {console.log("launch application control succeeded"); },
-        function(e) {console.log("launch application control failed. reason: " + e.message); },
-        appControlReplyCallback );
- }
+  tizen.application.launchAppControl(appControl, appId,
+      function()
+      {
+        console.log("Launch application control succeed");
+      },
+      function(e)
+      {
+        console.log("Launch application control failed, reason: " + e.message);
+      },
+      appControlReplyCallback);
+}
 
- tizen.application.findAppControl(appControl, successCB);
- </pre>
+tizen.application.findAppControl(appControl, successCB);
+</pre>
 </div>
-
 </dd>
 </dl>
 </div>
@@ -2418,8 +2365,7 @@ It is used in <em>ApplicationManager.findAppControl()</em>.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationContextArraySuccessCallback {
     void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2438,18 +2384,16 @@ an array of <em>ApplicationContext </em>objects as an input parameter. It is use
 <div class="brief">
  Called when <em>ApplicationManager.getAppsContext() </em>completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">contexts</span>: 
- A list of running applications
+<span class="name">contexts</span>:
+ A list of running applications.
                 </li>
         </ul>
 </div>
@@ -2464,11 +2408,9 @@ an array of <em>ApplicationContext </em>objects as an input parameter. It is use
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface ApplicationControlDataArrayReplyCallback {
     void onsuccess(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
-
     void onfailure();
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -2483,37 +2425,42 @@ This callback interface specifies two methods:
           </ul>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appControl = new tizen.ApplicationControl(
-     "http://tizen.org/appcontrol/operation/pick",
-     null,
-     "image/jpeg",
-     null);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appControl = new tizen.ApplicationControl(
+    "http://tizen.org/appcontrol/operation/pick", null, "image/jpeg", null);
 
- // ApplicationControlDataArrayReplyCallback instance
- var appControlReplyCallback = {
-     // callee sent a reply
-     onsuccess: function(data) {
-         for (var i = 0; i &lt; data.length; i++) {
-             if (data[i].key == "http://tizen.org/appcontrol/data/selected") {
-                 console.log('Selected image is ' + data[i].value[0]);
-             }
-         }
-     },
-     // callee returned failure
-     onfailure: function() {
-         console.log('The launch application control failed');
-     }
- }
+/* ApplicationControlDataArrayReplyCallback instance. */
+var appControlReplyCallback =
+{
+  /* Callee sent a reply. */
+  onsuccess: function(data)
+  {
+    for (var i = 0; i &lt; data.length; i++)
+    {
+      if (data[i].key == "http://tizen.org/appcontrol/data/selected")
+      {
+        console.log("Selected image is " + data[i].value[0]);
+      }
+    }
+  },
+  /* Callee returned failure. */
+  onfailure: function()
+  {
+    console.log("The launch application control failed");
+  }
+};
 
- tizen.application.launchAppControl(
-     appControl,
-     null,
-     function() {console.log("launch application control succeeded"); },
-     function(e) {console.log("launch application control failed. reason: " + e.message); },
-     appControlReplyCallback );
- </pre>
+tizen.application.launchAppControl(appControl, null,
+    function()
+    {
+      console.log("Launch application control succeed");
+    },
+    function(e)
+    {
+      console.log("Launch application control failed, reason: " + e.message);
+    },
+    appControlReplyCallback);
+</pre>
 </div>
-
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -2524,18 +2471,16 @@ This callback interface specifies two methods:
 <div class="brief">
  Called when the callee application calls <em>RequestedApplicationControl.replyResult()</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">data</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- An array of <em>ApplicationControlData</em> objects
+<span class="name">data</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An array of <em>ApplicationControlData</em> objects.
                 </li>
         </ul>
 </div>
@@ -2547,10 +2492,8 @@ This callback interface specifies two methods:
 <div class="brief">
  Called when the callee application calls <em>RequestedApplicationControl.replyFailure()</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onfailure();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onfailure();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </dd>
@@ -2565,13 +2508,10 @@ applications on a device.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface ApplicationInformationEventCallback {
     void oninstalled(<a href="#ApplicationInformation">ApplicationInformation</a> info);
-
     void onupdated(<a href="#ApplicationInformation">ApplicationInformation</a> info);
-
     void onuninstalled(<a href="#ApplicationId">ApplicationId</a> id);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2581,21 +2521,24 @@ an application is installed, updated, or uninstalled.
           </p>
          </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var appEventCallback = {
-    oninstalled: function(appInfo) {
-       console.log('The application ' + appInfo.name + ' is installed');
-    },
-    onupdated: function(appInfo) {
-       console.log('The application ' + appInfo.name + ' is updated');
-    },
-    onuninstalled: function(appid) {
-       console.log('The application ' + appid + ' is uninstalled');
-    }
- };
- var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appEventCallback =
+{
+  oninstalled: function(appInfo)
+  {
+    console.log("The application " + appInfo.name + " is installed");
+  },
+  onupdated: function(appInfo)
+  {
+    console.log("The application " + appInfo.name + " is updated");
+  },
+  onuninstalled: function(appid)
+  {
+    console.log("The application " + appid + " is uninstalled");
+  }
+};
+var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
+</pre>
 </div>
-
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -2606,17 +2549,15 @@ an application is installed, updated, or uninstalled.
 <div class="brief">
  Called when an application is installed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oninstalled(<a href="#ApplicationInformation">ApplicationInformation</a> info);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oninstalled(<a href="#ApplicationInformation">ApplicationInformation</a> info);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">info</span>: 
+<span class="name">info</span>:
  The application information of the installed application
                 </li>
         </ul>
@@ -2629,17 +2570,15 @@ an application is installed, updated, or uninstalled.
 <div class="brief">
  Called when an application is updated.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onupdated(<a href="#ApplicationInformation">ApplicationInformation</a> info);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onupdated(<a href="#ApplicationInformation">ApplicationInformation</a> info);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">info</span>: 
+<span class="name">info</span>:
  The application information of the updated application
                 </li>
         </ul>
@@ -2652,17 +2591,15 @@ an application is installed, updated, or uninstalled.
 <div class="brief">
  Called when an application is uninstalled.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onuninstalled(<a href="#ApplicationId">ApplicationId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onuninstalled(<a href="#ApplicationId">ApplicationId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span>: 
+<span class="name">id</span>:
  The ID of the uninstalled application
                 </li>
         </ul>
@@ -2680,8 +2617,7 @@ an application is installed, updated, or uninstalled.
     attribute DOMString value;
     attribute DOMString type;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -2698,8 +2634,7 @@ Platform modules will be able to broadcast system events in a future Tizen relea
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface EventCallback {
     void onevent(<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -2712,52 +2647,55 @@ Platform modules will be able to broadcast system events in a future Tizen relea
 <div class="brief">
  Called when the event occurs.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onevent(<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onevent(<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">event</span>: 
- Broadcasted event which invokes this callback
+<span class="name">event</span>:
+ Broadcasted event which invokes this callback.
                 </li>
           <li class="param">
-<span class="name">data</span>: 
- Broadcasted event data
+<span class="name">data</span>:
+ Broadcasted event data.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var app = tizen.application.getCurrentApplication();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var app = tizen.application.getCurrentApplication();
 
- // for user events: sender's application ID  and event name must be provided by using a dictionary
- // Let's assume that at least two applications are installed
- function onListInstalledApps(appsInfo) {
-   var appId = null;
+/* For user events: sender's application ID and event name must be provided by using a dictionary. */
+/* Let's assume that at least two applications are installed. */
+function onListInstalledApps(appsInfo)
+{
+  var appId = null;
 
-   if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id) {
-     appId = appsInfo[0].id;
-   } else if (appsInfo.length &gt; 1) {
-     appId = appsInfo[1].id;
-   }
+  if (appsInfo.length &gt; 0 &amp;&amp; app.appInfo.id != appsInfo[0].id)
+  {
+    appId = appsInfo[0].id;
+  }
+  else if (appsInfo.length &gt; 1)
+  {
+    appId = appsInfo[1].id;
+  }
 
-   var eventCB = function(event, data) {
-     console.log("Data: " + JSON.stringify(data));
-     // do something
-   };
+  var eventCB = function(event, data)
+  {
+    console.log("Data: " + JSON.stringify(data));
+    /* Do something. */
+  };
 
-   if (appId) {
-     var watchId = app.addEventListener({"appId": appId, "name": "custom_user_event"}, eventCB);
-   }
- }
- tizen.application.getAppsInfo(onListInstalledApps);
- </pre>
+  if (appId)
+  {
+    var watchId = app.addEventListener({"appId": appId, "name": "custom_user_event"}, eventCB);
+  }
+}
+tizen.application.getAppsInfo(onListInstalledApps);
+</pre>
 </div>
-
 </dd>
 </dl>
 </div>
@@ -2769,16 +2707,14 @@ Platform modules will be able to broadcast system events in a future Tizen relea
           </div>
 <pre class="webidl prettyprint">  dictionary EventInfo {
     <a href="#ApplicationId">ApplicationId</a> appId;
-
     DOMString name;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
           <p>
-System events do not require an application identifier to be specified. If one is specified, the event will be interpreted as a user event.
+System events do not require an application identifier to be specified. If one is specified, the event will be interpreted as an user event.
           </p>
          </div>
 <div class="attributes">
@@ -2794,11 +2730,10 @@ System events do not require an application identifier to be specified. If one i
 An application can listen to events from other applications. However, it can only broadcast its own events. Therefore, when broadcasting an event, this dictionary member must be the identifier of the application which is broadcasting the event.
             </p>
             <p>
-System events do not require an application identifier to be specified. If one is specified, the event will be interpreted as a user event.
+System events do not require an application identifier to be specified. If one is specified, the event will be interpreted as an user event.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </dd>
@@ -2813,8 +2748,7 @@ Must only contain the ASCII characters "[A-Z][a-z][0-9]_" and may not begin with
 Must be at least 1 byte in length and not exceed the maximum name length of 127 bytes.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </dd>
@@ -2822,206 +2756,142 @@ Must be at least 1 byte in length and not exceed the maximum name length of 127 
 </div>
 </div>
 </div>
-<h2 id="full-webidl">3. Full WebIDL</h2>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device which supports Application History feature, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/app_history</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee the running of the application on a device which has battery, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/battery</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Application {
-
   typedef DOMString ApplicationId;
-
   typedef DOMString ApplicationContextId;
-
   typedef object UserEventData;
-
   typedef (<a href="#SystemEventData">SystemEventData</a> or <a href="#UserEventData">UserEventData</a>) EventData;
-
   enum ApplicationControlLaunchMode { "SINGLE", "GROUP" };
-
   [NoInterfaceObject] interface ApplicationManagerObject {
     readonly attribute <a href="#ApplicationManager">ApplicationManager</a> application;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ApplicationManagerObject">ApplicationManagerObject</a>;
-
   [NoInterfaceObject] interface ApplicationManager {
-
     <a href="#Application">Application</a> getCurrentApplication() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId,
-              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void launch(<a href="#ApplicationId">ApplicationId</a> id,
-                optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
-                          optional <a href="#ApplicationId">ApplicationId</a>? id,
-                          optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                          optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl,
-                        <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback,
+    void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void launch(<a href="#ApplicationId">ApplicationId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback)
+                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getAppsContext(<a href="#ApplicationContextArraySuccessCallback">ApplicationContextArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#ApplicationContext">ApplicationContext</a> getAppContext(optional <a href="#ApplicationContextId">ApplicationContextId</a>? contextId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getAppsInfo(<a href="#ApplicationInformationArraySuccessCallback">ApplicationInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#ApplicationInformation">ApplicationInformation</a> getAppInfo(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    long addAppInfoEventListener(<a href="#ApplicationInformationEventCallback">ApplicationInformationEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeAppInfoEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface Application {
-
     readonly attribute <a href="#ApplicationInformation">ApplicationInformation</a> appInfo;
-
     readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> contextId;
-
     void exit() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void hide() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#RequestedApplicationControl">RequestedApplicationControl</a> getRequestedAppControl() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addEventListener(<a href="#EventInfo">EventInfo</a> event, <a href="#EventCallback">EventCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void broadcastEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void broadcastTrustedEvent(<a href="#EventInfo">EventInfo</a> event, <a href="#UserEventData">UserEventData</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface ApplicationInformation {
-
     readonly attribute <a href="#ApplicationId">ApplicationId</a> id;
-
     readonly attribute DOMString name;
-
     readonly attribute DOMString iconPath;
-
     readonly attribute DOMString version;
-
     readonly attribute boolean show;
-
     readonly attribute DOMString[] categories;
-
     readonly attribute Date installDate;
-
     readonly attribute long size raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute <a href="package.html#PackageId">PackageId</a> packageId;
   };
-
   [NoInterfaceObject] interface ApplicationContext {
-
     readonly attribute <a href="#ApplicationContextId">ApplicationContextId</a> id;
-
     readonly attribute <a href="#ApplicationId">ApplicationId</a> appId;
   };
-
   [Constructor(DOMString key, DOMString[] value)]
   interface ApplicationControlData {
-
     attribute DOMString key;
-
     attribute DOMString[] value;
   };
-
-  [Constructor(DOMString operation, optional DOMString? uri,
-               optional DOMString? mime, optional DOMString? category,
+  [Constructor(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category,
                optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode)]
   interface ApplicationControl {
-
     attribute DOMString operation;
-
     attribute DOMString? uri;
-
     attribute DOMString? mime;
-
     attribute DOMString? category;
-
     attribute <a href="#ApplicationControlData">ApplicationControlData</a>[] data;
-
     attribute <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a> launchMode;
   };
-
   [NoInterfaceObject] interface RequestedApplicationControl {
-
     readonly attribute <a href="#ApplicationControl">ApplicationControl</a> appControl;
-
     readonly attribute <a href="#ApplicationId">ApplicationId</a> callerAppId;
-
     void replyResult(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void replyFailure() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface ApplicationCertificate {
-
     readonly attribute DOMString type;
-
     readonly attribute DOMString value;
   };
-
   [NoInterfaceObject] interface ApplicationMetaData {
-
     readonly attribute DOMString key;
-
     readonly attribute DOMString value;
   };
-
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationInformationArraySuccessCallback {
     void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface FindAppControlSuccessCallback {
     void onsuccess(<a href="#ApplicationInformation">ApplicationInformation</a>[] informationArray, <a href="#ApplicationControl">ApplicationControl</a> appControl);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ApplicationContextArraySuccessCallback {
     void onsuccess(<a href="#ApplicationContext">ApplicationContext</a>[] contexts);
   };
-
   [Callback, NoInterfaceObject] interface ApplicationControlDataArrayReplyCallback {
     void onsuccess(optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data);
-
     void onfailure();
   };
-
   [Callback, NoInterfaceObject] interface ApplicationInformationEventCallback {
     void oninstalled(<a href="#ApplicationInformation">ApplicationInformation</a> info);
-
     void onupdated(<a href="#ApplicationInformation">ApplicationInformation</a> info);
-
     void onuninstalled(<a href="#ApplicationId">ApplicationId</a> id);
   };
-
   [NoInterfaceObject] interface SystemEventData {
     attribute DOMString value;
     attribute DOMString type;
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface EventCallback {
     void onevent(<a href="#EventInfo">EventInfo</a> event, <a href="#EventData">EventData</a> data);
   };
-
   dictionary EventInfo {
     <a href="#ApplicationId">ApplicationId</a> appId;
-
     DOMString name;
   };
 };</pre>
