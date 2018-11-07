@@ -135,7 +135,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/packagemanager.admin` | platform |  | The application can install and uninstall application packages. |
 | `http://tizen.org/privilege/packagemanager.clearcache` | public |  | The application can clear other applications' caches. |
 | `http://tizen.org/privilege/packagemanager.info` | public |  | The application can retrieve detailed application package information. |
-| `http://tizen.org/privilege/permission.check` | platform |  | The application can read the permission statuses of other apps. |
+| `http://tizen.org/privilege/permission.check` | platform |  | The application can read the permission statuses of other applications. |
 | `http://tizen.org/privilege/power` | public |  | The application can control power-related settings, such as dimming the screen. |
 | `http://tizen.org/privilege/push` | public |  | The application can receive notifications via the internet. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/reboot` | platform |  | The application can restart the device. |
