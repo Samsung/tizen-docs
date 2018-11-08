@@ -757,7 +757,7 @@
 ##### [3.0](/application/native/api/wearable-3.0.md)
 ##### [2.3.2](/application/native/api/wearable-2.3.2.md)
 
-### [Samples](https://developer.tizen.org/development/sample/native)
+### [Samples](/development/sample/native)
 
 
 ## Web Application
@@ -1016,7 +1016,7 @@
 ##### [3.0](/application/web/api/launch.htm?toc=1&profile=tv&version=3.0)
 
 
-### [Samples](https://developer.tizen.org/development/sample/web)
+### [Samples](/development/sample/web)
 
 
 ## Tizen Studio
