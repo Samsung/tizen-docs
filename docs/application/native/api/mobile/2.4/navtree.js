@@ -6,6 +6,25 @@ var NAVTREE =
   ] ]
 ];
 
+$(document).ready(function () {
+    var current_path = window.location.pathname;
+    var path = current_path.split("/");
+    
+    var api_platform = capitalizeFirstLetter(path[path.length - 3 ]);
+    var api_version = path[path.length - 2 ];
+    var div_platform = '<div style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-bottom: 10px;padding-top: 10px;text-align: center;color: #555;font-size: 16px;margin-right: 18px;">'+ api_platform  +'</div>';
+    var div_verion = '<div style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-top: 10px;padding-bottom: 10px;/* padding-left: 40px; */text-align: center;color: #555;font-size: 16px;">'+ api_version  +'</div>'
+    var div_common = '<div style="margin-top: 16px; margin-bottom: 10px; margin-left: 30px;">' + div_platform + div_verion + '</div>';
+    $('#nav-tree').prepend(div_common);
+    
+    var div_search = '<div class="flexbox"><div class="flex1"></div><div class="tizen-search-api" style="float: right;"><form id="form-search-api"><div class="form-group-search"><input type="text" placeholder="Search related API References" name="search-api" id="search-api" style="padding-right: 38px !important;"><input type="text" name="category-application" id="category-application" style="display: none" value="native-application"><button class="btn btn-submit" id="btn-search-api"><svg width="32" height="32" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></svg></button></div></form></div></div>';
+    $('#doc-content').prepend(div_search);
+});
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function getData(varName)
 {
   var i = varName.lastIndexOf('/');
