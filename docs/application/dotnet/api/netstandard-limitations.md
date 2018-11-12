@@ -42,6 +42,7 @@ Since applications on Tizen have limitations compared to .NET desktop applicatio
     In order to get path of the above folders, you need to call `Environment.GetFolderPath()` with Environment.SpecialFolderOption.DoNotVerify.
 
 
-6. System.Security.Cryptography.X509Certificates.X509Store is not supported.
+6. Limited System.Security.Cryptography.X509Certificates.X509Store support.
 
-    Tizen does not support X509Store in both StoreLocation.CurrentUser and StoreLocation.LocalMachine.
+    Tizen has limitations on X509Store in `StoreLocation.LocalMachine`. You can find limitations in **Linux** column at [X509Store in Cross-Platform Cryptography](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/cross-platform-cryptography.md#x509store).
+    Furthermore, Tizen does not support X509Store in `StoreLocation.CurrentUser` at all.
