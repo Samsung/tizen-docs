@@ -43,7 +43,7 @@ To listen for system events, use the `ui_app_add_event_handler()` function. The 
 <a name="state_trans"></a>
 ## Application States and Transitions
 
-The Tizen native application can be in one of several different [application states](applications.md#state_change).
+The Tizen native application can be in one of several different [application states](../overview.md#state_change).
 
 The Application API defines 5 states with corresponding transition handlers. A state transition callback is triggered after each state change, whenever the application is created, starts running, or is paused, resumed, or terminated. The application must [react to each state change appropriately](#fundamentals).
 

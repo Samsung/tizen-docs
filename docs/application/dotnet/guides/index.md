@@ -8,9 +8,13 @@ The TizenFX API allows applications to call into platform-specific functionality
 
 Select the feature you are interested in and see what Tizen offers for your application:
 
+- [Applications](applications/overview.md)
+
+  The applications feature covers various application models available for Tizen .NET applications.
+
 - [Application Management](app-management/overview.md)
 
-  The application management feature covers various application models available for Tizen .NET applications. They describe the application life-cycle, resources, and the communication methods available for the application.
+  The application management feature covers application resources and the communication methods available for the application.
 
 - [Natural User Interface](nui/NUIoverview.md)
 

@@ -214,7 +214,7 @@ Pay attention to the following main issues in the application source code (in th
 
     > **Note**
     >
-    > For more information on the application life-cycle callbacks, see [Applications](../../guides/app-management/applications.md).
+    > For more information on the application life-cycle callbacks, see [Applications](../../guides/applications/overview.md).
 
 - An ambient mode is available on a low-powered wearable device. In this mode, the watch application shows a limited UI and receives only the ambient tick event every minute to reduce power consumption.
 

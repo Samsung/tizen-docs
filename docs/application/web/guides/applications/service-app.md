@@ -2,7 +2,8 @@
 
 A service application is a type of Tizen Web application that provides an environment for running JavaScript in the background without a graphical user interface (the application follows the [ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm)). The service application is used to perform tasks that need to run periodically or continuously, but do not require any user interaction. For example, a service application can be used for getting data or listening for platform events in the background. As service applications do not have UI components, they run on top of a more light-weight runtime than UI applications. Therefore, you can expect them to perform better and consume less memory.
 
-> **Note**  
+> **Note**
+>
 > This feature is supported in TV applications only. The Web service application is an optional feature, which means that it may not be supported on all TV devices. You can check the device capability by using the `getCapability()` method of the [SystemInfo](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo) interface. For more information, see [Application Filtering](../../tutorials/app-filtering.md).
 
 The main features of the service application include:
@@ -27,7 +28,8 @@ The main features of the service application include:
 
 The device main menu does not contain any icons for service applications, because the applications run in the background. The task switcher does not show them either. Service applications can run simultaneously with other service and UI applications.
 
-> **Note**  
+> **Note**
+>
 > The TV service application requires [partner-level certification](../../tutorials/sign-certificate.md) in Tizen 3.0.
 
 ## Prerequisites
@@ -55,7 +57,7 @@ To enable your application to use the service application functionality:
    </widget>
    ```
 
-   The `<tizen:service>` element is a child of the `<widget>` element in the `config.xml` file. With the `<tizen:service>` element attributes, you can set the traits of a service application, such as application ID, auto restart, and boot launching capability. With the `<tizen:service>` child elements, you can set the starting script, name, and icon for the service application.  
+   The `<tizen:service>` element is a child of the `<widget>` element in the `config.xml` file. With the `<tizen:service>` element attributes, you can set the traits of a service application, such as application ID, auto restart, and boot launching capability. With the `<tizen:service>` child elements, you can set the starting script, name, and icon for the service application.
 
    The definition of all service elements is listed and explained in the [Extending Configuration Elements](../../../tizen-studio/web-tools/config-editor.md#ww_extend).
 
@@ -65,7 +67,8 @@ To enable your application to use the service application functionality:
    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
    ```
 
-> **Note**  
+> **Note**
+>
 > No privileges need to be separately defined for service applications, since the service application is always packaged with a UI application, and a privilege defined for the UI application covers the entire application package.
 
 <a name="create"></a>

@@ -28,20 +28,6 @@ Tizen provides various application models to allow you to create applications ta
 
   The service application is a Tizen Web application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
-
-## Application Package Manager
-
-The application package manager is one of the core modules of the Tizen application framework, and responsible for installing, uninstalling, and updating packages, and storing their information. Using the package manager, you can also retrieve information related to the packages that are installed on the device.
-
-The application package manager module is expandable to support various types of applications, and designated installation modules can be added to it.
-
-**Figure: Application package manager**
-
-![Application package manager](./media/application_package_manager.png)
-
-Tizen supports both Web application packages and hybrid application packages, which combine a Web application and one or more native service applications. Applications in the same package follow the same installation life-cycle, handled by the application package manager.
-
-
 ## Related Infromation
 - Dependencies
   - Tizen 2.4 and Higher for Mobile

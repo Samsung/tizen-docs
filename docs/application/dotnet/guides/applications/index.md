@@ -27,13 +27,13 @@ Tizen provides various application models to allow you to create applications ta
   - [Widget application](widget-app.md)
 
     A widget application (or widget) is a specialized application that provides the user a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
-  
+
 <a name="life-cycle"></a>
 ## Tizen .NET Application Life-Cycle
 
 The Tizen .NET application model handles application life-cycle and system events. Tizen .NET application life-cycle is handled by the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace. It provides methods to manage the main event loop, the application state change events, and basic system events.
 
-Applications in the same package follow the same installation life-cycle, which is handled by the application package manager. Each application in the package follows its own application life-cycle. Each application in an application package can be identified by its own ID.  
+Applications in the same package follow the same installation life-cycle, which is handled by the application package manager. Each application in the package follows its own application life-cycle. Each application in an application package can be identified by its own ID.
 
 <a name="state_change"></a>
 ## Tizen .NET Application State Change Methods

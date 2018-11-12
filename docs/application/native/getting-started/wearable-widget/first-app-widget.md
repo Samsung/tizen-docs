@@ -225,7 +225,7 @@ Pay attention to the following main issues in the application source code (in th
     }
     ```
 
-    -   The `create` callback is triggered when the widget instance is created. You can use the callback to initialize resources for the widget instance and [draw the UI](../../guides/app-management/ui-app/widget-app.md#get_window). If the bundle content is not `NULL`, restore the previous status.
+    -   The `create` callback is triggered when the widget instance is created. You can use the callback to initialize resources for the widget instance and [draw the UI](../../guides/applications/widget-app.md#get_window). If the bundle content is not `NULL`, restore the previous status.
 
         ```
         static int
