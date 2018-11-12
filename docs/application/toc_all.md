@@ -111,15 +111,20 @@
 
 ## .NET Application
 
+
 ### [Overview](/application/dotnet/index.md)
 
+
 ### Getting Started
+
 #### [Overview](/application/dotnet/getting-started/overview.md)
-#### [Creating Your First Tizen Mobile .NET Application](/application/dotnet/getting-started/mobile/first-app.md)
-#### [Creating Your First Tizen Wearable .NET Application](/application/dotnet/getting-started/wearable/first-app.md)
-#### [Creating Your First Tizen TV .NET Application](/application/dotnet/getting-started/tv/first-app.md)
+#### [Creating Mobile .NET Application](/application/dotnet/getting-started/mobile/first-app.md)
+#### [Creating Wearable .NET Application](/application/dotnet/getting-started/wearable/first-app.md)
+#### [Creating TV .NET Application](/application/dotnet/getting-started/tv/first-app.md)
+
 
 ### Tutorials
+
 #### [Overview](/application/dotnet/index.md)
 #### [Tizen .NET Features and Components](/application/dotnet/tutorials/details/features.md)
 #### [Managed Runtime Advantages](/application/dotnet/tutorials/details/runtime.md)
@@ -133,23 +138,26 @@
 #### [Packaging a .NET and Web Hybrid Application](/application/dotnet/tutorials/hybrid/create-dotnet-hybrid-package.md)
 #### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library/library-list.md)
 
+
 ### Guides
+
 #### [Overview](/application/dotnet/guides/index.md)
+
+#### Applications
+##### [Overview](/application/dotnet/guides/applications/overview.md)
+##### UI Application
+###### [Overview](/application/dotnet/guides/applications/ui-app.md)
+###### [Watch Application](/application/dotnet/guides/applications/watch-app.md)
+###### [Widget Application](/application/dotnet/guides/applications/widget-app.md)
+
 #### Application Management
 ##### [Overview](/application/dotnet/guides/app-management/overview.md)
-##### Applications
-###### [Overview](/application/dotnet/guides/app-management/applications.md)
-###### [UI Application](/application/dotnet/guides/app-management/ui-app.md)
-###### [Watch Application](/application/dotnet/guides/app-management/watch-app.md)
-###### [Widget Application](/application/dotnet/guides/app-management/widget-app.md)
 ##### [Application Icons](/application/dotnet/guides/app-management/app-icons.md)
 ##### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
 ##### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
 ##### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
-##### Application Data Exchange
-###### [Overview](/application/dotnet/guides/app-management/app-communication.md)
-###### [Message Port](/application/dotnet/guides/app-management/message-port.md)
-###### [Data Control](/application/dotnet/guides/app-management/data-control.md)
+##### [Message Port](/application/dotnet/guides/app-management/message-port.md)
+##### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
 #### Natural User Interface
 ##### [Overview](/application/dotnet/guides/nui/NUIoverview.md)
@@ -278,7 +286,13 @@
 ##### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 ##### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
 
+#### Natural Language Processing
+##### [Overview](/application/dotnet/guides/nlp/overview.md)
+##### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
+
+
 ### [API Reference](/application/dotnet/api/overview.md)
+
 
 ### Samples
 #### [Account](/application/dotnet/samples/account/overview.md)
@@ -301,16 +315,21 @@
 
 ## Native Application
 
-## [Overview](/application/native/index.md)
+
+### [Overview](/application/native/index.md)
+
 
 ### Getting Started
+
 #### [Overview](/application/native/getting-started/overview.md)
-#### [Creating Your First Tizen Mobile Native Application](/application/native/getting-started/mobile/first-app.md)
-#### [Creating Your First Tizen Wearable Native Application](/application/native/getting-started/wearable/first-app.md)
-#### [Creating Your First Tizen Wearable Native Watch Application](/application/native/getting-started/wearable-watch/first-app-watch.md)
-#### [Creating Your First Tizen Wearable Native Widget Application](/application/native/getting-started/wearable-widget/first-app-widget.md)
+#### [Creating Mobile Native Application](/application/native/getting-started/mobile/first-app.md)
+#### [Creating Wearable Native Application](/application/native/getting-started/wearable/first-app.md)
+#### [Creating Wearable Native Watch Application](/application/native/getting-started/wearable-watch/first-app-watch.md)
+#### [Creating Wearable Native Widget Application](/application/native/getting-started/wearable-widget/first-app-widget.md)
+
 
 ### Tutorials
+
 #### [Overview](/application/native/tutorials/overview.md)
 
 #### Application Development Process
@@ -374,32 +393,47 @@
 
 #### [Best Practices for Location](/application/native/tutorials/feature/best-practice-battery.md)
 
+
 ### Guides
+
 #### [Overview](/application/native/guides/index.md)
+
+#### Applications
+##### [Overview](/application/native/guides/applications/overview.md)
+##### UI Applications
+###### [Overview](/application/native/guides/applications/ui-app.md)
+###### EFL Applications
+####### [Overview](/application/native/guides/applications/efl-app.md)
+####### [Basic UI Application](/application/native/guides/applications/efl-ui-app.md)
+####### [Watch Application](/application/native/guides/applications/watch-app.md)
+####### [Widget Application](/application/native/guides/applications/widget-app.md)
+###### DALi Applications
+####### [Overview](/application/native/guides/applications/dali-app.md)
+####### [Basic UI Application](/application/native/guides/applications/dali-basic-app.md)
+####### [Watch Application](/application/native/guides/applications/dali-watch-app.md)
+####### [Widget Application](/application/native/guides/applications/dali-widget-app.md)
+##### [Service Applications](/application/native/guides/applications/service-app.md)
+
 #### Application Management
-##### [Overview](/application/native/guides/app-management/applications.md)
-##### [UI Applications](/application/native/guides/app-management/ui-app/index.md)
-##### [Service Applications](/application/native/guides/app-management/service-app.md)
-##### Application Information and Controls
-###### [Overview](/application/native/guides/app-management/app-info-control.md)
-###### [Application Resources](/application/native/guides/app-management/app-resources.md)
-###### [Application Preferences](/application/native/guides/app-management/app-preferences.md)
-###### [Application Icons](/application/native/guides/app-management/app-icons.md)
-###### [Application Controls](/application/native/guides/app-management/app-controls.md)
-###### [Common Application Controls](/application/native/guides/app-management/common-appcontrols.md)
-###### [Application Manager](/application/native/guides/app-management/app-manager.md)
-###### [Package Manager](/application/native/guides/app-management/package-manager.md)
-###### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
-##### Application Data Exchange
-###### [Overview](/application/native/guides/app-management/app-communication.md)
-###### [Message Port](/application/native/guides/app-management/message-port.md)
-###### [Data Control](/application/native/guides/app-management/data-control.md)
-###### [Data Bundle](/application/native/guides/app-management/data-bundles.md)
-###### [RPC Port](/application/native/guides/app-management/rpc-port.md)
-###### [TIDL](/application/native/guides/app-management/tidl.md)
+##### [Overview](/application/native/guides/app-management/overview.md)
+##### [Application Resources](/application/native/guides/app-management/app-resources.md)
+##### [Application Preferences](/application/native/guides/app-management/app-preferences.md)
+##### [Application Icons](/application/native/guides/app-management/app-icons.md)
+##### [Application Controls](/application/native/guides/app-management/app-controls.md)
+##### [Common Application Controls](/application/native/guides/app-management/common-appcontrols.md)
+##### [Application Manager](/application/native/guides/app-management/app-manager.md)
+##### [Package Manager](/application/native/guides/app-management/package-manager.md)
+##### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
+##### [Message Port](/application/native/guides/app-management/message-port.md)
+##### [Data Control](/application/native/guides/app-management/data-control.md)
+##### [Data Bundle](/application/native/guides/app-management/data-bundles.md)
+##### [RPC Port](/application/native/guides/app-management/rpc-port.md)
+##### [TIDL](/application/native/guides/app-management/tidl.md)
 
 #### User Interface
+
 ##### [Overview](/application/native/guides/ui/overview.md)
+
 ##### EFL
 ###### [Introduction](/application/native/guides/ui/efl/index.md)
 ###### [Getting Started](/application/native/guides/ui/efl/getting-started.md)
@@ -584,6 +618,7 @@
 ####### [Properties](/application/native/guides/ui/dali/properties.md)
 ####### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
+
 #### Internationalization
 ##### [Overview](/application/native/guides/internationalization/overview.md)
 ##### [i18n](/application/native/guides/internationalization/i18n.md)
@@ -623,7 +658,7 @@
 ##### [Alarms](/application/native/guides/alarm/alarms.md)
 ##### [Contextual System Event Trigger](/application/native/guides/alarm/trigger.md)
 
-#### Media and Camera
+#### Multimedia
 ##### [Overview](/application/native/guides/multimedia/overview.md)
 ##### Media Content and Metadata
 ###### [Media Content](/application/native/guides/multimedia/media-content.md)
@@ -634,21 +669,20 @@
 ###### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ###### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ###### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
-##### Audio Management
-###### [OpenAL](/application/native/guides/multimedia/openal.md)
-###### [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
-###### [Sound Pools](/application/native/guides/multimedia/sound-pool.md)
 ##### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 ##### [Media Recording](/application/native/guides/multimedia/media-recording.md)
-##### [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
 ##### [Media Controller](/application/native/guides/multimedia/media-controller.md)
 ##### [Media Conversions](/application/native/guides/multimedia/media-conversions.md)
 ##### [Media Handle Management](/application/native/guides/multimedia/media-handle.md)
 ##### [Media Key Events](/application/native/guides/multimedia/media-key.md)
-##### [Screen Mirroring](/application/native/guides/multimedia/screen-mirroring.md)
 ##### [Media Muxing](/application/native/guides/multimedia/media-muxing.md)
 ##### [Media Stream Playback](/application/native/guides/multimedia/media-streams.md)
 ##### [Media Stream Recording](/application/native/guides/multimedia/stream-recorder.md)
+##### [Screen Mirroring](/application/native/guides/multimedia/screen-mirroring.md)
+##### [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
+##### [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
+##### [Sound Pools](/application/native/guides/multimedia/sound-pool.md)
+##### [OpenAL](/application/native/guides/multimedia/openal.md)
 ##### [Radio](/application/native/guides/multimedia/radio.md)
 ##### [Camera](/application/native/guides/multimedia/camera.md)
 
@@ -668,7 +702,6 @@
 ###### [Download](/application/native/guides/connectivity/download.md)
 ###### [Curl](/application/native/guides/connectivity/curl.md)
 ###### [HTTP](/application/native/guides/connectivity/http.md)
-###### [Service Access through Plugins](/application/native/guides/connectivity/plugins.md)
 ###### [Web View](/application/native/guides/connectivity/web-view.md)
 ##### [File Transfer with MTP](/application/native/guides/connectivity/mtp.md)
 ##### [VPN Connections](/application/native/guides/connectivity/vpn.md)
@@ -699,6 +732,7 @@
 ##### [Speech-to-text](/application/native/guides/text-input/stt.md)
 ##### [Text-to-speech](/application/native/guides/text-input/tts.md)
 ##### [Voice Control](/application/native/guides/text-input/voice-control.md)
+##### [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
 
 #### Personal Data
 ##### [Overview](/application/native/guides/personal/overview.md)
@@ -733,6 +767,7 @@
 ##### [Cryptographic Operations](/application/native/guides/security/yaca.md)
 ##### [Device Policy Management](/application/native/guides/security/dpm.md)
 ##### [Malware Scanning and Web Protection](/application/native/guides/security/csr.md)
+##### [Device Certificate Manager](/application/native/guides/security/device-certificate-manager.md)
 ##### [Security Tips](/application/native/guides/security/security-tip.md)
 
 #### Error Handling
@@ -744,35 +779,37 @@
 ##### [Overview](/application/native/guides/performance/overview.md)
 ##### [Tracepoints](/application/native/guides/performance/tracepoints.md)
 
+#### Watchface Complication
+##### [Overview](/application/native/guides/compliations/overview.md)
+##### [Watchface Complication](/application/native/guides/compliations/watchface-complication.md)
+##### [Complication Provider](/application/native/guides/compliations/watchface-complication-provider.md)
+
 #### [Migration Guide](/application/native/guides/migration-guide.md)
 
-### API Reference
-#### [Overview](/application/native/api/overview.md)
-#### Mobile
-##### [4.0](/application/native/api/mobile-4.0.md)
-##### [3.0](/application/native/api/mobile-3.0.md)
-##### [2.4](/application/native/api/mobile-2.4.md)
-#### Wearable
-##### [4.0](/application/native/api/wearable-4.0.md)
-##### [3.0](/application/native/api/wearable-3.0.md)
-##### [2.3.2](/application/native/api/wearable-2.3.2.md)
+
+### [API Reference](/application/native/api/overview.md)
+
 
 ### [Samples](https://developer.tizen.org/development/sample/native)
 
 
 ## Web Application
 
+
 ### [Overview](/application/web/index.md)
 
 ### Getting Started
+
 #### [Overview](/application/web/getting-started/overview.md)
-#### [Creating Your First Tizen Mobile Web Application](/application/web/getting-started/mobile/first-app.md)
-#### [Creating Your First Tizen Wearable Web Application](/application/web/getting-started/wearable/first-app.md)
-#### [Creating Your First Tizen Wearable Web Watch Application](/application/web/getting-started/wearable-watch/first-app-watch.md)
-#### [Creating Your First Tizen Wearable Web Widget Application](/application/web/getting-started/wearable-widget/first-app-widget.md)
-#### [Creating Your First Tizen TV Web Application](/application/web/getting-started/tv/first-app.md)
+#### [Creating Mobile Web Application](/application/web/getting-started/mobile/first-app.md)
+#### [Creating Wearable Web Application](/application/web/getting-started/wearable/first-app.md)
+#### [Creating Wearable Web Watch Application](/application/web/getting-started/wearable-watch/first-app-watch.md)
+#### [Creating Wearable Web Widget Application](/application/web/getting-started/wearable-widget/first-app-widget.md)
+#### [Creating TV Web Application](/application/web/getting-started/tv/first-app.md)
+
 
 ### Tutorials
+
 #### [Overview](/application/web/tutorials/overview.md)
 #### [Application Development Process](/application/web/tutorials/process/app-dev-process.md)
 ##### [Creating the Application Project](/application/web/tutorials/process/creating-app-project.md)
@@ -784,29 +821,31 @@
 #### [Web Runtime](/application/web/tutorials/web-runtime.md)
 #### [Event Handling](/application/web/tutorials/event-handling.md)
 #### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)
-#### [API Versioning and Deprecation Policy of the Tizen Platform](/application/web/tutorials/deprecation-policy.md)
+#### [API Versioning and Deprecation Policy](/application/web/tutorials/deprecation-policy.md)
+
 
 ### Guides
+
 #### [Overview](/application/web/guides/index.md)
+
+#### Applications
+##### [Overview](/application/web/guides/applications/overview.md)
+##### UI Application
+###### [Watch Application](/application/web/guides/applications/watch-app.md)
+###### [Widget Application](/application/web/guides/applications/web-widget.md)
+##### [Service Application](/application/web/guides/applications/service-app.md)
+
 #### Application Management
-##### Applications
-###### [Overview](/application/web/guides/app-management/applications.md)
-###### [Service Application](/application/web/guides/app-management/service-app.md)
-###### [Watch Application](/application/web/guides/app-management/watch-app.md)
-###### [Widget Application](/application/web/guides/app-management/web-widget.md)
-##### Application Information and Controls
-###### [Overview](/application/web/guides/app-management/app-info-control.md)
-###### [Application Groups](/application/web/guides/app-management/app-group.md)
-###### [Application Preferences](/application/web/guides/app-management/preference.md)
-###### [Application Icons](/application/web/guides/app-management/app-icons.md)
-###### [Application Controls](/application/web/guides/app-management/app-controls.md)
-###### [Common Application Controls](/application/web/guides/app-management/common-appcontrols.md)
-###### [Widget Information](/application/web/guides/app-management/widget-info.md)
-###### [Package Information](/application/web/guides/app-management/packages.md)
-##### Application Data Exchange
-###### [Overview](/application/web/guides/app-management/app-communication.md)
-###### [Message Port](/application/web/guides/app-management/message-port.md)
-###### [Data Control](/application/web/guides/app-management/data-control.md)
+##### [Overview](/application/web/guides/app-management/overview.md)
+##### [Application Groups](/application/web/guides/app-management/app-group.md)
+##### [Application Preferences](/application/web/guides/app-management/preference.md)
+##### [Application Icons](/application/web/guides/app-management/app-icons.md)
+##### [Application Controls](/application/web/guides/app-management/app-controls.md)
+##### [Common Application Controls](/application/web/guides/app-management/common-appcontrols.md)
+##### [Widget Information](/application/web/guides/app-management/widget-info.md)
+##### [Package Information](/application/web/guides/app-management/packages.md)
+##### [Message Port](/application/web/guides/app-management/message-port.md)
+##### [Data Control](/application/web/guides/app-management/data-control.md)
 
 #### Cordova
 ##### [Overview](/application/web/guides/cordova/cordova.md)
@@ -999,29 +1038,22 @@
 ###### [CSS Fonts Module (Level 3)](/application/web/guides/w3c/ui/font.md)
 ###### [WOFF File Format (1.0 and 2.0)](/application/web/guides/w3c/ui/woff.md)
 
-### API Reference
-#### [Overview](/application/web/api/index.md)
-#### Mobile
-##### [4.0](/application/web/api/launch.htm?toc=1&profile=mobile&version=4.0)
-##### [3.0](/application/web/api/launch.htm?toc=1&profile=mobile&version=3.0)
-##### [2.4](/application/web/api/launch.htm?toc=1&profile=mobile&version=2.4)
 
-#### Wearable
-##### [4.0](/application/web/api/launch.htm?toc=1&profile=wearable&version=4.0)
-##### [3.0](/application/web/api/launch.htm?toc=1&profile=wearable&version=3.0)
-##### [2.3.2](/application/web/api/launch.htm?toc=1&profile=wearable&version=2.3.2)
-
-#### TV
-##### [4.0](/application/web/api/launch.htm?toc=1&profile=tv&version=4.0)
-##### [3.0](/application/web/api/launch.htm?toc=1&profile=tv&version=3.0)
+### [API Reference](/application/web/api/index.md)
 
 
 ### [Samples](https://developer.tizen.org/development/sample/web)
 
 
+
 ## Tizen Studio
+
+
 ### [Overview](/application/tizen-studio/index.md)
+
+
 ### Set up
+
 #### Install
 ##### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
 ##### [Prerequisites](/application/tizen-studio/setup/prerequisites.md)
@@ -1030,8 +1062,11 @@
 #### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
 #### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
 
+
 ### Native Tools
+
 #### [Overview](/application/tizen-studio/native-tools/index.md)
+
 #### Manage Projects
 ##### [Project Creation Wizard](/application/tizen-studio/native-tools/project-wizard.md)
 ##### [Project Explorer View](/application/tizen-studio/native-tools/project-explorer-view.md)
@@ -1093,6 +1128,7 @@
 
 
 ### Web Tools
+
 #### [Overview](/application/tizen-studio/web-tools/index.md)
 
 #### Manage Projects
@@ -1145,26 +1181,29 @@
 
 
 ### Platform Tools
+
 #### [Overview](/application/tizen-studio/platform-tools/overview.md)
 #### [Platform Development Tools](/application/tizen-studio/platform-tools/platform-tools.md)
 
 ### [Configurable SDK](/application/tizen-studio/configurable-sdk/configurable-sdk.md)
 
 ### Extension SDK
+
 #### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 #### [In-App Purchase Program Guide](/application/tizen-studio/extension-sdk/in-app-purchase.md)
 #### [InMobi Tizen Ad SDK Program Guide](/application/tizen-studio/extension-sdk/inmovi.md)
 #### [VMAX Tizen Ad SDK Integration Guide](/application/tizen-studio/extension-sdk/vmax.md)
 
 ### RT IDE
+
 #### [Overview](/application/tizen-studio/rt-ide/overview.md)
 #### Get Started
-##### [Overview](/application/tizen-studio/rt-ide/gett-started/overview.md)
-##### [Install Tizen Studio for RT](/application/tizen-studio/rt-ide/gett-started/install.md)
-##### [Manage a Project](/application/tizen-studio/rt-ide/gett-started/create.md)
-##### [Flash the Project](/application/tizen-studio/rt-ide/gett-started/flash.md)
-##### [Use the Serial Terminal](/application/tizen-studio/rt-ide/gett-started/terminal.md)
-##### [Debug the Project](/application/tizen-studio/rt-ide/gett-started/debug.md)
+##### [Overview](/application/tizen-studio/rt-ide/getting-started/overview.md)
+##### [Install Tizen Studio for RT](/application/tizen-studio/rt-ide/getting-started/install.md)
+##### [Manage a Project](/application/tizen-studio/rt-ide/getting-started/create.md)
+##### [Flash the Project](/application/tizen-studio/rt-ide/getting-started/flash.md)
+##### [Use the Serial Terminal](/application/tizen-studio/rt-ide/getting-started/terminal.md)
+##### [Debug the Project](/application/tizen-studio/rt-ide/getting-started/debug.md)
 #### SmartThings Extension
 ##### [Overview](/application/tizen-studio/rt-ide/smartths-ext/overview.md)
 ##### [Create a SmartThings Project](/application/tizen-studio/rt-ide/smartths-ext/create-smartths.md)
@@ -1173,6 +1212,8 @@
 ##### [Device/Resource Model Manager](/application/tizen-studio/rt-ide/smartths-ext/model-manager.md)
 
 ### Release Notes
+
+#### [3.0 (Oct 18, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
 #### [2.5 (Aug 7, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
 #### [2.4 (May 25, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
 #### [2.3 (March 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
@@ -1188,10 +1229,15 @@
 #### [1.0 (Sep 1, 2016)](/application/tizen-studio/release-notes/1-0-release-notes.md)
 
 
+
 ## Visual Studio Tools for Tizen
+
 ### [Overview](/application/vstools/index.md)
+
 ### [Installing Visual Studio Tools for Tizen](/application/vstools/install.md)
+
 ### Tools
+
 #### [Project Wizard](/application/vstools/tools/project-wizard.md)
 #### Manifest Editor
 ##### [Overview](/application/vstools/tools/manifest-editor.md)
@@ -1202,8 +1248,10 @@
 #### [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
 #### [Device Manager](/application/vstools/tools/device-manager.md)
 #### [Log Viewer](/application/vstools/tools/log-viewer.md)
-#### [Profiler](/application/vstools/tools/profiler.md)
+#### [Profiler](/application/vstools/tools/profiler-user-manual.md)
+#### [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
 #### [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)
+
 
 
 ## [Visual Studio Code Extension for Tizen](/application/vscode-ext/index.md)
@@ -1213,34 +1261,37 @@
 # Distribute
 
 
-### [Overview](/application/distribute/index.md)
+## [Overview](/application/distribute/index.md)
 
-### Tizen Store
-#### [Tizen Store Overview](/application/distribute/index.md)
-#### [Tizen App Share](/application/distribute/tizen-app-share.md)
+## Tizen Store
 
-### [Tizen Seller Office Overview](/application/distribute/seller-office.md)
+### [Tizen Store Overview](/application/distribute/index.md)
+### [Tizen App Share](/application/distribute/tizen-app-share.md)
 
-### How to Distribute
-##### [Overview](/application/distribute/how-to-distribute/overview.md)
-##### [Binary](/application/distribute/how-to-distribute/binary.md)
-##### [Sales](/application/distribute/how-to-distribute/sales.md)
-##### [Submit the Application](/application/distribute/how-to-distribute/submit-application.md)
-##### [Item](/application/distribute/how-to-distribute/item.md)
-##### [Display](/application/distribute/how-to-distribute/display.md)
+## [Tizen Seller Office Overview](/application/distribute/seller-office.md)
 
-### Validation
-#### Guidelines
-##### [Introduction](validation/guidelines/introduction.md)
-##### [Application Validation Process](/application/distribute/validation/guidelines/application-validation-process.md)
-##### [Tizen Application Compliance](/application/distribute/validation/guidelines/tizen-application-compliance.md)
-##### [Age Rating Guide](/application/distribute/validation/guidelines/age-rating-guide.md)
-##### [Usability Evaluation Guide](/application/distribute/validation/guidelines/usability-evaluation-guide.md)
-#### [Tizen Validation Policy](/application/distribute/validation/tizen-validation-policy.md)
-#### [Self-Check List](/application/distribute/validation/self-check-list.md)
-#### TOP 5 Defects & Tips
-##### [Icon Problems](/application/distribute/validation/defects-tips/icon-problems.md)
-##### [Back Key Malfunction](/application/distribute/validation/defects-tips/back-key-malfunction.md)
-##### [Basic Functions do not exist or work properly](/application/distribute/validation/defects-tips/basic-functions-do-not-exist-or-work-properly.md)
-##### [Display Error](/application/distribute/validation/defects-tips/display-error.md)
-##### [Fail to Install, Execute or Terminate Application](/application/distribute/validation/defects-tips/fail-install-execute-or-terminate-application.md)
+## How to Distribute
+
+### [Overview](/application/distribute/how-to-distribute/overview.md)
+### [Binary](/application/distribute/how-to-distribute/binary.md)
+### [Sales](/application/distribute/how-to-distribute/sales.md)
+### [Submit the Application](/application/distribute/how-to-distribute/submit-application.md)
+### [Item](/application/distribute/how-to-distribute/item.md)
+### [Display](/application/distribute/how-to-distribute/display.md)
+
+## Validation
+
+### Guidelines
+#### [Introduction](validation/guidelines/introduction.md)
+#### [Application Validation Process](/application/distribute/validation/guidelines/application-validation-process.md)
+#### [Tizen Application Compliance](/application/distribute/validation/guidelines/tizen-application-compliance.md)
+#### [Age Rating Guide](/application/distribute/validation/guidelines/age-rating-guide.md)
+#### [Usability Evaluation Guide](/application/distribute/validation/guidelines/usability-evaluation-guide.md)
+### [Tizen Validation Policy](/application/distribute/validation/tizen-validation-policy.md)
+### [Self-Check List](/application/distribute/validation/self-check-list.md)
+### TOP 5 Defects & Tips
+#### [Icon Problems](/application/distribute/validation/defects-tips/icon-problems.md)
+#### [Back Key Malfunction](/application/distribute/validation/defects-tips/back-key-malfunction.md)
+#### [Basic Functions do not exist or work properly](/application/distribute/validation/defects-tips/basic-functions-do-not-exist-or-work-properly.md)
+#### [Display Error](/application/distribute/validation/defects-tips/display-error.md)
+#### [Fail to Install, Execute or Terminate Application](/application/distribute/validation/defects-tips/fail-install-execute-or-terminate-application.md)
