@@ -623,7 +623,7 @@ To send a search command to the client from the server side:
    ```
 
 5. Send the search command to the server using the corresponding `mc_client_send_search_cmd()`. Use the server name retrieved in the previous step to identify the server.
-For example, to send a your own event to the client, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
+For example, to send your own event to the client, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
 
    ```
    char *request_id = NULL;
@@ -822,7 +822,7 @@ The following table lists all the playlist update mode attributes the client can
 
 ## Media Controller Content Type Attributes
 
-The following table lists all the content type attributes the server can receive.
+The following table lists all the content type attributes the server can receive:
 
 **Table: Media controller content type attributes**
 
@@ -841,7 +841,7 @@ The following table lists all the content type attributes the server can receive
 
 ## Media Controller Search Category Attributes
 
-The following table lists all the search category attributes the server can receive.
+The following table lists all the search category attributes the server can receive:
 
 **Table: Media controller search category attributes**
 
