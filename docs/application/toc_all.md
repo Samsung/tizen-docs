@@ -1244,3 +1244,9 @@
 ##### [Basic Functions do not exist or work properly](/application/distribute/validation/defects-tips/basic-functions-do-not-exist-or-work-properly.md)
 ##### [Display Error](/application/distribute/validation/defects-tips/display-error.md)
 ##### [Fail to Install, Execute or Terminate Application](/application/distribute/validation/defects-tips/fail-install-execute-or-terminate-application.md)
+
+
+# Samples Application
+
+## [Web](/development/sample/web)
+## [Native](/development/sample/native)
