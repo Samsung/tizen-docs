@@ -583,7 +583,7 @@ To receive the reply of processing command on the server side:
 
 ## Sending and Processing a Search Command
 
-To send a search command to the client from the server side:
+To send a search command to the server from the client side:
 
 1. Create the media controller client handle using the `mc_client_create()`:
 
@@ -623,7 +623,7 @@ To send a search command to the client from the server side:
    ```
 
 5. Send the search command to the server using the corresponding `mc_client_send_search_cmd()`. Use the server name retrieved in the previous step to identify the server.
-For example, to send your own event to the client, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
+For example, to send a search command to the server, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
 
    ```
    char *request_id = NULL;
@@ -645,7 +645,7 @@ For example, to send your own event to the client, use the `mc_client_send_searc
 
 To process the received search command on the server side:
 
-1. Create the media controller client handle using the `mc_server_create()`:
+1. Create the media controller server handle using the `mc_server_create()`:
 
    ```
    ret = mc_server_create(&g_server_h);
