@@ -623,7 +623,7 @@ To send a search command to the server from the client side:
    ```
 
 5. Send the search command to the server using the corresponding `mc_client_send_search_cmd()`. Use the server name retrieved in the previous step to identify the server.
-For example, to send a search command to the server, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
+For example, to send the search command to the server, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
 
    ```
    char *request_id = NULL;
