@@ -92,22 +92,6 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/wappinformation.png" width="180"/></td>
-			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank"><strong>(W) AppInformation</strong></a></p>
-			<p>This sample application demonstrates how to get the specific information such as AppId, Package ID, and shared directory path. It also demonstrates how to get the directory information such as resource, cache, app data and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
-			<p>This application uses Tizen.Application API.<br>
-			<ul>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html" target="_blank">Class ApplicationInfo</a></li>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DirectoryInfo.html" target="_blank">Class DirectoryInfo</a></li>
-			</ul></p>
-			<p>In addition, there is similar native sample application.<br>
-			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/App-common" target="_blank">Native version</a></li>
-			</ul></p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="180" src="media/wappcontrol.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppControl" target="_blank"><strong>(W) AppControl</strong></a></p>
@@ -130,10 +114,19 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/wbadges.png" width="180"/></td>
+			<td><img alt="" height="180" src="media/wappinformation.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Badges</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use application badge and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank"><strong>(W) AppInformation</strong></a></p>
+			<p>This sample application demonstrates how to get the specific information such as AppId, Package ID, and shared directory path. It also demonstrates how to get the directory information such as resource, cache, app data and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This application uses Tizen.Application API.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html" target="_blank">Class ApplicationInfo</a></li>
+				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DirectoryInfo.html" target="_blank">Class DirectoryInfo</a></li>
+			</ul></p>
+			<p>In addition, there is similar native sample application.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/App-common" target="_blank">Native version</a></li>
+			</ul></p>
 			</td>
 		</tr>
 		<tr>
@@ -145,6 +138,13 @@ for TD:
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/web/Application/Badges" target="_blank">Web version</a></li>
 			</ul></p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/wbadges.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Badges" target="_blank"><strong>(W) Badges</strong></a></p>
+			<p>This sample application demonstrates how to use application badge and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>

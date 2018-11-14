@@ -306,6 +306,79 @@ for TD:
 			<p>This sample application demonstrates how to use various kinds of visuals.</p>
 			</td>
 		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv28ball3d.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Ball3D (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to draw a spherical 3D model, add texture to the model, and realize rotation of the model.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv29cubetexture.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) CubeTexture (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to draw a 3D model (cube), realize rotation of the model, and add texture to the model.</p>
+                        <p>It also demonstrates how the application implements two cubes independently drawn using two programs.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv30graffiti.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Graffiti (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to respond to click events or button events and how to draw a dot or line at the corresponding position on the screen.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv31panorama.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Panorama360 (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to achieve 360-degree panorama effect.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv32particledynamic.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) ParticleDynamic (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to implement a dynamic particle scenario.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv33scratchpaper.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) ScratchPaper (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to respond to click events or button events and how to draw corresponding textures at the corresponding position on the screen.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv34star.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Star (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to implement shaders loading, program creation, linking, vertex data loading, texture data loading, and other preliminary operations of drawing. It also demonstrates how to draw a multilateral graph (five-pointed star) with the DrawElements API.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv35triangle.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Triangle (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to implement shaders loading, program creation, linking, vertex data loading, texture data loading, and other preliminary operations of drawing. It also demonstrates how to implement a basic graph drawing (drawing triangles) with the DrawArrays API.</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
