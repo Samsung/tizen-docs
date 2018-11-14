@@ -8,7 +8,7 @@ The introduction to .Net applications documentation provides the overall informa
 
 - [Getting Started](getting-started/overview.md)
 
-   Demonstrates how you can create your first simple .NET application.
+  Demonstrates how you can create your first simple .NET application.
 
 - [Tizen .NET Features and Components](tutorials/details/features.md)
 

@@ -143,7 +143,7 @@ AppControl appcontrol = new AppControl();
 appcontrol.Operation = AppControlOperations.Default;
 appcontrol.ApplicationId = "org.tizen.TestApp";
 
-AppControl.SendLauncherRequest(appcontrol);
+AppControl.SendLaunchRequest(appcontrol);
 ```
 
 <a name="implicit"></a>
@@ -160,7 +160,7 @@ The following examples show how to create an implicit launch request:
     appcontrol.Operation = AppControlOperations.CreateContent;
     appcontrol.Mime = "image/jpg";
 
-    AppControl.SendLauncherRequest(appcontrol);
+    AppControl.SendLaunchRequest(appcontrol);
     ```
 
 - To launch a viewer application with a specific operation, URI, and
@@ -173,7 +173,7 @@ The following examples show how to create an implicit launch request:
     appcontrol.Mime = "image/*";
     appcontrol.Uri = "file:///home/myhome/Photos/1_photo.jpg";
 
-    AppControl.SendLauncherRequest(appcontrol);
+    AppControl.SendLaunchRequest(appcontrol);
     ```
 
 <a name="resolution"></a>		

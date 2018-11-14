@@ -8,7 +8,7 @@ To address IoT-specific requirements, Tizen IoT is derived from Tizen. Tizen IoT
 
 Tizen IoT is composed of:
 
-- [Lightweight OS](getting-started/tizen-image-download-flash.md) for IoT devices,
+- [Lightweight OS](getting-started/setting-up-board.md) for IoT devices,
 - [Peripheral I/O API](guides/peripheral-io-api.md) for the access and control of the devices, and
 - [Things SDK API](guides/things-api.md) for the integration with the [SmartThings Cloud](https://smartthings.developer.samsung.com/develop/index.html).
 
