@@ -35,17 +35,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
 
 8.  Edit the source code. The code is composed of a device definition JSON file (in the `res/` directory) and code implementation C files.
 
-    For more information, see [Things SDK API](../guides/things-api.md). For more information on the JSON file, see [Device Definition](../guides/things-api-device.md), and for C APIs and callbacks, see [API Usage](../guides/things-api-guide.md).
-
-    > **Note**
-    >
-    > The Network Audio sample application can be built without any modification. To run it, connect the audio jack of the board to a speaker.
-
-    Instead of using an existing sample as a basis for your application, you can use the **IoT** template that makes use of the Things SDK API:
-
-    1.  In Tizen Studio, select **File > New > Tizen Project**.
-    2.  Select **Template**, click **Next**, select **Custom > Iot-headless v5.0**, and click **Next**.
-    3.  Select **Native Application**, click **Next**, select the **IoT** template, and click **Finish**.
+    For more information, see [Things SDK API](../guides/things-api-5.0.md). For more information on the JSON file, see [Device Definition](../guides/things-api-device-5.0.md), and for C APIs and callbacks, see [API Usage](../guides/things-api-guide-5.0.md).
 
 9.  You need a certificate to make the device work correctly. You only have to create the certificate once, when you first install Tizen Studio.
     1.  In Tizen Studio menu, open the Certificate Manager by going to **Tools > Certificate Manager**.

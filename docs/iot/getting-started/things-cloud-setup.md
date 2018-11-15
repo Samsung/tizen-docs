@@ -6,19 +6,14 @@ To develop applications that integrate with the SmartThings Cloud, you must regi
 
 To register the function of your device:
 
-1.  Create a cloud-connected device in the Developer Workspace site (<https://devworkspace.developer.samsung.com/>), by following the instructions on the [SmartThings Developers site](https://smartthings.developer.samsung.com/develop/workspace/ide/create-a-cloud-connected-device.html):
+1.  Create a new directly connected device in the [Developer Workspace site](<https://devworkspace.developer.samsung.com/>). Please see the guides on the [SmartThings Developers Documentation site](https://smartthings.developer.samsung.com/docs/index.html):
 
-    -   Create a unique VID (vendor ID) for each device you develop.
-    -   Select the **Switch** and **Audio Volume** capabilities in the **Device Profile** field, for the Network Audio sample application.
+    -   Create a unique **VID** (vendor ID) for each device you develop.
+    -   Assign three digits of **Device Onboarding Id**.
+    -   Check **MNID** which is assigned to you automatically.
+    -   Select the **Switch** and **Audio Volume** capabilities for the Network Audio sample application.
 
-        ![Web Console VID Example](media/devworkspace_vid.png)
-
-2.  After the cloud-connected device is created, check the device information by clicking the new device.
-3.  Note the **VID**, the **MNID**, and the **Device Onboarding Id** field value, shown in the device information, must be updated in the device definition JSON file.
-
-    For more information, see [Developing Applications with Things SDK API](things-app-development-5.0.md).
-
-    ![Web Console VID/MNID Example](media/devworkspace_mnid_vid.png)
+2.  Note that the **VID**, the **MNID**, and the **Device Onboarding Id** field values must be updated in the device definition JSON file. For more information, see [Developing Applications with Things SDK API](things-app-development-5.0.md).
 
 ## Generating Cloud Certificates
 
