@@ -17,10 +17,10 @@ $(document).ready(function () {
     var div_common = '<div style="margin-top: 16px; margin-bottom: 10px; margin-left: 30px;">' + div_platform + div_verion + '</div>';
     $('#nav-tree').prepend(div_common);
     
-    var div_search = '<div class="flexbox"><div class="flex1"></div><div class="tizen-search-api" style="float: right;"><form id="form-search-api"><div class="form-group-search"><input type="text" placeholder="Search related API References" name="search-api" id="search-api" style="padding-right: 38px !important;"><input type="text" name="category-application" id="category-application" style="display: none" value="native-application"><button class="btn btn-submit" id="btn-search-api"><svg width="32" height="32" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></svg></button></div></form></div></div>';
+    var div_search = '<div class="flexbox"><div class="flex1"></div><div class="tizen-search-api" style="float: right;"><form id="form-search-api"><div class="form-group-search"><input type="text" placeholder="Search related API References" name="search-api" id="search-api" style="padding-right: 38px !important;"><button class="btn btn-submit" id="btn-search-api"><svg width="32" height="32" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></svg></button></div></form></div></div>';
     $('#doc-content').prepend(div_search);
-	
-	var btGotoTop = '<div><input type="image" id="btngototop" src="/images/btn_go_to_top.png" style="display: none"></div>';
+    
+    var btGotoTop = '<div><input type="image" id="btngototop" src="/images/btn_go_to_top.png" style="display: none"></div>';
     $('body').append(btGotoTop);
     
     var btnTop = $('#btngototop');
@@ -33,6 +33,19 @@ $(document).ready(function () {
     });
     btnTop.click(function () {
         $('html, body').animate({scrollTop:0}, '300');
+    });
+    
+    $('#btn-search-api').click(function (event) {
+        event.preventDefault();
+        var search_text = $('#search-api').val();
+        var current_url = window.location.href;
+        var current_url_array = current_url.split("/");
+        var to_url = '';
+        for(var i=0; i< current_url_array.length -1; i++){
+            to_url += current_url_array[i] + "/";
+        }
+        to_url += 'search-api-reference.php?search=' + search_text;
+        window.location.href = to_url;
     });
 });
 
