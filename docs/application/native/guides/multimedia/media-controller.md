@@ -616,7 +616,7 @@ To send a search command to the server from the client side:
    ret = mc_search_create(&g_search_h);
    ```
 
-4. Set the condition with [a content type](#media-controller-content-type-attributes), [a search category](#media-controller-search-category-attributes) and a search keyword using the `mc_search_set_condition()`:
+4. Set the condition with [a content type](#content_type), [a search category](#search_category) and a search keyword using the `mc_search_set_condition()`:
 
    ```
    ret = mc_search_set_condition(g_search_h, MC_CONTENT_TYPE_MUSIC, MC_SEARCH_TITLE, "keyword", NULL);
@@ -820,6 +820,7 @@ The following table lists all the playlist update mode attributes the client can
 >
 > This Attributes support Tizen 4.0 and Higher for Mobile.
 
+<a name=content_type></a>
 ## Media Controller Content Type Attributes
 
 The following table lists all the content type attributes the server can receive:
@@ -839,6 +840,7 @@ The following table lists all the content type attributes the server can receive
 >
 > This Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
+<a name=search_category></a>
 ## Media Controller Search Category Attributes
 
 The following table lists all the search category attributes the server can receive:
