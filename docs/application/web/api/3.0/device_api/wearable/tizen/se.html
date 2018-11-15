@@ -7,17 +7,18 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SecureElement">
-<div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>SecureElement API</h1></div>
 <div class="brief">
- The SecureElement API provides functionality to communicate with applications in several Secure Elements.
+ The Secure Element API provides functionality to communicate with applications in several Secure Elements.
 A Secure Element is a secure smart card chip. It can be a UICC/SIM, an embedded Secure Element, or a Secure SD card that is inserted in a device.
-<p>
-For more information about how to use SecureElement API, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/secure-element-access">Secure Element Access Guide</a>.
-        </p>
         </div>
-<p><span class="version">
-            Since: </span>
+<div class="description">
+        <p>
+For more information on the Secure Element features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/secure-element-access">Secure Element Access Guide</a>.
+        </p>
+       </div>
+<p><span class="version">Since: </span>
  2.3.1
         </p>
 <h2>Table of Contents</h2>
@@ -134,13 +135,12 @@ For more information about how to use SecureElement API, see <a href="https://de
     readonly attribute <a href="#SEService">SEService</a> seService;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
           <p>
-The <em>tizen.seService</em> object allows access to the functionality of the SecureElement API.
+The <em>tizen.seService</em> object allows access to the functionality of the Secure Element API.
           </p>
          </div>
 </div>
@@ -154,11 +154,9 @@ The <em>tizen.seService</em> object allows access to the functionality of the Se
     void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregisterSEListener(unsigned long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void shutdown() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
@@ -176,10 +174,8 @@ It provides access to the API functionalities through the <em>tizen.seService</e
 <div class="brief">
  Gets all the available Secure Element readers.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="description">
@@ -191,12 +187,10 @@ The ErrorCallback is launched with these error types:
  UnknownError - If any error occurs during retrieval.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="parameters">
@@ -204,11 +198,11 @@ The ErrorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when the list of available Secure Element readers has been successfully retrieved
+ Callback method that is invoked when the list of available Secure Element readers has been successfully retrieved.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -225,28 +219,27 @@ The ErrorCallback is launched with these error types:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   function success(readers)
-   {
-      for (var i = 0; i &lt; readers.length; i++)
+  function success(readers)
+  {
+    for (var i = 0; i &lt; readers.length; i++)
+    {
+      if (readers[i].isPresent)
       {
-         if (readers[i].isPresent)
-         {
-            console.log("Reader Name: " + readers[i].getName());
-         }
+        console.log("Reader name: " + readers[i].getName());
       }
-   }
-   function error(err)
-   {
-      console.log(err.name + ": " + err.message);
-   }
-   tizen.seService.getReaders(success, error);
+    }
+  }
+  function error(err)
+  {
+    console.log(err.name + ": " + err.message);
+  }
+  tizen.seService.getReaders(success, error);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -258,18 +251,14 @@ catch (err)
 <div class="brief">
  Registers a callback function that is invoked when an available Secure Element reader is detected.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="parameters">
@@ -283,8 +272,12 @@ catch (err)
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- unsigned long An identifier used to clear the watch subscription
-              </div>
+<ul>
+<span class="return">unsigned long:
+                  </span>
+ An identifier used to clear the watch subscription.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -301,30 +294,29 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var listener =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var listener =
 {
-   onSEReady: function(reader)
-   {
-      console.log(reader.getName() + " is ready.");
-   },
-   onSENotReady: function(reader)
-   {
-      console.log(reader.getName() + " is not ready.");
-   },
-   onSEError: function(reader, error)
-   {
-      console.log(reader.getName() + ": error occurred: " + error.message);
-   }
+  onSEReady: function(reader)
+  {
+    console.log(reader.getName() + " is ready");
+  },
+  onSENotReady: function(reader)
+  {
+    console.log(reader.getName() + " is not ready");
+  },
+  onSEError: function(reader, error)
+  {
+    console.log(reader.getName() + ": error occurred: " + error.message);
+  }
 };
 
 try
 {
-   var seListener = tizen.seService.registerSEListener(listener);
+  var seListener = tizen.seService.registerSEListener(listener);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -336,18 +328,14 @@ catch (err)
 <div class="brief">
  Unregisters the listener from notifying any detection of an available Secure Element reader.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterSEListener(unsigned long id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterSEListener(unsigned long id);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="parameters">
@@ -355,7 +343,7 @@ catch (err)
 <ul>
           <li class="param">
 <span class="name">id</span>:
- A subscription identifier that is returned by the <em>registerSEListener()</em> method
+ A subscription identifier that is returned by the <em>registerSEListener()</em> method.
                 </li>
         </ul>
 </div>
@@ -372,15 +360,14 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var seListener; /* seListener obtained from registerSEListener */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable seListener obtained from registerSEListener. */
 try
 {
-   tizen.seService.unregisterSEListener(seListener);
+  tizen.seService.unregisterSEListener(seListener);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -392,18 +379,14 @@ catch (err)
 <div class="brief">
  Shuts down Secure Elements after releasing all resources.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void shutdown();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void shutdown();</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="exceptionlist">
@@ -419,14 +402,13 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   tizen.seService.shutdown();
+  tizen.seService.shutdown();
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -446,8 +428,7 @@ catch (err)
     void openSession(<a href="#SessionSuccessCallback">SessionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void closeSessions() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
@@ -462,8 +443,7 @@ This interface offers methods to control sessions on the reader.
 </span><span class="type">boolean </span><span class="name">isPresent</span></span><div class="brief">
  Boolean value that indicates whether a Secure Element is present on a reader.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 </li></ul>
@@ -478,24 +458,24 @@ This interface offers methods to control sessions on the reader.
 <div class="brief">
  Gets the reader's name.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">DOMString getName();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">DOMString getName();</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- DOMString The name of the reader
-              </div>
+<ul>
+<span class="return">DOMString:
+                  </span>
+ The name of the reader.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -509,28 +489,27 @@ This interface offers methods to control sessions on the reader.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   function success(readers)
-   {
-      for (var i = 0; i &lt; readers.length; i++)
+  function success(readers)
+  {
+    for (var i = 0; i &lt; readers.length; i++)
+    {
+      if (readers[i].isPresent)
       {
-         if (readers[i].isPresent)
-         {
-            console.log("Reader Name: " + readers[i].getName());
-         }
+        console.log("Reader name: " + readers[i].getName());
       }
-   }
-   function error(err)
-   {
-      console.log(err.name + ": " + err.message);
-   }
-   tizen.seService.getReaders(success, error);
+    }
+  }
+  function error(err)
+  {
+    console.log(err.name + ": " + err.message);
+  }
+  tizen.seService.getReaders(success, error);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -542,10 +521,8 @@ catch (err)
 <div class="brief">
  Opens a session on a reader.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void openSession(<a href="#SessionSuccessCallback">SessionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void openSession(<a href="#SessionSuccessCallback">SessionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="description">
@@ -561,12 +538,10 @@ The ErrorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="parameters">
@@ -574,11 +549,11 @@ The ErrorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when a session has been successfully opened
+ Callback method that is invoked when a session has been successfully opened.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -595,22 +570,21 @@ The ErrorCallback is launched with these error types:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   function success(session) 
-   {
-      console.log("Open Session Success: " + !session.isClosed);
-   }
-   function error(err)
-   {
-      console.log(err.name + ": " + err.message);
-   }
-   reader.openSession(success, error);
+  function success(session)
+  {
+    console.log("Open Session Success: " + !session.isClosed);
+  }
+  function error(err)
+  {
+    console.log(err.name + ": " + err.message);
+  }
+  reader.openSession(success, error);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -622,18 +596,14 @@ catch (err)
 <div class="brief">
  Closes all sessions opened on a reader.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void closeSessions();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void closeSessions();</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="exceptionlist">
@@ -649,14 +619,13 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   reader.closeSessions();
+  reader.closeSessions();
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -672,14 +641,15 @@ catch (err)
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Session
   {
     readonly attribute boolean isClosed;
-    void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void openLogicalChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void openLogicalChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] getATR() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void closeChannels() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="attributes">
@@ -689,8 +659,7 @@ catch (err)
 </span><span class="type">boolean </span><span class="name">isClosed</span></span><div class="brief">
  Boolean value that indicates whether a session is closed.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 </li></ul>
@@ -708,10 +677,8 @@ The basic channel (defined in the ISO7816-4 specification) is opened by default 
 Once this channel has been opened by an application, it is considered to be "locked" to other applications, and they cannot open any channel, until the basic channel is closed.
 Some Secure Elements might always deny opening a basic channel.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="description">
@@ -736,12 +703,10 @@ The ErrorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="parameters">
@@ -753,11 +718,11 @@ The ErrorCallback is launched with these error types:
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when a basic channel has been successfully opened
+ Callback method that is invoked when a basic channel has been successfully opened.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -778,40 +743,39 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   function successChannel(channel)
-   {
-      if (channel.isBasicChannel)
-      {
-         console.log("Basic channel is opened.");
-      }
-      else
-      {
-         console.log("Logical channel is opened.");
-      }
-   }
-   function errorChannel(err)
-   {
-      console.log("openBasicChannel Error:" + err.name +": " + err.message);
-   }
-
-   function successSession(session)
-   {
-      console.log("Open Session Success: " + !session.isClosed);
-      /* This aid is for test. Use aid for your applet in secure element */
-      session.openBasicChannel([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe], successChannel, errorChannel);
-   }
-   function errorSession(err)
-   {
-      console.log("openSession Error: " + err.name + ": " + err.message);
-   }
-   reader.openSession(successSession, errorSession);
+  function successChannel(channel)
+  {
+    if (channel.isBasicChannel)
+    {
+      console.log("Basic channel is opened");
+    }
+    else
+    {
+      console.log("Logical channel is opened");
+    }
+  }
+  function errorChannel(err)
+  {
+    console.log("openBasicChannel error: " + err.name + ": " + err.message);
+  }
+  function successSession(session)
+  {
+    console.log("Open session success: " + !session.isClosed);
+    /* This AID is for test. Use AID for your applet in secure element. */
+    session.openBasicChannel([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe],
+        successChannel, errorChannel);
+  }
+  function errorSession(err)
+  {
+    console.log("openSession error: " + err.name + ": " + err.message);
+  }
+  reader.openSession(successSession, errorSession);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -824,10 +788,8 @@ catch (err)
  Opens a logical channel in a session by the specified applet ID.
 The logical channel is defined in the ISO7816-4 specification.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void openLogicalChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void openLogicalChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="description">
@@ -852,12 +814,10 @@ The ErrorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="parameters">
@@ -869,11 +829,11 @@ The ErrorCallback is launched with these error types:
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when a logical channel has been successfully opened
+ Callback method that is invoked when a logical channel has been successfully opened.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -893,32 +853,32 @@ The ErrorCallback is launched with these error types:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var session; /* Session obtained from openSession callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable session obtained from openSession callback. */
 try
 {
-   function successChannel(channel)
-   {
-      if (channel.isBasicChannel)
-      {
-         console.log("Basic channel is opened.");
-      }
-      else
-      {
-         console.log("Logical channel is opened.");
-      }
-   }
-   function errorChannel(err)
-   {
-      console.log("openLogicalChannel Error:" + err.name + ": " + err.message);
-   }
+  function successChannel(channel)
+  {
+    if (channel.isBasicChannel)
+    {
+      console.log("Basic channel is opened");
+    }
+    else
+    {
+      console.log("Logical channel is opened");
+    }
+  }
+  function errorChannel(err)
+  {
+    console.log("openLogicalChannel error: " + err.name + ": " + err.message);
+  }
 
-   /* This aid is for test. Use aid for your applet in secure element */
-   session.openLogicalChannel([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe], successChannel, errorChannel);
+  /* This AID is for test. Use AID for your applet in secure element. */
+  session.openLogicalChannel([0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe],
+      successChannel, errorChannel);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -930,24 +890,24 @@ catch (err)
 <div class="brief">
  Gets the answer to reset(ATR) of a Secure Element.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">byte[] getATR();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">byte[] getATR();</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- byte[] The ATR of a Secure Element
-              </div>
+<ul>
+<span class="return">byte[]:
+                  </span>
+ The ATR of a Secure Element.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -961,15 +921,14 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var session; /* Session obtained from openSession callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable session obtained from openSession callback. */
 try
 {
-   var atr = session.getATR();
+  var atr = session.getATR();
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -981,18 +940,14 @@ catch (err)
 <div class="brief">
  Closes a session.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void close();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void close();</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="exceptionlist">
@@ -1008,15 +963,14 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var session; /* Session obtained from openSession callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable session obtained from openSession callback. */
 try
 {
-   session.close();
+  session.close();
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1028,18 +982,14 @@ catch (err)
 <div class="brief">
  Closes all channels on this session.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void closeChannels();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void closeChannels();</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="exceptionlist">
@@ -1055,15 +1005,14 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var session; /* Session obtained from openSession callback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable session obtained from openSession callback. */
 try
 {
-   session.closeChannels();
+  session.closeChannels();
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1080,13 +1029,11 @@ The channel is defined in the ISO7816-4.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Channel {
     readonly attribute boolean isBasicChannel;
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void transmit(byte[] command, <a href="#TransmitSuccessCallback">TransmitSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void transmit(byte[] command, <a href="#TransmitSuccessCallback">TransmitSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] getSelectResponse() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="attributes">
@@ -1096,8 +1043,7 @@ The channel is defined in the ISO7816-4.
 </span><span class="type">boolean </span><span class="name">isBasicChannel</span></span><div class="brief">
  Boolean value that indicates whether it is a basic channel.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 </li></ul>
@@ -1112,18 +1058,14 @@ The channel is defined in the ISO7816-4.
 <div class="brief">
  Closes a channel.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void close();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void close();</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="exceptionlist">
@@ -1139,15 +1081,14 @@ The channel is defined in the ISO7816-4.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var channel; /* Obtained from openLogicalChannel or openBasicChannel */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Variable channel obtained from openLogicalChannel or openBasicChannel. */
 try
 {
-   channel.close();
+  channel.close();
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1159,10 +1100,8 @@ catch (err)
 <div class="brief">
  Transmits an APDU command to a Secure Element. The APDU command is defined in ISO7816-4.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void transmit(byte[] command, <a href="#TransmitSuccessCallback">TransmitSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void transmit(byte[] command, <a href="#TransmitSuccessCallback">TransmitSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="description">
@@ -1193,12 +1132,10 @@ The ErrorCallback is launched with these error types:
  UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="parameters">
@@ -1206,15 +1143,15 @@ The ErrorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">command</span>:
- APDU command to transmit through this channel
+ APDU command to transmit through this channel.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method that is invoked when a command has been successfully transmitted
+ Callback method that is invoked when a command has been successfully transmitted.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when an error occurs
+ Callback method that is invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -1238,11 +1175,9 @@ The ErrorCallback is launched with these error types:
 <div class="brief">
  Gets the data as received from the application select command including the status words.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">byte[] getSelectResponse();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
- 2.3
+<div class="synopsis"><pre class="signature prettyprint">byte[] getSelectResponse();</pre></div>
+<p><span class="version">Since: </span>
+ 2.3.1
             </p>
 <div class="description">
             <p>
@@ -1263,18 +1198,20 @@ Null if an application select command has not been performed or
 the selection response can not be retrieved by the reader implementation.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/secureelement
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- bytes[] The data as returned by the application select command including the status words
-              </div>
+<ul>
+<span class="return">byte[]:
+                  </span>
+ The data as returned by the application select command including the status words.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -1296,8 +1233,7 @@ the selection response can not be retrieved by the reader implementation.       
     void onSENotReady(<a href="#Reader">Reader</a> reader);
     void onSEError(<a href="#Reader">Reader</a> reader, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
@@ -1315,10 +1251,8 @@ It is used in <em>SEService.registerSEListener()</em>.
 <div class="brief">
  Called when a Secure Element reader is detected.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onSEReady(<a href="#Reader">Reader</a> reader);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onSEReady(<a href="#Reader">Reader</a> reader);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="parameters">
@@ -1326,7 +1260,7 @@ It is used in <em>SEService.registerSEListener()</em>.
 <ul>
           <li class="param">
 <span class="name">reader</span>:
- Newly detected Secure Element reader
+ Newly detected Secure Element reader.
                 </li>
         </ul>
 </div>
@@ -1338,10 +1272,8 @@ It is used in <em>SEService.registerSEListener()</em>.
 <div class="brief">
  Called when a Secure Element reader is lost.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onSENotReady(<a href="#Reader">Reader</a> reader);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onSENotReady(<a href="#Reader">Reader</a> reader);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="parameters">
@@ -1349,7 +1281,7 @@ It is used in <em>SEService.registerSEListener()</em>.
 <ul>
           <li class="param">
 <span class="name">reader</span>:
- Lost Secure Element reader
+ Lost Secure Element reader.
                 </li>
         </ul>
 </div>
@@ -1361,10 +1293,8 @@ It is used in <em>SEService.registerSEListener()</em>.
 <div class="brief">
  Called when a Secure Element reader has an error.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onSEError(<a href="#Reader">Reader</a> reader, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onSEError(<a href="#Reader">Reader</a> reader, <a href="tizen.html#WebAPIError">WebAPIError</a> error);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -1392,8 +1322,7 @@ It is used in <em>SEService.registerSEListener()</em>.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ReaderArraySuccessCallback {
     void onsuccess(<a href="#Reader">Reader</a>[] readers);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
@@ -1412,10 +1341,8 @@ It is used in asynchronous operations such as <em>SEService.getReaders()</em>.
 <div class="brief">
  Called when an asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Reader">Reader</a>[] readers);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Reader">Reader</a>[] readers);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="parameters">
@@ -1423,7 +1350,7 @@ It is used in asynchronous operations such as <em>SEService.getReaders()</em>.
 <ul>
           <li class="param">
 <span class="name">readers</span>:
- List of available Secure Element readers
+ List of available Secure Element readers.
                 </li>
         </ul>
 </div>
@@ -1439,8 +1366,7 @@ It is used in asynchronous operations such as <em>SEService.getReaders()</em>.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SessionSuccessCallback {
     void onsuccess(<a href="#Session">Session</a> session);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
@@ -1459,10 +1385,8 @@ It is used in asynchronous operations such as <em>Reader.openSession()</em>.
 <div class="brief">
  Called when an asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Session">Session</a> session);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Session">Session</a> session);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="parameters">
@@ -1470,7 +1394,7 @@ It is used in asynchronous operations such as <em>Reader.openSession()</em>.
 <ul>
           <li class="param">
 <span class="name">session</span>:
- Open session
+ Open session.
                 </li>
         </ul>
 </div>
@@ -1486,8 +1410,7 @@ It is used in asynchronous operations such as <em>Reader.openSession()</em>.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ChannelSuccessCallback {
     void onsuccess(<a href="#Channel">Channel</a> channel);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
@@ -1506,10 +1429,8 @@ It is used in asynchronous operations such as <em>Session.openBasicChannel() </e
 <div class="brief">
  Called when an asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Channel">Channel</a> channel);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Channel">Channel</a> channel);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="parameters">
@@ -1517,7 +1438,7 @@ It is used in asynchronous operations such as <em>Session.openBasicChannel() </e
 <ul>
           <li class="param">
 <span class="name">channel</span>:
- Open channel
+ Open channel.
                 </li>
         </ul>
 </div>
@@ -1533,8 +1454,7 @@ It is used in asynchronous operations such as <em>Session.openBasicChannel() </e
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface TransmitSuccessCallback {
     void onsuccess(byte[] response);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="description">
@@ -1552,10 +1472,8 @@ This callback interface specifies a success method with an array of bytes as an 
 <div class="brief">
  Called when an asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(byte[] response);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(byte[] response);</pre></div>
+<p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="parameters">
@@ -1563,7 +1481,7 @@ This callback interface specifies a success method with an array of bytes as an 
 <ul>
           <li class="param">
 <span class="name">response</span>:
- APDU command response that is transmitted on a channel
+ APDU command response that is transmitted on a channel.
                 </li>
         </ul>
 </div>
@@ -1574,7 +1492,7 @@ This callback interface specifies a success method with an array of bytes as an 
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1584,7 +1502,7 @@ To guarantee this application will run on a device with a Secure Element, add th
 <li class="feature">http://tizen.org/feature/network.secure_element</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SecureElement {
@@ -1592,16 +1510,13 @@ To guarantee this application will run on a device with a Secure Element, add th
     readonly attribute <a href="#SEService">SEService</a> seService;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
-
   [NoInterfaceObject] interface SEService
   {
     void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregisterSEListener(unsigned long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void shutdown() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface Reader
   {
     readonly attribute boolean isPresent;
@@ -1612,40 +1527,35 @@ To guarantee this application will run on a device with a Secure Element, add th
   [NoInterfaceObject] interface Session
   {
     readonly attribute boolean isClosed;
-    void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void openLogicalChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void openLogicalChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] getATR() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void closeChannels() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface Channel {
     readonly attribute boolean isBasicChannel;
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void transmit(byte[] command, <a href="#TransmitSuccessCallback">TransmitSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void transmit(byte[] command, <a href="#TransmitSuccessCallback">TransmitSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] getSelectResponse() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Callback, NoInterfaceObject] interface SEChangeListener {
     void onSEReady(<a href="#Reader">Reader</a> reader);
     void onSENotReady(<a href="#Reader">Reader</a> reader);
     void onSEError(<a href="#Reader">Reader</a> reader, <a href="tizen.html#WebAPIError">WebAPIError</a> error);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ReaderArraySuccessCallback {
     void onsuccess(<a href="#Reader">Reader</a>[] readers);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface SessionSuccessCallback {
     void onsuccess(<a href="#Session">Session</a> session);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ChannelSuccessCallback {
     void onsuccess(<a href="#Channel">Channel</a> channel);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface TransmitSuccessCallback {
     void onsuccess(byte[] response);
   };
