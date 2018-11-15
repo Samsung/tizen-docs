@@ -21,10 +21,6 @@ You can use the following Internet and content download features in your native 
 
   You can connect to Web servers to fetch and transmit a Web resource. You can also manage HTTP sessions, transactions, and requests.
 
-- [Service Access through Plugins](plugins.md) **in mobile applications only**
-
-  You can work with cloud storages and services by managing authentication, contact information and file transfers to and from the cloud. You can do this through adaptors, which function as agents between the Service Adaptor Client and the related plugins.
-
 - [Web View](web-view.md)
 
   You can access Web pages and Web content in your application. You can also use various features for Web browsing, such as loading and displaying Web pages and navigating through the browsing history.

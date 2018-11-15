@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Popup</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Popup</h1>
+
+<p>The popup component handles creating and managing pop-up windows.</p>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.8939050626941025">Default Selectors</a>
+
+		</li>
+
+
+
+		<li><a href="#manual-constructor0.5366392943542451">Manual Constructor</a>
+
+		</li>
+
+		<li><a href="#html-examples0.8655443852767348">HTML Examples</a>
+
+		</li>
+
+        <li><a href="#popup-ctxpopup">Popup / ContextPopup</a>
+
+        </li>
+
+        <li><a href="#options-list">Options</a>
+
+		</li>
+
+
+		<li><a href="#events-list">Events</a>
+
+		</li>
+
+
+		<li><a href="#managing-popup">Managing a Popup</a>
+
+		</li>
+
+
+</ol>
+
+<h2><a id="default-selectors0.8939050626941025"></a>Default Selectors</h2>
+
+<p>By default, all elements with the <code>class=&quot;ui-popup&quot;</code> and <code>data-role=&quot;popup&quot;</code> attribute are displayed as Tizen Web UI popups.</p>
+
+
+<h2><a id="manual-constructor0.5366392943542451"></a>Manual Constructor</h2>
+
+<p>To manually create a button component, use the component constructor from the <code>tau</code> namespace:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+   &lt;p&gt;This is not a popup yet. But when TAU namespace calls me as widget, I will be popup.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var popupElement = document.getElementById(&quot;popup&quot;),
+       popup = tau.widget.Popup(popupElement);
+&lt;/script&gt;
+</pre>
+
+<h2><a id="html-examples0.8655443852767348"></a>HTML Examples</h2>
+
+<h3>Basic structure of Popup</h3>
+<p>As basically, popup has <code>class=&quot;ui-popup-header&quot;</code> as Header, <code>class=&quot;ui-popup-content&quot;</code> as body and <code>class=&quot;ui-popup-footer&quot;</code> as button area. Here is simple example:</p>
+<pre class="prettyprint">&lt;div id=&quot;1btn_popup&quot; class=&quot;ui-popup&quot;&gt;
+   &lt;div class=&quot;ui-popup-header&quot;&gt;Popup Header&lt;/div&gt;
+   &lt;div class=&quot;ui-popup-content popup-content-padding&quot;&gt;
+      Lorem ipsum dolor sit amet,
+      consectetur adiptiscing elit, sed
+      doei usmod tempore sit ipsum
+   &lt;/div&gt;
+   &lt;div class=&quot;ui-popup-footer&quot;&gt;
+      &lt;a class=&quot;ui-btn&quot; data-rel=&quot;back&quot; data-inline=&quot;true&quot;&gt;Cancel&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h3>Context Popup</h3>
+<p>Context popup(ctxpopup) has very simple structure. It does not need header or footer. So, just put content in <code>&lt;div&gt;</code> area. Please refer this example: </p>
+<pre class="prettyprint">&lt;div id=&quot;ctxpopup_vertical_basic&quot; class=&quot;ui-popup&quot; data-overlay=&quot;false&quot;&gt;
+   &lt;ul class=&quot;ui-listview&quot;&gt;
+      &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Copy&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Cut&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Paste&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Clipboard&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+<h3>Toast Popup</h3>
+<p>If you want to show popup as toast, please add <code>&quot;ui-popup-toast&quot;</code> class with <code>&quot;ui-popup&quot;</code></p>
+<pre class="prettyprint">&lt;div id=&quot;popup_toast&quot; data-role=&quot;popup&quot; class=&quot;ui-popup ui-popup-toast&quot;&gt;
+   &lt;div class=&quot;ui-popup-content&quot;&gt;
+      Toast popup text Toast popup text
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+<h2><a id="popup-ctxpopup"></a>Popup / ContextPopup</h2>
+<p>There's one different factor between popup and context popup. It is <code>data-position-to</code> options of popup opener element.</p>
+<h3>Open Popup as window popup</h3>
+<p>When element has <code>data-position-to=&quot;window&quot;</code>, it opens window popup(as known as normal popup window).</p>
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; class=&quot;ui-page&quot; id=&quot;demo-page&quot;&gt;
+   &lt;div class=&quot;ui-content&quot;&gt;
+      &lt;ul class=&quot;ui-listview&quot;&gt;
+         &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a  href=&quot;#1btn_popup&quot; data-inline=&quot;true&quot; data-rel=&quot;popup&quot; data-position-to=&quot;window&quot;&gt;1btn popup&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;div id=&quot;1btn_popup&quot; class=&quot;ui-popup&quot;&gt;
+         &lt;div class=&quot;ui-popup-header&quot;&gt;Popup Header&lt;/div&gt;
+         &lt;div class=&quot;ui-popup-content popup-content-padding&quot;&gt;
+            Lorem ipsum dolor sit amet,
+            consectetur adiptiscing elit, sed
+            doei usmod tempore sit ipsum
+         &lt;/div&gt;
+         &lt;div class=&quot;ui-popup-footer&quot;&gt;
+             &lt;a class=&quot;ui-btn&quot; data-rel=&quot;back&quot; data-inline=&quot;true&quot;&gt;Cancel&lt;/a&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+<h3>Open Popup as context popup</h3>
+<p>When element has <code>data-position-to=&quot;origin&quot;</code>, it opens context popup.<br>
+In mobile profile, default value is &quot;origin&quot; and if popup has no option about <code>data-position-to</code>, it opened as context popup.</p>
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; class=&quot;ui-page&quot; id=&quot;demo-page&quot;&gt;
+   &lt;div class=&quot;ui-content&quot;&gt;
+      &lt;ul class=&quot;ui-listview&quot;&gt;
+         &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#ctxpopup_vertical_basic&quot; data-inline=&quot;true&quot; data-rel=&quot;popup&quot;&gt;Vertical Basic&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;div id=&quot;ctxpopup_vertical_basic&quot; class=&quot;ui-popup&quot; data-overlay=&quot;false&quot;&gt;
+         &lt;ul class=&quot;ui-listview&quot;&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Copy&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Cut&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Paste&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; data-rel=&quot;back&quot;&gt;Clipboard&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+	<h2><a id="options-list"></a>Options</h2>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+        </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-position-to</span></td>
+                <td class="option">string</td>
+                <td class="option">&quot;origin&quot;</td>
+                <td class="option">Element relative to which the popup is centered.</td>
+            </tr>
+
+            <tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-close-link-selector</span></td>
+				<td class="option">string</td>
+				<td class="option">&#39;a[data-rel=&quot;back&quot;]&#39;</td>
+				<td class="option">Selector for the close buttons in the popup.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-transition</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;pop&quot;</td>
+				<td class="option">Default transition for the popup.</td>
+			</tr>
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-arrow</span></td>
+                <td class="option">string</td>
+                <td class="option">&quot;b, t, r, l&quot;</td>
+                <td class="option">Sets directions of popup's arrow by priority (&quot;l&quot; for left, &quot;t&quot; for top, &quot;r&quot; for right, and &quot;b&quot; for bottom).<br>
+                    The first one has the highest priority.</td>
+            </tr>
+
+            <tr>
+                <td class="option"><span style="font-family: Courier New,Courier,monospace">data-direction-priority</span></td>
+                <td class="option">Array</td>
+                <td class="option">[&quot;bottom&quot;,&quot;top&quot;, &quot;right&quot;, &quot;left&quot;]</td>
+                <td class="option"><span style="color:red;"><i>DEPRECATED since 2.4</i></span></td>
+            </tr>
+
+		</tbody>
+	</table>
+
+
+	<h2><a id="events-list"></a>Events</h2>
+
+<p>To handle popup events, use the following code:</p>
+
+<pre class="prettyprint">&lt;!--Popup HTML code--&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+   &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   /* Use popup events */
+   var popup = document.getElementById(&quot;popup&quot;);
+   popup.addEventListener(&quot;popupafteropen&quot;, function()
+   {
+      /* Implement code for popupafteropen event */
+   });
+&lt;/script&gt;
+</pre>
+
+	<h3>Summary</h3>
+<p>Mobile Popup has three more events including <a href="../Base/popup.htm#popup-events">Base Popup Events</a>. Here is mobile-specific popup events.</p>
+	<table>
+		<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">popupafteropen</span></td>
+				<td><p>Triggered when process of opening a popup is completed.<br />The event is triggered when the popup has completely appeared on the screen and all associated animations have completed.</p></td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">beforeposition</span></td>
+				<td><p>Triggered before a popup computes the coordinates where it appears.<br />The event is triggered before the popup starts the opening animations and calculates the coordinates. Handling this event gives an opportunity to modify the content of the popup before it appears on the screen.</p></td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">popupafterclose</span></td>
+				<td><p>Triggered when the process of closing a popup is completed.<br />The event is triggered when the popup has completely disappeared from the screen and all associated animations have completed.</p></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+<h2><a id="managing-popup"></a>Managing a Popup</h2>
+
+<h3>Open Popup</h3>
+<p>There are 2 ways to open a popup:</p>
+
+<ul><li>Open by clicking on a link:
+
+<p>If the link has the <code>id</code> of the popup set as the value of the <code>href</code> property, the popup is opened after clicking on the link.</p>
+
+<pre class="prettyprint">&lt;!--Definition of link, which opens popup with popup id--&gt;
+&lt;a href=&quot;#popup&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+   &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+</li>
+
+<li>Open manually:
+<p>To open a popup with the &quot;popup&quot; <code>id</code> property, the <code>tau</code> namespace can be used.:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+   &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var popupElement = document.getElementById(&quot;popup&quot;),
+       popup = tau.widget.Popup(popupElement);
+   popup.open();
+&lt;/script&gt;
+</pre>
+
+<p>With the TAU API, you can open a popup anywhere:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+   &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   tau.openPopup(&quot;#popup&quot;);
+&lt;/script&gt;
+</pre></li></ul>
+
+<h3>Close Popup</h3>
+<p>There are 2 ways to close a popup:</p>
+
+<ul><li>Close by clicking on a button inside:
+
+<p>If the link inside the popup has the <code>data-rel=&quot;back&quot;</code> property, the popup is closed after clicking on it.<br>
+The selector, which causes closing on click, can be changed by setting the <code>closeLinkSelector</code> option in the popup: </p>
+<pre class="prettyprint">&lt;div id=&quot;1btn_popup&quot; class=&quot;ui-popup&quot;&gt;
+   &lt;div class=&quot;ui-popup-header&quot;&gt;Popup Header&lt;/div&gt;
+   &lt;div class=&quot;ui-popup-content popup-content-padding&quot;&gt;
+      Lorem ipsum dolor sit amet,
+      consectetur adiptiscing elit, sed
+      doei usmod tempore sit ipsum
+   &lt;/div&gt;
+   &lt;div class=&quot;ui-popup-footer&quot;&gt;
+      &lt;a class=&quot;ui-btn&quot; data-rel=&quot;back&quot; data-inline=&quot;true&quot;&gt;Cancel&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+</li>
+
+<li>Close manually:
+<p>To close a popup with the &quot;popup&quot; <code>id</code> property, the <code>tau</code> namespace can be used:</p>
+
+<pre class="prettyprint">&lt;a href=&quot;#popup&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
+&lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
+   &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   var popupElement = document.getElementById(&quot;popup&quot;),
+       popup = tau.widget.Popup(popupElement);
+   /* Close popup after opening */
+   popupElement.addEventListener(&quot;popupafteropen&quot;, function()
+   {
+      popup.close();
+   });
+&lt;/script&gt;
+</pre>
+
+
+<p>With the TAU API, you can close a popup anywhere:</p>
+
+<pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
+   &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   tau.closePopup();
+&lt;/script&gt;
+</pre></li></ul>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

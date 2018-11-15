@@ -16,6 +16,28 @@ The main features of the Feedback API include:
 
 Each feedback pattern can have separate media files of sound and vibration type. For example, when receiving a new email message, a predefined sound and vibration feedback pattern can be played.
 
+## Prerequisites
+
+1. From Tizen 5.0 onwards, it is possible to make your application visible in the Tizen Store only for devices that support the feedback vibration feature. To do so, you must specify the following feature in the `config.xml` file of the application:
+
+   ```
+    <widget>
+       <feature name="http://tizen.org/feature/feedback.vibration"/>
+    </widget>
+   ```
+
+    Additionally, you can also verify if the feedback vibration feature is supported using the `tizen.systeminfo.getCapability()` method, and accordingly enable or disable the code that needs the API:
+
+    ```
+    try {
+        /* Checks whether a device supports feedback vibration feature */
+        var vibration_feature = tizen.systeminfo.getCapability('http://tizen.org/feature/feedback.vibration');
+        console.log('Feedback vibration = ' + vibration_feature);
+    } catch (error) {
+        console.log('Error name: ' + error.name + ', message: ' + error.message);
+    }
+    ```
+
 ## Checking the Pattern
 
 You can check whether a feedback type (sound or vibration) is supported for a specified pattern. To get information about the supported specified system predefined pattern type pairs, use the `isPatternSupported()` method of the `FeedbackManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/feedback.html#FeedbackManager) and [wearable](../../api/latest/device_api/wearable/tizen/feedback.html#FeedbackManager) applications):

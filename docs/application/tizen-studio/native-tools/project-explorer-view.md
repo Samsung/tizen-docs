@@ -4,7 +4,7 @@ The **Project Explorer** view allows you to view and manage Tizen projects. You 
 
 **Figure: Project Explorer**
 
-![Project Explorer](./media/proj_explorer_n.png)
+![Project Explorer](./media/basic_app_project_explorer_mn.png)
 
 In this view, you can:
 
