@@ -23,6 +23,9 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 
     ![Install the headless profile](media/package_manager_iot_5.0.png)
 
+    > **Note**
+    >
+    > **Extension SDK** should be updated to the latest version.
 
 # Flashing Tizen Images with IoT Setup Manager
 
@@ -33,12 +36,12 @@ IoT Setup Manager helps you to easily install Tizen on your IoT device using you
 You must have the binary images in your computer. You can download the binary images from:
 
 -   Boot image:
-       -    ARTIK 530: [tizen-unified_20181024.1_iot-boot-armv7l-artik530.tar.gz](http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20181024.1/images/standard/iot-boot-armv7l-artik530/tizen-unified_20181024.1_iot-boot-armv7l-artik530.tar.gz)
+       -    ARTIK 530: [tizen-unified_20181024.1_iot-boot-armv7l-artik530.tar.gz](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/standard/iot-boot-armv7l-artik530/tizen-unified_20181024.1_iot-boot-armv7l-artik530.tar.gz)
 
        -   ARTIK 530s: None
 -   Platform image:
-       -   Headless (without display): [tizen-unified_20181024.1_iot-headless-2parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20181024.1/images/standard/iot-headless-2parts-armv7l-artik530_710/tizen-unified_20181024.1_iot-headless-2parts-armv7l-artik530_710.tar.gz)
-       -   Headed (with display): [tizen-unified_20181024.1_iot-headed-3parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20181024.1/images/standard/iot-headed-3parts-armv7l-artik530_710/tizen-unified_20181024.1_iot-headed-3parts-armv7l-artik530_710.tar.gz)
+       -   Headless (without display): [tizen-unified_20181024.1_iot-headless-2parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/standard/iot-headless-2parts-armv7l-artik530_710/tizen-unified_20181024.1_iot-headless-2parts-armv7l-artik530_710.tar.gz)
+       -   Headed (with display): [tizen-unified_20181024.1_iot-headed-3parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/standard/iot-headed-3parts-armv7l-artik530_710/tizen-unified_20181024.1_iot-headed-3parts-armv7l-artik530_710.tar.gz)
 
 To make a device with a display, select **Headed** image, which consists of the UI framework. To make a device without a display, select **Headless** image. 
 
