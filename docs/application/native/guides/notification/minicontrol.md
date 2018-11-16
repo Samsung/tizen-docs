@@ -3,8 +3,6 @@
 
 Minicontrol is a small application view that can be shown on the quick panel or lock screen.
 
-This feature is supported in mobile applications only.
-
 The main features of the Minicontrol API include:
 
 - Creating a minicontrol
@@ -29,7 +27,7 @@ The main features of the Minicontrol API include:
 
 To enable your application to use the minicontrol functionality:
 
-1. To use the [Minicontrol](../../api/mobile/latest/group__MINICONTROL__LIBRARY.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Minicontrol API (in [mobile](../../api/mobile/latest/group__MINICONTROL__LIBRARY.html) and [wearable](../../api/wearable/latest/group__MINICONTROL__LIBRARY.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -107,3 +105,4 @@ To hide the quick panel:
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
+  - Tizen 5.0 and Higher for Wearable

@@ -74,44 +74,45 @@ You can implement the following gesture types:
 
 - `EFL_UTIL_GESTURE_TYPE_EDGE_SWIPE`: The user touches near a screen edge and moves the finger quickly toward the opposite side. Edge swipe is a non-continuous gesture.
 
- **Figure: Top edge 1-finger swipe gesture**
+  **Figure: Top edge 1-finger swipe gesture**
 
-![Edge swipe gesture](./media/efl_global_gesture_edge_swipe.png)
+  ![Edge swipe gesture](./media/efl_global_gesture_edge_swipe.png)
 
 - `EFL_UTIL_GESTURE_TYPE_EDGE_DRAG`: The user touches near a screen edge and drags the finger toward the opposite side. Edge drag is a continuous gesture.
 
- **Figure: Top edge 1-finger drag gesture**
+  **Figure: Top edge 1-finger drag gesture**
 
- ![Edge drag gesture](./media/efl_global_gesture_edge_drag.png)
+  ![Edge drag gesture](./media/efl_global_gesture_edge_drag.png)
 
 - `EFL_UTIL_GESTURE_TYPE_TAP`: The user touches the screen with their finger and quickly releases it. Tap is a non-continuous gesture.
 
- **Figure: 2-finger double tap gesture**
+  **Figure: 2-finger double tap gesture**
 
- ![Tap gesture](./media/efl_global_gesture_tap.png)
+  ![Tap gesture](./media/efl_global_gesture_tap.png)
 
 - `EFL_UTIL_GESTURE_TYPE_PALM_COVER`: The user places their palm over the screen. Palm cover is a continuous gesture.
 
- **Figure: Palm cover gesture**
+  **Figure: Palm cover gesture**
 
- ![Palm cover gesture](./media/efl_global_gesture_palm_cover.png)
+  ![Palm cover gesture](./media/efl_global_gesture_palm_cover.png)
 
 - `EFL_UTIL_GESTURE_TYPE_PAN`: The user touches the screen with 2 or more fingers and moves them in the same direction. Pan is a continuous gesture.
 
- **Figure: 2-finger pan gesture**
- ![Pan gesture](./media/efl_global_gesture_pan.png)
+  **Figure: 2-finger pan gesture**
+
+  ![Pan gesture](./media/efl_global_gesture_pan.png)
 
 - `EFL_UTIL_GESTURE_TYPE_PINCH`: The user touches the screen with 2 or more fingers and moves the fingers away from or toward each other. Pinch is a continuous gesture.
 
- **Figure: 2-finger pinch gesture**
+  **Figure: 2-finger pinch gesture**
 
- ![Pinch gesture](./media/efl_global_gesture_pinch.png)
+  ![Pinch gesture](./media/efl_global_gesture_pinch.png)
 
 - `EFL_UTIL_GESTURE_TYPE_PALM_SWIPE`: The user places their palm at a screen edge and swipes to the opposite side. Palm swipe is a non-continuous gesture.
 
- **Figure: Palm swipe gesture**
+  **Figure: Palm swipe gesture**
 
- ![Palm swipe gesture](./media/efl_global_gesture_palm_swipe.png)
+  ![Palm swipe gesture](./media/efl_global_gesture_palm_swipe.png)
 
 ## Prerequisites
 
@@ -151,8 +152,8 @@ To create notification windows and access the current notification level of an e
 
      ```
          /* Set the NOTIFICATION level */
-         error = efl_util_set_notification_window_level(eo, EFL_UTIL_NOTIFICATION_LEVEL_1);
- 		 if (error != EFL_UTIL_ERROR_NONE) {
+         error = efl_util_set_notification_window_level(eo, EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT);
+         if (error != EFL_UTIL_ERROR_NONE) {
              /* Error handling for each error code */
          }
 
@@ -246,7 +247,7 @@ To take a screenshot:
 
 To generate key input events:
 
-1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()` or `efl_util_input_initialize_generator_with_name()` function:
+1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()`, `efl_util_input_initialize_generator_with_name()`, or `efl_util_input_initialize_generator_with_sync()` function:
 
    ```
    void
@@ -258,8 +259,11 @@ To generate key input events:
        /* Create an input device with the default name: "Input Generator" */
        inputgen = efl_util_input_initialize_generator(EFL_UTIL_INPUT_DEVTYPE_KEYBOARD);
        /*
-          Since Tizen 4.0, you can create an input generator with a given name (in this example, "Local Device"):
+          Since Tizen 4.0, you can create an input device with a given name (in this example, "Local Device"):
           inputgen = efl_util_input_initialize_generator_with_name(EFL_UTIL_INPUT_DEVTYPE_KEYBOARD, "Local_Device");
+
+          From Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
+          inputgen = efl_util_input_initialize_generator_with_sync(EFL_UTIL_INPUT_DEVTYPE_KEYBOARD, NULL);
        */
        if (!inputgen) {
            /* Failed to initialize the input generator system */
@@ -305,7 +309,7 @@ To generate key input events:
 
 To generate touch input events:
 
-1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()` or `efl_util_input_initialize_generator_with_name()` function:
+1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()`, `efl_util_input_initialize_generator_with_name()`, or `efl_util_input_initialize_generator_with_sync()` function:
 
    ```
    void
@@ -319,6 +323,9 @@ To generate touch input events:
        /*
           Since Tizen 4.0, you can create an input device with a given name (in this example, "Local Device"):
           inputgen = efl_util_input_initialize_generator_with_name(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, "Local_Device");
+
+          From Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
+          inputgen = efl_util_input_initialize_generator_with_sync(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, NULL);
        */
        if (!inputgen) {
            /* Failed to initialize the input generator system */
