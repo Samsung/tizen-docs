@@ -92,6 +92,10 @@ $request_uri = $_SERVER['REQUEST_URI'];
 $search_text = explode('?', $request_uri)[1];
 $search_text = str_replace("search=", "", $search_text);
 
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$request_uri_arr = explode('/', $request_uri);
+$request_uri_except_search = str_replace($request_uri_arr[sizeof($request_uri_arr) -1], "", $actual_link);
+
 $allow_search = TRUE;
 if(strlen($search_text) < 4){
     $allow_search = FALSE;
@@ -105,7 +109,7 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "SELECT full_name, content FROM api_reference_native where full_name like '%".$search_text."%'";
+$sql = "SELECT full_name, content, url FROM api_reference_native where full_name like '%".$search_text."%'";
 $sql_count_result = "SELECT count(*) as total FROM api_reference_native where full_name like '%".$search_text."%'";
 
 $count_result = $conn->query($sql_count_result)->fetch_assoc()['total'];
@@ -135,12 +139,17 @@ if($allow_search){
     while($row = $result->fetch_assoc()) {
 //        echo $row["full_name"];
         ?>
-    <div class="memitem">
-        <div class="memproto">
-        <table class="memname"><tbody><tr><td class="memname"><?php echo $row["full_name"];?></td>
-          </tr></tbody></table></div>
-        <div class="memdoc"><?php echo $row["content"];?></div>
-    </div>
+    
+    
+    <li class="search-result">
+        <div class="td-wrap-result">
+            <h3 class="title"><a href="<?php echo $row["url"];?>"><?php echo $row["full_name"];?></a></h3>
+        </div>
+        <div class="search-snippet-info">
+            <p class="search-snippet"><?php echo $row["content"];?></p>
+            <a href="<?php echo $row["url"];?>"><?php echo $request_uri_except_search . $row["url"];?></a>
+        </div>
+    </li>
     <?php
     }
 } 
