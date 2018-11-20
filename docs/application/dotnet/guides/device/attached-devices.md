@@ -121,13 +121,14 @@ To retrieve and set display properties:
     dis.Brightness = 30;
     ```
 
--   Get the display state with the `State` property.
+-   Get and set the display state with the `State` property.
 
     The property contains the display state as a value of the [Tizen.System.DisplayState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.DisplayState.html) enumeration.
 
     ```
     DisplayState state;
     state = Display.State;
+    Display.State = DisplayState.Normal;
     ```
 
 <a name="haptic"></a>
@@ -215,18 +216,18 @@ To control LEDs on the device:
 
 To lock and unlock the CPU state:
 
--   Lock the power state with the `RequestCpuLock()` method of the [Tizen.System.Power](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Power.html) class.
+-   Lock the power state with the `RequestLock()` method of the [Tizen.System.Power](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Power.html) class.
 
-    The method locks the CPU for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
-
-    ```
-    Power.RequestCpuLock(2000);
-    ```
-
--   Unlock the power state with the `ReleaseCpuLock()` method:
+    The method locks the given PowerLock of the [Tizen.System.PowerLock](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.PowerLock.html) enumeration for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
 
     ```
-    Power.ReleaseCpuLock();
+    Power.RequestLock(PowerLock.Cpu, 2000);
+    ```
+
+-   Unlock the power state with the `ReleaseLock()` method:
+
+    ```
+    Power.ReleaseLock(PowerLock.Cpu);
     ```
 
 <a name="changes"></a>

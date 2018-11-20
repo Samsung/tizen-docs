@@ -193,10 +193,7 @@ namespace Tizen.NUI
         /// </summary>
         /// <param name="func">The function to call</param>
         /// <returns>true if added successfully, false otherwise</returns>
-<<<<<<< HEAD
-=======
         /// <since_tizen> 4 </since_tizen>
->>>>>>> 71d9594193d2c1e0b50e5e78bf367cc5f4397814
         public bool AddIdle(System.Delegate func)
         {
             return ((NUICoreBackend)this.Backend).AddIdle(func);

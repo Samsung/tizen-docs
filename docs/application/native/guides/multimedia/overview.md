@@ -1,9 +1,9 @@
-# Media and Camera
+# Multimedia
 
 
-The media and camera features introduce how you can use multimedia features in your application.
+Multimedia features introduce how you can handle multimedia resources, such as media files, images, audio, video, camera and radio.
 
-You can use the following media and camera features in your native applications:
+You can use the following multimedia features in your native applications:
 
 - [Media Content and Metadata](media-content-metadata.md)
 
@@ -21,10 +21,6 @@ You can use the following media and camera features in your native applications:
 
   You can detect or generate various barcodes. You can also track how faces or image objects move in consecutive camera preview images as well as perceive faces or objects in still images.
 
-- [Audio Management](audio.md)
-
-  You can control the audio behavior of the application. You can control the output volume and sound session types, query various information from sound devices, and use sound pools. You can use OpenAL to specify the objects and operations in producing high-quality audio output.
-
 - [Media Playback](media-playback.md)
 
   You can manage the playback of different media file types. You can play audio and video files, and tones. You can also manage the state of the media player.
@@ -36,6 +32,18 @@ You can use the following media and camera features in your native applications:
 - [Raw Audio Playback and Recording](raw-audio.md)
 
   You can play and record uncompressed audio data both synchronously and asynchronously. You can record audio data from a microphone type input device to a file.
+
+- [Sound Manager](sound-manager.md)
+
+  You can control the output volume of a specific volume type (aka sound type). You can define which stream type is used for a playback or recording handle in your application. You can manage sound conflict senarios by using stream focus. You can also query for various information related to the connected sound devices, for example, type, name, id, direction and state.
+
+- [Sound Pools](sound-pool.md)
+
+  You can use sound pools, which are basically collections of sounds. You can load multiple sound sources to a sound pool and manage their playback as a group.
+
+- [OpenAL](openal.md)
+
+  You can use OpenAL software interface to audio hardware for a variety of audio playback tasks (such as sound effects in games). You can create a context, request a source and buffer, and control the audio stream with OpenAL.
 
 - [Media Controller](media-controller.md)
 

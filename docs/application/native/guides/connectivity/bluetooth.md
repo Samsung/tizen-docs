@@ -260,18 +260,18 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
   1. Define and register the discovery state change callback.
 
-     Register the callback with the `bt_adapter_set_device_discovery_state_changed_cb()` (classic Bluetooth) or `bt_adapter_le_set_device_discovery_state_changed_cb()` (Bluetooth LE) function.
+     Register the callback with the `bt_adapter_set_device_discovery_state_changed_cb()` (classic Bluetooth) or `bt_adapter_le_start_scan()` (Bluetooth LE) function.
 
      Use the callback to manage the discovery process:
 
      - The first callback parameter defines the result of the Bluetooth discovery process. If successful, the parameter value is `BT_ERROR_NONE`. If the discovery failed to start due to an error, the parameter value is `BT_ERROR_TIMEOUT`.
 
-     - The second callback parameter defined the current state of the discovery process using the enumerators `bt_adapter_device_discovery_state_e` (classic Bluetooth) (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) applications) or `bt_adapter_le_device_discovery_state_e` (Bluetooth LE) (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga4b90a954c6cfb51b60d520c114d8f62d) applications):
-       - When you start the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_STARTED` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_STARTED` state.
+     - The second callback parameter defined the current state of the discovery process using the enumerators `bt_adapter_device_discovery_state_e` (classic Bluetooth) (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gaae6b21353576e515e5bb1e76d25472bd) applications):
+     - When you start the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_STARTED` state.
 
-         Similarly, when you stop the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FINISHED` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_FINISHED` state.
+         Similarly, when you stop the discovery process, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FINISHED` state.
 
-       - Each time a remote Bluetooth device is found, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FOUND` or `BT_ADAPTER_LE_DEVICE_DISCOVERY_FOUND` state.
+     - Each time a remote Bluetooth device is found, the callback is triggered with the `BT_ADAPTER_DEVICE_DISCOVERY_FOUND` state.
 
          In this state, you can get some information about the discovered device, such as the device MAC address, name, class, RSSI (received signal strength indicator), and bonding state. Using this information, you can bond with the discovered device.
 
@@ -328,7 +328,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
      ret = bt_adapter_start_device_discovery();
 
      /* Bluetooth LE */
-     int bt_adapter_le_start_device_discovery(void);
+     int bt_adapter_le_start_scan(__bt_adapter_le_scan_result_cb, NULL);
 
      if (ret != BT_ERROR_NONE)
          dlog_print(DLOG_ERROR, LOG_TAG, "[bt_adapter_start_device_discovery] failed.");
@@ -336,7 +336,7 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
      You can discover a nearby remote Bluetooth device, if the remote device Bluetooth is enabled and in a discovery mode.
 
-     To stop the device discovery, call the `bt_adapter_stop_device_discovery()` (classic Bluetooth) or `bt_adapter_le_stop_device_discovery()` (Bluetooth LE) function.
+     To stop the device discovery, call the `bt_adapter_stop_device_discovery()` (classic Bluetooth) or `bt_adapter_le_stop_scan()` (Bluetooth LE) function.
 
   3. To bond with a discovered remote device, use the `bt_device_create_bond()` function. To cancel bonding, call the `bt_device_cancel_bonding()` function.
 
@@ -1736,60 +1736,6 @@ To discover nearby LE devices, perform an LE scan operation:
    }
    ```
 
-<a name="le_discovery"></a>
-## Discovering Bluetooth LE Devices
-
-Perform the LE discovery operation to discover nearby Bluetooth LE devices. You can register and deregister a callback for the LE discovery operation through the set and unset callback functions. The registered device discovery callback provides details of the discovered devices and the state of the discovery (started, finished, found).
-
-> **Note**
->
-> The APIs used in this use case are deprecated since Tizen 2.3.1. For scanning nearby BLE devices in Tizen 2.3.1 and higher, see [Managing Bluetooth LE Scans](#le_scan).
-
-To start the BLE discovery operation:
-
-```
-static void
-__bt_adapter_le_device_discovery_state_changed_cb(int result,
-                                                  bt_adapter_le_device_discovery_state_e discovery_state,
-                                                  bt_adapter_le_device_discovery_info_s *discovery_info,
-                                                  void *user_data)
-{
-    if (discovery_info == NULL && discovery_state == BT_ADAPTER_LE_DEVICE_DISCOVERY_FOUND)
-        dlog_print(DLOG_ERROR, LOG_TAG, "No discovery_info!");
-
-    return;
-
-    if (discovery_state != BT_ADAPTER_LE_DEVICE_DISCOVERY_FOUND) {
-        dlog_print(DLOG_INFO, LOG_TAG, "LE discovery %s",
-                   discovery_state == BT_ADAPTER_LE_DEVICE_DISCOVERY_STARTED ? "Started" : "Finished");
-    } else {
-        dlog_print(DLOG_INFO, LOG_TAG, "%s Adv %d Scan resp %d RSSI %d Addr_type %d",
-                   discovery_info->remote_address, discovery_info->adv_data_len, discovery_info->scan_data_len,
-                   discovery_info->rssi, discovery_info->address_type);
-
-        if (discovery_info->adv_data_len > 31 || discovery_info->scan_data_len > 31)
-            bt_adapter_le_stop_device_discovery();
-    }
-}
-
-int
-main()
-{
-    int ret = BT_ERROR_NONE;
-
-    ret = bt_adapter_le_set_device_discovery_state_changed_cb(__bt_adapter_le_device_discovery_state_changed_cb, NULL);
-
-    ret = bt_adapter_le_start_device_discovery();
-
-    if (ret != BT_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "[bt_adapter_le_start_device_discovery] failed.");
-    /* To unset the LE device discovery state change callback */
-    ret = bt_adapter_le_unset_device_discovery_state_changed_cb();
-
-    return;
-}
-```
-
 <a name="le_scan_filter"></a>
 ## Adding an LE Scan Filter
 
@@ -1945,7 +1891,6 @@ When advertising to a remote device, use the `bt_adapter_le_set_advertising_conn
 static bt_advertiser_h advertiser = NULL;
 static bt_advertiser_h advertiser_list[3] = {NULL,};
 static int advertiser_index = 0;
-int type = BT_ADAPTER_LE_ADVERTISING_CONNECTABLE;
 
 advertiser = advertiser_list[advertiser_index];
 
@@ -1955,7 +1900,7 @@ if (advertiser == NULL) {
     advertiser_list[advertiser_index] = advertiser;
 }
 
-ret = bt_adapter_le_set_advertising_connectable(advertiser, type);
+ret = bt_adapter_le_set_advertising_connectable(advertiser, true);
 if (ret != BT_ERROR_NONE)
     dlog_print(DLOG_INFO, LOG_TAG, "add scan response data [0x%04x]", ret);
 ```

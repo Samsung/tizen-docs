@@ -8,7 +8,7 @@ Since Tizen 2.4, an application in the background goes into a suspended state.
 
 In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of the background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the background. In this case, the application can designate their background category as an allowed category to avoid going into the suspended state.
 
-For more information, and a list of background categories that allow the application to run in the background, see [Background Categories](app-management/efl-ui-app.md#allow_bg).
+For more information, and a list of background categories that allow the application to run in the background, see [Background Categories](applications/efl-ui-app.md#allow_bg).
 
 You can receive an event when the background application goes to the suspended state. Pass `APP_EVENT_SUSPENDED_STATE_CHANGED` as `event_type` to the `ui_app_add_event_handler()` or `service_app_add_event_handler()` function to handle the suspended event. You must release the resources properly when your application goes to the suspended state.
 
