@@ -8,9 +8,13 @@ The TizenFX API allows applications to call into platform-specific functionality
 
 Select the feature you are interested in and see what Tizen offers for your application:
 
+- [Applications](applications/overview.md)
+
+  The applications feature covers various application models available for Tizen .NET applications.
+
 - [Application Management](app-management/overview.md)
 
-  The application management feature covers various application models available for Tizen .NET applications. They describe the application life-cycle, resources, and the communication methods available for the application.
+  The application management feature covers application resources and the communication methods available for the application.
 
 - [Natural User Interface](nui/NUIoverview.md)
 
@@ -68,6 +72,10 @@ Select the feature you are interested in and see what Tizen offers for your appl
 - [Security](security/overview.md)
 
   The security features ensure that private information remains private, and that the user knows when they are trying to access privileged information. You can use a repository to manage keys, certificates, and sensitive user data. When the user tries to access privileged information, you can display information about the data.
+
+- [Natural Language Processing](nlp/overview.md)
+
+  The natural language process features explains the methods by which you can handle all the sentences in your applications. You can get the results using the NLP service.
 
 ## Related Information
 

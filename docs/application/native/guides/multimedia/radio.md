@@ -80,13 +80,11 @@ To enable your application to use the radio functionality:
        mRadioInfo* mRadio = (mRadioInfo *)userdata;
 
        switch (code) {
-       case RADIO_INTERRUPTED_COMPLETED:
-           /* Application, which was the source of the conflict, is now closed */
-           /* Restart the radio playback here */
+       case RADIO_INTERRUPTED_BY_RESOURCE_CONFLICT:
+           /* Radio listening is interrupted by resource */
+           /* Release the application resources or save the current state here */
            break;
        default:
-           /* Radio listening is interrupted */
-           /* Release the application resources or save the current state here */
            break;
        }
    }

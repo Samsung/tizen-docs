@@ -1,12 +1,8 @@
 # Application Management
 
-The application management features cover the various application models available for Tizen .NET applications. They describe the application life-cycle and resources, and the communication methods available for the application.
+The application management features cover application resources, the communication methods available for the application, and getting application information.
 
 You can use the following application management features in your .NET applications:
-
-- [Applications](applications.md)
-
-  Tizen provides various application models to allow you to create applications targeted for specific tasks. You can create UI applications to run on the foreground, and specific applications to function as the watch face for the device clock, or as a widget available on the home screen.
 
 - [Application Icons](app-icons.md)
 

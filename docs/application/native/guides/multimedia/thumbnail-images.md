@@ -7,13 +7,21 @@ The main features of the Thumbnail Util API include:
 
 - Video and image thumbnails
 
-  You can [create thumbnails](#get_thumbnail) from video and image files. Audio files are not supported.
+  You can [create thumbnails](#get_thumbnail) from video and image files. Thumbnail Util API does not support audio files.
 
 - Custom size
 
-  You can create the thumbnail using any size you like. The Thumbnail Util API outputs the results according to the size you have set. This means that the thumbnail can be generated even if the output size differs from the original aspect ratio.
+  You can create the thumbnail of any size.
 
-The requested thumbnail is provided as a raw data type with the BGRA color space, not a JPG or PNG file. If you want to save the thumbnail to a file, you must encode it.
+The API provides the requested thumbnail as raw data or a file.
+
+In case of raw data, if the requested media is a video, thumbnail is RGB colorspace. And if it is an image, thumbnail is BGRA colorspace.
+
+In case of a file, thumbnails are encoded with a user-specified extension.
+
+> **Note**  
+> See `thumbnail_util_extract_to_file()` for details regarding extensions.
+
 
 ## Prerequisites
 
@@ -25,23 +33,17 @@ To enable your application to use the thumbnail util functionality:
    #include <thumbnail_util.h>
    ```
 
-2. To work with the Thumbnail Util API, define a handle variable for the thumbnail utility:
+2. Ensure that you have access to the file required to extract the thumbnail.
 
-   ```
-   static thumbnail_h g_thumb_h = NULL;
-   ```
-
-   This guide uses a global variable for the handle.
-
-3. Make sure you have access to the file whose thumbnail you want to extract.
-
-   This guide uses a JPEG image file, which is accessed through its file path. The following example code uses internal storage, so you must include the `<storage.h>` header file for the code to work.
+   This guide uses a JPEG image file, which is accessed through its file path. Include the <storage.h> header file as the example code uses internal storage. The example code is as follows:
 
    ```
    int internal_storage_id;
    char *internal_image_storage_path;
    char *image_file_name = "test_image.jpg";
    char *image_test_path;
+   char *out_file_name = "result_image.jpg";
+   char *out_test_path;
 
    static bool
    storage_cb(int storage_id, storage_type_e type, storage_state_e state,
@@ -81,6 +83,9 @@ To enable your application to use the thumbnail util functionality:
 
        strncat(image_test_path, internal_image_storage_path, strlen(internal_image_storage_path));
        strncat(image_test_path, image_file_name, strlen(image_file_name));
+       
+       strncat(out_test_path, internal_image_storage_path, strlen(internal_image_storage_path));
+       strncat(out_test_path, out_file_name, strlen(out_file_name));
    }
    ```
 
@@ -88,69 +93,32 @@ To enable your application to use the thumbnail util functionality:
 > The Thumbnail Util functions can use both common content in the device storage (internal or external) and private content in your application data.
 
 <a name="get_thumbnail"></a>
-## Extracting a Thumbnail
+## Extract a Thumbnail
 
 To extract a thumbnail from the file:
 
-1. Create the thumbnail utility handle using the `thumbnail_util_create()` function:
+1. To receive the results in a file, use the `thumbnail_util_extract_to_file()` function:
 
    ```
-   ret = thumbnail_util_create(&g_thumb_h);
+   ret = thumbnail_util_extract_to_file(image_test_path, 512, 288, out_test_path);
    ```
 
-2. Set the path to the file using the `thumbnail_util_set_path()` function:
+   You find a thumbnail file on `out_test_path`.
+
+2. To receive the results in a raw data, use the `thumbnail_util_extract_to_buffer()` function:
 
    ```
-   ret = thumbnail_util_set_path(g_thumb_h, image_test_path);
+   unsigned char *out_buf;
+   size_t out_buf_size;
+   unsigned int out_width;
+   unsigned int out_height;
+   
+   ret = thumbnail_util_extract_to_buffer(image_test_path, 512, 288, &out_buf, &out_buf_size, &out_width, &out_height);
    ```
 
-   The function binds the thumbnail utility handle (first parameter) with the file specified in the path variable (second parameter).
-
-3. Set the thumbnail size using the `thumbnail_util_set_size()` function:
-
-   ```
-   int width = 512;
-   int height = 288;
-
-   ret = thumbnail_util_set_size(g_thumb_h, width, height);
-   ```
-
-   If you do not set the size, the Thumbnail Util API use a default size of 320 x 240.
-
-4. Extract the thumbnail from the file using the `thumbnail_util_extract()` function. As parameters, define the thumbnail utility handle, a callback for checking the extraction result, user data, and a request ID.
-
-   ```
-   void
-   thumbnail_completed_cb(thumbnail_util_error_e error, const char *request_id,
-                          int raw_width, int raw_height, unsigned char *raw_data,
-                          int raw_size, void *user_data)
-   {
-       dlog_print(DLOG_DEBUG, LOG_TAG, "REQUEST ID: %s\n", request_id);
-       dlog_print(DLOG_DEBUG, LOG_TAG, "WIDTH: %d, HEIGHT: %d\n", raw_width, raw_height);
-   }
-
-   void
-   extract()
-   {
-       char *request_id = NULL;
-
-       ret = thumbnail_util_extract(g_thumb_h, thumbnail_completed_cb, NULL, &request_id);
-   }
-   ```
-
-   After calling the function, check whether the return value is `THUMBNAIL_UTIL_ERROR_NONE`. If it is, the function extracted the thumbnail successfully and stored it in the `raw_data` parameter returned by the callback. Otherwise, the function failed because of an error, which you need to handle.
-
-   The request ID is returned in the `request_id` parameter of the callback. You can use it to distinguish between different-sized thumbnails extracted from the same file, or to cancel a specific extraction request using the `thumbnail_util_cancel()` function.
-
-   The thumbnail is raw data that you can display on the screen directly. You can also encode and save the thumbnail to a file. When no longer needed, release the thumbnail using the `free()` function.
-
-5. When no longer needed, destroy the thumbnail utility handle using the `thumbnail_util_destroy()` function:
-
-   ```
-   thumbnail_util_destroy(g_thumb_h);
-   ```
+   You get a BGRA color image.
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
-  - Tizen 3.0 and Higher for Wearable
+  - Tizen 5.0 and Higher for Mobile
+  - Tizen 5.0 and Higher for Wearable
