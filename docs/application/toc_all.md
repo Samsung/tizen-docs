@@ -1291,7 +1291,3 @@
 ##### [Fail to Install, Execute or Terminate Application](/application/distribute/validation/defects-tips/fail-install-execute-or-terminate-application.md)
 
 
-# Samples Application
-
-## [Web](/development/sample/web)
-## [Native](/development/sample/native)
