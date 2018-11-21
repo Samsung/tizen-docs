@@ -47,7 +47,48 @@ $(document).ready(function () {
         to_url += 'search-api-reference.php?search=' + search_text;
         window.location.href = to_url;
     });
+    
+    var navbar_header = 
+    '<div class="navbar-wrapper">' +
+        '<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">' +
+            '<div class="container">' +
+                '<div class="navbar-header">' +
+                    '<a class="navbar-brand" href="/">Docs</a>' +
+                '</div>' +
+
+                '<ul id="navbar" class="nav navbar-nav navbar-right">' +
+                    '<li><a href="/open-source-project/about/tizen-open-source-overview">Open Source Tizen</a></li>' +
+                    '<li><a href="/application/">Application</a></li>' +
+                    '<li><a href="/iot/">IoT</a></li>' +
+                    '<li><a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank">Download</a></li>' +
+                    '<li class="navbar-divisor"></li>' +
+
+                    '<li class="search"><a id="gnb_search_btn" href="#"><div class="search-btn"></div></a>' +
+                      '<form method="GET" id="gnb_search_box" class="searchbox" >' +
+                        '<input class="form-control" type=text name="q" placeholder="Search ...">' +
+                        '<a href="#"><img src="/images/ic_search_ac.png"></a>' +
+                      '</form>' +
+                    '</li>' +
+
+                '</ul>' +
+            '</div>' +
+        '</nav>' +
+    '</div>';
+    
+    $("body").prepend(navbar_header);
+    
+    register_gnb_search_btn();
 });
+function register_gnb_search_btn() {
+  $('#gnb_search_btn').click(function() {
+    $('#gnb_search_box').fadeIn(500);
+    $('#gnb_search_box > input').focus();
+  });
+
+  $('#gnb_search_box > input').blur(function() {
+    $('#gnb_search_box').fadeOut(500);
+  });
+}
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
