@@ -80,7 +80,7 @@
 # Tizen Studio
 ## [Overview](/open-source-project/tizen-studio/overview.md)
 ## [Contributing to Tizen Studio](/open-source-project/tizen-studio/contribute-gerrit.md)
-### Developing Extensions
+## Developing Extensions
 ### [IDE Extension Development](/open-source-project/tizen-studio/web-extension-guide.md)
 ### [Emulator Extension Development](/open-source-project/tizen-studio/emulator-extension-guide.md)
 ### [Package File Description](/open-source-project/tizen-studio/package-file-desc-guide.md)
