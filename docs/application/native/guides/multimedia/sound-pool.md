@@ -1,4 +1,3 @@
-
 # Sound Pools
 
 You can use sound pools, which are basically collections of sounds. You can load multiple sound sources to a sound pool and manage their playback as a group.

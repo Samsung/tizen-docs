@@ -102,7 +102,7 @@ To play audio:
 
     The hardware device prepares its internal output buffer for playback. Playback begins when the internal output buffer starts receiving audio data.
 
-2.  To start playing the recorded audio, copy the audio data from the local buffer to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioCapture` class:
+2.  To start playing the recorded audio, copy the audio data from the local buffer to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     int bytesWritten = audioPlayback.Write(buffer);
@@ -110,7 +110,7 @@ To play audio:
 
     The returned value represents the number of bytes written to the internal output buffer.
 
-3.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioCapture` class:
+3.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     audioPlayback.Unprepare();
@@ -129,7 +129,7 @@ To start playing the recorded audio:
     audioPlayback.BufferAvailable += OnBufferAvailable;
     ```
 
-2.  Prepare the audio output device and start the playback process using the `Prepare()` method of the `Tizen.Multimedia.AudioCapture` class:
+2.  Prepare the audio output device and start the playback process using the `Prepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     audioPlayback.Prepare();
@@ -168,11 +168,11 @@ To start playing the recorded audio:
     }
     ```
 
-4.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioCapture` class:
+4.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     /// Stop the hardware playback process
-    audioPlayback.Unprepare(output);
+    audioPlayback.Unprepare();
     ```
 
     The device no longer raises the event.

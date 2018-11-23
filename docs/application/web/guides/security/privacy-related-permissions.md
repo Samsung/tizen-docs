@@ -22,9 +22,9 @@ For a list of privacy-related privileges, see [Security and API Privileges](../.
 <a name="requesting"></a>
 ## Requesting Permissions
 
-To check whether an application has permission to use a privilege, and to request permission if required:
+To verify whether an application has permission to use a privilege, and to request permission if required:
 
-1.  To check whether an application has permission to use a particular privilege, use the `checkPermission()` method:
+1.  To verify whether an application has permission to use a particular privilege, use the `checkPermission()` method:
 
     ```
     var cameraPrivilege = "http://tizen.org/privilege/camera";
@@ -87,6 +87,8 @@ To check whether an application has permission to use a privilege, and to reques
     - If the user decision is `PPM_DENY_ONCE`, the decision is not definitive. In this case, access to protected functionality is still prohibited. This decision can be interpreted as a cancel action on behalf of the user, indicating that the user is not sure what the purpose of the request is. Therefore, consider providing some additional information to explain why the permission is required.
 
     If the decision is definitive, any subsequent `requestPermission()` calls result in an immediate response with an appropriate result: `PPM_ALLOW_FOREVER` or `PPM_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
+
+4. Since Tizen 5.0 you can check and request multiple privacy privileges at once. To do that please use `checkPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and `requestPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions).
 
 > **Note**  
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.

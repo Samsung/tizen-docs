@@ -1,6 +1,25 @@
 # UI
 
-(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
+<!--
+For MD:
+-->
+
+<link href="../css/dotnet-samples.css" ref="stylesheet">
+
+<!--
+for TD:
+
+<style type="text/css">
+    Please copy dotnet-samples.css and paste it here
+</script>
+-->
+
+<div class="sampletab">
+<button class="tablinks" onclick="openProfile(event, 'Mobile')" id="defaultOpen">Mobile</button> <button class="tablinks" onclick="openProfile(event, 'Wearable')">Wearable</button> <button class="tablinks" onclick="openProfile(event, 'TV')">TV</button>
+</div>
+
+<!-- Tab content -->
+<div class="tabcontent" id="Mobile">
 <table>
 	<tbody>
 		<tr>
@@ -8,15 +27,6 @@
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/ApplicationStoreUI" target="_blank"><strong>(M) Application Store UI</strong></a></p>
 			<p>This sample application demonstrates how to create a complex view.</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv19basiccalculator.png" width="400" /></p>
-			</td>
-			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/BasicCalculator" target="_blank"><strong>(T) BasicCalculator</strong></a></p>
-			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
 			</td>
 		</tr>
 		<tr>
@@ -35,18 +45,6 @@
 			<p>In addition, there is similar web sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/web/General/Calculator" target="_blank">Web version</a></li>
-			</ul></p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/wcalculator.png" width="180"/></td>
-			<td>
-			<p><strong>(W) Calculator</strong> [In progress]</p>
-			<p>This sample application demonstrates the regular calculator. This is using some Xamarin.Forms features such as XAML files for GUI and Custom Renderers for the image buttons.</p>
-			<p>In addition, there are similar native and web sample applications.<br>
-			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Calculator" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/General/Calculator_1" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -74,50 +72,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td>
-			<p><img alt="" height="180" src="media/wimagereader.png" width="180"/></p>
-			</td>
-			<td>
-			<p><strong>(W) ImageReader</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use an image in the Tizen .Net application.
-			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
-			<p>For more information, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a>.</p>
-			<p><strong>Prerequisites</strong><br>
-			Network connection is required for DownloadImage.</p>
-			<p>To use network connection in an application,<br>
-			you must have the following privileges:<br>
-			<ul>
-				<li><code>http://tizen.org/privilege/internet</code></li>
-				<li><code>http://tizen.org/privilege/network.get</code></li>
-			</ul></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<p><img alt="" height="225" src="media/tv1musicplayerui.png" width="400" /></p>
-			</td>
-			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MusicPlayerUI" target="_blank"><strong>(T) Music Player UI</strong></a></p>
-			<p>This sample application demonstrates how to use ListViews and a TabbedPage to create intuitive and complex layouts on a TV.</p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="267" src="media/m7puzzle.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/Puzzle" target="_blank"><strong>(M) Puzzle</strong></a></p>
 			<p>This sample application demonstrates the basic UI sample application.</p>
-			</td>
-		</tr>
-		<tr>
-			<td><img alt="" height="180" src="media/wrotarytimer.png" width="180"/></td>
-			<td>
-			<p><strong>(W) Rotary timer</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use Rotary Bezel.</p>
-			<p>In addition, there are similar native and web sample applications.<br>
-			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/UI/Rotary_Timer" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/General/Rotary_Timer" target="_blank">Web version</a></li>
-			</ul></p>
 			</td>
 		</tr>
 		<tr>
@@ -137,13 +95,73 @@
 			(This sample only demonstrates how to create your UI application only, not the functionality of your application.)</p>
 			</td>
 		</tr>
+	</tbody>
+</table>
+</div>
+
+<!-- Tab content -->
+<div class="tabcontent" id="Wearable">
+<table>
+	<tbody>
+		<tr>
+			<td><img alt="" height="180" src="media/wcalculator.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Calculator" target="_blank"><strong>(W) Calculator</strong></a></p>
+			<p>This sample application demonstrates the regular calculator. This is using some Xamarin.Forms features such as XAML files for GUI and Custom Renderers for the image buttons.</p>
+			<p>In addition, there are similar native and web sample applications.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Calculator" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/General/Calculator_1" target="_blank">Web version</a></li>
+			</ul></p>
+			</td>
+		</tr>
 		<tr>
 			<td>
-			<p><img alt="" height="225" src="media/tv13stopwatch.png" width="400" /></p>
+			<p><img alt="" height="180" src="media/wimagereader.png" width="180"/></p>
 			</td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Stopwatch" target="_blank"><strong>(T) Stopwatch</strong></a></p>
-			<p>This sample application demonstrates how to create an application that measures the amount of time taken for a task. This application is created using Xamarin.Forms.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ImageReader" target="_blank"><strong>(W) ImageReader</strong></a></p>
+			<p>This sample application demonstrates how to use an image in the Tizen .Net application.
+			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>For more information, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a>.</p>
+			<p><strong>Prerequisites</strong><br>
+			Network connection is required for DownloadImage.</p>
+			<p>To use network connection in an application,<br>
+			you must have the following privileges:<br>
+			<ul>
+				<li><code>http://tizen.org/privilege/internet</code></li>
+				<li><code>http://tizen.org/privilege/network.get</code></li>
+			</ul></p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/wrotarytimer.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/RotaryTimer" target="_blank"><strong>(W) Rotary timer</strong></a></p>
+			<p>This sample application demonstrates how to use Rotary Bezel.</p>
+			<p>In addition, there are similar native and web sample applications.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/UI/Rotary_Timer" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/General/Rotary_Timer" target="_blank">Web version</a></li>
+			</ul></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="180" src="media/wskiasharp2d.png" width="180"/></p>
+			</td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SkiaSharp2DSample" target="_blank"><strong>(W) SkiaSharp2DSample</strong></a></p>
+			<p>This sample application demonstrates how to use SkiaSharp API in Tizen Xamarin.Forms applications.
+			<ul>
+				<li>Drawing Basics (DrawCircle)</li>
+				<li>SkiaSharp Path (DrawPath)</li>
+				<li>SkiaSharp Transforms (Translate, Scale, RotateDegrees)</li>
+			</ul>
+			This application uses <a href="https://docs.microsoft.com/en-us/dotnet/api/SkiaSharp" target="_blank">SkiaSharp API</a>.
+			<ul>
+				<li><a href="https://docs.microsoft.com/en-us/dotnet/api/skiasharp.skcanvas" target="_blank">Class SKCanvas</a></li>
+			</ul></p>
 			</td>
 		</tr>
 		<tr>
@@ -168,12 +186,46 @@
 			</ul></p>
 			</td>
 		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="tabcontent" id="TV">
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv19basiccalculator.png" width="400" /></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/BasicCalculator" target="_blank"><strong>(T) BasicCalculator</strong></a></p>
+			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv1musicplayerui.png" width="400" /></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MusicPlayerUI" target="_blank"><strong>(T) Music Player UI</strong></a></p>
+			<p>This sample application demonstrates how to use ListViews and a TabbedPage to create intuitive and complex layouts on a TV.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv13stopwatch.png" width="400" /></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Stopwatch" target="_blank"><strong>(T) Stopwatch</strong></a></p>
+			<p>This sample application demonstrates how to create an application that measures the amount of time taken for a task. This application is created using Xamarin.Forms.</p>
+			</td>
+		</tr>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv4animationsample.png" width="400" /></p>
 			</td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AnimationSample" target="_blank"><strong>(T) Animaton Sample (NUI)</strong></a></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AnimationSample" target="_blank"><strong>(T) Animation Sample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to use the animation class to create and cancel animations.</p>
 			</td>
 		</tr>
@@ -256,3 +308,17 @@
 		</tr>
 	</tbody>
 </table>
+</div>
+
+<!--
+For MD:
+-->
+<script src="../js/dotnet-samples.js"></script>
+
+<!--
+for TD:
+
+<script>
+  Please copy dotnet-samples.js and paste it here
+</script>
+-->

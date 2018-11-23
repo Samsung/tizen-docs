@@ -775,7 +775,7 @@ method: [
         name: &lt;method name&gt;,
         compiler: &lt;compiler name, such as GCC, LLVM&gt;,
         rootstraps: [
-            {name: &lt;ID of a dependent project&gt;, platform: &lt;platform name&gt;, arch: &lt;architecture&gt;}
+            {name: &lt;Rootstrap name &gt;, platform: &lt;platform name&gt;, arch: &lt;architecture&gt;}
         ],
         predefines: [&lt;predefined build macros separated by commas&gt;],
         configs: [&lt;build config&gt;]
@@ -822,6 +822,14 @@ package: [
   > tizen build-app -m "name:m1,configs:[Debug,Release]" -b "name:b1,targets:[basic,service],methods:[m1]" -p "name:nativep1,targets:[b1]" -s MyProfile
 
   ```
+- Package web and native hybrid application with the debug and release build configurations.
+
+  Windows&reg;, Ubuntu, and macOS:
+
+  ```
+  > tizen build-app -m "name:m1,compiler:llvm,rootstraps:[{"name":"wearable-3.0-device.core","platform":"wearable-3.0","arch":"arm"}],configs:[Debug,Release]" -b "name:b1,targets:[webbasicapp,service],methods:[m1]" -p "name:mypkg, targets:[b1]" -s MyProfile
+  ```
+
 
 ## Installing the Application on a Target
 

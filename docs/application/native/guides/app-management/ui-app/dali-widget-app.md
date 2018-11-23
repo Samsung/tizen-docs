@@ -1,11 +1,11 @@
 # DALi Widget Application
 
 
-You can create a widget application with DALi to display small version of application on the home screen.
+You can create a widget application with DALi to display small version of application on the Home screen.
 
 To create a DALi widget application, you must:
 
-- Use the [Dali::WidgetApplication class](#widget-application-api).
+- Use the [Dali::WidgetApplication class](#widget-application-class).
 
 	> **Note**
 	> - The implementation of DALi widget application is similar to [DALi basic UI application](dali-basic-app.md), because the [Dali::WidgetApplication](../../../api/mobile/latest/classDali_1_1WidgetApplication.html) class inherits from the [Dali::Application](../../../api/mobile/latest/classDali_1_1Application.html) class.
@@ -19,9 +19,8 @@ To create a DALi widget application, you must:
 
 **Figure: DALi widget application**
 
-For more information on basics of creating a DALi widget application, see [The steps to create a DALi widget application](#create).
+For more information on basics of creating a DALi widget application, see [Creating a DALi Widget Application](#create-a-dali-widget-application).
 
-<a name="widget-application-api"></a>
 ## Widget Application Class
 
 If you want to use DALi for your widget application, you must create the application with the `Dali::WidgetApplication` class. This class provides the means for initializing the resources required by DALi.
@@ -32,10 +31,9 @@ The table list the main functions to manage widget instance:
 
 | Function                             | Description                              |
 |--------------------------------------|------------------------------------------|
-| `mainloop()`                         | The mainloop() function is used to start the event loop. If you do not call the function and start the event loop, DALi cannot call any callback functions for application events.  |
-| `RegisterWidgetCreatingFunction()`   | This function is used to register create function to create widget instance. When widget viewer application requests, then the widget application creates widget instance using the function |
+| `mainloop()`                         | This function is used to start the event loop. If you do not call the function and start the event loop, DALi cannot call any callback functions for application events.  |
+| `RegisterWidgetCreatingFunction()`   | This function is used to register create function to create a widget instance. When the widget viewer application requests, then a widget application creates a widget instance using the function. |
 
-<a name="widget-api"></a>
 ## Widget Class
 
 `Dali::Widget` class provides interface for creating custom widget.
@@ -58,8 +56,8 @@ Most of functions are used for managing widget instance lifecycle. You can descr
 
 Widget instance can send data to widget viewer application using `SetContentInfo()` function. If you want to save the current state of widget before deleting it, view the current state of the widget and delete it.
 
-<a name="create"></a>
-## The steps to create a DALi widget application:
+## Create a DALi Widget Application
+The steps to create a DALi widget application:
 
 1. Initialize the widget application:
 
@@ -100,7 +98,7 @@ Widget instance can send data to widget viewer application using `SetContentInfo
     }
    ```
 
-3. Create a widget class
+3. Create a widget class.
 
    On starting, ensure that you must have background knowledge on [Handle/Body Pattern: Basic Way of Using DALi Objects](../../ui/dali/handle.md).
 

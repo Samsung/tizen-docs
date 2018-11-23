@@ -24,7 +24,7 @@ The main features of the Human Activity Monitor API include:
 
 - Recognizing activity
 
-  You can [recognize activities](#recognizing-an-activity), or [determine whether the user is sleeping](#monitoring-sleep).
+  You can [recognize activities](#recognizing-an-activity), determine whether the [user is sleeping](#detecting-sleep), monitor [user's sleep](#monitoring-sleep) or [stress level](#monitoring-stress).
 
 ## Prerequisites
 
@@ -140,7 +140,8 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
    query['endTime'] = (new Date(2016, 7, 31)).getTime() / 1000;
    ```
 
-4. To get the data sliced by an interval, you can use a combination of the `anchorTime` and `interval` options in the `HumanActivityRecorderQuery` interface.  
+4. To get the data sliced by an interval, you can use a combination of the `anchorTime` and `interval` options in the `HumanActivityRecorderQuery` interface.
+
    Some human activity recorder types do not allow slicing the data by an interval.
 
    ```
@@ -150,8 +151,9 @@ The Human Activity Monitor API allows you to record and retrieve saved sensor da
    query['interval'] = 1440; /* Day */
    ```
 
-5. To read the human activity recorder data from the database, use the `readRecorderData()` method of the `HumanActivityMonitorManager` interface with the query.  
-  Even if your application never recorded any data, you can access any data that has been recorded in the database by other applications.
+5. To read the human activity recorder data from the database, use the `readRecorderData()` method of the `HumanActivityMonitorManager` interface with the query.
+
+   Even if your application never recorded any data, you can access any data that has been recorded in the database by other applications.
 
    ```
    function onerror(error) {
@@ -293,7 +295,7 @@ Learning how to register a listener that allows you to recognize and monitor an 
 
 ## Monitoring Sleep
 
-Learning how to detect whether the user is asleep is a basic Human Activity Monitor (HAM) management skill:
+Learning how to monitor user's sleep is a basic Human Activity Monitor (HAM) management skill:
 
 1. To enable the monitor and start collecting data, use the `start()` method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
 
@@ -312,6 +314,90 @@ Learning how to detect whether the user is asleep is a basic Human Activity Moni
    tizen.humanactivitymonitor.stop('SLEEP_MONITOR');
    ```
 
+## Detecting Sleep
+
+Learning how to detect whether the user is asleep is a basic Human Activity Monitor (HAM) management skill:
+
+1. To enable the monitor and start collecting data, use the `start()` method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications) with
+`HumanActivityType` set to SLEEP_DETECTOR:
+
+   ```
+   function onchangedCB(sleepInfo) {
+       console.log('Sleep status: ' + sleepInfo.status);
+   }
+
+   tizen.humanactivitymonitor.start('SLEEP_DETECTOR', onchangedCB);
+   ```
+
+2. To disable the monitor when it is no longer required, use the `stop()` method of the `HumanActivityMonitorManager` interface with
+`HumanActivityType` set to SLEEP_DETECTOR:
+   ```
+   tizen.humanactivitymonitor.stop('SLEEP_DETECTOR');
+   ```
+
+## Monitoring Stress
+
+Learning how to register a listener that allows you to monitor user's stress is a basic Human Activity Monitor (HAM) management skill:
+
+1. To register an event handler for monitoring user stress, use the `addStressMonitorChangeListener()`  method of the `HumanActivityMonitorManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) and [wearable](../../api/latest/device_api/wearable/tizen/humanactivitymonitor.html#HumanActivityMonitorManager) applications):
+
+   ```
+   var listenerId;
+
+   function errorCallback(error)
+   {
+       console.log(error.name + ": " + error.message);
+   }
+
+   function listener(label)
+   {
+       console.log("Stress level: " + label);
+   }
+
+    var ranges = [new tizen.StressMonitorDataRange("Normal",10, 15),
+              new tizen.StressMonitorDataRange("Stress Alarm",15, 17)];
+
+   try
+   {
+       listenerId = tizen.humanactivitymonitor.addStressMonitorChangeListener(ranges, listener, errorCallback);
+   }
+   catch (error)
+   {
+       console.log(error.name + ": " + error.message);
+   }
+   ```
+
+2. To enable receiving data it is need to call sensor's `start()` method with `HumanActivityType` set to STRESS_MONITOR:
+
+   ```
+   function onchangedCB(info)
+   {
+       console.log("score: " + info.stressScore);
+   }
+
+   function onerrorCB(error)
+   {
+       console.log("Error occurred, name: " + error.name + ", message: " + error.message);
+   }
+
+   try
+   {
+       tizen.humanactivitymonitor.start("STRESS_MONITOR", onchangedCB, onerrorCB,
+                                        {callbackInterval: 1500, sampleInterval: 100});
+   }
+   catch (err)
+   {
+       console.log(err.name + ": " + err.message);
+   }
+   ```
+
+3. To disable the monitor when it is no longer required, use the `stop()` and `removeStressMonitorChangeListener()` methods of the `HumanActivityMonitorManager` interface:
+
+   ```
+   tizen.humanactivitymonitor.stop('STRESS_MONITOR');
+   tizen.humanactivitymonitor.removeStressMonitorChangeListener(listenerId);
+   ```
+
 ## Supported Monitors
 
 The following table introduces the available monitor types and lists the monitor capabilities you can use to [determine whether a specific monitor is supported](#support) on a device.
@@ -326,7 +412,9 @@ The following table introduces the available monitor types and lists the monitor
 | Heart rate monitor                   | `http://tizen.org/feature/sensor.heart_rate_monitor` | When the heart rate monitor (HRM) sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
 | GPS                                  | `http://tizen.org/feature/location.batch` | When the GPS sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data.<br> The GPS sensor provides both the current value and a short history of last recorded GPS positions. The sensor supports sampling intervals, which can be used to create more power-efficient applications. |
 | Sleep monitor                        | `http://tizen.org/feature/sensor.sleep_monitor` | When the sleep sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
+| Sleep detector                        | `http://tizen.org/feature/sensor.sleep_monitor` | When the sleep sensor is started, a change callback is invoked when data changes. Use the `getHumanActivityData()` method to get the current data. |
 | Activity recognition                 | `http://tizen.org/feature/sensor.activity_recognition` | To recognize an activity, start listening for it using the `addActivityRecognitionListener()` method.  The following activity types can be recognized:<br> - `STATIONARY`<br> - `WALKING`<br> - `RUNNING`<br> - `IN_VEHICLE` |
+| Stress monitor                        | `http://tizen.org/feature/sensor.stress_monitor` | To receive information about stress, start listening for it using the `addStressMonitorChangeListener()` method. |
 
 ## Supported Recorders in Wearable Applications
 

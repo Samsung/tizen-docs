@@ -1,6 +1,25 @@
 # UIX
 
-(M) : for mobile profile, (W) : for wearable profile, (T) : for TV profile
+<!--
+For MD:
+-->
+
+<link href="../css/dotnet-samples.css" ref="stylesheet">
+
+<!--
+for TD:
+
+<style type="text/css">
+    Please copy dotnet-samples.css and paste it here
+</script>
+-->
+
+<div class="sampletab">
+<button class="tablinks" onclick="openProfile(event, 'Mobile')" id="defaultOpen">Mobile</button> <button class="tablinks" onclick="openProfile(event, 'Wearable')">Wearable</button> <button class="tablinks" onclick="openProfile(event, 'TV')">TV</button>
+</div>
+
+<!-- Tab content -->
+<div class="tabcontent" id="Mobile">
 <table>
 	<tbody>
 		<tr>
@@ -17,6 +36,16 @@
 			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts C# API</a>.</p>
 			</td>
 		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="tabcontent" id="Wearable">
+</div>
+
+<div class="tabcontent" id="TV">
+<table>
+	<tbody>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv14textreader.png" width="400" /></p>
@@ -28,3 +57,17 @@
 		</tr>
 	</tbody>
 </table>
+</div>
+
+<!--
+For MD:
+-->
+<script src="../js/dotnet-samples.js"></script>
+
+<!--
+for TD:
+
+<script>
+  Please copy dotnet-samples.js and paste it here
+</script>
+-->

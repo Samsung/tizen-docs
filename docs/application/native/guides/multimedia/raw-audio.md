@@ -18,18 +18,20 @@ The main uncompressed audio management features are:
 
 The Audio Output API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__OUT__MODULE.html) applications) enables your application to play such data using output devices. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
 
-To play the audio PCM data, the application must call the `audio_out_create()` function to initialize the audio output handle.
+To play the audio PCM data, the application must call the `audio_out_create_new()` function to initialize the audio output handle.
 
 Your application must define the following PCM data settings:
 
 - Audio channels:
-  - Mono (1 channel)
-  - Stereo (2 channels)
+  - `AUDIO_CHANNEL_MONO` : 1 channel
+  - `AUDIO_CHANNEL_STEREO` : 2 channels
 - Audio sample type:
-  - Unsigned 8-bit PCM
-  - Signed 16-bit little endian PCM
+  - `AUDIO_SAMPLE_TYPE_U8` : Unsigned 8 bit integer PCM
+  - `AUDIO_SAMPLE_TYPE_S16_LE` : Signed 16 integer bit PCM, little endian
+  - `AUDIO_SAMPLE_TYPE_S24_LE` : Signed 24 bit integer PCM packed, little endian
+  - `AUDIO_SAMPLE_TYPE_S24_32LE` : Signed 24 bit integer PCM in LSB of 32 bit words, little endian
 - Audio sample rate:
-  - 8000 ~ 48000 Hz
+  - 8000 ~ 192000 Hz
 
 The following figures illustrate the general audio output states, and how the state changes when the audio output is interrupted by the system.
 
@@ -51,7 +53,7 @@ For supporting various low-end Tizen devices, the application must follow certai
   - To reduce the processing overhead inside, use the target device-preferred PCM format (for example, signed 16-bit little endian, stereo, 44100 Hz).
   - Using the preferred format reduces internal operations, such as converting audio samples from mono to stereo or re-sampling audio frequency to fit the target device's input sample rate.
 - Do not call the Audio Output functions too frequently.
-  - The Audio Output functions require more time while repeated in the order of `audio_out_create()` > `audio_out_prepare()` > `audio_out_unprepare()` > `audio_out_destroy()`. Therefore, keep the frequency of calling these functions to a minimum. Note that the `audio_out_prepare()` and `audio_out_unprepare()` functions are much faster than `audio_out_create()` and `audio_out_destroy()`.
+  - The Audio Output functions require more time while repeated in the order of `audio_out_create_new()` > `audio_out_prepare()` > `audio_out_unprepare()` > `audio_out_destroy()`. Therefore, keep the frequency of calling these functions to a minimum. Note that the `audio_out_prepare()` and `audio_out_unprepare()` functions are much faster than `audio_out_create_new()` and `audio_out_destroy()`.
 - Reduce event delay and remove glitches.
   - The Audio Output API works recursively with events. The smaller the buffer size, the more often are events generated. If you use the Audio Output API with the smallest buffer and other resources (for example, a timer or sensor), the application is negatively influenced by the delay of the event. To prevent problems, set the write buffer size properly based on the other resources you need.
   - To guarantee the working events of the Audio Output API independently, an instance of the Audio Output API needs to be created and worked on the event thread.
@@ -67,18 +69,7 @@ The Audio Input API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUD
 
 Audio data is captured periodically, so to receive the audio PCM data from the input device, you must implement the audio input interface to notify the application of audio data events, such as the end of filling audio data.
 
-Before recording audio, you must define the following PCM data settings:
-
-- Input device type:
-  - Microphone
-- Audio channels:
-  - Mono (1 channel)
-  - Stereo (2 channels)
-- Audio sample type:
-  - Unsigned 8-bit PCM
-  - Signed 16-bit little endian PCM
-- Audio sample rate:
-  - 8000 ~ 48000 Hz
+Before recording audio, you must define the PCM data settings. For more information, see [Audio Output](#play_pcm).
 
 To minimize the overhead of the audio input API, use the optimal channel type, sample type and sampling rate, which can be retrieved using the `audio_in_get_channel()`, `audio_in_get_sample_type()` and `audio_in_get_sample_rate()` functions, respectively.
 
@@ -103,7 +94,7 @@ To enable your application to use the uncompressed audio functionality:
    #include <sound_manager.h>
    ```
 
-2. To initialize the audio input and output devices, use the `audio_in_create()` and `audio_out_create()` functions:
+2. To initialize the audio input and output devices, use the `audio_in_create()` and `audio_out_create_new()` functions:
 
    ```
    /* Define the sample rate for recording audio */
@@ -120,7 +111,7 @@ To enable your application to use the uncompressed audio functionality:
    /* Initialize the audio output device */
    audio_out_h output;
 
-   error_code = audio_out_create(SAMPLE_RATE, AUDIO_CHANNEL_MONO, AUDIO_SAMPLE_TYPE_S16_LE, SOUND_TYPE_SYSTEM, &output);
+   error_code = audio_out_create_new(SAMPLE_RATE, AUDIO_CHANNEL_MONO, AUDIO_SAMPLE_TYPE_S16_LE, &output);
    ```
 
    The audio input and output devices support the channel types defined in the `audio_channel_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga4e07ead99d581a0a049e8ee632b858b4) applications), and the sample types defined in the `audio_sample_type_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__AUDIO__IO__MODULE.html#ga1e66f976b2890f5fc2e9e6ec71af7536) applications). For playing the recorded audio, use the same channel and sample type on both audio devices.
@@ -206,9 +197,14 @@ modify_sound()
     int error_code = audio_in_get_sample_type(input, &sample_type);
     if (error_code != AUDIO_IO_ERROR_NONE) {
         dlog_print(DLOG_ERROR, LOG_TAG, "audio_in_get_sample_type() failed! Error code = %d", error_code);
-
         return;
     }
+
+    if (sample_type != AUDIO_SAMPLE_TYPE_S16_LE ||
+        sample_type != AUDIO_SAMPLE_TYPE_U8) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "this example doesn't support this sample type(%d)", sample_type);
+        return;
+	}
 
     uint8_t *index = (uint8_t*)buffer;
     while (index < (((uint8_t*)buffer) + buffer_size)) {

@@ -37,12 +37,12 @@ To enable your application to use `rpc_port_proxy_connect()` API:
 
   To use the `rpc_port_proxy_connect()` API, the application has to request permission by adding the following privilege to `tizen-manifest.xml` file:
 
-    ```
-    <privileges>
-       <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
-       <privilege>http://tizen.org/privilege/datasharing</privilege>
-    </privileges>
-    ```
+  ```
+  <privileges>
+     <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+     <privilege>http://tizen.org/privilege/datasharing</privilege>
+  </privileges>
+  ```
 
 
 ## Related Information

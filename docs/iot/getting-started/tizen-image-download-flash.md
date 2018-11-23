@@ -110,7 +110,7 @@ To install the IoT Setup Manager using the Package Manager available in Tizen St
     > 4.  Type IoT Setup Manager in the `Name` field and <http://download.tizen.org/sdk/extensions/iot-setup-mgr> in the `Repository` field.
 
 3.  Click **install** to install the IoT Setup Manager Extension.
-4.  Start Tizen Studio. If the Tizen Studio is already running, close and restart it.
+4.  Start Tizen Studio. If Tizen Studio is already running, close and restart it.
 
 ### Launch IoT Setup Manager
 

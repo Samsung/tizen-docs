@@ -40,6 +40,11 @@
 ### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 ## [Resources](/application/dotnet/guides/nui/resources.md)
 
+# Wearable Circular UI
+## [Overview](/application/dotnet/guides/wcircularui/overview.md)
+## [Quickstart](/application/dotnet/guides/wcircularui/quickstart.md)
+## [Tizen Wearable XAML App Template](/application/dotnet/guides/wcircularui/quickstart_tizenxamlapptemplate.md)
+
 # Internationalization
 ## [Localization](/application/dotnet/guides/internationalization/localization.md)
 ## [Phone Number Management](/application/dotnet/guides/internationalization/phonenumber.md)
@@ -135,3 +140,7 @@
 ## [Privilege Information](/application/dotnet/guides/security/privilege.md)
 ## [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 ## [TEE Communication](/application/dotnet/guides/security/tee-client.md)
+
+# Natural Language Processing
+## [Overview](/application/dotnet/guides/nlp/overview.md)
+## [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)

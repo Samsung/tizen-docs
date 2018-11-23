@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Content">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Content API</h1></div>
 <div class="brief">
  The Content API provides functionality to discover content such as images, videos, music, or others.
@@ -18,14 +18,13 @@ It is possible to search for specific content using filters.
 The API also supports setting the attributes of specific content.
         </p>
         <p>
-For more information on the Content features, see <a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/stored-content-management">Stored Content Management Guide</a>.
+For more information on the Content features, see <a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/stored-content-management">Stored Content Management</a>.
         </p>
         <p>
 Playlist functionality has been added in Tizen 2.3.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
         </p>
 <h2>Table of Contents</h2>
@@ -120,8 +119,6 @@ Playlist functionality has been added in Tizen 2.3.
 <div>void <a href="#ContentManager::cancelScanDirectory">cancelScanDirectory</a> (DOMString contentDirURI)</div>
 <div>long <a href="#ContentManager::addChangeListener">addChangeListener</a> (<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback)</div>
 <div>void <a href="#ContentManager::removeChangeListener">removeChangeListener</a> (long listenerId)</div>
-<div class="deprecated">void <a href="#ContentManager::setChangeListener">setChangeListener</a> (<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback)</div>
-<div class="deprecated">void <a href="#ContentManager::unsetChangeListener">unsetChangeListener</a> ()</div>
 <div>void <a href="#ContentManager::getPlaylists">getPlaylists</a> (<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#ContentManager::createPlaylist">createPlaylist</a> (DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#Playlist">Playlist</a>? sourcePlaylist)</div>
 <div>void <a href="#ContentManager::removePlaylist">removePlaylist</a> (<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
@@ -214,8 +211,7 @@ Playlist functionality has been added in Tizen 2.3.
 <div class="enum" id="ContentDirectoryStorageType">
 <a class="backward-compatibility-anchor" name="::Content::ContentDirectoryStorageType"></a><h3>1.1. ContentDirectoryStorageType</h3>
 <pre class="webidl prettyprint">  enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -227,8 +223,7 @@ Defines whether a content directory is stored on internal or external storage (s
 <div class="enum" id="ContentType">
 <a class="backward-compatibility-anchor" name="::Content::ContentType"></a><h3>1.2. ContentType</h3>
 <pre class="webidl prettyprint">  enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -236,15 +231,14 @@ Defines whether a content directory is stored on internal or external storage (s
 Defines the type of content such as an image, video, audio, or any other.
           </p>
          </div>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  "OTHER" type is added since Tizen 2.1.
           </p>
 </div>
 <div class="enum" id="AudioContentLyricsType">
 <a class="backward-compatibility-anchor" name="::Content::AudioContentLyricsType"></a><h3>1.3. AudioContentLyricsType</h3>
 <pre class="webidl prettyprint">  enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -255,9 +249,9 @@ Defines whether the lyrics supplied with an audio file is time-synchronized.
 </div>
 <div class="enum" id="ImageContentOrientation">
 <a class="backward-compatibility-anchor" name="::Content::ImageContentOrientation"></a><h3>1.4. ImageContentOrientation</h3>
-<pre class="webidl prettyprint">  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE", "ROTATE_270" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE",
+    "ROTATE_270" };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -272,8 +266,7 @@ Defines the orientation of an image.
  Content identifier.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString ContentId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 </div>
@@ -283,8 +276,7 @@ Defines the orientation of an image.
  Content directory identifier.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString ContentDirectoryId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 </div>
@@ -294,8 +286,7 @@ Defines the orientation of an image.
  Playlist identifier.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString PlaylistId;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 </div>
@@ -311,8 +302,7 @@ Defines the orientation of an image.
     readonly attribute <a href="#ContentManager">ContentManager</a> content;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContentManagerObject">ContentManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -327,62 +317,30 @@ The <em>tizen.content </em>object allows accessing the functionality of the Cont
  The ContentManager interface provides operations to retrieve and manipulate content.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ContentManager {
-
     void update(<a href="#Content">Content</a> content) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void updateBatch(<a href="#Content">Content</a>[] contents,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-              optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId,
-              optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
-              optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
-              optional unsigned long? count,
-              optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-    void scanFile(DOMString contentURI,
-                  optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void scanDirectory(DOMString contentDirURI,
-                       boolean recursive,
-                       optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback,
+    void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+              optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
+              optional unsigned long? count, optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void scanFile(DOMString contentURI, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void scanDirectory(DOMString contentDirURI, boolean recursive, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback,
                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void cancelScanDirectory(DOMString contentDirURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void setChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void unsetChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void createPlaylist(DOMString name,
-                        <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                         optional <a href="#Playlist">Playlist</a>? sourcePlaylist) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void createThumbnail(<a href="#Content">Content</a> content,
-                         <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void createThumbnail(<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="methods">
@@ -395,10 +353,8 @@ The <em>tizen.content </em>object allows accessing the functionality of the Cont
 <div class="brief">
  Updates attributes of content in the content database synchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#Content">Content</a> content);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#Content">Content</a> content);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -407,15 +363,13 @@ When an application has changed some attributes of the content, this method allo
 writing it back to the content database.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  The <em>editableAttributes</em> in the <em>Content</em> interface indicates
 the attributes that can be changed.
 This API does not support updating the metadata of a file.
@@ -450,12 +404,11 @@ contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Assume the content is a Content object as a result of find method */
-/* Check the description is editable, and then set a description */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Assume the content is a Content object as a result of find method. */
+/* Check if the description is editable, and then set a description. */
 if (content.editableAttributes.indexOf("description") &gt;= 0)
 {
-   content.description = "Sample content";
+  content.description = "Sample content";
 }
 tizen.content.update(content);
 </pre>
@@ -468,10 +421,8 @@ tizen.content.update(content);
 <div class="brief">
  Updates a batch of content attributes in the content database asynchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -489,15 +440,13 @@ InvalidValuesError: If any of the input parameters contain an invalid value.    
 UnknownError: In any other error case.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  The <em>editableAttributes</em> in the <em>Content</em> interface indicates
 the attributes that can be changed.
 This API does not support updating the metadata of a file.
@@ -533,24 +482,23 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Following example increases rating of a content by 1 */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Following example increases rating of a content by 1. */
 
 function errorCB(err)
 {
-   console.log('The following error occurred: ' +  err.name);
+  console.log("The following error occurred: " + err.name);
 }
 
 function successCB()
 {
-   console.log('Attributes set successfully');
+  console.log("Attributes set successfully");
 }
 
-/* Assume the content is a Content object as a result of find method */
-/* Check the rating is editable, and then increase by 1 */
+/* Assume the content is a Content object as a result of find method. */
+/* Check if the rating is editable, and then increase by 1. */
 if (content.editableAttributes.indexOf("rating") &gt;= 0)
 {
-   content.rating++;
+  content.rating++;
 }
 tizen.content.updateBatch([content], successCB, errorCB);
 </pre>
@@ -563,10 +511,8 @@ tizen.content.updateBatch([content], successCB, errorCB);
 <div class="brief">
  Gets a list of content directories.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -604,22 +550,21 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Following example retrieves content directories in the storage */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Following example retrieves content directories in the storage. */
 
 function errorCB(err)
 {
-   console.log('The following error occurred: ' +  err.name);
+  console.log("The following error occurred: " + err.name);
 }
 
 function printDirectory(directory, index, directories)
 {
-   console.log('directoryURI: ' + directory.directoryURI + ' Title: ' + directory.title);
+  console.log("directoryURI: " + directory.directoryURI + " Title: " + directory.title);
 }
 
 function getDirectoriesCB(directories)
 {
-   directories.forEach(printDirectory);
+  directories.forEach(printDirectory);
 }
 
 tizen.content.getDirectories(getDirectoriesCB, errorCB);
@@ -633,10 +578,10 @@ tizen.content.getDirectories(getDirectoriesCB, errorCB);
 <div class="brief">
  Finds contents that satisfy the conditions set by a filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? count, optional unsigned long? offset);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+          optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, 
+          optional unsigned long? count, optional unsigned long? offset);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -655,12 +600,10 @@ InvalidValuesError: If any of the input parameters contain an invalid value.    
 UnknownError: In any other error case.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.read
             </p>
 <div class="parameters">
@@ -710,8 +653,8 @@ is not compatible with the expected type for that parameter.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Following example retrieves all songs from the album "The Joshua Tree", by artist "U2", ordered by the name */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Following example retrieves all songs from the album "The Joshua Tree", by artist "U2", ordered */
+/* by the name. */
 var count = 100;
 var offset = 0;
 var sortMode = new tizen.SortMode("name", "ASC");
@@ -721,25 +664,25 @@ var filter = new tizen.CompositeFilter("INTERSECTION", [albumFilter, artistFilte
 
 function errorCB(err)
 {
-   console.log('The following error occurred: ' +  err.name);
+  console.log("The following error occurred: " + err.name);
 }
 
 function printContent(content, index, contents)
 {
-   console.log('Name: ' + content.name + ' Title: ' + content.title +
-               'URL: ' + content.contentURI + 'MIME: ' + content.mimeType);
+  console.log("Name: " + content.name + " Title: " + content.title + "URL: " + content.contentURI +
+              "MIME: " + content.mimeType);
 }
 
 function findCB(contents)
 {
-   console.log('The Joshua Tree by U2:');
-   contents.forEach(printContent);
-   /* Increase the offset as much as the count and then find content again */
-   if (contents.length === count)
-   {
-      offset += count;
-      tizen.content.find(findCB, errorCB, null, filter, sortMode, count, offset);
-   }
+  console.log("The Joshua Tree by U2:");
+  contents.forEach(printContent);
+  /* Increase the offset as much as the count and then find content again. */
+  if (contents.length === count)
+  {
+    offset += count;
+    tizen.content.find(findCB, errorCB, null, filter, sortMode, count, offset);
+  }
 }
 
 tizen.content.find(findCB, errorCB, null, filter, sortMode, count, offset);
@@ -753,10 +696,8 @@ tizen.content.find(findCB, errorCB, null, filter, sortMode, count, offset);
 <div class="brief">
  Scans a file to create or update content in the content database.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void scanFile(DOMString contentURI, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void scanFile(DOMString contentURI, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -772,12 +713,10 @@ The errorCallback is launched with these error types:
 UnknownError: In case of any error detected asynchronously              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -815,22 +754,21 @@ contain an invalid value (e.g. given <em>contentURI</em> is an empty string).
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Following example scans 'tizen.jpg' in media directory */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Following example scans "tizen.jpg" in media directory. */
 
 function errorCB(err)
 {
-   console.log('The following error occurred: ' +  err.name);
+  console.log("The following error occurred: " + err.name);
 }
 
 function successCB(path)
 {
-   console.log('scanning is completed');
+  console.log("Scanning is completed");
 }
 
 tizen.filesystem.resolve("images/tizen.jpg", function(imageFile)
 {
-   tizen.content.scanFile(imageFile.toURI(), successCB, errorCB);
+  tizen.content.scanFile(imageFile.toURI(), successCB, errorCB);
 });
 </pre>
 </div>
@@ -842,10 +780,9 @@ tizen.filesystem.resolve("images/tizen.jpg", function(imageFile)
 <div class="brief">
  Scans a content directory to create or update content in the content database.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void scanDirectory(DOMString contentDirURI, boolean recursive, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void scanDirectory(DOMString contentDirURI, boolean recursive, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, 
+                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -862,12 +799,10 @@ The errorCallback is launched with these error types:
 UnknownError: In case of any error detected asynchronously              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -912,22 +847,21 @@ contain an invalid value (e.g. given <em>contentDirURI</em> is an empty string).
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Following example scans 'images' directory */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Following example scans "images" directory. */
 
 function errorCB(err)
 {
-   console.log('The following error occurred: ' +  err.name);
+  console.log("The following error occurred: " + err.name);
 }
 
 function successCB(path)
 {
-   console.log('scanning is completed');
+  console.log("Scanning is completed");
 }
 
 tizen.filesystem.resolve("images", function(directory)
 {
-   tizen.content.scanDirectory(directory.toURI(), true, successCB, errorCB);
+  tizen.content.scanDirectory(directory.toURI(), true, successCB, errorCB);
 });
 </pre>
 </div>
@@ -939,10 +873,8 @@ tizen.filesystem.resolve("images", function(directory)
 <div class="brief">
  Cancels a scan process of a content directory.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void cancelScanDirectory(DOMString contentDirURI);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void cancelScanDirectory(DOMString contentDirURI);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -950,12 +882,10 @@ tizen.filesystem.resolve("images", function(directory)
 When a scan of a given directory is running it may be canceled by this function.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -984,8 +914,7 @@ contain an invalid value (e.g. given <em>contentDirURI</em> is an empty string).
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-tizen.content.cancelScanDirectory(directory.toURI());
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.content.cancelScanDirectory(directory.toURI());
 </pre>
 </div>
 </dd>
@@ -996,10 +925,8 @@ tizen.content.cancelScanDirectory(directory.toURI());
 <div class="brief">
  Adds a listener which receives notifications when content changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -1013,8 +940,12 @@ tizen.content.cancelScanDirectory(directory.toURI());
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long Identifier of the newly added listener.
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ Identifier of the newly added listener.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1028,44 +959,43 @@ tizen.content.cancelScanDirectory(directory.toURI());
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var listener =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var listener =
 {
-   oncontentadded: function(content)
-   {
-      console.log(content.contentURI + ' content is added');
-   },
-   oncontentupdated: function(content) 
-   {
-      console.log(content.contentURI + ' content is updated');
-   },
-   oncontentremoved: function(id)
-   {
-      console.log(id + ' is removed');
-   },
-   oncontentdiradded: function(contentDir)
-   {
-      console.log(contentDir.directoryURI + ' content directory is added');
-   },
-   oncontentdirupdated: function(contentDir)
-   {
-      console.log(contentDir.directoryURI + ' content directory is updated');
-   },
-   oncontentdirremoved: function(id)
-   {
-      console.log(id + ' directory is removed');
-   }
+  oncontentadded: function(content)
+  {
+    console.log(content.contentURI + " content is added");
+  },
+  oncontentupdated: function(content)
+  {
+    console.log(content.contentURI + " content is updated");
+  },
+  oncontentremoved: function(id)
+  {
+    console.log(id + " is removed");
+  },
+  oncontentdiradded: function(contentDir)
+  {
+    console.log(contentDir.directoryURI + " content directory is added");
+  },
+  oncontentdirupdated: function(contentDir)
+  {
+    console.log(contentDir.directoryURI + " content directory is updated");
+  },
+  oncontentdirremoved: function(id)
+  {
+    console.log(id + " directory is removed");
+  }
 };
 
-/* Adds the listener */
+/* Adds the listener. */
 var listenerId = tizen.content.addChangeListener(listener);
 
-console.log('Listener ID: ' + listenerId);
+console.log("Listener ID: " + listenerId);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Listener ID: 1
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Listener ID: 1
+</pre>
 </div>
 </dd>
 <dt class="method" id="ContentManager::removeChangeListener">
@@ -1075,10 +1005,8 @@ console.log('Listener ID: ' + listenerId);
 <div class="brief">
  Removes a listener which receives notifications about content changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long listenerId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeChangeListener(long listenerId);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -1086,7 +1014,7 @@ console.log('Listener ID: ' + listenerId);
 <ul>
           <li class="param">
 <span class="name">listenerId</span>:
- Identifier of the listener to be removed. It is returned by
+ Identifier of the listener to be removed. It is returned by.
 <a href="./content.html#ContentManager::addChangeListener">addChangeListener()</a> when a listener is successfully added.
                 </li>
         </ul>
@@ -1099,40 +1027,39 @@ console.log('Listener ID: ' + listenerId);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var listener =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var listener =
 {
-   oncontentadded: function(content)
-   {
-      console.log(content.contentURI + ' content is added');
-   },
-   oncontentupdated: function(content)
-   {
-      console.log(content.contentURI + ' content is updated');
-   },
-   oncontentremoved: function(id)
-   {
-      console.log(id + ' is removed');
-   },
-   oncontentdiradded: function(contentDir)
-   {
-      console.log(contentDir.directoryURI + ' content directory is added');
-   },
-   oncontentdirupdated: function(contentDir)
-   {
-      console.log(contentDir.directoryURI + ' content directory is updated');
-   },
-   oncontentdirremoved: function(id)
-   {
-      console.log(id + ' directory is removed');
-   }
+  oncontentadded: function(content)
+  {
+    console.log(content.contentURI + " content is added");
+  },
+  oncontentupdated: function(content)
+  {
+    console.log(content.contentURI + " content is updated");
+  },
+  oncontentremoved: function(id)
+  {
+    console.log(id + " is removed");
+  },
+  oncontentdiradded: function(contentDir)
+  {
+    console.log(contentDir.directoryURI + " content directory is added");
+  },
+  oncontentdirupdated: function(contentDir)
+  {
+    console.log(contentDir.directoryURI + " content directory is updated");
+  },
+  oncontentdirremoved: function(id)
+  {
+    console.log(id + " directory is removed");
+  }
 };
 
 var listenerId = tizen.content.addChangeListener(listener);
 
-/* Do some job here and when the listener is not needed anymore remove it */
+/* Do some job here and when the listener is not needed anymore remove it. */
 
-/* Removes the listener */
+/* Removes the listener. */
 tizen.content.removeChangeListener(listenerId);
 </pre>
 </div>
@@ -1148,18 +1075,14 @@ tizen.content.removeChangeListener(listenerId);
  Deprecated since 3.0. Instead, <a href="./content.html#ContentManager::addChangeListener">addChangeListener()</a> allows application
 developers to add a listener and get notified when content is added, removed or updated on a device.
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void setChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.read
             </p>
 <div class="parameters">
@@ -1190,36 +1113,35 @@ developers to add a listener and get notified when content is added, removed or 
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var listener =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var listener =
 {
-   oncontentadded: function(content)
-   {
-      console.log(content.contentURI + ' content is added');
-   },
-   oncontentupdated: function(content)
-   {
-      console.log(content.contentURI + ' content is updated');
-   },
-   oncontentremoved: function(id)
-   {
-      console.log(id + ' is removed');
-   },
-   oncontentdiradded: function(contentDir)
-   {
-      console.log(contentDir.directoryURI + ' content directory is added');
-   },
-   oncontentdirupdated: function(contentDir)
-   {
-      console.log(contentDir.directoryURI + ' content directory is updated');
-   },
-   oncontentdirremoved: function(id)
-   {
-      console.log(id + ' directory is removed');
-   }
+  oncontentadded: function(content)
+  {
+    console.log(content.contentURI + " content is added");
+  },
+  oncontentupdated: function(content)
+  {
+    console.log(content.contentURI + " content is updated");
+  },
+  oncontentremoved: function(id)
+  {
+    console.log(id + " is removed");
+  },
+  oncontentdiradded: function(contentDir)
+  {
+    console.log(contentDir.directoryURI + " content directory is added");
+  },
+  oncontentdirupdated: function(contentDir)
+  {
+    console.log(contentDir.directoryURI + " content directory is updated");
+  },
+  oncontentdirremoved: function(id)
+  {
+    console.log(id + " directory is removed");
+  }
 };
 
-/* Registers to be notified when the content changes */
+/* Registers to be notified when the content changes. */
 tizen.content.setChangeListener(listener);
 </pre>
 </div>
@@ -1234,18 +1156,14 @@ tizen.content.setChangeListener(listener);
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 3.0. Instead, use <a href="./content.html#ContentManager::removeChangeListener">removeChangeListener()</a>.
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void unsetChangeListener();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unsetChangeListener();</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.read
             </p>
 <div class="exceptionlist">
@@ -1261,8 +1179,7 @@ tizen.content.setChangeListener(listener);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-tizen.content.unsetChangeListener();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.content.unsetChangeListener();
 </pre>
 </div>
 </dd>
@@ -1273,10 +1190,8 @@ tizen.content.unsetChangeListener();
 <div class="brief">
  Gets all playlists.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1288,12 +1203,10 @@ The errorCallback is launched with these error types:
 UnknownError: In case of any error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.read
             </p>
 <div class="parameters">
@@ -1301,11 +1214,11 @@ UnknownError: In case of any error              </li>
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method to be invoked when retrieving a list of all playlists completes
+ Callback method to be invoked when retrieving a list of all playlists completes.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -1322,24 +1235,22 @@ UnknownError: In case of any error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists;
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err);
+  console.log("getPlaylists failed: " + err);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   var cur, i;
-   gPlaylists = playlists;
-   for (i = 0; i &lt; gPlaylists.length; ++i)
-   {
-      cur = gPlaylists[i];
-      console.log("[" + i + "] name:" + cur.name + " num tracks:" +
-                  cur.numberOfTracks);
-   }
+  var cur, i;
+  gPlaylists = playlists;
+  for (i = 0; i &lt; gPlaylists.length; ++i)
+  {
+    cur = gPlaylists[i];
+    console.log("[" + i + "] name: " + cur.name + " num tracks: " + cur.numberOfTracks);
+  }
 }
 
 tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
@@ -1353,10 +1264,9 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Creates a new playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#Playlist">Playlist</a>? sourcePlaylist);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+                    optional <a href="#Playlist">Playlist</a>? sourcePlaylist);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1370,12 +1280,10 @@ InvalidValuesError: If <var>name</var> is empty or is same as the name of an exi
 UnknownError: In case of any other error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -1383,19 +1291,19 @@ UnknownError: In case of any other error              </li>
 <ul>
           <li class="param">
 <span class="name">name</span>:
- Name of the new playlist (case sensitive)
+ Name of the new playlist (case sensitive).
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method to be invoked to provide a created playlist
+ Callback method to be invoked to provide a created playlist.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
           <li class="param">
 <span class="name">sourcePlaylist</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Optional existing playlist to clone
+ Optional existing playlist to clone.
                 </li>
         </ul>
 </div>
@@ -1412,54 +1320,52 @@ UnknownError: In case of any other error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists;
 var gPlaylist;
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err.message);
+  console.log("getPlaylists failed: " + err.message);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   var cur, i;
-   gPlaylists = playlists;
-   for (i = 0; i &lt; gPlaylists.length; ++i)
-   {
-      cur = gPlaylists[i];
-      console.log("[" + i + "] name:" + cur.name + " num tracks:" +
-                  cur.numberOfTracks);
-   }
+  var cur, i;
+  gPlaylists = playlists;
+  for (i = 0; i &lt; gPlaylists.length; ++i)
+  {
+    cur = gPlaylists[i];
+    console.log("[" + i + "] name: " + cur.name + " num tracks: " + cur.numberOfTracks);
+  }
 }
 
 function findSuccess(contents)
 {
-   if (contents.length &gt; 0)
-   {
-      gPlaylist.add(contents[0]);
-   }
+  if (contents.length &gt; 0)
+  {
+    gPlaylist.add(contents[0]);
+  }
 
-   tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
+  tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 }
 
 function findFail(err)
 {
-   console.log("find FAIL: " + err.message);
+  console.log("find FAIL: " + err.message);
 }
 
 function createSuccess(playlist)
 {
-   console.log("create SUCCESS");
+  console.log("create SUCCESS");
 
-   gPlaylist = playlist;
-   tizen.content.find(findSuccess, findFail, null,
-                      new tizen.AttributeFilter("type", "EXACTLY", "AUDIO"));
+  gPlaylist = playlist;
+  tizen.content.find(
+      findSuccess, findFail, null, new tizen.AttributeFilter("type", "EXACTLY", "AUDIO"));
 }
 
 function createFail(err)
 {
-   console.log("create FAIL: " + err.message);
+  console.log("create FAIL: " + err.message);
 }
 
 tizen.content.createPlaylist("My new playlist", createSuccess, createFail);
@@ -1473,10 +1379,8 @@ tizen.content.createPlaylist("My new playlist", createSuccess, createFail);
 <div class="brief">
  Removes a playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1488,12 +1392,10 @@ The errorCallback is launched with these error types:
 UnknownError: In case of any error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -1501,15 +1403,15 @@ UnknownError: In case of any error              </li>
 <ul>
           <li class="param">
 <span class="name">id</span>:
- Identifier of a playlist to remove
+ Identifier of a playlist to remove.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when removing a playlist completes
+ Callback method to be invoked when removing a playlist completes.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -1526,47 +1428,42 @@ UnknownError: In case of any error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists;
 
 function removePlaylistSuccess()
 {
-   console.log("removePlaylist SUCCESS");
+  console.log("removePlaylist SUCCESS");
 }
 
 function removePlaylistFail(err)
 {
-   console.log("removePlaylist FAIL: " + err);
+  console.log("removePlaylist FAIL: " + err);
 }
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err);
+  console.log("getPlaylists failed: " + err);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   var cur, i;
-   gPlaylists = playlists;
-   for (i = 0; i &lt; gPlaylists.length; ++i)
-   {
-      cur = gPlaylists[i];
-      console.log("[" + i + "] name:" + cur.name + " num tracks:" +
-                  cur.numberOfTracks);
-   }
+  var cur, i;
+  gPlaylists = playlists;
+  for (i = 0; i &lt; gPlaylists.length; ++i)
+  {
+    cur = gPlaylists[i];
+    console.log("[" + i + "] name: " + cur.name + " num tracks: " + cur.numberOfTracks);
+  }
 
-   if (gPlaylists.length &lt; 1)
-   {
-      console.log("Please add at least 1 playlist");
+  if (gPlaylists.length &lt; 1)
+  {
+    console.log("Please add at least 1 playlist");
+    return;
+  }
 
-      return;
-   }
+  console.log("Will remove playlist at index [0] name: " + gPlaylists[0].name);
 
-   console.log("will remove playlist at index [0] name:"
-               + gPlaylists[0].name);
-
-   tizen.content.removePlaylist(gPlaylists[0].id, removePlaylistSuccess,
-                                removePlaylistFail);
+  tizen.content.removePlaylist(gPlaylists[0].id, removePlaylistSuccess, removePlaylistFail);
 }
 
 tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
@@ -1580,10 +1477,8 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Creates a content's thumbnail.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void createThumbnail(<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void createThumbnail(<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="description">
@@ -1597,12 +1492,10 @@ InvalidValuesError: In case of invalid content object.              </li>
 AbortError: In case of any error.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -1610,15 +1503,15 @@ AbortError: In case of any error.              </li>
 <ul>
           <li class="param">
 <span class="name">content</span>:
- Content object for which a new thumbnail will be created
+ Content object for which a new thumbnail will be created.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method to be invoked when the thumbnail is created
+ Callback method to be invoked when the thumbnail is created.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -1635,26 +1528,25 @@ AbortError: In case of any error.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function createCB(path)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function createCB(path)
 {
-   console.log("The thumbnail path is " + path);
+  console.log("The thumbnail path is " + path);
 }
 
 function findCB(contents)
 {
-   if (contents.length &gt; 0)
-   {
-      tizen.content.createThumbnail(contents[0], createCB);
-   }
+  if (contents.length &gt; 0)
+  {
+    tizen.content.createThumbnail(contents[0], createCB);
+  }
 }
 
 tizen.content.find(findCB);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> The thumbnail path is /home/owner/share/media/.thumb/phone/.jpg-bed1d5f494830f7a52e1217f1e924aff.jpg
- </pre>
+<span class="title"><p>Output example:</p></span><pre>The thumbnail path is /home/owner/share/media/.thumb/phone/.jpg-bed1d5f494830f7a52e1217f1e924aff.jpg
+</pre>
 </div>
 </dd>
 </dl>
@@ -1668,8 +1560,7 @@ tizen.content.find(findCB);
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ContentArraySuccessCallback {
     void onsuccess(<a href="#Content">Content</a>[] contents);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="methods">
@@ -1682,10 +1573,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when the list of content is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Content">Content</a>[] contents);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Content">Content</a>[] contents);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
@@ -1709,8 +1598,7 @@ tizen.content.find(findCB);
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ContentDirectoryArraySuccessCallback {
     void onsuccess(<a href="#ContentDirectory">ContentDirectory</a>[] directories);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="methods">
@@ -1723,10 +1611,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when the directory list is retrieved successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ContentDirectory">ContentDirectory</a>[] directories);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ContentDirectory">ContentDirectory</a>[] directories);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
@@ -1750,8 +1636,7 @@ tizen.content.find(findCB);
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ContentScanSuccessCallback {
     void onsuccess(DOMString uri);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -1764,13 +1649,11 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when the scanning has been completed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString uri);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString uri);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  This callback is also invoked upon success of the <a href="content.html#ContentManager::scanDirectory">scanDirectory()</a> method since Tizen 2.4. Therefore, the <em>uri</em> parameter may now also be the URI of a <em>ContentDirectory</em> object.
             </p>
 <div class="parameters">
@@ -1793,19 +1676,13 @@ tizen.content.find(findCB);
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface ContentChangeCallback {
     void oncontentadded(<a href="#Content">Content</a> content);
-
     void oncontentupdated(<a href="#Content">Content</a> content);
-
     void oncontentremoved(<a href="#ContentId">ContentId</a> id);
-
     void oncontentdiradded(<a href="#ContentDirectory">ContentDirectory</a> contentDir);
-
     void oncontentdirupdated(<a href="#ContentDirectory">ContentDirectory</a> contentDir);
-
     void oncontentdirremoved(<a href="#ContentDirectoryId">ContentDirectoryId</a> id);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -1818,10 +1695,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when content is added.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oncontentadded(<a href="#Content">Content</a> content);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oncontentadded(<a href="#Content">Content</a> content);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -1841,10 +1716,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when content is updated.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oncontentupdated(<a href="#Content">Content</a> content);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oncontentupdated(<a href="#Content">Content</a> content);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -1864,10 +1737,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when content is removed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oncontentremoved(<a href="#ContentId">ContentId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oncontentremoved(<a href="#ContentId">ContentId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -1887,10 +1758,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when a content directory is added.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oncontentdiradded(<a href="#ContentDirectory">ContentDirectory</a> contentDir);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oncontentdiradded(<a href="#ContentDirectory">ContentDirectory</a> contentDir);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1910,10 +1779,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when a content directory is updated.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oncontentdirupdated(<a href="#ContentDirectory">ContentDirectory</a> contentDir);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oncontentdirupdated(<a href="#ContentDirectory">ContentDirectory</a> contentDir);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1921,7 +1788,7 @@ tizen.content.find(findCB);
 <ul>
           <li class="param">
 <span class="name">contentDir</span>:
- The content directory after the update operation.
+ The content directory after the update operation.
                 </li>
         </ul>
 </div>
@@ -1933,10 +1800,8 @@ tizen.content.find(findCB);
 <div class="brief">
  Called when a content directory is removed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oncontentdirremoved(<a href="#ContentDirectoryId">ContentDirectoryId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oncontentdirremoved(<a href="#ContentDirectoryId">ContentDirectoryId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -1958,20 +1823,13 @@ tizen.content.find(findCB);
  The ContentDirectory interface provides access to properties of a content directory.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ContentDirectory {
-
     readonly attribute <a href="#ContentDirectoryId">ContentDirectoryId</a> id;
-
     readonly attribute DOMString directoryURI;
-
     readonly attribute DOMString title;
-
     readonly attribute <a href="#ContentDirectoryStorageType">ContentDirectoryStorageType</a> storageType;
-
     readonly attribute Date? modifiedDate;
-
-   };</pre>
-<p><span class="version">
-            Since: </span>
+  };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
@@ -1982,8 +1840,7 @@ tizen.content.find(findCB);
 </span><span class="type">ContentDirectoryId </span><span class="name">id</span></span><div class="brief">
  The opaque content directory identifier.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1992,8 +1849,7 @@ tizen.content.find(findCB);
 </span><span class="type">DOMString </span><span class="name">directoryURI</span></span><div class="brief">
  The directory path on the device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2002,8 +1858,7 @@ tizen.content.find(findCB);
 </span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
  The directory name.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2012,8 +1867,7 @@ tizen.content.find(findCB);
 </span><span class="type">ContentDirectoryStorageType </span><span class="name">storageType</span></span><div class="brief">
  The type of device storage.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2022,8 +1876,7 @@ tizen.content.find(findCB);
 </span><span class="type">Date </span><span class="name">modifiedDate</span><span class="optional"> [nullable]</span></span><div class="brief">
  The last modified date for a directory.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2036,37 +1889,22 @@ tizen.content.find(findCB);
  The Content interface provides access to the properties of a content item.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Content {
-
     readonly attribute DOMString[] editableAttributes;
-
     readonly attribute <a href="#ContentId">ContentId</a> id;
-
     attribute DOMString name;
-
     readonly attribute <a href="#ContentType">ContentType</a> type;
-
     readonly attribute DOMString mimeType;
-
     readonly attribute DOMString title;
-
     readonly attribute DOMString contentURI;
-
     readonly attribute DOMString[]? thumbnailURIs;
-
     readonly attribute Date? releaseDate;
-
     readonly attribute Date? modifiedDate;
-
     readonly attribute unsigned long size;
-
     attribute DOMString? description;
-
     attribute unsigned long rating;
-
     attribute boolean isFavorite;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
@@ -2078,8 +1916,7 @@ tizen.content.find(findCB);
                       </span><span class="name">editableAttributes</span></span><div class="brief">
  The list of attributes that are editable to the local backend using the update() or updateBatch() method.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2088,8 +1925,7 @@ tizen.content.find(findCB);
 </span><span class="type">ContentId </span><span class="name">id</span></span><div class="brief">
  The opaque content identifier.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2097,8 +1933,7 @@ tizen.content.find(findCB);
 <span class="attrName"><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  The content name. The initial value is the file name of the content.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -2107,8 +1942,7 @@ tizen.content.find(findCB);
 </span><span class="type">ContentType </span><span class="name">type</span></span><div class="brief">
  The content type.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2117,8 +1951,7 @@ tizen.content.find(findCB);
 </span><span class="type">DOMString </span><span class="name">mimeType</span></span><div class="brief">
  The content MIME type.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2127,8 +1960,7 @@ tizen.content.find(findCB);
 </span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
  The content title.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2137,8 +1969,7 @@ tizen.content.find(findCB);
 </span><span class="type">DOMString </span><span class="name">contentURI</span></span><div class="brief">
  The URI to access the content.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2148,8 +1979,7 @@ tizen.content.find(findCB);
                       </span><span class="name">thumbnailURIs</span><span class="optional"> [nullable]</span></span><div class="brief">
  The array of content thumbnail URIs.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2158,8 +1988,7 @@ tizen.content.find(findCB);
 </span><span class="type">Date </span><span class="name">releaseDate</span><span class="optional"> [nullable]</span></span><div class="brief">
  The date when content has been released publicly. If only the release year is known, then the month and date are set to January and 1st respectively.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2168,8 +1997,7 @@ tizen.content.find(findCB);
 </span><span class="type">Date </span><span class="name">modifiedDate</span><span class="optional"> [nullable]</span></span><div class="brief">
  The last modified date for a content item.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2178,8 +2006,7 @@ tizen.content.find(findCB);
 </span><span class="type">unsigned long </span><span class="name">size</span></span><div class="brief">
  The file size of the content in bytes.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2187,8 +2014,7 @@ tizen.content.find(findCB);
 <span class="attrName"><span class="type">DOMString </span><span class="name">description</span><span class="optional"> [nullable]</span></span><div class="brief">
  The content description.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2196,8 +2022,7 @@ tizen.content.find(findCB);
 <span class="attrName"><span class="type">unsigned long </span><span class="name">rating</span></span><div class="brief">
  The content rating. This value can range from <var>0</var> to <var>10</var>.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2205,8 +2030,7 @@ tizen.content.find(findCB);
 <span class="attrName"><span class="type">boolean </span><span class="name">isFavorite</span></span><div class="brief">
   Boolean value that indicates whether a content item is marked as a favorite.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2219,25 +2043,17 @@ tizen.content.find(findCB);
  The VideoContent interface extends a basic <em>Content </em>object with video-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface VideoContent : <a href="#Content">Content</a> {
-
     attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
-
     readonly attribute DOMString? album;
-
     readonly attribute DOMString[]? artists;
-
     readonly attribute unsigned long duration;
-
     readonly attribute unsigned long width;
-
     readonly attribute unsigned long height;
-
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
-
+        
       <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -2245,8 +2061,7 @@ tizen.content.find(findCB);
 <span class="attrName"><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
  The geographical location where the video has been made.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2255,8 +2070,7 @@ tizen.content.find(findCB);
 </span><span class="type">DOMString </span><span class="name">album</span><span class="optional"> [nullable]</span></span><div class="brief">
  The album name to which the video belongs.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2266,8 +2080,7 @@ tizen.content.find(findCB);
                       </span><span class="name">artists</span><span class="optional"> [nullable]</span></span><div class="brief">
  The list of artists who created the video.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2276,8 +2089,7 @@ tizen.content.find(findCB);
 </span><span class="type">unsigned long </span><span class="name">duration</span></span><div class="brief">
  The video duration in milliseconds.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2286,8 +2098,7 @@ tizen.content.find(findCB);
 </span><span class="type">unsigned long </span><span class="name">width</span></span><div class="brief">
  The width of a video in pixels.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2296,8 +2107,7 @@ tizen.content.find(findCB);
 </span><span class="type">unsigned long </span><span class="name">height</span></span><div class="brief">
  The height of the video in pixels.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2310,15 +2120,11 @@ tizen.content.find(findCB);
  The AudioContentLyrics interface provides lyrics for music.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface AudioContentLyrics {
-
     readonly attribute <a href="#AudioContentLyricsType">AudioContentLyricsType</a> type;
-
     readonly attribute unsigned long[] timestamps;
-
     readonly attribute DOMString[] texts;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
@@ -2329,8 +2135,7 @@ tizen.content.find(findCB);
 </span><span class="type">AudioContentLyricsType </span><span class="name">type</span></span><div class="brief">
  The type of lyrics, that is, whether they are synchronized with the music.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2345,8 +2150,7 @@ tizen.content.find(findCB);
 If the lyrics are not synchronized (if there is no time information for the lyrics) the array is undefined.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2361,8 +2165,7 @@ If the lyrics are not synchronized (if there is no time information for the lyri
 If the lyrics are not synchronized, the array has only one member with full lyrics.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2375,31 +2178,20 @@ If the lyrics are not synchronized, the array has only one member with full lyri
  The AudioContent interface extends a basic <em>Content </em>object with audio-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface AudioContent : <a href="#Content">Content</a> {
-
     readonly attribute DOMString? album;
-
     readonly attribute DOMString[]? genres;
-
     readonly attribute DOMString[]? artists;
-
     readonly attribute DOMString[]? composers;
-
     readonly attribute <a href="#AudioContentLyrics">AudioContentLyrics</a>? lyrics;
-
     readonly attribute DOMString? copyright;
-
     readonly attribute unsigned long bitrate;
-
     readonly attribute unsigned short? trackNumber;
-
     readonly attribute unsigned long duration;
-
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
-
+        
       <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -2408,8 +2200,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">DOMString </span><span class="name">album</span><span class="optional"> [nullable]</span></span><div class="brief">
  The album name to which the audio belongs.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2419,8 +2210,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
                       </span><span class="name">genres</span><span class="optional"> [nullable]</span></span><div class="brief">
  The list of genres to which the audio belongs.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2430,8 +2220,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
                       </span><span class="name">artists</span><span class="optional"> [nullable]</span></span><div class="brief">
  The list of artists who created the audio.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2441,8 +2230,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
                       </span><span class="name">composers</span><span class="optional"> [nullable]</span></span><div class="brief">
  The list of composers for the music.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2451,8 +2239,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">AudioContentLyrics </span><span class="name">lyrics</span><span class="optional"> [nullable]</span></span><div class="brief">
  The lyrics of a song in an audio file.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2461,18 +2248,16 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">DOMString </span><span class="name">copyright</span><span class="optional"> [nullable]</span></span><div class="brief">
  The copyright information.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="AudioContent::bitrate">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned long </span><span class="name">bitrate</span></span><div class="brief">
- The audio bitrate in bits per second. By default, this value is 0.
+ The audio bitrate in bits per second. By default, this value is <var>0</var>.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2481,8 +2266,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">unsigned short </span><span class="name">trackNumber</span><span class="optional"> [nullable]</span></span><div class="brief">
  The track number if the audio belongs to an album.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2491,8 +2275,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">unsigned long </span><span class="name">duration</span></span><div class="brief">
  The audio duration in milliseconds.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2505,20 +2288,15 @@ If the lyrics are not synchronized, the array has only one member with full lyri
  The ImageContent interface extends a basic <em>Content </em>object with image-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ImageContent : <a href="#Content">Content</a> {
-
     attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
-
     readonly attribute unsigned long width;
-
     readonly attribute unsigned long height;
-
     attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
-
+        
       <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -2526,8 +2304,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <span class="attrName"><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
  The geographical location where the image has been made.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2536,8 +2313,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">unsigned long </span><span class="name">width</span></span><div class="brief">
  The width of an image in pixels.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2546,8 +2322,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">unsigned long </span><span class="name">height</span></span><div class="brief">
  The height of an image in pixels.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2555,8 +2330,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <span class="attrName"><span class="type">ImageContentOrientation </span><span class="name">orientation</span></span><div class="brief">
  The image orientation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2572,8 +2346,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
   interface PlaylistItem {
     readonly attribute <a href="#Content">Content</a> content;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -2583,8 +2356,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">Content </span><span class="name">content</span></span><div class="brief">
  Content contained in this playlist item.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li></ul>
@@ -2598,41 +2370,23 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <pre class="webidl prettyprint">  [NoInterfaceObject]
   interface Playlist {
     readonly attribute <a href="#PlaylistId">PlaylistId</a> id;
-
     attribute DOMString name raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute long numberOfTracks;
-
     attribute DOMString? thumbnailURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void add(<a href="#Content">Content</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void addBatch(<a href="#Content">Content</a>[] items,
-                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void remove(<a href="#PlaylistItem">PlaylistItem</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback,
-             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-             optional long? count,
+    void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count,
              optional long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items,
-            optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void move(<a href="#PlaylistItem">PlaylistItem</a> item,
-              long delta,
-              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -2643,8 +2397,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 </span><span class="type">PlaylistId </span><span class="name">id</span></span><div class="brief">
  Identifier of a playlist.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2657,16 +2410,13 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 When <var>name</var> is set, the change is recorded in the database.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="exceptionlist">
@@ -2687,8 +2437,7 @@ When <var>name</var> is set, the change is recorded in the database.
 </span><span class="type">long </span><span class="name">numberOfTracks</span></span><div class="brief">
  Number of playlist items in the playlist.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2701,16 +2450,13 @@ When <var>name</var> is set, the change is recorded in the database.
 By default, this attribute is set to <var>null</var>. <br>When <var>thumbnailURI</var> is set, the change is recorded in the database.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="exceptionlist">
@@ -2738,10 +2484,8 @@ By default, this attribute is set to <var>null</var>. <br>When <var>thumbnailURI
 <div class="brief">
  Adds a content item to a playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Content">Content</a> item);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Content">Content</a> item);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -2749,12 +2493,10 @@ By default, this attribute is set to <var>null</var>. <br>When <var>thumbnailURI
 See code example for the <em>createPlaylist()</em> method.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -2762,7 +2504,7 @@ See code example for the <em>createPlaylist()</em> method.
 <ul>
           <li class="param">
 <span class="name">item</span>:
- Content to add
+ Content to add.
                 </li>
         </ul>
 </div>
@@ -2789,10 +2531,8 @@ See code example for the <em>createPlaylist()</em> method.
 <div class="brief">
  Adds tracks to a playlist as a batch, asynchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -2804,12 +2544,10 @@ The errorCallback is launched with these error types:
 UnknownError: In case of any error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -2817,15 +2555,15 @@ UnknownError: In case of any error              </li>
 <ul>
           <li class="param">
 <span class="name">items</span>:
- List of tracks (Content objects) to add
+ List of tracks (Content objects) to add.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when adding a list of content items to a playlist completes successfully
+ Callback method to be invoked when adding a list of content items to a playlist completes successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -2849,18 +2587,14 @@ UnknownError: In case of any error              </li>
 <div class="brief">
  Removes a track from a playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#PlaylistItem">PlaylistItem</a> item);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#PlaylistItem">PlaylistItem</a> item);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -2868,7 +2602,7 @@ UnknownError: In case of any error              </li>
 <ul>
           <li class="param">
 <span class="name">item</span>:
- Playlist item to remove
+ Playlist item to remove.
                 </li>
         </ul>
 </div>
@@ -2888,67 +2622,64 @@ UnknownError: In case of any error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists, gItems, gCurPlaylist;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists, gItems, gCurPlaylist;
 
 function get2Fail(err)
 {
-   console.log("get items (after remove) failed: " + err);
+  console.log("Get items (after remove) failed: " + err);
 }
 
 function get2Success(items)
 {
-   console.log("Playlist items:");
-   for (var i = 0; i &lt; items.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + items[i].content.name);
-   }
+  console.log("Playlist items:");
+  for (var i = 0; i &lt; items.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + items[i].content.name);
+  }
 }
 
 function getSuccess(items)
 {
-   gItems = items;
+  gItems = items;
 
-   if (gItems.length &lt; 1)
-   {
-      console.log("Please add at least 1 tracks to playlist!");
+  if (gItems.length &lt; 1)
+  {
+    console.log("Please add at least 1 tracks to playlist!");
+    return;
+  }
 
-      return;
-   }
+  console.log("Original playlist:");
+  for (var i = 0; i &lt; gItems.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + gItems[i].content.name);
+  }
 
-   console.log("Original playlist:");
-   for (var i = 0; i &lt; gItems.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + gItems[i].content.name);
-   }
-
-   console.log("Will remove item at index [0] name:" + gItems[0].content.name);
-   gCurPlaylist.remove(gItems[0]);
-   gCurPlaylist.get(get2Success, get2Fail);
+  console.log("Will remove item at index [0] name: " + gItems[0].content.name);
+  gCurPlaylist.remove(gItems[0]);
+  gCurPlaylist.get(get2Success, get2Fail);
 }
 
 function getFail(err)
 {
-   console.log("get items failed: " + err);
+  console.log("Get items failed: " + err);
 }
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err);
+  console.log("getPlaylists failed: " + err);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   gPlaylists = playlists;
-   if (gPlaylists.length === 0)
-   {
-      console.log("Please create at least 1 playlist!");
+  gPlaylists = playlists;
+  if (gPlaylists.length === 0)
+  {
+    console.log("Please create at least 1 playlist!");
+    return;
+  }
 
-      return;
-   }
-
-   gCurPlaylist = gPlaylists[0];
-   gCurPlaylist.get(getSuccess, getFail);
+  gCurPlaylist = gPlaylists[0];
+  gCurPlaylist.get(getSuccess, getFail);
 }
 
 tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
@@ -2962,10 +2693,8 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Removes tracks from a playlist as a batch, asynchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -2977,12 +2706,10 @@ The errorCallback is launched with these error types:
 UnknownError: In case of any other error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -2990,15 +2717,15 @@ UnknownError: In case of any other error              </li>
 <ul>
           <li class="param">
 <span class="name">items</span>:
- List of tracks to remove
+ List of tracks to remove.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when removing a list of content items from a playlist completes successfully
+ Callback method to be invoked when removing a list of content items from a playlist completes successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -3015,78 +2742,75 @@ UnknownError: In case of any other error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists, gItems, gCurPlaylist;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists, gItems, gCurPlaylist;
 
 function get2Fail(err)
 {
-   console.log("get items (after remove batch) failed: " + err);
+  console.log("Get items (after remove batch) failed: " + err);
 }
 
 function get2Success(items)
 {
-   console.log("Playlist after remove batch:");
-   for (var i = 0; i &lt; items.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + items[i].content.name);
-   }
+  console.log("Playlist after remove batch:");
+  for (var i = 0; i &lt; items.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + items[i].content.name);
+  }
 }
 
 function removeBatchSuccess()
 {
-   console.log("removeBatch success");
-   gCurPlaylist.get(get2Success, get2Fail);
+  console.log("removeBatch success");
+  gCurPlaylist.get(get2Success, get2Fail);
 }
 
 function removeBatchFail(err)
 {
-   console.log("removeBatch failed: " + err);
+  console.log("removeBatch failed: " + err);
 }
 
 function getSuccess(items)
 {
-   gItems = items;
+  gItems = items;
 
-   if (gItems.length &lt; 4)
-   {
-      console.log("Please add at least 4 tracks to playlist!");
+  if (gItems.length &lt; 4)
+  {
+    console.log("Please add at least 4 tracks to playlist!");
+    return;
+  }
 
-      return;
-   }
+  console.log("Original playlist:");
+  for (var i = 0; i &lt; gItems.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + gItems[i].content.name);
+  }
 
-   console.log("Original playlist:");
-   for (var i = 0; i &lt; gItems.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + gItems[i].content.name);
-   }
-
-   console.log("Will remove items at index [0](name:" + gItems[0].content.name
-               + ") and at index [2](name:" + gItems[2].content.name + ")");
-   gCurPlaylist.removeBatch([gItems[2], gItems[0]], removeBatchSuccess, removeBatchFail);
+  console.log("Will remove items at index [0] (name: " + gItems[0].content.name +
+              ") and at index [2] (name: " + gItems[2].content.name + ")");
+  gCurPlaylist.removeBatch([gItems[2], gItems[0]], removeBatchSuccess, removeBatchFail);
 }
 
 function getFail(err)
 {
-   console.log("get items failed: " + err);
+  console.log("Get items failed: " + err);
 }
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err);
+  console.log("getPlaylists failed: " + err);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   gPlaylists = playlists;
-   if (gPlaylists.length === 0)
-   {
-      console.log("Please create at least 1 playlist!");
+  gPlaylists = playlists;
+  if (gPlaylists.length === 0)
+  {
+    console.log("Please create at least 1 playlist!");
+    return;
+  }
 
-      return;
-   }
-
-   gCurPlaylist = gPlaylists[0];
-   gCurPlaylist.get(getSuccess, getFail);
+  gCurPlaylist = gPlaylists[0];
+  gCurPlaylist.get(getSuccess, getFail);
 }
 
 tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
@@ -3100,10 +2824,9 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Gets playlist items from a playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count, optional long? offset);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count, 
+         optional long? offset);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -3117,12 +2840,10 @@ InvalidValuesError: If any of the input parameters contain an invalid value (e.g
 UnknownError: In case of any error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.read
             </p>
 <div class="parameters">
@@ -3130,11 +2851,11 @@ UnknownError: In case of any error              </li>
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- Callback method to be invoked for a list of tracks in the playlist
+ Callback method to be invoked for a list of tracks in the playlist.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
           <li class="param">
 <span class="name">count</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -3142,7 +2863,7 @@ UnknownError: In case of any error              </li>
                 </li>
           <li class="param">
 <span class="name">offset</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Offset of the track from the beginning of the playlist <br>The default value is <em>0</em> <br>It means no offset.
+ Offset of the track from the beginning of the playlist <br>The default value is <var>0</var> <br>It means no offset.
                 </li>
         </ul>
 </div>
@@ -3159,42 +2880,40 @@ UnknownError: In case of any error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists, gItems, gCurPlaylist;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists, gItems, gCurPlaylist;
 
 function getSuccess(items)
 {
-   gItems = items;
-   console.log("Playlist items:");
-   for (var i = 0; i &lt; items.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + items[i].name);
-   }
+  gItems = items;
+  console.log("Playlist items:");
+  for (var i = 0; i &lt; items.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + items[i].name);
+  }
 }
 
 function getFail(err)
 {
-   console.log("get items failed: " + err);
+  console.log("Get items failed: " + err);
 }
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err);
+  console.log("getPlaylists failed: " + err);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   gPlaylists = playlists;
-   if (gPlaylists.length === 0)
-   {
-      console.log("Please create at least 1 playlist!");
+  gPlaylists = playlists;
+  if (gPlaylists.length === 0)
+  {
+    console.log("Please create at least 1 playlist!");
+    return;
+  }
 
-      return;
-   }
-
-   gCurPlaylist = gPlaylists[0];
-   /* To retrieve all playlist items of 'gCurPlaylist' playlist */
-   gCurPlaylist.get(getSuccess, getFail);
+  gCurPlaylist = gPlaylists[0];
+  /* To retrieves all playlist items of "gCurPlaylist" playlist. */
+  gCurPlaylist.get(getSuccess, getFail);
 }
 
 tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
@@ -3208,10 +2927,8 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Changes the play order of all playlist items in the playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -3225,12 +2942,10 @@ InvalidValuesError: In case the item in the passed <em>items</em> array is not i
 UnknownError: In case of any other error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -3242,11 +2957,11 @@ UnknownError: In case of any other error              </li>
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when changing the positions of items in the playlist is successfully completed
+ Callback method to be invoked when changing the positions of items in the playlist is successfully completed.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -3263,85 +2978,82 @@ UnknownError: In case of any other error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists, gItems, gCurPlaylist, gExpectedOrder;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists, gItems, gCurPlaylist, gExpectedOrder;
 
 function get2Fail(err)
 {
-   console.log("get items (after set order) failed: " + err);
+  console.log("Get items (after set order) failed: " + err);
 }
 
 function get2Success(items)
 {
-   console.log("Playlist order after setOrder:");
-   for (var i = 0; i &lt; items.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + items[i].content.name);
-   }
+  console.log("Playlist order after setOrder:");
+  for (var i = 0; i &lt; items.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + items[i].content.name);
+  }
 }
 
 function setOrderSuccess()
 {
-   console.log("set items order SUCCESS");
-   gCurPlaylist.get(get2Success, get2Fail);
+  console.log("Set items order SUCCESS");
+  gCurPlaylist.get(get2Success, get2Fail);
 }
 
 function setOrderFail(err)
 {
-   console.log("set items order failed: " + err);
+  console.log("Set items order failed: " + err);
 }
 
 function getSuccess(items)
 {
-   gItems = items;
+  gItems = items;
 
-   if (gItems.length &lt; 2)
-   {
-      console.log("Please add at least 2 tracks to playlist!");
+  if (gItems.length &lt; 2)
+  {
+    console.log("Please add at least 2 tracks to playlist!");
+    return;
+  }
 
-      return;
-   }
+  console.log("Original order:");
+  for (var i = 0; i &lt; gItems.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + gItems[i].content.name);
+  }
 
-   console.log("Original order:");
-   for (var i = 0; i &lt; gItems.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + gItems[i].content.name);
-   }
+  gExpectedOrder = gItems.slice(0);
+  gExpectedOrder.reverse();
 
-   gExpectedOrder = gItems.slice(0);
-   gExpectedOrder.reverse();
+  console.log("New order:");
+  for (var i = 0; i &lt; gExpectedOrder.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + gExpectedOrder[i].content.name);
+  }
 
-   console.log("New order:");
-   for (var i = 0; i &lt; gExpectedOrder.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + gExpectedOrder[i].content.name);
-   }
-
-   gCurPlaylist.setOrder(gExpectedOrder, setOrderSuccess, setOrderFail);
+  gCurPlaylist.setOrder(gExpectedOrder, setOrderSuccess, setOrderFail);
 }
 
 function getFail(err)
 {
-   console.log("get items failed: " + err);
+  console.log("get items failed: " + err);
 }
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err);
+  console.log("getPlaylists failed: " + err);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   gPlaylists = playlists;
-   if (gPlaylists.length === 0)
-   {
-      console.log("Please create at least 1 playlist!");
+  gPlaylists = playlists;
+  if (gPlaylists.length === 0)
+  {
+    console.log("Please create at least 1 playlist!");
+    return;
+  }
 
-      return;
-   }
-
-   gCurPlaylist = gPlaylists[0];
-   gCurPlaylist.get(getSuccess, getFail);
+  gCurPlaylist = gPlaylists[0];
+  gCurPlaylist.get(getSuccess, getFail);
 }
 
 tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
@@ -3355,10 +3067,8 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Moves the specified item up or down a specified amount in the play order.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -3381,12 +3091,10 @@ InvalidValuesError: In case the item in the passed <em>items</em> array is not i
 UnknownError: In case of any other error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/content.write
             </p>
 <div class="parameters">
@@ -3394,19 +3102,19 @@ UnknownError: In case of any other error              </li>
 <ul>
           <li class="param">
 <span class="name">item</span>:
- Playlist item to move
+ Playlist item to move.
                 </li>
           <li class="param">
 <span class="name">delta</span>:
- How many positions to move the item, negative value means move up, positive means move down
+ How many positions to move the item, negative value means move up, positive means move down.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when the playlist item has successfully been moved
+ Callback method to be invoked when the playlist item has successfully been moved.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs
+ Callback method to be invoked when an error occurs.
                 </li>
         </ul>
 </div>
@@ -3423,80 +3131,77 @@ UnknownError: In case of any other error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var gPlaylists, gItems, gCurPlaylist;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gPlaylists, gItems, gCurPlaylist;
 
 function get2Fail(err)
 {
-   console.log("get items (after move item) failed: " + err);
+  console.log("Get items (after move item) failed: " + err);
 }
 
 function get2Success(items)
 {
-   console.log("Playlist order after move:");
-   for (var i = 0; i &lt; items.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + items[i].content.name);
-   }
+  console.log("Playlist order after move:");
+  for (var i = 0; i &lt; items.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + items[i].content.name);
+  }
 }
 
 function moveSuccess()
 {
-   console.log("move item SUCCESS");
-   gCurPlaylist.get(get2Success, get2Fail);
+  console.log("Move item SUCCESS");
+  gCurPlaylist.get(get2Success, get2Fail);
 }
 
 function moveFail(err)
 {
-   console.log("move item failed: " + err);
+  console.log("Move item failed: " + err);
 }
 
 function getSuccess(items)
 {
-   gItems = items;
+  gItems = items;
 
-   if (gItems.length &lt; 2)
-   {
-      console.log("Please add at least 2 tracks to playlist!");
+  if (gItems.length &lt; 2)
+  {
+    console.log("Please add at least 2 tracks to playlist!");
+    return;
+  }
 
-      return;
-   }
+  console.log("Original order:");
+  for (var i = 0; i &lt; gItems.length; ++i)
+  {
+    console.log("[" + i + "]: name: " + gItems[i].content.name);
+  }
 
-   console.log("Original order:");
-   for (var i = 0; i &lt; gItems.length; ++i)
-   {
-      console.log("[" + i + "]: name:" + gItems[i].content.name);
-   }
+  console.log("Will move item at index [1] (name: " + gItems[1].content.name +
+              ") up by one place (to [0])");
 
-   console.log("Will move item at index [1] (name: " +
-               gItems[1].content.name + ") up by one place (to [0])");
-
-   gCurPlaylist.move(gItems[1], -1, moveSuccess, moveFail);
-   gItems.unshift(gItems.splice(1, 1)[0]);
+  gCurPlaylist.move(gItems[1], -1, moveSuccess, moveFail);
+  gItems.unshift(gItems.splice(1, 1)[0]);
 }
 
 function getFail(err)
 {
-   console.log("get items failed: " + err);
+  console.log("Get items failed: " + err);
 }
 
 function getPlaylistsFail(err)
 {
-   console.log("getPlaylists failed: " + err);
+  console.log("getPlaylists failed: " + err);
 }
 
 function getPlaylistsSuccess(playlists)
 {
-   gPlaylists = playlists;
-   if (gPlaylists.length === 0)
-   {
-      console.log("Please create at least 1 playlist!");
+  gPlaylists = playlists;
+  if (gPlaylists.length === 0)
+  {
+    console.log("Please create at least 1 playlist!");
+    return;
+  }
 
-      return;
-   }
-
-   gCurPlaylist = gPlaylists[0];
-   gCurPlaylist.get(getSuccess, getFail);
+  gCurPlaylist = gPlaylists[0];
+  gCurPlaylist.get(getSuccess, getFail);
 }
 
 tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
@@ -3514,8 +3219,7 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistArraySuccessCallback {
     void onsuccess(<a href="#Playlist">Playlist</a>[] playlists);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -3533,10 +3237,8 @@ It is used in <em>tizen.content.getPlaylists()</em>.
 <div class="brief">
  Called when the <em>tizen.content.getPlaylists()</em> method completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Playlist">Playlist</a>[] playlists);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Playlist">Playlist</a>[] playlists);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -3544,7 +3246,7 @@ It is used in <em>tizen.content.getPlaylists()</em>.
 <ul>
           <li class="param">
 <span class="name">playlists</span>:
- List of all playlists on a device
+ List of all playlists on a device.
                 </li>
         </ul>
 </div>
@@ -3560,8 +3262,7 @@ It is used in <em>tizen.content.getPlaylists()</em>.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistSuccessCallback {
     void onsuccess(<a href="#Playlist">Playlist</a> playlist);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -3579,10 +3280,8 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <div class="brief">
  Called when the <em>tizen.content.createPlaylist()</em> method completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Playlist">Playlist</a> playlist);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Playlist">Playlist</a> playlist);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -3590,7 +3289,7 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <ul>
           <li class="param">
 <span class="name">playlist</span>:
- Newly created playlist
+ Newly created playlist.
                 </li>
         </ul>
 </div>
@@ -3606,8 +3305,7 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistItemArraySuccessCallback {
     void onsuccess(<a href="#PlaylistItem">PlaylistItem</a>[] items);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -3620,10 +3318,8 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <div class="brief">
  Called when the <em>playlist.get()</em> method completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PlaylistItem">PlaylistItem</a>[] items);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PlaylistItem">PlaylistItem</a>[] items);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
@@ -3631,7 +3327,7 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <ul>
           <li class="param">
 <span class="name">items</span>:
- List of playlist items
+ List of playlist items.
                 </li>
         </ul>
 </div>
@@ -3647,8 +3343,7 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ThumbnailSuccessCallback {
     void onsuccess(DOMString path);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="methods">
@@ -3661,10 +3356,8 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <div class="brief">
  Called when the <em>tizen.content.createThumbnail()</em> method completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString path);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString path);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -3672,7 +3365,7 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 <ul>
           <li class="param">
 <span class="name">path</span>:
- Path of the created thumbnail
+ Path of the created thumbnail.
                 </li>
         </ul>
 </div>
@@ -3683,267 +3376,144 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Content {
-
   enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };
-
   enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };
-
   enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };
-
-  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE", "ROTATE_270" };
-
+  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE",
+    "ROTATE_270" };
   typedef DOMString ContentId;
-
   typedef DOMString ContentDirectoryId;
-
   typedef DOMString PlaylistId;
-
   [NoInterfaceObject] interface ContentManagerObject {
     readonly attribute <a href="#ContentManager">ContentManager</a> content;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContentManagerObject">ContentManagerObject</a>;
-
   [NoInterfaceObject] interface ContentManager {
-
     void update(<a href="#Content">Content</a> content) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void updateBatch(<a href="#Content">Content</a>[] contents,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-              optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId,
-              optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
-              optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
-              optional unsigned long? count,
-              optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-    void scanFile(DOMString contentURI,
-                  optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void scanDirectory(DOMString contentDirURI,
-                       boolean recursive,
-                       optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback,
+    void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getDirectories(<a href="#ContentDirectoryArraySuccessCallback">ContentDirectoryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+              optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
+              optional unsigned long? count, optional unsigned long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void scanFile(DOMString contentURI, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void scanDirectory(DOMString contentDirURI, boolean recursive, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback,
                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void cancelScanDirectory(DOMString contentDirURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void setChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void unsetChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void createPlaylist(DOMString name,
-                        <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                         optional <a href="#Playlist">Playlist</a>? sourcePlaylist) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id,
-                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void createThumbnail(<a href="#Content">Content</a> content,
-                         <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void createThumbnail(<a href="#Content">Content</a> content, <a href="#ThumbnailSuccessCallback">ThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ContentArraySuccessCallback {
     void onsuccess(<a href="#Content">Content</a>[] contents);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ContentDirectoryArraySuccessCallback {
     void onsuccess(<a href="#ContentDirectory">ContentDirectory</a>[] directories);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ContentScanSuccessCallback {
     void onsuccess(DOMString uri);
   };
-
   [Callback, NoInterfaceObject] interface ContentChangeCallback {
     void oncontentadded(<a href="#Content">Content</a> content);
-
     void oncontentupdated(<a href="#Content">Content</a> content);
-
     void oncontentremoved(<a href="#ContentId">ContentId</a> id);
-
     void oncontentdiradded(<a href="#ContentDirectory">ContentDirectory</a> contentDir);
-
     void oncontentdirupdated(<a href="#ContentDirectory">ContentDirectory</a> contentDir);
-
     void oncontentdirremoved(<a href="#ContentDirectoryId">ContentDirectoryId</a> id);
   };
-
-
   [NoInterfaceObject] interface ContentDirectory {
-
     readonly attribute <a href="#ContentDirectoryId">ContentDirectoryId</a> id;
-
     readonly attribute DOMString directoryURI;
-
     readonly attribute DOMString title;
-
     readonly attribute <a href="#ContentDirectoryStorageType">ContentDirectoryStorageType</a> storageType;
-
     readonly attribute Date? modifiedDate;
-
-   };
-
+  };
   [NoInterfaceObject] interface Content {
-
     readonly attribute DOMString[] editableAttributes;
-
     readonly attribute <a href="#ContentId">ContentId</a> id;
-
     attribute DOMString name;
-
     readonly attribute <a href="#ContentType">ContentType</a> type;
-
     readonly attribute DOMString mimeType;
-
     readonly attribute DOMString title;
-
     readonly attribute DOMString contentURI;
-
     readonly attribute DOMString[]? thumbnailURIs;
-
     readonly attribute Date? releaseDate;
-
     readonly attribute Date? modifiedDate;
-
     readonly attribute unsigned long size;
-
     attribute DOMString? description;
-
     attribute unsigned long rating;
-
     attribute boolean isFavorite;
   };
-
   [NoInterfaceObject] interface VideoContent : <a href="#Content">Content</a> {
-
     attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
-
     readonly attribute DOMString? album;
-
     readonly attribute DOMString[]? artists;
-
     readonly attribute unsigned long duration;
-
     readonly attribute unsigned long width;
-
     readonly attribute unsigned long height;
-
   };
-
-
   [NoInterfaceObject] interface AudioContentLyrics {
-
     readonly attribute <a href="#AudioContentLyricsType">AudioContentLyricsType</a> type;
-
     readonly attribute unsigned long[] timestamps;
-
     readonly attribute DOMString[] texts;
   };
-
   [NoInterfaceObject] interface AudioContent : <a href="#Content">Content</a> {
-
     readonly attribute DOMString? album;
-
     readonly attribute DOMString[]? genres;
-
     readonly attribute DOMString[]? artists;
-
     readonly attribute DOMString[]? composers;
-
     readonly attribute <a href="#AudioContentLyrics">AudioContentLyrics</a>? lyrics;
-
     readonly attribute DOMString? copyright;
-
     readonly attribute unsigned long bitrate;
-
     readonly attribute unsigned short? trackNumber;
-
     readonly attribute unsigned long duration;
-
   };
-
   [NoInterfaceObject] interface ImageContent : <a href="#Content">Content</a> {
-
     attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
-
     readonly attribute unsigned long width;
-
     readonly attribute unsigned long height;
-
     attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
   };
-
   [NoInterfaceObject]
   interface PlaylistItem {
     readonly attribute <a href="#Content">Content</a> content;
   };
-
   [NoInterfaceObject]
   interface Playlist {
     readonly attribute <a href="#PlaylistId">PlaylistId</a> id;
-
     attribute DOMString name raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute long numberOfTracks;
-
     attribute DOMString? thumbnailURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void add(<a href="#Content">Content</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void addBatch(<a href="#Content">Content</a>[] items,
-                  optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void addBatch(<a href="#Content">Content</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void remove(<a href="#PlaylistItem">PlaylistItem</a> item) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items,
-                     optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback,
-             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-             optional long? count,
+    void removeBatch(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count,
              optional long? offset) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items,
-            optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void move(<a href="#PlaylistItem">PlaylistItem</a> item,
-              long delta,
-              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setOrder(<a href="#PlaylistItem">PlaylistItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void move(<a href="#PlaylistItem">PlaylistItem</a> item, long delta, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistArraySuccessCallback {
     void onsuccess(<a href="#Playlist">Playlist</a>[] playlists);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistSuccessCallback {
     void onsuccess(<a href="#Playlist">Playlist</a> playlist);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface PlaylistItemArraySuccessCallback {
     void onsuccess(<a href="#PlaylistItem">PlaylistItem</a>[] items);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ThumbnailSuccessCallback {
     void onsuccess(DOMString path);
   };

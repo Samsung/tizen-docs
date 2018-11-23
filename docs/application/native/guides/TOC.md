@@ -3,15 +3,17 @@
 ## [UI Applications](/application/native/guides/app-management/ui-app/index.md)
 ## [Service Applications](/application/native/guides/app-management/service-app.md)
 ## Application Information and Controls
+### [Overview](/application/native/guides/app-management/app-info-control.md)
 ### [Application Resources](/application/native/guides/app-management/app-resources.md)
 ### [Application Preferences](/application/native/guides/app-management/app-preferences.md)
 ### [Application Icons](/application/native/guides/app-management/app-icons.md)
 ### [Application Controls](/application/native/guides/app-management/app-controls.md)
-### [Common Application Controls](/application/native/guides/app-management/common-appcontrol.md)
+### [Common Application Controls](/application/native/guides/app-management/common-appcontrols.md)
 ### [Application Manager](/application/native/guides/app-management/app-manager.md)
 ### [Package Manager](/application/native/guides/app-management/package-manager.md)
 ### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
 ## Application Data Exchange
+### [Overview](/application/native/guides/app-management/app-communication.md)
 ### [Message Port](/application/native/guides/app-management/message-port.md)
 ### [Data Control](/application/native/guides/app-management/data-control.md)
 ### [Data Bundle](/application/native/guides/app-management/data-bundles.md)
@@ -62,7 +64,7 @@
 ## [Alarms](/application/native/guides/alarm/alarms.md)
 ## [Contextual System Event Trigger](/application/native/guides/alarm/trigger.md)
 
-# Media and Camera
+# Multimedia
 ## [Overview](/application/native/guides/multimedia/overview.md)
 ## Media Content and Metadata
 ### [Media Content](/application/native/guides/multimedia/media-content.md)
@@ -73,13 +75,12 @@
 ### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
-## Audio Management
-### [OpenAL](/application/native/guides/multimedia/openal.md)
-### [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
-### [Sound Pools](/application/native/guides/multimedia/sound-pool.md)
 ## [Media Playback](/application/native/guides/multimedia/media-playback.md)
 ## [Media Recording](/application/native/guides/multimedia/media-recording.md)
 ## [Raw Audio Playback and Recording](/application/native/guides/multimedia/raw-audio.md)
+## [Sound Manager](/application/native/guides/multimedia/sound-manager.md)
+## [Sound Pools](/application/native/guides/multimedia/sound-pool.md)
+## [OpenAL](/application/native/guides/multimedia/openal.md)
 ## [Media Controller](/application/native/guides/multimedia/media-controller.md)
 ## [Media Conversions](/application/native/guides/multimedia/media-conversions.md)
 ## [Media Handle Management](/application/native/guides/multimedia/media-handle.md)
@@ -98,7 +99,8 @@
 ## [Smart Card](/application/native/guides/connectivity/smartcard.md)
 ## [Wi-Fi](/application/native/guides/connectivity/wifi.md)
 ## [Wi-Fi Direct&reg;](/application/native/guides/connectivity/wifi-direct.md)
-## [STC (Smart Traffic Control)](/application/native/guides/connectivity/stc.md)
+## [SoftAP](/application/native/guides/connectivity/softap.md)
+## [Smart Traffic Control (STC)](/application/native/guides/connectivity/stc.md)
 ## [Telephony Information](/application/native/guides/connectivity/telephony.md)
 ## [USB Host](/application/native/guides/connectivity/usb-host.md)
 ## Internet and Content Downloads
@@ -106,7 +108,6 @@
 ### [Download](/application/native/guides/connectivity/download.md)
 ### [Curl](/application/native/guides/connectivity/curl.md)
 ### [HTTP](/application/native/guides/connectivity/http.md)
-### [Service Access through Plugins](/application/native/guides/connectivity/plugins.md)
 ### [Web View](/application/native/guides/connectivity/web-view.md)
 ## [File Transfer with MTP](/application/native/guides/connectivity/mtp.md)
 ## [VPN Connections](/application/native/guides/connectivity/vpn.md)
@@ -137,6 +138,7 @@
 ## [Speech-to-text](/application/native/guides/text-input/stt.md)
 ## [Text-to-speech](/application/native/guides/text-input/tts.md)
 ## [Voice Control](/application/native/guides/text-input/voice-control.md)
+## [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
 
 # Personal Data
 ## [Overview](/application/native/guides/personal/overview.md)
@@ -171,6 +173,7 @@
 ## [Cryptographic Operations](/application/native/guides/security/yaca.md)
 ## [Device Policy Management](/application/native/guides/security/dpm.md)
 ## [Malware Scanning and Web Protection](/application/native/guides/security/csr.md)
+## [Device Certificate Manager](/application/native/guides/security/device-certificate-manager.md)
 ## [Security Tips](/application/native/guides/security/security-tip.md)
 
 # Error Handling
@@ -181,5 +184,10 @@
 # Performance
 ## [Overview](/application/native/guides/performance/overview.md)
 ## [Tracepoints](/application/native/guides/performance/tracepoints.md)
+
+# Watchface Complication
+## [Overview](/application/native/guides/compliations/overview.md)
+## [Watchface Complication](/application/native/guides/compliations/watchface-complication.md)
+## [Complication Provider](/application/native/guides/compliations/watchface-complication-provider.md)
 
 # [Migration Guide](/application/native/guides/migration-guide.md)
