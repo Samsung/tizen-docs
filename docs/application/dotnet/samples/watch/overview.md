@@ -32,7 +32,7 @@ for TD:
 			<p>This sample application demonstrates how to create a watch application that supports ambient mode in Tizen wearable device. It also demonstrates how to create a circular watch face using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.<br>
 			To extend battery life, a watch application can display a limited UI in the ambient mode by detecting ambient mode changes.<br>
 			</p>
-			<p>In <strong>tizen-manifest.xml</strong> file, set <code>ambient-support</code> attribute to true:<br>
+			<p>In <code>tizen-manifest.xml</code> file, set <code>ambient-support</code> attribute to true:<br>
 			For more information, see ambient-support attribute.
 			<br>
 			<code>
@@ -51,6 +51,19 @@ for TD:
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="180" src="media/wchronograph.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ChronographWatch" target="_blank"><strong>(W) ChronographWatch</strong></a></p>
+			<p>This sample application demonstrates how to create a circular watch with continuously moving hands. It also demonstrates how to use watch face API using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.<br>
+            This sample application includes the watch and stopwatch functionality.</p>
+			<p>In addition, there are similar native and web sample applications.<br>
+			<ul>
+				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Chronograph_Watch" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Chronograph_Watch" target="_blank">Web version</a></li>
+			</ul></p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="180" src="media/wclassicwatch.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ClassicWatch" target="_blank"><strong>(W) ClassicWatch</strong></a></p>
@@ -63,16 +76,18 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/wchronograph.png" width="180"/></td>
+			<td><img alt="" height="180" src="media/w43pulsometersdc.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ChronographWatch" target="_blank"><strong>(W) ChronographWatch</strong></a></p>
-			<p>This sample application demonstrates how to create a circular watch with continuously moving hands. It also demonstrates how to use watch face API using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.<br>
-            This sample application includes the watch and stopwatch functionality.</p>
-			<p>In addition, there are similar native and web sample applications.<br>
-			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Chronograph_Watch" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Chronograph_Watch" target="_blank">Web version</a></li>
-			</ul></p>
+                        <p><strong>(W) PulsometerSDC</strong> [In progress]</p>
+			<p>This sample application demonstrates how to measure the heart rate using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.HeartRateMonitor.html" target="_blank">Tizen Sensor API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w42watchfacesdc.png" width="180"/></td>
+			<td>
+                        <p><strong>(W) WatchFaceSDC</strong> [In progress]</p>
+			<p>This sample application demonstrates how to create watch face app using Xamarin Forms.</p>
+                        <p>Additionally, it shows how to extend functionality of the app by displaying battery related properties on the watch face. <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Battery.html" target="_blank">Tizen Battery API</a> provides data for extending the functionality.</p>
 			</td>
 		</tr>
 		<tr>
