@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemInfo">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>SystemInfo API</h1></div>
 <div class="brief">
  This specification defines interfaces and methods that provide web applications with access to various properties of a system.
@@ -52,7 +52,7 @@ STORAGE          </li>
 WIFI_NETWORK          </li>
         </ul>
         <p>
-Not all above properties may be available on every Tizen device. For instance, a device may not support the telephony feature. In that case, <var>CELLULAR_NETWORK</var> and <var>SIM</var> are not available.<br><br>To check the available <var>SystemInfoPropertyId</var>, use <em>tizen.systeminfo.getCapability()</em>.
+Not all above properties may be available on every Tizen device. For instance, a device may not support the telephony feature. In that case, <var>CELLULAR_NETWORK</var> and <var>SIM</var> are not available.<br><br>To check the available <a href="#SystemInfoPropertyId">SystemInfoPropertyId</a>, <a href="#SystemInfo::getCapability">getCapability()</a> method can be used.
         </p>
         <ul>
           <li>
@@ -71,27 +71,32 @@ Not all above properties may be available on every Tizen device. For instance, a
  WIFI_NETWORK     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.wifi"</em>)          </li>
         </ul>
         <p>
-For more information on the SystemInfo features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/system-information">System Information Guide</a>.
+For more information on the System Information features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/system-information">System Information Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#SystemInfoPropertyId">SystemInfoPropertyId</a>
+<li>
+                    1.1. <a href="#SystemInfoPropertyId">SystemInfoPropertyId</a>
 </li>
-<li>1.2. <a href="#SystemInfoNetworkType">SystemInfoNetworkType</a>
+<li>
+                    1.2. <a href="#SystemInfoNetworkType">SystemInfoNetworkType</a>
 </li>
-<li>1.3. <a href="#SystemInfoDeviceOrientationStatus">SystemInfoDeviceOrientationStatus</a>
+<li>
+                    1.3. <a href="#SystemInfoDeviceOrientationStatus">SystemInfoDeviceOrientationStatus</a>
 </li>
-<li>1.4. <a href="#SystemInfoSimState">SystemInfoSimState</a>
+<li>
+                    1.4. <a href="#SystemInfoSimState">SystemInfoSimState</a>
 </li>
-<li>1.5. <a href="#SystemInfoProfile">SystemInfoProfile</a>
+<li>
+                    1.5. <a href="#SystemInfoProfile">SystemInfoProfile</a>
 </li>
-<li>1.6. <a href="#SystemInfoLowMemoryStatus">SystemInfoLowMemoryStatus</a>
+<li>
+                    1.6. <a href="#SystemInfoLowMemoryStatus">SystemInfoLowMemoryStatus</a>
 </li>
 </ul>
 </li>
@@ -100,7 +105,7 @@ For more information on the SystemInfo features, see <a href="https://developer.
 </li>
 <li>2.2. <a href="#SystemInfo">SystemInfo</a>
 </li>
-<li>2.3. <a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a>
+<li class="deprecated">2.3. <a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a>
 </li>
 <li>2.4. <a href="#SystemInfoOptions">SystemInfoOptions</a>
 </li>
@@ -163,20 +168,17 @@ For more information on the SystemInfo features, see <a href="https://developer.
 </tr>
 <tr>
 <td><a href="#SystemInfo">SystemInfo</a></td>
-<td>long long <a href="#SystemInfo::getTotalMemory">getTotalMemory</a> ()<br>
-    long long <a href="#SystemInfo::getAvailableMemory">getAvailableMemory</a> ()<br>
-    <a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a> <a href="#SystemInfo::getCapabilities">getCapabilities</a> ()<br>
-    any <a href="#SystemInfo::getCapability">getCapability</a> (DOMString key)<br>
-    long <a href="#SystemInfo::getCount">getCount</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property)<br>
-    void <a href="#SystemInfo::getPropertyValue">getPropertyValue</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#SystemInfo::getPropertyValueArray">getPropertyValueArray</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    unsigned long <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    unsigned long <a href="#SystemInfo::addPropertyValueArrayChangeListener">addPropertyValueArrayChangeListener</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#SystemInfo::removePropertyValueChangeListener">removePropertyValueChangeListener</a> (unsigned long listenerId)</td>
-</tr>
-<tr>
-<td><a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a></td>
-<td></td>
+<td>
+<div>long long <a href="#SystemInfo::getTotalMemory">getTotalMemory</a> ()</div>
+<div>long long <a href="#SystemInfo::getAvailableMemory">getAvailableMemory</a> ()</div>
+<div>any <a href="#SystemInfo::getCapability">getCapability</a> (DOMString key)</div>
+<div>long <a href="#SystemInfo::getCount">getCount</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property)</div>
+<div>void <a href="#SystemInfo::getPropertyValue">getPropertyValue</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#SystemInfo::getPropertyValueArray">getPropertyValueArray</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>unsigned long <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>unsigned long <a href="#SystemInfo::addPropertyValueArrayChangeListener">addPropertyValueArrayChangeListener</a> (<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#SystemInfo::removePropertyValueChangeListener">removePropertyValueChangeListener</a> (unsigned long listenerId)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#SystemInfoOptions">SystemInfoOptions</a></td>
@@ -184,11 +186,11 @@ For more information on the SystemInfo features, see <a href="https://developer.
 </tr>
 <tr>
 <td><a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a></td>
-<td>void <a href="#SystemInfoPropertySuccessCallback::onsuccess">onsuccess</a> (<a href="#SystemInfoProperty">SystemInfoProperty</a> property)</td>
+<td><div>void <a href="#SystemInfoPropertySuccessCallback::onsuccess">onsuccess</a> (<a href="#SystemInfoProperty">SystemInfoProperty</a> property)</div></td>
 </tr>
 <tr>
 <td><a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a></td>
-<td>void <a href="#SystemInfoPropertyArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#SystemInfoProperty">SystemInfoProperty</a>[] properties)</td>
+<td><div>void <a href="#SystemInfoPropertyArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#SystemInfoProperty">SystemInfoProperty</a>[] properties)</div></td>
 </tr>
 <tr>
 <td><a href="#SystemInfoProperty">SystemInfoProperty</a></td>
@@ -256,7 +258,7 @@ For more information on the SystemInfo features, see <a href="https://developer.
 </tr>
 <tr>
 <td><a href="#SystemInfoCameraFlash">SystemInfoCameraFlash</a></td>
-<td>void <a href="#SystemInfoCameraFlash::setBrightness">setBrightness</a> (double brightness)</td>
+<td><div>void <a href="#SystemInfoCameraFlash::setBrightness">setBrightness</a> (double brightness)</div></td>
 </tr>
 </tbody>
 </table>
@@ -267,22 +269,22 @@ For more information on the SystemInfo features, see <a href="https://developer.
 <div class="brief">
  The device property identifier.
           </div>
-<pre class="webidl prettyprint">  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK", "ETHERNET_NETWORK", "CELLULAR_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "CAMERA_FLASH" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK",
+    "ETHERNET_NETWORK", "CELLULAR_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "CAMERA_FLASH" };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
-<p><span class="remark"> Remark : </span>
- <em>CAMERA_FLASH</em> is supported since Tizen 2.4
+<p><span class="remark">Remark: </span>
+ <var>CAMERA_FLASH</var> is supported since Tizen 2.4
           </p>
-<p><span class="remark"> Remark : </span>
- <em>ETHERNET_NETWORK</em> is supported since Tizen 2.4
+<p><span class="remark">Remark: </span>
+ <var>ETHERNET_NETWORK</var> is supported since Tizen 2.4
           </p>
-<p><span class="remark"> Remark : </span>
- <em>LOCALE</em> and <em>PERIPHERAL</em> are supported since Tizen 2.1
+<p><span class="remark">Remark: </span>
+ <var>LOCALE</var> and <var>PERIPHERAL</var> are supported since Tizen 2.1
           </p>
-<p><span class="remark"> Remark : </span>
- <em>MEMORY</em> is supported since Tizen 2.3
+<p><span class="remark">Remark: </span>
+ <var>MEMORY</var> is supported since Tizen 2.3
           </p>
 </div>
 <div class="enum" id="SystemInfoNetworkType">
@@ -291,8 +293,7 @@ For more information on the SystemInfo features, see <a href="https://developer.
  Data Network Type.
           </div>
 <pre class="webidl prettyprint">  enum SystemInfoNetworkType { "NONE", "2G", "2.5G", "3G", "4G", "WIFI", "ETHERNET", "UNKNOWN" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 </div>
@@ -302,8 +303,7 @@ For more information on the SystemInfo features, see <a href="https://developer.
  Device Orientation Status.
           </div>
 <pre class="webidl prettyprint">  enum SystemInfoDeviceOrientationStatus { "PORTRAIT_PRIMARY", "PORTRAIT_SECONDARY", "LANDSCAPE_PRIMARY", "LANDSCAPE_SECONDARY" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -362,27 +362,24 @@ Upside down, in other words rotated 180 degrees              </td>
  SIM State.
           </div>
 <pre class="webidl prettyprint">  enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED", "SIM_LOCKED", "UNKNOWN" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 </div>
 <div class="enum" id="SystemInfoProfile">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoProfile"></a><h3>1.5. SystemInfoProfile</h3>
 <div class="brief">
- Device Profile.
+ Device profile.
           </div>
-<div class="deprecated"><p><font color="red"><i><b>Deprecated.</b>
- <em>"MOBILE_FULL"</em> and <em>"MOBILE_WEB"</em> are deprecated since 2.3. Beginning with Tizen 2.3, <em>"MOBILE"</em> is returned instead of <em>"MOBILE_FULL"</em>.
-          </i></font></p></div>
-<pre class="webidl prettyprint">  enum SystemInfoProfile { "MOBILE_FULL", "MOBILE_WEB", "MOBILE", "WEARABLE" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };</pre>
+<p><span class="version">Since: </span>
  2.2
           </p>
-<p><span class="remark"> Remark : </span>
- <em>"MOBILE"</em> and <em>"WEARABLE"</em> are supported since Tizen 2.3
+<p><span class="remark">Remark: </span>
+ <var>MOBILE</var>, <var>WEARABLE</var> and <var>TV</var> are supported since Tizen 2.3
           </p>
+<p><span class="remark">Remark: </span>
+ <var>MOBILE_FULL</var> and <var>MOBILE_WEB</var> are deprecated since 2.3. Beginning with Tizen 2.3, <var>MOBILE</var> is returned instead of <var>MOBILE_FULL</var>          </p>
 </div>
 <div class="enum" id="SystemInfoLowMemoryStatus">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoLowMemoryStatus"></a><h3>1.6. SystemInfoLowMemoryStatus</h3>
@@ -390,16 +387,15 @@ Upside down, in other words rotated 180 degrees              </td>
  The low memory state of a device.
           </div>
 <pre class="webidl prettyprint">  enum SystemInfoLowMemoryStatus { "NORMAL", "WARNING" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
           <ul>
             <li>
-NORMAL - indicating the remaining memory is sufficient for an application to run             </li>
+NORMAL - indicating the remaining memory is sufficient for an application to run            </li>
             <li>
-WARNING - indicating the remaining memory is insufficient. Low memory warnings may happen differently according to the system.             </li>
+WARNING - indicating the remaining memory is insufficient. Low memory warnings may happen differently according to the system            </li>
           </ul>
          </div>
 </div>
@@ -415,14 +411,13 @@ WARNING - indicating the remaining memory is insufficient. Low memory warnings m
     readonly attribute <a href="#SystemInfo">SystemInfo</a> systeminfo;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemInfoObject">SystemInfoObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
           <p>
 There will be a tizen.systeminfo object that allows accessing the
-functionality of the SystemInfo API.
+functionality of the System Information API.
           </p>
          </div>
 </div>
@@ -433,33 +428,20 @@ functionality of the SystemInfo API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfo {
     long long getTotalMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long long getAvailableMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    <a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a> getCapabilities() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     any getCapability(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long getCount(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                          <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
+    void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                          <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                                        <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
-                                        optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options,
-                                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
+                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
+                                                 optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                                                 raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long addPropertyValueArrayChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                                        <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
-                                        optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options,
-                                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+                                                      <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
+                                                      optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                                                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePropertyValueChangeListener(unsigned long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <div class="description">
@@ -478,10 +460,8 @@ and for subscribing notifications of system information changes.
 <div class="brief">
  Gets the total amount of system memory (in bytes).
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long long getTotalMemory();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long long getTotalMemory();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="exceptionlist">
@@ -492,9 +472,9 @@ and for subscribing notifications of system information changes.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // To get total amount of system memory
- console.log("The total memory size is " + tizen.systeminfo.getTotalMemory() + " bytes.");
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* To get total amount of system memory. */
+console.log("The total memory size is " + tizen.systeminfo.getTotalMemory() + " bytes.");
+</pre>
 </div>
 </dd>
 <dt class="method" id="SystemInfo::getAvailableMemory">
@@ -504,39 +484,35 @@ and for subscribing notifications of system information changes.
 <div class="brief">
  Gets the amount of memory that is not in use (in bytes).
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long long getAvailableMemory();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long long getAvailableMemory();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError in any error case
+ with error type UnknownError in any error case.
                 </p></li></ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // To get total amount of system memory
- console.log("The available memory size is " + tizen.systeminfo.getAvailableMemory() + " bytes.");
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* To get total amount of system memory. */
+console.log("The available memory size is " + tizen.systeminfo.getAvailableMemory() + " bytes.");
+</pre>
 </div>
 </dd>
-<dt class="method" id="SystemInfo::getCapabilities">
+<dt class="deprecated method" id="SystemInfo::getCapabilities">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfo::getCapabilities"></a><code><b><span class="methodName">getCapabilities</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Gets the capabilities of the device.
             </div>
-<div class="deprecated"><p><font color="red"><i><b>Deprecated.</b>
- Deprecated since 2.3. Instead, use getCapability().
-            </i></font></p></div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a> getCapabilities();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 2.3. Instead, use <a href="#SystemInfo::getCapability">getCapability()</a>.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a> getCapabilities();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -552,12 +528,13 @@ The function must synchronously acquire the capabilities of the device.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var deviceCapabilities;
- deviceCapabilities = tizen.systeminfo.getCapabilities();
- if (deviceCapabilities.bluetooth) {
-     console.log("Bluetooth is supported");
- }
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var deviceCapabilities;
+deviceCapabilities = tizen.systeminfo.getCapabilities();
+if (deviceCapabilities.bluetooth)
+{
+  console.log("Bluetooth is supported");
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="SystemInfo::getCapability">
@@ -567,10 +544,8 @@ The function must synchronously acquire the capabilities of the device.
 <div class="brief">
  Gets a device capability related to a given key.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">any getCapability(DOMString key);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">any getCapability(DOMString key);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -583,15 +558,19 @@ The additional keys for the custom device capability are specified by OEMs and v
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">key</span>: 
- The device capability key for the device or additional custom device capability key specifies by OEMs
+<span class="name">key</span>:
+ The device capability key for the device or additional custom device capability key specified by OEM.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- any The value of the specified device capability
-              </div>
+<ul>
+<span class="return">any:
+                  </span>
+ The value of the specified device capability.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -600,14 +579,17 @@ The additional keys for the custom device capability are specified by OEMs and v
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> try {
-     // Checks if a device supports bluetooth API or not
-     var bluetooth = tizen.systeminfo.getCapability("http://tizen.org/feature/network.bluetooth");
-     console.log(" Bluetooth = " + bluetooth);
- } catch (error) {
-     console.log("Error name: " + error.name + ", message: " + error.message);
- }
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
+{
+  /* Checks if a device supports Bluetooth API. */
+  var bluetooth = tizen.systeminfo.getCapability("http://tizen.org/feature/network.bluetooth");
+  console.log(" Bluetooth = " + bluetooth);
+}
+catch (error)
+{
+  console.log("Error name: " + error.name + ", message: " + error.message);
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="SystemInfo::getCount">
@@ -617,30 +599,32 @@ The additional keys for the custom device capability are specified by OEMs and v
 <div class="brief">
  Gets the number of system property information provided for a particular system property.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long getCount(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long getCount(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
             <p>
-That is the length of array retrieved by the <em>getPropertyValueArray()</em> method for the given property.
+That is the length of array retrieved by the <a href="#SystemInfo::getPropertyValueArray">getPropertyValueArray()</a> method for the given property.
             </p>
            </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">property</span>: 
- The name of the system property
+<span class="name">property</span>:
+ The name of the system property.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long The number of property values for the given property. If the property is not supported, 0 is returned.
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ The number of property values for the given property. If the property is not supported, 0 is returned.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -649,13 +633,16 @@ That is the length of array retrieved by the <em>getPropertyValueArray()</em> me
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var count = tizen.systeminfo.getCount("SIM");
- if (count === 0) {
-     console.log("There is no available SIM card.");
- } else {
-     console.log("There is(are) " + count + " SIM card(s) available.");
- }
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var count = tizen.systeminfo.getCount("SIM");
+if (count === 0)
+{
+  console.log("There is no available SIM card.");
+}
+else
+{
+  console.log("There is (are) " + count + " SIM card(s) available.");
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="SystemInfo::getPropertyValue">
@@ -665,10 +652,9 @@ That is the length of array retrieved by the <em>getPropertyValueArray()</em> me
 <div class="brief">
  Gets the current value of a specified system property.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, 
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -677,44 +663,37 @@ The function must asynchronously acquire the current value of the requested prop
 the successCallback must be invoked with an object containing the information provided by the property.
             </p>
             <p>
-The <em>ErrorCallback</em> method can be launched with these error types:
+The <em>ErrorCallback</em> function can be launched with these error types:
             </p>
             <ul>
               <li>
-NotSupportedError - If the given <var>property</var> is not supported. (since Tizen 2.3)              </li>
+NotSupportedError - If the given <var>property</var> is not supported (since Tizen 2.3).              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">
-            Privilege: </span>
- http://tizen.org/privilege/telephony
-            </p>
-<p><span class="remark"> Remark : </span>
+<div class="description">
+           </div>
+<p><span class="remark">Remark: </span>
  If the given <var>property</var> is not supported, <em>NotSupportedError</em> would be passed through a <em>ErrorCallback()</em> since Tizen 2.3.
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  If system provides more than one value for the system property, the primary (first) system property is returned through SystemInfoSuccessCallback.
-            </p>
-<p><span class="remark"> Remark : </span>
- <b>http://tizen.org/privilege/telephony</b> has been required only for <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> property since Tizen 2.4.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">property</span>: 
+<span class="name">property</span>:
  The name of the property to retrieve.
+                <ul><li>
+<b>Conditional privilege: </b>For using <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> value, privilege <b>http://tizen.org/privilege/telephony (public level)</b> is needed since Tizen 2.4.</li></ul>
+</li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function called when the properties are successfully retrieved.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback function that is called when the properties have been successfully retrieved.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback function that is called when an error occurs while retrieving the properties.
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function called when an error occurs while retrieving the properties.
                 </li>
         </ul>
 </div>
@@ -722,48 +701,58 @@ NotSupportedError - If the given <var>property</var> is not supported. (since Ti
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
+ with error type SecurityError, this error is only thrown for <var>CELLULAR_NETWORK</var> property when an application does not declare <em>http://tizen.org/privilege/telephony</em> privilege in <em>config.xml</em>.
+                </p></li>
+<li class="list"><p>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
                 </p></li>
 <li class="list"><p>
  with error type UnknownError in any other error case.
                 </p></li>
-<li class="list"><p>
- with error type SecurityError, this error is only thrown for <em>CELLULAR_NETWORK</em> property when an application does not declare http://tizen.org/privilege/telephony privilege in config.xml.
-                </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onSuccessCallback(cpu) {
-     console.log("The cpu load is " + cpu.load);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onSuccessCallback(cpu)
+{
+  console.log("The cpu load is " + cpu.load);
+}
 
- function onErrorCallback(error) {
-     console.log("An error occurred " + error.message);
- }
+function onErrorCallback(error)
+{
+  console.log("An error occurred " + error.message);
+}
 
- tizen.systeminfo.getPropertyValue("CPU", onSuccessCallback, onErrorCallback);
- </pre>
+tizen.systeminfo.getPropertyValue("CPU", onSuccessCallback, onErrorCallback);
+</pre>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onSuccessCallback(cellular) {
-     console.log("The status of the cellular network is " + cellular.status);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onSuccessCallback(cellular)
+{
+  console.log("The status of the cellular network is " + cellular.status);
+}
 
- function onErrorCallback(error) {
-     console.log("An error occurred " + error.message);
-     // if telephony_capability is false but getPropertyValue("CELLULAR_NETWORK, ..) is called, NotSupportedError would be passed.
- }
+function onErrorCallback(error)
+{
+  console.log("An error occurred " + error.message);
+  /* If telephony_capability is false but getPropertyValue("CELLULAR_NETWORK, ...) is called, */
+  /* NotSupportedError is passed. */
+}
 
- var telephony_capability = tizen.systeminfo.getCapability("http://tizen.org/feature/network.telephony");
+var telephony_capability =
+    tizen.systeminfo.getCapability("http://tizen.org/feature/network.telephony");
 
- if (telephony_capability === true) {
-     // onSuccessCallback will be invoked.
-     tizen.systeminfo.getPropertyValue("CELLULAR_NETWORK", onSuccessCallback, onErrorCallback);
- } else {
-     console.log("Telephony feature is not supported. Cellular network related information cannot be retrieved.");
- }
- </pre>
+if (telephony_capability === true)
+{
+  /* onSuccessCallback will be invoked. */
+  tizen.systeminfo.getPropertyValue("CELLULAR_NETWORK", onSuccessCallback, onErrorCallback);
+}
+else
+{
+  console.log(
+      "Telephony feature is not supported. Cellular network related information cannot be retrieved.");
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="SystemInfo::getPropertyValueArray">
@@ -773,55 +762,47 @@ NotSupportedError - If the given <var>property</var> is not supported. (since Ti
 <div class="brief">
  Gets the current values of a specified system property.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, 
+                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
             <p>
-It is recommended that you check if a device provides one or more than one value for a particular system property via <em>getCount()</em>.
+It is recommended that you check if a device provides one or more than one value for a particular system property via <a href="#SystemInfo::getCount">getCount()</a>.
             </p>
             <p>
 If one particular system property is provided on a device, it returns an array containing one SystemInfoProperty object through <em>SystemInfoPropertyArraySuccessCallback</em> method.<br>If more than one particular system property is provided, multiple SystemInfoProperty objects are returned.
             </p>
             <p>
-The <em>ErrorCallback</em> method can be launched with these error types:
+The <em>ErrorCallback</em> function can be launched with these error types:
             </p>
             <ul>
               <li>
 NotSupportedError - If the given <var>property</var> is not supported.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">
-            Privilege: </span>
- http://tizen.org/privilege/telephony
-            </p>
-<p><span class="remark"> Remark : </span>
- See <em>getCount()</em>.
-            </p>
-<p><span class="remark"> Remark : </span>
- <b>http://tizen.org/privilege/telephony</b> has been required only for <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> property since Tizen 2.4.
+<div class="description">
+           </div>
+<p><span class="remark">Remark: </span>
+ See <a href="#SystemInfo::getCount">getCount()</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">property</span>: 
+<span class="name">property</span>:
  The name of the property to retrieve.
+                <ul><li>
+<b>Conditional privilege: </b>For using <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> value, privilege <b>http://tizen.org/privilege/telephony (public level)</b> is needed since Tizen 2.4.</li></ul>
+</li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function called when the properties are successfully retrieved.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback method that is invoked when the properties have been successfully retrieved.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method that is invoked when an error occurs while retrieving the properties.
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function called when an error occurs while retrieving the properties.
                 </li>
         </ul>
 </div>
@@ -829,35 +810,43 @@ NotSupportedError - If the given <var>property</var> is not supported.          
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+ with error type SecurityError, this error is only thrown for <var>CELLULAR_NETWORK</var> property when an application does not declare <em>http://tizen.org/privilege/telephony</em> privilege in <em>config.xml</em>.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, this error is only thrown for <em>CELLULAR_NETWORK</em> property when an application does not declare http://tizen.org/privilege/telephony privilege in config.xml.
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function successCB(property) {
-     console.log("The SIM's current state is " + property.state);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCB(property)
+{
+  console.log("The SIM's current state is " + property.state);
+}
 
- function successArrayCB(properties) {
-     console.log("The number of the returned system properties is " + properties.length);
-     for (var i = 0; i &lt; properties.length; i++) {
-         console.log("[" + i + "] SIM's state is " + properties[i].state);
-     }
- }
+function successArrayCB(properties)
+{
+  console.log("The number of the returned system properties is " + properties.length);
+  for (var i = 0; i &lt; properties.length; i++)
+  {
+    console.log("[" + i + "] SIM's state is " + properties[i].state);
+  }
+}
 
- var count = tizen.systeminfo.getCount("SIM");
- if (count === 0) {
-     console.log("This device does not provide SIM card.");
- } else if (count &gt; 1) {
-     tizen.systeminfo.getPropertyValueArray("SIM", successArrayCB);
- } else {
-     tizen.systeminfo.getPropertyValue("SIM", successCB);
- }
- </pre>
+var count = tizen.systeminfo.getCount("SIM");
+if (count === 0)
+{
+  console.log("This device does not provide SIM card.");
+}
+else if (count &gt; 1)
+{
+  tizen.systeminfo.getPropertyValueArray("SIM", successArrayCB);
+}
+else
+{
+  tizen.systeminfo.getPropertyValue("SIM", successCB);
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="SystemInfo::addPropertyValueChangeListener">
@@ -865,12 +854,11 @@ NotSupportedError - If the given <var>property</var> is not supported.          
 </dt>
 <dd>
 <div class="brief">
- Adds a listener to allow tracking of changes in one or more system properties.
+ Adds a listener to allow tracking changes in one or more system properties.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, 
+                                             optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -881,15 +869,15 @@ When called, it immediately returns and then asynchronously starts a watch proce
 1. Register the successCallback to receive system events that the status of the requested properties may have changed.
             </p>
             <p>
-2. When a system event is successfully received invoke the associated successCallback with an object containing the property
+2. When a system event is successfully received, invoke the associated successCallback with an object containing the property
 values.
             </p>
             <p>
-3. Repeat step 2 until <em>removePropertyValueChangeListener()</em> function is called.
+3. Repeat step 2 until removePropertyValueChangeListener function is called.
             </p>
             <p>
 There are device properties which are never changed (e.g. "BUILD") and properties which are not changed on some devices
-(e.g. "DEVICE_ORIENTATION" in Tizen TV device). The <em>addPropertyValueChangeListener()</em> method accepts
+(e.g. "DEVICE_ORIENTATION" in Tizen TV device). The <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener()</a> method accepts
 any identifier of these properties, but the listener added for them will not be invoked.
             </p>
            </div>
@@ -899,74 +887,72 @@ The <em>errorCallback</em> can be launched with any of these error types:
             </p>
             <ul>
               <li>
-NotSupportedError - If the given <var>property</var> is not supported. (since Tizen 2.3)<br>For example, monitoring <var>CELLULAR_NETWORK</var> changes is not supported on a device which does not support the telephony feature.
+NotSupportedError - If the given <var>property</var> is not supported (since Tizen 2.3).<br>For example, monitoring <var>CELLULAR_NETWORK</var> changes is not supported on a device which does not support the telephony feature.
               </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">
-            Privilege: </span>
- http://tizen.org/privilege/telephony
-            </p>
-<p><span class="remark"> Remark : </span>
+<div class="description">
+           </div>
+<p><span class="remark">Remark: </span>
  The <em>errorCallback()</em> is newly added as an optional parameter since Tizen 2.3.
-            </p>
-<p><span class="remark"> Remark : </span>
- <b>http://tizen.org/privilege/telephony</b> has been required only for <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> property since Tizen 2.4.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">property</span>: 
+<span class="name">property</span>:
  The name of the property to retrieve.
+                <ul><li>
+<b>Conditional privilege: </b>For using <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> value, privilege <b>http://tizen.org/privilege/telephony (public level)</b> is needed since Tizen 2.4.</li></ul>
+</li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function called when the properties are successfully retrieved.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback function that is called when the properties have been successfully retrieved.
+<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ An object containing the various options for fetching the properties requested. See <a href="./systeminfo.html#::SystemInfo::SystemInfoOptions">details</a>.
                 </li>
           <li class="param">
-<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- An object containing the various options for fetching the properties requested. See <a href="#SystemInfoOptions">details</a>.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback function that is called when an error occurs.
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function called when an error occurs.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- unsigned long An identifier used to clear the watch subscription.
-              </div>
+<ul>
+<span class="return">unsigned long:
+                  </span>
+ An identifier used to clear the watch subscription.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value (e.g. the invalid value for <em>options</em>).
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, this error is only thrown for <var>CELLULAR_NETWORK</var> property when an application does not declare <em>http://tizen.org/privilege/telephony</em> privilege in <em>config.xml</em>.
+                </p></li>
+<li class="list"><p>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value (e.g. the invalid value for <em>options</em>).
-                </p></li>
-<li class="list"><p>
  with error type UnknownError in any other error case.
-                </p></li>
-<li class="list"><p>
- with error type SecurityError, this error is only thrown for <em>CELLULAR_NETWORK</em> property when an application does not declare http://tizen.org/privilege/telephony privilege in config.xml.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onSuccessCallback(cpu) {
-     console.log("The cpu load : " + cpu.load);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onSuccessCallback(cpu)
+{
+  console.log("The cpu load: " + cpu.load);
+}
 
- tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback, {lowThreshold : 0.2});
- </pre>
+tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback, {lowThreshold: 0.2});
+</pre>
 </div>
 </dd>
 <dt class="method" id="SystemInfo::addPropertyValueArrayChangeListener">
@@ -976,77 +962,74 @@ NotSupportedError - If the given <var>property</var> is not supported. (since Ti
 <div class="brief">
  Adds a listener to allow tracking of changes in one or more values of a system property.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueArrayChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueArrayChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, 
+                                                  <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, 
+                                                  optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
             <p>
-The <em>ErrorCallback</em> method can be launched with these error types:
+The <em>ErrorCallback</em> function can be launched with these error types:
             </p>
             <ul>
               <li>
-NotSupportedError - If the given <var>property</var> is not supported. (since Tizen 2.3)<br>For example, monitoring <var>CELLULAR_NETWORK</var> changes is not supported on a device which does not support the telephony feature.
+NotSupportedError - If the given <var>property</var> is not supported (since Tizen 2.3).<br>For example, monitoring <var>CELLULAR_NETWORK</var> changes is not supported on a device which does not support the telephony feature.
               </li>
             </ul>
             <p>
 There are device properties which never change (for example "BUILD") and properties which do not change on the current platform
-(for example "DEVICE_ORIENTATION" for some platforms). The <em>addPropertyValueChangeListener()</em> method accepts
+(for example "DEVICE_ORIENTATION" for some platforms). The <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener()</a> method accepts
 any identifier of these properties, but the listener added for them will not be invoked.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">
-            Privilege: </span>
- http://tizen.org/privilege/telephony
-            </p>
-<p><span class="remark"> Remark : </span>
- <b>http://tizen.org/privilege/telephony</b> has been required only for <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> property since Tizen 2.4.
-            </p>
+<div class="description">
+           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">property</span>: 
+<span class="name">property</span>:
  The name of the property to retrieve.
+                <ul><li>
+<b>Conditional privilege: </b>For using <a href="#SystemInfoPropertyId">CELLULAR_NETWORK</a> value, privilege <b>http://tizen.org/privilege/telephony (public level)</b> is needed since Tizen 2.4.</li></ul>
+</li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Callback function called when the properties are successfully retrieved.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback function that is called when the properties have been successfully retrieved.
-                </li>
-          <li class="param">
-<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  An object containing the various options for fetching the properties requested.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback function that is called when an error occurs.
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function called when an error occurs.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- unsigned long An identifier used to clear the watch subscription.
-              </div>
+<ul>
+<span class="return">unsigned long:
+                  </span>
+ An identifier used to clear the watch subscription.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value (e.g. the invalid value for <em>options</em>).
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, this error is only thrown for <var>CELLULAR_NETWORK</var> property when an application does not declare <em>http://tizen.org/privilege/telephony</em> privilege in <em>config.xml</em>.
+                </p></li>
+<li class="list"><p>
  with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value (e.g. the invalid value for <em>options</em>).
-                </p></li>
-<li class="list"><p>
  with error type UnknownError in any other error case.
-                </p></li>
-<li class="list"><p>
- with error type SecurityError, this error is only thrown for <em>CELLULAR_NETWORK</em> property when an application does not declare http://tizen.org/privilege/telephony privilege in config.xml.
                 </p></li>
 </ul>
 </li></ul>
@@ -1059,16 +1042,14 @@ any identifier of these properties, but the listener added for them will not be 
 <div class="brief">
  Unsubscribes notifications for property changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removePropertyValueChangeListener(unsigned long listenerId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removePropertyValueChangeListener(unsigned long listenerId);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
             <p>
-If a valid listenerId argument is passed that corresponds to a subscription
-already in place, then the watch process MUST immediately terminate and no further
+If a valid listenerId argument is passed that corresponds to an existing subscription,
+then the watch process must immediately terminate and no further
 callback is invoked. If the listenerId argument does not correspond to a valid subscription,
 the method should return without any further action.
             </p>
@@ -1077,8 +1058,9 @@ the method should return without any further action.
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">listenerId</span>: 
- An identifier of the subscription returned by the <em>addPropertyValueChangeListener()</em>/<em>addPropertyValueArrayChangeListener()</em> method.
+<span class="name">listenerId</span>:
+ An identifier of the subscription returned by the <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener()</a> or
+<a href="#SystemInfo::addPropertyValueArrayChangeListener">addPropertyValueArrayChangeListener()</a> method.
                 </li>
         </ul>
 </div>
@@ -1086,11 +1068,10 @@ the method should return without any further action.
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value.
                 </p></li>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input
-parameters contain an invalid value.
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
                 </p></li>
 <li class="list"><p>
  with error type UnknownError in any other error case.
@@ -1099,168 +1080,103 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var id = null;
- function onSuccessCallback(cpu) {
-    console.log("New value for CPU load is " + cpu.load);
-    if (id != null) { // After receiving the first notification, we clear it
-        tizen.systeminfo.removePropertyValueChangeListener(id);
-    }
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var id = null;
+function onSuccessCallback(cpu)
+{
+  console.log("New value for CPU load is " + cpu.load);
+  if (id != null)
+  {
+    /* After receiving the first notification, clear it. */
+    tizen.systeminfo.removePropertyValueChangeListener(id);
+  }
+}
 
- id = tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback);
- </pre>
+id = tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback);
+</pre>
 </div>
 </dd>
 </dl>
 </div>
 </div>
-<div class="interface" id="SystemInfoDeviceCapability">
+<div class="interface deprecated" id="SystemInfoDeviceCapability">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoDeviceCapability"></a><h3>2.3. SystemInfoDeviceCapability</h3>
 <div class="brief">
  SystemInfoDeviceCapability object.
           </div>
-<div class="deprecated"><p><font color="red"><i><b>Deprecated.</b>
- Deprecated since 2.3. Instead, use getCapability() to query device capabilities.
-          </i></font></p></div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 2.3. Instead, use <a href="#SystemInfo::getCapability">getCapability()</a> to query device capabilities.
+          </p>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoDeviceCapability {
     readonly attribute boolean bluetooth;
-
     readonly attribute boolean nfc;
-
-    readonly attribute boolean nfcReservedPush ;
-
+    readonly attribute boolean nfcReservedPush;
     readonly attribute unsigned short multiTouchCount;
-
     readonly attribute boolean inputKeyboard;
-
     readonly attribute boolean inputKeyboardLayout;
-
     readonly attribute boolean wifi;
-
     readonly attribute boolean wifiDirect;
-
     readonly attribute boolean opengles;
-
     readonly attribute DOMString openglestextureFormat;
-
     readonly attribute boolean openglesVersion1_1;
-
     readonly attribute boolean openglesVersion2_0;
-
     readonly attribute boolean fmRadio;
-
     readonly attribute DOMString platformVersion raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString webApiVersion raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString nativeApiVersion raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString platformName;
-
     readonly attribute boolean camera;
-
     readonly attribute boolean cameraFront;
-
     readonly attribute boolean cameraFrontFlash;
-
     readonly attribute boolean cameraBack;
-
     readonly attribute boolean cameraBackFlash;
-
     readonly attribute boolean location;
-
     readonly attribute boolean locationGps;
-
     readonly attribute boolean locationWps;
-
     readonly attribute boolean microphone;
-
     readonly attribute boolean usbHost;
-
     readonly attribute boolean usbAccessory;
-
     readonly attribute boolean screenOutputRca;
-
     readonly attribute boolean screenOutputHdmi;
-
     readonly attribute DOMString platformCoreCpuArch;
-
     readonly attribute DOMString platformCoreFpuArch;
-
     readonly attribute boolean sipVoip;
-
     readonly attribute DOMString duid;
-
     readonly attribute boolean speechRecognition;
-
     readonly attribute boolean speechSynthesis;
-
     readonly attribute boolean accelerometer;
-
     readonly attribute boolean accelerometerWakeup;
-
     readonly attribute boolean barometer;
-
     readonly attribute boolean barometerWakeup;
-
     readonly attribute boolean gyroscope;
-
     readonly attribute boolean gyroscopeWakeup;
-
     readonly attribute boolean magnetometer;
-
     readonly attribute boolean magnetometerWakeup;
-
     readonly attribute boolean photometer;
-
     readonly attribute boolean photometerWakeup;
-
     readonly attribute boolean proximity;
-
     readonly attribute boolean proximityWakeup;
-
     readonly attribute boolean tiltmeter;
-
     readonly attribute boolean tiltmeterWakeup;
-
     readonly attribute boolean dataEncryption;
-
     readonly attribute boolean graphicsAcceleration;
-
     readonly attribute boolean push;
-
     readonly attribute boolean telephony;
-
     readonly attribute boolean telephonyMms;
-
     readonly attribute boolean telephonySms;
-
     readonly attribute boolean screenSizeNormal;
-
     readonly attribute boolean screenSize480_800;
-
     readonly attribute boolean screenSize720_1280;
-
     readonly attribute boolean autoRotation;
-
     readonly attribute boolean shellAppWidget;
-
     readonly attribute boolean visionImageRecognition;
-
     readonly attribute boolean visionQrcodeGeneration;
-
     readonly attribute boolean visionQrcodeRecognition;
-
     readonly attribute boolean visionFaceRecognition;
-
     readonly attribute boolean secureElement;
-
     readonly attribute boolean nativeOspCompatible;
-
     readonly attribute <a href="#SystemInfoProfile">SystemInfoProfile</a> profile;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
@@ -1271,8 +1187,7 @@ parameters contain an invalid value.
 </span><span class="type">boolean </span><span class="name">bluetooth</span></span><div class="brief">
  Indicates whether the device supports Bluetooth.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1281,8 +1196,7 @@ parameters contain an invalid value.
 </span><span class="type">boolean </span><span class="name">nfc</span></span><div class="brief">
  Indicates whether the device supports NFC.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1291,8 +1205,7 @@ parameters contain an invalid value.
 </span><span class="type">boolean </span><span class="name">nfcReservedPush</span></span><div class="brief">
  Indicates whether the device supports NFC reserved push.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1301,18 +1214,16 @@ parameters contain an invalid value.
 </span><span class="type">unsigned short </span><span class="name">multiTouchCount</span></span><div class="brief">
  The number of point in Multi-point touch.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::inputKeyboard">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">inputKeyboard</span></span><div class="brief">
- Indicates whether the device supports the built-in Keyboard.
+ Indicates whether the device supports the built-in keyboard.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1321,8 +1232,7 @@ parameters contain an invalid value.
 </span><span class="type">boolean </span><span class="name">inputKeyboardLayout</span></span><div class="brief">
  Indicates whether the device supports the built-in keyboard layout.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1331,18 +1241,16 @@ parameters contain an invalid value.
 </span><span class="type">boolean </span><span class="name">wifi</span></span><div class="brief">
  Indicates whether the device supports Wi-Fi.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::wifiDirect">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">wifiDirect</span></span><div class="brief">
- Indicates whether the device supports Wi-Fi direct.
+ Indicates whether the device supports Wi-Fi Direct.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1351,8 +1259,7 @@ parameters contain an invalid value.
 </span><span class="type">boolean </span><span class="name">opengles</span></span><div class="brief">
  Indicates whether the device supports OpenGL-ES.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1362,8 +1269,7 @@ parameters contain an invalid value.
  The device 3DC texture format for OpenGL-ES.
 One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1372,8 +1278,7 @@ One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
 </span><span class="type">boolean </span><span class="name">openglesVersion1_1</span></span><div class="brief">
  Indicates whether the device supports OpenGL-ES version 1.1.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1382,8 +1287,7 @@ One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
 </span><span class="type">boolean </span><span class="name">openglesVersion2_0</span></span><div class="brief">
  Indicates whether the device supports OpenGL-ES version 2.0.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1392,26 +1296,31 @@ One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
 </span><span class="type">boolean </span><span class="name">fmRadio</span></span><div class="brief">
  Indicates whether the device supports FM radio.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::platformVersion">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">platformVersion</span></span><div class="brief">
- The version of the platform in the <em>[Major].[Minor].[Patch Version] </em> format. <br>For example, <var>1.0.0 </var> represents a platform version where the major version is <var>1 </var>and the minor and build versions are <var>0</var>.
+ The version of the platform in the <em>[Major].[Minor].[Patch Version]</em> format.
             </div>
-<p><span class="version">
-            Since: </span>
+<div class="description">
+            <p>
+For example, <var>1.0.0</var> represents a platform version where the major version is <var>1</var> and the minor and build versions are <var>0</var>.
+<em>[Patch Version]</em> is optional. The Tizen platform strictly follows this versioning system and this format must be preserved.
+Manufacturers may add more parts (dot followed by number or text) after the preserved format.
+If a version is not versioned as [Major].[Minor].[Patch Version], the unused digits must be taken as <var>0</var>.
+So for example, version <var>2.3</var> is <var>2.3.0</var> and manufacturers must add parts after <var>2.3.0</var> such as <var>2.3.0.1</var>.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -1425,18 +1334,24 @@ One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
 <li class="attribute" id="SystemInfoDeviceCapability::webApiVersion">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">webApiVersion</span></span><div class="brief">
- The version of the Web API in the <em>[Major].[Minor] </em> format. <br>For example, <var>1.0 </var>represents a web API version where the major version is <var>1 </var> and the minor version is <var>0</var>.
+ The version of the Web API in the <em>[Major].[Minor].[Patch Version]</em> format.
             </div>
-<p><span class="version">
-            Since: </span>
+<div class="description">
+            <p>
+For example, <var>1.0.0</var> represents a Web API version where the major version is <var>1</var> and the minor and build versions are <var>0</var>.
+<em>[Patch Version]</em> is optional. The Tizen platform strictly follows this versioning system and this format must be preserved.
+Manufacturers may add more parts (dot followed by number or text) after the preserved format.
+If a version is not versioned as [Major].[Minor].[Patch Version], the unused digits must be taken as <var>0</var>.
+So for example, version <var>2.3</var> is <var>2.3.0</var> and manufacturers must add parts after <var>2.3.0</var> such as <var>2.3.0.1</var>.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -1450,23 +1365,24 @@ One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
 <li class="attribute" id="SystemInfoDeviceCapability::nativeApiVersion">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">nativeApiVersion</span></span><div class="brief">
- The version of the native API in the <em>[Major].[Minor] </em>format.<br>            </div>
+ The version of the Native API in the <em>[Major].[Minor].[Patch Version]</em> format.
+            </div>
 <div class="description">
             <p>
-For example, <var>1.0</var> represents a native API version where the major version is <var>1 </var>and the minor version is <var>0</var>.
-If a device doesn't provide Tizen native API, nativeApiVersion will be a empty string.
+For example, <var>1.0.0</var> represents a Native API version where the major version is <var>1</var> and the minor and build versions are <var>0</var>.
+<em>[Patch Version]</em> is optional. The Tizen platform strictly follows this versioning system and this format must be preserved.
+Manufacturers may add more parts (dot followed by number or text) after the preserved format.
+If a version is not versioned as [Major].[Minor].[Patch Version], the unused digits must be taken as <var>0</var>.
+So for example, version <var>2.3</var> is <var>2.3.0</var> and manufacturers must add parts after <var>2.3.0</var> such as <var>2.3.0.1</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -1482,8 +1398,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">DOMString </span><span class="name">platformName</span></span><div class="brief">
  The name of the platform.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1492,8 +1407,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">camera</span></span><div class="brief">
  Indicates whether the device supports camera.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1502,8 +1416,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">cameraFront</span></span><div class="brief">
  Indicates whether the device supports front camera.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1512,8 +1425,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">cameraFrontFlash</span></span><div class="brief">
  Indicates whether the device supports flash on the front camera.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1522,8 +1434,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">cameraBack</span></span><div class="brief">
  Indicates whether the device supports back-side camera.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1532,8 +1443,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">cameraBackFlash</span></span><div class="brief">
  Indicates whether the device supports flash on the back-side camera.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1542,8 +1452,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">location</span></span><div class="brief">
  Indicates whether the device supports GPS or not.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1552,8 +1461,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">locationGps</span></span><div class="brief">
  Indicates whether the device supports GPS based location feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1562,8 +1470,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">locationWps</span></span><div class="brief">
  Indicates whether the device supports WPS based location feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1572,8 +1479,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">microphone</span></span><div class="brief">
  Indicates whether the device supports microphone.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1582,8 +1488,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">usbHost</span></span><div class="brief">
  Indicates whether the device supports USB host.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1592,8 +1497,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">usbAccessory</span></span><div class="brief">
  Indicates whether the device supports USB accessory.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1602,8 +1506,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">screenOutputRca</span></span><div class="brief">
  Indicates whether the device supports RCA output.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1612,8 +1515,7 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 </span><span class="type">boolean </span><span class="name">screenOutputHdmi</span></span><div class="brief">
  Indicates whether the device supports HDMI output.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1621,10 +1523,13 @@ If a device doesn't provide Tizen native API, nativeApiVersion will be a empty s
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">platformCoreCpuArch</span></span><div class="brief">
  The device CPU architecture.
-The possible values for this attribute are: armv6, armv7, x86.
             </div>
-<p><span class="version">
-            Since: </span>
+<div class="description">
+            <p>
+The possible values for this attribute are: <var>armv6</var>, <var>armv7</var>, <var>x86</var>.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1632,10 +1537,13 @@ The possible values for this attribute are: armv6, armv7, x86.
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">platformCoreFpuArch</span></span><div class="brief">
  The device FPU architecture.
-The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
             </div>
-<p><span class="version">
-            Since: </span>
+<div class="description">
+            <p>
+The possible values for this attribute are: <var>vfpv3</var>, <var>sse2</var>, <var>sse3</var> and <var>ssse3</var>.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1644,8 +1552,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">sipVoip</span></span><div class="brief">
  Indicates whether the device supports VOIP.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1654,12 +1561,11 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">DOMString </span><span class="name">duid</span></span><div class="brief">
  Indicates the Tizen ID, not device's unique ID since Tizen 2.3.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="remark"> Remark : </span>
- Tizen ID is a randomly generated value based on the model name. <br>It is recommended to use <em>tizen.systeminfo.getCapability("http://tizen.org/system/tizenid")</em> since Tizen 2.3 instead.
+<p><span class="remark">Remark: </span>
+ Tizen ID is a randomly generated value based on the model name. <br>It is recommended to use tizen.systeminfo.getCapability("http://tizen.org/system/tizenid") since Tizen 2.3 instead.
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::speechRecognition">
@@ -1667,8 +1573,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">speechRecognition</span></span><div class="brief">
  Indicates whether the device supports speech recognition.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1677,148 +1582,133 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">speechSynthesis</span></span><div class="brief">
  Indicates whether the device supports speech synthesis.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::accelerometer">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">accelerometer</span></span><div class="brief">
- Indicates whether the device supports Accelerometer sensor.
+ Indicates whether the device supports accelerometer.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::accelerometerWakeup">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">accelerometerWakeup</span></span><div class="brief">
- Indicates whether the device supports Accelerometer sensor wake-up feature.
+ Indicates whether the device supports accelerometer wake-up feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::barometer">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">barometer</span></span><div class="brief">
- Indicates whether the device supports Barometer sensor.
+ Indicates whether the device supports barometer.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::barometerWakeup">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">barometerWakeup</span></span><div class="brief">
- Indicates whether the device supports Barometer sensor wake-up feature.
+ Indicates whether the device supports barometer wake-up feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::gyroscope">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">gyroscope</span></span><div class="brief">
- Indicates whether the device supports Gyroscope sensor.
+ Indicates whether the device supports gyroscope.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::gyroscopeWakeup">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">gyroscopeWakeup</span></span><div class="brief">
- Indicates whether the device supports Gyroscope sensor wake-up feature.
+ Indicates whether the device supports gyroscope wake-up feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::magnetometer">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">magnetometer</span></span><div class="brief">
- Indicates whether the device supports Magnetometer sensor.
+ Indicates whether the device supports magnetometer.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::magnetometerWakeup">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">magnetometerWakeup</span></span><div class="brief">
- Indicates whether the device supports Magnetometer sensor wake-up feature.
+ Indicates whether the device supports magnetometer wake-up feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::photometer">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">photometer</span></span><div class="brief">
- Indicates whether the device supports Photometer sensor.
+ Indicates whether the device supports photometer.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::photometerWakeup">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">photometerWakeup</span></span><div class="brief">
- Indicates whether the device supports Photometer sensor wake-up feature.
+ Indicates whether the device supports photometer wake-up feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::proximity">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">proximity</span></span><div class="brief">
- Indicates whether the device supports Proximity sensor.
+ Indicates whether the device supports proximity.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::proximityWakeup">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">proximityWakeup</span></span><div class="brief">
- Indicates whether the device supports Proximity sensor wake-up feature.
+ Indicates whether the device supports proximity wake-up feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::tiltmeter">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">tiltmeter</span></span><div class="brief">
- Indicates whether the device supports Tiltmeter sensor.
+ Indicates whether the device supports tiltmeter.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="SystemInfoDeviceCapability::tiltmeterWakeup">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">tiltmeterWakeup</span></span><div class="brief">
- Indicates whether the device supports Tiltmeter sensor wake-up feature.
+ Indicates whether the device supports tiltmeter wake-up feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1827,8 +1717,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">dataEncryption</span></span><div class="brief">
  Indicates whether the device supports data encryption.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1837,8 +1726,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">graphicsAcceleration</span></span><div class="brief">
  Indicates whether the device supports hardware acceleration for 2D/3D graphics.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1847,8 +1735,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">push</span></span><div class="brief">
  Indicates whether the device supports push service.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1857,8 +1744,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">telephony</span></span><div class="brief">
  Indicates whether the device supports the telephony feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1867,8 +1753,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">telephonyMms</span></span><div class="brief">
  Indicates whether the device supports the MMS feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1877,8 +1762,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">telephonySms</span></span><div class="brief">
  Indicates whether the device supports the SMS feature.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1887,8 +1771,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">screenSizeNormal</span></span><div class="brief">
  Indicates whether the device supports the screen normal size.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1897,8 +1780,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">screenSize480_800</span></span><div class="brief">
  Indicates whether the device supports the 480 * 800 screen size.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1907,8 +1789,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">screenSize720_1280</span></span><div class="brief">
  Indicates whether the device supports the 720 * 1280 screen size.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1917,8 +1798,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">autoRotation</span></span><div class="brief">
  Indicates whether the device supports auto rotation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1927,8 +1807,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">shellAppWidget</span></span><div class="brief">
  Indicates whether the device supports shell app widget (dynamic box).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1937,8 +1816,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">visionImageRecognition</span></span><div class="brief">
  Indicates whether the device supports vision image recognition.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1947,8 +1825,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">visionQrcodeGeneration</span></span><div class="brief">
  Indicates whether the device supports vision QR code generation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1957,8 +1834,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">visionQrcodeRecognition</span></span><div class="brief">
  Indicates whether the device supports vision QR code recognition.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1967,8 +1843,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">visionFaceRecognition</span></span><div class="brief">
  Indicates whether the device supports vision face recognition.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1977,8 +1852,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">secureElement</span></span><div class="brief">
  Indicates whether the device supports secure element.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1987,8 +1861,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">boolean </span><span class="name">nativeOspCompatible</span></span><div class="brief">
  Indicates whether the device supports native OSP API.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1997,8 +1870,7 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
 </span><span class="type">SystemInfoProfile </span><span class="name">profile</span></span><div class="brief">
  Represents the profile of the current device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 </li>
@@ -2012,13 +1884,10 @@ The possible values for this attribute are: vfpv3 / sse2 / sse3 / ssse3.
           </div>
 <pre class="webidl prettyprint">  dictionary SystemInfoOptions {
     unsigned long timeout;
-
     double highThreshold;
-
     double lowThreshold;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -2027,11 +1896,11 @@ The <var>highThreshold</var> and <var>lowThreshold</var> values are only applica
           </p>
           <ul>
             <li>
- SystemInfoBattery - level : <em>from 0 to 1</em>             </li>
+SystemInfoBattery - level: <em>from 0 to 1</em>            </li>
             <li>
- SystemInfoCpu - load : <em>from 0 to 1</em>             </li>
+SystemInfoCpu - load: <em>from 0 to 1</em>            </li>
             <li>
- SystemInfoDisplay - brightness : <em>from 0 to 1</em>             </li>
+SystemInfoDisplay - brightness: <em>from 0 to 1</em>            </li>
           </ul>
           <p>
 For other cases, it is ignored.
@@ -2045,8 +1914,7 @@ For other cases, it is ignored.
 <div class="brief">
  The number of milliseconds beyond which the operation must be interrupted.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -2057,8 +1925,7 @@ For other cases, it is ignored.
 operation will be triggered only if the device property is a number and its value is greater than or equal to this number.
 This attribute has no effect on the <em>get()</em> method.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -2066,11 +1933,10 @@ This attribute has no effect on the <em>get()</em> method.
 <dd>
 <div class="brief">
  An attribute to indicate that the <em>successCallback()</em> method in the watch operation must be triggered only if the property is a number and its value is lower than or equal to this number.
-If both <em>highThreshold </em>and <em>lowThreshold </em>parameters are specified, the <em>successCallback()</em> method is triggered if and only if the property value is either lower than the value of <em>lowThreshold</em> or higher than the value of <em>highThreshold</em>.
+If both <em>highThreshold </em>and <em>lowThreshold </em>parameters are specified, the <em>successCallback()</em> is triggered if and only if the property value is either lower than the value of <em>lowThreshold</em> or higher than the value of <em>highThreshold</em>.
 This attribute has no effect on the get method.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </dd>
@@ -2085,15 +1951,14 @@ This attribute has no effect on the get method.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SystemInfoPropertySuccessCallback {
     void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a> property);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
           <p>
 This callback interface specifies a success callback with SystemInfoProperty as input argument.
 It is used in asynchronous
-operations, such as <em>getPropertyValue()</em> or <em>addPropertyValueChangeListener()</em>.
+operations, such as <a href="#SystemInfo::getPropertyValue">getPropertyValue()</a> or <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener()</a>.
           </p>
          </div>
 <div class="methods">
@@ -2104,19 +1969,17 @@ operations, such as <em>getPropertyValue()</em> or <em>addPropertyValueChangeLis
 </dt>
 <dd>
 <div class="brief">
- Method invoked when the asynchronous call completes successfully.
+ Function invoked when the asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a> property);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a> property);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">property</span>: 
+<span class="name">property</span>:
  The property returned from a successful asynchronous operation.
                 </li>
         </ul>
@@ -2133,14 +1996,13 @@ operations, such as <em>getPropertyValue()</em> or <em>addPropertyValueChangeLis
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SystemInfoPropertyArraySuccessCallback {
     void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a>[] properties);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
           <p>
 This callback interface specifies a success callback with SystemInfoProperty as input argument.
-It is used in asynchronous operations, such as <em>getPropertyValueArray()</em> or <em>addPropertyValueArrayChangeListener()</em>.
+It is used in asynchronous operations, such as <a href="#SystemInfo::getPropertyValueArray">getPropertyValueArray()</a> or <a href="#SystemInfo::addPropertyValueArrayChangeListener">addPropertyValueArrayChangeListener()</a>.
           </p>
          </div>
 <div class="methods">
@@ -2151,19 +2013,17 @@ It is used in asynchronous operations, such as <em>getPropertyValueArray()</em> 
 </dt>
 <dd>
 <div class="brief">
- Method invoked when the asynchronous call completes successfully.
+ Function invoked when the asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a>[] properties);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a>[] properties);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">properties</span>: 
+<span class="name">properties</span>:
  The array of SystemInfoProperty objects returned from a successful asynchronous operation.
                 </li>
         </ul>
@@ -2179,23 +2039,20 @@ It is used in asynchronous operations, such as <em>getPropertyValueArray()</em> 
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoProperty {
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
 <div class="interface" id="SystemInfoBattery">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoBattery"></a><h3>2.8. SystemInfoBattery</h3>
 <div class="brief">
- This property reflects the general state of the system's battery
+ This property reflects the general state of the system's battery.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoBattery : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute double level;
-
     readonly attribute boolean isCharging;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
         
@@ -2205,7 +2062,7 @@ It is used in asynchronous operations, such as <em>getPropertyValueArray()</em> 
 <li class="attribute" id="SystemInfoBattery::level">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">level</span></span><div class="brief">
- The remaining level of an internal battery, scaled from <var>0 </var>to <var>1</var>:
+ An attribute to specify the remaining level of an internal battery, scaled from <var>0 </var>to <var>1</var>:
             </div>
 <div class="description">
             <ul>
@@ -2218,8 +2075,7 @@ It is used in asynchronous operations, such as <em>getPropertyValueArray()</em> 
 Any threshold parameter used in a watch operation to monitor this property applies to this attribute.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2228,8 +2084,7 @@ Any threshold parameter used in a watch operation to monitor this property appli
 </span><span class="type">boolean </span><span class="name">isCharging</span></span><div class="brief">
  Indicates whether the battery source is currently charging.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2244,8 +2099,7 @@ Any threshold parameter used in a watch operation to monitor this property appli
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoCpu : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute double load;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
         
@@ -2254,11 +2108,10 @@ Any threshold parameter used in a watch operation to monitor this property appli
 <ul><li class="attribute" id="SystemInfoCpu::load">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">load</span></span><div class="brief">
-  The current CPU load, as a number between <var>0.0 </var>and <var>1.0</var>, representing the minimum and maximum values allowed on this system.
+  An attribute to indicate the current CPU load, as a number between <var>0.0 </var>and <var>1.0</var>, representing the minimum and maximum values allowed on this system.
 Any threshold parameter used in a watch function to monitor this property applies to this attribute.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li></ul>
@@ -2272,8 +2125,7 @@ Any threshold parameter used in a watch function to monitor this property applie
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoStorage : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoStorageUnit">SystemInfoStorageUnit</a>[] units;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
         
@@ -2285,8 +2137,7 @@ Any threshold parameter used in a watch function to monitor this property applie
                       </span><span class="name">units</span></span><div class="brief">
  The array of storage units connected to this device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li></ul>
@@ -2299,14 +2150,9 @@ Any threshold parameter used in a watch function to monitor this property applie
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoStorageUnit : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString type;
-
     readonly attribute unsigned long long capacity;
-
     readonly attribute unsigned long long availableCapacity;
-
     readonly attribute boolean isRemovable;
-
-    readonly attribute boolean isRemoveable;
   };</pre>
         
       <div class="attributes">
@@ -2334,8 +2180,7 @@ USB_HOST              </li>
 MMC              </li>
             </ul>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2344,8 +2189,7 @@ MMC              </li>
 </span><span class="type">unsigned long long </span><span class="name">capacity</span></span><div class="brief">
  The total amount of space available on the user's storage (excluding system-reserved), in bytes.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2354,15 +2198,14 @@ MMC              </li>
 </span><span class="type">unsigned long long </span><span class="name">availableCapacity</span></span><div class="brief">
  The amount of space currently available on the user's storage, in bytes.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
 <li class="attribute" id="SystemInfoStorageUnit::isRemovable">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">isRemovable</span></span><div class="brief">
- Indicates whether a device can be removed or not.
+ An attribute to indicate whether a device can be removed or not.
             </div>
 <div class="description">
             <p>
@@ -2370,26 +2213,24 @@ The following values are supported:
             </p>
             <ul>
               <li>
-<var>true </var> - If this storage unit can be removed from the system (such as an sdcard unplugged)              </li>
+<var>true</var> - If this storage unit can be removed from the system (such as an sdcard unplugged)              </li>
               <li>
 <var>false</var> - If this storage unit cannot be removed from the system              </li>
             </ul>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
-<li class="attribute" id="SystemInfoStorageUnit::isRemoveable">
+<li class="attribute deprecated" id="SystemInfoStorageUnit::isRemoveable">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">isRemoveable</span></span><div class="brief">
- <var>true</var> if this unit can be removed from the system (such as an sdcard unplugged), <var>false</var> otherwise.
+ true if this unit can be removed from the system (such as an sdcard unplugged), false otherwise.
             </div>
-<div class="deprecated"><p><font color="red"><i><b>Deprecated.</b>
- Deprecated since 2.1. Instead, use isRemovable.
-            </i></font></p></div>
-<p><span class="version">
-            Since: </span>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 2.1. Instead, use <em>isRemovable</em>.
+            </p>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2403,21 +2244,14 @@ The following values are supported:
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoDisplay : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute unsigned long resolutionWidth;
-
     readonly attribute unsigned long resolutionHeight;
-
     readonly attribute unsigned long dotsPerInchWidth;
-
     readonly attribute unsigned long dotsPerInchHeight;
-
     readonly attribute double physicalWidth;
-
     readonly attribute double physicalHeight;
-
     readonly attribute double brightness;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
         
@@ -2430,8 +2264,7 @@ The following values are supported:
  The total number of addressable pixels in the horizontal direction of a rectangular entity
 (such as Camera, Display, Image, Video, ...) when held in its default orientation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2441,8 +2274,7 @@ The following values are supported:
  The total number of addressable pixels in the vertical direction of a rectangular element
 (such as Camera, Display, Image, Video, ...) when held in its default orientation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2451,8 +2283,7 @@ The following values are supported:
 </span><span class="type">unsigned long </span><span class="name">dotsPerInchWidth</span></span><div class="brief">
  Resolution of this device, along its width, in dots per inch.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2461,8 +2292,7 @@ The following values are supported:
 </span><span class="type">unsigned long </span><span class="name">dotsPerInchHeight</span></span><div class="brief">
  Resolution of this device, along its height, in dots per inch.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2471,8 +2301,7 @@ The following values are supported:
 </span><span class="type">double </span><span class="name">physicalWidth</span></span><div class="brief">
  The display's physical width in millimeters.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2481,8 +2310,7 @@ The following values are supported:
 </span><span class="type">double </span><span class="name">physicalHeight</span></span><div class="brief">
  The display's physical height in millimeters.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2491,8 +2319,7 @@ The following values are supported:
 </span><span class="type">double </span><span class="name">brightness</span></span><div class="brief">
  The current brightness of a display ranging between <var>0 </var>to <var>1</var>.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2506,11 +2333,9 @@ The following values are supported:
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoDeviceOrientation : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoDeviceOrientationStatus">SystemInfoDeviceOrientationStatus</a> status;
-
     readonly attribute boolean isAutoRotation;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
         
@@ -2522,8 +2347,7 @@ The following values are supported:
 </span><span class="type">SystemInfoDeviceOrientationStatus </span><span class="name">status</span></span><div class="brief">
  Represents the status of the current device orientation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2532,8 +2356,7 @@ The following values are supported:
 </span><span class="type">boolean </span><span class="name">isAutoRotation</span></span><div class="brief">
  Indicates whether the device is in autorotation.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 </li>
@@ -2547,13 +2370,10 @@ The following values are supported:
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoBuild : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString model;
-
     readonly attribute DOMString manufacturer;
-
     readonly attribute DOMString buildVersion;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
         
@@ -2565,8 +2385,7 @@ The following values are supported:
 </span><span class="type">DOMString </span><span class="name">model</span></span><div class="brief">
  Represents the model name of the current device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2575,8 +2394,7 @@ The following values are supported:
 </span><span class="type">DOMString </span><span class="name">manufacturer</span></span><div class="brief">
  Represents the manufacturer of the device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -2585,8 +2403,7 @@ The following values are supported:
 </span><span class="type">DOMString </span><span class="name">buildVersion</span></span><div class="brief">
  Represents the build version information of the device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 </li>
@@ -2600,11 +2417,9 @@ The following values are supported:
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoLocale : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString language;
-
     readonly attribute DOMString country;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
         
@@ -2615,11 +2430,10 @@ The following values are supported:
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">language</span></span><div class="brief">
  Indicates the current language setting in the (LANGUAGE)_(REGION) syntax.
-The language setting is in the ISO 630-2 format and the region setting is in the ISO 3166-1 format.
+The language setting is in the ISO 639-2 format and the region setting is in the ISO 3166-1 alpha-2 format.
 The language setting is case-sensitive.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -2627,11 +2441,10 @@ The language setting is case-sensitive.
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">country</span></span><div class="brief">
  Indicates the current country setting in the (LANGUAGE)_(REGION) syntax.
-The language setting is in the ISO 630-2 format and the region setting is in the ISO 3166-1 format.
+The language setting is in the ISO 639-2 format and the region setting is in the ISO 3166-1 alpha-2 format.
 The country setting is case-sensitive.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -2646,8 +2459,7 @@ The country setting is case-sensitive.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoNetworkType">SystemInfoNetworkType</a> networkType;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
         
@@ -2658,8 +2470,7 @@ The country setting is case-sensitive.
 </span><span class="type">SystemInfoNetworkType </span><span class="name">networkType</span></span><div class="brief">
  Represents the network type of the current data network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li></ul>
@@ -2670,21 +2481,15 @@ The country setting is case-sensitive.
 <div class="brief">
  This property reflects the information of the Wi-Fi network in this system.
           </div>
-<pre class="webidl prettyprint">   [NoInterfaceObject] interface SystemInfoWifiNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoWifiNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString status;
-
     readonly attribute DOMString ssid;
-
     readonly attribute DOMString ipAddress;
-
     readonly attribute DOMString ipv6Address;
-
     readonly attribute DOMString macAddress;
-
     readonly attribute double signalStrength;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
         
@@ -2696,8 +2501,7 @@ The country setting is case-sensitive.
 </span><span class="type">DOMString </span><span class="name">status</span></span><div class="brief">
  Represents the status (ON or OFF) of the Wi-Fi interface.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2706,8 +2510,7 @@ The country setting is case-sensitive.
 </span><span class="type">DOMString </span><span class="name">ssid</span></span><div class="brief">
  Represents the SSID of the Wi-Fi network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2716,8 +2519,7 @@ The country setting is case-sensitive.
 </span><span class="type">DOMString </span><span class="name">ipAddress</span></span><div class="brief">
  Represents the IPv4 address of the Wi-Fi network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2726,8 +2528,7 @@ The country setting is case-sensitive.
 </span><span class="type">DOMString </span><span class="name">ipv6Address</span></span><div class="brief">
  Represents the IPv6 address of the Wi-Fi network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2741,8 +2542,7 @@ The country setting is case-sensitive.
 It is written in MM:MM:MM:SS:SS:SS format.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2751,8 +2551,7 @@ It is written in MM:MM:MM:SS:SS:SS format.
 </span><span class="type">double </span><span class="name">signalStrength</span></span><div class="brief">
  This connection's signal strength, as a normalized value between 0 (no signal detected) and 1 (the level is at its maximum value).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2764,19 +2563,14 @@ It is written in MM:MM:MM:SS:SS:SS format.
 <div class="brief">
  This property reflects the information of the Ethernet network in this system.
           </div>
-<pre class="webidl prettyprint">   [NoInterfaceObject] interface SystemInfoEthernetNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoEthernetNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString cable;
-
     readonly attribute DOMString status;
-
     readonly attribute DOMString ipAddress;
-
     readonly attribute DOMString ipv6Address;
-
     readonly attribute DOMString macAddress;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
           </p>
         
@@ -2786,55 +2580,50 @@ It is written in MM:MM:MM:SS:SS:SS format.
 <li class="attribute" id="SystemInfoEthernetNetwork::cable">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">cable</span></span><div class="brief">
- Represents the cable status (ATTACHED or DETACHED) of the ethernet interface.
+ Represents the cable status (ATTACHED or DETACHED) of the Ethernet interface.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
 <li class="attribute" id="SystemInfoEthernetNetwork::status">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">status</span></span><div class="brief">
- Represents the status (DEACTIVATED, DISCONNECTED or CONNECTED) of the ethernet interface.
+ Represents the status (DEACTIVATED, DISCONNECTED or CONNECTED) of the Ethernet interface.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
 <li class="attribute" id="SystemInfoEthernetNetwork::ipAddress">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">ipAddress</span></span><div class="brief">
- Represents the IPv4 address of the ethernet network.
+ Represents the IPv4 address of the Ethernet network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
 <li class="attribute" id="SystemInfoEthernetNetwork::ipv6Address">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">ipv6Address</span></span><div class="brief">
- Represents the IPv6 address of the ethernet network.
+ Represents the IPv6 address of the Ethernet network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
 <li class="attribute" id="SystemInfoEthernetNetwork::macAddress">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">macAddress</span></span><div class="brief">
- Represents the MAC address of the ethernet interface.
+ Represents the MAC address of the Ethernet interface.
             </div>
 <div class="description">
             <p>
 It is written in MM:MM:MM:SS:SS:SS format.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
@@ -2847,31 +2636,19 @@ It is written in MM:MM:MM:SS:SS:SS format.
  This property reflects the information of the Cellular network in this system.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoCellularNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
-
     readonly attribute DOMString status;
-
     readonly attribute DOMString apn;
-
     readonly attribute DOMString ipAddress;
-
     readonly attribute DOMString ipv6Address;
-
     readonly attribute unsigned short mcc;
-
     readonly attribute unsigned short mnc;
-
     readonly attribute unsigned short cellId;
-
     readonly attribute unsigned short lac;
-
     readonly attribute boolean isRoaming;
-
     readonly attribute boolean isFlightMode;
-
     readonly attribute DOMString imei raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
           </p>
         
@@ -2883,8 +2660,7 @@ It is written in MM:MM:MM:SS:SS:SS format.
 </span><span class="type">DOMString </span><span class="name">status</span></span><div class="brief">
  Represents the status (ON or OFF) of the cellular network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2893,8 +2669,7 @@ It is written in MM:MM:MM:SS:SS:SS format.
 </span><span class="type">DOMString </span><span class="name">apn</span></span><div class="brief">
  Represents an Access Point Name of the cellular network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2903,8 +2678,7 @@ It is written in MM:MM:MM:SS:SS:SS format.
 </span><span class="type">DOMString </span><span class="name">ipAddress</span></span><div class="brief">
  Represents the IPv4 address of the cellular network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2913,8 +2687,7 @@ It is written in MM:MM:MM:SS:SS:SS format.
 </span><span class="type">DOMString </span><span class="name">ipv6Address</span></span><div class="brief">
  Represents the IPv6 address of the cellular network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -2923,8 +2696,7 @@ It is written in MM:MM:MM:SS:SS:SS format.
 </span><span class="type">unsigned short </span><span class="name">mcc</span></span><div class="brief">
  Represents Mobile Country Code (MCC) of the cellular network.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2934,8 +2706,7 @@ It is written in MM:MM:MM:SS:SS:SS format.
  Represents Mobile Network Code (MNC) of the cellular network. MNC is used in combination with MCC (also known as a "MCC / MNC tuple") to uniquely
 identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UMTS public land mobile networks and some satellite mobile networks.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2944,8 +2715,7 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">unsigned short </span><span class="name">cellId</span></span><div class="brief">
  Represents Cell ID.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2954,8 +2724,7 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">unsigned short </span><span class="name">lac</span></span><div class="brief">
  Represents Location Area Code.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2964,8 +2733,7 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">boolean </span><span class="name">isRoaming</span></span><div class="brief">
  Indicates whether the connection is set up while the device is roaming.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -2974,8 +2742,7 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">boolean </span><span class="name">isFlightMode</span></span><div class="brief">
  Indicates whether the device is in flight mode.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -2984,16 +2751,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">DOMString </span><span class="name">imei</span></span><div class="brief">
  Represents the International Mobile Equipment Identity (IMEI).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/telephony
             </p>
 <p class="warning"><b>Warning:</b>
@@ -3013,27 +2777,19 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 <div class="interface" id="SystemInfoSIM">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoSIM"></a><h3>2.20. SystemInfoSIM</h3>
 <div class="brief">
- This property represents the the SIM card information.
+ This property reflects the information of the SIM card information.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoSIM : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoSimState">SystemInfoSimState</a> state raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString operatorName raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString msisdn raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString iccid raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute unsigned short mcc raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute unsigned short mnc raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString msin raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString spn raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
           </p>
         
@@ -3045,16 +2801,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">SystemInfoSimState </span><span class="name">state</span></span><div class="brief">
  Represents the SIM card state.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -3070,16 +2823,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">DOMString </span><span class="name">operatorName</span></span><div class="brief">
  Represents the Operator Name String (ONS) of Common PCN Handset Specification (CPHS) in SIM card.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -3095,16 +2845,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">DOMString </span><span class="name">msisdn</span></span><div class="brief">
  Represents the SIM card subscriber number.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/telephony
             </p>
 <p class="warning"><b>Warning:</b>
@@ -3123,16 +2870,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">DOMString </span><span class="name">iccid</span></span><div class="brief">
  Represents the Integrated Circuit Card ID.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -3148,16 +2892,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">unsigned short </span><span class="name">mcc</span></span><div class="brief">
  Represents the Mobile Country Code (MCC) of SIM provider.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -3173,16 +2914,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">unsigned short </span><span class="name">mnc</span></span><div class="brief">
  Represents the Mobile Network Code (MNC) of SIM provider.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -3198,16 +2936,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">DOMString </span><span class="name">msin</span></span><div class="brief">
  Represents the Mobile Subscription Identification Number (MSIN) of SIM provider.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/telephony
             </p>
 <p class="warning"><b>Warning:</b>
@@ -3226,16 +2961,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">DOMString </span><span class="name">spn</span></span><div class="brief">
  Represents the Service Provider Name (SPN) of SIM card.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/system
             </p>
 <div class="exceptionlist">
@@ -3257,8 +2989,7 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoPeripheral : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute boolean isVideoOutputOn;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
         
@@ -3269,8 +3000,7 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">boolean </span><span class="name">isVideoOutputOn</span></span><div class="brief">
  Represents the video out status.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li></ul>
@@ -3283,10 +3013,8 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoMemory : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoLowMemoryStatus">SystemInfoLowMemoryStatus</a> status;
-
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
           </p>
         
@@ -3297,8 +3025,7 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </span><span class="type">SystemInfoLowMemoryStatus </span><span class="name">status</span></span><div class="brief">
  Represents the low memory state.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li></ul>
@@ -3311,13 +3038,13 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoCameraFlash : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute double brightness raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString camera;
-
     readonly attribute long levels raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void setBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
+<p><span class="version">Since: </span>
+ 2.4
+          </p>
         
       <div class="attributes">
 <h4>Attributes</h4>
@@ -3325,18 +3052,15 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 <li class="attribute" id="SystemInfoCameraFlash::brightness">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">brightness</span></span><div class="brief">
- Brightness level of the camera flash (0~1)
+ Brightness level of the camera flash (0~1).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/led
             </p>
 <div class="exceptionlist">
@@ -3347,21 +3071,22 @@ identify a mobile phone operator/carrier using the GSM, CDMA, iDEN, TETRA and UM
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> tizen.systeminfo.getPropertyValue("CAMERA_FLASH",
-    function (flash) {
-        console.log("Flash brightness is set to: " + (flash.brightness * 100).toFixed(0) + "%");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.systeminfo.getPropertyValue("CAMERA_FLASH",
+    function(flash)
+    {
+      console.log("Flash brightness is set to: " + (flash.brightness * 100).toFixed(0) + "%");
     },
-    function (error) {
-        console.log("Error, name: " + error.name + ", message: " + error.message);
-    }
- );
- </pre>
+    function(error)
+    {
+      console.log("Error, name: " + error.name + ", message: " + error.message);
+    });
+</pre>
 </div>
 </li>
 <li class="attribute" id="SystemInfoCameraFlash::camera">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">camera</span></span><div class="brief">
- Specifies camera to which this flash belongs
+ Specifies camera to which this flash belongs.
             </div>
 <div class="description">
             <ul>
@@ -3377,29 +3102,25 @@ OTHER - a flash attached to any other camera              </li>
            </div>
 <div class="description">
             <p>
-The <em>getPropertyValue()</em> method retrieves the <var>SystemInfoCameraFlash</var> for <var>BACK</var> camera.
+The <a href="#SystemInfo::getPropertyValue">getPropertyValue()</a> method retrieves the <var>SystemInfoCameraFlash</var> for <var>BACK</var> camera.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
 <li class="attribute" id="SystemInfoCameraFlash::levels">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">levels</span></span><div class="brief">
- Number of brightness levels supported by the flash (other than 0 brightness)
+ Number of brightness levels supported by the flash (other than 0 brightness).
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/led
             </p>
 <div class="exceptionlist">
@@ -3422,10 +3143,8 @@ The <em>getPropertyValue()</em> method retrieves the <var>SystemInfoCameraFlash<
 <div class="brief">
  Sets the brightness value of the flash that is located next to the camera.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setBrightness(double brightness);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setBrightness(double brightness);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -3433,20 +3152,18 @@ The <em>getPropertyValue()</em> method retrieves the <var>SystemInfoCameraFlash<
 If the specified brightness value is not supported by the device, the brightness is rounded down to the nearest supported brightness value.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/led
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">brightness</span>: 
- The brightness value of LED (0~1)
+<span class="name">brightness</span>:
+ The brightness value of LED (0~1).
                 </li>
         </ul>
 </div>
@@ -3454,10 +3171,10 @@ If the specified brightness value is not supported by the device, the brightness
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+ with error type InvalidValuesError, if any of the input parameters contains an invalid value.
                 </p></li>
 <li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method or if the author signature does not match that of the designated application.
+ with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
  with error type UnknownError, if the method cannot be completed because of an unknown error.
@@ -3466,19 +3183,23 @@ If the specified brightness value is not supported by the device, the brightness
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> tizen.systeminfo.getPropertyValue("CAMERA_FLASH",
-    function (flash) {
-        try {
-            flash.setBrightness(1);
-        } catch (error) {
-            console.log("Setting flash brightness failed: " + error.message);
-        }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.systeminfo.getPropertyValue("CAMERA_FLASH",
+    function(flash)
+    {
+      try
+      {
+        flash.setBrightness(1);
+      }
+      catch (error)
+      {
+        console.log("Setting flash brightness failed: " + error.message);
+      }
     },
-    function (error) {
-        console.log("Error, name: " + error.name + ", message: " + error.message);
-    }
- );
- </pre>
+    function(error)
+    {
+      console.log("Error, name: " + error.name + ", message: " + error.message);
+    });
+</pre>
 </div>
 </dd>
 </dl>
@@ -3487,7 +3208,7 @@ If the specified brightness value is not supported by the device, the brightness
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -3513,371 +3234,143 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
 <li class="feature">http://tizen.org/feature/network.wifi</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SystemInfo {
-
-  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK", "ETHERNET_NETWORK", "CELLULAR_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "CAMERA_FLASH" };
-
+  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK",
+    "ETHERNET_NETWORK", "CELLULAR_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "CAMERA_FLASH" };
   enum SystemInfoNetworkType { "NONE", "2G", "2.5G", "3G", "4G", "WIFI", "ETHERNET", "UNKNOWN" };
-
   enum SystemInfoDeviceOrientationStatus { "PORTRAIT_PRIMARY", "PORTRAIT_SECONDARY", "LANDSCAPE_PRIMARY", "LANDSCAPE_SECONDARY" };
-
   enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED", "SIM_LOCKED", "UNKNOWN" };
-
-  enum SystemInfoProfile { "MOBILE_FULL", "MOBILE_WEB", "MOBILE", "WEARABLE" };
-
+  enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };
   enum SystemInfoLowMemoryStatus { "NORMAL", "WARNING" };
-
   [NoInterfaceObject] interface SystemInfoObject {
     readonly attribute <a href="#SystemInfo">SystemInfo</a> systeminfo;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemInfoObject">SystemInfoObject</a>;
-
   [NoInterfaceObject] interface SystemInfo {
     long long getTotalMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long long getAvailableMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    <a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a> getCapabilities() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     any getCapability(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     long getCount(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                          <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
+    void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                          <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                                        <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
-                                        optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options,
-                                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+    void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
+                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
+                                                 optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                                                 raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long addPropertyValueArrayChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
-                                        <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
-                                        optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options,
-                                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
+                                                      <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
+                                                      optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                                                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePropertyValueChangeListener(unsigned long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
-  [NoInterfaceObject] interface SystemInfoDeviceCapability {
-    readonly attribute boolean bluetooth;
-
-    readonly attribute boolean nfc;
-
-    readonly attribute boolean nfcReservedPush ;
-
-    readonly attribute unsigned short multiTouchCount;
-
-    readonly attribute boolean inputKeyboard;
-
-    readonly attribute boolean inputKeyboardLayout;
-
-    readonly attribute boolean wifi;
-
-    readonly attribute boolean wifiDirect;
-
-    readonly attribute boolean opengles;
-
-    readonly attribute DOMString openglestextureFormat;
-
-    readonly attribute boolean openglesVersion1_1;
-
-    readonly attribute boolean openglesVersion2_0;
-
-    readonly attribute boolean fmRadio;
-
-    readonly attribute DOMString platformVersion raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    readonly attribute DOMString webApiVersion raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    readonly attribute DOMString nativeApiVersion raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    readonly attribute DOMString platformName;
-
-    readonly attribute boolean camera;
-
-    readonly attribute boolean cameraFront;
-
-    readonly attribute boolean cameraFrontFlash;
-
-    readonly attribute boolean cameraBack;
-
-    readonly attribute boolean cameraBackFlash;
-
-    readonly attribute boolean location;
-
-    readonly attribute boolean locationGps;
-
-    readonly attribute boolean locationWps;
-
-    readonly attribute boolean microphone;
-
-    readonly attribute boolean usbHost;
-
-    readonly attribute boolean usbAccessory;
-
-    readonly attribute boolean screenOutputRca;
-
-    readonly attribute boolean screenOutputHdmi;
-
-    readonly attribute DOMString platformCoreCpuArch;
-
-    readonly attribute DOMString platformCoreFpuArch;
-
-    readonly attribute boolean sipVoip;
-
-    readonly attribute DOMString duid;
-
-    readonly attribute boolean speechRecognition;
-
-    readonly attribute boolean speechSynthesis;
-
-    readonly attribute boolean accelerometer;
-
-    readonly attribute boolean accelerometerWakeup;
-
-    readonly attribute boolean barometer;
-
-    readonly attribute boolean barometerWakeup;
-
-    readonly attribute boolean gyroscope;
-
-    readonly attribute boolean gyroscopeWakeup;
-
-    readonly attribute boolean magnetometer;
-
-    readonly attribute boolean magnetometerWakeup;
-
-    readonly attribute boolean photometer;
-
-    readonly attribute boolean photometerWakeup;
-
-    readonly attribute boolean proximity;
-
-    readonly attribute boolean proximityWakeup;
-
-    readonly attribute boolean tiltmeter;
-
-    readonly attribute boolean tiltmeterWakeup;
-
-    readonly attribute boolean dataEncryption;
-
-    readonly attribute boolean graphicsAcceleration;
-
-    readonly attribute boolean push;
-
-    readonly attribute boolean telephony;
-
-    readonly attribute boolean telephonyMms;
-
-    readonly attribute boolean telephonySms;
-
-    readonly attribute boolean screenSizeNormal;
-
-    readonly attribute boolean screenSize480_800;
-
-    readonly attribute boolean screenSize720_1280;
-
-    readonly attribute boolean autoRotation;
-
-    readonly attribute boolean shellAppWidget;
-
-    readonly attribute boolean visionImageRecognition;
-
-    readonly attribute boolean visionQrcodeGeneration;
-
-    readonly attribute boolean visionQrcodeRecognition;
-
-    readonly attribute boolean visionFaceRecognition;
-
-    readonly attribute boolean secureElement;
-
-    readonly attribute boolean nativeOspCompatible;
-
-    readonly attribute <a href="#SystemInfoProfile">SystemInfoProfile</a> profile;
-  };
-
   dictionary SystemInfoOptions {
     unsigned long timeout;
-
     double highThreshold;
-
     double lowThreshold;
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface SystemInfoPropertySuccessCallback {
     void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a> property);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface SystemInfoPropertyArraySuccessCallback {
     void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a>[] properties);
   };
-
   [NoInterfaceObject] interface SystemInfoProperty {
   };
-
   [NoInterfaceObject] interface SystemInfoBattery : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute double level;
-
     readonly attribute boolean isCharging;
   };
-
   [NoInterfaceObject] interface SystemInfoCpu : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute double load;
   };
-
   [NoInterfaceObject] interface SystemInfoStorage : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoStorageUnit">SystemInfoStorageUnit</a>[] units;
   };
-
   [NoInterfaceObject] interface SystemInfoStorageUnit : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString type;
-
     readonly attribute unsigned long long capacity;
-
     readonly attribute unsigned long long availableCapacity;
-
     readonly attribute boolean isRemovable;
-
-    readonly attribute boolean isRemoveable;
   };
-
   [NoInterfaceObject] interface SystemInfoDisplay : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute unsigned long resolutionWidth;
-
     readonly attribute unsigned long resolutionHeight;
-
     readonly attribute unsigned long dotsPerInchWidth;
-
     readonly attribute unsigned long dotsPerInchHeight;
-
     readonly attribute double physicalWidth;
-
     readonly attribute double physicalHeight;
-
     readonly attribute double brightness;
   };
-
   [NoInterfaceObject] interface SystemInfoDeviceOrientation : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoDeviceOrientationStatus">SystemInfoDeviceOrientationStatus</a> status;
-
     readonly attribute boolean isAutoRotation;
   };
-
   [NoInterfaceObject] interface SystemInfoBuild : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString model;
-
     readonly attribute DOMString manufacturer;
-
     readonly attribute DOMString buildVersion;
   };
-
   [NoInterfaceObject] interface SystemInfoLocale : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString language;
-
     readonly attribute DOMString country;
   };
-
   [NoInterfaceObject] interface SystemInfoNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoNetworkType">SystemInfoNetworkType</a> networkType;
   };
-
-   [NoInterfaceObject] interface SystemInfoWifiNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+  [NoInterfaceObject] interface SystemInfoWifiNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString status;
-
     readonly attribute DOMString ssid;
-
     readonly attribute DOMString ipAddress;
-
     readonly attribute DOMString ipv6Address;
-
     readonly attribute DOMString macAddress;
-
     readonly attribute double signalStrength;
   };
-
-   [NoInterfaceObject] interface SystemInfoEthernetNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+  [NoInterfaceObject] interface SystemInfoEthernetNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString cable;
-
     readonly attribute DOMString status;
-
     readonly attribute DOMString ipAddress;
-
     readonly attribute DOMString ipv6Address;
-
     readonly attribute DOMString macAddress;
   };
-
   [NoInterfaceObject] interface SystemInfoCellularNetwork : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
-
     readonly attribute DOMString status;
-
     readonly attribute DOMString apn;
-
     readonly attribute DOMString ipAddress;
-
     readonly attribute DOMString ipv6Address;
-
     readonly attribute unsigned short mcc;
-
     readonly attribute unsigned short mnc;
-
     readonly attribute unsigned short cellId;
-
     readonly attribute unsigned short lac;
-
     readonly attribute boolean isRoaming;
-
     readonly attribute boolean isFlightMode;
-
     readonly attribute DOMString imei raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface SystemInfoSIM : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoSimState">SystemInfoSimState</a> state raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString operatorName raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString msisdn raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString iccid raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute unsigned short mcc raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute unsigned short mnc raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString msin raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString spn raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface SystemInfoPeripheral : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute boolean isVideoOutputOn;
   };
-
   [NoInterfaceObject] interface SystemInfoMemory : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoLowMemoryStatus">SystemInfoLowMemoryStatus</a> status;
-
   };
-
   [NoInterfaceObject] interface SystemInfoCameraFlash : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute double brightness raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     readonly attribute DOMString camera;
-
     readonly attribute long levels raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void setBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
 };</pre>
 </div>
 <div id="page-footer">

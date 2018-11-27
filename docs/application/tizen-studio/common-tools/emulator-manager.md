@@ -54,7 +54,8 @@ To create a new emulator instance:
 
    To view the emulator instance details, right-click the instance and select **Detail**.
 
-   > **Note**  
+   > **Note**
+   >
    > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator).
 
 ### Creating Platforms
@@ -109,13 +110,16 @@ You can create a custom template in 2 ways:
    - To create a new template from the beginning:
      1. Click **+**.
      2. Define the features for the template.
-     3. Click **OK**.The new template is added to the list with a settings icon.
+     3. Click **OK**.
+
+        The new template is added to the list with a settings icon.
 
    - To create a new template based on an existing one:
      1. Select the template you want to clone.
      2. Click **clone template** (![Clone icon](./media/emulator_manager_clone.png)).
      3. Make the desired changes.
-     4. Click **OK**.  
+     4. Click **OK**.
+
         The new template is added to the list with a settings icon.
 
         **Figure: Template Configuration dialog**
@@ -142,7 +146,8 @@ In the Emulator Manager, you can launch, edit, delete, reset, and export emulato
    - To delete an emulator, click **Delete**.
    - To reset an emulator, right-click it and select **Reset**.
      <a name="export"></a>
-   - To export an emulator, right-click it and select **Export as**. Specify the new image file location.  
+   - To export an emulator, right-click it and select **Export as**. Specify the new image file location.
+
      When you export the emulator instance, the state of the platform image is replicated.
 
 <a name="control"></a>

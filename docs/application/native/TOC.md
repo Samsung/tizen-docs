@@ -74,10 +74,12 @@
 # API Reference
 ## [Overview](/application/native/api/overview.md)
 ## Mobile
+### [5.0](/application/native/api/mobile-5.0.md)
 ### [4.0](/application/native/api/mobile-4.0.md)
 ### [3.0](/application/native/api/mobile-3.0.md)
 ### [2.4](/application/native/api/mobile-2.4.md)
 ## Wearable
+### [5.0](/application/native/api/wearable-5.0.md)
 ### [4.0](/application/native/api/wearable-4.0.md)
 ### [3.0](/application/native/api/wearable-3.0.md)
 ### [2.3.2](/application/native/api/wearable-2.3.2.md)

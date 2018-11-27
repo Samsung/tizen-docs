@@ -41,6 +41,9 @@ With the DALi UI, you can create the following application types:
 
   The watch application is available for wearable devices only, and it is shown on the idle screen of the device. For low-powered wearable devices, the watch application supports a special ambient mode. The ambient mode reduces power consumption by showing a limited UI and updating the time on the screen only once per minute.
 
+- [Widget application](dali-widget-app.md)
+
+  A widget application (or widget) is a specialized application that provides the user a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application. The widget application is available for both mobile and wearable devices.
 
 ## Related Information
 - Dependencies

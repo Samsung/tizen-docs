@@ -10,5 +10,6 @@
 ## [API and Privilege Checker](/application/vstools/tools/api-privilege-checker.md)
 ## [Device Manager](/application/vstools/tools/device-manager.md)
 ## [Log Viewer](/application/vstools/tools/log-viewer.md)
-## [Profiler](/application/vstools/tools/profiler.md)
+## [Profiler](/application/vstools/tools/profiler-user-manual.md)
+## [Memory Profiler](/application/vstools/tools/memory-profiler-user-manual.md)
 ## [Command Line Interface](/application/vstools/tools/dotnet-cli-ext.md)

@@ -132,7 +132,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wbadgecounter.png" width="180"/></td>
 			<td>
-			<p><strong>(W) BadgeCounter</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/BadgeCounter" target="_blank"><strong>(W) BadgeCounter</strong></a></p>
 			<p>This sample application demonstrates how to manage badge counter of the application using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			<p>In addition, there is similar web sample application.<br>
 			<ul>
@@ -179,7 +179,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wpreference.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Preference</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Preference" target="_blank"><strong>(W) Preference</strong></a></p>
 			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>

@@ -45,20 +45,15 @@ The following figure illustrates the application to be created:
 
 To create the application project:
 
-1. Launch the Tizen Studio.
-2. Make sure the **Web** perspective is selected in the upper-right corner of the Tizen Studio window.
+1.  Launch the Tizen Studio.
 
-    ![Checking the perspective](media/change_perspective_w.png)
-
-    If not, select it. If the perspective is not visible, in the Tizen Studio menu, select **Window &gt; Perspective &gt; Open Perspective &gt; Other &gt; Web**, and click **OK**.
-
-3. In the Tizen Studio menu, select **File &gt; New &gt; Tizen Project**.
+2. In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
     ![Creating a new Tizen Web project](media/create_project_1.png)
 
     The Project Wizard opens.
 
-4. In the Project Wizard, define the project details.
+3. In the Project Wizard, define the project details.
 
     The Project Wizard is used to create the basic application skeleton with the required folder structure and mandatory files. You can easily create different applications by selecting an applicable template or sample for the Project Wizard to use.
 
@@ -104,7 +99,8 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_tv.png)
 
-> **Note**  
+> **Note**
+>
 > You can [view and modify the application configuration](#configuration) in the Web application configuration editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
@@ -136,15 +132,16 @@ To view and modify the application configuration:
 
     - **Source**: View and edit the source code of the `config.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-        > **Note**  
+        > **Note**
+        >
         > The `config.xml` file must conform to both the XML file format and the W3C specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
-3. To save any changes, in the Tizen Studio menu, select **File &gt; Save All**.
+3. To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
 For more information on configuring the application, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
 <a name="build"></a>
-## Building Your Application 
+## Building Your Application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
@@ -159,13 +156,13 @@ You can build the application in the following ways:
     To use the automatic build:
 
     1.  Select the project in the **Project Explorer** view.
-    2. In the Tizen Studio menu, select **Project &gt; Build Automatically**.
+    2. In the Tizen Studio menu, select **Project \> Build Automatically**.
 
         ![Using the automatic build](media/build_automatic_tv.png)
 
         A check mark appears next to the menu option.
 
-    You can toggle the automatic build on and off by reselecting **Project &gt; Build Automatically**.
+    You can toggle the automatic build on and off by reselecting **Project \> Build Automatically**.
 
 - **Manually**
 
@@ -179,7 +176,7 @@ You can build the application in the following ways:
 
     Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:
 
-    -   In the Tizen Studio menu, select **Project &gt; Build Project**.
+    -   In the Tizen Studio menu, select **Project \> Build Project**.
     -   Press the **F10** key.
 
 After you have built the application, run it.
@@ -190,17 +187,16 @@ After you have built the application, run it.
 You can run the Web application on the [emulator](../../tutorials/process/run-debug-app.md#emulator), [Samsung TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator), or a [real target device](../../tutorials/process/run-debug-app.md#target).
 
 <a name="emulator"></a>
-### Running on the Emulator 
+### Running on the Emulator
 
 To run the application on the emulator:
 
-1. Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-
-    1. In the Tizen Studio menu, select **Tools &gt; Emulator Manager**.
+1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
+   1.  In the Tizen Studio menu, select **Tools \> Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
-    2. In the Emulator Manager, select a TV emulator from the list and click **Launch**.
+   2. In the Emulator Manager, select a TV emulator from the list and click **Launch**.
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
@@ -215,7 +211,7 @@ To run the application on the emulator:
     Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in the Tizen Studio.
 
 3. Run the application:
-   1.  In the **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Web Application**.
+   1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Application**.
 
         ![Running the application](media/app_run_tv.png)
 
@@ -232,7 +228,7 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_tv.png)
 
-        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window &gt; Show View &gt; Log**.
+        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
 
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
@@ -241,7 +237,7 @@ For more information on using the emulator features, see [Using Emulator Control
 
 To run the application on the simulator:
 
-1.  In the **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Web Simulator Application (Samsung TV)**.
+1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Simulator Application (Samsung TV)**.
 
     ![Running the application](media/simulator_run_tv.png)
 
@@ -295,7 +291,7 @@ To run the application on a target device:
 
 3. Run the application:
    1.  In the **Device Manager**, select the device.
-   2. In **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Web Application**.
+   2. In **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Application**.
 
         ![Running the application on a target device](media/app_run_tv.png)
 
@@ -310,7 +306,8 @@ To run the application on a target device:
 
    3. Confirm that the application launches on the target device.
 
-   > **Note**  
+   > **Note**
+   >
    > The application is launched using the default debug run configuration. To create and use another configuration:
    > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
    > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.

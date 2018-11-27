@@ -21,6 +21,10 @@ You can use the following text input and voice features in your native applicati
 
   You can allow the user to control the device through voice commands. You can register voice commands, which trigger a callback when the user speaks them. Voice commands registered for EFL-supported UI components can be used to perform component-related actions, such as button clicks.
 
+- [Voice Control Engine](voice-control-engine.md)
+
+  You can manage Voice-Control-Engine (VCE) service application and control the recorded audio. The result of audio recording is sent as a predefined command.
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile

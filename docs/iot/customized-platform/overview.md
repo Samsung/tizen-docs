@@ -1,4 +1,4 @@
-# Customized Platform Guide
+# Customized Platform Guide (Only for Tizen 4.0)
 
 ## Introduction
 
@@ -59,7 +59,7 @@ To create a customized platform image:
         ![Image Creation](media/g_image_creation.png)
 
     8.  Click **Download** to download the image to your computer.
-    9.  Flash the newly created platform image to your board. For more details, see [Flashing Tizen Images](../getting-started/tizen-image-download-flash.md).
+    9.  Flash the newly created platform image to your board. For more details, see [Tizen IoT Preview 2](../preview2/getting-started/tizen-image-download-flash.md).
 
 ## Create Applications on the Customized Platform
 

@@ -20,7 +20,7 @@ When the Tizen Project Wizard opens, you must first select the project type.
 
 **Figure: Selecting the project type**
 
-![Selecting the project type](./media/project_wizard_type.png)
+![Selecting the project type](./media/create_project_wizard_type.png)
 
 The Tizen Studio provides various project templates and samples for mobile and wearable devices according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
 
@@ -32,14 +32,14 @@ The **Template** option provides a list of templates with a basic structure wher
 
 - **Mobile**
 
-  - **TAU MasterDetail**: Empty template project for developing UI applications using TAU (Tizen Web UI Framework).  
+  - **TAU MasterDetail**: Empty template project for developing UI applications using TAU (Tizen Web UI Framework).
   - **TAU MultiPage/SinglePage**: Empty template projects for developing multiple page and single page applications using TAU.
 
 - **Wearable**
 
-  - **TAU Basic**: Empty template project for developing basic circular UI applications using TAU.  
-  - **TAU List**: Empty template project for developing UI applications using a TAU list.  
-  - **Web Input Method Editor**: Empty template project for developing Web-based IME (Input Method Editor) applications using HTML, CSS, and JavaScript code.  
+  - **TAU Basic**: Empty template project for developing basic circular UI applications using TAU.
+  - **TAU List**: Empty template project for developing UI applications using a TAU list.
+  - **Web Input Method Editor**: Empty template project for developing Web-based IME (Input Method Editor) applications using HTML, CSS, and JavaScript code.
   - **Widget**: Empty template project for developing widget applications.
 
 The **Sample** option provides a list of sample applications demonstrating various API usage and UI design.
@@ -55,7 +55,7 @@ Based on the selected profile and version, a list of templates is shown in the t
 
 **Figure: Selecting the profile and version**
 
-![File analysis](./media/project_wizard_profile.png)
+![File analysis](./media/create_project_wizard_version.png)
 
 To move to the next step, select the profile and version, and click **Next**.
 
@@ -68,7 +68,7 @@ Based on the selected application type, a list of templates is shown in the temp
 
 **Figure: Selecting the application type**
 
-![Selecting the application type](./media/project_wizard_app_type_w.png)
+![Selecting the application type](./media/create_project_wizard_app_web.png)
 
 To move to the next step, select the application type and click **Next**.
 
@@ -79,7 +79,7 @@ You can select the template for your project while viewing information about a v
 
 **Figure: Selecting the template**
 
-![Selecting the template](./media/project_wizard_template_w.png)
+![Selecting the template](./media/create_project_wizard_template_mw.png)
 
 To move to the next step, select the template and click **Next**.
 
@@ -90,7 +90,7 @@ You can set basic project properties, such as the project name, location, and wo
 
 **Figure: Setting project properties**
 
-![Setting project properties](./media/project_wizard_properties_w.png)
+![Setting project properties](./media/create_project_wizard_properties_mw.png)
 
 The options you can set are listed in the following table.
 

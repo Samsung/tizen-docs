@@ -106,7 +106,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wcalculator.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Calculator</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Calculator" target="_blank"><strong>(W) Calculator</strong></a></p>
 			<p>This sample application demonstrates the regular calculator. This is using some Xamarin.Forms features such as XAML files for GUI and Custom Renderers for the image buttons.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -137,7 +137,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wrotarytimer.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Rotary timer</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/RotaryTimer" target="_blank"><strong>(W) Rotary timer</strong></a></p>
 			<p>This sample application demonstrates how to use Rotary Bezel.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
