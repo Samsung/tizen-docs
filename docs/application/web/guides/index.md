@@ -55,7 +55,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 
 - Guides:<br>
   [Alarms](alarm/alarms.md) <br>
-  [Application Management](app-management/applications.md) <br>
+  [Applications](applications/overview.md) <br>
+  [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
 - API Reference: [Application Framework](../api/latest/device_api/mobile/index.html#Application)
 
@@ -225,7 +226,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 
 - Guides:<br>
   [Alarms](alarm/alarms.md) <br>
-  [Application Management](app-management/applications.md) <br>
+  [Applications](applications/overview.md) <br>
+  [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
 - API Reference: [Application Framework](../api/latest/device_api/wearable/index.html#Application)
 </td>
@@ -380,7 +382,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 
 - Guides:<br>
   [Alarms](alarm/alarms.md) <br>
-  [Application Management](app-management/applications.md)
+  [Applications](applications/overview.md)
+  [Application Management](app-management/overview.md) <br>
 
 - API Reference: [Application Framework](../api/latest/device_api/tv/index.html#Application)
 </td>
