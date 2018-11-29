@@ -106,7 +106,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
     > -   **VID:** A device ID assigned to a developer. You need to assign a unique, alphanumerical ID for each device you develop.
     > -   **Private key and cloud certificate:** The key and certificate to certify that you are allowed to access the SmartThings Cloud.
 
-    1.  In the `platform` section of the `shared/res/device_def.json` file, check if the `mnid` and `vid` are correct. Also check if `setupId` is the same as the 'Device Onboarding ID' of [SmartThings deveolopers workspace](https://devworkspace.developer.samsung.com).
+    1.  In the `platform` section of the `shared/res/master.json` file, check if the `mnid` and `vid` are correct. Also check if `setupId` is the same as the 'Device Onboarding ID' of [SmartThings deveolopers workspace](https://devworkspace.developer.samsung.com).
 
        ![Device Definition JSON File](media/device-definition-json-mnid-vid-5.0.png)
 
