@@ -103,7 +103,7 @@ To activate and deactivate NFC:
     ```
 
     > **Note**   
-	> To be able to use this privilege, your application must be signed with a partner-level certificate.
+	> To be able to use this privilege, your application must be signed with a platform-level certificate.
 
 2.  To activate NFC, use the `SetActivationAsync()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class with the `true` parameter:
 

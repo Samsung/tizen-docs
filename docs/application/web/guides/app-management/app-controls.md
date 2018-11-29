@@ -1,38 +1,10 @@
 # Application Controls
 
-You can use various application management features, including application launching, event handling, and information retrieval.
+An application control (app control) is a way of sharing an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application.
 
-The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+You can use in your application operations, such as calling, Web browsing, and playing media items, which are exported by other applications. This mechanism allows you to conveniently launch other applications whose functionalities you need in your application. If you need to use functionality from another application, launching an application control allows you to request the system to launch that application according to your requirements. You can launch applications based on your immediate needs - you do not need to know their identifiers or specifications. You can use application controls by creating an [application control request](#application-control-request). The request allows you to [launch other applications](#launching-applications-with-the-application-control) to use their functionalities.
 
-The main application management features are:
-
-- Application management
-
-  You can [manage applications](#managing-applications) by launching and stopping other applications, and hiding or exiting the current application.
-
-- Application information retrieval
-
-  You can display a list of applications that are currently installed or running on the device, and [retrieve application information](#retrieving-application-information), such as application name, application ID, and context ID.
-
-- Application controls
-
-  An application control (app control) is a way of sharing an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application.
-
-  You can use in your application operations, such as calling, Web browsing, and playing media items, which are exported by other applications. This mechanism allows you to conveniently launch other applications whose functionalities you need in your application. If you need to use functionality from another application, launching an application control allows you to request the system to launch that application according to your requirements. You can launch applications based on your immediate needs - you do not need to know their identifiers or specifications. You can use application controls by creating an [application control request](#application-control-request). The request allows you to [launch other applications](#launching-applications-with-the-application-control) to use their functionalities.
-
-  If you want to allow other applications to use your application functionalities, you must [export your application controls](#application-control-export) and be prepared to [receive requests and respond to them](#receiving-and-replying-to-application-control-requests).
-
-- Event handling
-
-  You can [send and receive events](#broadcasting-and-listening-for-events) between 2 applications using events. Your application can broadcast its own events, and listen for events broadcast by others.
-
-- Background execution
-
-  Usually, when a Web application moves to the background, it gets suspended. To enable [background execution](#background-execution), you must declare a background category for your application.
-
-- Application status monitoring
-
-  You can monitor the installed applications and [be notified when their status changes](#monitoring-the-application-status).
+If you want to allow other applications to use your application functionalities, you must [export your application controls](#application-control-export) and be prepared to [receive requests and respond to them](#receiving-and-replying-to-application-control-requests).
 
 ## Application Control Request
 
@@ -53,7 +25,8 @@ The application control uses the following primary information:
 
   Used to identify the provider application of the requested application control.
 
-  > **Note**  
+  > **Note**
+  >
   > Since Tizen 2.4, the platform-defined application controls and aliased application IDs which were defined in previous Tizen versions may not be supported. If they are used, the application control behavior is undefined and cannot be guaranteed.
 
 - Operation
@@ -66,9 +39,12 @@ An application can be launched by the user from the Launcher or by another appli
 
 There are different types of application control requests for [launching other applications](#launching-applications-with-the-application-control):
 
-- [Explicit launch](#explicit-launch)  
+- [Explicit launch](#explicit-launch)
+
    You determine which application must be launched by explicitly specifying an application ID. The application ID determines which application is launched and the application performs the operation as specified in the application control request.
-- [Implicit launch](#implicit-launch)  
+
+- [Implicit launch](#implicit-launch)
+
    You provide information to describe the request to be performed by the newly launched application without specifying the application ID. The system uses the information to resolve the application control. It does this by trying to find a proper application to perform the application control request and then launching the selected application.
 
 You can take advantage of the Tizen [common application functionalities](#common-application-controls) through the application control feature. You can also [export your application functionality](#application-control-export) to allow other applications to launch your application.
@@ -77,7 +53,8 @@ You can take advantage of the Tizen [common application functionalities](#common
 
 If you specify the exact application ID of the application for the `launchAppControl()` method of the `Application` interface, you can request the application control from a specific application. The application ID determines which application is launched and the application performs the operation as specified in the control request.
 
-> **Note**  
+> **Note**
+>
 > An explicit launch request cannot be completed if the user does not have the specified application on their device. Hence implicit launches can be more effective, because the system can find an available application to complete the request. The implicit launch can also enhance the user experience because it allows the user to select a preferred application to complete the task.
 
 ### Implicit Launch
@@ -358,7 +335,8 @@ Learning how to retrieve information about installed and running applications al
   tizen.application.getAppsUsageInfo(successCallback, errorCallback, "RECENTLY");
   ```
 
-> **Note**  
+> **Note**
+>
 > Statistics are available for the last 90 days. If you set a time filter that starts from more than 90 days ago, only the period that falls within the last 90 days is included in the returned array.
 
 ## Managing Applications
@@ -566,9 +544,10 @@ Learning how to broadcast and listen for events allows you to create Web applica
 
 When a Web application becomes invisible (moves to the background), it is suspended. Before Tizen 2.4, to continue to execute the application in the background, you had to set the `background-support` attribute of the `<tizen:setting>` element to `enable` in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_setting) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_setting) applications).
 
-Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../native/guides/app-management/efl-ui-app.md#allow_bg_table) table.
+Since Tizen 2.4, the background process management policy has been changed. The system does not allow applications to run in the background except when they are explicitly declared to do so by having a specific background category. For more information on the available background categories, see the [Allowed background application policy](../../../native/guides/applications/efl-ui-app.md#allow_bg_table) table.
 
-> **Note**  
+> **Note**
+>
 > To guarantee that a Web application runs in the background, at least 1 `background-category` element must be declared in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_bg_category) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_bg_category) applications), and the `background-support` attribute of the `<tizen:setting>` element must be set to `enable`.
 
 The following `config.xml` file example shows how an application can be configured to run in the background:
