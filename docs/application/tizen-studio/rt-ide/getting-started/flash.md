@@ -19,7 +19,7 @@ To upload your project on the board, you need to flash it:
 
      ![Flashing without building error](media/rt_flash_build_error.png)
 
-4. In the Flash TizenRT Project Wizard, select the **Flash** option, and click **Flash**:
+4. In the Flash TizenRT Project Wizard, select the **Flash** option, and click **OK**:
 
      ![Flash option](media/rt_flash_option.png)
 
