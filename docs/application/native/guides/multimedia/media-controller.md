@@ -23,11 +23,7 @@ The main features of the Media Controller API include:
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
-- Sending and processing commands
-
-  You can [send a command](#sending-and-processing-commands) to the server from the client side and then process the command on the server side.
-
-- Sending and processing commands to receive replies
+- Sending and processing commands to receive the replies
 
   You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side, and then process the command on the server side.
 
@@ -272,82 +268,6 @@ To retrieve the playlist and metadata information on the client side:
 >
 > This feature supports Tizen 4.0 and Higher for Mobile.
 
-
-## Sending and Processing Commands
-
-To send a command to the server from the client side:
-
-1. Create the media controller client handle using the `mc_client_create()`:
-
-   ```
-   ret = mc_client_create(&g_client_h);
-   ```
-
-2. Retrieve the server name using the `mc_client_get_latest_server_info()`:
-
-   ```
-   char *server_name = NULL;
-   mc_server_state_e server_state;
-
-   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
-   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
-   ```
-
-3. Send the command to the server using the corresponding `mc_client_send_XXX()`. Use the server name retrieved in the previous step to identify the server.
-
-   For example, to send a playback state change command to the server, use the `mc_client_send_playback_state_command()` with the new state defined in the third parameter:
-
-   ```
-   mc_playback_h playback = NULL;
-   mc_playback_states_e playback_state = MC_PLAYBACK_STATE_PLAYING;
-
-   ret = mc_client_send_playback_state_command(g_client_h, server_name, playback_state);
-   ```
-
-   If you want to define your own commands to send to the server, use the `mc_client_send_custom_command()`.
-
-4. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
-
-   ```
-   mc_client_destroy(g_client_h);
-   ```
-
-To process the received command on the server side:
-
-1. Create the media controller server handle using the `mc_server_create()`:
-
-   ```
-   ret = mc_server_create(&g_server_h);
-   ```
-
-2. Define the callback that is invoked when the server receives the command.
-
-   For example, to define a callback for playback state change commands:
-
-   ```
-   void
-   command_received_cb(const char* client_name, mc_playback_states_e state, void *user_data)
-   {
-       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Playback state: %d\n", client_name, state);
-   }
-   ```
-
-3. Register the callback:
-
-   - To register a callback for playback state change commands, use the `mc_server_set_playback_state_command_received_cb()`.
-   - To register a callback for a custom command, use the `mc_server_set_custom_command_received_cb()`.
-
-   For example, to register a callback for playback state change commands:
-
-   ```
-   ret = mc_server_set_playback_state_command_received_cb(g_mc_server, command_received_cb, NULL);
-   ```
-
-4. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
-
-   ```
-   mc_server_destroy(g_server_h);
-   ```
 
 ## Sending and Processing Commands to Receive Replies
 
@@ -722,10 +642,6 @@ The following table lists all the server state attributes the client can receive
 | `MC_PLAYBACK_STATE_PLAYING`      | Playback state of playing                |
 | `MC_PLAYBACK_STATE_PAUSED`       | Playback state of paused                 |
 | `MC_PLAYBACK_STATE_STOPPED`      | Playback state of stopped                |
-| `MC_PLAYBACK_STATE_NEXT_FILE`    | Playback state of next file              |
-| `MC_PLAYBACK_STATE_PREV_FILE`    | Playback state of previous file          |
-| `MC_PLAYBACK_STATE_FAST_FORWARD` | Playback state of fast forward           |
-| `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewind                 |
 | `MC_PLAYBACK_STATE_MOVING_TO_NEXT` | Playback state of moving to next media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS` | Playback state of moving to previous media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_FAST_FORWARDING` | Playback state of fast forwarding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
