@@ -23,7 +23,7 @@ The main features of the Media Controller API include:
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
-- Sending and processing commands to receive the replies
+- Sending and processing commands to receive replies
 
   You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side, and then process the command on the server side.
 
