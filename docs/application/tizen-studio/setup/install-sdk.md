@@ -1,8 +1,8 @@
 # Installing Tizen Studio
 
-The installer has been renewed to provide a better user experience and show the unique Tizen philosophy. Using the new installer, you can now install the basic platform as well as useful tools step by step with a few clicks.
+The installer has been renewed to provide a better user experience and show the unique Tizen philosophy. Using the new installer, you can now install the basic platform and the useful tools with a few clicks.
 
-You can use either the GUI or CLI version of the installer.
+You can use either the GUI or the CLI version of the installer.
 
 ## Using the GUI Installer
 
@@ -10,31 +10,27 @@ To install the Tizen Studio:
 
 1. Launch the Tizen Studio installer.
 
-2. Accept the software license.
-
-   The license contains important legal notices for using the Tizen Studio. Read it fully, and click **Accept** only if you agree with the license statement.
+2. Accept the software license by reading the entire agreement, and click **Accept** only if you agree with the license statement:
 
    ![Tizen Studio License Agreement](./media/install_sdk_license.png)
 
-3. Set the SDK and data location.
-
-   The Tizen Studio and its data directory are installed in the location specified in the Installation settings step. To change the directory, click the **...** button and specify a new directory. If the new directory is valid (no errors are shown), click **Install** at the bottom of the installer.
+3. Click (./media/advanced_conf_browse.png) and specify a new directory to set the SDK and data location. If the new directory is valid and shows no errors, click **Install**:
+    
 
    ![Set SDK and data location](./media/install_sdk_directory.png)
 
-4. Wait while the Tizen Studio is installed.
+4. Click **Install** to install the required packages and tools in the specified directory. 
 
-   Once you click **Install**, the installer installs the required packages and tools in the specified directory. You can monitor the installation process or cancel the installation. The installation process is completed in a few minutes, unless you cancel it.
+   You can monitor the installation process or cancel the installation. The installation process is completed in a few minutes, unless you cancel it.
 
-5. Install additional tools.
+5. Click **Finish** and close the installer:
 
-   After the installation is finished, you can close the installer by clicking **Finish**.
 
    ![Installation complete](./media/migration_finish_instal.png)
 
-   If you want to install additional platforms and tools, launch the Package Manager by checking the **Launch the Package Manager** check box before clicking **Finish**.
+   To install additional platforms and tools, launch the Package Manager by selecting the **Launch the Package Manager** check box and click **Finish**.
 
-   Through the Tizen Studio Package Manager, you can both install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
+   Using the Tizen Studio Package Manager, you can install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
 
 
    > **Note**  
