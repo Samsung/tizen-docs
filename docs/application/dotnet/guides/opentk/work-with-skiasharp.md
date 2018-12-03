@@ -1,0 +1,183 @@
+# Work with SkiaSharp
+
+SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on Google's Skia Graphics Library. 
+It provides a comprehensive 2D API that can be used across mobile, server and desktop models to render images.
+
+In OpenTK application, you can use SkiaSharp to draw geometries, texts or images. For more information about the SkiaSharp APIs, please reference to [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3).
+
+To draw something with SkiaSharp in OpenTK application, it following some general guidelines:
+
+-   Allocate a memory block as a canvas for SkiaSharp.
+-   Create SKCanvas on this memory block and render text/image you want on this SKCanvas with SkiaSharp.
+-   Create 2D texture from this memory block.
+-   Draw 2D texture with graphics APIs of OpenTK.
+
+## Allocate memory block
+
+Allocate a specific size memory block. The size of memory block must be same with the size of the canvas you want.
+```C#
+private IntPtr pBitMap;                   // memory handle
+private int rowByte;                      // bytes of one row 
+private int bitmapHeight, bitmapWidth;    // height and width of the canvas
+
+private void CreateBitmap()
+{
+    bitmapHeight = (int)(skiaPercent * mainWindow.Height);
+    bitmapWidth = (int)(skiaPercent * mainWindow.Width);
+    pBitMap = Marshal.AllocHGlobal(bitmapWidth * bitmapHeight * 4);     // allocate a memory block
+
+    rowByte = bitmapWidth * 4;
+}
+
+private void FreeBitmap()
+{
+    if (pBitMap != IntPtr.Zero)
+    {
+        Marshal.FreeHGlobal(pBitMap);   // free the allocated memory block
+        pBitMap = IntPtr.Zero;
+    }
+}
+```
+
+## Create SKCanvas on memory block
+
+Create SKSurface on the memory block, and then you can get the SKCanvas from the SKSurface.
+```C#
+private SKSurface surface;
+private SKCanvas canvas;
+
+private void CreateSKCanvas()
+{
+    GL.PixelStore(All.UnpackAlignment, 4);
+    
+    // create the surface
+    var info = new SKImageInfo(bitmapWidth, bitmapHeight, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
+    surface = SKSurface.Create(info, pBitMap, rowByte);
+    if (surface != null)
+    {
+        canvas = surface.Canvas;
+    }
+}
+```
+
+## Draw text on the SKCanvas
+
+```C#
+private void DrawTextBySkiaSharp(SKCanvas canvas, int canvasWidth, int canvasHeight)
+{
+    canvas.DrawColor(SKColors.White);                                   // clear the canvas as white
+
+    using (var paint = new SKPaint())
+    {
+        paint.TextSize = 64.0f;
+        paint.IsAntialias = true;
+        paint.Color = SKColors.Red;
+        paint.IsStroke = false;
+        paint.TextAlign = SKTextAlign.Center;
+
+        canvas.DrawText("SkiaSharp", width / 2f, 144.0f, paint);        // Draw text 'SkiaSharp' on the canvas
+    }
+}
+
+private void DrawTextOnSkCanvas()
+{
+    if (canvas != null)
+    {
+        DrawTextBySkiaSharp(canvas, bitmapWidth, bitmapHeight);
+        canvas.Flush();
+    }
+}
+```
+
+## Create 2D texture from memory block.
+
+Call `GL.TexImage2D` of `OpenTK.Graphics.ES20` to generate 2D texture from the memory block.
+```C#
+private void Create2DTextureFromMemory()
+{
+    GL.TexImage2D(
+                All.Texture2D,
+                0,
+                All.BgraExt,
+                bitmapWidth,
+                bitmapHeight,
+                0,
+                All.BgraExt,
+                All.UnsignedByte,
+                pBitMap
+            );
+
+    GL.TexParameter(All.Texture2D, All.TextureMinFilter, (float)All.LinearMipmapLinear);
+    GL.TexParameter(All.Texture2D, All.TextureMagFilter, (float)All.Linear);
+    GL.GenerateMipmap(All.Texture2D);
+}
+```
+
+## Draw 2D Texture
+Draw a 2D texture with graphics APIs of OpenTK, for more information you can reference to [OpenTK samples](https://github.sec.samsung.net/dotnet/opentk_samples).
+```C#
+private IGameWindow mainWindow;     // window
+
+private float[] vertices;           // vertex array
+private float[] textCoord;          // texture coordinate array
+
+private int mProgramHandle;         // programe handle
+
+protected override void OnCreate()
+{
+    mainWindow = Window;
+    mainWindow.RenderFrame += OnRenderFrame;
+}
+
+private void OnRenderFrame(Object sender, FrameEventArgs e)
+{
+    GL.Viewport(0, 0, mainWindow.Width, mainWindow.Height);
+
+    GL.ClearColor(Color4.CornflowerBlue);
+    GL.Enable(All.DepthTest);
+    GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+
+    GL.UseProgram(mProgramHandle);
+    positionLoc = GL.GetAttribLocation(mProgramHandle, "a_position");
+    texCoordLoc = GL.GetAttribLocation(mProgramHandle, "a_texCoord");
+
+    textureLoc = GL.GetUniformLocation(mProgramHandle, "s_texture");
+    GL.Uniform1(textureLoc, 0);
+
+    unsafe
+    {
+        fixed (float* pvertices = vertices)
+        {
+            // Prepare the triangle coordinate data
+            GL.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 6 * sizeof(float), new IntPtr(pvertices));
+            GL.EnableVertexAttribArray(positionLoc);
+        }
+        fixed (float* texCoord = textCoord)
+        {
+            GL.VertexAttribPointer(texCoordLoc, 2, VertexAttribPointerType.Float, false, 2 * sizeof(float), new IntPtr(texCoord));
+            GL.EnableVertexAttribArray(texCoordLoc);
+        }
+    }
+    mvpLoc = GL.GetUniformLocation(mProgramHandle, "u_mvpMatrix");
+
+    // Apply the projection and view transformation
+    GL.UniformMatrix4(mvpLoc, false, ref mvpMatrix);
+
+    GL.DrawArrays(All.Triangles, 0, 36);
+    GL.Finish();
+
+    // Disable vertex array
+    GL.DisableVertexAttribArray(positionLoc);
+    GL.DisableVertexAttribArray(inColorLoc);
+    mainWindow.SwapBuffers();
+}
+```
+
+## Sample Application
+
+We implemented an OpenTK sample application which using SkiaSharp to draw text on a rotating cube. For more information
+you can referecne to this [sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp).
+
+- Running sample on TV emulator                                  
+![WorkWithSkiaSharp](media/SampleWorkWithSkiaSharp.png)
+

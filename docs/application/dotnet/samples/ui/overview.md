@@ -379,6 +379,15 @@ for TD:
 			<p>This sample application demonstrates how to implement shaders loading, program creation, linking, vertex data loading, texture data loading, and other preliminary operations of drawing. It also demonstrates how to implement a basic graph drawing (drawing triangles) with the DrawArrays API.</p>
 			</td>
 		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv36cubewithskiasharp.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) CubeWithSkiaSharp (OpenTK)</strong> [In progress]</p>
+			<p>This sample application mainly shows how to draw text with SkiaSharp on target memory block, generates 2D texture with the target memory block, and finally show this 2D texture in OpenTK application (drawing text on a rotating cube).</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
