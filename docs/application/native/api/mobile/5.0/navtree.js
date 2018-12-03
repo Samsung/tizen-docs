@@ -12,8 +12,19 @@ $(document).ready(function () {
     
     var api_platform = capitalizeFirstLetter(path[path.length - 3 ]);
     var api_version = path[path.length - 2 ];
-    var div_platform = '<div style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-bottom: 10px;padding-top: 10px;text-align: center;color: #555;font-size: 16px;margin-right: 18px;">'+ api_platform  +'</div>';
-    var div_verion = '<div style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-top: 10px;padding-bottom: 10px;/* padding-left: 40px; */text-align: center;color: #555;font-size: 16px;">'+ api_version  +'</div>'
+
+    var div_platform = 
+    '<a id="div_platform" style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-bottom: 10px;padding-top: 10px;text-align: center;color: #555;font-size: 16px;margin-right: 18px;" href="#nogo">'+ 
+    '<span class="undefined-status" style=" width: 100px;left: left;font-size: 100%;font-weight: 400;">' + api_platform + '</span>' +
+    '<span id="platformIcon" class="undefined-icon" style="    width: 16px;    background: url(/images/form-select_type1.png) no-repeat 50%;    height: 16px;    float: right;    margin-right: 11px;    margin-top: 3px;"></span>' +
+    '</a>';
+    
+    var div_verion = 
+    '<a id="div_verion" style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-top: 10px;padding-bottom: 10px;text-align: center;color: #555;font-size: 16px;" href="#nogo">' +
+    '<span class="undefined-status" style=" width: 100px;left: left;font-size: 100%;font-weight: 400;">' + api_version + '</span>' +
+    '<span id="versionIcon" class="undefined-icon" style="    width: 16px;    background: url(/images/form-select_type1.png) no-repeat 50%;    height: 16px;    float: right;    margin-right: 11px;    margin-top: 3px;"></span>' +
+    '</a>';
+
     var div_common = '<div style="margin-top: 16px; margin-bottom: 10px; margin-left: 30px;">' + div_platform + div_verion + '</div>';
     $('#nav-tree').prepend(div_common);
     
@@ -78,6 +89,11 @@ $(document).ready(function () {
     $("body").prepend(navbar_header);
     
     register_gnb_search_btn();
+
+    var menujsElement = document.createElement("script");
+    menujsElement.src = "/api/menu.js";
+    menujsElement.type = "text/javascript";
+    document.getElementsByTagName("head")[0].appendChild(menujsElement);
 });
 function register_gnb_search_btn() {
   $('#gnb_search_btn').click(function() {
@@ -489,4 +505,3 @@ function initNavTree(toroot,relpath)
 
   $(window).load(showRoot);
 }
-
