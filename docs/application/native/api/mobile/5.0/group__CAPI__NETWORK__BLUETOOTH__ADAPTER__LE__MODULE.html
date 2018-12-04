@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -148,33 +148,33 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gaaab623a017aca6b0e6e74ec7f52616bd">bt_adapter_le_free_ibeacon_report</a> (<a class="el" href="structbt__adapter__le__ibeacon__scan__result__info__s.html">bt_adapter_le_ibeacon_scan_result_info_s</a> *ibeacon_info)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees iBeacon information.  <a href="#gaaab623a017aca6b0e6e74ec7f52616bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab1b294b174c7597e2ee4ef29ea14c255">bt_adapter_le_create_advertiser</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> *advertiser)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create advertiser to advertise device's existence or respond to LE scanning request.  <a href="#gab1b294b174c7597e2ee4ef29ea14c255"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates advertiser to advertise device's existence or respond to LE scanning request.  <a href="#gab1b294b174c7597e2ee4ef29ea14c255"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga4e80b7cc6f4a8f1ff5ec9c3ff61d36cc">bt_adapter_le_destroy_advertiser</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy advertiser.  <a href="#ga4e80b7cc6f4a8f1ff5ec9c3ff61d36cc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys advertiser.  <a href="#ga4e80b7cc6f4a8f1ff5ec9c3ff61d36cc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3c3e9866c7b04563b38b1bd3e946447d">bt_adapter_le_add_advertising_service_uuid</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type, const char *uuid)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a service UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga3c3e9866c7b04563b38b1bd3e946447d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a service UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga3c3e9866c7b04563b38b1bd3e946447d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga567c62e7aed5ad9749d17bbfcafab0f7">bt_adapter_le_add_advertising_service_solicitation_uuid</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type, const char *uuid)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a service solicitation UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga567c62e7aed5ad9749d17bbfcafab0f7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a service solicitation UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga567c62e7aed5ad9749d17bbfcafab0f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gad184937d1a7871466546b8cb08c43f9d">bt_adapter_le_add_advertising_service_data</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type, const char *uuid, const char *service_data, int service_data_len)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add service data to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#gad184937d1a7871466546b8cb08c43f9d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds service data to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#gad184937d1a7871466546b8cb08c43f9d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gae9293da720cfdfd89bcf8568e08bf7f7">bt_adapter_le_set_advertising_appearance</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type, int appearance)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the external appearance of this device to advertise or scan response data. Please refer to the adopted Bluetooth specification for the the appearance.  <a href="#gae9293da720cfdfd89bcf8568e08bf7f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga75fff601a886390a48a3530ef48266e2">bt_adapter_le_add_advertising_manufacturer_data</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type, int manufacturer_id, const char *manufacturer_data, int manufacturer_data_len)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add manufacturer specific data to advertise or scan response data. Please refer to the Bluetooth Assigned Numbers provided by the Bluetooth SIG for a list of existing company identifiers. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga75fff601a886390a48a3530ef48266e2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds manufacturer specific data to advertise or scan response data. Please refer to the Bluetooth Assigned Numbers provided by the Bluetooth SIG for a list of existing company identifiers. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga75fff601a886390a48a3530ef48266e2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab9ea9ae55d14c4115037b6864b50b8d2">bt_adapter_le_set_advertising_device_name</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type, bool include_name)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the device name should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#gab9ea9ae55d14c4115037b6864b50b8d2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the device name should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#gab9ea9ae55d14c4115037b6864b50b8d2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9bfc32f57d35c5f9baf8ecb295677142">bt_adapter_le_set_advertising_tx_power_level</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type, bool include_tx_power)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the transmission power level should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga9bfc32f57d35c5f9baf8ecb295677142"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the transmission power level should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data.  <a href="#ga9bfc32f57d35c5f9baf8ecb295677142"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370">bt_adapter_le_clear_advertising_data</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga3530888b0378925221f930c82cc50b5f">bt_adapter_le_packet_type_e</a> pkt_type)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all data to be advertised or responded to scan request from LE scanning device.  <a href="#gac7ecfb54406a731baa8ac8e48036a370"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all data to be advertised or responded to scan request from LE scanning device.  <a href="#gac7ecfb54406a731baa8ac8e48036a370"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga50dc7f4601186bb2fb8efaa49cf2b736">bt_adapter_le_stop_advertising</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the advertising.  <a href="#ga50dc7f4601186bb2fb8efaa49cf2b736"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af">bt_adapter_le_start_advertising_new</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac2620ac89bd4036fd0cda8b75e642cf7">bt_adapter_le_advertising_state_changed_cb</a> cb, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Start advertising with passed advertiser and advertising parameters.  <a href="#ga9890155c4dc9f011fd86dbe3524f76af"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts advertising with passed advertiser and advertising parameters.  <a href="#ga9890155c4dc9f011fd86dbe3524f76af"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gaa38a92216af7a7ed364bec0c60978201">bt_adapter_le_set_advertising_mode</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga2988bd24e06ce481bb2b3f97e3631821">bt_adapter_le_advertising_mode_e</a> mode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set advertising mode to control the advertising power and latency.  <a href="#gaa38a92216af7a7ed364bec0c60978201"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets advertising mode to control the advertising power and latency.  <a href="#gaa38a92216af7a7ed364bec0c60978201"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga5b784ea0178432597dc7353bba9b86b6">bt_adapter_le_set_advertising_connectable</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga8ead3da88e329e313ee3d7f683917d86">bt_advertiser_h</a> advertiser, bool connectable)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the advertising type should be connectable or non-connectable.  <a href="#ga5b784ea0178432597dc7353bba9b86b6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the advertising type should be connectable or non-connectable.  <a href="#ga5b784ea0178432597dc7353bba9b86b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga98e79dd84057ea3bc965325e27d0ad03">bt_adapter_le_set_scan_mode</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gada7d8b2ff1a60a0c1adaffdd3dcdfaca">bt_adapter_le_scan_mode_e</a> scan_mode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Bluetooth LE scan mode.  <a href="#ga98e79dd84057ea3bc965325e27d0ad03"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gad2d2dc95f4985ddd8704733e51b6490f">bt_adapter_le_scan_filter_create</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gaf93f3ddc0a442bb7923fdbfa5ddb2bd5">bt_scan_filter_h</a> *scan_filter)</td></tr>
@@ -245,7 +245,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Start advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Starts advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga50dc7f4601186bb2fb8efaa49cf2b736" title="Stops the advertising.">bt_adapter_le_stop_advertising()</a> </dd></dl>
 
@@ -538,7 +538,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Add manufacturer specific data to advertise or scan response data. Please refer to the Bluetooth Assigned Numbers provided by the Bluetooth SIG for a list of existing company identifiers. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
+<p>Adds manufacturer specific data to advertise or scan response data. Please refer to the Bluetooth Assigned Numbers provided by the Bluetooth SIG for a list of existing company identifiers. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -563,7 +563,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clear all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clears all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
 
 </div>
 </div>
@@ -610,9 +610,9 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Add service data to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
+<p>Adds service data to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>16-bit UUID is supported. (e.g. 180F)</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>16-bit UUID is supported. (e.g. 180F).</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">advertiser</td><td>The handle of advertiser </td></tr>
@@ -636,7 +636,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clear all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clears all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
 
 </div>
 </div>
@@ -671,7 +671,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Add a service solicitation UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
+<p>Adds a service solicitation UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>16-bit service solicitation UUID or 128-bit service solicitation UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB)</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -695,7 +695,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clear all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clears all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
 
 </div>
 </div>
@@ -730,9 +730,9 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Add a service UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
+<p>Adds a service UUID to advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>16-bit UUID or 128-bit UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB)</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>16-bit UUID or 128-bit UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB).</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">advertiser</td><td>The handle of advertiser </td></tr>
@@ -754,7 +754,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clear all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clears all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
 
 </div>
 </div>
@@ -783,7 +783,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Clear all data to be advertised or responded to scan request from LE scanning device. </p>
+<p>Clears all data to be advertised or responded to scan request from LE scanning device. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -821,7 +821,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Create advertiser to advertise device's existence or respond to LE scanning request. </p>
+<p>Creates advertiser to advertise device's existence or respond to LE scanning request. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -841,7 +841,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga4e80b7cc6f4a8f1ff5ec9c3ff61d36cc" title="Destroy advertiser.">bt_adapter_le_destroy_advertiser()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga4e80b7cc6f4a8f1ff5ec9c3ff61d36cc" title="Destroys advertiser.">bt_adapter_le_destroy_advertiser()</a> </dd></dl>
 
 </div>
 </div>
@@ -860,7 +860,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Destroy advertiser. </p>
+<p>Destroys advertiser. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -879,7 +879,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab1b294b174c7597e2ee4ef29ea14c255" title="Create advertiser to advertise device&#39;s existence or respond to LE scanning request.">bt_adapter_le_create_advertiser()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab1b294b174c7597e2ee4ef29ea14c255" title="Creates advertiser to advertise device&#39;s existence or respond to LE scanning request.">bt_adapter_le_create_advertiser()</a> </dd></dl>
 
 </div>
 </div>
@@ -1315,13 +1315,13 @@ Typedefs</h2></td></tr>
 
 <p>Gets the service solicitation UUID list from the scan result information. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>uuids</em> must be iterated as count and each pointed data must be released with free(). Then uuids must be released with free(). <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>uuids</em> must be iterated as count and each pointed data must be released with free(). Then <em>uuids</em> must be released with free(). <br/>
  16-bit service solicitation UUID or 128-bit service solicitation UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB)</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>The scan result information </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pkt_type</td><td>The packet type </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">uuids</td><td>The list of string of the service solicitation uuid </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">uuids</td><td>The list of string of the service solicitation UUID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The count of the service UUIDs</td></tr>
   </table>
   </dd>
@@ -1381,13 +1381,13 @@ Typedefs</h2></td></tr>
 
 <p>Gets the service UUID list from the scan result information. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>uuids</em> must be iterated as count and each pointed data must be released with free(). Then uuids must be released with free(). <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>uuids</em> must be iterated as count and each pointed data must be released with free(). Then <em>uuids</em> must be released with free(). <br/>
  16-bit service UUID or 128-bit service UUID is supported. (e.g. 180F, 0000180F-0000-1000-8000-00805F9B34FB)</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">info</td><td>The scan result information </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">pkt_type</td><td>The packet type </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">uuids</td><td>The list of string of the service uuid </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">uuids</td><td>The list of string of the service UUID </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The count of the service UUIDs</td></tr>
   </table>
   </dd>
@@ -1481,9 +1481,11 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Checks for the LE device discovery is in progress or not. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000422">Deprecated:</a></b></dt><dd>Deprecated since 2.3.1</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000466">Deprecated:</a></b></dt><dd>Deprecated since 2.3.1</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If Bluetooth LE scan is in progress, other operations are not allowed and you have to either stop the LE scan operation, or wait for it to be finished, before performing other operations.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If Bluetooth LE scan is in progress, other operations are not allowed and <br/>
+ you have to either stop the LE scan operation, or wait for it to be finished, <br/>
+ before performing other operations.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">is_discovering</td><td>The discovering status: (<code>true</code> = in progress , <code>false</code> = not in progress )</td></tr>
@@ -1606,7 +1608,8 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Several scan filters can be registered. If an advertisement passes any of the registered scan filters, it will be included in the results.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Several scan filters can be registered. If an advertisement passes <br/>
+ any of the registered scan filters, it will be included in the results.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">scan_filter</td><td>The scan filter handle</td></tr>
@@ -2398,7 +2401,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clear all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clears all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
 
 </div>
 </div>
@@ -2427,7 +2430,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set whether the advertising type should be connectable or non-connectable. </p>
+<p>Sets whether the advertising type should be connectable or non-connectable. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
@@ -2452,7 +2455,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Start advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Starts advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd></dl>
 
 </div>
 </div>
@@ -2487,7 +2490,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set whether the device name should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
+<p>Sets whether the device name should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2510,7 +2513,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clear all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clears all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
 
 </div>
 </div>
@@ -2539,7 +2542,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set advertising mode to control the advertising power and latency. </p>
+<p>Sets advertising mode to control the advertising power and latency. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
@@ -2564,7 +2567,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Start advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Starts advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd></dl>
 
 </div>
 </div>
@@ -2599,7 +2602,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set whether the transmission power level should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
+<p>Sets whether the transmission power level should be included in advertise or scan response data. The maximum advertised or responded data size is 31 bytes including data type and system wide data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2622,7 +2625,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clear all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac7ecfb54406a731baa8ac8e48036a370" title="Clears all data to be advertised or responded to scan request from LE scanning device.">bt_adapter_le_clear_advertising_data()</a> </dd></dl>
 
 </div>
 </div>
@@ -2700,11 +2703,13 @@ The bluetooth service must be initialized with <a class="el" href="group__CAPI__
 </div>
 <div class="memdoc">
 
-<p>Start advertising with passed advertiser and advertising parameters. </p>
+<p>Starts advertising with passed advertiser and advertising parameters. </p>
+<p>Once Bluetooth advertising is started, nearby Bluetooth LE (Low Energy) supported <br/>
+ devices can know this device's existence. And one of them can make a connection request, <br/>
+ if it is allowed.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<p>Once Bluetooth advertising is started, nearby Bluetooth LE(Low Energy) supported devices can know this device's existence. And one of them can make a connection request, if it is allowed.</p>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">advertiser</td><td>The handle of advertiser </td></tr>
@@ -2761,10 +2766,10 @@ The bluetooth service must be initialized with <a class="el" href="group__CAPI__
 <div class="memdoc">
 
 <p>Starts the LE scan to find LE advertisement. </p>
+<p>If a LE advertisement is found, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab4894597224202b75912416ed3041746" title="Called when the LE advertisement has been found.">bt_adapter_le_scan_result_cb()</a> will be invoked.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<p>If a LE advertisement is found, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab4894597224202b75912416ed3041746" title="Called when the LE advertisement has been found.">bt_adapter_le_scan_result_cb()</a> will be invoked.</p>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>The callback to report the result of this function </td></tr>
@@ -2830,9 +2835,9 @@ The bluetooth service must be initialized with <a class="el" href="group__CAPI__
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The advertising must be going on with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Start advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The advertising must be going on with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Starts advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac2620ac89bd4036fd0cda8b75e642cf7" title="Called when the state of advertiser changes.">bt_adapter_le_advertising_state_changed_cb()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Start advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#ga9890155c4dc9f011fd86dbe3524f76af" title="Starts advertising with passed advertiser and advertising parameters.">bt_adapter_le_start_advertising_new()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gac2620ac89bd4036fd0cda8b75e642cf7" title="Called when the state of advertiser changes.">bt_adapter_le_advertising_state_changed_cb()</a> </dd></dl>
 

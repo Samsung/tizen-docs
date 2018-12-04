@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -180,6 +180,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the WPS generated PIN code.  <a href="#gaf132eefff2ff9e9d3148ee704e00a676"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0ccb6b46601b14e50879291d3adf05a5">wifi_manager_forget_ap</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the information of a stored access point and disconnects from it if it was connected to.  <a href="#ga0ccb6b46601b14e50879291d3adf05a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0f68d346aeddc493e0c55edaf7c37daf">wifi_manager_forget_ap_async</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaa36efed7c4ee87b8b194d8f91653b83b">wifi_manager_forget_ap_finished_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes stored access point's information and disconnects from it if connected, asynchronously.  <a href="#ga0f68d346aeddc493e0c55edaf7c37daf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga98edf686e54efcc0f60acf33757c6bdb">wifi_manager_update_ap</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a> ap)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates an existing AP.  <a href="#ga98edf686e54efcc0f60acf33757c6bdb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gac2f5a2691b49a8ab4f3dd3fc362d6a33">wifi_manager_add_vsie</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gafd664a0b67c818565f91eb3661907770">wifi_manager_vsie_frames_e</a> frame_id, const char *vsie_str)</td></tr>
@@ -206,6 +208,8 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the connection process is completed.  <a href="#ga96f9fd68be26834ab33c6a9b1d554dd5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga8572420cf221e05c19b3d62f3160eea1">wifi_manager_disconnected_cb</a> )(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga23ecaf77b31aefdbf8aa5e9dd47ebecc">wifi_manager_error_e</a> result, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga365ad987dee8781ce7f4c5b13e871d77" title="Disconnects to the access point asynchronously.">wifi_manager_disconnect()</a> is completed.  <a href="#ga8572420cf221e05c19b3d62f3160eea1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaa36efed7c4ee87b8b194d8f91653b83b">wifi_manager_forget_ap_finished_cb</a> )(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga23ecaf77b31aefdbf8aa5e9dd47ebecc">wifi_manager_error_e</a> result, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0f68d346aeddc493e0c55edaf7c37daf" title="Deletes stored access point&#39;s information and disconnects from it if connected, asynchronously.">wifi_manager_forget_ap_async()</a> is completed.  <a href="#gaa36efed7c4ee87b8b194d8f91653b83b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga403c0614a5c9f7d99ee52dad5efe06b9">wifi_manager_bssid_scan_finished_cb</a> )(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga23ecaf77b31aefdbf8aa5e9dd47ebecc">wifi_manager_error_e</a> error_code, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the BSSID scan is finished.  <a href="#ga403c0614a5c9f7d99ee52dad5efe06b9"></a><br/></td></tr>
 </table>
@@ -358,6 +362,34 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga365ad987dee8781ce7f4c5b13e871d77" title="Disconnects to the access point asynchronously.">wifi_manager_disconnect()</a> will invoke this callback function. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga365ad987dee8781ce7f4c5b13e871d77" title="Disconnects to the access point asynchronously.">wifi_manager_disconnect()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa36efed7c4ee87b8b194d8f91653b83b"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_forget_ap_finished_cb" ref="gaa36efed7c4ee87b8b194d8f91653b83b" args=")(wifi_manager_error_e result, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaa36efed7c4ee87b8b194d8f91653b83b">wifi_manager_forget_ap_finished_cb</a>)(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga23ecaf77b31aefdbf8aa5e9dd47ebecc">wifi_manager_error_e</a> result, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called after <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0f68d346aeddc493e0c55edaf7c37daf" title="Deletes stored access point&#39;s information and disconnects from it if connected, asynchronously.">wifi_manager_forget_ap_async()</a> is completed. </p>
+<p>The following error codes can be received: <br/>
+ <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a> Successful <br/>
+ <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a> Operation failed </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0f68d346aeddc493e0c55edaf7c37daf" title="Deletes stored access point&#39;s information and disconnects from it if connected, asynchronously.">wifi_manager_forget_ap_async()</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0f68d346aeddc493e0c55edaf7c37daf" title="Deletes stored access point&#39;s information and disconnects from it if connected, asynchronously.">wifi_manager_forget_ap_async()</a> will invoke this callback function. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0f68d346aeddc493e0c55edaf7c37daf" title="Deletes stored access point&#39;s information and disconnects from it if connected, asynchronously.">wifi_manager_forget_ap_async()</a> </dd></dl>
 
 </div>
 </div>
@@ -555,6 +587,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -621,6 +654,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -685,6 +719,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -733,6 +768,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -801,6 +837,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -877,6 +914,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -947,6 +985,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1029,6 +1068,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1107,6 +1147,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1197,6 +1238,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1260,6 +1302,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1332,6 +1375,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1398,6 +1442,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
@@ -1456,6 +1501,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
@@ -1517,6 +1563,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
@@ -1572,6 +1619,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1580,6 +1628,75 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0f68d346aeddc493e0c55edaf7c37daf"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_forget_ap_async" ref="ga0f68d346aeddc493e0c55edaf7c37daf" args="(wifi_manager_h wifi, wifi_manager_ap_h ap, wifi_manager_forget_ap_finished_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#ga0f68d346aeddc493e0c55edaf7c37daf">wifi_manager_forget_ap_async</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
+          <td class="paramname"><em>wifi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html#ga22edcda536edabcffa210c523d96cf37">wifi_manager_ap_h</a>&#160;</td>
+          <td class="paramname"><em>ap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaa36efed7c4ee87b8b194d8f91653b83b">wifi_manager_forget_ap_finished_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deletes stored access point's information and disconnects from it if connected, asynchronously. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.profile <br/>
+ http://tizen.org/privilege/network.get </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function needs both privileges. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ap</td><td>The access point handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be called </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html#gaa36efed7c4ee87b8b194d8f91653b83b" title="Called after wifi_manager_forget_ap_async() is completed.">wifi_manager_forget_ap_finished_cb()</a>. </dd></dl>
 
 </div>
 </div>
@@ -1624,6 +1741,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccac87725e224e7462af505edbcc75b791a">WIFI_MANAGER_ERROR_NO_CONNECTION</a></td><td>There is no connected AP </td></tr>
@@ -1674,6 +1792,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -1724,6 +1843,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1773,6 +1893,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -1830,6 +1951,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -1888,6 +2010,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
@@ -1938,6 +2061,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
@@ -1996,6 +2120,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -2062,6 +2187,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -2130,6 +2256,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -2198,6 +2325,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -2249,6 +2377,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -2298,6 +2427,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -2347,6 +2477,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -2395,6 +2526,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1fbd9b04ff2ad7c75241d2944a6bb8f3">WIFI_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -2448,6 +2580,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca1d51d50337ce04f776ec0fd3e1a83585">WIFI_MANAGER_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>

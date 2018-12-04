@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -121,8 +121,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the video display's height and width.  <a href="#ga41683f6ca90e61efb8c622ec179489bf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga20f2defad1bcda566ed60b1162fea4de">player_get_album_art</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, void **album_art, int *size)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the album art in the media resource.  <a href="#ga20f2defad1bcda566ed60b1162fea4de"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga14061edd38d3dfbecaaa146e2a9d95a7">player_get_duration</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int *duration)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total running time of the associated media.  <a href="#ga14061edd38d3dfbecaaa146e2a9d95a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga9ceb0c2aaae1786bea6b2d3aa0d63677">player_get_duration</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int *milliseconds)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total running time of the associated media.  <a href="#ga9ceb0c2aaae1786bea6b2d3aa0d63677"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gadec0201e2f27b5b19968c26e71c7e632">player_get_duration_nsec</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int64_t *nanoseconds)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total running time in nanoseconds of the associated media.  <a href="#gadec0201e2f27b5b19968c26e71c7e632"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gaeaba41bdfad5269790e9ab17648cddd3">player_set_video_stream_changed_cb</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gae3781dd0f53b7e94e7440097739ad622">player_video_stream_changed_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function to be invoked when video stream is changed.  <a href="#gaeaba41bdfad5269790e9ab17648cddd3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga37cb553fe5044b2ab635809d27ae5922">player_unset_video_stream_changed_cb</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player)</td></tr>
@@ -445,12 +447,12 @@ The playback type should be local playback or HTTP streaming playback. </dd></dl
 
 </div>
 </div>
-<a class="anchor" id="ga14061edd38d3dfbecaaa146e2a9d95a7"></a><!-- doxytag: member="player.h::player_get_duration" ref="ga14061edd38d3dfbecaaa146e2a9d95a7" args="(player_h player, int *duration)" -->
+<a class="anchor" id="ga9ceb0c2aaae1786bea6b2d3aa0d63677"></a><!-- doxytag: member="player.h::player_get_duration" ref="ga9ceb0c2aaae1786bea6b2d3aa0d63677" args="(player_h player, int *milliseconds)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga14061edd38d3dfbecaaa146e2a9d95a7">player_get_duration</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga9ceb0c2aaae1786bea6b2d3aa0d63677">player_get_duration</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
           <td class="paramname"><em>player</em>, </td>
@@ -459,7 +461,7 @@ The playback type should be local playback or HTTP streaming playback. </dd></dl
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>duration</em>&#160;</td>
+          <td class="paramname"><em>milliseconds</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -478,7 +480,7 @@ The playback type should be local playback or HTTP streaming playback. </dd></dl
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">duration</td><td>The duration in milliseconds </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">milliseconds</td><td>The duration in milliseconds </td></tr>
   </table>
   </dd>
 </dl>
@@ -495,7 +497,62 @@ The playback type should be local playback or HTTP streaming playback. </dd></dl
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga27ba21256d9f8992b3d22f5ea62611d8" title="Sets the data source (file-path, HTTP or RTSP URI) to use.">player_set_uri()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga37edf36cbae2bd0352e85def1dc08109" title="Sets memory as the data source.">player_set_memory_buffer()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga37edf36cbae2bd0352e85def1dc08109" title="Sets memory as the data source.">player_set_memory_buffer()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gadec0201e2f27b5b19968c26e71c7e632" title="Gets the total running time in nanoseconds of the associated media.">player_get_duration_nsec()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gadec0201e2f27b5b19968c26e71c7e632"></a><!-- doxytag: member="player.h::player_get_duration_nsec" ref="gadec0201e2f27b5b19968c26e71c7e632" args="(player_h player, int64_t *nanoseconds)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#gadec0201e2f27b5b19968c26e71c7e632">player_get_duration_nsec</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t *&#160;</td>
+          <td class="paramname"><em>nanoseconds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the total running time in nanoseconds of the associated media. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">nanoseconds</td><td>The duration time in nanoseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga27ba21256d9f8992b3d22f5ea62611d8" title="Sets the data source (file-path, HTTP or RTSP URI) to use.">player_set_uri()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga37edf36cbae2bd0352e85def1dc08109" title="Sets memory as the data source.">player_set_memory_buffer()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga9ceb0c2aaae1786bea6b2d3aa0d63677" title="Gets the total running time of the associated media.">player_get_duration()</a> </dd></dl>
 
 </div>
 </div>
@@ -705,7 +762,6 @@ This function must be called before calling the <a class="el" href="group__CAPI_
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>

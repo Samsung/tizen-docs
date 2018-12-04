@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -190,19 +190,22 @@ Functions</h2></td></tr>
 
 <p>Enumeration for cellular pdn type. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Use CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPV6 instead of CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPv6. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Use <a class="el" href="group__CAPI__NETWORK__CONNECTION__CELLULAR__PROFILE__MODULE.html#gga7173a5e33277ee01738504783906aff4a484d7f6df6a3ac13fddbc2da4f0724fa">CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPV6</a> instead of CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPv6. </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga7173a5e33277ee01738504783906aff4a2ad2893ed7000cfd8fb0bc4fd25be4cd"></a><!-- doxytag: member="CONNECTION_CELLULAR_PDN_TYPE_UNKNOWN" ref="gga7173a5e33277ee01738504783906aff4a2ad2893ed7000cfd8fb0bc4fd25be4cd" args="" -->CONNECTION_CELLULAR_PDN_TYPE_UNKNOWN</em>&nbsp;</td><td>
+<p>Unknown </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7173a5e33277ee01738504783906aff4a951b9d00939dd2a0cb7157b770ea81c5"></a><!-- doxytag: member="CONNECTION_CELLULAR_PDN_TYPE_IPV4" ref="gga7173a5e33277ee01738504783906aff4a951b9d00939dd2a0cb7157b770ea81c5" args="" -->CONNECTION_CELLULAR_PDN_TYPE_IPV4</em>&nbsp;</td><td>
-<p>&gt; Unknown </p>
+<p>IPv4 </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7173a5e33277ee01738504783906aff4aa45eb75ee6a23fa75e72fc5d3da221f8"></a><!-- doxytag: member="CONNECTION_CELLULAR_PDN_TYPE_IPV6" ref="gga7173a5e33277ee01738504783906aff4aa45eb75ee6a23fa75e72fc5d3da221f8" args="" -->CONNECTION_CELLULAR_PDN_TYPE_IPV6</em>&nbsp;</td><td>
-<p>&gt; IPv4 </p>
+<p>IPv6 </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7173a5e33277ee01738504783906aff4ab5ccb628555897c4f915a0f5e9c92f05"></a><!-- doxytag: member="CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPv6" ref="gga7173a5e33277ee01738504783906aff4ab5ccb628555897c4f915a0f5e9c92f05" args="" -->CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPv6</em>&nbsp;</td><td>
-<p>&gt; IPv6 </p>
+<p>IPv4 and IPv6 (Deprecated since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7173a5e33277ee01738504783906aff4a484d7f6df6a3ac13fddbc2da4f0724fa"></a><!-- doxytag: member="CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPV6" ref="gga7173a5e33277ee01738504783906aff4a484d7f6df6a3ac13fddbc2da4f0724fa" args="" -->CONNECTION_CELLULAR_PDN_TYPE_IPV4_IPV6</em>&nbsp;</td><td>
-<p>&gt; IPv4 and IPv6 (Deprecated since 4.0) </p>
+<p>IPv4 and IPv6 (Since 4.0) </p>
 </td></tr>
 </table>
 </dd>
@@ -291,6 +294,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32aebfd17a5647a1b73807e0b7cca2ab752">CONNECTION_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -353,6 +357,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32aebfd17a5647a1b73807e0b7cca2ab752">CONNECTION_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -402,6 +407,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32aebfd17a5647a1b73807e0b7cca2ab752">CONNECTION_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -449,6 +455,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -496,6 +503,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -543,6 +551,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -590,6 +599,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -636,6 +646,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -682,6 +693,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -728,6 +740,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -775,6 +788,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -837,6 +851,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -885,6 +900,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -932,6 +948,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -979,6 +996,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -1026,6 +1044,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>

@@ -7,6 +7,7 @@ var group__CAPI__BASE__UTILS__I18N__MODULE =
     [ "Format", "group__CAPI__BASE__UTILS__I18N__FORMAT__MODULE.html", null ],
     [ "Formattable", "group__CAPI__BASE__UTILS__I18N__FORMATTABLE__MODULE.html", null ],
     [ "Immutable Index", "group__CAPI__BASE__UTILS__I18N__IMMUTABLE__IDX__MODULE.html", null ],
+    [ "Locale display names", "group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html", null ],
     [ "Measure", "group__CAPI__BASE__UTILS__I18N__MEASURE__MODULE.html", null ],
     [ "MeasureFormat", "group__CAPI__BASE__UTILS__I18N__MEASURE__FORMAT__MODULE.html", null ],
     [ "MeasureUnit", "group__CAPI__BASE__UTILS__I18N__MEASURE__UNIT__MODULE.html", null ],

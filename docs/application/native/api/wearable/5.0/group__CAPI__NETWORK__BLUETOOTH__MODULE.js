@@ -8,7 +8,7 @@ var group__CAPI__NETWORK__BLUETOOTH__MODULE =
     [ "Bluetooth HDP", "group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html", null ],
     [ "Bluetooth HID", "group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html", "group__CAPI__NETWORK__BLUETOOTH__HID__MODULE" ],
     [ "Bluetooth IPSP", "group__CAPI__NETWORK__BLUETOOTH__IPSP__MODULE.html", null ],
-    [ "Bluetooth LE Adapter", "group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html", null ],
+    [ "Bluetooth LE Adapter", "group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html", "group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE" ],
     [ "Bluetooth OOB", "group__CAPI__NETWORK__BLUETOOTH__OOB__MODULE.html", null ],
     [ "Bluetooth OPP", "group__CAPI__NETWORK__BLUETOOTH__OPP__MODULE.html", "group__CAPI__NETWORK__BLUETOOTH__OPP__MODULE" ],
     [ "Bluetooth PBAP", "group__CAPI__NETWORK__BLUETOOTH__PBAP__MODULE.html", null ],

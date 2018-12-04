@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -96,7 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The watchface complication provides feature to receive and request watchface complication data. It also provides editable management feature to request edit for complication and design elements to editor. </p>
 <h2><a class="anchor" id="WATCHFACE_COMPLICATION_MODULE_HEADER"></a>
 Required Header</h2>
-<p>#include &lt;watchface-complication.h&gt; #include &lt;watchface-editable.h&gt;</p>
+<p>#include &lt;watchface-complication.h&gt;<br/>
+ #include &lt;watchface-editable.h&gt;</p>
 <h2><a class="anchor" id="WATCHFACE_COMPLICATION_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The watch applications can request data shared by other watchface complication provider applications using watchface complication. And the watchface complication provider application can share data with watchface application using watchface complication. However, only service applications can provide their own data to the watch application. The watch application also can request editing about their resources like complication and design elements to editor using watchface complication. *</p>
@@ -114,6 +115,9 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for Complication Error.  <a href="#ga8bd31854655d957b20a3432598dcf34b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#gaa3577339accbf558eb085fa84034b38e">_complication_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#ga94a951751e586c7e163c75e7f75719ff">watchface_complication_type_e</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for Complication Type.  <a href="#ga94a951751e586c7e163c75e7f75719ff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
+<a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#ga6798fddbb09bc41f3d86ee252d80cb42">_complication_event_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#ga033c7ec201559b5c566522ef5f2b2a64">watchface_complication_event_type_e</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for Complication event type.  <a href="#ga033c7ec201559b5c566522ef5f2b2a64"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="ga8bd31854655d957b20a3432598dcf34b"></a><!-- doxytag: member="watchface&#45;common.h::watchface_complication_error_e" ref="ga8bd31854655d957b20a3432598dcf34b" args="" -->
@@ -128,6 +132,23 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for Complication Error. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga033c7ec201559b5c566522ef5f2b2a64"></a><!-- doxytag: member="watchface&#45;common.h::watchface_complication_event_type_e" ref="ga033c7ec201559b5c566522ef5f2b2a64" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#ga6798fddbb09bc41f3d86ee252d80cb42">_complication_event_type</a>  <a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#ga033c7ec201559b5c566522ef5f2b2a64">watchface_complication_event_type_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for Complication event type. </p>
+<p>Watchface should transfer the touch event to complication provider to trigger the complication tap action. <a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#gga6798fddbb09bc41f3d86ee252d80cb42a90cff44509a65b1098c10b0272a40678">WATCHFACE_COMPLICATION_EVENT_NONE</a> is transferred to the complication provider when the complication is launched without tap event. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
@@ -198,6 +219,39 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga48e96ba9e6d31fd95c8e4790f54279eaa54c669584d2f2aa9186a69e4ad7b0142"></a><!-- doxytag: member="WATCHFACE_COMPLICATION_ERROR_NOT_EXIST" ref="gga48e96ba9e6d31fd95c8e4790f54279eaa54c669584d2f2aa9186a69e4ad7b0142" args="" -->WATCHFACE_COMPLICATION_ERROR_NOT_EXIST</em>&nbsp;</td><td>
 <p>Not exist </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga48e96ba9e6d31fd95c8e4790f54279eaa492ccd74db7af332dc61e8fc6b232bf1"></a><!-- doxytag: member="WATCHFACE_COMPLICATION_ERROR_PROVIDER_NOT_AVAILABLE" ref="gga48e96ba9e6d31fd95c8e4790f54279eaa492ccd74db7af332dc61e8fc6b232bf1" args="" -->WATCHFACE_COMPLICATION_ERROR_PROVIDER_NOT_AVAILABLE</em>&nbsp;</td><td>
+<p>Provider is not available, it could be uninstalled or disabled </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6798fddbb09bc41f3d86ee252d80cb42"></a><!-- doxytag: member="watchface&#45;common.h::_complication_event_type" ref="ga6798fddbb09bc41f3d86ee252d80cb42" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#ga6798fddbb09bc41f3d86ee252d80cb42">_complication_event_type</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for Complication event type. </p>
+<p>Watchface should transfer the touch event to complication provider to trigger the complication tap action. <a class="el" href="group__WATCHFACE__COMPLICATION__MODULE.html#gga6798fddbb09bc41f3d86ee252d80cb42a90cff44509a65b1098c10b0272a40678">WATCHFACE_COMPLICATION_EVENT_NONE</a> is transferred to the complication provider when the complication is launched without tap event. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga6798fddbb09bc41f3d86ee252d80cb42a90cff44509a65b1098c10b0272a40678"></a><!-- doxytag: member="WATCHFACE_COMPLICATION_EVENT_NONE" ref="gga6798fddbb09bc41f3d86ee252d80cb42a90cff44509a65b1098c10b0272a40678" args="" -->WATCHFACE_COMPLICATION_EVENT_NONE</em>&nbsp;</td><td>
+<p>Complication is not tapped </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6798fddbb09bc41f3d86ee252d80cb42ac4784bfd1820fc16638ed5e6868295c7"></a><!-- doxytag: member="WATCHFACE_COMPLICATION_EVENT_TAP" ref="gga6798fddbb09bc41f3d86ee252d80cb42ac4784bfd1820fc16638ed5e6868295c7" args="" -->WATCHFACE_COMPLICATION_EVENT_TAP</em>&nbsp;</td><td>
+<p>Tap </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6798fddbb09bc41f3d86ee252d80cb42a89e060ad789dbaaf2ca9c6bf204369b5"></a><!-- doxytag: member="WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP" ref="gga6798fddbb09bc41f3d86ee252d80cb42a89e060ad789dbaaf2ca9c6bf204369b5" args="" -->WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP</em>&nbsp;</td><td>
+<p>Double Tap </p>
 </td></tr>
 </table>
 </dd>

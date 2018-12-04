@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -153,8 +153,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when an OPP connection is requested. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <p>You must call bt_opp_server_accept_connection() if you want to accept. Otherwise, you must call bt_opp_server_reject_connection(). </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The address of remote device </td></tr>
@@ -183,7 +183,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">error_code</td><td>The result of push </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of push </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The path of file to be pushed </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The file size (bytes) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
@@ -407,8 +407,10 @@ bt_opp_server_accept_connection() </dd></dl>
 <div class="memdoc">
 
 <p>Initializes the Bluetooth OPP server requested by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__SERVER__MODULE.html#gaebe41c929616c96bb134ea65488526c5" title="Called when an OPP connection is requested.">bt_opp_server_connection_requested_cb()</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<p>No popup appears when an OPP connection is requested from a remote device. Instead, <em>connection_requested_cb()</em> will be called. At that time, you can call either <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__SERVER__MODULE.html#ga26692f88897c4c4893f37567cb0c09b1" title="Accepts the push request from the remote device.">bt_opp_server_accept()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__SERVER__MODULE.html#ga7deb8d31a8af4002a77f6f3b6d14f43a" title="Rejects the push request from the remote device.">bt_opp_server_reject()</a>. </p>
+<p>No popup appears when an OPP connection is requested from a remote device. <br/>
+ Instead, <em>connection_requested_cb()</em> will be called. <br/>
+ At that time, you can call either <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__SERVER__MODULE.html#ga26692f88897c4c4893f37567cb0c09b1" title="Accepts the push request from the remote device.">bt_opp_server_accept()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__SERVER__MODULE.html#ga7deb8d31a8af4002a77f6f3b6d14f43a" title="Rejects the push request from the remote device.">bt_opp_server_reject()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called to start Bluetooth OPP server. <br/>
  You must free all resources of the Bluetooth service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__SERVER__MODULE.html#ga03c19421c3f2cae26a6526524ef73487" title="Deinitializes the Bluetooth OPP server.">bt_opp_server_deinitialize()</a> if Bluetooth OPP service is no longer needed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -467,7 +469,6 @@ bt_opp_server_accept_connection() </dd></dl>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>

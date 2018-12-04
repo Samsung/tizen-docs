@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -124,8 +124,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts timer.  <a href="#ade499c2d491257e33ef9c33f841b1bdd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Timer.html#af7cd1d83bdc7943ae6dbfff376f110a0">Stop</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops timer.  <a href="#af7cd1d83bdc7943ae6dbfff376f110a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Timer.html#a842b9bfdada627a1be976da31e061e4a">Pause</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses timer.  <a href="#a842b9bfdada627a1be976da31e061e4a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Timer.html#afb02151c0a3f18677ec3cd60f82843d4">Resume</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes timer.  <a href="#afb02151c0a3f18677ec3cd60f82843d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Timer.html#a46ad96c5d45bcfbb3cadcd6f10da8980">SetInterval</a> (unsigned int milliSec)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new interval on the timer and starts the timer.  <a href="#a46ad96c5d45bcfbb3cadcd6f10da8980"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Timer.html#a9b62ddc2df6d556e841afd85036d29c0">SetInterval</a> (unsigned int milliSec, bool restart)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new interval on the timer with option to restart the timer.  <a href="#a9b62ddc2df6d556e841afd85036d29c0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Timer.html#ad2aac8fddb4cea905c836ad217cb76d2">GetInterval</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the interval of timer.  <a href="#ad2aac8fddb4cea905c836ad217cb76d2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Timer.html#a61174ae008a6a60f0f98b54063d6df94">IsRunning</a> () const </td></tr>
@@ -351,6 +357,44 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a842b9bfdada627a1be976da31e061e4a"></a><!-- doxytag: member="Dali::Timer::Pause" ref="a842b9bfdada627a1be976da31e061e4a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDali_1_1Timer.html#a842b9bfdada627a1be976da31e061e4a">Dali::Timer::Pause</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pauses timer. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>5.0, DALi version 1.3.41 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afb02151c0a3f18677ec3cd60f82843d4"></a><!-- doxytag: member="Dali::Timer::Resume" ref="afb02151c0a3f18677ec3cd60f82843d4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDali_1_1Timer.html#afb02151c0a3f18677ec3cd60f82843d4">Dali::Timer::Resume</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resumes timer. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>5.0, DALi version 1.3.41 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a46ad96c5d45bcfbb3cadcd6f10da8980"></a><!-- doxytag: member="Dali::Timer::SetInterval" ref="a46ad96c5d45bcfbb3cadcd6f10da8980" args="(unsigned int milliSec)" -->
 <div class="memitem">
 <div class="memproto">
@@ -372,6 +416,44 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">milliSec</td><td>Interval in milliseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9b62ddc2df6d556e841afd85036d29c0"></a><!-- doxytag: member="Dali::Timer::SetInterval" ref="a9b62ddc2df6d556e841afd85036d29c0" args="(unsigned int milliSec, bool restart)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDali_1_1Timer.html#a46ad96c5d45bcfbb3cadcd6f10da8980">Dali::Timer::SetInterval</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>milliSec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>restart</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a new interval on the timer with option to restart the timer. </p>
+<p>Cancels the previous timer. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>5.0, DALi version 1.3.41 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">milliSec</td><td>Interval in milliseconds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">restart</td><td>Flag to set enabled to restart or not. </td></tr>
   </table>
   </dd>
 </dl>

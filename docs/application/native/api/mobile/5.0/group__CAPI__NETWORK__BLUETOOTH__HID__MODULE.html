@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -134,20 +134,20 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the connection state is changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
-<p>This callback is called when the connection state is changed. When you call <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID(Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga121e26b634a56fa6ee6e36d0bee115c6" title="Disconnects the remote device with the HID(Human Interface Device) service, asynchronously.">bt_hid_host_disconnect()</a>, this callback is also called with error result even though these functions fail. </p>
+<p>This callback is called when the connection state is changed. When you call <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID (Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga121e26b634a56fa6ee6e36d0bee115c6" title="Disconnects the remote device with the HID (Human Interface Device) service, asynchronously.">bt_hid_host_disconnect()</a>, this callback is also called with error result even though these functions fail. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of changing the connection state </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>The state to be changed. <em>true</em> means connected state, Otherwise, <em>false</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>The state to be changed. true means connected state, Otherwise, false. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote address </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID(Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID (Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga121e26b634a56fa6ee6e36d0bee115c6" title="Disconnects the remote device with the HID(Human Interface Device) service, asynchronously.">bt_hid_host_disconnect()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga121e26b634a56fa6ee6e36d0bee115c6" title="Disconnects the remote device with the HID (Human Interface Device) service, asynchronously.">bt_hid_host_disconnect()</a> </dd></dl>
 
 </div>
 </div>

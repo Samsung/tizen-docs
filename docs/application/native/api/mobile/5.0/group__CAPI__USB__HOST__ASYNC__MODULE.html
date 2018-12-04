@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This API is used to perform asynchronous operations. </p>
 <h2><a class="anchor" id="CAPI_USB_HOST_ASYNC_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>Asynchronous transfers are performed by submitting previously prepared transfer handle (<a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0" title="USB asynchronous transfer handle.">usb_host_transfer_h</a>). When the transfer is finished, the callback set by user is called. Transfer handle contains all transfer parameters and, when configured, can be submited multiple times. Most of parameters required for asynchronous transfers match those from synchronous transfer.</p>
+<p>Asynchronous transfers are performed by submitting previously prepared transfer handle (<a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0" title="USB asynchronous transfer handle.">usb_host_transfer_h</a>). When the transfer is finished, the callback set by user is called. Transfer handle contains all transfer parameters and, when configured, can be submitted multiple times. Most of parameters required for asynchronous transfers match those from synchronous transfer.</p>
 <p>Like in synchronous transfer, you must first obtain the endpoint handle. Then you can create a transfer handle with desired parameters. </p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0" title="USB asynchronous transfer handle.">usb_host_transfer_h</a> transfer;
  <a class="code" href="group__CAPI__USB__HOST__ENDPOINT__MODULE.html#ga80033c02cd4f167288902f79287fbcfb" title="USB endpoint handle.">usb_host_endpoint_h</a> ep;
@@ -155,7 +155,7 @@ Overview</h2>
 Isochronous transfers</h2>
 <p>For creating isochronous transfers use <a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#gafe451bdc0f6519408c686bd0ea4e3465" title="Prepares an asynchronous USB isochronous transfer.">usb_host_create_isochronous_transfer()</a> function. It takes parameters similar to <a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga084cc9e9e79fe4bb57cd73461dbec71c" title="Prepares an asynchronous USB transfer.">usb_host_create_transfer()</a>, with addition of num_iso_packets. The data buffer is used to store all packets data and should be large enough to do so.</p>
 <div class="fragment"><pre class="fragment"> ret = <a class="code" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#gafe451bdc0f6519408c686bd0ea4e3465" title="Prepares an asynchronous USB isochronous transfer.">usb_host_create_isochronous_transfer</a>(ep, transfer_callback, data, length, num_iso_packets, user_data, timeout, &amp;transfer);
-</pre></div><p>Before submitting the transfer you must setup isochoronous packets lengths (and data, if making out transfer). </p>
+</pre></div><p>Before submitting the transfer you must setup isochronous packets lengths (and data, if making out transfer). </p>
 <div class="fragment"><pre class="fragment"> <span class="keywordflow">for</span> (i = 0; i &lt; num_iso_packets; ++i) {
     ret = usb_host_set_iso_packet_length(transfer, i, packet_lenght);
     <span class="comment">//...</span>
@@ -209,7 +209,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga600a1b0ce635a23ce55496c23503723b">usb_host_transfer_set_timeout</a> (<a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0">usb_host_transfer_h</a> transfer, unsigned int timeout)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets timeout for asynchronous transfer.  <a href="#ga600a1b0ce635a23ce55496c23503723b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga8380ddda4cd156e667b7943b9eba1026">usb_host_transfer_set_num_iso_packets</a> (<a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0">usb_host_transfer_h</a> transfer, unsigned int num_iso_packets)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets number of isochrnous packet for isochronous transfer.  <a href="#ga8380ddda4cd156e667b7943b9eba1026"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets number of isochronous packet for isochronous transfer.  <a href="#ga8380ddda4cd156e667b7943b9eba1026"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga4a7df6ac9fed679d09a2f2910ca643ff">usb_host_control_transfer_set_request_type</a> (<a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0">usb_host_transfer_h</a> transfer, uint8_t bm_request_type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets request type for control transfer setup packet.  <a href="#ga4a7df6ac9fed679d09a2f2910ca643ff"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#gacbef6e1aa8b283b9d9e4bcc10e22c0da">usb_host_control_transfer_set_request</a> (<a class="el" href="group__CAPI__USB__HOST__ASYNC__MODULE.html#ga1f956271e363bdb4c9bd0550c26499d0">usb_host_transfer_h</a> transfer, uint8_t b_request)</td></tr>
@@ -1508,7 +1508,7 @@ usb_host_transfer_s *&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </div>
 <div class="memdoc">
 
-<p>Sets number of isochrnous packet for isochronous transfer. </p>
+<p>Sets number of isochronous packet for isochronous transfer. </p>
 <p>This function changes the number of isochronous packets in transfer. This parameter affects only isochronous transfers (i.e. transfers on isochronous endpoints). Use <a class="el" href="group__CAPI__USB__HOST__ENDPOINT__MODULE.html#gab98700410695cc3f437c124d425e53ad" title="Gets transfer type of given endpoint.">usb_host_endpoint_get_transfer_type()</a> for checking types of your endpoints. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
