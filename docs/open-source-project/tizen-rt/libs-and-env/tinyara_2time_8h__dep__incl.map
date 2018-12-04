@@ -1,0 +1,9 @@
+<map id="/home/asd/project/public_1219/tinyara/os/include/tinyara/time.h" name="/home/asd/project/public_1219/tinyara/os/include/tinyara/time.h">
+<area shape="rect" id="node2" href="$clock_8h.html" title="Clock APIs. " alt="" coords="5,109,169,165"/>
+<area shape="rect" id="node3" href="$tinyara_2sched_8h.html" title="/home/asd/project/public\l_1219/tinyara/os/include\l/tinyara/sched.h" alt="" coords="193,109,357,165"/>
+<area shape="rect" id="node4" href="$sched_8h.html" title="/home/asd/project/public\l_1219/tinyara/os/include\l/sched.h" alt="" coords="193,213,357,269"/>
+<area shape="rect" id="node5" href="$spawn_8h.html" title="/home/asd/project/public\l_1219/tinyara/os/include\l/spawn.h" alt="" coords="100,317,264,373"/>
+<area shape="rect" id="node6" href="$stdio_8h.html" title="Standard Input / Output APIs. " alt="" coords="288,317,452,373"/>
+<area shape="rect" id="node7" href="$http__server_8h.html" title="APIs for HTTP Server. " alt="" coords="136,421,348,477"/>
+<area shape="rect" id="node8" href="$http__keyvalue__list_8h.html" title="APIs for key/value in HTTP Server. " alt="" coords="372,421,624,477"/>
+</map>

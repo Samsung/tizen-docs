@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['_5f_5fdirect_5ferrno_5faccess',['__DIRECT_ERRNO_ACCESS',['../group___e_r_r_n_o___k_e_r_n_e_l.html#ga84c99aefae179e49933490bf08097653',1,'errno.h']]],
+  ['_5f_5fhave_5fkernel_5fglobals',['__HAVE_KERNEL_GLOBALS',['../group___c_l_o_c_k___k_e_r_n_e_l.html#ga5d382db57f2975df15fd690dfcd37d38',1,'clock.h']]],
+  ['_5f_5fselect_5fndescriptors',['__SELECT_NDESCRIPTORS',['../group___s_e_l_e_c_t___k_e_r_n_e_l.html#gabb0b398fe7219d4e4bd34a4c6a078d70',1,'select.h']]],
+  ['_5f_5fselect_5fnuint32',['__SELECT_NUINT32',['../group___s_e_l_e_c_t___k_e_r_n_e_l.html#ga5f59be7e03eaba73a0371fe41e078e12',1,'select.h']]],
+  ['_5fexit',['_Exit',['../stdlib_8h.html#a9bb3e101bbbb6453c93152ebe3cf098e',1,'stdlib.h']]],
+  ['_5fo_5fmaxbit',['_O_MAXBIT',['../group___f_c_n_t_l___k_e_r_n_e_l.html#gad0708cdd322559b37821fb0336bc2098',1,'fcntl.h']]],
+  ['_5fpath_5fservices',['_PATH_SERVICES',['../group___s_o_c_k_e_t.html#ga0dd470c1e7fa3618600e792bfaea217c',1,'netdb.h']]],
+  ['_5fposix_5fmessage_5fpassing',['_POSIX_MESSAGE_PASSING',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#ga455f2a038c085f2435af3400e2108f9f',1,'unistd.h']]],
+  ['_5fposix_5fpriority_5fscheduling',['_POSIX_PRIORITY_SCHEDULING',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#gac45bb278bb76cdb9b47800d0fa0e1e77',1,'unistd.h']]],
+  ['_5fposix_5frealtime_5fsignals',['_POSIX_REALTIME_SIGNALS',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#ga4c90b5a29c9c7da8b01370f7eb3632ec',1,'unistd.h']]],
+  ['_5fposix_5fsync_5fio',['_POSIX_SYNC_IO',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#gac88e0b4faa4d436df149a318c898e110',1,'unistd.h']]],
+  ['_5fposix_5fsynchronized_5fio',['_POSIX_SYNCHRONIZED_IO',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#ga4f80747f06947039ade4d07a667bcc1e',1,'unistd.h']]],
+  ['_5fposix_5fthread_5fattr_5fstacksize',['_POSIX_THREAD_ATTR_STACKSIZE',['../pthread_8h.html#aba151d9d724809f6582df29e5fc32214',1,'pthread.h']]],
+  ['_5fposix_5fthreads',['_POSIX_THREADS',['../pthread_8h.html#a5e89527a7c4b94907d559a975d5850ce',1,'pthread.h']]],
+  ['_5fposix_5ftimers',['_POSIX_TIMERS',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#gae6ebdb1de129396e3ee9aeca563e5d19',1,'unistd.h']]],
+  ['_5fsa_5fhandler',['_sa_handler',['../structsigaction.html#a0a2bf7f3ade56385c9459e9039eac0c3',1,'sigaction']]],
+  ['_5fsa_5fhandler_5ft',['_sa_handler_t',['../group___s_i_g_n_a_l___k_e_r_n_e_l.html#ga3799c5c8781121acf9c1782700121f32',1,'signal.h']]],
+  ['_5fsa_5fsigaction',['_sa_sigaction',['../structsigaction.html#af3712e4d852e9ae60215a61e2a6c8cd8',1,'sigaction']]],
+  ['_5fsa_5fsigaction_5ft',['_sa_sigaction_t',['../group___s_i_g_n_a_l___k_e_r_n_e_l.html#ga93078ad3bb2d0811aa1579518c5d4639',1,'signal.h']]]
+];
