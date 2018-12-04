@@ -14,7 +14,7 @@ To install the Tizen Studio:
 
    ![Tizen Studio License Agreement](./media/install_sdk_license.png)
 
-3. Click (./media/advanced_conf_browse.png) and specify a new directory to set the SDK and data location. If the new directory is valid and shows no errors, click **Install**:
+3. Click ![Button](./media/advanced_conf_browse.png) and specify a new directory to set the SDK and data location. If the new directory is valid and shows no errors, click **Install**:
     
 
    ![Set SDK and data location](./media/install_sdk_directory.png)
