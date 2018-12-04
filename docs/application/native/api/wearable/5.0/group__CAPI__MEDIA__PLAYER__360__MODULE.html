@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -126,6 +126,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the field of view information of 360 video.  <a href="#ga9597a3825bb894335ebf46df1ea4641f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gaa25ddb991a24a33cbe249a1d17c4a3c7">player_360_get_field_of_view</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int *horizontal_degrees, int *vertical_degrees)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the field of view information of 360 video.  <a href="#gaa25ddb991a24a33cbe249a1d17c4a3c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#ga2bc2502e51e4c8bebe16bf9f634d2fd3">player_360_set_zoom_with_field_of_view</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, float level, int horizontal_degrees, int vertical_degrees)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the zoom level with field of view information of 360 video.  <a href="#ga2bc2502e51e4c8bebe16bf9f634d2fd3"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga66c9590e2decf97ff7cfa8f51883ab4a"></a><!-- doxytag: member="player.h::player_360_get_direction_of_view" ref="ga66c9590e2decf97ff7cfa8f51883ab4a" args="(player_h player, float *yaw, float *pitch)" -->
@@ -179,13 +181,11 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#ga51fb7febffa0a013f0274ee7262388f3" title="Sets the 360 video direction of view.">player_360_set_direction_of_view()</a> </dd></dl>
 
 </div>
@@ -241,13 +241,11 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#ga9597a3825bb894335ebf46df1ea4641f" title="Sets the field of view information of 360 video.">player_360_set_field_of_view()</a> </dd></dl>
 
 </div>
@@ -296,13 +294,11 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gabc92c30c30c5fa47ced55f14953beb9f" title="Sets the zoom level of 360 video.">player_360_set_zoom()</a> </dd></dl>
 
 </div>
@@ -403,13 +399,11 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gab8ff8e09041bc8a6f9dfd9ca5f5e9c26" title="Sets the 360 video mode.">player_360_set_enabled()</a> </dd></dl>
 
 </div>
@@ -465,13 +459,11 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#ga66c9590e2decf97ff7cfa8f51883ab4a" title="Gets the 360 video direction of view.">player_360_get_direction_of_view()</a> </dd></dl>
 
 </div>
@@ -520,13 +512,11 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gacce2d36e18134907dcc1576581635b20" title="Gets the 360 video display mode.">player_360_is_enabled()</a> </dd></dl>
 
 </div>
@@ -574,8 +564,10 @@ This function is related to the following features:<br/>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">horizontal_degrees</td><td>The horizontal field of view to display in degrees. Valid range is 1-360 degrees. Default value is 120 degrees. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">vertical_degrees</td><td>The vertical field of view to display in degrees. Valid range is 1-180 degrees. Default value is 67 degrees. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">horizontal_degrees</td><td>The horizontal field of view to display in degrees<br/>
+ Valid range is 1~360 degrees. Default value is 120 degrees. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vertical_degrees</td><td>The vertical field of view to display in degrees<br/>
+ Valid range is 1~180 degrees. Default value is 67 degrees. </td></tr>
   </table>
   </dd>
 </dl>
@@ -584,13 +576,11 @@ This function is related to the following features:<br/>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gaa25ddb991a24a33cbe249a1d17c4a3c7" title="Gets the field of view information of 360 video.">player_360_get_field_of_view()</a> </dd></dl>
 
 </div>
@@ -621,7 +611,7 @@ This function is related to the following features:<br/>
 <div class="memdoc">
 
 <p>Sets the zoom level of 360 video. </p>
-<p>The zoom means scaling of the flat image cutted from the panorama. The valid range is from 1.0 to 10.0, where 1.0 is the actual image and values above are zoom-in factor. Default value is 1.0 - no zoom. </p>
+<p>The zoom means scaling of the flat image cut from the panorama. The valid range is from 1.0 to 10.0, where 1.0 is the actual image and values above are zoom-in factor. Default value is 1.0 - no zoom. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function is related to the following features:<br/>
  http://tizen.org/feature/multimedia.player.spherical_video<br/>
@@ -630,7 +620,8 @@ This function is related to the following features:<br/>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>The zoom level </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>The zoom level<br/>
+ Valid range is 1.0~10.0. Default value is 1.0. </td></tr>
   </table>
   </dd>
 </dl>
@@ -639,14 +630,90 @@ This function is related to the following features:<br/>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gae5f6236037a01ca65fea4af293e61d09" title="Gets the current zoom level of 360 video.">player_360_get_zoom()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2bc2502e51e4c8bebe16bf9f634d2fd3"></a><!-- doxytag: member="player.h::player_360_set_zoom_with_field_of_view" ref="ga2bc2502e51e4c8bebe16bf9f634d2fd3" args="(player_h player, float level, int horizontal_degrees, int vertical_degrees)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#ga2bc2502e51e4c8bebe16bf9f634d2fd3">player_360_set_zoom_with_field_of_view</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>horizontal_degrees</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>vertical_degrees</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the zoom level with field of view information of 360 video. </p>
+<p>This function is provided to reduce the distortion of zoom operation. The zoom means scaling of the flat image cut from the panorama which is decided by the field of view data. The zoom level valid range is from 1.0 to 10.0, where 1.0 is the actual image and values above are zoom-in factor. Default value is 1.0 - no zoom. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The degree values above the default ones extend the field of view to significantly distorted areas and will not be useful in most cases. </dd>
+<dd>
+This function is related to the following features:<br/>
+ http://tizen.org/feature/multimedia.player.spherical_video<br/>
+ http://tizen.org/feature/opengles.version.2_0<br/>
+ </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>The zoom level<br/>
+ Valid range is 1.0~10.0. Default value is 1.0. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">horizontal_degrees</td><td>The horizontal field of view to display in degrees<br/>
+ Valid range is 1~360 degrees. Default value is 120 degrees. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vertical_degrees</td><td>The vertical field of view to display in degrees<br/>
+ Valid range is 1~180 degrees. Default value is 67 degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa17da775d441ff58c1172d7a522130e38">PLAYER_ERROR_FEATURE_NOT_SUPPORTED_ON_DEVICE</a></td><td>Unsupported feature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gabc92c30c30c5fa47ced55f14953beb9f" title="Sets the zoom level of 360 video.">player_360_set_zoom()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gae5f6236037a01ca65fea4af293e61d09" title="Gets the current zoom level of 360 video.">player_360_get_zoom()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#ga9597a3825bb894335ebf46df1ea4641f" title="Sets the field of view information of 360 video.">player_360_set_field_of_view()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__360__MODULE.html#gaa25ddb991a24a33cbe249a1d17c4a3c7" title="Gets the field of view information of 360 video.">player_360_get_field_of_view()</a> </dd></dl>
 
 </div>
 </div>

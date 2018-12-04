@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -100,7 +100,7 @@ Required Header</h2>
 <h2><a class="anchor" id="CAPI_MEDIA_CONTROLLER_OVERVIEW"></a>
 Overview</h2>
 <p>The <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html">Media Controller</a> API provides a set of functions to an effective communication between the server and the client for delivering the latest server information. It helps to transfer the information like playback info, shuffle mode, or the metadata of the latest server. <br/>
- To programming the interface, first, create a handler via <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9da7f1ab103ed4bcda2453a8005d07c9" title="Creates a media controller client.">mc_client_create()</a> or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. And then, the client request the necessary information to the server by using <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaedbe3f3e6c82f71ff1cc24395ec35bb9" title="Sets the callback for monitoring status of the media controller server.">mc_client_set_server_update_cb()</a>, or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gabf3b85ade9c212c80873b65ea2d78b46" title="Sets the callback for monitoring playback status of the media controller server.">mc_client_set_playback_update_cb()</a>. The server provides the requested information to the client by the callback. </p>
+ To programming the interface, first, create a handler via <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9da7f1ab103ed4bcda2453a8005d07c9" title="Creates a media controller client.">mc_client_create()</a> or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. And then, the client request the necessary information to the server by using <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaeb8b2bb1db1c9ce8063d7a3a42f55186" title="Sets the callback for monitoring status of the media controller server.">mc_client_set_server_updated_cb()</a>, or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga1c5a287814920e223e834bc7b4741686" title="Sets the callback for monitoring playback status of the media controller server.">mc_client_set_playback_updated_cb()</a>. The server provides the requested information to the client by the callback. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -112,6 +112,12 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller playback handle.  <a href="#ga79c7942e2eacc7bac72d784201f1f115"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gae9101e67ce04bc94bdecfe3dafd199e1">mc_metadata_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller metadata handle.  <a href="#gae9101e67ce04bc94bdecfe3dafd199e1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga8f954ebc243085164d61e92ee8bfe3da">mc_playlist_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller playlist handle.  <a href="#ga8f954ebc243085164d61e92ee8bfe3da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga5eb18a7417f45734ec6ae6760c6e3d5f">mc_playback_ability_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller ability handle.  <a href="#ga5eb18a7417f45734ec6ae6760c6e3d5f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga5868e629d295ebf4c65ef3ebdf6f1a7c">mc_search_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller search handle.  <a href="#ga5868e629d295ebf4c65ef3ebdf6f1a7c"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="ga845142c24ba548a76008b1aa719a5cea"></a><!-- doxytag: member="media_controller_type.h::mc_client_h" ref="ga845142c24ba548a76008b1aa719a5cea" args="" -->
@@ -146,6 +152,22 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga5eb18a7417f45734ec6ae6760c6e3d5f"></a><!-- doxytag: member="media_controller_type.h::mc_playback_ability_h" ref="ga5eb18a7417f45734ec6ae6760c6e3d5f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga5eb18a7417f45734ec6ae6760c6e3d5f">mc_playback_ability_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The structure type for the media controller ability handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga79c7942e2eacc7bac72d784201f1f115"></a><!-- doxytag: member="media_controller_type.h::mc_playback_h" ref="ga79c7942e2eacc7bac72d784201f1f115" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -159,6 +181,38 @@ Typedefs</h2></td></tr>
 
 <p>The structure type for the media controller playback handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8f954ebc243085164d61e92ee8bfe3da"></a><!-- doxytag: member="media_controller_type.h::mc_playlist_h" ref="ga8f954ebc243085164d61e92ee8bfe3da" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga8f954ebc243085164d61e92ee8bfe3da">mc_playlist_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The structure type for the media controller playlist handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5868e629d295ebf4c65ef3ebdf6f1a7c"></a><!-- doxytag: member="media_controller_type.h::mc_search_h" ref="ga5868e629d295ebf4c65ef3ebdf6f1a7c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga5868e629d295ebf4c65ef3ebdf6f1a7c">mc_search_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The structure type for the media controller search handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -179,6 +233,150 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="ga6baa9df1fb1b5c7faa105a4dbb9d7fc3"></a><!-- doxytag: member="media_controller_type.h::mc_ability_support_e" ref="ga6baa9df1fb1b5c7faa105a4dbb9d7fc3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga6baa9df1fb1b5c7faa105a4dbb9d7fc3">mc_ability_support_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for the support of the ability. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga6baa9df1fb1b5c7faa105a4dbb9d7fc3a28ecc1723af46505e09cc9f12446845d"></a><!-- doxytag: member="MC_ABILITY_SUPPORTED_YES" ref="gga6baa9df1fb1b5c7faa105a4dbb9d7fc3a28ecc1723af46505e09cc9f12446845d" args="" -->MC_ABILITY_SUPPORTED_YES</em>&nbsp;</td><td>
+<p>Supported </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6baa9df1fb1b5c7faa105a4dbb9d7fc3a3bcddd88d8ea19f8868ddc98de62ae94"></a><!-- doxytag: member="MC_ABILITY_SUPPORTED_NO" ref="gga6baa9df1fb1b5c7faa105a4dbb9d7fc3a3bcddd88d8ea19f8868ddc98de62ae94" args="" -->MC_ABILITY_SUPPORTED_NO</em>&nbsp;</td><td>
+<p>Not supported </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6baa9df1fb1b5c7faa105a4dbb9d7fc3a78a056e0e9dfcf8047be4e71d26fd0f4"></a><!-- doxytag: member="MC_ABILITY_SUPPORTED_UNDECIDED" ref="gga6baa9df1fb1b5c7faa105a4dbb9d7fc3a78a056e0e9dfcf8047be4e71d26fd0f4" args="" -->MC_ABILITY_SUPPORTED_UNDECIDED</em>&nbsp;</td><td>
+<p>Not decided </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga46700c459230fb37e7b5cc8dc36dc200"></a><!-- doxytag: member="media_controller_type.h::mc_content_age_rating_e" ref="ga46700c459230fb37e7b5cc8dc36dc200" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga46700c459230fb37e7b5cc8dc36dc200">mc_content_age_rating_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for the content age rating of the content. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a2b726fbacd94d37c34342b0a1576bf70"></a><!-- doxytag: member="MC_CONTENT_RATING_ALL" ref="gga46700c459230fb37e7b5cc8dc36dc200a2b726fbacd94d37c34342b0a1576bf70" args="" -->MC_CONTENT_RATING_ALL</em>&nbsp;</td><td>
+<p>Suitable for all ages </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200ac2e2a8991d6de1213ae7cdf620e5fadd"></a><!-- doxytag: member="MC_CONTENT_RATING_1_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200ac2e2a8991d6de1213ae7cdf620e5fadd" args="" -->MC_CONTENT_RATING_1_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 1 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200ae390e691b0c3e17c41571a396170ab7c"></a><!-- doxytag: member="MC_CONTENT_RATING_2_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200ae390e691b0c3e17c41571a396170ab7c" args="" -->MC_CONTENT_RATING_2_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 2 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a92c2598f1d0ee347b2f038c66fe92c32"></a><!-- doxytag: member="MC_CONTENT_RATING_3_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a92c2598f1d0ee347b2f038c66fe92c32" args="" -->MC_CONTENT_RATING_3_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 3 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a97bf65b3454a8c05ecc2668d1d3000c2"></a><!-- doxytag: member="MC_CONTENT_RATING_4_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a97bf65b3454a8c05ecc2668d1d3000c2" args="" -->MC_CONTENT_RATING_4_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 4 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200ae8dff40870245a683ce50ca830e25ecf"></a><!-- doxytag: member="MC_CONTENT_RATING_5_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200ae8dff40870245a683ce50ca830e25ecf" args="" -->MC_CONTENT_RATING_5_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 5 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200ab278c1a0149953c7739ffbccbbd0df66"></a><!-- doxytag: member="MC_CONTENT_RATING_6_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200ab278c1a0149953c7739ffbccbbd0df66" args="" -->MC_CONTENT_RATING_6_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 6 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a2b01e60d83adaa0e619ec5c75f6ec228"></a><!-- doxytag: member="MC_CONTENT_RATING_7_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a2b01e60d83adaa0e619ec5c75f6ec228" args="" -->MC_CONTENT_RATING_7_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 7 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a4f478daa69722dc90b9ff20aa736203c"></a><!-- doxytag: member="MC_CONTENT_RATING_8_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a4f478daa69722dc90b9ff20aa736203c" args="" -->MC_CONTENT_RATING_8_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 8 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200afd97f6a0364083f73611249c7fa24c9a"></a><!-- doxytag: member="MC_CONTENT_RATING_9_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200afd97f6a0364083f73611249c7fa24c9a" args="" -->MC_CONTENT_RATING_9_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 9 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a9b4200ae1fd1eaeca9773a7b63a58f40"></a><!-- doxytag: member="MC_CONTENT_RATING_10_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a9b4200ae1fd1eaeca9773a7b63a58f40" args="" -->MC_CONTENT_RATING_10_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 10 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200abaf3d1d9f791f89907edce06eaf7a0c9"></a><!-- doxytag: member="MC_CONTENT_RATING_11_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200abaf3d1d9f791f89907edce06eaf7a0c9" args="" -->MC_CONTENT_RATING_11_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 11 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200afd4ae0d62835f92b37f803a31b215aa8"></a><!-- doxytag: member="MC_CONTENT_RATING_12_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200afd4ae0d62835f92b37f803a31b215aa8" args="" -->MC_CONTENT_RATING_12_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 12 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a5e9617cd0210747868b80a8f760a9b5e"></a><!-- doxytag: member="MC_CONTENT_RATING_13_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a5e9617cd0210747868b80a8f760a9b5e" args="" -->MC_CONTENT_RATING_13_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 13 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a85723f613ad55f5fc113bee25cd3bd86"></a><!-- doxytag: member="MC_CONTENT_RATING_14_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a85723f613ad55f5fc113bee25cd3bd86" args="" -->MC_CONTENT_RATING_14_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 14 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a97c0a1b4ce85432434cabded5ff56803"></a><!-- doxytag: member="MC_CONTENT_RATING_15_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a97c0a1b4ce85432434cabded5ff56803" args="" -->MC_CONTENT_RATING_15_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 15 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a1785ecefde3dbc5ba61eb579bae8ce96"></a><!-- doxytag: member="MC_CONTENT_RATING_16_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a1785ecefde3dbc5ba61eb579bae8ce96" args="" -->MC_CONTENT_RATING_16_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 16 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200abe7465708f442c6a3fcf1961bea7070d"></a><!-- doxytag: member="MC_CONTENT_RATING_17_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200abe7465708f442c6a3fcf1961bea7070d" args="" -->MC_CONTENT_RATING_17_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 17 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200a678fa0015491a377c3bf4af3fceb7e71"></a><!-- doxytag: member="MC_CONTENT_RATING_18_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200a678fa0015491a377c3bf4af3fceb7e71" args="" -->MC_CONTENT_RATING_18_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 18 and up </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga46700c459230fb37e7b5cc8dc36dc200ad40e3eb4372b0b4d867c35e4a05e1ce1"></a><!-- doxytag: member="MC_CONTENT_RATING_19_PLUS" ref="gga46700c459230fb37e7b5cc8dc36dc200ad40e3eb4372b0b4d867c35e4a05e1ce1" args="" -->MC_CONTENT_RATING_19_PLUS</em>&nbsp;</td><td>
+<p>Suitable for ages 19 and up </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaefb0d22c2e754481be7ea0e2809a0cde"></a><!-- doxytag: member="media_controller_type.h::mc_content_type_e" ref="gaefb0d22c2e754481be7ea0e2809a0cde" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gaefb0d22c2e754481be7ea0e2809a0cde">mc_content_type_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for the content type of the content. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaefb0d22c2e754481be7ea0e2809a0cdea750ab204de00f48a7f563ecc82e8f7e8"></a><!-- doxytag: member="MC_CONTENT_TYPE_IMAGE" ref="ggaefb0d22c2e754481be7ea0e2809a0cdea750ab204de00f48a7f563ecc82e8f7e8" args="" -->MC_CONTENT_TYPE_IMAGE</em>&nbsp;</td><td>
+<p>Image content type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaefb0d22c2e754481be7ea0e2809a0cdea95ad98e9b3e8b263bd675cc058af86ce"></a><!-- doxytag: member="MC_CONTENT_TYPE_VIDEO" ref="ggaefb0d22c2e754481be7ea0e2809a0cdea95ad98e9b3e8b263bd675cc058af86ce" args="" -->MC_CONTENT_TYPE_VIDEO</em>&nbsp;</td><td>
+<p>Video content type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaefb0d22c2e754481be7ea0e2809a0cdeadb14f9049289d29dd26bf73486615730"></a><!-- doxytag: member="MC_CONTENT_TYPE_MUSIC" ref="ggaefb0d22c2e754481be7ea0e2809a0cdeadb14f9049289d29dd26bf73486615730" args="" -->MC_CONTENT_TYPE_MUSIC</em>&nbsp;</td><td>
+<p>Music content type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaefb0d22c2e754481be7ea0e2809a0cdeace9b39173e4e1aa28c97d191c3ff772d"></a><!-- doxytag: member="MC_CONTENT_TYPE_OTHER" ref="ggaefb0d22c2e754481be7ea0e2809a0cdeace9b39173e4e1aa28c97d191c3ff772d" args="" -->MC_CONTENT_TYPE_OTHER</em>&nbsp;</td><td>
+<p>Other content type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaefb0d22c2e754481be7ea0e2809a0cdea1aeffe800f7eb2f0a46893557fcbde80"></a><!-- doxytag: member="MC_CONTENT_TYPE_UNDECIDED" ref="ggaefb0d22c2e754481be7ea0e2809a0cdea1aeffe800f7eb2f0a46893557fcbde80" args="" -->MC_CONTENT_TYPE_UNDECIDED</em>&nbsp;</td><td>
+<p>Not decided </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga03ecf911890df61d5764b6d9e2712a30"></a><!-- doxytag: member="media_controller_type.h::mc_error_e" ref="ga03ecf911890df61d5764b6d9e2712a30" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +480,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for the media playback action. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga9675bc201e5262319645f67aaa50dd18a0cc6bd3dd80e2ac1f456bd9a34ebc2ad"></a><!-- doxytag: member="MC_PLAYBACK_ACTION_PLAY" ref="gga9675bc201e5262319645f67aaa50dd18a0cc6bd3dd80e2ac1f456bd9a34ebc2ad" args="" -->MC_PLAYBACK_ACTION_PLAY</em>&nbsp;</td><td>
 <p>Play </p>
@@ -341,28 +539,28 @@ Typedefs</h2></td></tr>
 <p>Stopped </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827af6b3b8e35a41144a02434b708cf6e08f"></a><!-- doxytag: member="MC_PLAYBACK_STATE_NEXT_FILE" ref="ggad123e313a0c0f0b5ada1c361a25f8827af6b3b8e35a41144a02434b708cf6e08f" args="" -->MC_PLAYBACK_STATE_NEXT_FILE</em>&nbsp;</td><td>
-<p>Next file (Deprecated since 5.0) </p>
+<p>Next file (Deprecated since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827a83d80a6078602aec6c32c89f5b35749e"></a><!-- doxytag: member="MC_PLAYBACK_STATE_PREV_FILE" ref="ggad123e313a0c0f0b5ada1c361a25f8827a83d80a6078602aec6c32c89f5b35749e" args="" -->MC_PLAYBACK_STATE_PREV_FILE</em>&nbsp;</td><td>
-<p>Previous file (Deprecated since 5.0) </p>
+<p>Previous file (Deprecated since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827aec0455e219d7b86fee5898ae50290e8a"></a><!-- doxytag: member="MC_PLAYBACK_STATE_FAST_FORWARD" ref="ggad123e313a0c0f0b5ada1c361a25f8827aec0455e219d7b86fee5898ae50290e8a" args="" -->MC_PLAYBACK_STATE_FAST_FORWARD</em>&nbsp;</td><td>
-<p>Fast forward (Deprecated since 5.0) </p>
+<p>Fast forward (Deprecated since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827a304f2d669e9b42cf96a77fbc855a9568"></a><!-- doxytag: member="MC_PLAYBACK_STATE_REWIND" ref="ggad123e313a0c0f0b5ada1c361a25f8827a304f2d669e9b42cf96a77fbc855a9568" args="" -->MC_PLAYBACK_STATE_REWIND</em>&nbsp;</td><td>
-<p>Rewind (Deprecated since 5.0) </p>
+<p>Rewind (Deprecated since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827ab611808e79bbf9ee02440cc793156eb5"></a><!-- doxytag: member="MC_PLAYBACK_STATE_MOVING_TO_NEXT" ref="ggad123e313a0c0f0b5ada1c361a25f8827ab611808e79bbf9ee02440cc793156eb5" args="" -->MC_PLAYBACK_STATE_MOVING_TO_NEXT</em>&nbsp;</td><td>
-<p>Moving to the next item (Since 5.0) </p>
+<p>Moving to the next item (Since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827ac7d2fc8cf4153f24c103f478ec53f68f"></a><!-- doxytag: member="MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS" ref="ggad123e313a0c0f0b5ada1c361a25f8827ac7d2fc8cf4153f24c103f478ec53f68f" args="" -->MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS</em>&nbsp;</td><td>
-<p>Moving to the previous item (Since 5.0) </p>
+<p>Moving to the previous item (Since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827a2cf06ff1bca55a45de1cf70d94e94d1c"></a><!-- doxytag: member="MC_PLAYBACK_STATE_FAST_FORWARDING" ref="ggad123e313a0c0f0b5ada1c361a25f8827a2cf06ff1bca55a45de1cf70d94e94d1c" args="" -->MC_PLAYBACK_STATE_FAST_FORWARDING</em>&nbsp;</td><td>
-<p>Fast forwarding (Since 5.0) </p>
+<p>Fast forwarding (Since 4.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad123e313a0c0f0b5ada1c361a25f8827ac7e72a71d855b34d8980f81765e63f3f"></a><!-- doxytag: member="MC_PLAYBACK_STATE_REWINDING" ref="ggad123e313a0c0f0b5ada1c361a25f8827ac7e72a71d855b34d8980f81765e63f3f" args="" -->MC_PLAYBACK_STATE_REWINDING</em>&nbsp;</td><td>
-<p>Rewinding (Since 5.0) </p>
+<p>Rewinding (Since 4.0) </p>
 </td></tr>
 </table>
 </dd>
@@ -382,7 +580,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for the playlist update mode. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga3a9039102152fe46846cd4707eb41327a023bce6749c3ae9b910d5c01aceb88cc"></a><!-- doxytag: member="MC_PLAYLIST_UPDATED" ref="gga3a9039102152fe46846cd4707eb41327a023bce6749c3ae9b910d5c01aceb88cc" args="" -->MC_PLAYLIST_UPDATED</em>&nbsp;</td><td>
 <p>Create or Update playlist </p>
@@ -417,7 +615,45 @@ Typedefs</h2></td></tr>
 <p>Repeat mode off </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga98da6ccbf8db2e7c5cf513617fa634bfa96a50ede3568a4fecafdc49459e58155"></a><!-- doxytag: member="MC_REPEAT_MODE_ONE_MEDIA" ref="gga98da6ccbf8db2e7c5cf513617fa634bfa96a50ede3568a4fecafdc49459e58155" args="" -->MC_REPEAT_MODE_ONE_MEDIA</em>&nbsp;</td><td>
-<p>Repeat mode on for one media (Since 5.0) </p>
+<p>Repeat mode on for one media (Since 4.0) </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa1af406fa716f389e7c74a8f621ed47d"></a><!-- doxytag: member="media_controller_type.h::mc_search_category_e" ref="gaa1af406fa716f389e7c74a8f621ed47d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gaa1af406fa716f389e7c74a8f621ed47d">mc_search_category_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for the search category. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaa1af406fa716f389e7c74a8f621ed47da82c72f33d4fe24f733d3c53223523e36"></a><!-- doxytag: member="MC_SEARCH_NO_CATEGORY" ref="ggaa1af406fa716f389e7c74a8f621ed47da82c72f33d4fe24f733d3c53223523e36" args="" -->MC_SEARCH_NO_CATEGORY</em>&nbsp;</td><td>
+<p>No search category </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1af406fa716f389e7c74a8f621ed47da127749555bf91fdc4d72708490c5954c"></a><!-- doxytag: member="MC_SEARCH_TITLE" ref="ggaa1af406fa716f389e7c74a8f621ed47da127749555bf91fdc4d72708490c5954c" args="" -->MC_SEARCH_TITLE</em>&nbsp;</td><td>
+<p>Search by content title </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1af406fa716f389e7c74a8f621ed47da45b6a1dec12cfa2c11fdfcda0b79d710"></a><!-- doxytag: member="MC_SEARCH_ARTIST" ref="ggaa1af406fa716f389e7c74a8f621ed47da45b6a1dec12cfa2c11fdfcda0b79d710" args="" -->MC_SEARCH_ARTIST</em>&nbsp;</td><td>
+<p>Search by content artist </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1af406fa716f389e7c74a8f621ed47da0672f940b26c31f59a4c9fd700b5031e"></a><!-- doxytag: member="MC_SEARCH_ALBUM" ref="ggaa1af406fa716f389e7c74a8f621ed47da0672f940b26c31f59a4c9fd700b5031e" args="" -->MC_SEARCH_ALBUM</em>&nbsp;</td><td>
+<p>Search by content album </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1af406fa716f389e7c74a8f621ed47da8a9b99f800d77887e9cad35088d16565"></a><!-- doxytag: member="MC_SEARCH_GENRE" ref="ggaa1af406fa716f389e7c74a8f621ed47da8a9b99f800d77887e9cad35088d16565" args="" -->MC_SEARCH_GENRE</em>&nbsp;</td><td>
+<p>Search by content genre </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1af406fa716f389e7c74a8f621ed47dadb4f123ee5adc8ada760174356c71da2"></a><!-- doxytag: member="MC_SEARCH_TPO" ref="ggaa1af406fa716f389e7c74a8f621ed47dadb4f123ee5adc8ada760174356c71da2" args="" -->MC_SEARCH_TPO</em>&nbsp;</td><td>
+<p>Search by Time Place Occasion </p>
 </td></tr>
 </table>
 </dd>
@@ -510,7 +746,16 @@ Typedefs</h2></td></tr>
 <p>Repeat mode </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaa3ae52172988df333a6288cf305f8c6ba130a6186b75cfcba586a788b8492dc03"></a><!-- doxytag: member="MC_SUBSCRIPTION_TYPE_PLAYLIST" ref="ggaa3ae52172988df333a6288cf305f8c6ba130a6186b75cfcba586a788b8492dc03" args="" -->MC_SUBSCRIPTION_TYPE_PLAYLIST</em>&nbsp;</td><td>
-<p>Playlist (Since 5.0) </p>
+<p>Playlist (Since 4.0) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa3ae52172988df333a6288cf305f8c6ba48cdd12d6331c496aa6f0e67340210f6"></a><!-- doxytag: member="MC_SUBSCRIPTION_TYPE_PLAYBACK_ABILITY" ref="ggaa3ae52172988df333a6288cf305f8c6ba48cdd12d6331c496aa6f0e67340210f6" args="" -->MC_SUBSCRIPTION_TYPE_PLAYBACK_ABILITY</em>&nbsp;</td><td>
+<p>Playback ability (Since 5.0) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa3ae52172988df333a6288cf305f8c6ba3c254d89988230b4615b33a3d101140a"></a><!-- doxytag: member="MC_SUBSCRIPTION_TYPE_SHUFFLE_ABILITY" ref="ggaa3ae52172988df333a6288cf305f8c6ba3c254d89988230b4615b33a3d101140a" args="" -->MC_SUBSCRIPTION_TYPE_SHUFFLE_ABILITY</em>&nbsp;</td><td>
+<p>Shuffle ability (Since 5.0) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa3ae52172988df333a6288cf305f8c6ba73cdd0392a54ef7fb1fd613b985662b9"></a><!-- doxytag: member="MC_SUBSCRIPTION_TYPE_REPEAT_ABILITY" ref="ggaa3ae52172988df333a6288cf305f8c6ba73cdd0392a54ef7fb1fd613b985662b9" args="" -->MC_SUBSCRIPTION_TYPE_REPEAT_ABILITY</em>&nbsp;</td><td>
+<p>Repeat ability (Since 5.0) </p>
 </td></tr>
 </table>
 </dd>

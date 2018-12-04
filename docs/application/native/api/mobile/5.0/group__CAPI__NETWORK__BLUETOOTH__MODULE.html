@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -128,13 +128,13 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaa19192e98943a9d5ff6a8cfedce1847f">bt_get_uuid_name</a> (const char *uuid, char **name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the specification name for the given UUID.  <a href="#gaa19192e98943a9d5ff6a8cfedce1847f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaeb7170233b848b981edf915ccc5832e4">bt_hid_host_initialize</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html#gad912b937f8ec1ee63203b324b074352c">bt_hid_host_connection_state_changed_cb</a> connection_cb, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Bluetooth HID(Human Interface Device) Host.  <a href="#gaeb7170233b848b981edf915ccc5832e4"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Bluetooth HID (Human Interface Device) Host.  <a href="#gaeb7170233b848b981edf915ccc5832e4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gad708799e63f9334545870d855ede1b9d">bt_hid_host_deinitialize</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the Bluetooth HID(Human Interface Device) Host.  <a href="#gad708799e63f9334545870d855ede1b9d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the Bluetooth HID (Human Interface Device) Host.  <a href="#gad708799e63f9334545870d855ede1b9d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773">bt_hid_host_connect</a> (const char *remote_address)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects the remote device with the HID(Human Interface Device) service, asynchronously.  <a href="#ga68ce7750569a1b4f488595ac84268773"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects the remote device with the HID (Human Interface Device) service, asynchronously.  <a href="#ga68ce7750569a1b4f488595ac84268773"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga121e26b634a56fa6ee6e36d0bee115c6">bt_hid_host_disconnect</a> (const char *remote_address)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects the remote device with the HID(Human Interface Device) service, asynchronously.  <a href="#ga121e26b634a56fa6ee6e36d0bee115c6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects the remote device with the HID (Human Interface Device) service, asynchronously.  <a href="#ga121e26b634a56fa6ee6e36d0bee115c6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga4b656114c011be53cef92a157576ff95">bt_hid_device_activate</a> (bt_hid_device_connection_state_changed_cb callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the Bluetooth HID Device role.  <a href="#ga4b656114c011be53cef92a157576ff95"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga5871ed3a630bda9980e0f563c998afe2">bt_hid_device_deactivate</a> (void)</td></tr>
@@ -243,6 +243,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga9a8a9f741ccf7e0e65c3278794a61654a49a8170403199c69c16067f6c59e4173"></a><!-- doxytag: member="BT_ERROR_SERVICE_NOT_FOUND" ref="gga9a8a9f741ccf7e0e65c3278794a61654a49a8170403199c69c16067f6c59e4173" args="" -->BT_ERROR_SERVICE_NOT_FOUND</em>&nbsp;</td><td>
 <p>Service Not Found </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga9a8a9f741ccf7e0e65c3278794a61654aad1286a559a951af1dffcfa486964f24"></a><!-- doxytag: member="BT_ERROR_AUTHORIZATION_REJECTED" ref="gga9a8a9f741ccf7e0e65c3278794a61654aad1286a559a951af1dffcfa486964f24" args="" -->BT_ERROR_AUTHORIZATION_REJECTED</em>&nbsp;</td><td>
+<p>Authorization rejected (Since 5.0) </p>
 </td></tr>
 </table>
 </dd>
@@ -361,7 +364,8 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called to register HID UUID. Only then a remote device is able to identify this one as a HID device.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called to register HID UUID. <br/>
+ Only then a remote device is able to identify this one as a HID device.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback called when the connection state is changed </td></tr>
@@ -465,7 +469,6 @@ The local device must be bonded with the remote device by <a class="el" href="gr
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654aabb5b755fba30444a1e188e419c45585">BT_ERROR_NOT_IN_PROGRESS</a></td><td>Not activated </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -511,6 +514,7 @@ The local device must be bonded with the remote device by <a class="el" href="gr
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ac914bd595e3fef6ab633f686b023b1c7">BT_ERROR_REMOTE_DEVICE_NOT_CONNECTED</a></td><td>Remote device is not connected </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
@@ -583,10 +587,12 @@ bt_hid_device_connection_state_changed_cb() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
@@ -739,6 +745,7 @@ bt_hid_device_connection_state_changed_cb() </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -769,6 +776,7 @@ bt_hid_device_connection_state_changed_cb() </dd></dl>
 
 <p>Unsets the data received callback. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -796,7 +804,7 @@ bt_hid_device_connection_state_changed_cb() </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Connects the remote device with the HID(Human Interface Device) service, asynchronously. </p>
+<p>Connects the remote device with the HID (Human Interface Device) service, asynchronously. </p>
 <p>@ @ @ </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -822,9 +830,9 @@ bt_hid_device_connection_state_changed_cb() </dd></dl>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The local device must be bonded with the remote device by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gaf72675b8c5db696ac12b139ff0a2b796" title="Creates a bond with a remote Bluetooth device, asynchronously.">bt_device_create_bond()</a>. </dd>
 <dd>
-The Bluetooth HID service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaeb7170233b848b981edf915ccc5832e4" title="Initializes the Bluetooth HID(Human Interface Device) Host.">bt_hid_host_initialize()</a>. </dd></dl>
+The Bluetooth HID service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaeb7170233b848b981edf915ccc5832e4" title="Initializes the Bluetooth HID (Human Interface Device) Host.">bt_hid_host_initialize()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html#gad912b937f8ec1ee63203b324b074352c" title="Called when the connection state is changed.">bt_hid_host_connection_state_changed_cb()</a> will be invoked. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga121e26b634a56fa6ee6e36d0bee115c6" title="Disconnects the remote device with the HID(Human Interface Device) service, asynchronously.">bt_hid_host_disconnect()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga121e26b634a56fa6ee6e36d0bee115c6" title="Disconnects the remote device with the HID (Human Interface Device) service, asynchronously.">bt_hid_host_disconnect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html#gad912b937f8ec1ee63203b324b074352c" title="Called when the connection state is changed.">bt_hid_host_connection_state_changed_cb()</a> </dd></dl>
 
@@ -845,7 +853,7 @@ The Bluetooth HID service must be initialized with <a class="el" href="group__CA
 </div>
 <div class="memdoc">
 
-<p>Deinitializes the Bluetooth HID(Human Interface Device) Host. </p>
+<p>Deinitializes the Bluetooth HID (Human Interface Device) Host. </p>
 <p>@ @ @ </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
@@ -858,8 +866,8 @@ The Bluetooth HID service must be initialized with <a class="el" href="group__CA
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth HID service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaeb7170233b848b981edf915ccc5832e4" title="Initializes the Bluetooth HID(Human Interface Device) Host.">bt_hid_host_initialize()</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaeb7170233b848b981edf915ccc5832e4" title="Initializes the Bluetooth HID(Human Interface Device) Host.">bt_hid_host_initialize()</a> </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth HID service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaeb7170233b848b981edf915ccc5832e4" title="Initializes the Bluetooth HID (Human Interface Device) Host.">bt_hid_host_initialize()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gaeb7170233b848b981edf915ccc5832e4" title="Initializes the Bluetooth HID (Human Interface Device) Host.">bt_hid_host_initialize()</a> </dd></dl>
 
 </div>
 </div>
@@ -878,7 +886,7 @@ The Bluetooth HID service must be initialized with <a class="el" href="group__CA
 </div>
 <div class="memdoc">
 
-<p>Disconnects the remote device with the HID(Human Interface Device) service, asynchronously. </p>
+<p>Disconnects the remote device with the HID (Human Interface Device) service, asynchronously. </p>
 <p>@ @ @ </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -903,9 +911,9 @@ The Bluetooth HID service must be initialized with <a class="el" href="group__CA
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The remote device must be connected by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID(Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The remote device must be connected by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID (Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html#gad912b937f8ec1ee63203b324b074352c" title="Called when the connection state is changed.">bt_hid_host_connection_state_changed_cb()</a> will be invoked. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID(Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga68ce7750569a1b4f488595ac84268773" title="Connects the remote device with the HID (Human Interface Device) service, asynchronously.">bt_hid_host_connect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HID__MODULE.html#gad912b937f8ec1ee63203b324b074352c" title="Called when the connection state is changed.">bt_hid_host_connection_state_changed_cb()</a> </dd></dl>
 
@@ -936,11 +944,12 @@ The Bluetooth HID service must be initialized with <a class="el" href="group__CA
 </div>
 <div class="memdoc">
 
-<p>Initializes the Bluetooth HID(Human Interface Device) Host. </p>
+<p>Initializes the Bluetooth HID (Human Interface Device) Host. </p>
 <p>@ @ @ </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called before Bluetooth HID Host starts. <br/>
- You must free all resources of the Bluetooth service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gad708799e63f9334545870d855ede1b9d" title="Deinitializes the Bluetooth HID(Human Interface Device) Host.">bt_hid_host_deinitialize()</a> if Bluetooth HID Host service is no longer needed. </dd></dl>
+ You must free all resources of the Bluetooth service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gad708799e63f9334545870d855ede1b9d" title="Deinitializes the Bluetooth HID (Human Interface Device) Host.">bt_hid_host_deinitialize()</a> <br/>
+ if Bluetooth HID Host service is no longer needed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">connection_cb</td><td>The callback called when the connection state is changed </td></tr>
@@ -962,7 +971,7 @@ The Bluetooth HID service must be initialized with <a class="el" href="group__CA
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The Bluetooth service must be initialized with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gad708799e63f9334545870d855ede1b9d" title="Deinitializes the Bluetooth HID(Human Interface Device) Host.">bt_hid_host_deinitialize()</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gad708799e63f9334545870d855ede1b9d" title="Deinitializes the Bluetooth HID (Human Interface Device) Host.">bt_hid_host_deinitialize()</a> </dd></dl>
 
 </div>
 </div>

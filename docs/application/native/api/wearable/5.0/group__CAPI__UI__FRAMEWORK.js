@@ -9,6 +9,7 @@ var group__CAPI__UI__FRAMEWORK =
     [ "FontConfig", "group__OPENSRC__FONTCONFIG__FRAMEWORK.html", null ],
     [ "Freetype", "group__OPENSRC__FREETYPE__FRAMEWORK.html", null ],
     [ "HarfBuzz", "group__OPENSRC__HARFBUZZ__FRAMEWORK.html", null ],
+    [ "Minicontrol", "group__MINICONTROL__LIBRARY.html", "group__MINICONTROL__LIBRARY" ],
     [ "OpenGL ES", "group__OPENSRC__OPENGLES__FRAMEWORK.html", null ],
     [ "SDL", "group__OPENSRC__SDL__FRAMEWORK.html", "group__OPENSRC__SDL__FRAMEWORK" ],
     [ "TBM Surface", "group__CAPI__UI__TBM__SURFACE__MODULE.html", null ],

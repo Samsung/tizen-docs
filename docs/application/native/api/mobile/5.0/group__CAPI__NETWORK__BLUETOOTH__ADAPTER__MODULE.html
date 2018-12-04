@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -259,7 +259,8 @@ Typedefs</h2></td></tr>
 
 <p>Called when the state of device discovery changes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If <em>discovery_state</em> is <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggaae6b21353576e515e5bb1e76d25472bda4e1aca7f64eab2a8da61be93c01e4832">BT_ADAPTER_DEVICE_DISCOVERY_FOUND</a>, then you can get some information, such as remote device address, remote device name, rssi, and bonding state.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If <em>discovery_state</em> is <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggaae6b21353576e515e5bb1e76d25472bda4e1aca7f64eab2a8da61be93c01e4832">BT_ADAPTER_DEVICE_DISCOVERY_FOUND</a>, <br/>
+ then you can get some information, such as remote device address, remote device name, rssi, and bonding state.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of the device discovery </td></tr>
@@ -681,8 +682,9 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the name of local Bluetooth adapter. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
-<p>Use this function to get the friendly name associated with Bluetooth device, retrieved by the remote Bluetooth devices.</p>
+<p>Use this function to get the friendly name associated with Bluetooth <br/>
+ device, retrieved by the remote Bluetooth devices.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>local_name</em> must be released with free() by you.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -813,7 +815,9 @@ Typedefs</h2></td></tr>
 
 <p>Checks for the device discovery is in progress or not. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If Bluetooth discovery is in progress, other operations are not allowed and you have to either stop the discovery operation, or wait for it to be finished, before performing other operations.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If Bluetooth discovery is in progress, other operations are not allowed and <br/>
+ you have to either stop the discovery operation, or wait for it to be finished, <br/>
+ before performing other operations.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">is_discovering</td><td>The discovering status: (<code>true</code> = in progress , <code>false</code> = not in progress )</td></tr>
@@ -1133,8 +1137,9 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Registers a callback function to be invoked every second. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 until the visibility mode is changed from <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1ea33c04ddd2418413de75d807474b3109c">BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE</a> to <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1eafdab2d0e1b91a64741759617b7030ce1">BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE</a>.</dd></dl>
-<p>When you set visibility mode as <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1ea33c04ddd2418413de75d807474b3109c">BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE</a>, <em>callback</em> will be called every second until visibility mode is changed to <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1eafdab2d0e1b91a64741759617b7030ce1">BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE</a>. </p>
+<p>When you set visibility mode as <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1ea33c04ddd2418413de75d807474b3109c">BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE</a>, <br/>
+ <em>callback</em> will be called every second until visibility mode is changed to <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1eafdab2d0e1b91a64741759617b7030ce1">BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE</a>.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 until the visibility mode is changed from <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1ea33c04ddd2418413de75d807474b3109c">BT_ADAPTER_VISIBILITY_MODE_LIMITED_DISCOVERABLE</a> to <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggadf09f397cf6e56a0dda20da1f9988c1eafdab2d0e1b91a64741759617b7030ce1">BT_ADAPTER_VISIBILITY_MODE_NON_DISCOVERABLE</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to register </td></tr>
@@ -1232,10 +1237,12 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Starts the device discovery, asynchronously. </p>
+<p>If a device is discovered, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ga99365f65836f14fe77bb850938304966" title="Called when the state of device discovery changes.">bt_adapter_device_discovery_state_changed_cb()</a> will be invoked <br/>
+ with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggaae6b21353576e515e5bb1e76d25472bda4e1aca7f64eab2a8da61be93c01e4832">BT_ADAPTER_DEVICE_DISCOVERY_FOUND</a>, and then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ga99365f65836f14fe77bb850938304966" title="Called when the state of device discovery changes.">bt_adapter_device_discovery_state_changed_cb()</a> <br/>
+ will be called with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggaae6b21353576e515e5bb1e76d25472bda9f71ec7bbd59916310334d293e640d5d">BT_ADAPTER_DEVICE_DISCOVERY_FINISHED</a> in case of the completion or cancellation of the discovery.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<p>If a device is discovered, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ga99365f65836f14fe77bb850938304966" title="Called when the state of device discovery changes.">bt_adapter_device_discovery_state_changed_cb()</a> will be invoked with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggaae6b21353576e515e5bb1e76d25472bda4e1aca7f64eab2a8da61be93c01e4832">BT_ADAPTER_DEVICE_DISCOVERY_FOUND</a>, and then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ga99365f65836f14fe77bb850938304966" title="Called when the state of device discovery changes.">bt_adapter_device_discovery_state_changed_cb()</a> will be called with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggaae6b21353576e515e5bb1e76d25472bda9f71ec7bbd59916310334d293e640d5d">BT_ADAPTER_DEVICE_DISCOVERY_FINISHED</a> in case of the completion or cancellation of the discovery.</p>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>To connect to peer Bluetooth device, you need to know its Bluetooth address. <br/>
  The device discovery can be stopped by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#gae536557868f1286a6579e95506ec1955" title="Stops the device discovery, asynchronously.">bt_adapter_stop_device_discovery()</a>.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>

@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -129,6 +129,18 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned int&#160;&#160;&#160;<a class="el" href="structcamera__preview__data__s.html#a70776ac271b9345448aecbcd9b3d91e3">v_size</a></td></tr>
 <tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcamera__preview__data__s.html#a142a76a6dbaa7b2ad2be9e3ce4fb6c60">triple_plane</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcamera__preview__data__s.html#afa5f82a0a093982b411abf844f848894">data</a></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned char *&#160;&#160;&#160;<a class="el" href="structcamera__preview__data__s.html#afa5f82a0a093982b411abf844f848894">data</a></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned int&#160;&#160;&#160;<a class="el" href="structcamera__preview__data__s.html#a2cf01eb6f50fd3b236e5c74220a6a569">size</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcamera__preview__data__s.html#a819f4455112eae33519044c65d585096">encoded_plane</a></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned char *&#160;&#160;&#160;<a class="el" href="structcamera__preview__data__s.html#afa5f82a0a093982b411abf844f848894">data</a></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned int&#160;&#160;&#160;<a class="el" href="structcamera__preview__data__s.html#a2cf01eb6f50fd3b236e5c74220a6a569">size</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcamera__preview__data__s.html#ac9fbbe023f881984601fbf793baaa05a">depth_plane</a></td></tr>
+<tr><td class="memItemLeft" >struct {</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned char *&#160;&#160;&#160;<a class="el" href="structcamera__preview__data__s.html#afa5f82a0a093982b411abf844f848894">data</a></td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned int&#160;&#160;&#160;<a class="el" href="structcamera__preview__data__s.html#a2cf01eb6f50fd3b236e5c74220a6a569">size</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcamera__preview__data__s.html#a2b4d49fd5c12c4767174372810073545">rgb_plane</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The structure type to preview stream data. </p>
@@ -144,7 +156,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The encoded data pointer </p>
+<p>The encoded data pointer</p>
+<p>The depth data pointer</p>
+<p>The RGB data pointer </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9fbbe023f881984601fbf793baaa05a"></a><!-- doxytag: member="camera_preview_data_s::depth_plane" ref="ac9fbbe023f881984601fbf793baaa05a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="structcamera__preview__data__s.html#ac9fbbe023f881984601fbf793baaa05a">camera_preview_data_s::depth_plane</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Depth plane frame data (Since 5.0) </p>
 
 </div>
 </div>
@@ -158,7 +186,21 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>double plane frame data </p>
+<p>Double plane frame data </p>
+
+</div>
+</div>
+<a class="anchor" id="a819f4455112eae33519044c65d585096"></a><!-- doxytag: member="camera_preview_data_s::encoded_plane" ref="a819f4455112eae33519044c65d585096" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="structcamera__preview__data__s.html#a819f4455112eae33519044c65d585096">camera_preview_data_s::encoded_plane</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Encoded plane frame data </p>
 
 </div>
 </div>
@@ -204,6 +246,20 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2b4d49fd5c12c4767174372810073545"></a><!-- doxytag: member="camera_preview_data_s::rgb_plane" ref="a2b4d49fd5c12c4767174372810073545" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }   <a class="el" href="structcamera__preview__data__s.html#a2b4d49fd5c12c4767174372810073545">camera_preview_data_s::rgb_plane</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>RGB plane frame data (Since 5.0) </p>
+
+</div>
+</div>
 <a class="anchor" id="a6c574ae156eaae8f91a4d486e36c3662"></a><!-- doxytag: member="camera_preview_data_s::single_plane" ref="a6c574ae156eaae8f91a4d486e36c3662" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +270,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>single plane frame data </p>
+<p>Single plane frame data </p>
 
 </div>
 </div>
@@ -229,7 +285,9 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>The size of data</p>
-<p>The size of encoded data </p>
+<p>The size of encoded data</p>
+<p>The size of depth data</p>
+<p>The size of RGB data </p>
 
 </div>
 </div>
@@ -257,7 +315,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>triple plane frame data </p>
+<p>Triple plane frame data </p>
 
 </div>
 </div>

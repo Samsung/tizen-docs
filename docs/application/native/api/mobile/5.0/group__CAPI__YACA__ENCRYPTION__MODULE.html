@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -311,6 +311,11 @@ exit:
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa9b2a74a8668b5255c3a5970d8b618a4a94c3616de03ab18226d4ecaf80173385">YACA_ERROR_NONE</a>)
         <span class="keywordflow">goto</span> exit;
 
+    <span class="comment">/* Allocate memory for tag */</span>
+    ret = <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#gad68834ed370229e2dbbb17cb5b2f0dfc" title="Allocates the zeroed memory.">yaca_zalloc</a>(tag_len, (<span class="keywordtype">void</span>**)&amp;tag);
+    <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa9b2a74a8668b5255c3a5970d8b618a4a94c3616de03ab18226d4ecaf80173385">YACA_ERROR_NONE</a>)
+        <span class="keywordflow">goto</span> exit;
+
     <span class="comment">/* Encryption */</span>
     {
         <span class="comment">/* Initialize encryption context */</span>
@@ -362,7 +367,7 @@ exit:
         <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa9b2a74a8668b5255c3a5970d8b618a4a94c3616de03ab18226d4ecaf80173385">YACA_ERROR_NONE</a>)
             <span class="keywordflow">goto</span> exit;
 
-        ret = <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ga7d1fc384ed13b6ffcd6adc797555c161" title="Returns the non-standard context properties. Can only be called on an initialized context...">yaca_context_get_property</a>(ctx, <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa1700ae68bc0622a63aaa347af1568cea54bebb6480150bfe762671d4503f0fe9">YACA_PROPERTY_GCM_TAG</a>, (<span class="keywordtype">void</span>**)&amp;tag, &amp;tag_len);
+        ret = <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ga7d1fc384ed13b6ffcd6adc797555c161" title="Returns the non-standard context properties. Can only be called on an initialized context...">yaca_context_get_property</a>(ctx, <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa1700ae68bc0622a63aaa347af1568cea54bebb6480150bfe762671d4503f0fe9">YACA_PROPERTY_GCM_TAG</a>, (<span class="keywordtype">void</span>**)tag, &amp;tag_len);
         <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa9b2a74a8668b5255c3a5970d8b618a4a94c3616de03ab18226d4ecaf80173385">YACA_ERROR_NONE</a>)
             <span class="keywordflow">goto</span> exit;
 
@@ -496,6 +501,11 @@ exit:
     <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa9b2a74a8668b5255c3a5970d8b618a4a94c3616de03ab18226d4ecaf80173385">YACA_ERROR_NONE</a>)
         <span class="keywordflow">goto</span> exit;
 
+    <span class="comment">/* Allocate memory for tag */</span>
+    ret = <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#gad68834ed370229e2dbbb17cb5b2f0dfc" title="Allocates the zeroed memory.">yaca_zalloc</a>(tag_len, (<span class="keywordtype">void</span>**)&amp;tag);
+    <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa9b2a74a8668b5255c3a5970d8b618a4a94c3616de03ab18226d4ecaf80173385">YACA_ERROR_NONE</a>)
+        <span class="keywordflow">goto</span> exit;
+
     <span class="comment">/* Encryption */</span>
     {
         <span class="comment">/* Initialize encryption context */</span>
@@ -553,7 +563,7 @@ exit:
             <span class="keywordflow">goto</span> exit;
 
         <span class="comment">/* Get the tag after final encryption */</span>
-        ret = <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ga7d1fc384ed13b6ffcd6adc797555c161" title="Returns the non-standard context properties. Can only be called on an initialized context...">yaca_context_get_property</a>(ctx, <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa1700ae68bc0622a63aaa347af1568ceaf06d8a97d658a5437132bb4504f5f1bb">YACA_PROPERTY_CCM_TAG</a>, (<span class="keywordtype">void</span>**)&amp;tag, &amp;tag_len);
+        ret = <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ga7d1fc384ed13b6ffcd6adc797555c161" title="Returns the non-standard context properties. Can only be called on an initialized context...">yaca_context_get_property</a>(ctx, <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa1700ae68bc0622a63aaa347af1568ceaf06d8a97d658a5437132bb4504f5f1bb">YACA_PROPERTY_CCM_TAG</a>, (<span class="keywordtype">void</span>**)tag, &amp;tag_len);
         <span class="keywordflow">if</span> (ret != <a class="code" href="group__CAPI__YACA__ENCRYPTION__MODULE.html#ggaa9b2a74a8668b5255c3a5970d8b618a4a94c3616de03ab18226d4ecaf80173385">YACA_ERROR_NONE</a>)
             <span class="keywordflow">goto</span> exit;
 
