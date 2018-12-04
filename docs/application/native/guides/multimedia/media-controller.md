@@ -645,7 +645,7 @@ The following table lists all the server state attributes the client can receive
 | `MC_PLAYBACK_STATE_MOVING_TO_NEXT` | Playback state of moving to next media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS` | Playback state of moving to previous media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_FAST_FORWARDING` | Playback state of fast forwarding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
-| `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewinding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
+| `MC_PLAYBACK_STATE_REWINDING`       | Playback state of rewinding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 
 
 ## Media Controller Playback Action Attributes
