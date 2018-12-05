@@ -1,20 +1,20 @@
 # Work with SkiaSharp
 
-SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on Google's Skia Graphics Library. 
-It provides a comprehensive 2D API that can be used across mobile, server and desktop models to render images.
+SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on the Skia Graphics Library of Google. 
+It provides a comprehensive 2D API that can be used across mobile, server, and desktop models to render images.
 
-In OpenTK application, you can use SkiaSharp to draw geometries, texts or images. For more information about the SkiaSharp APIs, please reference to [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3).
+In OpenTK app, you can use SkiaSharp to draw geometries, texts or images. For more information about the SkiaSharp APIs, see [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3).
 
-To draw something with SkiaSharp in OpenTK application, it following some general guidelines:
+To draw something with SkiaSharp in OpenTK application, use the following general guidelines:
 
 -   Allocate a memory block as a canvas for SkiaSharp.
--   Create SKCanvas on this memory block and render text/image you want on this SKCanvas with SkiaSharp.
+-   Create SKCanvas on this memory block, and render text or image what you want on this SKCanvas.
 -   Create 2D texture from this memory block.
 -   Draw 2D texture with graphics APIs of OpenTK.
 
-## Allocate memory block
+## Allocate Memory Block
 
-Allocate a specific size memory block. The size of memory block must be same with the size of the canvas you want.
+Allocate a specific size of the memory block. The size of memory block must be same as the size of the canvas as you want.
 ```C#
 private IntPtr pBitMap;                   // memory handle
 private int rowByte;                      // bytes of one row 
@@ -39,9 +39,9 @@ private void FreeBitmap()
 }
 ```
 
-## Create SKCanvas on memory block
+## Create SKCanvas on Memory Block
 
-Create SKSurface on the memory block, and then you can get the SKCanvas from the SKSurface.
+Create SKSurface on the memory block and then you can get the SKCanvas from the SKSurface:
 ```C#
 private SKSurface surface;
 private SKCanvas canvas;
@@ -60,7 +60,7 @@ private void CreateSKCanvas()
 }
 ```
 
-## Draw text on the SKCanvas
+## Draw Text on SKCanvas
 
 ```C#
 private void DrawTextBySkiaSharp(SKCanvas canvas, int canvasWidth, int canvasHeight)
@@ -89,9 +89,9 @@ private void DrawTextOnSkCanvas()
 }
 ```
 
-## Create 2D texture from memory block.
+## Create 2D Texture from Memory Block
 
-Call `GL.TexImage2D` of `OpenTK.Graphics.ES20` to generate 2D texture from the memory block.
+Call `GL.TexImage2D` of `OpenTK.Graphics.ES20` to generate 2D texture from the memory block:
 ```C#
 private void Create2DTextureFromMemory()
 {
@@ -114,7 +114,7 @@ private void Create2DTextureFromMemory()
 ```
 
 ## Draw 2D Texture
-Draw a 2D texture with graphics APIs of OpenTK, for more information you can reference to [OpenTK samples](https://github.sec.samsung.net/dotnet/opentk_samples).
+Draw a 2D texture with graphics APIs of OpenTK, for more information, see [OpenTK samples](https://github.sec.samsung.net/dotnet/opentk_samples).
 ```C#
 private IGameWindow mainWindow;     // window
 
@@ -175,9 +175,10 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
 
 ## Sample Application
 
-We implemented an OpenTK sample application which using SkiaSharp to draw text on a rotating cube. For more information
-you can referecne to this [sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp).
+An implementation of OpenTK sample app is made that uses SkiaSharp to draw text on a rotating cube.
 
-- Running sample on TV emulator                                  
+For more information, see [sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp).
+
+- Run this sample application on the TV emulator                                  
 ![WorkWithSkiaSharp](media/SampleWorkWithSkiaSharp.png)
 

@@ -385,7 +385,7 @@ for TD:
 			</td>
 			<td>
 			<p><strong>(T) CubeWithSkiaSharp (OpenTK)</strong> [In progress]</p>
-			<p>This sample application mainly shows how to draw text with SkiaSharp on target memory block, generates 2D texture with the target memory block, and finally show this 2D texture in OpenTK application (drawing text on a rotating cube).</p>
+			<p>This sample application demonstrates how to draw text with SkiaSharp on the target memory, generates 2D texture on the target memory block, and finally shows 2D texture in the OpenTK app (drawing text on a rotating cube).</p>
 			</td>
 		</tr>
 	</tbody>
