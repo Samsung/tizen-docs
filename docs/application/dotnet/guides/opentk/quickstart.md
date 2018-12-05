@@ -10,7 +10,7 @@ This guide explains how to create a .NET application with OpenTK on Tizen.
 
 ## Set Up Development Environment and Create Project
 
-To create a Tizen OpenTK application, use the following:
+To create a Tizen OpenTK app, use the following:
 
 - [Create Project](#create-project)
 - [Insert OpenTK app Code](#insert-opentk-app-code)
@@ -18,16 +18,16 @@ To create a Tizen OpenTK application, use the following:
 
 ### Create Project
 
-1.  In **New project** menu, select **Tizen 5.0** > **Tizen OpenTK App**. Click **OK**.
+1.  In **New project** menu, select **Tizen 5.0** > **Tizen OpenTK App**. Click **OK**:
     ![tizen_project_wizard_capture_template](media/tizen_project_wizard_capture_template1.png)
 
-2.  The new project is shown in the **Solution Explorer** view:.                                                   
+2.  The new project is shown in the **Solution Explorer** view:                                                   
     ![tizen_project_wizard_capture_template](media/tizen_project_wizard_capture_template2.png)
 
     
 ### Insert OpenTK app Code
 
-This OpenTK app draws a triangle, it defines vertex, color, shaders information of a triangle, and then register event handles on `Window` for drawing this triangle.
+This OpenTK app draws a triangle, it defines vertex, color, shaders information of a triangle and then register event handles on `Window` for drawing this triangle.
 
 In **SampleOpenTKApp.cs** file, add the following code:
 
@@ -198,9 +198,9 @@ namespace SampelOpenTKApp
 
 - **OpenTKApp** is derived from `TizenGameApplication`. 
     `TizenGameApplication` creates OpenGL running environment, which includes window, OpenGL context, and so on.
-    `TizenGameApplication` inherits from `Tizen.Applications.CoreUIApplication`, You can override the application related methods including: `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, `OnTerminate`, and so on. For more information about these methods, see [Applications](https://developer.tizen.org/development/guides/.net-application/application-management/applications)
-- `InitShader` : It is an event handler of `Window`.`Load` event. Also, it initializes shaders of triangle in this sample.
-- `RenderTriangle` : It is an event handler of `Window`.`RenderFrame` event. Also, it draws the triangle in this sample.
+    `TizenGameApplication` inherits from `Tizen.Applications.CoreUIApplication`, You can override the application related methods including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, `OnTerminate`, and so on. For more information about these methods, see [Applications](https://developer.tizen.org/development/guides/.net-application/application-management/applications)
+- `InitShader` : It is an event handler of `Window.Load` event. Also, it initializes shaders of triangle in this sample.
+- `RenderTriangle` : It is an event handler of `Window.RenderFrame` event. Also, it draws the triangle in this sample.
 - `app.Run()` : It runs the main loop of OpenTK app.
 
 ### Build and Launch your Application
@@ -253,7 +253,7 @@ The following are the emulators:
         - For Windows OS, launch the Tizen SDB command prompt (**Tool** > **Tizen** > **Tizen Sdb Command Prompt**).
         - For Linux, you can use the SDB command directly in your project path.
         
-    3.  Install your application with the SDB command :
+    3.  Install your application with the SDB command:
     
         ```sdb install org.tizen.example.SampleOpenTKApp-1.0.0.tpk```
 

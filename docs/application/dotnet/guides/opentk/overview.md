@@ -8,16 +8,16 @@ For developing the OpenGL app using C# on the Tizen platform, an app developer u
 Besides the OpenGL ES APIs, the OpenTK also provides several utility libraries including a math or linear algebra package, windowing system, and input handling for application developer.
 
 After setting up the OpenTK development environment, you can quickly create graphic applications with the OpenGL ES 2.0, such as:
--   Ambient App
+-   Ambient app
 -   Game
--   Dynamic Partial
+-   Dynamic partial
 -   Physics effect
 
 
 The OpenTK app offers the following main features:
--   Create cutting-edge graphics with the OpenGL ES 2.0
+-   Create cutting-edge graphics with the OpenGL ES 2.0.
 -   Spice up your GUI with 3D acceleration.
--   Windowing systems, helps you to started..
+-   Windowing systems, helps you to started.
 -   Input and other game essentials.
 -   Performant, highly optimized and reliable linear algebra library.
 
@@ -27,12 +27,12 @@ The OpenTK app offers the following main features:
 To be able to use OpenTK in your application, you must become familiar with the following OpenTK key concepts:
 -   **TizenGameApplication**: Application lifecycle manager and base class of OpenTK app for Tizen is integrated with the Tizen application framework. Therefore, you can get the events from the Tizen system.
     The OpenTK app implements virtual lifecycle functions to customize their own app flow.
-    For example: `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on. 
+    For example, `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on. 
     
     For more information, see [Applications](https://developer.tizen.org/development/guides/.net-application/application-management/applications).
--   **Window**: An attribute of TizenGameApplication. It provides window related attributes include: `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on. 
+-   **Window**: An attribute of TizenGameApplication. It provides window related attributes, which include `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on. 
 
-    It also provides events and OpenGL context related functions.  which includes the following:
+    It also provides **Events** and **OpenGL** context related functions, which includes the following:
     
     **Events**:
     -   `Load`
@@ -44,7 +44,7 @@ To be able to use OpenTK in your application, you must become familiar with the 
     -   `MakeCurrent`
     -   `Run`
     -   `SwapBuffers`
--   **WindowAttributes**: an attribute of TizenGameApplication. It provides window-controlling attributes, which includes the following:
+-   **WindowAttributes**: An attribute of TizenGameApplication. It provides window-controlling attributes, which includes the following:
     -   `IsFocusAllowed`
     -   `WindowOpacity`
     
