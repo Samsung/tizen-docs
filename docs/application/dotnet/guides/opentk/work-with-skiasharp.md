@@ -175,7 +175,7 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
 
 ## Sample Application
 
-An implementation of OpenTK sample app is made that uses SkiaSharp to draw text on a rotating cube.
+An implementation of OpenTK sample app is made, which uses SkiaSharp to draw text on a rotating cube.
 
 For more information, see [sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp).
 

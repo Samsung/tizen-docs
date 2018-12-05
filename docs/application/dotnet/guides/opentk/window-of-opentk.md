@@ -1,15 +1,16 @@
 # Window of OpenTK
 
 In the OpenTK app, `OpenTKGameApplication` creates a `Window` after calling `OnCreate` method. The `Window` is provided
-as a property of `TizenGameApplication`. This document will describe how to use this `Window` in your `OpenTK` application.
+as a property of `TizenGameApplication`. This document will describe how to use this `Window` in your OpenTK app.
 
 `Window` defines many events including [input event](#input-event), [window related](#window-related-event), and
 [render related event](#render-related-event). If needed, the event handlers on those event can be added.
 
 ## Input Event
 
-In some app scenario, you want to do some actions while an app user inputs something. To do this, you can add event hander on the input event of `Window`. Also, you can use `key` and `mouse` event using `Window` of `OpenTK` if a device supports both of them.
+In some app scenario, you want to do some actions while an app user inputs something. To do this, you can add event hander on the input event of `Window`. Also, you can use **key** and **mouse** event using `Window` of OpenTK if a device supports both of them.
 
+The following is the sample code:
 ```C#
 private IGameWindow mainWindow;
 
@@ -66,7 +67,7 @@ private void KeyDownEventHandler(object sender, KeyboardKeyEventArgs e)
 
 ## Window related Event
 
-`Window` also provides some window state related events, such as `Closed`, `Closing`, `FocusedChanged`, `Resize`, `VisibleChanged`, `WindowStateChanged`, and so on. In some scenario, if you want to mirror the state of `Window`, then 
+`Window` also provides some window state related events, such as **Closed**, **Closing**, **FocusedChanged**, **Resize**, **VisibleChanged**, **WindowStateChanged**, and so on. In some scenario, if you want to mirror the state of `Window`, then 
 you can add event handlers on these events.
 
 ```C#
@@ -89,8 +90,8 @@ private void ResizeEventHandler(object sender, EventArgs e)
 
 `Window` also provides the render ralated events including the following:
 
-- RenderFrame: This event occurs when a frame is rendered.
-- UpdateFrame: This event occurs when a frame is updated before `RenderFrame` event occurs.
+- `RenderFrame`: This event occurs when a frame is rendered.
+- `UpdateFrame`: This event occurs when a frame is updated before `RenderFrame` event occurs.
 
 These events will occur repeatedly while OpenTK's main loop is running.
 ```C#
