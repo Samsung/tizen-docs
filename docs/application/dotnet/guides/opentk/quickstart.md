@@ -198,7 +198,7 @@ namespace SampelOpenTKApp
 
 - **OpenTKApp** is derived from `TizenGameApplication`. 
     `TizenGameApplication` creates OpenGL running environment, which includes window, OpenGL context, and so on.
-    `TizenGameApplication` inherits from `Tizen.Applications.CoreUIApplication`, You can override the application related methods including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, `OnTerminate`, and so on. For more information about these methods, see [Applications](https://developer.tizen.org/development/guides/.net-application/application-management/applications)
+    `TizenGameApplication` inherits from `Tizen.Applications.CoreUIApplication`, You can override the application related methods including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, `OnTerminate`, and so on. For more information about these methods, see [Applications](https://developer.tizen.org/development/guides/.net-application/application-management/applications).
 - `InitShader` : It is an event handler of `Window.Load` event. Also, it initializes shaders of triangle in this sample.
 - `RenderTriangle` : It is an event handler of `Window.RenderFrame` event. Also, it draws the triangle in this sample.
 - `app.Run()` : It runs the main loop of OpenTK app.
