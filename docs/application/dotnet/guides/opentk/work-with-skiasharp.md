@@ -182,3 +182,6 @@ For more information, see [sample application](https://github.com/Samsung/Tizen-
 - Run this sample application on the TV emulator                                  
 ![WorkWithSkiaSharp](media/SampleWorkWithSkiaSharp.png)
 
+## Related Information
+- Dependencies
+  -   Tizen 5.0 and Higher

@@ -123,3 +123,7 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
     mainWindow.SwapBuffers();
 }
 ```
+
+## Related Information
+- Dependencies
+  -   Tizen 5.0 and Higher
