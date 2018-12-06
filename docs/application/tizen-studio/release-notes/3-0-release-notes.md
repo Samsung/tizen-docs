@@ -8,6 +8,9 @@
 
 ### New Features
 
+- Tizen Studio
+	- Supported till JAVA 10 (Oracle and OpenJDK).
+
 -   SmartThings
 	-  Added support for IOT-Headed-5.0 and IOT-Headless-5.0.
 	-  Added two process model support for IOT-Headed and IOT-Headless profiles.
@@ -20,7 +23,7 @@
 	-  Added support for automatic command exchange between plugin supported daemon and server.
 	-  Added support for querying individual capability.
 	-  Added support for querying the plugin to handle shell async commands.
--   Tizen RT
+-   TizenRT
 	-  Added support for Docker build.
 ### Fixed Bugs
 -   SmartThings
