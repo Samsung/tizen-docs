@@ -24,6 +24,9 @@ You can use the following personal data features in your native applications:
 - [Contacts](contacts.md)
 
   You can manage address books, persons, contacts, and contact groups on a device. You can add, modify, and monitor contacts. You can also convert contacts to the vCard format.
+- [Phone Number Management](phonenumber.md)
+
+  You can parse and format phone numbers to make contact management and telephony easier. You can retrieve location information from a phone number, and format the number according to a specific locale.
 
 - [Contextual Device Usage History Data](context.md)
 
