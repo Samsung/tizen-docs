@@ -3,7 +3,7 @@
 In the OpenTK app, `OpenTKGameApplication` creates a `Window` after calling `OnCreate` method. The `Window` is provided
 as a property of `TizenGameApplication`. This document will describe how to use this `Window` in your OpenTK app.
 
-`Window` defines many events including [input event](#input-event), [window related](#window-related-event), and
+`Window` defines many events including [input event](#input-event), [window related event](#window-related-event), and
 [render related event](#render-related-event). If needed, the event handlers on those event can be added.
 
 ## Input Event
@@ -65,7 +65,7 @@ private void KeyDownEventHandler(object sender, KeyboardKeyEventArgs e)
 
 ```
 
-## Window related Event
+## Window Related Event
 
 `Window` also provides some window state related events, such as **Closed**, **Closing**, **FocusedChanged**, **Resize**, **VisibleChanged**, **WindowStateChanged**, and so on. In some scenario, if you want to mirror the state of `Window`, then 
 you can add event handlers on these events.
@@ -86,7 +86,7 @@ private void ResizeEventHandler(object sender, EventArgs e)
 }
 ```
 
-## Render related Event
+## Render Related Event
 
 `Window` also provides the render ralated events including the following:
 

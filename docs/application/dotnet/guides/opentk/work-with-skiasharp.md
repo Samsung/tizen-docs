@@ -75,7 +75,7 @@ private void DrawTextBySkiaSharp(SKCanvas canvas, int canvasWidth, int canvasHei
         paint.IsStroke = false;
         paint.TextAlign = SKTextAlign.Center;
 
-        canvas.DrawText("SkiaSharp", width / 2f, 144.0f, paint);        // Draw text 'SkiaSharp' on the canvas
+        canvas.DrawText("SkiaSharp", width / 2f, 144.0f, paint);        // Draw text "SkiaSharp" on the canvas
     }
 }
 
