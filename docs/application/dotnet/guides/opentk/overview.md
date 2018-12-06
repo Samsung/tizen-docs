@@ -25,12 +25,12 @@ The OpenTK app offers the following main features:
 ## Key Concepts
 
 To be able to use OpenTK in your application, you must become familiar with the following OpenTK key concepts:
--   **TizenGameApplication**: Application lifecycle manager and base class of OpenTK app for Tizen is integrated with the Tizen application framework. Therefore, you can get the events from the Tizen system.
+-   `TizenGameApplication`: Application lifecycle manager and base class of OpenTK app for Tizen is integrated with the Tizen application framework. Therefore, you can get the events from the Tizen system.
     The OpenTK app implements virtual lifecycle functions to customize their own app flow.
     For example, `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on. 
     
     For more information, see [Applications](https://developer.tizen.org/development/guides/.net-application/application-management/applications).
--   **Window**: An attribute of TizenGameApplication. It provides window related attributes, which include `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on. 
+-   `Window`: An attribute of TizenGameApplication. It provides window related attributes, which include `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on. 
 
     It also provides **Events** and **OpenGL** context related functions, which includes the following:
     
@@ -44,7 +44,7 @@ To be able to use OpenTK in your application, you must become familiar with the 
     -   `MakeCurrent`
     -   `Run`
     -   `SwapBuffers`
--   **WindowAttributes**: An attribute of TizenGameApplication. It provides window-controlling attributes, which includes the following:
+-   `WindowAttributes`: An attribute of TizenGameApplication. It provides window-controlling attributes, which includes the following:
     -   `IsFocusAllowed`
     -   `WindowOpacity`
     
