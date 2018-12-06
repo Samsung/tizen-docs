@@ -1,5 +1,4 @@
 # Tizen Studio 2.4 Release Notes
-# Tizen Studio 2.4 Release Notes
 
 
 ## IDE and Tools
