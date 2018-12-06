@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -829,9 +829,6 @@ Defines</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380"></a><!-- doxytag: member="CAMERA_ERROR_INVALID_OPERATION" ref="gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380" args="" -->CAMERA_ERROR_INVALID_OPERATION</em>&nbsp;</td><td>
 <p>Internal error </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga2ef5666f3fa5a86c28347623dba6fd39af4d726fce94f2ce218d1db0278ded8d6"></a><!-- doxytag: member="CAMERA_ERROR_SOUND_POLICY" ref="gga2ef5666f3fa5a86c28347623dba6fd39af4d726fce94f2ce218d1db0278ded8d6" args="" -->CAMERA_ERROR_SOUND_POLICY</em>&nbsp;</td><td>
-<p>Blocked by Audio Session Manager (Deprecated since 3.0) </p>
-</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga2ef5666f3fa5a86c28347623dba6fd39afaa956d39175f71b2fa72bc3797a14c3"></a><!-- doxytag: member="CAMERA_ERROR_SECURITY_RESTRICTED" ref="gga2ef5666f3fa5a86c28347623dba6fd39afaa956d39175f71b2fa72bc3797a14c3" args="" -->CAMERA_ERROR_SECURITY_RESTRICTED</em>&nbsp;</td><td>
 <p>Restricted by security system policy </p>
 </td></tr>
@@ -840,12 +837,6 @@ Defines</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga2ef5666f3fa5a86c28347623dba6fd39a67af642c26e7919a24890fd80c65c132"></a><!-- doxytag: member="CAMERA_ERROR_DEVICE_NOT_FOUND" ref="gga2ef5666f3fa5a86c28347623dba6fd39a67af642c26e7919a24890fd80c65c132" args="" -->CAMERA_ERROR_DEVICE_NOT_FOUND</em>&nbsp;</td><td>
 <p>No camera device </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga2ef5666f3fa5a86c28347623dba6fd39aa378b9876a3ad504096fa1dc4286272c"></a><!-- doxytag: member="CAMERA_ERROR_SOUND_POLICY_BY_CALL" ref="gga2ef5666f3fa5a86c28347623dba6fd39aa378b9876a3ad504096fa1dc4286272c" args="" -->CAMERA_ERROR_SOUND_POLICY_BY_CALL</em>&nbsp;</td><td>
-<p>Blocked by Audio Session Manager - CALL (Deprecated since 3.0) </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga2ef5666f3fa5a86c28347623dba6fd39a9707e50cc7bdbd96198bb4d00425dc97"></a><!-- doxytag: member="CAMERA_ERROR_SOUND_POLICY_BY_ALARM" ref="gga2ef5666f3fa5a86c28347623dba6fd39a9707e50cc7bdbd96198bb4d00425dc97" args="" -->CAMERA_ERROR_SOUND_POLICY_BY_ALARM</em>&nbsp;</td><td>
-<p>Blocked by Audio Session Manager - ALARM (Deprecated since 3.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga2ef5666f3fa5a86c28347623dba6fd39a809f40f3403623fc2c0b7e9395556fe4"></a><!-- doxytag: member="CAMERA_ERROR_ESD" ref="gga2ef5666f3fa5a86c28347623dba6fd39a809f40f3403623fc2c0b7e9395556fe4" args="" -->CAMERA_ERROR_ESD</em>&nbsp;</td><td>
 <p>ESD situation </p>
@@ -997,6 +988,8 @@ Defines</h2></td></tr>
 
 <p>Enumeration for the camera pixel format. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga18b291f5f688ef92692b0cc273fd6eceaedc0f400a0aa9ffeb76d7368d2bc0b82">CAMERA_PIXEL_FORMAT_INVZ</a> is set, the type of display should be <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga3ddd0982778fdfacd3694d643d1610aca399079fa62c0a4f75bdb57f6823515ef">CAMERA_DISPLAY_TYPE_NONE</a>. <br/>
+ Otherwise, <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga525e1ae1f269622c6e6db49a1782d60d" title="Starts capturing and drawing preview frames on the screen.">camera_start_preview()</a> will return <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a>. (Since 5.0) </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga18b291f5f688ef92692b0cc273fd6ecea14d96a772b8b5b16f6f3e8d084ada5b8"></a><!-- doxytag: member="CAMERA_PIXEL_FORMAT_INVALID" ref="gga18b291f5f688ef92692b0cc273fd6ecea14d96a772b8b5b16f6f3e8d084ada5b8" args="" -->CAMERA_PIXEL_FORMAT_INVALID</em>&nbsp;</td><td>
 <p>Invalid pixel format </p>
@@ -1046,6 +1039,9 @@ Defines</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga18b291f5f688ef92692b0cc273fd6ecea147f9683cb0590793b6850892f537876"></a><!-- doxytag: member="CAMERA_PIXEL_FORMAT_H264" ref="gga18b291f5f688ef92692b0cc273fd6ecea147f9683cb0590793b6850892f537876" args="" -->CAMERA_PIXEL_FORMAT_H264</em>&nbsp;</td><td>
 <p>Encoded pixel format : H264 (Since 3.0) </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga18b291f5f688ef92692b0cc273fd6eceaedc0f400a0aa9ffeb76d7368d2bc0b82"></a><!-- doxytag: member="CAMERA_PIXEL_FORMAT_INVZ" ref="gga18b291f5f688ef92692b0cc273fd6eceaedc0f400a0aa9ffeb76d7368d2bc0b82" args="" -->CAMERA_PIXEL_FORMAT_INVZ</em>&nbsp;</td><td>
+<p>Depth pixel format : INVZ (Since 5.0) </p>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -1068,15 +1064,6 @@ Defines</h2></td></tr>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggaf5fdaee78951129048331c73094ca478a8c83d01badb27478bed1ab13b01720b7"></a><!-- doxytag: member="CAMERA_POLICY_NONE" ref="ggaf5fdaee78951129048331c73094ca478a8c83d01badb27478bed1ab13b01720b7" args="" -->CAMERA_POLICY_NONE</em>&nbsp;</td><td>
 <p>None </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf5fdaee78951129048331c73094ca478ad399be92dbcc3c5b0ab861a6fd2dda32"></a><!-- doxytag: member="CAMERA_POLICY_SOUND" ref="ggaf5fdaee78951129048331c73094ca478ad399be92dbcc3c5b0ab861a6fd2dda32" args="" -->CAMERA_POLICY_SOUND</em>&nbsp;</td><td>
-<p>Sound policy (Deprecated since 3.0) </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf5fdaee78951129048331c73094ca478a1e1fd3bce660c627d56f5e62c271461d"></a><!-- doxytag: member="CAMERA_POLICY_SOUND_BY_CALL" ref="ggaf5fdaee78951129048331c73094ca478a1e1fd3bce660c627d56f5e62c271461d" args="" -->CAMERA_POLICY_SOUND_BY_CALL</em>&nbsp;</td><td>
-<p>Sound policy by CALL (Deprecated since 3.0) </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf5fdaee78951129048331c73094ca478a23f6600637e768ba375669a0fd6d3e14"></a><!-- doxytag: member="CAMERA_POLICY_SOUND_BY_ALARM" ref="ggaf5fdaee78951129048331c73094ca478a23f6600637e768ba375669a0fd6d3e14" args="" -->CAMERA_POLICY_SOUND_BY_ALARM</em>&nbsp;</td><td>
-<p>Sound policy by ALARM (Deprecated since 3.0) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaf5fdaee78951129048331c73094ca478a95eefdc2e59da193cbb809b61fda57b3"></a><!-- doxytag: member="CAMERA_POLICY_SECURITY" ref="ggaf5fdaee78951129048331c73094ca478a95eefdc2e59da193cbb809b61fda57b3" args="" -->CAMERA_POLICY_SECURITY</em>&nbsp;</td><td>
 <p>Security policy </p>
@@ -1365,7 +1352,6 @@ The privilege http://tizen.org/privilege/camera is not required since 4.0,<br/>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39af51db4d590622c03a65385d348aa251a">CAMERA_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39af4d726fce94f2ce218d1db0278ded8d6">CAMERA_ERROR_SOUND_POLICY</a></td><td>Sound policy error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a0c6f1dd60c3809c362c7157c06cb0d3f">CAMERA_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a306184ef341c2d4cf55d8b76d7b391ee">CAMERA_ERROR_NOT_SUPPORTED</a></td><td>The feature is not supported </td></tr>
@@ -2132,7 +2118,9 @@ The privilege http://tizen.org/privilege/camera is not required since 4.0,<br/>
 
 <p>Sets the display handle to show preview images. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called before previewing (see <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga525e1ae1f269622c6e6db49a1782d60d" title="Starts capturing and drawing preview frames on the screen.">camera_start_preview()</a>). In Custom ROI display mode, <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga6d428e01bfcc8bcc34874d82da40d7be" title="Sets the ROI(Region Of Interest) area of display.">camera_attr_set_display_roi_area()</a> function must be called before calling this function. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called before previewing (see <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga525e1ae1f269622c6e6db49a1782d60d" title="Starts capturing and drawing preview frames on the screen.">camera_start_preview()</a>). In Custom ROI display mode, <a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga6d428e01bfcc8bcc34874d82da40d7be" title="Sets the ROI(Region Of Interest) area of display.">camera_attr_set_display_roi_area()</a> function must be called before calling this function. </dd>
+<dd>
+This function must be called in main thread of the application. Otherwise, it will return <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a> by internal restriction. To avoid <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a> in sub thread, <a class="el" href="group__Ecore__Main__Loop__Group.html#ga0624ccd91c607ed241f45ac1da8875a6" title="This function suspends the main loop in a know state.">ecore_thread_main_loop_begin()</a> and <a class="el" href="group__Ecore__Main__Loop__Group.html#gabd2ff96845800d5fcb7cd2607fffa296" title="Unlocks the main loop.">ecore_thread_main_loop_end()</a> can be used, but deadlock can occur if the main thread is busy. So, it's not recommended to use them. (Since 5.0) </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
@@ -2157,7 +2145,11 @@ The privilege http://tizen.org/privilege/camera is not required since 4.0,<br/>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The camera state must be set to <a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga28cde1b92417f9ce43dde605ed822cdea5f6ed9b5bbada931d7dd0759d3249441">CAMERA_STATE_CREATED</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#ga525e1ae1f269622c6e6db49a1782d60d" title="Starts capturing and drawing preview frames on the screen.">camera_start_preview()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gafd73ee3d0208cbbc2fd96293026ff60a" title="Gets a display handle.">GET_DISPLAY</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gafd73ee3d0208cbbc2fd96293026ff60a" title="Gets a display handle.">GET_DISPLAY</a> </dd>
+<dd>
+<a class="el" href="group__Ecore__Main__Loop__Group.html#ga0624ccd91c607ed241f45ac1da8875a6" title="This function suspends the main loop in a know state.">ecore_thread_main_loop_begin()</a> </dd>
+<dd>
+<a class="el" href="group__Ecore__Main__Loop__Group.html#gabd2ff96845800d5fcb7cd2607fffa296" title="Unlocks the main loop.">ecore_thread_main_loop_end()</a> </dd></dl>
 
 </div>
 </div>
@@ -3126,7 +3118,6 @@ The privilege http://tizen.org/privilege/camera is not required since 4.0,<br/>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39ae951406fcc0c01f80fd9036efc9f9ea7">CAMERA_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a66c8e430e1f94445149cd50dabef948d">CAMERA_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a9ba60d709b89dcdb588d422efb50d9ed">CAMERA_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39af4d726fce94f2ce218d1db0278ded8d6">CAMERA_ERROR_SOUND_POLICY</a></td><td>Sound policy error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a26380db9d055fd17187085c6da6f3b24">CAMERA_ERROR_RESOURCE_CONFLICT</a></td><td>Resource conflict error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a57e93add62ccbe1d245694184a845380">CAMERA_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__CAMERA__MODULE.html#gga2ef5666f3fa5a86c28347623dba6fd39a14f04eb577dd1393b4c6c5df6ef8f557">CAMERA_ERROR_DEVICE_BUSY</a></td><td>The device is being used in another application or is performing other operations </td></tr>

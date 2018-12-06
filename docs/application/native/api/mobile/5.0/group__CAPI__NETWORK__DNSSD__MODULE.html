@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -640,7 +640,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">local_service</td><td>The DNSSD local service handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the TXT record. A null-terminated string which only contains printable ASCII values (0x20-0x7E), excluding '=' (0x3D). Keys should be 9 characters or fewer excluding NULL. Keys are case insensitivie. Keys for known service types can be found at <a href="http://www.dns-sd.org/ServiceTypes.html">http://www.dns-sd.org/ServiceTypes.html</a>. For details, see section 6.4 of <a href="http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt">http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key of the TXT record. A null-terminated string which only contains printable ASCII values (0x20-0x7E), excluding '=' (0x3D). Keys should be 9 characters or fewer excluding NULL. Keys are case insensitive. Keys for known service types can be found at <a href="http://www.dns-sd.org/ServiceTypes.html">http://www.dns-sd.org/ServiceTypes.html</a>. For details, see section 6.4 of <a href="http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt">http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the value of the TXT record in bytes. The total size of a typical DNS-SD TXT record is intended to be small (upto 200 bytes). For details, see section 6.2 of <a href="http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt">http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the TXT record. It can be any binary value. For value that represents textual data, UTF-8 is STRONGLY recommended. For value that represents textual data, value_length should NOT include the terminating null (if any) at the end of the string. If NULL, then "key" will be added with no value. If non-NULL but value_length is zero, then "key=" will be added with empty value. For details see section 6.5 of <a href="http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt">http://files.dns-sd.org/draft-cheshire-dnsext-dns-sd.txt</a> </td></tr>
   </table>

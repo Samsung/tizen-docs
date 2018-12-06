@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -172,6 +172,8 @@ Functions</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga3eab097916ad3e428ca5aa43832cadc6">bt_gatt_foreach_cb</a> )(int total, int index, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab58e57df80c4c42105000023b2c8bacd">bt_gatt_h</a> gatt_handle, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when you get GATT handles repeatedly.  <a href="#ga3eab097916ad3e428ca5aa43832cadc6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#gafae9064d8132f74f81ff709901b0e277">bt_hrp_connection_state_changed_cb</a> )(int result, bool connected, const char *remote_address)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the connection state is changed.  <a href="#gafae9064d8132f74f81ff709901b0e277"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga670a1cd1480d544cf6cb7e252ef202a6">bt_gatt_connection_state_changed_cb</a> )(int result, bool connected, const char *remote_address, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the connection state is changed.  <a href="#ga670a1cd1480d544cf6cb7e252ef202a6"></a><br/></td></tr>
 </table>
@@ -188,20 +190,20 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the connection state is changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
-<p>This callback is called when the connection state is changed. When you called <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connect to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnect to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a>, this callback is also called with error result even though these functions fail.</p>
+<p>This callback is called when the connection state is changed. When you called <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connects to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a>, this callback is also called with error result even though these functions fail.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of changing the connection state. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>The state to be changed, <em>true</em> means connected state, Otherwise, <em>false</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>The state to be changed, true means connected state, Otherwise, false. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote_address </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connect to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connects to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnect to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga843964965aeeda123fe5714ae2f16c8d" title="Registers a callback function that will be invoked when the connection state is changed.">bt_gatt_set_connection_state_changed_cb()</a> </dd>
 <dd>
@@ -238,6 +240,32 @@ Typedefs</h2></td></tr>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga62cf273fb551e6052c32288606a5d182" title="Invokes callback function on each descriptor that belongs to the specified characteristic.">bt_gatt_characteristic_foreach_descriptors()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga48354aa3ff1cacd5df245287ccb7b99c" title="Invokes callback function on each service that belongs to the specified GATT client.">bt_gatt_client_foreach_services()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gafae9064d8132f74f81ff709901b0e277"></a><!-- doxytag: member="bluetooth_type.h::bt_hrp_connection_state_changed_cb" ref="gafae9064d8132f74f81ff709901b0e277" args=")(int result, bool connected, const char *remote_address)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#gafae9064d8132f74f81ff709901b0e277">bt_hrp_connection_state_changed_cb</a>)(int result, bool connected, const char *remote_address)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the connection state is changed. </p>
+<p>This callback is called when the connection state is changed. When you called <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connects to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a>, this callback is also called with error result even though these functions fail.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of changing the connection state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>The state to be changed, true means connected state, Otherwise, false. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote_address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -431,8 +459,11 @@ Typedefs</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7c79af924754f6f6b2353f9c12832497a0fe85c15ceb97429c0f01d1f892d7e9b"></a><!-- doxytag: member="BT_GATT_TYPE_SERVICE" ref="gga7c79af924754f6f6b2353f9c12832497a0fe85c15ceb97429c0f01d1f892d7e9b" args="" -->BT_GATT_TYPE_SERVICE</em>&nbsp;</td><td>
 <p>GATT service type </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga7c79af924754f6f6b2353f9c12832497a6fa249457f5ea3bf61a46b8b7d5e53fc"></a><!-- doxytag: member="BT_GATT_TYPE_DESCRIPTOR" ref="gga7c79af924754f6f6b2353f9c12832497a6fa249457f5ea3bf61a46b8b7d5e53fc" args="" -->BT_GATT_TYPE_DESCRIPTOR</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="gga7c79af924754f6f6b2353f9c12832497a3a2183f3321698e464eccff4ec4fe2d7"></a><!-- doxytag: member="BT_GATT_TYPE_CHARACTERISTIC" ref="gga7c79af924754f6f6b2353f9c12832497a3a2183f3321698e464eccff4ec4fe2d7" args="" -->BT_GATT_TYPE_CHARACTERISTIC</em>&nbsp;</td><td>
 <p>GATT characteristic type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga7c79af924754f6f6b2353f9c12832497a6fa249457f5ea3bf61a46b8b7d5e53fc"></a><!-- doxytag: member="BT_GATT_TYPE_DESCRIPTOR" ref="gga7c79af924754f6f6b2353f9c12832497a6fa249457f5ea3bf61a46b8b7d5e53fc" args="" -->BT_GATT_TYPE_DESCRIPTOR</em>&nbsp;</td><td>
+<p>GATT descriptor type </p>
 </td></tr>
 </table>
 </dd>
@@ -518,9 +549,11 @@ Typedefs</h2></td></tr>
 
 <p>Creates the GATT characteristic. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>permissions</em> can be one or more values of <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga9c9e65c2bdc739e37cfb672a774d5873" title="Enumerations of the attribute&#39;s permission.">bt_gatt_permission_e</a>, combined with bitwise 'or'. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>permissions</em> can be one or more values of <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga9c9e65c2bdc739e37cfb672a774d5873" title="Enumerations of the attribute&#39;s permission.">bt_gatt_permission_e</a>, combined with bitwise 'or'. <br/>
+ </dd>
 <dd>
-The <em>properties</em> can be one or more values of <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#gad87c45fef46a631519732a2dddd236a5" title="Enumerations of the characteristic&#39;s property.">bt_gatt_property_e</a>, combined with bitwise 'or'. </dd>
+The <em>properties</em> can be one or more values of <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#gad87c45fef46a631519732a2dddd236a5" title="Enumerations of the characteristic&#39;s property.">bt_gatt_property_e</a>, combined with bitwise 'or'. <br/>
+ </dd>
 <dd>
 The <em>characteristic</em> should be destroyed by using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#gae0d1cbfc72eed430f0ef6c04a4fd139a" title="Destroys the GATT handle of characteristic.">bt_gatt_characteristic_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -635,7 +668,9 @@ The <em>characteristic</em> should be destroyed by using <a class="el" href="gro
 
 <p>Gets a descriptor's GATT handle which has specific UUID. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. If there are multiple descriptors which have same UUID, only the first matched one will be returned.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. <br/>
+ It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. <br/>
+ If there are multiple descriptors which have same UUID, only the first matched one will be returned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">characteristic</td><td>The characteristic's GATT handle </td></tr>
@@ -781,7 +816,8 @@ The <em>characteristic</em> should be destroyed by using <a class="el" href="gro
 
 <p>Gets the service's GATT handle which the specified characteristic belongs to. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. <br/>
+ It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">characteristic</td><td>The characteristic's GATT handle </td></tr>
@@ -942,7 +978,8 @@ The <em>characteristic</em> should be destroyed by using <a class="el" href="gro
 
 <p>Creates the GATT characteristic descriptor. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>permissions</em> can be one or more values of <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga9c9e65c2bdc739e37cfb672a774d5873" title="Enumerations of the attribute&#39;s permission.">bt_gatt_permission_e</a>, combined with bitwise 'or'. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>permissions</em> can be one or more values of <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga9c9e65c2bdc739e37cfb672a774d5873" title="Enumerations of the attribute&#39;s permission.">bt_gatt_permission_e</a>, combined with bitwise 'or'. <br/>
+ </dd>
 <dd>
 The <em>descriptor</em> should be destroyed by using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#gad37d99e8175bdc1db2576364de70edb7" title="Destroys the GATT handle of descriptor.">bt_gatt_descriptor_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -996,7 +1033,8 @@ The <em>descriptor</em> should be destroyed by using <a class="el" href="group__
 
 <p>Gets the characteristic's GATT handle which the specified descriptor belongs to. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. <br/>
+ It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">descriptor</td><td>The descriptor's GATT handle </td></tr>
@@ -1266,7 +1304,7 @@ The <em>descriptor</em> should be destroyed by using <a class="el" href="group__
 <p>Gets the UUID of a service, characteristic or descriptor's GATT handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>uuid</em> must be released using free(). <br/>
- 16-bit UUID or 128-bit UUID is supported. (e.g. 2A19, 00002A19-0000-1000-8000-00805F9B34FB)</dd></dl>
+ 16-bit UUID or 128-bit UUID is supported. (e.g. 2A19, 00002A19-0000-1000-8000-00805F9B34FB).</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">gatt_handle</td><td>The handle of a service, characteristic or descriptor </td></tr>
@@ -1483,7 +1521,9 @@ The <em>descriptor</em> should be destroyed by using <a class="el" href="group__
 
 <p>Gets a characteristic's GATT handle which has specific UUID. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. If there are multiple characteristics which have same UUID, only the first matched one will be returned.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. <br/>
+ It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. <br/>
+ If there are multiple characteristics which have same UUID, only the first matched one will be returned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">service</td><td>The service's GATT handle </td></tr>
@@ -1538,7 +1578,9 @@ The <em>descriptor</em> should be destroyed by using <a class="el" href="group__
 
 <p>Gets an included service's GATT handle which has specific UUID. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. If there are multiple included services which have same UUID, only the first matched one will be returned.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. <br/>
+ It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. <br/>
+ If there are multiple included services which have same UUID, only the first matched one will be returned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">service</td><td>The service's GATT handle </td></tr>
@@ -1607,8 +1649,7 @@ The <em>descriptor</em> should be destroyed by using <a class="el" href="group__
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function updates a value of <em>gatt_handle</em> locally. <br/>
  When <em>gatt_handle</em> is associated with bt_gatt_client_h, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga8b426f29604c236c90cd323acefab02e" title="Writes the value of a characteristic or descriptor to the remote device asynchronously.">bt_gatt_client_write_value()</a> can be used after this function <br/>
- in order to update the remote device's value. <br/>
-</dd></dl>
+ in order to update the remote device's value.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">gatt_handle</td><td>The handle of a characteristic or descriptor </td></tr>
@@ -1673,8 +1714,7 @@ The <em>descriptor</em> should be destroyed by using <a class="el" href="group__
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function updates a value of <em>gatt_handle</em> locally. <br/>
  When <em>gatt_handle</em> is associated with bt_gatt_client_h, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga8b426f29604c236c90cd323acefab02e" title="Writes the value of a characteristic or descriptor to the remote device asynchronously.">bt_gatt_client_write_value()</a> can be used after this function <br/>
- in order to update the remote device's value. <br/>
-</dd></dl>
+ in order to update the remote device's value.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">gatt_handle</td><td>The handle of a characteristic or descriptor </td></tr>

@@ -1,0 +1,9 @@
+<map id="/home/asd/project/public_1219/tinyara/os/include/stdio.h" name="/home/asd/project/public_1219/tinyara/os/include/stdio.h">
+<area shape="rect" id="node5" href="$sched_8h.html" title="sched.h" alt="" coords="709,109,777,136"/>
+<area shape="rect" id="node11" href="$time_8h.html" title="time.h" alt="" coords="565,333,623,360"/>
+<area shape="rect" id="node22" href="$semaphore_8h.html" title="Semaphore APIs. " alt="" coords="5,333,103,360"/>
+<area shape="rect" id="node7" href="$tinyara_2sched_8h.html" title="tinyara/sched.h" alt="" coords="909,184,1020,211"/>
+<area shape="rect" id="node8" href="$queue_8h.html" title="Queue APIs. " alt="" coords="1524,333,1592,360"/>
+<area shape="rect" id="node9" href="$signal_8h.html" title="Signal APIs. " alt="" coords="861,259,927,285"/>
+<area shape="rect" id="node15" href="$tinyara_2time_8h.html" title="Time APIs. " alt="" coords="279,259,338,285"/>
+</map>

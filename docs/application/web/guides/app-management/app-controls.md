@@ -1,38 +1,10 @@
 # Application Controls
 
-You can use various application management features, including application launching, event handling, and information retrieval.
+An application control (app control) is a way of sharing an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application.
 
-The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+You can use in your application operations, such as calling, Web browsing, and playing media items, which are exported by other applications. This mechanism allows you to conveniently launch other applications whose functionalities you need in your application. If you need to use functionality from another application, launching an application control allows you to request the system to launch that application according to your requirements. You can launch applications based on your immediate needs - you do not need to know their identifiers or specifications. You can use application controls by creating an [application control request](#application-control-request). The request allows you to [launch other applications](#launching-applications-with-the-application-control) to use their functionalities.
 
-The main application management features are:
-
-- Application management
-
-  You can [manage applications](#managing-applications) by launching and stopping other applications, and hiding or exiting the current application.
-
-- Application information retrieval
-
-  You can display a list of applications that are currently installed or running on the device, and [retrieve application information](#retrieving-application-information), such as application name, application ID, and context ID.
-
-- Application controls
-
-  An application control (app control) is a way of sharing an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application.
-
-  You can use in your application operations, such as calling, Web browsing, and playing media items, which are exported by other applications. This mechanism allows you to conveniently launch other applications whose functionalities you need in your application. If you need to use functionality from another application, launching an application control allows you to request the system to launch that application according to your requirements. You can launch applications based on your immediate needs - you do not need to know their identifiers or specifications. You can use application controls by creating an [application control request](#application-control-request). The request allows you to [launch other applications](#launching-applications-with-the-application-control) to use their functionalities.
-
-  If you want to allow other applications to use your application functionalities, you must [export your application controls](#application-control-export) and be prepared to [receive requests and respond to them](#receiving-and-replying-to-application-control-requests).
-
-- Event handling
-
-  You can [send and receive events](#broadcasting-and-listening-for-events) between 2 applications using events. Your application can broadcast its own events, and listen for events broadcast by others.
-
-- Background execution
-
-  Usually, when a Web application moves to the background, it gets suspended. To enable [background execution](#background-execution), you must declare a background category for your application.
-
-- Application status monitoring
-
-  You can monitor the installed applications and [be notified when their status changes](#monitoring-the-application-status).
+If you want to allow other applications to use your application functionalities, you must [export your application controls](#application-control-export) and be prepared to [receive requests and respond to them](#receiving-and-replying-to-application-control-requests).
 
 ## Application Control Request
 

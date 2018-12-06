@@ -16,17 +16,31 @@ Tizen provides various application models to allow you to create applications ta
 
   The UI application is the most common Tizen application model.
 
-  - [Widget Application](web-widget.md) **in wearable applications only**
-
-    The widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
-
   - [Watch Application](watch-app.md) **in wearable applications only**
 
     The watch application provides a watch face as its user interface, showing the current time and updating it every second. The watch application can be shown on the idle screen of the wearable device.
 
+  - [Widget Application](web-widget.md) **in wearable applications only**
+
+    The widget application (or widget) is a specialized application that provides the user with a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
+
 - [Service Application](service-app.md)
 
   The service application is a Tizen Web application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
+
+
+## Application Package Manager
+
+The application package manager is one of the core modules of the Tizen application framework, and responsible for installing, uninstalling, and updating packages, and storing their information. Using the package manager, you can also retrieve information related to the packages that are installed on the device.
+
+The application package manager module is expandable to support various types of applications, and designated installation modules can be added to it.
+
+**Figure: Application package manager**
+
+![Application package manager](./media/application_package_manager.png)
+
+Tizen supports both Web application packages and hybrid application packages, which combine a Web application and one or more native service applications. Applications in the same package follow the same installation life-cycle, handled by the application package manager.
+
 
 ## Related Infromation
 - Dependencies

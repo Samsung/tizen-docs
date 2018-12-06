@@ -125,7 +125,7 @@ To enable your application to use the widget functionality:
    #include <widget_app_efl.h>
    ```
 
-2. Edit the widget application settings in the [manifest](../../../tizen-studio/native_tools/manifest-text-editor.md#widget_app) file.
+2. Edit the widget application settings in the [manifest](../../../tizen-studio/native-tools/manifest-text-editor.md#widget_app) file.
 
 <a name="create"></a>
 ## Creating the Widget Application
@@ -476,7 +476,7 @@ For example, consider the differences between a Weather application and a Weathe
 - The Weather application is launched when user selects it from the application list.
 - The widget is launched when the Home screen is on screen and is terminated when the Home screen is hidden.
 
-Although the widget wants to share some data from the Weather application (such as the user's favorite city), it is ineffective for the widget to launch the Weather application every time to retrieve such data. This inefficiency makes it difficult to use typical IPC mechanisms, such as sockets and [message ports](message_port_n.htm), for which both the receiver and sender processes must be alive. To overcome this limitation, the widget application must use a communication method that stores data permanently somewhere in the system.
+Although the widget wants to share some data from the Weather application (such as the user's favorite city), it is ineffective for the widget to launch the Weather application every time to retrieve such data. This inefficiency makes it difficult to use typical IPC mechanisms, such as sockets and [message ports](../app-management/message-port.md), for which both the receiver and sender processes must be alive. To overcome this limitation, the widget application must use a communication method that stores data permanently somewhere in the system.
 
 In the Tizen platform, applications in the same package (including widget applications) can access files in the `data` directory of the package installation path. This means that the UI (or service) application can first write files to the `data` directory, and the widget can later read them, or vice versa.
 
@@ -486,15 +486,15 @@ In the Tizen platform, applications in the same package (including widget applic
 
 To manage data through the `data` directory:
 
-- You can set and get data in the `data` directory using the Preference API functions (in [mobile](../../api/mobile/latest/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PREFERENCE__MODULE.html) applications). You can use the functions to [store and retrieve key-value data](app_preferences_n.htm) in the `data` directory.
+- You can set and get data in the `data` directory using the Preference API functions (in [mobile](../../api/mobile/latest/group__CAPI__PREFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PREFERENCE__MODULE.html) applications). You can use the functions to [store and retrieve key-value data](../app-management/app-preferences.md) in the `data` directory.
 
 - You can share the `data` directory content with SQLite, by creating an SQLite database file in the `data` directory.
 
-  The SQLite database has an advantage to the direct use of a file in error handling, such as journaling. Consequently, if the application must handle complex data rather than primitive values, [use SQLite to store and retrieve the data](../data/sql.htm).
+  The SQLite database has an advantage to the direct use of a file in error handling, such as journaling. Consequently, if the application must handle complex data rather than primitive values, [use SQLite to store and retrieve the data](../data/sql.md).
 
 If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use the Data Control API (in [mobile](../../api/mobile/latest/group__CAPI__DATA__CONTROL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__DATA__CONTROL__MODULE.html) applications).
 
-For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the Data Control to [provide data to the other applications](data_control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
+For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the Data Control to [provide data to the other applications](../app-management/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
 
 **Figure: Sharing through data control**
 
@@ -504,7 +504,7 @@ For example, a music-player-service service application is needed to control the
 >
 > For user convenience, a STANDALONE widget application package is not allowed in the Tizen Store.
 >
-> You can make a STANDALONE widget application in the Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process//app-dev-process.md#develop).
+> You can make a STANDALONE widget application in the Tizen Studio for test purposes. However, to publish it, you must combine it with at least 1 UI application in the package. For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
 
 
 ## Related Information

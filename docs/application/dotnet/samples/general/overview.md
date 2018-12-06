@@ -108,13 +108,27 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WebWidgetHybrid" target="_blank"><strong>(W) WebWidgetHybrid</strong></a></p>
-			<p>This sample application demonstrates how to create Tizen hybrid application which is packaged with Tizen Web and .Net applications.</p>
+			<p>This sample application demonstrates how to create a Tizen hybrid application, which is packaged with Tizen Web and .Net applications.</p>
 			</td>
 		</tr>
 	</tbody>
 </table>
 </div>
 <div class="tabcontent" id="TV">
+<table>
+        <tbody>
+                <tr>
+                        <td>
+                        <p><img alt="" height="225" src="media/tv25errorcodeconverter.png" width="400" /></p>
+                        </td>
+                        <td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/ErrorCodeConverter" target="_blank"><strong>(T) ErrorCodeConverter</strong></a></p>
+                        <p>This sample application demonstrates how to get the message for a specific error code.</p>
+                        </td>
+                </tr>
+        </tbody>
+</table>
+
 </div>
 
 <!--

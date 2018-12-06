@@ -24,6 +24,7 @@ Tizen supports both UI applications (which have a graphical user interface) and 
 
 Applications in the same package follow the same installation life-cycle, which is handled by the application package manager. Each application in the package follows its own application life-cycle. Each application (UI application or service application) in an application package can be identified by its own ID.
 
+<a name="state_change"></a>
 ## Native Application State Change Callbacks
 
 A Tizen native application can be in one of several different states. Typically, the application is launched by the user from the Launcher, or by another application. When the application is starting, the `app_create_cb()` function is executed and the main event loop starts. The application is normally at the top of the window, with focus.

@@ -13,7 +13,7 @@ support the media key events. You can use the Efl Extension Event API
 (in
 [mobile](../../api/mobile/latest/group__EFL__EXTENSION__EVENTS__GROUP.html)
 and
-[wearable](../../api/wearable/latest/group__CAPI__EFL__EXTENSION__EVENT__MODULE.html)
+[wearable](../../api/wearable/latest/group__EFL__EXTENSION__EVENTS__GROUP.html)
 applications) to handle the **Menu** key, **Back** key, and rotary
 events.
 

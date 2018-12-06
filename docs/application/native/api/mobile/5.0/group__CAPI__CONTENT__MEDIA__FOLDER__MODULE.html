@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -138,10 +138,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the media folder name.  <a href="#ga6e07990f44427771af73fe3fd623855c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae2333420a93b5b03920c7843f72d7a20">media_folder_get_modified_time</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a> folder, time_t *date) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the modified date of the folder.  <a href="#gae2333420a93b5b03920c7843f72d7a20"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gab6f29e91faf7347ec568ffcefa36f7c9">media_folder_get_storage_type</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a> folder, <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gac37413d82f3af8614ce540b23262b90b">media_content_storage_e</a> *storage_type)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the folder storage type.  <a href="#gab6f29e91faf7347ec568ffcefa36f7c9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gac6f18d17fae8cc3e139fece8f4ae187f">media_folder_get_storage_id</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a> folder, char **storage_id)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the storage id of the folder.  <a href="#gac6f18d17fae8cc3e139fece8f4ae187f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gac7e972b877a8cdcfd96cafffddaa72db">media_folder_get_storage_type</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a> folder, <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gac37413d82f3af8614ce540b23262b90b">media_content_storage_e</a> *storage_type) TIZEN_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the folder storage type.  <a href="#gac7e972b877a8cdcfd96cafffddaa72db"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#ga536878b99c8a4b23ba1e7e6c5961a9bb">media_folder_get_storage_id</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a> folder, char **storage_id) TIZEN_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the storage id of the folder.  <a href="#ga536878b99c8a4b23ba1e7e6c5961a9bb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gad4cce419b0a4b7c6babb5fbd36056120">media_folder_get_order</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a> folder, int *order) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the folder viewing order.  <a href="#gad4cce419b0a4b7c6babb5fbd36056120"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gacfaf2e6f7e8177bfb624e7af58a4ba64">media_folder_get_folder_from_db</a> (const char *folder_id, <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a> *folder)</td></tr>
@@ -274,7 +274,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys the media folder. </p>
-<p>The function frees all resources related to the folder handle. This handle no longer can be used to perform any operation. A new handle has to be created before the next use.</p>
+<p>The function frees all resources related to the folder handle. This handle no longer can be used to perform any operations. A new handle has to be created before the next use.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -667,7 +667,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the modified date of the folder. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000371">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000401">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -760,7 +760,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the folder viewing order. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000372">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000404">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee order independence between applications. It is recommended that the viewing order is managed by the application.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -808,7 +808,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the parent folder ID. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000370">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000400">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>parent_folder_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -876,12 +876,12 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 
 </div>
 </div>
-<a class="anchor" id="gac6f18d17fae8cc3e139fece8f4ae187f"></a><!-- doxytag: member="media_folder.h::media_folder_get_storage_id" ref="gac6f18d17fae8cc3e139fece8f4ae187f" args="(media_folder_h folder, char **storage_id)" -->
+<a class="anchor" id="ga536878b99c8a4b23ba1e7e6c5961a9bb"></a><!-- doxytag: member="media_folder.h::media_folder_get_storage_id" ref="ga536878b99c8a4b23ba1e7e6c5961a9bb" args="(media_folder_h folder, char **storage_id) TIZEN_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gac6f18d17fae8cc3e139fece8f4ae187f">media_folder_get_storage_id</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#ga536878b99c8a4b23ba1e7e6c5961a9bb">media_folder_get_storage_id</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a>&#160;</td>
           <td class="paramname"><em>folder</em>, </td>
@@ -902,6 +902,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the storage id of the folder. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000403">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>storage_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -923,12 +924,12 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 
 </div>
 </div>
-<a class="anchor" id="gab6f29e91faf7347ec568ffcefa36f7c9"></a><!-- doxytag: member="media_folder.h::media_folder_get_storage_type" ref="gab6f29e91faf7347ec568ffcefa36f7c9" args="(media_folder_h folder, media_content_storage_e *storage_type)" -->
+<a class="anchor" id="gac7e972b877a8cdcfd96cafffddaa72db"></a><!-- doxytag: member="media_folder.h::media_folder_get_storage_type" ref="gac7e972b877a8cdcfd96cafffddaa72db" args="(media_folder_h folder, media_content_storage_e *storage_type) TIZEN_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gab6f29e91faf7347ec568ffcefa36f7c9">media_folder_get_storage_type</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gac7e972b877a8cdcfd96cafffddaa72db">media_folder_get_storage_type</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#gae5f7c76b28c905e9e604cd901f9513dd">media_folder_h</a>&#160;</td>
           <td class="paramname"><em>folder</em>, </td>
@@ -949,6 +950,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the folder storage type. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000402">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gaa94ac8120da755db0e781ca7fa2a5913" title="Gets the type and the kind of external device for the given storage id.">storage_get_type_dev()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -994,7 +996,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Sets the folder name. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000373">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaf3c65c5fe726e752bd9d3814ccf63ee7" title="Requests to scan a media folder, asynchronously.">media_content_scan_folder()</a> or <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000405">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaf3c65c5fe726e752bd9d3814ccf63ee7" title="Requests to scan a media folder, asynchronously.">media_content_scan_folder()</a> or <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1042,7 +1044,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Sets the folder viewing order. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000374">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000406">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee order independence between applications. It is recommended that the viewing order is managed by the application. </dd></dl>
 <p>If you set the order value for each folder, you can sort in ascending or descending order as the set order values using the filter. <br/>
  Moreover, more detailed settings are possible when used with the filter. <br/>
@@ -1084,7 +1086,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Updates the media folder to the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000375">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Related setter functions are deprecated, therefore this function is not needed anymore. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000407">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Related setter functions are deprecated, therefore this function is not needed anymore. </dd></dl>
 <p>The function updates the given media folder in the media database. The function should be called after any change in folder attributes, to be updated to the media database.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>

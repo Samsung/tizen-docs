@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -267,7 +267,7 @@ Typedefs</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>output</em> must be released by <a class="el" href="group__CAPI__MEDIA__AUDIO__OUT__MODULE.html#ga5bdb945e25a68be9360fb8cc6d79d5f4" title="Releases the audio output handle, along with all its resources.">audio_out_destroy()</a>. It is recommended to call <a class="el" href="group__CAPI__MEDIA__AUDIO__OUT__MODULE.html#ga614db8c188a04b8a83c27ff8aafddd76" title="Sets the sound stream information to the audio output.">audio_out_set_sound_stream_info()</a> after this API.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sample_rate</td><td>The audio sample rate in 8000[Hz] ~ 48000[Hz] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sample_rate</td><td>The audio sample rate in 8000[Hz] ~ 48000[Hz] (Before 5.0), 8000[Hz] ~ 192000[Hz] (Since 5.0) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The audio channel type (mono or stereo) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of audio sample (8-bit or 16-bit) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>An audio output handle is created on success </td></tr>
@@ -525,7 +525,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>The handle to the audio output </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">sample_rate</td><td>The audio sample rate in Hertz (8000 ~ 48000) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sample_rate</td><td>The audio sample rate in Hertz (8000 ~ 48000) (Before 5.0), (8000 ~ 192000) (Since 5.0) </td></tr>
   </table>
   </dd>
 </dl>

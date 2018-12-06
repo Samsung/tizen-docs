@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -122,6 +122,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a proxy rejected callback.  <a href="#gac725b7d2e6432cd2f89e0f5e2a46b869"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga3a9e65b69d5162b5dd40479f3df9f129">rpc_port_proxy_add_received_event_cb</a> (<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga31f61ba5bc90c541820bcd8a4b6107b6">rpc_port_proxy_h</a> h, <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga7c4d8e69de257ae31751e4fb599bc530">rpc_port_proxy_received_event_cb</a> cb, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a proxy received callback.  <a href="#ga3a9e65b69d5162b5dd40479f3df9f129"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga9315413a401e70e683e114e19ad5d6a6">rpc_port_proxy_get_port</a> (<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga31f61ba5bc90c541820bcd8a4b6107b6">rpc_port_proxy_h</a> h, <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6789120440ecb342f540b180e20968fc">rpc_port_port_type_e</a> type, <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6f397d54286904b52c38aa6909d7d7b3">rpc_port_h</a> *port)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a port from proxy handle.  <a href="#ga9315413a401e70e683e114e19ad5d6a6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga02c43bd0c81636d7fa1cdb3a05345dbc">rpc_port_stub_create</a> (<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga8bfa4d8f7b9e80e21656974a7d8d533e">rpc_port_stub_h</a> *h, const char *port_name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a rpc port stub handle.  <a href="#ga02c43bd0c81636d7fa1cdb3a05345dbc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga3a49e45400b0f9398177deb1278f7a1b">rpc_port_stub_destroy</a> (<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga8bfa4d8f7b9e80e21656974a7d8d533e">rpc_port_stub_h</a> h)</td></tr>
@@ -138,6 +140,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a stub disconnected callback.  <a href="#ga75831125736cc623025f12f4425b8340"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga4fa820a2a8d4f5ec36ebec43d8dd7b77">rpc_port_stub_add_received_event_cb</a> (<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga8bfa4d8f7b9e80e21656974a7d8d533e">rpc_port_stub_h</a> h, <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga9edfe9c81c455ce5a92de6310897e9af">rpc_port_stub_received_event_cb</a> cb, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a stub received callback.  <a href="#ga4fa820a2a8d4f5ec36ebec43d8dd7b77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga40e4d97d7483adf456ddfb1fed86b24a">rpc_port_stub_get_port</a> (<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga8bfa4d8f7b9e80e21656974a7d8d533e">rpc_port_stub_h</a> h, <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6789120440ecb342f540b180e20968fc">rpc_port_port_type_e</a> type, const char *instance, <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6f397d54286904b52c38aa6909d7d7b3">rpc_port_h</a> *port)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a port from stub handle.  <a href="#ga40e4d97d7483adf456ddfb1fed86b24a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6f397d54286904b52c38aa6909d7d7b3">rpc_port_h</a></td></tr>
@@ -417,6 +421,32 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga41af23630ce748dbd1f0da63a6fad1b6ac5214afacf230203e2c8f106f1141fd0"></a><!-- doxytag: member="RPC_PORT_ERROR_PERMISSION_DENIED" ref="gga41af23630ce748dbd1f0da63a6fad1b6ac5214afacf230203e2c8f106f1141fd0" args="" -->RPC_PORT_ERROR_PERMISSION_DENIED</em>&nbsp;</td><td>
 <p>Permission denied </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6789120440ecb342f540b180e20968fc"></a><!-- doxytag: member="rpc&#45;port.h::rpc_port_port_type_e" ref="ga6789120440ecb342f540b180e20968fc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6789120440ecb342f540b180e20968fc">rpc_port_port_type_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for types of communication channels. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga6789120440ecb342f540b180e20968fcae3079d405c06ee5f0505d5ee8ed68526"></a><!-- doxytag: member="RPC_PORT_PORT_MAIN" ref="gga6789120440ecb342f540b180e20968fcae3079d405c06ee5f0505d5ee8ed68526" args="" -->RPC_PORT_PORT_MAIN</em>&nbsp;</td><td>
+<p>Main channel </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6789120440ecb342f540b180e20968fcabaf35f2ed36c83ae9ab33ae71055a0de"></a><!-- doxytag: member="RPC_PORT_PORT_CALLBACK" ref="gga6789120440ecb342f540b180e20968fcabaf35f2ed36c83ae9ab33ae71055a0de" args="" -->RPC_PORT_PORT_CALLBACK</em>&nbsp;</td><td>
+<p>The channel for callbacks </p>
 </td></tr>
 </table>
 </dd>
@@ -763,6 +793,67 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga9315413a401e70e683e114e19ad5d6a6"></a><!-- doxytag: member="rpc&#45;port.h::rpc_port_proxy_get_port" ref="ga9315413a401e70e683e114e19ad5d6a6" args="(rpc_port_proxy_h h, rpc_port_port_type_e type, rpc_port_h *port)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga9315413a401e70e683e114e19ad5d6a6">rpc_port_proxy_get_port</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga31f61ba5bc90c541820bcd8a4b6107b6">rpc_port_proxy_h</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6789120440ecb342f540b180e20968fc">rpc_port_port_type_e</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6f397d54286904b52c38aa6909d7d7b3">rpc_port_h</a> *&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a port from proxy handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This handle <em>port</em> will not be valid if the proxy was disconnected or destroyed. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port proxy handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of port </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">port</td><td>The port to communicate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a14b98b22a190e02cfe643eeadd21f0cd">RPC_PORT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a49de5fd2d1c367667733874c2b627411">RPC_PORT_ERROR_INVALID_PARAMETER</a></td><td>The specified <em>h</em> is NULL </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a3bcce9adc9cc0fa537bffef0eb26f1be">RPC_PORT_ERROR_IO_ERROR</a></td><td>No available ports </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga5f95b36f28221f91f7374a601877d4d3" title="Writes data to an RPC port.">rpc_port_write()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gabe9874f5794c761c8d50e01f9767aea7" title="Reads data from an RPC port.">rpc_port_read()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga410ad405b88476cee4e705de531b4436" title="Creates a rpc port parcel handle from port.">rpc_port_parcel_create_from_port()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaedd74e469375a20730af711f4d6c6956" title="Sends parcel data through the port.">rpc_port_parcel_send()</a>; </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gabe9874f5794c761c8d50e01f9767aea7"></a><!-- doxytag: member="rpc&#45;port.h::rpc_port_read" ref="gabe9874f5794c761c8d50e01f9767aea7" args="(rpc_port_h h, void *buf, unsigned int size)" -->
 <div class="memitem">
 <div class="memproto">
@@ -795,7 +886,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads data from an RPC port. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port handle </td></tr>
@@ -1101,6 +1192,74 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga40e4d97d7483adf456ddfb1fed86b24a"></a><!-- doxytag: member="rpc&#45;port.h::rpc_port_stub_get_port" ref="ga40e4d97d7483adf456ddfb1fed86b24a" args="(rpc_port_stub_h h, rpc_port_port_type_e type, const char *instance, rpc_port_h *port)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga40e4d97d7483adf456ddfb1fed86b24a">rpc_port_stub_get_port</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga8bfa4d8f7b9e80e21656974a7d8d533e">rpc_port_stub_h</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6789120440ecb342f540b180e20968fc">rpc_port_port_type_e</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>instance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga6f397d54286904b52c38aa6909d7d7b3">rpc_port_h</a> *&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a port from stub handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This handle <em>port</em> will not be valid if the instance of the stub was disconnected or destroyed. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port stub handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of port </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">instance</td><td>The ID of the instance which is connected </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">port</td><td>The port to communicate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a14b98b22a190e02cfe643eeadd21f0cd">RPC_PORT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a49de5fd2d1c367667733874c2b627411">RPC_PORT_ERROR_INVALID_PARAMETER</a></td><td>The specified <em>h</em> is NULL </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a3bcce9adc9cc0fa537bffef0eb26f1be">RPC_PORT_ERROR_IO_ERROR</a></td><td>No available ports </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga5f95b36f28221f91f7374a601877d4d3" title="Writes data to an RPC port.">rpc_port_write()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gabe9874f5794c761c8d50e01f9767aea7" title="Reads data from an RPC port.">rpc_port_read()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga410ad405b88476cee4e705de531b4436" title="Creates a rpc port parcel handle from port.">rpc_port_parcel_create_from_port()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaedd74e469375a20730af711f4d6c6956" title="Sends parcel data through the port.">rpc_port_parcel_send()</a>; </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga803b50a9f7f2f34f3c41e85b8d354b3a"></a><!-- doxytag: member="rpc&#45;port.h::rpc_port_stub_listen" ref="ga803b50a9f7f2f34f3c41e85b8d354b3a" args="(rpc_port_stub_h h)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1215,7 +1374,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes data to an RPC port. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port handle </td></tr>

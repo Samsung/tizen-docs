@@ -7,17 +7,18 @@ To create a DALi widget application, you must:
 
 - Use the [Dali::WidgetApplication class](#widget-application-class).
 
-	> **Note**
-	> - The implementation of DALi widget application is similar to [DALi basic UI application](dali-basic-app.md), because the [Dali::WidgetApplication](../../../api/mobile/latest/classDali_1_1WidgetApplication.html) class inherits from the [Dali::Application](../../../api/mobile/latest/classDali_1_1Application.html) class.
+    > **Note**
+    >
+    > - The implementation of DALi widget application is similar to [DALi basic UI application](dali-basic-app.md), because the [Dali::WidgetApplication](../../api/mobile/latest/classDali_1_1WidgetApplication.html) class inherits from the [Dali::Application](../../api/mobile/latest/classDali_1_1Application.html) class.
   > - Ensure you are familiar with the basic UI application details before tackling a widget application.
 
 - Ensure you start the event loop.
 
 - To implement your own widget class inherit the `Dali::Widget` class.
 
-![DALi widget application](./media/dali_widget_application.png)
-
 **Figure: DALi widget application**
+
+![DALi widget application](./media/dali_widget_application.png)
 
 For more information on basics of creating a DALi widget application, see [Creating a DALi Widget Application](#create-a-dali-widget-application).
 
@@ -100,7 +101,7 @@ The steps to create a DALi widget application:
 
 3. Create a widget class.
 
-   On starting, ensure that you must have background knowledge on [Handle/Body Pattern: Basic Way of Using DALi Objects](../../ui/dali/handle.md).
+   On starting, ensure that you must have background knowledge on [Handle/Body Pattern: Basic Way of Using DALi Objects](../ui/dali/handle.md).
 
    Additionally, for this pattern you need to construct two classes for custom widget:
 

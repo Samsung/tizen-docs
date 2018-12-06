@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -426,7 +426,8 @@ Static Public Member Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>Function must be called from main event thread only</dd></dl>
 <p>A callback of the following type may be used: </p>
 <div class="fragment"><pre class="fragment">   <span class="keywordtype">void</span> MyFunction();
-</pre></div><dl class="note"><dt><b>Note:</b></dt><dd>Ownership of the callback is passed onto this class. </dd></dl>
+</pre></div><p> This callback will be deleted once it is called.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Ownership of the callback is passed onto this class. </dd></dl>
 
 </div>
 </div>

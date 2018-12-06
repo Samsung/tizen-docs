@@ -12,7 +12,7 @@ For the steps of creating the basic parts of a simple DALi UI application, see [
 <a name="api"></a>
 ## Main Application Class
 
-If you want to use DALi for your application UI, you must create the application with the `Dali::Application` class (in [mobile](../../../api/mobile/latest/classDali_1_1Application.html) and [wearable](../../../api/wearable/latest/classDali_1_1Application.html) applications). This class provides the means for initializing the resources required by DALi.
+If you want to use DALi for your application UI, you must create the application with the `Dali::Application` class (in [mobile](../../api/mobile/latest/classDali_1_1Application.html) and [wearable](../../api/wearable/latest/classDali_1_1Application.html) applications). This class provides the means for initializing the resources required by DALi.
 
 The following table lists the main functions you need in your application. They are all provided by the `Dali::Application` class.
 
@@ -48,13 +48,13 @@ The following table lists the callbacks for the basic signals provided by the `D
 | `PauseSignal()`           | Called when the application becomes invisible. The signal is emitted when the application is paused due to another application becoming active (for example, because of a call, alarm, or message alert). |
 | `TerminateSignal()`       | Called when the application is terminated. The signal is useful when the application has resources to release at the end. By releasing those resources, you allow other applications to use them. |
 | `ResizeSignal()`          | Called when the window size is changes. The signal is called when a window is created or resized. You can use the signal to change the UI layout according to the new window size. |
-| `AppControlSignal()`      | Called when an [application control](../app-controls.md) signal is emitted from another application. This provides the means to communicate between applications. |
+| `AppControlSignal()`      | Called when an [application control](../app-management/app-controls.md) signal is emitted from another application. This provides the means to communicate between applications. |
 | `LanguageChangedSignal()` | Called when the language is changed on the device. You can use the signal to refresh the display with the new language. |
 | `RegionChangedSignal()`   | Called when the region is changed. You can use the signal to refresh any region-specific information on the screen. |
 | `BatteryLowSignal()`      | Called when the battery state is low. You can use the signal to save any crucial information in case the battery state becomes so low that the application is forcefully terminated. |
 | `MemoryLowSignal()`       | Called when the memory state is low. You can use the signal to release any unused memory. |
 
-For more information on Tizen UI applications in general, see [UI Application](index.md).
+For more information on Tizen UI applications in general, see [UI Application](ui-app.md).
 
 <a name="create"></a>
 ## Basics of Creating a DALi Application
@@ -63,7 +63,7 @@ To create a DALi basic UI application:
 
 1. Initialize the application:
 
-   1. To use the functions and data types of the DALi API, (in [mobile](../../../api/mobile/latest/group__dali.html) and [wearable](../../../api/wearable/latest/group__dali.html) applications), include the `<dali-toolkit/dali-toolkit.h>` header file in your application:
+   1. To use the functions and data types of the DALi API, (in [mobile](../../api/mobile/latest/group__dali.html) and [wearable](../../api/wearable/latest/group__dali.html) applications), include the `<dali-toolkit/dali-toolkit.h>` header file in your application:
       ```
       #include <dali-toolkit/dali-toolkit.h>
       ```
@@ -80,7 +80,7 @@ To create a DALi basic UI application:
 
 3. Connect signals to keep yourself informed when certain system events occur.
 
-   To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way to start a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals.
+   To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way to start a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals.
 
    When the application receives the `InitSignal()`, it can build the 3D scene graph. Connect the `HelloWorld::Create()` callback to the `Dali::Application::InitSignal()` function:
 
@@ -90,7 +90,7 @@ To create a DALi basic UI application:
 
 4. Create an actor and add it to the stage.
 
-   The `Dali::Toolkit::TextLabel` UI component (in [mobile](../../../api/mobile/latest/classDali_1_1Toolkit_1_1TextLabel.html) and [wearable](../../../api/wearable/latest/classDali_1_1Toolkit_1_1TextLabel.html) applications) renders a short text string.
+   The `Dali::Toolkit::TextLabel` UI component (in [mobile](../../api/mobile/latest/classDali_1_1Toolkit_1_1TextLabel.html) and [wearable](../../api/wearable/latest/classDali_1_1Toolkit_1_1TextLabel.html) applications) renders a short text string.
 
    To display the text label, add it to a stage. The stage instance is a singleton object (the only instance of its class during the lifetime of the program), so you can get it using a static function:
 

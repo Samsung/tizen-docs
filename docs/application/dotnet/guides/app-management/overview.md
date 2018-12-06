@@ -20,9 +20,17 @@ You can use the following application management features in your .NET applicati
 
   You can retrieve information about the packages installed on the device. You can also monitor for changes in the device packages.
 
-- [Application Data Exchange](app-communication.md)
+The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
 
-  The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
+You can use the following application data exchange features in your .NET applications:
+
+-   [Message Port](message-port.md)
+
+    Applications communicate with each other using message ports. You can send and receive messages using the map data format and trusted or untrusted message port instances.
+
+-   [Data Control](data-control.md)
+
+    You can exchange SQL- or key-value-type data between applications. All applications can request data shared by other applications, but only service applications can provide their own data.
 
 
 ## Related Information

@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -250,8 +250,8 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter</td></tr>
   </table>
   </dd>
 </dl>
@@ -383,7 +383,8 @@ Typedefs</h2></td></tr>
 <p>Initializes the Bluetooth OPP client. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called before Bluetooth OPP client starts. <br/>
- You must free all resources of the Bluetooth service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#gae5b4c2d2b002c0d1f8c4188ca024abb3" title="Deinitializes the Bluetooth OPP client.">bt_opp_client_deinitialize()</a> if Bluetooth OPP service is no longer needed. </dd></dl>
+ You must free all resources of the Bluetooth service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#gae5b4c2d2b002c0d1f8c4188ca024abb3" title="Deinitializes the Bluetooth OPP client.">bt_opp_client_deinitialize()</a> <br/>
+ if Bluetooth OPP service is no longer needed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -443,10 +444,13 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Pushes the file to the remote device, asynchronously. </p>
+<p>At first, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga80b7b100bbc0936ab7b355624be3490b" title="Called when OPP server responds to the push request.">bt_opp_client_push_responded_cb()</a> will be called when OPP server responds to the push request. <br/>
+ After connection is established, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga03e92ba8bb927379e55bb122b297fcb8" title="Called when each file is being transferred.">bt_opp_client_push_progress_cb()</a> will be called repeatedly until a file is transferred completely. <br/>
+ If you send several files, then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga03e92ba8bb927379e55bb122b297fcb8" title="Called when each file is being transferred.">bt_opp_client_push_progress_cb()</a> with another file will be called repeatedly until the file is transferred completely. <br/>
+ <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga4f8396bebe46b54274c7d375bb0210e4" title="Called when the push request is finished.">bt_opp_client_push_finished_cb()</a> will be called when the push request is finished.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<p>At first, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga80b7b100bbc0936ab7b355624be3490b" title="Called when OPP server responds to the push request.">bt_opp_client_push_responded_cb()</a> will be called when OPP server responds to the push request. After connection is established, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga03e92ba8bb927379e55bb122b297fcb8" title="Called when each file is being transferred.">bt_opp_client_push_progress_cb()</a> will be called repeatedly until a file is transferred completely. If you send several files, then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga03e92ba8bb927379e55bb122b297fcb8" title="Called when each file is being transferred.">bt_opp_client_push_progress_cb()</a> with another file will be called repeatedly until the file is transferred completely. <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga4f8396bebe46b54274c7d375bb0210e4" title="Called when the push request is finished.">bt_opp_client_push_finished_cb()</a> will be called when the push request is finished. </p>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote address </td></tr>
@@ -473,7 +477,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#gac11f589295668f478daf44ecc34adcfa" title="Initializes the Bluetooth OPP client.">bt_opp_client_initialize()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga02f084c9ba1c639462db68b2efbfa512" title="Cancels the push request in progress, asynchronously.">bt_opp_client_cancel_push</a> </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__OPP__CLIENT__MODULE.html#ga02f084c9ba1c639462db68b2efbfa512" title="Cancels the push request in progress, asynchronously.">bt_opp_client_cancel_push()</a> </dd></dl>
 
 </div>
 </div>

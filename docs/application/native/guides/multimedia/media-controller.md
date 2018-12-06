@@ -23,10 +23,6 @@ The main features of the Media Controller API include:
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
-- Sending and processing commands
-
-  You can [send a command](#sending-and-processing-commands) to the server from the client side and then process the command on the server side.
-
 - Sending and processing commands to receive replies
 
   You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side, and then process the command on the server side.
@@ -46,6 +42,14 @@ The main features of the Media Controller API include:
   > **Note**
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
+
+- Sending and processing a search command
+
+  You can [send a search command](#sending-and-processing-a-search-command) to the server from the client side, and then process the command on the server side.
+
+  > **Note**
+  >
+  > This feature supports Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Prerequisites
 
@@ -264,82 +268,6 @@ To retrieve the playlist and metadata information on the client side:
 >
 > This feature supports Tizen 4.0 and Higher for Mobile.
 
-
-## Sending and Processing Commands
-
-To send a command to the server from the client side:
-
-1. Create the media controller client handle using the `mc_client_create()`:
-
-   ```
-   ret = mc_client_create(&g_client_h);
-   ```
-
-2. Retrieve the server name using the `mc_client_get_latest_server_info()`:
-
-   ```
-   char *server_name = NULL;
-   mc_server_state_e server_state;
-
-   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
-   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
-   ```
-
-3. Send the command to the server using the corresponding `mc_client_send_XXX()`. Use the server name retrieved in the previous step to identify the server.
-
-   For example, to send a playback state change command to the server, use the `mc_client_send_playback_state_command()` with the new state defined in the third parameter:
-
-   ```
-   mc_playback_h playback = NULL;
-   mc_playback_states_e playback_state = MC_PLAYBACK_STATE_PLAYING;
-
-   ret = mc_client_send_playback_state_command(g_client_h, server_name, playback_state);
-   ```
-
-   If you want to define your own commands to send to the server, use the `mc_client_send_custom_command()`.
-
-4. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
-
-   ```
-   mc_client_destroy(g_client_h);
-   ```
-
-To process the received command on the server side:
-
-1. Create the media controller server handle using the `mc_server_create()`:
-
-   ```
-   ret = mc_server_create(&g_server_h);
-   ```
-
-2. Define the callback that is invoked when the server receives the command.
-
-   For example, to define a callback for playback state change commands:
-
-   ```
-   void
-   command_received_cb(const char* client_name, mc_playback_states_e state, void *user_data)
-   {
-       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Playback state: %d\n", client_name, state);
-   }
-   ```
-
-3. Register the callback:
-
-   - To register a callback for playback state change commands, use the `mc_server_set_playback_state_command_received_cb()`.
-   - To register a callback for a custom command, use the `mc_server_set_custom_command_received_cb()`.
-
-   For example, to register a callback for playback state change commands:
-
-   ```
-   ret = mc_server_set_playback_state_command_received_cb(g_mc_server, command_received_cb, NULL);
-   ```
-
-4. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
-
-   ```
-   mc_server_destroy(g_server_h);
-   ```
 
 ## Sending and Processing Commands to Receive Replies
 
@@ -572,6 +500,132 @@ To receive the reply of processing command on the server side:
 > This feature supports Tizen 4.0 and Higher for Mobile.
 
 
+## Sending and Processing a Search Command
+
+To send a search command to the server from the client side:
+
+1. Create the media controller client handle using the `mc_client_create()`:
+
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
+
+2. Retrieve the server name using the `mc_client_foreach_server()`:
+
+   ```
+   bool
+   activated_server_cb(const char *server_name, void *user_data)
+   {
+     GList **server_list = (GList **)user_data;
+
+     if (!server_list || !server_name) return FALSE;
+     *server_list = g_list_append(*client_list, g_strdup(server_name));
+
+     return TRUE;
+   }
+
+   GList *server_list = NULL;
+
+   ret = mc_client_foreach_server(g_client_h, activated_server_cb, &server_list);
+   ```
+
+3. Create the search handle using the `mc_search_create()`:
+
+   ```
+   ret = mc_search_create(&g_search_h);
+   ```
+
+4. Set the condition with a [content type](#media-controller-content-type-attributes), a [search category](#media-controller-search-category-attributes) and a search keyword using the `mc_search_set_condition()`:
+
+   ```
+   ret = mc_search_set_condition(g_search_h, MC_CONTENT_TYPE_MUSIC, MC_SEARCH_TITLE, "keyword", NULL);
+   ```
+
+5. Send the search command to the server using the corresponding `mc_client_send_search_cmd()`. Use the server name retrieved in the previous step to identify the server.
+For example, to send the search command to the server, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
+
+   ```
+   char *request_id = NULL;
+
+   ret = mc_client_send_search_cmd(g_client_h, server_name, g_search_h, &request_id);
+   ```
+
+6. Destroy the search handle using the `mc_search_destroy()`, when search handle is no longer needed:
+
+   ```
+   mc_search_destroy(g_search_h);
+   ```
+
+7. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
+
+   ```
+   mc_client_destroy(g_client_h);
+   ```
+
+To process the received search command on the server side:
+
+1. Create the media controller server handle using the `mc_server_create()`:
+
+   ```
+   ret = mc_server_create(&g_server_h);
+   ```
+
+2. Define the callback that is invoked when the server receives the search command.
+
+   For example, to define a callback for a search command:
+
+   ```
+   void
+   search_command_received_cb(const char* client_name, const char *request_id, mc_search_h search, void *user_data)
+   {
+      mc_search_h *get_search = mc_search_h *(user_data);
+      dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request id: %s\n", client_name, request_id);
+      ret = mc_search_clone(search, get_search);
+   }
+   ```
+
+3. Register the callback:
+
+   - To register a callback for a search command, use the `mc_server_set_search_cmd_received_cb()`.
+
+      For example, to register a callback for a search command:
+
+      ```
+      mc_search_h g_search_h = NULL;
+      ret = mc_server_set_search_cmd_received_cb(g_server_h, search_command_received_cb, &g_search);
+      ```
+
+4. Retrieve the search condition using the `mc_search_foreach_condition()`:
+
+   ```
+   bool
+   search_condition_cb(mc_content_type_e content_type, mc_search_category_e category, const char *search_keyword, bundle *data, void *user_data)
+   {
+      dlog_print(DLOG_DEBUG, LOG_TAG, "Content Type: %d, Search Category: %d, Search Keyword: %s\n", content_type, category, search_keyword);
+
+      return TRUE;
+   }
+
+   ret = mc_search_foreach_condition(g_search_h, search_condition_cb, NULL);
+   ```
+
+5. Destroy the search handle using the `mc_search_destroy()`, when search handle is no longer needed:
+
+   ```
+   mc_search_destroy(g_search_h);
+   ```
+
+6. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
+
+   ```
+   mc_server_destroy(g_server_h);
+   ```
+
+> **Note**
+>
+> This feature supports Tizen 5.0 and Higher for Mobile and Wearable.
+
+
 ## Media Controller Server State Attributes
 
 The following table lists all the server state attributes the client can receive:
@@ -588,14 +642,10 @@ The following table lists all the server state attributes the client can receive
 | `MC_PLAYBACK_STATE_PLAYING`      | Playback state of playing                |
 | `MC_PLAYBACK_STATE_PAUSED`       | Playback state of paused                 |
 | `MC_PLAYBACK_STATE_STOPPED`      | Playback state of stopped                |
-| `MC_PLAYBACK_STATE_NEXT_FILE`    | Playback state of next file              |
-| `MC_PLAYBACK_STATE_PREV_FILE`    | Playback state of previous file          |
-| `MC_PLAYBACK_STATE_FAST_FORWARD` | Playback state of fast forward           |
-| `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewind                 |
 | `MC_PLAYBACK_STATE_MOVING_TO_NEXT` | Playback state of moving to next media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS` | Playback state of moving to previous media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_FAST_FORWARDING` | Playback state of fast forwarding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
-| `MC_PLAYBACK_STATE_REWIND`       | Playback state of rewinding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
+| `MC_PLAYBACK_STATE_REWINDING`       | Playback state of rewinding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 
 
 ## Media Controller Playback Action Attributes
@@ -684,6 +734,45 @@ The following table lists all the playlist update mode attributes the client can
 > **Note**
 >
 > This Attributes support Tizen 4.0 and Higher for Mobile.
+
+## Media Controller Content Type Attributes
+
+The following table lists all the content type attributes the server can receive:
+
+**Table: Media controller content type attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Content types**        |                                          |
+| `MC_CONTENT_TYPE_IMAGE`          | Image content type                       |
+| `MC_CONTENT_TYPE_VIDEO`          | Video content type                       |
+| `MC_CONTENT_TYPE_MUSIC`          | Music content type                       |
+| `MC_CONTENT_TYPE_OTHER`          | Other content type                       |
+| `MC_CONTENT_TYPE_UNDECIDED`      | Content type is not decided              |
+
+> **Note**
+>
+> This Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+
+## Media Controller Search Category Attributes
+
+The following table lists all the search category attributes the server can receive:
+
+**Table: Media controller search category attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Search categories**        |                                          |
+| `MC_SEARCH_NO_CATEGORY`          | No search category                       |
+| `MC_SEARCH_TITLE`                | Search by content title                  |
+| `MC_SEARCH_ARTIST`               | Search by content artist                 |
+| `MC_SEARCH_ALBUM`                | Search by content album                  |
+| `MC_SEARCH_GENRE`                | Search by content genre                  |
+| `MC_SEARCH_TPO`                  | Search by Time Place Occasion            |
+
+> **Note**
+>
+> This Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies

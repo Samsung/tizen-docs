@@ -20,6 +20,10 @@ The application controls allow you to share an application's functionality. Usin
 
   The application controls allow you to share an application's functionality. Using another application's features through application controls reduces the time and effort needed to develop your own application. You can also allow other applications to share your functionality by exporting your application control functionalities.
 
+- [Common Application Controls](common-appcontrols.md)
+
+  The common application introduces the required parameters, such as a specific operation, URI, MIME type, and extra data when the application launches other applications with App Control API.
+
 - [Widget Information](widget-info.md) **in mobile and wearable applications only**
 
   You can manage installed widgets and widget instances in various ways, such as retrieving information about widgets, or getting the widget instances and receiving notifications when the state of the widget changes.

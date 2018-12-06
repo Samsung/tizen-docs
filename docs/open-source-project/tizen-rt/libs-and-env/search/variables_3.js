@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['c_5fcc',['c_cc',['../structtermios.html#a06ea1504c051c8b60c9e5d04b63877dd',1,'termios']]],
+  ['c_5fcflag',['c_cflag',['../structtermios.html#ac6409888277d696c033f0068b33d5acc',1,'termios']]],
+  ['c_5fiflag',['c_iflag',['../structtermios.html#a3e416181096da14aacc3a5aaa3138d3e',1,'termios']]],
+  ['c_5flflag',['c_lflag',['../structtermios.html#ad03044b6d30bc840e24751ea465651af',1,'termios']]],
+  ['c_5foflag',['c_oflag',['../structtermios.html#a615efcbde1bbfd1f2c28b3a62bd05add',1,'termios']]],
+  ['c_5fspeed',['c_speed',['../structtermios.html#a9b14ff83a882d409ce372efd707f76f4',1,'termios']]],
+  ['c_5ftid',['c_tid',['../structhttp__server__t.html#a57193e288ba855f8d93363c4cac29309',1,'http_server_t']]],
+  ['callback',['callback',['../structhttp__client__request__t.html#a4ac45af97807f04efc64178b83e179c8',1,'http_client_request_t']]],
+  ['cb',['cb',['../structhttp__server__t.html#af995f83188fe5ef4e584eb2eac35104d',1,'http_server_t::cb()'],['../structwebsocket__t.html#a921bab7cd926a1e47a229e95b12a761c',1,'websocket_t::cb()']]],
+  ['ch_5fflags',['ch_flags',['../structchild__status__s.html#a812cd2035ebd906c15bc6c468df0b6c1',1,'child_status_s']]],
+  ['ch_5fpid',['ch_pid',['../structchild__status__s.html#a8ad6ce3452d941f1a827c5746c689f00',1,'child_status_s']]],
+  ['ch_5fstatus',['ch_status',['../structchild__status__s.html#a6169ce09cd142bca73b314eb69dbfc7e',1,'child_status_s']]],
+  ['client_5ffd',['client_fd',['../structhttp__client__tls__t.html#ae4f1c36e2c0e305e54a0de1d107bf9ef',1,'http_client_tls_t']]],
+  ['client_5fip',['client_ip',['../structhttp__req__message.html#a6ad36fdf5e7ffa340dd06acddff4365b',1,'http_req_message']]],
+  ['cmn',['cmn',['../structtask__tcb__s.html#ac9506bd169dd358b52b583a10ffb16ad',1,'task_tcb_s::cmn()'],['../structpthread__tcb__s.html#ac9506bd169dd358b52b583a10ffb16ad',1,'pthread_tcb_s::cmn()']]],
+  ['conn',['conn',['../structntpc__server__s.html#ab75159d2a34e722ae1afe8e39ea12e82',1,'ntpc_server_s']]],
+  ['count',['count',['../structpthread__barrier__s.html#a16ff2d8e15ade4948398b0aeb80124a8',1,'pthread_barrier_s']]],
+  ['counts',['counts',['../structsemholder__s.html#ad5daea048a26df74654c14cf74f5e649',1,'semholder_s']]],
+  ['crefs',['crefs',['../structdspace__s.html#ab1b5877517439382ef953b4c6578143f',1,'dspace_s']]],
+  ['ctx',['ctx',['../structwebsocket__t.html#a95be3fd14037394c595d8bd0fcbcaab5',1,'websocket_t']]],
+  ['curr_5falloc_5fsize',['curr_alloc_size',['../structtcb__s.html#a576be77cbbd15c74e44ef848dcbe9115',1,'tcb_s']]]
+];

@@ -32,7 +32,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m41camera.png" width="150"/></td>
 			<td>
-			<p><strong>(M) Camera</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Camera" target="_blank"><strong>(M) Camera</strong></a></p>
 			<p>This sample application demonstrates how to take a picture using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
 			</td>
 		</tr>
@@ -58,13 +58,6 @@ for TD:
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="267" src="media/m50thumbnailextractorsample.png" width="150"/></td>
-			<td>
-			<p><strong>(M) ThumbnailExtractorSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to extract thumbnails from an image using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
-			</td>
-		</tr>
-		<tr>
 			<td><img alt="" height="267" src="media/m51radiosample.png" width="150"/></td>
 			<td>
 			<p><strong>(M) RadioSample</strong> [In progress]</p>
@@ -86,10 +79,24 @@ for TD:
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="267" src="media/m50thumbnailextractorsample.png" width="150"/></td>
+			<td>
+			<p><strong>(M) ThumbnailExtractorSample</strong> [In progress]</p>
+			<p>This sample application demonstrates how to extract thumbnails from an image using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="267" src="media/m57visionapplicationsample.png" width="150"/></td>
 			<td>
 			<p><strong>(M) VisionApplicationSample</strong> [In progress]</p>
 			<p>This sample application demonstrates how to implement barcode generation or detection, face detection, and image recognition.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="267" src="media/m42voicerecorder.png" width="150"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/VoiceRecorder" target="_blank"><strong>(M) VoiceRecorder</strong></a></p>
+			<p>This sample application demonstrates how to record an audio using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -99,13 +106,6 @@ for TD:
 			<p>This sample application demonstrates how to retrieve and set the device volume levels.</p>
 			</td>
 		</tr>
-		<tr>
-			<td><img alt="" height="267" src="media/m42voicerecorder.png" width="150"/></td>
-			<td>
-			<p><strong>(M) VoiceRecorder</strong> [In progress]</p>
-			<p>This sample application demonstrates how to record an audio using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
-			</td>
-		</tr>
 	</tbody>
 </table>
 </div>
@@ -113,6 +113,21 @@ for TD:
 <div class="tabcontent" id="Wearable">
 <table>
 	<tbody>
+		<tr>
+			<td><img alt="" height="180" src="media/w41imageviewer.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ImageViewer" target="_blank"><strong>(W) ImageViewer</strong></a></p>
+			<p>This sample application demonstrates how to make a circle thumbnail view and how to retrieve an image content on a Tizen wearable device.</p>
+			</td>
+		</tr>
+                <tr>
+                        <td><img alt="" height="180" src="media/w40qrcodegenerator.png" width="180"/></td>
+                        <td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/QRCodeGenerator" target="_blank"><strong>(W) QRCodeGenerator</strong></a></p>
+                        <p>This sample application demonstrates how to use Tizen.CircularUI NuGet package and Tizen.Multimedia.Vision API.</p>
+                        <p>This application also demonstrates how to generate Wi-Fi type QR code. After scanning the code with any widely available QR code scanner, the <strong>Connect to a Wi-Fi</strong> option appears.</p>
+                        </td>
+                </tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wvolumecontroller.png" width="180"/></td>
 			<td>
@@ -125,6 +140,19 @@ for TD:
 </div>
 
 <div class="tabcontent" id="TV">
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv27musicplayer.png" width="400" /></p>
+			</td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MusicPlayer" target="_blank"><strong>(T) MusicPlayer</strong></a></p>
+			<p>This sample application demonstrates how to create a music player application that plays music stored on a device.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <!--

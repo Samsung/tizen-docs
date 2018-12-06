@@ -23,6 +23,10 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 
     ![Install the headless profile](media/package_manager_iot_5.0.png)
 
+    > **Note**
+    >
+    > **Extension SDK** should be updated to the latest version.
+
 
 # Flashing Tizen Images with IoT Setup Manager
 
@@ -32,9 +36,9 @@ IoT Setup Manager helps you to easily install Tizen on your IoT device using you
 
 You must have the binary images in your computer. You can download the binary images from:
 
--   Boot image: [tizen-unified_20181024.1_iot-boot-arm64-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20181024.1/images/standard/iot-boot-arm64-rpi3/tizen-unified_20181024.1_iot-boot-arm64-rpi3.tar.gz)
+-   Boot image: [tizen-unified_20181024.1_iot-boot-arm64-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/standard/iot-boot-arm64-rpi3/tizen-unified_20181024.1_iot-boot-arm64-rpi3.tar.gz)
 -   Platform image:
-       -   Headless (without display): [tizen-unified_20181024.1_iot-headless-2parts-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/tizen-unified_20181024.1/images/standard/iot-headless-2parts-armv7l-rpi3/tizen-unified_20181024.1_iot-headless-2parts-armv7l-rpi3.tar.gz)
+       -   Headless (without display): [tizen-unified_20181024.1_iot-headless-2parts-armv7l-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/standard/iot-headless-2parts-armv7l-rpi3/tizen-unified_20181024.1_iot-headless-2parts-armv7l-rpi3.tar.gz)
        -   Headed (with display): Not available
        -   Customized image: Not supported for Tizen 5.0.
 

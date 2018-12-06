@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -176,6 +176,8 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the remote device requests to read a value on a GATT server.  <a href="#ga819f914ffe2b93502a7dbae9b6865f12"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#gad440594102a33aa823d4df63219e9de5">bt_gatt_server_characteristic_notification_state_changed_cb</a> )(bool notify, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#gaa69a5a2a0d9fd4d4db76ba9a9f759824">bt_gatt_server_h</a> server, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab58e57df80c4c42105000023b2c8bacd">bt_gatt_h</a> gatt_handle, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the remote device enables or disables the Notification/Indication for particular characteristics.  <a href="#gad440594102a33aa823d4df63219e9de5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga7305a3f8dc9fc5c6917f18bde6a290dd">bt_hrp_sensor_characteristic_notification_state_changed_cb</a> )(bool notify, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#gaa69a5a2a0d9fd4d4db76ba9a9f759824">bt_gatt_server_h</a> server, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab58e57df80c4c42105000023b2c8bacd">bt_gatt_h</a> gatt_handle, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the remote device enables or disables the Notification/Indication for particular characteristics for HRP.  <a href="#ga7305a3f8dc9fc5c6917f18bde6a290dd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga6986408e87d0c56143619cab39c5c2a4">bt_gatt_server_notification_sent_cb</a> )(int result, const char *remote_address, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#gaa69a5a2a0d9fd4d4db76ba9a9f759824">bt_gatt_server_h</a> server, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab58e57df80c4c42105000023b2c8bacd">bt_gatt_h</a> characteristic, bool completed, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the sending notification / indication is done.  <a href="#ga6986408e87d0c56143619cab39c5c2a4"></a><br/></td></tr>
 </table>
@@ -192,8 +194,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the remote device enables or disables the Notification/Indication for particular characteristics. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <p>By using this callback function, server can know notification state.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>server</em> must not be freed by application. </dd>
 <dd>
 The <em>gatt_handle</em> must not be freed by application.</dd></dl>
@@ -275,8 +277,8 @@ In case of an indication, once a confirmation is received from the remote device
 <div class="memdoc">
 
 <p>Called when the remote device requests to read a value on a GATT server. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <p>For finishing the request, call the function <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga004f281963ac23a8d9706b2667049542" title="Sends a response to the remote device as a result of a read/write request.">bt_gatt_server_send_response</a> in callback.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>remote_address</em> must not be freed by application. </dd>
 <dd>
 The <em>server</em> must not be freed by application. </dd>
@@ -311,9 +313,10 @@ The <em>gatt_handle</em> must not be freed by application.</dd></dl>
 <div class="memdoc">
 
 <p>Called when a value of a characteristic or descriptor's GATT handle has been changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <p>For finishing the request, call the function <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga004f281963ac23a8d9706b2667049542" title="Sends a response to the remote device as a result of a read/write request.">bt_gatt_server_send_response</a> in callback.</p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>After this function is returned, a changed value is automatically applied to <em>gatt_handle</em>. Before that, <em>gatt_handle</em> has an old value. </dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>After this function is returned, a changed value is automatically <br/>
+ applied to <em>gatt_handle</em>. Before that, <em>gatt_handle</em> has an old value. </dd>
 <dd>
 The <em>remote_address</em> must not be freed by application. </dd>
 <dd>
@@ -342,6 +345,35 @@ The <em>value</em> must not be freed by application.</dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="ga7305a3f8dc9fc5c6917f18bde6a290dd"></a><!-- doxytag: member="bluetooth_type.h::bt_hrp_sensor_characteristic_notification_state_changed_cb" ref="ga7305a3f8dc9fc5c6917f18bde6a290dd" args=")(bool notify, bt_gatt_server_h server, bt_gatt_h gatt_handle, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga7305a3f8dc9fc5c6917f18bde6a290dd">bt_hrp_sensor_characteristic_notification_state_changed_cb</a>)(bool notify, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#gaa69a5a2a0d9fd4d4db76ba9a9f759824">bt_gatt_server_h</a> server, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html#gab58e57df80c4c42105000023b2c8bacd">bt_gatt_h</a> gatt_handle, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the remote device enables or disables the Notification/Indication for particular characteristics for HRP. </p>
+<p>By using this callback function, server can know notification state.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>server</em> must not be freed by application. </dd>
+<dd>
+The <em>gatt_handle</em> must not be freed by application.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">notify</td><td>Indicates whether the Notification/Indication is enabled or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The GATT server handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gatt_handle</td><td>The characteristic's GATT handle to be read </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the registration function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="gad7c1ecdb6ba3eb4923ebfbce25d199c3"></a><!-- doxytag: member="bluetooth_type.h::bt_gatt_att_request_type_e" ref="gad7c1ecdb6ba3eb4923ebfbce25d199c3" args="" -->
 <div class="memitem">
@@ -356,6 +388,16 @@ The <em>value</em> must not be freed by application.</dd></dl>
 
 <p>Enumerations of the remote device request types for attributes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggad7c1ecdb6ba3eb4923ebfbce25d199c3a24c2a664d80e284623b71e6371e46739"></a><!-- doxytag: member="BT_GATT_REQUEST_TYPE_READ" ref="ggad7c1ecdb6ba3eb4923ebfbce25d199c3a24c2a664d80e284623b71e6371e46739" args="" -->BT_GATT_REQUEST_TYPE_READ</em>&nbsp;</td><td>
+<p>Read Requested </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad7c1ecdb6ba3eb4923ebfbce25d199c3a0edf8c639159d3f8ad80ac8824cf0665"></a><!-- doxytag: member="BT_GATT_REQUEST_TYPE_WRITE" ref="ggad7c1ecdb6ba3eb4923ebfbce25d199c3a0edf8c639159d3f8ad80ac8824cf0665" args="" -->BT_GATT_REQUEST_TYPE_WRITE</em>&nbsp;</td><td>
+<p>Write Requested </p>
+</td></tr>
+</table>
+</dd>
+</dl>
 
 </div>
 </div>
@@ -498,7 +540,7 @@ The <em>value</em> must not be freed by application.</dd></dl>
 
 <p>Creates the GATT server's handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>server</em> handle should be destroyed by using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga2c5b64ed72090bd2919d2fa2a00349c9" title="Destroys the GATT server&#39;s handle.">bt_gatt_server_destroy()</a></dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>server</em> handle should be destroyed by using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga2c5b64ed72090bd2919d2fa2a00349c9" title="Destroys the GATT server&#39;s handle.">bt_gatt_server_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">server</td><td>The GATT server's handle </td></tr>
@@ -542,7 +584,6 @@ The <em>value</em> must not be freed by application.</dd></dl>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
@@ -569,7 +610,7 @@ The <em>value</em> must not be freed by application.</dd></dl>
 
 <p>Destroys the GATT server's handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>All registered services to GATT server are unregistered</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>All registered services to GATT server are unregistered.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The GATT server's handle </td></tr>
@@ -676,7 +717,9 @@ The <em>value</em> must not be freed by application.</dd></dl>
 
 <p>Gets a service's GATT handle which has specific UUID. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. It will be freed when an associated server is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga2c5b64ed72090bd2919d2fa2a00349c9" title="Destroys the GATT server&#39;s handle.">bt_gatt_server_destroy()</a>. If there are multiple services which have same UUID, only the first matched one will be returned.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. <br/>
+ It will be freed when an associated server is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga2c5b64ed72090bd2919d2fa2a00349c9" title="Destroys the GATT server&#39;s handle.">bt_gatt_server_destroy()</a>. <br/>
+ If there are multiple services which have same UUID, only the first matched one will be returned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The GATT server's handle </td></tr>
@@ -721,7 +764,6 @@ The <em>value</em> must not be freed by application.</dd></dl>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
@@ -1116,7 +1158,6 @@ The <em>value</em> must not be freed by application.</dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ac0495d450c173ab0014d09c403d26886">BT_ERROR_ALREADY_DONE</a></td><td>Operation is already done </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
@@ -1353,7 +1394,7 @@ The <em>value</em> must not be freed by application.</dd></dl>
 
 <p>Creates the GATT service. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>service</em> should be destroyed by using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga66fc91a408ccba68e410f7bcf04aa61c" title="Destroys the GATT handle of service.">bt_gatt_service_destroy()</a></dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>service</em> should be destroyed by using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__SERVER__MODULE.html#ga66fc91a408ccba68e410f7bcf04aa61c" title="Destroys the GATT handle of service.">bt_gatt_service_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">uuid</td><td>The UUID of the service </td></tr>

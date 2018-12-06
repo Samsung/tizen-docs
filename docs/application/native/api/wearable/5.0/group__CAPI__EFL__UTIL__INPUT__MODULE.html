@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -108,6 +108,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes system and check input generate functions are supported, open devices generated events.  <a href="#ga1d38968a7c84f8ae47ffe6e6cc3cc77b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga91c9f7756c7039ed9f8931ced8852ffe">efl_util_inputgen_h</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga34932c0939dc3d275c1bc0bded539806">efl_util_input_initialize_generator_with_name</a> (unsigned int dev_type, const char *name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes system, check input generate functions are supported and then open events generator devices with given name.  <a href="#ga34932c0939dc3d275c1bc0bded539806"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga91c9f7756c7039ed9f8931ced8852ffe">efl_util_inputgen_h</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#gad95a69a06d596ce7809ee433ace5ca9c">efl_util_input_initialize_generator_with_sync</a> (unsigned int dev_type, const char *name)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the system, checks if input generated functions are supported and then open events generator devices synchronously.  <a href="#gad95a69a06d596ce7809ee433ace5ca9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga474c2e9c1e67d861788f4ff3b5778c57">efl_util_input_deinitialize_generator</a> (<a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga91c9f7756c7039ed9f8931ced8852ffe">efl_util_inputgen_h</a> inputgen_h)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes system and close opened devices.  <a href="#ga474c2e9c1e67d861788f4ff3b5778c57"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga9cb8a02657988991a2e777390fbfa9eb">efl_util_input_generate_key</a> (<a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga91c9f7756c7039ed9f8931ced8852ffe">efl_util_inputgen_h</a> inputgen_h, const char *key_name, int pressed)</td></tr>
@@ -587,6 +589,73 @@ The dev_type is changed into the unsigned int to perform bitwise operations. </d
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa28e81fa6c594e180d874d2dbbae35c9d">EFL_UTIL_ERROR_NO_SUCH_DEVICE</a></td><td>No such device or address </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aacf097c36dd0c51048eece3ba518a9fcd">EFL_UTIL_ERROR_INVALID_OPERATION</a></td><td>Function not implemented </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aaef7c8567712fc22a334f4fae987856d8">EFL_UTIL_ERROR_OUT_OF_MEMORY</a></td><td>Memory allocation failure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga474c2e9c1e67d861788f4ff3b5778c57" title="Deinitializes system and close opened devices.">efl_util_input_deinitialize_generator()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad95a69a06d596ce7809ee433ace5ca9c"></a><!-- doxytag: member="efl_util.h::efl_util_input_initialize_generator_with_sync" ref="gad95a69a06d596ce7809ee433ace5ca9c" args="(unsigned int dev_type, const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga91c9f7756c7039ed9f8931ced8852ffe">efl_util_inputgen_h</a> <a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#gad95a69a06d596ce7809ee433ace5ca9c">efl_util_input_initialize_generator_with_sync</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>dev_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initializes the system, checks if input generated functions are supported and then open events generator devices synchronously. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>platform </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/inputgenerator </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a> method. Error codes are described in Exception section. </dd>
+<dd>
+<em>dev_type</em> is changed into the unsigned int to perform bitwise operations. </dd>
+<dd>
+If the <em>name</em> is NULL, it will be set to "Input Generator" </dd>
+<dd>
+The returned object should be released with <a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga474c2e9c1e67d861788f4ff3b5778c57" title="Deinitializes system and close opened devices.">efl_util_input_deinitialize_generator()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev_type</td><td>The device type to generate events, values of <a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga5b239f8af05c06bd7d2ed8f2dd48fc31" title="Enumeration of device type generated events.">efl_util_input_device_type_e</a> combined with bitwise 'or'<br/>
+ Example: <a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#gga5b239f8af05c06bd7d2ed8f2dd48fc31aa406d41fdc4ed5ad8a13b4501b3dc7ac">EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN</a> | <a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#gga5b239f8af05c06bd7d2ed8f2dd48fc31a6ba701665717a0f321d34ad6c6caeaf4">EFL_UTIL_INPUT_DEVTYPE_KEYBOARD</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The device name (maximum 31 characters, can be NULL) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga91c9f7756c7039ed9f8931ced8852ffe" title="Definition for the input generator handle.">efl_util_inputgen_h</a> on success, otherwise <code>NULL</code> </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__INPUT__MODULE.html#ga91c9f7756c7039ed9f8931ced8852ffe" title="Definition for the input generator handle.">efl_util_inputgen_h</a></td><td>The input generator handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa5ae851bfc15767bd9bea1e78dbdea10d">EFL_UTIL_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aac6d5067a1273ee691d405cf9212a495a">EFL_UTIL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa28e81fa6c594e180d874d2dbbae35c9d">EFL_UTIL_ERROR_NO_SUCH_DEVICE</a></td><td>No such device or address </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aacf097c36dd0c51048eece3ba518a9fcd">EFL_UTIL_ERROR_INVALID_OPERATION</a></td><td>Function not implemented </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aaef7c8567712fc22a334f4fae987856d8">EFL_UTIL_ERROR_OUT_OF_MEMORY</a></td><td>Memory allocation failure </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EFL__UTIL__WIN__PROPERTY__MODULE.html#ggabd074ff1d7147114eea0fed44c8c208aa494993fa9d9f012d00e125bc2145468c">EFL_UTIL_ERROR_PERMISSION_DENIED</a></td><td>Has no permission to initialize input generator </td></tr>
   </table>
   </dd>
 </dl>
