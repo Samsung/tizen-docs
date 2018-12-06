@@ -1,4 +1,5 @@
 # Tizen Studio 2.4 Release Notes
+# Tizen Studio 2.4 Release Notes
 
 
 ## IDE and Tools
@@ -8,8 +9,8 @@
 
 -   Device Manager
 	-   Enabled Device Manager Context UI to be extended by plugins
--   RT-IDE
-	-   RT-IDE GNU Compiler Collection (GCC) toolchain is updated to version 6.3.1.
+-   RTIDE
+	-   RTIDE GNU Compiler Collection (GCC) toolchain is updated to version 6.3.1.
 -   SmartThings&trade;
 	-   The setupId is a mandatory field and is mapped to the device onboarding ID.
 	-   The RESTful API Modeling Language (RAML) for SmartThings&trade; is updated.
@@ -17,7 +18,7 @@
 	-   Removed portable object (*.po) files , which are packaged into tpk.
 
 ### Changed Features
--	RT-IDE
+-	RTIDE
 	-   Removed the local template for creating a project. The project can be created using the latest RT code from GitHub.
 
 ### Fixed Bugs
@@ -48,7 +49,7 @@
 	-   You can create unit tests for Tizen 2.3.2 and higher version projects only. Now the Tizen Studio does not support unit testing for older versions.
 -	Web IDE
 	-   The preview tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the preview tab in the Web Page Editor, use the preview feature **Ctrl + 4** of the Web SDK HTML Editor.
-	-   In RDS (Rapid Development Support) mode, the web unit test result is not updated.
+	-   In  Rapid Development Support (RDS) mode, the web unit test result is not updated.
 -	Certificate Manager
 	-   Overwriting a duplicate certificate profile in the migration wizard works incorrectly on macOS.
 	-   IoT certification currently requires a user to manually download and select the certificate.

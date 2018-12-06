@@ -8,8 +8,8 @@
 
 -   SDB
 	-  `wait-for-device` command added, when this command is issued SDB waits indefinitely for the target to come to `device` state.
--   RT IDE Certificate Manager
-	-   Integrated Certificate Manager into RT IDE.
+-   RTIDE Certificate Manager
+	-   Integrated Certificate Manager into RTIDE.
 -   Baseline SDK Size Optimizations
 	-   Optimized baseline SDK size from 480MB to 320MB.
 
@@ -45,7 +45,7 @@
 	-   You can create unit tests only for Tizen 2.3.2 and later version projects. Currently, Tizen Studio does not support unit tests for the earlier versions.
 -	Web IDE
 	-   The preview tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the preview tab in the Web Page Editor, use the preview feature **Ctrl + 4** of the Web SDK HTML Editor.
-	-   In RDS (Rapid Development Support) mode, the web unit test result is not updated.
+	-   In Rapid Development Support (RDS) mode, the web unit test result is not updated.
 -	Certificate Manager
 	-   Overwriting a duplicate certificate profile in the migration wizard works incorrectly on macOS.
 	-   IoT certification currently requires a user to manually download and select the certificate.
