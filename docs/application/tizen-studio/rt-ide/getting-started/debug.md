@@ -34,42 +34,6 @@ To debug the application:
 
    ![Debug configuration](./media/rt_debug_config.png)
 
-5. Before the debugging starts, the **Confirm Perspective Switch** dialog box is shown. Click **No**, and add **Source Mapping** before proceeding to debug perspective:
-
-   ![Debug perspectiveno](./media/rt_debug_confirmno.png)
-   
-6. To add **Source Mapping**, click **Debug Configurations** in the debug drop-down list:
-
-   ![Debug configurations](./media/rt_debug_config_menu.png)
-
-7. Expand the **GDB OpenOCD Debugging** from the list in the left, and select the available configuration. Select the **Source** tab, and click **Add**:
-
-	![Debug sourceadd](./media/rt_debug_source.png)
-   
-8. Select **Path Mapping** option from the **Add Source** dialog box:
-
-	![Debug sourcepath](./media/rt_debug_pathadd.png)
-	
-9. In the **Path Mapping** dialog click **Add**, and enter the name for new path mapping:
-	
-	- In the Configuration Path, add `/root/tizenrt` as path.
-	- In the Local file system path, select the path where the TizenRT platform code is present.
-	
-	![Debug sourcepath](./media/rt_debug_pathmapping.png)
-	
-	![Debug filepath](./media/rt_debug_filepath.png)
-	
-	![Debug rtcodepath](./media/rt_debug_fileaddpath.png)
-	
-10. Click **OK** after the TizenRT platform code has been selected:
-	
-	![Debug filepathok](./media/rt_debug_filepathok.png)
-	
-	After, you have added the path mapping, you can see the new path mapping entry in **source** tab:
-	
-	![Debug pathmapadded](./media/rt_debug_pathmapadded.png)
-	
-	After path mapping has been added, click **Debug** to start debugging.
 	**Confirm Perspective** dialog box is shown, to switch to the **Debug** perspective, click **Yes**:
    
 	![Perspective switch](./media/rt_debug_switch.png)
