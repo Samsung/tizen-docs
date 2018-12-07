@@ -6,9 +6,6 @@ You can load different language resources for different locales in your applicat
 
 - [Localization](localization.md)
 
-You can use the following internationalization features in your .NET applications:
-
-- [Phone Number Management](phonenumber.md)
 
 ## Related Information
 * Dependencies
