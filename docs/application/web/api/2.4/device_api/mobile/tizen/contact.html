@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Contact API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Contact API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Contact">
@@ -449,6 +449,18 @@ CUSTOM - Custom IM service provider. The actual type can be set in the label.   
 The <em>tizen.contact </em>object allows access to the Contact API functionality.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="ContactManagerObject::contact">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ContactManager </span><span class="name">contact</span></span><div class="brief">
+ Object representing a contact manager.
+            </div>
+<p><span class="version">Since: </span>
+ 1.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="ContactManager">
 <a class="backward-compatibility-anchor" name="::Contact::ContactManager"></a><h3>2.2. ContactManager</h3>
@@ -3626,6 +3638,14 @@ This function returns a newly created Person object that indicates the separated
                 </li>
         </ul>
 </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Person:
+                  </span>
+ Newly created Person object that indicates the separated contact
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -4345,14 +4365,14 @@ catch (err)
 <a class="backward-compatibility-anchor" name="::Contact::Contact::clone"></a><code><b><span class="methodName">clone</span></b></code>
 </dt>
 <dd>
+<div class="brief">
+ Creates a clone of the Contact object, detached from any address book.
+            </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Contact">Contact</a> clone();</pre></div>
 <p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
-            <p>
-Creates a clone of the Contact object, detached from any address book.
-            </p>
             <p>
 The Contact object returned by the <var>clone()</var> method will have its identifier
 set to <var>null</var> and will be detached from any address book.
@@ -4853,8 +4873,7 @@ For more details, see RFC 2426, Section 3.5.3.
  The ContactWebSite interface contains the URL and the type of web site.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString url, optional DOMString type)]
-  interface ContactWebSite
-  {
+  interface ContactWebSite {
     attribute DOMString url;
     attribute DOMString type;
   };</pre>
@@ -4918,8 +4937,7 @@ By default, this attribute is set to HOMEPAGE.
  The <em>ContactAnniversary </em>interface contains the date and description of an anniversary.
           </div>
 <pre class="webidl prettyprint">  [Constructor(Date date, optional DOMString? label)]
-  interface ContactAnniversary
-  {
+  interface ContactAnniversary {
     attribute Date date;
     attribute DOMString? label;
   };</pre>
@@ -4968,8 +4986,7 @@ By default, this attribute is set to <var>null</var>.
 <div class="brief">
  The ContactAddressInit dictionary defines the properties of a ContactAddress to pass to the ContactAddress constructor.
           </div>
-<pre class="webidl prettyprint">  dictionary ContactAddressInit
-  {
+<pre class="webidl prettyprint">  dictionary ContactAddressInit {
     DOMString country;
     DOMString region;
     DOMString city;
@@ -4996,8 +5013,7 @@ See ContactAddress interface for more information about the members.
 on the Earth's surface.
           </div>
 <pre class="webidl prettyprint">  [Constructor(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict)]
-  interface ContactAddress
-  {
+  interface ContactAddress {
     attribute DOMString? country;
     attribute DOMString? region;
     attribute DOMString? city;
@@ -5177,8 +5193,7 @@ By default, this attribute is initialized to <var>null</var>.
  The ContactPhoneNumber interface contains the number and the type of phone number.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString number, optional DOMString[] types, optional boolean isDefault)]
-  interface ContactPhoneNumber
-  {
+  interface ContactPhoneNumber {
     attribute DOMString number;
     attribute boolean isDefault;
     attribute DOMString[] types;
@@ -5315,8 +5330,7 @@ By default, this attribute is initialized to <var>null</var>.
  The ContactEmailAddress interface contains the email address and the type of email address.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString email, optional DOMString[] types, optional boolean isDefault)]
-  interface ContactEmailAddress
-  {
+  interface ContactEmailAddress {
     attribute DOMString email;
     attribute boolean isDefault;
     attribute DOMString[] types;
@@ -5430,8 +5444,7 @@ By default, this attribute is initialized to <var>null</var>.
  The ContactInstantMessenger interface contains the instant messenger (IM) address and the type of IM provider.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type)]
-  interface ContactInstantMessenger
-  {
+  interface ContactInstantMessenger {
     attribute DOMString imAddress;
     attribute <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a> type;
     attribute DOMString? label;
@@ -5495,8 +5508,7 @@ By default, this attribute is initialized to <var>null</var>.
  The ContactGroup interface that defines a group.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI)]
-  interface ContactGroup
-  {
+  interface ContactGroup {
     readonly attribute <a href="#ContactGroupId">ContactGroupId</a>? id;
     readonly attribute <a href="#AddressBookId">AddressBookId</a>? addressBookId;
     attribute DOMString name;
@@ -5649,8 +5661,7 @@ By default, this attribute is set to false.
  The ContactRelationship interface contains the relationship of the contact.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type)]
-  interface ContactRelationship
-  {
+  interface ContactRelationship {
     attribute DOMString relativeName;
     attribute <a href="#ContactRelationshipType">ContactRelationshipType</a> type;
     attribute DOMString? label;
@@ -5746,7 +5757,7 @@ get or save a list of persons.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Person">Person</a>[] persons);</pre></div>
 <p><span class="version">Since: </span>
- 2.0
+ 1.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -6463,19 +6474,16 @@ watcherId = tizen.contact.addChangeListener(watcher);
     attribute DOMString? logoURI;
   };
   [Constructor(DOMString url, optional DOMString type)]
-  interface ContactWebSite
-  {
+  interface ContactWebSite {
     attribute DOMString url;
     attribute DOMString type;
   };
   [Constructor(Date date, optional DOMString? label)]
-  interface ContactAnniversary
-  {
+  interface ContactAnniversary {
     attribute Date date;
     attribute DOMString? label;
   };
-  dictionary ContactAddressInit
-  {
+  dictionary ContactAddressInit {
     DOMString country;
     DOMString region;
     DOMString city;
@@ -6487,8 +6495,7 @@ watcherId = tizen.contact.addChangeListener(watcher);
     DOMString label;
   };
   [Constructor(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict)]
-  interface ContactAddress
-  {
+  interface ContactAddress {
     attribute DOMString? country;
     attribute DOMString? region;
     attribute DOMString? city;
@@ -6500,31 +6507,27 @@ watcherId = tizen.contact.addChangeListener(watcher);
     attribute DOMString? label;
   };
   [Constructor(DOMString number, optional DOMString[] types, optional boolean isDefault)]
-  interface ContactPhoneNumber
-  {
+  interface ContactPhoneNumber {
     attribute DOMString number;
     attribute boolean isDefault;
     attribute DOMString[] types;
     attribute DOMString? label;
   };
   [Constructor(DOMString email, optional DOMString[] types, optional boolean isDefault)]
-  interface ContactEmailAddress
-  {
+  interface ContactEmailAddress {
     attribute DOMString email;
     attribute boolean isDefault;
     attribute DOMString[] types;
     attribute DOMString? label;
   };
   [Constructor(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type)]
-  interface ContactInstantMessenger
-  {
+  interface ContactInstantMessenger {
     attribute DOMString imAddress;
     attribute <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a> type;
     attribute DOMString? label;
   };
   [Constructor(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI)]
-  interface ContactGroup
-  {
+  interface ContactGroup {
     readonly attribute <a href="#ContactGroupId">ContactGroupId</a>? id;
     readonly attribute <a href="#AddressBookId">AddressBookId</a>? addressBookId;
     attribute DOMString name;
@@ -6533,8 +6536,7 @@ watcherId = tizen.contact.addChangeListener(watcher);
     readonly attribute DOMString readOnly;
   };
   [Constructor(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type)]
-  interface ContactRelationship
-  {
+  interface ContactRelationship {
     attribute DOMString relativeName;
     attribute <a href="#ContactRelationshipType">ContactRelationshipType</a> type;
     attribute DOMString? label;
