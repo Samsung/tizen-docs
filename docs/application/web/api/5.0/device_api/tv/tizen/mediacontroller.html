@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>MediaController API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MediaController API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
@@ -181,6 +181,14 @@ For more information on the Media Controller features, see <a href="https://deve
 <p><span class="version">Since: </span>
  5.0
           </p>
+<div class="description">
+          <ul>
+            <li>
+ACTIVE - Corresponds to active server state.            </li>
+            <li>
+INACTIVE - Corresponds to inactive server state.            </li>
+          </ul>
+         </div>
 </div>
 <div class="enum" id="MediaControllerPlaybackState">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackState"></a><h3>1.2. MediaControllerPlaybackState</h3>
@@ -191,6 +199,24 @@ For more information on the Media Controller features, see <a href="https://deve
 <p><span class="version">Since: </span>
  5.0
           </p>
+<div class="description">
+          <ul>
+            <li>
+PLAY - Corresponds to play media controller playback state.            </li>
+            <li>
+PAUSE - Corresponds to pause media controller playback state.            </li>
+            <li>
+STOP - Corresponds to stop media controller playback state.            </li>
+            <li>
+NEXT - Corresponds to next media controller playback state.            </li>
+            <li>
+PREV - Corresponds to previous media controller playback state.            </li>
+            <li>
+FORWARD - Corresponds to forward media controller playback state..            </li>
+            <li>
+REWIND - Corresponds to rewind media controller playback state..            </li>
+          </ul>
+         </div>
 </div>
 </div>
 <div class="interfaces" id="interfaces-section">
@@ -212,6 +238,18 @@ For more information on the Media Controller features, see <a href="https://deve
 There is a <em>tizen.mediacontroller</em> object that allows access to the Media Controller API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="MediaControllerObject::mediacontroller">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MediaControllerManager </span><span class="name">mediacontroller</span></span><div class="brief">
+ Object representing a media controller manager.
+            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="MediaControllerManager">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerManager"></a><h3>2.2. MediaControllerManager</h3>
@@ -373,7 +411,7 @@ and be controlled by other application(client) remotely.
  5.0
             </p>
 <p><span class="remark">Remark: </span>
- Object is holding state which is automatically updated by update methods.
+ Object holds state which is automatically updated by update methods.
             </p>
 </li></ul>
 </div>
@@ -385,7 +423,7 @@ and be controlled by other application(client) remotely.
 </dt>
 <dd>
 <div class="brief">
- Update playback state and send notification to the listening clients.
+ Updates playback state and send notification to the listening clients.
 See <em>MediaControllerServerInfo.addPlaybackInfoChangeListener</em> to check
 how to receive playback info changes from server on client side.
             </div>
@@ -427,7 +465,7 @@ console.log("Current playback state is: " + mcServer.playbackInfo.state);
 </dt>
 <dd>
 <div class="brief">
- Update playback position and send notification to the listening clients.
+ Updates playback position and send notification to the listening clients.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void updatePlaybackPosition(unsigned long long position);</pre></div>
 <p><span class="version">Since: </span>
@@ -467,7 +505,7 @@ console.log("Current playback position is: " + mcServer.playbackInfo.position);
 </dt>
 <dd>
 <div class="brief">
- Update shuffle mode and send notification to the listening clients.
+ Updates shuffle mode and send notification to the listening clients.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void updateShuffleMode(boolean mode);</pre></div>
 <p><span class="version">Since: </span>
@@ -502,7 +540,7 @@ console.log("Current shuffle mode is: " + mcServer.playbackInfo.shuffleMode);
 </dt>
 <dd>
 <div class="brief">
- Update repeat mode and send notification to the listening clients.
+ Updates repeat mode and send notification to the listening clients.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void updateRepeatMode(boolean mode);</pre></div>
 <p><span class="version">Since: </span>
@@ -537,7 +575,7 @@ console.log("Current repeat mode is: " + mcServer.playbackInfo.repeatMode);
 </dt>
 <dd>
 <div class="brief">
- Update repeat mode and send notification to the listening clients.
+ Updates metadata and send notification to the listening clients.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);</pre></div>
 <p><span class="version">Since: </span>

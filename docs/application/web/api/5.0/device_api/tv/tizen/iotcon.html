@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Iotcon API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Iotcon API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Iotcon">
@@ -517,6 +517,18 @@ DEREGISTER - action of unregistering observation            </li>
 There is a <em>tizen.iotcon</em> object that allows access to the Iotcon API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="IotconObject::iotcon">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">Iotcon </span><span class="name">iotcon</span></span><div class="brief">
+ Object representing a exif manager.
+            </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="Iotcon">
 <a class="backward-compatibility-anchor" name="::Iotcon::Iotcon"></a><h3>2.2. Iotcon</h3>
@@ -3612,7 +3624,7 @@ var representation = new tizen.Representation(uriPath);
 <li class="attribute" id="Representation::children">
 <span class="attrName"><span class="type">Representation[]
                       </span><span class="name">children</span><span class="optional"> [nullable]</span></span><div class="brief">
- the representations belong to the representation as children.
+ Representations belonging to this representation.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3712,7 +3724,7 @@ query["filter"] = filter;
 <dt class="member" id="Query::resourceType"><span class="attrName"><a href="#ResourceType">ResourceType</a>? resourceType</span></dt>
 <dd>
 <div class="brief">
- resourceType The resource type specified as a filter for the resource.
+ The resource type specified as a filter for the resource.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3721,7 +3733,7 @@ query["filter"] = filter;
 <dt class="member" id="Query::resourceInterface"><span class="attrName"><a href="#ResourceInterface">ResourceInterface</a>? resourceInterface</span></dt>
 <dd>
 <div class="brief">
- resourceInterfaces The resource interface specified as a filter for the resource.
+ The resource interface specified as a filter for the resource.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3730,7 +3742,7 @@ query["filter"] = filter;
 <dt class="member" id="Query::filter"><span class="attrName">object? filter</span></dt>
 <dd>
 <div class="brief">
- filter The query filter consists of key and string data.
+ The query filter consists of key and string data.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3944,7 +3956,7 @@ catch (err)
 <li class="attribute" id="Response::request">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">Request </span><span class="name">request</span></span><div class="brief">
- the request, that server responded.
+ The request, that server responded.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3956,7 +3968,7 @@ catch (err)
 </li>
 <li class="attribute" id="Response::result">
 <span class="attrName"><span class="type">ResponseResult </span><span class="name">result</span></span><div class="brief">
- the result indicates the detailed information about the result of the response to request.
+ The result indicates the detailed information about the result of the response to request.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3970,7 +3982,7 @@ response.result = result;
 </li>
 <li class="attribute" id="Response::representation">
 <span class="attrName"><span class="type">Representation </span><span class="name">representation</span></span><div class="brief">
- the representation indicates the information of the resource.
+ The representation indicates the information of the resource.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -3993,7 +4005,7 @@ response.representation = representation;
 <li class="attribute" id="Response::options">
 <span class="attrName"><span class="type">IotconOption[]
                       </span><span class="name">options</span><span class="optional"> [nullable]</span></span><div class="brief">
- the options indicates the vendor specific options of COAP packet.
+ The options indicates the vendor specific options of COAP packet.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -4080,7 +4092,7 @@ response.send();
 <li class="attribute" id="RemoteResponse::result">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ResponseResult </span><span class="name">result</span></span><div class="brief">
- the result indicates the detailed information about the result of the response to request.
+ The result indicates the detailed information about the result of the response to request.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -4089,7 +4101,7 @@ response.send();
 <li class="attribute" id="RemoteResponse::representation">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">Representation </span><span class="name">representation</span></span><div class="brief">
- the representation indicates the information of the resource.
+ The representation indicates the information of the resource.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -4099,7 +4111,7 @@ response.send();
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">IotconOption[]
                       </span><span class="name">options</span><span class="optional"> [nullable]</span></span><div class="brief">
- the options indicates the vendor specific options of COAP packet.
+ The options indicates the vendor specific options of COAP packet.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -4666,7 +4678,7 @@ for <em>Client.findResource()</em>.
 <ul>
           <li class="param">
 <span class="name">isAlive</span>:
- - state of the remote resource.
+ State of the remote resource.
                 </li>
         </ul>
 </div>
@@ -4707,7 +4719,7 @@ for <em>Client.findResource()</em>.
 <ul>
           <li class="param">
 <span class="name">representation</span>:
- - state of the remote resource.
+ State of the remote resource.
                 </li>
         </ul>
 </div>
@@ -4748,7 +4760,7 @@ for <em>Client.findResource()</em>.
 <ul>
           <li class="param">
 <span class="name">pin</span>:
- - generated random pin.
+ Generated random pin.
                 </li>
         </ul>
 </div>

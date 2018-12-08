@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Content API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Content API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Content">
@@ -221,26 +221,42 @@ Playlist functionality has been added in Tizen 2.3.
 <h2>1. Type Definitions</h2>
 <div class="enum" id="ContentDirectoryStorageType">
 <a class="backward-compatibility-anchor" name="::Content::ContentDirectoryStorageType"></a><h3>1.1. ContentDirectoryStorageType</h3>
+<div class="brief">
+ Defines whether a content directory is stored on internal or external storage (such as a removable memory card).
+          </div>
 <pre class="webidl prettyprint">  enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
-          <p>
-Defines whether a content directory is stored on internal or external storage (such as a removable memory card).
-          </p>
+          <ul>
+            <li>
+INTERNAL - corresponds to internal content directory storage.            </li>
+            <li>
+EXTERNAL - corresponds to external content directory storage.            </li>
+          </ul>
          </div>
 </div>
 <div class="enum" id="ContentType">
 <a class="backward-compatibility-anchor" name="::Content::ContentType"></a><h3>1.2. ContentType</h3>
+<div class="brief">
+ Defines the type of content such as an image, video, audio, or any other.
+          </div>
 <pre class="webidl prettyprint">  enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
-          <p>
-Defines the type of content such as an image, video, audio, or any other.
-          </p>
+          <ul>
+            <li>
+IMAGE - corresponds to image content.            </li>
+            <li>
+VIDEO - corresponds to video content.            </li>
+            <li>
+AUDIO - corresponds to audio content.            </li>
+            <li>
+OTHER - corresponds to other content.            </li>
+          </ul>
          </div>
 <p><span class="remark">Remark: </span>
  "OTHER" type is added since Tizen 2.1 and since 4.0 it is optional type, related to <a href="http://tizen.org/feature/content.scanning.others">http://tizen.org/feature/content.scanning.others</a> feature.
@@ -249,27 +265,51 @@ One can check "OTHER" type support using systeminfo API with tizen.systeminfo.ge
 </div>
 <div class="enum" id="AudioContentLyricsType">
 <a class="backward-compatibility-anchor" name="::Content::AudioContentLyricsType"></a><h3>1.3. AudioContentLyricsType</h3>
+<div class="brief">
+ Defines whether the lyrics supplied with an audio file is time-synchronized.
+          </div>
 <pre class="webidl prettyprint">  enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
-          <p>
-Defines whether the lyrics supplied with an audio file is time-synchronized.
-          </p>
+          <ul>
+            <li>
+SYNCHRONIZED - corresponds to synchronized audio content lyrics.            </li>
+            <li>
+UNSYNCHRONIZED - corresponds to unsynchronized audio content lyrics.            </li>
+          </ul>
          </div>
 </div>
 <div class="enum" id="ImageContentOrientation">
 <a class="backward-compatibility-anchor" name="::Content::ImageContentOrientation"></a><h3>1.4. ImageContentOrientation</h3>
+<div class="brief">
+ Defines the orientation of an image.
+          </div>
 <pre class="webidl prettyprint">  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE",
     "ROTATE_270" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
-          <p>
-Defines the orientation of an image.
-          </p>
+          <ul>
+            <li>
+NORMAL - corresponds to normal image content orientation.            </li>
+            <li>
+FLIP_HORIZONTAL - corresponds to horizontal flip image content orientation.            </li>
+            <li>
+ROTATE_180 - corresponds to rotate 180 degrees image content orientation.            </li>
+            <li>
+FLIP_VERTICAL - corresponds to vertical flip image content orientation.            </li>
+            <li>
+TRANSPOSE - corresponds to transpose image content orientation.            </li>
+            <li>
+ROTATE_90 - corresponds to rotate 90 degrees image content orientation.            </li>
+            <li>
+TRANSVERSE - corresponds to transverse image content orientation.            </li>
+            <li>
+ROTATE_270 - corresponds to rotate 270 degrees image content orientation.            </li>
+          </ul>
          </div>
 </div>
 <div class="typedef" id="ContentId">
@@ -322,6 +362,18 @@ Defines the orientation of an image.
 The <em>tizen.content </em>object allows accessing the functionality of the Content module.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="ContentManagerObject::content">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ContentManager </span><span class="name">content</span></span><div class="brief">
+ Object representing a content manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="ContentManager">
 <a class="backward-compatibility-anchor" name="::Content::ContentManager"></a><h3>2.2. ContentManager</h3>
