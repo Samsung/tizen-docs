@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Power API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Power API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Power">
@@ -98,6 +98,12 @@ For more information on the Power features, see <a href="https://developer.tizen
 Screen and CPU resources are supported at present.
 Supported power resource states are provided in PowerScreenState and PowerCpuState enums respectively prefixed by the corresponding resource type.
           </p>
+          <ul>
+            <li>
+SCREEN - Corresponds to screen power resource.            </li>
+            <li>
+CPU - corresponds to CPU power resource.            </li>
+          </ul>
          </div>
 </div>
 <div class="enum" id="PowerScreenState">
@@ -105,7 +111,10 @@ Supported power resource states are provided in PowerScreenState and PowerCpuSta
 <div class="brief">
  Specifies the power state for screen resource.
           </div>
-<pre class="webidl prettyprint">  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL" };</pre>
+<pre class="webidl prettyprint">  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", <span class="nocode deprecated">"SCREEN_BRIGHT"</span> };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ SCREEN_BRIGHT is deprecated since Tizen 2.1.
+          </p>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -130,9 +139,6 @@ SCREEN_BRIGHT (Deprecated since 2.1) - The minimal screen state is set to <em>BR
 Note that the change in brightness does not affect the system brightness setting, i.e., the system brightness value is automatically restored when the resource is released or the process is completed.
           </p>
          </div>
-<p><span class="remark">Remark: </span>
- SCREEN_BRIGHT is deprecated since 2.1.
-          </p>
 </div>
 <div class="enum" id="PowerCpuState">
 <a class="backward-compatibility-anchor" name="::Power::PowerCpuState"></a><h3>1.3. PowerCpuState</h3>
@@ -184,6 +190,18 @@ It can be either a PowerScreenState or a PowerCpuState.
 There will be a <em>tizen.power </em>object that allows accessing of a functionality of the Power API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="PowerManagerObject::power">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PowerManager </span><span class="name">power</span></span><div class="brief">
+ Object representing a power manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="PowerManager">
 <a class="backward-compatibility-anchor" name="::Power::PowerManager"></a><h3>2.2. PowerManager</h3>
@@ -696,7 +714,7 @@ tizen.power.turnScreenOff();
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Power {
   enum PowerResource { "SCREEN", "CPU" };
-  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL" };
+  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", "SCREEN_BRIGHT" };
   enum PowerCpuState { "CPU_AWAKE" };
   typedef (<a href="#PowerScreenState">PowerScreenState</a> or <a href="#PowerCpuState">PowerCpuState</a>) PowerState;
   [NoInterfaceObject] interface PowerManagerObject {
