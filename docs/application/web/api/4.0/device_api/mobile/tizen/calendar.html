@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Calendar API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Calendar API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Calendar">
@@ -369,9 +369,22 @@ YEARLY - if the event occurs yearly            </li>
  1.0
           </p>
 <div class="description">
-          <p>
-"MO" to "SU" correspond to "Monday" to "Sunday".
-          </p>
+          <ul>
+            <li>
+"MO" corresponds to "Monday"            </li>
+            <li>
+"TU" corresponds to "Tuesday"            </li>
+            <li>
+"WE" corresponds to "Wednesday"            </li>
+            <li>
+"TH" corresponds to "Thursday"            </li>
+            <li>
+"FR" corresponds to "Friday"            </li>
+            <li>
+"SA" corresponds to "Saturday"            </li>
+            <li>
+"SU" corresponds to "Sunday"            </li>
+          </ul>
          </div>
 </div>
 <div class="enum" id="EventAvailability">
@@ -581,6 +594,18 @@ CANCELLED -  if the task has been cancelled            </li>
 <p><span class="version">Since: </span>
  1.0
           </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="CalendarManagerObject::calendar">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">CalendarManager </span><span class="name">calendar</span></span><div class="brief">
+ Object representing a calendar manager.
+            </div>
+<p><span class="version">Since: </span>
+ 1.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="CalendarManager">
 <a class="backward-compatibility-anchor" name="::Calendar::CalendarManager"></a><h3>2.2. CalendarManager</h3>
@@ -3124,8 +3149,7 @@ See <em>CalendarAttendee </em>interface for more information about the members.
  The CalendarAttendee interface implements the <em>CalendarAttendee </em>object that contains information about an event attendee.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString uri, optional <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>? attendeeInitDict)]
-  interface CalendarAttendee
-  {
+  interface CalendarAttendee {
     attribute DOMString uri;
     attribute DOMString? name;
     attribute <a href="#AttendeeRole">AttendeeRole</a> role;
@@ -3312,8 +3336,7 @@ For more information about the members, see <em>CalendarRecurrenceRule </em>inte
 (See RFC 5545, Section 3.3.10.)
           </div>
 <pre class="webidl prettyprint">  [Constructor(<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency, optional <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>? ruleInitDict)]
-  interface CalendarRecurrenceRule
-  {
+  interface CalendarRecurrenceRule {
     attribute <a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency;
     attribute unsigned short interval;
     attribute <a href="time.html#TZDate">TZDate</a>? untilDate;
@@ -4212,8 +4235,7 @@ To guarantee the running of the application on a device with Contact feature, de
     <a href="contact.html#ContactRef">ContactRef</a> contactRef;
   };
   [Constructor(DOMString uri, optional <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>? attendeeInitDict)]
-  interface CalendarAttendee
-  {
+  interface CalendarAttendee {
     attribute DOMString uri;
     attribute DOMString? name;
     attribute <a href="#AttendeeRole">AttendeeRole</a> role;
@@ -4234,8 +4256,7 @@ To guarantee the running of the application on a device with Contact feature, de
     <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };
   [Constructor(<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency, optional <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>? ruleInitDict)]
-  interface CalendarRecurrenceRule
-  {
+  interface CalendarRecurrenceRule {
     attribute <a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency;
     attribute unsigned short interval;
     attribute <a href="time.html#TZDate">TZDate</a>? untilDate;

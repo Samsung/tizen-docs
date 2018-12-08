@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Push API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Push API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Push">
@@ -171,6 +171,18 @@ UNREGISTERED - The application is not registered to the push server.            
 The <em>tizen.push </em>object allows access to the functionality of the Push API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="PushManagerObject::push">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PushManager </span><span class="name">push</span></span><div class="brief">
+ Object representing a push manager.
+            </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="PushManager">
 <a class="backward-compatibility-anchor" name="::Push::PushManager"></a><h3>2.2. PushManager</h3>
@@ -214,8 +226,6 @@ TimeoutError - If the operation timed out.              </li>
               <li>
 AbortError - If the operation cannot be finished properly.              </li>
             </ul>
-           </div>
-<div class="description">
             <p>
 The <em>connect()</em> method must be called before calling the <em>register()</em> method.
             </p>
