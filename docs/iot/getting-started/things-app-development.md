@@ -2,7 +2,7 @@
 
 To create a new application project using Things SDK API:
 
-1.  In the Tizen Studio, select **File > New > Tizen Project**.
+1.  In Tizen Studio, select **File > New > Tizen Project**.
 2.  Select **Template**, and click **Next**.
 
     ![Tizen Project Wizard](media/thingsapp_sample.png)
@@ -43,12 +43,12 @@ To create a new application project using Things SDK API:
 
     Instead of using an existing sample as a basis for your application, you can use the **IoT** template that makes use of the Things SDK API:
 
-    1.  In the Tizen Studio, select **File > New > Tizen Project**.
+    1.  In Tizen Studio, select **File > New > Tizen Project**.
     2.  Select **Template**, click **Next**, select **Custom > Iot-headless v4.0**, and click **Next**.
     3.  Select **Native Application**, click **Next**, select the **IoT** template, and click **Finish**.
 
-9.  You need a certificate to make the device work correctly. You only have to create the certificate once, when you first install the Tizen Studio.
-    1.  In the Tizen Studio menu, open the Certificate Manager by going to **Tools > Certificate Manager**.
+9.  You need a certificate to make the device work correctly. You only have to create the certificate once, when you first install Tizen Studio.
+    1.  In Tizen Studio menu, open the Certificate Manager by going to **Tools > Certificate Manager**.
 
         ![Open the Certificate Manager](media/certificate_manager.png)
 
@@ -82,7 +82,7 @@ To create a new application project using Things SDK API:
 
         ![Enter author details](media/cm_author.png)
 
-    8.  In the **Distributor Certificate** tab, select **Use the default Tizen distributor certificate** and select **Platform** in the **Privilege level** drop-down menu.
+    8.  In the **Distributor Certificate** tab, select **Use the default Tizen distributor certificate** and select **Platform** in the **Privilege level** drop-down list.
 
         ![Create distributor certificate](media/cm_privilege.png)
 
@@ -115,14 +115,14 @@ To create a new application project using Things SDK API:
 
 11. Connect the ARTIK 530 or Raspberry Pi 3 board to a Linux computer with a USB cable and make SDB connection.
 
-    For more information, see [Hardware Configuration](hardware-configuration.md).
+    For more information, see [Hardware Configuration](../preview2/getting-started/hardware-configuration.md).
 
-12. Confirm that "artik" or "rpi3" is shown in the Tizen Studio toolbar.(This will be shown when SDB is connected.)
+12. Confirm that "artik" or "rpi3" is shown in Tizen Studio toolbar.(This will be shown when SDB is connected.)
 
-    ![Artik connected to the Tizen Studio](media/tizen_studio_artik.png)
+    ![Artik connected to Tizen Studio](media/tizen_studio_artik.png)
 
-    ![Raspberry Pi 3 connected to the Tizen Studio](media/tizen_studio_rpi3.png)
+    ![Raspberry Pi 3 connected to Tizen Studio](media/tizen_studio_rpi3.png)
 
-13. In the Tizen Studio **Project Explorer** view, right-click the project and select **Run As > Tizen Native Project**.
+13. In Tizen Studio **Project Explorer** view, right-click the project and select **Run As > Tizen Native Project**.
 
     ![Running the project](media/thingsapp_runas.png)

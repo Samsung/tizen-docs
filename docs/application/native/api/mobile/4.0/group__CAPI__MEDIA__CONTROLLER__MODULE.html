@@ -100,7 +100,7 @@ Required Header</h2>
 <h2><a class="anchor" id="CAPI_MEDIA_CONTROLLER_OVERVIEW"></a>
 Overview</h2>
 <p>The <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html">Media Controller</a> API provides a set of functions to an effective communication between the server and the client for delivering the latest server information. It helps to transfer the information like playback info, shuffle mode, or the metadata of the latest server. <br/>
- To programming the interface, first, create a handler via <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9da7f1ab103ed4bcda2453a8005d07c9" title="Creates a media controller client.">mc_client_create()</a> or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. And then, the client request the necessary information to the server by using <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaedbe3f3e6c82f71ff1cc24395ec35bb9" title="Sets the callback for monitoring status of the media controller server.">mc_client_set_server_update_cb()</a>, or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gabf3b85ade9c212c80873b65ea2d78b46" title="Sets the callback for monitoring playback status of the media controller server.">mc_client_set_playback_update_cb()</a>. The server provides the requested information to the client by the callback. </p>
+ To programming the interface, first, create a handler via <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9da7f1ab103ed4bcda2453a8005d07c9" title="Creates a media controller client.">mc_client_create()</a> or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga08b1cf82de741c75595127e18b0f921b" title="Creates a media controller server.">mc_server_create()</a>. And then, the client request the necessary information to the server by using <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaeb8b2bb1db1c9ce8063d7a3a42f55186" title="Sets the callback for monitoring status of the media controller server.">mc_client_set_server_updated_cb()</a>, or <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga1c5a287814920e223e834bc7b4741686" title="Sets the callback for monitoring playback status of the media controller server.">mc_client_set_playback_updated_cb()</a>. The server provides the requested information to the client by the callback. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -112,6 +112,8 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller playback handle.  <a href="#ga79c7942e2eacc7bac72d784201f1f115"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#gae9101e67ce04bc94bdecfe3dafd199e1">mc_metadata_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller metadata handle.  <a href="#gae9101e67ce04bc94bdecfe3dafd199e1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga8f954ebc243085164d61e92ee8bfe3da">mc_playlist_h</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the media controller playlist handle.  <a href="#ga8f954ebc243085164d61e92ee8bfe3da"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="ga845142c24ba548a76008b1aa719a5cea"></a><!-- doxytag: member="media_controller_type.h::mc_client_h" ref="ga845142c24ba548a76008b1aa719a5cea" args="" -->
@@ -159,6 +161,22 @@ Typedefs</h2></td></tr>
 
 <p>The structure type for the media controller playback handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8f954ebc243085164d61e92ee8bfe3da"></a><!-- doxytag: member="media_controller_type.h::mc_playlist_h" ref="ga8f954ebc243085164d61e92ee8bfe3da" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void* <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga8f954ebc243085164d61e92ee8bfe3da">mc_playlist_h</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The structure type for the media controller playlist handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>
@@ -370,6 +388,32 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga3a9039102152fe46846cd4707eb41327"></a><!-- doxytag: member="media_controller_type.h::mc_playlist_update_mode_e" ref="ga3a9039102152fe46846cd4707eb41327" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga3a9039102152fe46846cd4707eb41327">mc_playlist_update_mode_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for the playlist update mode. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga3a9039102152fe46846cd4707eb41327a023bce6749c3ae9b910d5c01aceb88cc"></a><!-- doxytag: member="MC_PLAYLIST_UPDATED" ref="gga3a9039102152fe46846cd4707eb41327a023bce6749c3ae9b910d5c01aceb88cc" args="" -->MC_PLAYLIST_UPDATED</em>&nbsp;</td><td>
+<p>Create or Update playlist </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga3a9039102152fe46846cd4707eb41327aa745772873b83a94a21714991d8304ba"></a><!-- doxytag: member="MC_PLAYLIST_REMOVED" ref="gga3a9039102152fe46846cd4707eb41327aa745772873b83a94a21714991d8304ba" args="" -->MC_PLAYLIST_REMOVED</em>&nbsp;</td><td>
+<p>Remove playlist </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ga98da6ccbf8db2e7c5cf513617fa634bf"></a><!-- doxytag: member="media_controller_type.h::mc_repeat_mode_e" ref="ga98da6ccbf8db2e7c5cf513617fa634bf" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -482,6 +526,9 @@ Typedefs</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaa3ae52172988df333a6288cf305f8c6ba58753f821f23f06d0bb8a97958fe2ddd"></a><!-- doxytag: member="MC_SUBSCRIPTION_TYPE_REPEAT_MODE" ref="ggaa3ae52172988df333a6288cf305f8c6ba58753f821f23f06d0bb8a97958fe2ddd" args="" -->MC_SUBSCRIPTION_TYPE_REPEAT_MODE</em>&nbsp;</td><td>
 <p>Repeat mode </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa3ae52172988df333a6288cf305f8c6ba130a6186b75cfcba586a788b8492dc03"></a><!-- doxytag: member="MC_SUBSCRIPTION_TYPE_PLAYLIST" ref="ggaa3ae52172988df333a6288cf305f8c6ba130a6186b75cfcba586a788b8492dc03" args="" -->MC_SUBSCRIPTION_TYPE_PLAYLIST</em>&nbsp;</td><td>
+<p>Playlist (Since 4.0) </p>
 </td></tr>
 </table>
 </dd>

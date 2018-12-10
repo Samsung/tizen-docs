@@ -35,7 +35,7 @@ Implementing your application consists of:
   UI Builder is included in the Tizen Studio, and functions as a WYSIWYG (What You See Is What You Get) design environment for creating UIs for native applications.
 
   > **Note**  
-  > You can also design the application UI using the controls defined in the [User Interface](../../guides/ui/index.md) guides.
+  > You can also design the application UI using the controls defined in the [User Interface](../../guides/ui/overview.md) guides.
 
 
 - **Coding applications**

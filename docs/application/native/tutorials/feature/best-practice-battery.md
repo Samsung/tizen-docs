@@ -44,7 +44,7 @@ The application states are described in the following table.
 | `PAUSED`     | The application is running but invisible to the user. |
 | `TERMINATED` | The application is terminated.           |
 
-Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](../../guides/app-management/efl-ui-app.md#application-states-and-transitions).
+Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](../../guides/applications/efl-ui-app.md#application-states-and-transitions).
 
 ### Location Service Life-cycle
 

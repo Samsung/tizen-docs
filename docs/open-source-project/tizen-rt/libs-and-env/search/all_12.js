@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['r_5fok',['R_OK',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#ga24a7a0ceb1e8f5f44cb1038bb829030d',1,'unistd.h']]],
+  ['rand',['rand',['../group___s_t_d_l_i_b___l_i_b_c.html#gae23144bcbb8e3742b00eb687c36654d1',1,'stdlib.h']]],
+  ['read',['read',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#ga5fa13c3cfdb7371a855c2284a9fe6716',1,'unistd.h']]],
+  ['readdir',['readdir',['../group___d_i_r_e_n_t___k_e_r_n_e_l.html#ga104c9c6df60c439bb62880f8c0bb7b11',1,'dirent.h']]],
+  ['readdir_5fr',['readdir_r',['../group___d_i_r_e_n_t___k_e_r_n_e_l.html#ga5992e75ba59cedec83a00254a7586b6f',1,'dirent.h']]],
+  ['readme_5flibs_5fenv_2emd',['README_libs_env.md',['../_r_e_a_d_m_e__libs__env_8md.html',1,'']]],
+  ['realloc',['realloc',['../group___s_t_d_l_i_b___l_i_b_c.html#ga66c3b632a2c7b9c9ba91189a8c063c39',1,'stdlib.h']]],
+  ['recv',['recv',['../group___s_o_c_k_e_t.html#ga893583dc49862175155ccc71b213c0b8',1,'socket.h']]],
+  ['recvfrom',['recvfrom',['../group___s_o_c_k_e_t.html#gae37bffe1ee7e68d9a7ca8b6fb0f47a07',1,'socket.h']]],
+  ['region',['region',['../structpthread__attr__s.html#a8729d9c1806f50e849d795ec4f2af4c1',1,'pthread_attr_s::region()'],['../structdspace__s.html#ab51bd19de5152811de3eee7d6d8fb42c',1,'dspace_s::region()']]],
+  ['rem',['rem',['../structdiv__s.html#a1ba4c6426d29538ceed6a0db9b4e1df6',1,'div_s::rem()'],['../structldiv__s.html#a7c04b7afc95e3cc4480a634f3073ba8a',1,'ldiv_s::rem()'],['../structlldiv__s.html#a7c04b7afc95e3cc4480a634f3073ba8a',1,'lldiv_s::rem()']]],
+  ['req_5fmsg',['req_msg',['../structhttp__req__message.html#ac5357fd9963791387953400d6b8787d4',1,'http_req_message']]],
+  ['revents',['revents',['../structpollfd.html#a847a1e5a35870f186846a4c724108879',1,'pollfd']]],
+  ['rewinddir',['rewinddir',['../group___d_i_r_e_n_t___k_e_r_n_e_l.html#ga29baac04217cab77b26de52a1e9ed5bc',1,'dirent.h']]],
+  ['rmdir',['rmdir',['../group___u_n_i_s_t_d___k_e_r_n_e_l.html#gac93333e699e7c2f76f16cc7454d11f61',1,'unistd.h']]],
+  ['root_5fca',['root_ca',['../structssl__config__t.html#aba188ccd8e6c42ffb324a4eeae540a7e',1,'ssl_config_t::root_ca()'],['../structhttp__client__ssl__config__t.html#aba188ccd8e6c42ffb324a4eeae540a7e',1,'http_client_ssl_config_t::root_ca()']]],
+  ['root_5fca_5flen',['root_ca_len',['../structssl__config__t.html#ae5a4c2eed62fa72511b0f8d28045e707',1,'ssl_config_t::root_ca_len()'],['../structhttp__client__ssl__config__t.html#ae5a4c2eed62fa72511b0f8d28045e707',1,'http_client_ssl_config_t::root_ca_len()']]]
+];

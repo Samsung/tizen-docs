@@ -217,7 +217,7 @@ To define the kind of access and data your service application provides to other
 
 - Add the background category type (since Tizen 2.4).
 
-  You can [describe the background category](../../guides/app-management/efl-ui-app.md#describing-the-background-category) of your Tizen native application.
+  You can [describe the background category](../../guides/applications/efl-ui-app.md#describing-the-background-category) of your Tizen native application.
 
   To add background category types to allow running in the background, click **+** in the **Background Category** panel, select the category type, and click **OK**.
 
@@ -240,6 +240,6 @@ To define the kind of access and data your service application provides to other
 
   The **Source** tab of the manifest editor shows the code of the `tizen-manifest.xml` file. You can [edit the basic syntax of the XML document](../../../tizen-studio/native-tools/manifest-text-editor.md) and also see how changes made on the other tabs are reflected in the raw XML source content.
 
->  **Note**
+> **Note**
 >
->  If you edit application information manually in the `tizen-manifest.xml` file source code, you can introduce errors preventing the application from running normally.
+> If you edit application information manually in the `tizen-manifest.xml` file source code, you can introduce errors preventing the application from running normally.

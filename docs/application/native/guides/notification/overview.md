@@ -13,7 +13,7 @@ You can use the following notifications and content sharing features in your nat
 
   The attach panel is a method that allows the user to attach various content into an application. You can attach images, take pictures, record voice, and select files on the attach panel. You can also select new applications to be launched.
 
-- [Minicontrol Window](minicontrol.md) **in mobile applications only**
+- [Minicontrol Window](minicontrol.md)
 
   A minicontrol is a small application view that can be shown in other applications, or the quick panel or lock screen. You can create a minicontrol and display it in the quick panel or lock screen. You can also host minicontrols in your application.
 

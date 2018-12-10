@@ -7,22 +7,22 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Package">
-<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+ <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Package API</h1></div>
 <div class="brief">
  This API provides functionalities to install or uninstall packages, and retrieve information about installed packages.<br>It also provides a listener method so that an application can be notified when there is a change on the installed packages.
         </div>
 <div class="description">
         <p>
-<b>Remark:</b> For wearable profile only, since 4.0 in case of accessing files, you need to add privilege mentioned in method description, moreover depending on your choice of contents path:
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
         </p>
         <ul>
           <li>
-if you want to access only internal storage by using this API, you need to add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>          </li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
           <li>
-if you want to access only external storage by using this API, you need to add privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>          </li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
           <li>
-if you want to access both storages, you need to add both privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>)          </li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
           <li>
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
@@ -35,7 +35,8 @@ For more information on the Package features, see <a href="https://developer.tiz
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
-<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#PackageId">PackageId</a>
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#PackageId">PackageId</a>
 </li></ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -70,12 +71,15 @@ For more information on the Package features, see <a href="https://developer.tiz
 </tr>
 <tr>
 <td><a href="#PackageManager">PackageManager</a></td>
-<td>void <a href="#PackageManager::install">install</a> (DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#PackageManager::uninstall">uninstall</a> (<a href="#PackageId">PackageId</a> id, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#PackageManager::getPackagesInfo">getPackagesInfo</a> (<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    <a href="#PackageInformation">PackageInformation</a> <a href="#PackageManager::getPackageInfo">getPackageInfo</a> (optional <a href="#PackageId">PackageId</a>? id)<br>
-    void <a href="#PackageManager::setPackageInfoEventListener">setPackageInfoEventListener</a> (<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback)<br>
-    void <a href="#PackageManager::unsetPackageInfoEventListener">unsetPackageInfoEventListener</a> ()</td>
+<td>
+<div>void <a href="#PackageManager::install">install</a> (DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PackageManager::uninstall">uninstall</a> (<a href="#PackageId">PackageId</a> id, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PackageManager::getPackagesInfo">getPackagesInfo</a> (<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>
+<a href="#PackageInformation">PackageInformation</a> <a href="#PackageManager::getPackageInfo">getPackageInfo</a> (optional <a href="#PackageId">PackageId</a>? id)</div>
+<div>void <a href="#PackageManager::setPackageInfoEventListener">setPackageInfoEventListener</a> (<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback)</div>
+<div>void <a href="#PackageManager::unsetPackageInfoEventListener">unsetPackageInfoEventListener</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#PackageInformation">PackageInformation</a></td>
@@ -83,18 +87,22 @@ For more information on the Package features, see <a href="https://developer.tiz
 </tr>
 <tr>
 <td><a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a></td>
-<td>void <a href="#PackageInformationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#PackageInformation">PackageInformation</a>[] informationArray)</td>
+<td><div>void <a href="#PackageInformationArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#PackageInformation">PackageInformation</a>[] informationArray)</div></td>
 </tr>
 <tr>
 <td><a href="#PackageProgressCallback">PackageProgressCallback</a></td>
-<td>void <a href="#PackageProgressCallback::onprogress">onprogress</a> (<a href="#PackageId">PackageId</a> id, short progress)<br>
-    void <a href="#PackageProgressCallback::oncomplete">oncomplete</a> (<a href="#PackageId">PackageId</a> id)</td>
+<td>
+<div>void <a href="#PackageProgressCallback::onprogress">onprogress</a> (<a href="#PackageId">PackageId</a> id, short progress)</div>
+<div>void <a href="#PackageProgressCallback::oncomplete">oncomplete</a> (<a href="#PackageId">PackageId</a> id)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#PackageInformationEventCallback">PackageInformationEventCallback</a></td>
-<td>void <a href="#PackageInformationEventCallback::oninstalled">oninstalled</a> (<a href="#PackageInformation">PackageInformation</a> info)<br>
-    void <a href="#PackageInformationEventCallback::onupdated">onupdated</a> (<a href="#PackageInformation">PackageInformation</a> info)<br>
-    void <a href="#PackageInformationEventCallback::onuninstalled">onuninstalled</a> (<a href="#PackageId">PackageId</a> id)</td>
+<td>
+<div>void <a href="#PackageInformationEventCallback::oninstalled">oninstalled</a> (<a href="#PackageInformation">PackageInformation</a> info)</div>
+<div>void <a href="#PackageInformationEventCallback::onupdated">onupdated</a> (<a href="#PackageInformation">PackageInformation</a> info)</div>
+<div>void <a href="#PackageInformationEventCallback::onuninstalled">onuninstalled</a> (<a href="#PackageId">PackageId</a> id)</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -105,9 +113,8 @@ For more information on the Package features, see <a href="https://developer.tiz
 <div class="brief">
  A unique ID for an installed package.
           </div>
-<pre class="webidl prettyprint">    typedef DOMString PackageId;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  typedef DOMString PackageId;</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 </div>
@@ -119,12 +126,11 @@ For more information on the Package features, see <a href="https://developer.tiz
 <div class="brief">
  This interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PackageManagerObject {
-        readonly attribute <a href="#PackageManager">PackageManager</a> package;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PackageManagerObject {
+    readonly attribute <a href="#PackageManager">PackageManager</a> package;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -138,36 +144,18 @@ The <em>tizen.package </em>object allows access to Package API functionality.
 <div class="brief">
  This interface defines the package manager.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PackageManager {
-
-
-        void install(DOMString packageFileURI,
-                     <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void uninstall(<a href="#PackageId">PackageId</a> id,
-                       <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback,
-                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-
-
-        void getPackagesInfo(<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback,
-                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        <a href="#PackageInformation">PackageInformation</a> getPackageInfo(optional <a href="#PackageId">PackageId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void setPackageInfoEventListener(<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void unsetPackageInfoEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PackageManager {
+    void install(DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                 raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void uninstall(<a href="#PackageId">PackageId</a> id, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getPackagesInfo(<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#PackageInformation">PackageInformation</a> getPackageInfo(optional <a href="#PackageId">PackageId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setPackageInfoEventListener(<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetPackageInfoEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -180,10 +168,8 @@ The <em>tizen.package </em>object allows access to Package API functionality.
 <div class="brief">
  Installs a package with a specified file on a device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void install(DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void install(DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -200,15 +186,13 @@ NotFoundError - If the package is not found at the specified location.          
 UnknownError - If it is not allowed to install the package by the platform or any other platform error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  platform
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/packagemanager.install
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  Virtual path cannot be used for the parameter. First, you need to convert any virtual path to a file URI path using the resolve function in the Filesystem API before passing it to the function.
             </p>
 <div class="parameters">
@@ -216,15 +200,15 @@ UnknownError - If it is not allowed to install the package by the platform or an
 <ul>
           <li class="param">
 <span class="name">packageFileURI</span>:
- The location of the package to install
+ The location of the package to install.
                 </li>
           <li class="param">
 <span class="name">progressCallback</span>:
- The method to invoke when the installation is in progress or has been completed
+ The method to invoke when the installation is in progress or has been completed.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke when an error occurs
+ The method to invoke when an error occurs.
                 </li>
         </ul>
 </div>
@@ -241,33 +225,35 @@ UnknownError - If it is not allowed to install the package by the platform or an
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var onInstallation =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var onInstallation =
 {
-   onprogress: function(packageId, percentage)
-   {
-      console.log("On installation(" + packageId + "): progress(" + percentage + ")");
-   },
-   oncomplete: function(packageId)
-   {
-      console.log("Installation(" + packageId + ") Complete");
-   }
-}
+  onprogress: function(packageId, percentage)
+  {
+    console.log("On installation(" + packageId + "): progress(" + percentage + ")");
+  },
+  oncomplete: function(packageId)
+  {
+    console.log("Installation(" + packageId + ") completed");
+  }
+};
 
 var onError = function(err)
 {
-   console.log("Error occurred on installation: " + err.name);
-}
+  console.log("Error occurred on installation: " + err.name);
+};
 
-/* Let's assume that the "test.wgt" file exists in the downloads directory */
-tizen.filesystem.resolve("downloads/test.wgt", function(file)
-{
-   console.log("file URI: " + file.toURI());
-   tizen.package.install(file.toURI(), onInstallation, onError);
-}, function(err)
-{
-   console.log("Error occurred on resolve: " + err.name);
-}, "r");
+/* Assumes that the "test.wgt" file exists in the downloads directory. */
+tizen.filesystem.resolve("downloads/test.wgt",
+    function(file)
+    {
+      console.log("file URI: " + file.toURI());
+      tizen.package.install(file.toURI(), onInstallation, onError);
+    },
+    function(err)
+    {
+      console.log("Error occurred on resolve: " + err.name);
+    },
+    "r");
 </pre>
 </div>
 </dd>
@@ -278,10 +264,8 @@ tizen.filesystem.resolve("downloads/test.wgt", function(file)
 <div class="brief">
  Uninstalls the package with a specified package ID.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void uninstall(<a href="#PackageId">PackageId</a> id, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void uninstall(<a href="#PackageId">PackageId</a> id, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -298,15 +282,13 @@ NotFoundError - If the package is not found with the specified ID.              
 UnknownError - If it is not allowed to uninstall the package from the platform or any other platform error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  platform
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/packagemanager.install
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  Some preloaded packages cannot be uninstalled. In this case, ErrorCallback with the UnKnownError type is launched.
             </p>
 <div class="parameters">
@@ -314,15 +296,15 @@ UnknownError - If it is not allowed to uninstall the package from the platform o
 <ul>
           <li class="param">
 <span class="name">id</span>:
- The package ID to uninstall
+ The package ID to uninstall.
                 </li>
           <li class="param">
 <span class="name">progressCallback</span>:
- The method to invoke when uninstallation is in progress or has been completed
+ The method to invoke when uninstallation is in progress or has been completed.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to invoke when an error occurs
+ The method to invoke when an error occurs.
                 </li>
         </ul>
 </div>
@@ -339,25 +321,24 @@ UnknownError - If it is not allowed to uninstall the package from the platform o
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var onUninstallation =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var onUninstallation =
 {
-   onprogress: function(packageId, percentage)
-   {
-      console.log("On Uninstallation(" + packageId + "): progress(" + percentage + ")");
-   },
-   oncomplete: function(packageId)
-   {
-      console.log("Uninstallation(" + packageId + ") Complete");
-   }
+  onprogress: function(packageId, percentage)
+  {
+    console.log("On uninstallation(" + packageId + "): progress(" + percentage + ")");
+  },
+  oncomplete: function(packageId)
+  {
+    console.log("Uninstallation(" + packageId + ") completed");
+  }
 };
 
 var onError = function(err)
 {
-   console.log("Error occurred on installation: " + err.name);
+  console.log("Error occurred on installation: " + err.name);
 };
 
-/* Let's assume that the package ID to uninstall is "testapp001" */
+/* Assumes that the package ID to uninstall is "testapp001". */
 tizen.package.uninstall("testapp001", onUninstallation, onError);
 </pre>
 </div>
@@ -369,10 +350,8 @@ tizen.package.uninstall("testapp001", onUninstallation, onError);
 <div class="brief">
  Gets information of the installed packages.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getPackagesInfo(<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getPackagesInfo(<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -387,12 +366,10 @@ The <em>errorCallback()</em> is launched with this error type:
 UnknownError - If any other platform error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/package.info
             </p>
 <div class="parameters">
@@ -400,11 +377,11 @@ UnknownError - If any other platform error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">successCallback</span>:
- The method to call when an invocation ends successfully
+ The method to call when an invocation ends successfully.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The method to call when an error occurs
+ The method to call when an error occurs.
                 </li>
         </ul>
 </div>
@@ -421,18 +398,17 @@ UnknownError - If any other platform error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function onListInstalledPackages(packages)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onListInstalledPackages(packages)
 {
-   for (var i = 0; i &lt; packages.length; i++)
-   {
-      console.log("Package id[" + i + "]: " + packages[i].id);
-   }
+  for (var i = 0; i &lt; packages.length; i++)
+  {
+    console.log("Package id[" + i + "]: " + packages[i].id);
+  }
 }
 
 tizen.package.getPackagesInfo(onListInstalledPackages, function(err)
 {
-   console.log("Can't obtain packages list" + err.name);
+  console.log("Can't obtain packages list: " + err.name);
 });
 </pre>
 </div>
@@ -444,10 +420,8 @@ tizen.package.getPackagesInfo(onListInstalledPackages, function(err)
 <div class="brief">
  Gets information of an installed package.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#PackageInformation">PackageInformation</a> getPackageInfo(optional <a href="#PackageId">PackageId</a>? id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#PackageInformation">PackageInformation</a> getPackageInfo(optional <a href="#PackageId">PackageId</a>? id);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -456,12 +430,10 @@ If the ID is set to <var>null</var> or not set at all, it returns the package in
 The list of installed packages and their package IDs is obtained using <em>getPackagesInfo()</em>.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/package.info
             </p>
 <div class="parameters">
@@ -475,8 +447,12 @@ The list of installed packages and their package IDs is obtained using <em>getPa
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- PackageInformation The information of a package
-              </div>
+<ul>
+<span class="return">PackageInformation:
+                  </span>
+ The information of a package.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -496,8 +472,7 @@ The list of installed packages and their package IDs is obtained using <em>getPa
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var packageInfo = tizen.package.getPackageInfo(null);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var packageInfo = tizen.package.getPackageInfo(null);
 
 console.log("Current Package ID: " + packageInfo.id);
 </pre>
@@ -510,10 +485,8 @@ console.log("Current Package ID: " + packageInfo.id);
 <div class="brief">
  Sets a listener to receive notifications for any changes made to the list of installed packages.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setPackageInfoEventListener(<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setPackageInfoEventListener(<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -524,12 +497,10 @@ This method sets a <em>PackageInformationEventCallback</em> type callback that i
 The callback lasts until the <em>unsetPackageInfoEventListener()</em> method is called.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/package.info
             </p>
 <div class="parameters">
@@ -557,21 +528,20 @@ The callback lasts until the <em>unsetPackageInfoEventListener()</em> method is 
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var packageEventCallback =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var packageEventCallback =
 {
-   oninstalled: function(packageInfo)
-   {
-      console.log('The package ' + packageInfo.name + ' is installed');
-   },
-   onupdated: function(packageInfo)
-   {
-      console.log('The package ' + packageInfo.name + ' is updated');
-   },
-   onuninstalled: function(packageId)
-   {
-      console.log('The package ' + packageId + ' is uninstalled');
-   }
+  oninstalled: function(packageInfo)
+  {
+    console.log("The package " + packageInfo.name + " is installed");
+  },
+  onupdated: function(packageInfo)
+  {
+    console.log("The package " + packageInfo.name + " is updated");
+  },
+  onuninstalled: function(packageId)
+  {
+    console.log("The package " + packageId + " is uninstalled");
+  }
 };
 
 tizen.package.setPackageInfoEventListener(packageEventCallback);
@@ -585,18 +555,14 @@ tizen.package.setPackageInfoEventListener(packageEventCallback);
 <div class="brief">
  Unsets the listener to stop receiving package notifications.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unsetPackageInfoEventListener();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unsetPackageInfoEventListener();</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/package.info
             </p>
 <div class="exceptionlist">
@@ -612,8 +578,7 @@ tizen.package.setPackageInfoEventListener(packageEventCallback);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-tizen.package.unsetPackageInfoEventListener();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.package.unsetPackageInfoEventListener();
 </pre>
 </div>
 </dd>
@@ -625,40 +590,19 @@ tizen.package.unsetPackageInfoEventListener();
 <div class="brief">
  This interface defines the general information available to an installed package.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PackageInformation {
-
-        readonly attribute <a href="#PackageId">PackageId</a> id;
-
-
-        readonly attribute DOMString name;
-
-
-        readonly attribute DOMString iconPath;
-
-
-        readonly attribute DOMString version;
-
-
-        readonly attribute long totalSize;
-
-
-        readonly attribute long dataSize;
-
-
-        readonly attribute Date lastModified;
-
-
-        readonly attribute DOMString author;
-
-
-        readonly attribute DOMString description;
-
-
-        readonly attribute <a href="application.html#ApplicationId">ApplicationId</a>[] appIds;
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PackageInformation {
+    readonly attribute <a href="#PackageId">PackageId</a> id;
+    readonly attribute DOMString name;
+    readonly attribute DOMString iconPath;
+    readonly attribute DOMString version;
+    readonly attribute long totalSize;
+    readonly attribute long dataSize;
+    readonly attribute Date lastModified;
+    readonly attribute DOMString author;
+    readonly attribute DOMString description;
+    readonly attribute <a href="application.html#ApplicationId">ApplicationId</a>[] appIds;
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="attributes">
@@ -669,8 +613,7 @@ tizen.package.unsetPackageInfoEventListener();
 </span><span class="type">PackageId </span><span class="name">id</span></span><div class="brief">
  An attribute to store the identifier of a package.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -679,8 +622,7 @@ tizen.package.unsetPackageInfoEventListener();
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  An attribute to store the package name.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -701,8 +643,7 @@ The relevant application is the one with the same
 <a href="#PackageInformation::id">id</a> of this package.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -711,8 +652,7 @@ The relevant application is the one with the same
 </span><span class="type">DOMString </span><span class="name">version</span></span><div class="brief">
  An attribute to store the package version.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -721,8 +661,7 @@ The relevant application is the one with the same
 </span><span class="type">long </span><span class="name">totalSize</span></span><div class="brief">
  An attribute to store the total installed size(package + data) of a package.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -731,8 +670,7 @@ The relevant application is the one with the same
 </span><span class="type">long </span><span class="name">dataSize</span></span><div class="brief">
  An attribute to store the current data size of a package.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -741,8 +679,7 @@ The relevant application is the one with the same
 </span><span class="type">Date </span><span class="name">lastModified</span></span><div class="brief">
  An attribute to store the latest installed or updated time of a package.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -751,8 +688,7 @@ The relevant application is the one with the same
 </span><span class="type">DOMString </span><span class="name">author</span></span><div class="brief">
  An attribute to store the author of a package.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -761,8 +697,7 @@ The relevant application is the one with the same
 </span><span class="type">DOMString </span><span class="name">description</span></span><div class="brief">
  An attribute to store the package description.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -772,8 +707,7 @@ The relevant application is the one with the same
                       </span><span class="name">appIds</span></span><div class="brief">
  An attribute to store the application ID list of a package.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -785,13 +719,10 @@ The relevant application is the one with the same
 <div class="brief">
  This interface invokes the success callback with an array of <em>PackageInformation </em>objects as an input parameter when the installed package list is retrieved.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface PackageInformationArraySuccessCallback {
-
-
-        void onsuccess(<a href="#PackageInformation">PackageInformation</a>[] informationArray);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PackageInformationArraySuccessCallback {
+    void onsuccess(<a href="#PackageInformation">PackageInformation</a>[] informationArray);
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -809,10 +740,8 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  Called when the asynchronous call completes successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PackageInformation">PackageInformation</a>[] informationArray);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PackageInformation">PackageInformation</a>[] informationArray);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -833,16 +762,11 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  This callback interface specifies subscriptions for any notification on the progress or completion of requests.
           </div>
-<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface PackageProgressCallback {
-
-
-        void onprogress(<a href="#PackageId">PackageId</a> id, short progress);
-
-
-        void oncomplete(<a href="#PackageId">PackageId</a> id);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface PackageProgressCallback {
+    void onprogress(<a href="#PackageId">PackageId</a> id, short progress);
+    void oncomplete(<a href="#PackageId">PackageId</a> id);
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -855,10 +779,8 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  Called while the request is in progress.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onprogress(<a href="#PackageId">PackageId</a> id, short progress);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onprogress(<a href="#PackageId">PackageId</a> id, short progress);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -866,7 +788,7 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <ul>
           <li class="param">
 <span class="name">id</span>:
- The package ID
+ The package ID.
                 </li>
           <li class="param">
 <span class="name">progress</span>:
@@ -882,10 +804,8 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  Called when the request is completed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oncomplete(<a href="#PackageId">PackageId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oncomplete(<a href="#PackageId">PackageId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -893,7 +813,7 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <ul>
           <li class="param">
 <span class="name">id</span>:
- The package ID
+ The package ID.
                 </li>
         </ul>
 </div>
@@ -906,19 +826,12 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  This callback interface specifies methods that are invoked when a package is installed, updated, or uninstalled.
           </div>
-<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface PackageInformationEventCallback {
-
-
-        void oninstalled(<a href="#PackageInformation">PackageInformation</a> info);
-
-
-        void onupdated(<a href="#PackageInformation">PackageInformation</a> info);
-
-
-        void onuninstalled(<a href="#PackageId">PackageId</a> id);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface PackageInformationEventCallback {
+    void oninstalled(<a href="#PackageInformation">PackageInformation</a> info);
+    void onupdated(<a href="#PackageInformation">PackageInformation</a> info);
+    void onuninstalled(<a href="#PackageId">PackageId</a> id);
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -931,10 +844,8 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  Called when a package is installed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void oninstalled(<a href="#PackageInformation">PackageInformation</a> info);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void oninstalled(<a href="#PackageInformation">PackageInformation</a> info);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -942,7 +853,7 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <ul>
           <li class="param">
 <span class="name">info</span>:
- The information of the installed package
+ The information of the installed package.
                 </li>
         </ul>
 </div>
@@ -954,10 +865,8 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  Called when a package is updated.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onupdated(<a href="#PackageInformation">PackageInformation</a> info);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onupdated(<a href="#PackageInformation">PackageInformation</a> info);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -965,7 +874,7 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <ul>
           <li class="param">
 <span class="name">info</span>:
- The information of the updated package
+ The information of the updated package.
                 </li>
         </ul>
 </div>
@@ -977,10 +886,8 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <div class="brief">
  Called when a package is uninstalled.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onuninstalled(<a href="#PackageId">PackageId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onuninstalled(<a href="#PackageId">PackageId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
@@ -988,7 +895,7 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <ul>
           <li class="param">
 <span class="name">id</span>:
- The ID of the uninstalled package
+ The ID of the uninstalled package.
                 </li>
         </ul>
 </div>
@@ -999,110 +906,46 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Package {
-
-
-    typedef DOMString PackageId;
-
-
-    [NoInterfaceObject] interface PackageManagerObject {
-        readonly attribute <a href="#PackageManager">PackageManager</a> package;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
-
-
-    [NoInterfaceObject] interface PackageManager {
-
-
-        void install(DOMString packageFileURI,
-                     <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback,
-                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void uninstall(<a href="#PackageId">PackageId</a> id,
-                       <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback,
-                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-
-
-        void getPackagesInfo(<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback,
-                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        <a href="#PackageInformation">PackageInformation</a> getPackageInfo(optional <a href="#PackageId">PackageId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void setPackageInfoEventListener(<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void unsetPackageInfoEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };
-
-
-    [NoInterfaceObject] interface PackageInformation {
-
-        readonly attribute <a href="#PackageId">PackageId</a> id;
-
-
-        readonly attribute DOMString name;
-
-
-        readonly attribute DOMString iconPath;
-
-
-        readonly attribute DOMString version;
-
-
-        readonly attribute long totalSize;
-
-
-        readonly attribute long dataSize;
-
-
-        readonly attribute Date lastModified;
-
-
-        readonly attribute DOMString author;
-
-
-        readonly attribute DOMString description;
-
-
-        readonly attribute <a href="application.html#ApplicationId">ApplicationId</a>[] appIds;
-
-    };
-
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface PackageInformationArraySuccessCallback {
-
-
-        void onsuccess(<a href="#PackageInformation">PackageInformation</a>[] informationArray);
-    };
-
-
-    [Callback, NoInterfaceObject] interface PackageProgressCallback {
-
-
-        void onprogress(<a href="#PackageId">PackageId</a> id, short progress);
-
-
-        void oncomplete(<a href="#PackageId">PackageId</a> id);
-    };
-
-
-    [Callback, NoInterfaceObject] interface PackageInformationEventCallback {
-
-
-        void oninstalled(<a href="#PackageInformation">PackageInformation</a> info);
-
-
-        void onupdated(<a href="#PackageInformation">PackageInformation</a> info);
-
-
-        void onuninstalled(<a href="#PackageId">PackageId</a> id);
-    };
-
+  typedef DOMString PackageId;
+  [NoInterfaceObject] interface PackageManagerObject {
+    readonly attribute <a href="#PackageManager">PackageManager</a> package;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
+  [NoInterfaceObject] interface PackageManager {
+    void install(DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                 raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void uninstall(<a href="#PackageId">PackageId</a> id, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getPackagesInfo(<a href="#PackageInformationArraySuccessCallback">PackageInformationArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#PackageInformation">PackageInformation</a> getPackageInfo(optional <a href="#PackageId">PackageId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setPackageInfoEventListener(<a href="#PackageInformationEventCallback">PackageInformationEventCallback</a> eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetPackageInfoEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface PackageInformation {
+    readonly attribute <a href="#PackageId">PackageId</a> id;
+    readonly attribute DOMString name;
+    readonly attribute DOMString iconPath;
+    readonly attribute DOMString version;
+    readonly attribute long totalSize;
+    readonly attribute long dataSize;
+    readonly attribute Date lastModified;
+    readonly attribute DOMString author;
+    readonly attribute DOMString description;
+    readonly attribute <a href="application.html#ApplicationId">ApplicationId</a>[] appIds;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface PackageInformationArraySuccessCallback {
+    void onsuccess(<a href="#PackageInformation">PackageInformation</a>[] informationArray);
+  };
+  [Callback, NoInterfaceObject] interface PackageProgressCallback {
+    void onprogress(<a href="#PackageId">PackageId</a> id, short progress);
+    void oncomplete(<a href="#PackageId">PackageId</a> id);
+  };
+  [Callback, NoInterfaceObject] interface PackageInformationEventCallback {
+    void oninstalled(<a href="#PackageInformation">PackageInformation</a> info);
+    void onupdated(<a href="#PackageInformation">PackageInformation</a> info);
+    void onuninstalled(<a href="#PackageId">PackageId</a> id);
+  };
 };</pre>
 </div>
 <div id="page-footer">

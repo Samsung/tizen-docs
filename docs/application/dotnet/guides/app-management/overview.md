@@ -1,12 +1,8 @@
 # Application Management
 
-The application management features cover the various application models available for Tizen .NET applications. They describe the application life-cycle and resources, and the communication methods available for the application.
+The application management features cover application resources, the communication methods available for the application, and getting application information.
 
 You can use the following application management features in your .NET applications:
-
-- [Applications](applications.md)
-
-  Tizen provides various application models to allow you to create applications targeted for specific tasks. You can create UI applications to run on the foreground, and specific applications to function as the watch face for the device clock, or as a widget available on the home screen.
 
 - [Application Icons](app-icons.md)
 
@@ -24,9 +20,17 @@ You can use the following application management features in your .NET applicati
 
   You can retrieve information about the packages installed on the device. You can also monitor for changes in the device packages.
 
-- [Application Data Exchange](app-communication.md)
+The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
 
-  The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
+You can use the following application data exchange features in your .NET applications:
+
+-   [Message Port](message-port.md)
+
+    Applications communicate with each other using message ports. You can send and receive messages using the map data format and trusted or untrusted message port instances.
+
+-   [Data Control](data-control.md)
+
+    You can exchange SQL- or key-value-type data between applications. All applications can request data shared by other applications, but only service applications can provide their own data.
 
 
 ## Related Information

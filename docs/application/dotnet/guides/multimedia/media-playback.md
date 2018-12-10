@@ -121,6 +121,11 @@ The [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Ti
 
     After the player state is changed to `Ready`, you can [read the subtitle track](#insert).
 
+- Spherical Video Playback
+
+  Use the `SphericalVideo` Property of the `Tizen.Multimedia.Player` class to set the rendering attributes for spherical video playback.
+
+
 <a name="stream"></a>
 ## Playback Streams
 
@@ -218,7 +223,7 @@ To play an audio file:
 1.  After creating the player, specify the audio file to play by creating an instance of the [Tizen.Multimedia.MediaUriSource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaUriSource.html) class with the path to the audio file, and setting that as the `Source` property of the [Tizen.Multimedia.Player](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Player.html) class instance you want to play the file with:
 
     ```
-    player.Source = new MediaUriSource(audioPath);
+    player.SetSource(new MediaUriSource(audioPath));
     ```
 
 2. Prepare the player for playback using the `PrepareAsync()` method of the `Tizen.Multimedia.Player` class:
@@ -250,14 +255,14 @@ To play a video file:
 
 2. To set the display on which the video is played, use the `Display` property of the `Tizen.Multimedia.Player` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the [Tizen.Xamarin.Forms.Extension.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Xamarin.Forms.Extension.MediaView.html) class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
     ```
-    var mediaView = new Tizen.Xamarin.Forms.Extension.MediaView();
+    var mediaView = new VideoView();
 
     mediaView.NativeViewCreated += (s, e) =>
     {
-        player.Display = new Display((Tizen.Multimedia.MediaView)mediaView.NativeView);
+        player.Display = new Display((Tizen.Multimedia.MediaView)(s as VideoView).NativeView);
     };
     ```
 
@@ -384,7 +389,7 @@ To retrieve information about the audio and video streams:
         Retrieve information about the album, artist, author, genre, title, and year using the `GetMetadata()` method. The available metadata attributes are defined in the [Tizen.Multimedia.StreamMetadataKey](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamMetadataKey.html) enumeration.
 
         ```
-        Tizen.Log.Info(LogTag, $"Album = {player.StreamInfo.GetMetadata(StreamMetadataKey.Alarm)}");
+        Tizen.Log.Info(LogTag, $"Album = {player.StreamInfo.GetMetadata(StreamMetadataKey.Album)}");
         Tizen.Log.Info(LogTag, $"Artist = {player.StreamInfo.GetMetadata(StreamMetadataKey.Artist)}");
         Tizen.Log.Info(LogTag, $"Author = {player.StreamInfo.GetMetadata(StreamMetadataKey.Author)}");
         Tizen.Log.Info(LogTag, $"Genre = {player.StreamInfo.GetMetadata(StreamMetadataKey.Genre)}");
@@ -442,7 +447,7 @@ To start and stop playing a tone:
     The first parameter defines the tone type as a value of the [Tizen.Multimedia.ToneType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.ToneType.html) enumeration.
 
     ```
-    await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media));
+    await TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), -1);
     ```
 
 2. To stop playback, use the `StartAsync()` method with the `cancellationToken` parameter:
@@ -450,7 +455,7 @@ To start and stop playing a tone:
     ```
     var cancellationTokenSource = new CancellationTokenSource();
 
-    TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), cancellationTokenSource);
+    TonePlayer.StartAsync(ToneType.Default, new AudioStreamPolicy(AudioStreamType.Media), -1, cancellationTokenSource);
 
     cancellationTokenSource.Cancel();
     ```

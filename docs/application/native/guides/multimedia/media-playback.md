@@ -15,7 +15,7 @@ The main media playback features are:
 
 - Using the player [features](#features)
 
-  Enables you manage the player and control the volume, sound mode, display, stream info, and audio effects.
+  Enables you to manage the player and control the volume, sound mode, display, stream info, and audio effects.
 
 - Streaming playback
 
@@ -88,13 +88,9 @@ The Player API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__
 
 - Modifying playback properties
 
-  When the player state is changed to READY, you can modify various playback properties, such as volume, sound type, latency mode, mute mode, and looping mode.
+  When the player state is changed to READY, you can modify various playback properties, such as volume, audio latency mode, mute mode, looping mode, audio only mode, track information of each stream and etc.
 
 - Moving the audio and video content based on time
-
-- Controlling the volume of the audio and video content based on each instance
-
-  The player works based on the audio session manager policy. This means that an application can be interrupted by another application if a resource is in conflict or it has an audio policy rule to follow. You can change the session policy directly by using the Sound Manager API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html) applications).
 
 - Getting information about the audio and video content
 
@@ -130,12 +126,21 @@ The Player sub-APIs offer the following features:
 
   After changing to the READY state, the subtitles can be read.
 
+- Media Streams
+
+  Use the media stream API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html) applications) to play and control the external demuxed stream.
+
+- Spherical Video Playback
+
+  Use the Spherical Video API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__360__MODULE.html) applications) to set the rendering attributes for spherical video playback.
+
+
 <a name="stream"></a>
 ## Playback Streams
 
 You can set specific URLs for streaming media playback by using the `player_set_uri()` function.
 
-Both Hypertext Transfer Protocol (HTTP) and Real Time Streaming Protocol (RTSP) protocols support streaming media playback. The HTTP request header supports the playback of both complete and download-in-progress media files. The index table (atoms) must be moved in front of the file for progressive download.
+Both Hypertext Transfer Protocol (HTTP) and Real Time Streaming Protocol (RTSP) protocols support streaming media playback. The HTTP request header supports the playback of both complete and download-in-progress media files.
 
 For HTTP streaming, buffering can happen when the player is prepared. You can get the status using the `player_set_buffering_cb()` function.
 
@@ -144,11 +149,9 @@ The player supports the streaming protocol features:
  -  Hypertext Transfer Protocol (HTTP)
     - HTTP Streaming
     - HTTP Live Streaming
-    - HTTP Progressive Download Play
 
  -  Real Time Streaming Protocol (RTSP)
     - RTSP Streaming
-
 
 <a name="wav"></a>
 ## WAV Player
@@ -159,7 +162,7 @@ Tizen enables your application to play WAVE format audio in 1 of 2 ways:
 
 - Through the multimedia application control **in mobile applications only**
 
-  When using the [multimedia application control](../app-management/common-appcontrol.md#multimedia), the device standard media player application is launched to play audio.
+  When using the [multimedia application control](../app-management/common-appcontrols.md#multimedia), the device standard media player application is launched to play audio.
 
 - With the WAV player functions
 
@@ -461,6 +464,7 @@ To play a video file:
    > For an overlay surface, when the device orientation changes, the displayed video does not rotate automatically. If you want to change the video orientation according to the device orientation, use the `player_set_display_rotation()` function within the `app_device_orientation_cb()` callback function used by the application. For an Evas surface, the Evas object for the video is rotated by the window manager used by the application, not by the `player_set_display_rotation()` function.
 
 <a name="play_video_prepare"></a>
+
 3. Prepare the player for playback using the `player_prepare()` function:
 
    ```
@@ -476,6 +480,7 @@ To play a video file:
    Both functions change the player state from `PLAYER_STATE_IDLE` to `PLAYER_STATE_READY`, which is required to start playback.
 
 <a name="play_video_play"></a>
+
 4. Play the video file:
 
    1. Ensure that the player state has changed to `PLAYER_STATE_READY`. To check the state, use the `player_get_state()` function in a waiting loop:
@@ -855,7 +860,9 @@ To insert subtitles to a video file:
 
 To start and stop the WAV player:
 
-1. To start the WAV player, use the `wav_player_start()` function.
+1. Start playback using the `wav_player_start_new()` function.
+
+   The second parameter should be sound information handle which can created by `sound_manager_create_stream_information()`.
 
    The third parameter defines a callback that is invoked when the player finishes playback. Implement the callback and handle any post-playback actions in it.
 
@@ -875,8 +882,11 @@ To start and stop the WAV player:
        int wav_player_id;
        wav_player_error_e ret;
        const char* wav_path = "PATH OF YOUR WAV FILE";
+       sound_stream_info_h stream_info;
 
-       ret = wav_player_start(wav_path, SOUND_TYPE_MEDIA, _playback_completed_cb, (void*)wav_path, &wav_player_id);
+       sound_manager_create_stream_information(SOUND_STREAM_TYPE_MEDIA, NULL, NULL, &stream_info);
+
+       ret = wav_player_start_new(wav_path, stream_info, _playback_completed_cb, (void*)wav_path, &wav_player_id);
    }
    ```
 
@@ -898,12 +908,14 @@ To start and stop the WAV player:
 
 To start and stop playing a tone:
 
-1. To start playback, use the `tone_player_start()` function.
+1. Start playback using the `tone_player_start_new()` function.
 
-   The `tone_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications) and `sound_type_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__SOUND__MANAGER__VOLUME__MODULE.html#gab0b52eeab59765b94c7a751097738a0b) applications) enumerators define the available values for the tone type (first parameter) and sound type (second parameter).
+   The first parameter should be the tone_type_e (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__TONE__PLAYER__MODULE.html#gaf12912b2c8f9ffe720518ce797506574) applications) enumerators which can define the available values for the tone type.
+
+   The second parameter should be sound information handle which can created by `sound_manager_create_stream_information()`.
 
    ```
-   tone_player_start(TONE_TYPE_DEFAULT, SOUND_TYPE_MEDIA, -1, &tone_player_id);
+   tone_player_start_new(TONE_TYPE_DEFAULT, stream_info, -1, &tone_player_id);
    ```
 
    The player ID is assigned and returned if the function succeeds. The ID of the tone player that starts first is 0, the ID of the second one is 1, and so on. If you set the player ID parameter to `NULL`, the ID is not returned.
@@ -917,10 +929,10 @@ To start and stop playing a tone:
 <a name="duration"></a>
 ## Playing a Tone for a Specified Duration
 
-To play a tone for a specified duration, use the `tone_player_start()` function with the duration (third parameter) set to the number of milliseconds you want playback to last:
+To play a tone for a specified duration, use the `tone_player_start_new()` function with the duration (third parameter) set to the number of milliseconds you want playback to last:
 
 ```
-tone_player_start(TONE_TYPE_SUP_CONGESTION, SOUND_TYPE_CALL, 1000, &tone_player_id);
+tone_player_start_new(TONE_TYPE_SUP_CONGESTION, stream_info, 1000, &tone_player_id);
 ```
 
 When you set the duration to a specified time, playback stops automatically after that time. You can also stop playback manually using the `tone_player_stop()` function.

@@ -1,0 +1,1589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<script type="text/javascript" src="snippet.js"></script><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="styles-systeminfo.css" rel="StyleSheet" type="text/css">
+<link href="tizen.css" rel="StyleSheet" type="text/css">
+<title>System Information</title>
+<style>
+  table { width: auto }
+  table td:nth-child(1) { min-width: 32em; }
+  table td:nth-child(2) { min-width: 4em; }
+  table td:nth-child(3) { width: 40em; }
+  table td:nth-child(4) { min-width: 2em; }
+</style>
+</head>
+<body onload="prettyPrint()">
+  <!--<div id="banner">
+Tizen</div>-->
+  <h1>Getting the Device Capabilities through System Information API</h1>
+  <p>The following keys are available to obtain the device capability information using  <a href="./systeminfo.html">SystemInfo API</a>.</p>
+  <ul>
+<br>
+
+<li>Device Capability keys:
+  <ul>
+  <li><a href="#battery">Battery</a></li>
+  <li><a href="#camera">Camera</a></li>
+  <li><a href="#content_w">Content API</a></li>
+  <li><a href="#database">Database</a></li>
+  <li><a href="#download">Download API</a></li>
+  <li><a href="#graphics">Graphics</a></li>
+  <li><a href="#input">Input</a></li>
+  <li><a href="#iotcon">Iotcon</a></li>
+  <li><a href="#network">Push API</a></li>
+  <li><a href="#led">Led</a></li>
+  <li><a href="#location">Location</a></li>
+  <li><a href="#microphone">Microphone</a></li>
+  <li><a href="#multipoint">Multi-point touch</a></li>
+  <li><a href="#mediatranscoder">Multimedia transcoder</a></li>
+  <li><a href="#network">Network</a></li>
+  <li><a href="#opengl">OpenGL&reg; ES</a></li>
+  <li><a href="#platformfeat">Platform</a></li>
+  <li><a href="#profile">Profile</a></li>
+  <li><a href="#sensor">Sensor</a></li>
+  <li><a href="#screen">Screen</a></li>
+  <li><a href="#shell">Shell (Dynamic Box)</a></li>
+  <li><a href="#sip">Sip</a></li>
+  <li><a href="#speech">Speech</a></li>
+  <li><a href="#tv">TV</a></li>
+  <li><a href="#usb">USB</a></li>
+  <li><a href="#vision">Vision</a></li>
+  <li><a href="#webservice">Web service</a></li>
+  </ul>
+</li>
+
+<br>
+<li>System keys:
+  <ul>
+  <li><a href="#buildinfo">Build Information</a></li>
+  <li><a href="#modelname">Model name</a></li>
+  <li><a href="#platformsys">Platform name</a></li>
+  <li><a href="#tizenid">Tizen ID</a></li>
+  </ul>
+</li>
+
+<br>
+<p>The following table lists the keys to check if a device has a battery.</p>
+ <table id="battery" border="1" style="width:95%">
+<caption>
+     Table: Battery capability key
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+    <th style="width:7%">Type</th>
+    <th>Description</th>
+    <th style="width:7%">Version</th>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/battery</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device has a battery. If it is <span style="font-family: Courier New,Courier,monospace">true</span>, <span style="font-family: Courier New,Courier,monospace"><a href="http://www.w3.org/TR/2012/CR-battery-status-20120508/?cp=2_6_3_1_2">W3C Battery Status API</a></span>and <span style="font-family: Courier New,Courier,monospace"><a href="systeminfo.html#SystemInfoBattery">BATTERY</a></span> property in SystemInfo API must be supported.</td>
+    <td>2.3</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the Camera feature keys.</p>
+<table id="camera" border="1" style="width:95%">
+<caption>
+     Table: Camera feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+    <th style="width:7%">Type</th>
+    <th>Description</th>
+    <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device provides any kind of a camera. If it is <span style="font-family: Courier New,Courier,monospace">true</span>, <a href="../../../w3c_api/w3c_api_tv.html#getusermedia">W3C getUserMedia</a> API is supported.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera.back</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera</span> key, if the device provides a back-facing camera.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera.back.flash</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera.back</span> key, if the device provides a back-facing camera with a flash.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera.front</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera</span> key, if the device provides a front-facing camera.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera.front.flash</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/camera.front</span> key, if the device provides a front-facing camera with a flash.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the keys related to Content API features.</p>
+ <table id="content_w" border="1" style="width:95%">
+<caption>
+     Table: Content API key
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+    <th style="width:7%">Type</th>
+    <th>Description</th>
+    <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/content.scanning.others</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the media scanning feature for <span style="font-weight: bold; font-style: italic;">"OTHER"</span>-type files which are not included in the media content types such as <span style="font-weight: bold; font-style: italic;">"IMAGE"</span>, <span style="font-weight: bold; font-style: italic;">"VIDEO"</span>, <span style="font-weight: bold; font-style: italic;">"SOUND"</span> or <span style="font-weight: bold; font-style: italic;">"MUSIC"</span>.<span style="font-family: Courier New,Courier,monospace"></span>.</td>
+     <td>4.0</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the database feature keys.</p>
+  <table id="database" border="1" style="width:95%">
+<caption>
+     Table: Database feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/database.encryption</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports database encryption.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the keys to check if Download API is supported on a Tizen device.</p>
+ <table id="download" border="1" style="width:95%">
+<caption>
+     Table: Download API key
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+    <th style="width:7%">Type</th>
+    <th>Description</th>
+    <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/download</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports <span style="font-family: Courier New,Courier,monospace"><a href="download.html">Download API</a></span>.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.telephony</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports all APIs which require telephony feature. If it is <span style="font-family: Courier New,Courier,monospace">true</span>, <span style="font-weight: bold; font-style: italic;">"CELLULAR"</span> in <span style="font-family: Courier New,Courier,monospace"><a href="download.html#DownloadNetworkType">DownloadNetworkType</a></span> is supported.</td>
+     <td>2.2.1</td>
+    </tr>
+
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.wifi</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports all APIs which require Wi-Fi. If it is <span style="font-family: Courier New,Courier,monospace">true</span>, <span style="font-weight: bold; font-style: italic;">"WIFI"</span> in <span style="font-family: Courier New,Courier,monospace"><a href="download.html#DownloadNetworkType">DownloadNetworkType</a></span> is supported.</td>
+     <td>2.2.1</td>
+    </tr>
+
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the graphics feature keys.</p>
+   <table id="graphics" border="1" style="width:95%">
+<caption>
+     Table: Graphics feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/graphics.acceleration</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports graphics hardware acceleration.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the input feature keys.</p>
+  <table id="input" border="1" style="width:95%">
+<caption>
+     Table: Input feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/input.keyboard</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device  provides a built-in keyboard supporting any keyboard layout.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/input.keyboard.layout</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the keyboard layout (such as <span style="font-family: Courier New,Courier,monospace">qwerty</span>) supported by the built-in keyboard for this key and returns <span style="font-family: Courier New,Courier,monospace">true</span> for the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/input.keyboard</span> key.
+        <p>If the device does not provide a built-in keyboard, the platform returns an empty string for this key and returns <span style="font-family: Courier New,Courier,monospace">false</span> for the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/input.keyboard</span> key.</p>
+</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/input.rotating_bezel</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device provides a built-in rotating bezel.</td>
+    <td>2.3.1</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the keys related to Iotcon API features.</p>
+ <table id="iotcon" border="1" style="width:95%">
+<caption>
+     Table: Iotcon API key
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+    <th style="width:7%">Type</th>
+    <th>Description</th>
+    <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/iot.ocf</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the IOT connectivity. If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+         <span style="font-family: Courier New,Courier,monospace"><a href="iotcon.html">Iotcon</a></span> API is supported.</td>
+     <td>4.0</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the led feature key.</p>
+   <table id="led" border="1" style="width:95%">
+<caption>
+     Table: Led feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/led</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports led.</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the location feature keys.</p>
+<table id="location" border="1" style="width:95%">
+<caption>
+     Table: Location feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/location</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports location positioning.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/location.batch</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">
+         http://tizen.org/feature/location</span> key, if the device supports GPS batch feature.
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/location.gps</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/location</span>,
+         if the device supports the Global Positioning System(GPS).</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/location.wps</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/location</span> key, if the device supports  the Wi-Fi-based Positioning System (WPS).</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the microphone feature keys.</p>
+<table id="microphone" border="1" style="width:95%">
+<caption>
+     Table: Microphone feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/microphone</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports a microphone.
+     If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+     <a href="../../../w3c_api/w3c_api_tv.html#getusermedia">W3C getUserMedia</a> API is supported.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/media.audio_recording</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports to record audio files on a device.
+     If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+     <a href="cordova/media.html">Media</a> API is supported.</td>
+     <td>3.0</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the multi-point touch feature keys.</p>
+  <table id="multipoint" border="1" style="width:95%">
+<caption>
+     Table: Multi-point touch feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/multi_point_touch.pinch_zoom</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports pinch zoom gestures.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/multi_point_touch.point_count</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">long</span></td>
+     <td>The platform returns the maximum number of supported multi-touch points for this key.
+     <p>The platform returns a value less than 2 for this key, if the device does not support multi-point touch.</p>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the multimedia transcoder feature key.</p>
+   <table id="mediatranscoder" border="1" style="width:95%">
+<caption>
+     Table: Multimedia transcoder feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/multimedia.transcoder</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports multimedia transcoder.</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the network feature keys.</p>
+  <table id="network" border="1" style="width:95%">
+<caption>
+     Table: Network feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/capability/network.bluetooth.always_on</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device must always enable Bluetooth. It means that an application cannot change the Bluetooth's state (visibility, connectivity, device name).</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.bluetooth</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Bluetooth.</td>
+    <td>2.2.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.bluetooth.audio.call</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Bluetooth Handsfree Profile (HFP).</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.bluetooth.audio.media</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Bluetooth Advanced Audio Distribute Profile (A2DP).</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.bluetooth.health</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Bluetooth Health Device Profile (HDP).</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.bluetooth.hid</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Bluetooth Human Input Device (HID).</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.bluetooth.le</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Bluetooth Low Energy related methods in Bluetooth API.</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.bluetooth.opp</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Bluetooth Object Push Profile (OPP).</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.ethernet</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports ethernet. If it is <span style="font-family: Courier New,Courier,monospace">true</span>, <span style="font-weight: bold; font-style: italic;">"ALL"</span> in <span style="font-family: Courier New,Courier,monospace"><a href="download.html#DownloadNetworkType">DownloadNetworkType</a></span> and <span style="font-family: Courier New,Courier,monospace"><a href="./systeminfo.html#SystemInfoEthernetNetwork">SystemInfoEthernetNetwork</a></span> is supported.</td>
+    <td>2.4</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.internet</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports internet.</td>
+    <td>2.3.1</td>
+    </tr>
+<tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.net_proxy</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports network proxy for internet connection.</td>
+    <td>3.0</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.nfc</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Near Field Communication (NFC).</td>
+    <td>2.2.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.nfc.card_emulation</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device is recognized by the NFC card readers.</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.nfc.card_emulation.hce</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports NFC Host-based Card Emulation.</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.nfc.p2p</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports P2P APIs which require Near Field Communication (NFC).</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.nfc.reserved_push </span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the http://tizen.org/feature/network.nfc key, if the device supports the NFC reserved push feature.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.nfc.tag</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Tag APIs which require Near Field Communication (NFC).</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.push</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports <span style="font-family: Courier New,Courier,monospace"><a href="./push.html">Push API</a></span> which requires the IP push service provided by
+the Tizen reference implementation.</td>
+    <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.secure_element</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports secure elements.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.telephony</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the telephony related APIs.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.telephony.mms</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.telephony</span> key, if the device supports MMS.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.wifi</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports all APIs which require Wi-Fi.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.wifi.direct</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/network.wifi</span> key, if the device supports Wi-Fi Direct&trade;.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the OpenGL&reg; ES feature keys.</p>
+<table id="opengl" border="1" style="width:95%">
+<caption>
+     Table: OpenGL&reg; ES feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports any OpenGL&reg; ES version and any texture format.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.texture_format</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The supported texture formats for the OpenGL&reg; ES. (e.g. "3dc/atc/etc/ptc").<br>
+         The platform returns an empty string for this key if OpenGL&reg; ES or compressed texture formats are not supported.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.texture_format.3dc</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the 3DC texture format for OpenGL&reg; ES.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.texture_format.atc</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the ATC texture format for OpenGL&reg; ES.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.texture_format.etc</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the ETC texture format for OpenGL&reg; ES.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.texture_format.ptc</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the PTC texture format for OpenGL&reg; ES.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.texture_format.pvrtc</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the PVRTC texture format for OpenGL&reg; ES.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.texture_format.utc</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the UTC texture format for OpenGL&reg; ES.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.version.1_1</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the OpenGL&reg; ES version 1.1.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles.version.2_0</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/opengles</span> key, if the device supports the OpenGL&reg; ES version 2.0.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the platform feature keys.</p>
+  <table id="platformfeat" border="1" style="width:95%">
+<caption>
+     Table: Platform feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.api.version</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The version of the Tizen Core API in the [Major].[Minor] format. For example, "1.0" represents a web api version where the major version is 1 and the minor version is 0.
+     If a device doesn't provide Tizen Core API, it returns an empty string("").</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.cpu.arch</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the CPU architecture (e.g. "armv7", "x86") of a device. </td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.cpu.arch.armv6</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the ARMv6 CPU architecture. </td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.cpu.arch.armv7</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the ARMv7 CPU architecture. </td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.cpu.arch.x86</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the x86 CPU architecture. </td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.cpu.frequency</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">long</span></td>
+     <td>The platform returns the frequency at which a core CPU is running. (unit: MHz)</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.fpu.arch</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the FPU architecture (e.g. "vfpv3", "ssse3" of a device.) If there is no FPU on a device, it returns an empty string("").</td>
+     <td>2.3</td>
+ </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.fpu.arch.sse2</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the SSE2 FPU architecture.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.fpu.arch.sse3</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the SSE3 FPU architecture.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.fpu.arch.ssse3</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the SSSE3 FPU architecture.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.fpu.arch.vfpv2</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the VFPV2 FPU architecture.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.core.fpu.arch.vfpv3</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device runs on the VFPV3 FPU architecture.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.native.api.version</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The version of the Native API in the [Major].[Minor] format. For example, 1.0 represents a native api version where the major version is 1 and the minor version is 0.
+     If a device doesn't provide Tizen Native API, it returns an empty string("").</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.native.osp_compatible</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the bada compatibility mode.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.version</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The version of the platform in the [Major].[Minor].[Patch Version] format.
+     For example, 1.0.0 represents a platform version where the major version is 1 and the minor and build versions are 0.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.web.api.version</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The version of the Web API in the [Major].[Minor] format. For example, 1.0 represents a web api version where the major version is 1 and the minor version is 0.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/platform.version.name</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform return the platform version name. (e.g. Tizen 2.0: magnolia, Tizen 2.1: Nectarine)</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the profile feature keys.</p>
+<table id="profile" border="1" style="width:95%">
+<caption>
+     Table: Profile feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/profile</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">SystemInfoProfile</span></td>
+     <td>The platform returns a compliant device profile (such as <span style="font-family: Courier New,Courier,monospace">"MOBILE", "WEARABLE"</span>) for this key.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+
+<br>
+<p>The following table lists the sensor feature keys.</p>
+<table id="sensor" border="1" style="width:95%">
+<caption>
+     Table: Sensor feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+</tr>
+<tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.accelerometer</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the acceleration sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.accelerometer.wakeup</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.accelerometer</span> key, if the device supports the wake-up operation by the acceleration sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.activity_recognition</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports Activity Recognition.</td>
+     <td>2.3</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.barometer</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the barometer (Pressure) sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.barometer.wakeup </span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.barometer</span> key, if the device supports the wake-up operation by the barometer sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+        <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.gesture_recognition</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the gesture recognition.</td>
+     <td>2.3</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.gravity</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports gravity</td>
+     <td>2.3</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.gyroscope</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports gyroscope</a></span>.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.gyroscope_rotation_vector</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports gyroscope rotation vector.</td>
+     <td>3.0</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.gyroscope.wakeup</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.gyroscope</span> key, if the device supports the wake-up operation by the gyro sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.heart_rate_monitor</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key if the device supports HRM.</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.heart_rate_monitor.led_green</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key if the device supports green light spectrum.</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.heart_rate_monitor.led_ir</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key if the device supports infrared spectrum.</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.heart_rate_monitor.led_red</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key if the device supports red light spectrum.</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.humidity</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the humidity sensor.</td>
+     <td>2.3</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.linear_acceleration</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the linear acceleration sensor.</td>
+     <td>2.3</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.magnetometer </span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the magnetic sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.magnetometer.wakeup</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.magnetometer</span> key, if the device supports the wake-up operation by the magnetic sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.pedometer</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports PEDOMETER.</td>
+    <td>2.3</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.photometer</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the photometer sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+     <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.photometer.wakeup</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.photometer</span> key, if the device supports the wake-up operation by the photo sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+     <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.proximity</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the proximity sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+     <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.proximity.wakeup</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.proximity</span> key, if the device supports the wake-up operation by the proximity sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.rotation_vector</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the rotation vector sensor.</td>
+     <td>2.3</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.sleep_monitor</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports SLEEP_MONITOR.</td>
+     <td>3.0</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.temperature</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the temperature sensor.</td>
+     <td>2.3</td>
+</tr>
+<tr>
+     <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.tiltmeter</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the tilt sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+     <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.tiltmeter.wakeup</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key and the <span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.tiltmeter</span> key, if the device supports the wake-up operation by the tilt sensor.</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.ultraviolet</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key if the device supports ultraviolet sensor.</td>
+     <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sensor.wrist_up</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key if the device supports WRIST_UP.</td>
+    <td>2.3</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the screen feature keys.</p>
+<table id="screen" border="1" style="width:95%">
+<caption>
+     Table: Screen feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+    <th style="width:7%">Type</th>
+    <th>Description</th>
+    <th style="width:7%">Version</th>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device has a display screen.</td>
+    <td>2.3</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.auto_rotation</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports screen auto-rotation.</td>
+    <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.bpp</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">long</span></td>
+     <td>The platform returns the number of bits per pixel supported by the device for this key. The value depends on the screen, and is typically 8, 16, 24, or 32.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.coordinate_system.size.large</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the large screen size for the coordinate system.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.coordinate_system.size.normal</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the normal screen size for the coordinate system.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.dpi</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">long</span></td>
+     <td>The platform returns the number of dots per inch supported by the device for this key.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.height</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">long</span></td>
+     <td>The platform returns the height of the screen in pixels supported by the device for this key.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.output.hdmi</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports HDMI output.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.output.rca</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports RCA output.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.shape.circle</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports a circular shaped screen.</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+    <td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.shape.rectangle</span></td>
+    <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+    <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports a rectangular shaped screen.</td>
+    <td>2.3.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.all</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> if the device supports any of screen sizes and resolutions. (If the device has a display screen, it returns <span style="font-family: Courier New,Courier,monospace">true</span>.)</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.large</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> if the device supports the large screen size.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> the device supports the normal screen size.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.240.400</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 240 x 400 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.320.320</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 320 x 320 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.320.480</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 320 x 480 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.360.360</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 360 x 360 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.3.2</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.360.480</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 360 x 480 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.480.800</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 480 x 800 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.540.960</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 540 x 960 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.600.1024</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 600 x 1024 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.720.1280</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+        <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 720 x 1280 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.2.1</td>
+</tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.size.normal.1080.1920</span></td>
+<td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+<td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the 1080 x 1920 resolution for the normal screen size.
+<p>The platform can return <span style="font-family: Courier New,Courier,monospace">true</span> for multiple resolution keys.</p>
+</td>
+     <td>2.2.1</td>
+</tr>
+
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/screen.width</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">long</span></td>
+     <td>The platform returns the width of the screen in pixels supported by the device for this key.</td>
+     <td>2.2.1</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the shell(Dynamic Box) feature keys.</p>
+<table id="shell" border="1" style="width:95%">
+<caption>
+     Table: Shell(Dynamic Box) feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/shell.appwidget</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the Widget. Since 2.3.1, this key indicates only Native Widget.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the sip feature keys.</p>
+  <table id="sip" border="1" style="width:95%">
+<caption>
+     Table: Sip feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/sip.voip</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the Voice over Internet Protocol (VoIP).</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the speech feature keys.</p>
+   <table id="speech" border="1" style="width:95%">
+<caption>
+     Table: Speech feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/speech.recognition </span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports speech recognition (STT).</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/speech.synthesis</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports speech synthesis (TTS).</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/speech.control</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports speech control.</td>
+     <td>4.0</td>
+    </tr>
+
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the TV feature keys.</p>
+     <table id="tv" border="1" style="width:95%">
+<caption>
+     Table: TV feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/tv.audio</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports control of TV audio.
+         If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+         <span style="font-family: Courier New,Courier,monospace"><a href="tvaudiocontrol.html">TVAudioControl</a></span> API is supported.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/tv.tuner</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports control of TV channel.
+         If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+         <span style="font-family: Courier New,Courier,monospace"><a href="tvchannel.html"> TV Channel</a></span> API is supported.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/tv.display</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports getting information about the effects of stereoscopy(3D mode).
+         If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+         <span style="font-family: Courier New,Courier,monospace"><a href="tvdisplaycontrol.html"> TV Display Control</a></span> API is supported.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/tv.inputdevice</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports receiving key events generated when the user presses a key of an Input Device (for example a TV remote control).
+         If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+         <span style="font-family: Courier New,Courier,monospace"><a href="tvinputdevice.html"> TV Input Device</a></span> API is supported.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/tv.pip</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports control of TV Window(e.g. main window, PIP window).
+         If it is <span style="font-family: Courier New,Courier,monospace">true</span>,
+         <span style="font-family: Courier New,Courier,monospace"><a href="tvwindow.html"> TV Window</a></span> API is supported.</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the USB feature keys.</p>
+     <table id="usb" border="1" style="width:95%">
+<caption>
+     Table: USB feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/usb.accessory </span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the USB client or accessory mode.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/usb.host</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the USB host mode.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the vision feature keys.</p>
+       <table id="vision" border="1" style="width:95%">
+<caption>
+     Table: Vision feature keys
+   </caption>
+<tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/vision.face_recognition</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports face recognition.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/vision.image_recognition</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports image recognition.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/vision.qrcode_generation</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports QR code generation.</td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/vision.qrcode_recognition</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports QR code recognition.</td>
+     <td>2.2.1</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the web service model feature keys.</p>
+     <table id="webservice" border="1" style="width:95%">
+<caption>
+     Table: Web Service feature keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/feature/web.service</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">boolean</span></td>
+     <td>The platform returns <span style="font-family: Courier New,Courier,monospace">true</span> for this key, if the device supports the web service model.</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the build information key.</p>
+  <table id="buildinfo" border="1" style="width:95%">
+<caption>
+     Table: Build information system key
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/build.date</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the build date.(the format : YYYY.MM.DD)</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/build.string</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the build string including build date and time.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/build.time</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the build time. (the format : HH.MM.SS)</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/manufacturer</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the device manufacturer's name.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/build.release</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the build version information. The build version information is made when the platform image is created.</td>
+     <td>3.0</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/build.type</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the build type, such as &quot;user&quot; or &quot;eng&quot;. The build type is made when the platform image is created.</td>
+     <td>3.0</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/build.variant</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the variant release information. The variant release information is made when the platform image is created.</td>
+     <td>3.0</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/build.id</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the build ID. The build ID is made when the platform image is created.</td>
+     <td>3.0</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the model name key.</p>
+  <table id="modelname" border="1" style="width:95%">
+<caption>
+     Table: Model name key
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/model_name</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the model name.</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the platform system keys.</p>
+  <table id="platformsys" border="1" style="width:95%">
+<caption>
+     Table: Platform system keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/platform.communication_processor</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the device communication processor name.</td>
+     <td>2.3</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/platform.name</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the platform name. It must be <q>Tizen</q></td>
+     <td>2.2.1</td>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/platform.processor</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the device processor name.</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<br>
+<p>The following table lists the Tizen ID system key.</p>
+  <table id="tizenid" border="1" style="width:95%">
+<caption>
+     Table: Tizen ID system keys
+   </caption>
+   <tbody>
+<tr>
+<th style="width:27%">Key</th>
+     <th style="width:7%">Type</th>
+     <th>Description</th>
+     <th style="width:7%">Version</th>
+    </tr>
+<tr>
+<td><span style="font-family: Courier New,Courier,monospace">http://tizen.org/system/tizenid</span></td>
+     <td><span style="font-family: Courier New,Courier,monospace">DOMString</span></td>
+     <td>The platform returns the Tizen ID. It is a randomly generated value based on the model name.</td>
+     <td>2.3</td>
+    </tr>
+</tbody>
+</table>
+
+<div id="footer">
+   <hr size="1">
+<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+  </div>
+  <!--start-->
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script><!--end-->
+</body>
+</html>
+
+

@@ -13,7 +13,7 @@ To build a package for a specific project:
 1. To clone the source of a specific project, follow the instructions in [Cloning Tizen Source Files](cloning.md).
 2. Switch to the directory that contains the project:
 
-   ```bash
+   ```
    $ cd <Specific_Project>
    ```
 3. Create a  `<Specific_Project>/.gbs.conf` GBS configuration file (optional).
@@ -24,7 +24,7 @@ To build a package for a specific project:
 
 4. Build a package for the project:
 
-   ```bash
+   ```
    $ gbs build <gbs build option>
    ```
 5. Take follow-up actions, if necessary. For more information, see [Performing Another Build](#performing-another-build).
@@ -42,7 +42,7 @@ The build tips for local builds include:
 To exclude specific packages when building locally with GBS, you can either list them in the `--exclude` argument of the `gbs build` command, or list them in the `.gbs.conf` file:
 
 - To exclude packages when running the `gbs build` command, use the `--exclude` build argument:
-  ```bash
+  ```
   $ exclude_pkgs="aaa bbb ccc ddd"
   $ gbs build -A armv7l --exclude=${exclude_pkgs},eee,fff
   ```
@@ -57,7 +57,7 @@ To exclude specific packages when building locally with GBS, you can either list
 
 If the size of your RAM and swap file are both larger than 8 GB, you can speed up building by creating a GBS `BUILD-ROOTS` directory and mounting it as a RAM disk:
 
-```bash
+```
 $ mkdir -p ~/GBS-ROOT/local/BUILD-ROOTS
 $ sudo mount -t tmpfs -o size=16G tmpfs ~/GBS-ROOT/local/BUILD-ROOTS
 ```
@@ -71,7 +71,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   - New packages to be built are dependent on previously built packages.
   - You want previously built packages to participate in the new build.
 
-  ```bash
+  ```
   $ gbs build -A <Arch>
   ```
 
@@ -80,7 +80,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.
 
-  ```bash
+  ```
   $ gbs build -A <Arch> --clean-repos
   ```
 
@@ -89,7 +89,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   - The URL of the remote repository has changed.
   - New packages to be built are not dependent on previously built packages.
 
-  ```bash
+  ```
   $ gbs build -A <Arch> --clean
   ```
 
@@ -98,7 +98,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   - New packages to be built are dependent on previously built packages.
   - You want previously built packages to participate in the new build.
 
-  ```bash
+  ```
   $ gbs build -A <Arch> --clean
   ```
 
@@ -107,7 +107,7 @@ When the result of the first build is unsatisfactory, perform another build by e
   - New packages to be built are dependent on previously built packages.
   - You do not want previously built packages to participate in the new build.
 
-  ```bash
+  ```
   $ gbs build -A <Arch> --clean --clean-repos
   ```
 

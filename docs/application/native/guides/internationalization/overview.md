@@ -1,6 +1,6 @@
-# Internationalization
+# Localization
 
-The internationalization features introduce how you can localize your application to use different languages and function smoothly in different locales.
+The localization features introduce how you can localize your application to use different languages and function smoothly in different locales.
 
 You can use the following internationalization features in your native applications:
 
@@ -11,10 +11,6 @@ You can use the following internationalization features in your native applicati
 - [Resource Localization](resource-localization.md)
 
   You can load different language resources for different locales in your application. With locale-specific resources, you ensure that the user has the best possible experience regardless of the language settings selected on the device.
-
-- [Phone Number Management](phonenumber.md)
-
-  You can parse and format phone numbers to make contact management and telephony easier. You can retrieve location information from a phone number, and format the number according to a specific locale.
 
 ## Related Information
 -  Dependencies

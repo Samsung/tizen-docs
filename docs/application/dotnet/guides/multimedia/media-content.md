@@ -107,15 +107,15 @@ To enable your application to use the media content functionality:
         Tizen.Log.Info(LogTag, $"Folder updated: Id = {args.Id}, Operation = {args.OperationType}");
     }
 
-    MediaDatabase.MediInfoUpdated += OnMediaInfoUpdated;
+    MediaDatabase.MediaInfoUpdated += OnMediaInfoUpdated;
     MediaDatabase.FolderUpdated += OnFolderUpdated;
     ```
 
 2. When you no longer want to receive notifications, deregister the event handlers:
 
     ```
-    MediDatabase.MediInfoUpdated -= OnMediaInfoUpdated;
-    MediDatabase.FolderUpdated -= OnFolderUpdated;
+    MediaDatabase.MediaInfoUpdated -= OnMediaInfoUpdated;
+    MediaDatabase.FolderUpdated -= OnFolderUpdated;
     ```
 
 <a name="findingall"></a>
@@ -169,7 +169,7 @@ using (var mediaDataReader = albumCmd.SelectMember(album.Id))
     {
         var mediaInfo = mediaDataReader.Current;
 
-        Tizen.Log.Info(LogTag, $"MediaInfo - Title: {mediaInfo.Title}, MIME type: {mediaInfo.MimeType}, Size: {mediaInfo.Size}");
+        Tizen.Log.Info(LogTag, $"MediaInfo - Title: {mediaInfo.Title}, MIME type: {mediaInfo.MimeType}, File size: {mediaInfo.FileSize}");
     }
 }
 ```
@@ -183,8 +183,9 @@ To set a bookmark for a video file at a given timestamp, use the `Insert()` meth
 var bookmarkCmd = new BookmarkCommand(mediaDatabase);
 
 var thumbnailPath = "path/to/image/file";
+var bookmarkName = "MyBookmark";
 
-bookmarkCmd.Insert(mediaInfo.Id, offset, thumbnailPath);
+bookmarkCmd.Insert(mediaInfo.Id, offset, bookmarkName, thumbnailPath);
 ```
 
 The parameters are the media ID of the video file, the moment (time in milliseconds from the beginning) in the video to bookmark, and the image used as a thumbnail for the bookmark.
@@ -380,7 +381,7 @@ To access media item information:
                     VideoInfo videoInfo = mediaInfo as VideoInfo;
 
                     Tizen.Log.Info(LogTag, "This is a video");
-                    Tizen.Log.Info(LogTag, $"Title: {videoInfo.Title}, Album: {videoInfo.Alarm}, Artist: {videoInfo.Artist}, Album artist: {videoInfo.AlbumArtist}, Duration: {videoInfo.Duration}");
+                    Tizen.Log.Info(LogTag, $"Title: {videoInfo.Title}, Album: {videoInfo.Album}, Artist: {videoInfo.Artist}, Album artist: {videoInfo.AlbumArtist}, Duration: {videoInfo.Duration}");
             }
         }
     }
@@ -649,24 +650,26 @@ The following tables list the available media file information.
 
 | Metadata name    | Description                              |
 |----------------|----------------------------------------|
-| `Media ID`       | ID of the media content                  |
-| `File path`      | Path of the media content                |
-| `Display name`   | Display name of the media content        |
-| `Media type`     | Media type of the media content          |
-| `Mime type`      | MIME type of the media content           |
-| `Size`           | File size of the media content           |
-| `Added time`     | Time the media content was added to the database |
-| `Modified time`  | Last modification time of the media content |
+| `Id`             | Id of the media content                  |
+| `Path`           | Path of the media content                |
+| `DisplayName`    | Display name of the media content        |
+| `MediaType`      | Media type of the media content          |
+| `MimeType`       | MIME type of the media content           |
+| `FileSize`       | File size of the media content           |
+| `DateAdded`      | Time the media content was added to the database |
+| `DateModified`   | Last modification time of the media content |
 | `Timeline`       | Time the media content was created       |
-| `Thumbnail path` | Path of the stored thumbnail image of the media content |
+| `ThumbnailPath`  | Path of the stored thumbnail image of the media content |
 | `Description`    | Description of the media content         |
 | `Longitude`      | Longitude of the media content           |
 | `Latitude`       | Latitude of the media content            |
 | `Altitude`       | Altitude of the media content            |
 | `Rating`         | Rating of the media content              |
-| `Favorite`       | Favorite status of the media content     |
+| `IsFavorite`     | Favorite status of the media content     |
 | `Title`          | Title of the media content               |
-| `Storage type`   | Storage type of the media content        |
+| `StorageId`      | The storage Id of the storage that the media is stored on          |
+| `IsDrm`          | The media is DRM-protected or not        |
+| `StorageType`    | The storage type of the storage that the media is stored on        |
 
 **Table: Audio metadata (only for audio files)**
 
@@ -674,16 +677,16 @@ The following tables list the available media file information.
 |----------------|----------------------------------------|
 | `Album`          | Album information for the audio content  |
 | `Artist`         | Artist of the audio content              |
-| `Album Artist`   | Album artist of the audio content<br>The artist and album artist can be the same. |
+| `AlbumArtist`    | Album artist of the audio content<br>The artist and album artist can be the same. |
 | `Genre`          | Genre of the audio content               |
 | `Composer`       | Composer of the audio content            |
 | `Year`           | Year the audio content was recorded      |
-| `Date recorded`  | Date the audio content was recorded      |
+| `DateRecorded`   | Date the audio content was recorded      |
 | `Copyright`      | Copyright information for the audio content |
-| `Track number`   | Track number of the audio content        |
-| `Bit rate`       | Bit rate of the audio content            |
-| `Bit per sample` | Bit per sample of the audio content<br>The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
-| `Sample rate`    | Sample rate of the audio content         |
+| `TrackNumber`    | Track number of the audio content        |
+| `BitRate`        | Bit rate of the audio content            |
+| `BitPerSample`   | Bit per sample of the audio content<br>The bit per sample is the same as the sample format. The sample format is the number of digits in the digital representation of each sample. |
+| `SampleRate`     | Sample rate of the audio content         |
 | `Channels`       | Channel information for the audio content |
 | `Duration`       | Duration of the audio content            |
 
@@ -693,12 +696,12 @@ The following tables list the available media file information.
 |---------------|----------------------------------------|
 | `Width`         | Width of the image                       |
 | `Height`        | Height of the image                      |
-| `Exposure time` | Exposure time of the image               |
-| `F-number`      | F-number of the image                    |
-| `ISO`           | ISO of the image                         |
+| `ExposureTime`  | Exposure time of the image               |
+| `FNumber`       | FNumber of the image                    |
+| `Iso`           | Iso of the image                         |
 | `Model`         | Model name of the camera that created the image |
 | `Orientation`   | Orientation of the image                 |
-| `Date taken`    | Time the image was created<br>You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
+| `DateTaken`     | Time the image was created<br>You can get this information from the EXIF tag. If there is no EXIF tag for the image, set the created time in the file system. |
 
 **Table: Video metadata (only for video files)**
 
@@ -706,14 +709,14 @@ The following tables list the available media file information.
 |---------------|---------------------------------------|
 | `Album`         | Album information for the video content |
 | `Artist`        | Artist of the video content             |
-| `Album artist`  | Album artist of the video content       |
+| `AlbumArtist`   | Album artist of the video content       |
 | `Genre`         | Genre of the video content              |
 | `Composer`      | Media composer of the video content     |
 | `Year`          | Year the video content was recorded     |
-| `Date recorded` | Date the video content was recorded     |
+| `DateRecorded`  | Date the video content was recorded     |
 | `Copyright`     | Copyright of the video content          |
-| `Track number`  | Track number of the video content       |
-| `Bit rate`      | Bit rate of the video content           |
+| `TrackNumber`   | Track number of the video content       |
+| `BitRate`       | Bit rate of the video content           |
 | `Duration`      | Duration of the video content           |
 | `Width`         | Width of the video content              |
 | `Height`        | Height of the video content             |

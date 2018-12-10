@@ -36,7 +36,7 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
 - Storage API and block module enhancement
   - USB/SD Card external storage has been enumerated with the libstorage API.
   - Support for multiple partitions and devices has been added.
-  - Block dbus connection has been separated to a special-purpose block module.
+  - Block D-Bus connection has been separated to a special-purpose block module.
 - Device HAL upgrade
   - Common device HAL structure has been added.
   - USB configfs is supported.
@@ -54,22 +54,22 @@ Tizen 3.0 adopts various new features, such as high-performance graphics, the la
   - Various patterns are supported, such as a combination of duration and waiting.
 - System information enhancement
   - GDBM backend to support a light-weight system registry to improve performance has been added.
-- Cynara-based dbus policy support through dbus-daemon
+- Cynara-based D-Bus policy support through dbus-daemon
   - Privilege-based access check has been added.
-- New APIs
-  - IR device APIs have been added.
-  - USB Host APIs have been added.
-  - Battery and charger status APIs have been added.
+- New API set
+  - IR device API set have been added.
+  - USB Host API set have been added.
+  - Battery and charger status API set have been added.
   - Detailed build information has been added.
-  - CPU frequency APIs have been added.
+  - CPU frequency API set have been added.
   - Storage change event handler API has been added.
-- Major open-source component upgrades and changes
+- Major Open-source component upgrades and changes
   - Systemd version has been upgraded from v216 to v219.
   - Pwdutils has been replaced with shadow-utils.
   - Libfuse version has been upgraded to 2.9.6.
   - Fsck-msdos and newfs-msdos have been separated from deviced.
   - The libdbus version has been upgraded to 1.10.6.
-  - In TV, the kdbus version has been upgraded to V4.
+  - In TV, the KDBus version has been upgraded to V4.
 
 ### System (Base)
 
@@ -167,7 +167,7 @@ As a common feature, multi-user support has been added.
     - Window geometries
     - Window stacks
     - Resource allocation status
-    - FPS (frame per second) value
+    - frame per second (FPS) value
     - Wayland protocol messages with user-defined filters
     - List of input devices and related information
     - Key grab status for each hardware key
@@ -180,14 +180,14 @@ As a common feature, multi-user support has been added.
       - Definition of keynames and mapping between a keyname and a keycode
       - Repeat configuration and privilege check Boolean values for each key
     - Prebuilt keymap cache support
-        - 1 or more keymap caches can be generated at build time and installed.
+        - One or more keymap caches can be generated at build time and installed.
         - There is no need to compile a keymap at boot time and runtime by using existing keymap caches.
   - Touch event cancellation
-    - A cancellation event can be created and sent to the current touch surface when 1 of the following events takes place:
-        - Window stack changes
-        - LCD/display is switched off
-        - Touch gesture is recognized
-  - Input device/event block/unblock support
+    - A cancellation event can be created and sent to the current touch surface when one of the following events takes place:
+        - Window stack changes.
+        - LCD/display is switched off.
+        - Touch gesture is recognized.
+  - Input device/event block/unblock support.
     - Each type of input device or each input event can be blocked by the client request only when the client has the proper privilege for the request.
   - Input device identification support
     - Source input device information can be acquired from an input event, such as Ecore or Evas event, in an application.
@@ -209,17 +209,17 @@ As a common feature, multi-user support has been added.
     - API to support controlling of the quickpanel service window has been added.
 - efl-util
   - API to support controlling of the screen brightness through the application window has been added.
-  - Behavior of the following APIs has been changed to support synchronous operation:
+  - Behavior of the following API set has been changed to support synchronous operation:
     - `efl_util_set_notification_window_level()`
     - `efl_util_set_window_screen_mode()`
-  - The following APIs have been deprecated:
+  - The following API set have been deprecated:
     - `efl_util_set_notification_window_level_error_cb()`
     - `efl_util_unset_notification_window_level_error_cb()`
     - `efl_util_set_window_screen_mode_error_cb()`
     - `efl_util_unset_window_screen_mode_error_cb()`
 - Tizen HAL
   - Tizen display HAL
-    - TDM (Tizen Display Manager) support has been added.
+    - Tizen Display Manager (TDM) support has been added.
     - Reference implementation of Exynos and Sprd tdm backend has been provided.
   - Tizen buffer HALTBM (Tizen Buffer Manager) version 2.0 is supported:
     - The tbm_surface_queue has been provided.
@@ -229,13 +229,13 @@ As a common feature, multi-user support has been added.
     - Backend interface has been changed.
   - Tizen EGL porting layer
     - TPL-EGL 1.0 support has been added.
-    - TPL (Tizen Porting Layer) is an abstraction layer for surface and buffer management on the Tizen platform, aimed to implement the EGL&trade; porting layer of the OpenGL&reg; ES driver over various display protocols.
+    - Tizen Porting Layer (TPL) is an abstraction layer for surface and buffer management on the Tizen platform, aimed to implement the EGL&trade; porting layer of the OpenGL&reg; ES driver over various display protocols.
     - Supported EGL&trade; backends:
         - Wayland, gbm, tbm
     - Buffer management and Wayland protocol of Vulkan WSI Tizen are supported.
     - Emulator GL Driver (emulator-yagl) supports the libtpl-egl backend.
 - Vulkan WSI Tizen
-  - The Vulkan WSI (Window System Integration) Layer for Tizen wraps vendor Vulkan&reg; ICDs and provides the WSI (Window-System Interface) for Tizen.
+  - The Vulkan Window System Integration (WSI) Layer for Tizen wraps vendor Vulkan&reg; ICDs and provides the Window System Integration (WSI) for Tizen.
   - The VK_KHR_wayland_surface is supported.
 - CoreGL
   - CoreGL is an OpenGL&reg; ES injection layer.
@@ -344,9 +344,9 @@ As a common feature, multi-user support has been added.
   - In mobile, LazEDC and color class have been applied to default theme.
   - EDC support for SVG files has been added.
   - EFL vector support for GL and SW backend have been added.
-  - In mobile, CBHM (ClipBoard History Manager) has been integrated.
+  - In mobile, ClipBoard History Manager (CBHM) has been integrated.
   - In mobile, view manager has been added.
-  - Customization APIs have been added.
+  - Customization API set have been added.
 - Text input
   - Input framework has been changed from X-based to Wayland-based.
   - In mobile, 3 input languages have been added (Irish, Uzbek, and Hindi).  
@@ -374,7 +374,7 @@ As a common feature, multi-user support has been added.
 - Accessibility
   - Screen reader functionality has not been fully tested.
 - Clipboard
-  - CBHM (ClipBoard History Manager) has not been fully tested.
+  - ClipBoard History Manager (CBHM) has not been fully tested.
 - View manager
   - View manager has not been fully tested.
 - Customization API
@@ -408,17 +408,17 @@ As a common feature, multi-user support has been added.
   - The performance has been optimized by removing unnecessary IPC when rendering video.
   - API to set the region of interest area in the display has been added.
   - The `player_completed_cb()`, `player_error_cb()`, and `player_prepared_cb()` functions have been made to invoke by default context.
-  - Error return value of `player_create()` API and display-related APIs has been added.
+  - Error return value of `player_create()` API and display-related API set has been added.
   - In wearable, the Evas display type has been added.
 - Radio (in mobile and wearable)
   - API to set or get the volume has been added.
   - Pre-state of `radio_scan_start()` API has been changed.
 - Media tool
-  - APIs to support container type have been added.
+  - API set to support container type have been added.
   - API to get a flag for the buffer stream information has been added.
   - API to set the video frame rate has been added.
   - API to get the video frame rate has been added.
-  - Media packet pool APIs to reuse allocated media packets have been added.
+  - Media packet pool API set to reuse allocated media packets have been added.
 - Media codec
   - API to get media packet pool has been added.
 - Media streamer
@@ -440,7 +440,7 @@ As a common feature, multi-user support has been added.
   - API to query whether stream is connected to specific device has been added.
   - Feature to support auto-last-connected device policy has been added.
   - Feature to support fading audio in pulseaudio has been added.
-  - Feature to protect infinite power consumption caused by improper use of audio APIs has been added.
+  - Feature to protect infinite power consumption caused by improper use of audio API set has been added.
   - Sound-Server has been changed to operate as an on-demand process.
   - In TV, a feature to support vconf in pulseaudio has been added.
   - In TV, a feature to use of tizen-audio-sink/source has been added.
@@ -450,10 +450,10 @@ As a common feature, multi-user support has been added.
   - Error enumerations for resource conflict have been added.
   - API to get the flash state set by the Camera API has been added.
   - API to get the camera facing direction has been added.
-  - APIs for the encoded preview format (H.264) have been added.
-  - APIs to set and get pan have been added.
-  - APIs to set and get tilt have been added.
-  - APIs to set and get display ROI (region of interest) area have been added.
+  - API set for the encoded preview format (H.264) have been added.
+  - API set to set and get pan have been added.
+  - API set to set and get tilt have been added.
+  - API set to set and get display region of interest (ROI) area have been added.
 - Recorder
   - Internal method to provide a recorder service has been changed from library to server-client.
   - Error enumerations for the sound policy have been deprecated.
@@ -475,7 +475,7 @@ As a common feature, multi-user support has been added.
 - Image util
   - PNG, GIF, BMP encoding/decoding support has been added.
   - JPEG encoding/decoding has been modified to use a handle.
-  - JPEG encoding/decoding APIs have been deprecated.
+  - JPEG encoding/decoding API set have been deprecated.
 - Thumbnail util
   - The `http://tizen.org/privilege/content.write` privilege has been removed.
 - Metadata extractor
@@ -497,24 +497,24 @@ As a common feature, multi-user support has been added.
 **New and Changed Features**
 
 - Data network
-- In mobile and wearable, SoftAP (Software-enabled Access Point) has been added.
+- In mobile and wearable, Software-enabled Access Point (SoftAP) has been added.
 - In mobile, wearable, and TV, support for multi-instance in applications has been added to the WiFi Manager API.
 - In mobile and TV, the default VPN to build up the VPN default setting has been added.
-- In mobile, wearable, and TV, NSD (Network Service Discovery) has been added.
+- In mobile, wearable, and TV, Network Service Discovery (NSD) has been added.
 - In mobile, the additional AP router function (such as port forwarding, 802.11 mode/channel, and dhcp range) has been added to the tethering module.
-- In mobile and wearable, APIs for HTTP have been added to the curl wrapper.
-- In mobile, the Wi-Fi TDLS (Tunneled Direct Link Setup) has been added.
+- In mobile and wearable, API set for HTTP have been added to the curl wrapper.
+- In mobile, the Wi-Fi Tunneled Direct Link Setup (TDLS) has been added.
 - In mobile, the tethering configuration has been added.
 - In mobile and TV, the VPN service to build up a VPN client has been added.
 - In mobile and wearable, an additional connection type has been added to handle a gadget connection.
-- In mobile and TV, the IPC of the wifi direct manager has been changed from socket to d-bus.
+- In mobile and TV, the IPC of the wifi direct manager has been changed from socket to D-Bus.
 - In mobile and wearable, the privilege for the `wifi_ap_create()` function has been removed.
 - In mobile and TV, an API for wifi-direct peer signal strength has been added.
-- In mobile and TV, APIs for connection to get/set cellular pdn type have been added.
-- In mobile and wearable, HTTP uploading file/cancel APIs have been added.
+- In mobile and TV, API set for connection to get/set cellular pdn type have been added.
+- In mobile and wearable, HTTP uploading file/cancel API set have been added.
 - Connectivity
   - MTP initiator has been added.
-  - MTP initiator APIs are provided.
+  - MTP initiator API set are provided.
   - In mobile and wearable, the NFC preferred application has been added.
   - In mobile and wearable, the NFC internal API for HCE operation and the pkgmgr-plugin-nfc package has been added.
   - In mobile and wearable, the NFC appcontrol operations have been modified for the Tap&Pay menu.
@@ -525,9 +525,9 @@ As a common feature, multi-user support has been added.
 - IoTCon
   - IoTCon has been newly added to support IoTivity 1.2.1.
   - IoTivity security has been enabled.
-  - APIs for resource finding and registration have been added.
-  - APIs for resource requests and responses have been added.
-  - APIs for resource observation and presence have been added.
+  - API set for resource finding and registration have been added.
+  - API set for resource requests and responses have been added.
+  - API set for resource observation and presence have been added.
 - Telephony
   - In mobile and wearable, the CDMA/LTE network info getter API has been added.
   - In mobile and wearable, the lac/cell ID network API privilege has been changed.
@@ -535,7 +535,7 @@ As a common feature, multi-user support has been added.
 - Major open-source component upgrades and changes
   - Curl has been upgraded from 7.40 to 7.50.2 for stability.
   - Dnsmasq has been upgraded from 2.57 to 2.74 for stability.
-  - wpa_supplicant has been upgraded from 2.4 to 2.5 for the d-bus interface.
+  - wpa_supplicant has been upgraded from 2.4 to 2.5 for the D-Bus interface.
   - libidn has been upgraded from 1.15 to 1.16 for stability.
   - Libcap has been upgraded from 2.21 to 2.24 for stability.
   - Gnutls has been upgraded from 3.3.5 to 3.4.11 for stability.
@@ -571,7 +571,7 @@ As a common feature, multi-user support has been added.
   - The security-server package has been removed.
     - Functionalities have been moved to security-manager and cynara.
   - Support for application shared directory has been added for backward compatibility.
-  - Support for application private sharing APIs has been added for backward compatibility.
+  - Support for application private sharing API set has been added for backward compatibility.
   - All smack rules generated by security-manager have been merged to 1 file to improve performance of smack rule loading.
   - libnss_securitymanager has been implemented.
     - The user session daemon has been inserted to proper groups.
@@ -587,12 +587,12 @@ As a common feature, multi-user support has been added.
     - When an application requests a service, it checks whether an application has the proper privilege.
   - Web privilege management method has been changed.
   - The cynara package has been divided into 3 sub-packages to avoid build dependency.
-  - Cynara monitor APIs for gathering privacy usage information have been added.
+  - Cynara monitor API set for gathering privacy usage information have been added.
   - In mobile and wearable, privacy setting application has been added.
     - If the user does not want to grant specific privileges to an application, they can disable the privileges.
   - In mobile and wearable, a user confirmation step has been added.
     - If an application uses privacy-related privilege, user confirmation is required.
-  - In TV, the `GetConnectionCredentials()` method in gdbus helpers is used for kdbus support.
+  - In TV, the `GetConnectionCredentials()` method in GDBus helpers is used for KDBus support.
 - Privilege list
   - In mobile, the following privileges have been added:
     - Native
@@ -627,11 +627,11 @@ As a common feature, multi-user support has been added.
     - 50+ daemons have been changed from root to non-root ID.
     - Root daemon minimization is still in progress.
 - Device policy management framework
-  - New device policy management framework and related APIs
-    - In mobile and wearable, password policy APIs have been added.
-    - Restriction policy APIs have been added.
-    - Security policy APIs have been added.
-    - In mobile, the zone policy APIs have been added.
+  - New device policy management framework and related API set
+    - In mobile and wearable, password policy API set have been added.
+    - Restriction policy API set have been added.
+    - Security policy API set have been added.
+    - In mobile, the zone policy API set have been added.
 - Container (in mobile)
   - New container package:
     - New container framework has been added.
@@ -651,7 +651,7 @@ As a common feature, multi-user support has been added.
     - tizen-security-policy in Tizen 2.4 had app-signing root certificates. App-signing root certificates have been moved to ca-certificates-tizen.
   - cert-svc has been changed.
     - Pluggable step has been added to the app-signature validation. The plugin can perform an additional signature validation step.
-    - Internal APIs in the `cert-service.h` header file have been completely removed. The cert-svc-vcore capis implement the same functionality.
+    - Internal API set in the `cert-service.h` header file have been completely removed. The cert-svc-vcore capis implement the same functionality.
     - Additional fingerprint file (`fingerprint_list_ext.xml`) for application signature verification root certificates are now allowed.
     - Internal symbolic links in application packaging are now allowed.
     - Certificate blacklist for application signature verification has been added.
@@ -662,38 +662,38 @@ As a common feature, multi-user support has been added.
     - Hardware integration has been upgraded.
     - Encrypted initial value support has been added.
     - Symmetric key (AES key) support has been added.
-    - All public APIs have been changed to non-privileged APIs.
-    - The following APIs have been added:
-      - APIs to handle PKCS12 files, such as `ckmc_save_pkcs12()` and `ckmc_get_pkcs12()`, have been added.
+    - All public API set have been changed to non-privileged API set.
+    - The following API set have been added:
+      - API set to handle PKCS12 files, such as `ckmc_save_pkcs12()` and `ckmc_get_pkcs12()`, have been added.
       - API for certificate verification with designated trust certificates has been added.
-      - API for OCSP (Online Certificate Status Protocol) has been added.
+      - API for Online Certificate Status Protocol (OCSP) has been added.
       - The `kmc_set_permission()` function to manage access control rules efficiently has been added.
       - The `ckmc_remove_alias()` function that deletes data in the database using an alias has been added.
       - Error code (`CKMC_ERROR_AUTHENTICATION_FAILED`) for per-row password mismatched error has been added.
       - API to create an AES key has been added.
-      - APIs for encryption and decryption have been added.
-      - APIs to handle cryptographic parameters have been added.
-    - The following APIs have been changed:
-      - Platform-level privilege has been removed from the key-manager control APIs.
+      - API set for encryption and decryption have been added.
+      - API set to handle cryptographic parameters have been added.
+    - The following API set have been changed:
+      - Platform-level privilege has been removed from the key-manager control API set.
       - Getting a certificate chain with the aliases API has been deprecated.
   - Web application encryption
     - Web application (WGT) encryption feature is moved from secure-storage (until Tizen 2.4) to libwebappenc (since Tizen 3.0).
-  - YACA (Yet Another Crypto API)
+  - Yet Another Crypto API (YACA)
     - A new crypto API package, YACA, has been introduced in Tizen 3.0.
-      - It provides the application with the following stable cryptographic APIs:
-        - APIs for encryption/decryption operations with symmetric keys and sealing and opening operations with asymmetric keys
-        - APIs for creating and verifying a signature, calculating HMAC/CMAC, and calculating a message digest
-        - APIs for key handling operations, such as generating, importing, and exporting a key, and deriving a key from a password
-        - Simple APIs for cryptographic operations
-        - APIs for low-level RSA operations
+      - It provides the application with the following stable cryptographic API set:
+        - API set for encryption/decryption operations with symmetric keys and sealing and opening operations with asymmetric keys
+        - API set for creating and verifying a signature, calculating HMAC/CMAC, and calculating a message digest
+        - API set for key handling operations, such as generating, importing, and exporting a key, and deriving a key from a password
+        - Simple API set for cryptographic operations
+        - API set for low-level RSA operations
   - openssl upgrade
     - openssl has been upgraded to 1.0.2j.
-    - The following risky SSLv2-related APIs were removed:
+    - The following risky SSLv2-related API set were removed:
       - `SSLv2_method()` ,`SSLv2_client_method()`, `SSLv2_server_method()`
 - Anti-virus
   - csr-framework
     - Client-server architecture has been adopted.
-    - Whole APIs have been changed to simple and easy APIs.
+    - Whole API set have been changed to simple and easy API set.
     - Delta scanning is supported.
     - Only embedded engine is supported (engine in the application is not supported).
 
@@ -703,17 +703,17 @@ As a common feature, multi-user support has been added.
 
 - Location
   - Map service (in mobile and wearable)
-    - APIs to get place list metadata, multiple reverse-geocodes, and alternative routes have been added.
-    - APIs to render a map image on an Evas object have been added.
-    - APIs for map objects, such as marker, polyline, and polygon, have been added.
+    - API set to get place list metadata, multiple reverse-geocodes, and alternative routes have been added.
+    - API set to render a map image on an Evas object have been added.
+    - API set for map objects, such as marker, polyline, and polygon, have been added.
     - API to capture snapshots of the current map has been added.
     - Gesture detector to recognize gestures internally has been added.
     - Mapzen map provider plugin has been added.
   - Location (in mobile and wearable)
-    - APIs to get mock locations have been added.
-    - APIs to get locations in a batch have been added.
+    - API set to get mock locations have been added.
+    - API set to get locations in a batch have been added.
   - Geofence (in mobile)
-    - APIs to get proximity data based on geofence have been added.
+    - API set to get proximity data based on geofence have been added.
 - Sensor
   - Sensor listener (in mobile and wearable)
     - 2 new sensor types, sleep detector and stress monitor, have been added.
@@ -732,8 +732,8 @@ As a common feature, multi-user support has been added.
     - Usage types for contact usage statistics have been added.
     - API to reset phone log statistics by SIM slot number has been added.
     - SIP address contact property has been added.
-    - APIs for the search snippet have been added.
-    - APIs for setting the limit size of the vCard photo have been added.
+    - API set for the search snippet have been added.
+    - API set for setting the limit size of the vCard photo have been added.
     - API for checking the initialization status in each SIM has been added. Old API has been deprecated.
     - API for importing contacts from each SIM has been added. Old API has been deprecated.
     - Thumbnail support for contact and person has been added.
@@ -742,13 +742,13 @@ As a common feature, multi-user support has been added.
     - API for checking progress of SIM contact import has been added.
     - In mobile, the service running mode is changed from on-demand to always-on.
   - Calendar (in mobile)
-    - IPC of the calendar service has been changed from PIMS-ipc to gdbus.
+    - IPC of the calendar service has been changed from PIMS-ipc to GDBus.
     - Multi-user support has been added.
     - Database mode has been changed to WAL mode.
   - Phonenumber-utils (in mobile and wearable)
       - In wearable, Phonenumber-utils has been added.
       - API for normalization of the phone number has been added.
-      - APIs for daemonization of phonenumber-utils have been added.
+      - API set for daemonization of phonenumber-utils have been added.
 - Email and message
   - Email (in mobile and wearable)
     - In wearable, the email service has been added.
@@ -757,7 +757,7 @@ As a common feature, multi-user support has been added.
   - Message (in mobile and wearable)
     - msg-manager package for multi-user support has been added.
     - API for checking change of thread list has been added.
-    - APIs related to v-object have been deprecated.
+    - API set related to v-object have been deprecated.
     - Reply on active notification feature has been added.
     - Support for single-part MMS has been added.
 
@@ -766,24 +766,24 @@ As a common feature, multi-user support has been added.
 **New and Changed Features**
 
 - Web View API
-  - The following APIs have been added:
+  - The following API set have been added:
     - `ewk_cookie_manager_file_scheme_cookies_allow_get()`, `ewk_cookie_manager_file_scheme_cookies_allow_set()`, `ewk_context_intercept_request_callback_set()`, `ewk_intercept_request_url_get()`, `ewk_intercept_request_http_method_get()`, `ewk_intercept_request_headers_get()`, `ewk_intercept_request_ignore()`, `ewk_intercept_request_response_set()`, `ewk_intercept_request_response_status_set()`, `ewk_intercept_request_response_header_add()`, `ewk_intercept_request_response_header_map_add()`, `ewk_intercept_request_response_body_set()`, `ewk_intercept_request_response_write_chunk()`, `ewk_view_add_in_incognito_mode()`, `ewk_view_javascript_message_handler_add()`, and `ewk_view_evaluate_javascript()`
-- HTML5/W3C APIs
+- HTML5/W3C API set
   - Responsive Images  
     Enables tag-based responsive image resource mapping for facilitating multi-screen Web application design and implementation.
   - Web Components (`template`, `imports`)  
-    Enables user-defined Web components
+    Enables user-defined Web components.
   - Service Worker  
     Enables background task/page management.
   - WebSpeech API  
-    Provides enhanced support for Speech APIs, including speech recognition.
+    Provides enhanced support for Speech API set, including speech recognition.
   - Media Source Extensions (MSE)  
     Allows JS to generate media streams.
   - WebRTC  
     Enables real-time communication between browsers.
   - Web Cryptography API and Contents Security Policy 1.1
   - Web Push API  
-    Gives Web applications the ability to receive messages pushed to them from the app server. (Not included in the TCS)
+    Gives Web applications the ability to receive messages pushed to them from the app server (not included in the TCS).
 - Web Device API
   - Iotcon API  
     Provides functions for IoT connectivity.
@@ -834,7 +834,7 @@ As a common feature, multi-user support has been added.
   - linaro-gcc: `--enable-lto` option has been added.
   - linaro-glibc: `--disable-nscd` option has been added.
 - gmp library
-  - DEP (Data Execution Prevention) option has been applied.
+  - Data Execution Prevention (DEP) option has been applied.
 - elfutils
   - CVE-2014-0172, CVE-2014-9447 patches have been applied.
 

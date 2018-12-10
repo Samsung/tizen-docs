@@ -17,7 +17,7 @@ GBS simply creates a monolithic source tarball from the HEAD of the current bran
 
 The Git repository layout looks like this:
 
-```bash
+```
          v1.0    v2.0
             |       |
 o---A---B---C---D---E   master
@@ -27,7 +27,7 @@ o---A---B---C---D---E   master
 
 In the joint-packaging model (where packaging and development are in the same branch), packaging data (spec file etc) is kept in the same branch with the source code:
 
-```bash
+```
               F---G---H   master (packaging + code changes)
              /
 o---A---B---C---D---E     upstream
@@ -51,7 +51,7 @@ You cannot have any pre-existing patches in the packaging directory or spec file
 
 In the orphan-packaging model (with separate packaging and development branches), packaging data is kept in a separate (orphan) branch with no source code or common history with the code development branches:
 
-```bash
+```
 o---I---J---K---L         master (packaging)
 
               F---G---H   development/master/1.0 (local source code changes)
@@ -120,7 +120,7 @@ To maintain packages using the model described above, you need to keep unmodifie
 
   In this model, you import source tarballs (or ZIP files) from the upstream release to your Git repository using the `gbs import` command. GBS commits the sources in the upstream branch and creates a tag for the upstream release. An example of starting from scratch, that is importing to an empty repo:
 
-  ```bash
+  ```
   $ mkdir zlib && cd zlib && git init
   $ gbs import ../zlib-1.2.6.tar.gz
   ...
@@ -133,7 +133,7 @@ To maintain packages using the model described above, you need to keep unmodifie
 
   Now you can start development just by adding packaging files to the master branch. When you need to update to a newer upstream version, use the `gbs import` command again:
 
-  ```bash
+  ```
   $ gbs import ../zlib-1.2.7.tar.gz
   $ git tag
   upstream/1.2.6
@@ -148,7 +148,7 @@ To maintain packages using the model described above, you need to keep unmodifie
 
   In this model, you directly track a remote (Git) repository and the `gbs import` command is not used. GBS needs to know only the name of the upstream branch and the format of the upstream release tags. These are package-dependent information so you must configure them in a package-specific `.gbs.conf` in the master branch. For example, to start a package from scratch:
 
-  ```bash
+  ```
   $ git clone git://github.com/madler/zlib.git && cd zlib
   $ git branch -m master origin # to keep origin tracking the upstream
   $ git checkout -b master
@@ -174,7 +174,7 @@ You can use the `pristine-tar` for storing and checking out the upstream tarball
 
 However, if you track a remote upstream repository directly, you need to commit the upstream source tarballs to the pristine-tar branch manually. For example:
 
-```bash
+```
 $ cd zlib
 $ git branch
 * master
@@ -250,7 +250,7 @@ When generating patches, GBS supports squashing several commits into 1 monolithi
 
 For example:
 
-```bash
+```
 $ git branch
 * master
 stable

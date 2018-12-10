@@ -94,6 +94,8 @@ The following table lists the available `VideoView` properties.
 | `MUTED`    | BOOLEAN       | Whether the playback is muted            |
 | `VOLUME`   | MAP           | Playback volume. The `Property::Map` must get left and right volume scalar as a float type. |
 | `UNDERLAY` | BOOLEAN       | Video rendering by underlay              |
+| `PLAY_POSITION` | INTEGER       | The play position (millisecond) of the video              |
+| `DISPLAY_MODE` | DisplayMode   | Options for video mode on the VideoView    |
 
 To change a property from its default value, use the `SetProperty()` function:
 
@@ -106,6 +108,19 @@ Property::Map newMap;
 newMap.Insert( "volumeLeft", 1.0f );
 newMap.Insert( "volumeRight", 0.5f );
 mView.SetProperty( VideoView::Property::VOLUME, newMap );
+```
+
+To change the display mode, use the `PLAYER_DISPLAY_MODE` enums (in [mobile](../../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) applications) .
+
+- `LETTER_BOX`
+- `ORIGIN_SIZE`
+- `FULL_SCREEN`
+- `CROPPED_FULL`
+- `ORIGIN_OR_LETTER`
+- `DST_ROI`
+
+```
+mView.SetProperty( VideoView::Property::DISPLAY_MODE, VideoView::DisplayMode::LETTER_BOX );
 ```
 
 ## Related Information

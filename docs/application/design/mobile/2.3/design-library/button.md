@@ -28,5 +28,3 @@ Keep the following guidelines in mind when designing application controls:
 
 -   Use buttons in the, body, pop-ups, and lists.
 -   Reserve check boxes, radio buttons, and on/off buttons for the application body or pop-up. Never use these types of controls in the header.
-
- 

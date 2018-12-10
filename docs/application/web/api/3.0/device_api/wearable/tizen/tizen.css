@@ -38,18 +38,26 @@ pre webidl
 {
     background-color: #FCE6B9;
     word-wrap:break-word;
+    padding: 2px;
 }
 
 .examplecode
 {
     background-color: #D5F1FD;
     word-wrap:break-word;
+    padding: 2px;
 }
 
 .webidl
 {
     background-color: #D9F0C4;
     word-wrap:break-word;
+    padding: 2px;
+}
+
+.output > pre
+{
+    padding: 2px;
 }
 
 .prettyprint b
@@ -942,6 +950,10 @@ table.informaltable .deprecated a {
 }
 ul.toc li.deprecated,
 ul.toc li.deprecated a {
+    color: #aaa;
+}
+
+.nocode.deprecated {
     color: #aaa;
 }
 

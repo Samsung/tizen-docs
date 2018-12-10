@@ -1,5 +1,9 @@
 # Tizen Native Application
 
+> CAUTION
+>
+> Unauthorized use or replication of external APIs is prohibited.
+
 The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](api/mobile/latest/group__CAPI__APPLICATION__MODULE.html)
 and [wearable](api/wearable/latest/group__CAPI__APPLICATION__MODULE.html)
 applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
@@ -36,7 +40,7 @@ the background, when:
     topmost window and hides your application.
 
 Since Tizen 2.4, an application in the background goes into a suspended state. In the suspended state, the application process is executed with limited CPU resources. In other words, the platform does not allow the running of the background applications, except for some exceptional applications (such as Media and Download) that necessarily work in the
-background. In this case, the application can [designate their background category as an allowed category](guides/app-management/ui-app/efl-ui-app.md#allow_bg) to avoid going into the suspended state.
+background. In this case, the application can [designate their background category as an allowed category](guides/applications/efl-ui-app.md#allow_bg) to avoid going into the suspended state.
 
 When your application becomes visible again, the `app_resume_cb()` callback is invoked. The visibility returns, when:
 
@@ -52,7 +56,7 @@ When your application starts exiting, the `app_terminate_cb()` callback is invok
 
 Because a service application has no UI, neither does it have a pause state. Since Tizen 2.4, a service application can go into the suspended state. Basically, the service application is running in the background by its nature; so the platform does not allow running the service application unless the application has a background category defined in its manifest file. However, when the UI application that is packaged with the service application is running on the foreground, the service application is also regarded as a foreground application and it can be run without a designated background category.
 
-Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](guides/app-management/ui-app/efl-ui-app.md#state_trans).
+Application state changes are managed by the underlying framework. For more information on application state transitions, see [Application States and Transitions](guides/applications/efl-ui-app.md#state_trans).
 
 <a name="start"></a>
 ## Starting the Tizen Native Application

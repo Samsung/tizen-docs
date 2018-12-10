@@ -10,16 +10,20 @@ To install the GNU ARM toolchain:
 > Only the 4.9.2 and 4.9.3 versions are currently supported and tested.
 
 1. Download the built-in binaries and libraries (`gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar`) from [https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update](https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update).
-2. Untar the `gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar` file and export to the following path:  
-`export PATH=/home/xyz/currentwork/workcommon/toolchain/armgcc492/bin:$PATH`
+
+2. Untar the `gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar` file and export to the following path:
+
+    ```
+    export PATH=/home/xyz/currentwork/workcommon/toolchain/armgcc492/bin:$PATH
+    ```
 
     > **Note**
     >
-	> The above command is an example only - do not copy-paste it directly. If you have multiple toolchains, modify the path appropriately.
+    > The above command is an example only - do not copy-paste it directly. If you have multiple toolchains, modify the path appropriately.
 
     In Ubuntu 13.10 and higher, if you cannot execute 32-bit packages, use the following command:
 
-    ```bash
+    ```
 	sudo apt-get install -y lib32z1 lib32ncurses5 lib32bz2-1.0
 	```
 
@@ -27,7 +31,7 @@ To install the GNU ARM toolchain:
 
 To get the source code, run the following commands:
 
-```bash
+```
     $ git clone ssh://<Your ID>@review.tizen.org:29418/rtos/tinyara
     $ cd tinyara
     $ TINYARA_BASEDIR="$PWD"
@@ -37,8 +41,8 @@ The `TINYARA_BASEDIR` environment variable is meant for reference and is used la
 
 > **Note**
 >
-> To get the source code from GitHub, instead of `git clone ssh://...`, use the following command:  
-> ```bash
+> To get the source code from GitHub, instead of `git clone ssh://...`, use the following command:
+> ```
 > $ git clone https://github.com/Samsung/TinyAra.git
 > ```
 
@@ -47,20 +51,20 @@ To build Tizen RT:
 
 1. Configure the build from the `$TINYARA_BASEDIR/os/tools` directory:
 
-   ```bash
+   ```
    $ ./configure.sh <board>/<configuration_set>
    ```
 
-    For example:  
+    For example:
 
-   ```bash
+   ```
    ./configure.sh sidk_s5jt200/hello_with_tash
    ```
 
     The command copies the configuration set for the particular board into the `$TINYARA_BASEDIR/os` directory. The configuration can be modified by running the `make menuconfig` command from the `$TINYARA_BASEDIR/os` directory.
 1. Initiate the build from the `$TINYARA_BASEDIR/os` directory:
 
-   ```bash
+   ```
    $ make
    ```
 

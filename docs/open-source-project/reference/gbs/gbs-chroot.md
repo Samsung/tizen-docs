@@ -4,7 +4,7 @@ Use the `chroot` subcommand to chroot to the build root directory, which is gene
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs chroot --help
 ```
 
@@ -16,7 +16,7 @@ Examples:
 
 - Create a build root with extra packages added to the build root:
 
-  ```bash
+  ```
   $ gbs build --extra-packs=zypper,vim -A i586 # install zypper,vim to build root
   ```
 
@@ -24,26 +24,26 @@ Examples:
 
 - Chroot to the build root:
 
-  ```bash
+  ```
   $ gbs chroot ~/GBS-ROOT/local/scratch.i686.0/
   ```
 
 - Chroot as a "root" user:
 
-  ```bash
+  ```
   $ gbs chroot -r ~/GBS-ROOT/local/scratch.i686.0/
   ```
 
   If the command fails with a "su: user root does not exist" error, it is caused by a Tizen repository. Fix the problem by adding a root user manually by editing the following 2 files:
 
-  ```bash
+  ```
   $ echo "root:x:0:0:root:/root:/bin/bash" >>path/to/buildroot/etc/passwd
   $ echo "root:x:0:" >>path/to/buildroot/etc/group
   ```
 
 - Chroot and install extra packages into the build root directory for development purposes:
 
-  ```bash
+  ```
   chroot as 'root':
   $ gbs chroot -r ~/GBS-ROOT/local/scratch.i686.0/
   Configure tizen repo in the chroot env:
@@ -56,7 +56,7 @@ Examples:
 
   For https repositories, you must specify the `ssl_verify=no` option:
 
-  ```bash
+  ```
   # zypper ar https://user:passwd@tizen.org/releases/daily/<release_id>/repos/main/ia32/packages/?ssl_verify=no tizen-main
   ```
 
@@ -64,6 +64,6 @@ Examples:
 >
 > - To use the `gbs chroot` command as "root", specify the `-r` option. Then zypper can be used to install and remove packages.
 > - To install packages in the build root environment, specify the `-n` option:
->   ```bash
+>   ```
 >   zypper -n install gdb
 >   ```

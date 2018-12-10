@@ -8,7 +8,7 @@ The command updates all local branch HEADs that can be fast-forwarded. It prints
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs pull --help
 ```
 
@@ -16,7 +16,7 @@ Examples:
 
 - Update a Tizen package repository:
 
-  ```bash
+  ```
   $ gbs pull
   info: updating from remote
   .....
@@ -37,7 +37,7 @@ You can use some special options with the `gbs pull` subcommand:
   >
   > Use the `--force` option with care. It discards all local changes to the updated branches. This effectively performs a `git reset --hard` for the local branches.
 
-```bash
+```
 $ gbs pull --all
 info: updating from remote
 .....

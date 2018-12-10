@@ -9,14 +9,14 @@ Use the `gbs clone` subcommand to clone a Git repository into a new directory. U
 
 Synopsis:
 
-```bash
+```
 gbs clone [-h] [--upstream-branch <Upstream_Branch>]
           [--packaging-branch <Working_Branch>]
           [--all] [--depth <Depth>] <Repository> [<Directory>]
 ```
 
 - Mandatory parameter:
-  ```bash
+  ```
   <Repository>        Specifies the path of target local repository or the URL
                       of target remote repository.
 
@@ -34,7 +34,7 @@ gbs clone [-h] [--upstream-branch <Upstream_Branch>]
 
 - Optional parameters:
 
-  ```bash
+  ```
   -h, --help        Shows the help message and exit.
   --upstream-branch <Upstream_Branch>
                     Specifies the upstream branch of the target package when
@@ -68,7 +68,7 @@ Examples:
 
 - Clone a Tizen package:
 
-  ```bash
+  ```
   $ gbs clone tizen:toolchains/zlib.git
   info: cloning tizen:toolchains/zlib.git
   .......
@@ -80,7 +80,7 @@ Examples:
 
 - Clone a Tizen package, as well as tracking all remote branches:
 
-  ```bash
+  ```
   $ gbs clone --all tizen:toolchains/zlib.git
   info: cloning tizen:toolchains/zlib.git
   .......
@@ -96,6 +96,6 @@ Examples:
 
 - Clone a Tizen package through the HTTPS protocol:
 
-  ```bash
+  ```
   $ gbs clone https://<User>:nownjzm9ICUJ@review.tizen.org/gerrit/p/adaptation/systemd-bootmode
   ```

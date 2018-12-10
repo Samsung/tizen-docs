@@ -233,6 +233,8 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the application control operation: Shows the VPN service settings.  <a href="#gad9e8de060075306dabb7b03c35092a7f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga8a94c2acfd2fb91ce2aebcb794c20b4e">APP_CONTROL_OPERATION_GET_INPUT</a>&#160;&#160;&#160;&quot;http://tizen.org/appcontrol/operation/get_input&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the application control operation: Select the type of input method to receive an input from the user.  <a href="#ga8a94c2acfd2fb91ce2aebcb794c20b4e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga7814a1db8e343a4224cb8d05b70c912d">APP_CONTROL_OPERATION_MEDIA_CONTROLLER</a>&#160;&#160;&#160;&quot;http://tizen.org/appcontrol/operation/media_control&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the application control operation: launch controller server or client.  <a href="#ga7814a1db8e343a4224cb8d05b70c912d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga66479be1d84438f929ec2376de137dba">APP_CONTROL_DATA_SUBJECT</a>&#160;&#160;&#160;&quot;http://tizen.org/appcontrol/data/subject&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the app_control data: Subject.  <a href="#ga66479be1d84438f929ec2376de137dba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga1c05f5fe7619192a0c8cd1b0cad1889e">APP_CONTROL_DATA_TO</a>&#160;&#160;&#160;&quot;http://tizen.org/appcontrol/data/to&quot;</td></tr>
@@ -1053,6 +1055,26 @@ Refer to the Launch-On-Event section of the event module. </dd></dl>
  Output: Nothing<br/>
  </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7814a1db8e343a4224cb8d05b70c912d"></a><!-- doxytag: member="app_control.h::APP_CONTROL_OPERATION_MEDIA_CONTROLLER" ref="ga7814a1db8e343a4224cb8d05b70c912d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga7814a1db8e343a4224cb8d05b70c912d">APP_CONTROL_OPERATION_MEDIA_CONTROLLER</a>&#160;&#160;&#160;&quot;http://tizen.org/appcontrol/operation/media_control&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition for the application control operation: launch controller server or client. </p>
+<p>Input: APP_CONTROL_DATA_TYPE in extra is the text of launch type("server" or "client"). This is a mandatory field.<br/>
+ In some cases, URI is used to inform the path to play for the media controller server.<br/>
+ Output: Nothing<br/>
+ </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>

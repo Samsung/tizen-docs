@@ -56,9 +56,6 @@ The main media content features include:
 
   You can manage a collection of media items as a group, when the items have the same value of a given property. You can, for example, [search for groups](#find_groups) and [read group information](#read_group).
 
-- Media storages
-
-  You can [retrieve information about the media storages](#storage_list).
 
 <a name="prerequisites"></a>
 ## Prerequisites
@@ -319,14 +316,16 @@ To get notifications of database changes, register a callback. You can only set 
    int ret = MEDIA_CONTENT_ERROR_NONE;
 
    /* Subscribe notifications */
+   media_content_noti_h noti = NULL;
    char *user_str = strdup("hi");
-   media_content_set_db_updated_cb(_noti_cb, (void*)user_str);
+
+   media_content_add_db_updated_cb(_noti_cb, (void*)user_str, &noti);
    ```
 
-3. When you no longer want to receive notifications, deregister the callback:
+3. When you no longer want to receive notifications, deregister the callback using the generated `noti` handle:
 
    ```
-   media_content_unset_db_updated_cb();
+   media_content_remove_db_updated_cb(noti);
    ```
 
 <a name="findingall"></a>
@@ -782,7 +781,7 @@ To find media folders and filter the results:
 
 1. To find only folders satisfying certain criteria, or modify the results in a specific way, create a filter and set its properties.
 
-   The following example filters media folders so that only folders named "Downloads" found in the internal storage are included in the result. The filter is case-insensitive, and the results are sorted in ascending order by modified time. For more information on the filter properties, see [Setting up a Filter](#filter).
+   The following example filters media folders so that only folders named "Downloads" found are included in the result. The filter is case-insensitive, and the results are sorted in ascending order by modified time. For more information on the filter properties, see [Setting up a Filter](#filter).
 
    ```
    filter_h filter = NULL;
@@ -792,7 +791,6 @@ To find media folders and filter the results:
    #define BUFLEN 200
    char buf[BUFLEN] = {'\0'};
    snprintf(buf, BUFLEN, "%s = 'Downloads'", FOLDER_NAME);
-   snprintf(buf, BUFLEN, "%s = %d", FOLDER_STORAGE_TYPE, MEDIA_CONTENT_STORAGE_INTERNAL);
 
    media_filter_set_condition(filter, buf, MEDIA_CONTENT_COLLATE_NOCASE);
    media_filter_set_order(filter, MEDIA_CONTENT_ORDER_ASC, FOLDER_MODIFIED_TIME,
@@ -822,7 +820,7 @@ To find media folders and filter the results:
 <a name="read_folder"></a>
 ## Reading Folder Information
 
-To read media folder information, define a callback for the `media_folder_foreach_folder_from_db()` function and retrieve the basic folder information (folder ID, name, path, storage type, last modified time, and number of media items in the folder) in the callback:
+To read media folder information, define a callback for the `media_folder_foreach_folder_from_db()` function and retrieve the basic folder information (folder ID, name, path, last modified time, and number of media items in the folder) in the callback:
 
 1. Read the folder details within the callback:
 
@@ -870,29 +868,6 @@ To read media folder information, define a callback for the `media_folder_foreac
      >
      > Free the `name` and `path` variables at the end. The `folder_id` variable is freed later, since it is still needed.
 
-   - Read the folder storage type using the `media_folder_get_storage_type()` function:
-
-     ```
-         media_content_storage_e storage_type = MEDIA_CONTENT_STORAGE_INTERNAL;
-
-         ret = media_folder_get_storage_type(folder, &storage_type);
-         if (ret != MEDIA_CONTENT_ERROR_NONE) {
-             /* Error handling */
-         } else {
-             switch (storage_type) {
-             case MEDIA_CONTENT_STORAGE_INTERNAL:
-                 dlog_print(DLOG_DEBUG, LOG_TAG, "Folder storage type: Internal\n");
-                 break;
-             case MEDIA_CONTENT_STORAGE_EXTERNAL:
-                 dlog_print(DLOG_DEBUG, LOG_TAG, "Folder storage type: External\n");
-                 break;
-             default:
-                 dlog_print(DLOG_DEBUG, LOG_TAG, "Folder storage type: Unknown\n");
-                 break;
-             }
-         }
-     ```
-
    - Get the media item count in the folder with the `media_folder_get_media_count_from_db()` function.
 
      The second parameter is the filter. If it is set to `NULL`, all media is counted.
@@ -910,9 +885,9 @@ To read media folder information, define a callback for the `media_folder_foreac
       }
       ```
 
- 	 > **Note**
+      > **Note**
       >
-     > Free the `folder_id` value after it is used for the `media_folder_get_media_count_from_db()` function.
+      > Free the `folder_id` value after it is used for the `media_folder_get_media_count_from_db()` function.
 
 <a name="folder_content"></a>
 ## Retrieving Folder Content
@@ -1623,57 +1598,6 @@ To delete a tag:
    g_list_free(tag_list);
    tag_list = NULL;
    ```
-<a name="storage_list"></a>
-## Retrieving Storage Information
-
-To access information about the storages:
-
-1. Define a callback function for the `media_storage_foreach_storage_from_db()` function, called for each available storage. Use the callback to create a list of storages.
-
-    ```
-    void
-    storage_cb(media_storage_h storage, void *user_data)
-    {
-        media_storage_h new_storage = NULL;
-        media_storage_clone(&new_storage, storage);
-
-        GList **list = (GList**)user_data;
-        *list = g_list_append(*list, new_media);
-    }
-    ```
-
-2. To find the storages, call the `media_storage_foreach_storage_from_db()` function with the defined callback. After the callback has created the storage list, you can access the storage details with various `media_storage_get_XXX()` functions.
-
-    ```
-    char *id = NULL;
-    char *name = NULL;
-    char *path = NULL;
-    GList *storage_list = NULL; /* Include glib.h */
-    media_storage_h storage = NULL;
-
-    ret = media_storage_foreach_storage_from_db(NULL, storage_cb, &storage_list);
-    if (ret != MEDIA_CONTENT_ERROR_NONE) {
-        dlog_print(DLOG_ERROR, LOG_TAG,
-                   "media_storage_foreach_storage_from_db failed: %d", ret);
-
-        return ret;
-    } else {
-        int i;
-
-        for (i = 0; i < g_list_length(storage_list); i++) {
-            storage = (media_storage_h)g_list_nth_data(storage_list, i);
-            media_storage_get_id(new_storage, &id);
-            media_storage_get_name(new_storage, &name);
-            media_storage_get_path(new_storage, &path);
-
-            dlog_print(DLOG_DEBUG, LOG_TAG, "id:[%s] name:[%s] path:[%s]", id, name, path);
-
-            free(id);
-            free(name);
-            free(storage);
-        }
-    }
-    ```
 
 <a name="find_groups"></a>
 ## Finding Media Item Groups
@@ -1814,22 +1738,10 @@ The following tables list the information available about the media files.
 | `Longitude`       | Longitude of the media content           |
 | `Latitude`        | Latitude of the media content            |
 | `Altitude`        | Altitude of the media content            |
-| `Weather`         | Weather information for the media content |
 | `Rating`          | Rating of the media content              |
 | `Favorite`        | Favorite status of the media content     |
-| `Author`          | Author of the media content              |
-| `Provider`        | Provider of the media content            |
-| `Content name`    | Content name of the media content        |
 | `Title`           | Title of the media content               |
-| `Category`        | Category of the media content            |
-| `Location tag`    | Location tag of the media content        |
-| `Age rating`      | Age rating of the media content          |
-| `Keyword`         | Keyword of the media content             |
 | `Is DRM`          | Check flag for DRM content               |
-| `Storage type`    | Storage type of the media content        |
-| `Played count`    | Played count of the media content        |
-| `Played time`     | Last played time of the media content    |
-| `Played position` | Last played position of the media content |
 
 For metadata of an audio file, call the `media_info_get_audio()` function with the media handle.
 
@@ -1889,6 +1801,7 @@ For metadata of a video file, call `withmedia_info_get_video()` function with th
 | `Duration`      | Duration of the video content            |
 | `Width`         | Width of the video content               |
 | `Height`        | Height of the video content              |
+| `rotation`      | The clockwise rotation angle of the video content in degrees |
 
 ## Related Information
 - Dependencies

@@ -6,7 +6,7 @@ A mobile native application is created using the C language, and can be run on T
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile native application, which displays some text on the screen with no user interaction:
 
-1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/setup/download.md).
+1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
@@ -26,7 +26,7 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/cover-native.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
@@ -43,19 +43,13 @@ To create the application project:
 
 1.  Launch the Tizen Studio.
 
-2. Make sure the **Native** perspective is selected in the upper-right corner of the Tizen Studio window.
-
-    ![Checking the perspective](media/change_perspective_n.png)
-
-    If not, select it. If the perspective is not visible, in the Tizen Studio menu, select **Window &gt; Perspective &gt; Open Perspective &gt; Other &gt; Native**, and click **OK**.
-
-3. In the Tizen Studio menu, select **File &gt; New &gt; Tizen Project**.
+2. In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
     ![Creating a new Tizen Native project](media/create_project_1.png)
 
     The Project Wizard opens.
 
-4. In the Project Wizard, define the project details.
+3. In the Project Wizard, define the project details.
 
     The Project Wizard is used to create the basic application skeleton with the required folder structure and mandatory files. You can easily create different applications by selecting an applicable template or sample for the Project Wizard to use.
 
@@ -118,7 +112,7 @@ To view and modify the application configuration:
 
 2. In the manifest editor, view and modify the configuration details using the various tabs:
 
-    ![Configuring the application](media/basic_app_config_n.png)
+    ![Configuring the application](media/basic_app_config_mn.png)
 
     - **Overview**: Define general information, such as the package, label, and icon of the application.
 
@@ -187,7 +181,7 @@ main(int argc, char *argv[])
 ```
 
 <a name="build"></a>
-## Building Your Application 
+## Building Your Application
 
 After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
 
@@ -202,13 +196,13 @@ You can build the application in the following ways:
     To use the automatic build:
 
     1.  Select the project in the **Project Explorer** view.
-    2. In the Tizen Studio menu, select **Project &gt; Build Automatically**.
+    2. In the Tizen Studio menu, select **Project \> Build Automatically**.
 
-        ![Using the automatic build](media/build_automatic_n.png)
+        ![Using the automatic build](media/build_automatic.png)
 
         A check mark appears next to the menu option.
 
-    You can toggle the automatic build on and off by reselecting **Project &gt; Build Automatically**.
+    You can toggle the automatic build on and off by reselecting **Project \> Build Automatically**.
 
 - **Manually**
 
@@ -218,14 +212,14 @@ You can build the application in the following ways:
 
     **Figure: Manually building the application**
 
-    ![Manually building the application](media/build_manual_n.png)
+    ![Manually building the application](media/build_manual_mn.png)
 
     Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:
 
-    -   In the Tizen Studio menu, select **Project &gt; Build Project**.
+    -   In the Tizen Studio menu, select **Project \> Build Project**.
     -   Press the **F10** key.
 
-You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations &gt; Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
+You can have more than one build configuration. To see the current active configuration or change it, right-click the project in the **Project Explorer** view and select **Build Configurations \> Set Active**. The default configuration is `Debug`. For more information, see [Building Applications](../../tutorials/process/building-app.md).
 
 After you have built the application, run it.
 
@@ -240,7 +234,7 @@ You can run the application on the emulator or a real target device.
 To run the application on the emulator:
 
 1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-    1.  In the Tizen Studio menu, select **Tools &gt; Emulator Manager**.
+    1.  In the Tizen Studio menu, select **Tools \> Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
@@ -248,18 +242,18 @@ To run the application on the emulator:
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
-        ![Launching the emulator](media/emulator_instance_launch.png)
+        ![Launching the emulator](media/emulator_launch_m.png)
 
         The emulator is launched in its own window. You can also see the new emulator instance and its folder structure in the **Device Manager**.
 
-        ![Emulator](media/emulator_window_mobile.png)
+        ![Emulator](media/emulator_window_m.png)
 
 2. Generate a security profile.
 
     Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in the Tizen Studio.
 
 3. Run the application:
-    1.  In the **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Native Application**.
+    1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Native Application**.
 
         ![Running the application](media/app_run_n.png)
 
@@ -282,7 +276,7 @@ To run the application on the emulator:
         > 1.  To switch the display on, in the key window next to the emulator screen, click `Power`.
         > 2.  On the home screen, swipe left.
 
-        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window &gt; Show View &gt; Log**.
+        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
 
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
@@ -298,7 +292,7 @@ To run the application on a target device:
 
 3. Run the application:
     1.  In the **Device Manager**, select the device.
-    2. In **Project Explorer** view, right-click the project and select **Run As &gt; Tizen Native Application**.
+    2. In **Project Explorer** view, right-click the project and select **Run As \> Tizen Native Application**.
 
         ![Run the application on a target device](media/app_run_n.png)
 
@@ -321,9 +315,9 @@ To run the application on a target device:
     >    ![Run Configurations window](media/run_configurations_n.png)
 
 <a name="build_ui"></a>
-## Designing a Simple UI 
+## Designing a Simple UI
 
-The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/introduction-n.md).
+The mobile application created with the **Basic UI** template has a simple user interface with a label component showing the **Hello Tizen** text at the top of the screen. The UI is created using [EFL](../../guides/ui/efl/index.md).
 
 **Figure: User interface in the Basic UI template**
 
@@ -382,7 +376,7 @@ The UI is created in the `basicui.c` file:
 
         The function receives a pointer to fill in the `appdata_s` structure.
 
-        ``` 
+        ```
         static void
         create_base_gui(appdata_s *ad)
         {
@@ -417,7 +411,7 @@ The UI is created in the `basicui.c` file:
         -   The conformant component is set as a resize object of the window by using the `elm_win_resize_object_add()` function. It means that the conformant size and position are controlled by the window component directly.
         -   The `evas_object_show()` function makes the conformant component visible.
 
-        ``` 
+        ```
             /*
                Conformant
                Create and initialize elm_conformant, which is mandatory for the base GUI
@@ -436,7 +430,7 @@ The UI is created in the `basicui.c` file:
 
         The label text is set with the `elm_object_text_set()` function.
 
-        ``` 
+        ```
             /*
                Label
                Create an actual view of the base GUI
@@ -451,7 +445,7 @@ The UI is created in the `basicui.c` file:
 
     5. When all the UI components are ready, the `evas_object_show()` function makes the window component visible. This means that the window displays everything on the screen at once.
 
-        ``` 
+        ```
             /* Show the window after the base GUI is set up */
             evas_object_show(ad->win);
         }
@@ -463,7 +457,7 @@ When the basic UI exists, you can easily modify the components in the UI by usin
 
 For example, the following modifications to the label component change the label style to a marker (making the text bold) and increase the font size to 50:
 
-``` 
+```
 /* Label */
 ad->label = elm_label_add(ad->conform);
 elm_object_text_set(ad->label, "<align=center><font_size=50>Hello Tizen</font/></align>");
@@ -509,7 +503,7 @@ To add more content to the UI:
 
     2. Create the box component using the conformant as the parent, and set the box as the conformant content:
 
-        ``` 
+        ```
         ad->box = elm_box_add(ad->conform);
         evas_object_size_hint_weight_set(ad->box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
         evas_object_show(ad->box);
@@ -518,7 +512,7 @@ To add more content to the UI:
 
     3. Modify the existing label component to use box as a parent, and add it to the box:
 
-        ``` 
+        ```
         /* Modify the label code */
         ad->label = elm_label_add(ad->box);
         elm_object_text_set(ad->label, "<align=center>Hello Tizen</align>");
@@ -540,7 +534,7 @@ To add more content to the UI:
 
         - Add items to the list with the `elm_list_item_append()` function.
 
-        ``` 
+        ```
         int i;
         /* Create the list */
         ad->list = elm_list_add(ad->box);
@@ -619,14 +613,14 @@ To add more content to the UI:
 
         Each application view is a separate item in the naviframe, and the top item is always displayed.
 
-        ``` 
+        ```
         ad->navi_item = elm_naviframe_item_push(ad->navi, "View with list",
                                                 NULL, NULL, ad->box, NULL);
         ```
 
     5. Create the navigation between the views by adding a click event callback for the **Next** button. When the user clicks the button, the second view opens.
 
-        ``` 
+        ```
         /* Create the button */
 
         evas_object_show(ad->button);
@@ -643,7 +637,7 @@ To add more content to the UI:
 
         Add both the new functions before the `create_base_gui()` function.
 
-        ``` 
+        ```
         static void
         prev_btn_clicked_cb(void *data, Evas_Object *obj, void *event_info)
         {

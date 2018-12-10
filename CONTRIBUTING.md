@@ -18,18 +18,19 @@ The document covers the process for contributing to the articles and code sample
 You need a basic understanding of [Git and GitHub.com](https://guides.github.com/activities/hello-world/).
 
 **Step 1:** Skip this step for small changes. Open an [issue](https://github.com/Samsung/tizen-docs/issues) describing what you want to do, such as change an existing article or create a new one.
-The content inside the **docs** folder is organized into sections that are reflected in the Table of Contents (docs/TOC.md). Define where the topic will be located in the docs/TOC.md. Get feedback on your proposal.
+The content inside the **docs** folder is organized into sections that are reflected in the Table of Contents (toc_all.md). Define where the topic will be located in the toc_all.md. Get feedback on your proposal.
+
+You must use heading tags(#, ##, ###, ####...) for items of TOC. There are four categoris: Open Source Project, Application, IoT and Blog. They are items of GNB(Global Navigation Bar) and they have own TOC files(toc_all.md) in their own directories.
 
 > **Note**
 >
-> docs/TOC.md has maximum 4th depth. You can use #, ##, ###, and ####. The title with # will be located on GNB(Global Navigation Bar).
+> Blog is not shown on GNB yet.
 
-
-You can also look at our [open issues](https://github.com/Samsung/tizen-docs/issues) list and volunteer to work on the ones you're interested in. 
+You can also look at our [open issues](https://github.com/Samsung/tizen-docs/issues) list and volunteer to work on the ones you're interested in.
 
 **Step 2:** Fork the `/Samsung/tizen-docs` repo and create a branch for your changes.
 
-For small changes, you can use GitHub's web interface. Simply click the **Edit the file in your fork of this project** on the file you'd like to change. 
+For small changes, you can use GitHub's web interface. Simply click the **Edit the file in your fork of this project** on the file you'd like to change.
 GitHub creates the new branch for you when you submit the changes.
 
 **Step 3:** Make the changes on this new branch.
@@ -52,7 +53,7 @@ Be sure to follow the proper Markdown syntax. For more information, see the [sty
 - Example structure
   ```
   docs
-    /open-source-tizen
+    /open-source-project
       /porting
         porting-overview.md
         /media
@@ -117,7 +118,7 @@ On a certain cadence, we push all commits from master branch into the live branc
    ```bash
    $ git push origin <new branch name>
    ```
-7. Open a pull requst on http://github.com/Samsung/tizen-docs.git.
+7. Open a pull request on http://github.com/Samsung/tizen-docs.git.
 
 
 ## DOs and DON'Ts

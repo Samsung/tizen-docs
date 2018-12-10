@@ -12,7 +12,6 @@ Offer the **Menu**, **Back**, and **Home** keys as physical (hardware) keys.
 
 <img alt="" height="490" src="media/01_navigation_messages01_2.png" width="240" />
 
-
 ## Back Key and Cancel Button
 
 When moving from a screen to another to perform a task, the user taps applicable elements on the current screen (for example, lists and pop-ups). When the user wants to return to the previous screen, he or she taps the **Back** key or **Cancel** button.
@@ -36,7 +35,6 @@ The following figure shows the navigation path from the file manager screen to a
 </video>
 
 The **Back** key can be used not only to return to the previous screen, but also to hide the virtual keypad or notification pop-up.
-
 
 ### Cancel Button
 
@@ -89,7 +87,6 @@ When using tabs, avoid using other components that also use horizontal scroll, s
 <video controls width="240">
   <source src="media/navigation_05.mp4" type=video/mp4>
 </video>
-
 
 ### Drawer
 

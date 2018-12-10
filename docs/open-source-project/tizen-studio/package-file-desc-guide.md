@@ -25,7 +25,7 @@ Project structure for developing, packaging, and building extensions requires th
 ### `pkginfo.manifest` File
 
 This file contains information about the packages created by the source build. It consists of sections and fields:
-  
+
 Sections are separated by 2 newline characters (`\n \n`), and each section contains various fields:
 - The Common section contains the following fields:
   - Source name
@@ -40,16 +40,21 @@ Sections are separated by 2 newline characters (`\n \n`), and each section conta
   - Source dependency
   - Attribute information
   - Description
-  - C-Prerequisites  
+  - C-Prerequisites
     - Given as `C-Prerequisites : Library name`. If more than 1 library is needed, separate them with `,`.
     - If a library needs to be used for more than 1 version:
-      - The library needs to be used in all Ubuntu versions:  
+      - The library needs to be used in all Ubuntu versions:
+
         `C-Prerequisites : libpixman-1-0, libpng12-0`
-      - The library needs to be used in a single Ubuntu version:  
+
+      - The library needs to be used in a single Ubuntu version:
+
         `C-Prerequisites : libxcb-keysyms1 [12.04]`
-      - The library needs to be used in multiple Ubuntu versions (separated by a space):  
+
+      - The library needs to be used in multiple Ubuntu versions (separated by a space):
+
         `C-Prerequisites : qemu-user-static [11.04 11.10 12.04 12.10 13.04 13.10]`
-  
+
   ```
   Package : facebook-sdk-back
   Label : Facebook SDK for Tizen
@@ -68,9 +73,9 @@ Sections are separated by 2 newline characters (`\n \n`), and each section conta
 
 This file consists of a shell script. You need to implement some of the following functions:
 
-```bash
+```
 clean() {
-    // Code clean 
+    // Code clean
     rm -rf $SRCDIR/*.zip
     rm -rf $SRCDIR/package/testGitA.package.$TARGET_OS
 }
@@ -103,15 +108,25 @@ This file is included in the package file (.zip). When a new package is deployed
 Your package must comply with the extension package name creation rules:
 
 - Package name: `<Profile>-<Version>-<Product-name>-<Package-Name>`
+
 - One of the following types specified with the metapackage name postfix (required):
-  - Web: `WebAppDevelopment`  
+
+  - Web: `WebAppDevelopment`
+
     For example, `tv-2.4-samsung-public-WebAppDevelopment`
-  - Native: `NativeAppDevelopment`  
+
+  - Native: `NativeAppDevelopment`
+
     For example, `mobile-2.4-product-NativeAppDevelopment`
-  - Emulator: `Emulator`  
+
+  - Emulator: `Emulator`
+
     For example, `tv-2.4-samsung-public-Emulator`
 
 The list of supported environments in Tizen Studio:
+
   - Profile: Mobile, Wearable, or TV
+
   - Platform version: 2.4 or 3.0
+
   - Development environment: Native IDE, Web IDE, Emulator (CLI will be supported)

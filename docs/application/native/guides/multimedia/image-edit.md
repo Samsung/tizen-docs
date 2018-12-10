@@ -118,19 +118,13 @@ To convert an image from one color space to another:
    ret = image_util_transform_create(&handle);
    ```
 
-2. Optionally, enable hardware acceleration using the `image_util_transform_set_hardware_acceleration()` function:
-
-   ```
-   ret = image_util_transform_set_hardware_acceleration(handle, true);
-   ```
-
-3. Set the target color space using the `image_util_transform_set_colorspace()` function:
+2. Set the target color space using the `image_util_transform_set_colorspace()` function:
 
    ```
    ret = image_util_transform_set_colorspace(handle, colorspace);
    ```
 
-4. Execute the transformation using the `image_util_transform_run()` function:
+3. Execute the transformation using the `image_util_transform_run()` function:
 
    ```
    ret = image_util_transform_run(handle, src,
@@ -144,9 +138,9 @@ To convert an image from one color space to another:
    > - Because of the restrictions of the image processing library, not all color space combinations are supported for conversion. For example, the NV12 format is commonly used in hardware chips, but it is not supported by the library.
    > - If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
-5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
-6. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
 
    ```
    ret = image_util_transform_destroy(handle);
@@ -164,19 +158,13 @@ To resize an image:
    ret = image_util_transform_create(&handle);
    ```
 
-2. Optionally, enable hardware acceleration using the `image_util_transform_set_hardware_acceleration()` function:
-
-   ```
-   ret = image_util_transform_set_hardware_acceleration(handle, true);
-   ```
-
-3. Set the target resolution using the `image_util_transform_set_resolution()` function:
+2. Set the target resolution using the `image_util_transform_set_resolution()` function:
 
    ```
    ret = image_util_transform_set_resolution(handle, width, height);
    ```
 
-4. Execute the transformation using the `image_util_transform_run()` function:
+3. Execute the transformation using the `image_util_transform_run()` function:
 
    ```
    ret = image_util_transform_run(handle, src,
@@ -190,9 +178,9 @@ To resize an image:
    > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.
    > - If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
-5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
-6. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
 
    ```
    ret = image_util_transform_destroy(handle);
@@ -210,13 +198,7 @@ To rotate an image:
    ret = image_util_transform_create(&handle);
    ```
 
-2. Optionally, enable hardware acceleration using the `image_util_transform_set_hardware_acceleration()` function:
-
-   ```
-   ret = image_util_transform_set_hardware_acceleration(handle, true);
-   ```
-
-3. Set the amount of rotation using the `image_util_transform_set_rotation()` function:
+2. Set the amount of rotation using the `image_util_transform_set_rotation()` function:
 
    ```
    ret = image_util_transform_set_rotation(handle, rotation);
@@ -224,7 +206,7 @@ To rotate an image:
 
    The possible values for the `rotation` parameter are defined in the `image_util_rotation_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) applications).
 
-4. Execute the transformation using the `image_util_transform_run()` function:
+3. Execute the transformation using the `image_util_transform_run()` function:
 
    ```
    ret = image_util_transform_run(handle, src,
@@ -237,9 +219,9 @@ To rotate an image:
    > - The image format has no effect on the transformation.
    > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
-5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
-6. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
 
    ```
    ret = image_util_transform_destroy(handle);
@@ -256,19 +238,13 @@ To crop an image:
    ret = image_util_transform_create(&handle);
    ```
 
-2. Optionally, enable hardware acceleration using the `image_util_transform_set_hardware_acceleration()` function:
-
-   ```
-   ret = image_util_transform_set_hardware_acceleration(handle, true);
-   ```
-
-3. Set the crop area using the `image_util_transform_set_crop_area()` function:
+2. Set the crop area using the `image_util_transform_set_crop_area()` function:
 
    ```
    ret = image_util_transform_set_crop_area(handle, start_x, start_y, end_x, end_y);
    ```
 
-4. Execute the transformation using the `image_util_transform_run()` function:
+3. Execute the transformation using the `image_util_transform_run()` function:
 
    ```
    ret = image_util_transform_run(handle, src,
@@ -281,9 +257,9 @@ To crop an image:
    > - Because of a YUV restriction, and because the crop start position can be set arbitrarily, the cropped image width and height must be even.
    > - If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
-5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
-6. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
 
    ```
    ret = image_util_transform_destroy(handle);

@@ -4,7 +4,7 @@ Use the `gbs submit` subcommand to create or push tags to Gerrit. This triggers 
 
 For command usage details, enter:
 
-```bash
+```
 $ gbs submit --help
 ```
 
@@ -12,7 +12,7 @@ Examples:
 
 - Create a tag on a current working branch and submit it directly:
 
-  ```bash
+  ```
   $ gbs submit -m 'release for 0.1'
   ```
 
@@ -20,13 +20,13 @@ Examples:
 
 - Use the `-c` option to submit a specific commit:
 
-  ```bash
+  ```
   $ gbs submit -c <commit_ID> -m 'release for 0.2'
   ```
 
 - Use the `--target` option to specify the target version to submit:
 
-  ```bash
+  ```
   $ gbs submit --target=trunk -m 'release for 0.2.1'
   ```
 
@@ -36,12 +36,12 @@ Examples:
 
 - Use the `-r` option to specify the remote Gerrit server to submit. By default, the server is `origin`.
 
-  ```bash
+  ```
   $ gbs submit -r tizen:public/base/gcc -m 'release for 0.4'
   ```
 
 - If your gpg key has been set, use the `-s` option to create a signed tag:
 
-  ```bash
+  ```
   $ gbs submit -m 'release for 0.3' -s
   ```

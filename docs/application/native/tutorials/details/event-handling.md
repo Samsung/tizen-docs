@@ -13,11 +13,12 @@ support the media key events. You can use the Efl Extension Event API
 (in
 [mobile](../../api/mobile/latest/group__EFL__EXTENSION__EVENTS__GROUP.html)
 and
-[wearable](../../api/wearable/latest/group__CAPI__EFL__EXTENSION__EVENT__MODULE.html)
+[wearable](../../api/wearable/latest/group__EFL__EXTENSION__EVENTS__GROUP.html)
 applications) to handle the **Menu** key, **Back** key, and rotary
 events.
 
-> **Note**  
+> **Note**
+>
 > For more information on using Efl Extension for **Menu** key,
 **Back** key, and rotary events, see [Hardware Input Handling](../../guides/ui/efl/hw-input.md).
 
@@ -86,4 +87,4 @@ applications).
 
 An ambient mode is available on a low-powered wearable device. For more
 information on ambient events in the mobile native profile, see the
-[Watch Application](../../guides/app-management/watch-app.md) guide.
+[Watch Application](../../guides/applications/watch-app.md) guide.

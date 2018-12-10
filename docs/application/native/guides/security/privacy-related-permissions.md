@@ -132,7 +132,134 @@ To check whether an application has permission to use a privilege, and to reques
 >
 > Since the privileges are grouped, the user's decision regarding one privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only one of them, the above rule does not apply.
 
+## Requesting Multiple Permissions
+
+This section describes how to check and request multiple privileges in a single API call.
+
+> **Note**
+>
+> Multiple privileges in single API call are supported from Tizen 5.0.
+
+To check whether an application has permission to use a privilege, and to request permission if required:
+
+1. Check whether an application has permission to use privileges, using the `ppm_check_permissions()` function:
+
+    ```
+    void
+    app_check_and_request_permissions()
+    {
+        ppm_check_result_e results[2];
+        const char* privileges [] = {"http://tizen.org/privilege/alarm.get",
+                                     "http://tizen.org/privilege/calendar.read"};
+        char* askable_privileges[2];
+        int askable_privileges_count = 0;
+
+        int ret = ppm_check_permissions(privileges, sizeof(privileges) / sizeof(privileges[0]), results);
+    ```
+
+    The results of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) applications).
+
+2. React to the permissions check appropriately:
+
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+
+        ```
+            if (ret == PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE) {
+                for (int it = 0; it < sizeof(privileges) / sizeof(privileges[0]); ++it)
+                {
+                    switch (results[it]) {
+                    case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ALLOW:
+                        /* Update UI and start accessing protected functionality */
+                        break;
+        ```
+
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any API function that involves the privilege results in an error.
+
+     ```
+                case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_DENY:
+                    /* Show a message and terminate the application */
+                    break;
+
+     ```
+
+   - If the result value is `PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK`, the application must request permission from the user with the `ppm_request_permissions()` function, which displays a dialog box. You can pass user data as the fourth parameter of the function, as a pointer to an application context instance. When the user makes a decision, a callback defined as the second parameter is invoked.
+
+     The dialog box asking for user permissions is shown only if the `ppm_request_permissions()` function returns without an error.
+
+        ```
+                    case PRIVACY_PRIVILEGE_MANAGER_CHECK_RESULT_ASK:
+                        askable_privileges[askable_privileges_count++] = privileges[it];
+                        /* Log and handle errors */
+                        break;
+                    }
+                }
+                ret = ppm_request_permissions(askable_privileges, askable_privileges_count,
+                                              app_request_multiple_response_cb, NULL);
+            } else {
+                /* ret != PRIVACY_PRIVILEGE_MANAGER_ERROR_NONE */
+                /* Handle errors */
+            }
+        }
+        ```
+
+3. If you need to request user permissions, handle the user decisions within the callback.
+
+   The user decisions is returned in the callback as a value of the `ppm_request_result_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga0be419f8be0a398fd6e9af29f9c3e29b) applications).
+
+    ```
+    void
+    app_request_multiple_response_cb(ppm_call_cause_e cause, ppm_request_result_e* results,
+                                     const char **privileges, size_t privileges_count, void *user_data)
+    {
+        if (cause == PRIVACY_PRIVILEGE_MANAGER_CALL_CAUSE_ERROR) {
+            /* Log and handle errors */
+
+            return;
+        }
+        for (int it = 0; it < privileges_count; ++it) {
+            switch (results[it]) {
+                case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER:
+                    /* Update UI and start accessing protected functionality */
+                    break;
+                case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER:
+                    /* Show a message and terminate the application */
+                    break;
+                case PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE:
+                    /* Show a message with explanation */
+                    break;
+            }
+        }
+    }
+
+## Checking Permissions
+
+This section describes how to check privileges of the application with the specified app_id.
+
+> **Note**
+>
+> Checking permissions of the application with the specified app_id is supported from Tizen 5.0. Requesting permissions of the application with the specified app_id is not supported.
+
+To check whether the application with the specified app_id has permission to use the privileges:
+
+1. Declare the `http://tizen.org/privilege/permission.check` privilege in the manifest of the application. If the privilege is missing, the API functions that are designed to check the privileges of the application with the specified app_id, return the `PRIVACY_PRIVILEGE_MANAGER_ERROR_PERMISSION_DENIED` error.
+
+2. Check whether the application has permission to use the privileges, using the `ppm_check_app_permission()` or `ppm_check_app_permissions()`, in a way similar to `ppm_check_permission()` and `ppm_check_permissions()`. The only difference is that you need to add the app_id as the first argument of the used function. For example:
+
+    ```
+    void
+    check_app_permission()
+    {
+        ppm_check_result_e result;
+        const char *app_id = "org.tizen.camera-app";
+        const char *privilege = "http://tizen.org/privilege/camera";
+
+        int ret = ppm_check_app_permission(app_id, privilege, &result);
+    }
+    ```
+
+    The result of the call is stored in the variable passed as the second parameter (for available results, see the `ppm_check_result_e` enumeration in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#ga41f409d8b9d4c27d41b907bdb0975f0c) applications).
+
 ## Related Information
 - Dependencies
-  - Tizen 2.3 and Higher for Mobile
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 4.0 and Higher for Mobile
+  - Tizen 4.0 and Higher for Wearable

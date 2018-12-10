@@ -6,6 +6,10 @@ The Tizen platform supports hybrid applications (1 Web application and 1 or more
 
 Tizen provides a wide range of Web API modules that allow you to take full advantage of various Tizen features.
 
+> **Note**
+>
+> The feature support differs depending on the application profile (mobile, wearable, or TV).
+
 The following table lists the features provided by the [Mobile Web Device API Reference](../api/latest/device_api/mobile/index.html).
 
 **Table: Device API features provided for mobile applications**
@@ -51,7 +55,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 
 - Guides:<br>
   [Alarms](alarm/alarms.md) <br>
-  [Application Management](app-management/applications.md) <br>
+  [Applications](applications/overview.md) <br>
+  [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
 - API Reference: [Application Framework](../api/latest/device_api/mobile/index.html#Application)
 
@@ -221,7 +226,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 
 - Guides:<br>
   [Alarms](alarm/alarms.md) <br>
-  [Application Management](app-management/applications.md) <br>
+  [Applications](applications/overview.md) <br>
+  [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
 - API Reference: [Application Framework](../api/latest/device_api/wearable/index.html#Application)
 </td>
@@ -376,7 +382,8 @@ You can schedule an application to be run at a specific time, retrieve informati
 
 - Guides:<br>
   [Alarms](alarm/alarms.md) <br>
-  [Application Management](app-management/applications.md)
+  [Applications](applications/overview.md)
+  [Application Management](app-management/overview.md) <br>
 
 - API Reference: [Application Framework](../api/latest/device_api/tv/index.html#Application)
 </td>
@@ -692,3 +699,16 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 </tr>
 </table>
 -->
+
+> **Note**
+>
+> In Tizen Web Device APIs, there are two types of APIs: mandatory and optional.
+>
+> The mandatory APIs are always available on all Tizen devices. The optional APIs provide functionality that depends on the available device hardware or software capabilities, and they may not be available on all Tizen devices. For example, the Bluetooth and NFC API hardware features are optional, and not supported on all devices.
+>
+> To determine the availability of optional APIs, use the `tizen.systeminfo.getCapability()` method of the System Information API (in [mobile](../api/latest/device_api/mobile/tizen/systeminfo.html), [wearable](../api/latest/device_api/wearable/tizen/systeminfo.html), and [TV](../api/latest/device_api/tv/tizen/systeminfo.html) applications).
+>
+> Note that all mandatory APIs are supported on the Tizen Emulators, while the optional APIs may or may not be supported. For more information on support for each API, see [Tizen Web Device API Reference](../api/latest/device_api/mobile/index.html).
+>
+> To compare API support between Web Device API modules and native API modules, see [Tizen 3.0 Native and Web API Modules](media/tizen-3.0-native-web-api-modules.pdf).
+

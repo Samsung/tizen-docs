@@ -56,13 +56,16 @@ The System framework module abstracts low-level system functions and manages the
 - `systemd` requirements for system and service management
     - Linux Kernel >= 3.4 , Linux Kernel >= 3.8 for Smack support
     - `CONFIG_CGROUPS`, `CONFIG_TIMERFD`, `CONFIG_SIGNALFD`, `CONFIG_EPOLL`, ...
+
 - Basic resource requirements (such as CPU, memory) usage management
   - Linux Kernel >= 3.10 for `VMPRESSURE`, Linux Kernel >= 3.8 for `MEMCG SWAP`
   - `CONFIG_CGROUPS`, `CONFIG_CGROUP_SCHED`, `CONFIG_MEMCG`, `CONFIG_MEMCG_SWAP`, ...
 - `deviced` requirements for device and power management
     - Device HAL layer porting
-- dlog requirements  
-Select a backend for the target environment and enable the appropriate kernel feature:
+
+- dlog requirements
+
+  Select a backend for the target environment and enable the appropriate kernel feature:
     - Additional KMSG patch for multiple Kmsg backend
     - Android&trade; logger driver for Android log backend
     - Userspace logger daemon
@@ -115,21 +118,28 @@ To use most of the `resourced` functionalities, you must enable the following `c
 
 Tizen provides 3 logging system backends:
 
-- Multiple `kmsg` backend  
+- Multiple `kmsg` backend
+
   Requires a kernel patch. For more information, see https://lwn.net/Articles/677047/.
-- Android-logger backend  
+
+- Android-logger backend
+
   Utilizes the Android logger driver.
-- User logger backend  
+
+- User logger backend
+
   No requirement (you do not have to enable anything from dlog)
 
 ### Porting the Smart Development Bridge (SDB)
 
 SDB is a device management tool used for remote shell command, file transfer, controlling device log out, and USB debugging.
 
-- To use SDB, you must install a kernel driver.  
-    For example:  
+- To use SDB, you must install a kernel driver.
+
+    For example:
     - [Gadget Driver for SLP based on Android](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git;a=blob;f=drivers/usb/gadget/slp.c;h=c0d935f5362cc5ae03807d3533fe84df88e8c354;hb=refs/heads/accepted/tizen_mobile)
     - [Gadget Driver for Samsung SDB (based on Android ADB)](https://review.tizen.org/git/?p=profile/mobile/platform/kernel/linux-3.10-sc7730.git;a=blob;f=drivers/usb/gadget/f_sdb.c;h=7f334ba01139d6bcbe7668bd84582e078d563638;hb=refs/heads/accepted/tizen_mobile)
+
 - To recognize the target as a Tizen device, the SDB interface on the target device must have the following information in the USB interface descriptor:
     ```
     Class: 0xff
@@ -137,8 +147,9 @@ SDB is a device management tool used for remote shell command, file transfer, co
     Protocol: 0x02
     ```
 - When using multi-configuration, SDB must be located in the first configuration on the target multi-configuration system. The SDB client of the host PC (Linux PC) selects the first configuration.
+
 - To recognize the USB cable connection, you must port the External Connector Class (`extcon`) to the kernel. If `extcon` cannot be ported, you can enable SDB using the following shell command:
-    ```bash
+    ```
     /usr/bin/direct_set_debug.sh --sdb-set
     ```
 
@@ -1033,12 +1044,17 @@ The sensor HALs retrieve data from sensor hardware and enable client application
 
 The Sensor framework consists of the following components:
 
-- Sensor client library  
-Any application that wants to access the sensor server and communicate with it must use the sensor API library. Using the Sensor API, the application can control sensors and receive sensor events from the sensor server. By using the sensor API, any application or middleware framework can have the sensor client library executing within its own process context.
-- Sensor server  
-The sensor server is a daemon which communicates uniquely to multiple sensors (through drivers) in the system and dispatches sensor data or events back to the application. The sensor server is responsible for initializing the sensors during boot, driver configuration, sensor data fetching and delivery, and managing all sensors and clients on the platform.
-- Sensor HAL (Hardware Abstraction Layer)  
-The sensor HAL, which is interfaced to the sensor server, is responsible for interacting with the sensor drivers. The HAL processes data from the sensor drivers and communicates it to the server. Hardware sensors must support the HAL. The sensor HAL is implemented as a shared library. The `sensor_loader` finds the `hal.so` library in the `/usr/lib/sensor/` directory, and loads it at boot time.
+- Sensor client library
+
+  Any application that wants to access the sensor server and communicate with it must use the sensor API library. Using the Sensor API, the application can control sensors and receive sensor events from the sensor server. By using the sensor API, any application or middleware framework can have the sensor client library executing within its own process context.
+
+- Sensor server
+
+  The sensor server is a daemon which communicates uniquely to multiple sensors (through drivers) in the system and dispatches sensor data or events back to the application. The sensor server is responsible for initializing the sensors during boot, driver configuration, sensor data fetching and delivery, and managing all sensors and clients on the platform.
+
+- Sensor HAL (Hardware Abstraction Layer)
+
+  The sensor HAL, which is interfaced to the sensor server, is responsible for interacting with the sensor drivers. The HAL processes data from the sensor drivers and communicates it to the server. Hardware sensors must support the HAL. The sensor HAL is implemented as a shared library. The `sensor_loader` finds the `hal.so` library in the `/usr/lib/sensor/` directory, and loads it at boot time.
 
 ### Porting the HAL Interface
 
@@ -2129,7 +2145,7 @@ The following table lists the available project Git repositories.
 
 The `sensor-test package`, in the `sensord` Git repository, provides `sensorctl`, a command-line tool for testing sensors. After installing `sensor-test package`, you can test sensors using the following commands:
 
-```bash
+```
 $ sensorctl test accelerometer
 $ sensorctl test gyroscope
 $ sensorctl test accelerometer 100 /* enable accelerometer with interval 100 ms */

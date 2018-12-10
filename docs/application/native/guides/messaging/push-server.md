@@ -52,29 +52,28 @@ To send push notifications:
 
      ```
      {
-         "messages":
-         [{
-             /* Other content */
-             "message": "action=ALERT&badgeOption=INCREASE&badgeNumber=1&alertMessage=Hi",
-             "appData": "{id:asdf&passwd:1234}",
-             /* Other content */
-         ]}
+         /* Other content */
+         "message": "action=ALERT&badgeOption=INCREASE&badgeNumber=1&alertMessage=Hi",
+         "appData": "{id:asdf&passwd:1234}",
+         /* Other content */
      }
      ```
 
-   - If you have data to send to the application but no need to notify the user, use the action field on the same level as the messages field, instead of within the messages field, and do not include the message field itself. In this case, the notification is delivered with the best effort.
+   - If you have to send data to an application without notifying the user immediately, use the action field. The action field must be used at the same level as message field, and do not include the message field itself. In this case, the notification is delivered on best-effort basis.
 
      ```
      {
+         /* Other content */
          "action": "backgroundLaunch",
-         "messages":
-         [{
-             /* Other content */
-             "appData": "{id:asdf&passwd:1234}",
-             /* Other content */
-         ]}
+         "appData": "{id:asdf&passwd:1234}",
+         /* do not include "message" field */
+         /* Other content */
      }
      ```
+
+     > **Note**
+     >
+     > Do not confuse between "backgroundLaunch" option of action field in the 1st depth and "BACKGROUNDLAUNCH" option of action field in message field in the 2nd depth. The former is to deliver the notification with the best effort and the latter is to launch the application in the background. However, "backgroundLaunch" option also launches the application in the background.
 
 3. Create the notification message.
 
@@ -101,7 +100,7 @@ To send push notifications:
 
    > **Note**
    >
-   > For the `BACKGROUNDLAUNCH` notification, the `app_create()` and `app_control()` life-cycle callbacks are called, but the `app_resume()` callback is not called. However, the next time the user runs the application, the `app_resume()` callback is invoked normally. For more information on the life-cycle, see the [Applications](../app-management/applications.md) guide.
+   > For the `BACKGROUNDLAUNCH` notification, the `app_create()` and `app_control()` life-cycle callbacks are called, but the `app_resume()` callback is not called. However, the next time the user runs the application, the `app_resume()` callback is invoked normally. For more information on the life-cycle, see the [Applications](../applications/overview.md) guide.
 
 4. Use the Rest APIs for sending push notifications.
 

@@ -23,13 +23,21 @@ The main media controller features include:
 
 To enable your application to use the media controller functionality:
 
-1.  To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-    ```
-    <privileges>
-       <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
-    </privileges>
-    ```
+   - To use the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html) class
+       ```
+       <privileges>
+          <privilege>http://tizen.org/privilege/mediacontroller.client</privilege>
+       </privileges>
+       ```
+
+   - To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class
+       ```
+       <privileges>
+          <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
+       </privileges>
+       ```
 
 2. To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and `Tizen.Multimedia.Remoting.MediaControlServer` classes, include the [Tizen.Multimedia.Remoting](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.html) namespace in your application:
 
@@ -71,7 +79,7 @@ To update the metadata and playback information on the server side, and to retri
     2. Retrieve the currently-active controllers and select one:
 
         ```
-        var controller = MediaControllerManager.GetActiveControllers().First();
+        var controller = mediaControllerManager.GetActiveControllers().First();
         ```
 
     3. Retrieve the metadata or playback information from the server using the `GetMetadata()`, `GetPlaybackState()`, or `GetPlaybackPosition()` methods.
