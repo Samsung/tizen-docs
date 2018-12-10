@@ -34,7 +34,7 @@ Following are the set of tools provided by the Tizen Studio to develop your appl
   Configurable SDK in Tizen Studio helps you to develop applications in a customizable Tizen platform environment.
 
 
-The Tizen Studio contains many familiar tools from the old Tizen SDK, but with few improvements. The following list describes the main changes:
+The Tizen Studio contains many familiar tools from the old Tizen SDK, but with some improvements. The following list describes the main changes:
 
 
 - Installer and Package Manager
