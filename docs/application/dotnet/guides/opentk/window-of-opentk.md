@@ -4,7 +4,7 @@ In the OpenTK app, `OpenTKGameApplication` creates a `Window` after calling `OnC
 as a property of `TizenGameApplication`. This document will describe how to use this `Window` in your OpenTK app.
 
 `Window` defines many events including [input event](#input-event), [window related event](#window-related-event), and
-[render related event](#render-related-event). If needed, the event handlers on those event can be added.
+[render related event](#render-related-event). You can add the event handlers of these events, if needed.
 
 ## Input Event
 
@@ -88,12 +88,12 @@ private void ResizeEventHandler(object sender, EventArgs e)
 
 ## Render Related Event
 
-`Window` also provides the render ralated events including the following:
+`Window` also provides the render ralated events:
 
 - `RenderFrame`: This event occurs when a frame is rendered.
 - `UpdateFrame`: This event occurs when a frame is updated before `RenderFrame` event occurs.
 
-These events will occur repeatedly while OpenTK's main loop is running.
+These events repeatedly occur while the main loop of OpenTK is running.
 ```C#
 private IGameWindow mainWindow;
 

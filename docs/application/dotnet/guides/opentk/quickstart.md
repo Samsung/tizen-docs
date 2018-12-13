@@ -3,7 +3,7 @@
 This guide explains how to create a .NET application with OpenTK on Tizen.
 
 
-## Prerequisite
+## Prerequisites
 
 - Visual Studio
 - [Visual Studio tools for Tizen](../../../vstools/install.md)
@@ -13,8 +13,8 @@ This guide explains how to create a .NET application with OpenTK on Tizen.
 To create a Tizen OpenTK app, use the following:
 
 - [Create Project](#create-project)
-- [Insert OpenTK app Code](#insert-opentk-app-code)
-- [Build and Launch Your Application](#build-and-launch-your-application)
+- [Insert OpenTK App Code](#insert-opentk-app-code)
+- [Build and Launch your Application](#build-and-launch-your-application)
 
 ### Create Project
 
@@ -23,9 +23,10 @@ To create a Tizen OpenTK app, use the following:
 
 2.  The new project `SampleOpenTKApp` is shown in the **Solution Explorer** view:                                                   
     ![tizen_project_wizard_capture_template](media/tizen_project_wizard_capture_template2.png)
-
     
-### Insert OpenTK app Code
+    If OpenTK.Tizen (3.0.2) is available in NuGet packages then you can use the OpenTK APIs.
+    
+### Insert OpenTK App Code
 
 This `SampleOpenTKApp` draws a triangle, it defines vertex, color, shaders information of a triangle and then register event handles on `Window` for drawing this triangle.
 
@@ -197,10 +198,10 @@ namespace SampelOpenTKApp
 ```
 
 - `OpenTKApp` is derived from `TizenGameApplication`. 
-    `TizenGameApplication` creates OpenGL running environment, which includes window, OpenGL context, and so on.
-    `TizenGameApplication` inherits from `Tizen.Applications.CoreUIApplication`, You can override the application related methods including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, `OnTerminate`, and so on. For more information about these methods, see [Applications](https://developer.tizen.org/development/guides/.net-application/application-management/applications).
-- `InitShader` : It is an event handler of `Window.Load` event. Also, it initializes shaders of triangle in this sample.
-- `RenderTriangle` : It is an event handler of `Window.RenderFrame` event. Also, it draws the triangle in this sample.
+    `TizenGameApplication` creates OpenGL? ES running environment, which includes window, OpenGL? ES context, and so on.
+    `TizenGameApplication` inherits from `Tizen.Applications.CoreUIApplication`, and you can override the application related methods including `OnCreate`, `OnPause`, `OnResume`, `OnAppControlReceived`, `OnTerminate`, and so on. For more information about these methods, see [Applications](../applications/ui-app.md).
+- `InitShader` : `InitShader` is an event handler of `Window.Load` event. It initializes shaders of triangle in this sample.
+- `RenderTriangle` : `RenderTriangle` is an event handler of `Window.RenderFrame` event. It draws the triangle in this sample.
 - `app.Run()` : It runs the main loop of OpenTK app.
 
 ### Build and Launch your Application
@@ -217,35 +218,36 @@ namespace SampelOpenTKApp
 
         ![launch_emulator1](media/tizen_project_wizard_capture_template3.png)
 
-    - In the Emulator Manager, select an emulator from the list and click **Launch**:
+    - In the Emulator Manager, select an emulator from the list, and click **Launch**:
         ![launch_emulator2](media/tizen_project_wizard_capture_template4.png)
-    - You must update the emulator image because the emulator is based on Tizen 5.0, but not on Tizen 4.0.
+    - You must update the following emulator images to use the latest version (Tizen 5.0).
 
-3.  After launching an emulator instance, you can select the target from the drop-down list to change the deployment target in the Visual Studio toolbar:                                                    
+3.  After you launch an emulator instance, you can select the target from the drop-down list to change the deployment target in the Visual Studio toolbar:                                                          
         ![VS_Toolbar2](media/tizen_project_wizard_capture_template6.png)
-
-    You can deploy your OpenTK app to the target, using the following ways:
+        
+    You can deploy your OpenTK app to the target in Visual Studio, Visual Studio uses the Smart Development Bridge (SDB) to communicate with the target device or emulator, using the following:
 
      1. Press the **F5** or **Ctrl+F5** key.
-     2. Select **Debug > Start Debugging/Start Without Debugging** on the menu bar.
-     3. Select the emulator instance in the Visual Studio toolbar:                                               
+     2. In the Visual Studio menu, Select **Debug > Start Debugging** or **Start Without Debugging**.
+     3. On the Visual Studio toolbar, click an emulator instance:                                               
      ![VS_Toolbar](media/tizen_project_wizard_capture_template5.png)
                          
 4.  If the deployment is successful, then the application is launched on the target emulator.
 The following are the emulators:
 
-    - Launch the OpenTK app on the mobile emulator:                             
+    1. Launch the OpenTK app on mobile emulator:                             
     ![OpenTKAppOnMobile](media/OpenTKAppOnMobile.png)
 
-    - Launch the OpenTK app on the TV emulator:                                   
+    2. Launch the OpenTK app on TV emulator:                                   
     ![OpenTKAppOnTV](media/OpenTKAppOnTV.png)
     
     You can also deploy your OpenTK app with SDB manually:
 
-    1.  Copy the application **tpk** file from the project binary path to the SDB tool path:
+    1.  Copy the application .tpk file from the project binary path to the SDB tool path:
     
-        - `SampelOpenTKApp` tpk file is located in `ProjectPath\SampelOpenTKApp\SampelOpenTKApp\bin\Debug\tizen50\org.tizen.example.SampelOpenTKApp-1.0.0.tpk`.
-        - To locate the project path, in the Solution Explorer view, right-click the solution name and click **open folder in file explorer**.
+        - The `SampelOpenTKApp` tpk file(`org.tizen.example.SampelOpenTKApp-1.0.0.tpk`) is located in `ProjectPath\SampelOpenTKApp\SampelOpenTKApp\bin\Debug\tizen50`.
+        - To locate the project path in the Solution Explorer view, right-click the solution name and click **open folder in file explorer**.
+
         - SDB tool is located in `c:\tizen\tools\sdb.exe`.
 
     2.  Launch Tizen SDB command prompt:
