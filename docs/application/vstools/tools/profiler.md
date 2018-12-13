@@ -1,4 +1,4 @@
-# Profiler
+﻿# Profiler
 
 The profiler allows you to analyze the performance of your application. You can record, manage, and view profiling sessions.
 

@@ -1,4 +1,4 @@
-# Project Wizard
+﻿# Project Wizard
 
 The Project Wizard in Visual Studio Tools for Tizen is used to create a Tizen .NET application project.
 
