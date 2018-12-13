@@ -1,20 +1,20 @@
 # Work with SkiaSharp
 
 SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on the Skia Graphics Library of Google. 
-It provides a comprehensive 2D API that can be used across mobile, server, and desktop models to render images.
+It provides a comprehensive 2D API that is used across mobiles, servers, and desktop models to render images.
 
-In OpenTK app, you can use SkiaSharp to draw geometries, texts or images. For more information about the SkiaSharp APIs, see [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3).
+In OpenTK app, you can use SkiaSharp to draw geometries, texts, or images. For more information about the SkiaSharp APIs, see [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3).
 
-To draw something with SkiaSharp in OpenTK application, use the following general guidelines:
+To draw a text using SkiaSharp in the OpenTK application, use the following guidelines:
 
 -   Allocate a memory block as a canvas for SkiaSharp.
--   Create SKCanvas on this memory block, and render text or image what you want on this SKCanvas.
--   Create 2D texture from this memory block.
--   Draw 2D texture with graphics APIs of OpenTK.
+-   Create a SKCanvas on this memory block, and render text or image that you want on this SKCanvas.
+-   Create a 2D texture from this memory block.
+-   Draw a 2D texture with graphics APIs of OpenTK.
 
 ## Allocate Memory Block
 
-Allocate a specific size of the memory block. The size of memory block must be same as the size of the canvas as you want.
+Allocate a specific size of the memory block. The size of memory block must be same as the size of the canvas you want.
 ```C#
 private IntPtr pBitMap;                   // memory handle
 private int rowByte;                      // bytes of one row 
@@ -65,7 +65,7 @@ private void CreateSKCanvas()
 ```C#
 private void DrawTextBySkiaSharp(SKCanvas canvas, int canvasWidth, int canvasHeight)
 {
-    canvas.DrawColor(SKColors.White);                                   // clear the canvas as white
+    canvas.DrawColor(SKColors.White);                                   // Change the canvas as white.
 
     using (var paint = new SKPaint())
     {
@@ -114,14 +114,14 @@ private void Create2DTextureFromMemory()
 ```
 
 ## Draw 2D Texture
-Draw a 2D texture with graphics APIs of OpenTK, for more information, see [OpenTK samples](https://github.sec.samsung.net/dotnet/opentk_samples).
+Draw a 2D texture with graphics APIs of OpenTK:
 ```C#
 private IGameWindow mainWindow;     // window
 
 private float[] vertices;           // vertex array
 private float[] textCoord;          // texture coordinate array
 
-private int mProgramHandle;         // programe handle
+private int mProgramHandle;         // program handle
 
 protected override void OnCreate()
 {

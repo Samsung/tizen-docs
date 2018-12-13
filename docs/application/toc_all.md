@@ -185,6 +185,12 @@
 ###### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 ##### [Resources](/application/dotnet/guides/nui/resources.md)
 
+#### OpenTK
+##### [Overview](/application/dotnet/guides/opentk/overview.md)
+##### [Quickstart](/application/dotnet/guides/opentk/quickstart.md)
+##### [OpenTK Window](/application/dotnet/guides/opentk/window-of-opentk.md)
+##### [OpenTK Work With SkiaSharp](/application/dotnet/guides/opentk/work-with-skiasharp.md)
+
 #### Wearable Circular UI
 ##### [Overview](/application/dotnet/guides/wcircularui/overview.md)
 ##### [Quickstart](/application/dotnet/guides/wcircularui/quickstart.md)
