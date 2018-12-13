@@ -96,8 +96,8 @@
         $request_uri = $_SERVER['REQUEST_URI'];
         $url_search_base = explode('?', $request_uri)[0];
 
-        $url = "http://td-prd-crawler-elb-1900134565.us-west-2.elb.amazonaws.com/api/v1/docs/search?start=" . $search_start . "&pageSize=10";
-//        $url = "http://10.10.11.193:8080/api/v1/docs/search?start=" . $search_start . "&pageSize=10";
+//        $url = "http://td-prd-crawler-elb-1900134565.us-west-2.elb.amazonaws.com/api/v1/docs/search?start=" . $search_start . "&pageSize=10";
+        $url = "http://10.10.11.193:8080/api/v1/docs/search?start=" . $search_start . "&pageSize=10";
 
         $content = '{
                                 "queryText": "' . $search_text . '" ,
