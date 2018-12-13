@@ -75,7 +75,7 @@ $(document).ready(function () {
                     '<li class="navbar-divisor"></li>' +
 
                     '<li class="search"><a id="gnb_search_btn" href="#"><div class="search-btn"></div></a>' +
-                      '<form method="GET" id="gnb_search_box" class="searchbox" >' +
+                      '<form method="GET" id="gnb_search_box" class="searchbox" action="/search.php">' +
                         '<input class="form-control" type=text name="q" placeholder="Search ...">' +
                         '<a href="#"><img src="/images/ic_search_ac.png"></a>' +
                       '</form>' +
