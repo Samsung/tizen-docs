@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Archive API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Archive API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Archive">
@@ -183,6 +183,18 @@ BEST - Choose the best compression method, compression may be slow.            <
 The <em>tizen.archive</em> object allows access to the Archive API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="ArchiveManagerObject::archive">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ArchiveManager </span><span class="name">archive</span></span><div class="brief">
+ Object representing an archive manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="dictionary" id="ArchiveFileOptions">
 <a class="backward-compatibility-anchor" name="::Archive::ArchiveFileOptions"></a><h3>2.2. ArchiveFileOptions</h3>
@@ -537,7 +549,7 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess);
 <li class="attribute" id="ArchiveFile::mode">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">FileMode </span><span class="name">mode</span></span><div class="brief">
- attribute File mode when it is opened.
+ Describes the mode the file is opened with.
             </div>
 <p><span class="version">Since: </span>
  2.3

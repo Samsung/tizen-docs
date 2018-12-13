@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>SecureElement API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SecureElement API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SecureElement">
@@ -143,14 +143,25 @@ For more information on the Secure Element features, see <a href="https://develo
 The <em>tizen.seService</em> object allows access to the functionality of the Secure Element API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SEServiceManagerObject::seService">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SEService </span><span class="name">seService</span></span><div class="brief">
+ Object representing a secure element service manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.1
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="SEService">
 <a class="backward-compatibility-anchor" name="::SecureElement::SEService"></a><h3>1.2. SEService</h3>
 <div class="brief">
  The SEService interface provides access to the available Secure Element readers.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface SEService
-  {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SEService {
     void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregisterSEListener(unsigned long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -421,8 +432,7 @@ catch (err)
 <div class="brief">
  The Reader interface that is connected to this device.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Reader
-  {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Reader {
     readonly attribute boolean isPresent;
     DOMString getName() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void openSession(<a href="#SessionSuccessCallback">SessionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -638,8 +648,7 @@ catch (err)
 <div class="brief">
  The Session interface is connected to one of the readers and offers methods to control channels in a session.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface Session
-  {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Session {
     readonly attribute boolean isClosed;
     void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1510,22 +1519,19 @@ To guarantee this application will run on a device with a Secure Element, add th
     readonly attribute <a href="#SEService">SEService</a> seService;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
-  [NoInterfaceObject] interface SEService
-  {
+  [NoInterfaceObject] interface SEService {
     void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregisterSEListener(unsigned long id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void shutdown() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [NoInterfaceObject] interface Reader
-  {
+  [NoInterfaceObject] interface Reader {
     readonly attribute boolean isPresent;
     DOMString getName() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void openSession(<a href="#SessionSuccessCallback">SessionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void closeSessions() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [NoInterfaceObject] interface Session
-  {
+  [NoInterfaceObject] interface Session {
     readonly attribute boolean isClosed;
     void openBasicChannel(byte[] aid, <a href="#ChannelSuccessCallback">ChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
