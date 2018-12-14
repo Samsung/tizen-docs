@@ -8,7 +8,7 @@ as a property of `TizenGameApplication`. This document will describe how to use 
 
 ## Input Event
 
-In some app scenario, you want to do some actions while an app user inputs something. To do this, you can add event hander on the input event of `Window`. Also, you can use **key** and **mouse** event using `Window` of OpenTK if a device supports both of them.
+There are app scenarios, where you want to do some actions while the app user inputs something. In this scenario, you can add an event handler on the input event of `Window`. Also, you can use **key** or **mouse** event using `Window` of OpenTK if your device supports them. For example, if your device supports remote controller then you can use **key** event; if your device supports mouse then you can use **mouse** event.
 
 The following is the sample code:
 ```C#
@@ -67,8 +67,9 @@ private void KeyDownEventHandler(object sender, KeyboardKeyEventArgs e)
 
 ## Window Related Event
 
-`Window` also provides some window state related events, such as **Closed**, **Closing**, **FocusedChanged**, **Resize**, **VisibleChanged**, **WindowStateChanged**, and so on. In some scenario, if you want to mirror the state of `Window`, then 
-you can add event handlers on these events.
+`Window` also provides some window state related events, such as **Closed**, **Closing**, **FocusedChanged**, **Resize**, **VisibleChanged**, **WindowStateChanged**, and so on. 
+
+In some scenario, if you want to mirror the state of `Window`, then you can add event handlers on these events.
 
 ```C#
 private IGameWindow mainWindow;
@@ -88,7 +89,7 @@ private void ResizeEventHandler(object sender, EventArgs e)
 
 ## Render Related Event
 
-`Window` also provides the render ralated events:
+`Window` also provides the render related events:
 
 - `RenderFrame`: This event occurs when a frame is rendered.
 - `UpdateFrame`: This event occurs when a frame is updated before `RenderFrame` event occurs.

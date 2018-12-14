@@ -1,13 +1,13 @@
 
 # OpenTK
 
-The Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL? ES APIs. From Tizen 5.0, it is integrated with Tizen Application Framework.
+The Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES 2.0 APIs. From Tizen 5.0, it is integrated with Tizen Application Framework.
 
-For developing the OpenGL? app using C# on the Tizen platform, an app developer uses the TizenFX APIs, the .NET Standard 2.0 APIs, and the OpenTK APIs based on their needs.
+For developing the OpenGL&reg; app using C# on the Tizen platform, an app developer uses the TizenFX APIs, the .NET Standard 2.0 APIs, and the OpenTK APIs based on their needs.
 
-Besides the OpenGL? ES APIs, OpenTK also provides several utility libraries including a math or linear algebra package, windowing system, and input handling for application developers.
+Besides the OpenGL&reg; ES APIs, OpenTK also provides several utility libraries including a math or linear algebra package, windowing system, and input handling for application developers.
 
-After setting up the OpenTK development environment, you can quickly create graphic applications with the OpenGL? ES 2.0, such as:
+After setting up the OpenTK development environment, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as:
 -   Ambient app
 -   Game
 -   Dynamic partial
@@ -15,10 +15,10 @@ After setting up the OpenTK development environment, you can quickly create grap
 
 
 The OpenTK app offers the following features:
--   Create graphics with the OpenGL? ES 2.0.
+-   Create graphics with the OpenGL&reg; ES 2.0.
 -   GUI animation with 3D acceleration.
 -   Windowing systems to help you get started.
--   Input handing and other game essentials.
+-   Input handling and other game essentials.
 -   Powerful, highly optimized, and reliable linear algebra library.
 
 
@@ -40,11 +40,11 @@ To use OpenTK in your application, you must familiarize yourself with the follow
     -   `UpdateFrame`
     -   `RenderFrame`
     
-    **OpenGL? context related functions**
+    **OpenGL&reg; context related functions**
     -   `MakeCurrent`
     -   `Run`
     -   `SwapBuffers`
--   `WindowAttributes`: It is an attribute of TizenGameApplication, and provides window-controlling attributes, which includes the following:
+-   `WindowAttributes`: It is an attribute of `TizenGameApplication`, and provides window-controlling attributes, which includes the following:
     -   `IsFocusAllowed`
     -   `WindowOpacity`
     

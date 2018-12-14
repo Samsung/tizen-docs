@@ -34,9 +34,9 @@ A list of limitations is available at [Current Xamarin.Forms limitations](xamari
 Using these APIs, you can easily and efficiently add Tizen wearable-specific user interfaces to your Tizen wearable application. For more information about these APIs, see [Tizen.Wearable.CircularUI GitHub](https://github.com/Samsung/Tizen.CircularUI).
 
 ## Tizen OpenTK
-The Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL? ES APIs. From Tizen 5.0, it is integrated with Tizen Application Framework. Besides the OpenGL? ES APIs, OpenTK also provides several utility libraries including a math or linear algebra package, windowing system, and input handling for application developers.
+Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES APIs. From Tizen 5.0, it is integrated with Tizen Application Framework. So, it allows Tizen app developer to use C# OpenGL&reg; ES APIs in .Net application.
 
-Using these APIs, you can quickly create graphic applications with the OpenGL? ES 2.0, such as: Ambient app, Game, Dynamic partial, Physics effect, and so on. For more information about these APIs, see [Tizen OpenTK GitHub](https://github.com/TizenAPI/opentk).
+Using these APIs, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as: Ambient app, Game, Dynamic partial, Physics effect, and so on. For more information about these APIs, see [Tizen OpenTK GitHub](https://github.com/TizenAPI/opentk).
 
 ## TizenFX API
 
