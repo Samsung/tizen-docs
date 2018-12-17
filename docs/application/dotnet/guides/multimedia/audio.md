@@ -138,7 +138,7 @@ To query audio device information:
 
 
         > **Note**   
-		> The initial running state of the connected device is `false', that is 'not running'.
+		> The initial running state of the connected device is `false`, which means the connected device is not running.
 
 
 
