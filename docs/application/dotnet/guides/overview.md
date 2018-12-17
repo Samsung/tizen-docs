@@ -37,9 +37,9 @@ You can use the following TizenFX features in your .NET applications:
   The Wearable Circular UI feature introduces a set of helpful extensions of the <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/" target="_blank">Xamarin.Forms</a> framework.
   Its aim is to develop an open source software and to motivate software developers to create Tizen Wearable Xamarin.Forms application more easily and efficiently.
 
-- [Internationalization](internationalization/phonenumber.md)
+- [Localization](internationalization/localization.md)
 
-  The localization feature ensures that your application is functional in different locations and time zones. Additionally, it also gives the formatted phone numbers and international standardized phone numbers based on the current location of your device.
+  The localization feature ensures that your application is functional in different locations and time zones.
 
 - [Notifications and Content Sharing](notification/overview.md)
 
