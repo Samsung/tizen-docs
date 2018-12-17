@@ -88,9 +88,9 @@ To query audio device information:
         -   `IoDirection`: Device IO direction
         -   `Id`: Device ID
         -   `Name`: Device name
-        -   `State`: Device state
+        -   `IsRunning`: Device running state
 
--   To get a notification when the audio device connection or state changes, add event handlers for the `DeviceConnectionChanged` and `DeviceStateChanged` events of the `Tizen.Multimedia.AudioManager` class:
+-   To get a notification when the audio device connection or state changes, add event handlers for the `DeviceConnectionChanged` and `DeviceRunningChanged` events of the `Tizen.Multimedia.AudioManager` class:
     -   To receive a notification whenever the device connection state changes:
 
         ```
@@ -118,12 +118,12 @@ To query audio device information:
     -   To receive a notification whenever the device state changes:
 
         ```
-        void OnDeviceStateChanged(object sender, AudioDeviceStateChangedEventArgs args)
+        void OnDeviceRunningChanged(object sender, AudioDeviceRunningChangedEventArgs args)
         {
             if (args.Device.Type == AudioDeviceType.BluetoothMedia)
             {
-                if (args.Device.State == AudioDeviceState.Deactivated)
-                    /// Bluetooth device has been deactivated, handle accordingly
+                if (args.Device.IsRunning == false)
+                    /// Bluetooth device is not running, handle accordingly
                 else
                     /// Handle accordingly
             }
@@ -133,12 +133,12 @@ To query audio device information:
             }
         }
 
-        AudioManager.DeviceStateChanged += OnDeviceStateChanged;
+        AudioManager.DeviceRunningChanged += OnDeviceRunningChanged;
         ```
 
 
         > **Note**   
-		> The initial state of the connected device is `Deactivated`.
+		> The initial running state of the connected device is `false`, which means the connected device is not running.
 
 
 
