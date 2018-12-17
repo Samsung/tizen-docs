@@ -224,7 +224,7 @@ namespace SampelOpenTKApp
 3.  After you launch an emulator instance, you can select the target from the drop-down list to change the deployment target in the Visual Studio toolbar:                                                          
         ![VS_Toolbar2](media/tizen_project_wizard_capture_template6.png)
         
-    You can deploy your OpenTK app to the target, using the following::
+    You can deploy your OpenTK app to the target, using the following:
 
      1. Press the **F5** or **Ctrl+F5** key.
      2. In the Visual Studio menu, Select **Debug > Start Debugging** or **Start Without Debugging**.
@@ -234,13 +234,15 @@ namespace SampelOpenTKApp
 4.  If the deployment is successful, then the application is launched on the target emulator.
 The following are snapshots of launching this OpenTK app on mobile and TV emulators:
 
-    Figure: OpenTK app on TV emulator:                             
+    Figure: OpenTK app on TV emulator                             
     ![OpenTKAppOnMobile](media/OpenTKAppOnMobile.png)
 
-    Figure: OpenTK app on TV emulator:                                   
+    Figure: OpenTK app on TV emulator                                   
     ![OpenTKAppOnTV](media/OpenTKAppOnTV.png)
     
-    Visual Studio uses the Smart Development Bridge (SDB) to communicate with the target device or emulator. You can also deploy your OpenTK application with SDB manually:
+    Visual Studio uses the Smart Development Bridge (SDB) to communicate with the target device or emulator. 
+    
+    You can also deploy your OpenTK application with SDB manually:
 
     1.  Copy the application .tpk file from the project binary path to the SDB tool path:
     
