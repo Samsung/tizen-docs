@@ -11,6 +11,7 @@ property of `TizenGameApplication`. This document will describe how to use this 
 There are app scenarios, where you want to do some actions while the app user inputs something. In this scenario, you can add an event handler on the input event of `Window`. Also, you can use **key** or **mouse** event using `Window` of OpenTK, if your device supports them. For example, if your device supports remote controller, then you can use **key** event. If your device supports mouse, then you can use **mouse** event.
 
 The following is the sample code:
+
 ```C#
 private IGameWindow mainWindow;
 
@@ -95,6 +96,7 @@ private void ResizeEventHandler(object sender, EventArgs e)
 - `UpdateFrame`: This event occurs when a frame is updated before `RenderFrame` event occurs.
 
 These events repeatedly occur while the main loop of OpenTK is running.
+
 ```C#
 private IGameWindow mainWindow;
 
