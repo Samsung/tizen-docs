@@ -16,7 +16,7 @@ To draw a text using SkiaSharp in the OpenTK application, use the following guid
 
 Allocate a specific size of the memory block. The size of memory block must be same as the size of the canvas you want.
 
-```C#
+```csharp
 private IntPtr pBitMap;                   // memory handle
 private int rowByte;                      // bytes of one row 
 private int bitmapHeight, bitmapWidth;    // height and width of the canvas
@@ -44,7 +44,7 @@ private void FreeBitmap()
 
 Create SKSurface on the memory block and then you can get the SKCanvas from the SKSurface:
 
-```C#
+```csharp
 private SKSurface surface;
 private SKCanvas canvas;
 
@@ -64,7 +64,7 @@ private void CreateSKCanvas()
 
 ## Draw Text on SKCanvas
 
-```C#
+```csharp
 private void DrawTextBySkiaSharp(SKCanvas canvas, int canvasWidth, int canvasHeight)
 {
     canvas.DrawColor(SKColors.White);                                   // Change the canvas as white
@@ -95,7 +95,7 @@ private void DrawTextOnSkCanvas()
 
 Call `GL.TexImage2D` of `OpenTK.Graphics.ES20` to generate 2D texture from the memory block:
 
-```C#
+```csharp
 private void Create2DTextureFromMemory()
 {
     GL.TexImage2D(
@@ -120,7 +120,7 @@ private void Create2DTextureFromMemory()
 
 Draw a 2D texture with graphics APIs of OpenTK:
 
-```C#
+```csharp
 private IGameWindow mainWindow;     // window
 
 private float[] vertices;           // vertex array

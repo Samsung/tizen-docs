@@ -12,7 +12,7 @@ There are app scenarios, where you want to do some actions while the app user in
 
 The following is the sample code:
 
-```C#
+```csharp
 private IGameWindow mainWindow;
 
 protected override void OnCreate()
@@ -72,7 +72,7 @@ private void KeyDownEventHandler(object sender, KeyboardKeyEventArgs e)
 
 In some scenario, if you want to mirror the state of `Window`, then you can add event handlers on these events.
 
-```C#
+```csharp
 private IGameWindow mainWindow;
 
 protected override void OnCreate()
@@ -97,7 +97,7 @@ private void ResizeEventHandler(object sender, EventArgs e)
 
 These events repeatedly occur while the main loop of OpenTK is running.
 
-```C#
+```csharp
 private IGameWindow mainWindow;
 
 protected override void OnCreate()

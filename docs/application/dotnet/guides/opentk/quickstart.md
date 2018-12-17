@@ -51,7 +51,7 @@ namespace SampelOpenTKApp
         private int mColorHandle;
         private int mPositionHandle;
 
-        private float[] mVertexes;          // Vertix of triangle
+        private float[] mVertexes;          // Vertex of triangle
         private float[] mColor;             // Color of triangle
 
         private string mVertexShaderSrc;    // Vertex shader
@@ -234,10 +234,10 @@ namespace SampelOpenTKApp
 4.  If the deployment is successful, then the application is launched on the target emulator.
 The following are snapshots of launching this OpenTK app on mobile and TV emulators:
 
-    Figure: OpenTK app on TV emulator                             
+    **Figure: OpenTK app on TV emulator**                             
     ![OpenTKAppOnMobile](media/OpenTKAppOnMobile.png)
 
-    Figure: OpenTK app on TV emulator                                   
+    **Figure: OpenTK app on TV emulator**                                   
     ![OpenTKAppOnTV](media/OpenTKAppOnTV.png)
     
     Visual Studio uses the Smart Development Bridge (SDB) to communicate with the target device or emulator. 
