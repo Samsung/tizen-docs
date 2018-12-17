@@ -10,7 +10,7 @@ To install the Tizen Studio for RT:
 
 2. Configure the installation directory.
 
-   The Tizen Studio for RT and its data directory are installed in the location specified in the Installation Settings step. To change the directory, click ![Button](./media/rt_button.png) and specify a new directory. If the new directory is valid, click **Install**:
+   The Tizen Studio for RT and its data directory are installed in the location specified in the Installation Settings step. To change the directory, click the **...** button and specify a new directory. If the new directory is valid, click **Install**:
 
    ![Installation settings](./media/rt_install_settings.png)
 
