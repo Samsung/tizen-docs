@@ -10,9 +10,9 @@ Tizen.Wearable.CircularUI is a set of extension APIs of Xamarin.Forms. Tizen.Wea
 You can easily create your Tizen wearable applications with [Tizen.Wearable.CircularUI guides](https://samsung.github.io/Tizen.CircularUI/guide/Overview.html). For more information about these APIs, see [Tizen.Wearable.CircularUI GitHub](https://github.com/Samsung/Tizen.CircularUI).
 
 ## Tizen OpenTK
-Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES APIs. From Tizen 5.0, it is integrated with Tizen Application Framework. So, it allows Tizen app developer to use C# OpenGL&reg; ES APIs in .Net application.
+The Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES APIs. From Tizen 5.0, it is integrated with Tizen Application Framework. Therefore, it allows Tizen app developer to use C# OpenGL&reg; ES APIs in .Net application.
 
-Using these APIs, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as: Ambient app, Game, Dynamic partial, Physics effect, and so on. For more information about these APIs, see [Tizen OpenTK GitHub](https://github.com/TizenAPI/opentk).
+Using these APIs, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as, Ambient app, Game, Dynamic partial, Physics effect, and so on. For more information about these APIs, see [Tizen OpenTK GitHub](https://github.com/TizenAPI/opentk).
 
 ## TizenFX API
 

@@ -1,14 +1,14 @@
 # Window of OpenTK
 
-In the OpenTK app, `OpenTKGameApplication` creates a `Window` after calling `OnCreate` method. The `Window` is provided
-as a property of `TizenGameApplication`. This document will describe how to use this `Window` in your OpenTK app.
+In the OpenTK app, `OpenTKGameApplication` creates a `Window` after `OnCreate` method is called. `Window` is a
+property of `TizenGameApplication`. This document will describe how to use this `Window` in your OpenTK app.
 
 `Window` defines many events including [input event](#input-event), [window related event](#window-related-event), and
 [render related event](#render-related-event). You can add the event handlers of these events, if needed.
 
 ## Input Event
 
-There are app scenarios, where you want to do some actions while the app user inputs something. In this scenario, you can add an event handler on the input event of `Window`. Also, you can use **key** or **mouse** event using `Window` of OpenTK if your device supports them. For example, if your device supports remote controller then you can use **key** event; if your device supports mouse then you can use **mouse** event.
+There are app scenarios, where you want to do some actions while the app user inputs something. In this scenario, you can add an event handler on the input event of `Window`. Also, you can use **key** or **mouse** event using `Window` of OpenTK, if your device supports them. For example, if your device supports remote controller, then you can use **key** event. If your device supports mouse, then you can use **mouse** event.
 
 The following is the sample code:
 ```C#
