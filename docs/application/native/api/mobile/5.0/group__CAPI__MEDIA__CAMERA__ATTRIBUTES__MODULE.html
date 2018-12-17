@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -1776,7 +1776,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga7da5bb4142af888c464e5c7aabfbc2b7" title="Gets the GOP(Group Of Pictures) interval of encoded preview.">camera_attr_get_encoded_preview_gop_interval()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gac867f59702ef8ae977a46dc750d66930" title="Sets the GOP(Group Of Pictures) interval of encoded preview.">camera_attr_set_encoded_preview_gop_interval()</a> </dd></dl>
 
 </div>
 </div>
@@ -3767,6 +3767,8 @@ ROI area can be set before setting ROI display mode. (since 4.0) </dd></dl>
 
 <p>Sets the bit rate of encoded preview. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The recommended range is from 1,000 (1 kbps) to 100,000,000 (100 Mbps). <br/>
+ But, due to codec limitations, it may not apply. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
@@ -3816,6 +3818,8 @@ ROI area can be set before setting ROI display mode. (since 4.0) </dd></dl>
 
 <p>Sets the GOP(Group Of Pictures) interval of encoded preview. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The recommended range is from 1,000 (1 second) to 600,000 (10 minutes). <br/>
+ But, due to codec limitations, it may not apply. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">camera</td><td>The handle to the camera </td></tr>
@@ -3834,7 +3838,7 @@ ROI area can be set before setting ROI display mode. (since 4.0) </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#gac867f59702ef8ae977a46dc750d66930" title="Sets the GOP(Group Of Pictures) interval of encoded preview.">camera_attr_set_encoded_preview_gop_interval()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__CAMERA__ATTRIBUTES__MODULE.html#ga7da5bb4142af888c464e5c7aabfbc2b7" title="Gets the GOP(Group Of Pictures) interval of encoded preview.">camera_attr_get_encoded_preview_gop_interval()</a> </dd></dl>
 
 </div>
 </div>

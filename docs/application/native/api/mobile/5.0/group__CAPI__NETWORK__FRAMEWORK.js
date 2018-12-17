@@ -6,6 +6,7 @@ var group__CAPI__NETWORK__FRAMEWORK =
     [ "Curl", "group__OPENSRC__CURL__FRAMEWORK.html", null ],
     [ "DNSSD", "group__CAPI__NETWORK__DNSSD__MODULE.html", null ],
     [ "HTTP", "group__CAPI__NETWORK__HTTP__MODULE.html", "group__CAPI__NETWORK__HTTP__MODULE" ],
+    [ "Intelligent Network Monitoring", "group__CAPI__NETWORK__INM__MODULE.html", "group__CAPI__NETWORK__INM__MODULE" ],
     [ "IoTCon", "group__CAPI__IOT__CONNECTIVITY__MODULE.html", "group__CAPI__IOT__CONNECTIVITY__MODULE" ],
     [ "MTP", "group__CAPI__NETWORK__MTP__MODULE.html", "group__CAPI__NETWORK__MTP__MODULE" ],
     [ "NFC", "group__CAPI__NETWORK__NFC__MODULE.html", "group__CAPI__NETWORK__NFC__MODULE" ],

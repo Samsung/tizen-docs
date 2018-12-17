@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -256,6 +256,18 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends audio formats necessary for playing TTS feedback.  <a href="#gad69777c31878a71eaf9d451cdc91cd41"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga21330a62887da154fa9920ed3ef718da">vce_send_feedback_streaming</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga3e591afc6adfbd1a3d6732d59e07dfe1">vce_feedback_event_e</a> event, char *buffer, int len)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends audio streaming necessary for playing TTS feedback.  <a href="#ga21330a62887da154fa9920ed3ef718da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7b12fa651945dd7a614f31d6694055d6">vce_set_request_tts_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad27785b88249fdd1b6b10dcea9f2da37">vce_request_tts_cb</a> callback_func, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function for getting the request of sending TTS feedback from the engine service user.  <a href="#ga7b12fa651945dd7a614f31d6694055d6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga77b87f96e6a26c57c30a243c5ca8770c">vce_unset_request_tts_cb</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the TTS feedback request callback function.  <a href="#ga77b87f96e6a26c57c30a243c5ca8770c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga36801b6c322f23b102466ff8d2b9ac76">vce_set_cancel_tts_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7439c874739480e317932885d340ad8d">vce_cancel_tts_cb</a> callback_func, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function for getting the request of canceling TTS feedback from the engine service user.  <a href="#ga36801b6c322f23b102466ff8d2b9ac76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga9b886d10ae560473a95aa802f87a6f8f">vce_unset_cancel_tts_cb</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the TTS feedback cancellation callback function.  <a href="#ga9b886d10ae560473a95aa802f87a6f8f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8aecca1e55ac196e779ab3e9f80642e3">vce_set_tts_audio_format_request_cb</a> (<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7ff89f8c2eddc68277fb7149423a7790">vce_tts_audio_format_request_cb</a> callback_func, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a callback function for sending TTS audio format to the engine service user.  <a href="#ga8aecca1e55ac196e779ab3e9f80642e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga57ec8dc3c7224c36431b0da049df0f52">vce_unset_get_tts_audio_format_cb</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsets the TTS audio format request callback function.  <a href="#ga57ec8dc3c7224c36431b0da049df0f52"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct vce_cmd_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga24a622b2c5a5c8ca88ffbd836263c1ab">vce_cmd_h</a></td></tr>
@@ -310,6 +322,12 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the engine service user requests the base information of VC engine.  <a href="#ga5b41bdaef7327c1e0fe0fafa2b28f7b0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8d612178c14c9391cd8f4dad873033d5">vce_command_cb</a> )(int id, int type, int format, const char *command, const char *param, int domain, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to retrieve the commands.  <a href="#ga8d612178c14c9391cd8f4dad873033d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad27785b88249fdd1b6b10dcea9f2da37">vce_request_tts_cb</a> )(int pid, int utt_id, const char *text, const char *language, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the engine service user (voice control client) requests to send TTS feedback.  <a href="#gad27785b88249fdd1b6b10dcea9f2da37"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7439c874739480e317932885d340ad8d">vce_cancel_tts_cb</a> )(int pid, int utt_id, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the engine service user cancels TTS feedback.  <a href="#ga7439c874739480e317932885d340ad8d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7ff89f8c2eddc68277fb7149423a7790">vce_tts_audio_format_request_cb</a> )(int *rate, int *channel, int *audio_type, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the engine service user requests TTS audio format.  <a href="#ga7ff89f8c2eddc68277fb7149423a7790"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga5eb120164a796a382b532955f3224618">VCE_COMMAND_TYPE_FOREGROUND</a>&#160;&#160;&#160;1</td></tr>
@@ -346,7 +364,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition for failed recognition because the speech is too loud to listen. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -362,7 +380,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition for none message. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -378,7 +396,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition of bluetooth audio id. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 Bluetooth audio id </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 Bluetooth audio id </dd></dl>
 
 </div>
 </div>
@@ -394,7 +412,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition of Wi-Fi audio id. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 Wi-Fi audio id </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 Wi-Fi audio id </dd></dl>
 
 </div>
 </div>
@@ -410,7 +428,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition for background command type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -426,7 +444,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definitions for exclusive command type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -442,7 +460,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition for foreground command type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -458,7 +476,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition for system command type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -474,7 +492,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition for system background command type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -490,7 +508,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition for widget command type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -507,7 +525,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the engine service user cancels the recognition process. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -523,6 +541,43 @@ vce_stop() </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="ga7439c874739480e317932885d340ad8d"></a><!-- doxytag: member="vce.h::vce_cancel_tts_cb" ref="ga7439c874739480e317932885d340ad8d" args=")(int pid, int utt_id, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7439c874739480e317932885d340ad8d">vce_cancel_tts_cb</a>)(int pid, int utt_id, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the engine service user cancels TTS feedback. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pid</td><td>The process id of the engine service user </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">utt_id</td><td>The utterance id corresponding to the text </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback setter function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga36801b6c322f23b102466ff8d2b9ac76" title="Sets a callback function for getting the request of canceling TTS feedback from the engine service us...">vce_set_cancel_tts_cb()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga36801b6c322f23b102466ff8d2b9ac76" title="Sets a callback function for getting the request of canceling TTS feedback from the engine service us...">vce_set_cancel_tts_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga9b886d10ae560473a95aa802f87a6f8f" title="Unsets the TTS feedback cancellation callback function.">vce_unset_cancel_tts_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga24a622b2c5a5c8ca88ffbd836263c1ab"></a><!-- doxytag: member="vce.h::vce_cmd_h" ref="ga24a622b2c5a5c8ca88ffbd836263c1ab" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -535,7 +590,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>A structure of handle for VC command. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -551,7 +606,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called to retrieve the commands. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>command</em>, <em>param</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -584,7 +639,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user deinitializes VC engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is mandatory and must be registered using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a6144e4498e6d0174e160029dbd526" title="Starts the main function for Voice Control (VC) engine.">vce_main()</a>. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
@@ -610,7 +665,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user retrieves all supported languages of VC engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is mandatory and must be registered using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a6144e4498e6d0174e160029dbd526" title="Starts the main function for Voice Control (VC) engine.">vce_main()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -645,7 +700,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user requests the base information of VC engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is mandatory and must be registered using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a6144e4498e6d0174e160029dbd526" title="Starts the main function for Voice Control (VC) engine.">vce_main()</a>. The <em>engine_uuid</em> is managed by the platform and will be released when this callback function is completed. The <em>engine_name</em> is managed by the platform and will be released when this callback function is completed. The <em>engine_settings_app_id</em> is managed by the platform and will be released when this callback function is completed. The <em>use_network</em> is managed by the platform and will be released when this callback function is completed. In order to upload the engine to Tizen Appstore, both the service app and the UI app (engine settings) are necessary. Therefore, <em>engine_settings_app_id</em> should be set to the application ID of the UI application. If there is no UI application, then <em>engine_settings_app_id</em> should be set to NULL. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -680,7 +735,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user requests the recording format of VC engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is mandatory and must be registered using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a6144e4498e6d0174e160029dbd526" title="Starts the main function for Voice Control (VC) engine.">vce_main()</a>. The <em>audio_id</em> can be used only in the callback. To use outside, make a copy. The <em>types</em> is managed by the platform and will be released when this callback function is completed. The <em>rate</em> is managed by the platform and will be released when this callback function is completed. The <em>channels</em> is managed by the platform and will be released when this callback function is completed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -714,7 +769,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user initializes Voice Control (VC) engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is mandatory and must be registered using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a6144e4498e6d0174e160029dbd526" title="Starts the main function for Voice Control (VC) engine.">vce_main()</a>. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
@@ -742,7 +797,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user checks whether a language is supported or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is mandatory and must be registered using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a6144e4498e6d0174e160029dbd526" title="Starts the main function for Voice Control (VC) engine.">vce_main()</a>. The <em>language</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -767,7 +822,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user requests essential value from NLU result. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key</em> can be used only in the callback. To use outside, make a copy. The <em>value</em> is managed by the platform and will be released when this callback function is completed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -799,7 +854,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user requests private data between app and engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key</em> can be used only in the callback. To use outside, make a copy. The <em>data</em> is managed by the platform and will be released when this callback function is completed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -831,7 +886,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user sets private data between app and engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>key</em>, <em>data</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -863,7 +918,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user requests haptic event. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>event</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -894,7 +949,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user requests list event. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>event</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -925,7 +980,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user requests process text. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>text</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -944,6 +999,46 @@ vce_stop() </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="gad27785b88249fdd1b6b10dcea9f2da37"></a><!-- doxytag: member="vce.h::vce_request_tts_cb" ref="gad27785b88249fdd1b6b10dcea9f2da37" args=")(int pid, int utt_id, const char *text, const char *language, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad27785b88249fdd1b6b10dcea9f2da37">vce_request_tts_cb</a>)(int pid, int utt_id, const char *text, const char *language, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the engine service user (voice control client) requests to send TTS feedback. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>text</em> and <em>language</em> can be used only in the callback. To use outside, make a copy.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pid</td><td>The process id of the engine service user (voice control client) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">utt_id</td><td>The utterance id </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>The text for TTS feedback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">language</td><td>The language </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback setter function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7b12fa651945dd7a614f31d6694055d6" title="Sets a callback function for getting the request of sending TTS feedback from the engine service user...">vce_set_request_tts_cb()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7b12fa651945dd7a614f31d6694055d6" title="Sets a callback function for getting the request of sending TTS feedback from the engine service user...">vce_set_request_tts_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga77b87f96e6a26c57c30a243c5ca8770c" title="Unsets the TTS feedback request callback function.">vce_unset_request_tts_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gafdd54d1a18d2d5978363d965e22731f4"></a><!-- doxytag: member="vce.h::vce_set_audio_type_cb" ref="gafdd54d1a18d2d5978363d965e22731f4" args=")(const char *audio_type)" -->
 <div class="memitem">
 <div class="memproto">
@@ -956,7 +1051,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user sets audio recording type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>audio_type</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -987,7 +1082,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user sets command list before recognition. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should set commands via vcd_foreach_command(). The <em>vc_command</em> should not be released. The <em>vc_command</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1029,7 +1124,7 @@ vce_unset_commands() </dd>
 <div class="memdoc">
 
 <p>Called when the engine service user sets domain (agent or device type). </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>domain</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1060,7 +1155,7 @@ vce_unset_commands() </dd>
 <div class="memdoc">
 
 <p>Called when the engine service user sets language. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>language</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1093,7 +1188,7 @@ vce_unset_commands() </dd>
 <div class="memdoc">
 
 <p>Called when the engine service user sets recording data for speech recognition from recorder. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function should be returned immediately after recording data copy. The <em>data</em> can be used only in the callback. To use outside, make a copy. The <em>speech_detected</em> should not be released. This is managed by the platform. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1134,7 +1229,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user sets app id which is want to ask server dialog. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>app_id</em> and <em>credential</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1167,7 +1262,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when client gets the specific engine's request from the engine service user. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>engine_app_id</em> is managed by the platform and will be released when this callback function is completed. The <em>event</em> is managed by the platform and will be released when this callback function is completed. The <em>request</em> is managed by the platform and will be released when this callback function is completed.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1205,7 +1300,7 @@ vce_stop() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user starts recognition. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is mandatory and must be registered using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a6144e4498e6d0174e160029dbd526" title="Starts the main function for Voice Control (VC) engine.">vce_main()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1246,7 +1341,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user stops to get the result of recognition. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -1281,7 +1376,7 @@ vce_cancel() </dd></dl>
 
 <p>Called when VC engine informs the engine service user about whole supported languages. </p>
 <p>This callback function is implemented by the engine service user. Therefore, the engine developer does NOT have to implement this callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This callback function is called by <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga6fa0b3d4528f3beeed692f8076eb13f0" title="Called when the engine service user retrieves all supported languages of VC engine.">vce_foreach_supported_languages_cb()</a> to retrieve the whole supported language list. The <em>user_data</em> must be transferred from <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga6fa0b3d4528f3beeed692f8076eb13f0" title="Called when the engine service user retrieves all supported languages of VC engine.">vce_foreach_supported_languages_cb()</a>. The <em>language</em> can be used only in the callback. To use outside, make a copy. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1298,6 +1393,45 @@ vce_cancel() </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="ga7ff89f8c2eddc68277fb7149423a7790"></a><!-- doxytag: member="vce.h::vce_tts_audio_format_request_cb" ref="ga7ff89f8c2eddc68277fb7149423a7790" args=")(int *rate, int *channel, int *audio_type, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7ff89f8c2eddc68277fb7149423a7790">vce_tts_audio_format_request_cb</a>)(int *rate, int *channel, int *audio_type, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the engine service user requests TTS audio format. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>rate</em>, <em>channel</em>, and <em>audio_type</em> should not be released. The <em>rate</em>, <em>channel</em>, and <em>audio_type</em> are managed by the platform and will be released after the audio format is transferred to the VC client.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">rate</td><td>The audio sample rate </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">channel</td><td>The audio channel </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">audio_type</td><td>The audio type </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback setter function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a></td><td>Operation failure</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>An application registers callback function using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8aecca1e55ac196e779ab3e9f80642e3" title="Sets a callback function for sending TTS audio format to the engine service user.">vce_set_tts_audio_format_request_cb()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8aecca1e55ac196e779ab3e9f80642e3" title="Sets a callback function for sending TTS audio format to the engine service user.">vce_set_tts_audio_format_request_cb()</a> </dd>
+<dd>
+vce_unset_tts_audio_format_request_cb() </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaad9394402faf3bc043861921c2fada81"></a><!-- doxytag: member="vce.h::vce_unset_commands_cb" ref="gaad9394402faf3bc043861921c2fada81" args=")(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1310,7 +1444,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Called when the engine service user unsets command list for reset. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -1339,7 +1473,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumerations of ASR result events. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga1cc7b0762749d938d9252da581455928a2197fc87aeb93ceed5a2de93d11a6890"></a><!-- doxytag: member="VCE_ASR_RESULT_EVENT_FINAL_RESULT" ref="gga1cc7b0762749d938d9252da581455928a2197fc87aeb93ceed5a2de93d11a6890" args="" -->VCE_ASR_RESULT_EVENT_FINAL_RESULT</em>&nbsp;</td><td>
 <p>Event when the ASR result is last data or ASR result is only one result </p>
@@ -1368,7 +1502,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumerations of audio channels. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga8d81a495ae7ae5cfaf303f6fe3230f00a024d32cae6ba40d85db8cd6336597d75"></a><!-- doxytag: member="VCE_AUDIO_CHANNEL_MONO" ref="gga8d81a495ae7ae5cfaf303f6fe3230f00a024d32cae6ba40d85db8cd6336597d75" args="" -->VCE_AUDIO_CHANNEL_MONO</em>&nbsp;</td><td>
 <p>1 channel, mono </p>
@@ -1394,7 +1528,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumerations of audio type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggacc6cd1a905e6c2a9b385027158bc19e3a0e4acbe71d16d5775950a2250236228d"></a><!-- doxytag: member="VCE_AUDIO_TYPE_PCM_S16_LE" ref="ggacc6cd1a905e6c2a9b385027158bc19e3a0e4acbe71d16d5775950a2250236228d" args="" -->VCE_AUDIO_TYPE_PCM_S16_LE</em>&nbsp;</td><td>
 <p>Signed 16bit audio type, Little endian </p>
@@ -1420,7 +1554,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumerations of command type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggaef9340a2c54a5290537a87651b5fb746af308d13705362d1e1e2d1751a636fe44"></a><!-- doxytag: member="VCE_COMMAND_FORMAT_FIXED" ref="ggaef9340a2c54a5290537a87651b5fb746af308d13705362d1e1e2d1751a636fe44" args="" -->VCE_COMMAND_FORMAT_FIXED</em>&nbsp;</td><td>
 <p>Fixed command </p>
@@ -1461,7 +1595,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumerations of error codes. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d"></a><!-- doxytag: member="VCE_ERROR_NONE" ref="ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d" args="" -->VCE_ERROR_NONE</em>&nbsp;</td><td>
 <p>Successful </p>
@@ -1517,7 +1651,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumeration for TTS feedback events. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga3e591afc6adfbd1a3d6732d59e07dfe1ac82eac2dc97f1537f66e9d171df3b915"></a><!-- doxytag: member="VCE_FEEDBACK_EVENT_FAIL" ref="gga3e591afc6adfbd1a3d6732d59e07dfe1ac82eac2dc97f1537f66e9d171df3b915" args="" -->VCE_FEEDBACK_EVENT_FAIL</em>&nbsp;</td><td>
 <p>Failed </p>
@@ -1549,7 +1683,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumerations of callback event. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga894730e0706f962fa9078eef5b500c07a44f40d9f7d37220a7abeba57471e916f"></a><!-- doxytag: member="VCE_RESULT_EVENT_SUCCESS" ref="gga894730e0706f962fa9078eef5b500c07a44f40d9f7d37220a7abeba57471e916f" args="" -->VCE_RESULT_EVENT_SUCCESS</em>&nbsp;</td><td>
 <p>Event when the recognition full result is ready </p>
@@ -1578,7 +1712,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Enumerations of speech detect. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga257e788c33aa539c67e76f42c1530ca9a25ee9179557206106aab8ed788064abd"></a><!-- doxytag: member="VCE_SPEECH_DETECT_NONE" ref="gga257e788c33aa539c67e76f42c1530ca9a25ee9179557206106aab8ed788064abd" args="" -->VCE_SPEECH_DETECT_NONE</em>&nbsp;</td><td>
 <p>No event </p>
@@ -1612,7 +1746,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Gets current audio type. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>audio_type</em> must be released using free() when it is no longer required. </dd></dl>
@@ -1661,7 +1795,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Gets command length. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vce_command</td><td>The handle to be passed to the vce_set_commands() function </td></tr>
@@ -1714,7 +1848,7 @@ vce_cancel() </dd></dl>
 <div class="memdoc">
 
 <p>Retrieves all commands using callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">vce_command</td><td>The handle to be passed to the vce_set_commands() function </td></tr>
@@ -1766,7 +1900,7 @@ vce_set_commands() </dd></dl>
 <div class="memdoc">
 
 <p>Gets private data from a voice manager client. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>data</em> must be released using free() when it is no longer required. </dd></dl>
@@ -1826,7 +1960,7 @@ vce_set_commands() </dd></dl>
 
 <p>Starts the main function for Voice Control (VC) engine. </p>
 <p>This function is the main function for operating VC engine. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__SERVICE__APP__MODULE.html#gaad16526cf28a7365b795659e49ee368a" title="Runs the main loop of the application until service_app_exit() is called.">service_app_main()</a> should be used for working the engine after this function. </dd></dl>
@@ -1975,7 +2109,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sends the ASR result to the engine service user. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>A asr result event </td></tr>
@@ -2044,7 +2178,7 @@ vce_unload_engine() </dd>
  <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a1721622bc833db2bd1dcb127d6ce48ae">VCE_ERROR_OPERATION_FAILED</a>, <br/>
  <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a78eca79e0e28b5a517da9aa7d5ba2d00">VCE_ERROR_PERMISSION_DENIED</a>, <br/>
  <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8ab4cf70be00cec4ec99a2d568b13ceead">VCE_ERROR_NOT_SUPPORTED_FEATURE</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">error</td><td>Error type </td></tr>
@@ -2099,7 +2233,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sends audio formats necessary for playing TTS feedback. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>A sampling rate </td></tr>
@@ -2154,7 +2288,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sends audio streaming necessary for playing TTS feedback. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>A feedback event </td></tr>
@@ -2203,7 +2337,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sends the NLG (Natural Language Generation) result to the engine service user. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">nlg_result</td><td>A nlg result </td></tr>
@@ -2294,7 +2428,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sends the results to the engine service user. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>A result event </td></tr>
@@ -2363,7 +2497,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sends the specific engine result to the engine service user. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">engine_app_id</td><td>A specific engine's app id </td></tr>
@@ -2387,6 +2521,55 @@ vce_unload_engine() </dd>
 
 </div>
 </div>
+<a class="anchor" id="ga36801b6c322f23b102466ff8d2b9ac76"></a><!-- doxytag: member="vce.h::vce_set_cancel_tts_cb" ref="ga36801b6c322f23b102466ff8d2b9ac76" args="(vce_cancel_tts_cb callback_func, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga36801b6c322f23b102466ff8d2b9ac76">vce_set_cancel_tts_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7439c874739480e317932885d340ad8d">vce_cancel_tts_cb</a>&#160;</td>
+          <td class="paramname"><em>callback_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a callback function for getting the request of canceling TTS feedback from the engine service user. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>Callback function to be registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to the callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7439c874739480e317932885d340ad8d" title="Called when the engine service user cancels TTS feedback.">vce_cancel_tts_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga9b886d10ae560473a95aa802f87a6f8f" title="Unsets the TTS feedback cancellation callback function.">vce_unset_cancel_tts_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga8168405af13e745aa34d9548c23666d9"></a><!-- doxytag: member="vce.h::vce_set_nlu_base_info_requested_cb" ref="ga8168405af13e745aa34d9548c23666d9" args="(vce_nlu_base_info_requested_cb callback_func)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2403,7 +2586,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sets a callback function for requesting the NLU base information to the engine service. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a19a49c7440ccb36ed231301ccfb27" title="Called when the engine service user requests essential value from NLU result.">vce_nlu_base_info_requested_cb()</a> function is called when the engine service user requests the NLU base information to the engine service. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2451,7 +2634,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sets private data to a voice manager client. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -2493,7 +2676,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sets a callback function for requesting the private data to the engine service. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1ac037972c7a75d8dcd49262dd8cbd09" title="Called when the engine service user requests private data between app and engine.">vce_private_data_requested_cb()</a> function is called when the engine service user requests the private data to the engine service. </dd></dl>
@@ -2534,7 +2717,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sets a callback function for setting the private data to the engine service. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad7ea17b11f74b7767046561c02de8084" title="Called when the engine service user sets private data between app and engine.">vce_private_data_set_cb()</a> function is called when the engine service user sets the private data to the engine service. </dd></dl>
@@ -2561,6 +2744,55 @@ vce_unload_engine() </dd>
 
 </div>
 </div>
+<a class="anchor" id="ga7b12fa651945dd7a614f31d6694055d6"></a><!-- doxytag: member="vce.h::vce_set_request_tts_cb" ref="ga7b12fa651945dd7a614f31d6694055d6" args="(vce_request_tts_cb callback_func, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7b12fa651945dd7a614f31d6694055d6">vce_set_request_tts_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad27785b88249fdd1b6b10dcea9f2da37">vce_request_tts_cb</a>&#160;</td>
+          <td class="paramname"><em>callback_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a callback function for getting the request of sending TTS feedback from the engine service user. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>Callback function to be registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to the callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad27785b88249fdd1b6b10dcea9f2da37" title="Called when the engine service user (voice control client) requests to send TTS feedback.">vce_request_tts_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga77b87f96e6a26c57c30a243c5ca8770c" title="Unsets the TTS feedback request callback function.">vce_unset_request_tts_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gabdd4752ba20a197293a9bdc0f7bfff23"></a><!-- doxytag: member="vce.h::vce_set_specific_engine_request_cb" ref="gabdd4752ba20a197293a9bdc0f7bfff23" args="(vce_specific_engine_request_cb callback_func)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2577,7 +2809,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Sets a callback function for getting the engine service request. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>Callback function to register</td></tr>
@@ -2597,6 +2829,55 @@ vce_unload_engine() </dd>
 
 </div>
 </div>
+<a class="anchor" id="ga8aecca1e55ac196e779ab3e9f80642e3"></a><!-- doxytag: member="vce.h::vce_set_tts_audio_format_request_cb" ref="ga8aecca1e55ac196e779ab3e9f80642e3" args="(vce_tts_audio_format_request_cb callback_func, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga8aecca1e55ac196e779ab3e9f80642e3">vce_set_tts_audio_format_request_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7ff89f8c2eddc68277fb7149423a7790">vce_tts_audio_format_request_cb</a>&#160;</td>
+          <td class="paramname"><em>callback_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a callback function for sending TTS audio format to the engine service user. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback_func</td><td>Callback function to be registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to the callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a19010cdaa60e7fab5444cd62c778392d">VCE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8a82eded2d9753419929afcd5202cafca3">VCE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ggabf4992d5bec66a4a7e879e4464e686f8aec683a5e7d116676d264c497e2b16611">VCE_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7ff89f8c2eddc68277fb7149423a7790" title="Called when the engine service user requests TTS audio format.">vce_tts_audio_format_request_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga57ec8dc3c7224c36431b0da049df0f52" title="Unsets the TTS audio format request callback function.">vce_unset_get_tts_audio_format_cb()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gab7c34786a891c8ab77d158123efcb17c"></a><!-- doxytag: member="vce.h::vce_start_recording" ref="gab7c34786a891c8ab77d158123efcb17c" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -2613,7 +2894,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Starts recording voice. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
@@ -2646,7 +2927,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Stops recording voice. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/recorder </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
@@ -2659,6 +2940,93 @@ vce_unload_engine() </dd>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9b886d10ae560473a95aa802f87a6f8f"></a><!-- doxytag: member="vce.h::vce_unset_cancel_tts_cb" ref="ga9b886d10ae560473a95aa802f87a6f8f" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga9b886d10ae560473a95aa802f87a6f8f">vce_unset_cancel_tts_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets the TTS feedback cancellation callback function. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga36801b6c322f23b102466ff8d2b9ac76" title="Sets a callback function for getting the request of canceling TTS feedback from the engine service us...">vce_set_cancel_tts_cb()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga57ec8dc3c7224c36431b0da049df0f52"></a><!-- doxytag: member="vce.h::vce_unset_get_tts_audio_format_cb" ref="ga57ec8dc3c7224c36431b0da049df0f52" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga57ec8dc3c7224c36431b0da049df0f52">vce_unset_get_tts_audio_format_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets the TTS audio format request callback function. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>vce_set_tts_audio_format_cb() </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga77b87f96e6a26c57c30a243c5ca8770c"></a><!-- doxytag: member="vce.h::vce_unset_request_tts_cb" ref="ga77b87f96e6a26c57c30a243c5ca8770c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga77b87f96e6a26c57c30a243c5ca8770c">vce_unset_request_tts_cb</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unsets the TTS feedback request callback function. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6a9770edab31749f7dc6c3a680c126a6d4">VC_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gga1666eab377d310ecf893fab49d9a51a6af21aa3788fb3b52f51fc288319235ba4">VC_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga7b12fa651945dd7a614f31d6694055d6" title="Sets a callback function for getting the request of sending TTS feedback from the engine service user...">vce_set_request_tts_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -2678,7 +3046,7 @@ vce_unload_engine() </dd>
 <div class="memdoc">
 
 <p>Unsets the engine service request callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">

@@ -1,0 +1,12 @@
+<map id="task_group_s" name="task_group_s">
+<area shape="rect" id="node6" href="$structtcb__s.html" title="This is the common part of the task control block (TCB). The TCB is the heart of the TinyAra task&#45;con..." alt="" coords="286,321,341,348"/>
+<area shape="rect" id="node2" href="$structsq__queue__s.html" title="structure for header queue " alt="" coords="274,109,366,136"/>
+<area shape="rect" id="node3" href="$structsq__entry__s.html" title="structure for singly&#45;linked queue " alt="" coords="277,5,363,32"/>
+<area shape="rect" id="node4" href="$structsem__s.html" title="Structure of generic semaphore. " alt="" coords="133,501,195,528"/>
+<area shape="rect" id="node5" href="$structsemholder__s.html" title="Structure of semholder. " alt="" coords="116,412,212,439"/>
+<area shape="rect" id="node7" href="$structdspace__s.html" title="This structure describes a reference counted D&#45;Space region. This must be a separately allocated &quot;bre..." alt="" coords="186,222,265,249"/>
+<area shape="rect" id="node8" href="$unionentry__u.html" title="This is the entry point into the main thread of the task or into a created pthread within the task..." alt="" coords="289,222,354,249"/>
+<area shape="rect" id="node9" href="$structsiginfo.html" title="Structure for using to pass parameters to/from signal handlers. " alt="" coords="515,222,575,249"/>
+<area shape="rect" id="node10" href="$unionsigval.html" title="Union for defining the types of the siginfo si_value field. " alt="" coords="517,109,573,136"/>
+<area shape="rect" id="node11" href="$structchild__status__s.html" title="This structure is used to maintin information about child tasks. pthreads work differently, they have join information. This is only for child tasks. " alt="" coords="5,109,112,136"/>
+</map>

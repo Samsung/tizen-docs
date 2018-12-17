@@ -25,6 +25,10 @@ You can use the following personal data features in your .NET applications:
 
     You can manage address books, persons, contacts, and contact groups on a device. You can add, modify, and monitor contacts. You can also convert contacts to the vCard format.
 
+-   [Phone Number Management](phonenumber.md)
+
+    You can parse, format, and normalize phone numbers.
+
 -   [Application Usage History Data](app-history.md)
 
     You can retrieve the user's application usage patterns, such as information about frequently used applications.

@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Bluetooth API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bluetooth API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bluetooth">
@@ -405,6 +405,14 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <p><span class="version">Since: </span>
  2.3.1
           </p>
+<div class="description">
+          <ul>
+            <li>
+CLOSED - corresponds to closed bluetooth socket.            </li>
+            <li>
+OPEN - corresponds to opened bluetooth socket.            </li>
+          </ul>
+         </div>
 </div>
 <div class="enum" id="BluetoothProfileType">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothProfileType"></a><h3>1.4. BluetoothProfileType</h3>
@@ -415,6 +423,12 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <p><span class="version">Since: </span>
  2.3.1
           </p>
+<div class="description">
+          <ul>
+            <li>
+HEALTH - corresponds to health bluetooth profile type.            </li>
+          </ul>
+         </div>
 </div>
 <div class="enum" id="BluetoothHealthChannelType">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelType"></a><h3>1.5. BluetoothHealthChannelType</h3>
@@ -425,6 +439,14 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <p><span class="version">Since: </span>
  2.3.1
           </p>
+<div class="description">
+          <ul>
+            <li>
+RELIABLE - corresponds to reliable bluetooth health channel type.            </li>
+            <li>
+STREAMING - corresponds to streaming bluetooth health channel type.            </li>
+          </ul>
+         </div>
 </div>
 <div class="typedef" id="BluetoothLESolicitationUUID">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLESolicitationUUID"></a><h3>1.6. BluetoothLESolicitationUUID</h3>
@@ -512,6 +534,18 @@ LOW_ENERGY - Low energy advertising mode             </li>
 The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="BluetoothManagerObject::bluetooth">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">BluetoothManager </span><span class="name">bluetooth</span></span><div class="brief">
+ Object representing a bluetooth manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.3.1
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="BluetoothLEServiceData">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEServiceData"></a><h3>2.2. BluetoothLEServiceData</h3>
@@ -3004,7 +3038,7 @@ adapter.startScan(function onsuccess(device)
 </dt>
 <dd>
 <div class="brief">
- Unregisters a characteristic value change listener
+ Unregisters a characteristic value change listener.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void removeValueChangeListener(long watchID);</pre></div>
 <p><span class="version">Since: </span>
@@ -4185,6 +4219,14 @@ adapter.startScan(onDeviceFound, onerror);
                 </li>
         </ul>
 </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">BluetoothGATTService:
+                  </span>
+ Retrieved service for the given UUID.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -5175,8 +5217,7 @@ adapter.getDevice("12:34:56:78:9A:BC",
 <li class="attribute" id="BluetoothServiceHandler::uuid">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothUUID </span><span class="name">uuid</span></span><div class="brief">
- The UUID of the service. See <a href="#BluetoothServiceHandler::onconnect">example
-</a>.
+ The UUID of the service. See <a href="#BluetoothServiceHandler::onconnect">example</a>.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5185,8 +5226,7 @@ adapter.getDevice("12:34:56:78:9A:BC",
 <li class="attribute" id="BluetoothServiceHandler::name">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
- The name of the service. See <a href="#BluetoothServiceHandler::onconnect">example
-</a>.
+ The name of the service. See <a href="#BluetoothServiceHandler::onconnect">example</a>.
             </div>
 <p><span class="version">Since: </span>
  2.3.1

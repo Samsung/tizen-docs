@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>HumanActivityMonitor API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>HumanActivityMonitor API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::HumanActivityMonitor">
@@ -271,7 +271,10 @@ For more information about how to use Human Activity Monitor API, see <a href="h
 <div class="brief">
  Specifies the supported human activity monitor types.
           </div>
-<pre class="webidl prettyprint">  enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR", "STRESS_MONITOR" };</pre>
+<pre class="webidl prettyprint">  enum HumanActivityType { "PEDOMETER", <span class="nocode deprecated">"WRIST_UP"</span>, "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR", "STRESS_MONITOR" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ WRIST_UP is deprecated since Tizen 4.0. Use <em>GestureType</em> and <a href="#HumanActivityMonitorManager::addGestureRecognitionListener">addGestureRecognitionListener</a> to monitor WRIST_UP gesture.
+          </p>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -298,9 +301,6 @@ STRESS_MONITOR - Stress monitor (stress score)            </li>
          </div>
 <p><span class="remark">Remark: </span>
  <em>SLEEP_MONITOR</em> is supported since Tizen 3.0
-          </p>
-<p><span class="remark">Remark: </span>
- <em>WRIST_UP</em> is deprecated since Tizen 4.0. Use <em>GestureType</em> and <a href="#HumanActivityMonitorManager::addGestureRecognitionListener">addGestureRecognitionListener</a> to monitor <em>WRIST_UP</em> gesture.
           </p>
 <p><span class="remark">Remark: </span>
  <em>SLEEP_DETECTOR</em> and <em>STRESS_MONITOR</em> are supported since Tizen 5.0
@@ -522,6 +522,18 @@ The <em>tizen.humanactivitymonitor</em> object allows access to the human activi
 <p><span class="version">Since: </span>
  2.3
           </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="HumanActivityMonitorManagerObject::humanactivitymonitor">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">HumanActivityMonitorManager </span><span class="name">humanactivitymonitor</span></span><div class="brief">
+ Object representing a exif manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="HumanActivityMonitorManager">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager"></a><h3>2.2. HumanActivityMonitorManager</h3>

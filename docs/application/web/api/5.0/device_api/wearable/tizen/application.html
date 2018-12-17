@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Application API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Application API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Application">
@@ -311,9 +311,9 @@ The launch modes defined by this enumerator are:
           </p>
           <ul>
             <li>
-SINGLE - Launch application as standalone instance            </li>
+SINGLE - Launch application as standalone instance.            </li>
             <li>
-GROUP - Launch application in subgroup            </li>
+GROUP - Launch application in subgroup.            </li>
           </ul>
          </div>
 </div>
@@ -332,9 +332,9 @@ Possible types are:
           </p>
           <ul>
             <li>
-RECENTLY - indicates most recently used applications, in a descending order of the application use counts            </li>
+RECENTLY - Indicates most recently used applications, in a descending order of the application use counts.            </li>
             <li>
-FREQUENTLY - indicates most frequently used applications, in a descending order of the application use counts            </li>
+FREQUENTLY - Indicates most frequently used applications, in a descending order of the application use counts.            </li>
           </ul>
          </div>
 </div>
@@ -358,6 +358,18 @@ FREQUENTLY - indicates most frequently used applications, in a descending order 
 The <em>tizen.application </em>object allows access to the Application API's functionality.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="ApplicationManagerObject::application">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationManager </span><span class="name">application</span></span><div class="brief">
+ Object representing a account manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="ApplicationManager">
 <a class="backward-compatibility-anchor" name="::Application::ApplicationManager"></a><h3>2.2. ApplicationManager</h3>
@@ -620,8 +632,6 @@ information about what the application is doing. The launched application
 can send a result to the caller application with the <em>replyResult() </em>method of the
 <em>RequestedApplicationControl</em> interface.
             </p>
-           </div>
-<div class="description">
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
             </p>
@@ -1481,7 +1491,7 @@ with the corresponding listener identifier.
 <ul>
 <span class="return">long:
                   </span>
- long ID of the listener that can be used to remove the listener later.
+ ID of the listener that can be used to remove the listener later.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -3156,6 +3166,27 @@ tizen.application.launchAppControl(appControl, null,
 Platform modules will be able to broadcast system events in a future Tizen release.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SystemEventData::value">
+<span class="attrName"><span class="type">DOMString </span><span class="name">value</span></span><div class="brief">
+ Value of the system event data item.
+            </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</li>
+<li class="attribute" id="SystemEventData::type">
+<span class="attrName"><span class="type">DOMString </span><span class="name">type</span></span><div class="brief">
+ Type of the system event data item.
+            </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</li>
+</ul>
+</div>
 </div>
 <div class="interface" id="EventCallback">
 <a class="backward-compatibility-anchor" name="::Application::EventCallback"></a><h3>2.21. EventCallback</h3>

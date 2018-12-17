@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -156,6 +156,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a count for array from rpc port parcel handle.  <a href="#ga7aee8a509a5c070ede701d4914a67297"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga1b0599a22156543ea821ab0471d761e5">rpc_port_parcel_read</a> (<a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaa30a471ae606d84e8e422797208b7963">rpc_port_parcel_h</a> h, <a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga6599bcaad902c868adeb8d865c1b4bb0">rpc_port_parcelable_t</a> *parcelable, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a parcel from the data using <em>parcelable</em>.  <a href="#ga1b0599a22156543ea821ab0471d761e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaeba7d7ca7ab62c7098d639bc5ad58ec8">rpc_port_parcel_burst_read</a> (<a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaa30a471ae606d84e8e422797208b7963">rpc_port_parcel_h</a> h, unsigned char *buf, unsigned int size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads bytes from rpc port parcel handle.  <a href="#gaeba7d7ca7ab62c7098d639bc5ad58ec8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga288a5034059d46844995353921bafea5">rpc_port_parcel_burst_write</a> (<a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaa30a471ae606d84e8e422797208b7963">rpc_port_parcel_h</a> h, const unsigned char *buf, unsigned int size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Write bytes to rpc port parcel handle.  <a href="#ga288a5034059d46844995353921bafea5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaa30a471ae606d84e8e422797208b7963">rpc_port_parcel_h</a></td></tr>
@@ -177,7 +181,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>The rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>
@@ -193,11 +197,117 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>The interface for converting data to/from a parcel. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gaeba7d7ca7ab62c7098d639bc5ad58ec8"></a><!-- doxytag: member="rpc&#45;port&#45;parcel.h::rpc_port_parcel_burst_read" ref="gaeba7d7ca7ab62c7098d639bc5ad58ec8" args="(rpc_port_parcel_h h, unsigned char *buf, unsigned int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaeba7d7ca7ab62c7098d639bc5ad58ec8">rpc_port_parcel_burst_read</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaa30a471ae606d84e8e422797208b7963">rpc_port_parcel_h</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reads bytes from rpc port parcel handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buf</td><td>The array buffer to read </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Bytes to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a14b98b22a190e02cfe643eeadd21f0cd">RPC_PORT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a49de5fd2d1c367667733874c2b627411">RPC_PORT_ERROR_INVALID_PARAMETER</a></td><td>The specified <em>h</em> is NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaba63d9ccf4cd542955bf97c125b586c8" title="Writes a boolean value into rpc port parcel handle.">rpc_port_parcel_write_bool()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga288a5034059d46844995353921bafea5"></a><!-- doxytag: member="rpc&#45;port&#45;parcel.h::rpc_port_parcel_burst_write" ref="ga288a5034059d46844995353921bafea5" args="(rpc_port_parcel_h h, const unsigned char *buf, unsigned int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga288a5034059d46844995353921bafea5">rpc_port_parcel_burst_write</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaa30a471ae606d84e8e422797208b7963">rpc_port_parcel_h</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Write bytes to rpc port parcel handle. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The array buffer to write </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Bytes to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a14b98b22a190e02cfe643eeadd21f0cd">RPC_PORT_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gga41af23630ce748dbd1f0da63a6fad1b6a49de5fd2d1c367667733874c2b627411">RPC_PORT_ERROR_INVALID_PARAMETER</a></td><td>The specified <em>h</em> is NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#gaba63d9ccf4cd542955bf97c125b586c8" title="Writes a boolean value into rpc port parcel handle.">rpc_port_parcel_write_bool()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga514a4dcf05f90ca8076f364c9172a523"></a><!-- doxytag: member="rpc&#45;port&#45;parcel.h::rpc_port_parcel_create" ref="ga514a4dcf05f90ca8076f364c9172a523" args="(rpc_port_parcel_h *h)" -->
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +324,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates a rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>h</em> using <a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga7844e52e14fb7c1e5a88c3d937a93ca7" title="Destroys a rpc port parcel handle.">rpc_port_parcel_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -260,7 +370,7 @@ Typedefs</h2></td></tr>
 
 <p>Creates a rpc port parcel handle from port. </p>
 <p>Creates a rpc port parcel handle using read data from the port. It calls <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#gabe9874f5794c761c8d50e01f9767aea7" title="Reads data from an RPC port.">rpc_port_read()</a> internally. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <em>h</em> using <a class="el" href="group__CAPI__RPC__PORT__PARCEL__MODULE.html#ga7844e52e14fb7c1e5a88c3d937a93ca7" title="Destroys a rpc port parcel handle.">rpc_port_parcel_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -300,7 +410,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys a rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -351,7 +461,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a parcel from the data using <em>parcelable</em>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -398,7 +508,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a count for array from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -444,7 +554,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a boolean value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -490,7 +600,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a bundle data from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>b</em> should be released using <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -537,7 +647,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a byte value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -583,7 +693,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a double precision floating point value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -629,7 +739,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a floating point value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -675,7 +785,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a short value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -721,7 +831,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a integer value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -767,7 +877,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a long long integer value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -813,7 +923,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Reads a string value from rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>str</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -861,7 +971,7 @@ Typedefs</h2></td></tr>
 
 <p>Sends parcel data through the port. </p>
 <p>Sends parcel data through the port. It calls <a class="el" href="group__CAPI__RPC__PORT__MODULE.html#ga5f95b36f28221f91f7374a601877d4d3" title="Writes data to an RPC port.">rpc_port_write()</a> internally. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle that is newly created </td></tr>
@@ -914,7 +1024,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes the data into parcel handle using <em>parcelable</em>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -961,7 +1071,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a count for array into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1007,7 +1117,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a boolean value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1053,7 +1163,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a bundle data into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1099,7 +1209,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a byte value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1145,7 +1255,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a double precision floating point value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1191,7 +1301,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a floating point value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1237,7 +1347,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a short value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1283,7 +1393,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a integer value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1329,7 +1439,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a long long integer value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>
@@ -1375,7 +1485,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Writes a string value into rpc port parcel handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>The rpc port parcel handle </td></tr>

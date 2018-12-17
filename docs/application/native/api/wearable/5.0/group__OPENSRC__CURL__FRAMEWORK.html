@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -96,7 +96,16 @@ Overview</h2>
  Version: 7.59.0<br/>
  Reference: <a href="https://curl.haxx.se/libcurl/">https://curl.haxx.se/libcurl/</a><br/>
 </p>
-<p>In some cases such as internet access, your application requires some privileges. For more information, see the <a href="https://developer.tizen.org/development/getting-started/native-application/understanding-tizen-programming/security-and-api-privileges#nonAPI">Non-API Bound Privileges.</a> </p>
+<p>In some cases such as internet access, your application requires some privileges. For more information, see the <a href="https://developer.tizen.org/development/getting-started/native-application/understanding-tizen-programming/security-and-api-privileges#nonAPI">Non-API Bound Privileges.</a></p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Note that the following enums will be removed at the next platform release. </dd>
+<dd>
+- CURLE_SSL_CACERT </dd>
+<dd>
+- CURLOPT_DNS_USE_GLOBAL_CACHE </dd>
+<dd>
+You can use CURLE_PEER_FAILED_VERIFICATION instesd of CURLE_SSL_CACERT. </dd>
+<dd>
+You can use CURLOPT_SHARE instead of CURLOPT_DNS_USE_GLOBAL_CACHE. </dd></dl>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

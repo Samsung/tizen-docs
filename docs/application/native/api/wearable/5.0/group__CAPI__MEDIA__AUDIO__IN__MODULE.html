@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -284,7 +284,7 @@ Typedefs</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>input</em> must be released using <a class="el" href="group__CAPI__MEDIA__AUDIO__IN__MODULE.html#ga7955c1c7e3ee619a257eedff8c5db31a" title="Releases the audio input handle and all its resources associated with an audio stream.">audio_in_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sample_rate</td><td>The audio sample rate in 8000[Hz] ~ 48000[Hz] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sample_rate</td><td>The audio sample rate in 8000[Hz] ~ 48000[Hz] (Before 5.0), 8000[Hz] ~ 192000[Hz] (Since 5.0) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The audio channel type (mono or stereo) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of audio sample (8- or 16-bit) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">input</td><td>An audio input handle is created on success </td></tr>
@@ -549,7 +549,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The handle to the audio input </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">sample_rate</td><td>The audio sample rate in Hertz (8000 ~ 48000) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sample_rate</td><td>The audio sample rate in Hertz (8000 ~ 48000) (Before 5.0), (8000 ~ 192000) (Since 5.0) </td></tr>
   </table>
   </dd>
 </dl>

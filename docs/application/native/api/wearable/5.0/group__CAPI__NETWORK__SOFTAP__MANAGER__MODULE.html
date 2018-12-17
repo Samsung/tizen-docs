@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -1902,12 +1902,14 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets the channel for SoftAP. </p>
-<p>If channel is not set, channel 6 is used as default. </p>
+<p>If channel is not set, channel 1 is used as default. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/softap </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This change is applied next time SoftAP is enabled. <br/>
- You can use <a class="el" href="group__CAPI__NETWORK__SOFTAP__MANAGER__MODULE.html#ga6043884612dfcb29c7b820474004ee7c" title="Enables the SoftAP, asynchronously.">softap_enable()</a> or <a class="el" href="group__CAPI__NETWORK__SOFTAP__MANAGER__MODULE.html#ga5618f7b59636df538bf6bbd11064bdfb" title="Reloads the settings (SSID / Passphrase / Security type / SSID visibility) for SoftAP.">softap_reload_settings()</a> to enable SoftAP. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This change is applied next time SoftAP is enabled.<br/>
+ You can use <a class="el" href="group__CAPI__NETWORK__SOFTAP__MANAGER__MODULE.html#ga6043884612dfcb29c7b820474004ee7c" title="Enables the SoftAP, asynchronously.">softap_enable()</a> or <a class="el" href="group__CAPI__NETWORK__SOFTAP__MANAGER__MODULE.html#ga5618f7b59636df538bf6bbd11064bdfb" title="Reloads the settings (SSID / Passphrase / Security type / SSID visibility) for SoftAP.">softap_reload_settings()</a> to enable SoftAP.<br/>
+ If <em>channel</em> is 0, the channel can be selected automatically at run time.<br/>
+ (ACS: Automatic Channel Selection) </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">softap</td><td>The SoftAP handle </td></tr>

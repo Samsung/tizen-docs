@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -125,9 +125,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html#ga7c726c39e6d8a5a521df063c6d4c7d34">connection_profile_get_wifi_max_speed</a> (<a class="el" href="group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#gab6efe37fdc397da715213e5b58f4a75d">connection_profile_h</a> profile, int *max_speed)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the max speed (Mbps).  <a href="#ga7c726c39e6d8a5a521df063c6d4c7d34"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html#ga886d4c4df68867e14aa3d0aecba05132">connection_profile_get_wifi_security_type</a> (<a class="el" href="group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#gab6efe37fdc397da715213e5b58f4a75d">connection_profile_h</a> profile, <a class="el" href="group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html#ga75089650da20fbb2aecebd70cc8ded48">connection_wifi_security_type_e</a> *type)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the security mode of Wi-Fi.  <a href="#ga886d4c4df68867e14aa3d0aecba05132"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the security type of Wi-Fi.  <a href="#ga886d4c4df68867e14aa3d0aecba05132"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html#ga4548427c26451f0a1662f91d3ba9d8ec">connection_profile_get_wifi_encryption_type</a> (<a class="el" href="group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#gab6efe37fdc397da715213e5b58f4a75d">connection_profile_h</a> profile, <a class="el" href="group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html#ga88d40a155b830f49ee8b86c6bf17531a">connection_wifi_encryption_type_e</a> *type)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the security mode of Wi-Fi.  <a href="#ga4548427c26451f0a1662f91d3ba9d8ec"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the encryption type of Wi-Fi.  <a href="#ga4548427c26451f0a1662f91d3ba9d8ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html#ga74734566b0d98305fb82ac7aea438c97">connection_profile_is_wifi_passphrase_required</a> (<a class="el" href="group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#gab6efe37fdc397da715213e5b58f4a75d">connection_profile_h</a> profile, bool *required)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether passphrase is required.  <a href="#ga74734566b0d98305fb82ac7aea438c97"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__CONNECTION__WIFI__PROFILE__MODULE.html#gadc69e86493df8ae2ec95a6b04a5e7250">connection_profile_set_wifi_passphrase</a> (<a class="el" href="group__CAPI__NETWORK__CONNECTION__PROFILE__MODULE.html#gab6efe37fdc397da715213e5b58f4a75d">connection_profile_h</a> profile, const char *passphrase)</td></tr>
@@ -246,6 +246,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32aebfd17a5647a1b73807e0b7cca2ab752">CONNECTION_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -280,7 +281,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the security mode of Wi-Fi. </p>
+<p>Gets the encryption type of Wi-Fi. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -293,6 +294,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -341,6 +343,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32aebfd17a5647a1b73807e0b7cca2ab752">CONNECTION_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -388,6 +391,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -434,6 +438,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -480,6 +485,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -513,7 +519,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the security mode of Wi-Fi. </p>
+<p>Gets the security type of Wi-Fi. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -526,6 +532,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32acd4495fb9cad08a145c171d040f2345a">CONNECTION_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
@@ -574,6 +581,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -621,6 +629,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
@@ -668,6 +677,7 @@ Functions</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a3647cddc745bf63752ded21ca764d882">CONNECTION_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32ae814515c32088b394c4355aeb7755813">CONNECTION_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6d397f192c735be4d9972078e06966cd">CONNECTION_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html#gga172b8b5d075a12782ffee3f6cd52ed32a6ec99cd025a843847d89da608bd349d8">CONNECTION_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>

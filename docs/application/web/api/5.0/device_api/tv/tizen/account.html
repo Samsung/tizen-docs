@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Account API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Account API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Account">
@@ -40,6 +40,9 @@ by account provider application. A web application is an account provider when i
 For more information about how to use Account API, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/account-management">Account Guide</a>.
         </p>
        </div>
+<p><span class="version">Since: </span>
+ 5.0
+        </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
@@ -152,6 +155,9 @@ For more information about how to use Account API, see <a href="https://develope
  Account identifier.
           </div>
 <pre class="webidl prettyprint">  typedef unsigned long AccountId;</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 </div>
 </div>
 <div class="interfaces" id="interfaces-section">
@@ -165,6 +171,9 @@ For more information about how to use Account API, see <a href="https://develope
     readonly attribute <a href="#AccountManager">AccountManager</a> account;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AccountManagerObject">AccountManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="description">
           <p>
 The tizen.account object allows accessing the functionality of the Account API.
@@ -172,6 +181,18 @@ There is one account manager in one web runtime.
 The Accounts back-end may support multiple account managers.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="AccountManagerObject::account">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">AccountManager </span><span class="name">account</span></span><div class="brief">
+ Object representing an account manager.
+            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="AccountProvider">
 <a class="backward-compatibility-anchor" name="::Account::AccountProvider"></a><h3>2.2. AccountProvider</h3>
@@ -186,6 +207,9 @@ The Accounts back-end may support multiple account managers.
     readonly attribute DOMString[] capabilities;
     readonly attribute boolean isMultipleAccountSupported;
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -194,24 +218,36 @@ The Accounts back-end may support multiple account managers.
 </span><span class="type">ApplicationId </span><span class="name">applicationId</span></span><div class="brief">
  Identifier of the account provider application.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="AccountProvider::displayName">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">displayName</span></span><div class="brief">
  Logical (translatable) display name.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="AccountProvider::iconUri">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">iconUri</span></span><div class="brief">
  Path to the icon representing the account provider.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="AccountProvider::smallIconUri">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">smallIconUri</span></span><div class="brief">
  Path to the small icon representing the account provider.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="AccountProvider::capabilities">
 <span class="attrName"><span class="readonly">                readonly
@@ -230,12 +266,18 @@ http://tizen.org/account/capability/contact - Used when the account is related t
 http://tizen.org/account/capability/calendar - Used when the account is related to calendar              </li>
             </ul>
            </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="AccountProvider::isMultipleAccountSupported">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">isMultipleAccountSupported</span></span><div class="brief">
  Boolean value that indicates whether multiple accounts are supported.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 </ul>
 </div>
@@ -251,6 +293,9 @@ properties of account after the account is created.
     DOMString userName;
     DOMString iconUri;
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 </div>
 <div class="interface" id="Account">
 <a class="backward-compatibility-anchor" name="::Account::Account"></a><h3>2.4. Account</h3>
@@ -270,6 +315,9 @@ credentials, presenting password dialogs, and so on.
     void getExtendedData(<a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="description">
           <p>
 The information is hidden from web applications.
@@ -288,18 +336,27 @@ The information is hidden from web applications.
  Identifier for the account.
 By default, this attribute is set to null.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="Account::userName">
 <span class="attrName"><span class="type">DOMString </span><span class="name">userName</span><span class="optional"> [nullable]</span></span><div class="brief">
  Account user name.
 By default, this attribute is set to null.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="Account::iconUri">
 <span class="attrName"><span class="type">DOMString </span><span class="name">iconUri</span><span class="optional"> [nullable]</span></span><div class="brief">
  Name, identifier or URI of the icon.
 By default, this attribute is set to null.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 <li class="attribute" id="Account::provider">
 <span class="attrName"><span class="readonly">                readonly
@@ -308,6 +365,9 @@ By default, this attribute is set to null.
 There is one provider for each account.
 A given provider can be referenced from many accounts.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 </ul>
 </div>
@@ -322,6 +382,9 @@ A given provider can be referenced from many accounts.
  Adds the specified key and value to the extended data.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void setExtendedData(DOMString key, DOMString value);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="description">
             <p>
 If the specified key already exists, the corresponding value is overwritten with the specified value.
@@ -397,6 +460,9 @@ tizen.account.getAccounts(
 Returns null if the given key is not found.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">DOMString getExtendedData(DOMString key);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -465,6 +531,9 @@ tizen.account.getAccounts(
 Returns an empty array if there is no extended data.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getExtendedData(<a href="#AccountExtendedDataArraySuccessCallback">AccountExtendedDataArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -556,6 +625,9 @@ providers and accounts.
     long addAccountListener(<a href="#AccountChangeCallback">AccountChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeAccountListener(long accountListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -567,6 +639,9 @@ providers and accounts.
  Adds an account to the account database.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Account">Account</a> account);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="description">
             <p>
 If the account is added successfully, an accountId and provider are newly assigned when the function returns.
@@ -623,6 +698,9 @@ tizen.account.add(account);
  Removes an account from the account database.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#AccountId">AccountId</a> accountId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="description">
             <p>
 Removes the account in the database that corresponds to the specified identifier.
@@ -686,6 +764,9 @@ tizen.account.getAccounts(
  Updates an account.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void update(<a href="#Account">Account</a> account);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="description">
             <p>
 This method can be used only an account provider application.
@@ -749,6 +830,9 @@ tizen.account.getAccounts(
  Gets the Account object with the given identifier.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Account">Account</a>? getAccount(<a href="#AccountId">AccountId</a> accountId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -799,6 +883,9 @@ If you want to get all accounts, omit the applicationId argument.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getAccounts(<a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
                  optional DOMString? applicationId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -858,6 +945,9 @@ If you want to get all accounts, omit the applicationId argument.
  Gets the account provider with the given application identifier.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#AccountProvider">AccountProvider</a>? getProvider(<a href="application.html#ApplicationId">ApplicationId</a> applicationId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="description">
             <p>
 You can register your application as an account provider by writing account related information in <var>config.xml</var>.<br>For more details, see
@@ -918,6 +1008,9 @@ If you want to get all the providers, omit the capability argument.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getProviders(<a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
                   optional DOMString? capability);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -979,6 +1072,9 @@ If you want to get all the providers, omit the capability argument.
  Adds an account listener for watching changes to accounts.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">long addAccountListener(<a href="#AccountChangeCallback">AccountChangeCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -1043,6 +1139,9 @@ If you want to get all the providers, omit the capability argument.
  Removes the previously registered listener.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void removeAccountListener(long accountListenerId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -1102,6 +1201,9 @@ tizen.account.removeAccountListener(watchId);
     readonly attribute DOMString key;
     readonly attribute DOMString value;
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -1119,6 +1221,9 @@ tizen.account.removeAccountListener(watchId);
 </span><span class="type">DOMString </span><span class="name">value</span></span><div class="brief">
  Value of the account extended data item.
             </div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 </li>
 </ul>
 </div>
@@ -1131,6 +1236,9 @@ tizen.account.removeAccountListener(watchId);
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface AccountArraySuccessCallback {
     void onsuccess(<a href="#Account">Account</a>[] accounts);
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -1142,6 +1250,9 @@ tizen.account.removeAccountListener(watchId);
  Called when information of accounts is ready.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Account">Account</a>[] accounts);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1163,6 +1274,9 @@ tizen.account.removeAccountListener(watchId);
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface AccountExtendedDataArraySuccessCallback {
     void onsuccess(<a href="#AccountExtendedData">AccountExtendedData</a>[] extendedDataArray);
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -1174,6 +1288,9 @@ tizen.account.removeAccountListener(watchId);
  Called when information of extended data is ready.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#AccountExtendedData">AccountExtendedData</a>[] extendedDataArray);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1195,6 +1312,9 @@ tizen.account.removeAccountListener(watchId);
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface AccountProviderArraySuccessCallback {
     void onsuccess(<a href="#AccountProvider">AccountProvider</a>[] providers);
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -1206,6 +1326,9 @@ tizen.account.removeAccountListener(watchId);
  Called when information of providers are ready.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#AccountProvider">AccountProvider</a>[] providers);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1229,6 +1352,9 @@ tizen.account.removeAccountListener(watchId);
     void onremoved(<a href="#AccountId">AccountId</a> accountId);
     void onupdated(<a href="#Account">Account</a> account);
   };</pre>
+<p><span class="version">Since: </span>
+ 5.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -1240,6 +1366,9 @@ tizen.account.removeAccountListener(watchId);
  Called when an account is added.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onadded(<a href="#Account">Account</a> account);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1258,6 +1387,9 @@ tizen.account.removeAccountListener(watchId);
  Called when an account is removed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onremoved(<a href="#AccountId">AccountId</a> accountId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1276,6 +1408,9 @@ tizen.account.removeAccountListener(watchId);
  Called when an account is updated.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onupdated(<a href="#Account">Account</a> account);</pre></div>
+<p><span class="version">Since: </span>
+ 5.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>

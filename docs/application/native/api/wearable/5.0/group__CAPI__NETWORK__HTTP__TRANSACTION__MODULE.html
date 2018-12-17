@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -361,6 +361,8 @@ Functions</h2></td></tr>
 
 <p>Gets the flag to allow TCP Fast Open. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>TCP Fast Open depends on kernel version.<br/>
+ <a class="el" href="group__CAPI__NETWORK__HTTP__MODULE.html#gga800759919daa3e1810d83a336167e0aeaaa8b0c447e94917b8d3566e483fbf94b">HTTP_ERROR_NOT_SUPPORTED</a> error will be returned for kernel version less than 3.13. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">http_transaction</td><td>The HTTP transaction handle </td></tr>
@@ -953,6 +955,8 @@ Functions</h2></td></tr>
 
 <p>Sets the flag to allow TCP Fast Open. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>TCP Fast Open depends on kernel version.<br/>
+ <a class="el" href="group__CAPI__NETWORK__HTTP__MODULE.html#gga800759919daa3e1810d83a336167e0aeaaa8b0c447e94917b8d3566e483fbf94b">HTTP_ERROR_NOT_SUPPORTED</a> error will be returned for kernel version less than 3.13. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">http_transaction</td><td>The HTTP transaction handle </td></tr>

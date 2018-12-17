@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -151,12 +151,12 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the connection state is changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
-<p>This callback is called when the connection state is changed. When you call <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#gac4ea4d3e51c3f0dc5cbf8850c6643260" title="Connects the remote device with the given audio profile, asynchronously.">bt_audio_connect()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ga0c2b6ec48216c58df5f9fbdf606f2b31" title="Disconnects the remote device with the given audio profile, asynchronously.">bt_audio_disconnect()</a>, this callback is also called with error result even though these functions fail. </p>
+<p>This callback is called when the connection state is changed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 When you call <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#gac4ea4d3e51c3f0dc5cbf8850c6643260" title="Connects the remote device with the given audio profile, asynchronously.">bt_audio_connect()</a> or <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ga0c2b6ec48216c58df5f9fbdf606f2b31" title="Disconnects the remote device with the given audio profile, asynchronously.">bt_audio_disconnect()</a>, this callback is also called with error result even though these functions fail. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of changing the connection state </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>The state to be changed. <em>true</em> means connected state, Otherwise, <em>false</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>The state to be changed. true means connected state, Otherwise, false. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote address </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of audio profile except <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96a44aa4429d89ac7444fa359273808cbb9">BT_AUDIO_PROFILE_TYPE_ALL</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
@@ -232,10 +232,11 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Connects the remote device with the given audio profile, asynchronously. </p>
+<p>If you input type as <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96a44aa4429d89ac7444fa359273808cbb9">BT_AUDIO_PROFILE_TYPE_ALL</a> and connection request succeeds, then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#gac08de785dd3be4a96e45dcfcc09a850f" title="Called when the connection state is changed.">bt_audio_connection_state_changed_cb()</a> will be called twice <br/>
+ when <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac8a88458d17fc3031512353d333a4d2e">BT_AUDIO_PROFILE_TYPE_HSP_HFP</a> is connected and <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac7b9ce335205bc7963d93bfdb0fe1a00">BT_AUDIO_PROFILE_TYPE_A2DP</a> is connected.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<p>If you input type as <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96a44aa4429d89ac7444fa359273808cbb9">BT_AUDIO_PROFILE_TYPE_ALL</a> and connection request succeeds, then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#gac08de785dd3be4a96e45dcfcc09a850f" title="Called when the connection state is changed.">bt_audio_connection_state_changed_cb()</a> will be called twice when <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac8a88458d17fc3031512353d333a4d2e">BT_AUDIO_PROFILE_TYPE_HSP_HFP</a> is connected and <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac7b9ce335205bc7963d93bfdb0fe1a00">BT_AUDIO_PROFILE_TYPE_A2DP</a> is connected. </p>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote address </td></tr>
@@ -324,10 +325,11 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <div class="memdoc">
 
 <p>Disconnects the remote device with the given audio profile, asynchronously. </p>
+<p>If you input type as <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96a44aa4429d89ac7444fa359273808cbb9">BT_AUDIO_PROFILE_TYPE_ALL</a> and disconnection request succeeds, then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#gac08de785dd3be4a96e45dcfcc09a850f" title="Called when the connection state is changed.">bt_audio_connection_state_changed_cb()</a> will be called twice <br/>
+ when <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac8a88458d17fc3031512353d333a4d2e">BT_AUDIO_PROFILE_TYPE_HSP_HFP</a> is disconnected and <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac7b9ce335205bc7963d93bfdb0fe1a00">BT_AUDIO_PROFILE_TYPE_A2DP</a> is disconnected. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<p>If you input type as <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96a44aa4429d89ac7444fa359273808cbb9">BT_AUDIO_PROFILE_TYPE_ALL</a> and disconnection request succeeds, then <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#gac08de785dd3be4a96e45dcfcc09a850f" title="Called when the connection state is changed.">bt_audio_connection_state_changed_cb()</a> will be called twice when <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac8a88458d17fc3031512353d333a4d2e">BT_AUDIO_PROFILE_TYPE_HSP_HFP</a> is disconnected and <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ggaeaa4b22491e3804201e51e05fd42ee96ac7b9ce335205bc7963d93bfdb0fe1a00">BT_AUDIO_PROFILE_TYPE_A2DP</a> is disconnected. </p>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote address </td></tr>
@@ -374,7 +376,8 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <p>Initializes the Bluetooth profiles related with audio. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called before Bluetooth profiles related with audio starts. <br/>
- You must free all resources of the this service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ga766874bd192cc5b49dcab9fda96dffd6" title="Deinitializes the Bluetooth profiles related with audio.">bt_audio_deinitialize()</a> if Bluetooth profiles related with audio service is no longer needed. </dd></dl>
+ You must free all resources of the this service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AUDIO__MODULE.html#ga766874bd192cc5b49dcab9fda96dffd6" title="Deinitializes the Bluetooth profiles related with audio.">bt_audio_deinitialize()</a> <br/>
+ if Bluetooth profiles related with audio service is no longer needed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">

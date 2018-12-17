@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -124,6 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>date interval</li>
 <li>date interval format</li>
 <li>simple date format</li>
+<li>locale display names</li>
 </ul>
 <p>This module provides flexible generation of number or date format patterns and helps you format and parse dates/number for any locale. The i18n module provides various features based on data from ICU. The following table shows the version of ICU used in each Tizen platform. </p>
 <table class="doxtable">
@@ -205,7 +206,7 @@ Overview</h2>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__DATE__INTERVAL__FORMAT__MODULE.html">DateIntervalFormat</a> </td><td>Date interval format module formats date intervals in a language-independent manner.  </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td>The Simple Date Format module provides API for formatting and parsing dates in language-independent manner.  </td></tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td>The Simple Date Format module provides API for formatting and parsing dates in language-independent manner. </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td>The locale display names module returns display names of Locales and components of Locales.  </td></tr>
 </table>
 <h2><a class="anchor" id="CAPI_BASE_UTILS_I18N_MODULE_MAPPING_TABLE"></a>
 Mapping Table</h2>
@@ -1749,7 +1750,37 @@ Mapping Table</h2>
 <tr>
 <td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gadd2ac194bc1d90ffc10ba4fbb8dd5d89" title="Sets the calendar to be used by this date format.">i18n_simple_date_fmt_adopt_calendar</a> </td><td>adoptCalendar  </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gac1fa5da657fe7f06b4e84565a6df3f39" title="Sets a particular i18n_udisplay_context_e value in the formatter, such as I18N_UDISPLAY_CONTEXT_CAPIT...">i18n_simple_date_fmt_set_context</a> </td><td>setContext  </td></tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html">Simple Date Format</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__SIMPLE__DATE__FORMAT__MODULE.html#gac1fa5da657fe7f06b4e84565a6df3f39" title="Sets a particular i18n_udisplay_context_e value in the formatter, such as I18N_UDISPLAY_CONTEXT_CAPIT...">i18n_simple_date_fmt_set_context</a> </td><td>setContext </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga38dcd3f45b3bce3d21f57359e4b50d10" title="Creates a default locale display names object.">i18n_loc_disp_names_create</a> </td><td>createInstance  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga05ef02f0ab683be6fe068b1734868656" title="Creates a locale display names object for the given dialect handling.">i18n_loc_disp_names_create_from_dialect</a> </td><td>createInstance  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga9d732bb5f8c33ca60685914c430a619a" title="Creates a locale display names object for given display contexts.">i18n_loc_disp_names_create_from_context</a> </td><td>createInstance  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga5eb4ce41b540492849aec25b87fdeaa6" title="Destroys the locale display names object.">i18n_loc_disp_names_destroy</a> </td><td>~LocaleDisplayNames  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga2ea7ba11f189bce330449c096134f023" title="Gets the locale used by the given locale display names object to determinate the display names...">i18n_loc_disp_names_get_locale</a> </td><td>getLocale  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#gaac5f606d4e9a7be35c12504a097868f7" title="Gets the dialect handling used by the given locale display names object.">i18n_loc_disp_names_get_dialect_handling</a> </td><td>getDialectHandling  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga7c514ff2ec8e971f2ba804216e1dc026" title="Gets the context from the given locale display names object.">i18n_loc_disp_names_get_context</a> </td><td>getContext  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga5f44fa1f77075ebf54779d3aa762286b" title="Gets the display name of the provided locale.">i18n_loc_disp_names_get_loc_disp_name</a> </td><td>localeDisplayName  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga17f93406eeb752a8893cffce5cab7762" title="Gets the display name of the provided language code.">i18n_loc_disp_names_get_language_disp_name</a> </td><td>languageDisplayName  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#gab12dbb2f4d75df4e2ac9f37899b46b59" title="Gets the display name of the script code provided as string.">i18n_loc_disp_names_get_script_disp_name</a> </td><td>scriptDisplayName  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga44dbee4f5633114df3fbe854ddd3dee6" title="Gets the display name of the script code provided as enumeration.">i18n_loc_disp_names_get_script_disp_name_with_script_code</a> </td><td>scriptDisplayName  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga14a4a63cdd3f0e1a9626c0236832c4d8" title="Gets the display name of the provided region code.">i18n_loc_disp_names_get_region_disp_name</a> </td><td>regionDisplayName  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#gaddefc86d00980174451068fda4512633" title="Gets the display name of the provided variant.">i18n_loc_disp_names_get_variant_disp_name</a> </td><td>variantDisplayName  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#gaa7249e7c5e53f6c89c28f5d0af06320b" title="Gets the display name of the provided locale key.">i18n_loc_disp_names_get_key_disp_name</a> </td><td>keyDisplayName  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#CAPI_BASE_UTILS_I18N_LOCALE_DISPLAY_NAMES_MODULE">Required Header</a> </td><td><a class="el" href="group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html#ga1f26be2b8f18822af92e0d850ade79ba" title="Gets the display name of the provided locale key-value.">i18n_loc_disp_names_get_key_value_disp_name</a> </td><td>keyValueDisplayName  </td></tr>
 </table>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>

@@ -380,6 +380,12 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>Locale display names</Name>
+                <Path>group__CAPI__BASE__UTILS__I18N__LOCALE__DISPLAY__NAMES__MODULE.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Measure</Name>
                 <Path>group__CAPI__BASE__UTILS__I18N__MEASURE__MODULE.html</Path>
                 <Subnodes>
@@ -1012,6 +1018,30 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>Media Controller Metadata</Name>
+              <Path>group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Media Controller Playback ability</Name>
+              <Path>group__CAPI__MEDIA__CONTROLLER__ABILITY__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Media Controller Playlist</Name>
+              <Path>group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Media Controller Search</Name>
+              <Path>group__CAPI__MEDIA__CONTROLLER__SEARCH__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Media Controller Server</Name>
               <Path>group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html</Path>
               <Subnodes>
@@ -1363,6 +1393,12 @@
               <Name>Bluetooth LE Adapter</Name>
               <Path>group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__MODULE.html</Path>
               <Subnodes>
+               <Node>
+                <Name>Bluetooth LE Adapter for Bluetooth 5.0</Name>
+                <Path>group__CAPI__NETWORK__BLUETOOTH__ADAPTER__LE__50__MODULE.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
               </Subnodes>
              </Node>
              <Node>
@@ -1483,6 +1519,42 @@
                  </Node>
                 </Subnodes>
                </Node>
+              </Subnodes>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Intelligent Network Monitoring</Name>
+            <Path>group__CAPI__NETWORK__INM__MODULE.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>Network Monitoring Connection</Name>
+              <Path>group__CAPI__NETWORK__INM__CONNECTION__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Network Monitoring General</Name>
+              <Path>group__CAPI__NETWORK__INM__GENERAL__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Network Monitoring Specific</Name>
+              <Path>group__CAPI__NETWORK__INM__SPECIFIC__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Network Monitoring Wi-Fi</Name>
+              <Path>group__CAPI__NETWORK__INM__WIFI__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>Network Monitoring Wi-Fi AP</Name>
+              <Path>group__CAPI__NETWORK__INM__WIFI__AP__MODULE.html</Path>
+              <Subnodes>
               </Subnodes>
              </Node>
             </Subnodes>
@@ -2244,6 +2316,12 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>Dlog</Name>
+            <Path>group__CAPI__SYSTEM__DLOG.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>Feedback</Name>
             <Path>group__CAPI__SYSTEM__FEEDBACK__MODULE.html</Path>
             <Subnodes>
@@ -2361,12 +2439,6 @@
               <Subnodes>
               </Subnodes>
              </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>dlog</Name>
-            <Path>group__CAPI__SYSTEM__DLOG.html</Path>
-            <Subnodes>
             </Subnodes>
            </Node>
           </Subnodes>
@@ -4550,6 +4622,18 @@
             <Name>Input Method Manager</Name>
             <Path>group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html</Path>
             <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>Multi assistant</Name>
+            <Path>group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>Multi assistant client</Name>
+              <Path>group__CAPI__UIX__MULTI__ASSISTANT__CLIENT__MODULE.html</Path>
+              <Subnodes>
+              </Subnodes>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
