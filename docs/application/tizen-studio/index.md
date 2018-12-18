@@ -2,12 +2,12 @@
 
 **Tizen Studio 3.0 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png) **Download**](https://developer.tizen.org/development/tizen-studio/download)
 
-The Tizen Studio platform is based on a new version of Eclipse, therefore you can experience a stable, lightweight, and consistent user interface that is unique to the Tizen development environment. Using Tizen Studio, you can select and install only those platforms and profiles you need.
+The Tizen Studio platform is based on a new version of Eclipse, so you can experience a stable, lightweight, and consistent user interface that is unique to the Tizen development environment. Using Tizen Studio, you can select and install only those platforms and profiles you need.
 
 Similar to the old Tizen SDK, in Tizen Studio, you can perform all the development activities like: develop, build, debug, profile, and emulate Tizen native and Web applications. The new development environment in the Tizen Studio is simply better. It allows you to develop applications more comfortably and is more focused on Tizen development. There are about 200 online sample applications available to increase your understanding of Tizen applications, and the sample library continues to grow.
 
 
-Following are the set of tools provided by the Tizen Studio to develop your applications:
+Following are the set of tools available in Tizen Studio to develop your applications:
 
 - [Setup](setup/install-sdk.md)
 
@@ -23,15 +23,15 @@ Following are the set of tools provided by the Tizen Studio to develop your appl
 
 - [Platform Tools](platform-tools/overview.md)
 
-  Platform development environment helps you to develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
+  Platform development environment helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
 - [Tizen Studio for RT](rt-ide/overview.md)
 
-  Tizen Studio for RT helps you to develop lightweight RTOS-based applications.
+  Tizen Studio for RT helps you develop lightweight RTOS-based applications.
 
 - [Configurable SDK](configurable-sdk/configurable-sdk.md)
 
-  Configurable SDK in Tizen Studio helps you to develop applications in a customizable Tizen platform environment.
+  Configurable SDK in Tizen Studio helps you develop applications in a customizable Tizen platform environment.
 
 
 The Tizen Studio contains many familiar tools from the old Tizen SDK, but with some improvements. The following list describes the main changes:
@@ -72,7 +72,7 @@ The Tizen Studio contains many familiar tools from the old Tizen SDK, but with s
 
 - Emulator
 
-  This tool helps you to develop and debug Tizen applications without an actual Tizen device. You can select the platform, profile, and device features that you need and run applications on an emulator. In addition, through the Emulator Control Panel (ECP), you can simulate events in your application and see how the application responds:
+  This tool helps you develop and debug Tizen applications without an actual Tizen device. You can select the platform, profile, and device features that you need and run applications on an emulator. In addition, through the Emulator Control Panel (ECP), you can simulate events in your application and see how the application responds:
 
   **Figure: Emulator Manager and ECP**
 
