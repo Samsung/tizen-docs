@@ -64,7 +64,7 @@ You can enable your application to record uncompressed audio from a microphone-t
 
 Audio data is captured periodically. To receive the audio PCM data from the input device, you must implement the audio capture interface to notify the application of audio data events, such as when the audio data buffer is full.
 
-Before recording audio, you must define the following PCM data settings. For more information, see [Audio Output](#play_pcm).
+Before recording audio, you must define the PCM data settings. For more information, see [Audio Output](#play_pcm).
 
 ## Prerequisites
 
