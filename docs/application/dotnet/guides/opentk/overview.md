@@ -20,7 +20,7 @@ The OpenTK app offers the following features:
 
 ## Key Concepts
 
-To use OpenTK in your application, it helps you understand the following OpenTK key concepts:
+To use OpenTK in your application, understand the following OpenTK key concepts:
 
 -   `TizenGameApplication`: The application lifecycle manager and base class of OpenTK app for Tizen.
 
