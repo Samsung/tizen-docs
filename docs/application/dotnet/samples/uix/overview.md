@@ -32,7 +32,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m29textreader.png" width="150"/></td>
 			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/TextReader" target="_blank"><strong>(M) TextReader</strong></a></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/TextReader" target="_blank"><strong>(M) TextReader</strong></a></p>
 			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts C# API</a>.</p>
 			</td>
 		</tr>
@@ -41,6 +41,13 @@ for TD:
 </div>
 
 <div class="tabcontent" id="Wearable">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample. </td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <div class="tabcontent" id="TV">

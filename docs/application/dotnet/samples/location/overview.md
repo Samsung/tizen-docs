@@ -106,7 +106,7 @@ for TD:
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MapView" target="_blank"><strong>(T) MapsView</strong></a></p>
 			<p>This sample application demonstrates how to display and control the map components.</p>
 			</td>
-		</tr>		
+		</tr>
 	</tbody>
 </table>
 </div>

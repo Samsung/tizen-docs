@@ -48,6 +48,13 @@ for TD:
 </div>
 
 <div class="tabcontent" id="Wearable">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <div class="tabcontent" id="TV">
@@ -71,7 +78,7 @@ for TD:
 			<p>This sample application demonstrates how to create a grid of images and a scrollable slideshow on a TV.<br />
 			It also shows how to change the layout depending on the device type.</p>
 			</td>
-		</tr>		
+		</tr>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv22mediacontent.png" width="400" /></p>
