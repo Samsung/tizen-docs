@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Feedback API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Feedback API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Feedback">
@@ -209,6 +209,18 @@ VOLUME_KEY - volume key press            </li>
 The <em>tizen.feedback</em> object allows access to the Feedback API functionality.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="FeedbackManagerObject::feedback">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">FeedbackManager </span><span class="name">feedback</span></span><div class="brief">
+ Object representing a feedback manager.
+            </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="FeedbackManager">
 <a class="backward-compatibility-anchor" name="::Feedback::FeedbackManager"></a><h3>2.2. FeedbackManager</h3>
@@ -290,7 +302,7 @@ catch (err)
 </dt>
 <dd>
 <div class="brief">
- Stop various of vibration patterns.
+ Stops various of vibration patterns.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void stop();</pre></div>
 <p><span class="version">Since: </span>

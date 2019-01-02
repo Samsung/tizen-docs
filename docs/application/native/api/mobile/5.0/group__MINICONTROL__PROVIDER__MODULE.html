@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -127,10 +127,11 @@ Typedefs</h2></td></tr>
 
 <p>Called when a event comes from viewer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>event_arg</em> should not be released. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event_type</td><td>The type of fired event </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event_arg</td><td>Argument of the event </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_arg</td><td>Argument of the event The <em>event_arg</em> can be used only in the callback. To use outside, make a copy. </td></tr>
   </table>
   </dd>
 </dl>
@@ -175,7 +176,7 @@ Typedefs</h2></td></tr>
 
 <p>Creates a window for minicontrol. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the gat_last_result() method. Error codes are described in Exception section. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The specific error code can be obtained using the gat_last_result() method. Error codes are described in Exception section. The returned value should be released using <a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of minicontrol socket window </td></tr>
@@ -235,8 +236,8 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sends a event to the viewer. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>When a viewer doesn't handle some events, it can be ignored. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>When a viewer doesn't handle some events, it can be ignored. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">minicontrol</td><td>Minicontrol window </td></tr>
@@ -248,6 +249,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__MINICONTROL__LIBRARY.html#ggac2e8c8d3b2138f46c833ee26b780db61a4df149937f1aa6f2dfed2d191ae97685">MINICONTROL_ERROR_NONE</a> on success, otherwise an error code on failure </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__MINICONTROL__LIBRARY.html#ggac2e8c8d3b2138f46c833ee26b780db61a4df149937f1aa6f2dfed2d191ae97685">MINICONTROL_ERROR_NONE</a></td><td>Success </td></tr>
     <tr><td class="paramname"><a class="el" href="group__MINICONTROL__LIBRARY.html#ggac2e8c8d3b2138f46c833ee26b780db61a615329f01e07d1916dfef743e46e189e">MINICONTROL_ERROR_INVALID_PARAMETER</a></td><td>Invalid argument </td></tr>
     <tr><td class="paramname"><a class="el" href="group__MINICONTROL__LIBRARY.html#ggac2e8c8d3b2138f46c833ee26b780db61a6960a3d1520490cce88e8ccb9be5c056">MINICONTROL_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>

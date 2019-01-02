@@ -141,7 +141,7 @@
 
 ### Guides
 
-#### [Overview](/application/dotnet/guides/index.md)
+#### [Overview](/application/dotnet/guides/overview.md)
 
 #### Applications
 ##### [Overview](/application/dotnet/guides/applications/overview.md)
@@ -185,14 +185,18 @@
 ###### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 ##### [Resources](/application/dotnet/guides/nui/resources.md)
 
+#### OpenTK
+##### [Overview](/application/dotnet/guides/opentk/overview.md)
+##### [Quickstart](/application/dotnet/guides/opentk/quickstart.md)
+##### [OpenTK Window](/application/dotnet/guides/opentk/window-of-opentk.md)
+##### [OpenTK Work With SkiaSharp](/application/dotnet/guides/opentk/work-with-skiasharp.md)
+
 #### Wearable Circular UI
 ##### [Overview](/application/dotnet/guides/wcircularui/overview.md)
 ##### [Quickstart](/application/dotnet/guides/wcircularui/quickstart.md)
 ##### [Tizen Wearable XAML App Template](/application/dotnet/guides/wcircularui/quickstart_tizenxamlapptemplate.md)
 
-#### Internationalization
-##### [Localization](/application/dotnet/guides/internationalization/localization.md)
-##### [Phone Number Management](/application/dotnet/guides/internationalization/phonenumber.md)
+#### [Localization](/application/dotnet/guides/internationalization/localization.md)
 
 #### Notifications and Content Sharing
 ##### [Notifications](/application/dotnet/guides/notification/noti.md)
@@ -268,6 +272,7 @@
 ###### [OAuth 2.0](/application/dotnet/guides/personal/oauth.md)
 ##### [Calendar](/application/dotnet/guides/personal/calendar.md)
 ##### [Contacts](/application/dotnet/guides/personal/contacts.md)
+##### [Phone Number Management](/application/dotnet/guides/personal/phonenumber.md)
 ##### [Application Usage History Data](/application/dotnet/guides/personal/app-history.md)
 
 #### [Data Storages](/application/dotnet/guides/data/data-storages.md)
@@ -286,9 +291,7 @@
 ##### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 ##### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
 
-#### Natural Language Processing
-##### [Overview](/application/dotnet/guides/nlp/overview.md)
-##### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
+#### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
 
 
 ### [API Reference](/application/dotnet/api/overview.md)
@@ -619,11 +622,10 @@
 ####### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
 
-#### Internationalization
+#### Localization
 ##### [Overview](/application/native/guides/internationalization/overview.md)
 ##### [i18n](/application/native/guides/internationalization/i18n.md)
 ##### [Resource Localization](/application/native/guides/internationalization/resource-localization.md)
-##### [Phone Number Management](/application/native/guides/internationalization/phonenumber.md)
 
 #### Graphics
 ##### [Overview](/application/native/guides/graphics/overview.md)
@@ -743,6 +745,7 @@
 ###### [OAuth 2.0](/application/native/guides/personal/oauth.md)
 ##### [Calendar](/application/native/guides/personal/calendar.md)
 ##### [Contacts](/application/native/guides/personal/contacts.md)
+##### [Phone Number Management](/application/native/guides/personal/phonenumber.md)
 ##### [Contextual Device Usage History Data](/application/native/guides/personal/context.md)
 
 #### Data Storage and Management

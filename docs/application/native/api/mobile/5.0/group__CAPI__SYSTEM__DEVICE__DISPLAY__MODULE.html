@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -101,7 +101,22 @@ Required Header</h2>
 </p>
 <h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_DISPLAY_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>The Display API provides the way to get supported display count and the display brightness. It also supports the API to set the display brightness. Application can receive the display event by callback function from the system. </p>
+<p>The Display API provides the way to get supported display count and the display brightness. It also supports the API to set the display brightness. Application can receive the display event by callback function from the system.</p>
+<h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_DISPLAY_MODULE__FEATURE"></a>
+Related Features</h2>
+<p>This API is related with the following features:<br/>
+</p>
+<ul>
+<li>http://tizen.org/feature/display.state<br/>
+</li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability.<br/>
+</p>
+<p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+</p>
+<p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
+</p>
+<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>feature element description</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -115,8 +130,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the display brightness value.  <a href="#gab0e0c76e04d1b1905b71634134aae7c5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gaf9df1b71aec03cd4d78c323f0f6ea9d9">device_display_get_state</a> (<a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f">display_state_e</a> *state)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current display state.  <a href="#gaf9df1b71aec03cd4d78c323f0f6ea9d9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gafa467faf59d731b5cf9803c8e61b4fec">device_display_change_state</a> (<a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f">display_state_e</a> state) TIZEN_DEPRECATED_API</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the display state by force.  <a href="#gafa467faf59d731b5cf9803c8e61b4fec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gab897efb4e6f7f6acd1301cbba8aa2dec">device_display_change_state</a> (<a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f">display_state_e</a> state)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the display state by force.  <a href="#gab897efb4e6f7f6acd1301cbba8aa2dec"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="ga93a9434f07b3db52ec85fe58b79c529f"></a><!-- doxytag: member="display.h::display_state_e" ref="ga93a9434f07b3db52ec85fe58b79c529f" args="" -->
@@ -149,12 +164,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="gafa467faf59d731b5cf9803c8e61b4fec"></a><!-- doxytag: member="display.h::device_display_change_state" ref="gafa467faf59d731b5cf9803c8e61b4fec" args="(display_state_e state) TIZEN_DEPRECATED_API" -->
+<a class="anchor" id="gab897efb4e6f7f6acd1301cbba8aa2dec"></a><!-- doxytag: member="display.h::device_display_change_state" ref="gab897efb4e6f7f6acd1301cbba8aa2dec" args="(display_state_e state)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gafa467faf59d731b5cf9803c8e61b4fec">device_display_change_state</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gab897efb4e6f7f6acd1301cbba8aa2dec">device_display_change_state</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#ga93a9434f07b3db52ec85fe58b79c529f">display_state_e</a>&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
@@ -165,11 +180,12 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Changes the display state by force. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000211">Deprecated:</a></b></dt><dd>Deprecated Since 2.4</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/display </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This API triggers display change process and then updates the status when it completes. While the operation is on-going, the <a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gaf9df1b71aec03cd4d78c323f0f6ea9d9" title="Gets the current display state.">device_display_get_state()</a> function returns previous display state. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This API triggers display change process and then updates the status when it completes. While the operation is on-going, the <a class="el" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gaf9df1b71aec03cd4d78c323f0f6ea9d9" title="Gets the current display state.">device_display_get_state()</a> function returns previous display state. </dd>
+<dd>
+<a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a> is returned, when the following feature is not supported: http://tizen.org/feature/display.state. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>The display state </td></tr>
@@ -183,6 +199,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a59b175f9b05f09a72764060378a6cec8">DEVICE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -196,7 +213,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__SYSTEM__DEVICE__CALLBACK__MODULE.html#ggaa55ba4e8bf4d8877b500686e1d78f2d7ae7c76b9e1afa944d4e815546aea98dc9">DEVICE_CALLBACK_DISPLAY_STATE</a></dd></dl>
 <dl class="user"><dt><b>Example</b></dt><dd><div class="fragment"><pre class="fragment">  ...
-  result = <a class="code" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gafa467faf59d731b5cf9803c8e61b4fec" title="Changes the display state by force.">device_display_change_state</a>(<a class="code" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gga93a9434f07b3db52ec85fe58b79c529fafb0438b9c8f78e373277e5d6d2acab5a">DISPLAY_STATE_SCREEN_OFF</a>);
+  result = <a class="code" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gab897efb4e6f7f6acd1301cbba8aa2dec" title="Changes the display state by force.">device_display_change_state</a>(<a class="code" href="group__CAPI__SYSTEM__DEVICE__DISPLAY__MODULE.html#gga93a9434f07b3db52ec85fe58b79c529fafb0438b9c8f78e373277e5d6d2acab5a">DISPLAY_STATE_SCREEN_OFF</a>);
   <span class="keywordflow">if</span> (result &lt; 0)
       <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54a45e6d8207d23a6a79d0bc2a9faf3818d">DLOG_ERROR</a>, LOG_TAG, <span class="stringliteral">&quot;[ERROR] return value result =%d, \n&quot;</span>,result);
   <span class="keywordflow">else</span>

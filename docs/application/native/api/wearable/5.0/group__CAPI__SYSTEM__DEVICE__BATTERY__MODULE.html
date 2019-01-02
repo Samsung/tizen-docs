@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -101,7 +101,22 @@ Required Header</h2>
 </p>
 <h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_BATTERY_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>The Battery API provides the way to get the current battery capacity value, battery state and charging state. It also supports the API for an application to receive the battery events from the system. To receive the battery event it should be described by the callback function. </p>
+<p>The Battery API provides the way to get the current battery capacity value, battery state and charging state. It also supports the API for an application to receive the battery events from the system. To receive the battery event it should be described by the callback function.</p>
+<h2><a class="anchor" id="CAPI_SYSTEM_DEVICE_BATTERY_MODULE_OVERVIEW"></a>
+Overview</h2>
+<p>This API is related with the following features:<br/>
+</p>
+<ul>
+<li>http://tizen.org/feature/battery<br/>
+</li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability.<br/>
+</p>
+<p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
+</p>
+<p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
+</p>
+<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>feature element description</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -246,6 +261,15 @@ Functions</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga779f86190397843f45f4d22d3ce6ef8aa5de6021f0641bdcb3f5b44e030588d4b"></a><!-- doxytag: member="DEVICE_BATTERY_PROPERTY_CURRENT_AVERAGE" ref="gga779f86190397843f45f4d22d3ce6ef8aa5de6021f0641bdcb3f5b44e030588d4b" args="" -->DEVICE_BATTERY_PROPERTY_CURRENT_AVERAGE</em>&nbsp;</td><td>
 <p>The average battery current (uA) </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga779f86190397843f45f4d22d3ce6ef8aac2a25791371b7a4dd53c06dbf5c4a948"></a><!-- doxytag: member="DEVICE_BATTERY_PROPERTY_VOLTAGE_NOW" ref="gga779f86190397843f45f4d22d3ce6ef8aac2a25791371b7a4dd53c06dbf5c4a948" args="" -->DEVICE_BATTERY_PROPERTY_VOLTAGE_NOW</em>&nbsp;</td><td>
+<p>The battery voltage (uV) (Since 5.0) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga779f86190397843f45f4d22d3ce6ef8aa8e8c765c84526e45bb68eb71325e1bfd"></a><!-- doxytag: member="DEVICE_BATTERY_PROPERTY_VOLTAGE_AVERAGE" ref="gga779f86190397843f45f4d22d3ce6ef8aa8e8c765c84526e45bb68eb71325e1bfd" args="" -->DEVICE_BATTERY_PROPERTY_VOLTAGE_AVERAGE</em>&nbsp;</td><td>
+<p>The average battery voltage (uV) (Since 5.0) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga779f86190397843f45f4d22d3ce6ef8aadb430eb84e79b082152b697607da3fa8"></a><!-- doxytag: member="DEVICE_BATTERY_PROPERTY_TEMPERATURE" ref="gga779f86190397843f45f4d22d3ce6ef8aadb430eb84e79b082152b697607da3fa8" args="" -->DEVICE_BATTERY_PROPERTY_TEMPERATURE</em>&nbsp;</td><td>
+<p>The battery temperature (`C) (Since 5.0) </p>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -314,6 +338,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789abeb24a4c3efe6ca49702f99a72217153">DEVICE_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -349,6 +374,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789abeb24a4c3efe6ca49702f99a72217153">DEVICE_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -394,6 +420,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a59b175f9b05f09a72764060378a6cec8">DEVICE_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -429,6 +456,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789abeb24a4c3efe6ca49702f99a72217153">DEVICE_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -475,6 +503,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789abeb24a4c3efe6ca49702f99a72217153">DEVICE_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -510,6 +539,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789abeb24a4c3efe6ca49702f99a72217153">DEVICE_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>
@@ -545,6 +575,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789abeb24a4c3efe6ca49702f99a72217153">DEVICE_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789af0b854a0ddf44a1dc42117f2a60299b2">DEVICE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a09ac7f38c355bb62a6737c5454a2998d">DEVICE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__DEVICE__MODULE.html#ggaa7466207772dc4d17f6cb814d79cb789a8b62298ec0921c07676f7d4da56909b7">DEVICE_ERROR_NOT_SUPPORTED</a></td><td>Not supported device </td></tr>
   </table>
   </dd>
 </dl>

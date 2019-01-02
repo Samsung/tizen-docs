@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Notification API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Notification API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Notification">
@@ -291,6 +291,18 @@ The <em>tizen.notification</em> object allows access to the
 Notification API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NotificationObject::notification">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">NotificationManager </span><span class="name">notification</span></span><div class="brief">
+ Object representing a notification manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.3.1
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="NotificationManager">
 <a class="backward-compatibility-anchor" name="::Notification::NotificationManager"></a><h3>2.2. NotificationManager</h3>
@@ -630,6 +642,14 @@ catch (err)
                 </li>
         </ul>
 </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Notification:
+                  </span>
+ Notification posted previously by the current application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -681,6 +701,14 @@ catch (err)
                 </li>
         </ul>
 </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Notification:
+                  </span>
+ Notification previously been posted by the current application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -725,6 +753,14 @@ catch (err)
 <p><span class="remark">Remark: </span>
  This method is designed to return <a href="#StatusNotification">old-style notifications</a>.
             </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Notification[]:
+                  </span>
+ All notifications previously been posted by the current application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -772,6 +808,14 @@ catch (err)
 <p><span class="remark">Remark: </span>
  This method is designed to return <a href="#UserNotification">new representation of a notifications</a>.
             </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Notification[]:
+                  </span>
+ All notifications posted previously by the current application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -922,6 +966,14 @@ An application can load only templates that it has saved.
  The name of template to be used as source of notification.
                 </li>
         </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">UserNotification:
+                  </span>
+ Created notification.
+              </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>

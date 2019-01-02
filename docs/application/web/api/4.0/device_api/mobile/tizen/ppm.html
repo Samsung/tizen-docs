@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>PrivacyPrivilege API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>PrivacyPrivilege API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::PrivacyPrivilege">
@@ -145,6 +145,18 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
 <em>tizen.ppm</em> object is available to manage the user permissions to use privacy-related privileges in your Web application.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="PrivacyPrivilegeManagerObject::ppm">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PrivacyPrivilegeManager </span><span class="name">ppm</span></span><div class="brief">
+ Object representing a privacy privilege manager.
+            </div>
+<p><span class="version">Since: </span>
+ 4.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="PrivacyPrivilegeManager">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManager"></a><h3>2.2. PrivacyPrivilegeManager</h3>
@@ -172,7 +184,7 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
             </p>
 <div class="description">
             <p>
-For privileges not listed in application's <em>config.xml</em> file (or not privacy-related), will always return <var>PPM_DENY</var>.
+For privileges not listed in application's <em>config.xml</em> file (or not privacy-related), always returns <var>PPM_DENY</var>.
             </p>
            </div>
 <div class="parameters">
@@ -228,10 +240,10 @@ console.log("Current state of permission is: " + permission);
 <div class="description">
             <p>
 Requesting permission for privileges not listed in application's <em>config.xml</em> file (or not privacy-related) will not trigger any pop-up,
-instead the <em>successCallback</em> will be executed with <em>result</em> <var>PPM_DENY_FOREVER</var>.
+instead the <em>successCallback</em> will be executed with <var>PPM_DENY_FOREVER</var>.
             </p>
             <p>
-When a user has already decided to permanently allow or deny access to use a given privilege, subsequent calls of this function
+When the user has already decided to permanently allow or deny access to use a given privilege, subsequent calls of this function
 will result in immediate invocation of <em>successCallback</em> with an appropriate result: <var>PPM_ALLOW_FOREVER</var> or <var>PPM_DENY_FOREVER</var>.
 Additionally the asking pop-up will not be shown.
             </p>
@@ -277,9 +289,9 @@ AbortError - If any platform error occurs.              </li>
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback. */
-function errorCallback(response)
+function errorCallback(error)
 {
-  console.log("The following error occurred: " + response.name);
+  console.log("The following error occurred: " + error.name);
 }
 
 /* Defines PermissionSuccessCallback. */

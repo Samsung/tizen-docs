@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -153,9 +153,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga7af1269090464e42b4f1b5290b2a57f7">bt_gatt_client_unset_service_changed_cb</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9917a82fdc893887385b92b974dd9638">bt_gatt_client_h</a> client)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters a callback function.  <a href="#ga7af1269090464e42b4f1b5290b2a57f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf">bt_gatt_connect</a> (const char *address, bool auto_connect)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to a specific LE based service on a remote bluetooth device address, asynchronously.  <a href="#gaa711cbab44b1c29f5c2d83e19189b1cf"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects to a specific LE based service on a remote bluetooth device address, asynchronously.  <a href="#gaa711cbab44b1c29f5c2d83e19189b1cf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517">bt_gatt_disconnect</a> (const char *address)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnect to LE connection with the given remote Bluetooth device address, asynchronously.  <a href="#ga663bd0e9fbe2c6ad5e026681d272f517"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.  <a href="#ga663bd0e9fbe2c6ad5e026681d272f517"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga843964965aeeda123fe5714ae2f16c8d">bt_gatt_set_connection_state_changed_cb</a> (<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga670a1cd1480d544cf6cb7e252ef202a6">bt_gatt_connection_state_changed_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback function that will be invoked when the connection state is changed.  <a href="#ga843964965aeeda123fe5714ae2f16c8d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaba2efbbb8e2723b07140d267ddf9dd6d">bt_gatt_unset_connection_state_changed_cb</a> (void)</td></tr>
@@ -187,7 +187,9 @@ Typedefs</h2></td></tr>
 
 <p>Called when the ATT MTU value is changed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>mtu_info</em> must not be freed by application. <em>mtu_info</em> can be used only inside the callback. If it's needed outside, make a copy.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>mtu_info</em> must not be freed by application. <br/>
+ <em>mtu_info</em> can be used only inside the callback. <br/>
+ If it's needed outside, make a copy.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>The handle of a GATT client which is associated with a remote device </td></tr>
@@ -215,7 +217,8 @@ bt_gatt_client_unset_connection_state_changed_cb() </dd></dl>
 
 <p>Called when a value of a watched characteristic's GATT handle has been changed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>After this function is returned, a changed value is automatically applied to <em>characteristic</em>. Before that, <em>characteristic</em> has an old value.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>After this function is returned, a changed value is automatically <br/>
+ applied to <em>characteristic</em>. Before that, <em>characteristic</em> has an old value.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">characteristic</td><td>The characteristic's GATT handle of which value change is informed. It has an old value. </td></tr>
@@ -353,7 +356,7 @@ bt_gatt_client_unset_connection_state_changed_cb() </dd></dl>
 
 <p>Creates the GATT client handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The GATT client handle must be freed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a> after use</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The GATT client handle must be freed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a> after use.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The address of the remote device </td></tr>
@@ -393,7 +396,7 @@ bt_gatt_client_unset_connection_state_changed_cb() </dd></dl>
 
 <p>Destroys the GATT client's handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>All related service, characteristic and descriptor's GATT handles are freed also</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>All related service, characteristic and descriptor's GATT handles are freed also.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>The GATT client's handle </td></tr>
@@ -509,7 +512,6 @@ bt_gatt_client_unset_connection_state_changed_cb() </dd></dl>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>
@@ -597,7 +599,9 @@ bt_gatt_client_unset_connection_state_changed_cb() </dd></dl>
 
 <p>Gets a service's GATT handle which has specific UUID. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. If there are multiple services which have same UUID, only the first matched one will be returned.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned GATT handle must not be freed by application. <br/>
+ It will be freed when an associated client is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>. <br/>
+ If there are multiple services which have same UUID, only the first matched one will be returned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>The GATT client's handle </td></tr>
@@ -935,6 +939,7 @@ bt_gatt_client_unset_characteristic_value_change() </dd></dl>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
@@ -1117,11 +1122,11 @@ bt_gatt_client_unset_characteristic_value_change() </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Connect to a specific LE based service on a remote bluetooth device address, asynchronously. </p>
+<p>Connects to a specific LE based service on a remote bluetooth device address, asynchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>A connection can be disconnected by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnect to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a>.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>A connection can be disconnected by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The address of the remote Bluetooth device. </td></tr>
@@ -1148,7 +1153,7 @@ The remote device must support le connection. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga670a1cd1480d544cf6cb7e252ef202a6" title="Called when the connection state is changed.">bt_gatt_connection_state_changed_cb()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnect to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga843964965aeeda123fe5714ae2f16c8d" title="Registers a callback function that will be invoked when the connection state is changed.">bt_gatt_set_connection_state_changed_cb()</a> </dd>
 <dd>
@@ -1173,7 +1178,7 @@ The remote device must support le connection. </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Disconnect to LE connection with the given remote Bluetooth device address, asynchronously. </p>
+<p>Disconnects to LE connection with the given remote Bluetooth device address, asynchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
@@ -1200,7 +1205,7 @@ The remote device must support le connection. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga670a1cd1480d544cf6cb7e252ef202a6" title="Called when the connection state is changed.">bt_gatt_connection_state_changed_cb()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#ga8ff11bde26c63e78c1fe3c376e21a28c" title="Initializes the Bluetooth API.">bt_initialize()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connect to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connects to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga843964965aeeda123fe5714ae2f16c8d" title="Registers a callback function that will be invoked when the connection state is changed.">bt_gatt_set_connection_state_changed_cb()</a> </dd>
 <dd>
@@ -1237,7 +1242,9 @@ The remote device must support le connection. </dd></dl>
 
 <p>Gets the GATT client handle which the specified service belongs to. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function doesn't allocate new memory for GATT client handle. The returned GATT client handle is the same one which was got from <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gad8c24880191a8155c724df501ba59d14" title="Creates the GATT client handle.">bt_gatt_client_create()</a>. So if it is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>, all related GATT handles are freed also.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function doesn't allocate new memory for GATT client handle. <br/>
+ The returned GATT client handle is the same one which was got from <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gad8c24880191a8155c724df501ba59d14" title="Creates the GATT client handle.">bt_gatt_client_create()</a>. <br/>
+ So if it is destroyed by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga9bc80d8f11d2914611f93f8493a7db79" title="Destroys the GATT client&#39;s handle.">bt_gatt_client_destroy()</a>, all related GATT handles are freed also.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">service</td><td>The service's GATT handle </td></tr>
@@ -1292,6 +1299,7 @@ The remote device must support le connection. </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -1301,9 +1309,9 @@ The remote device must support le connection. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connect to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connects to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnect to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaba2efbbb8e2723b07140d267ddf9dd6d" title="Unregisters a callback function that will be invoked when the connection state is changed...">bt_gatt_unset_connection_state_changed_cb()</a> </dd></dl>
 
@@ -1326,6 +1334,7 @@ The remote device must support le connection. </dd></dl>
 
 <p>Unregisters a callback function that will be invoked when the connection state is changed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
@@ -1334,9 +1343,9 @@ The remote device must support le connection. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connect to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#gaa711cbab44b1c29f5c2d83e19189b1cf" title="Connects to a specific LE based service on a remote bluetooth device address, asynchronously.">bt_gatt_connect()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnect to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
+<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__CLIENT__MODULE.html#ga663bd0e9fbe2c6ad5e026681d272f517" title="Disconnects to LE connection with the given remote Bluetooth device address, asynchronously.">bt_gatt_disconnect()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__GATT__MODULE.html#ga670a1cd1480d544cf6cb7e252ef202a6" title="Called when the connection state is changed.">bt_gatt_connection_state_changed_cb()</a> </dd></dl>
 

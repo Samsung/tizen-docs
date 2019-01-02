@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -111,7 +111,7 @@ Overview</h2>
  7. Resume the player <br/>
  8. Stop the player <br/>
  9. Destroy a handle <br/>
- The TTS API also notifies you (by callback mechanism) when the state of TTS is changed, utterance is started and completed, default voice is changed or an error occured. An application should register callback functions: <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gab0dff9f0e6c8c808cdb27038b8260a22" title="Called when the state of TTS is changed.">tts_state_changed_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaea56736acb1ae7235e249b3a4ab6ea52" title="Called when utterance has started.">tts_utterance_started_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga82206e17db1ea8e1897cab0468350fcc" title="Called when utterance is finished.">tts_utterance_completed_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga658ed1b28ab527d1216330109045632e" title="Called when the default voice is changed.">tts_default_voice_changed_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaed8da03c8edea4e8cda63e1ce46b76f1" title="Called when an error occurs.">tts_error_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga4c2626481625dfcb9fa421d0c8f30cad" title="Called when the engine is changed.">tts_engine_changed_cb()</a>.</p>
+ The TTS API also notifies you (by callback mechanism) when the state of TTS is changed, utterance is started and completed, default voice is changed or an error occurred. An application should register callback functions: <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gab0dff9f0e6c8c808cdb27038b8260a22" title="Called when the state of TTS is changed.">tts_state_changed_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaea56736acb1ae7235e249b3a4ab6ea52" title="Called when utterance has started.">tts_utterance_started_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga82206e17db1ea8e1897cab0468350fcc" title="Called when utterance is finished.">tts_utterance_completed_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga658ed1b28ab527d1216330109045632e" title="Called when the default voice is changed.">tts_default_voice_changed_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#gaed8da03c8edea4e8cda63e1ce46b76f1" title="Called when an error occurs.">tts_error_cb()</a>, <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga4c2626481625dfcb9fa421d0c8f30cad" title="Called when the engine is changed.">tts_engine_changed_cb()</a>.</p>
 <h2><a class="anchor" id="CAPI_UIX_TTS_MODULE_STATE_DIAGRAM"></a>
 State Diagram</h2>
 <p>The following diagram shows the life cycle and the states of the TTS. This state diagram shows that the state can be changed from 'None' to 'Created' by calling the <a class="el" href="group__CAPI__UIX__TTS__MODULE.html#ga5f3af6bca3932ab00959353187858aa1" title="Creates a handle for TTS.">tts_create()</a> function. Similarly, you can know the relation between the states and API functions. You need to know the current state before calling the API, because the TTS API is based on state machine. The current state can be known from the state changed callback.</p>

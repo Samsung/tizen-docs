@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -151,7 +151,7 @@ Callback(Event) Operations</h2>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gad971003234aa8ca8a61f97eeb2830d91">bt_device_get_service_mask_from_uuid_list</a> (char **uuids, int no_of_service, <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#ga779e70f53f44185ab73a6df1c7ebf1bf">bt_service_class_t</a> *service_mask_list)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the service mask from the uuid list.  <a href="#gad971003234aa8ca8a61f97eeb2830d91"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the service mask from the UUID list.  <a href="#gad971003234aa8ca8a61f97eeb2830d91"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gaf72675b8c5db696ac12b139ff0a2b796">bt_device_create_bond</a> (const char *remote_address)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a bond with a remote Bluetooth device, asynchronously.  <a href="#gaf72675b8c5db696ac12b139ff0a2b796"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gaca87178113a8f1037d24fe57cd2e0f86">bt_device_cancel_bonding</a> (void)</td></tr>
@@ -249,9 +249,11 @@ Typedefs</h2></td></tr>
 
 <p>Called when the process of creating bond finishes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the remote user does not respond within 60 seconds, a time out will happen with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a72b198f9f00cea02fed57ec4454a9e21">BT_ERROR_TIMED_OUT</a> result code.<br/>
- If <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gaca87178113a8f1037d24fe57cd2e0f86" title="Cancels the bonding process.">bt_device_cancel_bonding()</a> is called and it returns <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a>, then this callback function will be called with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654aa0da5a4ebe6fb3c4cfb426c7a93f6c29">BT_ERROR_CANCELLED</a> result. <br/>
- If creating a bond succeeds but service search fails, then this callback will be called with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a997e423e023290c77c1d6d4a5f351af5">BT_ERROR_SERVICE_SEARCH_FAILED</a>. In this case, you should try service search again by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#ga2e3d274324363ce5b41f099bef006148" title="Starts the search for services supported by the specified device, asynchronously.">bt_device_start_service_search()</a> to get the supported service list.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the remote user does not respond within 60 seconds, a time out will happen with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a72b198f9f00cea02fed57ec4454a9e21">BT_ERROR_TIMED_OUT</a> result code. <br/>
+ If <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gaca87178113a8f1037d24fe57cd2e0f86" title="Cancels the bonding process.">bt_device_cancel_bonding()</a> is called and it returns <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a>, then this callback function will be called <br/>
+ with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654aa0da5a4ebe6fb3c4cfb426c7a93f6c29">BT_ERROR_CANCELLED</a> result. <br/>
+ If creating a bond succeeds but service search fails, then this callback will be called with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a997e423e023290c77c1d6d4a5f351af5">BT_ERROR_SERVICE_SEARCH_FAILED</a>. <br/>
+ In this case, you should try service search again by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#ga2e3d274324363ce5b41f099bef006148" title="Starts the search for services supported by the specified device, asynchronously.">bt_device_start_service_search()</a> to get the supported service list.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of the bonding device </td></tr>
@@ -368,7 +370,6 @@ Typedefs</h2></td></tr>
 
 <p>Called when the process of service search finishes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of the service searching </td></tr>
@@ -1083,7 +1084,8 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Use this function when the remote Bluetooth device is not responding to the bond request or you wish to cancel the bonding request.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Use this function when the remote Bluetooth device is not responding to the <br/>
+ bond request or you wish to cancel the bonding request.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -1309,7 +1311,7 @@ The bond with the remote device must be created with <a class="el" href="group__
 </div>
 <div class="memdoc">
 
-<p>Get the service mask from the uuid list. </p>
+<p>Gets the service mask from the UUID list. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1803,9 +1805,9 @@ The bond with the remote device must be created with <a class="el" href="group__
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If creating a bond succeeds, which means <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gac7c8b9266f2ec485d30baa1418d2696b" title="Called when the process of creating bond finishes.">bt_device_bond_created_cb()</a> is called with result <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a>, then you don't need to run this function.<br/>
- The service search takes a couple of seconds to complete normally. <br/>
-</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If creating a bond succeeds, which means <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gac7c8b9266f2ec485d30baa1418d2696b" title="Called when the process of creating bond finishes.">bt_device_bond_created_cb()</a> is called with result <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a>, <br/>
+ then you don't need to run this function.<br/>
+ The service search takes a couple of seconds to complete normally.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The address of the remote Bluetooth device whose services need to be checked</td></tr>

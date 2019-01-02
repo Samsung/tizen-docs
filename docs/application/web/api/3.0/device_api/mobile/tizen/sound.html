@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Sound API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sound API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sound">
@@ -235,6 +235,18 @@ The possible types are:
 There is a tizen.sound object that allows accessing the functionality of the Sound API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SoundManagerObject::sound">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SoundManager </span><span class="name">sound</span></span><div class="brief">
+ Object representing a sound manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="SoundManager">
 <a class="backward-compatibility-anchor" name="::Sound::SoundManager"></a><h3>2.2. SoundManager</h3>
@@ -330,6 +342,9 @@ There is a tizen.sound object that allows accessing the functionality of the Sou
  with error type InvalidValuesError, if any of the input parameters contain an invalid value.
                 </p></li>
 <li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
  with error type UnknownError in any other error case.
                 </p></li>
 </ul>
@@ -388,6 +403,9 @@ There is a tizen.sound object that allows accessing the functionality of the Sou
  Registers a listener to be called when the sound mode is changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void setSoundModeChangeListener(<a href="#SoundModeChangeCallback">SoundModeChangeCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
+ 2.3
+            </p>
 <p><span class="version">Since: </span>
  2.3
             </p>

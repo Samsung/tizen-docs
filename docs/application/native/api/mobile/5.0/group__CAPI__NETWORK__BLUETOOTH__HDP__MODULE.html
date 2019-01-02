@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -120,11 +120,11 @@ Related Features</h2>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga0e30f04be590fba5ed8309ee59051f8c">bt_hdp_register_sink_app</a> (unsigned short data_type, char **app_id)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an application that acts as the <em>Sink</em> role of HDP(Health Device Profile).  <a href="#ga0e30f04be590fba5ed8309ee59051f8c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an application that acts as the Sink role of HDP (Health Device Profile).  <a href="#ga0e30f04be590fba5ed8309ee59051f8c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gad9ee2f2beb1a2e6e9445987c2d44a081">bt_hdp_unregister_sink_app</a> (const char *app_id)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the given application that acts as the <em>Sink</em> role of HDP(Health Device Profile).  <a href="#gad9ee2f2beb1a2e6e9445987c2d44a081"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the given application that acts as the Sink role of HDP (Health Device Profile).  <a href="#gad9ee2f2beb1a2e6e9445987c2d44a081"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gafc0906e3a28006f76a8e50a70757cb5a">bt_hdp_connect_to_source</a> (const char *remote_address, const char *app_id)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects the remote device which acts as <em>Source</em> role, asynchronously.  <a href="#gafc0906e3a28006f76a8e50a70757cb5a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects the remote device which acts as Source role, asynchronously.  <a href="#gafc0906e3a28006f76a8e50a70757cb5a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gacd07b6b3496d6ead9167665446d56d52">bt_hdp_disconnect</a> (const char *remote_address, unsigned int channel)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects the remote device, asynchronously.  <a href="#gacd07b6b3496d6ead9167665446d56d52"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gac7290c8b3280c610313c534dbb7980cd">bt_hdp_send_data</a> (unsigned int channel, const char *data, unsigned int size)</td></tr>
@@ -159,21 +159,21 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the connection is established. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000477">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of connecting to the remote device </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The address of connected remote device </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">app_id</td><td>The ID of application </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of HDP(Health Device Profile) channel </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of HDP (Health Device Profile) channel </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The connected data channel </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga735a8ecea2041891df9fec0074f2b40f" title="Called when the connection is disconnected.">bt_hdp_disconnected_cb</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gabcbeb1a8ae06b305b428e125026b7ce0" title="Registers a callback function that will be invoked when the connection state is changed.">bt_hdp_set_connection_state_changed_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gabcbeb1a8ae06b305b428e125026b7ce0" title="Registers a callback function that will be invoked when the connection state is changed.">bt_hdp_set_connection_state_changed_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga63532c16ff33d3fc137a49324ab0e1b1" title="Unregisters a callback function that will be invoked when the connection state is changed...">bt_hdp_unset_connection_state_changed_cb()</a> </dd></dl>
 
@@ -191,7 +191,9 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the you receive the data. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000479">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The connected data channel </td></tr>
@@ -219,7 +221,9 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the connection is disconnected. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000478">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of disconnecting from the remote device </td></tr>
@@ -229,9 +233,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga9853382d798fc8eaa4dd663dc0c03a10" title="Called when the connection is established.">bt_hdp_connected_cb</a> </dd>
-<dd>
-<a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gabcbeb1a8ae06b305b428e125026b7ce0" title="Registers a callback function that will be invoked when the connection state is changed.">bt_hdp_set_connection_state_changed_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gabcbeb1a8ae06b305b428e125026b7ce0" title="Registers a callback function that will be invoked when the connection state is changed.">bt_hdp_set_connection_state_changed_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga63532c16ff33d3fc137a49324ab0e1b1" title="Unregisters a callback function that will be invoked when the connection state is changed...">bt_hdp_unset_connection_state_changed_cb()</a> </dd></dl>
 
@@ -250,7 +252,9 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumerations for the data channel type. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000476">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggae2caec7dfe873712b2563d719b0f3604a07c020910dee7c57a42654db3fcc0f9b"></a><!-- doxytag: member="BT_HDP_CHANNEL_TYPE_RELIABLE" ref="ggae2caec7dfe873712b2563d719b0f3604a07c020910dee7c57a42654db3fcc0f9b" args="" -->BT_HDP_CHANNEL_TYPE_RELIABLE</em>&nbsp;</td><td>
 <p>Reliable Data Channel </p>
@@ -290,10 +294,12 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Connects the remote device which acts as <em>Source</em> role, asynchronously. </p>
+<p>Connects the remote device which acts as Source role, asynchronously. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000469">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote address </td></tr>
@@ -315,7 +321,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The Sink role of HDP must be registered with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga0e30f04be590fba5ed8309ee59051f8c" title="Registers an application that acts as the Sink role of HDP(Health Device Profile).">bt_hdp_register_sink_app()</a>. </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The Sink role of HDP must be registered with <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga0e30f04be590fba5ed8309ee59051f8c" title="Registers an application that acts as the Sink role of HDP (Health Device Profile).">bt_hdp_register_sink_app()</a>. </dd>
 <dd>
 The local device must be bonded with the remote device by <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__DEVICE__MODULE.html#gaf72675b8c5db696ac12b139ff0a2b796" title="Creates a bond with a remote Bluetooth device, asynchronously.">bt_device_create_bond()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga9853382d798fc8eaa4dd663dc0c03a10" title="Called when the connection is established.">bt_hdp_connected_cb()</a> will be invoked. </dd></dl>
@@ -353,9 +359,11 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <div class="memdoc">
 
 <p>Disconnects the remote device, asynchronously. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000470">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote address </td></tr>
@@ -411,11 +419,13 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 </div>
 <div class="memdoc">
 
-<p>Registers an application that acts as the <em>Sink</em> role of HDP(Health Device Profile). </p>
+<p>Registers an application that acts as the Sink role of HDP (Health Device Profile). </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000467">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>app_id</em> must be released with free() by you. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>app_id</em> must be released with free() by you. <br/>
+ Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">data_type</td><td>The data type of MDEP. This value is defined in ISO/IEEE 11073-20601 spec. For example, pulse oximeter is 0x1004 and blood pressure monitor is 0x1007. </td></tr>
@@ -428,6 +438,7 @@ The local device must be bonded with the remote device by <a class="el" href="gr
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a8b1f96d52edfa962caee69ac0bec5649">BT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
@@ -436,7 +447,7 @@ The local device must be bonded with the remote device by <a class="el" href="gr
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The state of local Bluetooth must be <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__ADAPTER__MODULE.html#ggaa6c14517cfde815d93128835995e8daea9344c5c91e1672312fe871889f50c83d">BT_ADAPTER_ENABLED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gad9ee2f2beb1a2e6e9445987c2d44a081" title="Unregisters the given application that acts as the Sink role of HDP(Health Device Profile)...">bt_hdp_unregister_sink_app()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#gad9ee2f2beb1a2e6e9445987c2d44a081" title="Unregisters the given application that acts as the Sink role of HDP (Health Device Profile)...">bt_hdp_unregister_sink_app()</a> </dd></dl>
 
 </div>
 </div>
@@ -472,9 +483,11 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <div class="memdoc">
 
 <p>Sends the data to the remote device. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000471">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>The connected data channel </td></tr>
@@ -537,7 +550,9 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <div class="memdoc">
 
 <p>Registers a callback function that will be invoked when the connection state is changed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000472">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">connected_cb</td><td>The callback function called when a connection is established </td></tr>
@@ -587,7 +602,9 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <div class="memdoc">
 
 <p>Registers a callback function that will be invoked when you receive the data. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000474">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to register </td></tr>
@@ -625,10 +642,12 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 </div>
 <div class="memdoc">
 
-<p>Unregisters the given application that acts as the <em>Sink</em> role of HDP(Health Device Profile). </p>
+<p>Unregisters the given application that acts as the Sink role of HDP (Health Device Profile). </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000468">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/bluetooth </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">app_id</td><td>The ID of application </td></tr>
@@ -640,6 +659,7 @@ The local device must be bonded with the remote device by <a class="el" href="gr
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a070fb13fb84ea856d589400ae212724c">BT_ERROR_NOT_ENABLED</a></td><td>Not enabled </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
@@ -647,7 +667,7 @@ The local device must be bonded with the remote device by <a class="el" href="gr
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga0e30f04be590fba5ed8309ee59051f8c" title="Registers an application that acts as the Sink role of HDP(Health Device Profile).">bt_hdp_register_sink_app()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__HDP__MODULE.html#ga0e30f04be590fba5ed8309ee59051f8c" title="Registers an application that acts as the Sink role of HDP (Health Device Profile).">bt_hdp_register_sink_app()</a> </dd></dl>
 
 </div>
 </div>
@@ -667,7 +687,9 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <div class="memdoc">
 
 <p>Unregisters a callback function that will be invoked when the connection state is changed. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000473">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -698,7 +720,9 @@ The local device must be bonded with the remote device by <a class="el" href="gr
 <div class="memdoc">
 
 <p>Unregisters a callback function that will be invoked when you receive the data. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000475">Deprecated:</a></b></dt><dd>Deprecated since 5.0.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Deprecated, because of no usecase and supported devices. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">

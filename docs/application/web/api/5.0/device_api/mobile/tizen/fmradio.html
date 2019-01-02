@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>FMRadio API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>FMRadio API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::FMRadio">
@@ -199,6 +199,18 @@ RADIO_INTERRUPTED_BY_MEDIA_EXTERNAL_ONLY - radio interrupted by external media  
 The tizen.fmradio object provides access to the functionality of the FM Radio API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="FMRadioObject::fmradio">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">FMRadioManager </span><span class="name">fmradio</span></span><div class="brief">
+ Object representing a exif manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.3
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="FMRadioManager">
 <a class="backward-compatibility-anchor" name="::FMRadio::FMRadioManager"></a><h3>2.2. FMRadioManager</h3>
@@ -415,8 +427,6 @@ if (radioState == "PLAYING")
 This method is only available in the <em>PLAYING</em> state. There is no change of <var>state</var>. <br>When the next valid frequency is successfully found, <em>successCallback</em> is invoked.
 After the search, the radio begins playing the new channel automatically. <br>If the highest frequency(<em>frequencyUpperBound</em>) has been reached, it finds the lowest frequency(<em>frequencyLowerBound</em>) channel.
             </p>
-           </div>
-<div class="description">
             <p>
 The ErrorCallback is launched with these error types:
             </p>
@@ -487,8 +497,6 @@ if (radioState == "PLAYING")
 This method is only available in the <em>PLAYING</em> state. There is no change of <var>state</var>. <br>When the next valid frequency is successfully found, <em>successCallback</em> is invoked.
 After the search, the radio begins playing the new channel automatically. <br>If the lowest frequency(<em>frequencyLowerBound</em>) has been reached, it finds the highest frequency(<em>frequencyUpperBound</em>) channel.
             </p>
-           </div>
-<div class="description">
             <p>
 The ErrorCallback is launched with these error types:
             </p>
@@ -507,9 +515,8 @@ If a user call seekDown() while the radio is seeking, the errorCallback will be 
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when the radio successfully finds a radio channel.
-                </li>
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>
+</li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  Callback method to be invoked when an error occurs.
@@ -777,7 +784,7 @@ tizen.fmradio.setFMRadioInterruptedListener(interruptCallback);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.fmradio.unsetFMRadioInterruptListener();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.fmradio.unsetFMRadioInterruptedListener();
 </pre>
 </div>
 </dd>

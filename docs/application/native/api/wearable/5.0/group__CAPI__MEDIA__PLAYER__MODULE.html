@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -196,7 +196,7 @@ State Dependent Function Calls</h3>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga58baa4d17b555dc24e472dae5e3d4842" title="Gets the player&#39;s looping status.">player_is_looping()</a> </td><td>IDLE/ READY/ PLAYING/ PAUSED </td><td>This function must be called after <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gadf887679f1f25035ce811e8b2274a74b" title="Creates a player handle for playing multimedia content.">player_create()</a>  </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga14061edd38d3dfbecaaa146e2a9d95a7" title="Gets the total running time of the associated media.">player_get_duration()</a> </td><td>PLAYING/ PAUSED </td><td>This function must be called after <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaaebaa53929b5c1bd0dca5c6de9a2fc6b" title="Starts or resumes playback.">player_start()</a>  </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga9ceb0c2aaae1786bea6b2d3aa0d63677" title="Gets the total running time of the associated media.">player_get_duration()</a> </td><td>PLAYING/ PAUSED </td><td>This function must be called after <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaaebaa53929b5c1bd0dca5c6de9a2fc6b" title="Starts or resumes playback.">player_start()</a>  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga13098b40509e1b5d4efd7ea295f3a7ae" title="Sets the video display.">player_set_display()</a> </td><td>IDLE </td><td>This function must be called before <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a>  </td></tr>
 <tr>
@@ -208,7 +208,7 @@ State Dependent Function Calls</h3>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga41683f6ca90e61efb8c622ec179489bf" title="Gets the video display&#39;s height and width.">player_get_video_size()</a> </td><td>READY/ PLAYING/ PAUSED </td><td>This function must be called after <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a>  </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html#gaf3172ddc1469279ab0d592d72fe61d15" title="Sets the seek position for the subtitle.">player_set_subtitle_position_offset()</a> </td><td>PLAYING/ PAUSED </td><td>This function must be called after <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaaebaa53929b5c1bd0dca5c6de9a2fc6b" title="Starts or resumes playback.">player_start()</a>  </td></tr>
+<td><a class="el" href="group__CAPI__MEDIA__PLAYER__SUBTITLE__MODULE.html#ga6bb36cd4700973b04ed4349f5cb06caf" title="Sets the seek position for the subtitle.">player_set_subtitle_position_offset()</a> </td><td>PLAYING/ PAUSED </td><td>This function must be called after <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaaebaa53929b5c1bd0dca5c6de9a2fc6b" title="Starts or resumes playback.">player_start()</a>  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga9240dcd7926cb2ee7337fe80bb2a4e0c" title="Gets current track index.">player_get_current_track()</a><br/>
 <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga8b1e5213655e2c73bc8e20b844244143" title="Gets language code of a track.">player_get_track_language_code()</a><br/>
@@ -221,7 +221,7 @@ State Dependent Function Calls</h3>
 </table>
 </div><h3><a class="anchor" id="CAPI_MEDIA_PLAYER_LIFE_CYCLE_ASYNCHRONOUS_OPERATIONS"></a>
 Asynchronous Operations</h3>
-<p>All functions that change the player state are synchronous except <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga89584f75ceabc7fbb3499105b779d644" title="Prepares the media player for playback, asynchronously.">player_prepare_async()</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga5f9447522af17885b8ddba83b68cbb95" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a>, and <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaff257abc90872f07b348b7b44f641d54" title="Captures the video frame, asynchronously.">player_capture_video()</a>. Thus the result is passed to the application via the callback mechanism.</p>
+<p>All functions that change the player state are synchronous except <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga89584f75ceabc7fbb3499105b779d644" title="Prepares the media player for playback, asynchronously.">player_prepare_async()</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a>, and <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaff257abc90872f07b348b7b44f641d54" title="Captures the video frame, asynchronously.">player_capture_video()</a>. Thus the result is passed to the application via the callback mechanism.</p>
 <h3><a class="anchor" id="CAPI_MEDIA_PLAYER_LIFE_CYCLE_CALLBACK_OPERATIONS"></a>
 Callback(Event) Operations</h3>
 <div><table  class="doxtable">
@@ -293,10 +293,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops playing media content.  <a href="#ga6cf6f3d2756dc1d63c062c6107904f31"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga6d2d40384f2426bd4f8fab0badf0eabe">player_pause</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the player.  <a href="#ga6d2d40384f2426bd4f8fab0badf0eabe"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga5f9447522af17885b8ddba83b68cbb95">player_set_play_position</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int millisecond, bool accurate, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b">player_seek_completed_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the seek position for playback, asynchronously.  <a href="#ga5f9447522af17885b8ddba83b68cbb95"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gae6efff6a01b17000d8d90a901a79ef02">player_get_play_position</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int *millisecond)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position in milliseconds.  <a href="#gae6efff6a01b17000d8d90a901a79ef02"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2">player_set_play_position</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int milliseconds, bool accurate, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b">player_seek_completed_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the seek position for playback, asynchronously.  <a href="#gaee1ee8a3d32f8cb9165f60cad3735af2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7c4333ef24f982b607b1cd69e2d73580">player_set_play_position_nsec</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int64_t nanoseconds, bool accurate, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b">player_seek_completed_cb</a> callback, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the seek position in nanoseconds for playback, asynchronously.  <a href="#ga7c4333ef24f982b607b1cd69e2d73580"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga3338c376ae29b4ebb10a7461ba0d394f">player_get_play_position</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int *milliseconds)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position in milliseconds.  <a href="#ga3338c376ae29b4ebb10a7461ba0d394f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga076780328f21e9b2a889967d748114a8">player_get_play_position_nsec</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, int64_t *nanoseconds)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position in nanoseconds.  <a href="#ga076780328f21e9b2a889967d748114a8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga0d5121454fa1419a5a2d02b763ff5342">player_set_mute</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, bool muted)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the player's mute status.  <a href="#ga0d5121454fa1419a5a2d02b763ff5342"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaad27604161dbe479062a0f6292cf9edf">player_is_muted</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, bool *muted)</td></tr>
@@ -363,6 +367,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the player's replaygain status.  <a href="#ga31ad7b42d485b7181eb8acd58425c7ca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga83460eb86ca035cb6dca22e0b818be50">player_is_replaygain_enabled</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, bool *enabled)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's replaygain status.  <a href="#ga83460eb86ca035cb6dca22e0b818be50"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga745bbb97c96cd58aa797510b7d5de6ba">player_set_video_roi_area</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, double x_scale, double y_scale, double w_scale, double h_scale)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the ROI (Region Of Interest) area of the content video source.  <a href="#ga745bbb97c96cd58aa797510b7d5de6ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga987d3c4c2461dda0eed537fc562c8035">player_get_video_roi_area</a> (<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a> player, double *x_scale, double *y_scale, double *w_scale, double *h_scale)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the ROI (Region Of Interest) area of the content video source.  <a href="#ga987d3c4c2461dda0eed537fc562c8035"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct player_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a></td></tr>
@@ -613,7 +621,9 @@ The <em>packet</em> should be released using <a class="el" href="group__CAPI__ME
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga5f9447522af17885b8ddba83b68cbb95" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7c4333ef24f982b607b1cd69e2d73580" title="Sets the seek position in nanoseconds for playback, asynchronously.">player_set_play_position_nsec()</a> </dd></dl>
 
 </div>
 </div>
@@ -1178,7 +1188,7 @@ Video display type should be set by calling <a class="el" href="group__CAPI__MED
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is PLAYER_STREAM_TYPE_AUDIO or PLAYER_STREAM_TYPE_TEXT </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4ab10ce5782530b9789d0719cd33cf8172">PLAYER_STREAM_TYPE_AUDIO</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4a3f8af664d320002b0491740e90d3f660">PLAYER_STREAM_TYPE_TEXT</a> </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">index</td><td>The index of track </td></tr>
   </table>
   </dd>
@@ -1246,11 +1256,9 @@ If the buffer level over the max size, <a class="el" href="group__CAPI__MEDIA__P
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga75e0e36664222bcd06fb9e3cdb5a9be4" title="Sets the max size bytes of buffer.">player_set_media_stream_buffer_max_size()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7a5667c2eb103a003003c98241782d3f" title="Called when the buffer level drops below the threshold of max size or no free space in buffer...">player_media_stream_buffer_status_cb()</a> </dd></dl>
@@ -1306,23 +1314,21 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaa1e2e81994d1e44523a31625534f716f" title="Sets the buffer threshold percent of buffer.">player_set_media_stream_buffer_min_threshold()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7a5667c2eb103a003003c98241782d3f" title="Called when the buffer level drops below the threshold of max size or no free space in buffer...">player_media_stream_buffer_status_cb()</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gae6efff6a01b17000d8d90a901a79ef02"></a><!-- doxytag: member="player.h::player_get_play_position" ref="gae6efff6a01b17000d8d90a901a79ef02" args="(player_h player, int *millisecond)" -->
+<a class="anchor" id="ga3338c376ae29b4ebb10a7461ba0d394f"></a><!-- doxytag: member="player.h::player_get_play_position" ref="ga3338c376ae29b4ebb10a7461ba0d394f" args="(player_h player, int *milliseconds)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gae6efff6a01b17000d8d90a901a79ef02">player_get_play_position</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga3338c376ae29b4ebb10a7461ba0d394f">player_get_play_position</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
           <td class="paramname"><em>player</em>, </td>
@@ -1331,7 +1337,7 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>millisecond</em>&#160;</td>
+          <td class="paramname"><em>milliseconds</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1347,7 +1353,7 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">millisecond</td><td>The current position in milliseconds </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">milliseconds</td><td>The current position in milliseconds </td></tr>
   </table>
   </dd>
 </dl>
@@ -1355,15 +1361,69 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaae3089343c51cc2ff9d923bb81363d257">PLAYER_ERROR_SEEK_FAILED</a></td><td>Seek operation failure </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga5f9447522af17885b8ddba83b68cbb95" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7c4333ef24f982b607b1cd69e2d73580" title="Sets the seek position in nanoseconds for playback, asynchronously.">player_set_play_position_nsec()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga076780328f21e9b2a889967d748114a8" title="Gets the current position in nanoseconds.">player_get_play_position_nsec()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga076780328f21e9b2a889967d748114a8"></a><!-- doxytag: member="player.h::player_get_play_position_nsec" ref="ga076780328f21e9b2a889967d748114a8" args="(player_h player, int64_t *nanoseconds)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga076780328f21e9b2a889967d748114a8">player_get_play_position_nsec</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t *&#160;</td>
+          <td class="paramname"><em>nanoseconds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the current position in nanoseconds. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">nanoseconds</td><td>The current position in nanoseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaae3089343c51cc2ff9d923bb81363d257">PLAYER_ERROR_SEEK_FAILED</a></td><td>Seek operation failure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga3338c376ae29b4ebb10a7461ba0d394f" title="Gets the current position in milliseconds.">player_get_play_position()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7c4333ef24f982b607b1cd69e2d73580" title="Sets the seek position in nanoseconds for playback, asynchronously.">player_set_play_position_nsec()</a> </dd></dl>
 
 </div>
 </div>
@@ -1449,7 +1509,7 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is PLAYER_STREAM_TYPE_AUDIO or PLAYER_STREAM_TYPE_TEXT </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4ab10ce5782530b9789d0719cd33cf8172">PLAYER_STREAM_TYPE_AUDIO</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4a3f8af664d320002b0491740e90d3f660">PLAYER_STREAM_TYPE_TEXT</a> </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The number of track </td></tr>
   </table>
   </dd>
@@ -1511,7 +1571,7 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is PLAYER_STREAM_TYPE_AUDIO or PLAYER_STREAM_TYPE_TEXT </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4ab10ce5782530b9789d0719cd33cf8172">PLAYER_STREAM_TYPE_AUDIO</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4a3f8af664d320002b0491740e90d3f660">PLAYER_STREAM_TYPE_TEXT</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The index of track </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">code</td><td>A language code in ISO 639-1. "und" will be returned if the language is undefined. </td></tr>
   </table>
@@ -1528,6 +1588,83 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga987d3c4c2461dda0eed537fc562c8035"></a><!-- doxytag: member="player.h::player_get_video_roi_area" ref="ga987d3c4c2461dda0eed537fc562c8035" args="(player_h player, double *x_scale, double *y_scale, double *w_scale, double *h_scale)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga987d3c4c2461dda0eed537fc562c8035">player_get_video_roi_area</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>y_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>w_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>h_scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the ROI (Region Of Interest) area of the content video source. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function gets the ratio value of the each coordinate and size based on the video resolution size. </dd>
+<dd>
+The ROI area is valid only in <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga6b83386e10a8febc7e5dfbff85b342aba2c6469452b11873b6cef3c755a86a5b6">PLAYER_DISPLAY_TYPE_OVERLAY</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x_scale</td><td>The current X coordinate ratio value of the video source area based on the video width size </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y_scale</td><td>The current Y coordinate ratio value of the video source area based on the video height size </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">w_scale</td><td>The current width ratio value of the video source area based on the video width size </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h_scale</td><td>The current height ratio value of the video source area based on the video height size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab" title="Enumeration for display type.">player_display_type_e</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga13098b40509e1b5d4efd7ea295f3a7ae" title="Sets the video display.">player_set_display()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga41683f6ca90e61efb8c622ec179489bf" title="Gets the video display&#39;s height and width.">player_get_video_size()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga745bbb97c96cd58aa797510b7d5de6ba" title="Sets the ROI (Region Of Interest) area of the content video source.">player_set_video_roi_area()</a> </dd></dl>
 
 </div>
 </div>
@@ -1629,7 +1766,6 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of: <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaea480b585dc201d3233fc12a1b0afa2b" title="Sets the audio only mode.">player_set_audio_only()</a> </dd></dl>
 
 </div>
@@ -1675,11 +1811,9 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga165e6474b1bdf23f1640fc4255ac47e7" title="Sets the player&#39;s looping status.">player_set_looping()</a> </dd></dl>
 
 </div>
@@ -1728,7 +1862,6 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga0d5121454fa1419a5a2d02b763ff5342" title="Sets the player&#39;s mute status.">player_set_mute()</a> </dd></dl>
 
 </div>
@@ -1772,12 +1905,10 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>player_set_replaygain_enable() </dd></dl>
 
 </div>
@@ -1818,7 +1949,7 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be set to <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>. </dd></dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>The player state will be <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>The player state will be <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaaebaa53929b5c1bd0dca5c6de9a2fc6b" title="Starts or resumes playback.">player_start()</a> </dd></dl>
 
 </div>
@@ -1910,11 +2041,8 @@ The internet privilege(<a href="http://tizen.org/privilege/internet">http://tize
 
 <p>Prepares the media player for playback, asynchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The mediastorage privilege(<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>) must be added if any video/audio files are used to play located in the internal storage. </dd>
-<dd>
-The externalstorage privilege(<a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be added if any video/audio files are used to play located in the external storage. </dd>
-<dd>
-The internet privilege(<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a>) must be added if any URLs are used to play from network. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The mediastorage privilege(<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>) must be added if any video/audio files are used to play located in the internal storage. The externalstorage privilege(<a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be added if any video/audio files are used to play located in the external storage. The internet privilege(<a href="http://tizen.org/privilege/internet">http://tizen.org/privilege/internet</a>) must be added if any URLs are used to play from network. <br/>
+ Since 5.0: To cancel the asynchronous preparing, call <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga93c2c8ac38f639649f318f5e0b57663b" title="Resets the media player.">player_unprepare()</a> even in <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a> state. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
@@ -2041,7 +2169,7 @@ The available buffer size can be set by calling <a class="el" href="group__CAPI_
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is PLAYER_STREAM_TYPE_AUDIO or PLAYER_STREAM_TYPE_TEXT </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of target stream which is <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4ab10ce5782530b9789d0719cd33cf8172">PLAYER_STREAM_TYPE_AUDIO</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga59c022fc77c1273b0282f0a2a6fee2b4a3f8af664d320002b0491740e90d3f660">PLAYER_STREAM_TYPE_TEXT</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>The index of track </td></tr>
   </table>
   </dd>
@@ -2257,8 +2385,10 @@ The available buffer size can be set by calling <a class="el" href="group__CAPI_
 <dd>
 We are not supporting changing display. </dd>
 <dd>
-This function have be called before calling the <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga89584f75ceabc7fbb3499105b779d644" title="Prepares the media player for playback, asynchronously.">player_prepare_async()</a> <br/>
- to reflect the display type. </dd></dl>
+This function must be called before calling the <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga89584f75ceabc7fbb3499105b779d644" title="Prepares the media player for playback, asynchronously.">player_prepare_async()</a> <br/>
+ to reflect the display type. </dd>
+<dd>
+This function must be called in main thread of application. Otherwise, it will return <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a> by internal restriction. To avoid <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a> in sub thread, <a class="el" href="group__Ecore__Main__Loop__Group.html#ga0624ccd91c607ed241f45ac1da8875a6" title="This function suspends the main loop in a know state.">ecore_thread_main_loop_begin()</a> and <a class="el" href="group__Ecore__Main__Loop__Group.html#gabd2ff96845800d5fcb7cd2607fffa296" title="Unlocks the main loop.">ecore_thread_main_loop_end()</a> can be used, but deadlock can be also occurred if main thread is busy. So, it's not recommended to use them. (since 5.0) </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
@@ -2280,13 +2410,17 @@ This function have be called before calling the <a class="el" href="group__CAPI_
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be set to <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a> by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gadf887679f1f25035ce811e8b2274a74b" title="Creates a player handle for playing multimedia content.">player_create()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga93c2c8ac38f639649f318f5e0b57663b" title="Resets the media player.">player_unprepare()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab" title="Enumeration for display type.">player_display_type_e</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga55ed3a19040c5364fd0d248bb71c02c1" title="Sets the video display mode.">player_set_display_mode</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga55ed3a19040c5364fd0d248bb71c02c1" title="Sets the video display mode.">player_set_display_mode()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga5142e305ba066340aa0afe3b2bd15920" title="Sets the ROI (Region Of Interest) area of display.">player_set_display_roi_area</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga5142e305ba066340aa0afe3b2bd15920" title="Sets the ROI (Region Of Interest) area of display.">player_set_display_roi_area()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga37ec894326dd3c10002ff91081f08f4e" title="Sets the visibility of the video display.">player_set_display_visible</a> </dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga37ec894326dd3c10002ff91081f08f4e" title="Sets the visibility of the video display.">player_set_display_visible()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaf61b3aaa20a868c0e7a473647fe0ca55" title="Sets the rotation settings of the video surface display.">player_set_display_rotation</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gaf61b3aaa20a868c0e7a473647fe0ca55" title="Sets the rotation settings of the video surface display.">player_set_display_rotation()</a> </dd>
+<dd>
+<a class="el" href="group__Ecore__Main__Loop__Group.html#ga0624ccd91c607ed241f45ac1da8875a6" title="This function suspends the main loop in a know state.">ecore_thread_main_loop_begin()</a> </dd>
+<dd>
+<a class="el" href="group__Ecore__Main__Loop__Group.html#gabd2ff96845800d5fcb7cd2607fffa296" title="Unlocks the main loop.">ecore_thread_main_loop_end()</a> </dd></dl>
 
 </div>
 </div>
@@ -2447,11 +2581,9 @@ This function have be called before calling the <a class="el" href="group__CAPI_
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga58baa4d17b555dc24e472dae5e3d4842" title="Gets the player&#39;s looping status.">player_is_looping()</a> </dd></dl>
 
 </div>
@@ -2516,7 +2648,7 @@ This function have be called before calling the <a class="el" href="group__CAPI_
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player's state must be <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>. And, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga6b83386e10a8febc7e5dfbff85b342aba8b84b38a65943b55b8d8b2d29c856bd2">PLAYER_DISPLAY_TYPE_NONE</a> must be set by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga13098b40509e1b5d4efd7ea295f3a7ae" title="Sets the video display.">player_set_display()</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gae40771002fef0a9a2a8b7f6baad71d7f" title="Unsets the media packet video frame callback function.">player_unset_media_packet_video_frame_decoded_cb</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gae40771002fef0a9a2a8b7f6baad71d7f" title="Unsets the media packet video frame callback function.">player_unset_media_packet_video_frame_decoded_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -2569,11 +2701,9 @@ If the buffer level over the max size, <a class="el" href="group__CAPI__MEDIA__P
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. (since 3.0) </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga9ce01efa672856270b5339073e090953" title="Gets the max size bytes of buffer.">player_get_media_stream_buffer_max_size()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7a5667c2eb103a003003c98241782d3f" title="Called when the buffer level drops below the threshold of max size or no free space in buffer...">player_media_stream_buffer_status_cb()</a> </dd></dl>
@@ -2629,11 +2759,9 @@ If the buffer level drops below the percent value, <a class="el" href="group__CA
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. (since 3.0) </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga96ce511174ed9547662328e7e75da532" title="Gets the buffer threshold percent of buffer.">player_get_media_stream_buffer_min_threshold()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7a5667c2eb103a003003c98241782d3f" title="Called when the buffer level drops below the threshold of max size or no free space in buffer...">player_media_stream_buffer_status_cb()</a> </dd></dl>
@@ -2942,17 +3070,16 @@ This function must be called before calling the <a class="el" href="group__CAPI_
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaad27604161dbe479062a0f6292cf9edf" title="Gets the player&#39;s mute status.">player_is_muted()</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga5f9447522af17885b8ddba83b68cbb95"></a><!-- doxytag: member="player.h::player_set_play_position" ref="ga5f9447522af17885b8ddba83b68cbb95" args="(player_h player, int millisecond, bool accurate, player_seek_completed_cb callback, void *user_data)" -->
+<a class="anchor" id="gaee1ee8a3d32f8cb9165f60cad3735af2"></a><!-- doxytag: member="player.h::player_set_play_position" ref="gaee1ee8a3d32f8cb9165f60cad3735af2" args="(player_h player, int milliseconds, bool accurate, player_seek_completed_cb callback, void *user_data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga5f9447522af17885b8ddba83b68cbb95">player_set_play_position</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2">player_set_play_position</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
           <td class="paramname"><em>player</em>, </td>
@@ -2961,7 +3088,7 @@ This function must be called before calling the <a class="el" href="group__CAPI_
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>millisecond</em>, </td>
+          <td class="paramname"><em>milliseconds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2992,16 +3119,20 @@ This function must be called before calling the <a class="el" href="group__CAPI_
 
 <p>Sets the seek position for playback, asynchronously. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function will trigger the seeking operation on player instance. Normally application need to wait for <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> before calling it again. Otherwise it will return PLAYER_ERROR_SEEK_FAILED. Please note that if application is playing external media data via <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga76cc2b85122553e9a3fe6d0924eedd48" title="Sets contents information for media stream.">player_set_media_stream_info()</a>, then consecutive calling of this function will always success and no need to wait for <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> before next calling of this function.(since_tizen 3.0) </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function will trigger the seeking operation on player instance like in the case of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7c4333ef24f982b607b1cd69e2d73580" title="Sets the seek position in nanoseconds for playback, asynchronously.">player_set_play_position_nsec()</a>. Normally application needs to wait for <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> before calling setting position function again. Otherwise it will return <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaae3089343c51cc2ff9d923bb81363d257">PLAYER_ERROR_SEEK_FAILED</a>. </dd>
 <dd>
-Even if you don't set visible to true by calling player_set_display_visible, the video will be shown when the _seek_completed cb is invoked. </dd>
+Calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga6d2d40384f2426bd4f8fab0badf0eabe" title="Pauses the player.">player_pause()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaaebaa53929b5c1bd0dca5c6de9a2fc6b" title="Starts or resumes playback.">player_start()</a> before <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> is invoked will cause <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a> to be returned. </dd>
 <dd>
-In case of non-seekable content, it will return PLAYER_ERROR_INVALID_OPERATION. If application ignore this error, player will keep playing without changing play position. </dd></dl>
+Please note that if application is playing external media data via <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga76cc2b85122553e9a3fe6d0924eedd48" title="Sets contents information for media stream.">player_set_media_stream_info()</a>, then consecutive calling of this function will always succeed and there is no need to wait for <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> before next calling of this function.(since_tizen 3.0) </dd>
+<dd>
+Even if you don't set visible to true by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga37ec894326dd3c10002ff91081f08f4e" title="Sets the visibility of the video display.">player_set_display_visible()</a>, the video will be shown when the <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> is invoked. </dd>
+<dd>
+In case of non-seekable content, the function will return <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a> and the player will keep playing without changing the play position. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">millisecond</td><td>The position in milliseconds from the start to the seek point </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">accurate</td><td>If <code>true</code> the selected position is returned, but this might be considerably slow, if <code>false</code> the nearest key frame position is returned, but this might be faster but less accurate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">milliseconds</td><td>The position in milliseconds from the start to the seek point </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">accurate</td><td>If <code>true</code> the selected position is returned, but this might be considerably slow, if <code>false</code> the nearest key frame position is returned, this might be faster but less accurate. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to register </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
@@ -3020,7 +3151,96 @@ In case of non-seekable content, it will return PLAYER_ERROR_INVALID_OPERATION. 
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>It invokes <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> when seek operation completes, if you set a callback. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gae6efff6a01b17000d8d90a901a79ef02" title="Gets the current position in milliseconds.">player_get_play_position()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga3338c376ae29b4ebb10a7461ba0d394f" title="Gets the current position in milliseconds.">player_get_play_position()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7c4333ef24f982b607b1cd69e2d73580" title="Sets the seek position in nanoseconds for playback, asynchronously.">player_set_play_position_nsec()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga076780328f21e9b2a889967d748114a8" title="Gets the current position in nanoseconds.">player_get_play_position_nsec()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7c4333ef24f982b607b1cd69e2d73580"></a><!-- doxytag: member="player.h::player_set_play_position_nsec" ref="ga7c4333ef24f982b607b1cd69e2d73580" args="(player_h player, int64_t nanoseconds, bool accurate, player_seek_completed_cb callback, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga7c4333ef24f982b607b1cd69e2d73580">player_set_play_position_nsec</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>nanoseconds</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>accurate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b">player_seek_completed_cb</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the seek position in nanoseconds for playback, asynchronously. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function will trigger the seeking operation on player instance like in the case of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a>. Normally application needs to wait for <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> before calling setting position function again. Otherwise it will return <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaae3089343c51cc2ff9d923bb81363d257">PLAYER_ERROR_SEEK_FAILED</a>. </dd>
+<dd>
+Calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga6d2d40384f2426bd4f8fab0badf0eabe" title="Pauses the player.">player_pause()</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaaebaa53929b5c1bd0dca5c6de9a2fc6b" title="Starts or resumes playback.">player_start()</a> before <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> is invoked will cause <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a> to be returned. </dd>
+<dd>
+Please note that if application is playing external media data via <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga76cc2b85122553e9a3fe6d0924eedd48" title="Sets contents information for media stream.">player_set_media_stream_info()</a>, then consecutive calling of this function will always succeed and there is no need to wait for <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> before next calling of this function. </dd>
+<dd>
+Even if you don't set visible to true by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga37ec894326dd3c10002ff91081f08f4e" title="Sets the visibility of the video display.">player_set_display_visible()</a>, the video will be shown when the <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> is invoked. </dd>
+<dd>
+In case of non-seekable content, the function will return <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a> and the player will keep playing without changing the play position. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nanoseconds</td><td>The position in nanoseconds from the start to the seek point </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">accurate</td><td>If <code>true</code> the selected position is returned, but this might be considerably slow, if <code>false</code> the nearest key frame position is returned, this might be faster but less accurate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to register </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaae3089343c51cc2ff9d923bb81363d257">PLAYER_ERROR_SEEK_FAILED</a></td><td>Seek operation failure </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>It invokes <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gacc131d1f288ba232da2842e3a515782b" title="Called when the seek operation is completed.">player_seek_completed_cb()</a> when seek operation completes, if you set a callback. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaee1ee8a3d32f8cb9165f60cad3735af2" title="Sets the seek position for playback, asynchronously.">player_set_play_position()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga3338c376ae29b4ebb10a7461ba0d394f" title="Gets the current position in milliseconds.">player_get_play_position()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga076780328f21e9b2a889967d748114a8" title="Gets the current position in nanoseconds.">player_get_play_position_nsec()</a> </dd></dl>
 
 </div>
 </div>
@@ -3118,12 +3338,10 @@ The sound is muted, when playback rate is under <code>0.0</code> and over <code>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga83460eb86ca035cb6dca22e0b818be50" title="Gets the player&#39;s replaygain status.">player_is_replaygain_enabled()</a> </dd></dl>
 
 </div>
@@ -3264,6 +3482,102 @@ The internet privilege(<a href="http://tizen.org/privilege/internet">http://tize
 
 </div>
 </div>
+<a class="anchor" id="ga745bbb97c96cd58aa797510b7d5de6ba"></a><!-- doxytag: member="player.h::player_set_video_roi_area" ref="ga745bbb97c96cd58aa797510b7d5de6ba" args="(player_h player, double x_scale, double y_scale, double w_scale, double h_scale)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga745bbb97c96cd58aa797510b7d5de6ba">player_set_video_roi_area</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf">player_h</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>w_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>h_scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the ROI (Region Of Interest) area of the content video source. </p>
+<p>This function is to set the ROI area of video content to render it on <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga6b83386e10a8febc7e5dfbff85b342aba2c6469452b11873b6cef3c755a86a5b6">PLAYER_DISPLAY_TYPE_OVERLAY</a> display with current display mode. It can be regarded as zooming operation because the selected video area will be rendered fit to the display. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function requires the ratio value of the each coordinate and size based on the video resolution size to consider the dynamic resolution video content. </dd>
+<dd>
+This function have to be called after calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga13098b40509e1b5d4efd7ea295f3a7ae" title="Sets the video display.">player_set_display()</a> and the ROI area is valid only in <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga6b83386e10a8febc7e5dfbff85b342aba2c6469452b11873b6cef3c755a86a5b6">PLAYER_DISPLAY_TYPE_OVERLAY</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x_scale</td><td>X coordinate ratio value of the video source area based on the video width size <br/>
+ Valid range is 0.0~1.0. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y_scale</td><td>Y coordinate ratio value of the video source area based on the video height size <br/>
+ Valid range is 0.0~1.0. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w_scale</td><td>Width ratio value of the video source area based on the video width size <br/>
+ Valid range is from greater than 0.0 to 1.0. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h_scale</td><td>Height ratio value of the video source area based on the video height size <br/>
+ Valid range is from greater than 0.0 to 1.0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaa157332a859a677d08fb14aa5cf2a66d8">PLAYER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga6b83386e10a8febc7e5dfbff85b342ab" title="Enumeration for display type.">player_display_type_e</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga13098b40509e1b5d4efd7ea295f3a7ae" title="Sets the video display.">player_set_display()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga55ed3a19040c5364fd0d248bb71c02c1" title="Sets the video display mode.">player_set_display_mode()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga41683f6ca90e61efb8c622ec179489bf" title="Gets the video display&#39;s height and width.">player_get_video_size()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga987d3c4c2461dda0eed537fc562c8035" title="Gets the ROI (Region Of Interest) area of the content video source.">player_get_video_roi_area()</a> </dd></dl>
+<dl class="user"><dt><b>Example</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">       #include &lt;player.h&gt;</span>
+       ...
+       <a class="code" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga52318c7315f215d0c68d12b35a351acf" title="The media player&#39;s type handle.">player_h</a> player = NULL;
+       <a class="code" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#gad2eff88d820bdcbfe1391a43566658cc" title="The player display handle.">player_display_h</a> display = NULL;
+       <span class="keywordtype">int</span> width = 0, height = 0;
+       ...
+       <a class="code" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga13098b40509e1b5d4efd7ea295f3a7ae" title="Sets the video display.">player_set_display</a> (player, <a class="code" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga6b83386e10a8febc7e5dfbff85b342aba2c6469452b11873b6cef3c755a86a5b6">PLAYER_DISPLAY_TYPE_OVERLAY</a>, display);
+       <a class="code" href="group__CAPI__MEDIA__PLAYER__STREAM__INFO__MODULE.html#ga41683f6ca90e61efb8c622ec179489bf" title="Gets the video display&#39;s height and width.">player_get_video_size</a> (player, &amp;width, &amp;height);
+       ...
+       <a class="code" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga745bbb97c96cd58aa797510b7d5de6ba" title="Sets the ROI (Region Of Interest) area of the content video source.">player_set_video_roi_area</a> (30/(<span class="keywordtype">double</span>)width, 30/(<span class="keywordtype">double</span>)height, 480/(<span class="keywordtype">double</span>)width, 270/(<span class="keywordtype">double</span>)height);
+       ...
+</pre></div> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaa796a6007bb3c50776da90b1704b0d35"></a><!-- doxytag: member="player.h::player_set_volume" ref="gaa796a6007bb3c50776da90b1704b0d35" args="(player_h player, float left, float right)" -->
 <div class="memitem">
 <div class="memproto">
@@ -3335,12 +3649,16 @@ The internet privilege(<a href="http://tizen.org/privilege/internet">http://tize
 <div class="memdoc">
 
 <p>Starts or resumes playback. </p>
-<p>Plays current media content, or resumes play if paused. </p>
+<p>Plays current media content, or resumes playback if the player is paused or buffering during HTTP streaming play. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Sound can be mixed with other sounds if you don't control the stream focus in sound-manager module since 3.0.<br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Even if you don't set visible to true by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga37ec894326dd3c10002ff91081f08f4e" title="Sets the visibility of the video display.">player_set_display_visible()</a>, the video will be shown on <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> state. </dd>
+<dd>
+Since 3.0: <br/>
+ Sound can be mixed with other sounds, if you don't control the stream focus in sound-manager module.<br/>
  You can refer to <a class="el" href="group__CAPI__MEDIA__SOUND__MANAGER__MODULE.html">Sound Manager</a>. </dd>
 <dd>
-Even if you don't set visible to true by calling player_set_display_visible, the video will be shown on <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a> state.</dd></dl>
+Since 5.0: <br/>
+ In case of HTTP streaming playback, the player could be internally paused for buffering. If the application calls this function during the buffering, the playback will be resumed by force and the buffering message posting by <a class="el" href="group__CAPI__MEDIA__PLAYER__STREAMING__MODULE.html#gaa707609579f878ae84eaa94802aec2f5" title="Called when the buffering percentage of the media playback is updated.">player_buffering_cb()</a> will be stopped. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>The handle to the media player </td></tr>
@@ -3359,9 +3677,10 @@ Even if you don't set visible to true by calling player_set_display_visible, the
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a> must be called before calling this function. </dd>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Before 5.0: The player state must be <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a> or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. <br/>
+ </dd>
 <dd>
-The player state must be set to <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a> by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a> or set to <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a> by calling <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga6d2d40384f2426bd4f8fab0badf0eabe" title="Pauses the player.">player_pause()</a>. </dd></dl>
+Since 5.0: The player state must be one of <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, or <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The player state will be <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>. </dd>
 <dd>
 It invokes <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga524bcfc5637c8a389278aeed242d3ab8" title="Called when the media player is completed.">player_completed_cb()</a> when playback completes, if you set a callback with <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga37a1112dda5f644bf76aad7301c689e2" title="Sets a callback function to be invoked when the playback is finished.">player_set_completed_cb()</a>. </dd></dl>
@@ -3377,7 +3696,11 @@ It invokes <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga524bcfc
 <dd>
 <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga524bcfc5637c8a389278aeed242d3ab8" title="Called when the media player is completed.">player_completed_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga37ec894326dd3c10002ff91081f08f4e" title="Sets the visibility of the video display.">player_set_display_visible()</a> </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html#ga37ec894326dd3c10002ff91081f08f4e" title="Sets the visibility of the video display.">player_set_display_visible()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__STREAMING__MODULE.html#gaa25c91324c4984617d2cc1b4c2f5d9c6" title="Sets a callback function to be invoked when there is a change in the buffering status of a media stre...">player_set_buffering_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__PLAYER__STREAMING__MODULE.html#gaa707609579f878ae84eaa94802aec2f5" title="Called when the buffering percentage of the media playback is updated.">player_buffering_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -3459,7 +3782,10 @@ The downloading will be aborted if you use progressive download. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The player state must be higher than <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Before 5.0: The player state must be one of: <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. <br/>
+ </dd>
+<dd>
+Since 5.0: The player state must be one of: <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da663870ef698e1cea2d14349510c177c2">PLAYER_STATE_READY</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da0d5fd6f0cce5c928750fcbd44156891d">PLAYER_STATE_PLAYING</a>, <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842da58999c0a30b5caebb20f078a2ec7c5f4">PLAYER_STATE_PAUSED</a>. <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a> is allowed only if player preparation was started with <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ga89584f75ceabc7fbb3499105b779d644" title="Prepares the media player for playback, asynchronously.">player_prepare_async()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The player state will be <a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#ggaffac9094a814a8d62e37c45f9af9842daa4bec034ec362c9c61de07fc35a2b65a">PLAYER_STATE_IDLE</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gaf53d48f01efcf1ee412f667e3b23fb06" title="Prepares the media player for playback.">player_prepare()</a> </dd></dl>
 
@@ -3648,7 +3974,6 @@ The downloading will be aborted if you use progressive download. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
@@ -3695,7 +4020,6 @@ The downloading will be aborted if you use progressive download. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaaa0af28aa3d374373d55ecb3c963fb7f8">PLAYER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaac13fb16603fc617b18173665b0230992">PLAYER_ERROR_INVALID_STATE</a></td><td>Invalid player state </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__PLAYER__MODULE.html#gga777e585d4ffacf5740aaeeddfd9853aaab634b6c54c33e02b447980ef5ff1e547">PLAYER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>

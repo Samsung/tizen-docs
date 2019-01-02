@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -184,7 +184,9 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,7 +256,9 @@ Functions</h2></td></tr>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a515874e4460acb61a30f6e8916049635">BT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -580,7 +584,7 @@ Functions</h2></td></tr>
 
 <p>Gets the metadata of the track played by the remote device. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>track</em> must be released using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AVRCP__CONTROL__MODULE.html#ga158556125bf45273e1fa5944f8010123" title="Frees the track metadata.">bt_avrcp_control_free_track_info()</a> </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>track</em> must be released using <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AVRCP__CONTROL__MODULE.html#ga158556125bf45273e1fa5944f8010123" title="Frees the track metadata.">bt_avrcp_control_free_track_info()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">track</td><td>The track metadata. </td></tr>
@@ -635,7 +639,8 @@ Functions</h2></td></tr>
 <p>Initializes the Bluetooth AVRCP (Audio/Video Remote Control Profile) controller service. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called before any other AVRCP controller functions are called. <br/>
- You must free all resources of the this service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AVRCP__CONTROL__MODULE.html#ga16cb6ba7d2c329041b2a65c553ade9ca" title="Deinitializes the Bluetooth AVRCP (Audio/Video Remote Control Profile) controller service...">bt_avrcp_control_deinitialize()</a> if Bluetooth AVRCP service is no longer needed. </dd></dl>
+ You must free all resources of the this service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__AVRCP__CONTROL__MODULE.html#ga16cb6ba7d2c329041b2a65c553ade9ca" title="Deinitializes the Bluetooth AVRCP (Audio/Video Remote Control Profile) controller service...">bt_avrcp_control_deinitialize()</a> <br/>
+ if Bluetooth AVRCP service is no longer needed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function called when the connection state is changed </td></tr>

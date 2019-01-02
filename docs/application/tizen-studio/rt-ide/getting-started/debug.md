@@ -85,6 +85,7 @@ To debug the application:
    ![Debug toolbar](./media/rt_debug_toolbar.png)
 
 > **Note**  
+>
 > OpenOCD (or other remote debuggers) can only create as many debugger instances as there are connected devices. So, if you connect only one device, you cannot create two debugger instances.
 >
 > When working with only one debugger instance, you must stop the previously running debugging operation to start a new debugging operation.

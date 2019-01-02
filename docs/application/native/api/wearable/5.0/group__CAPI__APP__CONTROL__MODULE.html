@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -163,6 +163,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the launch mode of the application.  <a href="#ga2ef793205d51b604364b0a7b3eb1b8d6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga5a671f25fb1dd5bdc03561f6c23e7df6">app_control_enable_app_started_result_event</a> (<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a> app_control)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables an additional launch result event on the launch request.  <a href="#ga5a671f25fb1dd5bdc03561f6c23e7df6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga6e1600f449108d988395426666bbfa68">app_control_send_launch_request_async</a> (<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a> app_control, <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gaef309dc4d42533a07afc537fb08d22d2">app_control_result_cb</a> result_cb, <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga3441ee31595fd9c6e8c309f66be9e6fb">app_control_reply_cb</a> reply_cb, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the launch request asynchronously.  <a href="#ga6e1600f449108d988395426666bbfa68"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct app_control_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a></td></tr>
@@ -173,6 +175,8 @@ Typedefs</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to retrieve the extra data contained in the app_control.  <a href="#gac3f07cf7db6e523868f22d3096457dcd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga2de1d16d8a093faf90fbbadf64418eb6">app_control_app_matched_cb</a> )(<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a> app_control, const char *appid, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once for each matched application that can be launched to handle the given app_control request.  <a href="#ga2de1d16d8a093faf90fbbadf64418eb6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gaef309dc4d42533a07afc537fb08d22d2">app_control_result_cb</a> )(<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a> request, <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga4dc33a18f6663af679b905447cc1ec28">app_control_error_e</a> result, void *user_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the result of the launch request is delivered.  <a href="#gaef309dc4d42533a07afc537fb08d22d2"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga75fff492d6880a3ca4478fccf8ce9f88">APP_CONTROL_OPERATION_MAIN</a>&#160;&#160;&#160;&quot;http://tizen.org/appcontrol/operation/main&quot;</td></tr>
@@ -1112,7 +1116,7 @@ Refer to the Launch-On-Event section of the event module. </dd></dl>
  In some cases, URI is used to inform the path to play for the media controller server.<br/>
  Output: Nothing<br/>
  </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>
@@ -1186,7 +1190,6 @@ Refer to the Launch-On-Event section of the event module. </dd></dl>
 
 <p>Definition for the application control operation: Shows guide popup to privacy settings. </p>
 <p>Input: APP_CONTROL_DATA_TYPE in extra is the text of guide type("open" or "use"). This is a mandatory field.<br/>
- Input: APP_CONTROL_DATA_NAME in extra is the text of the app name requesting privacy privileges. This is a mandatory field. <br/>
  Input: APP_CONTROL_DATA_FEATURE in extra is the text of the feature or function name which requires privacy privileges. <br/>
  Input: APP_CONTROL_DATA_PRIVILEGES in extra is the text array of the required privileges. This is a mandatory field. <br/>
  Output: APP_CONTROL_DATA_SELECTED in extra. The value is "yes" or "no" according to the user response. <br/>
@@ -1563,6 +1566,38 @@ Since 3.0, if <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ggadfea
 <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga5a671f25fb1dd5bdc03561f6c23e7df6" title="Enables an additional launch result event on the launch request.">app_control_enable_app_started_result_event()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ggadfeacb2a070af76b63efdd6b6290d530ac49da347d2abdee734d184df80e6c80a">APP_CONTROL_RESULT_APP_STARTED</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaef309dc4d42533a07afc537fb08d22d2"></a><!-- doxytag: member="app_control.h::app_control_result_cb" ref="gaef309dc4d42533a07afc537fb08d22d2" args=")(app_control_h request, app_control_error_e result, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gaef309dc4d42533a07afc537fb08d22d2">app_control_result_cb</a>)(<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a> request, <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga4dc33a18f6663af679b905447cc1ec28">app_control_error_e</a> result, void *user_data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Called when the result of the launch request is delivered. </p>
+<p>Following error codes can be delivered: <br/>
+ <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28aa6610742361ae3ce55d25192ed168d81">APP_CONTROL_ERROR_NONE</a>, <br/>
+ <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a0a271b561ed5495ef468731399489f31">APP_CONTROL_ERROR_APP_NOT_FOUND</a>, <br/>
+ <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28affc7f11a6df11ffa3159d4d09e3f1506">APP_CONTROL_ERROR_PERMISSION_DENIED</a>, <br/>
+ <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28af6a55383ffae19488f8ed3d0f06140cc">APP_CONTROL_ERROR_INVALID_PARAMETER</a>, <br/>
+ <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a6d0303f63cd35014671e18ee6d17708c">APP_CONTROL_ERROR_LAUNCH_REJECTED</a></p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>request</em> is the same object for which <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga6e1600f449108d988395426666bbfa68" title="Sends the launch request asynchronously.">app_control_send_launch_request_async()</a> was called. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>The app_control handle of the launch request that has been sent </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result value of the launch request </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga6e1600f449108d988395426666bbfa68" title="Sends the launch request asynchronously.">app_control_send_launch_request_async()</a> </dd></dl>
 
 </div>
 </div>
@@ -2848,6 +2883,87 @@ Since Tizen 3.0, the launch request of the service application over out of packa
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>If the launch request is sent for the result, the result will come back through the <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga3441ee31595fd9c6e8c309f66be9e6fb" title="Called when the reply of the launch request is delivered.">app_control_reply_cb()</a> from the callee application. Additional replies may be delivered on the <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga5a671f25fb1dd5bdc03561f6c23e7df6" title="Enables an additional launch result event on the launch request.">app_control_enable_app_started_result_event()</a> called. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga881c6fdbdc0af1baeb32df6829714e1a" title="Replies to the launch request sent by the caller.">app_control_reply_to_launch_request()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga3441ee31595fd9c6e8c309f66be9e6fb" title="Called when the reply of the launch request is delivered.">app_control_reply_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga5a671f25fb1dd5bdc03561f6c23e7df6" title="Enables an additional launch result event on the launch request.">app_control_enable_app_started_result_event()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6e1600f449108d988395426666bbfa68"></a><!-- doxytag: member="app_control.h::app_control_send_launch_request_async" ref="ga6e1600f449108d988395426666bbfa68" args="(app_control_h app_control, app_control_result_cb result_cb, app_control_reply_cb reply_cb, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga6e1600f449108d988395426666bbfa68">app_control_send_launch_request_async</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga99913ab029b9148271d50069941d4f55">app_control_h</a>&#160;</td>
+          <td class="paramname"><em>app_control</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gaef309dc4d42533a07afc537fb08d22d2">app_control_result_cb</a>&#160;</td>
+          <td class="paramname"><em>result_cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga3441ee31595fd9c6e8c309f66be9e6fb">app_control_reply_cb</a>&#160;</td>
+          <td class="paramname"><em>reply_cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sends the launch request asynchronously. </p>
+<p>The operation is mandatory information for the launch request. <br/>
+ If the operation is not specified, <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga406fae202d86be0e0504bbdee44bb29a" title="Definition for the app_control operation: An explicit launch for an application that excludes the hom...">APP_CONTROL_OPERATION_DEFAULT</a> is used by default. If the operation is <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga406fae202d86be0e0504bbdee44bb29a" title="Definition for the app_control operation: An explicit launch for an application that excludes the hom...">APP_CONTROL_OPERATION_DEFAULT</a>, the application ID is mandatory to explicitly launch the application.</p>
+<p>After the callee application is initialized or the launch request is delivered to the running application successfully, the result callback function will be invoked. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/appmanager.launch </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function returns <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a6d0303f63cd35014671e18ee6d17708c">APP_CONTROL_ERROR_LAUNCH_REJECTED</a> if the operation value is <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gac3e506b3eb424ca56ce9de74715045bf" title="Definition for the app_control operation: Can be launched by an interested system-event.">APP_CONTROL_OPERATION_LAUNCH_ON_EVENT</a> which is only for handling the event from the platform or other application, refer to the <em>Event</em> Module. </dd>
+<dd>
+The launch request of the service application over out of packages is restricted by the platform. Also, implicit launch requests are NOT delivered to service applications since 3.0. To launch a service application, an explicit launch request with application ID given by the <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga40d7faf45f8586c1a0dd2104e4dd4532" title="Sets the ID of the application to explicitly launch.">app_control_set_app_id()</a> must be sent. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">app_control</td><td>The app_control handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">result_cb</td><td>The callback function to be called when the result is delivered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">reply_cb</td><td>The callback function to be called when the reply is delivered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28aa6610742361ae3ce55d25192ed168d81">APP_CONTROL_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28af6a55383ffae19488f8ed3d0f06140cc">APP_CONTROL_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28ad45e40f43f41d322e9786480bb2ce188">APP_CONTROL_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a0a271b561ed5495ef468731399489f31">APP_CONTROL_ERROR_APP_NOT_FOUND</a></td><td>The application to run the given launch request is not found </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a6d0303f63cd35014671e18ee6d17708c">APP_CONTROL_ERROR_LAUNCH_REJECTED</a></td><td>The application cannot be launched in current context </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a8b85f6d5d5460a7113ebf84b65353147">APP_CONTROL_ERROR_LAUNCH_FAILED</a></td><td>Failed to launch the application </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28a025c79d849b81a506f3a6b9807e813d4">APP_CONTROL_ERROR_TIMED_OUT</a></td><td>Failed due to timeout. The application that handles <em>app_control</em> may be busy </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gga4dc33a18f6663af679b905447cc1ec28affc7f11a6df11ffa3159d4d09e3f1506">APP_CONTROL_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd>If the launch request is sent for the result, the result will come back through the <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga3441ee31595fd9c6e8c309f66be9e6fb" title="Called when the reply of the launch request is delivered.">app_control_reply_cb()</a> from the callee application. Additional replies may be delivered if <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga5a671f25fb1dd5bdc03561f6c23e7df6" title="Enables an additional launch result event on the launch request.">app_control_enable_app_started_result_event()</a> was called. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gaef309dc4d42533a07afc537fb08d22d2" title="Called when the result of the launch request is delivered.">app_control_result_cb()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga881c6fdbdc0af1baeb32df6829714e1a" title="Replies to the launch request sent by the caller.">app_control_reply_to_launch_request()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga3441ee31595fd9c6e8c309f66be9e6fb" title="Called when the reply of the launch request is delivered.">app_control_reply_cb()</a> </dd>
 <dd>

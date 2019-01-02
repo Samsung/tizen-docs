@@ -1,5 +1,9 @@
 # Tizen Native Application
 
+> CAUTION
+>
+> Unauthorized use or replication of external APIs is prohibited.
+
 The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](api/mobile/latest/group__CAPI__APPLICATION__MODULE.html)
 and [wearable](api/wearable/latest/group__CAPI__APPLICATION__MODULE.html)
 applications). It provides functions to manage the main event loop, the application state change events, and basic system events.

@@ -36,7 +36,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Tizen Native API
-   &#160;<span id="projectnumber">5.0 M1</span>
+   &#160;<span id="projectnumber">5.0</span>
    </div>
    
   </td>
@@ -167,6 +167,10 @@ Typedefs</h2></td></tr>
 <p>Called when PBAP is Connected or Disconnected. </p>
 <p>The following error codes can be delivered: <br/>
  <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a> <br/>
+ <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7978847295026e6220f64994c2a5607">BT_ERROR_AUTH_REJECTED</a> <br/>
+ <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654aad1286a559a951af1dffcfa486964f24">BT_ERROR_AUTHORIZATION_REJECTED</a> <br/>
+ <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a49a8170403199c69c16067f6c59e4173">BT_ERROR_SERVICE_NOT_FOUND</a> <br/>
+ <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a72b198f9f00cea02fed57ec4454a9e21">BT_ERROR_TIMED_OUT</a> <br/>
  <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ae7d5544a59734b1c0045e50948e76f1f">BT_ERROR_OPERATION_FAILED</a> <br/>
  </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
@@ -208,7 +212,6 @@ Typedefs</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote device address (<em>remote_address</em> is valid only inside this function. To use outside the callback, make a copy. <em>remote_address</em> should not be freed.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">vcard_info</td><td>List of vcard information (<em>vcard_info</em> is valid only inside this function. To use outside the callback, make a copy. <em>vcard_info</em> should not be freed.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Number of contacts in the list </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">successful</td><td>true if the operation was successful, false if not </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
   </table>
   </dd>
@@ -244,7 +247,6 @@ Typedefs</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">result</td><td>The result of getting the phone book </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">remote_address</td><td>The remote device address (<em>remote_address</em> is valid only inside this function. To use outside the callback, make a copy. <em>remote_address</em> should not be freed.) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">vcf_file</td><td>The absolute path of the file in which the vCards are saved (<em>vcf_file</em> is valid only inside this function. To use outside the callback, make a copy. <em>vcf_file</em> should not be freed.) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">successful</td><td>true if the operation was successful, false if not </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the callback registration function </td></tr>
   </table>
   </dd>
@@ -1008,7 +1010,8 @@ PBAP connection must be created with <a class="el" href="group__CAPI__NETWORK__B
 <p>Initializes the Bluetooth PBAP Client. </p>
 <p>This initialization is necessary to call other PBAP client APIs. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called to initialize Bluetooth PBAP client. You must free all resources of the Bluetooth service by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__PBAP__MODULE.html#gac6870cab5893552a7af3ef300f5b1265" title="Deinitializes the Bluetooth PBAP Client.">bt_pbap_client_deinitialize()</a> if Bluetooth PBAP Client is no longer needed. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called to initialize Bluetooth PBAP client. You must free all resources of the Bluetooth service <br/>
+ by calling <a class="el" href="group__CAPI__NETWORK__BLUETOOTH__PBAP__MODULE.html#gac6870cab5893552a7af3ef300f5b1265" title="Deinitializes the Bluetooth PBAP Client.">bt_pbap_client_deinitialize()</a> if Bluetooth PBAP Client is no longer needed. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -1331,7 +1334,6 @@ PBAP connection must be created with <a class="el" href="group__CAPI__NETWORK__B
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654ad9b08209a7cf5e92ab7d0b5a77f3286c">BT_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a91d485dc3ef2ff36ca58a0102c54e420">BT_ERROR_NOT_INITIALIZED</a></td><td>Not initialized </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a9e41bd608375ad8d7f7d247cea9ecfab">BT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__BLUETOOTH__MODULE.html#gga9a8a9f741ccf7e0e65c3278794a61654a2d70fc1d560238ea4577a61ef2f17e08">BT_ERROR_NOT_SUPPORTED</a></td><td>Not supported</td></tr>
   </table>
   </dd>
