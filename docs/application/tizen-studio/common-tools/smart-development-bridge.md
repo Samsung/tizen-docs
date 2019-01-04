@@ -53,7 +53,7 @@ For more information on commands and parameters, see the following table.
 | `get-state`                          | Prints the connection status with the target device: `device` or `offline`. |
 | `get-serialno`                       | Prints the serial number for connecting the target device. |
 | `status-window`                      | Prints the connection status for a specified device continuously. |
-| `root <on`&#124;`off>`               | Switches between the root and developer account mode.The `on` value sets the root mode and the `off` value sets the developer account mode. |
+| `root <on`&#124;`off>`               | Switches between the root and developer account mode.<br>The `on` value sets the root mode and the `off` value sets the developer account mode. |
 | `version`                            | Shows the version number.                |
 | `help`                               | Shows the help message.                  |
 
@@ -83,14 +83,14 @@ By specifying the `[serialNumber]` in the command, you can execute SDB commands 
 You can use the `pull` and `push` command options to copy files to and from the target instance. These options let you copy arbitrary directories and files to any location in the target instance, if you have the right permissions:
 
 - To copy a file or directory (and its sub-directories) from the target to the host computer, use the `pull` option:
-```
-> sdb pull <remote> [<local>]
-```
-- To copy a file or directory (and its sub-directories) from the host computer to the target, use the `push` option:`
-```
-> sdb push <local> <remote> [-with-utf8]
-```
-The `[-with-utf8]` parameter creates the remote file with the UTF-8 character encoding.
+   ```
+   > sdb pull <remote> [<local>]
+   ```
+- To copy a file or directory (and its sub-directories) from the host computer to the target, use the `push` option:
+   ```
+   > sdb push <local> <remote> [-with-utf8]
+   ```
+   The `[-with-utf8]` parameter creates the remote file with the UTF-8 character encoding.
 
 In both commands, the `<local>` and `<remote>` parameters refer to the paths to the target files and directory on your computer (local) and on the target instance (remote). For example:
 
@@ -125,13 +125,13 @@ ls, rm, mv, cd, cp, mkdir, touch, echo, tar, grep, cat, chmod, rpm, find, uname,
 You can use the SDB to install and uninstall the Tizen package file on the target instance:
 
 - The `install` command option pushes the package file to the target and installs it. The `<path_to_tpk>` parameter defines the path to the TPK file. The following command shows an example:
-```
-> sdb install /home/tizen/ko983dw33q-1.0.0-i386.tpk
-```
+   ```
+   > sdb install /home/tizen/ko983dw33q-1.0.0-i386.tpk
+   ```
 - The `uninstall` command option kills the application, if running, and removes the package from the target. The `<pkg-id>` is a unique 10-digit identifier for the application. The following command shows an example:
-```
-> sdb uninstall ko983dw33q
-```
+   ```
+   > sdb uninstall ko983dw33q
+   ```
 
 ## Forwarding Ports
 

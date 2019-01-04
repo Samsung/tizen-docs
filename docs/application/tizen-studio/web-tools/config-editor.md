@@ -605,7 +605,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
    &lt;tizen:icon section="Account"&gt;account_provider_icon.png&lt;/tizen:icon&gt;
    &lt;tizen:icon section="AccountSmall"&gt;account_provider_small_icon.png&lt;/tizen:icon&gt;
    &lt;tizen:display-name xml:lang="en"&gt;AccountProviderExample&lt;/tizen:display-name&gt;
-   &lt;tizen:capability&gt;http://tizen.org/account/capability/contact &lt;/tizen:capability&gt;
+   &lt;tizen:capability&gt;http://tizen.org/account/capability/contact&lt;/tizen:capability&gt;
 &lt;/tizen:account&gt;
             </code></pre>
 			</td>
@@ -668,7 +668,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 					<p>Optional; sets whether the page is reloaded when it is already loaded (available values: <code>enable</code> (default), <code>disable</code>)<p>
 					<p><strong>Since: 2.4</strong></p>
 					<blockquote><p><strong>Note</strong><br>
-                    The <code>reload</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>reload</code> attribute is used, the application installation fails</p></blockquote>
+                    The <code>reload</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>reload</code> attribute is used, the application installation fails.</p></blockquote>
 					</li>
 				</ul>
 				</li>
@@ -683,15 +683,13 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:app-control&gt;
-   &lt;tizen:src name="view.html" reload="disable" /&gt;
-   &lt;tizen:operation name="http://tizen.org/appcontrol/operation/view" /&gt;
-   &lt;tizen:uri name="http" /&gt;
-   &lt;tizen:mime name="image/jpeg" /&gt;
-   &lt;tizen:privilege name="http://tizen.org/privilege/alarm" /&gt;
-&lt;/tizen:app-control&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:app-control&gt;
+   &lt;tizen:src name="view.html" reload="disable"/&gt;
+   &lt;tizen:operation name="http://tizen.org/appcontrol/operation/view"/&gt;
+   &lt;tizen:uri name="http"/&gt;
+   &lt;tizen:mime name="image/jpeg"/&gt;
+   &lt;tizen:privilege name="http://tizen.org/privilege/alarm"/&gt;
+&lt;/tizen:app-control&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -723,10 +721,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1" /&gt;
-&lt;tizen:appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1"/&gt;
+&lt;tizen:appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -761,7 +757,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				<p>Mandatory; Tizen API version required for running the Web application</p>
 				</li>
 				<li><code>launch_mode</code>
-				<p>Optional; sets which launch mode is supported (available values: <code>single</code> (default), <code>group</code>, <code>caller</code><p>
+				<p>Optional; sets which launch mode is supported (available values: <code>single</code> (default), <code>group</code>, <code>caller</code>)<p>
 				<ul>
 					<li><code>single</code>: launched as a main application</li>
 					<li><code>group</code>: launched as a sub application</li>
@@ -773,12 +769,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:application id="1234abcDEF.projectname"
+			<pre><code>&lt;tizen:application id="1234abcDEF.projectname"
                    package="1234abcDEF"
                    required_version="2.4"
-                   launch_mode="caller" /&gt;
-            </code></pre>
+                   launch_mode="caller"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -809,9 +803,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:background-category value="media" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:background-category value="media"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -843,9 +835,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:content src="https://www.tizen.org/" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:content src="https://www.tizen.org/"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -870,9 +860,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:content-security-policy&gt;script-src 'self'&lt;/tizen:content-security-policy&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:content-security-policy&gt;script-src 'self'&lt;/tizen:content-security-policy&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -897,11 +885,9 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:content-security-policy-report-only&gt;
+			<pre><code>&lt;tizen:content-security-policy-report-only&gt;
    script-src 'self'; report-uri="http://example.com/report.cgi"
-&lt;/tizen:content-security-policy-report-only&gt;
-            </code></pre>
+&lt;/tizen:content-security-policy-report-only&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -932,9 +918,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;feature name="http://tizen.org/feature/network.bluetooth" /&gt;
-            </code></pre>
+			<pre><code>&lt;feature name="http://tizen.org/feature/network.bluetooth"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -968,10 +952,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:metadata key="key1" /&gt;
-&lt;tizen:metadata key="key2" value="value/&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:metadata key="key1"/&gt;
+&lt;tizen:metadata key="key2" value="value/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1000,9 +982,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:privilege name="http://tizen.org/privilege/application.launch" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:privilege name="http://tizen.org/privilege/application.launch"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1034,10 +1014,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:provides-appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1" /&gt;
-&lt;tizen:provides-appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:provides-appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1"/&gt;
+&lt;tizen:provides-appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1066,9 +1044,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:profile name="mobile" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:profile name="mobile"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1093,7 +1069,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>screen-orientation</code>
-				<p>Optional; viewport orientation lock (available values: <code>portrait</code> (default), <code>landscape</code> auto-rotation</p>
+				<p>Optional; viewport orientation lock (available values: <code>portrait</code> (default), <code>landscape</code>), auto-rotation</p>
 				If the system auto rotation setting is on, the Web application viewport orientation is changed accordingly by default.</li>
 				<li><code>context-menu</code>
 				<p>Optional; context menu is displayed when the user clicks, for example, an image, text, or link (available values: <code>enable</code> (default), <code>disable</code>)</p>
@@ -1120,21 +1096,19 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;!--Viewport orientation is locked to "landscape"--&gt;
-&lt;tizen:setting screen-orientation="landscape" /&gt;
+			<pre><code>&lt;!--Viewport orientation is locked to "landscape"--&gt;
+&lt;tizen:setting screen-orientation="landscape"/&gt;
 &lt;!--Context menu is not displayed--&gt;
-&lt;tizen:setting context-menu="disable" /&gt;
+&lt;tizen:setting context-menu="disable"/&gt;
 &lt;!--Web application execution is not suspended--&gt;
 &lt;!--when the application is sent to the background--&gt;
-&lt;tizen:setting background-support="enable" /&gt;
+&lt;tizen:setting background-support="enable"/&gt;
 &lt;!--Web applications resources are stored encrypted by the WRT--&gt;
-&lt;tizen:setting encryption="enable" /&gt;
+&lt;tizen:setting encryption="enable"/&gt;
 &lt;!--Installation location is set to "internal-only"--&gt;
-&lt;tizen:setting install-location="internal-only" /&gt;
+&lt;tizen:setting install-location="internal-only"/&gt;
 &lt;!--Hardware key event is sent to the Web application when the hardware key is pressed--&gt;
-&lt;tizen:setting hwkey-event="enable" /&gt;
-            </code></pre>
+&lt;tizen:setting hwkey-event="enable"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1163,9 +1137,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:trust-anchor use-system-certs="false" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:trust-anchor use-system-certs="false"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1174,9 +1146,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 <a name="ww_extend"></a>
 ## Extending Configuration Elements in Wearable Applications
 
-<p>The following sections show additional configuration elements used in the `config.xml` file of a Web application, but not included in the <a href="https://www.w3.org/TR/2011/REC-widgets-20110927/" target="_blank">Widget Packaging and XML Configuration guidelines</a>. For a quick view of the entire element hierarchy, see <a href="#hierarchy">Configuration Element Hierarchy</a>.</p>
+The following sections show additional configuration elements used in the `config.xml` file of a Web application, but not included in the [Widget Packaging and XML Configuration guidelines](https://www.w3.org/TR/2011/REC-widgets-20110927/). For a quick view of the entire element hierarchy, see [Configuration Element Hierarchy](#hierarchy).
 
-> **Note**  
+> **Note**
+>
 > The extension elements are denoted as though the `xmlns:tizen="http://tizen.org/ns/widgets"` namespace declaration is in effect.
 >
 > The maximum length of the attribute and the element (except `tizen:metadata`, W3C preference element) can be limited to 2048 bytes. In that case, leftover bytes are ignored.
@@ -1213,12 +1186,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:account multiple-account-support="false"&gt;
+			<pre><code>&lt;tizen:account multiple-account-support="false"&gt;
    &lt;tizen:display-name xml:lang="en"&gt;AccountProviderExample&lt;/tizen:display-name&gt;
-   &lt;tizen:capability&gt;http://tizen.org/account/capability/contact &lt;/tizen:capability&gt;
-&lt;/tizen:account&gt;
-            </code></pre>
+   &lt;tizen:capability&gt;http://tizen.org/account/capability/contact&lt;/tizen:capability&gt;
+&lt;/tizen:account&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1243,9 +1214,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:allow-navigation&gt;tizen.org *.tizen.org&lt;tizen:allow-navigation/&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:allow-navigation&gt;tizen.org *.tizen.org&lt;tizen:allow-navigation/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1294,15 +1263,13 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:app-control&gt;
-   &lt;tizen:src name="view.html" reload="disable" /&gt;
-   &lt;tizen:operation name="http://tizen.org/appcontrol/operation/view" /&gt;
-   &lt;tizen:uri name="http" /&gt;
-   &lt;tizen:mime name="image/jpeg" /&gt;
-   &lt;tizen:privilege name="http://tizen.org/privilege/alarm" /&gt;
-&lt;/tizen:app-control&gt;
-             </code></pre>
+			<pre><code>&lt;tizen:app-control&gt;
+   &lt;tizen:src name="view.html" reload="disable"/&gt;
+   &lt;tizen:operation name="http://tizen.org/appcontrol/operation/view"/&gt;
+   &lt;tizen:uri name="http"/&gt;
+   &lt;tizen:mime name="image/jpeg"/&gt;
+   &lt;tizen:privilege name="http://tizen.org/privilege/alarm"/&gt;
+&lt;/tizen:app-control&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1343,15 +1310,13 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:app-widget id="EHtuCWfzcr.Widget.Widget" primary="true" max-instance="0"&gt;
+			<pre><code>&lt;tizen:app-widget id="EHtuCWfzcr.Widget.Widget" primary="true" max-instance="0"&gt;
    &lt;tizen:widget-label&gt;Hello Web Widget!&lt;/tizen:widget-label&gt;
    &lt;tizen:widget-content src="index.html"&gt;
       &lt;tizen:widget-size preview="preview.png"&gt;2x2&lt;/tizen:widget-size&gt;
    &lt;/tizen:widget-content&gt;
-   &lt;tizen:widget-metadata key="index" value="2" /&gt;
-&lt;/tizen:app-widget&gt;
-            </code></pre>
+   &lt;tizen:widget-metadata key="index" value="2"/&gt;
+&lt;/tizen:app-widget&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1486,10 +1451,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1" /&gt;
-&lt;tizen:appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1"/&gt;
+&lt;tizen:appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1545,12 +1508,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:application id="1234abcDEF.projectname"
+			<pre><code>&lt;tizen:application id="1234abcDEF.projectname"
                    package="1234abcDEF"
                    required_version="2.4"
-                   ambient_support="enable" /&gt;
-            </code></pre>
+                   ambient_support="enable"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1568,8 +1529,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tbody>
 		<tr>
 			<td>Used to represent the category of an application that is allowed to run in the background.
-			<p><strong>Note</strong><br>
-            In addition to declaring the &lt;background-category&gt; element, you must <a href="#ww_setting">set the &lt;tizen:setting background-support&gt; attribute to <code>enable</code></a> to run Web applications in the background.</p>
+			<blockquote><p><strong>Note</strong><br>
+            In addition to declaring the <code>&lt;background-category&gt;</code> element, you must <a href="#ww_setting">set the <code>&lt;tizen:setting background-support&gt;</code> attribute to <code>enable</code></a> to run Web applications in the background.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1581,9 +1542,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:background-category value="media" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:background-category value="media"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1612,7 +1571,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>&lt;tizen:category name="http://tizen.org/category/wearable_clock" /&gt;</code></pre>
+			<pre><code>&lt;tizen:category name="http://tizen.org/category/wearable_clock"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1643,9 +1602,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:content src="https://www.tizen.org" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:content src="https://www.tizen.org"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1670,9 +1627,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:content-security-policy&gt;script-src 'self'&lt;/tizen:content-security-policy&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:content-security-policy&gt;script-src 'self'&lt;/tizen:content-security-policy&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1697,11 +1652,9 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:content-security-policy-report-only&gt;
+			<pre><code>&lt;tizen:content-security-policy-report-only&gt;
    script-src 'self'; report-uri="http://example.com/report.cgi"
-&lt;/tizen:content-security-policy-report-only&gt;
-            </code></pre>
+&lt;/tizen:content-security-policy-report-only&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1719,8 +1672,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tbody>
 		<tr>
 			<td>Used to define the hardware and software components for a Tizen wearable Web application. This attribute is only used in the Samsung Apps for filtering purposes. It is ignored by the Web Runtime installation procedure.
-			<p><strong>Note</strong><br>
-            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p>
+			<blockquote><p><strong>Note</strong><br>
+            Even though the <code>&lt;feature/&gt;</code> element is defined in the Widget Packaging and XML Configuration guidelines, an extended version is used in Tizen.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or more</li>
@@ -1732,9 +1685,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;feature name="http://tizen.org/feature/network.bluetooth" /&gt;
-            </code></pre>
+			<pre><code>&lt;feature name="http://tizen.org/feature/network.bluetooth"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1752,8 +1703,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 		<tbody>
 		<tr>
 			<td>Used to define the properties of an IME (Input Method Editor) type application, which is used when you want to create your own keyboard module for the Tizen platform.
-			<p><strong>Note</strong><br>
-            <code>&lt;tizen:category name="http://tizen.org/category/ime" /&gt;</code> must be defined to activate &lt;tizen:ime&gt;.</p>
+			<blockquote><p><strong>Note</strong><br>
+            <code>&lt;tizen:category name="http://tizen.org/category/ime"/&gt;</code> must be defined to activate <code>&lt;tizen:ime&gt;</code>.</p></blockquote>
 			<p><strong>Occurrences:</strong></p>
 			<ul>
 				<li>0 or 1</li>
@@ -1765,22 +1716,20 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 				<li><code>languages</code>
 				<p>Mandatory; list of input languages that the current IME supports</p>
-				<p><strong>Note</strong><br>
-                <code>&lt;tizen:language/&gt;</code> elements are provided as the child elements of this element.</p>
+				<blockquote><p><strong>Note</strong><br>
+                <code>&lt;tizen:language/&gt;</code> elements are provided as the child elements of this element.</p></blockquote>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:ime&gt;
+			<pre><code>&lt;tizen:ime&gt;
    &lt;tizen:uuid&gt;6135122a-a428-40d2-8feb-a75f462c202c&lt;/tizen:uuid&gt;
    &lt;tizen:languages&gt;
       &lt;tizen:language&gt;en-us&lt;/tizen:language&gt;
       &lt;tizen:language&gt;de-de&lt;/tizen:language&gt;
    &lt;/tizen:languages&gt;
-&lt;/tizen:ime&gt;
+&lt;/tizen:ime&gt;  
 
-&lt;tizen:category name="http://tizen.org/category/ime" /&gt;
-            </code></pre>
+&lt;tizen:category name="http://tizen.org/category/ime"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1800,12 +1749,10 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				<li>1 or more</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:languages&gt;
+			<pre><code>&lt;tizen:languages&gt;
    &lt;tizen:language&gt;en-us&lt;/tizen:language&gt;
    &lt;tizen:language&gt;de-de&lt;/tizen:language&gt;
-&lt;/tizen:languages&gt;
-            </code></pre>
+&lt;/tizen:languages&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1839,10 +1786,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:metadata key="key1" /&gt;
-&lt;tizen:metadata key="key2" value="value/&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:metadata key="key1"/&gt;
+&lt;tizen:metadata key="key2" value="value/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1871,9 +1816,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:privilege name="http://tizen.org/privilege/application.launch" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:privilege name="http://tizen.org/privilege/application.launch"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1905,10 +1848,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:provides-appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1" /&gt;
-&lt;tizen:provides-appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:provides-appdefined-privilege name="http://{provider_pkgid}/appdefined/exampleprivilege1"/&gt;
+&lt;tizen:provides-appdefined-privilege license="example_license" name="http://{provider_pkgid}/appdefined/exampleprivilege2"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1937,9 +1878,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<code>
-&lt;tizen:profile name="wearable" /&gt;
-            </code>
+			<pre><code>&lt;tizen:profile name="wearable"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1978,26 +1917,24 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 				<li><code>on-boot</code>
 				<p>Optional; sets whether the service application is launched automatically on device boot (available values: <code>true</code>, <code>false</code> (default))</p>
-				<p><strong>Note</strong><br>
-                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p>
+				<blockquote><p><strong>Note</strong><br>
+                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p></blockquote>
 				</li>
 				<li><code>auto-restart</code>
 				<p>Optional; sets whether the service application is relaunched automatically when it is terminated (available values: <code>true</code>, <code>false</code> (default))</p>
-				<p><strong>Note</strong><br>
-                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p>
+				<blockquote><p><strong>Note</strong><br>
+                This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.</p></blockquote>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:service id="webService.application" auto-restart="true" on-boot="false"&gt;
-   &lt;tizen:content src="service/service.js" /&gt;
+			<pre><code>&lt;tizen:service id="webService.application" auto-restart="true" on-boot="false"&gt;
+   &lt;tizen:content src="service/service.js"/&gt;
    &lt;tizen:name&gt;WebService&lt;/tizen:name&gt;
-   &lt;tizen:icon src="service-icon.png" /&gt;
+   &lt;tizen:icon src="service-icon.png"/&gt;
    &lt;tizen:description&gt;Web Service Application&lt;/tizen:description&gt;
-   &lt;tizen:metadata key="key1" value="value1" /&gt;
-   &lt;tizen:category name="http://tizen.org/category/service" /&gt;
-&lt;tizen:service&gt;
-            </code></pre>
+   &lt;tizen:metadata key="key1" value="value1"/&gt;
+   &lt;tizen:category name="http://tizen.org/category/service"/&gt;
+&lt;tizen:service&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -2164,8 +2101,8 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			<ul>
 				<li><code>background-support</code>
 				<p>Optional; application execution continues when it is moved to the background (available values: <code>enable</code> (execution continues in the background), <code>disable</code> (default; application is suspended))</p>
-				<p><strong>Note</strong><br>
-                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a Web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#ww_bg_category">add at least one background category</a> for the application with the &lt;tizen:background-category&gt; element. Only the background categories declared in the system can be used.</p>
+				<blockquote><p><strong>Note</strong><br>
+                Since Tizen 2.4, the system manages background processes more tightly. Even if the <code>background-support</code> attribute is set to <code>enable</code>, a Web application process can be suspended in the background. To guarantee that the application runs in the background, <a href="#ww_bg_category">add at least one background category</a> for the application with the &lt;tizen:background-category&gt; element. Only the background categories declared in the system can be used.</p></blockquote>
 				</li>
 				<li><code>context-menu</code>
 				<p>Optional; sets whether the context menu is shown (available values: <code>enable</code> (default), <code>disable</code>)</p>
@@ -2176,7 +2113,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				<p>If this option is enabled, the application resources (HTML, JS and CSS files) are encrypted.</p>
 				</li>
 				<li><code>screen-orientation</code>
-				<p>Optional; sets whether it locks the orientation of the Web application (available values: <code>portrait</code> (default), <code>landscape</code>, <code>auto-rotation</code></p>
+				<p>Optional; sets whether it locks the orientation of the Web application (available values: <code>portrait</code> (default), <code>landscape</code>, <code>auto-rotation</code>)</p>
 				<ul>
 					<li><code>portrait</code> or <code>landscape</code>: orientation is locked to portrait or landscape respectively</li>
 					<li><code>auto-rotation</code>: follows the device orientation setting</li>
@@ -2196,14 +2133,12 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
-			<pre><code>
-&lt;tizen:setting background-support="enable" /&gt;
-&lt;tizen:setting context-menu="disable" /&gt;
-&lt;tizen:setting encryption="enable" /&gt;
-&lt;tizen:setting screen-orientation="landscape" /&gt;
-&lt;tizen:setting install-location="internal-only" /&gt;
-&lt;tizen:setting hwkey-event="enable" /&gt;
-            </code></pre>
+			<pre><code>&lt;tizen:setting background-support="enable"/&gt;
+&lt;tizen:setting context-menu="disable"/&gt;
+&lt;tizen:setting encryption="enable"/&gt;
+&lt;tizen:setting screen-orientation="landscape"/&gt;
+&lt;tizen:setting install-location="internal-only"/&gt;
+&lt;tizen:setting hwkey-event="enable"/&gt;</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -2233,7 +2168,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			</ul>
 			<p><strong>Example:</strong></p>
 			<pre class="prettyprint">
-&lt;tizen:trust-anchor use-system-certs="false" /&gt;
+&lt;tizen:trust-anchor use-system-certs="false"/&gt;
 </pre>
 			</td>
 		</tr>

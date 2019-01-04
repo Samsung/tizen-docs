@@ -36,7 +36,7 @@ If you use the Code Beautifier in the **Source Editor** view, no new file is gen
 
 Minification is the process of compressing the code from its original size to the smallest size, without affecting its operation. The Code Minifier is a smart compression tool which removes or modifies unnecessary characters from the code.
 
-The Code Minifier removes characters, such as white space, line breaks, and commented-out code. It then places all of the code on 1 line.
+The Code Minifier removes characters, such as white space, line breaks, and commented-out code. It then places all the code on 1 line.
 
 The Code Minifier has the following features:
 

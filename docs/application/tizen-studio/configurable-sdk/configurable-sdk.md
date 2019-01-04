@@ -30,7 +30,7 @@ To install the IoT Headed 4.0 platform SDK:
 Creating Configurable SDK Projects <a name="create"></a>
 ----------------------------------
 
-After you have installed the IOT Headed 4.0 platform, you can create an IOT Headed 4.0 native project in the Tizen Studio:
+After you have installed the IoT Headed 4.0 platform, you can create an IoT Headed 4.0 native project in the Tizen Studio:
 
 1.  In the Tizen Studio menu, select **File &gt; New &gt; Tizen Project**.
 2.  In the Project Wizard, in the **Custom** drop-down menu, select **Iot-headed v4.0**, and click **Next**.

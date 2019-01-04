@@ -24,8 +24,8 @@ IAP supports the following item types:
 
 | Table          | Description                              |
 |--------------|----------------------------------------|
-| Consumable     | If you purchase an item of this type and use it, it is consumed. These items can be repurchased.Example: Consumable items, such as bullets in games. |
-| Non-consumable | Once purchased, you can use an item of this type permanently. These items cannot be repurchased.Example: Non-consumable items, including books, that do not need to be repurchased. |
+| Consumable     | If you purchase an item of this type and use it, it is consumed. These items can be repurchased.<br/>Example: Consumable items, such as bullets in games. |
+| Non-consumable | Once purchased, you can use an item of this type permanently. These items cannot be repurchased.<br/>Example: Non-consumable items, including books, that do not need to be repurchased. |
 
 ## Terms and Abbreviations
 
@@ -48,7 +48,7 @@ The following table lists the terminology used in the context of IAP.
 
 Applying IAP to your application is easy. The process contains the following steps:
 
-1. Register your items to the [Tizen Store Seller Office](http://seller.tizenstore.com/).
+1. Register your items to the [Tizen Store Seller Office](http://seller.tizenstore.com).
 2. Program your application to work with IAP.
 3. Test and upload your application.
 
@@ -326,34 +326,33 @@ The IAP Service instance allows you to get a list of items available for purchas
 					</li>
 				</ul>
 				<p>This information is optional.</p>
-				<p>&nbsp;</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<p>&nbsp;</p>
 				<p><code>_mcc</code></p>
-				<p>(deprecated)</p>
+				<p><code>(deprecated)</code></p>
 				</td>
 				<td>Mobile country code (MCC)</td>
 				<td>
-				<p><span>Mobile country code, such as 250.</span></p>
+				<p>Mobile country code, such as 250.</p>
 				<p>MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.</p>
 				<p>This information is optional.</p>
-				<p><span>(18th Oct. by Tizen Store Dev. - </span>deprecated parameter)</p>
+				<p>(18th Oct. by Tizen Store Dev. - deprecated parameter)</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<p><code>_mnc</code></p>
-				<p>(deprecated)</p>
+				<p><code>(deprecated)</code></p>
 				</td>
 				<td>Mobile network code (MNC)</td>
 				<td>
 				<p>Mobile network code, such as 01.</p>
 				<p>MNCs can only be used in developer mode.</p>
 				<p>This information is optional.</p>
-				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				<p>(18th Oct. by Tizen Store Dev. - deprecated parameter)</p>
 				</td>
 			</tr>
 		</tbody>
@@ -363,6 +362,7 @@ The IAP Service instance allows you to get a list of items available for purchas
   ```
   app_control_h app_control;
   int rt = app_control_create(&app_control);
+  
   if (rt == APP_CONTROL_ERROR_NONE) {
       app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
       app_control_set_operation(app_control,
@@ -403,31 +403,121 @@ The IAP Service instance allows you to get a list of items available for purchas
 
   **Table: Item keys in the output data**
 
-  | Key                                     | Value                                    | Description                              |
-  |-----------------------------------------|------------------------------------------|------------------------------------------|
-  | `PREFIX_itemId`                         | Item ID                                  | This is the same number as an item ID that is used in the request. |
-  | `PREFIX_itemGroupId`                    | Item group ID                            | ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office. |
-  | `PREFIX_itemName`                       | Item name                                | Name provided during item registration in Tizen Store Seller Office. |
-  | `PREFIX_currencyUnit`                   | Currency unit                            | Device user's currency unit, such as $, Won, or Pound. |
-  | `PREFIX_unitPrecedes`                   | 0 or 1                                   | Currency unit position:<br/> - 0: Tail (2.99 TL)<br/> - 1: Front ($ 2.99) |
-  | `PREFIX_hasPenny`                       | 0 or 1  | Information whether the currency unit has penny representation:<br/> - 0: No<br/> - 1: Yes  |
-  | `PREFIX_itemPrice`                      | Item price                               | Price of the item in the local currency. |
-  | `PREFIX_itemDownloadUrl`                | Item download URL                        | URL provided during item registration in the Tizen Store Seller Office. |
-  | `PREFIX_itemImageUrl`                   | Item image URL                           | URL provided during item registration in Tizen Store Seller Office. |
-  | `PREFIX_itemDescription`                | Item description                         | A description provided during item registration. |
-  | `PREFIX_reserved1`                      | Reserved field 1                         | Reserved field 1                         |
-  | `PREFIX_reserved2`                      | Reserved field 2                         | Reserved field 2                         |
-  | `PREFIX_itemTypeCd`                     | 00, 01, or 02                            | Item type code:00: Non-consumable01: Consumable02: Subscription (non-renewing - to be developed) |
-  | `PREFIX_itemSubsBillDurationCd`         | 00, 01, 02, or 03                        | To be developed (reserved field)         |
-  | `PREFIX_subscriptionDurationMultiplier` | Subscription duration multiplier         | To be developed (reserved field)         |
-  | `PREFIX_timeStamp`                      | Time stamp                               | Based on GMT +0, server time.(yyyyMMddHHmmss) |
+	<table>
+		<thead>
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>PREFIX_itemId</code></td>
+				<td>Item ID</td>
+				<td>This is the same number as an item ID that is used in the request.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemGroupId</code></td>
+				<td>Item group ID</td>
+				<td>ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemName</code></td>
+				<td>Item name</td>
+				<td>Name provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_currencyUnit</code></td>
+				<td>Currency unit</td>
+				<td>Device user's currency unit, such as $, Won, or Pound.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_unitPrecedes</code></td>
+				<td>0 or 1</td>
+				<td><p>Currency unit position:</p>
+					<ul>
+						<li>0: Tail (2.99 TL)</li>
+						<li>1: Front ($ 2.99)</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_hasPenny</code></td>
+				<td>0 or 1</td>
+				<td><p>Information whether the currency unit has penny representation:</p>
+					<ul>
+						<li>0: No</li>
+						<li>1: Yes</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemPrice</code></td>
+				<td>Item price</td>
+				<td>Price of the item in the local currency.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemDownloadUrl</code></td>
+				<td>Item download URL</td>
+				<td>URL provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemImageUrl</code></td>
+				<td>Item image URL</td>
+				<td>URL provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemDescription</code></td>
+				<td>Item description</td>
+				<td>A description provided during item registration.</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_reserved1</code></td>
+				<td>Reserved field 1</td>
+				<td>Reserved field 1</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_reserved2</code></td>
+				<td>Reserved field 2</td>
+				<td>Reserved field 2</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemTypeCd</code></td>
+				<td>00, 01, or 02</td>
+				<td><p>Item type code:</p>
+					<ul>
+						<li>00: Non-consumable</li>
+						<li>01: Consumable</li>
+						<li>02: Subscription (non-renewing - to be developed)</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_itemSubsBillDurationCd</code></td>
+				<td>00, 01, 02, or 03</td>
+				<td>To be developed (reserved field)</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_subscriptionDurationMultiplier</code></td>
+				<td>Subscription duration multiplier</td>
+				<td>To be developed (reserved field)</td>
+			</tr>
+			<tr>
+				<td><code>PREFIX_timeStamp</code></td>
+				<td>Time stamp</td>
+				<td><p>Based on GMT +0, server time.</p>
+					<p>(yyyyMMddHHmmss)</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 - **Example code for retrieving a list of items**
 
   ```
   void
-  get_item_list_cb(app_control_h request, app_control_h reply,
-	     app_control_result_e result, void *user_data)
+  get_item_list_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
   {
      char* rt_method = NULL;
      char* rt_result = NULL;
@@ -455,76 +545,76 @@ The IAP Service instance allows you to get a list of items available for purchas
      char* rt_timeStamp = NULL;
     
      if (result == APP_CONTROL_RESULT_SUCCEEDED) {
-	    rt = app_control_get_extra_data(reply, "_method", &rt_method);
-	    rt = app_control_get_extra_data(reply, "_result", &rt_result);
+        rt = app_control_get_extra_data(reply, "_method", &rt_method);
+        rt = app_control_get_extra_data(reply, "_result", &rt_result);
     
-	    /* Success */
-	    if (!strcmp("0", rt_result)) {
-	       rt = app_control_get_extra_data(reply, "_resultDescription",
-						     &rt_resultDescription);
-	       rt = app_control_get_extra_data(reply, "_transactionId",                                                                                          &rt_transactionId);
-	       rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
-	       rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
-	       rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
-	       rt = app_control_get_extra_data(reply, "_itemTotalCount",                                                                                          &rt_itemTotalCount);
+        /* Success */
+        if (!strcmp("0", rt_result)) {
+           rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
+           rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
+           rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
+           rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
+           rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
+           rt = app_control_get_extra_data(reply, "_itemTotalCount", &rt_itemTotalCount);
     
-	       int start = atoi(rt_startNumber);
-	       int end = atoi(rt_endNumber);
+           int start = atoi(rt_startNumber);
+           int end = atoi(rt_endNumber);
     
-	       char keyId[100] = {0,};
-	       for (; start <= end; start++) {
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");
-		      rt = app_control_get_extra_data(reply, key_id, &rt_itemId);
+           char keyId[100] = {0,};
+           for (; start <= end; start++) {
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");
+              rt = app_control_get_extra_data(reply, key_id, &rt_itemId);
     
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");
-		      rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_itemName);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start,"_itemSubsBillDurationCd");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
-		      snprintf(key_id, sizeof(keyId), "%d%s", start,"_subscriptionDurationMultiplier");
-    
-		      rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
- 		      snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
-		      rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
-	       }
-	    }
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");
+              rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");
+              rt = app_control_get_extra_data(reply, keyId, &rt_itemName);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");
+              rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");
+              rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");
+              rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");
+              rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");
+              rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");
+              rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");
+              rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");
+              rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");
+              rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");
+              rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start,"_itemSubsBillDurationCd");
+              rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start,"_subscriptionDurationMultiplier");
+              rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
+
+              snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
+              rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
+           }
+        }
      }
   }
   ```
-  
+
 - **`GetPurchasedItemList` operation**
 
   This operation returns a list of already purchased items.
@@ -636,20 +726,20 @@ The IAP Service instance allows you to get a list of items available for purchas
 				<p>Mobile country code, such as 250.</p>
 				<p>MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.</p>
 				<p>This information is optional.</p>
-				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				<p>(18th Oct. by Tizen Store Dev. - deprecated parameter)</p>
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<p><code>_mnc</code></p>
-				<p><font face="monospace, serif"><span>(deprecated)</span></font></p>
+				<p><code>(deprecated)</code></p>
 				</td>
 				<td>Mobile network code (MNC)</td>
 				<td>
 				<p>Mobile network code, such as 01.</p>
 				<p>MNCs can only be used in developer mode.</p>
 				<p>This information is optional.</p>
-				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				<p>(18th Oct. by Tizen Store Dev. - deprecated parameter)</p>
 				</td>
 			</tr>
 		</tbody>
@@ -659,10 +749,10 @@ The IAP Service instance allows you to get a list of items available for purchas
   ```
   app_control_h app_control;
   int rt = app_control_create(&app_control);
+
   if (rt == APP_CONTROL_ERROR_NONE) {
     app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
-    app_control_set_operation(app_control,
-					    "http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list");
+    app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list");
     app_control_add_extra_data(app_control, "_mode", "0");
     app_control_add_extra_data(app_control, "_transactionId", "123");
     app_control_add_extra_data(app_control, "_startNumber", "1");
@@ -674,6 +764,7 @@ The IAP Service instance allows you to get a list of items available for purchas
   
     rt = app_control_send_launch_request(app_control, get_purchased_item_list_cb, NULL);
   }
+  
   if (app_control != NULL)
     app_control_destroy(app_control);
   ```
@@ -830,10 +921,10 @@ The IAP Service instance allows you to get a list of items available for purchas
 	</table>
 
 - **Example code for retrieving a list of purchased items**
+
   ```
   void
-  get_purchased_item_list_cb(app_control_h request, app_control_h reply,
-				     app_control_result_e result, void *user_data)
+  get_purchased_item_list_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
   {
       char* rt_method = NULL;
       char* rt_result = NULL;
@@ -863,78 +954,78 @@ The IAP Service instance allows you to get a list of items available for purchas
       char* rt_timeStamp = NULL;
    
       if (result == APP_CONTROL_RESULT_SUCCEEDED) {
-	      rt = app_control_get_extra_data(reply, "_method", &rt_method);
-	      rt = app_control_get_extra_data(reply, "_result", &rt_result);
+          rt = app_control_get_extra_data(reply, "_method", &rt_method);
+          rt = app_control_get_extra_data(reply, "_result", &rt_result);
    
-	      /* Success */
-	      if (!strcmp("0", rt_result)) {
-		      rt = app_control_get_extra_data(reply, "_resultDescription", rt_resultDescription);
-		      rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
-		      rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
-		      rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
-		      rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
-		      rt = app_control_get_extra_data(reply, "_itemTotalCount", &rt_itemTotalCount);
+          /* Success */
+          if (!strcmp("0", rt_result)) {
+              rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
+              rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
+              rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
+              rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
+              rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
+              rt = app_control_get_extra_data(reply, "_itemTotalCount", &rt_itemTotalCount);
     
-		      int start = atoi(rt_startNumber);
-		      int end = atoi(rt_endNumber);
+              int start = atoi(rt_startNumber);
+              int end = atoi(rt_endNumber);
     
-		      char keyId[100] = {0,};
-		      for (; start <= end; start++) {
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");
-			      rt = app_control_get_extra_data(reply, key_id, &rt_itemId);
+              char keyId[100] = {0,};
+              for (; start <= end; start++) {
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");
+                  rt = app_control_get_extra_data(reply, key_id, &rt_itemId);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");
-			      rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");
+                  rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_itemName);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemName);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_paymentId");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_paymentId);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_paymentId");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_paymentId);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_purchaseDate");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_purchaseDate);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_purchaseDate");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_purchaseDate);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemSubsBillDurationCd");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemSubsBillDurationCd");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_subscriptionDurationMultiplier");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_subscriptionDurationMultiplier");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
     
-			      snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
-			      rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
-		      }
-	      }
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
+              }
+          }
       }
   }
   ```
@@ -950,20 +1041,23 @@ The IAP Service instance allows you to get a list of items available for purchas
 
   | Key              | Value          | Description                              |
   |----------------|--------------|----------------------------------------|
-  | `_transactionId` | Transaction ID | Transaction ID, such as 1 or 2.This information is mandatory.The ID is used to track a transaction between requests. |
+  | `_transactionId` | Transaction ID | Transaction ID, such as 1 or 2.<br/>This information is mandatory.<br/>The ID is used to track a transaction between requests. |
 
 - **Example code for get country list**
+
    ```
    app_control_h app_control;
    int rt = app_control_create(&app_control);
+   
    if (rt == APP_CONTROL_ERROR_NONE) {
      app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
-     app_control_set_operation(app_control,
-					    "http://tizen.org/appcontrol/operation/iapv2/get_country_list");
+     app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/get_country_list");
      app_control_add_extra_data(app_control, "_mode", "0");
      app_control_add_extra_data(app_control, "_transactionId", "123");
+   
      rt = app_control_send_launch_request(app_control, get_country_list_cb, NULL);
    }
+   
    if (app_control != NULL)
      app_control_destroy(app_control);
    ```
@@ -977,7 +1071,7 @@ The IAP Service instance allows you to get a list of items available for purchas
    **Table: Output data for getting a list of countries**
 
    | Key                  | Value                   | Description                              |
-   |----------------------|--- ---------------------|------------------------------------------|
+   |----------------------|-------------------------|------------------------------------------|
    | `_method`            | `OnCountryListReceived` | Method to be called as a purchase request result. |
    | `_result`            | Result code             | [Result codes are described at the end of this section.](#result_code) |
    | `_resultDescription` | Result code/Function ID | Result code/Function ID when `_result` value is not 0 (success). [Result codes are described at the end of this section.](#result_code) |
@@ -996,10 +1090,10 @@ The IAP Service instance allows you to get a list of items available for purchas
    | `PREFIX_mcc`         | MCC (mobile country code) | MCC (mobile country code) as a string value. |
 
 - **Example code for retrieving a list of get country list**
+
   ```
   void
-  get_country_list_cb(app_control_h request, app_control_h reply,
-			    app_control_result_e result, void *user_data)
+  get_country_list_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
   {
      char* rt_method = NULL;
      char* rt_result = NULL;
@@ -1010,27 +1104,31 @@ The IAP Service instance allows you to get a list of items available for purchas
      char* rt_totalCount = NULL;
      char* rt_countryName = NULL;
      char* rt_mcc = NULL;
+  
      if (result == APP_CONTROL_RESULT_SUCCEEDED) {
-	     rt = app_control_get_extra_data(reply, "_method", &rt_method);
-	     rt = app_control_get_extra_data(reply, "_result", &rt_result);
+         rt = app_control_get_extra_data(reply, "_method", &rt_method);
+         rt = app_control_get_extra_data(reply, "_result", &rt_result);
 
-	     /* Success */
-	     if (!strcmp("0", rt_result)) {
-		    rt = app_control_get_extra_data(reply, "_resultDescription",                                                                                       &rt_resultDescription);
-		    rt = app_control_get_extra_data(reply, "_transactionId",                                                                                           &rt_transactionId);
-		    rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
-		    rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
-		    rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
-		    int start = atoi(rt_startNumber);
-		    int end = atoi(rt_endNumber);
-		    char keyId[100] = {0,};
-		    for (; start <= end; start++) {
-			    snprintf(key_id, sizeof(keyId), "%d%s", start, "_countryName");
-			    rt = app_control_get_extra_data(reply, key_id, &rt_countryName);
-			    snprintf(key_id, sizeof(keyId), "%d%s", start, "_mcc");
-			    rt = app_control_get_extra_data(reply, key_id, &rt_mcc);
-		    }
-	     }
+         /* Success */
+         if (!strcmp("0", rt_result)) {
+            rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
+            rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
+            rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
+            rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
+            rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
+  
+            int start = atoi(rt_startNumber);
+            int end = atoi(rt_endNumber);
+  
+            char keyId[100] = {0,};
+            for (; start <= end; start++) {
+                snprintf(key_id, sizeof(keyId), "%d%s", start, "_countryName");
+                rt = app_control_get_extra_data(reply, key_id, &rt_countryName);
+  
+                snprintf(key_id, sizeof(keyId), "%d%s", start, "_mcc");
+                rt = app_control_get_extra_data(reply, key_id, &rt_mcc);
+            }
+         }
      }
   }
   ```
@@ -1159,7 +1257,7 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
 				<p>Mobile country code, such as 250.</p>
 				<p>MMCs can only be used in developer mode. You can retrieve a list of available MCCs using the get country list operation.</p>
 				<p>This information is optional.</p>
-				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				<p>(18th Oct. by Tizen Store Dev. - deprecated parameter)</p>
 				</td>
 			</tr>
 			<tr>
@@ -1172,16 +1270,18 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
 				<p>Mobile network code, such as 01.</p>
 				<p>MNCs can only be used in developer mode.</p>
 				<p>This information is optional.</p>
-				<p><span>(18th Oct. by Tizen Store Dev. - </span><span>deprecated parameter)</span></p>
+				<p>(18th Oct. by Tizen Store Dev. - deprecated parameter)</p>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 
 - **Example code for Purchase**
+
   ```
   app_control_h app_control;
   int rt = app_control_create(&app_control);
+  
   if (rt == APP_CONTROL_ERROR_NONE) {
      app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapclient");
      app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/purchase");
@@ -1190,6 +1290,7 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
      app_control_add_extra_data(app_control, "_itemGroupId", "100000000012");
      app_control_add_extra_data(app_control, "_languageCd", "ENG"); /* Optional */
      app_control_add_extra_data(app_control, "_itemName", "Item 1"); /* Optional */
+  
      rt = app_control_send_launch_request(app_control, get_purchase_cb, NULL);
   }
   
@@ -1207,40 +1308,168 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
 
   **Table: Output data for launching the purchase application**
 
-  | Key                  | Value                                    | Description                              |
-  |--------------------|----------------------------------------|----------------------------------------|
-  | `_method`            | `OnPurchaseItemReceived`                 | Method to be called as a purchase request result. |
-  | `_result`            | Result code                              | [Result codes are described at the end of this section.](#result_code_2) |
-  | `_resultDescription` | Result code/Function ID or HTML tags     | Display the `_resultDescription` value as a pop-up using Web-Control when you receive a `_result` value of 5600.[Result codes are described at the end of this section.](#result_code_2) |
-  | `_itemId`            | Item ID                                  | This is the same number as an item ID that is used in the request. |
-  | `_itemGroupId`       | Item group ID                            | ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office. |
-  | `_itemName`          | Item name                                | Name provided during item registration in Tizen Store Seller Office. |
-  | `_ticketPurchaseId`  | Purchased ticket ID                      | This ID can be used to verify the purchase with Tizen Store IAP Server. |
-  | `_currencyUnit`      | Currency unit                            | Device user's currency unit, such as $, Won, or Pound. |
-  | `_unitPrecedes`      | 0 or 1                                   | Currency unit position:<br/> - 0: Tail (2.99 TL)<br/> - 1: Front ($ 2.99) |
-  | `_hasPenny`          | 0 or 1  | Information whether the currency unit has penny representation:<br/> - 0: No<br/> - 1: Yes                                           |
-  | `_itemPrice`         | Item price                               | Price of the item in the local currency. |
-  | `_itemDownloadUrl`   | Item download URL                        | URL provided during item registration in Tizen Store Seller Office. |
-  | `_itemImageUrl`      | Item image URL                           | URL provided during item registration in Tizen Store Seller Office. |
-  | `_itemDescription`   | Item description                         | A description provided during item registration. |
-  | `_reserved1`         | Reserved field 1                         | Reserved field 1                         |
-  | `_reserved2`         | Reserved field 2                         | Reserved field 2                         |
-  | `_paymentId`         | Payment ID                               | Payment ID                               |
-  | `_ticketVerifyUrl`   | Server URL                               | Server URL, such as `http://tizen.org/appcontrol/operation/iap/purchase`.This URL can be used in combination with other parameters to verify the purchase with Tizen Store IAP Server. |
-  | `_ticketPurchaseId`  | Purchased ticket ID                      | This ID can be used to verify the purchase with Tizen Store IAP Server. |
-  | `_ticketParam1`      | Ticket parameter 1                       | This parameter is used with the server URL. |
-  | `_ticketParam2`      | Ticket parameter 2                       |  This parameter is used with the server URL.                                        |
-  | `_ticketParam3`      | Ticket parameter 3                       |  This parameter is used with the server URL.                                        |
-  | `_ticketParam4`      | Ticket parameter 4                       | This parameter is used with the server URL.                                         |
-  | `_ticketParam5`      | Ticket parameter 5                       | This parameter is used with the server URL.                                         |
-  | `_purchaseDate`      | Date of purchase                         | Date of purchase                         |
-  | `_timeStamp`         | Time stamp                               | Based on GMT +0, server time.<br/> (yyyyMMddHHmmss) |
+	<table>
+		<thead>
+			<tr>
+				<th>Key</th>
+				<th>Value</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>_method</code></td>
+				<td><code>OnPurchaseItemReceived</code></td>
+				<td>Method to be called as a purchase request result.</td>
+			</tr>
+			<tr>
+				<td><code>_result</code></td>
+				<td>Result code</td>
+				<td><a href="#result_code_2">Result codes are described at the end of this section.</a></td>
+			</tr>
+			<tr>
+				<td><code>_resultDescription</code></td>
+				<td>Result code/Function ID or HTML tags</td>
+				<td><p>Display the <code>_resultDescription</code> value as a pop-up using Web-Control when you receive a <code>_result</code> value of 5600.</p>
+					<p><a href="#result_code_2">Result codes are described at the end of this section.</a></p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemId</code></td>
+				<td>Item ID</td>
+				<td>This is the same number as an item ID that is used in the request.</td>
+			</tr>
+			<tr>
+				<td><code>_itemGroupId</code></td>
+				<td>Item group ID</td>
+				<td>ID of a collection of items. The collection is linked to your application in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>_itemName</code></td>
+				<td>Item name</td>
+				<td>Name provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>_ticketPurchaseId</code></td>
+				<td>Purchased ticket ID</td>
+				<td>This ID can be used to verify the purchase with Tizen Store IAP Server.</td>
+			</tr>
+			<tr>
+				<td><code>_currencyUnit</code></td>
+				<td>Currency unit</td>
+				<td>Device user's currency unit, such as $, Won, or Pound.</td>
+			</tr>
+			<tr>
+				<td><code>_unitPrecedes</code></td>
+				<td>0 or 1</td>
+				<td><p>Currency unit position:</p>
+					<ul>
+						<li>0: Tail (2.99 TL)</li>
+						<li>1: Front ($ 2.99)</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_hasPenny</code></td>
+				<td>0 or 1</td>
+				<td><p>Information whether the currency unit has penny representation:</p>
+					<ul>
+						<li>0: No</li>
+						<li>1: Yes</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_itemPrice</code></td>
+				<td>Item price</td>
+				<td>Price of the item in the local currency.</td>
+			</tr>
+			<tr>
+				<td><code>_itemDownloadUrl</code></td>
+				<td>Item download URL</td>
+				<td>URL provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>_itemImageUrl</code></td>
+				<td>Item image URL</td>
+				<td>URL provided during item registration in Tizen Store Seller Office.</td>
+			</tr>
+			<tr>
+				<td><code>_itemDescription</code></td>
+				<td>Item description</td>
+				<td>A description provided during item registration.</td>
+			</tr>
+			<tr>
+				<td><code>_reserved1</code></td>
+				<td>Reserved field 1</td>
+				<td>Reserved field 1</td>
+			</tr>
+			<tr>
+				<td><code>_reserved2</code></td>
+				<td>Reserved field 2</td>
+				<td>Reserved field 2</td>
+			</tr>
+			<tr>
+				<td><code>_paymentId</code></td>
+				<td>Payment ID</td>
+				<td>Payment ID</td>
+			</tr>
+			<tr>
+				<td><code>_ticketVerifyUrl</code></td>
+				<td>Server URL</td>
+				<td><p>Server URL, such as <code>http://tizen.org/appcontrol/operation/iap/purchase</code>.</p>
+					<p>This URL can be used in combination with other parameters to verify the purchase with Tizen Store IAP Server.</p>
+				</td>
+			</tr>
+			<tr>
+				<td><code>_ticketPurchaseId</code></td>
+				<td>Purchased ticket ID</td>
+				<td>This ID can be used to verify the purchase with Tizen Store IAP Server.</td>
+			</tr>
+			<tr>
+				<td><code>_ticketParam1</code></td>
+				<td>Ticket parameter 1</td>
+				<td>This parameter is used with the server URL.</td>
+			</tr>
+			<tr>
+				<td><code>_ticketParam2</code></td>
+				<td>Ticket parameter 2</td>
+				<td>This parameter is used with the server URL.</td>
+			</tr>
+			<tr>
+				<td><code>_ticketParam3</code></td>
+				<td>Ticket parameter 3</td>
+				<td>This parameter is used with the server URL.</td>
+			</tr>
+			<tr>
+				<td><code>_ticketParam4</code></td>
+				<td>Ticket parameter 4</td>
+				<td>This parameter is used with the server URL.</td>
+			</tr>
+			<tr>
+				<td><code>_ticketParam5</code></td>
+				<td>Ticket parameter 5</td>
+				<td>This parameter is used with the server URL.</td>
+			</tr>
+			<tr>
+				<td><code>_purchaseDate</code></td>
+				<td>Date of purchase</td>
+				<td>Date of purchase</td>
+			</tr>
+			<tr>
+				<td><code>_timeStamp</code></td>
+				<td>Time stamp</td>
+				<td><p>Based on GMT +0, server time.</p>
+				<p>(yyyyMMddHHmmss)</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 - **Example code for Purchase result**
   ```
   void
-  get_purchase_cb(app_control_h request, app_control_h reply,
-		     app_control_result_e result, void *user_data)
+  get_purchase_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
   {
      char* rt_method = NULL;
      char* rt_result = NULL;
@@ -1273,39 +1502,38 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
      char* rt_timeStamp = NULL;
 
      if (result == APP_CONTROL_RESULT_SUCCEEDED) {
-	     rt = app_control_get_extra_data(reply, "_method", &rt_method);
-	     rt = app_control_get_extra_data(reply, "_result", &rt_result);
+         rt = app_control_get_extra_data(reply, "_method", &rt_method);
+         rt = app_control_get_extra_data(reply, "_result", &rt_result);
 
-	     /* Success */
-	     if (!strcmp("0", rt_result)) {
-		    rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
-		    rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
-		    rt = app_control_get_extra_data(reply, "_itemId", &rt_itemId);
-		    rt = app_control_get_extra_data(reply, "_itemGroupId", &rt_itemGroupId);
-		    rt = app_control_get_extra_data(reply, "_itemName", &rt_itemName);
-		    rt = app_control_get_extra_data(reply, "_currencyUnit", &rt_currencyUnit);
-		    rt = app_control_get_extra_data(reply, "_unitPrecedes", &rt_unitPrecedes);
-		    rt = app_control_get_extra_data(reply, "_itemPrice", &rt_itemPrice);
-		    rt = app_control_get_extra_data(reply, "_itemDownloadUrl", &rt_itemDownloadUrl);
-		    rt = app_control_get_extra_data(reply, "_itemImageUrl", &rt_itemImageUrl);
-		    rt = app_control_get_extra_data(reply, "_itemDescription", &rt_itemDescription);
-		    rt = app_control_get_extra_data(reply, "_reserved1", &amp;rt_reserved1);
-		    rt = app_control_get_extra_data(reply, "_reserved2", &rt_reserved2);
-		    rt = app_control_get_extra_data(reply, "_paymentId", &rt_paymentId);
-		    rt = app_control_get_extra_data(reply, "_ticketVerifyUrl", &rt_ticketVerifyUrl);
-		    rt = app_control_get_extra_data(reply, "_ticketPurchaseId", &rt_ticketPurchaseId);
-		    rt = app_control_get_extra_data(reply, "_ticketParam1", &rt_ticketParam1);
-		    rt = app_control_get_extra_data(reply, "_ticketParam2", &rt_ticketParam2);
-		    rt = app_control_get_extra_data(reply, "_ticketParam3", &rt_ticketParam3);
-		    rt = app_control_get_extra_data(reply, "_ticketParam4", &rt_ticketParam4);
-		    rt = app_control_get_extra_data(reply, "_ticketParam5", &rt_ticketParam5);
-		    rt = app_control_get_extra_data(reply, "_purchaseDate", &rt_purchaseDate);
-		    rt = app_control_get_extra_data(reply, "_itemTypeCd", &rt_itemTypeCd);
-		    rt = app_control_get_extra_data(reply, "_itemSubsBillDurationCd", &rt_itemSubsBillDurationCd);
-		    rt = app_control_get_extra_data(reply, "_subscriptionDurationMultiplier",
-								    &rt_subscriptionDurationMultiplier);
-		    rt = app_control_get_extra_data(reply, "_timeStamp", &rt_timeStamp);
-	     }
+         /* Success */
+         if (!strcmp("0", rt_result)) {
+            rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
+            rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
+            rt = app_control_get_extra_data(reply, "_itemId", &rt_itemId);
+            rt = app_control_get_extra_data(reply, "_itemGroupId", &rt_itemGroupId);
+            rt = app_control_get_extra_data(reply, "_itemName", &rt_itemName);
+            rt = app_control_get_extra_data(reply, "_currencyUnit", &rt_currencyUnit);
+            rt = app_control_get_extra_data(reply, "_unitPrecedes", &rt_unitPrecedes);
+            rt = app_control_get_extra_data(reply, "_itemPrice", &rt_itemPrice);
+            rt = app_control_get_extra_data(reply, "_itemDownloadUrl", &rt_itemDownloadUrl);
+            rt = app_control_get_extra_data(reply, "_itemImageUrl", &rt_itemImageUrl);
+            rt = app_control_get_extra_data(reply, "_itemDescription", &rt_itemDescription);
+            rt = app_control_get_extra_data(reply, "_reserved1", &amp;rt_reserved1);
+            rt = app_control_get_extra_data(reply, "_reserved2", &rt_reserved2);
+            rt = app_control_get_extra_data(reply, "_paymentId", &rt_paymentId);
+            rt = app_control_get_extra_data(reply, "_ticketVerifyUrl", &rt_ticketVerifyUrl);
+            rt = app_control_get_extra_data(reply, "_ticketPurchaseId", &rt_ticketPurchaseId);
+            rt = app_control_get_extra_data(reply, "_ticketParam1", &rt_ticketParam1);
+            rt = app_control_get_extra_data(reply, "_ticketParam2", &rt_ticketParam2);
+            rt = app_control_get_extra_data(reply, "_ticketParam3", &rt_ticketParam3);
+            rt = app_control_get_extra_data(reply, "_ticketParam4", &rt_ticketParam4);
+            rt = app_control_get_extra_data(reply, "_ticketParam5", &rt_ticketParam5);
+            rt = app_control_get_extra_data(reply, "_purchaseDate", &rt_purchaseDate);
+            rt = app_control_get_extra_data(reply, "_itemTypeCd", &rt_itemTypeCd);
+            rt = app_control_get_extra_data(reply, "_itemSubsBillDurationCd", &rt_itemSubsBillDurationCd);
+            rt = app_control_get_extra_data(reply, "_subscriptionDurationMultiplier", &rt_subscriptionDurationMultiplier);
+            rt = app_control_get_extra_data(reply, "_timeStamp", &rt_timeStamp);
+         }
      }
   }
   ```

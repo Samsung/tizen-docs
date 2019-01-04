@@ -130,7 +130,7 @@ If you have a previously-installed Tizen baseline SDK or Tizen Studio instance, 
 
 If you do not have a real device, you can run applications in the Tizen emulator.
 
-To download emulator media, you can use the Tizen Package Manager or the Tizen Emulator Manager.
+To download emulator images, you can use the Tizen Package Manager or the Tizen Emulator Manager.
 
 - To use the Tizen Package Manager:
   1. Open the **Command Palette** and enter **tizen package**.
@@ -142,7 +142,7 @@ To download emulator media, you can use the Tizen Package Manager or the Tizen E
 - To use the Tizen Emulator Manager:
 
   > **Note**  
-  > The Tizen Emulator Manager shows the emulator media installation window only when no media are installed on your computer.
+  > The Tizen Emulator Manager shows the emulator images installation window only when no images are installed on your computer.
 
   1. Open the **Command Palette** and enter **tizen emulator**.
   2. Select **Tizen .NET: Launch Tizen Emulator Manager**.

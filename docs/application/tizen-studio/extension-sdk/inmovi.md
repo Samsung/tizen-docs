@@ -356,7 +356,10 @@ To create InMobi Tizen ads for Unity games:
         ```
 
      2. Load the created banner ad using the BannerAdLoad() function:
-        `result = adobject.BannerAdLoad(adhandle);`
+
+        ```
+        result = adobject.BannerAdLoad(adhandle);
+        ```
 
      3. The visibility of the ad view has to be managed by the game while switching between views using the following function:
 
