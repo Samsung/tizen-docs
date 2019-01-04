@@ -101,6 +101,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor registers the type creation function.  <a href="#a3b809ee6cbcc7028999eac8e15c5e21f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeRegistration.html#a303d803e8d8d437f95f6ec3a09030f49">TypeRegistration</a> (const std::type_info &amp;registerType, const std::type_info &amp;baseType, <a class="el" href="classDali_1_1TypeInfo.html#a9b979ba52fa1da48172ed9851da4dafb">TypeInfo::CreateFunction</a> f, bool callCreateOnInit)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor registers the type creation function.  <a href="#a303d803e8d8d437f95f6ec3a09030f49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeRegistration.html#a754ebc1602fb2dc8f93a3b10190dd2ac">TypeRegistration</a> (const std::type_info &amp;registerType, const std::type_info &amp;baseType, <a class="el" href="classDali_1_1TypeInfo.html#a9b979ba52fa1da48172ed9851da4dafb">TypeInfo::CreateFunction</a> f, const DefaultPropertyMetadata &amp;defaultProperties)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor registers the type creation function.  <a href="#a754ebc1602fb2dc8f93a3b10190dd2ac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeRegistration.html#aa6954c7587f43801aad411356d7dca7e">TypeRegistration</a> (const std::string &amp;name, const std::type_info &amp;baseType, <a class="el" href="classDali_1_1TypeInfo.html#a9b979ba52fa1da48172ed9851da4dafb">TypeInfo::CreateFunction</a> f)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor registers the type creation function for a named class or type.  <a href="#aa6954c7587f43801aad411356d7dca7e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeRegistration.html#a91ff03783d01d11d3b9f5439e0845c1b">RegisteredName</a> () const </td></tr>
@@ -199,6 +201,56 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">baseType</td><td>the base type info of registerType </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>registerType instance creation function </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">callCreateOnInit</td><td>If true the creation function is called as part of <a class="el" href="namespaceDali.html" title="The DALi namespace.">Dali</a> initialization </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a754ebc1602fb2dc8f93a3b10190dd2ac"></a><!-- doxytag: member="Dali::TypeRegistration::TypeRegistration" ref="a754ebc1602fb2dc8f93a3b10190dd2ac" args="(const std::type_info &amp;registerType, const std::type_info &amp;baseType, TypeInfo::CreateFunction f, const DefaultPropertyMetadata &amp;defaultProperties)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDali_1_1TypeRegistration.html#a3b809ee6cbcc7028999eac8e15c5e21f">Dali::TypeRegistration::TypeRegistration</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::type_info &amp;&#160;</td>
+          <td class="paramname"><em>registerType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::type_info &amp;&#160;</td>
+          <td class="paramname"><em>baseType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDali_1_1TypeInfo.html#a9b979ba52fa1da48172ed9851da4dafb">TypeInfo::CreateFunction</a>&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DefaultPropertyMetadata &amp;&#160;</td>
+          <td class="paramname"><em>defaultProperties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor registers the type creation function. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">registerType</td><td>the type info for the type to be registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">baseType</td><td>the base type info of registerType </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>registerType instance creation function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">defaultProperties</td><td>the default property meta-data </td></tr>
   </table>
   </dd>
 </dl>

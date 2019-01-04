@@ -112,15 +112,15 @@ Inheritance diagram for Dali::CustomActorImpl:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1CustomActor.html">CustomActor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#ab11fce803bedf303c9886670d71f3d53">Self</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by derived <a class="el" href="classDali_1_1CustomActorImpl.html" title="CustomActorImpl is an abstract base class for custom control implementations.">CustomActorImpl</a> instances, to access the public <a class="el" href="classDali_1_1Actor.html" title="Actor is the primary object with which Dali applications interact.">Actor</a> interface.  <a href="#ab11fce803bedf303c9886670d71f3d53"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#a5f26fd6da77cb9f6db09dea577d4ff86">OnStageConnection</a> (int depth)=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the actor has been connected to the stage.  <a href="#a5f26fd6da77cb9f6db09dea577d4ff86"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#a525db276034c474bf11faaf019115168">OnStageConnection</a> (int32_t depth)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the actor has been connected to the stage.  <a href="#a525db276034c474bf11faaf019115168"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#acfe31c1ec619cd17ab3fcb56f3c57a32">OnStageDisconnection</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the actor has been disconnected from <a class="el" href="classDali_1_1Stage.html" title="The Stage is a top-level object used for displaying a tree of Actors.">Stage</a>.  <a href="#acfe31c1ec619cd17ab3fcb56f3c57a32"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#a48fc850baf671d741e298031eb751189">OnChildAdd</a> (<a class="el" href="classDali_1_1Actor.html">Actor</a> &amp;child)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after a child has been added to the owning actor.  <a href="#a48fc850baf671d741e298031eb751189"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#a226bf02b8034673eb4e39163dfe9834e">OnChildRemove</a> (<a class="el" href="classDali_1_1Actor.html">Actor</a> &amp;child)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called after the owning actor has attempted to remove a child (regardless of whether it succeeded or not).  <a href="#a226bf02b8034673eb4e39163dfe9834e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#aed5ab937b45b93c7e402e2f01cccad3b">OnPropertySet</a> (<a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index, <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> propertyValue)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#aed5ab937b45b93c7e402e2f01cccad3b">OnPropertySet</a> (<a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index, <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> propertyValue)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the owning actor property is set.  <a href="#aed5ab937b45b93c7e402e2f01cccad3b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#aab4d2767ea89c41931b0bf56e96a749a">OnSizeSet</a> (const <a class="el" href="structDali_1_1Vector3.html">Vector3</a> &amp;targetSize)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the owning actor's size is set e.g. using <a class="el" href="classDali_1_1Actor.html#a5b97829fa00d101c105c00acfa137e76" title="Sets the size of an actor.">Actor::SetSize()</a>.  <a href="#aab4d2767ea89c41931b0bf56e96a749a"></a><br/></td></tr>
@@ -188,8 +188,8 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if this actor is dependent on its children for relayout from the base class.  <a href="#aed96564fc7475d9df0fbb677aedd9e52"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10497d48715e0980145b01690993ff9e"></a><!-- doxytag: member="Dali::CustomActorImpl::ACTOR_FLAG_COUNT" ref="a10497d48715e0980145b01690993ff9e" args="" -->
-static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#a10497d48715e0980145b01690993ff9e">ACTOR_FLAG_COUNT</a> = <a class="el" href="structDali_1_1Log.html">Log</a>&lt; <a class="el" href="classDali_1_1CustomActorImpl.html#a16365e44f9cbc99db1a07d9504dc8cb0a78b4fb619167750ef1502a1149cd41d2">LAST_ACTOR_FLAG</a> - 1 &gt;::value + 1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ee32bffce22ff693d3cc77f594fa104"></a><!-- doxytag: member="Dali::CustomActorImpl::ACTOR_FLAG_COUNT" ref="a9ee32bffce22ff693d3cc77f594fa104" args="" -->
+static const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1CustomActorImpl.html#a9ee32bffce22ff693d3cc77f594fa104">ACTOR_FLAG_COUNT</a> = <a class="el" href="structDali_1_1Log.html">Log</a>&lt; <a class="el" href="classDali_1_1CustomActorImpl.html#a16365e44f9cbc99db1a07d9504dc8cb0a78b4fb619167750ef1502a1149cd41d2">LAST_ACTOR_FLAG</a> - 1 &gt;::value + 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Value for deriving classes to continue on the flag enum. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -786,7 +786,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
         <tr>
           <td class="memname">virtual void <a class="el" href="classDali_1_1CustomActorImpl.html#aed5ab937b45b93c7e402e2f01cccad3b">Dali::CustomActorImpl::OnPropertySet</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a>&#160;</td>
           <td class="paramname"><em>index</em>, </td>
         </tr>
         <tr>
@@ -966,14 +966,14 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 
 </div>
 </div>
-<a class="anchor" id="a5f26fd6da77cb9f6db09dea577d4ff86"></a><!-- doxytag: member="Dali::CustomActorImpl::OnStageConnection" ref="a5f26fd6da77cb9f6db09dea577d4ff86" args="(int depth)=0" -->
+<a class="anchor" id="a525db276034c474bf11faaf019115168"></a><!-- doxytag: member="Dali::CustomActorImpl::OnStageConnection" ref="a525db276034c474bf11faaf019115168" args="(int32_t depth)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classDali_1_1CustomActorImpl.html#a5f26fd6da77cb9f6db09dea577d4ff86">Dali::CustomActorImpl::OnStageConnection</a> </td>
+          <td class="memname">virtual void <a class="el" href="classDali_1_1CustomActorImpl.html#a525db276034c474bf11faaf019115168">Dali::CustomActorImpl::OnStageConnection</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>depth</em></td><td>)</td>
           <td><code> [pure virtual]</code></td>
         </tr>
@@ -1002,8 +1002,6 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   </table>
   </dd>
 </dl>
-
-<p>Implemented in <a class="el" href="classDali_1_1Toolkit_1_1Internal_1_1Control.html#a9a3b71bc2621b1efa246d348e33dc821">Dali::Toolkit::Internal::Control</a>.</p>
 
 </div>
 </div>

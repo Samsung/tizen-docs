@@ -190,11 +190,7 @@ Gengrid smart events</h2>
 <ul>
 <li>elm_object_item_part_content_set() </li>
 <li>elm_object_item_part_content_unset() </li>
-<li>elm_object_item_part_text_set()</li>
-</ul>
-<p>List of gengrid examples: </p>
-<ul>
-<li><a class="el" href="gengrid_example.html">Gengrid widget example</a> </li>
+<li>elm_object_item_part_text_set() </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -283,6 +279,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#gaac3cca8c12d72bfd0b860eb96f4a1fbe">elm_gengrid_item_select_mode_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, Elm_Object_Select_Mode mode)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Object_Select_Mode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#ga4497ab26f6211a13c3ec96a06b6abacb">elm_gengrid_item_select_mode_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#ga059356c1c19666be08243f9904c898e0">elm_gengrid_nth_item_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, unsigned int nth)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Gengrid.html#gad5ad75733d292c28d8446e3d849d5d0a">elm_gengrid_page_show</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int h_pagenumber, int v_pagenumber)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga9ab2e5b38433f1021c01d0f71397266c"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_add" ref="ga9ab2e5b38433f1021c01d0f71397266c" args="(Evas_Object *parent)" -->
@@ -1989,6 +1987,95 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga059356c1c19666be08243f9904c898e0"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_nth_item_get" ref="ga059356c1c19666be08243f9904c898e0" args="(const Evas_Object *obj, unsigned int nth)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a>* <a class="el" href="group__Elm__Gengrid.html#ga059356c1c19666be08243f9904c898e0">elm_gengrid_nth_item_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>nth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the nth item, in a given gengrid widget, placed at position <code>nth</code>, in its internal items list</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The gengrid object </td></tr>
+    <tr><td class="paramname">nth</td><td>The number of the item to grab (0 being the first)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The item stored in <code>obj</code> at position <code>nth</code> or <code>NULL</code>, if there's no item with that index (and on errors)</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad5ad75733d292c28d8446e3d849d5d0a"></a><!-- doxytag: member="elm_gengrid_legacy.h::elm_gengrid_page_show" ref="gad5ad75733d292c28d8446e3d849d5d0a" args="(const Evas_Object *obj, int h_pagenumber, int v_pagenumber)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Gengrid.html#gad5ad75733d292c28d8446e3d849d5d0a">elm_gengrid_page_show</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h_pagenumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>v_pagenumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000268">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Use <a class="el" href="group__Elm__Scroller.html#ga23f1e0f70e5026b2e42b27b355c86d1e">elm_scroller_page_show()</a> instead. Show a specific virtual region within the gengrid content object by page number.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The gengrid object </td></tr>
+    <tr><td class="paramname">h_pagenumber</td><td>The horizontal page number </td></tr>
+    <tr><td class="paramname">v_pagenumber</td><td>The vertical page number</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>0, 0 of the indicated page is located at the top-left of the viewport. This will jump to the page directly without animation.</p>
+<p>Example of usage:</p>
+<div class="fragment"><pre class="fragment"> sc = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
+ elm_gengrid_content_set(sc, content);
+ elm_gengrid_page_relative_set(sc, 1, 0);
+ elm_gengrid_current_page_get(sc, &amp;h_page, &amp;v_page);
+ <a class="code" href="group__Elm__Gengrid.html#gad5ad75733d292c28d8446e3d849d5d0a">elm_gengrid_page_show</a>(sc, h_page + 1, v_page);
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae42eafda4e1d7ad8b76ee9350e4d6cfb">elm_scroller_page_bring_in()</a></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

@@ -302,7 +302,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the Server receives custom command from the client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000316">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga05768e8bb8b6af4a4cef0c0928bf96f6" title="Called when the Server receives custom command from the client.">mc_server_custom_cmd_received_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000729">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga05768e8bb8b6af4a4cef0c0928bf96f6" title="Called when the Server receives custom command from the client.">mc_server_custom_cmd_received_cb()</a> instead. </dd></dl>
 <p>This callback is called when server receives custom command from client. If there is reply for command, call <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaa6f71194b38ca3ea79b59bf725768697" title="Sends a reply for the requested command to the client.">mc_server_send_command_reply()</a> function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop. <em>data</em> should be released using <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free()</a>.<br/>
@@ -435,7 +435,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the server receives the playback state from the client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000315">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac8c5e9b788215d7629f7c85653abd4c2" title="Called when the server receives the playback action command from the client.">mc_server_playback_action_cmd_received_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000728">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac8c5e9b788215d7629f7c85653abd4c2" title="Called when the server receives the playback action command from the client.">mc_server_playback_action_cmd_received_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop. The <em>client_name</em> should not be released by the application. <br/>
  The <em>client_name</em> can be used only in the callback. To use outside, make a copy.</dd></dl>
@@ -1140,7 +1140,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <div class="memdoc">
 
 <p>Sends a reply for the requested command to the client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000322">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf167776cacf8cf246278bec5d5571996" title="Replies the result of the requested command to the client.">mc_server_send_cmd_reply()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000735">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf167776cacf8cf246278bec5d5571996" title="Replies the result of the requested command to the client.">mc_server_send_cmd_reply()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -1403,7 +1403,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <div class="memdoc">
 
 <p>Sets the callback for receiving custom command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000320">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gab4c4ef0b1be4920b82882f38cc568254" title="Sets the callback for receiving custom command from client.">mc_server_set_custom_cmd_received_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000733">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gab4c4ef0b1be4920b82882f38cc568254" title="Sets the callback for receiving custom command from client.">mc_server_set_custom_cmd_received_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -2001,7 +2001,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <div class="memdoc">
 
 <p>Sets the callback for receiving playback state command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000318">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga88312bc8e019e6e38819311cfe64c69a" title="Sets the callback for receiving playback action command from client.">mc_server_set_playback_action_cmd_received_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000731">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga88312bc8e019e6e38819311cfe64c69a" title="Sets the callback for receiving playback action command from client.">mc_server_set_playback_action_cmd_received_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -2116,7 +2116,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <div class="memdoc">
 
 <p>Sets the index of the current playing media in the playlist to update the latest playback info. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000317">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gafed9a238ede8ce52c66400b6f65096de" title="Sets the playlist name and index of the current playing media in the playlist to update the latest pl...">mc_server_set_playlist_item_info()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000730">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gafed9a238ede8ce52c66400b6f65096de" title="Sets the playlist name and index of the current playing media in the playlist to update the latest pl...">mc_server_set_playlist_item_info()</a> instead. </dd></dl>
 <p>If a media controller server has a playlist, the server can register and share it with media controller client. A playlist is a set of "index" and "media metadata".<br/>
  The media controller server can let media controller clients know the index of current playing media by using this function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
@@ -2569,7 +2569,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <div class="memdoc">
 
 <p>Unsets the callback for receiving custom command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000321">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaa49cc465e962e14ea68f0facafff9109" title="Unsets the callback for receiving custom command from client.">mc_server_unset_custom_cmd_received_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000734">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaa49cc465e962e14ea68f0facafff9109" title="Unsets the callback for receiving custom command from client.">mc_server_unset_custom_cmd_received_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -2739,7 +2739,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <div class="memdoc">
 
 <p>Unsets the callback for receiving playback state command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000319">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga25486085dff0cacbba4037439aa0ef9a" title="Unsets the callback for receiving playback action command from client.">mc_server_unset_playback_action_cmd_received_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000732">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga25486085dff0cacbba4037439aa0ef9a" title="Unsets the callback for receiving playback action command from client.">mc_server_unset_playback_action_cmd_received_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>

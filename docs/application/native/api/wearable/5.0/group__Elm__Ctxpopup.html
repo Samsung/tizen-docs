@@ -97,9 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="ctxpopup_inheritance_tree.png" alt="ctxpopup_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/ctxpopup/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>A ctxpopup is a widget that, when shown, pops up a list of items. It automatically chooses an area inside its parent object's view (set via <a class="el" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add()</a> and <a class="el" href="group__Elm__Ctxpopup.html#ga9dd899aad33e1580b76b37a38ca5638c" title="Set the Ctxpopup&#39;s parent.">elm_ctxpopup_hover_parent_set()</a>) to optimally fit into it. In the default theme, it will also point an arrow to it's top left position at the time one shows it. Ctxpopup items have a label and/or an icon. It is intended for a small number of items (hence the use of list, not genlist).</p>
 <p>This widget inherits from the Layout one, so that all the functions acting on it also work for context popup objects (since 1.8).</p>
 <p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
@@ -162,6 +159,24 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga9f8915c02b2500623dbce48d63bc4f3f">elm_ctxpopup_item_append</a> (Elm_Ctxpopup *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new item to a ctxpopup object.  <a href="#ga9f8915c02b2500623dbce48d63bc4f3f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga641e4779f030e4bb294483db9c5851d7">elm_ctxpopup_direction_available_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Ctxpopup_Direction direction)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga34a7901bcd2ac4cd5b99e0d14bed9de0">elm_ctxpopup_item_disabled_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ctxpopup item's disabled/enabled state.  <a href="#ga34a7901bcd2ac4cd5b99e0d14bed9de0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gabc2f065cf3872ccdb0a13b5dc69ac8fd">elm_ctxpopup_item_disabled_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the ctxpopup item's state as disabled or enabled.  <a href="#gabc2f065cf3872ccdb0a13b5dc69ac8fd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga6033a4e7321dfb99321bfb1ef7f865e3">elm_ctxpopup_item_icon_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the icon object for the given ctxpopup item.  <a href="#ga6033a4e7321dfb99321bfb1ef7f865e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gae779f821f58a9785ef28cfabcee545ca">elm_ctxpopup_item_icon_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the side icon associated with the ctxpopup item.  <a href="#gae779f821f58a9785ef28cfabcee545ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gaf0b48061e617396a1a537ea0223d023b">elm_ctxpopup_item_label_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the label for the given ctxpopup item.  <a href="#gaf0b48061e617396a1a537ea0223d023b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga60a0c1032069f4bde1ab662076eb5daa">elm_ctxpopup_item_label_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *label)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">(Re)set the label on the given ctxpopup item.  <a href="#ga60a0c1032069f4bde1ab662076eb5daa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gac9d839bcf91f02f0e023a33298bdb05e">elm_ctxpopup_content_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *content)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an elm widget as the content of the ctxpopup.  <a href="#gac9d839bcf91f02f0e023a33298bdb05e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga59dd2ccce7f5890e7682606a89bcbbc2">elm_ctxpopup_content_unset</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unset the ctxpopup content.  <a href="#ga59dd2ccce7f5890e7682606a89bcbbc2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga8fe1d905da71606e0ea38fa4012c2462">elm_ctxpopup_item_del</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the given item in a ctxpopup object.  <a href="#ga8fe1d905da71606e0ea38fa4012c2462"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gae1ad10d2c5153a5f009c23b83e71b251"></a><!-- doxytag: member="elc_ctxpopup_legacy.h::elm_ctxpopup_add" ref="gae1ad10d2c5153a5f009c23b83e71b251" args="(Evas_Object *parent)" -->
@@ -258,6 +273,75 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gac9d839bcf91f02f0e023a33298bdb05e"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_content_set" ref="gac9d839bcf91f02f0e023a33298bdb05e" args="(Evas_Object *obj, Evas_Object *content)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Ctxpopup.html#gac9d839bcf91f02f0e023a33298bdb05e">elm_ctxpopup_content_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>content</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set an elm widget as the content of the ctxpopup. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Ctxpopup object </td></tr>
+    <tr><td class="paramname">content</td><td>Content to be swallowed</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If the content object is already set, a previous one will be deleted. If you want to keep that old content object, use the <a class="el" href="group__Elm__Ctxpopup.html#ga59dd2ccce7f5890e7682606a89bcbbc2" title="Unset the ctxpopup content.">elm_ctxpopup_content_unset()</a> function.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Ctxpopup can't hold both a item list and a content at the same time. When a content is set, any previous items will be removed.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000281">Deprecated:</a></b></dt><dd>use elm_object_content_set() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga59dd2ccce7f5890e7682606a89bcbbc2"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_content_unset" ref="ga59dd2ccce7f5890e7682606a89bcbbc2" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Ctxpopup.html#ga59dd2ccce7f5890e7682606a89bcbbc2">elm_ctxpopup_content_unset</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unset the ctxpopup content. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Ctxpopup object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The content that was being used</dd></dl>
+<p>Unparent and return the content object which was set for this widget.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000282">Deprecated:</a></b></dt><dd>use elm_object_content_unset()</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup.html#gac9d839bcf91f02f0e023a33298bdb05e" title="Set an elm widget as the content of the ctxpopup.">elm_ctxpopup_content_set()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000283">Deprecated:</a></b></dt><dd>use elm_object_content_unset() instead</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga641e4779f030e4bb294483db9c5851d7"></a><!-- doxytag: member="elm_deprecated.h::elm_ctxpopup_direction_available_get" ref="ga641e4779f030e4bb294483db9c5851d7" args="(Evas_Object *obj, Elm_Ctxpopup_Direction direction)" -->
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +366,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000224">Deprecated:</a></b></dt><dd>Deprecated since 2.4.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000226">Deprecated:</a></b></dt><dd>Deprecated since 2.4.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -651,6 +735,236 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>null</code>, on errors. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8fe1d905da71606e0ea38fa4012c2462"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_item_del" ref="ga8fe1d905da71606e0ea38fa4012c2462" args="(Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Ctxpopup.html#ga8fe1d905da71606e0ea38fa4012c2462">elm_ctxpopup_item_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete the given item in a ctxpopup object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>Ctxpopup item to be deleted</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000284">Deprecated:</a></b></dt><dd>Use elm_object_item_del() instead </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup.html#ga9f8915c02b2500623dbce48d63bc4f3f" title="Add a new item to a ctxpopup object.">elm_ctxpopup_item_append()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga34a7901bcd2ac4cd5b99e0d14bed9de0"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_item_disabled_get" ref="ga34a7901bcd2ac4cd5b99e0d14bed9de0" args="(const Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Ctxpopup.html#ga34a7901bcd2ac4cd5b99e0d14bed9de0">elm_ctxpopup_item_disabled_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the ctxpopup item's disabled/enabled state. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>Ctxpopup item to be enabled/disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>disabled <code>EINA_TRUE</code>, if disabled, <code>EINA_FALSE</code> otherwise</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup.html#gabc2f065cf3872ccdb0a13b5dc69ac8fd" title="Set the ctxpopup item&#39;s state as disabled or enabled.">elm_ctxpopup_item_disabled_set()</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000275">Deprecated:</a></b></dt><dd>use elm_object_item_disabled_get() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabc2f065cf3872ccdb0a13b5dc69ac8fd"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_item_disabled_set" ref="gabc2f065cf3872ccdb0a13b5dc69ac8fd" args="(Elm_Object_Item *it, Eina_Bool disabled)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Ctxpopup.html#gabc2f065cf3872ccdb0a13b5dc69ac8fd">elm_ctxpopup_item_disabled_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>disabled</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the ctxpopup item's state as disabled or enabled. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>Ctxpopup item to be enabled/disabled </td></tr>
+    <tr><td class="paramname">disabled</td><td><code>EINA_TRUE</code> to disable it, <code>EINA_FALSE</code> to enable it</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>When disabled the item is greyed out to indicate it's state. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000276">Deprecated:</a></b></dt><dd>use elm_object_item_disabled_set() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6033a4e7321dfb99321bfb1ef7f865e3"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_item_icon_get" ref="ga6033a4e7321dfb99321bfb1ef7f865e3" args="(const Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Ctxpopup.html#ga6033a4e7321dfb99321bfb1ef7f865e3">elm_ctxpopup_item_icon_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the icon object for the given ctxpopup item. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>Ctxpopup item </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>icon object or <code>NULL</code>, if the item does not have icon or an error occurred</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup.html#ga9f8915c02b2500623dbce48d63bc4f3f" title="Add a new item to a ctxpopup object.">elm_ctxpopup_item_append()</a> </dd>
+<dd>
+<a class="el" href="group__Elm__Ctxpopup.html#gae779f821f58a9785ef28cfabcee545ca" title="Sets the side icon associated with the ctxpopup item.">elm_ctxpopup_item_icon_set()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000277">Deprecated:</a></b></dt><dd>use elm_object_item_part_content_get() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae779f821f58a9785ef28cfabcee545ca"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_item_icon_set" ref="gae779f821f58a9785ef28cfabcee545ca" args="(Elm_Object_Item *it, Evas_Object *icon)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Ctxpopup.html#gae779f821f58a9785ef28cfabcee545ca">elm_ctxpopup_item_icon_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>icon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the side icon associated with the ctxpopup item. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>Ctxpopup item </td></tr>
+    <tr><td class="paramname">icon</td><td>Icon object to be set</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Once the icon object is set, a previously set one will be deleted. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Setting the same icon for two items will cause the icon to disappear from the first item.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup.html#ga9f8915c02b2500623dbce48d63bc4f3f" title="Add a new item to a ctxpopup object.">elm_ctxpopup_item_append()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000278">Deprecated:</a></b></dt><dd>use elm_object_item_part_content_set() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf0b48061e617396a1a537ea0223d023b"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_item_label_get" ref="gaf0b48061e617396a1a537ea0223d023b" args="(const Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char* <a class="el" href="group__Elm__Ctxpopup.html#gaf0b48061e617396a1a537ea0223d023b">elm_ctxpopup_item_label_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the label for the given ctxpopup item. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>Ctxpopup item </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>label string or <code>NULL</code>, if the item does not have label or an error occurred</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup.html#ga9f8915c02b2500623dbce48d63bc4f3f" title="Add a new item to a ctxpopup object.">elm_ctxpopup_item_append()</a> </dd>
+<dd>
+<a class="el" href="group__Elm__Ctxpopup.html#ga60a0c1032069f4bde1ab662076eb5daa" title="(Re)set the label on the given ctxpopup item.">elm_ctxpopup_item_label_set()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000279">Deprecated:</a></b></dt><dd>use elm_object_item_text_get() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga60a0c1032069f4bde1ab662076eb5daa"></a><!-- doxytag: member="elm_removed.h::elm_ctxpopup_item_label_set" ref="ga60a0c1032069f4bde1ab662076eb5daa" args="(Elm_Object_Item *it, const char *label)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Ctxpopup.html#ga60a0c1032069f4bde1ab662076eb5daa">elm_ctxpopup_item_label_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>(Re)set the label on the given ctxpopup item. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>Ctxpopup item </td></tr>
+    <tr><td class="paramname">label</td><td>String to set as label</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000280">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set()</a> instead</dd></dl>
 
 </div>
 </div>
