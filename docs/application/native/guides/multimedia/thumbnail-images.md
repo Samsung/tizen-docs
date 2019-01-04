@@ -119,7 +119,8 @@ To extract a thumbnail from the file:
    You get a BGRA color image.
 
 > **Note**  
-> Since 5.5, if the requested width and height of the thumbnail are bigger than the those of the image, they changes their sizes to those of the image.
+>
+> Since Tizen 5.5, if the requested width and height of the thumbnail are bigger than the image, then the thumbnail size is changed to the image size.
 
 ## Related Information
 - Dependencies
