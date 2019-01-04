@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The plug component shows an `Evas_Object` created by another process. It can be used anywhere in the same way as any other Elementary UI component.
 
-For more information, see the [Plug](../../../../api/wearable/latest/group__Plug.html) API.
+For more information, see the [Plug](../../../../api/wearable/latest/group__Elm__Plug.html) API.
 
 **Figure: Plug hierarchy**
 
