@@ -96,11 +96,13 @@ To set the magnetic field, enter the X, Y, and Z axis values.
 
 ![Accelerometer and gyro sensors](./media/simulator_panel_accelerometer_gyro.png)
 
-> **Note**  
-> If the computer does not fully support WebGL&trade;, the simulated device in the **Sensors** panel looks like in the following figure.    
-**Figure: Sensor without WebGL&trade;**
-
-![Sensor without WebGL](./media/simulator_sensor_webgl.png)
+> **Note**
+>
+> If the computer does not fully support WebGL&trade;, the simulated device in the **Sensors** panel looks like in the following figure.
+>
+> **Figure: Sensor without WebGL&trade;**
+>
+> ![Sensor without WebGL](./media/simulator_sensor_webgl.png)
 
 <a name="package"></a>
 ### Packages and Applications
@@ -116,34 +118,47 @@ You can use the **Packages and Applications** panel to verify created operations
 
 ![Packages and Applications panel](./media/simulator_panel_package.png)
 
-The following sample code demonstrates how to receive the INSTALLED, UPDATED, and UNINSTALLED events for changes in the installed packages list. If you select **Sample Package** from the available packages list and click **Install**, the "The package "Sample Package" is installed" message is displayed in the console, and for each application in the package, the `oninstalled` event is generated. You can subscribe to these application events by registering the `tizen.application.addAppInfoEventListener` interface.
+You can receive notifications of changes in the list of installed packages. The `setPackageInfoEventListener()` method of the `PackageManager` interface (in [mobile](../../web/api/latest/device_api/mobile/tizen/package.html#PackageManager), [wearable](../../web/api/latest/device_api/wearable/tizen/package.html#PackageManager), and [TV](../../web/api/latest/device_api/tv/tizen/package.html#PackageManager) applications) registers an event listener for changes in the installed packages list. To unsubscribe the listener, use the `unsetPackageInfoEventListener()` method. You can use the `PackageInformationEventCallback` interface (in [mobile](../../web/api/latest/device_api/mobile/tizen/package.html#PackageInformationEventCallback), [wearable](../../web/api/latest/device_api/wearable/tizen/package.html#PackageInformationEventCallback), and [TV](../../web/api/latest/device_api/tv/tizen/package.html#PackageInformationEventCallback) applications) to define listeners for receiving notifications.
 
-```
-var packageEventCallback = {
-    oninstalled: function(packageInfo) {
-        console.log('The package "' + packageInfo.name + '" is installed');
-    },
-    onupdated: function(packageInfo) {
-        console.log('The package "' + packageInfo.name + '" is updated');
-    },
-    onuninstalled: function(packageId) {
-        console.log('The package "' + packageId + '" is uninstalled');
-    }
-};
+Learning to receive notifications when the list of installed packages changes allows you to manage device packages from your application:
 
-tizen.package.setPackageInfoEventListener(packageEventCallback);
+- Define the event handlers for different notifications using the `PackageInformationEventCallback` listener interface:
 
-```
+    ```
+    var packageEventCallback = {
+        oninstalled: function(packageInfo) {
+            console.log('The package ' + packageInfo.name + ' is installed');
+        },
+        onupdated: function(packageInfo) {
+            console.log('The package ' + packageInfo.name + ' is updated');
+        },
+        onuninstalled: function(packageId) {
+            console.log('The package ' + packageId + ' is uninstalled');
+        }
+    };
+    ```
+
+- Register the listener to use the defined event handlers with the `setPackageInfoEventListener()` method of the `PackageManager` interface:
+
+    ```
+    tizen.package.setPackageInfoEventListener(packageEventCallback);
+    ```
+
+- To stop receiving notifications, use the `unsetPackageInfoEventListener()` method of the `PackageManager` interface:
+
+    ```
+    tizen.package.unsetPackageInfoEventListener();
+    ```
 
 #### Preinstalled Packages and Applications In Mobile Applications
 
-A **Sample Package** is preinstalled in the simulator and contains 2 sample applications: Tizen dialer for making phone calls, and Tizen sender for sending SMS messages. Many sample applications, such as CallLog, use the Tizen [Application](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) API to invoke these service applications. Since the simulator allows you to run only 1 application at a time, the **Application Module Message** window is available, which can provide return data for success callback and simulate application launch failure.
+A **Sample Package** is preinstalled in the simulator and contains 2 sample applications: Tizen dialer for making phone calls, and Tizen sender for sending SMS messages. Many sample applications, such as CallLog, use the Tizen [Application](../../web/api/latest/device_api/mobile/tizen/application.html) API to invoke these service applications. Since the simulator allows you to run only 1 application at a time, the **Application Module Message** window is available, which can provide return data for success callback and simulate application launch failure.
 
 The following sample code demonstrates how to define an application control and invoke the `http://tizen.org/appcontrol/operation/send_text` service provided by the Tizen sender application. You can use the **Application Module Message** window to simulate the success value for the success callback or an error message for the error callback.
 
 ```
 var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/send_text',
-                                              'sms:' + phoneNumber);
+                                               'sms:' + phoneNumber);
 
 tizen.application.launchAppControl(appControl, null, function() {
     console.log('launch app service ...');
@@ -173,7 +188,7 @@ In the **Communications** panel, you can handle calls, messages, and the push se
 
 **Calls**
 
-The **Calls** tab provides controls for simulating incoming calls made to the application. The calls can be tracked by call history-related methods using the Tizen [Call History](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html) API.
+The **Calls** tab provides controls for simulating incoming calls made to the application. The calls can be tracked by call history-related methods using the Tizen [Call History](../../web/api/latest/device_api/mobile/tizen/callhistory.html) API.
 
 **Figure: Calls tab**
 
@@ -193,7 +208,7 @@ The **Messages** tab provides controls for simulating SMS, MMS, and email messag
 2. Select the message type.
 3. Click **Send**.
 
-The application receives messages using the Tizen [Messaging](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html) API.
+The application receives messages using the Tizen [Messaging](../../web/api/latest/device_api/mobile/tizen/messaging.html) API.
 
 The **Message Thread** section shows the message history of the current session.
 
@@ -223,7 +238,7 @@ To push a message from the panel to the application:
 2. Enter the alert message and application data.
 3. Click **Push**.
 
-The application receives push notifications using the Tizen [Push](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/push.html) API.
+The application receives push notifications using the Tizen [Push](../../web/api/latest/device_api/mobile/tizen/push.html) API.
 
 **Figure: Push tab**
 
@@ -254,7 +269,7 @@ The **Bearer Selection** section provides network bearer selection management by
 
 ![Network bearer selection](./media/simulator_panel_bearer.png)
 
-Your application can manage network devices and network status using the Tizen [NFC](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html), [Bluetooth](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html), and [Network Bearer Selection](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/networkbearerselection.html) APIs.
+Your application can manage network devices and network status using the Tizen [NFC](../../web/api/latest/device_api/mobile/tizen/nfc.html), [Bluetooth](../../web/api/latest/device_api/mobile/tizen/bluetooth.html), and [Network Bearer Selection](../../web/api/latest/device_api/mobile/tizen/networkbearerselection.html) APIs.
 
 <a name="power"></a>
 ### Power Manager in Mobile Applications
@@ -265,7 +280,7 @@ The **Power Manager** panel provides controls for managing the state of the batt
 
 ![Power Manager panel](./media/power_manager_simulator.png)
 
-The **BATTERY** section simulates the device battery level. Your application can retrieve the current battery status using the Tizen [System Information](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html) API.
+The **BATTERY** section simulates the device battery level. Your application can retrieve the current battery status using the Tizen [System Information](../../web/api/latest/device_api/mobile/tizen/systeminfo.html) API.
 
 <a name="download"></a>
 ### Download in Mobile Applications
@@ -289,7 +304,7 @@ tizen.download.setListener(downloadId, listener);
 <a name="noti"></a>
 ### Notification in Mobile Applications
 
-The **Notification** panel provides a notification center administrating system notifications. As the Simulator has no real desktop UI components, such as status bar or notification tray, the panel serves as the final rendering place of all the notifications. You can easily verify that the notification details you created with the Tizen [Notification](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html) API are correct.
+The **Notification** panel provides a notification center administrating system notifications. As the Simulator has no real desktop UI components, such as status bar or notification tray, the panel serves as the final rendering place of all the notifications. You can easily verify that the notification details you created with the Tizen [Notification](../../web/api/latest/device_api/mobile/tizen/notification.html) API are correct.
 
 **Figure: Notification panel with empty notification**
 
@@ -305,7 +320,6 @@ notification = new tizen.StatusNotification('PROGRESS', 'Notification Sample', {
     vibration: true,
     progressValue: 67
 });
-
 ```
 
 **Figure: Notification panel with a notification**

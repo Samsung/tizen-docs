@@ -272,6 +272,7 @@ For more information on the relationship between the elements, see the [element 
 - `hw-acceleration`
 
   Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))
+
   By default, this value is not defined.
 
 
