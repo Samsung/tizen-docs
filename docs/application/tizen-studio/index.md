@@ -7,6 +7,10 @@ The Tizen Studio platform is based on a new version of Eclipse, so you can exper
 In the Tizen Studio, you can perform all the same development activities that were possible with the old Tizen SDK: you can develop, build, debug, profile, and emulate Tizen native and Web applications. The new development environment in the Tizen Studio is simply better. It allows you to develop applications more comfortably and is more focused on Tizen development. There are about 200 online sample applications available to increase your understanding of Tizen applications, and the sample library continues to grow.
 
 
+> **Note**
+> 
+> From Tizen Studio 3.0 onwards, support for 32 bit host for Windows and Ubuntu will be removed.
+
 To develop your applications, use the set of tools provided by the Tizen Studio:
 
 - [Setup](setup/install-sdk.md)

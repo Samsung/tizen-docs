@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>VoiceControl API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>VoiceControl API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::VoiceControl">
@@ -157,6 +157,18 @@ The command type defined by this enumeration is:
 The <em>tizen.voicecontrol</em> object provides access to the functionality of the Voice Control API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="VoiceControlClientManagerObject::voicecontrol">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">VoiceControlClientManager </span><span class="name">voicecontrol</span></span><div class="brief">
+ Object representing a voice control manager.
+            </div>
+<p><span class="version">Since: </span>
+ 4.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="VoiceControlClientManager">
 <a class="backward-compatibility-anchor" name="::VoiceControl::VoiceControlClientManager"></a><h3>2.2. VoiceControlClientManager</h3>
@@ -264,6 +276,14 @@ A language is specified as an ISO 3166 alpha-2 two letter country-code followed 
 For example, "ko_KR" for Korean, "en_US" for American English.
             </p>
            </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:
+                  </span>
+ Currently set language.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>

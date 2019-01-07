@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>NFC API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>NFC API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NFC">
@@ -257,6 +257,14 @@ For more information on the NFC features, see <a href="https://developer.tizen.o
 <p><span class="version">Since: </span>
  1.0
           </p>
+<div class="description">
+          <ul>
+            <li>
+UTF8 - Corresponds to UTF8 NDEF record text encoding.            </li>
+            <li>
+UTF16 - Corresponds to UTF16 NDEF record text encoding.            </li>
+          </ul>
+         </div>
 </div>
 <div class="enum" id="NFCTagType">
 <a class="backward-compatibility-anchor" name="::NFC::NFCTagType"></a><h3>1.2. NFCTagType</h3>
@@ -425,6 +433,18 @@ The <em>tizen.nfc </em>object allows access to the functionality of the NFC API.
 <p><span class="version">Since: </span>
  1.0
           </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NFCManagerObject::nfc">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">NFCManager </span><span class="name">nfc</span></span><div class="brief">
+ Object representing a nfc manager.
+            </div>
+<p><span class="version">Since: </span>
+ 1.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="NFCManager">
 <a class="backward-compatibility-anchor" name="::NFC::NFCManager"></a><h3>2.2. NFCManager</h3>
@@ -1804,7 +1824,7 @@ catch (err)
 </dt>
 <dd>
 <div class="brief">
- send host APDU response to CLF (Contactless Front-end).
+ Sends host APDU response to CLF (Contactless Front-end).
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void sendHostAPDUResponse(byte[] apdu, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -1901,7 +1921,7 @@ catch (err)
 </dt>
 <dd>
 <div class="brief">
-  Allows an application to query whether an application is currently the activated handler for a specific AID and secure element type.
+ Allows an application to query whether an application is currently the activated handler for a specific AID and secure element type.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">boolean isActivatedHandlerForAID(<a href="#SecureElementType">SecureElementType</a> type, <a href="#AID">AID</a> aid);</pre></div>
 <p><span class="version">Since: </span>

@@ -61,8 +61,7 @@ To use InMobi Tizen Ads in Web applications:
 1. For Web applications, include the InMobi JavaScript file to use InMobi Tizen ads:
 
    ```
-   <script type="text/javascript" src="https://i.l.inmobicdn.net/sdk/jsac/p1/inmobi.js">
-   </script>
+   <script type="text/javascript" src="https://i.l.inmobicdn.net/sdk/jsac/p1/inmobi.js"></script>
    ```
 
 2. Request permission by adding the following privileges and access feature to the config.xml file:  
@@ -356,7 +355,10 @@ To create InMobi Tizen ads for Unity games:
         ```
 
      2. Load the created banner ad using the BannerAdLoad() function:
-        `result = adobject.BannerAdLoad(adhandle);`
+
+        ```
+        result = adobject.BannerAdLoad(adhandle);
+        ```
 
      3. The visibility of the ad view has to be managed by the game while switching between views using the following function:
 

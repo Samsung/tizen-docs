@@ -21,11 +21,11 @@ To open a terminal:
 
 1. Click the **Open a Terminal** toolbar button.
 
- ![Opening a terminal](media/rt_terminal_open.png)
+   ![Opening a terminal](media/rt_terminal_open.png)
 
 2. In the Terminal Dialog, set the information to connect the board, and click **OK**.
 
- ![Connection information](media/rt_terminal_connection.png)
+   ![Connection information](media/rt_terminal_connection.png)
 
 You can see the opened terminal with a serial connection in the **Terminal** view.
 
@@ -41,11 +41,11 @@ To use the tash commands, push the **Soft Reset** button on the board.
 
 ![Soft Reset button](media/rt_soft_reset.png)
 
-You can see the booting logs on the **Terminal** view with the TASH prompt.
+You can see the boot logs on the **Terminal** view with the TASH prompt.
 
-**Figure: Booting logs**
+**Figure: Boot logs**
 
-![Booting logs](media/rt_booting_logs.png)
+![Boot logs](media/rt_booting_logs.png)
 
 To see the available tash commands, run the `help` command on the TASH prompt. You can also easily test the communication with the board using the various commands provided by the **Terminal** view.
 

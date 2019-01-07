@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>WidgetService API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>WidgetService API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::WidgetService">
@@ -343,6 +343,18 @@ of the Widget interface.
 The <em>tizen.widgetservice</em> object provides access to the Widget Service API's functionality.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="WidgetServiceManagerObject::widgetservice">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">WidgetServiceManager </span><span class="name">widgetservice</span></span><div class="brief">
+ Object representing a widget service manager.
+            </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="WidgetServiceManager">
 <a class="backward-compatibility-anchor" name="::WidgetService::WidgetServiceManager"></a><h3>2.2. WidgetServiceManager</h3>
@@ -1615,6 +1627,7 @@ data2: test2
 <div class="interface" id="WidgetContentCallback">
 <a class="backward-compatibility-anchor" name="::WidgetService::WidgetContentCallback"></a><h3>2.10. WidgetContentCallback</h3>
 <div class="brief">
+ The WidgetVariantsCallback interface implements the success callback used in the asynchronous operation to get a content data of widget instance using the getContent() method.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface WidgetContentCallback {
     void onsuccess(Object data);

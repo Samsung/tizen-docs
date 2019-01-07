@@ -34,9 +34,23 @@ for TD:
 </div>
 
 <div class="tabcontent" id="Wearable">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <div class="tabcontent" id="TV">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <!--

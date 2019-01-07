@@ -202,9 +202,9 @@ You can see a call stack for each allocation from the **Persistent Allocations**
 
 The table contains the following columns:
 
-- **Function**: Name of the called function, or **<unknown>** if the function name cannot be determined
-- **Address**: Address of the instruction from where the next function was called, or **<unknown>** if the function name cannot be determined
-- **Binary path**: Path to the library which contains the defined function, or **<unknown library>** if it cannot be determined
+- **Function**: Name of the called function, or **\<unknown>** if the function name cannot be determined
+- **Address**: Address of the instruction from where the next function was called, or **\<unknown>** if the function name cannot be determined
+- **Binary path**: Path to the library which contains the defined function, or **\<unknown library>** if it cannot be determined
 
 ## Related information
 * Dependencies

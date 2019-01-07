@@ -14,10 +14,10 @@ To create a test project:
 
 2. In the New Tizen Unit Test Project window:
 
-   a. In the **Select the Tizen Project for test** panel, select the project you want to test.  
-   b. Specify a name for the test project.  
-   c. Specify a destination folder where to save the project.  
-   d. Click **Finish**.
+   1. In the **Select the Tizen Project for test** panel, select the project you want to test.
+   2. Specify a name for the test project.
+   3. Specify a destination folder where to save the project.
+   4. Click **Finish**.
 
    ![New Tizen Unit Test Project wizard](./media/unit_test_wizard.png)
 
@@ -67,10 +67,10 @@ In the following example with a calculator sample project, a test case is create
 2. Append the test method to the end of the `myProjectTest/src/myProjectTestTestCase.cpp` file:  
 ```csharp
 TEST_F(TestSuite, utils_round)
-{    
-  double var = 3.5;    
-  /* long long utils_round(double value); */   
-  EXPECT_EQ(utils_round(var), (long long)4);
+{
+    double var = 3.5;
+    /* long long utils_round(double value); */
+    EXPECT_EQ(utils_round(var), (long long)4);
 }
 ```
 3. Change the line that includes the `utils/utils.h` file:  
@@ -78,8 +78,8 @@ TEST_F(TestSuite, utils_round)
 #include "view/window.h"
 #include "view/main-view.h"
 extern "C"
-{    
-      #include "utils/utils.h"
+{
+    #include "utils/utils.h"
 }
 #include "utils/ui-utils.h"
 ```

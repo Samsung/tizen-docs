@@ -20,6 +20,13 @@ for TD:
 
 <!-- Tab content -->
 <div class="tabcontent" id="Mobile">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <div class="tabcontent" id="Wearable">
@@ -106,7 +113,15 @@ for TD:
 	</tbody>
 </table>
 </div>
+
 <div class="tabcontent" id="TV">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <!--

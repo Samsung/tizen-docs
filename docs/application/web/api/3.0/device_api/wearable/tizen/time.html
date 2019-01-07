@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Time API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Time API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Time">
@@ -212,6 +212,18 @@ There will be a <em>tizen.time</em> object that allows accessing the
 functionality of the Time API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="TimeManagerObject::time">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">TimeUtil </span><span class="name">time</span></span><div class="brief">
+ Object representing a time manager.
+            </div>
+<p><span class="version">Since: </span>
+ 1.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="TimeUtil">
 <a class="backward-compatibility-anchor" name="::Time::TimeUtil"></a><h3>2.2. TimeUtil</h3>
@@ -378,14 +390,14 @@ else
 <a class="backward-compatibility-anchor" name="::Time::TimeUtil::getDateFormat"></a><code><b><span class="methodName">getDateFormat</span></b></code>
 </dt>
 <dd>
+<div class="brief">
+ Gets the date format according to the system's locale settings.
+            </div>
 <div class="synopsis"><pre class="signature prettyprint">DOMString getDateFormat(optional boolean? shortformat);</pre></div>
 <p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
-            <p>
-Gets the date format according to the system's locale settings.
-            </p>
             <p>
 These expressions may be used in the returned string:
             </p>
@@ -445,14 +457,14 @@ console.log("Long date format: " + dateFormat);
 <a class="backward-compatibility-anchor" name="::Time::TimeUtil::getTimeFormat"></a><code><b><span class="methodName">getTimeFormat</span></b></code>
 </dt>
 <dd>
+<div class="brief">
+ Gets the time format according to the system's locale settings.
+            </div>
 <div class="synopsis"><pre class="signature prettyprint">DOMString getTimeFormat();</pre></div>
 <p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
-            <p>
-Gets the time format according to the system's locale settings.
-            </p>
             <p>
 These expressions may be used in the returned string:
             </p>
@@ -2598,8 +2610,7 @@ console.log(nextDstTransition.toString());
  The TimeDuration interface that contains the length and its associated time unit.
           </div>
 <pre class="webidl prettyprint">  [Constructor(long long length, optional <a href="#TimeDurationUnit">TimeDurationUnit</a>? unit)]
-  interface TimeDuration
-  {
+  interface TimeDuration {
     attribute long long length;
     attribute <a href="#TimeDurationUnit">TimeDurationUnit</a> unit;
     <a href="#TimeDuration">TimeDuration</a> difference(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2969,8 +2980,7 @@ var ret = d1.greaterThan(d2);                  /* Returns true. */
     <a href="#TZDate">TZDate</a>? getNextDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Constructor(long long length, optional <a href="#TimeDurationUnit">TimeDurationUnit</a>? unit)]
-  interface TimeDuration
-  {
+  interface TimeDuration {
     attribute long long length;
     attribute <a href="#TimeDurationUnit">TimeDurationUnit</a> unit;
     <a href="#TimeDuration">TimeDuration</a> difference(<a href="#TimeDuration">TimeDuration</a> other) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>SystemInfo API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SystemInfo API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemInfo">
@@ -398,15 +398,16 @@ Upside down, in other words rotated 180 degrees              </td>
 <div class="brief">
  Device profile.
           </div>
-<pre class="webidl prettyprint">  enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };</pre>
+<pre class="webidl prettyprint">  enum SystemInfoProfile { <span class="nocode deprecated">"MOBILE_FULL"</span>, <span class="nocode deprecated">"MOBILE_WEB"</span>, "MOBILE", "WEARABLE", "TV" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ MOBILE_FULL and MOBILE_WEB are deprecated since 2.3. Beginning with Tizen 2.3, MOBILE is returned instead.
+          </p>
 <p><span class="version">Since: </span>
  2.2
           </p>
 <p><span class="remark">Remark: </span>
- <var>MOBILE</var>, <var>WEARABLE</var> and <var>TV</var> are supported since Tizen 2.3
+ <var>MOBILE</var>, <var>WEARABLE</var> and <var>TV</var> are supported since Tizen 2.3.
           </p>
-<p><span class="remark">Remark: </span>
- <var>MOBILE_FULL</var> and <var>MOBILE_WEB</var> are deprecated since 2.3. Beginning with Tizen 2.3, <var>MOBILE</var> is returned instead of <var>MOBILE_FULL</var>          </p>
 </div>
 <div class="enum" id="SystemInfoLowMemoryStatus">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoLowMemoryStatus"></a><h3>1.6. SystemInfoLowMemoryStatus</h3>
@@ -447,6 +448,18 @@ There will be a tizen.systeminfo object that allows accessing the
 functionality of the System Information API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SystemInfoObject::systeminfo">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SystemInfo </span><span class="name">systeminfo</span></span><div class="brief">
+ Object representing a system info module.
+            </div>
+<p><span class="version">Since: </span>
+ 1.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="SystemInfo">
 <a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfo"></a><h3>2.2. SystemInfo</h3>
@@ -491,6 +504,14 @@ and for subscribing notifications of system information changes.
 <p><span class="version">Since: </span>
  2.3
             </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long long:
+                  </span>
+ Total system memory.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -515,6 +536,14 @@ console.log("The total memory size is " + tizen.systeminfo.getTotalMemory() + " 
 <p><span class="version">Since: </span>
  2.3
             </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long long:
+                  </span>
+ Not used memory in bytes.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -547,6 +576,14 @@ console.log("The available memory size is " + tizen.systeminfo.getAvailableMemor
 The function must synchronously acquire the capabilities of the device.
             </p>
            </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">SystemInfoDeviceCapability:
+                  </span>
+ Capabilities of the device.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -907,8 +944,6 @@ There are device properties which are never changed (e.g. "BUILD") and propertie
 (e.g. "DEVICE_ORIENTATION" in Tizen TV device). The <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener()</a> method accepts
 any identifier of these properties, but the listener added for them will not be invoked.
             </p>
-           </div>
-<div class="description">
             <p>
 The <em>errorCallback</em> can be launched with any of these error types:
             </p>
@@ -1294,8 +1329,12 @@ id = tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback);
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">openglestextureFormat</span></span><div class="brief">
  The device 3DC texture format for OpenGL-ES.
-One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
             </div>
+<div class="description">
+            <p>
+One example of possible output is as follows: "3dc/atc/etc/ptc/pvrtc/utc"
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.1
             </p>
@@ -1949,9 +1988,13 @@ For other cases, it is ignored.
 <dd>
 <div class="brief">
  An attribute to indicate that the <em>successCallback()</em> method in the watch
+            </div>
+<div class="description">
+            <p>
 operation will be triggered only if the device property is a number and its value is greater than or equal to this number.
 This attribute has no effect on the <em>get()</em> method.
-            </div>
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  1.0
             </p>
@@ -1960,9 +2003,13 @@ This attribute has no effect on the <em>get()</em> method.
 <dd>
 <div class="brief">
  An attribute to indicate that the <em>successCallback()</em> method in the watch operation must be triggered only if the property is a number and its value is lower than or equal to this number.
+            </div>
+<div class="description">
+            <p>
 If both <em>highThreshold </em>and <em>lowThreshold </em>parameters are specified, the <em>successCallback()</em> is triggered if and only if the property value is either lower than the value of <em>lowThreshold</em> or higher than the value of <em>highThreshold</em>.
 This attribute has no effect on the get method.
-            </div>
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  1.0
             </p>
@@ -2082,6 +2129,15 @@ It is used in asynchronous operations, such as <a href="#SystemInfo::getProperty
 <p><span class="version">Since: </span>
  1.0
           </p>
+<div class="description">
+          <p>
+<b>Listener notice</b>:
+          </p>
+          <p>
+Change listener registered on <var>BATTERY</var> property is triggered on
+<em>level</em> and <em>isCharging</em> properties change.
+          </p>
+         </div>
         
       <div class="attributes">
 <h4>Attributes</h4>
@@ -2136,8 +2192,12 @@ Any threshold parameter used in a watch operation to monitor this property appli
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">load</span></span><div class="brief">
   An attribute to indicate the current CPU load, as a number between <var>0.0 </var>and <var>1.0</var>, representing the minimum and maximum values allowed on this system.
-Any threshold parameter used in a watch function to monitor this property applies to this attribute.
             </div>
+<div class="description">
+            <p>
+Any threshold parameter used in a watch function to monitor this property applies to this attribute.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  1.0
             </p>
@@ -2252,7 +2312,7 @@ The following values are supported:
 <li class="attribute deprecated" id="SystemInfoStorageUnit::isRemoveable">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">isRemoveable</span></span><div class="brief">
- true if this unit can be removed from the system (such as an sdcard unplugged), false otherwise.
+ True if this unit can be removed from the system (such as an sdcard unplugged), false otherwise.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 2.1. Instead, use <em>isRemovable</em>.
@@ -2281,6 +2341,15 @@ The following values are supported:
 <p><span class="version">Since: </span>
  1.0
           </p>
+<div class="description">
+          <p>
+<b>Listener notice</b>:
+          </p>
+          <p>
+Change listener registered on <var>DISPLAY</var> property is triggered on
+<em>brightness</em> property change.
+          </p>
+         </div>
         
       <div class="attributes">
 <h4>Attributes</h4>
@@ -2457,9 +2526,13 @@ The following values are supported:
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">language</span></span><div class="brief">
  Indicates the current language setting in the (LANGUAGE)_(REGION) syntax.
+            </div>
+<div class="description">
+            <p>
 The language setting is in the ISO 639-2 format and the region setting is in the ISO 3166-1 alpha-2 format.
 The language setting is case-sensitive.
-            </div>
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.1
             </p>
@@ -2468,9 +2541,13 @@ The language setting is case-sensitive.
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">country</span></span><div class="brief">
  Indicates the current country setting in the (LANGUAGE)_(REGION) syntax.
+            </div>
+<div class="description">
+            <p>
 The language setting is in the ISO 639-2 format and the region setting is in the ISO 3166-1 alpha-2 format.
 The country setting is case-sensitive.
-            </div>
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.1
             </p>
@@ -2519,6 +2596,22 @@ The country setting is case-sensitive.
 <p><span class="version">Since: </span>
  1.0
           </p>
+<div class="description">
+          <p>
+<b>Listener notice</b>:
+          </p>
+          <p>
+Change listener registered on <var>WIFI_NETWORK</var> property is triggered on
+<em>ipAddress</em> and <em>ipv6Address</em> properties change (the network layer).
+Those changes could be not consistent with physical layer (<em>status</em> or
+<em>signalStrength</em> of physical adapter).
+          </p>
+          <p>
+According to above constraints, in specific situation the listener could be
+triggered just before network adapter shutdown and the value of <em>status</em> returned
+by listener would be outdated.
+          </p>
+         </div>
         
       <div class="attributes">
 <h4>Attributes</h4>
@@ -2600,6 +2693,21 @@ It is written in MM:MM:MM:SS:SS:SS format.
 <p><span class="version">Since: </span>
  2.4
           </p>
+<div class="description">
+          <p>
+<b>Listener notice</b>:
+          </p>
+          <p>
+Change listener registered on <var>ETHERNET_NETWORK</var> property is triggered on
+<em>ipAddress</em> and <em>ipv6Address</em> properties change (the network layer).
+Those changes could be not consistent with physical layer (<em>status</em> of physical adapter).
+          </p>
+          <p>
+According to above constraints, in specific situation the listener could be
+triggered just before network adapter shutdown and the value of <em>status</em> returned
+by listener would be outdated.
+          </p>
+         </div>
         
       <div class="attributes">
 <h4>Attributes</h4>
@@ -2678,6 +2786,22 @@ It is written in MM:MM:MM:SS:SS:SS format.
 <p><span class="version">Since: </span>
  1.0
           </p>
+<div class="description">
+          <p>
+<b>Listener notice</b>:
+          </p>
+          <p>
+Change listener registered on <var>CELLULAR_NETWORK</var> property is triggered on
+<em>ipAddress</em>, <em>ipv6Address</em> (the network layer), <em>cellId</em>,
+<em>lac</em> and <em>isFlightMode</em> properties change.
+Those changes could be not consistent with physical layer (<em>status</em> of physical adapter).
+          </p>
+          <p>
+According to above constraints, in specific situation the listener could be
+triggered just before network adapter shutdown and the value of <em>status</em> returned
+by listener would be outdated.
+          </p>
+         </div>
         
       <div class="attributes">
 <h4>Attributes</h4>
@@ -3328,7 +3452,7 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
   enum SystemInfoNetworkType { "NONE", "2G", "2.5G", "3G", "4G", "WIFI", "ETHERNET", "NET_PROXY", "UNKNOWN" };
   enum SystemInfoDeviceOrientationStatus { "PORTRAIT_PRIMARY", "PORTRAIT_SECONDARY", "LANDSCAPE_PRIMARY", "LANDSCAPE_SECONDARY" };
   enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED", "SIM_LOCKED", "UNKNOWN" };
-  enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };
+  enum SystemInfoProfile { "MOBILE_FULL", "MOBILE_WEB", "MOBILE", "WEARABLE", "TV" };
   enum SystemInfoLowMemoryStatus { "NORMAL", "WARNING" };
   [NoInterfaceObject] interface SystemInfoObject {
     readonly attribute <a href="#SystemInfo">SystemInfo</a> systeminfo;

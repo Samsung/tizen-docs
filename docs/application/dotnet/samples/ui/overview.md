@@ -327,6 +327,15 @@ for TD:
 		</tr>
 		<tr>
 			<td>
+			<p><img alt="" height="225" src="media/tv36cubewithskiasharp.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) CubeWithSkiaSharp (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to draw a text with SkiaSharp on the target memory, to generates 2D texture on the target memory block, and to shows 2D texture in the OpenTK app (drawing text on a rotating cube).</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			<p><img alt="" height="225" src="media/tv30graffiti.png" width="400" /></p>
 			</td>
 			<td>
