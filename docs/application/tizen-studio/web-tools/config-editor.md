@@ -1503,8 +1503,8 @@ The following sections show additional configuration elements used in the `confi
 					<li><code>caller</code>: caller application defines the launch mode with the <code>app_control_set_launch_mode()</code> method</li>
 				</ul>
 				<p><strong>Since: 2.4</strong></p>
-				<p><strong>Note</strong><br>
-                The <code>launch_mode</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>launch_mode</code> attribute is used, the application installation fails.</p>
+				<blockquote><p><strong>Note</strong><br>
+                The <code>launch_mode</code> attribute is supported since Tizen 2.4. If the <code>required_version</code> in the application's <code>config.xml</code> file is set to a version older than Tizen 2.4, and the <code>launch_mode</code> attribute is used, the application installation fails.</p></blockquote>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -1727,7 +1727,7 @@ The following sections show additional configuration elements used in the `confi
       &lt;tizen:language&gt;en-us&lt;/tizen:language&gt;
       &lt;tizen:language&gt;de-de&lt;/tizen:language&gt;
    &lt;/tizen:languages&gt;
-&lt;/tizen:ime&gt;  
+&lt;/tizen:ime&gt;
 
 &lt;tizen:category name="http://tizen.org/category/ime"/&gt;</code></pre>
 			</td>

@@ -193,8 +193,7 @@ IAP uses AppControl interface to handle purchases. You need to add the `http://t
 
   ```
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-  <manifest xmlns="http://tizen.org/ns/packages" package="org.tizen.iapsample"
-            version="1.0.0">
+  <manifest xmlns="http://tizen.org/ns/packages" package="org.tizen.iapsample" version="1.0.0">
      <privileges>
         <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
      </privileges>
@@ -207,8 +206,7 @@ IAP uses AppControl interface to handle purchases. You need to add the `http://t
 
   ```
   <?xml version="1.0" encoding="UTF-8"?>
-  <widget xmlns="http://www.w3.org/ns/widgets"
-          xmlns:tizen="http://tizen.org/ns/widgets" id=...>
+  <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id=...>
      <tizen:privilege name = "http://tizen.org/privilege/application.launch"/>
   </widget>
   ```
@@ -332,7 +330,7 @@ The IAP Service instance allows you to get a list of items available for purchas
 				<td>
 				<p>&nbsp;</p>
 				<p><code>_mcc</code></p>
-				<p><code>(deprecated)</code></p>
+				<p>(deprecated)</p>
 				</td>
 				<td>Mobile country code (MCC)</td>
 				<td>
@@ -345,7 +343,7 @@ The IAP Service instance allows you to get a list of items available for purchas
 			<tr>
 				<td>
 				<p><code>_mnc</code></p>
-				<p><code>(deprecated)</code></p>
+				<p>(deprecated)</p>
 				</td>
 				<td>Mobile network code (MNC)</td>
 				<td>
@@ -365,8 +363,7 @@ The IAP Service instance allows you to get a list of items available for purchas
   
   if (rt == APP_CONTROL_ERROR_NONE) {
       app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
-      app_control_set_operation(app_control,
-               "http://tizen.org/appcontrol/operation/iapv2/get_item_list");
+      app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/get_item_list");
       app_control_add_extra_data(app_control, "_mode", "0");
       app_control_add_extra_data(app_control, "_transactionId", "123");
       app_control_add_extra_data(app_control, "_startNumber", "1");
@@ -519,99 +516,99 @@ The IAP Service instance allows you to get a list of items available for purchas
   void
   get_item_list_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
   {
-     char* rt_method = NULL;
-     char* rt_result = NULL;
-     char* rt_resultDescription = NULL;
-     char* rt_transactionId = NULL;
-     char* rt_startNumber = NULL;
-     char* rt_endNumber = NULL;
-     char* rt_totalCount = NULL;
-     char* rt_itemTotalCount = NULL;
-     char* rt_itemId = NULL;
-     char* rt_itemGroupId = NULL;
-     char* rt_itemName = NULL;
-     char* rt_currencyUnit = NULL;
-     char* rt_unitPrecedes = NULL;
-     char* rt_hasPenny = NULL;
-     char* rt_itemPrice = NULL;
-     char* rt_itemDownloadUrl = NULL;
-     char* rt_itemImageUrl = NULL;
-     char* rt_itemDescription = NULL;
-     char* rt_reserved1 = NULL;
-     char* rt_reserved2 = NULL;
-     char* rt_itemTypeCd = NULL;
-     char* rt_itemSubsBillDurationCd = NULL;
-     char* rt_subscriptionDurationMultiplier = NULL;
-     char* rt_timeStamp = NULL;
-    
-     if (result == APP_CONTROL_RESULT_SUCCEEDED) {
-        rt = app_control_get_extra_data(reply, "_method", &rt_method);
-        rt = app_control_get_extra_data(reply, "_result", &rt_result);
-    
-        /* Success */
-        if (!strcmp("0", rt_result)) {
-           rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
-           rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
-           rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
-           rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
-           rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
-           rt = app_control_get_extra_data(reply, "_itemTotalCount", &rt_itemTotalCount);
-    
-           int start = atoi(rt_startNumber);
-           int end = atoi(rt_endNumber);
-    
-           char keyId[100] = {0,};
-           for (; start <= end; start++) {
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");
-              rt = app_control_get_extra_data(reply, key_id, &rt_itemId);
-    
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");
-              rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);
+      char* rt_method = NULL;
+      char* rt_result = NULL;
+      char* rt_resultDescription = NULL;
+      char* rt_transactionId = NULL;
+      char* rt_startNumber = NULL;
+      char* rt_endNumber = NULL;
+      char* rt_totalCount = NULL;
+      char* rt_itemTotalCount = NULL;
+      char* rt_itemId = NULL;
+      char* rt_itemGroupId = NULL;
+      char* rt_itemName = NULL;
+      char* rt_currencyUnit = NULL;
+      char* rt_unitPrecedes = NULL;
+      char* rt_hasPenny = NULL;
+      char* rt_itemPrice = NULL;
+      char* rt_itemDownloadUrl = NULL;
+      char* rt_itemImageUrl = NULL;
+      char* rt_itemDescription = NULL;
+      char* rt_reserved1 = NULL;
+      char* rt_reserved2 = NULL;
+      char* rt_itemTypeCd = NULL;
+      char* rt_itemSubsBillDurationCd = NULL;
+      char* rt_subscriptionDurationMultiplier = NULL;
+      char* rt_timeStamp = NULL;
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");
-              rt = app_control_get_extra_data(reply, keyId, &rt_itemName);
+      if (result == APP_CONTROL_RESULT_SUCCEEDED) {
+          rt = app_control_get_extra_data(reply, "_method", &rt_method);
+          rt = app_control_get_extra_data(reply, "_result", &rt_result);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");
-              rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);
+          /* Success */
+          if (!strcmp("0", rt_result)) {
+              rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
+              rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
+              rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
+              rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
+              rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
+              rt = app_control_get_extra_data(reply, "_itemTotalCount", &rt_itemTotalCount);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");
-              rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);
+              int start = atoi(rt_startNumber);
+              int end = atoi(rt_endNumber);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");
-              rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);
+              char keyId[100] = {0,};
+              for (; start <= end; start++) {
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");
+                  rt = app_control_get_extra_data(reply, key_id, &rt_itemId);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");
-              rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");
+                  rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");
-              rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemName);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");
-              rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");
-              rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");
-              rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");
-              rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");
-              rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start,"_itemSubsBillDurationCd");
-              rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start,"_subscriptionDurationMultiplier");
-              rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);
 
-              snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
-              rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
-           }
-        }
-     }
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);
+
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);
+
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);
+
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemSubsBillDurationCd");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
+
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_subscriptionDurationMultiplier");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
+
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
+                  rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
+              }
+          }
+      }
   }
   ```
 
@@ -719,7 +716,7 @@ The IAP Service instance allows you to get a list of items available for purchas
 			<tr>
 				<td>
 				<p><code>_mcc</code></p>
-				<p><code>(deprecated)</code></p>
+				<p>(deprecated)</p>
 				</td>
 				<td>Mobile country code (MCC)</td>
 				<td>
@@ -732,7 +729,7 @@ The IAP Service instance allows you to get a list of items available for purchas
 			<tr>
 				<td>
 				<p><code>_mnc</code></p>
-				<p><code>(deprecated)</code></p>
+				<p>(deprecated)</p>
 				</td>
 				<td>Mobile network code (MNC)</td>
 				<td>
@@ -751,22 +748,22 @@ The IAP Service instance allows you to get a list of items available for purchas
   int rt = app_control_create(&app_control);
 
   if (rt == APP_CONTROL_ERROR_NONE) {
-    app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
-    app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list");
-    app_control_add_extra_data(app_control, "_mode", "0");
-    app_control_add_extra_data(app_control, "_transactionId", "123");
-    app_control_add_extra_data(app_control, "_startNumber", "1");
-    app_control_add_extra_data(app_control, "_endNumber", "10");
-    app_control_add_extra_data(app_control, "_startDate", "20140101");
-    app_control_add_extra_data(app_control, "_endDate", "20141231");
-    app_control_add_extra_data(app_control, "_itemGroupId", "100000000012");
-    app_control_add_extra_data(app_control, "_languageCd", "ENG");
-  
-    rt = app_control_send_launch_request(app_control, get_purchased_item_list_cb, NULL);
+      app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
+      app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/get_purchased_item_list");
+      app_control_add_extra_data(app_control, "_mode", "0");
+      app_control_add_extra_data(app_control, "_transactionId", "123");
+      app_control_add_extra_data(app_control, "_startNumber", "1");
+      app_control_add_extra_data(app_control, "_endNumber", "10");
+      app_control_add_extra_data(app_control, "_startDate", "20140101");
+      app_control_add_extra_data(app_control, "_endDate", "20141231");
+      app_control_add_extra_data(app_control, "_itemGroupId", "100000000012");
+      app_control_add_extra_data(app_control, "_languageCd", "ENG");
+
+      rt = app_control_send_launch_request(app_control, get_purchased_item_list_cb, NULL);
   }
-  
+
   if (app_control != NULL)
-    app_control_destroy(app_control);
+      app_control_destroy(app_control);
   ```
 
 - **Output Data**
@@ -952,11 +949,11 @@ The IAP Service instance allows you to get a list of items available for purchas
       char* rt_itemSubsBillDurationCd = NULL;
       char* rt_subscriptionDurationMultiplier = NULL;
       char* rt_timeStamp = NULL;
-   
+
       if (result == APP_CONTROL_RESULT_SUCCEEDED) {
           rt = app_control_get_extra_data(reply, "_method", &rt_method);
           rt = app_control_get_extra_data(reply, "_result", &rt_result);
-   
+
           /* Success */
           if (!strcmp("0", rt_result)) {
               rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
@@ -965,63 +962,63 @@ The IAP Service instance allows you to get a list of items available for purchas
               rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
               rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
               rt = app_control_get_extra_data(reply, "_itemTotalCount", &rt_itemTotalCount);
-    
+
               int start = atoi(rt_startNumber);
               int end = atoi(rt_endNumber);
-    
+
               char keyId[100] = {0,};
               for (; start <= end; start++) {
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemId");
                   rt = app_control_get_extra_data(reply, key_id, &rt_itemId);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemGroupId);");
                   rt = app_control_get_extra_data(reply, key_id, &rt_itemGroupId);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemName");
                   rt = app_control_get_extra_data(reply, keyId, &rt_itemName);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_currencyUnit");
                   rt = app_control_get_extra_data(reply, keyId, &rt_currencyUnit);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_unitPrecedes");
                   rt = app_control_get_extra_data(reply, keyId, &rt_unitPrecedes);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_hasPenny");
                   rt = app_control_get_extra_data(reply, keyId, &rt_hasPenny);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemPrice");
                   rt = app_control_get_extra_data(reply, keyId, &rt_itemPrice);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDownloadUrl");
                   rt = app_control_get_extra_data(reply, keyId, &rt_itemDownloadUrl);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemImageUrl");
                   rt = app_control_get_extra_data(reply, keyId, &rt_itemImageUrl);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemDescription");
                   rt = app_control_get_extra_data(reply, keyId, &rt_itemDescription);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved1");
                   rt = app_control_get_extra_data(reply, keyId, &rt_reserved1);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_reserved2");
                   rt = app_control_get_extra_data(reply, keyId, &rt_reserved2);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_paymentId");
                   rt = app_control_get_extra_data(reply, keyId, &rt_paymentId);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_purchaseDate");
                   rt = app_control_get_extra_data(reply, keyId, &rt_purchaseDate);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemTypeCd");
                   rt = app_control_get_extra_data(reply, keyId, &rt_itemTypeCd);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_itemSubsBillDurationCd");
                   rt = app_control_get_extra_data(reply, keyId, &rt_itemSubsBillDurationCd);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_subscriptionDurationMultiplier");
                   rt = app_control_get_extra_data(reply, keyId, &rt_subscriptionDurationMultiplier);
-    
+
                   snprintf(key_id, sizeof(keyId), "%d%s", start, "_timeStamp");
                   rt = app_control_get_extra_data(reply, keyId, &rt_timeStamp);
               }
@@ -1050,16 +1047,16 @@ The IAP Service instance allows you to get a list of items available for purchas
    int rt = app_control_create(&app_control);
    
    if (rt == APP_CONTROL_ERROR_NONE) {
-     app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
-     app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/get_country_list");
-     app_control_add_extra_data(app_control, "_mode", "0");
-     app_control_add_extra_data(app_control, "_transactionId", "123");
+       app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapservice");
+       app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/get_country_list");
+       app_control_add_extra_data(app_control, "_mode", "0");
+       app_control_add_extra_data(app_control, "_transactionId", "123");
    
-     rt = app_control_send_launch_request(app_control, get_country_list_cb, NULL);
+       rt = app_control_send_launch_request(app_control, get_country_list_cb, NULL);
    }
    
    if (app_control != NULL)
-     app_control_destroy(app_control);
+       app_control_destroy(app_control);
    ```
 
 - **Output Data**
@@ -1095,41 +1092,41 @@ The IAP Service instance allows you to get a list of items available for purchas
   void
   get_country_list_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
   {
-     char* rt_method = NULL;
-     char* rt_result = NULL;
-     char* rt_resultDescription = NULL;
-     char* rt_transactionId = NULL;
-     char* rt_startNumber = NULL;
-     char* rt_endNumber = NULL;
-     char* rt_totalCount = NULL;
-     char* rt_countryName = NULL;
-     char* rt_mcc = NULL;
+      char* rt_method = NULL;
+      char* rt_result = NULL;
+      char* rt_resultDescription = NULL;
+      char* rt_transactionId = NULL;
+      char* rt_startNumber = NULL;
+      char* rt_endNumber = NULL;
+      char* rt_totalCount = NULL;
+      char* rt_countryName = NULL;
+      char* rt_mcc = NULL;
   
-     if (result == APP_CONTROL_RESULT_SUCCEEDED) {
-         rt = app_control_get_extra_data(reply, "_method", &rt_method);
-         rt = app_control_get_extra_data(reply, "_result", &rt_result);
+      if (result == APP_CONTROL_RESULT_SUCCEEDED) {
+          rt = app_control_get_extra_data(reply, "_method", &rt_method);
+          rt = app_control_get_extra_data(reply, "_result", &rt_result);
 
-         /* Success */
-         if (!strcmp("0", rt_result)) {
-            rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
-            rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
-            rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
-            rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
-            rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
+          /* Success */
+          if (!strcmp("0", rt_result)) {
+              rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
+              rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
+              rt = app_control_get_extra_data(reply, "_startNumber", &rt_startNumber);
+              rt = app_control_get_extra_data(reply, "_endNumber", &rt_endNumber);
+              rt = app_control_get_extra_data(reply, "_totalCount", &rt_totalCount);
   
-            int start = atoi(rt_startNumber);
-            int end = atoi(rt_endNumber);
+              int start = atoi(rt_startNumber);
+              int end = atoi(rt_endNumber);
   
-            char keyId[100] = {0,};
-            for (; start <= end; start++) {
-                snprintf(key_id, sizeof(keyId), "%d%s", start, "_countryName");
-                rt = app_control_get_extra_data(reply, key_id, &rt_countryName);
+              char keyId[100] = {0,};
+              for (; start <= end; start++) {
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_countryName");
+                  rt = app_control_get_extra_data(reply, key_id, &rt_countryName);
   
-                snprintf(key_id, sizeof(keyId), "%d%s", start, "_mcc");
-                rt = app_control_get_extra_data(reply, key_id, &rt_mcc);
-            }
-         }
-     }
+                  snprintf(key_id, sizeof(keyId), "%d%s", start, "_mcc");
+                  rt = app_control_get_extra_data(reply, key_id, &rt_mcc);
+              }
+          }
+      }
   }
   ```
 
@@ -1250,7 +1247,7 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
 			<tr>
 				<td>
 				<p><code>_mcc</code></p>
-				<p><code>(deprecated)</code></p>
+				<p>(deprecated)</p>
 				</td>
 				<td>Mobile country code (MCC)</td>
 				<td>
@@ -1263,7 +1260,7 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
 			<tr>
 				<td>
 				<p><code>_mnc</code></p>
-				<p><code>(deprecated)</code></p>
+				<p>(deprecated)</p>
 				</td>
 				<td>Mobile network code (MNC)</td>
 				<td>
@@ -1283,19 +1280,19 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
   int rt = app_control_create(&app_control);
   
   if (rt == APP_CONTROL_ERROR_NONE) {
-     app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapclient");
-     app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/purchase");
-     app_control_add_extra_data(app_control, "_mode", "0");
-     app_control_add_extra_data(app_control, "_itemId", "000000000001");
-     app_control_add_extra_data(app_control, "_itemGroupId", "100000000012");
-     app_control_add_extra_data(app_control, "_languageCd", "ENG"); /* Optional */
-     app_control_add_extra_data(app_control, "_itemName", "Item 1"); /* Optional */
+      app_control_set_app_id(app_control, " org.tizen.inapppurchase.iapclient");
+      app_control_set_operation(app_control, "http://tizen.org/appcontrol/operation/iapv2/purchase");
+      app_control_add_extra_data(app_control, "_mode", "0");
+      app_control_add_extra_data(app_control, "_itemId", "000000000001");
+      app_control_add_extra_data(app_control, "_itemGroupId", "100000000012");
+      app_control_add_extra_data(app_control, "_languageCd", "ENG"); /* Optional */
+      app_control_add_extra_data(app_control, "_itemName", "Item 1"); /* Optional */
   
-     rt = app_control_send_launch_request(app_control, get_purchase_cb, NULL);
+      rt = app_control_send_launch_request(app_control, get_purchase_cb, NULL);
   }
   
   if (app_control != NULL)
-     app_control_destroy(app_control);
+      app_control_destroy(app_control);
   ```
 
 - **Output Data**
@@ -1471,70 +1468,70 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
   void
   get_purchase_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *user_data)
   {
-     char* rt_method = NULL;
-     char* rt_result = NULL;
-     char* rt_resultDescription = NULL;
-     char* rt_transactionId = NULL;
-     char* rt_itemId = NULL;
-     char* rt_itemGroupId = NULL;
-     char* rt_itemName = NULL;
-     char* rt_currencyUnit = NULL;
-     char* rt_unitPrecedes = NULL;
-     char* rt_hasPenny = NULL;
-     char* rt_itemPrice = NULL;
-     char* rt_itemDownloadUrl = NULL;
-     char* rt_itemImageUrl = NULL;
-     char* rt_itemDescription = NULL;
-     char* rt_reserved1 = NULL;
-     char* rt_reserved2 = NULL;
-     char* rt_paymentId = NULL;
-     char* rt_ticketVerifyUrl = NULL;
-     char* rt_ticketPurchaseId = NULL;
-     char* rt_ticketParam1 = NULL;
-     char* rt_ticketParam2 = NULL;
-     char* rt_ticketParam3 = NULL;
-     char* rt_ticketParam4 = NULL;
-     char* rt_ticketParam5 = NULL;
-     char* rt_purchaseDate = NULL;
-     char* rt_itemTypeCd = NULL;
-     char* rt_itemSubsBillDurationCd = NULL;
-     char* rt_subscriptionDurationMultiplier = NULL;
-     char* rt_timeStamp = NULL;
+      char* rt_method = NULL;
+      char* rt_result = NULL;
+      char* rt_resultDescription = NULL;
+      char* rt_transactionId = NULL;
+      char* rt_itemId = NULL;
+      char* rt_itemGroupId = NULL;
+      char* rt_itemName = NULL;
+      char* rt_currencyUnit = NULL;
+      char* rt_unitPrecedes = NULL;
+      char* rt_hasPenny = NULL;
+      char* rt_itemPrice = NULL;
+      char* rt_itemDownloadUrl = NULL;
+      char* rt_itemImageUrl = NULL;
+      char* rt_itemDescription = NULL;
+      char* rt_reserved1 = NULL;
+      char* rt_reserved2 = NULL;
+      char* rt_paymentId = NULL;
+      char* rt_ticketVerifyUrl = NULL;
+      char* rt_ticketPurchaseId = NULL;
+      char* rt_ticketParam1 = NULL;
+      char* rt_ticketParam2 = NULL;
+      char* rt_ticketParam3 = NULL;
+      char* rt_ticketParam4 = NULL;
+      char* rt_ticketParam5 = NULL;
+      char* rt_purchaseDate = NULL;
+      char* rt_itemTypeCd = NULL;
+      char* rt_itemSubsBillDurationCd = NULL;
+      char* rt_subscriptionDurationMultiplier = NULL;
+      char* rt_timeStamp = NULL;
 
-     if (result == APP_CONTROL_RESULT_SUCCEEDED) {
-         rt = app_control_get_extra_data(reply, "_method", &rt_method);
-         rt = app_control_get_extra_data(reply, "_result", &rt_result);
+      if (result == APP_CONTROL_RESULT_SUCCEEDED) {
+          rt = app_control_get_extra_data(reply, "_method", &rt_method);
+          rt = app_control_get_extra_data(reply, "_result", &rt_result);
 
-         /* Success */
-         if (!strcmp("0", rt_result)) {
-            rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
-            rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
-            rt = app_control_get_extra_data(reply, "_itemId", &rt_itemId);
-            rt = app_control_get_extra_data(reply, "_itemGroupId", &rt_itemGroupId);
-            rt = app_control_get_extra_data(reply, "_itemName", &rt_itemName);
-            rt = app_control_get_extra_data(reply, "_currencyUnit", &rt_currencyUnit);
-            rt = app_control_get_extra_data(reply, "_unitPrecedes", &rt_unitPrecedes);
-            rt = app_control_get_extra_data(reply, "_itemPrice", &rt_itemPrice);
-            rt = app_control_get_extra_data(reply, "_itemDownloadUrl", &rt_itemDownloadUrl);
-            rt = app_control_get_extra_data(reply, "_itemImageUrl", &rt_itemImageUrl);
-            rt = app_control_get_extra_data(reply, "_itemDescription", &rt_itemDescription);
-            rt = app_control_get_extra_data(reply, "_reserved1", &amp;rt_reserved1);
-            rt = app_control_get_extra_data(reply, "_reserved2", &rt_reserved2);
-            rt = app_control_get_extra_data(reply, "_paymentId", &rt_paymentId);
-            rt = app_control_get_extra_data(reply, "_ticketVerifyUrl", &rt_ticketVerifyUrl);
-            rt = app_control_get_extra_data(reply, "_ticketPurchaseId", &rt_ticketPurchaseId);
-            rt = app_control_get_extra_data(reply, "_ticketParam1", &rt_ticketParam1);
-            rt = app_control_get_extra_data(reply, "_ticketParam2", &rt_ticketParam2);
-            rt = app_control_get_extra_data(reply, "_ticketParam3", &rt_ticketParam3);
-            rt = app_control_get_extra_data(reply, "_ticketParam4", &rt_ticketParam4);
-            rt = app_control_get_extra_data(reply, "_ticketParam5", &rt_ticketParam5);
-            rt = app_control_get_extra_data(reply, "_purchaseDate", &rt_purchaseDate);
-            rt = app_control_get_extra_data(reply, "_itemTypeCd", &rt_itemTypeCd);
-            rt = app_control_get_extra_data(reply, "_itemSubsBillDurationCd", &rt_itemSubsBillDurationCd);
-            rt = app_control_get_extra_data(reply, "_subscriptionDurationMultiplier", &rt_subscriptionDurationMultiplier);
-            rt = app_control_get_extra_data(reply, "_timeStamp", &rt_timeStamp);
-         }
-     }
+          /* Success */
+          if (!strcmp("0", rt_result)) {
+              rt = app_control_get_extra_data(reply, "_resultDescription", &rt_resultDescription);
+              rt = app_control_get_extra_data(reply, "_transactionId", &rt_transactionId);
+              rt = app_control_get_extra_data(reply, "_itemId", &rt_itemId);
+              rt = app_control_get_extra_data(reply, "_itemGroupId", &rt_itemGroupId);
+              rt = app_control_get_extra_data(reply, "_itemName", &rt_itemName);
+              rt = app_control_get_extra_data(reply, "_currencyUnit", &rt_currencyUnit);
+              rt = app_control_get_extra_data(reply, "_unitPrecedes", &rt_unitPrecedes);
+              rt = app_control_get_extra_data(reply, "_itemPrice", &rt_itemPrice);
+              rt = app_control_get_extra_data(reply, "_itemDownloadUrl", &rt_itemDownloadUrl);
+              rt = app_control_get_extra_data(reply, "_itemImageUrl", &rt_itemImageUrl);
+              rt = app_control_get_extra_data(reply, "_itemDescription", &rt_itemDescription);
+              rt = app_control_get_extra_data(reply, "_reserved1", &amp;rt_reserved1);
+              rt = app_control_get_extra_data(reply, "_reserved2", &rt_reserved2);
+              rt = app_control_get_extra_data(reply, "_paymentId", &rt_paymentId);
+              rt = app_control_get_extra_data(reply, "_ticketVerifyUrl", &rt_ticketVerifyUrl);
+              rt = app_control_get_extra_data(reply, "_ticketPurchaseId", &rt_ticketPurchaseId);
+              rt = app_control_get_extra_data(reply, "_ticketParam1", &rt_ticketParam1);
+              rt = app_control_get_extra_data(reply, "_ticketParam2", &rt_ticketParam2);
+              rt = app_control_get_extra_data(reply, "_ticketParam3", &rt_ticketParam3);
+              rt = app_control_get_extra_data(reply, "_ticketParam4", &rt_ticketParam4);
+              rt = app_control_get_extra_data(reply, "_ticketParam5", &rt_ticketParam5);
+              rt = app_control_get_extra_data(reply, "_purchaseDate", &rt_purchaseDate);
+              rt = app_control_get_extra_data(reply, "_itemTypeCd", &rt_itemTypeCd);
+              rt = app_control_get_extra_data(reply, "_itemSubsBillDurationCd", &rt_itemSubsBillDurationCd);
+              rt = app_control_get_extra_data(reply, "_subscriptionDurationMultiplier", &rt_subscriptionDurationMultiplier);
+              rt = app_control_get_extra_data(reply, "_timeStamp", &rt_timeStamp);
+          }
+      }
   }
   ```
 

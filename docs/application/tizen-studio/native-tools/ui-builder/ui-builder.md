@@ -125,7 +125,7 @@ void view1_button1_onclicked(uib_view1_view_context *vc, Evas_Object *obj, void 
 ```csharp
 struct _uib_view1_view_context {
     /* Parent evas_object which was a parameter of the create function */
-    Evas_Object *parent;    
+    Evas_Object *parent;
     /* Root container UI component of this view */
     Evas_Object* root_container;
     /* View class name */
