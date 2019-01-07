@@ -1,7 +1,6 @@
-# Work with SkiaSharp
+# Create Applications with SkiaSharp
 
-SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on the Skia Graphics Library of Google. 
-It provides a comprehensive 2D API that is used across mobiles, servers, and desktop models to render images.
+SkiaSharp is a cross-platform 2D graphics API for .NET platforms based on the Skia Graphics Library of Google. It provides a comprehensive 2D API that is used across mobiles, servers, and desktop models to render images.
 
 In OpenTK app, you can use SkiaSharp to draw geometries, texts, or images. For more information about the SkiaSharp APIs, see [SkiaSharp API document](https://docs.microsoft.com/en-us/dotnet/api/skiasharp?view=skiasharp-1.60.3).
 
@@ -18,7 +17,7 @@ Allocate a specific size of the memory block. The size of memory block must be s
 
 ```csharp
 private IntPtr pBitMap;                   // memory handle
-private int rowByte;                      // bytes of one row 
+private int rowByte;                      // bytes of one row
 private int bitmapHeight, bitmapWidth;    // height and width of the canvas
 
 private void CreateBitmap()
@@ -51,7 +50,7 @@ private SKCanvas canvas;
 private void CreateSKCanvas()
 {
     GL.PixelStore(All.UnpackAlignment, 4);
-    
+
     // create the surface
     var info = new SKImageInfo(bitmapWidth, bitmapHeight, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
     surface = SKSurface.Create(info, pBitMap, rowByte);
@@ -63,6 +62,8 @@ private void CreateSKCanvas()
 ```
 
 ## Draw Text on SKCanvas
+
+Set a color and draw text on the canvas:
 
 ```csharp
 private void DrawTextBySkiaSharp(SKCanvas canvas, int canvasWidth, int canvasHeight)
@@ -180,12 +181,13 @@ private void OnRenderFrame(Object sender, FrameEventArgs e)
 
 ## Sample Application
 
-An implementation of OpenTK sample app is made that uses SkiaSharp to draw text on a rotating cube.
+There is a [OpenTK sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp) that uses SkiaSharp to draw text on a rotating cube.
 
-For more information, see [sample application](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp).
+**Figure: Sample application running on TV emulator**
 
-- Run this sample application on the TV emulator                                  
 ![WorkWithSkiaSharp](media/SampleWorkWithSkiaSharp.png)
+
+For more information, see [Tizen-CSharp-Samples](https://github.com/Samsung/Tizen-CSharp-Samples/tree/dev/TV/CubeWithSkiaSharp) repository on GitHub.
 
 ## Related Information
 - Dependencies
