@@ -89,6 +89,7 @@ package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value
 ```
 
 **Table: Install command parameters**
+
 | Parameter                   | Description                              |
 |-----------------------------|------------------------------------------|
 | `--accept-license`          | Accepts the license terms.               |
