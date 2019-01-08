@@ -104,10 +104,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#afb0a6f54a98659276867ff3ed480a13e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1HoverEvent.html#a5e42d026beba2a0379c6098892c3fec7">~HoverEvent</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a5e42d026beba2a0379c6098892c3fec7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1HoverEvent.html#af98b63c765c8d452b246e8afd245efc9">GetPointCount</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of points in this <a class="el" href="structDali_1_1HoverEvent.html" title="Hover events are a collection of touch points at a specific moment in time.">HoverEvent</a>.  <a href="#af98b63c765c8d452b246e8afd245efc9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1HoverEvent.html#ad703cd9e58fc4d0cdf078fc8ff3e3740">GetPoint</a> (unsigned int point) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a touch point at the index requested.  <a href="#ad703cd9e58fc4d0cdf078fc8ff3e3740"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1HoverEvent.html#a2bc9a88d3874e0cef37b62d832a038c5">GetPointCount</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of points in this <a class="el" href="structDali_1_1HoverEvent.html" title="Hover events are a collection of touch points at a specific moment in time.">HoverEvent</a>.  <a href="#a2bc9a88d3874e0cef37b62d832a038c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1HoverEvent.html#adcb4cb8cf5368f45bc1c2c44da025a74">GetPoint</a> (uint32_t point) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a touch point at the index requested.  <a href="#adcb4cb8cf5368f45bc1c2c44da025a74"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dali__core__events.html#ga0b7a02bd217232f3f0ec953a3995b186">TouchPointContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1HoverEvent.html#a20c557099602ebf6a7cc6a2c101e20d3">points</a></td></tr>
@@ -186,14 +186,14 @@ unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ad703cd9e58fc4d0cdf078fc8ff3e3740"></a><!-- doxytag: member="Dali::HoverEvent::GetPoint" ref="ad703cd9e58fc4d0cdf078fc8ff3e3740" args="(unsigned int point) const " -->
+<a class="anchor" id="adcb4cb8cf5368f45bc1c2c44da025a74"></a><!-- doxytag: member="Dali::HoverEvent::GetPoint" ref="adcb4cb8cf5368f45bc1c2c44da025a74" args="(uint32_t point) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a>&amp; <a class="el" href="structDali_1_1HoverEvent.html#ad703cd9e58fc4d0cdf078fc8ff3e3740">Dali::HoverEvent::GetPoint</a> </td>
+          <td class="memname">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a>&amp; <a class="el" href="structDali_1_1HoverEvent.html#adcb4cb8cf5368f45bc1c2c44da025a74">Dali::HoverEvent::GetPoint</a> </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -211,16 +211,16 @@ unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Point requested </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>"point" should be less than the value returned by <a class="el" href="structDali_1_1HoverEvent.html#af98b63c765c8d452b246e8afd245efc9" title="Returns the total number of points in this HoverEvent.">GetPointCount()</a>. If out of range, then program asserts. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>"point" should be less than the value returned by <a class="el" href="structDali_1_1HoverEvent.html#a2bc9a88d3874e0cef37b62d832a038c5" title="Returns the total number of points in this HoverEvent.">GetPointCount()</a>. If out of range, then program asserts. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af98b63c765c8d452b246e8afd245efc9"></a><!-- doxytag: member="Dali::HoverEvent::GetPointCount" ref="af98b63c765c8d452b246e8afd245efc9" args="() const " -->
+<a class="anchor" id="a2bc9a88d3874e0cef37b62d832a038c5"></a><!-- doxytag: member="Dali::HoverEvent::GetPointCount" ref="a2bc9a88d3874e0cef37b62d832a038c5" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="structDali_1_1HoverEvent.html#af98b63c765c8d452b246e8afd245efc9">Dali::HoverEvent::GetPointCount</a> </td>
+          <td class="memname">uint32_t <a class="el" href="structDali_1_1HoverEvent.html#a2bc9a88d3874e0cef37b62d832a038c5">Dali::HoverEvent::GetPointCount</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

@@ -97,20 +97,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="bg_inheritance_tree.png" alt="bg_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/bg/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>The bg (background) widget is used for setting (solid) background decorations to a window (unless it has transparency enabled) or to any container object. It works just like an image, but has some properties useful to a background, like setting it to tiled, centered, scaled or stretched.</p>
 <p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for background objects.</p>
 <p>Default content parts of the bg widget that you can use for are: </p>
 <ul>
-<li><code>"overlay"</code> - overlay of the bg</li>
-</ul>
-<p>Here is some sample code using it: </p>
-<ul>
-<li><a class="el" href="bg_01_example_page.html">elm_bg - Plain color background.</a> </li>
-<li><a class="el" href="bg_02_example_page.html">elm_bg - Image background.</a> </li>
-<li><a class="el" href="bg_03_example_page.html">elm_bg - Background properties.</a> </li>
+<li><code>"overlay"</code> - overlay of the bg </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -126,6 +117,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Bg.html#ga7ebcf30b15b9610380101a26b240b711">elm_bg_color_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int *r, int *g, int *b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c">elm_bg_file_set</a> (Eo *obj, const char *file, const char *group)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Bg.html#gafd923c1eb9d78db9f4b50fcfec7c74ae">elm_bg_file_get</a> (const Eo *obj, const char **file, const char **group)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Bg.html#ga626651023c23741909f641834db7e4b1">elm_bg_overlay_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *overlay)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Bg.html#ga5efdbef26b19739f9253f6ab3fb79ffb">elm_bg_overlay_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Bg.html#ga090c20e28a8d262267375af586c3f050">elm_bg_overlay_unset</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="gac13a24993e39fac3484bd29a9bfeea26"></a><!-- doxytag: member="elm_bg.eo.legacy.h::Elm_Bg_Option" ref="gac13a24993e39fac3484bd29a9bfeea26" args="" -->
@@ -142,17 +136,20 @@ Functions</h2></td></tr>
 <p>Identifiers on how a background widget is to display its image -- if it was set to use an image file. </p>
 <p>See also <a class="el" href="group__Elm__Bg.html#gab079cb5e5f770be10ddb4acb00434f57">elm_bg_option_set</a>, <a class="el" href="group__Elm__Bg.html#gacaf91f944846418cee118e198b2c1c66">elm_bg_option_get</a>. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26a02ef6a9e93a4d4fe3a5a69bdc94b9261"></a><!-- doxytag: member="ELM_BG_OPTION_SCALE" ref="ggac13a24993e39fac3484bd29a9bfeea26a02ef6a9e93a4d4fe3a5a69bdc94b9261" args="" -->ELM_BG_OPTION_SCALE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26a59df3d0f575cd2bc133c367beca423dc"></a><!-- doxytag: member="ELM_BG_OPTION_CENTER" ref="ggac13a24993e39fac3484bd29a9bfeea26a59df3d0f575cd2bc133c367beca423dc" args="" -->ELM_BG_OPTION_CENTER</em>&nbsp;</td><td>
 <p>Center the background image. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26ab6da4402f66e31e15d30b7b79bf7478b"></a><!-- doxytag: member="ELM_BG_OPTION_STRETCH" ref="ggac13a24993e39fac3484bd29a9bfeea26ab6da4402f66e31e15d30b7b79bf7478b" args="" -->ELM_BG_OPTION_STRETCH</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26a02ef6a9e93a4d4fe3a5a69bdc94b9261"></a><!-- doxytag: member="ELM_BG_OPTION_SCALE" ref="ggac13a24993e39fac3484bd29a9bfeea26a02ef6a9e93a4d4fe3a5a69bdc94b9261" args="" -->ELM_BG_OPTION_SCALE</em>&nbsp;</td><td>
 <p>Scale the background image, retaining aspect ratio (default). </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26a95d3970cc20d64547bf76b9aba606002"></a><!-- doxytag: member="ELM_BG_OPTION_TILE" ref="ggac13a24993e39fac3484bd29a9bfeea26a95d3970cc20d64547bf76b9aba606002" args="" -->ELM_BG_OPTION_TILE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26ab6da4402f66e31e15d30b7b79bf7478b"></a><!-- doxytag: member="ELM_BG_OPTION_STRETCH" ref="ggac13a24993e39fac3484bd29a9bfeea26ab6da4402f66e31e15d30b7b79bf7478b" args="" -->ELM_BG_OPTION_STRETCH</em>&nbsp;</td><td>
 <p>Stretch the background image to fill the widget's area. </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26a95d3970cc20d64547bf76b9aba606002"></a><!-- doxytag: member="ELM_BG_OPTION_TILE" ref="ggac13a24993e39fac3484bd29a9bfeea26a95d3970cc20d64547bf76b9aba606002" args="" -->ELM_BG_OPTION_TILE</em>&nbsp;</td><td>
+<p>Tile background image at its original size. </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac13a24993e39fac3484bd29a9bfeea26a714632e623be7b2e82c96aea6aba5ce3"></a><!-- doxytag: member="ELM_BG_OPTION_LAST" ref="ggac13a24993e39fac3484bd29a9bfeea26a714632e623be7b2e82c96aea6aba5ce3" args="" -->ELM_BG_OPTION_LAST</em>&nbsp;</td><td>
-<p>Tile background image at its original size. Sentinel value, also used to indicate errors. </p>
+<p>Sentinel value, also used to indicate errors. </p>
 </td></tr>
 </table>
 </dd>
@@ -495,6 +492,97 @@ This will only affect the contents of one of the background's swallow spots, nam
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5efdbef26b19739f9253f6ab3fb79ffb"></a><!-- doxytag: member="elm_removed.h::elm_bg_overlay_get" ref="ga5efdbef26b19739f9253f6ab3fb79ffb" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Bg.html#ga5efdbef26b19739f9253f6ab3fb79ffb">elm_bg_overlay_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the overlay object used for the background object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The bg object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The content that is being used</dd></dl>
+<p>Return the content object which is set for this widget</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000342">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__General.html#ga32413f4d59d8232cd362a922a281abf1">elm_object_part_content_get()</a> instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga626651023c23741909f641834db7e4b1"></a><!-- doxytag: member="elm_removed.h::elm_bg_overlay_set" ref="ga626651023c23741909f641834db7e4b1" args="(Evas_Object *obj, Evas_Object *overlay)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Bg.html#ga626651023c23741909f641834db7e4b1">elm_bg_overlay_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>overlay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the overlay object used for the background object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The bg object </td></tr>
+    <tr><td class="paramname">overlay</td><td>The overlay object</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This provides a way for elm_bg to have an 'overlay' that will be on top of the bg. Once the over object is set, a previously set one will be deleted, even if you set the new one to NULL. If you want to keep that old content object, use the <a class="el" href="group__Elm__Bg.html#ga090c20e28a8d262267375af586c3f050">elm_bg_overlay_unset()</a> function.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000341">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga090c20e28a8d262267375af586c3f050"></a><!-- doxytag: member="elm_removed.h::elm_bg_overlay_unset" ref="ga090c20e28a8d262267375af586c3f050" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Bg.html#ga090c20e28a8d262267375af586c3f050">elm_bg_overlay_unset</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the overlay object used for the background object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The bg object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The content that was being used</dd></dl>
+<p>Unparent and return the overlay object which was set for this widget</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000343">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__General.html#gadc5a1df25fe17e31739841133b53b5fc">elm_object_part_content_unset()</a> instead</dd></dl>
 
 </div>
 </div>

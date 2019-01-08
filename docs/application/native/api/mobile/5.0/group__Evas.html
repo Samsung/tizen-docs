@@ -106,6 +106,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Evas__Engine__Info.html">_Evas_Engine_Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas.html#ga86d67b69014ab10fffe20b883685fa46">Evas_Engine_Info</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Evas_Axis&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas.html#gaeb8cae9fc5cdbc605c0b70655457e604">Evas_Axis</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas.html#gafe9cc74872ef141d258c2162fa0ce5ca">Evas_Real</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct _Evas_Version&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas.html#ga15361e29701195a6391ff713459f495a">Evas_Version</a></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="gaeb8cae9fc5cdbc605c0b70655457e604"></a><!-- doxytag: member="evas_types.eot.h::Evas_Axis" ref="gaeb8cae9fc5cdbc605c0b70655457e604" args="" -->
@@ -221,6 +222,30 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>A type for floating value </p>
 
+</div>
+</div>
+<a class="anchor" id="ga15361e29701195a6391ff713459f495a"></a><!-- doxytag: member="Evas_Common.h::Evas_Version" ref="ga15361e29701195a6391ff713459f495a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Evas.html#ga15361e29701195a6391ff713459f495a">Evas_Version</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This is the Evas version information structure that can be used at runtime to detect which version of evas is being used and adapt appropriately as follows for example:</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #if defined(EVAS_VERSION_MAJOR) &amp;&amp; (EVAS_VERSION_MAJOR &gt;= 1) &amp;&amp; defined(EVAS_VERSION_MINOR) &amp;&amp; (EVAS_VERSION_MINOR &gt; 0)</span>
+<span class="preprocessor"></span> printf(<span class="stringliteral">&quot;Evas version: %i.%i.%i\n&quot;</span>,
+        evas_version-&gt;major,
+        evas_version-&gt;minor,
+        evas_version-&gt;micro);
+ <span class="keywordflow">if</span> (evas_version-&gt;revision &gt; 0)
+   {
+     printf(<span class="stringliteral">&quot;  Built from Git revision # %i\n&quot;</span>, evas_version-&gt;revision);
+   }
+<span class="preprocessor"> #endif</span>
+</pre></div> 
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>

@@ -113,9 +113,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
  <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 </pre></div><p>After these two pieces of code are executed, respectively, in the server and client code, the server will be up and running and the client will try to connect to it. The connection, with its subsequent messages being sent from server to client and client to server, can be represented in the following sequence diagram:</p>
- 
- <img src="ecore_con-client-server.png" style="max-width: 400px"/>
- <a href="ecore_con-client-server.png">Full size</a>
+<div class="image">
+<img src="ecore_con-client-server.png" alt="ecore_con-client-server.png"/>
+</div>
   <p>Please notice the important difference between these two codes: the first is used for writing a <b>server</b>, while the second should be used for writing a <b>client</b>.</p>
 <p>A reference for the <code>client</code> functions can be found at <a class="el" href="group__Ecore__Con__Client__Group.html">Ecore Connection Client Functions</a>.</p>
 <p>Examples of usage for this API can be found here: </p>

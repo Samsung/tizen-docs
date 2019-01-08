@@ -96,9 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="colorselector_inheritance_tree.png" alt="colorselector_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/colorselector/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>A ColorSelector is a color selection widget. It allows application to set a series of colors.It also allows to load/save colors from/to config with a unique identifier, by default, the colors are loaded/saved from/to config using "default" identifier. The colors can be picked by user from the color set by clicking on individual color item on the palette or by selecting it from selector.</p>
 <p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for check objects.</p>
 <p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
@@ -132,6 +129,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new color item to palette.  <a href="#ga090acce63543732c98b2684ce6d1b182"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Colorselector.html#gaec59b585dc6fb561e07e8d46039f5c3c">elm_colorselector_palette_clear</a> (Elm_Colorselector *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the palette items.  <a href="#gaec59b585dc6fb561e07e8d46039f5c3c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Colorselector.html#ga9058fd3f763834982fc00c1cc66c1288">elm_colorselector_palette_item_color_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, int *r, int *g, int *b, int *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Palette item's color.  <a href="#ga9058fd3f763834982fc00c1cc66c1288"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Colorselector.html#gaa946ad707505e98ab9bc3cb96a433651">elm_colorselector_palette_item_color_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, int r, int g, int b, int a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set palette item's color.  <a href="#gaa946ad707505e98ab9bc3cb96a433651"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Colorselector.html#ga0f846a3405120a875297a8f146079f3d">elm_colorselector_palette_item_selected_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected state of color palette item.  <a href="#ga0f846a3405120a875297a8f146079f3d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Colorselector.html#ga137c970e4ce5225ec021b06ae2ff6c01">elm_colorselector_palette_item_selected_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> selected)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the selected state of color palette item.  <a href="#ga137c970e4ce5225ec021b06ae2ff6c01"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Colorselector.html#ga27ebfd6da68b578e5f462eb4e71ce372">elm_colorselector_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new colorselector to the parent.  <a href="#ga27ebfd6da68b578e5f462eb4e71ce372"></a><br/></td></tr>
 </table>
@@ -465,6 +470,186 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new color palette Item. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9058fd3f763834982fc00c1cc66c1288"></a><!-- doxytag: member="elm_colorselector_common.h::elm_colorselector_palette_item_color_get" ref="ga9058fd3f763834982fc00c1cc66c1288" args="(const Elm_Object_Item *it, int *r, int *g, int *b, int *a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Colorselector.html#ga9058fd3f763834982fc00c1cc66c1288">elm_colorselector_palette_item_color_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get Palette item's color. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The color palette item. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>integer pointer for r-value of color </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">g</td><td>integer pointer for g-value of color </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>integer pointer for b-value of color </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>integer pointer for a-value of color </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa946ad707505e98ab9bc3cb96a433651"></a><!-- doxytag: member="elm_colorselector_common.h::elm_colorselector_palette_item_color_set" ref="gaa946ad707505e98ab9bc3cb96a433651" args="(Elm_Object_Item *it, int r, int g, int b, int a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Colorselector.html#gaa946ad707505e98ab9bc3cb96a433651">elm_colorselector_palette_item_color_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set palette item's color. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The color palette item. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>r-value of color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>g-value of color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>b-value of color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>a-value of color </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0f846a3405120a875297a8f146079f3d"></a><!-- doxytag: member="elm_colorselector_common.h::elm_colorselector_palette_item_selected_get" ref="ga0f846a3405120a875297a8f146079f3d" args="(const Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Colorselector.html#ga0f846a3405120a875297a8f146079f3d">elm_colorselector_palette_item_selected_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the selected state of color palette item. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The Colorpalette item </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the item is selected, <code>EINA_FALSE</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga137c970e4ce5225ec021b06ae2ff6c01"></a><!-- doxytag: member="elm_colorselector_common.h::elm_colorselector_palette_item_selected_set" ref="ga137c970e4ce5225ec021b06ae2ff6c01" args="(Elm_Object_Item *it, Eina_Bool selected)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Colorselector.html#ga137c970e4ce5225ec021b06ae2ff6c01">elm_colorselector_palette_item_selected_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>selected</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the selected state of color palette item. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The Colorpalette item </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selected</td><td>The selected state </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

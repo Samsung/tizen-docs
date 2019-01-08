@@ -117,16 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><a class="el" href="group__Elm__General.html#ga1beada7edf5d714c0dba5459bcc993fc">elm_object_signal_emit</a> </li>
 <li><a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add</a> </li>
-<li><a class="el" href="group__Elm__General.html#ga3c76b5447be522d647e352cb7ff7c9e6">elm_object_signal_callback_del</a></li>
-</ul>
-<p>Here is some sample code using it: </p>
-<ul>
-<li><a class="el" href="calendar_example_01.html">Calendar - Simple creation.</a> </li>
-<li><a class="el" href="calendar_example_02.html">Calendar - Layout strings formatting.</a> </li>
-<li><a class="el" href="calendar_example_03.html">Calendar - Years restrictions.</a> </li>
-<li><a class="el" href="calendar_example_04.html">Calendar - Days selection.</a> </li>
-<li><a class="el" href="calendar_example_05.html">Calendar - Signal callback and getters.</a> </li>
-<li><a class="el" href="calendar_example_06.html">Calendar - Calendar marks.</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga3c76b5447be522d647e352cb7ff7c9e6">elm_object_signal_callback_del</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -177,6 +168,11 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current time displayed in the widget.  <a href="#ga100be4ad650a50fe583432b8c5c2e805"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#gaacf325f949268d816c3b2a601969ecda">elm_calendar_mark_del</a> (<a class="el" href="group__Elm__Calendar.html#ga68bc9b2ac669f3f7964e1ca5faff78e4">Elm_Calendar_Mark</a> *mark)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#gae893c6a3465db10d322ff937be4b0854">elm_calendar_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga3693138d3f7563629525f100c6598a4c">elm_calendar_min_max_year_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int min, int max)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga52f8b71f756ef62dd2a21b9df338d39b">elm_calendar_min_max_year_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int *min, int *max)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga1b2546749b6df7673f3d7e162f3a12aa">elm_calendar_text_saturday_color_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga06608ab5826374005094c95fe29795e0">elm_calendar_text_sunday_color_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#gabf386320f2d08c8b0be81467254a938f">elm_calendar_text_weekday_color_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int pos)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Elm_Calendar_Mark&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Calendar.html#ga68bc9b2ac669f3f7964e1ca5faff78e4">Elm_Calendar_Mark</a></td></tr>
@@ -277,7 +273,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new calendar widget handle or <code>NULL</code>, on errors.</dd></dl>
 <p>This function inserts a new calendar widget on the canvas.</p>
-<p><a class="el" href="calendar_example_01.html">Calendar - Simple creation.</a></p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -553,7 +548,6 @@ Typedefs</h2></td></tr>
 
 <p>Set a function to format the string that will be used to display month and year;. </p>
 <p>By default it uses strftime with "%B %Y" format string. It should allocate the memory that will be used by the string, that will be freed by the widget after usage. A pointer to the string and a pointer to the time struct will be provided.</p>
-<p><a class="el" href="calendar_example_02.html">Calendar - Layout strings formatting.</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -677,7 +671,6 @@ Typedefs</h2></td></tr>
 <p>It won't immediately update the calendar, drawing the marks. For this, <a class="el" href="group__Elm__Calendar.html#gaac0a5d49f8515c1995a13c321bf84e1a">elm_calendar_marks_draw()</a>. However, when user selects next or previous month calendar forces marks drawn.</p>
 <p>Marks created with this method can be deleted with <a class="el" href="group__Elm__Calendar.html#gaacf325f949268d816c3b2a601969ecda">elm_calendar_mark_del()</a>.</p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#gaac0a5d49f8515c1995a13c321bf84e1a">elm_calendar_marks_draw</a>, <a class="el" href="group__Elm__Calendar.html#gaacf325f949268d816c3b2a601969ecda">elm_calendar_mark_del()</a>.</p>
-<p><a class="el" href="calendar_example_06.html">Calendar - Calendar marks.</a></p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -714,7 +707,6 @@ Typedefs</h2></td></tr>
 </dl>
 <p>If deleting all calendar marks is required, <a class="el" href="group__Elm__Calendar.html#ga9bde6ccf81aa3d9c4e3cd80f769f09cf" title="Remove all calendar&#39;s marks.">elm_calendar_marks_clear()</a> should be used instead of getting marks list and deleting each one.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a></dd></dl>
-<p><a class="el" href="calendar_example_06.html">Calendar - Calendar marks.</a></p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -765,7 +757,6 @@ Typedefs</h2></td></tr>
 <p>Should be used after adding, removing or clearing marks. It will go through the entire marks list updating the calendar. If lots of marks will be added, add all the marks and then call this function.</p>
 <p>When the month is changed, i.e. user selects next or previous month, marks will be drawn.</p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de">elm_calendar_mark_add</a>, <a class="el" href="group__Elm__Calendar.html#gaacf325f949268d816c3b2a601969ecda">elm_calendar_mark_del()</a>, <a class="el" href="group__Elm__Calendar.html#ga9bde6ccf81aa3d9c4e3cd80f769f09cf">elm_calendar_marks_clear</a>.</p>
-<p><a class="el" href="calendar_example_06.html">Calendar - Calendar marks.</a></p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -800,6 +791,96 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga52f8b71f756ef62dd2a21b9df338d39b"></a><!-- doxytag: member="elm_calendar_legacy.h::elm_calendar_min_max_year_get" ref="ga52f8b71f756ef62dd2a21b9df338d39b" args="(const Evas_Object *obj, int *min, int *max)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Calendar.html#ga52f8b71f756ef62dd2a21b9df338d39b">elm_calendar_min_max_year_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the minimum and maximum values for the year.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">min</td><td>The minimum year, greater than 1901. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">max</td><td>The maximum year.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Default values are 1902 and -1.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Calendar.html#ga3693138d3f7563629525f100c6598a4c">elm_calendar_min_max_year_set()</a></dd></dl>
+<p><a class="el" href="calendar_example_05.html">Calendar - Signal callback and getters.</a></p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3693138d3f7563629525f100c6598a4c"></a><!-- doxytag: member="elm_calendar_legacy.h::elm_calendar_min_max_year_set" ref="ga3693138d3f7563629525f100c6598a4c" args="(Evas_Object *obj, int min, int max)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Calendar.html#ga3693138d3f7563629525f100c6598a4c">elm_calendar_min_max_year_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the minimum and maximum values for the year.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>The minimum year, greater than 1901. </td></tr>
+    <tr><td class="paramname">max</td><td>The maximum year.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Maximum must be greater than minimum, except if you don't want to set maximum year. Default values are 1902 and -1. If the maximum year is a negative value, it will be limited depending on the platform architecture. (year 2037 for 32 bits)</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Calendar.html#ga52f8b71f756ef62dd2a21b9df338d39b">elm_calendar_min_max_year_get()</a></dd></dl>
+<p><a class="el" href="calendar_example_03.html">Calendar - Years restrictions.</a></p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -967,7 +1048,6 @@ Typedefs</h2></td></tr>
 <p>Get selected date. </p>
 <p>Get date selected by the user or set by function <a class="el" href="group__Elm__Calendar.html#ga91ac41f39a33c9ae546f791733067ed5">elm_calendar_selected_time_set()</a>. Selected date changes when the user goes to next/previous month or select a day pressing over it on calendar.</p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#gaa0437fc4461958f49b4fb1091b864d97">elm_calendar_selected_time_get</a>.</p>
-<p><a class="el" href="calendar_example_05.html">Calendar - Signal callback and getters.</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1007,7 +1087,6 @@ Typedefs</h2></td></tr>
 <p>Set selected date to be highlighted on calendar. </p>
 <p>Set the selected date, changing the displayed month if needed. Selected date changes when the user goes to next/previous month or select a day pressing over it on calendar.</p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#gaa0437fc4461958f49b4fb1091b864d97">elm_calendar_selected_time_get</a>.</p>
-<p><a class="el" href="calendar_example_04.html">Calendar - Days selection.</a></p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1016,6 +1095,132 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1b2546749b6df7673f3d7e162f3a12aa"></a><!-- doxytag: member="elm_removed.h::elm_calendar_text_saturday_color_set" ref="ga1b2546749b6df7673f3d7e162f3a12aa" args="(Evas_Object *obj, int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Calendar.html#ga1b2546749b6df7673f3d7e162f3a12aa">elm_calendar_text_saturday_color_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a day text color to the same that represents Saturdays.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The calendar object. </td></tr>
+    <tr><td class="paramname">pos</td><td>The text position. Position is the cell counter, from left to right, up to down. It starts on 0 and ends on 41.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000498">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a> instead like:</dd></dl>
+<div class="fragment"><pre class="fragment"> <span class="keyword">struct </span>tm t = { 0, 0, 12, 6, 0, 0, 6, 6, -1 };
+ <a class="code" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(obj, <span class="stringliteral">&quot;sat&quot;</span>, &amp;t, ELM_CALENDAR_WEEKLY);
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga06608ab5826374005094c95fe29795e0"></a><!-- doxytag: member="elm_removed.h::elm_calendar_text_sunday_color_set" ref="ga06608ab5826374005094c95fe29795e0" args="(Evas_Object *obj, int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Calendar.html#ga06608ab5826374005094c95fe29795e0">elm_calendar_text_sunday_color_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a day text color to the same that represents Sundays.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The calendar object. </td></tr>
+    <tr><td class="paramname">pos</td><td>The text position. Position is the cell counter, from left to right, up to down. It starts on 0 and ends on 41.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000499">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a> instead like:</dd></dl>
+<div class="fragment"><pre class="fragment"> <span class="keyword">struct </span>tm t = { 0, 0, 12, 7, 0, 0, 0, 0, -1 };
+ <a class="code" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(obj, <span class="stringliteral">&quot;sat&quot;</span>, &amp;t, ELM_CALENDAR_WEEKLY);
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabf386320f2d08c8b0be81467254a938f"></a><!-- doxytag: member="elm_removed.h::elm_calendar_text_weekday_color_set" ref="gabf386320f2d08c8b0be81467254a938f" args="(Evas_Object *obj, int pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Calendar.html#gabf386320f2d08c8b0be81467254a938f">elm_calendar_text_weekday_color_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a day text color to the same that represents Weekdays.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The calendar object </td></tr>
+    <tr><td class="paramname">pos</td><td>The text position. Position is the cell counter, from left to right, up to down. It starts on 0 and ends on 41.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000500">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a> instead like:</dd></dl>
+<div class="fragment"><pre class="fragment"> <span class="keyword">struct </span>tm t = { 0, 0, 12, 1, 0, 0, 0, 0, -1 };
+
+ <a class="code" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(obj, <span class="stringliteral">&quot;week&quot;</span>, &amp;t, ELM_CALENDAR_WEEKLY); <span class="comment">// monday</span>
+ t.tm_tm_mday++; t.tm_wday++; t.tm_yday++;
+ <a class="code" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(obj, <span class="stringliteral">&quot;week&quot;</span>, &amp;t, ELM_CALENDAR_WEEKLY); <span class="comment">// tuesday</span>
+ t.tm_tm_mday++; t.tm_wday++; t.tm_yday++;
+ <a class="code" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(obj, <span class="stringliteral">&quot;week&quot;</span>, &amp;t, ELM_CALENDAR_WEEKLY); <span class="comment">// wednesday</span>
+ t.tm_tm_mday++; t.tm_wday++; t.tm_yday++;
+ <a class="code" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(obj, <span class="stringliteral">&quot;week&quot;</span>, &amp;t, ELM_CALENDAR_WEEKLY); <span class="comment">// thursday</span>
+ t.tm_tm_mday++; t.tm_wday++; t.tm_yday++;
+ <a class="code" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(obj, <span class="stringliteral">&quot;week&quot;</span>, &amp;t, ELM_CALENDAR_WEEKLY); <span class="comment">// friday</span>
+</pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Calendar.html#ga5a1f2bdc071645d44993e6517b0842de" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a> </dd></dl>
 
 </div>
 </div>
@@ -1037,7 +1242,6 @@ Typedefs</h2></td></tr>
 <p>Get weekdays names displayed by the calendar. </p>
 <p>By default, weekdays abbreviations get from system are displayed: E.g. for an en_US locale: "Sun, Mon, Tue, Wed, Thu, Fri, Sat" The first string is related to Sunday, the second to Monday...</p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#ga96fb93bdf0ca00c67eda563bd9489192">elm_calendar_weekdays_names_set</a>.</p>
-<p><a class="el" href="calendar_example_05.html">Calendar - Signal callback and getters.</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1078,7 +1282,6 @@ Typedefs</h2></td></tr>
 <p>By default, weekdays abbreviations get from system are displayed: E.g. for an en_US locale: "Sun, Mon, Tue, Wed, Thu, Fri, Sat"</p>
 <p>The first string should be related to Sunday, the second to Monday...</p>
 <p>See also <a class="el" href="group__Elm__Calendar.html#ga319701dddd905946dd00801ddc4c7bf9">elm_calendar_weekdays_names_get</a>.</p>
-<p><a class="el" href="calendar_example_02.html">Calendar - Layout strings formatting.</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

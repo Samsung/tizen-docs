@@ -112,14 +112,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward declare future extension interface.  <a href="#af71afae08c4e8e087ae52642e9a1c16c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#a5019d5b6b7d06951d48315629bef5370">GlExtensionDestroy</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the GL resource for the <a class="el" href="classDali_1_1NativeImage.html" title="NativeImage represents a platform specific image resource.">NativeImage</a>.  <a href="#a5019d5b6b7d06951d48315629bef5370"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#a684bbf76d0d5308af0d0ce86a021db50">TargetTexture</a> ()=0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the <a class="el" href="classDali_1_1NativeImage.html" title="NativeImage represents a platform specific image resource.">NativeImage</a> as a texture for rendering.  <a href="#a684bbf76d0d5308af0d0ce86a021db50"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#a201a8f2a11e0e4f19007af0fcbbf723e">TargetTexture</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the <a class="el" href="classDali_1_1NativeImage.html" title="NativeImage represents a platform specific image resource.">NativeImage</a> as a texture for rendering.  <a href="#a201a8f2a11e0e4f19007af0fcbbf723e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#aff1d0f02194e36b790997ffc16f1de21">PrepareTexture</a> ()=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called internally for each Bind call for this texture to allow implementation specific operations.  <a href="#aff1d0f02194e36b790997ffc16f1de21"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#a85068f0b0d4451d61a549a9c39f0d80b">GetWidth</a> () const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the <a class="el" href="classDali_1_1NativeImage.html" title="NativeImage represents a platform specific image resource.">NativeImage</a>.  <a href="#a85068f0b0d4451d61a549a9c39f0d80b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#aaa6a607dddf6dd95ec302d70e95bcd7f">GetHeight</a> () const =0</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the height of the <a class="el" href="classDali_1_1NativeImage.html" title="NativeImage represents a platform specific image resource.">NativeImage</a>.  <a href="#aaa6a607dddf6dd95ec302d70e95bcd7f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#afe03f0d334c61173f9c41e78d11f031a">GetWidth</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the width of the <a class="el" href="classDali_1_1NativeImage.html" title="NativeImage represents a platform specific image resource.">NativeImage</a>.  <a href="#afe03f0d334c61173f9c41e78d11f031a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#af847bb21662319c2730590e9c988e8ae">GetHeight</a> () const =0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the height of the <a class="el" href="classDali_1_1NativeImage.html" title="NativeImage represents a platform specific image resource.">NativeImage</a>.  <a href="#af847bb21662319c2730590e9c988e8ae"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#ad6d1ee8ad9619c1f3395e602751535e6">RequiresBlending</a> () const =0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries whether blending is required.  <a href="#ad6d1ee8ad9619c1f3395e602751535e6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual Extension *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1NativeImageInterface.html#a167653322aefe542b754277870f7cb2c">GetExtension</a> ()</td></tr>
@@ -175,12 +175,12 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaa6a607dddf6dd95ec302d70e95bcd7f"></a><!-- doxytag: member="Dali::NativeImageInterface::GetHeight" ref="aaa6a607dddf6dd95ec302d70e95bcd7f" args="() const =0" -->
+<a class="anchor" id="af847bb21662319c2730590e9c988e8ae"></a><!-- doxytag: member="Dali::NativeImageInterface::GetHeight" ref="af847bb21662319c2730590e9c988e8ae" args="() const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual unsigned int <a class="el" href="classDali_1_1NativeImageInterface.html#aaa6a607dddf6dd95ec302d70e95bcd7f">Dali::NativeImageInterface::GetHeight</a> </td>
+          <td class="memname">virtual uint32_t <a class="el" href="classDali_1_1NativeImageInterface.html#af847bb21662319c2730590e9c988e8ae">Dali::NativeImageInterface::GetHeight</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [pure virtual]</code></td>
@@ -195,12 +195,12 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a85068f0b0d4451d61a549a9c39f0d80b"></a><!-- doxytag: member="Dali::NativeImageInterface::GetWidth" ref="a85068f0b0d4451d61a549a9c39f0d80b" args="() const =0" -->
+<a class="anchor" id="afe03f0d334c61173f9c41e78d11f031a"></a><!-- doxytag: member="Dali::NativeImageInterface::GetWidth" ref="afe03f0d334c61173f9c41e78d11f031a" args="() const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual unsigned int <a class="el" href="classDali_1_1NativeImageInterface.html#a85068f0b0d4451d61a549a9c39f0d80b">Dali::NativeImageInterface::GetWidth</a> </td>
+          <td class="memname">virtual uint32_t <a class="el" href="classDali_1_1NativeImageInterface.html#afe03f0d334c61173f9c41e78d11f031a">Dali::NativeImageInterface::GetWidth</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [pure virtual]</code></td>
@@ -300,12 +300,12 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a684bbf76d0d5308af0d0ce86a021db50"></a><!-- doxytag: member="Dali::NativeImageInterface::TargetTexture" ref="a684bbf76d0d5308af0d0ce86a021db50" args="()=0" -->
+<a class="anchor" id="a201a8f2a11e0e4f19007af0fcbbf723e"></a><!-- doxytag: member="Dali::NativeImageInterface::TargetTexture" ref="a201a8f2a11e0e4f19007af0fcbbf723e" args="()=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual unsigned int <a class="el" href="classDali_1_1NativeImageInterface.html#a684bbf76d0d5308af0d0ce86a021db50">Dali::NativeImageInterface::TargetTexture</a> </td>
+          <td class="memname">virtual uint32_t <a class="el" href="classDali_1_1NativeImageInterface.html#a201a8f2a11e0e4f19007af0fcbbf723e">Dali::NativeImageInterface::TargetTexture</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>

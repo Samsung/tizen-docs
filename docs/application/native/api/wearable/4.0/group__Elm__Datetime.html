@@ -96,15 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="datetime_inheritance_tree.png" alt="datetime_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/datetime/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
-<img src="img/widget/datetime/preview-01.png" alt="preview-01.png"/>
-</div>
- <div class="image">
-<img src="img/widget/datetime/preview-02.png" alt="preview-02.png"/>
-</div>
  <p>Datetime widget is used to display and input date &amp; time values. This widget displays date and time as per the <b>system's locale</b> settings (Date includes Day, Month &amp; Year along with the defined separators and Time includes Hour, Minute &amp; AM/PM fields. Separator for AM/PM field is ignored.</p>
 <p>The corresponding Month, AM/PM strings are displayed according to the system’s language settings.</p>
 <p>Datetime format is a combination of LIBC standard characters like “%d %b %Y %I : %M %p” which, as a whole represents both Date as well as Time format.</p>
@@ -178,11 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><b>"changed"</b> - whenever Datetime field value is changed, this signal is sent. </li>
 <li><b>"language,changed"</b> - whenever system locale changes, this signal is sent. </li>
 <li><code>"focused"</code> - When the datetime has received focus. (since 1.8) </li>
-<li><code>"unfocused"</code> - When the datetime has lost focus. (since 1.8)</li>
-</ul>
-<p>Here is an example on its usage: </p>
-<ul>
-<li><a class="el" href="datetime_example.html">Datetime widget example</a> </li>
+<li><code>"unfocused"</code> - When the datetime has lost focus. (since 1.8) </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -206,7 +193,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gad36a67de13ac659331aced582d845a27">elm_datetime_field_visible_set</a> (Elm_Datetime *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> visible)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a field to be visible or not.  <a href="#gad36a67de13ac659331aced582d845a27"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gaa26caacb883768b28cdff3347d92d307">elm_datetime_field_visible_get</a> (const Elm_Datetime *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a field can be visible/not.  <a href="#gaa26caacb883768b28cdff3347d92d307"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a field to be visible or not.  <a href="#gaa26caacb883768b28cdff3347d92d307"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga09f41fd97baea0786e15c3e57ffa0e15">elm_datetime_value_max_set</a> (Elm_Datetime *obj, const Elm_Datetime_Time *maxtime)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the upper boundary of a field.  <a href="#ga09f41fd97baea0786e15c3e57ffa0e15"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga58db30f22e06c749e0fffbb6f43f584d">elm_datetime_value_max_get</a> (const Elm_Datetime *obj, Elm_Datetime_Time *maxtime)</td></tr>
@@ -227,20 +214,23 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Identifies a Datetime field, The widget supports 6 fields : Year, month, Date, Hour, Minute, AM/PM </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28"></a><!-- doxytag: member="ELM_DATETIME_MONTH" ref="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28" args="" -->ELM_DATETIME_MONTH</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5"></a><!-- doxytag: member="ELM_DATETIME_YEAR" ref="ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5" args="" -->ELM_DATETIME_YEAR</em>&nbsp;</td><td>
 <p>Indicates Year field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c"></a><!-- doxytag: member="ELM_DATETIME_DATE" ref="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c" args="" -->ELM_DATETIME_DATE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28"></a><!-- doxytag: member="ELM_DATETIME_MONTH" ref="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28" args="" -->ELM_DATETIME_MONTH</em>&nbsp;</td><td>
 <p>Indicates Month field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87"></a><!-- doxytag: member="ELM_DATETIME_HOUR" ref="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87" args="" -->ELM_DATETIME_HOUR</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c"></a><!-- doxytag: member="ELM_DATETIME_DATE" ref="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c" args="" -->ELM_DATETIME_DATE</em>&nbsp;</td><td>
 <p>Indicates Date field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9"></a><!-- doxytag: member="ELM_DATETIME_MINUTE" ref="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9" args="" -->ELM_DATETIME_MINUTE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87"></a><!-- doxytag: member="ELM_DATETIME_HOUR" ref="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87" args="" -->ELM_DATETIME_HOUR</em>&nbsp;</td><td>
 <p>Indicates Hour field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a"></a><!-- doxytag: member="ELM_DATETIME_AMPM" ref="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a" args="" -->ELM_DATETIME_AMPM</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9"></a><!-- doxytag: member="ELM_DATETIME_MINUTE" ref="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9" args="" -->ELM_DATETIME_MINUTE</em>&nbsp;</td><td>
 <p>Indicates Minute field. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a"></a><!-- doxytag: member="ELM_DATETIME_AMPM" ref="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a" args="" -->ELM_DATETIME_AMPM</em>&nbsp;</td><td>
+<p>Indicates AM/PM field . </p>
 </td></tr>
 </table>
 </dd>
@@ -322,7 +312,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">min</td><td>Reference to field's minimum value. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">max</td><td>Reference to field's maximum value. </td></tr>
   </table>
@@ -375,7 +365,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>Reference to field's minimum value. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>Reference to field's maximum value. </td></tr>
   </table>
@@ -409,16 +399,16 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get whether a field can be visible/not. </p>
+<p>Get a field to be visible or not. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, if field can be visible. <code>false</code> otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, if field to be visible. <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -460,7 +450,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">visible</td><td><code>true</code> field can be visible, <code>false</code> otherwise. </td></tr>
   </table>
   </dd>
