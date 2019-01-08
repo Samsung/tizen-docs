@@ -51,7 +51,7 @@ The table list the main functions to manage widget instance:
 | `OnResume()`       | This function is called when the widget is visible.                                           |
 | `OnResize()`       | This function is called before the widget size is changed.                                    |
 | `OnUpdate()`       | This function is called when an event for updating the widget is received.                    |
-| `SetContentInfo()` | This function sends data about current state of widget instance to widget viewer application. |
+| `SetContentInfo()` | This function sends data about current state of widget instance to a widget viewer application. |
 
 Most of functions are used for managing widget instance lifecycle. You can describe what will be done on each lifecycle functions.
 

@@ -1134,7 +1134,11 @@ The input delegator application control is supported in wearable applications si
 
 ### Receiving User Input
 
-To receive a specific type of input from the user, use the `APP_CONTROL_OPERATION_GET_INPUT` operation. This operation will give you various input types. If you want to give an option for the input delegator, refer to the extras defined below. You can execute the desired input type directly using `APP_CONTROL_DATA_INPUT_TYPE` operation. If you do not specify this operation, a default screen is displayed with all possible input types. For example, Figure 1 shows the main screen when the `APP_CONTROL_DATA_INPUT_TYPE` operation is not specified, and Figure 2 shows the screen when the input type of `APP_CONTROL_DATA_INPUT_TYPE` operation is given as `input_voice`.
+To receive a specific type of input from the user, use the `APP_CONTROL_OPERATION_GET_INPUT` operation. This operation will give you various input types. If you want to give an option for the input delegator, refer to the extras defined below.
+
+You can execute the desired input type directly using `APP_CONTROL_DATA_INPUT_TYPE` operation. If you do not specify this operation, a default screen is displayed with all possible input types.
+
+For example, Figure 1 shows the main screen when the `APP_CONTROL_DATA_INPUT_TYPE` operation is not specified, and Figure 2 shows the screen when the input type of `APP_CONTROL_DATA_INPUT_TYPE` operation is given as `input_voice`.
 
 **Figure 1: Default user input**
 
@@ -1170,7 +1174,7 @@ The input types are grouped into the following MIME types. Therefore, if you spe
 | `APP_CONTROL_DATA_INPUT_MAX_TEXT_LENGTH` | The maximum text length allowed in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_SET` | The position where the cursor is to be set in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
 | `APP_CONTROL_DATA_INPUT_CURSOR_POSITION_GET` | The current position of the cursor in the keyboard input type. This key must be passed as a string. | This key is optional and supported since Tizen 4.0.<br>This key is only supported for the `input_keyboard` type. |
-| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output  according to the result  of this key. If the  result is `input_audio`   or `input_image`, you  must get the path of the result value through     `APP_CONTROL_DATA_PATH`.<br><br>The available values    are:     <br>  -   `input_voice`:     Receive the result     as voice <br>     -   `input_emoticon`:  Receive the result   as an emoticon  <br>-   `input_keyboard`:      Receive the result    as keyboard input  <br> -   `input_reply`:          Receive the result    as reply input     <br> -   `input_image`:     Receive the result    as an image  <br> -   `input_audio`:        Receive the result    as audio  | This key is optional and is supported only in wearable applications since Tizen 4.0. |
+| `APP_CONTROL_DATA_INPUT_REPLY_TYPE` | The reply type. This key must be passed as a string.<br>This key allows caller application to know the user has entered though which input type of Input Delegator.<br><br> You can decide how to use extra output according to the result of this key. If the result is `input_audio` or `input_image`, you  must get the path of the result value through `APP_CONTROL_DATA_PATH`.<br><br>The available values are:<br> - `input_voice`: Receive the result as voice<br> - `input_emoticon`: Receive the result as an emoticon<br>- `input_keyboard`: Receive the result as keyboard input<br> - `input_reply`: Receive the result as reply input<br> - `input_image`: Receive the result as an image<br> - `input_audio`: Receive the result as audio  | This key is optional and supported only in wearable applications since Tizen 4.0. |
 
 #### Extra Output
 
@@ -1895,7 +1899,7 @@ To show common privacy setting guide popup, use the `APP_CONTROL_OPERATION_PRIVA
 | Key                     | Description                              | Note                   |
 |-------------------------|------------------------------------------|------------------------|
 | `APP_CONTROL_DATA_TYPE` | The guide message type. The available values are `open` (for application launching) and `use` (for using function).  This key must be passed as a string. | This key is mandatory. |
-| `APP_CONTROL_DATA_FEATURE` | The feature or function name. This key must be passed as a string. |   |
+| `APP_CONTROL_DATA_FEATURE` | The feature or function name. This key must be passed as a string. | This key is optional. |
 | `APP_CONTROL_DATA_PRIVILEGES` | The required privacy privileges that gets displayed. This key must be passed as an array of string.| This key is mandatory. |
 
 #### Extra Output
@@ -2181,7 +2185,7 @@ To launch the NFC setting application to allow the user to activate or deactivat
 
 | Key                     | Description                              | Note                                     |
 |-----------------------|----------------------------------------|----------------------------------------|
-| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:<br>- `nfc` (default): Default setting menu is launched<br>- `tap_n_pay`: Tap & pay setting menu is launched<br>The support for this value depends on the device NFC settings. | This key is optional and is supported since Tizen 3.0. |
+| `APP_CONTROL_DATA_TYPE` | The NFC setting menu type to be shown. This key must be passed as a string. The available values are:<br>- `nfc` (default): Default setting menu is launched<br>- `tap_n_pay`: Tap & pay setting menu is launched<br>The support for this value depends on the device NFC settings. | This key is optional and supported since Tizen 3.0. |
 
 #### Example Code
 

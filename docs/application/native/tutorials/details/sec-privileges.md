@@ -117,7 +117,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/keymanager.admin` | platform |  | The application can lock and unlock password-protected storage, and manage password changes for it. |
 | `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off. For example, the LED on the front of the device and the camera flash can be turned on or off. |
 | `http://tizen.org/privilege/location` | public | Location | The application can use user's location data. |
-| `http://tizen.org/privilege/location.coarse` | public | Location | The application can determine user's approximate location including user's device's Cell ID, LAC (Location Area Code), and TAC (Tracking Area Code). |
+| `http://tizen.org/privilege/location.coarse` | public | Location | The application can determine user's approximate location including user's device's Cell ID, Location Area Code (LAC), and Tracking Area Code (TAC). |
 | `http://tizen.org/privilege/location.enable` | platform |  | The application can control user's location service settings. |
 | `http://tizen.org/privilege/mapservice` | public |  | The application can use map services such as Geocoder, Places, and Route (Direction). |
 | `http://tizen.org/privilege/mediacontroller.client` | public |  | The application can receive information about currently playing media from applications that are allowed to send it, and can control those applications remotely. |

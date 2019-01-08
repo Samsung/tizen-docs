@@ -189,8 +189,8 @@ To create notification windows and access the current notification level of an e
       if (error== EFL_UTIL_ERROR_NONE) {
           switch (notification_level) {
           case EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT:
-               /* Do something for default level */
-               break;
+              /* Do something for default level */
+              break;
           case EFL_UTIL_NOTIFICATION_LEVEL_MEDIUM:
               /* Do something for medium level */
               break;
