@@ -113,9 +113,9 @@ Public Types</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Function signature for creating scriptable actions.  <a href="#abca1d11d31acedbcd96d38cac91de0a9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#ac4167c3228afc84b199801f3d2f7838c">SignalConnectorFunction</a> )(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1ConnectionTrackerInterface.html">ConnectionTrackerInterface</a> *tracker, const std::string &amp;signalName, <a class="el" href="classDali_1_1FunctorDelegate.html">FunctorDelegate</a> *functor)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects a callback function with the object's signals.  <a href="#ac4167c3228afc84b199801f3d2f7838c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#aeb8cf111b5cd404bb2fe60581d5cb621">SetPropertyFunction</a> )(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index, const <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> &amp;value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#aeb8cf111b5cd404bb2fe60581d5cb621">SetPropertyFunction</a> )(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index, const <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> &amp;value)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classDali_1_1Callback.html" title="Thin template to provide type safety for member function callbacks.">Callback</a> to set an event-thread only property.  <a href="#aeb8cf111b5cd404bb2fe60581d5cb621"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a23f9376ff3c503c40e0d59c62738efa3">GetPropertyFunction</a> )(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a23f9376ff3c503c40e0d59c62738efa3">GetPropertyFunction</a> )(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classDali_1_1Callback.html" title="Thin template to provide type safety for member function callbacks.">Callback</a> to get the value of an event-thread only property.  <a href="#a23f9376ff3c503c40e0d59c62738efa3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -149,13 +149,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all the property indices for this type.  <a href="#a016decfbe41c628395377d2528ebff32"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a27886e392ac39f5b0a21d7d55b974638">GetChildPropertyIndices</a> (<a class="el" href="classDali_1_1Property.html#aeda4eb5f0e05ae063b6dfc650bdf5367">Property::IndexContainer</a> &amp;indices) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all the child property indices for this type.  <a href="#a27886e392ac39f5b0a21d7d55b974638"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a2c5d796047704f5b72876721e1861d2f">GetPropertyName</a> (<a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a2c5d796047704f5b72876721e1861d2f">GetPropertyName</a> (<a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a property index, retrieve the property name associated with it.  <a href="#a2c5d796047704f5b72876721e1861d2f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a80b51875ed5ad3f1a4b399bc2a6d6e44">GetChildPropertyIndex</a> (const std::string &amp;name) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a80b51875ed5ad3f1a4b399bc2a6d6e44">GetChildPropertyIndex</a> (const std::string &amp;name) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a child property name, retrieve the property index associated with it,.  <a href="#a80b51875ed5ad3f1a4b399bc2a6d6e44"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#acb87428cb9a7a30c34166e045f141139">GetChildPropertyName</a> (<a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#acb87428cb9a7a30c34166e045f141139">GetChildPropertyName</a> (<a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a child property index, retrieve the property name associated with it.  <a href="#acb87428cb9a7a30c34166e045f141139"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759c">Property::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a340de114bae832ab20bfa5390e8eea9a">GetChildPropertyType</a> (<a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759c">Property::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TypeInfo.html#a340de114bae832ab20bfa5390e8eea9a">GetChildPropertyType</a> (<a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a child property index, retrieve the property name associated with it.  <a href="#a340de114bae832ab20bfa5390e8eea9a"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -200,7 +200,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a>(* <a class="el" href="classDali_1_1TypeInfo.html#a23f9376ff3c503c40e0d59c62738efa3">Dali::TypeInfo::GetPropertyFunction</a>)(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index)</td>
+          <td class="memname">typedef <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a>(* <a class="el" href="classDali_1_1TypeInfo.html#a23f9376ff3c503c40e0d59c62738efa3">Dali::TypeInfo::GetPropertyFunction</a>)(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index)</td>
         </tr>
       </table>
 </div>
@@ -225,7 +225,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="classDali_1_1TypeInfo.html#aeb8cf111b5cd404bb2fe60581d5cb621">Dali::TypeInfo::SetPropertyFunction</a>)(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> index, const <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> &amp;value)</td>
+          <td class="memname">typedef void(* <a class="el" href="classDali_1_1TypeInfo.html#aeb8cf111b5cd404bb2fe60581d5cb621">Dali::TypeInfo::SetPropertyFunction</a>)(<a class="el" href="classDali_1_1BaseObject.html">BaseObject</a> *object, <a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> index, const <a class="el" href="classDali_1_1Property.html#ab5742f91d835e7795448901e7d8644bd">Property::Value</a> &amp;value)</td>
         </tr>
       </table>
 </div>
@@ -431,7 +431,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a> <a class="el" href="classDali_1_1TypeInfo.html#a80b51875ed5ad3f1a4b399bc2a6d6e44">Dali::TypeInfo::GetChildPropertyIndex</a> </td>
+          <td class="memname"><a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a> <a class="el" href="classDali_1_1TypeInfo.html#a80b51875ed5ad3f1a4b399bc2a6d6e44">Dali::TypeInfo::GetChildPropertyIndex</a> </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -449,7 +449,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The property index or <a class="el" href="classDali_1_1Property.html#ae83a29a42f8c5cb089408d6e409e13cd">Property::INVALID_INDEX</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The property index or <a class="el" href="classDali_1_1Property.html#a1a292342feeb7eb9f7b9f96e2d4d9659">Property::INVALID_INDEX</a> </dd></dl>
 
 </div>
 </div>
@@ -487,7 +487,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">const std::string&amp; <a class="el" href="classDali_1_1TypeInfo.html#acb87428cb9a7a30c34166e045f141139">Dali::TypeInfo::GetChildPropertyName</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -514,7 +514,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classDali_1_1Property.html#acb569f557811bc94d2e98b5c880d759c">Property::Type</a> <a class="el" href="classDali_1_1TypeInfo.html#a340de114bae832ab20bfa5390e8eea9a">Dali::TypeInfo::GetChildPropertyType</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -629,7 +629,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">const std::string&amp; <a class="el" href="classDali_1_1TypeInfo.html#a2c5d796047704f5b72876721e1861d2f">Dali::TypeInfo::GetPropertyName</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a525da24fea3ed002f6b008fbb53a9116">Property::Index</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classDali_1_1Property.html#a3277535062bdb9a8ada43d8144a7db0d">Property::Index</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -652,6 +652,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>this method only works for custom registered properties </dd></dl>
 
 </div>
 </div>

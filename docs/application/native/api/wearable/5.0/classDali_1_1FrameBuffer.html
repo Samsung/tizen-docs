@@ -123,16 +123,16 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator, changes this handle to point at the same object.  <a href="#ae30a16e1f31027c80d586ce43e8a32c3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#a147df2d3ddecc939967f1d90221d0ad7">AttachColorTexture</a> (<a class="el" href="classDali_1_1Texture.html">Texture</a> &amp;texture)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach the base LOD of a 2D texture to the framebuffer for color rendering.  <a href="#a147df2d3ddecc939967f1d90221d0ad7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#a28ade65168a13449e3aa2e279121cdf8">AttachColorTexture</a> (<a class="el" href="classDali_1_1Texture.html">Texture</a> &amp;texture, unsigned int mipmapLevel, unsigned int layer)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach a texture to the framebuffer for color rendering.  <a href="#a28ade65168a13449e3aa2e279121cdf8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#aa92b5fbd6de6e8dc6b9aecf5767e7d23">AttachColorTexture</a> (<a class="el" href="classDali_1_1Texture.html">Texture</a> &amp;texture, uint32_t mipmapLevel, uint32_t layer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach a texture to the framebuffer for color rendering.  <a href="#aa92b5fbd6de6e8dc6b9aecf5767e7d23"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Texture.html">Texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#a494f86c275cd1b7e7410024c48b7d2df">GetColorTexture</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color texture used as output in the <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a>.  <a href="#a494f86c275cd1b7e7410024c48b7d2df"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#ac9d1ac72f79201c976b62d01f782b8f3">FrameBuffer</a> (Internal::FrameBuffer *pointer)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor.  <a href="#ac9d1ac72f79201c976b62d01f782b8f3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDali_1_1FrameBuffer.html">FrameBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#a0b692f8778c5e23b6cb66c5fc68a3151">New</a> (unsigned int width, unsigned int height, unsigned int attachments)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> object.  <a href="#a0b692f8778c5e23b6cb66c5fc68a3151"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDali_1_1FrameBuffer.html">FrameBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#acf84448f38f4968a275a60cdb56c0d20">New</a> (uint32_t width, uint32_t height, uint32_t attachments)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a> object.  <a href="#acf84448f38f4968a275a60cdb56c0d20"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classDali_1_1FrameBuffer.html">FrameBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1FrameBuffer.html#a2fa8524ff1ce85c8c89bc732276844b6">DownCast</a> (<a class="el" href="classDali_1_1BaseHandle.html">BaseHandle</a> handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Downcasts to a <a class="el" href="classDali_1_1FrameBuffer.html" title="FrameBuffer is a collection of textures that can be used as the destination for rendering.">FrameBuffer</a>. If not, the returned handle is left uninitialized.  <a href="#a2fa8524ff1ce85c8c89bc732276844b6"></a><br/></td></tr>
 </table>
@@ -241,7 +241,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a28ade65168a13449e3aa2e279121cdf8"></a><!-- doxytag: member="Dali::FrameBuffer::AttachColorTexture" ref="a28ade65168a13449e3aa2e279121cdf8" args="(Texture &amp;texture, unsigned int mipmapLevel, unsigned int layer)" -->
+<a class="anchor" id="aa92b5fbd6de6e8dc6b9aecf5767e7d23"></a><!-- doxytag: member="Dali::FrameBuffer::AttachColorTexture" ref="aa92b5fbd6de6e8dc6b9aecf5767e7d23" args="(Texture &amp;texture, uint32_t mipmapLevel, uint32_t layer)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -254,13 +254,13 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>mipmapLevel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>layer</em>&#160;</td>
         </tr>
         <tr>
@@ -334,26 +334,26 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0b692f8778c5e23b6cb66c5fc68a3151"></a><!-- doxytag: member="Dali::FrameBuffer::New" ref="a0b692f8778c5e23b6cb66c5fc68a3151" args="(unsigned int width, unsigned int height, unsigned int attachments)" -->
+<a class="anchor" id="acf84448f38f4968a275a60cdb56c0d20"></a><!-- doxytag: member="Dali::FrameBuffer::New" ref="acf84448f38f4968a275a60cdb56c0d20" args="(uint32_t width, uint32_t height, uint32_t attachments)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classDali_1_1FrameBuffer.html">FrameBuffer</a> <a class="el" href="classDali_1_1FrameBuffer.html#a0b692f8778c5e23b6cb66c5fc68a3151">Dali::FrameBuffer::New</a> </td>
+          <td class="memname">static <a class="el" href="classDali_1_1FrameBuffer.html">FrameBuffer</a> <a class="el" href="classDali_1_1FrameBuffer.html#acf84448f38f4968a275a60cdb56c0d20">Dali::FrameBuffer::New</a> </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>width</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>height</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>attachments</em>&#160;</td>
         </tr>
         <tr>

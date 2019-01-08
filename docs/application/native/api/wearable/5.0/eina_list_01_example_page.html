@@ -105,10 +105,11 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 
    <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
 </pre></div> Here we add a sequence of elements to our list. By using append we add elements to the end of the list, so the list will look like this:<br/>
-  
- <img src="eina_list_example_01_a.png" style="max-width: 100%;" />
- <a href="eina_list_example_01_a.png">Full-size</a>
-    <div class="fragment"><pre class="fragment">
+</p>
+<div class="image">
+<img src="eina_list_example_01_a.png" alt="eina_list_example_01_a.png"/>
+</div>
+   <div class="fragment"><pre class="fragment">
    list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, <span class="stringliteral">&quot;tigh&quot;</span>);
    list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, <span class="stringliteral">&quot;adar&quot;</span>);
    list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, <span class="stringliteral">&quot;baltar&quot;</span>);
@@ -134,10 +135,11 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 
    list = <a class="code" href="group__Eina__List__Group.html#ga03a77b1579ee83bcab4bc3d67375d4b1" title="Prepends a list node to a linked list before the specified member.">eina_list_prepend_relative_list</a>(list, <span class="stringliteral">&quot;lampkin&quot;</span>, l);
 </pre></div> With this additions our list now looks like this:<br/>
-  
- <img src="eina_list_example_01_b.png" style="max-width: 100%;" />
- <a href="eina_list_example_01_b.png">Full-size</a>
-   <p>Once done using the list it needs to be freed, and since we are done with eina that also need to be shutdown: <div class="fragment"><pre class="fragment">
+</p>
+<div class="image">
+<img src="eina_list_example_01_b.png" alt="eina_list_example_01_b.png"/>
+</div>
+  <p>Once done using the list it needs to be freed, and since we are done with eina that also need to be shutdown: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(list, l, list_data)
      printf(&quot;%s\n&quot;, (<span class="keywordtype">char</span>*)list_data);
 

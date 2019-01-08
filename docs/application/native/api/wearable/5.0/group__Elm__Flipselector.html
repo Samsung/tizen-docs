@@ -86,10 +86,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Flip Selector</div>  </div>
 <div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
 <div class="contents">
+<hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
 <img src="flipselector_inheritance_tree.png" alt="flipselector_inheritance_tree.png"/>
 </div>
@@ -123,12 +126,175 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>elm_object_item_del </li>
 <li>elm_object_item_part_text_set </li>
 <li>elm_object_item_part_text_get </li>
-<li>elm_object_item_signal_emit</li>
+<li>elm_object_item_signal_emit </li>
 </ul>
-<p>Here is an example on its usage: </p>
-<ul>
-<li><a class="el" href="flipselector_example.html">Flip selector widget example</a> </li>
-</ul>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Flipselector.html#ga6a65524c2ba5fc5088139d6765ed64d8">elm_flipselector_item_label_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Flipselector.html#ga82b8492656c9611bcfdfc60f84718dcb">elm_flipselector_item_label_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *label)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Flipselector.html#ga10daf67ef278454ddf24c575592276be">elm_flipselector_item_del</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Flipselector.html#ga8ef79780c833c94e4395ceb7f7502494">elm_flipselector_interval_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double interval)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Flipselector.html#ga6f990eab3e9cad245d0df7e890f370f7">elm_flipselector_interval_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+</table>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga6f990eab3e9cad245d0df7e890f370f7"></a><!-- doxytag: member="elm_removed.h::elm_flipselector_interval_get" ref="ga6f990eab3e9cad245d0df7e890f370f7" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> double <a class="el" href="group__Elm__Flipselector.html#ga6f990eab3e9cad245d0df7e890f370f7">elm_flipselector_interval_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the interval on time updates for an user mouse button hold on a flip selector widget.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The flip selector object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The (first) interval value, in seconds, set on it</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Flipselector.html#ga8ef79780c833c94e4395ceb7f7502494">elm_flipselector_interval_set()</a> for more details </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000370">Deprecated:</a></b></dt><dd>Use elm_flipselector_first_interval_get()</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8ef79780c833c94e4395ceb7f7502494"></a><!-- doxytag: member="elm_removed.h::elm_flipselector_interval_set" ref="ga8ef79780c833c94e4395ceb7f7502494" args="(Evas_Object *obj, double interval)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Flipselector.html#ga8ef79780c833c94e4395ceb7f7502494">elm_flipselector_interval_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>interval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the interval on time updates for a user mouse button hold on a flip selector widget.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The flip selector object </td></tr>
+    <tr><td class="paramname">interval</td><td>The (first) interval value in seconds</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This interval value is <b>decreased</b> while the user holds the mouse pointer either flipping up or flipping down a given flip selector.</p>
+<p>This helps the user to get to a given item distant from the current one easier/faster, as it will start to flip quicker and quicker on mouse button holds.</p>
+<p>The calculation for the next flip interval value, starting from the one set with this call, is the previous interval divided by 1.05, so it decreases a little bit.</p>
+<p>The default starting interval value for automatic flips is <b>0.85</b> seconds.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Flipselector.html#ga6f990eab3e9cad245d0df7e890f370f7">elm_flipselector_interval_get()</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000369">Deprecated:</a></b></dt><dd>Use elm_flipselector_first_interval_set()</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga10daf67ef278454ddf24c575592276be"></a><!-- doxytag: member="elm_removed.h::elm_flipselector_item_del" ref="ga10daf67ef278454ddf24c575592276be" args="(Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Flipselector.html#ga10daf67ef278454ddf24c575592276be">elm_flipselector_item_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Delete a given item from a flip selector widget.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The item to delete</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000368">Deprecated:</a></b></dt><dd>Use elm_object_item_del() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6a65524c2ba5fc5088139d6765ed64d8"></a><!-- doxytag: member="elm_removed.h::elm_flipselector_item_label_get" ref="ga6a65524c2ba5fc5088139d6765ed64d8" args="(const Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char* <a class="el" href="group__Elm__Flipselector.html#ga6a65524c2ba5fc5088139d6765ed64d8">elm_flipselector_item_label_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the label of a given flip selector widget's item.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The item to get label from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The text label of <code>item</code> or <code>NULL</code>, on errors</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000366">Deprecated:</a></b></dt><dd>see elm_object_item_text_get() instead</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga82b8492656c9611bcfdfc60f84718dcb"></a><!-- doxytag: member="elm_removed.h::elm_flipselector_item_label_set" ref="ga82b8492656c9611bcfdfc60f84718dcb" args="(Elm_Object_Item *it, const char *label)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Flipselector.html#ga82b8492656c9611bcfdfc60f84718dcb">elm_flipselector_item_label_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the label of a given flip selector widget's item.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The item to set label on </td></tr>
+    <tr><td class="paramname">label</td><td>The text label string, in UTF-8 encoding</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_object_item_text_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000367">Deprecated:</a></b></dt><dd>see <a class="el" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set()</a> instead</dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

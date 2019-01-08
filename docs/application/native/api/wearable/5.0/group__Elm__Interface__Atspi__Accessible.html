@@ -134,6 +134,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add key-value pair identifying widget extra attribute.  <a href="#gab8f34cd5be0ee01de3c661f7723701bf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gab154a0155a0ee1c94a70e54f1e5c0bbe">elm_atspi_accessible_relationships_clear</a> (Elm_Interface_Atspi_Accessible *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all relationships in accessible object.  <a href="#gab154a0155a0ee1c94a70e54f1e5c0bbe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga572716dc5f697741039b6cf10a99ab06">elm_atspi_attributes_list_free</a> (<a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *list)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga7e993a0678827f87defdb166706a1dd8">elm_atspi_relation_free</a> (Elm_Atspi_Relation *relation)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Elm_Atspi_Relation *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga044c4eb9a4d724b970f047d5d6f5930c">elm_atspi_relation_clone</a> (const Elm_Atspi_Relation *relation)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga5edca5b3c7d28986e62f25485f2d8213">elm_atspi_relation_set_relation_append</a> (<a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *set, <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gacfe10fd796804472349d406853a01440">Elm_Atspi_Relation_Type</a> type, const Eo *rel_obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga89cfe4c4e6d95d2cfbdee71155571c37">elm_atspi_relation_set_relation_remove</a> (<a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *set, <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gacfe10fd796804472349d406853a01440">Elm_Atspi_Relation_Type</a> type, const Eo *rel_obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gaf51cef7e1643d8986f550060ac88c998">elm_atspi_relation_set_relation_type_remove</a> (<a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *set, <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gacfe10fd796804472349d406853a01440">Elm_Atspi_Relation_Type</a> type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gae7aff62bc5b976b4e12b33bf1956016a">elm_atspi_relation_set_free</a> (<a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *set)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga64f7642a782b168cefbf0b12bc0ef3bf">elm_atspi_relation_set_clone</a> (const <a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *set)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga108985de48ee90367e86b49b42ace192">Elm_Atspi_Reading_Info_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
@@ -990,6 +998,200 @@ _Elm_Atspi_Relation_Type&#160;</td><td class="memItemRight" valign="bottom"><a c
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ga572716dc5f697741039b6cf10a99ab06"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_attributes_list_free" ref="ga572716dc5f697741039b6cf10a99ab06" args="(Eina_List *list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga572716dc5f697741039b6cf10a99ab06">elm_atspi_attributes_list_free</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Free Elm_Atspi_Attributes_List</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga044c4eb9a4d724b970f047d5d6f5930c"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_relation_clone" ref="ga044c4eb9a4d724b970f047d5d6f5930c" args="(const Elm_Atspi_Relation *relation)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Elm_Atspi_Relation* <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga044c4eb9a4d724b970f047d5d6f5930c">elm_atspi_relation_clone</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Elm_Atspi_Relation *&#160;</td>
+          <td class="paramname"><em>relation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Clones relation.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7e993a0678827f87defdb166706a1dd8"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_relation_free" ref="ga7e993a0678827f87defdb166706a1dd8" args="(Elm_Atspi_Relation *relation)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga7e993a0678827f87defdb166706a1dd8">elm_atspi_relation_free</a> </td>
+          <td>(</td>
+          <td class="paramtype">Elm_Atspi_Relation *&#160;</td>
+          <td class="paramname"><em>relation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Frees relation.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga64f7642a782b168cefbf0b12bc0ef3bf"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_relation_set_clone" ref="ga64f7642a782b168cefbf0b12bc0ef3bf" args="(const Elm_Atspi_Relation_Set *set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga64f7642a782b168cefbf0b12bc0ef3bf">elm_atspi_relation_set_clone</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *&#160;</td>
+          <td class="paramname"><em>set</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Clones Elm_Atspi_Relation_Set</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae7aff62bc5b976b4e12b33bf1956016a"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_relation_set_free" ref="gae7aff62bc5b976b4e12b33bf1956016a" args="(Elm_Atspi_Relation_Set *set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gae7aff62bc5b976b4e12b33bf1956016a">elm_atspi_relation_set_free</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *&#160;</td>
+          <td class="paramname"><em>set</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Frees Elm_Atspi_Relation_Set</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5edca5b3c7d28986e62f25485f2d8213"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_relation_set_relation_append" ref="ga5edca5b3c7d28986e62f25485f2d8213" args="(Elm_Atspi_Relation_Set *set, Elm_Atspi_Relation_Type type, const Eo *rel_obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga5edca5b3c7d28986e62f25485f2d8213">elm_atspi_relation_set_relation_append</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *&#160;</td>
+          <td class="paramname"><em>set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gacfe10fd796804472349d406853a01440">Elm_Atspi_Relation_Type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eo *&#160;</td>
+          <td class="paramname"><em>rel_obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Appends relation to relation set</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga89cfe4c4e6d95d2cfbdee71155571c37"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_relation_set_relation_remove" ref="ga89cfe4c4e6d95d2cfbdee71155571c37" args="(Elm_Atspi_Relation_Set *set, Elm_Atspi_Relation_Type type, const Eo *rel_obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#ga89cfe4c4e6d95d2cfbdee71155571c37">elm_atspi_relation_set_relation_remove</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *&#160;</td>
+          <td class="paramname"><em>set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gacfe10fd796804472349d406853a01440">Elm_Atspi_Relation_Type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eo *&#160;</td>
+          <td class="paramname"><em>rel_obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Removes relation from relation set</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf51cef7e1643d8986f550060ac88c998"></a><!-- doxytag: member="elm_interface_atspi_accessible.h::elm_atspi_relation_set_relation_type_remove" ref="gaf51cef7e1643d8986f550060ac88c998" args="(Elm_Atspi_Relation_Set *set, Elm_Atspi_Relation_Type type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gaf51cef7e1643d8986f550060ac88c998">elm_atspi_relation_set_relation_type_remove</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct__Eina__List.html">Elm_Atspi_Relation_Set</a> *&#160;</td>
+          <td class="paramname"><em>set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Elm__Interface__Atspi__Accessible.html#gacfe10fd796804472349d406853a01440">Elm_Atspi_Relation_Type</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Removes all relation from relation set of a given type</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>
