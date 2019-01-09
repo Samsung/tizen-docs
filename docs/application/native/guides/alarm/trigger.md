@@ -162,9 +162,13 @@ The following table lists the available options keys and the corresponding value
 
 A rule can contain multiple conditions. Some event and condition items provide more than 1 attribute key. For 1 attribute, more than 1 comparison statement can also be defined. For example, the value of an attribute is equal to A, B, or C. To combine multiple comparisons into an attribute, multiple attributes into an event or a condition, and multiple conditions into a rule, the contextual trigger allows you to choose 1 of the following logical operators:
 
-- `CONTEXT_TRIGGER_LOGICAL_CONJUNCTION`It denotes logical "AND". It means "true only if all components are true".
+- `CONTEXT_TRIGGER_LOGICAL_CONJUNCTION`
 
-- `CONTEXT_TRIGGER_LOGICAL_DISJUNCTION`It denotes logical "OR". It means "true if at least 1 component is true".
+  It denotes logical "AND". It means "true only if all components are true".
+
+- `CONTEXT_TRIGGER_LOGICAL_DISJUNCTION`
+
+  It denotes logical "OR". It means "true if at least 1 component is true".
 
 To use the conjunctions and disjunctions:
 
@@ -441,13 +445,13 @@ To manage the rules:
 
    1. Register the rule with the `context_trigger_add_rule()` function and acquire the rule ID:
 
-     ```
-     int rule_id;
+      ```
+      int rule_id;
 
-     context_trigger_add_rule(rule, &rule_id);
-     ```
+      context_trigger_add_rule(rule, &rule_id);
+      ```
 
-     The application can manage the rule with its rule ID. If the application adds the same rule with a previously registered rule ID, the same rule ID is acquired.
+      The application can manage the rule with its rule ID. If the application adds the same rule with a previously registered rule ID, the same rule ID is acquired.
 
    2. Release the rule handle resource:
 

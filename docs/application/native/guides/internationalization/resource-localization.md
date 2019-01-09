@@ -146,7 +146,7 @@ Take advantage of the following tips to smoothly internationalize your applicati
 
 - Make no assumptions about languages
 
-  Languages vary greatly and even if you know several of them, do not assume there is any common logic to them all. For example, with English typography, no character must appear before colons and semicolons (':' and ';'). However, with French typography, there must be "espace fine insécable", that is, a non-breakable space (HTML's &nbsp;) that is narrower than regular spaces.
+  Languages vary greatly and even if you know several of them, do not assume there is any common logic to them all. For example, with English typography, no character must appear before colons and semicolons (':' and ';'). However, with French typography, there must be "espace fine insécable", that is, a non-breakable space (HTML's \&nbsp;) that is narrower than regular spaces.
 
   To prevent problems with typography, avoid breaking your strings into multiple parts, if possible. The following example results in incorrect punctuation:
 

@@ -203,7 +203,7 @@ The following table lists the consumer IR feature keys:
 |----------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/consumer_ir` | `bool` | The platform returns `true` for this key, if the device supports the Consumer Infrared (CIR) feature. |
 
-The following table lists the content feature keys.
+The following table lists the content feature keys:
 
 <a name="content"></a>
 **Table: Content feature keys**
@@ -213,7 +213,7 @@ The following table lists the content feature keys.
 | `http://tizen.org/feature/content.scanning.others` | `bool` | The platform returns `true` for this key, if the device supports the media scanning feature for OTHERS type files which are not included in the media content-types such as IMAGE, VIDEO, SOUND or MUSIC. |
 | `http://tizen.org/feature/content.filter.pinyin ` | `bool` | The platform returns `true` for this key, if the device supports the Media Filter feature for Pinyin. |
 
-The following table lists the contextual trigger feature keys.
+The following table lists the contextual trigger feature keys:
 
 <a name="trigger"></a>
 **Table: Contextual trigger feature keys**
