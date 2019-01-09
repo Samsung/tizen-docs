@@ -20,6 +20,8 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 
 The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
 
+The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
+
 <a name="API"></a>
 ## Web API Privileges
 
@@ -39,10 +41,10 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/appmanager.kill` | partner |  | The application can close other applications. |
 | `http://tizen.org/privilege/appmanager.launch` | public |  | The application can open other applications. |
 | `http://tizen.org/privilege/bluetooth` | public |  | The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices. |
-| `http://tizen.org/privilege/bluetooth.admin` | public |  | The application can change Bluetooth settings, such as turning Bluetooth on or off, setting the device name, and enabling or disabling AV remote control. |
-| `http://tizen.org/privilege/bluetooth.gap` | public |  | The application can use the Bluetooth Generic Access Profile (GAP). As an example, it can scan and pair with devices. |
-| `http://tizen.org/privilege/bluetooth.health` | public |  | The application can use the Bluetooth Health Device Profile (HDP). As an example, it can send health information. |
-| `http://tizen.org/privilege/bluetooth.spp` | public |  | The application can use the Bluetooth Serial Port Profile (SPP). As an example, it can send serial data. |
+| `http://tizen.org/privilege/bluetooth.admin` | public |  | The application can change Bluetooth settings, such as turning Bluetooth on or off, setting the device name, and enabling or disabling AV remote control. Deprecated since 3.0. |
+| `http://tizen.org/privilege/bluetooth.gap` | public |  | The application can use the Bluetooth Generic Access Profile (GAP). As an example, it can scan and pair with devices. Deprecated since 3.0. |
+| `http://tizen.org/privilege/bluetooth.health` | public |  | The application can use the Bluetooth Health Device Profile (HDP). As an example, it can send health information. Deprecated since 3.0. |
+| `http://tizen.org/privilege/bluetooth.spp` | public |  | The application can use the Bluetooth Serial Port Profile (SPP). As an example, it can send serial data. Deprecated since 3.0. |
 | `http://tizen.org/privilege/bluetoothmanager` | platform |  | The application can change Bluetooth system settings related to privacy and security, such as the visibility mode. |
 | `http://tizen.org/privilege/bookmark.read` | platform | Bookmark | The application can read bookmarks. |
 | `http://tizen.org/privilege/bookmark.write` | platform | Bookmark | The application can create, edit, and delete bookmarks. |
@@ -64,7 +66,7 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/healthinfo` | public | Sensor | The application can read health information gathered by the device sensors, such as the pedometer and the heart rate monitor. |
 | `http://tizen.org/privilege/ime` | public |  | The application can provide users with a way to enter characters and symbols into an associated text field. |
 | `http://tizen.org/privilege/internet` | public | | The application can access the Internet. This may result in additional charges depending on user's payment plan. |
-| `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. |
+| `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. Deprecated since 3.0. |
 | `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off, such as the LED on the front of the device and the camera flash. |
 | `http://tizen.org/privilege/location` | public | | The application can use user's location data. |
 | `http://tizen.org/privilege/mediacapture` | public | Camera & Microphone | The application can capture video and audio data.  |
@@ -73,7 +75,7 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/messaging.read` | public | Message & Storage | The application can retrieve emails, text messages, and multimedia messages from the server or receive them directly. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/messaging.write` | public | Message & Storage | The application can write text messages, multimedia messages, and emails. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/networkbearerselection` | partner |  | The application can restrict the device so some specific domains can only be accessed via mobile networks. This may result in additional charges depending on user's payment plan. |
-| `http://tizen.org/privilege/nfc.admin` | public |  | The application can change NFC settings, such as turning NFC on or off. |
+| `http://tizen.org/privilege/nfc.admin` | public |  | The application can change NFC settings, such as turning NFC on or off. Deprecated since 2.3. |
 | `http://tizen.org/privilege/nfc.cardemulation` | public |  | The application can access smart card details, such as credit card details, and allow users to make payments via NFC. |
 | `http://tizen.org/privilege/nfc.common` | public |  | The application can use NFC common features. |
 | `http://tizen.org/privilege/nfc.p2p` | public |  | The application can push NFC messages to other devices. |
@@ -87,16 +89,16 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/secureelement` | public |  | The application can access secure smart card chips such as UICC/SIM, embedded secure elements, and secure SD cards. |
 | `http://tizen.org/privilege/setting` | public |  | The application can change and read user settings. |
 | `http://tizen.org/privilege/system` | public |  | The application can read system information. |
-| `http://tizen.org/privilege/systemmanager` | partner |  | The application can read secure system information. |
+| `http://tizen.org/privilege/systemmanager` | partner |  | The application can read secure system information. Deprecated since 2.4. |
 | `http://tizen.org/privilege/tee.client` | partner |  | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment. |
 | `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the statuses of calls. |
-| `http://tizen.org/privilege/tv.audio` | public |  | The application can change the volume, enable and disable silent mode, detect volume changes, and play beeps. |
+| `http://tizen.org/privilege/tv.audio` | public |  | The application can change the volume, enable and disable silent mode, detect volume changes, and play beeps. Deprecated since 5.0. |
 | `http://tizen.org/privilege/tv.channel` | public |  | The application can change the TV channel, read information about TV channels and programmes, and receive notifications when the TV channel has been changed. |
-| `http://tizen.org/privilege/tv.display` | public |  | The application can check whether a device supports 3D and read information about 3D mode. |
+| `http://tizen.org/privilege/tv.display` | public |  | The application can check whether a device supports 3D and read information about 3D mode. Deprecated since 5.0. |
 | `http://tizen.org/privilege/tv.inputdevice` | public |  | The application can capture the key events of an input device, for example, TV remote control, and release key grabbing. |
 | `http://tizen.org/privilege/tv.window` | public |  | The application can embed the display of a video source, specify the size, and show or hide the embedded display. |
 | `http://tizen.org/privilege/volume.set` | public |  | The application can adjust the volume for different features, such as notification alerts, ringtones, and media. |
-| `http://tizen.org/privilege/websetting` | public |  | The application can change its web application settings, including deleting its cookies. |
+| `http://tizen.org/privilege/websetting` | public |  | The application can change its web application settings, including deleting its cookies. Deprecated since 2.4. |
 | `http://tizen.org/privilege/widget.viewer` | public |  | The application can show widgets, and information from their associated applications, on the home screen. |
 
 **Table: Web W3C/HTML5 API privileges**
@@ -121,7 +123,7 @@ The following tables list the API privileges, which you must declare when using 
 <a name="nonAPI"></a>
 ## Non-API Bound Privileges
 
-Tizen application privileges are loosely bound to APIs, so most of the privileges can be identified by the APIs that the application calls. However, there are some privileges that are not coupled with the Tizen APIs. To allow easy identification, those privileges are mapped to corresponding system resources - same as other privileges.
+Tizen application privileges are loosely bound to APIs, so most of the privileges can be identified by the APIs that the application calls. However, there are some privileges that are not coupled with the Tizen APIs. To allow easy identification, those privileges are mapped to corresponding system resources that are similar as other privileges.
 
 The following table lists the non-API bound privileges:
 
