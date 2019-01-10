@@ -72,9 +72,16 @@ for TD:
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="180" src="media/w55deviceapp.png" width="180"/></td>
+			<td>
+			<p><strong>(W) DeviceApp</strong> [In progress]</p>
+			<p>This sample application shows the list of device features, such as battery, display, haptic, IR, LED, and the camera back flash. It also tests their basic operations.</p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="180" src="media/wfeedbackapp.png" width="180"/></td>
 			<td>
-			<p><strong>(W) FeedbackApp</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/FeedbackApp" target="_blank"><strong>(W) FeedbackApp</strong></a></p>
 			<p>This sample application demonstrates how to play sound and vibration feedback and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
@@ -90,6 +97,13 @@ for TD:
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MetalDetector" target="_blank"><strong>(W) MetalDetector</strong></a></p>
 			<p>This sample application demonstrates how to obtain the magnetometer sensor data using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w54storageapp.png" width="180"/></td>
+			<td>
+			<p><strong>(W) StorageApp</strong> [In progress]</p>
+			<p>This sample application shows the device storages and the information such as ID, type, root directory, total space, available space, and state.</p>
 			</td>
 		</tr>
 		<tr>
