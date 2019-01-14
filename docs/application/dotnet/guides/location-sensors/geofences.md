@@ -54,11 +54,11 @@ Creating a geopoint geofence requires a geopoint and a radius, whereas Wi-Fi and
 
 Tizen provides the user a way of managing geofence places and fences through the My Places application. The following figure shows the default places and supported fence types.
 
-**Figure: My places**
+**Figure: My Places**
 
 ![My places](./media/geofence_setting.png)
 
-My places controls the adding, removing, and updating of places and fences. **Home**, **Office**, and **Car** are the default places. **Map**, **Wi-Fi**, and **Bluetooth** are the supported fence methods. **Car** supports only Wi-Fi and Bluetooth as fence methods.
+My Places controls the adding, removing, and updating of places and fences. **Home**, **Office**, and **Car** are the default places. **Map**, **Wi-Fi**, and **Bluetooth** are the supported fence methods. **Car** supports only Wi-Fi and Bluetooth as fence methods.
 
 
 ## Prerequisites

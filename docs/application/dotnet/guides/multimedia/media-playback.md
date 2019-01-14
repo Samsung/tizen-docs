@@ -310,9 +310,9 @@ You set the display parameters of a video file with the `DisplaySettings` proper
 2. To make the display visible:
     1.  Check whether the display is already visible using the `IsVisible` property of the `Tizen.Multimedia.PlayerDisplaySettings` class:
 
-        ​```
+        ```
         Tizen.Log.Info(LogTag, $"Display visible = {player.DisplaySettings.IsVisible}");
-        ​```
+        ```
 
     2.  If the display is not visible, make it visible by setting the `IsVisible` property to `true`:  
 
