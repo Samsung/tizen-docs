@@ -2,7 +2,7 @@
 
 The natural language processing features introduce how you can process sentence with Nlp class. They also describe how you can call methods about NLP in your application.
 
-You can use the following natural language processing features in your DOTNET applications:
+You can use the following natural language processing features in your .NET applications:
 
 -   [Natural Language Processing](nlp.md)
 

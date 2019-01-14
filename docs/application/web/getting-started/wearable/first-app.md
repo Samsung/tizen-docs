@@ -238,7 +238,7 @@ To run the application on the emulator:
 
         While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
 
-    For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
+        For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 <a name="target"></a>
 ### Running on a Target Device
@@ -266,6 +266,7 @@ To run the application on a target device:
             ![Switch on debugging](media/emulator_target_debug.png)
 
     <a name="remote_device"></a>
+
     2.  Use the Remote Device Manager to connect the wearable device:
         1.  In the **Device Manager**, click the **Remote Device Manager** button.
 

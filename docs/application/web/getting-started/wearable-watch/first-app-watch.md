@@ -267,6 +267,7 @@ To run the application on the emulator:
         > If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
     <a name="watchface"></a>
+
     3. Change the watch face.
 
         To change the device watch face and make the installed watch application visible on the home screen:

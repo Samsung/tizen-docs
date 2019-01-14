@@ -1,4 +1,4 @@
-## Quickstart
+# Quickstart
 
 The quick guide explains how to create a .NET application with OpenTK on Tizen.
 
