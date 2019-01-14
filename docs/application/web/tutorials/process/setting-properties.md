@@ -147,7 +147,7 @@ The following table lists the policy properties you can edit in the **Policy** t
   **content-security-policy** </td>
   <td>
 
-  Used to define an additional content security policy for a packaged or hosted application. The policy string is defined according to [Content Security Policy Level 2](http://www.w3.org/TR/2015/CR-CSP2-20150721/)(in mobile and TV applications) and [Content Security Policy 1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/) (in wearable applications).</td>
+  Used to define an additional content security policy for a packaged or hosted application. The policy string is defined according to [Content Security Policy Level 2](http://www.w3.org/TR/2015/CR-CSP2-20150721/) (in mobile and TV applications) and [Content Security Policy 1.0](http://www.w3.org/TR/2012/CR-CSP-20121115/) (in wearable applications).</td>
 </tr>
 <tr>
   <td>
@@ -170,7 +170,7 @@ The following table lists the policy properties you can edit in the **Policy** t
   <td>
 
   Used to define network resource permissions.<br>
-  To request network resource permissions, click **+** and enter the resource URLs in the **Network URL** column. You can allow the Web application to access the URLsub-domains by setting the **Allow subdomain** column value as **true**.</td>
+  To request network resource permissions, click **+** and enter the resource URLs in the **Network URL** column. You can allow the Web application to access the URL sub-domains by setting the **Allow subdomain** column value as **true**.</td>
 </tr>
 </table>
 
@@ -208,7 +208,7 @@ To add a localized name, description, or license:
 
     The following example shows the setting in the `config.xml` file code:  
     ```xml
-    <license xml:lang="en-gb" href=" http://www.apache.org/licenses/LICENSE-2.0.html">
+    <license xml:lang="en-gb" href="http://www.apache.org/licenses/LICENSE-2.0.html">
        Apache License, Version 2.0
     </license>
     ```

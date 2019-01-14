@@ -47,6 +47,27 @@ To connect a client application to a trusted application, first create a new TEE
 > **Note**  
 > A client application can connect only to its own trusted application. Built-in security rules prevent connecting to other trusted applications.
 
+```
+try {
+    function sessionSuccess(session) {
+        /* Session opened, the application can now communicate with the trusted application */
+        console.log('session opened');
+
+        session.close();
+    }
+
+    function sessionError(err) {
+        console.log('openSession: ' + err.name + ': ' + err.message);
+    }
+
+    var ta = '123e4567-e89b-12d3-a456-426655440000'; /* UUID of the trusted application */
+    var ctx = tizen.teec.getContext();
+
+    ctx.openSession(ta, TeecLoginMethod.PUBLIC, null, null, sessionSuccess, sessionError);
+} catch (err) {
+    console.log(err.name + ': ' + err.message);
+}
+```
 
 <a name="secure_commands"></a>
 ## Sending Secure Commands

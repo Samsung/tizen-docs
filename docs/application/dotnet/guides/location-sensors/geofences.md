@@ -15,7 +15,7 @@ The main features of the Tizen.Location.Geofence namespace include:
 
 -   Managing the geofence service
 
-    You can allow the user to [manage the geofence places and fences](#settings) through My places.
+    You can allow the user to [manage the geofence places and fences](#settings) through My Places.
 
 **Figure: Geofence architecture**
 
@@ -52,7 +52,7 @@ Creating a geopoint geofence requires a geopoint and a radius, whereas Wi-Fi and
 <a name="settings"></a>
 ## Geofence Management through My Places
 
-Tizen provides the user a way of managing geofence places and fences through the My places application. The following figure shows the default places and supported fence types.
+Tizen provides the user a way of managing geofence places and fences through the My Places application. The following figure shows the default places and supported fence types.
 
 **Figure: My places**
 

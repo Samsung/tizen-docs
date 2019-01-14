@@ -80,9 +80,9 @@ You can set an alarm which, when it expires, either launches an application or s
 
             The method creates the alarm as a new instance of the [Tizen.Applications.Alarm](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Alarm.html) class.
 
-            ​```
+            ```
             Alarm myAlarm = AlarmManager.CreateAlarm(DELAY, PERIOD, appControl);
-            ​```
+            ```
 
     2. When the alarm expires, it triggers the `OnAppControlReceived()` event handler of the [Tizen.Applications.CoreApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.CoreApplication.html) class in the AlarmTarget application:
 

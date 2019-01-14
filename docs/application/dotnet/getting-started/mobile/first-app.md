@@ -374,38 +374,38 @@ To modify the application by adding a button and label:
     using System.Text;
     using Xamarin.Forms;
 
-        namespace CrossTemplate2
+    namespace CrossTemplate2
+    {
+        public class App : Application
         {
-            public class App : Application
-            {
-                Button button;
-                Label label;
-                int clicks = 0;
+            Button button;
+            Label label;
+            int clicks = 0;
     ```
 
 2. Instantiate the button, and add the `OnButtonClicked` event handler to the button's `Clicked` event:
 
     ```csharp
-                public App()
+            public App()
+            {
+                button = new Button
                 {
-                    button = new Button
-                    {
-                        Text = "Click here!",
-                        BackgroundColor = Color.Red,
-                        HorizontalOptions = LayoutOptions.Center,
-                    };
-                    button.Clicked += OnButtonClicked;
+                    Text = "Click here!",
+                    BackgroundColor = Color.Red,
+                    HorizontalOptions = LayoutOptions.Center,
+                };
+                button.Clicked += OnButtonClicked;
     ```
 
 3. Instantiate the label, and give the label a value to be displayed in
     the initial state by setting the `Text` property:
 
     ```csharp
-                    label = new Label
-                    {
-                        Text = "unclicked",
-                        HorizontalOptions = LayoutOptions.Center,
-                    };
+                label = new Label
+                {
+                    Text = "unclicked",
+                    HorizontalOptions = LayoutOptions.Center,
+                };
     ```
 
 4. Change the initial text of the first label to "Welcome to Tizen!",
@@ -413,23 +413,23 @@ To modify the application by adding a button and label:
     `StackLayout`, so they are stacked below the first label:
 
     ```csharp
-                    /// The root page of your application
-                    MainPage = new ContentPage
+                /// The root page of your application
+                MainPage = new ContentPage
+                {
+                    Content = new StackLayout
                     {
-                        Content = new StackLayout
-                        {
-                            VerticalOptions = LayoutOptions.Center,
-                            Children = {
-                                new Label {
-                                    HorizontalTextAlignment = TextAlignment.Center,
-                                    Text = "Welcome to Tizen!"
-                                },
-                                button,
-                                label,
-                            }
+                        VerticalOptions = LayoutOptions.Center,
+                        Children = {
+                            new Label {
+                                HorizontalTextAlignment = TextAlignment.Center,
+                                Text = "Welcome to Tizen!"
+                            },
+                            button,
+                            label,
                         }
-                    };
-                }
+                    }
+                };
+            }
     ```
 
 5. To change the new label's properties when the button is clicked,

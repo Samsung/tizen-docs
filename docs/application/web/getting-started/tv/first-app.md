@@ -192,11 +192,12 @@ You can run the Web application on the [emulator](../../tutorials/process/run-de
 To run the application on the emulator:
 
 1.  Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
-   1.  In the Tizen Studio menu, select **Tools \> Emulator Manager**.
+
+    1.  In the Tizen Studio menu, select **Tools \> Emulator Manager**.
 
         ![Emulator Manager](media/emulator_icon.png)
 
-   2. In the Emulator Manager, select a TV emulator from the list and click **Launch**.
+    2. In the Emulator Manager, select a TV emulator from the list and click **Launch**.
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
@@ -265,7 +266,7 @@ To run the application on a target device:
    
         1. In the **Device Manager**, click the **Remote Device Manager** button.
 
-            ![Launch the Remote Device Manager](media/remote_conn_mgr_ww.png)
+            ![Launch the Remote Device Manager](media/remote_conn_mgr.png)
 
         2. In the **Remote Device Manager** window, click **+**.
 

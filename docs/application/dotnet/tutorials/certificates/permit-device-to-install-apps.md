@@ -10,5 +10,6 @@ Right-click anywhere in the file explorer of the **Device Manager** and select *
 
 If failed to install application to device, follow the instructions:
 - Verify the device date and time.
+
    If the certificate issued is before the device date and time, the application cannot be installed, as the certificate is considered invalid.
 - Verify whether the permit to install applications process is performed correctly.
