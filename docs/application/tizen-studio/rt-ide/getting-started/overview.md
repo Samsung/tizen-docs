@@ -19,16 +19,11 @@ To install the Tizen Studio for RT the following prerequistes must be checked:
  
 - Operating system and hardware requirements:
 
-<<<<<<< HEAD
   To install the appropriate JDK version for your Ubuntu system, go to the Ubuntu Web site and follow the detailed instructions for installing the Oracle&reg; JDK version 8 or 9.
-
 
 - Operating system and hardware requirements
 
-  The following table lists the supported operating systems and hardware requirements for the Tizen Studio for RT.
-=======
   The following table lists the supported operating systems and hardware requirements for the Tizen Studio for RT:
->>>>>>> Review of file
 
   **Table: Operating system and hardware requirements**
 
@@ -61,7 +56,6 @@ To install the Tizen Studio for RT the following prerequistes must be checked:
 </tr>
 </table>
 
-
 - RT platform requirements:
 
   For the additional requirements and guides related to building and flashing an RT application, see:
@@ -71,7 +65,7 @@ To install the Tizen Studio for RT the following prerequistes must be checked:
 
 - Package requirements for developing applications in Ubuntu:
 
-  You must install the webkitgtk package. At the terminal prompt, enter the following command:
+  You must install the `webkitgtk` package. At the terminal prompt, enter the following command:
 
   `$ sudo apt-get install libwebkitgtk-1.0-0`
 
