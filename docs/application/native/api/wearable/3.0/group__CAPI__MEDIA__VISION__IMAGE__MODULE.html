@@ -206,7 +206,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_RECOGNITION_MIN_MATCH_NUM to set the minimum number of keypoints matches required for recognition attribute of the engine configuration. </p>
-<p>The minimal number of keypoints should be matched between an image and a scene. It will be taken into account for image objects recognition. Value is unsigned integer and the defalut is 30</p>
+<p>The minimal number of keypoints should be matched between an image and a scene. It will be taken into account for image objects recognition. Value is unsigned integer and the default is 30</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gac6e5f51937e5c33ee69f06dcb76ed1d8" title="Sets the integer attribute to the configuration.">mv_engine_config_set_int_attribute()</a> </dd>
 <dd>
@@ -226,7 +226,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_RECOGNITION_OBJECT_MAX_KEYPOINTS_NUM to set the maximum keypoints should be detected on the image attribute of the engine configuration. </p>
-<p>The maximal number of keypoints can be selected on the image object to calculate descriptors. This keypoints will be used for image (object) recognition and has to be specified as integer number and the defalut is 1000 </p>
+<p>The maximal number of keypoints can be selected on the image object to calculate descriptors. This keypoints will be used for image (object) recognition and has to be specified as integer number and the default is 1000 </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gac6e5f51937e5c33ee69f06dcb76ed1d8" title="Sets the integer attribute to the configuration.">mv_engine_config_set_int_attribute()</a> </dd>
 <dd>
@@ -246,7 +246,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_RECOGNITION_OBJECT_SCALE_FACTOR to set the image to be recognized scale factor attribute of the engine configuration. </p>
-<p>The value of the factor will be used for resizing of the images (objects) for recognition. Scale factor is the double value and the defalut is 1.2</p>
+<p>The value of the factor will be used for resizing of the images (objects) for recognition. Scale factor is the double value and the default is 1.2</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
@@ -266,7 +266,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_RECOGNITION_REQ_MATCH_PART to set the required matching part for the image recognition attribute of the engine configuration. </p>
-<p>To recognize occluded or hidden an image by other images, required relative part of the matches in respect to the total amount of matching keypoints required for image recognition. Too low value will result in unsustainable behavior, but effect of object overlapping will be reduced. Value can be from 0 to 1 and the defalut is 0.05</p>
+<p>To recognize occluded or hidden an image by other images, required relative part of the matches in respect to the total amount of matching keypoints required for image recognition. Too low value will result in unsustainable behavior, but effect of object overlapping will be reduced. Value can be from 0 to 1 and the default is 0.05</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
@@ -286,7 +286,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_RECOGNITION_SCENE_MAX_KEYPOINTS_NUM to set the maximum keypoints should be detected on the scene attribute of the engine configuration. </p>
-<p>The maximal number of keypoints can be selected on the scene including the images (objects) to calculate descriptors. This keypoints will be used for image recognition and has to be specified as unsigned integer and the defalut is 5000</p>
+<p>The maximal number of keypoints can be selected on the scene including the images (objects) to calculate descriptors. This keypoints will be used for image recognition and has to be specified as unsigned integer and the default is 5000</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
@@ -306,7 +306,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_RECOGNITION_SCENE_SCALE_FACTOR to set the scene scale factor attribute of the engine configuration. </p>
-<p>The value of the factor will be used for resizing of the scene including the images (objects) for recognition. Scale factor is the double value and the defalut is 1.2</p>
+<p>The value of the factor will be used for resizing of the scene including the images (objects) for recognition. Scale factor is the double value and the default is 1.2</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
@@ -326,7 +326,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_RECOGNITION_TOLERANT_MATCH_PART_ERR to set the part matching error for the image recognition attribute of the engine configuration. </p>
-<p>Allowable error of matches number. Value can be from 0 to 1 and the defalut is 0.1</p>
+<p>Allowable error of matches number. Value can be from 0 to 1 and the default is 0.1</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
@@ -346,7 +346,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_TRACKING_EXPECTED_OFFSET to set the expected tracking offset attribute of the engine configuration. </p>
-<p>Relative offset value, for which the object offset is expected (relative to the object size in the current frame). Value is a double and the defalut is 0</p>
+<p>Relative offset value, for which the object offset is expected (relative to the object size in the current frame). Value is a double and the default is 0</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
@@ -366,7 +366,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_TRACKING_HISTORY_AMOUNT to set the number of recognition results in the tracking history attribute of the engine configuration. </p>
-<p>Number of previous recognition results, which will influence the stabilization. Value is unsigned integer and the defalut is 3</p>
+<p>Number of previous recognition results, which will influence the stabilization. Value is unsigned integer and the default is 3</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gac6e5f51937e5c33ee69f06dcb76ed1d8" title="Sets the integer attribute to the configuration.">mv_engine_config_set_int_attribute()</a> </dd>
 <dd>
@@ -386,7 +386,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_TRACKING_STABLIZATION_ACCELERATION to set the acceleration of the tracking stabilization attribute of the engine configuration. </p>
-<p>Acceleration will be used for image stabilization (relative to the distance from current location to stabilized location). Value is double from 0 to 1 and the defalut is 0.1</p>
+<p>Acceleration will be used for image stabilization (relative to the distance from current location to stabilized location). Value is double from 0 to 1 and the default is 0.1</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
@@ -406,7 +406,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Defines MV_IMAGE_TRACKING_STABLIZATION_SPEED to set the speed of the tracking stabilization attribute of the engine configuration. </p>
-<p>Start speed will be used for image stabilization. Value is a double and the defalut is 0.3 </p>
+<p>Start speed will be used for image stabilization. Value is a double and the default is 0.3 </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga09befb6f54b2731848365d9959aa1784" title="Sets the double attribute to the configuration.">mv_engine_config_set_double_attribute()</a> </dd>
 <dd>
