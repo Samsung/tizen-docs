@@ -32,7 +32,7 @@ Use the statvfs wrapper to get memory sizes:
 
   The function returns the internal memory size. Use it instead of the statvfs function when you need the internal memory size.
 
-  When the memory is low, the system must at least be able to launch a low memory pop-up. To do that, it reserves a minimum memory, whose size depends on the device storage size. The memory size returned by the `storage_get_internal_memory_size()`function excludes the minimum memory size.
+  When the memory is low, the system must at least be able to launch a low memory pop-up. To do that, it reserves a minimum memory, whose size depends on the device storage size. The memory size returned by the `storage_get_internal_memory_size()` function excludes the minimum memory size.
 
   The statvfs structure has a different structure size than the `__USE_FILE_OFFSET64` option. If you define this option, libstorage changes the `storage_get_internal_memory_size()` function to `storage_get_internal_memory_size64()` automatically.
 
@@ -46,7 +46,7 @@ Use the statvfs wrapper to get memory sizes:
 
   The function returns the external memory size. Use it instead of the statvfs function when you need the external memory size.
 
-  When the memory is low, the system must at least be able to launch a low memory pop-up. To do that, it reserves a minimum memory, whose size depends on the device storage size. The memory size returned by the `storage_get_external_memory_size()`function excludes the minimum memory size.
+  When the memory is low, the system must at least be able to launch a low memory pop-up. To do that, it reserves a minimum memory, whose size depends on the device storage size. The memory size returned by the `storage_get_external_memory_size()` function excludes the minimum memory size.
 
   The statvfs structure has a different structure size than the `__USE_FILE_OFFSET64` option. If you define this option, libstorage changes the `storage_get_external_memory_size()` function to `storage_get_external_memory_size64()` automatically.
 
@@ -170,7 +170,7 @@ To monitor storage state changes:
 <a name="space"></a>
 ## Retrieving Storage Space Information
 
-To get the available and total size of the storage, use the `storage_get_total_space()` and `storage_get_available_space()` functions. They return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these functions to get the memory size. For the same reason, you cannot use the `statvfs` function directly in Tizen. Instead, use `storage_get_internal_memory_size()`and `storage_get_external_memory_size()`. The Statvfs structure has a different structure size defined by "\__USE\_FILE\_OFFSET64". However, you can ignore this, since the Storage API uses a proper function automatically.
+To get the available and total size of the storage, use the `storage_get_total_space()` and `storage_get_available_space()` functions. They return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these functions to get the memory size. For the same reason, you cannot use the `statvfs` function directly in Tizen. Instead, use `storage_get_internal_memory_size()` and `storage_get_external_memory_size()`. The Statvfs structure has a different structure size defined by "\__USE\_FILE\_OFFSET64". However, you can ignore this, since the Storage API uses a proper function automatically.
 
 To retrieve storage space information:
 

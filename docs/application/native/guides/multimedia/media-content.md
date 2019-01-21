@@ -66,10 +66,10 @@ To enable your application to use the media content functionality:
 
    ```
    <privileges>
-      <!--To insert content-->
-      <privilege>http://tizen.org/privilege/content.write</privilege>
-      <!--To access a storage to insert content-->
-      <privilege>http://tizen.org/privilege/mediastorage</privilege>
+       <!--To insert content-->
+       <privilege>http://tizen.org/privilege/content.write</privilege>
+       <!--To access a storage to insert content-->
+       <privilege>http://tizen.org/privilege/mediastorage</privilege>
    </privileges>
    ```
 
@@ -220,7 +220,7 @@ To retrieve a list of media items:
     ret = media_filter_create(&filter);
 
     snprintf(buf, BUFLEN, "%s = %d OR %s = %d", MEDIA_TYPE, MEDIA_CONTENT_TYPE_IMAGE,
-             MEDIA_TYPE, MEDIA_CONTENT_TYPE_VIDEO);
+            MEDIA_TYPE, MEDIA_CONTENT_TYPE_VIDEO);
     ret = media_filter_set_condition(filter, buf, collate_type);
     if (ret != MEDIA_CONTENT_ERROR_NONE) {
         media_filter_destroy(filter);
@@ -271,10 +271,10 @@ To get notifications of database changes, register a callback. You can only set 
    ```
    void
    _noti_cb(media_content_error_e error, int pid,
-            media_content_db_update_item_type_e update_item,
-            media_content_db_update_type_e update_type,
-            media_content_type_e media_type,
-            char *uuid, char *path, char *mime_type, void *user_data)
+           media_content_db_update_item_type_e update_item,
+           media_content_db_update_type_e update_type,
+           media_content_type_e media_type,
+           char *uuid, char *path, char *mime_type, void *user_data)
    {
        if (error == MEDIA_CONTENT_ERROR_NONE)
            dlog_print(DLOG_DEBUG, LOG_TAG, "noti success! %d\n", error);
@@ -397,38 +397,38 @@ To read album information, define a callback for the `media_album_foreach_album_
    - Use the `media_album_get_album_id()`, `media_album_get_name()`, and `media_album_get_artist()` functions to read the album ID, name, and artist:
 
      ```
-        media_content_error_e ret = MEDIA_CONTENT_ERROR_NONE;
+         media_content_error_e ret = MEDIA_CONTENT_ERROR_NONE;
 
-        int id = -1;
-        char *name = NULL;
-        char *artist = NULL;
-        int count = -1;
+         int id = -1;
+         char *name = NULL;
+         char *artist = NULL;
+         int count = -1;
 
-        /* Get the ID of the album */
-        ret = media_album_get_album_id(album, &id);
-        if (ret != MEDIA_CONTENT_ERROR_NONE)
-            /* Error handling */
-        else
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Album id: %d\n", id);
+         /* Get the ID of the album */
+         ret = media_album_get_album_id(album, &id);
+         if (ret != MEDIA_CONTENT_ERROR_NONE)
+             /* Error handling */
+         else
+             dlog_print(DLOG_DEBUG, LOG_TAG, "Album id: %d\n", id);
 
-        /* Get name of the album */
-        ret = media_album_get_name(album, &name);
-        if (ret != MEDIA_CONTENT_ERROR_NONE) {
-            /* Error handling */
-        } else {
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Album name: %s\n", name);
-            free(name);
-        }
+         /* Get name of the album */
+         ret = media_album_get_name(album, &name);
+         if (ret != MEDIA_CONTENT_ERROR_NONE) {
+             /* Error handling */
+         } else {
+             dlog_print(DLOG_DEBUG, LOG_TAG, "Album name: %s\n", name);
+             free(name);
+         }
 
-        /* Get the artist name */
-        ret = media_album_get_artist(album, &artist);
-        if (ret != MEDIA_CONTENT_ERROR_NONE) {
-            /* Error handling */
-        } else {
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Artist: %s\n", artist);
-            free(artist);
-        }
-      ```
+         /* Get the artist name */
+         ret = media_album_get_artist(album, &artist);
+         if (ret != MEDIA_CONTENT_ERROR_NONE) {
+             /* Error handling */
+         } else {
+             dlog_print(DLOG_DEBUG, LOG_TAG, "Artist: %s\n", artist);
+             free(artist);
+         }
+     ```
 
       > **Note**
       >
@@ -439,15 +439,15 @@ To read album information, define a callback for the `media_album_foreach_album_
       The second parameter is the filter. If it is set to `NULL`, all media is counted.
 
       ```
-        /* Get media count in the album */
-        /* Filter is NULL - all media items are counted */
-        ret = media_album_get_media_count_from_db(id, NULL, &count);
-        if (ret != MEDIA_CONTENT_ERROR_NONE)
-            /* Error handling */
-        else
-            dlog_print(DLOG_DEBUG, LOG_TAG, "Media count in this album: %d\n", count);
+          /* Get media count in the album */
+          /* Filter is NULL - all media items are counted */
+          ret = media_album_get_media_count_from_db(id, NULL, &count);
+          if (ret != MEDIA_CONTENT_ERROR_NONE)
+              /* Error handling */
+          else
+              dlog_print(DLOG_DEBUG, LOG_TAG, "Media count in this album: %d\n", count);
 
-        return true;
+          return true;
       }
       ```
 
@@ -725,7 +725,7 @@ To use a filter to find media items that satisfy certain criteria or to modify t
 
    ```
    media_filter_set_order(filter, MEDIA_CONTENT_ORDER_ASC, MEDIA_ARTIST,
-                          MEDIA_CONTENT_COLLATE_DEFAULT);
+                       MEDIA_CONTENT_COLLATE_DEFAULT);
    ```
 
    The second and fourth parameters determine the order and collation types, and the available types are defined in the enumerators `media_content_order_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#gaa4e5eece5a509c7414afb96e7a2c3fa2) applications) and `media_content_collation_e` (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTENT__MODULE.html#ga31a20f732fe262e81f112416bfefe13c) applications).
@@ -738,7 +738,7 @@ To use a filter to find media items that satisfy certain criteria or to modify t
    media_content_collation_e check_order_collate_type = MEDIA_CONTENT_COLLATE_DEFAULT;
 
    media_filter_get_order(filter, &check_order_type, &check_order_keyword,
-                          &check_order_collate_type);
+                       &check_order_collate_type);
    ```
 
 4. Set an offset using the `media_filter_set_offset()` function.
@@ -794,7 +794,7 @@ To find media folders and filter the results:
 
    media_filter_set_condition(filter, buf, MEDIA_CONTENT_COLLATE_NOCASE);
    media_filter_set_order(filter, MEDIA_CONTENT_ORDER_ASC, FOLDER_MODIFIED_TIME,
-                          MEDIA_CONTENT_COLLATE_DEFAULT);
+                       MEDIA_CONTENT_COLLATE_DEFAULT);
    media_folder_foreach_folder_from_db(filter, folder_cb, NULL);
    ```
 
@@ -879,11 +879,12 @@ To read media folder information, define a callback for the `media_folder_foreac
              /* Error handling */
          else
              dlog_print(DLOG_DEBUG, LOG_TAG,
-                        "Number of media contents: %d\n", item_count);
+                 "Number of media contents: %d\n", item_count);
          free(folder_id);
+
          return true;
-      }
-      ```
+     }
+     ```
 
       > **Note**
       >
@@ -971,7 +972,7 @@ To access media item information:
 
    /* Set the condition */
    snprintf(buf, BUFLEN, "%s = %d OR %s = %d", MEDIA_TYPE,
-            MEDIA_CONTENT_TYPE_IMAGE, MEDIA_TYPE, MEDIA_CONTENT_TYPE_VIDEO);
+           MEDIA_CONTENT_TYPE_IMAGE, MEDIA_TYPE, MEDIA_CONTENT_TYPE_VIDEO);
 
    ret = media_filter_set_condition(filter, buf, collate_type);
    if (ret != MEDIA_CONTENT_ERROR_NONE) {
@@ -999,7 +1000,7 @@ To access media item information:
    ret = media_info_foreach_media_from_db(filter, gallery_media_item_cb, &all_item_list);
    if (ret != MEDIA_CONTENT_ERROR_NONE) {
        dlog_print(DLOG_ERROR, LOG_TAG,
-                  "media_info_foreach_media_from_db failed: %d", ret);
+               "media_info_foreach_media_from_db failed: %d", ret);
        media_filter_destroy(filter);
 
        return ret;
@@ -1032,8 +1033,8 @@ To access media item information:
 
                    dlog_print(DLOG_DEBUG, LOG_TAG, "This is an image");
                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                              "Width: %d, Height: %d, Orientation: %d, Date taken: %s",
-                              width, height, orientation, datetaken);
+                               "Width: %d, Height: %d, Orientation: %d, Date taken: %s",
+                               width, height, orientation, datetaken);
                }
 
                if (datetaken)
@@ -1062,9 +1063,9 @@ To access media item information:
 
                    dlog_print(DLOG_DEBUG, LOG_TAG, "This is a video");
                    dlog_print(DLOG_DEBUG, LOG_TAG,
-                              "Title: %s, Album: %s, Artist: %s, Album_artist: %s \n
+                               "Title: %s, Album: %s, Artist: %s, Album_artist: %s \n
                                Duration: %d, Played time: %d",
-                              title, album, artist, album_artist, duration, time_played);
+                               title, album, artist, album_artist, duration, time_played);
                }
 
                free(artist);
@@ -1347,7 +1348,7 @@ To read playlist information, define a callback for the `media_playlist_foreach_
           media_filter_set_offset(audio_fltr, 0, 10);
 
           media_playlist_foreach_media_from_db(playlist_id, audio_fltr,
-                                               audio_list_cb, NULL);
+                                              audio_list_cb, NULL);
 
           media_filter_destroy(audio_fltr);
           media_filter_destroy(temp_filter);
@@ -1501,15 +1502,15 @@ To access information first about the tags and then about the media items relate
             media_tag_get_name(tag_handle, &tag_name);
 
             ret = media_tag_foreach_media_from_db(tag_id, NULL, gallery_media_item_cb,
-                                                  &media_list_in_tag);
+                                                &media_list_in_tag);
             if (ret != MEDIA_CONTENT_ERROR_NONE) {
                 dlog_print(DLOG_ERROR, LOG_TAG,
-                           "media_tag_foreach_media_from_db() failed: %d", ret);
+                            "media_tag_foreach_media_from_db() failed: %d", ret);
 
                 return ret;
             } else {
                 dlog_print(DLOG_DEBUG, LOG_TAG,
-                           "media_tag_foreach_media_from_db() successful");
+                            "media_tag_foreach_media_from_db() successful");
                 int j = 0;
                 media_info_h tag_media_handle;
                 char *media_id = NULL;
@@ -1528,13 +1529,13 @@ To access information first about the tags and then about the media items relate
                     ret = media_info_get_media_type(tag_media_handle, &media_type);
 
                     dlog_print(DLOG_DEBUG, LOG_TAG,
-                               "[%s] media_id [%d]: %s", tag_name, j, media_id);
+                                "[%s] media_id [%d]: %s", tag_name, j, media_id);
                     dlog_print(DLOG_DEBUG, LOG_TAG,
-                               "[%s] media_type [%d]: %d", tag_name, j, media_type);
+                                "[%s] media_type [%d]: %d", tag_name, j, media_type);
                     dlog_print(DLOG_DEBUG, LOG_TAG,
-                               "[%s] media_name [%d]: %s", tag_name, j, media_name);
+                                "[%s] media_name [%d]: %s", tag_name, j, media_name);
                     dlog_print(DLOG_DEBUG, LOG_TAG,
-                               "[%s] media_path [%d]: %s", tag_name, j, media_path);
+                                "[%s] media_path [%d]: %s", tag_name, j, media_path);
 
                     free(media_name);
                     free(media_path);

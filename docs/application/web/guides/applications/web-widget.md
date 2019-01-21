@@ -334,7 +334,7 @@ The following UI layouts with code examples are common use cases in widgets on w
 > **Note**  
 > The widget engine only supports the `block`, `inline`, `inline-block`, and `none` values for the `display` property.
 > ```
-> #more {   
+> #more {
 >    .display: inline-block;
 > }
 > ```
@@ -670,9 +670,9 @@ The Web widget applications support the following events: `onload`, `onclick`, a
   ![onload event](./media/webwidget_onload_event.png)
 
   ```
-    <!--HTML-->
-    <element onload="load">
-    ```
+  <!--HTML-->
+  <element onload="load">
+  ```
 
     ```
     /* JavaScript */
@@ -741,24 +741,24 @@ The Web widget applications support the following events: `onload`, `onclick`, a
 
    This event is generated when the Web widget content becomes visible or hidden.
 
-  **Figure: visibilityChange event**  
+  **Figure: visibilityChange event**
 
   ![visibilityChange event](./media/webwidget_visibilitychange_event.png)
 
   ```
-    /* JavaScript */
+  /* JavaScript */
 
-    /* Set the event listener */
-    document.addEventListener('visibilitychange', visibilitychange);
+  /* Set the event listener */
+  document.addEventListener('visibilitychange', visibilitychange);
 
-    /* Define the event handler in the main.js file */
-    function visibilitychange() {
-        if (document.visibilityState === 'hidden') {
-            /* Store shared data */
-        } else {
-            /* Load stored data and update the page */
-        }
-    }
+  /* Define the event handler in the main.js file */
+  function visibilitychange() {
+      if (document.visibilityState === 'hidden') {
+          /* Store shared data */
+      } else {
+          /* Load stored data and update the page */
+      }
+  }
   ```
 
 <a name="communication"></a>

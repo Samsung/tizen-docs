@@ -196,26 +196,26 @@ To detect barcodes:
 
       The image is now stored in the source, and you can access the image through the source handle.
 
-      ```
-      static void
-      _camera_media_packet_preview_cb(media_packet_h pkt, void *user_data)
-      {
-          mv_point_s mv_point = {0, 0};
-          mv_rectangle_s mv_roi = {mv_point, bardetdata.width, bardetdata.height};
+   ```
+   static void
+   _camera_media_packet_preview_cb(media_packet_h pkt, void *user_data)
+   {
+       mv_point_s mv_point = {0, 0};
+       mv_rectangle_s mv_roi = {mv_point, bardetdata.width, bardetdata.height};
 
-          if (pkt == NULL)
-              return;
+       if (pkt == NULL)
+           return;
 
-          error_code = mv_source_fill_by_media_packet(bardetdata.g_source, pkt);
-          if (error_code != MEDIA_VISION_ERROR_NONE)
-              dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error code);
+       error_code = mv_source_fill_by_media_packet(bardetdata.g_source, pkt);
+       if (error_code != MEDIA_VISION_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error code);
 
-          if (pkt) {
-              error_code = media_packet_destroy(pkt);
-              pkt = NULL;
-          }
-      }
-      ```
+       if (pkt) {
+           error_code = media_packet_destroy(pkt);
+           pkt = NULL;
+       }
+   }
+   ```
 
 2. In the `_camera_media_packet_preview_cb()` callback, detect barcodes in the image using the `mv_barcode_detect()` function:
 

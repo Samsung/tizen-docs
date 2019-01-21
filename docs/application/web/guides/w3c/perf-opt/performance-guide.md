@@ -4,19 +4,19 @@ The performance and optimization features include animation rate and page visibi
 
 The main performance and optimization features are:
 
-- [Page Visibility](./page.md)  
+- [Page Visibility](./page.md)
 
   Enables you to retrieve the visibility status of a Web document and detect changes in it.
 
-- [Timing control for script-based animations](./timing-control.md)  
+- [Timing control for script-based animations](./timing-control.md)
 
   Enables you to control animation speed by scheduling frame update requests.
 
-- [Web Workers](./web-workers.md)  
+- [Web Workers](./web-workers.md)
 
   Enables you to create and manage HTML5 Web Workers to run an independent JavaScript thread in the background without affecting the device performance.
 
-- [Performance Improvement](./performance.md) **in wearable applications only**	
+- [Performance Improvement](./performance-improvement.md) **in wearable applications only**
 
   Allows you to improve the performance of Tizen Web applications.
 

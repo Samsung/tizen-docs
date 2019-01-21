@@ -291,9 +291,9 @@ The following table lists the measurement data that the accelerometer provides.
 | Measurement  | Type                 | Range                               | Unit         |
 |--------------|----------------------|-------------------------------------|--------------|
 | Timestamp    | `unsigned long long` | -                                   | Microseconds |
-| values[0]: X | `float`              | Min. value = -19.6Max. value = 19.6 | m/s<sup>2</sup>         |
-| values[1]: Y | `float`              | Min. value = -19.6Max. value = 19.6 | m/s<sup>2</sup>         |
-| values[2]: Z | `float`              | Min. value = -19.6Max. value = 19.6 | m/s<sup>2</sup>         |
+| values[0]: X | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
+| values[1]: Y | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
+| values[2]: Z | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 
 The following table provides information about the accelerometer output for a device at rest.
 
@@ -546,7 +546,7 @@ The following table lists the measurement data that the orientation sensor provi
 | values[1]: Pitch   | `float`              | Min. value = -180<br> Max. value = 180 | Degrees (&deg;)  |
 | values[2]: Roll    | `float`              | Min. value = -90<br> Max. value = 90   | Degrees (&deg;)  |
 
-The angular positions are measured using a fixed frame reference ((X<sub>E</sub>, Y<sub>E</sub>, Z<sub>E</sub>)).
+The angular positions are measured using a fixed frame reference (X<sub>E</sub>, Y<sub>E</sub>, Z<sub>E</sub>).
 
 **Figure: Angular positions and the fixed frame reference**
 
@@ -671,7 +671,7 @@ The following table lists the measurement data that the temperature sensor provi
 | Measurement            | Type                 | Range                            | Unit         |
 |------------------------|----------------------|----------------------------------|--------------|
 | Timestamp              | `unsigned long long` | -                                | Microseconds |
-| values[0]: temperature | `float`              | Min. value = -30Max. value = 100 | &deg;C           |
+| values[0]: temperature | `float`              | Min. value = -30<br>Max. value = 100 | &deg;C           |
 
 <a name="ultraviolet"></a>
 ## Ultraviolet Sensor

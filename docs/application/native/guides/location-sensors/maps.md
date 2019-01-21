@@ -860,7 +860,7 @@ To parse route data:
      ```
      error = maps_route_foreach_segment(route, __maps_route_segment_cb, user_data);
      if (error != MAPS_ERROR_NONE)
-         /* Error handling */`
+         /* Error handling */
      ```
 
      Implement the `__maps_route_segment_cb()` callback:

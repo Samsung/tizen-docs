@@ -252,8 +252,7 @@ After the image file reading is complete, you can create a Cairo surface for the
 
 ```
 src_buffer = (unsigned char *)evas_object_image_data_get(decoded_img, EINA_TRUE);
-cairo_surface_t *source = cairo_image_surface_create_for_data(src_buffer, CAIRO_FORMAT_ARGB32, w, h,
-                                                              evas_object_image_stride_get(decoded_img));
+cairo_surface_t *source = cairo_image_surface_create_for_data(src_buffer, CAIRO_FORMAT_ARGB32, w, h, evas_object_image_stride_get(decoded_img));
 cairo_set_source_surface(cr, source, 0, 0);
 cairo_paint(cr);
 

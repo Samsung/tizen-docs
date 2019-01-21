@@ -255,7 +255,7 @@ To play a video file:
 
 2. To set the display on which the video is played, use the `Display` property of the `Tizen.Multimedia.Player` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer such as VideoView based on VisualElementRenderer class. Cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
     ```
     var mediaView = new VideoView();
@@ -310,9 +310,9 @@ You set the display parameters of a video file with the `DisplaySettings` proper
 2. To make the display visible:
     1.  Check whether the display is already visible using the `IsVisible` property of the `Tizen.Multimedia.PlayerDisplaySettings` class:
 
-        ​```
+        ```
         Tizen.Log.Info(LogTag, $"Display visible = {player.DisplaySettings.IsVisible}");
-        ​```
+        ```
 
     2.  If the display is not visible, make it visible by setting the `IsVisible` property to `true`:  
 

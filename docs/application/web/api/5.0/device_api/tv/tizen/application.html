@@ -1302,8 +1302,7 @@ var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
 </dt>
 <dd class="deprecated">
 <div class="brief">
- Removes the listener to stop receiving notifications for changes on the list of installed
-applications on a device.
+ Removes the listener to stop receiving notifications for changes on the list of installed applications on a device.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 2.4. Instead, use <a href="./package.html#PackageManager::unsetPackageInfoEventListener">tizen.package.unsetPackageInfoEventListener()</a>.
@@ -1426,6 +1425,11 @@ var watchId = tizen.application.addAppStatusChangeListener(appStatusEventCallbac
 <p><span class="version">Since: </span>
  4.0
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if there is no listener with given id.
+            </p>
+           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1782,6 +1786,11 @@ tizen.application.getAppsInfo(onListInstalledApps);
 <p><span class="version">Since: </span>
  2.4
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if there is no listener with given id.
+            </p>
+           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>

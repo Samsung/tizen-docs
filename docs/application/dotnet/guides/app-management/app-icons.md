@@ -153,7 +153,7 @@ To add a widget to the home screen:
 2. Define the widget details (such as its ID, size, and period) with the properties of the [Tizen.Applications.Shortcut.WidgetShortcutInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.WidgetShortcutInfo.html) class:
 
     ```
-    Widgetshortcutinfo shortcut = new Widgetshortcutinfo
+    WidgetShortcutInfo shortcut = new WidgetShortcutInfo
     {
         shortcutname = "samplewidget",
         iconpath = "icon_path",
