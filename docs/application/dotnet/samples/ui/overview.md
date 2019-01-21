@@ -186,6 +186,62 @@ for TD:
 			</ul></p>
 			</td>
 		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w46_animationsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) AnimationSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to animate NUI objects using the NUI animation.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w47imagesample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) ImageSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to load and control images.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w48scriptlayoutsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) ScriptLayoutSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to set the theme of an application using script file.
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w49texteditorsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) TextEditorSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control the TextEditor properties.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w50textfieldsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) TextFieldSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control the TextField properties.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w51textlabelsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) TextLabelSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control the TextLabel properties.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w52uicontrolsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) UIControlSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to generate and control individual NUI UI control objects.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w53visualssample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) VisualsSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use various kinds of visuals.</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
