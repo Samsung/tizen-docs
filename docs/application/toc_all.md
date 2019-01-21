@@ -1103,10 +1103,10 @@
 #### [Device/Resource Model Manager](/application/tizen-studio/rt-ide/smartths-ext/model-manager.md)
 
 ## Release Notes
-### [3.1 (Jan 15, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
-### [3.0 (Oct 18, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
-### [2.5 (Aug 7, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
-### [2.4 (May 25, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
+### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
+### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
+### [2.5 (Aug 8, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
+### [2.4 (May 29, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
 ### [2.3 (March 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
 ### [2.2 (Jan 30, 2018)](/application/tizen-studio/release-notes/2-2-release-notes.md)
 ### [2.1 (Jan 3, 2018)](/application/tizen-studio/release-notes/2-1-release-notes.md)

@@ -1,5 +1,7 @@
 # Tizen Studio 2.5 Release Notes
 
+-   Release Date: Aug 8, 2018
+
 
 ## IDE and Tools
 

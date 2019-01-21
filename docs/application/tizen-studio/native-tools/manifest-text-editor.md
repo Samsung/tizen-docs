@@ -422,6 +422,8 @@ For more information on the relationship between the elements, see the [element 
 </service-application>
 ```
 
+<a name="watch_app"></a>
+
 ### \<watch-application\> Element
 
 This element contains the settings for a watch application.

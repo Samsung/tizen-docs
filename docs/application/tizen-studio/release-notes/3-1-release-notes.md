@@ -1,6 +1,6 @@
 # Tizen Studio 3.1 Release Notes
 
--   Release Date: Jan 16, 2019
+-   Release Date: Jan 17, 2019
 
 
 ## IDE and Tools
