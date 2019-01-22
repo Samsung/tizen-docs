@@ -183,10 +183,25 @@
 ### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
 
 
-## [API Reference](/application/dotnet/api/overview.md)
+## API Reference
+
+### [Overview](/application/native/api/overview.md)
+
+### Mobile
+#### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
+#### [4.0](/application/native/api/mobile/4.0/index.html){:target="_blank"}
+#### [3.0](/application/native/api/mobile/3.0/index.html){:target="_blank"}
+#### [2.4](/application/native/api/mobile/2.4/index.html){:target="_blank"}
+
+### Wearable
+#### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
+#### [4.0](/application/native/api/wearable/4.0/index.html){:target="_blank"}
+#### [3.0](/application/native/api/wearable/3.0/index.html){:target="_blank"}
+#### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 
 ## Samples
+
 ### [Account](/application/dotnet/samples/account/overview.md)
 ### [AppFW](/application/dotnet/samples/appfw/overview.md)
 ### [Content](/application/dotnet/samples/content/overview.md)
@@ -681,7 +696,8 @@
 ## [API Reference](/application/native/api/overview.md)
 
 
-## [Samples](https://developer.tizen.org/development/sample/native)
+## [Samples](/development/sample/native)
+
 
 
 # Web Application
@@ -933,7 +949,7 @@
 ## [API Reference](/application/web/api/index.md)
 
 
-## [Samples](https://developer.tizen.org/development/sample/web)
+## [Samples](/development/sample/web)
 
 
 
