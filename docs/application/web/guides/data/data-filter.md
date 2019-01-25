@@ -330,15 +330,16 @@ The following table lists the filter types you can use with specific content att
 
 The following tables list the filter types you can use with specific message attributes in the methods of the [MessageStorage](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage) interface.
 
-The following table lists the filter attributes related to the `findMessage()` method.
+The following table lists the attributes by which `Message` objects may be filtered.
 
-**Table: Filter attributes for finding messages**
+**Table: Filter attributes for finding Messages**
+<a name="message-filters-table"></a>
 
 | Attribute        | Attribute filter supported | Attribute range filter supported |
 | ---------------- | -------------------------- | -------------------------------- |
 | `id`             | Yes                        | No                               |
 | `serviceId`      | Yes                        | No                               |
-| `conversationId` | No                         | No                               |
+| `conversationId` | Yes                        | No                               |
 | `folderId`       | Yes                        | No                               |
 | `type`           | Yes                        | No                               |
 | `timestamp`      | No                         | Yes                              |
@@ -351,44 +352,46 @@ The following table lists the filter attributes related to the `findMessage()` m
 | `hasAttachment`  | Yes                        | No                               |
 | `isHighPriority` | Yes                        | No                               |
 | `subject`        | Yes                        | No                               |
-| `isResponseTo`   | No                         | No                               |
-| `messageStatus`  | No                         | No                               |
+| `inResponseTo`   | Yes                        | No                               |
+| `messageStatus`  | Yes                        | No                               |
 | `attachments`    | No                         | No                               |
 
-The following table lists the filter attributes related to the `findConversations()` method.
+The following table lists the attributes by which `MessageConversation` objects may be filtered.
 
 **Table: Filter attributes for finding conversations**
+<a name="conversation-filters-table"></a>
 
 | Attribute        | Attribute filter supported | Attribute range filter supported |
 | ---------------- | -------------------------- | -------------------------------- |
 | `id`             | Yes                        | No                               |
 | `type`           | Yes                        | No                               |
 | `timestamp`      | No                         | Yes                              |
-| `messageCount`   | Yes                        | No                               |
-| `unreadMessages` | Yes                        | No                               |
+| `messageCount`   | Yes                        | Yes                              |
+| `unreadMessages` | Yes                        | Yes                              |
 | `preview`        | Yes                        | No                               |
-| `subject`        | No                         | No                               |
-| `isRead`         | No                         | No                               |
+| `subject`        | Yes                        | No                               |
+| `isRead`         | Yes                        | No                               |
 | `from`           | Yes                        | No                               |
 | `to`             | Yes                        | No                               |
-| `cc`             | No                         | No                               |
-| `bcc`            | No                         | No                               |
-| `lastMessageId`  | No                         | No                               |
+| `cc`             | Yes                        | No                               |
+| `bcc`            | Yes                        | No                               |
+| `lastMessageId`  | Yes                        | No                               |
 
-The following table lists the filter attributes related to the `findFolders()` method.
+The following table lists the attributes by which `MessageFolder` objects may be filtered.
 
-**Table: Filter attributes for finding message folders**
+**Table: Filter attributes for finding folders**
+<a name="folder-filters-table"></a>
 
 | Attribute        | Attribute filter supported | Attribute range filter supported |
 | ---------------- | -------------------------- | -------------------------------- |
-| `id`             | No                         | No                               |
-| `parentId`       | No                         | No                               |
+| `id`             | Yes                        | No                               |
+| `parentId`       | Yes                        | No                               |
 | `serviceId`      | Yes                        | No                               |
-| `contentType`    | No                         | No                               |
-| `name`           | No                         | No                               |
-| `path`           | No                         | No                               |
-| `type`           | No                         | No                               |
-| `synchronizable` | No                         | No                               |
+| `contentType`    | Yes                        | No                               |
+| `name`           | Yes                        | No                               |
+| `path`           | Yes                        | No                               |
+| `type`           | Yes                        | No                               |
+| `synchronizable` | Yes                        | No                               |
 
 > **Note**  
 > The `FULLSTRING` value of the `FilterMatchFlag` enumerator (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#FilterMatchFlag), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#FilterMatchFlag), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#FilterMatchFlag) applications) is not supported and returns an error callback.
