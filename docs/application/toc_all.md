@@ -188,16 +188,16 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Mobile
-#### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
-#### [4.0](/application/native/api/mobile/4.0/index.html){:target="_blank"}
-#### [3.0](/application/native/api/mobile/3.0/index.html){:target="_blank"}
-#### [2.4](/application/native/api/mobile/2.4/index.html){:target="_blank"}
+#### [5.0](/application/native/api/mobile/5.0/index.html){target=_blank}
+#### [4.0](/application/native/api/mobile/4.0/index.html){target=_blank}
+#### [3.0](/application/native/api/mobile/3.0/index.html){target=_blank}
+#### [2.4](/application/native/api/mobile/2.4/index.html){target=_blank}
 
 ### Wearable
-#### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
-#### [4.0](/application/native/api/wearable/4.0/index.html){:target="_blank"}
-#### [3.0](/application/native/api/wearable/3.0/index.html){:target="_blank"}
-#### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
+#### [5.0](/application/native/api/wearable/5.0/index.html){target=_blank}
+#### [4.0](/application/native/api/wearable/4.0/index.html){target=_blank}
+#### [3.0](/application/native/api/wearable/3.0/index.html){target=_blank}
+#### [2.3.2](/application/native/api/wearable/2.3.2/index.html){target=_blank}
 
 
 ## Samples
