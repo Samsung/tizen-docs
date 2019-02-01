@@ -6,7 +6,7 @@ var NAVTREE =
   ] ]
 ];
 
-$(document).ready(function () {
+window.onload = function () {
     var current_path = window.location.pathname;
     var native_or_web = current_path.indexOf("native");
     if(native_or_web >= 0){
@@ -16,11 +16,11 @@ $(document).ready(function () {
     }
     var path = current_path.split("/");
     
-    var api_platform = capitalizeFirstLetter(path[4]);
-    if(api_platform != "Modile" && api_platform != "Wearable" && api_platform != "Tv") {
-      api_platform = "Mobile";
+    var api_platform = "Mobile";
+    if(path.length > 6 && (path[6] == "modile" || path[6] == "wearable" || path[6] == "tv")) {
+      api_platform = capitalizeFirstLetter(path[6]);
     }
-    var api_version = path[5];
+    var api_version = path[4];
 
     var div_platform = 
     '<a id="div_platform" style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-bottom: 10px;padding-top: 10px;text-align: center;color: #555;font-size: 16px;margin-right: 18px;" href="#nogo">'+ 
@@ -34,14 +34,14 @@ $(document).ready(function () {
     '<span id="versionIcon" class="undefined-icon" style="    width: 16px;    background: url(/images/form-select_type1.png) no-repeat 50%;    height: 16px;    float: right;    margin-right: 11px;    margin-top: 3px;"></span>' +
     '</a>';
 
-    var div_common = '<div style="margin-top: 16px; margin-bottom: 10px; margin-left: 30px;">' + div_platform + div_verion + '</div>';
-    $('#nav-tree').prepend(div_common);
+    var div_common = '<div id="side-nav"><div id="nav-tree"><div style="margin-top: 16px; margin-bottom: 10px; margin-left: 30px;">' + div_platform + div_verion + '</div><div id="nav-tree-contents"></div></div></div>';
+    $("body").prepend(div_common);
     
     var div_search = '<div class="flexbox"><div class="flex1"></div><div class="tizen-search-api" style="float: right;"><form id="form-search-api"><div class="form-group-search"><input type="text" placeholder="Search related API References" name="search-api" id="search-api" style="padding-right: 38px !important;"><button class="btn btn-submit" id="btn-search-api"><svg width="32" height="32" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></svg></button></div></form></div></div>';
     $('#doc-content').prepend(div_search);
     
     var btGotoTop = '<div><input type="image" id="btngototop" src="/images/btn_go_to_top.png" style="display: none"></div>';
-    $('body').append(btGotoTop);
+    $("body").append(btGotoTop);
     
     var btnTop = $('#btngototop');
     $(window).scroll(function() {
@@ -110,10 +110,11 @@ $(document).ready(function () {
             menujsElement.type = "text/javascript";
             document.getElementsByTagName("head")[0].appendChild(menujsElement);
         }
-   });      
+   });       
     
     register_gnb_search_btn();
-});
+
+};
 function register_gnb_search_btn() {
   $('#gnb_search_btn').click(function() {
     $('#gnb_search_box').fadeIn(500);
