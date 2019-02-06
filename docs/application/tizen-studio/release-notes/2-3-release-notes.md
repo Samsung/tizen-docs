@@ -11,8 +11,8 @@
 	-   [JAVA 9](https://www.oracle.com/java/java9.html) support is added in Tizen Studio. Users can now download and install Tizen Studio along with JAVA 9.
 -   Base IDE
 	-   Tizen Studio is updated from [Eclipse Mars](https://www.eclipse.org/mars/) to [Eclipse Oxygen](https://projects.eclipse.org/releases/oxygen), to help user with improved performance and bug fixes.
-	-   CDT (C/C++ Development Tooling) is updated to 9.3.2 and the Debugger is migrated from CDI to DSF enabling faster debugging and easier extension.
--	Emulator Manager
+	-   C/C++ Development Tooling (CDT) is updated to 9.3.2 and the Debugger is migrated from CDI to DSF enabling faster debugging and easier extension.
+-	Emulator Manager 
 	-   The Emulator Manager is updated to support JAVA 9.
 	-   [Intel&reg; HAXM](../setup/hardware-accelerated-execution-manager.md) is upgraded to 7.0.0 to support Tizen Emulators on Windows 10 and Mac.
 -	Device Manager
@@ -25,18 +25,19 @@
 	-   Base IDE of RT IDE is migrated from Eclipse Mars to Eclipse Oxygen, to help user with improved performance and bug fixes.
 ### Changed Features
 -	Certificate Manager
-	-   ST (Smart Things) certification is simplified by enabling auto certificate generation using Samsung Account sign-in.
+	-   Smart Things (ST) certification is simplified by enabling auto certificate generation using Samsung Account sign-in.
 
- > **Note**  
- > From futural Tizen Studio version onwards, support for 32 bit host for Windows and Ubuntu will be removed.
+ > **Note** 
+ > 
+ > From futural Tizen Studio version onwards, support for 32 bits host for Windows and Ubuntu will be removed.
 
 ### Fixed Bugs
 -	Emulators
-	-   Fixed a bug in Emulator Manager that shows the deleted skin in the list of device definition.
+	-   A bug in the Emulator Manager that shows the deleted skin in the list of device definition has been fixed.
 -	Device Manager
-	-   Fixed a bug in Device Manager, now the remote device manager of Tizen Studio and remote device manager of Device Manager are in sync.
+	-   A bug in Device Manager has been fixed. Now, the remote device manager of Tizen Studio and remote device manager of Device Manager are in sync.
 -   Web and Native IDE
-	-   Fixed a bug in common-eplugin, earlier it used to return last connected device even if the device was disconnected.
+	-   A bug in common-eplugin has been fixed. Earlier, it used to return last connected device even if the device was disconnected.
 ### Known Issues
 -	Tizen Studio
 	-	In case of Mac, if the UI perspectives are not displayed properly after updating the Tizen Studio, it is recommended to restart the IDE. This issue is because of the uncleared cache from previous installation.
@@ -51,7 +52,7 @@
 	-   You can create unit tests for Tizen 2.3.2 and higher version projects only. Now the Tizen Studio does not support unit testing for older versions.
 -	Web IDE
 	-   The preview tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the preview tab in the Web Page Editor, use the preview feature **Ctrl + 4** of the Web SDK HTML Editor.
-	-   In RDS (Rapid Development Support) mode, the web unit test result is not updated.
+	-   In Rapid Development Support (RDS) mode, the web unit test result is not updated.
 -	Certificate Manager
 	-   Overwriting a duplicate certificate profile in the migration wizard works incorrectly on macOS.
 	-   IoT certification currently requires a user to manually download and select the certificate.
@@ -75,7 +76,7 @@
 	-   When you launch the Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
 	-   Basic Web applications does not install on SD cards.
 -	CLI and SDB
-	-   The Tizen Studio does not support the SDB ([Smart Development Bridge](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/sdb)) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
+	-   The Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md) (SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 -	Dynamic Analyzer
 	-   When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
 	    -   The Core Frequency information is not shown.

@@ -9,24 +9,25 @@
 ### New Features
 
 -   SmartThings
-	-  Added support for IOT-Headed-5.0 and IOT-Headless-5.0.
-	-  Added two process model support for IOT-Headed and IOT-Headless profiles.
-	-  Added iotjs templates for IOT-Headless profile.
+	-  The support for IOT-Headed-5.0 and IOT-Headless-5.0 has been added.
+	-  The two process model support for IOT-Headed and IOT-Headless profiles has been added.
+	-  The iotjs templates for IOT-Headless profile has been added.
 -   Certificate Manager
-	-  The certificate password storage scheme is upgraded, making the certificate profiles more secure.
+	-  The certificate password storage scheme has been upgraded, making the certificate profiles more secure.
 -   Ubuntu 18.04
-	-  Added support for Ubuntu 18.04 platform for Tizen Studio.
+	-  The support for Ubuntu 18.04 platform for Tizen Studio has been added.
 -   SDB
-	-  Added support for automatic command exchange between plugin supported daemon and server.
-	-  Added support for querying individual capability.
-	-  Added support for querying the plugin to handle shell async commands.
+	-  The support for automatic command exchange between plugin supported daemon and server has been added.
+	-  The support for querying individual capability has been added.
+	-  The support for querying the plugin to handle shell async commands has been added.
 -   Tizen RT
-	-  Added support for Docker build.
+	-  The support for Docker build has been added.
+	
 ### Fixed Bugs
 -   SmartThings
 	-   IoT applications can now be installed without the Cloud service cetificate and key.
 -   Package Manager
-	-   Added a label warning user to terminate all Tizen Studio tasks before installing or uninstalling any package.
+	-   A warning label to terminate all Tizen Studio tasks before installing or uninstalling any package has been added.
 
 ### Deprecated
 -   NativeIDE
@@ -41,7 +42,7 @@
 -	Web and Native IDE
 	-   From Tizen Studio 2.0 onwards, the Connection Explorer is replaced with the Device Manager, this can cause errors in the Connection Explorer view. You can fix this in two ways:
 	    -   Reset the perspective.
-            In the Tizen Studio menu, select Window > Perspective > Reset Perspective
+            In the Tizen Studio menu, select Window > Perspective > Reset Perspective.
 	    -   After updating to the Tizen Studio 2.0, run the **eclipse.exe -clean -clearPersistedState** command. Then launch the Tizen Studio normally.
 	-   You can create unit tests for Tizen 2.3.2 and higher version projects only. Now the Tizen Studio does not support unit testing for older versions.
 -	Web IDE
@@ -70,7 +71,7 @@
 	-   Basic Web applications does not install on SD cards.
 	-   Samsung Certificate cannot be used to sign application while launching application on 5.0 Emulator.
 -	CLI and SDB
-	-   The Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md) (SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
+	-   The Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md)(SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 -	Dynamic Analyzer
 	-   When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
 	    -   The Core Frequency information is not shown.

@@ -1,7 +1,5 @@
 # Tizen Studio 2.4 Release Notes
 
--   Release Date: May 29, 2018
-
 
 ## IDE and Tools
 
@@ -9,32 +7,32 @@
 ### New Features
 
 -   Device Manager
-	-   Enabled Device Manager Context UI to be extended by plugins
+	-   Enabled Device Manager Context UI to be extended by plugins.
 -   RT-IDE
 	-   RT-IDE GNU Compiler Collection (GCC) toolchain is updated to version 6.3.1.
 -   SmartThings&trade;
 	-   The setupId is a mandatory field and is mapped to the device onboarding ID.
 	-   The RESTful API Modeling Language (RAML) for SmartThings&trade; is updated.
 -   Package Manager
-	-   Removed portable object (*.po) files , which are packaged into tpk.
+	-   The portable object (*.po) files has been removed, which are packaged into tpk.
 
 ### Changed Features
 -	RT-IDE
-	-   Removed the local template for creating a project. The project can be created using the latest RT code from GitHub.
+	-   The local template for creating a project has been removed. The project can be created using the latest RT code from GitHub.
 
 ### Fixed Bugs
 -   Device Manager
-	-   Fixed the crash that occurred while filtering devices in JAVA 9.
-	-   Increased the clickable area for Add new tab button to cover the entire button area.
-	-   Added support for empty filter category in logs.
-	-   Fixed permit to install the failure for secure TV profile.
+	-   The crash that occurred while filtering devices in JAVA 9 has been fixed.
+	-   The clickable area for Add new tab button has been increased to cover the entire button area.
+	-   The support for empty filter category in logs has been added.
+	-   The permit to install the failure for secure TV profile has been fixed.
 -   Emulator
-	-   Corrected the marked location data in emulator control panel.
+	-   The marked location data in emulator control panel has been corrected.
 -   Package Manager
-	-   Added https support in Package Manager to download SDK from https website.
-	-   Fixed multiple instance of same Package Manager getting launched in Windows and macOS.
+	-   The https support in Package Manager to download SDK from https website has been added.
+	-   The multiple instance of same Package Manager getting launched in Windows and macOS has been fixed.
 -   Certificate Manager
-	-   Fixed the socket timeout error when creating IoT certificates.
+	-   The socket timeout error when creating IoT certificates has been fixed.
 
 ### Known Issues
 -	Tizen Studio
@@ -45,12 +43,12 @@
 -	Web and Native IDE
 	-   From Tizen Studio 2.0 onwards, the Connection Explorer is replaced with the Device Manager, this can cause errors in the Connection Explorer view. You can fix this in two ways:
 	    -   Reset the perspective.
-            In the Tizen Studio menu, select Window > Perspective > Reset Perspective
+            In the Tizen Studio menu, select Window > Perspective > Reset Perspective.
 	    -   After updating to the Tizen Studio 2.0, run the *eclipse.exe -clean -clearPersistedState* command. Then launch the Tizen Studio normally.
 	-   You can create unit tests for Tizen 2.3.2 and higher version projects only. Now the Tizen Studio does not support unit testing for older versions.
 -	Web IDE
 	-   The preview tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the preview tab in the Web Page Editor, use the preview feature **Ctrl + 4** of the Web SDK HTML Editor.
-	-   In RDS (Rapid Development Support) mode, the web unit test result is not updated.
+	-   In Rapid Development Support (RDS) mode, the web unit test result is not updated.
 -	Certificate Manager
 	-   Overwriting a duplicate certificate profile in the migration wizard works incorrectly on macOS.
 	-   IoT certification currently requires a user to manually download and select the certificate.
@@ -61,7 +59,7 @@
 	-   Playing sound is not supported on Windows&reg; or macOS.
 	-   The Component Designer crashes if an alias is selected as the source group of an added item.
 -	Emulator
-	-   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen emulator, see [Prerequisites for the Tizen Studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio/prerequisites).
+	-   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen emulator, see [Prerequisites for the Tizen Studio](../setup/prerequisites.md).
 	    -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee ). For Windows&reg;, select *High Speed NVIDIA&reg; Processor* as *Preferred Graphics processor* in the NVIDIA&reg; control panel.
 	    -   On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session occasionally logs out while launching the Emulator Manager, or the emulator skin is displayed improperly. Verify the prerequisites and upgrade to the latest graphics driver.
 	-   On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
@@ -74,7 +72,7 @@
 	-   When you launch the Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
 	-   Basic Web applications does not install on SD cards.
 -	CLI and SDB
-	-   The Tizen Studio does not support the SDB ([Smart Development Bridge](https://developer.tizen.org/development/tizen-studio/web-tools/running-and-testing-your-app/sdb)) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
+	-   The Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md) (SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 -	Dynamic Analyzer
 	-   When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
 	    -   The Core Frequency information is not shown.

@@ -1,6 +1,6 @@
 # Tizen Studio 3.1 Release Notes
 
--   Release Date: Jan 17, 2019
+-   Release Date: Jan 16, 2019
 
 
 ## IDE and Tools
@@ -8,23 +8,23 @@
 
 ### New Features
 -   OpenJDK
-	-  Added support for OpenJDK 10.
+	-  The support for OpenJDK 10 has been added.
 
 ### Fixed Bugs
 -   Tizen IDE
 	-   Changing the profile and platform version now updates the rootstrap in project configuration.
-	-   Modified the error message, which appears while adding an incorrect privilege file to a native application.
-	-   Fixed the issues with log filtering in log tab.
+	-   The error message has been modified, which appears while adding an incorrect privilege file to a native application.
+	-   The issues with log filtering in log tab has been fixed.
 -   Certificate manager
-	-   Fixed the failure in generating a new certificate profile after 01 January 2019.
-	-   Fixed the issue in network proxy settings. Now, the network proxy setting change is applied for all network accesses.
-	-   Made the unnecessary input fields optional in UI while creating IoT certificates. 
+	-   The failure in generating a new certificate profile after 01 January 2019 has been fixed.
+	-   The issue in network proxy settings has been fixed. Now, the network proxy setting change is applied for all network accesses.
+	-   The unnecessary input fields has been made optional in UI while creating IoT certificates. 
 -   Device Manager
-	-   Fixed the issues with log filtering in log tab.
+	-   The issues with log filtering in log tab has been fixed.
 -   TizenRT
-	-   Fixed the issue in RT IDE . Now, the IoT certificates are copied to the project while building instead of flashing.
-	-   RT IDE installation prompts user to install libwebkitgt to avoid "browser path not set" error message.
-	-   Fixed the issues that occurs while debugging Tizen RT application. 
+	-   The issue in RTIDE has been fixed. Now, the IoT certificates are copied to the project while building instead of flashing.
+	-   RTIDE installation prompts user to install libwebkitgt to avoid "browser path not set" error message.
+	-   The issues that occurs while debugging TizenRT application has been fixed. 
 
 ### Known Issues
 -	Tizen Studio
