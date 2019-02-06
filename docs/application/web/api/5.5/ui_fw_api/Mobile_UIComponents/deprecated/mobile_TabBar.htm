@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Tab Bar</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Tab Bar</h1>
+
+<p>The tab bar component shows an unordered list of buttons on the screen wrapped together in a single group. It can be placed in the header or footer of the page.</p>
+
+
+<table class="note deprecated">
+        <tbody>
+                <tr>
+                        <th class="note deprecated">Note</th>
+                </tr>
+                <tr>
+                        <td class="note deprecated">This component has been <span class="deprecated">DEPRECATED since <b>Tizen 2.4</b></span> and will be <i>deleted in Tizen 3.0.</i><br>
+To support Backward compatibility, please import tau.support-2.3.js.</td>
+                </tr>
+                <tr>
+                        <td class="note deprecated">Since 2.4, to use Tab Bar component, please refer <a href="../mobile_Tabs.htm">Tabs</a> component.
+                </tr>
+        </tbody>
+</table>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#default-selectors0.14516900992020965">Default Selectors</a>
+
+
+		</li>
+
+		<li><a href="#manual-constructor0.69354601460509">Manual Constructor</a>
+
+		</li>
+		<li><a href="#options">Options</a>
+
+		</li>
+
+		<li><a href="#basic">Creating a Basic Tab Bar</a>
+						</li>
+
+		<li><a href="#multi">Creating a Tab Bar with MultiPages</a>
+						</li>
+
+
+</ol>
+
+
+
+<h2><a id="default-selectors0.14516900992020965"></a>Default Selectors</h2>
+
+<p>By default, all HTML elements with the <code>data-role=&quot;tabbar&quot;</code> attribute are displayed as tab bars.</p>
+
+<h2><a id="manual-constructor0.69354601460509"></a>Manual Constructor</h2>
+
+<p>To manually create a tab bar component, use the component constructor from the <code>tau</code> namespace (<strong>RECOMMENDED</strong>):</p>
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; id=&quot;tab-bar-page&quot;&gt;
+   &lt;div data-role=&quot;header&quot;&gt;
+      &lt;div id=&quot;ready-for-tab-bar&quot;&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar3&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div data-role=&quot;content&quot;&gt;
+      Content
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   (function(document)
+   {
+      var pageElement = document.getElementById(&quot;tab-bar-page&quot;),
+          tabBarElement = document.getElementById(&quot;ready-for-tab-bar&quot;),
+          tabBar;
+
+      function createPageHandle()
+      {
+         tabBar = tau.widget.TabBar(tabBarElement);
+      }
+
+      pageElement.addEventListener(&quot;pagecreate&quot;, createPageHandle);
+   }(document));
+&lt;/script&gt;
+</pre>
+
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+
+<p>If the jQuery library is loaded, you can use its method (<strong>support for backward compatibility</strong>):</p>
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot; id=&quot;ab-bar-page&quot;&gt;
+   &lt;div data-role=&quot;header&quot;&gt;
+      &lt;div id=&quot;ready-for-tab-bar&quot;&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar3&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div data-role=&quot;content&quot;&gt;
+      Content
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   (function(document)
+   {
+      function createPageHandle()
+      {
+         $(&quot;#ready-for-tab-bar&quot;).tabbar();
+      }
+
+      $(&quot;#tab-bar-page&quot;).on(&quot;pagecreate&quot;, createPageHandle);
+   }(document));
+&lt;/script&gt;
+</pre>
+
+<h2><a id="options"></a>Options</h2>
+
+
+<p>The following table lists the options for the tab bar component.</p>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-auto-change</span></td>
+				<td class="option">boolean</td>
+				<td class="option">true</td>
+				<td class="option">If &quot;true&quot;, the component automatically changes the active status of the tab when the user clicks the tab.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-active</span></td>
+				<td class="option">number</td>
+				<td class="option">0</td>
+				<td class="option">Sets the default active tab.</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+<h2><a id="basic"></a>Creating a Basic Tab Bar</h2>
+<p>A basic tab bar is for users who want a tab bar for one page.</p>
+<p>Basically, the page has one tab bar, and when the user clicks the tab, only the content area is changed. Clicking a tab never changes the entire page.</p>
+
+
+<ul><li>To create a simple tab bar in the header:
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot;&gt;
+   &lt;div data-role=&quot;header&quot;&gt;
+      &lt;div data-role=&quot;tabbar&quot;&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar3&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div data-role=&quot;content&quot;&gt;
+      Content
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre></li>
+
+<li>To create a simple tab bar in the footer:
+
+<pre class="prettyprint">&lt;div data-role=&quot;page&quot;&gt;
+   &lt;div data-role=&quot;content&quot;&gt;
+      Content
+   &lt;/div&gt;
+   &lt;div data-role=&quot;footer&quot;&gt;
+      &lt;div data-role=&quot;tabbar&quot;&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tabbar3&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre></li></ul>
+
+<h2><a id="multi"></a>Creating a Tab Bar with MultiPages</h2>
+
+<p>To create a tab bar for multiple pages (where clicking a tab changes the entire page), the <code>data-auto-change</code> option must be <code>&quot;false&quot;</code> and you must use the <code>&quot;ui-btn-active&quot;</code> class for each tab:
+
+<pre class="prettyprint">&lt;div class=&quot;ui-page&quot; id=&quot;first&quot;&gt;
+   &lt;div class=&quot;ui-header&quot;&gt;
+      &lt;div class=&quot;ui-tabbar&quot; data-auto-change=&quot;false&quot;&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#first&quot; class=&quot;ui-btn-active&quot;&gt;First&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#second&quot;&gt;Second&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#third&quot;&gt;Third&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;ui-content&quot;&gt;
+      First page
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui-page&quot; id=&quot;second&quot;&gt;
+   &lt;div class=&quot;ui-header&quot;&gt;
+      &lt;div class=&quot;ui-tabbar&quot; data-auto-change=&quot;false&quot;&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#first&quot;&gt;First&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#second&quot; class=&quot;ui-btn-active&quot;&gt;Second&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#third&quot;&gt;Third&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;ui-content&quot;&gt;
+      Second page
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ui-page&quot; id=&quot;third&quot;&gt;
+   &lt;div class=&quot;ui-header&quot;&gt;
+      &lt;div class=&quot;ui-tabbar&quot; data-auto-change=&quot;false&quot;&gt;
+         &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#first&quot;&gt;First&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#second&quot;&gt;Second&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#third&quot; class=&quot;ui-btn-active&quot;&gt;Third&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;ui-content&quot;&gt;
+      Third page
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

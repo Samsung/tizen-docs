@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <script type="text/javascript" src="../snippet.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="../styles.css" rel="StyleSheet" type="text/css" />
+  <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+  <title>Button</title>
+ </head>
+ <body onload="prettyPrint()" id="content">
+
+<h1>Button</h1>
+
+<p>The button component shows on the screen a control that you can use to generate an action event when it is pressed and released.<br> The component is coded with standard HTML anchor and input elements.</p>
+<p>The following table describes the supported button classes.</p>
+<table>
+<caption>Table: Button type classes</caption>
+<tbody>
+	<tr>
+		<th style="width:20%;">Class</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-btn</span></td>
+		<td>Creates the element as a button component.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-btn-icon</span></td>
+		<td><p>Creates an icon button.</p>
+<p>To use the icon button, add this class to the <span style="font-family: Courier New,Courier,monospace">button</span> element. To insert a custom icon, use the following code:</p>
+		<pre class="prettyprint">
+&lt;div class=&quot;ui-grid-row&quot;&gt;
+   &lt;button type=&quot;button&quot; class=&quot;ui-btn ui-btn-icon&quot;
+           style=&quot;background-image: url(images/00_icon_back_ef.png);&quot;&gt;
+      Button Icon
+   &lt;/button&gt;
+&lt;/div&gt;
+</pre><p>The Tizen wearable Web UI framework does not provide styles for an icon with text.</p>
+</td>
+</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-inline</span></td>
+		<td>Creates an inline button.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-multiline</span></td>
+		<td>Creates a multi-line text button.</td>
+	</tr>
+</tbody>
+</table>
+
+<p>To add a button component to the application, use the following code. You can use the <span style="font-family: Courier New,Courier,monospace">disabled</span> attribute to disable a button and prevent the user from clicking it.<br>
+And it is highly recomeneded to add these button in the content area and footer area, not header.</p>
+
+<pre class="prettyprint">
+&lt;button type=&quot;button&quot; class=&quot;ui-btn&quot;&gt;Button&lt;/button&gt;
+&lt;a href=&quot;#&quot; class=&quot;ui-btn&quot;&gt;Button&lt;/a&gt;
+&lt;input type=&quot;button&quot; class=&quot;ui-btn&quot; value=&quot;Button&quot;/&gt;
+
+&lt;!--Inline button--&gt;
+&lt;input type=&quot;button&quot; class=&quot;ui-btn ui-inline&quot; value=&quot;Button&quot;/&gt;
+
+&lt;!--Multi-line text button--&gt;
+&lt;a href=&quot;#&quot; class=&quot;ui-btn ui-multiline ui-inline&quot;&gt;A Button&lt;br/&gt;Icon&lt;/a&gt;
+
+&lt;!--Disabled button--&gt;
+&lt;button type=&quot;button&quot; class=&quot;ui-btn&quot; disabled=&quot;disabled&quot;&gt;Button disabled&lt;/button&gt;
+</pre>
+
+<h2>Button Color Themes</h2>
+<p>The following table lists the supported button color classes.</p>
+<table>
+<caption>Table: Button color classes</caption>
+<tbody>
+	<tr>
+		<th style="width:40%;">Class</th>
+		<th>Default button color</th>
+		<th>Pressed button color</th>
+		<th>Disabled button color</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-color-red</span></td>
+		<td>#ce2302</td>
+		<td>#dd654e</td>
+		<td>#3d0a0a</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-color-orange</span></td>
+		<td>#ed8600</td>
+		<td>#f0aa56</td>
+		<td>#462805</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-color-green</span></td>
+		<td>#64a323</td>
+		<td>#92be5e</td>
+		<td>#1e3108</td>
+	</tr>
+</tbody>
+</table>
+
+<p>
+<h2>Button Groups</h2>
+<p>You can group buttons in columns or rows. The following table lists the supported  button column and row classes.</p>
+
+<table>
+<caption>Table: Button group classes</caption>
+<tbody>
+	<tr>
+		<th style="width:40%;">Class</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-grid-col-1</span></td>
+		<td>Defines the button column width as 100% of the screen.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-grid-col-2</span></td>
+		<td>Defines the button column width as 50% of the screen.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-grid-col-3</span></td>
+		<td>Defines the button column width as 33% of the screen.</td>
+	</tr>
+	<tr>
+		<td><span style="font-family: Courier New,Courier,monospace">ui-grid-row</span></td>
+		<td>Arranges the buttons in a row.</td>
+	</tr>
+</tbody>
+</table>
+
+<p>To implement the button groups, use the following code:</p>
+<ul><li><p>For columns:</p>
+<pre class="prettyprint">
+&lt;div class=&quot;ui-grid-col-3&quot; style=&quot;height:76px&quot;&gt;
+   &lt;button type=&quot;button&quot; class=&quot;ui-btn&quot;&gt;Button Circle&lt;/button&gt;
+   &lt;a href=&quot;#&quot; class=&quot;ui-btn ui-color-red&quot;&gt;A Button Circle&lt;/a&gt;
+   &lt;input type=&quot;button&quot; class=&quot;ui-btn ui-color-orange&quot; value=&quot;Input Button Circle&quot;/&gt;
+&lt;/div&gt;
+</pre></li>
+
+<li><p>For rows:</p>
+<pre class="prettyprint">
+&lt;div class=&quot;ui-grid-row&quot;&gt;
+   &lt;button type=&quot;button&quot; class=&quot;ui-btn&quot;&gt;Button Circle&lt;/button&gt;
+   &lt;a href=&quot;#&quot; class=&quot;ui-btn ui-color-red&quot;&gt;A Button Circle&lt;/a&gt;
+   &lt;input type=&quot;button&quot; class=&quot;ui-btn ui-color-orange&quot; value=&quot;Input Button Circle&quot;/&gt;
+&lt;/div&gt;
+</pre></li></ul>
+
+
+ <div id="footer">
+   <hr size="1" />
+   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+  </div>
+
+  <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-25976949-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+ </body>
+</html>
