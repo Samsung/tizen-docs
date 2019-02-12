@@ -17,10 +17,10 @@
 
 ### Fixed Bugs
 -   Certificate Manager
-	-  The validation for .pem and .der files has been added when they are imported as a new IoT profile in the Certificate Manager.
+	-  The validation for .pem and .der files have been added when they are imported as a new IoT profile in the Certificate Manager.
 
 -   Installer  and Package Manager
-	-   The extension download failure has been fixed, which occurs when URL starts with https.
+	-   The extension download failure, which occurs when URL starts with https has been fixed.
 	-   An issue of the uninstaller window has been fixed. Earlier, the window gets closed while uninstalling.
 	-   An issue of the target directory has been fixed. Now, it is possible to set the target directory after an invalid path.
 -   Base IDE
@@ -31,7 +31,7 @@
 	>
 	> If you have projects with old CLI build scripts, you must re-create the build script by running `export to CLI` before running the CLI commands.
 -   Others
-	-   The security issues in Tizen Studio source code has been fixed.
+	-   The security issues in Tizen Studio source code have been fixed.
 
 ### Known Issues
 -	Tizen Studio
