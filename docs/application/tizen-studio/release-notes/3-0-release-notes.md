@@ -71,7 +71,7 @@
 	-   Basic Web applications does not install on SD cards.
 	-   Samsung Certificate cannot be used to sign application while launching application on 5.0 Emulator.
 -	CLI and SDB
-	-   The Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md)(SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
+	-   The Tizen Studio does not support the [Smart Development Bridge](../common-tools/smart-development-bridge.md) (SDB) bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 -	Dynamic Analyzer
 	-   When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
 	    -   The Core Frequency information is not shown.
