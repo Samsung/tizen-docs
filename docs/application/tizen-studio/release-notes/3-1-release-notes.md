@@ -13,18 +13,18 @@
 ### Fixed Bugs
 -   Tizen IDE
 	-   Changing the profile and platform version now updates the rootstrap in project configuration.
-	-   The error message has been modified, which appears while adding an incorrect privilege file to a native application.
-	-   The issues with log filtering in log tab has been fixed.
+	-   The error message, which appears while adding an incorrect privilege file to a native application has been modified.
+	-   The issues with log filtering in log tab have been fixed.
 -   Certificate manager
 	-   The failure in generating a new certificate profile after 01 January 2019 has been fixed.
-	-   The issue in network proxy settings has been fixed. Now, the network proxy setting change is applied for all network accesses.
-	-   The unnecessary input fields has been changed to optional in UI while creating IoT certificates. 
+	-   The issue in network proxy settings have been fixed. Now, the network proxy setting change is applied for all network accesses.
+	-   The unnecessary input fields have been changed to optional in UI while creating IoT certificates. 
 -   Device Manager
-	-   The issues with log filtering in log tab has been fixed.
+	-   The issues with log filtering in log tab have been fixed.
 -   TizenRT
 	-   The issue in RT IDE has been fixed. Now, the IoT certificates are copied to the project while building instead of flashing.
 	-   RT IDE installation prompts user to install libwebkitgt to avoid "browser path not set" error message.
-	-   The issues that occurs while debugging TizenRT application has been fixed. 
+	-   The issues that occurs while debugging TizenRT application have been fixed. 
 
 ### Known Issues
 -	Tizen Studio
