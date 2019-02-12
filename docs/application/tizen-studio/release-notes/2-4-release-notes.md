@@ -8,17 +8,17 @@
 ### New Features
 
 -   Device Manager
-	-   Enabled Device Manager Context UI to be extended by plugins.
--   RT-IDE
-	-   RT-IDE GNU Compiler Collection (GCC) toolchain is updated to version 6.3.1.
+	-   Enabled Device Manager Context UI has been extended by plugins.
+-   RT IDE
+	-   RT IDE GNU Compiler Collection (GCC) toolchain has been updated to version 6.3.1.
 -   SmartThings&trade;
-	-   The setupId is a mandatory field and is mapped to the device onboarding ID.
-	-   The RESTful API Modeling Language (RAML) for SmartThings&trade; is updated.
+	-   The setupId is a mandatory field and has been mapped to the device onboarding ID.
+	-   The RESTful API Modeling Language (RAML) for SmartThings&trade; has been updated.
 -   Package Manager
 	-   The portable object (*.po) files has been removed, which are packaged into tpk.
 
 ### Changed Features
--	RT-IDE
+-	RT IDE
 	-   The local template for creating a project has been removed. The project can be created using the latest RT code from GitHub.
 
 ### Fixed Bugs
