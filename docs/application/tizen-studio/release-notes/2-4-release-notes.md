@@ -15,7 +15,7 @@
 	-   The setupId is a mandatory field and has been mapped to the device onboarding ID.
 	-   The RESTful API Modeling Language (RAML) for SmartThings&trade; has been updated.
 -   Package Manager
-	-   The portable object (*.po) files has been removed, which are packaged into tpk.
+	-   The portable object (*.po) files, which are packaged into tpk have been removed.
 
 ### Changed Features
 -	RT IDE
