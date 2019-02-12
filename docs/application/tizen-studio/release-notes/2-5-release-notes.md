@@ -10,7 +10,7 @@
 
 -   SDB
 	-  `wait-for-device` command has been added. When this command is issued SDB waits indefinitely for the target to come to `device` state.
--   RTIDE Certificate Manager
+-   RT IDE Certificate Manager
 	-   Certificate Manager has been integrated into RT IDE.
 -   Baseline SDK Size Optimizations
 	-   Optimized baseline SDK size from 480MB to 320MB.
