@@ -1478,11 +1478,11 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|\\!|\\!=|\\!==|\\#|\\%|\\%=|&|&&|&
 })();
 
 var jqueryjsElement = document.createElement("script");
-jqueryjsElement.src = "/application/native/api/mobile/4.0/jquery.js";
+jqueryjsElement.src = "/application/native/api/mobile/2.4/jquery.js";
 jqueryjsElement.type = "text/javascript";
 document.getElementsByTagName("head")[0].appendChild(jqueryjsElement);
 
 var navtreejsElement = document.createElement("script");
-navtreejsElement.src = "/application/web/api/4.0/scripts/navtree.js";
+navtreejsElement.src = "/application/web/api/2.4/scripts/navtree.js";
 navtreejsElement.type = "text/javascript";
 document.getElementsByTagName("head")[0].appendChild(navtreejsElement);

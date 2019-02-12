@@ -6,115 +6,127 @@ var NAVTREE =
   ] ]
 ];
 
-window.onload = function () {
-    var current_path = window.location.pathname;
-    var native_or_web = current_path.indexOf("native");
-    if(native_or_web >= 0){
-        native_or_web = "native";
-    }else{
-        native_or_web = "web";
-    }
-    var path = current_path.split("/");
-    
-    var api_platform = "Mobile";
-    if(path.length > 6 && (path[6] == "modile" || path[6] == "wearable" || path[6] == "tv")) {
-      api_platform = capitalizeFirstLetter(path[6]);
-    }
-    var api_version = path[4];
+var waitForJQuery = setInterval(function () {
+  if (typeof $ != 'undefined') {
+    $( document ).ready(function() {
+      var current_path = window.location.pathname;
+      var native_or_web = current_path.indexOf("native");
+      if(native_or_web >= 0){
+          native_or_web = "native";
+      }else{
+          native_or_web = "web";
+      }
+      var path = current_path.split("/");
+      
+      var api_platform = "Mobile";
+      if(path.length > 6 && (path[6] == "modile" || path[6] == "wearable" || path[6] == "tv")) {
+        api_platform = capitalizeFirstLetter(path[6]);
+      }
+      var api_version = path[4];
 
-    var div_platform = 
-    '<a id="div_platform" style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-bottom: 10px;padding-top: 10px;text-align: center;color: #555;font-size: 16px;margin-right: 18px;" href="#nogo">'+ 
-    '<span class="undefined-status" style=" width: 100px;left: left;font-size: 100%;font-weight: 400;">' + api_platform + '</span>' +
-    '<span id="platformIcon" class="undefined-icon" style="    width: 16px;    background: url(/images/form-select_type1.png) no-repeat 50%;    height: 16px;    float: right;    margin-right: 11px;    margin-top: 3px;"></span>' +
-    '</a>';
-    
-    var div_verion = 
-    '<a id="div_verion" style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-top: 10px;padding-bottom: 10px;text-align: center;color: #555;font-size: 16px;" href="#nogo">' +
-    '<span class="undefined-status" style=" width: 100px;left: left;font-size: 100%;font-weight: 400;">' + api_version + '</span>' +
-    '<span id="versionIcon" class="undefined-icon" style="    width: 16px;    background: url(/images/form-select_type1.png) no-repeat 50%;    height: 16px;    float: right;    margin-right: 11px;    margin-top: 3px;"></span>' +
-    '</a>';
+      var div_platform = 
+      '<a id="div_platform" style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-bottom: 10px;padding-top: 10px;text-align: center;color: #555;font-size: 16px;margin-right: 18px;" href="#nogo">'+ 
+      '<span class="undefined-status" style=" width: 100px;left: left;font-size: 100%;font-weight: 400;">' + api_platform + '</span>' +
+      '<span id="platformIcon" class="undefined-icon" style="    width: 16px;    background: url(/images/form-select_type1.png) no-repeat 50%;    height: 16px;    float: right;    margin-right: 11px;    margin-top: 3px;"></span>' +
+      '</a>';
+      
+      var div_verion = 
+      '<a id="div_verion" style="border: 1px solid #d6d6d6;width: 148px;display: inline-block;padding-top: 10px;padding-bottom: 10px;text-align: center;color: #555;font-size: 16px;" href="#nogo">' +
+      '<span class="undefined-status" style=" width: 100px;left: left;font-size: 100%;font-weight: 400;">' + api_version + '</span>' +
+      '<span id="versionIcon" class="undefined-icon" style="    width: 16px;    background: url(/images/form-select_type1.png) no-repeat 50%;    height: 16px;    float: right;    margin-right: 11px;    margin-top: 3px;"></span>' +
+      '</a>';
 
-    var div_common = '<div id="side-nav"><div id="nav-tree"><div style="margin-top: 16px; margin-bottom: 10px; margin-left: 30px;">' + div_platform + div_verion + '</div><div id="nav-tree-contents"></div></div></div>';
-    $("body").prepend(div_common);
-    
-    var div_search = '<div class="flexbox"><div class="flex1"></div><div class="tizen-search-api" style="float: right;"><form id="form-search-api"><div class="form-group-search"><input type="text" placeholder="Search related API References" name="search-api" id="search-api" style="padding-right: 38px !important;"><button class="btn btn-submit" id="btn-search-api"><svg width="32" height="32" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></svg></button></div></form></div></div>';
-    $('#doc-content').prepend(div_search);
-    
-    var btGotoTop = '<div><input type="image" id="btngototop" src="/images/btn_go_to_top.png" style="display: none"></div>';
-    $("body").append(btGotoTop);
-    
-    var btnTop = $('#btngototop');
-    $(window).scroll(function() {
-        if ($(window).scrollTop() > 300) {
-          btnTop.show();
-        } else {
-          btnTop.hide();
-        }
+      var div_common = '<div id="side-nav"><div id="nav-tree"><div style="margin-top: 16px; margin-bottom: 10px; margin-left: 30px;">' + div_platform + div_verion + '</div><div id="nav-tree-contents"></div></div></div>';
+      $("body").prepend(div_common);
+      
+      var div_search = '<div class="flexbox"><div class="flex1"></div><div class="tizen-search-api" style="float: right;"><form id="form-search-api"><div class="form-group-search"><input type="text" placeholder="Search related API References" name="search-api" id="search-api" style="padding-right: 38px !important;"><button class="btn btn-submit" id="btn-search-api"><svg width="32" height="32" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path></svg></button></div></form></div></div>';
+      $('#doc-content').prepend(div_search);
+      
+      var btGotoTop = '<div><input type="image" id="btngototop" src="/images/btn_go_to_top.png" style="display: none"></div>';
+      $("body").append(btGotoTop);
+      
+      var btnTop = $('#btngototop');
+      $(window).scroll(function() {
+          if ($(window).scrollTop() > 300) {
+            btnTop.show();
+          } else {
+            btnTop.hide();
+          }
+      });
+      btnTop.click(function () {
+          $('html, body').animate({scrollTop:0}, '300');
+      });
+      
+      $('#btn-search-api').click(function (event) {
+          event.preventDefault();
+          var search_text = $('#search-api').val();
+          var current_url = window.location.href;
+          var current_url_array = current_url.split("/");
+          var to_url = '';
+          for(var i=0; i< current_url_array.length -1; i++){
+              to_url += current_url_array[i] + "/";
+          }
+          to_url += 'search-api-reference.php?search=' + search_text;
+          window.location.href = to_url;
+      });
+      
+      var navbar_header = 
+      '<div class="navbar-wrapper">' +
+          '<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">' +
+              '<div class="container">' +
+                  '<div class="navbar-header">' +
+                      '<a class="navbar-brand" href="/">Docs</a>' +
+                  '</div>' +
+
+                  '<ul id="navbar" class="nav navbar-nav navbar-right">' +
+                      '<li><a href="/open-source-project/about/tizen-open-source-overview">Open Source Tizen</a></li>' +
+                      '<li><a href="/application/">Application</a></li>' +
+                      '<li><a href="/iot/">IoT</a></li>' +
+                      '<li><a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank">Download</a></li>' +
+                      '<li class="navbar-divisor"></li>' +
+
+                      '<li class="search"><a id="gnb_search_btn" href="#"><div class="search-btn"></div></a>' +
+                        '<form method="GET" id="gnb_search_box" class="searchbox" action="/search.php">' +
+                          '<input class="form-control" type=text name="q" placeholder="Search ...">' +
+                          '<a href="#"><img src="/images/ic_search_ac.png"></a>' +
+                        '</form>' +
+                      '</li>' +
+
+                  '</ul>' +
+              '</div>' +
+          '</nav>' +
+      '</div>';
+      
+      $("body").prepend(navbar_header);
+      
+      var api_platform_version = {"api_platform": api_platform, "api_version": api_version, "native_or_web": native_or_web};
+      
+      $.ajax({
+          type: "POST",
+          url: '/api/api-reference-navtree-contents.php',
+          data: api_platform_version,
+          dataType: "text",
+          success: function(response){
+              $('#nav-tree-contents').html(response);
+              
+                var menujsElement = document.createElement("script");
+                menujsElement.src = "/js/menu.js";
+                menujsElement.type = "text/javascript";
+                document.getElementsByTagName("head")[0].appendChild(menujsElement);
+          }
+      });
+      
+
+      
+      $('#nav-tree-contents').html("adsasdsd");
+      
+      register_gnb_search_btn();
     });
-    btnTop.click(function () {
-        $('html, body').animate({scrollTop:0}, '300');
-    });
-    
-    $('#btn-search-api').click(function (event) {
-        event.preventDefault();
-        var search_text = $('#search-api').val();
-        var current_url = window.location.href;
-        var current_url_array = current_url.split("/");
-        var to_url = '';
-        for(var i=0; i< current_url_array.length -1; i++){
-            to_url += current_url_array[i] + "/";
-        }
-        to_url += 'search-api-reference.php?search=' + search_text;
-        window.location.href = to_url;
-    });
-    
-    var navbar_header = 
-    '<div class="navbar-wrapper">' +
-        '<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">' +
-            '<div class="container">' +
-                '<div class="navbar-header">' +
-                    '<a class="navbar-brand" href="/">Docs</a>' +
-                '</div>' +
 
-                '<ul id="navbar" class="nav navbar-nav navbar-right">' +
-                    '<li><a href="/open-source-project/about/tizen-open-source-overview">Open Source Tizen</a></li>' +
-                    '<li><a href="/application/">Application</a></li>' +
-                    '<li><a href="/iot/">IoT</a></li>' +
-                    '<li><a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank">Download</a></li>' +
-                    '<li class="navbar-divisor"></li>' +
+    clearInterval(waitForJQuery);
+  }
+}, 10);
 
-                    '<li class="search"><a id="gnb_search_btn" href="#"><div class="search-btn"></div></a>' +
-                      '<form method="GET" id="gnb_search_box" class="searchbox" action="/search.php">' +
-                        '<input class="form-control" type=text name="q" placeholder="Search ...">' +
-                        '<a href="#"><img src="/images/ic_search_ac.png"></a>' +
-                      '</form>' +
-                    '</li>' +
-
-                '</ul>' +
-            '</div>' +
-        '</nav>' +
-    '</div>';
-    
-    $("body").prepend(navbar_header);
-    
-    var api_platform_version = {"api_platform": api_platform, "api_version": api_version, "native_or_web": native_or_web};
-    $.ajax({
-        type: "POST",
-        url: '/api/api-reference-navtree-contents.php',
-        data: api_platform_version,
-        dataType: "text",
-        success: function(response){
-            $('#nav-tree-contents').html(response);
-            var menujsElement = document.createElement("script");
-            menujsElement.src = "/js/menu.js";
-            menujsElement.type = "text/javascript";
-            document.getElementsByTagName("head")[0].appendChild(menujsElement);
-        }
-   });       
-    
-    register_gnb_search_btn();
-
-};
 function register_gnb_search_btn() {
   $('#gnb_search_btn').click(function() {
     $('#gnb_search_box').fadeIn(500);

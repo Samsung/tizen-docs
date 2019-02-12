@@ -107,14 +107,19 @@ $(document).ready(function(){
 
 	var isScrolledIntoView = function(elem)
 	{
-		var docViewTop = $('#contents').scrollTop();
-		var docViewBottom = docViewTop + $('#contents').height();
+		try {
+			var docViewTop = $('#contents').scrollTop();
+			var docViewBottom = docViewTop + $('#contents').height();
 
-		var elemTop = $(elem).offset().top;
-		var elemBottom = elemTop + $(elem).height();
+			var elemTop = $(elem).offset().top;
+			var elemBottom = elemTop + $(elem).height();
 
-		return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom)
-		  && (elemBottom <= docViewBottom) &&  (elemTop >= docViewTop) );
+			return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom)
+				&& (elemBottom <= docViewBottom) &&  (elemTop >= docViewTop) );
+		} catch(err) {
+			console.log(err);
+			return false;
+		}
 	}
 
 	$('#contents').scroll();
