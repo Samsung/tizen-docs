@@ -8,7 +8,6 @@
 		<tizen-api profile="mobile">
 
 			<!-- 5.0 mobile web -->
-			<topic label="5.0 Web Application" href="html/device_api/mobile/index.html" invisible-node="true">
 				<topic label="Tizen Web Device API Reference" href="html/device_api/mobile/index.html">
 					<topic label="Mobile Web" href="html/device_api/mobile/index.html" invisible-node="true">
 						<topic href="html/device_api/mobile/index.html#Base" label="Base">
@@ -290,7 +289,6 @@
 						</topic>
 					</topic>
 				</topic>
-			</topic>
 
 			<!-- 5.0 mobile native -->
 			<topic label="5.0 Native Application" href="../org.tizen.native.mobile.apireference/index.html" invisible-node="true">
