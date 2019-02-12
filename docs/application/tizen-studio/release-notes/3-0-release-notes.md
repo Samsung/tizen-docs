@@ -9,15 +9,15 @@
 ### New Features
 
 -   SmartThings
-	-  The support for IOT-Headed-5.0 and IOT-Headless-5.0 has been added.
-	-  The two process model support for IOT-Headed and IOT-Headless profiles has been added.
-	-  The iotjs templates for IOT-Headless profile has been added.
+	-  The support for IOT-Headed-5.0 and IOT-Headless-5.0 have been added.
+	-  The two process model support for IOT-Headed and IOT-Headless profiles have been added.
+	-  The iotjs templates for IOT-Headless profile have been added.
 -   Certificate Manager
 	-  The certificate password storage scheme has been upgraded, making the certificate profiles more secure.
 -   Ubuntu 18.04
 	-  The support for Ubuntu 18.04 platform for Tizen Studio has been added.
 -   SDB
-	-  The support for automatic command exchange between plugin supported daemon and server has been added.
+	-  The support for automatic command exchange between plugin supported daemon and server have been added.
 	-  The support for querying individual capability has been added.
 	-  The support for querying the plugin to handle shell async commands has been added.
 -   Tizen RT
