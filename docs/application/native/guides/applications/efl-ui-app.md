@@ -227,7 +227,7 @@ Since Tizen 2.4, an application is not allowed to run in the background except w
 
   > **Note**
   >
-  > Since Tizen 4.0, even if the background-network category is declared, the running application is freezed if the network is not connected.
+  > Since Tizen 4.0, even if the background-network category is declared, the running application stops if the network is not connected.
 
 ### Describing the Background Category
 
