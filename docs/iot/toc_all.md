@@ -70,4 +70,4 @@
 ## Samples
 ### [Network Audio Sample Overview](/iot/preview2/sample/iot-sample.md)
 
-# [IoT and Tizen IoT](/iot/iot-partners/index.md)
+# [Tizen IoT with Nubison Cloud](/iot/iot-partners/index.md)

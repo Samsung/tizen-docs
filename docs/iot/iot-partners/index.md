@@ -1,7 +1,7 @@
-# Tizen IoT x Nubison Cloud
+# Tizen IoT with Nubison Cloud
 
-Nubison cloud can readily be interconnected with Tizen IoT devices.
-Using Nubison cloud, users can easily send data or receive requests for Tizen service applications on real-time basis.
+The Nubison cloud can readily be interconnected with Tizen IoT devices, which has an instrinsic capability of seamless connectivity.
+The Nubison cloud empowers the users to send or receive requests for Tizen service applications in real-time with ease.
 
 **Figure: Architecture**
 ![Architecture](media/architecture.png)
@@ -12,7 +12,7 @@ Compatibility
 
 
 ## What is Nubison IoT?
-Nubison IoT, as an IoT service provider, lets anyone to easily use various features and services, inclduing data analysis function, specialized for IoT environment.
+Nubison IoT provides various IoT features and services which can be utilized in various IoT devices. Data anlaysis service is one of distinguished IoT services that Nubison provides.
 
 
 References
