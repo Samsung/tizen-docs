@@ -26,6 +26,7 @@
 ### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/test/testing-your-app-on-gear.md)
 ### [Packaging a .NET and Web Hybrid Application](/application/dotnet/tutorials/hybrid/create-dotnet-hybrid-package.md)
 ### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library/library-list.md)
+### [Security and API Privileges](/application/dotnet/getting-started/sec-privileges.md)
 
 
 ## Guides
@@ -238,6 +239,7 @@
 #### [Overview](/application/native/tutorials/details/details.md)
 #### [Application Filtering](/application/native/tutorials/details/app-filtering.md)
 #### [Security and API Privileges](/application/native/tutorials/details/sec-privileges.md)
+#### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/native/tutorials/details/old-versioned-sec-privileges.md)
 #### [Event Handling](/application/native/tutorials/details/event-handling.md)
 #### [Error Handling](/application/native/tutorials/details/error-handling.md)
 #### [File System Directory Hierarchy](/application/native/tutorials/details/io-overview.md)
@@ -725,6 +727,7 @@
 #### [Running and Debugging Applications](/application/web/tutorials/process/run-debug-app.md)
 ### [Application Filtering](/application/web/tutorials/app-filtering.md)
 ### [Security and API Privileges](/application/web/tutorials/sec-privileges.md)
+### [Security and API Privileges for Apps with API Version 4.0 or Earlier](/application/web/tutorials/old-versioned-sec-privileges.md)
 ### [Web Runtime](/application/web/tutorials/web-runtime.md)
 ### [Event Handling](/application/web/tutorials/event-handling.md)
 ### [Application Signing and Certificates](/application/web/tutorials/sign-certificate.md)

@@ -46,6 +46,8 @@ applications).
 The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
 Privileges](../../../tizen-studio/native-tools/api-checker.md).
 
+The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
+
 <a name="API"></a>
 ## Native API Privileges
 
@@ -113,8 +115,8 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/imemanager` | public |  | The application can manage installed input methods. |
 | `http://tizen.org/privilege/inputgenerator` | platform |  | The application can simulate keys being pressed and touch interactions with the screen. |
 | `http://tizen.org/privilege/keygrab` | platform |  | The application can read actions involving special keys, such as the volume keys on this or other devices (for example, TV remote controls), even when it is running in the background. |
-| `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. |
-| `http://tizen.org/privilege/keymanager.admin` | platform |  | The application can lock and unlock password-protected storage, and manage password changes for it. |
+| `http://tizen.org/privilege/keymanager` | public |  | The application can save keys, certificates, and data to, and retrieve and delete them from, password-protected storage. Checking the statuses of certificates while connected to a mobile network may result in additional charges depending on user's payment plan. Deprecated since 3.0. |
+| `http://tizen.org/privilege/keymanager.admin` | platform |  | The application can lock and unlock password-protected storage, and manage password changes for it. Deprecated since 3.0. |
 | `http://tizen.org/privilege/led` | public |  | The application can turn LEDs on or off. For example, the LED on the front of the device and the camera flash can be turned on or off. |
 | `http://tizen.org/privilege/location` | public | Location | The application can use user's location data. |
 | `http://tizen.org/privilege/location.coarse` | public | Location | The application can determine user's approximate location including user's device's Cell ID, Location Area Code (LAC), and Tracking Area Code (TAC). |
@@ -125,7 +127,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/mediahistory.read` | public | User history | The application can read the statistics concerning the music and videos played on the device, such as the peak times for playing music or videos. |
 | `http://tizen.org/privilege/message.read` | public | Message | The application can read text and multimedia messages, and any information related to them. |
 | `http://tizen.org/privilege/message.write` | public | Message | The application can write, send, delete, move text and multimedia messages, download multimedia messages, and change the settings and statuses of messages, such as read or unread. This may result in additional charges depending on user's payment plan. |
-| `http://tizen.org/privilege/minicontrol.provider` | public |  | The application can show a small toolbar on the notification panel or lock screen while it is open. |
+| `http://tizen.org/privilege/minicontrol.provider` | public |  | The application can show a small toolbar on the notification panel or lock screen while it is open. Deprecated since 3.0. |
 | `http://tizen.org/privilege/network.get` | public |  | The application can retrieve network information such as the status of each network, its type, and detailed network profile information. |
 | `http://tizen.org/privilege/network.profile` | public |  | The application can add, remove, and edit network profiles. |
 | `http://tizen.org/privilege/network.set` | public |  | The application can turn Wi-Fi on and off, and connect to and disconnect from Wi-Fi and mobile networks. This may result in additional charges depending on user's payment plan. |
@@ -147,7 +149,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/softap` | public |  | The application can manage SoftAP configuration settings, such as the Service Set Identifier (SSID) and password. |
 | `http://tizen.org/privilege/softap.admin` | platform |  | The application can turn SoftAP on or off, and change its settings. |
 | `http://tizen.org/privilege/systemmonitor` | public |  | The application can read system information, including information from the CPU and RAM. |
-| `http://tizen.org/privilege/systemsettings` | public |  | The application can read and write unrestricted system settings. |
+| `http://tizen.org/privilege/systemsettings` | public |  | The application can read and write unrestricted system settings. Deprecated since 2.3.1. |
 | `http://tizen.org/privilege/systemsettings.admin` | platform |  | The application can read and write all system settings. |
 | `http://tizen.org/privilege/tee.client` | partner |  | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment. |
 | `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the statuses of calls. |
@@ -190,7 +192,7 @@ Tizen application privileges are loosely bound to APIs, so most of the
 privileges can be identified by the APIs that the application calls.
 However, there are some privileges that are not coupled with the Tizen
 APIs. To allow easy identification, those privileges are mapped to
-corresponding system resources that are similar as other privileges.
+corresponding system resources that are similar to other privileges.
 
 The following table lists the non-API bound privileges:
 
