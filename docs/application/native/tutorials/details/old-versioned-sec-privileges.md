@@ -182,7 +182,7 @@ applications:
 | `http://tizen.org/privilege/imemanager`  | public   | -            | 3.0   | The application can manage installed input methods. |
 | `http://tizen.org/privilege/inputgenerator` | platform | -            | 3.0   | The application can simulate keys being pressed and touch interactions with the screen. |
 | `http://tizen.org/privilege/keygrab`     | platform | -            | 3.0   | The application can read actions involving special keys, such as the volume keys on this or other devices (such as TV remote controls), even when it is running in the background. |
-| `http://tizen.org/privilege/keymanager`  | public   | -            | 2.3.1 | The application can save keys, certificates, and data to, and retrieve and delete them from, a password-protected storage. |
+| `http://tizen.org/privilege/keymanager`  | public   | -            | 2.3.1 | The application can save keys, certificates, and data to, and retrieve and delete them from, a password-protected storage. Deprecated since 3.0. |
 | `http://tizen.org/privilege/keymanager.admin` | platform | -            | 2.3.1 | The application can lock and unlock a password-protected storage, and manage password changes for it. Deprecated since 3.0. |
 | `http://tizen.org/privilege/led`         | public   | -            | 2.3.1 | The application can switch LEDs on or off, such as the LED on the front of the device and the camera flash. |
 | `http://tizen.org/privilege/location`    | public   | Location     | 2.3.1 | The application can read the user's location information. |
