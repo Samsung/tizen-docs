@@ -1,27 +1,26 @@
 # Tizen IoT with Nubison Cloud
 
-The Nubison cloud can readily be interconnected with Tizen IoT devices, which has an intrinsic capability of seamless connectivity.
+The Nubison IoT cloud is a cloud-based IoT platform that provides smart solutions and intelligent services by connecting various things easily, as well as collecting and analyzing IoT data in real time.
+
 Real-time data monitoring and controlling between Tizen service app and Nubison cloud is empowered through Nubison plugin.
+
+The following diagram shows the interface between Tizen IoT device and Nubison cloud through Nubison plugin:
+
 
 **Figure: Architecture**
 
 ![Architecture](media/architecture.png)
 
-Compatibility
-- Platform : Tizen 5.0 IoT Headed & Headless and later
-- SDK : Tizen Studio 3.0 and later 
+The Nubison plugin can be installed on Tizen IoT devices compatible with as follow:
 
+* Platform : Tizen 5.0 IoT Headed & Headless and later
+* SDK : Tizen Studio 3.0 and later
 
-## What is Nubison IoT?
-Nubison IoT provides various IoT features and services which can be utilized in different IoT devices. Data analysis service is one of distinguished IoT services that Nubison provides.
-
-
-References
+For more information about Nubison IoT cloud service, see the following references:
 - [Github for Nubison Template](https://github.com/nubisoniot/NI)
 - [Nubison Site for Developers](https://nubisoniot.com/)
 - [Nubison: Your IoT Service Provider](https://blog.naver.com/nubison/221462430388)
 - [How to use Nubison IoT](https://blog.naver.com/nubison/221462229766)
 
 
-**Start now by importing Nubison's template application in Tizen Studio!**
-
+**Start now by importing [Nubison's template](https://github.com/nubisoniot/NI) in the Tizen Studio!**
