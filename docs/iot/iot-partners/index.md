@@ -17,6 +17,7 @@ The Nubison plugin can be installed on Tizen IoT devices compatible with as foll
 * SDK : Tizen Studio 3.0 and later
 
 For more information about Nubison IoT cloud service, see the following references:
+
 - [Github for Nubison Template](https://github.com/nubisoniot/NI)
 - [Nubison Site for Developers](https://nubisoniot.com/)
 - [Nubison: Your IoT Service Provider](https://blog.naver.com/nubison/221462430388)
