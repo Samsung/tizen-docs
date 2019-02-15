@@ -94,7 +94,11 @@ To use most of the `resourced` functionalities, you must enable the following `c
   - `CONFIG_CGROUP_SCHED`: Controls the CPU share of applications
   - `CONFIG_MEMCG`: Selects the victim in low-memory situations
   - `CONFIG_FREEZER`: Freezes background (and idle) applications
-  - `CONFIG_MEMCG_SWAP`, `CONFIG_MEMCG_SWAP_ENABLED`, `CONFIG_ZRAM`, `CONFIG_ZSMALLOC`: Saves memory through compression
+  - `CONFIG_MEMCG_SWAP`, `CONFIG_MEMCG_SWAP_ENABLED`: Adds swap management features to memory resource controller. Depends on `CONFIG_MEMCG` and `CONFIG_SWAP`.
+  - `CONFIG_ZRAM`: Creates memory-backed compressed block devices /dev/zramX (X = 0, 1, …). Depends on `CONFIG_ZSMALLOC`.
+  - `CONFIG_ZRAM_LZ4_COMPRESS`: Enables support for an alternative compression algorithm. By default, ZRAM uses Lempel–Ziv–Oberhumer (LZO).
+  - `CONFIG_ZSWAP`: Compresses data in memory before moving them to a storage device.
+  - `CRYPTO_DEFLATE`, `CRYPTO_ZLIB`, `CRYPTO_LZO`, `CRYPTO_LZ4`, `CRYPTO_LZ4HC`: Compression algorithms available as part of kernel cyrpto API.
 
 > **Note**
 >
