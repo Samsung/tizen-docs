@@ -70,7 +70,7 @@
 	-   On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
 	-   On Windows&reg;, if an error with message "failed to allocate memory" occurs while executing the emulator, try the following:
 	    -   Close some other programs and try to launch the emulator again.
-	    -   If the RAM size is set to 768 or 1024 MB for the VM in Emulator Manager, change it to 512 MB.
+	    -   If the RAM size is set to 768 or 1024 MB for VM in Emulator Manager, change it to 512 MB.
 	    -   Increase the user area of the virtual memory in the system to 3 GB by entering the *bcdedit /setincreaseuserva 3072* command on the console with administrator rights (only in Windows&reg; 7), and reboot.
 	-   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, the emulator can unexpectedly terminate when you execute the emulator with OpenGL ES version 1.1 or 2.0. Verify the emulator configuration in Emulator Manager and on the general tab in the emulator configuration window, set OpenGL ES version to version 2.0 or to version 3.0.
 	-   When you launch Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
