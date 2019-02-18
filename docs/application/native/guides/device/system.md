@@ -58,6 +58,7 @@ To obtain the information, query a feature or system key.
    - [Shell](#shell)
    - [Sip](#sip)
    - [Speech](#speech)
+   - [Storage](#storage)
    - [System setting](#systemsetting)
    - [USB](#usb)
    - [Vibration](#vibration)
@@ -630,6 +631,15 @@ The following table lists the speech feature keys:
 | `http://tizen.org/feature/speech.control` | `bool` | The platform returns `true` for this key, if the device supports voice control. |
 | `http://tizen.org/feature/speech.recognition` | `bool` | The platform returns `true` for this key, if the device supports speech recognition (STT). |
 | `http://tizen.org/feature/speech.synthesis` | `bool` | The platform returns `true` for this key, if the device supports speech synthesis (TTS). |
+
+The following table lists the external storage feature keys:
+
+<a name="storage"></a>
+**Table: External storage feature keys**
+
+| Key                                 | Type   | Description                              |
+|-------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/storage.external` | `bool` | The platform returns `true` for this key, if the device supports the external storage. |
 
 The following table lists the system setting feature keys:
 
