@@ -212,6 +212,7 @@ application package.
 | `http://tizen.org/feature/sensor.sleep_monitor` | Specify this key, if the application requires a sleep monitor sensor which tracks the human sleep state or a sleep detector sensor which detects whether the human falls asleep or wakes up. | 3.0   |
 | `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 
 
 \* This key has been available for checking device capabilities since
@@ -288,6 +289,7 @@ Tizen 4.0.
 | `http://tizen.org/feature/sensor.sleep_monitor` | Specify this key, if the application requires a sleep monitor sensor which tracks the human sleep state or a sleep detector sensor which detects whether the human falls asleep or wakes up. | 3.0   |
 | `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires an ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/watch_app`     | Specify this key, if the application requires the watch application feature. | 4.0   |
 
 \* This key has been available for checking device capabilities since
