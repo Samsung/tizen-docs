@@ -639,7 +639,7 @@ The following table lists the external storage feature keys:
 
 | Key                                 | Type   | Description                              |
 |-------------------------------------|--------|------------------------------------------|
-| `http://tizen.org/feature/storage.external` | `bool` | The platform returns `true` for this key, if the device supports the external storage. |
+| `http://tizen.org/feature/storage.external` | `bool` | The platform returns `true` for this key, if the device supports external storage. |
 
 The following table lists the system setting feature keys:
 
