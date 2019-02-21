@@ -35,9 +35,10 @@ You can use the following text input and voice features in your native applicati
 
 - [Autofill Manager](autofill-manager.md)
 
-  You can create an autofill manager application to show the installed autofill service and change as the new autofill service the user selected.
+  You can create a autofill manager application to show installed Autofill service. In addition, change as the new Autofill service that the user selected.
 
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 5.5 and Higher for autofill in Mobile and Wearable

@@ -1,21 +1,21 @@
 # Autofill Manager
 
-Tizen autofill framework allows more than one or more autofill services to be installed in a Tizen device. Autofill manager is a module for managing the installed autofill services. Application developers can use autofill manager to get the current autofill service or change the autofill service.
+The Tizen autofill framework allows more than one or more Autofill services to be installed on a Tizen device. Autofill manager is a module for managing the installed autofill services. Application developers can use autofill manager to get the current autofill service or change the autofill service.
 
 The main features of the Autofill Manager API include:
 
-- [Getting the installed autofill service list](#getting-the-installed-autofill-service-list)
+- [Getting installed autofill service list](#getting-installed-autofill-service-list)
 
   Use the `autofill_manager_foreach_autofill_service()` function to get the installed autofill service list in your device.
-  As a result, the `autofill_manager_autofill_service_cb()` callback function is invoked and you can get the installed autofill services.
+  As a result, the `autofill_manager_autofill_service_cb()` callback function is invoked and You can get the installed Autofill service listed on your device.
 
-- [Getting the current autofill service](#getting-the-current-autofill-service)
+- [Getting current autofill service](#getting-current-autofill-service)
 
-  Use the `autofill_manager_get_autofill_service()` function to get the current autofill service.
+  You can get the current autofill service.
 
-- [Setting the autofill service](#setting-the-autofill-service)
+- [Setting autofill service](#setting-autofill-service)
 
-  Use the `autofill_manager_set_autofill_service()` function to set the autofill service.
+  You can set the Autofill service.
 
 ## Prerequisites
 
@@ -33,9 +33,7 @@ The main features of the Autofill Manager API include:
     #include <autofill_manager.h>
     ```
 
-3. To use the Autofill manager library, create an autofill manager handle.
-
-   The autofill manager handle is used in other autofill manager functions as a parameter.
+3. To use the Autofill manager library, create an autofill manager handle. It is used in other autofill manager functions as a parameter.
 
    ```c
    void
@@ -49,7 +47,7 @@ The main features of the Autofill Manager API include:
    }
    ```
 
-4. When you no longer need the autofill manager library, destroy the autofill manager handle using the `autofill_manager_destroy()` function:
+4. Incase, the Autofill manager library is not needed in your application, you must destroy the Autofill manager handle using the `autofill_manager_destroy()`  function:
 
    ```c
    void
@@ -65,10 +63,10 @@ The main features of the Autofill Manager API include:
 
    > **Note**
    >
-   > Do not use the `autofill_manager_destroy()` function in a callback function.
+   > You must not use the `autofill_manager_destroy()` function in a callback function.
 
-5. After you create the autofill manager handle, connect the background autofill daemon with the `autofill_manager_connect()` function.
-   The function is asynchronous and you can get the result with callback function that registered as the second parameter of `autofill_manager_connect()`.
+5. After, you create the autofill manager handle, connect the background autofill daemon with the `autofill_manager_connect()` function.
+   The function is asynchronous and you can get the result with callback function that registered as the second parameter of `autofill_manager_connect()`:
 
    ```c
    static void manager_connection_status_changed_cb(autofill_manager_h amh, autofill_manager_connection_status_e status, void *user_data)
@@ -99,11 +97,11 @@ The main features of the Autofill Manager API include:
 
    You can use the autofill manager functions after receiving `AUTOFILL_MANAGER_CONNECTION_STATUS_CONNECTED` in `manager_connection_status_changed_cb()`.
 
-## Getting the installed autofill service list
+## Getting installed autofill service list
 
 To get the installed autofill service list:
 
-1. Create the `autofill_service_info_cb()` callback function, which is invoked for each installed autofill service application and is used to access autofill service information:
+1. To access Autofill service information, create a callback function using the `autofill_service_info_cb()` function, which is invoked for each installed Autofill service application:
 
 ```c
 #include <app_manager.h>
@@ -127,7 +125,7 @@ static bool autofill_service_info_cb(const char* app_id, void* user_data)
 }
 ```
 
-2. Use the `autofill_manager_foreach_autofill_service()` function to get the installed autofill service by invoking a callback function for each installed autofill service application:
+2. To get the installed Autofill service by invoking a callback function for each installed Autofill service application, use the `autofill_manager_foreach_autofill_service()` function:
 
 ```c
     ret = autofill_manager_foreach_autofill_service(amh, autofill_service_info_cb, NULL);
@@ -135,9 +133,9 @@ static bool autofill_service_info_cb(const char* app_id, void* user_data)
         /* Error handling */
 ```
 
-## Getting the current autofill service
+## Getting current autofill service
 
-To get the application ID of the current used autofill service, use the `autofill_manager_get_autofill_service()` function.
+To get the application ID of the current used autofill service, use the `autofill_manager_get_autofill_service()` function:
 
 ```c
 void get_autofill_service(autofill_manager_h amh)
@@ -153,9 +151,9 @@ void get_autofill_service(autofill_manager_h amh)
 }
 ```
 
-## Setting the autofill service
+## Setting autofill service
 
-To change autofill service as the other autofill service, use the `autofill_manager_set_autofill_service()` function.
+To change autofill service as the other autofill service, use the `autofill_manager_set_autofill_service()` function:
 
 ```c
 void set_autofill_service(autofill_manager_h amh, const char *autofill_service_app_id)

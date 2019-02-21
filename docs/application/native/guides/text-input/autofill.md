@@ -1,31 +1,31 @@
 # Autofill
 
-Autofill is a feature that allows you to fill out commonly-entered information such as email, account and address in a text input field. email, account and address in a text input field.
-Using autofill functions, you can get the retrieve the data previously entered by the user and stored or request to store data in an autofill service.
+Autofill is a feature that allows you to fill commonly entered information, such as email, account, and address in a text input field.
+The autofill functions is used to retrieve previously entered data by the user or request to store data in an autofill service.
 
 The main features of the Autofill API include:
 
-- [Requesting to get the presence of autofill data and autofill authentication information](#requesting-to-get-the-presence-of-autofill-data-and-autofill-authentication-information)
+- [Autofill Data and Autofill Authentication Information](#autofill-data-and-autofill-authentication-information)
 
-  You can get the autofill service information such as autofill service name, service message and service logo image to use `autofill_auth_info_request()`.
-  You can get the presence of autofill data for each view in autofill service information to be received.
+  You can get the autofill service information, such as autofill service name, service message, and service logo image to use `autofill_auth_info_request()`.
+  Also, can get the presence of autofill data for each view in autofill service information to be received.
 
-- [Retrieving the data previously entered by the user and stored in an autofill service](#retrieving-the-data-previously-entered-by-the-user-and-stored-in-an-autofill-service)
+- [Data entered and Stored in Autofill Service](#data-entered-and-stored-in-autofill-service)
 
-  Use the `autofill_fill_request()` function to retrieve the data previously entered by the user and stored in an autofill service
+  You can retrieve the data previously entered by the user and stored in the Autofill service using the `autofill_fill_request` function.
 
-- [Requesting to store the data entered by the user in autofill service](#requesting-to-store-the-data-entered-by-the-user-in-autofill-service)
+- [Storing Entered Data](#storing-entered-data)
 
-  Use the `autofill_commit()` function to store the data entered by the user in autofill service
+  You can store the data entered by the user in Autofill service using the `autofill_commit()` function.
 
 ## Prerequisites
 
-1. Configure autofill service:
+1. To configure the autofill service:
 
-   Set autofill service in Settings > Language and input > Input Assistance > Autofill setting.
-   In some environment, the autofill service can be designated according to the system configuration.
+   Autofill service must be configured, to configure, set autofill service by navigating to Settings > Language and input > Input Assistance > Autofill setting.
+   In some other environments, the Autofill service can be found within the system configuration
 
-2. To use the autofill API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__MODULE.html) applications), include the `<autofill.h>` header file in your application:
+2. To use the Autofill API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__MODULE.html) applications), include the `<autofill.h>` header file in your application:
 
    ```c
    #include <autofill.h>
@@ -47,7 +47,8 @@ The main features of the Autofill API include:
    }
    ```
 
-4. When you no longer need the autofill library, destroy the autofill handle using the `autofill_destroy()` function:
+4. Incase, the Autofill library is not needed in your application, you must destroy the autofill handle using the
+`autofill_destroy()` function:
 
    ```c
    void
@@ -63,10 +64,10 @@ The main features of the Autofill API include:
 
    > **Note**
    >
-   > Do not use the `autofill_destroy()` function in a callback function.
+   > It is not recommended to use the `autofill_destroy()` function in a callback function.
 
-5. After you create the autofill handle, connect the background autofill daemon with the `autofill_connect()` function:
-   The function is asynchronous and you can get the result with callback function that registered as the second parameter of `autofill_connect()`.
+5. After, you create the autofill handle, connect the background autofill daemon with the `autofill_connect()` function.
+   The function is asynchronous and you can get the result with callback function that registered as the second parameter of `autofill_connect()`:
 
    ```c
    static void connection_status_changed_cb(autofill_h ah, autofill_connection_status_e status, void *user_data)
@@ -95,14 +96,15 @@ The main features of the Autofill API include:
    }
    ```
 
-   You can use the autofill functions after receiving `AUTOFILL_CONNECTION_STATUS_CONNECTED` in `connection_status_changed_cb()`.
+   You can use the Autofill functions after receiving the status from AUTOFILL_CONNECTION_STATUS_CONNECTED in the `connection_status_changed_cb()` function.
 
-## Requesting to get the presence of autofill data and autofill authentication information
+## Autofill Data and Autofill Authentication Information
 
-1. Create the callback function to get the presence of autofill data and autofill authentication information:
+To get the presence of Autofill data and Autofill authentication information:
 
-   You have to implement the UI to display the name, service message, and logo image of autofill service if the authentication is necessary.
-   In addition, `autofill_auth_info_request()` to retrieve the data previously entered by the user and stored in an autofill service should be called when pressing UI to show autofill service information.
+1. Create a callback function using the `auth_info_received_cb()` function:
+
+   You need to implement the UI elements to display the name, service message, and logo, image of autofill service, incase the authentication is required. In addition, `autofill_auth_info_request()` to retrieve the data previously entered by the user and stored in an autofill service must be called when pressing UI to show Autofill service information:
 
     ```c
     static void
@@ -153,7 +155,7 @@ The main features of the Autofill API include:
     autofill_auth_info_set_received_cb(ah, auth_info_received_cb, NULL);
     ```
 
-2. Create autofill data for each input field and view information to include several autofill data:
+2. To include several Autofill data, create autofill data for each input field and view information:
 
     ```c
     int ret;
@@ -182,7 +184,7 @@ The main features of the Autofill API include:
         free(app_id);
     ```
 
-3. Request to get the authentication information:
+3. To get the authentication information, request with the `autofill_auth_info_request()` function:
 
     ```c
     /* Send request to get authentication information */
@@ -191,22 +193,22 @@ The main features of the Autofill API include:
         /* Error handling */
     ```
 
-4. When you no longer need the autofill view handle, call `autofill_view_info_destroy()` to release autofill view handle:
+4. Incase, the Autofill manager library is not needed in your application, you must destroy the Autofill manager handle using the `autofill_manager_destroy()` function:
 
     ```c
     autofill_view_info_destroy(vi_h);
     ```
 
-## Retrieving the data previously entered by the user and stored in an autofill service
+## Data entered and Stored in Autofill Service
 
-To Retrieve the data previously entered by the user and stored in an autofill service:
+To retrieve the data previously entered by the user and stored in an Autofill service:
 
-1. Create the callback function to get the data previously entered by the user and stored in an autofill service:
+1. To get the data previously entered using the `fill_response_item_cb()` function, create the callback function:
 
    Autofill service can send more than one autofill response for the view ID to be requested.
-   To support this case, `autofill_fill_response_foreach_group()` function is used to receive the multiple autofill response group. Each group has the autofill data for the requested view ID to be filled.
+   To support this case, the `autofill_fill_response_foreach_group()` function is used to receive the multiple autofill response group. Each group has the autofill data for the requested view ID to be filled.
 
-   The following example code shows how to receive multiple autofill response data to have 2 autofill response to be consisted of user ID and user password:
+   The following code snippet shows how to receive multiple Autofill response data to have two Autofill responses that consists of of user ID and user password in this case:
 
     ```c
     static bool fill_response_item_cb(autofill_fill_response_item_h item, void *user_data)
@@ -290,7 +292,7 @@ To Retrieve the data previously entered by the user and stored in an autofill se
     autofill_view_info_add_item(vi_h, ai_password);
     ```
 
-3. Request to get the data previously entered by the user and stored in an autofill service:
+3. To get the data previously entered by the user and stored in an Autofill service, request using the `autofill_fill_request()` function:
 
     ```c
     /* Send request to get autofill fill response */
@@ -299,15 +301,18 @@ To Retrieve the data previously entered by the user and stored in an autofill se
         /* Error handling */
     ```
 
-4. When you no longer need the autofill view handle, call `autofill_view_info_destroy()` to release autofill view handle:
+4. Incase, the Autofill view handle is not needed in your application, you must destroy the autofill view handle using
+`autofill_view_info_destroy()` to release autofill view handle:
 
     ```c
     autofill_view_info_destroy(vi_h);
     ```
 
-## Requesting to store the data entered by the user in autofill service
+## Storing Entered Data
 
-1. Create autofill data for each input field for saving:
+To store entered data by the user in the autofill service:
+
+1. To save, create an Autofill data for each input fields:
 
     ```c
     autofill_save_item_h si_h;
@@ -321,7 +326,7 @@ To Retrieve the data previously entered by the user and stored in an autofill se
     autofill_save_item_set_value(si_h, "myID");
     ```
 
-2. Create autofill view data to include multiple autofill items:
+2. To include multiple Autofill items, create an Autofill view data:
 
     ```c
     char *app_id;
@@ -340,7 +345,7 @@ To Retrieve the data previously entered by the user and stored in an autofill se
         free(app_id);
     ```
 
-3. Request to store the data in an autofill service using `autofill_commit()`:
+3. To store the data in an Autofill service using `autofill_commit()`, request with the `autofill_commit()` function:
 
     ```c
     int ret;
@@ -353,7 +358,7 @@ To Retrieve the data previously entered by the user and stored in an autofill se
     autofill_save_view_info_destroy(svi_h);
     ```
 
-4. When you no longer need the autofill save view handle, call `autofill_view_info_destroy()` to release autofill save view handle:
+4. Incase, the Autofill save view handle is not needed in your application, you must destroy the Autofill save view handle using `autofill_view_info_destroy()` and to release autofill save view handle:
 
     ```c
     autofill_save_view_info_destroy(vi_h);

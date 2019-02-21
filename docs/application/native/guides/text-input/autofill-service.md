@@ -1,25 +1,24 @@
 # Autofill Service
 
-Autofill Service application is a service application to store the user input and provide the data previously entered by the user.
-Using the autofill service functions, Autofill service application developers can implement their own autofill service to serve the autofill information.
+Autofill Service application is a service application to store the user input and provides the data previously entered by the user. Developers can implement the Autofill service in their own application to serve the Autofill information.
 
 The main features of the Autofill service API include:
 
-- [Receiving the request of authentication information and sending the authentication information](#receiving-the-request-of-authentication-information-and-sending-the-authentication-information)
+- [Authentication Information](#authentication-information)
 
-  To receive the request of authentication information, use the `autofill_service_set_auth_info_requested_cb()` function. The autofill authentication information can be sent with `autofill_service_send_auth_info()`.
+  You can receive the request of authentication, and send the authentication information.
 
-- [Receiving the request of autofill fill request and sending the autofill fill response](#receiving-the-request-of-autofill-fill-request-and-sending-the-autofill-fill-response)
+- [Receiving request of autofill fill request and sending autofill fill response](#receiving-request-of-autofill-fill-request-and-sending-autofill-fill-response)
 
-  To receive the request of autofill fill request, use the `autofill_service_set_fill_requested_cb()` function. The autofill fill response can be sent with `autofill_service_send_fill_response()`.
+  You can receive the autofill fill request, and send the autofill fill response.
 
-- [Receiving the request of saving autofill data](#receiving-the-request-of-saving-autofill-data)
+- [Saving autofill data](#saving-autofill-data)
 
-  To receive the request of saving autofill data, use the `autofill_service_set_commited_cb()` function.
+  You can receive the request of saving the autofill data.
 
 ## Prerequisites
 
-1. To use the autofill service API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__SERVICE_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__SERVICE_MODULE.html) applications), the application should have meta data '\<metadata key="autofill-service" value="true"/>' in the `tizen-manifest.xml` file to be recognized as an autofill service:
+1. To use the Autofill Service API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__SERVICE_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__SERVICE_MODULE.html) applications), the application must have meta key in the `tizen-manifest.xml` file to be recognized as an Autofill Service:
 
    ```xml
     <service-application ...>
@@ -27,13 +26,13 @@ The main features of the Autofill service API include:
     </service-application>
    ```
 
-2. To use the functions and data types of the autofill service API, include the `<autofill_service.h>` header file in your application:
+2. To use the functions and data types of the Autofill Service API, include the `<autofill_service.h>` header file in your application:
 
    ```c
    #include <autofill_service.h>
    ```
 
-3. To use the autofill service library, initialize the autofill service using the `autofill_service_initialize()` function.
+3. To use the autofill service library, initialize the autofill service using the `autofill_service_initialize()` function:
 
    ```c
    bool service_app_create(void *data)
@@ -46,7 +45,7 @@ The main features of the Autofill service API include:
    }
    ```
 
-4. When you no longer need the autofill service library, de-initialize the autofill service using the `autofill_service_deinitialize()` function.
+4. Incase, if the Autofill service library is not needed in your application, you must de-initialize the Autofill service:
 
    ```c
    void service_app_terminate(void *data)
@@ -55,7 +54,7 @@ The main features of the Autofill service API include:
    }
    ```
 
-5. Register the callback functions to receive the each request such as authentication request, fill request and commit.
+5. To receive each request, such as authentication request, fill request, and commit, register the callback functions:
 
    ```c
    bool service_app_create(void *data)
@@ -70,11 +69,11 @@ The main features of the Autofill service API include:
    }
    ```
 
-## Receiving the request of authentication information and sending the authentication information
+## Authentication Information
 
-To receive the request of authentication information and send the authentication information:
+To receive the request of authentication information, create a callback using the `autofill_service_set_auth_info_requested_cb()` function:
 
-1. Create the callback function to receive the request of authentication information:
+1. To receive the request of authentication information, create a callback using the `autofill_service_set_auth_info_requested_cb()` function:
 
    Perform the action to certificate to use a method such as **biometrics or entering password** in this callback function.
 
@@ -115,7 +114,7 @@ To receive the request of authentication information and send the authentication
     }
     ```
 
-2. Send the result whether the autofill data is present or not and the authentication information:
+2. Send the result whether the autofill data is present or not and the authentication information with the `autofill_service_send_auth_info()` function:
 
     ```c
     static void send_auth_info(int context_id, const char *app_id, const char *view_id)
@@ -139,13 +138,15 @@ To receive the request of authentication information and send the authentication
     }
     ```
 
-## Receiving the request of autofill fill request and sending the autofill fill response
+## Receiving request of autofill fill request and sending autofill fill response
 
-1. To receive the request of autofill fill request and send the autofill fill response:
+1. To receive the autofill fill request, create a callback function using the `autofill_service_set_fill_requested_cb()` function and send the autofill fill response with the `autofill_service_send_fill_response()` function:
 
-   Autofill service can have more than one autofill response for the view ID to be requested.
-   To support this case, create autofill data group using the `autofill_fill_response_group_create()` function and fill the data in the each autofill response group.
-   The following example code shows how to provide multiple autofill response data to have 2 autofill response to be consisted of user ID and user password:
+   > **Note**
+   >
+   > Autofill service can have more than one autofill response for the view ID to be requested.
+   > To support this case, create autofill data group using the `autofill_fill_response_group_create()` function and fill the data in the each autofill response group.
+   > The following example code shows how to provide multiple autofill response data to have 2 autofill response to be consisted of user ID and user password:
 
     ```c
     static void _fill_request_received_cb(int context_id, autofill_view_info_h vi_h, void *user_data)
@@ -255,11 +256,11 @@ To receive the request of authentication information and send the authentication
     }
     ```
 
-## Receiving the request of saving autofill data
+## Saving autofill data
 
-To receive the request of saving autofill data:
+To receive the request of saving Autofill data, create the callback function using the `void _commit_received_cb()` function.
 
-1. Create the callback function to receive the request of saving autofill data:
+1. To receive the request of saving Autofill data, create the callback function using the `void _commit_received_cb()` function.
 
     ```c
     static void _commit_received_cb(int context_id, autofill_save_view_info_h vi_h, void *user_data)
@@ -286,7 +287,7 @@ To receive the request of saving autofill data:
     }
     ```
 
-2. Store the autofill data in your secure storage in the callback to receive autofill data:
+2. Store the autofill data in a secure storage in the callback that received it:
 
     ```c
     static bool __save_item_cb(autofill_save_item_h it_h, void *user_data)
