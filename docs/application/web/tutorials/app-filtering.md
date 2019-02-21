@@ -332,6 +332,7 @@ Tizen 4.0.
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/tv.audio`      | Specify this key, if the application requires the audio control functionality for using the [TV Audio Control](../api/latest/device_api/tv/tizen/tvaudiocontrol.html) API. | 3.0   |
 | `http://tizen.org/feature/tv.tuner`      | Specify this key, if the application requires the channel tuner functionality for using the [TV Channel](../api/latest/device_api/tv/tizen/tvchannel.html) API. | 3.0   |
 | `http://tizen.org/feature/tv.display`    | Specify this key, if the application requires the screen display functionality for using the [TV Display Control](../api/latest/device_api/tv/tizen/tvdisplaycontrol.html) API. | 3.0   |
