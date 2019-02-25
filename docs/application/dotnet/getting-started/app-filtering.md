@@ -83,6 +83,8 @@ The following tables show the available requirements for an application package.
 |------------------------------------------|------------------------------------------|-------|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
+| `http://tizen.org/feature/accessibility.grayscale`  | Specify this key, if the application requires the accessibility grayscale feature. | 5.5   |
+| `http://tizen.org/feature/accessibility.negative`  | Specify this key, if the application requires the accessibility negative feature. | 5.5   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
 | `http://tizen.org/feature/attach_panel`  | Specify this key, if the application requires the application attach panel feature. | 5.0   |
 | `http://tizen.org/feature/badge`         | Specify this key, if the application requires the badge feature. | 4.0   |
@@ -254,6 +256,8 @@ The following tables show the available requirements for an application package.
 |----------------------------------------|----------------------------------------|-----|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
+| `http://tizen.org/feature/accessibility.grayscale`  | Specify this key, if the application requires the accessibility grayscale feature. | 5.5   |
+| `http://tizen.org/feature/accessibility.negative`  | Specify this key, if the application requires the accessibility negative feature. | 5.5   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
 | `http://tizen.org/feature/badge`         | Specify this key, if the application requires the badge feature. | 4.0   |
 | `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar service. | 4.0   |
