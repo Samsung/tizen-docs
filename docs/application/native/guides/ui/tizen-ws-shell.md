@@ -11,9 +11,9 @@ Since, the system GUI service runs different process, all of operations of the T
 
 To support each system GUI service in Tizen, the TZSH provides the following libraries:
 
-- tzsh-quickpanel: For the quickpanel window which shows notifications and system setup widgets.
+- **tzsh-quickpanel**: For the quickpanel window which shows notifications and system setup widgets.
 
-- tzsh-softkey: For the softkey window which shows the device back and home buttons.
+- **tzsh-softkey**: For the softkey window which shows the device back and home buttons.
 
 Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window. For example, media player application needs to close the quickpanel window during playback of video. In this case, you can use the tzsh-quickpanel library.
 
