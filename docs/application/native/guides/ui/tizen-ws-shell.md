@@ -1,21 +1,21 @@
 # Tizen Window System Shell
 
 
-The Tizen window system shell (TZSH) is an interface for manipulating windows of the sytem graphical user interfaces (GUI) services such as the quickpanel and the softkey. It provides C libraries that allow developers to control windows of system GUI services and be notified state changes of them within an application.
+The TZSH is an interface for manipulating windows of the sytem GUI services such as the quickpanel and the softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
 
-Since the system GUI services are different processes from the application, all of operations of the TZSH are performed using the inter-process communication (IPC) through the display server. Below figure shows a simple S/W architecture of the TZSH.
+Since, the system GUI service runs different process, all of operations of the TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of the TZSH:
 
 **Figure: Layer diagram for the Tizen window system shell**
 
 ![Layer diagram for the Tizen window system shell](./media/tzsh_arch.png)
 
-The TZSH provides following libraries to support each system GUI services in the Tizen:
+To support each system GUI service in Tizen, the TZSH provides the following libraries:
 
 - tzsh-quickpanel: For the quickpanel window which shows notifications and system setup widgets.
 
 - tzsh-softkey: For the softkey window which shows the device back and home buttons.
 
-Most applications don't need to use the TZSH's functionalities. However, some applications may want to perform manipulation of system GUI service's window in certain situations.  For example, media player application needs to close the quickpanel window during playback of video. The tzsh-quickpanel can be used in this case.
+Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window. For example, media player application needs to close the quickpanel window during playback of video. In this case, you can use the tzsh-quickpanel library.
 
 
 ## Prerequisites
@@ -63,41 +63,40 @@ init(const char *name)
 
 ## Showing and Hiding Quickpanel Window
 
-To show and hide quickpanel window when your application's window is activated, call the following functions:
+To show or hide quickpanel window when your application's window is activated, call the following functions:
 
 ```
-   ...
-
    if (show)
      tzsh_quickpanel_show(tzsh_qp); /* To show quickpanel window */
    else
      tzsh_quickpanel_hide(tzsh_qp); /* To hide quickpanel window */
-
-   ...
 ```
 
 ## Getting Visible Status of Quickpanel Window
-To know the state of current visibility of qp service's window, call the `tzsh_quickpanel_visible_get` function. The quickpanel service's window may be visible or not visible on the screen.
+To know the state of current visibility of quickpanel service's window, call the `tzsh_quickpanel_visible_get` function. The quickpanel service's window may be visible or invisible on the screen.
 
 ```
-   ...
    tzsh_quickpanel_state_visible_e state;
 
    tzsh_quickpanel_visible_get(tzsh_qp, &state);
    if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN)
-     /* visible state */
-     ;
+     {
+        /* visible state */
+     }
    else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN)
-     /* invisible state */
-     ;
+     {
+        /* invisible state */
+     }
    else
-     /* error */
-     ;
+     {
+        /* error */
+     }
+
 ```
 
 
 ## Registering Changed Event for the Quickpanel Window
-To be notified of state changes, implement the appropriate event callback function and call the `tzsh_quickpanel_event_handler_add` function with that. If you want to change your application's behavior to match visibility of the quicknapel service's window, then you should handle state change event as following:
+To be notified about the state changes, implement the appropriate event callback function and call the `tzsh_quickpanel_event_handler_add` function with that. If you want to change your application's behavior to match visibility of the quicknapel service's window, you need to handle state change event as follows:
 
 ```
 static tzsh_quickpanel_event_handler_h handler;
@@ -112,28 +111,32 @@ ev_callback(int type, tzsh_quickpanel_event_info_h ev_info, void *data)
 
    tzsh_quickpanel_event_visible_get(ev_info, &state);
    if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN)
-     ;
+     {
+        /* visible state */
+     }
    else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN)
-     ;
+     {
+        /* invisible state */
+     }
    else
-     ;
+     {
+        /* error */
+     }
 }
 
 static void
-init_tzsh(Evas_Object *main_win)
+init(Evas_Object *main_win)
 {
    ...
 
    /* register event callback */
    handler = tzsh_quickpanel_event_handler_add(tzsh_qp, TZSH_QUICKPANEL_EVENT_VISIBLE, ev_callback, NULL);
-
-   ...
 }
 ```
 
 
 ## Destroying TZSH Quickpanel and TZSH Structures
-When no longer needed, free structures with following functions:
+When TZSH quickpanel and TZSH structures are no longer needed, free the structures as follows:
 
 ```
 static void
@@ -148,4 +151,5 @@ deinit(void)
 
 ## Related Information
 - Dependencies
-  - Tizen 3.0 and Higher for Mobile and Wearable
+  - Tizen 3.0 and Higher for Mobile
+  - Tizen 3.0 and Higher for Wearable

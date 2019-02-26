@@ -25,7 +25,7 @@ You can use the following user interface features in your native applications:
 
 - [Tizen Window System Shell (TZSH)](tizen-ws-shell.md)
 
-  You can use the Tizen window system shell if you are manipulating windows of the sytem graphical user interfaces (GUI) services such as the quickpanel. It allows developers to control windows of system GUI services and be notified state changes of them within an application. Most applications don't need to use the tzsh's functionalities. However, some applications may want to perform manipulation of system GUI service's window in certain situations.
+  You can use the TZSH to manipulate the windows of the sytem graphical user interfaces (GUI) services such as the quickpanel. It allows you to control the windows of system GUI services and get notifications about the state changes of each window within an application. Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window.
 
 ## Related Information
 - Dependencies
