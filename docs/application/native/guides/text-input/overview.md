@@ -1,13 +1,25 @@
 # Text Input and Voice
 
 
-The text input and voice features introduce how you can convert speech to text and back to speech, and provide customized keyboards and voice control.
+The text input and voice features introduce how you can convert speech to text and back to speech, and provide customized keyboards and voice control, and retrieve previous data in a text input field.
 
 You can use the following text input and voice features in your native applications:
 
 - [Input Method](input-method.md)
 
-  You can create an IME (Input Method Editor) application that provides a customized keyboard for the user. You can show and hide the keyboard as needed, and offer a keyboard option menu to allow the user to manage the keyboard settings.
+  You can create an Input Method Editor (IME) application that provides a customized keyboard for the user. You can show and hide the keyboard as needed, and offer a keyboard option menu to allow the user to manage the keyboard settings.
+
+- [Autofill](autofill.md)
+
+  You can retrieve the previously entered data stored in an autofill service.
+
+- [Autofill Service](autofill-service.md)
+
+  You can create an autofill service application that saves and provides the data previously entered by the user.
+
+- [Autofill Manager](autofill-manager.md)
+
+  You can create an Autofill manager application that shows installed Autofill service and switches to the selected Autofill service.
 
 - [Speech-to-text](stt.md)
 
@@ -25,20 +37,7 @@ You can use the following text input and voice features in your native applicati
 
   You can manage Voice-Control-Engine (VCE) service application and control the recorded audio. The result of audio recording is sent as a predefined command.
 
-- [Autofill](autofill.md)
-
-  You can get the retrieve the data previously entered by the user and stored or request to store data in an autofill service.
-
-- [Autofill Service](autofill-service.md)
-
-  You can create an autofill service application that saves and provides the data previously entered by the user.
-
-- [Autofill Manager](autofill-manager.md)
-
-  You can create a autofill manager application to show installed Autofill service. In addition, change as the new Autofill service that the user selected.
-
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
-  - Tizen 5.5 and Higher for autofill in Mobile and Wearable

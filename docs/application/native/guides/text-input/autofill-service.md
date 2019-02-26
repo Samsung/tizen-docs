@@ -1,24 +1,24 @@
 # Autofill Service
 
-Autofill Service application is a service application to store the user input and provides the data previously entered by the user. Developers can implement the Autofill service in their own application to serve the Autofill information.
+Autofill Service application is a service application to store the user input and provides stored data. Developers can implement the Autofill Service in their own application to serve the Autofill information.
 
-The main features of the Autofill service API include:
+The main features of the Autofill Service API include:
 
-- [Authentication Information](#authentication-information)
+- Receive Authentication Information
 
-  You can receive the request of authentication, and send the authentication information.
+  You can [receive the request of authentication, and send the authentication information](#receive-authentication-information).
 
-- [Receiving request of autofill fill request and sending autofill fill response](#receiving-request-of-autofill-fill-request-and-sending-autofill-fill-response)
+- Receive Fill Request and Send Fill Response
 
-  You can receive the autofill fill request, and send the autofill fill response.
+  You can [receive the fill request, and send the fill response](#receive-fill-request-and-send-fill-response).
 
-- [Saving autofill data](#saving-autofill-data)
+- Receive Request of Saving Autofill Data
 
-  You can receive the request of saving the autofill data.
+  You can [receive the request of saving the autofill data](#receive-request-of-saving-autofill-data).
 
 ## Prerequisites
 
-1. To use the Autofill Service API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__SERVICE_MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__SERVICE_MODULE.html) applications), the application must have meta key in the `tizen-manifest.xml` file to be recognized as an Autofill Service:
+1. To use the Autofill Service API (in [mobile](../../api/mobile/latest/group__CAPI__UIX__AUTOFILL__SERVICE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__UIX__AUTOFILL__SERVICE__MODULE.html) applications), the application must have metadata key in the `tizen-manifest.xml` file to be recognized as an Autofill Service:
 
    ```xml
     <service-application ...>
@@ -32,50 +32,43 @@ The main features of the Autofill service API include:
    #include <autofill_service.h>
    ```
 
-3. To use the autofill service library, initialize the autofill service using the `autofill_service_initialize()` function:
+## Initialization
 
-   ```c
-   bool service_app_create(void *data)
-   {
-       autofill_service_initialize();
+   1. To use the autofill service library, initialize the autofill service using the `autofill_service_initialize()` function:
 
-       ...
+      ```c
+      bool service_app_create(void *data)
+      {
+          autofill_service_initialize();
 
-       return true;
-   }
-   ```
+          ...
 
-4. Incase, if the Autofill service library is not needed in your application, you must de-initialize the Autofill service:
+          return true;
+      }
+      ```
 
-   ```c
-   void service_app_terminate(void *data)
-   {
-       autofill_service_deinitialize();
-   }
-   ```
+   2. To receive each request, such as authentication request, fill request, and commit, register the callback functions:
 
-5. To receive each request, such as authentication request, fill request, and commit, register the callback functions:
+      ```c
+      bool service_app_create(void *data)
+      {
+          autofill_service_initialize();
 
-   ```c
-   bool service_app_create(void *data)
-   {
-       autofill_service_initialize();
+          autofill_service_set_auth_info_requested_cb(_auth_info_request_received_cb, NULL);
+          autofill_service_set_fill_requested_cb(_fill_request_received_cb, NULL);
+          autofill_service_set_commited_cb(_commit_received_cb, NULL);
 
-       autofill_service_set_auth_info_requested_cb(_auth_info_request_received_cb, NULL);
-       autofill_service_set_fill_requested_cb(_fill_request_received_cb, NULL);
-       autofill_service_set_commited_cb(_commit_received_cb, NULL);
+          return true;
+      }
+      ```
 
-       return true;
-   }
-   ```
-
-## Authentication Information
-
-To receive the request of authentication information, create a callback using the `autofill_service_set_auth_info_requested_cb()` function:
+## Receive Authentication Information
 
 1. To receive the request of authentication information, create a callback using the `autofill_service_set_auth_info_requested_cb()` function:
 
-   Perform the action to certificate to use a method such as **biometrics or entering password** in this callback function.
+   > **Note**
+   >
+   > Perform the action to certificate to use a method such as **biometrics or entering password** in this callback function.
 
     ```c
     static void _auth_info_request_received_cb(int context_id, autofill_view_info_h vi_h, void *user_data)
@@ -138,15 +131,15 @@ To receive the request of authentication information, create a callback using th
     }
     ```
 
-## Receiving request of autofill fill request and sending autofill fill response
+## Receive Fill Request and Send Fill Response
 
-1. To receive the autofill fill request, create a callback function using the `autofill_service_set_fill_requested_cb()` function and send the autofill fill response with the `autofill_service_send_fill_response()` function:
+1. To receive the fill request, create a callback function using the `autofill_service_set_fill_requested_cb()` function and send the fill response with the `autofill_service_send_fill_response()` function:
 
    > **Note**
    >
-   > Autofill service can have more than one autofill response for the view ID to be requested.
+   > Autofill Service can have more than one autofill response for the view ID to be requested.
    > To support this case, create autofill data group using the `autofill_fill_response_group_create()` function and fill the data in the each autofill response group.
-   > The following example code shows how to provide multiple autofill response data to have 2 autofill response to be consisted of user ID and user password:
+   > The following example code shows how to provide multiple autofill response data to have two autofill response to be consisted of user ID and user password:
 
     ```c
     static void _fill_request_received_cb(int context_id, autofill_view_info_h vi_h, void *user_data)
@@ -163,7 +156,7 @@ To receive the request of authentication information, create a callback using th
 
         /* Retrieve the stored user information */
 
-        /* Create autofill fill response */
+        /* Create fill response */
         autofill_fill_response_h fill_response_h;
         autofill_fill_response_create(&fill_response_h);
         autofill_fill_response_set_app_id(fill_response_h, app_id);
@@ -256,11 +249,9 @@ To receive the request of authentication information, create a callback using th
     }
     ```
 
-## Saving autofill data
+## Receive Request of Saving Autofill Data
 
-To receive the request of saving Autofill data, create the callback function using the `void _commit_received_cb()` function.
-
-1. To receive the request of saving Autofill data, create the callback function using the `void _commit_received_cb()` function.
+1. To receive the request of saving Autofill data, create the callback function using the `void _commit_received_cb()` function:
 
     ```c
     static void _commit_received_cb(int context_id, autofill_save_view_info_h vi_h, void *user_data)
@@ -287,7 +278,7 @@ To receive the request of saving Autofill data, create the callback function usi
     }
     ```
 
-2. Store the autofill data in a secure storage in the callback that received it:
+2. Store the autofill data received by the callback, in a secure storage:
 
     ```c
     static bool __save_item_cb(autofill_save_item_h it_h, void *user_data)
@@ -323,7 +314,19 @@ To receive the request of saving Autofill data, create the callback function usi
     }
     ```
 
+## Release Resources
+
+After you have finished working with the Autofill Service library, deinitialize the Autofill Service:
+
+   ```c
+   void service_app_terminate(void *data)
+   {
+       autofill_service_deinitialize();
+   }
+   ```
+
 ## Related Information
 
-* Dependencies
-  - Tizen 5.5 and Higher
+- Dependencies
+  - Tizen 5.5 and Higher for Mobile
+  - Tizen 5.5 and Higher for Wearable
