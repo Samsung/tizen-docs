@@ -145,7 +145,7 @@ appcontrol.ApplicationId = "org.tizen.TestApp";
 
 AppControl.SendLaunchRequest(appcontrol);
 ```
-If you want to request launching an AppControl asynchronously, you can use SendLaunchRequestAsync().
+If you want to launch an AppControl asynchronously, use SendLaunchRequestAsync().
 
 <a name="implicit"></a>
 ### Implicit Launch Request
