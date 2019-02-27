@@ -77,19 +77,22 @@
 <pre class="prettyprint">
 &lt;div id="indexscrollbar" class="ui-circularindexscrollbar"
      data-index="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"&gt;&lt;/div&gt;
-&lt;script&gt;
-   (function()
-   {
-      var elem = document.getElementById("indexscrollbar");
-      tau.widget.CircularIndexScrollbar(elem);
-      elem.addEventListener("select", function(event)
-      {
-         var index = event.detail.index;
-         /* Print selected index */
-         console.log(index);
-      });
-   }());
-&lt;/script&gt;
+</pre>
+
+<p>JS code:</p>
+
+<pre class="prettyprint">
+	   (function()
+	   {
+		  var elem = document.getElementById("indexscrollbar");
+		  tau.widget.CircularIndexScrollbar(elem);
+		  elem.addEventListener("select", function(event)
+		  {
+			 var index = event.detail.index;
+			 /* Print selected index */
+			 console.log(index);
+		  });
+	   }());
 </pre>
 
 <p>The index value can be retrieved by accessing event.detail.index property.</p>
@@ -120,9 +123,13 @@
       &lt;/ul&gt;
    &lt;/section&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   (function()
-   {
+</pre>
+
+<p>JS code:</p>
+
+<pre class="prettyprint">
+    (function()
+    {
       var page = document.getElementById("pageIndexScrollbar"),
           indexScrollbar;
 
@@ -182,10 +189,7 @@
          indexScrollbar.destroy();
       });
    }());
-&lt;/script&gt;
 </pre>
-
-
 
 	<h2><a id="options-list"></a>Options</h2>
 
@@ -304,17 +308,17 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
-							<pre name="code" class="examplecode
-							prettyprint">
+							<pre name="code" class="examplecode	prettyprint">
 &lt;div id="circularindexscrollbar"&gt;&lt;/div&gt;
-&lt;script&gt;
-   var circularindexElement = document.getElementById("circularindexscrollbar"),
+							</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var circularindexElement = document.getElementById("circularindexscrollbar"),
        circularIndexScrollbar = tau.widget.CircularIndexScrollbar(circularindexElement),
        /* Return current index value */
        value = circularIndexScrollbar.value();
    /* Set the index value */
    circularIndexScrollbar.value("C");
-&lt;/script&gt;
 </pre>
 						</div>
 
