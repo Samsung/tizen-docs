@@ -24,6 +24,7 @@ To obtain the information, query a feature or system key.
 
 - [Feature keys](#feature)
    - [Account](#account)
+   - [Accessibility](#accessibility)
    - [Application history](#apphistory)
    - [Attach panel](#attachpanel)
    - [Battery](#battery)
@@ -154,6 +155,17 @@ The following table lists the account feature keys:
 |-----------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/account`      | `bool` | The platform returns `true` for this key, if the device supports the Account Manager API. |
 | `http://tizen.org/feature/account.sync` | `bool` | The platform returns `true` for this key, if the device supports the Sync Manager API. |
+
+The following table lists the accessibility feature keys:
+
+<a name="accessibility"></a>
+**Table: Accessibility feature keys**
+
+| Key                                     | Type   | Description                              |
+|-----------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/accessibility.grayscale`` | `bool` | The platform returns `true` for this key, if the device supports the accessibility grayscale feature. |
+| `http://tizen.org/feature/accessibility.negative` | `bool` | The platform returns `true` for this key, if the device supports the accessibility negative feature. |
+
 
 The following table lists the application history feature keys:
 
