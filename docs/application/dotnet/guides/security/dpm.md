@@ -5,16 +5,16 @@ The Device Policy Management (DPM) framework supports enterprise applications by
 
 DPM consists of a device policy client library and a device policy manager. The device policy manager manages all device policies and provides interfaces for the device policy client library. The device policy client library contains the device administration functions the client application can call. Internally, the device policy client library communicates with the device policy manager using a built-in remote method invocation engine.
 
-The main features of the [Tizen.Security.DevicePolicyManager](#https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace include:
+The main features of the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace include:
 
 - Managing policies
 
-  You can [track the state between the device admin client and the device policy manager](#client_application) with the `DevicePolicyManager` class provided by the [Tizen.Security.DevicePolicyManager](#https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace.
+  You can [track the state between the device admin client and the device policy manager](#client_application) with the `DevicePolicyManager` class provided by the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace.
 
 
 - Checking restrictions
 
-  You can [check the restriction states of the device](#client_application), such as camera, microphone, Wi-Fi, Bluetooth, and USB, using the properties of the each policy classes provided by the [Tizen.Security.DevicePolicyManager](#https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace.
+  You can [check the restriction states of the device](#client_application), such as camera, microphone, Wi-Fi, Bluetooth, and USB, using the properties of the each policy classes provided by the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace.
 
 The following figure illustrates the DPM framework process.
 
@@ -24,7 +24,7 @@ The following figure illustrates the DPM framework process.
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.Security.DevicePolicyManager](#https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namesapce, include in your application:
+To use the methods and properties of the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namesapce, include in your application:
 
 ```
 using Tizen.Security.DevicePolicyManager;
