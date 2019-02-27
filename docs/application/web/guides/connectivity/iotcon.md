@@ -39,9 +39,9 @@ To enable your application to use the IoT functionality:
 2. To make your application visible in the Tizen Store only for devices that support Iotcon, the application must specify the following feature in the `config.xml` file:
 
    ```
-    <widget>
+   <widget>
        <feature name="http://tizen.org/feature/iot.ocf"/>
-    </widget>
+   </widget>
    ```
 
    Additionally, to double-check the for Iotcon API support while the application is running, use the `tizen.systeminfo.getCapability()` method and enable or disable the code that needs the API, as needed:

@@ -2,19 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>TVChannel API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVChannel API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVChannel">
-<div class="supported-platforms"><img title="Optional" src="../../../images/tv_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="tv-optional" title="Optional, Not supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>TVChannel API</h1></div>
 <div class="brief">
         </div>
 <div class="description">
         <p>
 The TV Channel API provides the control of channel change and
-a way to get information about the television program for supporting an Electronic Program Guide(EPG) or Interactive Program Guide(IPG).
+a way to get information about the television program for supporting an Electronic Program Guide (EPG) or Interactive Program Guide (IPG).
 Using this API, TV watchers can get continuously updated EPG information about the current and upcoming TV programs on all available channels.
         </p>
         <p>
@@ -22,11 +22,10 @@ Regarding tuning operation, there are some common behaviors.
         </p>
         <ul>
           <li>
-<var>errorCallback</var> will be invoked if there is no channel corresponding to the request          </li>
+<em>errorCallback</em> will be invoked if there is no channel corresponding to the request          </li>
         </ul>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
         </p>
 <h2>Table of Contents</h2>
@@ -161,14 +160,8 @@ Regarding tuning operation, there are some common behaviors.
 <div class="brief">
  An enumerator to indicate the tune mode.
           </div>
-<pre class="webidl prettyprint">    enum TuneMode {
-        "ALL",
-        "DIGITAL",
-        "ANALOG",
-        "FAVORITE"
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum TuneMode { "ALL", "DIGITAL", "ANALOG", "FAVORITE" };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -192,12 +185,8 @@ It determines the scope of channel navigation.
 <div class="brief">
  An enumerator to indicate the signal state.
           </div>
-<pre class="webidl prettyprint">    enum SignalState {
-        "SIGNAL_STATE_OK",
-        "SIGNAL_STATE_NO_SIGNAL"
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum SignalState { "SIGNAL_STATE_OK", "SIGNAL_STATE_NO_SIGNAL" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -214,14 +203,8 @@ It determines the scope of channel navigation.
 <div class="brief">
  An enumerator to indicate the broadcast standard.
           </div>
-<pre class="webidl prettyprint">    enum BroadcastStandard {
-        "ATSC",
-        "DVB",
-        "ISDB",
-        "SATELLITE"
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum BroadcastStandard { "ATSC", "DVB", "ISDB", "SATELLITE" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -245,12 +228,11 @@ SATELLITE - satellite standards            </li>
 <div class="brief">
  This interface defines what is instantiated by the <em>tizen</em> object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface TVChannelManager {
-        readonly attribute <a href="#ChannelManager">ChannelManager</a> tvchannel;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVChannelManager">TVChannelManager</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface TVChannelManager {
+    readonly attribute <a href="#ChannelManager">ChannelManager</a> tvchannel;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVChannelManager">TVChannelManager</a>;</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -265,61 +247,29 @@ functionality of the channel module.
 <div class="brief">
  This interface provides access to the API functionalities through the <em>tizen.tvchannel</em> interface.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface ChannelManager {
-
-        void tune(<a href="#TuneOption">TuneOption</a> tuneOption,
-                  <a href="#TuneCallback">TuneCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ChannelManager {
+    void tune(<a href="#TuneOption">TuneOption</a> tuneOption, <a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode,
+                optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode,
                   optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                    optional <a href="#TuneMode">TuneMode</a>? tuneMode,
-                    optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                      optional <a href="#TuneMode">TuneMode</a>? tuneMode,
-                      optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void findChannel(long major,
-                         long minor,
-                         <a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                            optional <a href="#TuneMode">TuneMode</a>? mode,
-                            optional long? nStart,
-                            optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#ChannelInfo">ChannelInfo</a> getCurrentChannel(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo,
-                            <a href="time.html#TZDate">TZDate</a> startTime,
-                            <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                            optional unsigned long? duration) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#ProgramInfo">ProgramInfo</a>? getCurrentProgram(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addChannelChangeListener(<a href="#ChannelChangeCallback">ChannelChangeCallback</a> callback,
-                                       optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeChannelChangeListener(long channelListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addSignalStateChangeListener(<a href="#SignalStateChangeCallback">SignalStateChangeCallback</a> callback
-                                       ) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeSignalStateChangeListener(long signalListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#FavoriteList">FavoriteList</a>[] getFavorites() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        
-        <a href="#BroadcastStandard">BroadcastStandard</a> getBroadcastStandard(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+    void findChannel(long major, long minor, <a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? mode,
+                        optional long? nStart, optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#ChannelInfo">ChannelInfo</a> getCurrentChannel(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="time.html#TZDate">TZDate</a> startTime, <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? duration) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#ProgramInfo">ProgramInfo</a>? getCurrentProgram(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addChannelChangeListener(<a href="#ChannelChangeCallback">ChannelChangeCallback</a> callback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChannelChangeListener(long channelListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addSignalStateChangeListener(<a href="#SignalStateChangeCallback">SignalStateChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeSignalStateChangeListener(long signalListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#FavoriteList">FavoriteList</a>[] getFavorites() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BroadcastStandard">BroadcastStandard</a> getBroadcastStandard(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -332,10 +282,8 @@ functionality of the channel module.
 <div class="brief">
  Tunes the specified channel.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void tune(<a href="#TuneOption">TuneOption</a> tuneOption, <a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void tune(<a href="#TuneOption">TuneOption</a> tuneOption, <a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -352,31 +300,29 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  UnknownError - Failed to set the selected channel or <em>onprograminforeceived</em> for another tune was invoked              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">tuneOption</span>: 
+<span class="name">tuneOption</span>:
  The tuning option. By default, this attribute is set to <b>null</b>.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when the tunning operation is completed successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
   The method to invoke when an error occurs.
                 </li>
           <li class="param">
-<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The window type. By default, this attribute is set to <var>MAIN</var>.
                 </li>
         </ul>
@@ -397,51 +343,49 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var tuneCB =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tuneCB =
 {
-   onsuccess: function()
-   {
-      console.log("Tune() is successfully done. And there is a signal.");
-   }
-   onnosignal: function()
-   {
-      console.log("Tune() is successfully done. But there is no signal.");
-   }
+  onsuccess: function()
+  {
+    console.log("tune() is successfully done and there is a signal");
+  }
+  onnosignal: function()
+  {
+    console.log("tune() is successfully done, but there is no signal");
+  }
 };
 
 function channelCB(channels)
 {
-   console.log("getting channels is successful. " + channels.length + " channels are retrieved.");
-   if (channels.length === 0)
-   {
-      console.log("There is no found channel.");
-
-      return;
-   }
-   try
-   {
-      tizen.tvchannel.tune({major: channels[0].major}, tuneCB);
-   }
-   catch (error)
-   {
-      console.log("Error name = " + error.name + ", Error message = " + error.message);
-   }
+  console.log("Getting channels is successful, " + channels.length + " channels retreived");
+  if (channels.length === 0)
+  {
+    console.log("No channel found");
+    return;
+  }
+  try
+  {
+    tizen.tvchannel.tune({major: channels[0].major}, tuneCB);
+  }
+  catch (error)
+  {
+    console.log("Error name: " + error.name + ", error message: " + error.message);
+  }
 }
 
 function errorCB(error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 
 try
 {
-   /* Requests to get information about 10 channels */
-   tizen.tvchannel.getChannelList(channelCB, errorCB, "ALL", 0, 10);
+  /* Gets information about first 10 channels. */
+  tizen.tvchannel.getChannelList(channelCB, errorCB, "ALL", 0, 10);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -453,10 +397,9 @@ catch (error)
 <div class="brief">
  Changes channel up.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode, optional <a href="tvwindow.html#WindowType">WindowType</a>? type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode, 
+            optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -473,31 +416,29 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  UnknownError - Failed to change to the next higher channel or <em>onprograminforeceived</em> for another tune was invoked              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when the tunning operation is completed successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The method to invoke when an error occurs.
                 </li>
           <li class="param">
-<span class="name">tuneMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">tuneMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The tuning navigation mode. By default, this attribute is set to <var>ALL</var>.
                 </li>
           <li class="param">
-<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The window type. By default, this attribute is set to <var>MAIN</var>.
                 </li>
         </ul>
@@ -518,26 +459,25 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var tuneCB =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tuneCB =
 {
-   onsuccess: function()
-   {
-      console.log("tuneUp() is successfully done. And there is a signal.");
-   }
-   onnosignal: function()
-   {
-      console.log("tuneUp() is successfully done. But there is no signal.");
-   }
+  onsuccess: function()
+  {
+    console.log("tuneUp() is successfully done and there is a signal");
+  }
+  onnosignal: function()
+  {
+    console.log("tuneUp() is successfully done, but there is no signal");
+  }
 };
 
 try
 {
-   tizen.tvchannel.tuneUp(tuneCB, null, "ALL");
+  tizen.tvchannel.tuneUp(tuneCB, null, "ALL");
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -549,10 +489,9 @@ catch (error)
 <div class="brief">
  Changes channel down.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode, optional <a href="tvwindow.html#WindowType">WindowType</a>? type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode, 
+              optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -569,31 +508,29 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  UnknownError - Failed to change to the next lower channel or <em>onprograminforeceived</em> for another tune was invoked              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when the tunning operation is completed successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
   The method to invoke when an error occurs.
                 </li>
           <li class="param">
-<span class="name">tuneMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">tuneMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The tuning navigation mode. By default, this attribute is set to <var>ALL</var>.
                 </li>
           <li class="param">
-<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The window type. By default, this attribute is set to <var>MAIN</var>.
                 </li>
         </ul>
@@ -614,27 +551,26 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var tuneCB =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var tuneCB =
 {
-   onsuccess: function()
-   {
-      console.log("tuneDown() is successfully done. And there is a signal.");
-   }
-   onnosignal: function()
-   {
-      console.log("tuneDown() is successfully done. But there is no signal.");
-   }
+  onsuccess: function()
+  {
+    console.log("tuneDown() is successfully done and there is a signal");
+  }
+  onnosignal: function()
+  {
+    console.log("tuneDown() is successfully done, but there is no signal");
+  }
 };
 
 try
 {
-   /* Change the channel down according to 'ALL' navigation mode */
-   tizen.tvchannel.tuneDown(tuneCB);
+  /* Changes the channel down according to 'ALL' navigation mode. */
+  tizen.tvchannel.tuneDown(tuneCB);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -646,10 +582,8 @@ catch (error)
 <div class="brief">
  Retrieves information about all available channels.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findChannel(long major, long minor, <a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void findChannel(long major, long minor, <a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -661,31 +595,29 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  NotFoundError - Failed to find the channel (e.g. call <var>findChannel()</var> with invalid major and minor values(e.g. non-existing channel information))              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">major</span>: 
- The major channel number
+<span class="name">major</span>:
+ The major channel number.
                 </li>
           <li class="param">
-<span class="name">minor</span>: 
- The minor channel number
+<span class="name">minor</span>:
+ The minor channel number.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when the channel searching is done successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The method to invoke when an error occurs.
                 </li>
         </ul>
@@ -706,28 +638,27 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successCB(channels)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCB(channels)
 {
-   console.log("findChannel() is successfully done. Totally " + channels.length + " channels are found.");
-   for (var i = 0; i &lt; channels.length; i++)
-   {
-      console.log("----- Channel [" + i + "] -----");
-      console.log("Major channel = " + channels[i].major);
-      console.log("Minor channel = " + channels[i].minor);
-      console.log("Channel Name = " + channels[i].channelName);
-      console.log("Program Number = " + channels[i].programNumber);
-      /* You can get other attributes provided in ChannelInfo */
-   }
+  console.log("findChannel() is successfully done, " + channels.length + " channels found");
+  for (var i = 0; i &lt; channels.length; i++)
+  {
+    console.log("----- Channel [" + i + "] -----");
+    console.log("Major channel: " + channels[i].major);
+    console.log("Minor channel: " + channels[i].minor);
+    console.log("Channel Name: " + channels[i].channelName);
+    console.log("Program Number: " + channels[i].programNumber);
+    /* You can get other attributes provided in ChannelInfo. */
+  }
 }
 
 try
 {
-   tizen.tvchannel.findChannel(9, 0, successCB);
+  tizen.tvchannel.findChannel(9, 0, successCB);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -739,10 +670,9 @@ catch (error)
 <div class="brief">
  Gets the TV channel list.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? mode, optional long? nStart, optional long? number);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? mode, 
+                    optional long? nStart, optional long? number);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -766,36 +696,34 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  NotFoundError - Failed to find the channels              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when a list of tv channels is retrieved successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The method to invoke when an error occurs.
                 </li>
           <li class="param">
-<span class="name">mode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">mode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The channel navigation mode. By default, this attribute is set to <var>ALL</var>.
                 </li>
           <li class="param">
-<span class="name">nStart</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">nStart</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The starting index. By default, this attribute is set to <var>0</var>.
 <br> If <var>nStart</var> is a negative number, InvalidValuesError will occur.
                 </li>
           <li class="param">
-<span class="name">number</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">number</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The number of the channel informations to retrieve. Without <var>number</var>, all vailable channel informations will be retrieved.
 <br> If <var>number</var> is a negative number, InvalidValuesError will occur.
                 </li>
@@ -820,56 +748,56 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successCB(channels)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCB(channels)
 {
-   console.log("getChannelList() is successfully done. Totally " + channels.length + " channels are retrieved.");
-   for (var i = 0; i &lt; channels.length; i++)
-   {
-      console.log("----- Channel [" + i + "] -----");
-      console.log("Major channel = " + channels[i].major);
-      console.log("Minor channel = " + channels[i].minor);
-      console.log("Channel Name = " + channels[i].channelName);
-      console.log("Program Number = " + channels[i].programNumber);
-      /* You can get other attributes provided in ChannelInfo */
-   }
+  console.log("getChannelList() is successfully done. Totally " + channels.length +
+              " channels are retrieved.");
+  for (var i = 0; i &lt; channels.length; i++)
+  {
+    console.log("----- Channel [" + i + "] -----");
+    console.log("Major channel: " + channels[i].major);
+    console.log("Minor channel: " + channels[i].minor);
+    console.log("Channel Name: " + channels[i].channelName);
+    console.log("Program Number: " + channels[i].programNumber);
+    /* You can get other attributes provided in ChannelInfo. */
+  }
 }
 
 try
 {
-   /* Gets 10 channel information among all channels */
-   tizen.tvchannel.getChannelList(successCB, null, "ALL", 0, 10);
+  /* Gets information about first 10 channels. */
+  tizen.tvchannel.getChannelList(successCB, null, "ALL", 0, 10);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successCB(channels)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCB(channels)
 {
-   console.log("getChannelList() is successfully done. Totally " + channels.length + " channels are retrieved.");
-   for (var i = 0; i &lt; channels.length; i++)
-   {
-      console.log("----- Channel [" + i + "] -----");
-      console.log("Major channel = " + channels[i].major);
-      console.log("Minor channel = " + channels[i].minor);
-      console.log("Channel Name = " + channels[i].channelName);
-      console.log("Program Number = " + channels[i].programNumber);
-      /* You can get other attributes provided in ChannelInfo */
-   }
+  console.log("getChannelList() is successfully done. Totally " + channels.length +
+              " channels are retrieved.");
+  for (var i = 0; i &lt; channels.length; i++)
+  {
+    console.log("----- Channel [" + i + "] -----");
+    console.log("Major channel: " + channels[i].major);
+    console.log("Minor channel: " + channels[i].minor);
+    console.log("Channel Name: " + channels[i].channelName);
+    console.log("Program Number: " + channels[i].programNumber);
+    /* You can get other attributes provided in ChannelInfo. */
+  }
 }
 
 try
 {
-   /* Gets one digital channel */
-   tizen.tvchannel.getChannelList(successCB, null, "DIGITAL", 0, 1);
+  /* Gets one digital channel. */
+  tizen.tvchannel.getChannelList(successCB, null, "DIGITAL", 0, 1);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -881,33 +809,33 @@ catch (error)
 <div class="brief">
  Gets information about the current channel.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#ChannelInfo">ChannelInfo</a> getCurrentChannel(optional <a href="tvwindow.html#WindowType">WindowType</a>? type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ChannelInfo">ChannelInfo</a> getCurrentChannel(optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The window type. By default, this attribute is set to <var>MAIN</var>.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- ChannelInfo the current channel information
-              </div>
+<ul>
+<span class="return">ChannelInfo:
+                  </span>
+ ChannelInfo the current channel information.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -924,16 +852,15 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var channel = tizen.tvchannel.getCurrentChannel();
-   console.log("The current channel name is " + channel.channelName);
-   console.log("The current channel's major number is " + channel.major);
+  var channel = tizen.tvchannel.getCurrentChannel();
+  console.log("The current channel name is " + channel.channelName);
+  console.log("The current channel's major number is " + channel.major);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -946,10 +873,9 @@ catch (error)
  Gets a list of programs for a specific channel within a specified time duration.
 If this method is invoked without the <var>duration</var> parameter, all available program informations are retrieved.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="time.html#TZDate">TZDate</a> startTime, <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? duration);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="time.html#TZDate">TZDate</a> startTime, <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback, 
+                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? duration);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -961,38 +887,36 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  NotFoundError - Failed to retrieve any information about the TV program              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  If a specified channel has never been tuned before, you cannot get a information about the programs. It will retrieve be empty array through ProgramListSuccessCallback.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">channelInfo</span>: 
- The channel
+<span class="name">channelInfo</span>:
+ The channel.
                 </li>
           <li class="param">
-<span class="name">startTime</span>: 
+<span class="name">startTime</span>:
  The starting time to search programs.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when a list of programs is retrieved successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
   The method to invoke when an error occurs.
                 </li>
           <li class="param">
-<span class="name">duration</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">duration</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The duration to search programs.(unit: hour) Without <var>duration</var> value, all available program informations are retrieved.
                 </li>
         </ul>
@@ -1013,28 +937,27 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function programListCB(programInfos)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function programListCB(programInfos)
 {
-   console.log("getting all available programs is successfully retrieved.");
-   for (var i = 0; i &lt; programInfos.length; i++)
-   {
-      console.log("--------------- Program " + i + " ---------------");
-      console.log("title = " + programInfos[i].title);
-      console.log("duration = " + programInfos[i].duration);
-      /* You can get other attributes in the retrieved ProgramInfo objects */
-   }
+  console.log("Programs successfully retrieved");
+  for (var i = 0; i &lt; programInfos.length; i++)
+  {
+    console.log("--------------- Program " + i + " ---------------");
+    console.log("title: " + programInfos[i].title);
+    console.log("duration: " + programInfos[i].duration);
+    /* You can get other attributes in the retrieved ProgramInfo objects */
+  }
 }
 
 try
 {
-   var channel = tizen.tvchannel.getCurrentChannel();
-   /* Get all available program information */
-   tizen.tvchannel.getProgramList(channel, tizen.time.getCurrentDateTime(), programListCB);
+  var channel = tizen.tvchannel.getCurrentChannel();
+  /* Gets all available program information. */
+  tizen.tvchannel.getProgramList(channel, tizen.time.getCurrentDateTime(), programListCB);
 }
 catch (error)
 {
-   console.log(error.name);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -1046,10 +969,8 @@ catch (error)
 <div class="brief">
  Gets information about the current television program.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#ProgramInfo">ProgramInfo</a>? getCurrentProgram(optional <a href="tvwindow.html#WindowType">WindowType</a>? type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#ProgramInfo">ProgramInfo</a>? getCurrentProgram(optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1057,27 +978,29 @@ catch (error)
 If there is no TV program data grabbed from broadcaster, it will return <var>null</var>.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The window type. By default, this attribute is set to <var>MAIN</var>.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- ProgramInfo the information of television program
-              </div>
+<ul>
+<span class="return">ProgramInfo:
+                  </span>
+ ProgramInfo the information of television program.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1094,15 +1017,14 @@ If there is no TV program data grabbed from broadcaster, it will return <var>nul
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var program = tizen.tvchannel.getCurrentProgram();
-   console.log("The current program is titled " + program.title);
+  var program = tizen.tvchannel.getCurrentProgram();
+  console.log("Title of current program: " + program.title);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -1114,37 +1036,37 @@ catch (error)
 <div class="brief">
  Adds a channel change listener for getting notified about the channel changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addChannelChangeListener(<a href="#ChannelChangeCallback">ChannelChangeCallback</a> callback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addChannelChangeListener(<a href="#ChannelChangeCallback">ChannelChangeCallback</a> callback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">callback</span>: 
- The method to invoke when the channel has been changed
+<span class="name">callback</span>:
+ The method to invoke when the channel has been changed.
                 </li>
           <li class="param">
-<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The window type. By default, this attribute is set to <var>MAIN</var>.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:
+                  </span>
  long The identifier to clear the watch subscription for channel changes.
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1164,20 +1086,19 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function channelChangeCB(channelInfo, type)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function channelChangeCB(channelInfo, type)
 {
-   console.log("Switched to the new channel (major = " + channelInfo.major + ", minor = " + channelInfo.minor +
-               ", channel name = " + channelInfo.channelName);
+  console.log("Switched to the new channel (major: " + channelInfo.major + ", minor: " +
+              channelInfo.minor + "), channel name: " + channelInfo.channelName);
 }
 
 try
 {
-   var channelListenerID = tizen.tvchannel.addChannelChangeListener(channelChangeCB);
+  var channelListenerID = tizen.tvchannel.addChannelChangeListener(channelChangeCB);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -1189,26 +1110,27 @@ catch (error)
 <div class="brief">
  Removes the listener to stop receiving notifications for the channel changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeChannelChangeListener(long channelListenerId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeChannelChangeListener(long channelListenerId);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<div class="description">
+            <p>
+Calling this function has no effect if there is no listener with given id.
+            </p>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">channelListenerId</span>: 
- The identifier of the listener for channel changes
+<span class="name">channelListenerId</span>:
+ The identifier of the listener for channel changes.
                 </li>
         </ul>
 </div>
@@ -1238,33 +1160,33 @@ catch (error)
 <div class="brief">
  Adds a signal state change listener for getting notified about signal state changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addSignalStateChangeListener(<a href="#SignalStateChangeCallback">SignalStateChangeCallback</a> callback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addSignalStateChangeListener(<a href="#SignalStateChangeCallback">SignalStateChangeCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">callback</span>: 
- The method to invoke when the signal state has been changed
+<span class="name">callback</span>:
+ The method to invoke when the signal state has been changed.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:
+                  </span>
  long The identifier to clear the watch subscription for signal state changes.
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1281,19 +1203,19 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function signalStateChangeCB(state)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function signalStateChangeCB(state)
 {
-   console.log("Signal state changed to: " + state);
+  console.log("Signal state changed to: " + state);
 }
 
 try
 {
-   var signalStateChangeListenerID = tizen.tvchannel.addSignalStateChangeListener(signalStateChangeCB);
+  var signalStateChangeListenerID =
+      tizen.tvchannel.addSignalStateChangeListener(signalStateChangeCB);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -1305,26 +1227,27 @@ catch (error)
 <div class="brief">
  Removes the listener to stop receiving notifications about signal state changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeSignalStateChangeListener(long signalListenerId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeSignalStateChangeListener(long signalListenerId);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<div class="description">
+            <p>
+Calling this function has no effect if there is no listener with given id.
+            </p>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">signalListenerId</span>: 
- The identifier of the listener for signal state changes
+<span class="name">signalListenerId</span>:
+ The identifier of the listener for signal state changes.
                 </li>
         </ul>
 </div>
@@ -1348,10 +1271,8 @@ catch (error)
 <div class="brief">
  Gets a list of available favorite lists.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#FavoriteList">FavoriteList</a>[] getFavorites();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#FavoriteList">FavoriteList</a>[] getFavorites();</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -1359,18 +1280,20 @@ catch (error)
 The returned array will contain at least one <a href="#FavoriteList">FavoriteList</a>. It will also contain any empty favorite lists.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">FavoriteList[]:
+                  </span>
  FavoriteList[] The array of favorite lists.
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -1384,18 +1307,17 @@ The returned array will contain at least one <a href="#FavoriteList">FavoriteLis
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var favorites = tizen.tvchannel.getFavorites();
-   for (var i = 0; i &lt; favorites.length; ++i)
-   {
-      console.log("Favorite id: " + favorites[i].id);
-   }
+  var favorites = tizen.tvchannel.getFavorites();
+  for (var i = 0; i &lt; favorites.length; ++i)
+  {
+    console.log("Favorite id: " + favorites[i].id);
+  }
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -1407,25 +1329,21 @@ catch (error)
 <div class="brief">
  Gets the video broadcast standard.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#BroadcastStandard">BroadcastStandard</a> getBroadcastStandard(optional <a href="tvwindow.html#WindowType">WindowType</a>? type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#BroadcastStandard">BroadcastStandard</a> getBroadcastStandard(optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">type</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The window type. By default, this attribute is set to <var>MAIN</var>.
                 </li>
         </ul>
@@ -1446,8 +1364,7 @@ catch (error)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var res = tizen.tvchannel.getBroadcastStandard();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var res = tizen.tvchannel.getBroadcastStandard();
 console.log("Video standard: " + res);
 </pre>
 </div>
@@ -1460,11 +1377,10 @@ console.log("Video standard: " + res);
 <div class="brief">
  This interface invokes the success callback that is invoked when the list of TV program informations is successfully retrieved.
           </div>
-<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
-        void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
+    void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -1477,18 +1393,16 @@ console.log("Video standard: " + res);
 <div class="brief">
  The method invoked when the list of TV program informations is retrieved.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">programInfos</span>: 
- A list of TV program informations of a channel
+<span class="name">programInfos</span>:
+ A list of TV program informations of a channel.
                 </li>
         </ul>
 </div>
@@ -1501,11 +1415,10 @@ console.log("Video standard: " + res);
 <div class="brief">
  The interface invokes the success callback that is invoked when all available channels are searched.
           </div>
-<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
-        void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
+    void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -1518,18 +1431,16 @@ console.log("Video standard: " + res);
 <div class="brief">
  Method invoked when all channels are found.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">channelInfos</span>: 
- A list of channel Informations
+<span class="name">channelInfos</span>:
+ A list of channel Informations.
                 </li>
         </ul>
 </div>
@@ -1542,11 +1453,10 @@ console.log("Video standard: " + res);
 <div class="brief">
  The interface defines a channel change callback for getting notified information about the channel changes.
           </div>
-<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
-        void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
+    void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -1559,22 +1469,20 @@ console.log("Video standard: " + res);
 <div class="brief">
  Method invoked when the channel has been changed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">channelInfo</span>: 
- The switched channel information
+<span class="name">channelInfo</span>:
+ The switched channel information.
                 </li>
           <li class="param">
-<span class="name">type</span>: 
- The window type
+<span class="name">type</span>:
+ The window type.
                 </li>
         </ul>
 </div>
@@ -1587,11 +1495,10 @@ console.log("Video standard: " + res);
 <div class="brief">
  The interface defines a signal state change callback for getting notified information about signal state changes.
           </div>
-<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
-        void onchanged(<a href="#SignalState">SignalState</a> state);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
+    void onchanged(<a href="#SignalState">SignalState</a> state);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -1604,17 +1511,15 @@ console.log("Video standard: " + res);
 <div class="brief">
  Method invoked when the signal state has been changed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#SignalState">SignalState</a> state);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#SignalState">SignalState</a> state);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">state</span>: 
+<span class="name">state</span>:
  The changed signal state.
                 </li>
         </ul>
@@ -1628,15 +1533,12 @@ console.log("Video standard: " + res);
 <div class="brief">
  This interface invokes the callback that is invoked when the tuning has been completed.
           </div>
-<pre class="webidl prettyprint">    [Callback, NoInterfaceObject] interface TuneCallback {
-        void onsuccess(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tvwindow.html#WindowType">WindowType</a> type);
-
-        void onnosignal();
-
-        void onprograminforeceived(<a href="#ProgramInfo">ProgramInfo</a> program, <a href="tvwindow.html#WindowType">WindowType</a> type);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface TuneCallback {
+    void onsuccess(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tvwindow.html#WindowType">WindowType</a> type);
+    void onnosignal();
+    void onprograminforeceived(<a href="#ProgramInfo">ProgramInfo</a> program, <a href="tvwindow.html#WindowType">WindowType</a> type);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -1670,22 +1572,20 @@ But on the other hand, if there is no TV signal, <b>onnosignal()</b> will be inv
 <div class="brief">
  Method invoked when the tuning is successfully done.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tvwindow.html#WindowType">WindowType</a> type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tvwindow.html#WindowType">WindowType</a> type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">channel</span>: 
- The tuned channel information
+<span class="name">channel</span>:
+ The tuned channel information.
                 </li>
           <li class="param">
-<span class="name">type</span>: 
- The window type
+<span class="name">type</span>:
+ The window type.
                 </li>
         </ul>
 </div>
@@ -1697,10 +1597,8 @@ But on the other hand, if there is no TV signal, <b>onnosignal()</b> will be inv
 <div class="brief">
  Method invoked when the tuning is successfully done but there is no signal on the switched channel.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onnosignal();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onnosignal();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
@@ -1711,10 +1609,8 @@ But on the other hand, if there is no TV signal, <b>onnosignal()</b> will be inv
 <div class="brief">
  Method invoked when information about the current program is available after the tune operation
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onprograminforeceived(<a href="#ProgramInfo">ProgramInfo</a> program, <a href="tvwindow.html#WindowType">WindowType</a> type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onprograminforeceived(<a href="#ProgramInfo">ProgramInfo</a> program, <a href="tvwindow.html#WindowType">WindowType</a> type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -1726,12 +1622,12 @@ If there is no TV program data grabbed from broadcaster, <var>onprograminreceive
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">program</span>: 
- the information about program on offer from The tuned channel
+<span class="name">program</span>:
+ the information about program on offer from The tuned channel.
                 </li>
           <li class="param">
-<span class="name">type</span>: 
- The window type
+<span class="name">type</span>:
+ The window type.
                 </li>
         </ul>
 </div>
@@ -1744,25 +1640,17 @@ If there is no TV program data grabbed from broadcaster, <var>onprograminreceive
 <div class="brief">
  This dictionary specifies the tunning option.
           </div>
-<pre class="webidl prettyprint">    dictionary TuneOption {
-        long? major;
-
-        long? minor;
-
-        long? sourceID;
-
-        long? programNumber;
-
-        long? transportStreamID;
-
-        long? ptc;
-
-        long? originalNetworkID;
-
-        DOMString? providerMBR;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  dictionary TuneOption {
+    long? major;
+    long? minor;
+    long? sourceID;
+    long? programNumber;
+    long? transportStreamID;
+    long? ptc;
+    long? originalNetworkID;
+    DOMString? providerMBR;
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -1775,8 +1663,7 @@ If there is no TV program data grabbed from broadcaster, <var>onprograminreceive
 <br>The first number in a two-part number used to identify a virtual channel.
 Each virtual channel carries one service, such as a television program.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
@@ -1787,8 +1674,7 @@ Each virtual channel carries one service, such as a television program.
 <br>The second number in a two-part number used to identify a virtual channel.
 The minor number changes for each different service that is or will be present in a DTV transport stream.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
@@ -1802,8 +1688,7 @@ The minor number changes for each different service that is or will be present i
 It is a number that uniquely identifies a source of scheduled programming.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
@@ -1812,8 +1697,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 <div class="brief">
  Program number
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
@@ -1822,18 +1706,16 @@ It is a number that uniquely identifies a source of scheduled programming.
 <div class="brief">
  TSID (Transport Stream ID or transmission signal ID)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
 <dt class="member" id="TuneOption::ptc"><span class="attrName">long? ptc</span></dt>
 <dd>
 <div class="brief">
- PTC(Physical Transmission Channel) number
+ PTC Physical Transmission Channel) number
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
@@ -1842,19 +1724,20 @@ It is a number that uniquely identifies a source of scheduled programming.
 <div class="brief">
  Original network ID
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </dd>
 <dt class="member" id="TuneOption::providerMBR"><span class="attrName">DOMString? providerMBR</span></dt>
 <dd>
 <div class="brief">
- Multi-brand remote control provider name
+ The set-top box provider name for a multi-brand remote control
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>providerMBR</em> is only supported by the <a href="#ChannelManager::tune">tune()</a> method.
             </p>
 </dd>
 </dl>
@@ -1865,29 +1748,19 @@ It is a number that uniquely identifies a source of scheduled programming.
 <div class="brief">
  This interface represents the object for identifying a TV channel.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface ChannelInfo {
-        readonly attribute long major;
-
-        readonly attribute long minor;
-
-        readonly attribute DOMString channelName;
-
-        readonly attribute long programNumber;
-
-        readonly attribute long ptc;
-
-        readonly attribute long lcn;
-
-        readonly attribute long sourceID;
-
-        readonly attribute long transportStreamID;
-
-        readonly attribute long originalNetworkID;
-
-        readonly attribute DOMString serviceName;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ChannelInfo {
+    readonly attribute long major;
+    readonly attribute long minor;
+    readonly attribute DOMString channelName;
+    readonly attribute long programNumber;
+    readonly attribute long ptc;
+    readonly attribute long lcn;
+    readonly attribute long sourceID;
+    readonly attribute long transportStreamID;
+    readonly attribute long originalNetworkID;
+    readonly attribute DOMString serviceName;
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -1900,8 +1773,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 <br>The first number in a two-part number used to identify a virtual channel.
 Each virtual channel carries one service, such as a television program.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1912,8 +1784,7 @@ Each virtual channel carries one service, such as a television program.
 <br>The second number in a two-part number used to identify a virtual channel.
 The minor number changes for each different service that is or will be present in a DTV transport stream.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1922,8 +1793,7 @@ The minor number changes for each different service that is or will be present i
 </span><span class="type">DOMString </span><span class="name">channelName</span></span><div class="brief">
  Channel Name to represent the station's indentity
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1932,18 +1802,16 @@ The minor number changes for each different service that is or will be present i
 </span><span class="type">long </span><span class="name">programNumber</span></span><div class="brief">
  Program number
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
 <li class="attribute" id="ChannelInfo::ptc">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">ptc</span></span><div class="brief">
- PTC(Physical Transmission Channel) number
+ PTC (Physical Transmission Channel) number
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1951,10 +1819,9 @@ The minor number changes for each different service that is or will be present i
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">lcn</span></span><div class="brief">
  The logical channel number
-<br>It is used in DVB(Digital Video Broadcasting) standards for digital television.
+<br>It is used in DVB (Digital Video Broadcasting) standards for digital television.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1968,8 +1835,7 @@ The minor number changes for each different service that is or will be present i
 It is a number that uniquely identifies a source of scheduled programming.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1978,8 +1844,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">long </span><span class="name">transportStreamID</span></span><div class="brief">
  TSID (Transport Stream ID or transmission signal ID)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1988,8 +1853,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">long </span><span class="name">originalNetworkID</span></span><div class="brief">
  Original Network ID
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -1998,8 +1862,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">DOMString </span><span class="name">serviceName</span></span><div class="brief">
  Service Name
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2011,21 +1874,15 @@ It is a number that uniquely identifies a source of scheduled programming.
 <div class="brief">
  This interface represents information about the television program.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface ProgramInfo {
-        readonly attribute DOMString title;
-
-        readonly attribute <a href="time.html#TZDate">TZDate</a> startTime;
-
-        readonly attribute long duration;
-
-        readonly attribute DOMString? detailedDescription;
-
-        readonly attribute DOMString? language;
-
-        readonly attribute DOMString? rating;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface ProgramInfo {
+    readonly attribute DOMString title;
+    readonly attribute <a href="time.html#TZDate">TZDate</a> startTime;
+    readonly attribute long duration;
+    readonly attribute DOMString? detailedDescription;
+    readonly attribute DOMString? language;
+    readonly attribute DOMString? rating;
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="attributes">
@@ -2036,8 +1893,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
  The program title
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2046,8 +1902,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">TZDate </span><span class="name">startTime</span></span><div class="brief">
  The program start time
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2056,8 +1911,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">long </span><span class="name">duration</span></span><div class="brief">
  The duration of the program
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2066,8 +1920,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">DOMString </span><span class="name">detailedDescription</span><span class="optional"> [nullable]</span></span><div class="brief">
  A detailed description of the program's content.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2076,8 +1929,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">DOMString </span><span class="name">language</span><span class="optional"> [nullable]</span></span><div class="brief">
  Language information
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2086,8 +1938,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">DOMString </span><span class="name">rating</span><span class="optional"> [nullable]</span></span><div class="brief">
  Rating information
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
             </p>
 </li>
@@ -2099,23 +1950,16 @@ It is a number that uniquely identifies a source of scheduled programming.
 <div class="brief">
  This interface represents a favorite list.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface FavoriteList {
-        readonly attribute long id;
-
-        void addChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void removeChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                            optional long? nStart,
-                            optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface FavoriteList {
+    readonly attribute long id;
+    void addChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? nStart,
+                     optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="attributes">
@@ -2125,8 +1969,7 @@ It is a number that uniquely identifies a source of scheduled programming.
 </span><span class="type">long </span><span class="name">id</span></span><div class="brief">
  The ID of favorite list.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li></ul>
@@ -2141,10 +1984,8 @@ It is a number that uniquely identifies a source of scheduled programming.
 <div class="brief">
  Adds a channel to a specific favorite list.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void addChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -2159,27 +2000,25 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  UnknownError - In case of unknown error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">channel</span>: 
+<span class="name">channel</span>:
  The channel to add.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when the channel is added successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The method to invoke when an error occurs.
                 </li>
         </ul>
@@ -2194,28 +2033,29 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in case of unknown error
+ with error type UnknownError in case of unknown error.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var favorites = tizen.tvchannel.getFavorites();
-   var channel = tizen.tvchannel.getCurrentChannel();
-   favorites[0].addChannel(channel, function()
-   {
-      console.log("Channel added");
-   }, function(error)
-   {
-      console.log("Error callback: name = " + error.name + ", Error message = " + error.message);
-   });
+  var favorites = tizen.tvchannel.getFavorites();
+  var channel = tizen.tvchannel.getCurrentChannel();
+  favorites[0].addChannel(channel,
+      function()
+      {
+        console.log("Channel added");
+      },
+      function(error)
+      {
+        console.log("Error callback, name: " + error.name + ", error message: " + error.message);
+      });
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -2227,10 +2067,8 @@ catch (error)
 <div class="brief">
  Removes a channel from a specific favorite list.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -2245,27 +2083,25 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  UnknownError - In case of unknown error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">channel</span>: 
+<span class="name">channel</span>:
  The channel to remove.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when the channel is removed successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The method to invoke when an error occurs.
                 </li>
         </ul>
@@ -2280,28 +2116,29 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in case of unknown error
+ with error type UnknownError in case of unknown error.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var favorites = tizen.tvchannel.getFavorites();
-   var channel = tizen.tvchannel.getCurrentChannel();
-   favorites[0].removeChannel(channel, function()
-   {
-      console.log("Channel removed");
-   }, function(error)
-   {
-      console.log("Error callback: name = " + error.name + ", Error message = " + error.message);
-   });
+  var favorites = tizen.tvchannel.getFavorites();
+  var channel = tizen.tvchannel.getCurrentChannel();
+  favorites[0].removeChannel(channel,
+      function()
+      {
+        console.log("Channel removed");
+      },
+      function(error)
+      {
+        console.log("Error callback, name: " + error.name + ", error message: " + error.message);
+      });
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -2313,10 +2150,9 @@ catch (error)
 <div class="brief">
  Gets the list of TV channels in a specific favorite list.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? nStart, optional long? number);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? nStart, 
+                 optional long? number);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -2331,32 +2167,30 @@ The <em>ErrorCallback</em> will be launched in the following situations:
  UnknownError - In case of unknown error              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.channel
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span>: 
+<span class="name">successCallback</span>:
  The method to invoke when a list of TV channels is retrieved successfully.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The method to invoke when an error occurs.
                 </li>
           <li class="param">
-<span class="name">nStart</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">nStart</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The starting index. By default, this attribute is set to <var>0</var>.
 <br> If <var>nStart</var> is a negative number, the InvalidValuesError exception will occur
                 </li>
           <li class="param">
-<span class="name">number</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
+<span class="name">number</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
  The number of channels to retrieve. Without <var>number</var>, all channels in the favorite list will be retrieved..
 <br> A negative nStart will cause InvalidValuesError.
                 </li>
@@ -2378,30 +2212,29 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successCB(channels)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCB(channels)
 {
-   console.log("Totally " + channels.length + " channels are retrieved.");
-   for (var i = 0; i &lt; channels.length; i++)
-   {
-      console.log("----- Channel [" + i + "] -----");
-      console.log("Major channel = " + channels[i].major);
-      console.log("Minor channel = " + channels[i].minor);
-      console.log("Channel Name = " + channels[i].channelName);
-      console.log("Program Number = " + channels[i].programNumber);
-      /* You can get other attributes provided in ChannelInfo */
-   }
+  for (var i = 0; i &lt; channels.length; i++)
+  {
+    console.log("Totally " + channels.length + " channels are retrieved.");
+    console.log("----- Channel [" + i + "] -----");
+    console.log("Major channel: " + channels[i].major);
+    console.log("Minor channel: " + channels[i].minor);
+    console.log("Channel Name: " + channels[i].channelName);
+    console.log("Program Number: " + channels[i].programNumber);
+    /* You can get other attributes provided in ChannelInfo. */
+  }
 }
 
 try
 {
-   var favorites = tizen.tvchannel.getFavorites();
-   /* Gets channel information for 10 channels */
-   favorites[0].getChannels(successCB, null, 0, 10);
+  var favorites = tizen.tvchannel.getFavorites();
+  /* Gets information about first 10 channels. */
+  favorites[0].getChannels(successCB, null, 0, 10);
 }
 catch (error)
 {
-   console.log("Error name = " + error.name + ", Error message = " + error.message);
+  console.log("Error name: " + error.name + ", error message: " + error.message);
 }
 </pre>
 </div>
@@ -2412,7 +2245,7 @@ catch (error)
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -2426,178 +2259,91 @@ To guarantee the running of this application on a device with a tuner, define th
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVChannel {
-
-    enum TuneMode {
-        "ALL",
-        "DIGITAL",
-        "ANALOG",
-        "FAVORITE"
-    };
-
-    enum SignalState {
-        "SIGNAL_STATE_OK",
-        "SIGNAL_STATE_NO_SIGNAL"
-    };
-
-    enum BroadcastStandard {
-        "ATSC",
-        "DVB",
-        "ISDB",
-        "SATELLITE"
-    };
-
-    [NoInterfaceObject] interface TVChannelManager {
-        readonly attribute <a href="#ChannelManager">ChannelManager</a> tvchannel;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVChannelManager">TVChannelManager</a>;
-
-    [NoInterfaceObject] interface ChannelManager {
-
-        void tune(<a href="#TuneOption">TuneOption</a> tuneOption,
-                  <a href="#TuneCallback">TuneCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+  enum TuneMode { "ALL", "DIGITAL", "ANALOG", "FAVORITE" };
+  enum SignalState { "SIGNAL_STATE_OK", "SIGNAL_STATE_NO_SIGNAL" };
+  enum BroadcastStandard { "ATSC", "DVB", "ISDB", "SATELLITE" };
+  [NoInterfaceObject] interface TVChannelManager {
+    readonly attribute <a href="#ChannelManager">ChannelManager</a> tvchannel;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVChannelManager">TVChannelManager</a>;
+  [NoInterfaceObject] interface ChannelManager {
+    void tune(<a href="#TuneOption">TuneOption</a> tuneOption, <a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type)
+              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode,
+                optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode,
                   optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                    optional <a href="#TuneMode">TuneMode</a>? tuneMode,
-                    optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback,
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                      optional <a href="#TuneMode">TuneMode</a>? tuneMode,
-                      optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void findChannel(long major,
-                         long minor,
-                         <a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback,
-                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                            optional <a href="#TuneMode">TuneMode</a>? mode,
-                            optional long? nStart,
-                            optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#ChannelInfo">ChannelInfo</a> getCurrentChannel(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo,
-                            <a href="time.html#TZDate">TZDate</a> startTime,
-                            <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                            optional unsigned long? duration) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#ProgramInfo">ProgramInfo</a>? getCurrentProgram(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addChannelChangeListener(<a href="#ChannelChangeCallback">ChannelChangeCallback</a> callback,
-                                       optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeChannelChangeListener(long channelListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        long addSignalStateChangeListener(<a href="#SignalStateChangeCallback">SignalStateChangeCallback</a> callback
-                                       ) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeSignalStateChangeListener(long signalListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#FavoriteList">FavoriteList</a>[] getFavorites() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        
-        <a href="#BroadcastStandard">BroadcastStandard</a> getBroadcastStandard(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [Callback = FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
-        void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);
-    };
-
-    [Callback = FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
-        void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);
-    };
-
-    [Callback = FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
-        void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);
-    };
-
-    [Callback = FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
-        void onchanged(<a href="#SignalState">SignalState</a> state);
-    };
-
-    [Callback, NoInterfaceObject] interface TuneCallback {
-        void onsuccess(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tvwindow.html#WindowType">WindowType</a> type);
-
-        void onnosignal();
-
-        void onprograminforeceived(<a href="#ProgramInfo">ProgramInfo</a> program, <a href="tvwindow.html#WindowType">WindowType</a> type);
-    };
-
-    dictionary TuneOption {
-        long? major;
-
-        long? minor;
-
-        long? sourceID;
-
-        long? programNumber;
-
-        long? transportStreamID;
-
-        long? ptc;
-
-        long? originalNetworkID;
-
-        DOMString? providerMBR;
-    };
-
-    [NoInterfaceObject] interface ChannelInfo {
-        readonly attribute long major;
-
-        readonly attribute long minor;
-
-        readonly attribute DOMString channelName;
-
-        readonly attribute long programNumber;
-
-        readonly attribute long ptc;
-
-        readonly attribute long lcn;
-
-        readonly attribute long sourceID;
-
-        readonly attribute long transportStreamID;
-
-        readonly attribute long originalNetworkID;
-
-        readonly attribute DOMString serviceName;
-    };
-
-    [NoInterfaceObject] interface ProgramInfo {
-        readonly attribute DOMString title;
-
-        readonly attribute <a href="time.html#TZDate">TZDate</a> startTime;
-
-        readonly attribute long duration;
-
-        readonly attribute DOMString? detailedDescription;
-
-        readonly attribute DOMString? language;
-
-        readonly attribute DOMString? rating;
-    };
-
-    [NoInterfaceObject] interface FavoriteList {
-        readonly attribute long id;
-
-        void addChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-
-        void removeChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback,
-                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                            optional long? nStart,
-                            optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
+    void findChannel(long major, long minor, <a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? mode,
+                        optional long? nStart, optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#ChannelInfo">ChannelInfo</a> getCurrentChannel(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="time.html#TZDate">TZDate</a> startTime, <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback,
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? duration) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#ProgramInfo">ProgramInfo</a>? getCurrentProgram(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addChannelChangeListener(<a href="#ChannelChangeCallback">ChannelChangeCallback</a> callback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChannelChangeListener(long channelListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addSignalStateChangeListener(<a href="#SignalStateChangeCallback">SignalStateChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeSignalStateChangeListener(long signalListenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#FavoriteList">FavoriteList</a>[] getFavorites() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BroadcastStandard">BroadcastStandard</a> getBroadcastStandard(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback = FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
+    void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);
+  };
+  [Callback = FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
+    void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);
+  };
+  [Callback = FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
+    void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);
+  };
+  [Callback = FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
+    void onchanged(<a href="#SignalState">SignalState</a> state);
+  };
+  [Callback, NoInterfaceObject] interface TuneCallback {
+    void onsuccess(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tvwindow.html#WindowType">WindowType</a> type);
+    void onnosignal();
+    void onprograminforeceived(<a href="#ProgramInfo">ProgramInfo</a> program, <a href="tvwindow.html#WindowType">WindowType</a> type);
+  };
+  dictionary TuneOption {
+    long? major;
+    long? minor;
+    long? sourceID;
+    long? programNumber;
+    long? transportStreamID;
+    long? ptc;
+    long? originalNetworkID;
+    DOMString? providerMBR;
+  };
+  [NoInterfaceObject] interface ChannelInfo {
+    readonly attribute long major;
+    readonly attribute long minor;
+    readonly attribute DOMString channelName;
+    readonly attribute long programNumber;
+    readonly attribute long ptc;
+    readonly attribute long lcn;
+    readonly attribute long sourceID;
+    readonly attribute long transportStreamID;
+    readonly attribute long originalNetworkID;
+    readonly attribute DOMString serviceName;
+  };
+  [NoInterfaceObject] interface ProgramInfo {
+    readonly attribute DOMString title;
+    readonly attribute <a href="time.html#TZDate">TZDate</a> startTime;
+    readonly attribute long duration;
+    readonly attribute DOMString? detailedDescription;
+    readonly attribute DOMString? language;
+    readonly attribute DOMString? rating;
+  };
+  [NoInterfaceObject] interface FavoriteList {
+    readonly attribute long id;
+    void addChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeChannel(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? nStart,
+                     optional long? number) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
 };</pre>
 </div>
 <div id="page-footer">

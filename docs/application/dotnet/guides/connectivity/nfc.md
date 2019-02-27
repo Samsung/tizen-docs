@@ -103,7 +103,7 @@ To activate and deactivate NFC:
     ```
 
     > **Note**   
-	> To be able to use this privilege, your application must be signed with a partner-level certificate.
+	> To be able to use this privilege, your application must be signed with a platform-level certificate.
 
 2.  To activate NFC, use the `SetActivationAsync()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class with the `true` parameter:
 
@@ -259,7 +259,7 @@ To keep track of NFC tag events through event handlers:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _tagFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
         }
     }
     ```
@@ -311,7 +311,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _tagFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
+                    "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
             }
         }
         ```
@@ -366,7 +366,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _tagFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
+                    "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
             }
         }
         ```
@@ -421,7 +421,7 @@ To keep track of P2P events through event handlers:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _p2pFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
         }
     }
     ```
@@ -484,7 +484,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _p2pFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
+                    "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
             }
         }
         ```
@@ -546,7 +546,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _p2pFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the Nfc P2P operation");
+                    "Method throws the NotSupportedException, but Tizen supports the Nfc P2P operation");
             }
         }
         ```
@@ -661,7 +661,7 @@ To manage secure element (SE) events:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _ceFeature == false || _hceFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC card emulation operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC card emulation operation");
         }
     }
     ```
@@ -717,7 +717,7 @@ To manage HCE events from the NFC reader:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _ceFeature == false || _hceFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
         }
     }
     ```
@@ -768,7 +768,7 @@ To send HCE responses to the NFC reader:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _ceFeature == false || _hceFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
         }
     }
     ```

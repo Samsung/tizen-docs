@@ -2,19 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>WebSetting API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>WebSetting API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::WebSetting">
-<div class="supported-platforms"><img title="Mandatory" src="../../../images/tv_s_w.png"></div>
+ <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
 <div class="title"><h1>WebSetting API</h1></div>
 <div class="brief">
- This Web setting API defines a set of APIs that manages the setting states of the Web view in your Web application.
+ This Web Setting API defines a set of APIs that manages the setting states of the Web view in your Web application.
         </div>
 <div class="description">
         <p>
-A Tizen Web application includes a web view and the properties below of the web view can be managed via the Web setting API:
+A Tizen Web application includes a web view and the properties below of the web view can be managed via the Web Setting API:
         </p>
         <ul>
           <li>
@@ -23,14 +23,13 @@ A Tizen Web application includes a web view and the properties below of the web 
  Set a custom user agent string of the web view in the Web application.          </li>
         </ul>
         <p>
-Note that all the settings using the Web setting API is bound to your application; thus, no other applications are affected via the Web setting API calls within your application.
+Note that all the settings using the Web Setting API is bound to your application; thus, no other applications are affected via the Web Setting API calls within your application.
         </p>
         <p>
-For more information on the Web setting features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/web-view-settings">Web View Settings Guide</a>.
+For more information on the Web Setting features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/web-view-settings">Web Setting Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
         </p>
 <h2>Table of Contents</h2>
@@ -71,14 +70,13 @@ For more information on the Web setting features, see <a href="https://developer
 <div class="interface" id="WebSettingObject">
 <a class="backward-compatibility-anchor" name="::WebSetting::WebSettingObject"></a><h3>1.1. WebSettingObject</h3>
 <div class="brief">
- This interface defines what is instantiated for the Web setting API by the <em>Tizen</em> object from the Tizen Platform.
+ This interface defines what is instantiated for the Web Setting API by the <em>Tizen</em> object from the Tizen Platform.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface WebSettingObject {
     readonly attribute <a href="#WebSettingManager">WebSettingManager</a> websetting;
   };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WebSettingObject">WebSettingObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WebSettingObject">WebSettingObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.2
           </p>
 <div class="description">
@@ -86,22 +84,29 @@ For more information on the Web setting features, see <a href="https://developer
 <em>tizen.websetting</em> object is available to manage the settings of the Web view in your Web application.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="WebSettingObject::websetting">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">WebSettingManager </span><span class="name">websetting</span></span><div class="brief">
+ Object representing a web settings manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.2
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="WebSettingManager">
 <a class="backward-compatibility-anchor" name="::WebSetting::WebSettingManager"></a><h3>1.2. WebSettingManager</h3>
 <div class="brief">
- This is the top-level interface for the WebSetting API that managed the settings of the Web view in your Web application.
+ This is the top-level interface for the Web Setting API that managed the settings of the Web view in your Web application.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface WebSettingManager {
-
-   void setUserAgentString(DOMString userAgent,
-              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-   void removeAllCookies(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-   };</pre>
+    void setUserAgentString(DOMString userAgent, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAllCookies(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -112,10 +117,8 @@ For more information on the Web setting features, see <a href="https://developer
 <div class="brief">
  Sets the custom user agent string for your Web application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setUserAgentString(DOMString userAgent, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setUserAgentString(DOMString userAgent, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.2
             </p>
 <div class="description">
@@ -158,10 +161,9 @@ InvalidValuesError - If any of the input parameters contain an invalid value.   
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successCallback()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCallback()
 {
-   console.log("The requested user agent string has just been set successfully.");
+  console.log("The requested user agent string has just been set successfully");
 }
 
 tizen.websetting.setUserAgentString("the new user agent string to set", successCallback);
@@ -175,10 +177,8 @@ tizen.websetting.setUserAgentString("the new user agent string to set", successC
 <div class="brief">
  Removes all the cookies saved for the Web view in your Web application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeAllCookies(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeAllCookies(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.2
             </p>
 <div class="description">
@@ -217,10 +217,9 @@ UnknownError - If any error occurs while deleting the cookies.              </li
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function successCallback()
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function successCallback()
 {
-   console.log("The cookies saved for your application have just been removed.");
+  console.log("The cookies saved for your application have just been removed");
 }
 
 tizen.websetting.removeAllCookies(successCallback);
@@ -233,22 +232,15 @@ tizen.websetting.removeAllCookies(successCallback);
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module WebSetting {
-
   [NoInterfaceObject] interface WebSettingObject {
     readonly attribute <a href="#WebSettingManager">WebSettingManager</a> websetting;
   };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WebSettingObject">WebSettingObject</a>;
-
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WebSettingObject">WebSettingObject</a>;
   [NoInterfaceObject] interface WebSettingManager {
-
-   void setUserAgentString(DOMString userAgent,
-              optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-   void removeAllCookies(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-   };
+    void setUserAgentString(DOMString userAgent, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAllCookies(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
 };</pre>
 </div>
 <div id="page-footer">

@@ -40,9 +40,10 @@ application is found to match the given conditions, that application is
 launched. If multiple matching applications are found, the application
 selector is shown and the user can select the application they want.
 
-> **Note**  
-> When using application controls, pay attention to the following:  
-> - Since Tizen 2.4, application controls that launch [service applications](../../guides/app-management/service-app.md) outside the current package are not supported. Because of this, a     service application can only be launched explicitly by an    application in the same package.
+> **Note**
+>
+> When using application controls, pay attention to the following:
+> - Since Tizen 2.4, application controls that launch [service applications](../../guides/applications/service-app.md) outside the current package are not supported. Because of this, a     service application can only be launched explicitly by an    application in the same package.
 > - The operation is mandatory information for sending a launch request.    If the operation is not specified, the `APP_CONTROL_OPERATION_DEFAULT` operation is used. In that case, the application ID is mandatory to explicitly launch an application.
 
 

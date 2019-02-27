@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>PrivacyPrivilege API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>PrivacyPrivilege API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::PrivacyPrivilege">
+ <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>PrivacyPrivilege API</h1></div>
 <div class="brief">
  This Privacy Privilege API defines a set of APIs that manage the permissions for using a privacy-related privileges of application.
@@ -24,8 +25,7 @@ Privacy Privilege API allows:
  Requesting pop-up about giving permission for using privacy-related privilege.          </li>
         </ul>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  4.0
         </p>
 <h2>Table of Contents</h2>
@@ -85,8 +85,7 @@ Privacy Privilege API allows:
  Specifies the type of given permission.
           </div>
 <pre class="webidl prettyprint">  enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  4.0
           </p>
 <div class="description">
@@ -109,8 +108,7 @@ PPM_ASK - The user has to be asked whether to grant permission to use a privacy-
  Specifies the result of a permission request.
           </div>
 <pre class="webidl prettyprint">  enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  4.0
           </p>
 <div class="description">
@@ -138,9 +136,8 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
     readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
   };</pre>
-<pre class="webidl prettyprint">   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  4.0
           </p>
 <div class="description">
@@ -148,6 +145,18 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
 <em>tizen.ppm</em> object is available to manage the user permissions to use privacy-related privileges in your Web application.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="PrivacyPrivilegeManagerObject::ppm">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PrivacyPrivilegeManager </span><span class="name">ppm</span></span><div class="brief">
+ Object representing a privacy privilege manager.
+            </div>
+<p><span class="version">Since: </span>
+ 4.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="PrivacyPrivilegeManager">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PrivacyPrivilegeManager"></a><h3>2.2. PrivacyPrivilegeManager</h3>
@@ -155,13 +164,10 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
  This is the top-level interface for the Privacy Privilege API that manages permissions for using privileges in application.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface PrivacyPrivilegeManager {
-
-   <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-   void requestPermission(DOMString privilege,
-                          <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-   };</pre>
+    <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -173,13 +179,12 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
  Method allows checking current state of user's permission for using a privilege.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  4.0
             </p>
 <div class="description">
             <p>
-For privileges not listed in application's <em>config.xml</em> file (or not privacy-related), will always return <var>PPM_DENY</var>.
+For privileges not listed in application's <em>config.xml</em> file (or not privacy-related), always returns <var>PPM_DENY</var>.
             </p>
            </div>
 <div class="parameters">
@@ -229,17 +234,16 @@ console.log("Current state of permission is: " + permission);
  This method allows launching pop-up for asking user to directly grant permission for given privilege.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  4.0
             </p>
 <div class="description">
             <p>
 Requesting permission for privileges not listed in application's <em>config.xml</em> file (or not privacy-related) will not trigger any pop-up,
-instead the <em>successCallback</em> will be executed with <em>result</em> <var>PPM_DENY_FOREVER</var>.
+instead the <em>successCallback</em> will be executed with <var>PPM_DENY_FOREVER</var>.
             </p>
             <p>
-When a user has already decided to permanently allow or deny access to use a given privilege, subsequent calls of this function
+When the user has already decided to permanently allow or deny access to use a given privilege, subsequent calls of this function
 will result in immediate invocation of <em>successCallback</em> with an appropriate result: <var>PPM_ALLOW_FOREVER</var> or <var>PPM_DENY_FOREVER</var>.
 Additionally the asking pop-up will not be shown.
             </p>
@@ -284,18 +288,19 @@ AbortError - If any platform error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback */
-function errorCallback(response)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback. */
+function errorCallback(error)
 {
-  console.log("The following error occurred: " + response.name);
+  console.log("The following error occurred: " + error.name);
 }
 
-/* Defines PermissionSuccessCallback */
+/* Defines PermissionSuccessCallback. */
 function permissionSuccess(result, privilege)
 {
   console.log("User's action for privilege " + privilege + " was to: " + result);
 }
-tizen.ppm.requestPermission("http://tizen.org/privilege/contact.read", permissionSuccess, errorCallback);
+tizen.ppm.requestPermission(
+    "http://tizen.org/privilege/contact.read", permissionSuccess, errorCallback);
 </pre>
 </div>
 <div class="output">
@@ -309,14 +314,13 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/contact.read", permissio
 <div class="interface" id="PermissionSuccessCallback">
 <a class="backward-compatibility-anchor" name="::PrivacyPrivilege::PermissionSuccessCallback"></a><h3>2.3. PermissionSuccessCallback</h3>
 <div class="brief">
- The PermissionSuccessCallback interface that implements the success callback used in the asynchronous operation for requesting permisson for using privilege.
+ The PermissionSuccessCallback interface that implements the success callback used in the asynchronous operation for requesting permission for using privilege.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
   interface PermissionSuccessCallback {
     void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  4.0
           </p>
 <div class="methods">
@@ -330,8 +334,7 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/contact.read", permissio
  Called when the permission for using privilege was requested successfully.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  4.0
             </p>
 <div class="parameters">
@@ -348,7 +351,7 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/contact.read", permissio
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines PermissionSuccessCallback */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines PermissionSuccessCallback. */
 function permissionSuccess(result, privilege)
 {
   console.log("User's action for privilege " + privilege + " was to: " + result);
@@ -367,25 +370,17 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/callhistory.read", permi
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module PrivacyPrivilege {
-
   enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };
-
   enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };
-
   [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
     readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
   };
-   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
-
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
   [NoInterfaceObject] interface PrivacyPrivilegeManager {
-
-   <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-   void requestPermission(DOMString privilege,
-                          <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback,
-                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises (<a href="tizen.html#WebAPIException">WebAPIException</a>);
-   };
-
+    <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
   [Callback=FunctionOnly, NoInterfaceObject]
   interface PermissionSuccessCallback {
     void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);

@@ -93,13 +93,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__elm__infra__group.html">Elementary Infrastructure</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>Different widgets can be scaled independently. These functions allow you to manipulate this scaling on a per-widget basis. The object and all its children get their scaling factors multiplied by the scale factor set. This is multiplicative, in that if a child also has a scale size set it is in turn multiplied by its parent's scale size. <code>1.0</code> means “don't scale”, <code>2.0</code> is double size, <code>0.5</code> is half, etc.</p>
-<p><a class="el" href="general_functions_example_page.html">This</a> example contemplates some of these functions. </p>
+<p>Different widgets can be scaled independently. These functions allow you to manipulate this scaling on a per-widget basis. The object and all its children get their scaling factors multiplied by the scale factor set. This is multiplicative, in that if a child also has a scale size set it is in turn multiplied by its parent's scale size. <code>1.0</code> means “don't scale”, <code>2.0</code> is double size, <code>0.5</code> is half, etc. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scaling.html#gac3093b4d226be788c6a98618275c657e">elm_config_scale_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scaling.html#ga6f37a2609d6a4559122ad54e69c63814">elm_config_scale_set</a> (double scale)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scaling.html#gaa880e269df13bae603bc1e1172bddb8f">elm_scale_all_set</a> (double scale)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scaling.html#ga1606f51f88c4d0b58544d36225420a37">elm_object_scale_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double scale)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Scaling.html#ga0affbdc85f2d9dd33a16f6ac03aba7b8">elm_object_scale_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 </table>
@@ -210,6 +210,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa880e269df13bae603bc1e1172bddb8f"></a><!-- doxytag: member="elm_removed.h::elm_scale_all_set" ref="gaa880e269df13bae603bc1e1172bddb8f" args="(double scale)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Scaling.html#gaa880e269df13bae603bc1e1172bddb8f">elm_scale_all_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>scale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the global scaling factor for all applications on the display</p>
+<p>This sets the globally configured scaling factor that is applied to all objects for all applications. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>The scaling factor to set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000390">Deprecated:</a></b></dt><dd>use elm_scale_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd></dl>
 
 </div>
 </div>

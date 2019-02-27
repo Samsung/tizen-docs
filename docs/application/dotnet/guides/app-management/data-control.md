@@ -8,13 +8,13 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 -   Managing a provider
 
-    You can have your application function as a provider to [provide data to consumer applications](#map1) by using the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.l) class.
+    You can have your application function as a provider to [provide data to consumer applications](#map1) by using the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.html) class.
 
     To create a provider, you must [export its provider functionalities](#export) in the application project settings in the IDE.
 
 - Managing a consumer
 
-    You can have your application function as a consumer to [access data shared by service applications](#map2) by using the [Tizen.Applications.DataControl.Consumer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Consumer.l) class.
+    You can have your application function as a consumer to [access data shared by service applications](#map2) by using the [Tizen.Applications.DataControl.Consumer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Consumer.html) class.
 
     The consumer sends a request to the provider to insert, update, select, or delete SQL-type data, or to add, access, set, or remove map-type data. The provider processes the request and sends a response back to the consumer.
 
@@ -22,7 +22,7 @@ The main features of the Tizen.Applications.DataControl namespace include:
 
 - Using a matrix cursor
 
-    You can [use a matrix cursor](#map3) by using the [Tizen.Applications.DataControl.MatrixCursor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.MatrixCursor.l) class.
+    You can [use a matrix cursor](#map3) by using the [Tizen.Applications.DataControl.MatrixCursor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.MatrixCursor.html) class.
 
     The matrix cursor helps you to create a cursor for a collection of data that is not in a database.
 
@@ -36,7 +36,7 @@ The data control use cases involve 2 applications. Each application plays a diff
 
 To enable your application to use the data control functionality:
 
-1.  To use the [Tizen.Applications.DataControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.l) namespace, the consumer has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Applications.DataControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.html) namespace, the consumer has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -84,7 +84,7 @@ To enable your application to use the data control functionality:
 <a name="map1"></a>
 ## Managing a Provider
 
-In a provider application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.l) class for handling SQL requests: `OnSelect()`, `OnInsert()`, `OnUpdate()`, and `OnDelete()`. If you want to use Map-type data controls, you must override the `OnMapAdd()`, `OnMapGet()`, `OnMapSet()`, and `OnMapRemove()` methods. Optionally, you can override the `OnBulkInsert()`, `OnMapBulkAdd()`, and `OnDataChangeListenRequest()` methods as well.
+In a provider application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.html) class for handling SQL requests: `OnSelect()`, `OnInsert()`, `OnUpdate()`, and `OnDelete()`. If you want to use Map-type data controls, you must override the `OnMapAdd()`, `OnMapGet()`, `OnMapSet()`, and `OnMapRemove()` methods. Optionally, you can override the `OnBulkInsert()`, `OnMapBulkAdd()`, and `OnDataChangeListenRequest()` methods as well.
 
 The applicable overridden method is called when a request is received from a consumer application.
 
@@ -239,7 +239,7 @@ The applicable overridden method is called when a request is received from a con
 <a name="map2"></a>
 ## Managing a Consumer
 
-In a consumer application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Consumer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Consumer.l) class for handling responses to SQL requests: `OnSelectResult()`, `OnInsertResult()`, `OnUpdateResult()`, and `OnDeleteResult()`. If you want to use Map-type data controls, you must override the `OnMapAddResult()`, `OnMapGetResult()`, `OnMapSetResult()`, and `OnMapRemoveResult()` methods. Optionally, you can override the `OnBulkInsertResult()`, `OnMapBulkAddResult()`, and `OnDataChangeListenResult()` methods as well. If you want to override the behavior for when the provider uses the `SendDataChange()` method of the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.l) class, override the `OnDataChange()` method.
+In a consumer application, you must override the following abstract methods of the [Tizen.Applications.DataControl.Consumer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Consumer.html) class for handling responses to SQL requests: `OnSelectResult()`, `OnInsertResult()`, `OnUpdateResult()`, and `OnDeleteResult()`. If you want to use Map-type data controls, you must override the `OnMapAddResult()`, `OnMapGetResult()`, `OnMapSetResult()`, and `OnMapRemoveResult()` methods. Optionally, you can override the `OnBulkInsertResult()`, `OnMapBulkAddResult()`, and `OnDataChangeListenResult()` methods as well. If you want to override the behavior for when the provider uses the `SendDataChange()` method of the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.html) class, override the `OnDataChange()` method.
 
 The applicable overridden method is called when a result is received from a provider.
 
@@ -365,18 +365,18 @@ The applicable overridden method is called when a result is received from a prov
 <a name="map3"></a>
 ## Using a Matrix Cursor
 
-If you use a consumer application for SQL-type data and you have a collection of data that is not in a database, you can use the [Tizen.Applications.DataControl.MatrixCursor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.MatrixCursor.l) class to create a cursor for the data:
+If you use a consumer application for SQL-type data and you have a collection of data that is not in a database, you can use the [Tizen.Applications.DataControl.MatrixCursor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.MatrixCursor.html) class to create a cursor for the data:
 
 To create a matrix cursor, simply construct it with an array of column names:
 
 -   Add one row at a time to the matrix by passing either an array of objects or an Iterable to the `AddRow()` method of the `Tizen.Applications.DataControl.MatrixCursor` class.
--   Define column types for a matrix cursor by using the values of the [Tizen.Applications.DataControl.ColumnType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.ColumnType.l) enumeration.
+-   Define column types for a matrix cursor by using the values of the [Tizen.Applications.DataControl.ColumnType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.ColumnType.html) enumeration.
 
 To use a matrix cursor:
 
 1.  Implement the provider application.
 
-    If a consumer sends a select request to the provider, the `OnSelect()` method of the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.l) class is called, and the provider sends the results to the consumer as an instance of the [Tizen.Applications.DataControl.SelectResult](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.SelectResult.l) class:
+    If a consumer sends a select request to the provider, the `OnSelect()` method of the [Tizen.Applications.DataControl.Provider](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Provider.html) class is called, and the provider sends the results to the consumer as an instance of the [Tizen.Applications.DataControl.SelectResult](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.SelectResult.html) class:
 
     ```
     public class MyProvider : Provider
@@ -418,7 +418,7 @@ To use a matrix cursor:
 
 2. Implement the consumer application.
 
-    The consumer sends a select request to the provider. When the provider responds by sending a `Tizen.Applications.DataControl.SelectResult` instance, the `OnSelectResult()` method of the [Tizen.Applications.DataControl.Consumer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Consumer.l) class is called:
+    The consumer sends a select request to the provider. When the provider responds by sending a `Tizen.Applications.DataControl.SelectResult` instance, the `OnSelectResult()` method of the [Tizen.Applications.DataControl.Consumer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.Consumer.html) class is called:
 
     ```
     public class MyConsumer : Consumer

@@ -2,35 +2,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Power API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Power API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Power">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Power API</h1></div>
 <div class="brief">
  The Power API provides support for requesting power management related resource states.
         </div>
 <div class="description">
         <p>
-For more information on the Power features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/power-states">Power States Guide</a>.
+For more information on the Power features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/power-states">Power Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#PowerResource">PowerResource</a>
+<li>
+                    1.1. <a href="#PowerResource">PowerResource</a>
 </li>
-<li>1.2. <a href="#PowerScreenState">PowerScreenState</a>
+<li>
+                    1.2. <a href="#PowerScreenState">PowerScreenState</a>
 </li>
-<li>1.3. <a href="#PowerCpuState">PowerCpuState</a>
+<li>
+                    1.3. <a href="#PowerCpuState">PowerCpuState</a>
 </li>
-<li>1.4. <a href="#PowerState">PowerState</a>
+<li>
+                    1.4. <a href="#PowerState">PowerState</a>
 </li>
 </ul>
 </li>
@@ -60,20 +63,20 @@ For more information on the Power features, see <a href="https://developer.tizen
 </tr>
 <tr>
 <td><a href="#PowerManager">PowerManager</a></td>
-<td>void <a href="#PowerManager::request">request</a> (<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state)<br>
-    void <a href="#PowerManager::release">release</a> (<a href="#PowerResource">PowerResource</a> resource)<br>
-    void <a href="#PowerManager::setScreenStateChangeListener">setScreenStateChangeListener</a> (<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener)<br>
-    void <a href="#PowerManager::unsetScreenStateChangeListener">unsetScreenStateChangeListener</a> ()<br>
-    double <a href="#PowerManager::getScreenBrightness">getScreenBrightness</a> ()<br>
-    void <a href="#PowerManager::setScreenBrightness">setScreenBrightness</a> (double brightness)<br>
-    boolean <a href="#PowerManager::isScreenOn">isScreenOn</a> ()<br>
-    void <a href="#PowerManager::restoreScreenBrightness">restoreScreenBrightness</a> ()<br>
-    void <a href="#PowerManager::turnScreenOn">turnScreenOn</a> ()<br>
-    void <a href="#PowerManager::turnScreenOff">turnScreenOff</a> ()</td>
+<td>
+<div>void <a href="#PowerManager::request">request</a> (<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state)</div>
+<div>void <a href="#PowerManager::release">release</a> (<a href="#PowerResource">PowerResource</a> resource)</div>
+<div>void <a href="#PowerManager::setScreenStateChangeListener">setScreenStateChangeListener</a> (<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener)</div>
+<div>void <a href="#PowerManager::unsetScreenStateChangeListener">unsetScreenStateChangeListener</a> ()</div>
+<div>double <a href="#PowerManager::getScreenBrightness">getScreenBrightness</a> ()</div>
+<div>void <a href="#PowerManager::setScreenBrightness">setScreenBrightness</a> (double brightness)</div>
+<div>boolean <a href="#PowerManager::isScreenOn">isScreenOn</a> ()</div>
+<div>void <a href="#PowerManager::restoreScreenBrightness">restoreScreenBrightness</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a></td>
-<td>void <a href="#ScreenStateChangeCallback::onchanged">onchanged</a> (<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState)</td>
+<td><div>void <a href="#ScreenStateChangeCallback::onchanged">onchanged</a> (<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState)</div></td>
 </tr>
 </tbody>
 </table>
@@ -84,9 +87,8 @@ For more information on the Power features, see <a href="https://developer.tizen
 <div class="brief">
  Specifies power resources with values aligned with <em>SystemInfo </em>property values.
           </div>
-<pre class="webidl prettyprint">    enum PowerResource    { "SCREEN", "CPU" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum PowerResource { "SCREEN", "CPU" };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -94,6 +96,12 @@ For more information on the Power features, see <a href="https://developer.tizen
 Screen and CPU resources are supported at present.
 Supported power resource states are provided in PowerScreenState and PowerCpuState enums respectively prefixed by the corresponding resource type.
           </p>
+          <ul>
+            <li>
+SCREEN - Corresponds to screen power resource.            </li>
+            <li>
+CPU - corresponds to CPU power resource.            </li>
+          </ul>
          </div>
 </div>
 <div class="enum" id="PowerScreenState">
@@ -101,12 +109,11 @@ Supported power resource states are provided in PowerScreenState and PowerCpuSta
 <div class="brief">
  Specifies the power state for screen resource.
           </div>
-<div class="deprecated"><p><font color="red"><i><b>Deprecated.</b>
- SCREEN_BRIGHT is deprecated since 2.1.
-          </i></font></p></div>
-<pre class="webidl prettyprint">    enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", "SCREEN_BRIGHT" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", <span class="nocode deprecated">"SCREEN_BRIGHT"</span> };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ SCREEN_BRIGHT is deprecated since Tizen 2.1.
+          </p>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -136,9 +143,8 @@ Note that the change in brightness does not affect the system brightness setting
 <div class="brief">
  Specifies the power state for the CPU resource.
           </div>
-<pre class="webidl prettyprint">    enum PowerCpuState { "CPU_AWAKE" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum PowerCpuState { "CPU_AWAKE" };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -157,9 +163,8 @@ CPU_AWAKE - The CPU state is set to awake and it does not go to <em>SLEEP</em> s
  The supported power states in general.
 It can be either a PowerScreenState or a PowerCpuState.
           </div>
-<pre class="webidl prettyprint">    typedef (<a href="#PowerScreenState">PowerScreenState</a> or <a href="#PowerCpuState">PowerCpuState</a>) PowerState;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  typedef (<a href="#PowerScreenState">PowerScreenState</a> or <a href="#PowerCpuState">PowerCpuState</a>) PowerState;</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 </div>
@@ -171,12 +176,11 @@ It can be either a PowerScreenState or a PowerCpuState.
 <div class="brief">
  The PowerManagerObject interface defines what is instantiated by the <em>Tizen</em> object from the Tizen Platform.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PowerManagerObject {
-        readonly attribute <a href="#PowerManager">PowerManager</a> power;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PowerManagerObject {
+    readonly attribute <a href="#PowerManager">PowerManager</a> power;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -184,35 +188,35 @@ It can be either a PowerScreenState or a PowerCpuState.
 There will be a <em>tizen.power </em>object that allows accessing of a functionality of the Power API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="PowerManagerObject::power">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PowerManager </span><span class="name">power</span></span><div class="brief">
+ Object representing a power manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="PowerManager">
 <a class="backward-compatibility-anchor" name="::Power::PowerManager"></a><h3>2.2. PowerManager</h3>
 <div class="brief">
  The PowerManager interface is used to request resource states.
           </div>
-<pre class="webidl prettyprint">   [NoInterfaceObject] interface PowerManager {
-       void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void release(<a href="#PowerResource">PowerResource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void setScreenStateChangeListener(<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void unsetScreenStateChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       double getScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void setScreenBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       boolean isScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void restoreScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void turnScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void turnScreenOff() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-   };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PowerManager {
+    void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void release(<a href="#PowerResource">PowerResource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setScreenStateChangeListener(<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetScreenStateChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    double getScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setScreenBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void restoreScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -230,30 +234,26 @@ However, these requests can be overridden by the system. If the requests are ove
 <div class="brief">
  Requests the minimum-state for a power resource.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/power
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">resource</span>: 
- Power resource for which the request is made
+<span class="name">resource</span>:
+ Power resource for which the request is made.
                 </li>
           <li class="param">
-<span class="name">state</span>: 
-    Minimal power state in which the power resource is desired to be
+<span class="name">state</span>:
+    Minimal power state in which the power resource is desired to be.
                 </li>
         </ul>
 </div>
@@ -281,8 +281,8 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> tizen.power.request("SCREEN", "SCREEN_NORMAL");
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.power.request("SCREEN", "SCREEN_NORMAL");
+</pre>
 </div>
 </dd>
 <dt class="method" id="PowerManager::release">
@@ -292,18 +292,16 @@ parameters contain an invalid value.
 <div class="brief">
  Releases the power state request for the given resource.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void release(<a href="#PowerResource">PowerResource</a> resource);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void release(<a href="#PowerResource">PowerResource</a> resource);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">resource</span>: 
- Resource for which requests are to be removed
+<span class="name">resource</span>:
+ Resource for which requests are to be removed.
                 </li>
         </ul>
 </div>
@@ -328,9 +326,9 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Release SCREEN resource.
- tizen.power.release("SCREEN");
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Releases SCREEN resource. */
+tizen.power.release("SCREEN");
+</pre>
 </div>
 </dd>
 <dt class="method" id="PowerManager::setScreenStateChangeListener">
@@ -340,18 +338,16 @@ parameters contain an invalid value.
 <div class="brief">
  Sets the screen state change callback and monitors its state changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setScreenStateChangeListener(<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setScreenStateChangeListener(<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">listener</span>: 
- Screen state change callback
+<span class="name">listener</span>:
+ Screen state change callback.
                 </li>
         </ul>
 </div>
@@ -376,13 +372,14 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onScreenStateChanged(previousState, changedState) {
-   console.log("Screen state changed from " + previousState + " to " + changedState);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onScreenStateChanged(previousState, changedState)
+{
+  console.log("Screen state changed from " + previousState + " to " + changedState);
+}
 
- // Sets the screen state change listener.
- tizen.power.setScreenStateChangeListener(onScreenStateChanged);
- </pre>
+/* Sets the screen state change listener. */
+tizen.power.setScreenStateChangeListener(onScreenStateChanged);
+</pre>
 </div>
 </dd>
 <dt class="method" id="PowerManager::unsetScreenStateChangeListener">
@@ -392,12 +389,15 @@ parameters contain an invalid value.
 <div class="brief">
  Unsets the screen state change callback and stop monitoring it.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unsetScreenStateChangeListener();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unsetScreenStateChangeListener();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if listener is not set.
+            </p>
+           </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -411,9 +411,9 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Unsets the screen state change listener.
- tizen.power.unsetScreenStateChangeListener();
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Unsets the screen state change listener. */
+tizen.power.unsetScreenStateChangeListener();
+</pre>
 </div>
 </dd>
 <dt class="method" id="PowerManager::getScreenBrightness">
@@ -423,16 +423,18 @@ parameters contain an invalid value.
 <div class="brief">
  Gets the screen brightness level of an application, from 0 to 1.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">double getScreenBrightness();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">double getScreenBrightness();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- double Current screen brightness value
-              </div>
+<ul>
+<span class="return">double:
+                  </span>
+ Current screen brightness value.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -446,9 +448,9 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Gets the current screen brightness value.
- var screenBrightness = tizen.power.getScreenBrightness();
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current screen brightness value. */
+var screenBrightness = tizen.power.getScreenBrightness();
+</pre>
 </div>
 </dd>
 <dt class="method" id="PowerManager::setScreenBrightness">
@@ -458,10 +460,8 @@ parameters contain an invalid value.
 <div class="brief">
  Sets the screen brightness level, from 0 to 1.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setScreenBrightness(double brightness);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setScreenBrightness(double brightness);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
@@ -469,20 +469,18 @@ parameters contain an invalid value.
 An approximation is made for best effort when the given value is not exactly applicable by the hardware or system.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/power
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">brightness</span>: 
- The screen brightness value to set
+<span class="name">brightness</span>:
+ The screen brightness value to set.
                 </li>
         </ul>
 </div>
@@ -510,9 +508,9 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Sets the screen brightness value for the application.
- tizen.power.setScreenBrightness(1);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Sets the screen brightness value for the application. */
+tizen.power.setScreenBrightness(1);
+</pre>
 </div>
 </dd>
 <dt class="method" id="PowerManager::isScreenOn">
@@ -522,16 +520,18 @@ parameters contain an invalid value.
 <div class="brief">
  Checks whether the screen is on.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">boolean isScreenOn();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">boolean isScreenOn();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- boolean true if screen is on, otherwise false if the screen is off
-              </div>
+<ul>
+<span class="return">boolean:
+                  </span>
+ <var>true</var> if screen is on, otherwise <var>false</var> if the screen is off.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -545,9 +545,9 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Checks whether the screen is on or off.
- var isScreenOn = tizen.power.isScreenOn();
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Checks whether the screen is on or off. */
+var isScreenOn = tizen.power.isScreenOn();
+</pre>
 </div>
 </dd>
 <dt class="method" id="PowerManager::restoreScreenBrightness">
@@ -557,10 +557,8 @@ parameters contain an invalid value.
 <div class="brief">
  Restores the screen brightness to the system default setting value.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void restoreScreenBrightness();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void restoreScreenBrightness();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="exceptionlist">
@@ -576,38 +574,34 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Restores the screen brightness value to the system default setting value.
- tizen.power.restoreScreenBrightness();
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Restores the screen brightness value to the system default setting value. */
+tizen.power.restoreScreenBrightness();
+</pre>
 </div>
 </dd>
-<dt class="method" id="PowerManager::turnScreenOn">
+<dt class="deprecated method" id="PowerManager::turnScreenOn">
 <a class="backward-compatibility-anchor" name="::Power::PowerManager::turnScreenOn"></a><code><b><span class="methodName">turnScreenOn</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Turns on the screen.
             </div>
-<div class="deprecated"><p><font color="red"><i><b>Deprecated.</b>
- Deprecated since 2.4.
-            </i></font></p></div>
-<div class="synopsis"><pre class="signature prettyprint">void turnScreenOn();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 2.4. Use <a href="#PowerManager::request">request()</a> instead.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void turnScreenOn();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
             <p>
-This API triggers turn-on process and then updates the status when it completes. While the operation is on-going, the <em>isScreenOn()</em> method returns false.
+This API triggers turn-on process and then updates the status when it completes. While the operation is on-going, the isScreenOn() method returns false.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/power
             </p>
 <div class="exceptionlist">
@@ -626,39 +620,35 @@ This API triggers turn-on process and then updates the status when it completes.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Turns the screen on.
- tizen.power.turnScreenOn();
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Turns the screen on. */
+tizen.power.turnScreenOn();
+</pre>
 </div>
 </dd>
-<dt class="method" id="PowerManager::turnScreenOff">
+<dt class="deprecated method" id="PowerManager::turnScreenOff">
 <a class="backward-compatibility-anchor" name="::Power::PowerManager::turnScreenOff"></a><code><b><span class="methodName">turnScreenOff</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Turns off the screen.
             </div>
-<div class="deprecated"><p><font color="red"><i><b>Deprecated.</b>
- Deprecated since 2.4.
-            </i></font></p></div>
-<div class="synopsis"><pre class="signature prettyprint">void turnScreenOff();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 2.4. Use <a href="#PowerManager::request">request()</a> instead.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void turnScreenOff();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="description">
             <p>
 This API triggers turn-off process and then updates the status when it completes.
-While the operation is on-going, the <em>isScreenOn()</em> method returns true.
+While the operation is on-going, the isScreenOn() method returns true.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/power
             </p>
 <div class="exceptionlist">
@@ -677,9 +667,9 @@ While the operation is on-going, the <em>isScreenOn()</em> method returns true.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Turns the screen off.
- tizen.power.turnScreenOff();
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Turns the screen off. */
+tizen.power.turnScreenOff();
+</pre>
 </div>
 </dd>
 </dl>
@@ -690,11 +680,10 @@ While the operation is on-going, the <em>isScreenOn()</em> method returns true.
 <div class="brief">
  The ScreenStateChangeCallback callback interface defines notification for the screen state changes.
           </div>
-<pre class="webidl prettyprint">   [Callback=FunctionOnly, NoInterfaceObject] interface ScreenStateChangeCallback {
-       void onchanged(<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState);
-   };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ScreenStateChangeCallback {
+    void onchanged(<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState);
+  };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="methods">
@@ -707,22 +696,20 @@ While the operation is on-going, the <em>isScreenOn()</em> method returns true.
 <div class="brief">
  Called on screen state change.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">previousState</span>: 
- Previous screen state
+<span class="name">previousState</span>:
+ Previous screen state.
                 </li>
           <li class="param">
-<span class="name">changedState</span>: 
-  Changed screen state
+<span class="name">changedState</span>:
+  Changed screen state.
                 </li>
         </ul>
 </div>
@@ -733,46 +720,27 @@ While the operation is on-going, the <em>isScreenOn()</em> method returns true.
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Power {
-
-    enum PowerResource    { "SCREEN", "CPU" };
-
-    enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", "SCREEN_BRIGHT" };
-
-    enum PowerCpuState { "CPU_AWAKE" };
-
-    typedef (<a href="#PowerScreenState">PowerScreenState</a> or <a href="#PowerCpuState">PowerCpuState</a>) PowerState;
-
-    [NoInterfaceObject] interface PowerManagerObject {
-        readonly attribute <a href="#PowerManager">PowerManager</a> power;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;
-
-   [NoInterfaceObject] interface PowerManager {
-       void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void release(<a href="#PowerResource">PowerResource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void setScreenStateChangeListener(<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void unsetScreenStateChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       double getScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void setScreenBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       boolean isScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void restoreScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void turnScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-       void turnScreenOff() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-   };
-
-   [Callback=FunctionOnly, NoInterfaceObject] interface ScreenStateChangeCallback {
-       void onchanged(<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState);
-   };
-
+  enum PowerResource { "SCREEN", "CPU" };
+  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", "SCREEN_BRIGHT" };
+  enum PowerCpuState { "CPU_AWAKE" };
+  typedef (<a href="#PowerScreenState">PowerScreenState</a> or <a href="#PowerCpuState">PowerCpuState</a>) PowerState;
+  [NoInterfaceObject] interface PowerManagerObject {
+    readonly attribute <a href="#PowerManager">PowerManager</a> power;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;
+  [NoInterfaceObject] interface PowerManager {
+    void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void release(<a href="#PowerResource">PowerResource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setScreenStateChangeListener(<a href="#ScreenStateChangeCallback">ScreenStateChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetScreenStateChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    double getScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setScreenBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void restoreScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ScreenStateChangeCallback {
+    void onchanged(<a href="#PowerScreenState">PowerScreenState</a> previousState, <a href="#PowerScreenState">PowerScreenState</a> changedState);
+  };
 };</pre>
 </div>
 <div id="page-footer">

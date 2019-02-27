@@ -1,0 +1,5 @@
+<map id="websocket_info_t" name="websocket_info_t">
+<area shape="rect" id="node2" href="$structwebsocket__t.html" title="structure to manage websocket client/server " alt="" coords="19,184,115,211"/>
+<area shape="rect" id="node3" href="$structpthread__attr__s.html" title="Structure of pthread attr configuration. " alt="" coords="15,95,120,121"/>
+<area shape="rect" id="node4" href="$structpthread__region__s.html" title="Structure of pthread region configuration. " alt="" coords="7,5,128,32"/>
+</map>

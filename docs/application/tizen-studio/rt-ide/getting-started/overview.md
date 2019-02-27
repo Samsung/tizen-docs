@@ -17,7 +17,7 @@ Check the following prerequisites before installing the Tizen Studio for RT:
 
   You must install a JDK 8 or 9 to use the Tizen Studio. Do not install OpenJDK.
 
-  To install the appropriate JDK version for your Ubuntu system, go to the Ubuntu Web site and follow the detailed instructions for installing the OracleA&reg; JDK version 8 or 9.
+  To install the appropriate JDK version for your Ubuntu system, go to the Ubuntu Web site and follow the detailed instructions for installing the Oracle&reg; JDK version 8 or 9.
 
 
 - Operating system and hardware requirements
@@ -29,7 +29,7 @@ Check the following prerequisites before installing the Tizen Studio for RT:
  <table>
  <tr>
   <th rowspan="2"> OS </th>
-  <th> Versioin </th>
+  <th> Version </th>
   <td> Ubuntu 16.04 / 14.04 </td>
  </tr>
  <tr>
@@ -69,6 +69,9 @@ Check the following prerequisites before installing the Tizen Studio for RT:
 
   `$ sudo apt-get install libwebkitgtk-1.0-0`
 
+- Docker CE for Ubuntu
+  
+  To install Docker CE on Ubuntu, see [Get Docker CE for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
 ## Related Information
 * Dependencies  

@@ -2,23 +2,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>MessagePort API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MessagePort API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MessagePort">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>MessagePort API</h1></div>
 <div class="brief">
- The MessagePort API provides the functionality for communicating with other applications.
+ The Message Port API provides the functionality for communicating with other applications.
         </div>
 <div class="description">
         <p>
-For more information on the MessagePort features, see <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-data-exchange/message-port">MessagePort Guide</a>.
+For more information on the Message Port features, see <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-data-exchange/message-port">Message Port Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
         </p>
 <h2>Table of Contents</h2>
@@ -56,19 +55,26 @@ For more information on the MessagePort features, see <a href="https://developer
 <tr>
 <td><a href="#MessagePortManager">MessagePortManager</a></td>
 <td>
-<a href="#LocalMessagePort">LocalMessagePort</a> <a href="#MessagePortManager::requestLocalMessagePort">requestLocalMessagePort</a> (DOMString localMessagePortName)<br>
-    <a href="#LocalMessagePort">LocalMessagePort</a> <a href="#MessagePortManager::requestTrustedLocalMessagePort">requestTrustedLocalMessagePort</a> (DOMString localMessagePortName)<br>
-    <a href="#RemoteMessagePort">RemoteMessagePort</a> <a href="#MessagePortManager::requestRemoteMessagePort">requestRemoteMessagePort</a> (<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName)<br>
-    <a href="#RemoteMessagePort">RemoteMessagePort</a> <a href="#MessagePortManager::requestTrustedRemoteMessagePort">requestTrustedRemoteMessagePort</a> (<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName)</td>
+<div>
+<a href="#LocalMessagePort">LocalMessagePort</a> <a href="#MessagePortManager::requestLocalMessagePort">requestLocalMessagePort</a> (DOMString localMessagePortName)</div>
+<div>
+<a href="#LocalMessagePort">LocalMessagePort</a> <a href="#MessagePortManager::requestTrustedLocalMessagePort">requestTrustedLocalMessagePort</a> (DOMString localMessagePortName)</div>
+<div>
+<a href="#RemoteMessagePort">RemoteMessagePort</a> <a href="#MessagePortManager::requestRemoteMessagePort">requestRemoteMessagePort</a> (<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName)</div>
+<div>
+<a href="#RemoteMessagePort">RemoteMessagePort</a> <a href="#MessagePortManager::requestTrustedRemoteMessagePort">requestTrustedRemoteMessagePort</a> (<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#LocalMessagePort">LocalMessagePort</a></td>
-<td>long <a href="#LocalMessagePort::addMessagePortListener">addMessagePortListener</a> (<a href="#MessagePortCallback">MessagePortCallback</a> listener)<br>
-    void <a href="#LocalMessagePort::removeMessagePortListener">removeMessagePortListener</a> (long watchId)</td>
+<td>
+<div>long <a href="#LocalMessagePort::addMessagePortListener">addMessagePortListener</a> (<a href="#MessagePortCallback">MessagePortCallback</a> listener)</div>
+<div>void <a href="#LocalMessagePort::removeMessagePortListener">removeMessagePortListener</a> (long watchId)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#RemoteMessagePort">RemoteMessagePort</a></td>
-<td>void <a href="#RemoteMessagePort::sendMessage">sendMessage</a> (<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, optional <a href="#LocalMessagePort">LocalMessagePort</a>? localMessagePort)</td>
+<td><div>void <a href="#RemoteMessagePort::sendMessage">sendMessage</a> (<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, optional <a href="#LocalMessagePort">LocalMessagePort</a>? localMessagePort)</div></td>
 </tr>
 <tr>
 <td><a href="#MessagePortDataItem">MessagePortDataItem</a></td>
@@ -76,7 +82,7 @@ For more information on the MessagePort features, see <a href="https://developer
 </tr>
 <tr>
 <td><a href="#MessagePortCallback">MessagePortCallback</a></td>
-<td>void <a href="#MessagePortCallback::onreceived">onreceived</a> (<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, <a href="#RemoteMessagePort">RemoteMessagePort</a>? remoteMessagePort)</td>
+<td><div>void <a href="#MessagePortCallback::onreceived">onreceived</a> (<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, <a href="#RemoteMessagePort">RemoteMessagePort</a>? remoteMessagePort)</div></td>
 </tr>
 </tbody>
 </table>
@@ -91,8 +97,7 @@ For more information on the MessagePort features, see <a href="https://developer
     readonly attribute <a href="#MessagePortManager">MessagePortManager</a> messageport;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessagePortManagerObject">MessagePortManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -100,6 +105,18 @@ For more information on the MessagePort features, see <a href="https://developer
 The <em>tizen.messageport</em> object allows access to the functionality of the Message Port API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="MessagePortManagerObject::messageport">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MessagePortManager </span><span class="name">messageport</span></span><div class="brief">
+ Object representing a exif manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.1
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="MessagePortManager">
 <a class="backward-compatibility-anchor" name="::MessagePort::MessagePortManager"></a><h3>1.2. MessagePortManager</h3>
@@ -107,17 +124,12 @@ The <em>tizen.messageport</em> object allows access to the functionality of the 
  The <em>MessagePortManager</em> interface provides methods to request message port to communicate.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MessagePortManager {
-
     <a href="#LocalMessagePort">LocalMessagePort</a> requestLocalMessagePort(DOMString localMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#LocalMessagePort">LocalMessagePort</a> requestTrustedLocalMessagePort(DOMString localMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#RemoteMessagePort">RemoteMessagePort</a> requestRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#RemoteMessagePort">RemoteMessagePort</a> requestTrustedRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -128,27 +140,29 @@ The <em>tizen.messageport</em> object allows access to the functionality of the 
 </dt>
 <dd>
 <div class="brief">
- Requests a LocalMessage Port instance to start receiving message from another application.
+ Requests a LocalMessagePort instance to start receiving message from another application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#LocalMessagePort">LocalMessagePort</a> requestLocalMessagePort(DOMString localMessagePortName);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#LocalMessagePort">LocalMessagePort</a> requestLocalMessagePort(DOMString localMessagePortName);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">localMessagePortName</span>: 
+<span class="name">localMessagePortName</span>:
  Name of the local message port to retrieve <br>The LocalMessagePort instances are identical for the same message port name.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- LocalMessagePort LocalMessagePort instance
-              </div>
+<ul>
+<span class="return">LocalMessagePort:
+                  </span>
+ LocalMessagePort instance.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -165,9 +179,9 @@ The <em>tizen.messageport</em> object allows access to the functionality of the 
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Requests the LocalMessagePort instance with the specified message port name
- var localMsgPort = tizen.messageport.requestLocalMessagePort('MessagePortA');
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Requests the LocalMessagePort instance with the specified message port name. */
+var localMsgPort = tizen.messageport.requestLocalMessagePort("MessagePortA");
+</pre>
 </div>
 </dd>
 <dt class="method" id="MessagePortManager::requestTrustedLocalMessagePort">
@@ -177,10 +191,8 @@ The <em>tizen.messageport</em> object allows access to the functionality of the 
 <div class="brief">
  Requests a trusted LocalMessagePort instance to receive message from another application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#LocalMessagePort">LocalMessagePort</a> requestTrustedLocalMessagePort(DOMString localMessagePortName);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#LocalMessagePort">LocalMessagePort</a> requestTrustedLocalMessagePort(DOMString localMessagePortName);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -192,15 +204,19 @@ Trusted local message port can communicate with applications that are signed wit
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">localMessagePortName</span>: 
+<span class="name">localMessagePortName</span>:
  Name of local message port <br>The LocalMessagePort instances are identical for the same message port name.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- LocalMessagePort Trusted LocalMessagePort instance
-              </div>
+<ul>
+<span class="return">LocalMessagePort:
+                  </span>
+ Trusted LocalMessagePort instance.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -217,9 +233,9 @@ Trusted local message port can communicate with applications that are signed wit
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Requests the LocalMessagePort instance with the specified message port name
- var localMsgPort = tizen.messageport.requestTrustedLocalMessagePort('MessagePortB');
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Requests the LocalMessagePort instance with the specified message port name. */
+var localMsgPort = tizen.messageport.requestTrustedLocalMessagePort("MessagePortB");
+</pre>
 </div>
 </dd>
 <dt class="method" id="MessagePortManager::requestRemoteMessagePort">
@@ -229,10 +245,8 @@ Trusted local message port can communicate with applications that are signed wit
 <div class="brief">
  Requests a RemoteMessagePort instance to send message to another application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#RemoteMessagePort">RemoteMessagePort</a> requestRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#RemoteMessagePort">RemoteMessagePort</a> requestRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -244,19 +258,23 @@ If the message port name and application ID are the same, the platform returns t
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">appId</span>: 
-                 ID of the application to send messages
+<span class="name">appId</span>:
+                 ID of the application to send messages.
                 </li>
           <li class="param">
-<span class="name">remoteMessagePortName</span>: 
- Name of remote message port
+<span class="name">remoteMessagePortName</span>:
+ Name of remote message port.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- RemoteMessagePort RemoteMessagePort instance
-              </div>
+<ul>
+<span class="return">RemoteMessagePort:
+                  </span>
+ RemoteMessagePort instance.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -270,9 +288,9 @@ If the message port name and application ID are the same, the platform returns t
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Requests the RemoteMessagePort instance with the specified message port name
- var remoteMsgPort = tizen.messageport.requestRemoteMessagePort('6xaeuflskd.App1', 'MessagePortA');
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Requests the RemoteMessagePort instance with the specified message port name. */
+var remoteMsgPort = tizen.messageport.requestRemoteMessagePort("6xaeuflskd.App1", "MessagePortA");
+</pre>
 </div>
 </dd>
 <dt class="method" id="MessagePortManager::requestTrustedRemoteMessagePort">
@@ -282,10 +300,8 @@ If the message port name and application ID are the same, the platform returns t
 <div class="brief">
  Requests a trusted RemoteMessagePort instance to receive message from another application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#RemoteMessagePort">RemoteMessagePort</a> requestTrustedRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#RemoteMessagePort">RemoteMessagePort</a> requestTrustedRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -298,19 +314,23 @@ Trusted remote message port can communicate with applications that are signed wi
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">appId</span>: 
-                 ID of the application to send messages
+<span class="name">appId</span>:
+                 ID of the application to send messages.
                 </li>
           <li class="param">
-<span class="name">remoteMessagePortName</span>: 
- Name of remote message port
+<span class="name">remoteMessagePortName</span>:
+ Name of remote message port.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- RemoteMessagePort Trusted RemoteMessagePort instance
-              </div>
+<ul>
+<span class="return">RemoteMessagePort:
+                  </span>
+ Trusted RemoteMessagePort instance.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -318,18 +338,19 @@ Trusted remote message port can communicate with applications that are signed wi
  with error type NotFoundError, if the port of the target application is not found.
                 </p></li>
 <li class="list"><p>
- with error type InvalidAccessError, if the target application is not signed with the same certificate.
+ with error type InvalidAccessError, if the target application is not signed with the same certification.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError, if any other error occurs.
+ with error type UnknownError, if any other error occurs
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Requests the RemoteMessagePort instance with the specified message port name.
- var remoteMsgPort = tizen.messageport.requestTrustedRemoteMessagePort('6xauflskd.App1', 'MessagePortB');
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Requests the RemoteMessagePort instance with the specified message port name. */
+var remoteMsgPort =
+    tizen.messageport.requestTrustedRemoteMessagePort("6xauflskd.App1", "MessagePortB");
+</pre>
 </div>
 </dd>
 </dl>
@@ -341,17 +362,12 @@ Trusted remote message port can communicate with applications that are signed wi
  The <em>LocalMessagePort</em> interface provides methods to receive data.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface LocalMessagePort {
-
     readonly attribute DOMString messagePortName;
-
     readonly attribute boolean isTrusted;
-
     long addMessagePortListener(<a href="#MessagePortCallback">MessagePortCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeMessagePortListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="attributes">
@@ -362,8 +378,7 @@ Trusted remote message port can communicate with applications that are signed wi
 </span><span class="type">DOMString </span><span class="name">messagePortName</span></span><div class="brief">
  The name of the message port name.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -372,8 +387,7 @@ Trusted remote message port can communicate with applications that are signed wi
 </span><span class="type">boolean </span><span class="name">isTrusted</span></span><div class="brief">
  The flag indicating whether the message port is trusted.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -389,25 +403,27 @@ Trusted remote message port can communicate with applications that are signed wi
 <div class="brief">
  Adds a message port listener to receive messages from other applications.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addMessagePortListener(<a href="#MessagePortCallback">MessagePortCallback</a> listener);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long addMessagePortListener(<a href="#MessagePortCallback">MessagePortCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">listener</span>: 
- Callback function that is called when a message is received
+<span class="name">listener</span>:
+ Callback function that is called when a message is received.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long ID of the listener that is later used to remove the listener
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ ID of the listener that is later used to remove the listener.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -424,13 +440,14 @@ Trusted remote message port can communicate with applications that are signed wi
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> function onreceived(data, remoteMsgPort) {
-   console.log('Received data to \'' + remoteMsgPort.messagePortName + '\'');
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onreceived(data, remoteMsgPort)
+{
+  console.log("Received data to '" + remoteMsgPort.messagePortName + "'");
+}
 
- var localMsgPort = tizen.messageport.requestLocalMessagePort('MessagePortA');
- var watchId = localMsgPort.addMessagePortListener(onreceived);
- </pre>
+var localMsgPort = tizen.messageport.requestLocalMessagePort("MessagePortA");
+var watchId = localMsgPort.addMessagePortListener(onreceived);
+</pre>
 </div>
 </dd>
 <dt class="method" id="LocalMessagePort::removeMessagePortListener">
@@ -440,18 +457,16 @@ Trusted remote message port can communicate with applications that are signed wi
 <div class="brief">
  Removes the message port listener.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeMessagePortListener(long watchId);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeMessagePortListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">watchId</span>: 
- ID to identify the listener
+<span class="name">watchId</span>:
+ ID to identify the listener.
                 </li>
         </ul>
 </div>
@@ -474,11 +489,12 @@ Trusted remote message port can communicate with applications that are signed wi
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var localMsgPort = tizen.messageport.requestLocalMessagePort('MessagePortA');
- var watchId = localMsgPort.addMessagePortListener(onreceived);
- // Communication routines of your app...
- localMsgPort.removeMessagePortListener(watchId);
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var localMsgPort = tizen.messageport.requestLocalMessagePort("MessagePortA");
+var watchId = localMsgPort.addMessagePortListener(onreceived);
+/* Communication routines of your app. */
+
+localMsgPort.removeMessagePortListener(watchId);
+</pre>
 </div>
 </dd>
 </dl>
@@ -490,17 +506,12 @@ Trusted remote message port can communicate with applications that are signed wi
  The <em>RemoteMessagePort</em> interface provides methods to send messages.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface RemoteMessagePort {
-
     readonly attribute DOMString messagePortName;
-
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> appId;
-
     readonly attribute boolean isTrusted;
-
     void sendMessage(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, optional <a href="#LocalMessagePort">LocalMessagePort</a>? localMessagePort) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="attributes">
@@ -511,8 +522,7 @@ Trusted remote message port can communicate with applications that are signed wi
 </span><span class="type">DOMString </span><span class="name">messagePortName</span></span><div class="brief">
  The message port name.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -521,8 +531,7 @@ Trusted remote message port can communicate with applications that are signed wi
 </span><span class="type">ApplicationId </span><span class="name">appId</span></span><div class="brief">
  The application ID to connect with.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -531,8 +540,7 @@ Trusted remote message port can communicate with applications that are signed wi
 </span><span class="type">boolean </span><span class="name">isTrusted</span></span><div class="brief">
  The flag indicating whether the message port is trusted.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -548,10 +556,8 @@ Trusted remote message port can communicate with applications that are signed wi
 <div class="brief">
  Sends messages to the specified application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendMessage(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, optional <a href="#LocalMessagePort">LocalMessagePort</a>? localMessagePort);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void sendMessage(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, optional <a href="#LocalMessagePort">LocalMessagePort</a>? localMessagePort);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -563,14 +569,14 @@ The sent messages will be ignored without any notice, unless the target applicat
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">data</span>: 
-             Array of data to send
+<span class="name">data</span>:
+             Array of data to send.
                 </li>
           <li class="param">
-<span class="name">localMessagePort</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
-<em>LocalMessagePort</em> object that gives local message port of the current application<br>It can be used to receive reply messages from the other end of the message port.<br>The order of items in this array is not guaranteed to be preserved during data transfer, and values of <em>key</em> within this
+<span class="name">localMessagePort</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ <em>LocalMessagePort</em> object that gives local message port of the current application<br>It can be used to receive reply messages from the other end of the message port.<br>The order of items in this array is not guaranteed to be preserved during data transfer, and values of <em>key</em> within this
 array must not be duplicated or empty.
-               </li>
+                </li>
         </ul>
 </div>
 <div class="exceptionlist">
@@ -592,32 +598,21 @@ array must not be duplicated or empty.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var currApp = tizen.application.getCurrentApplication();
- var currAppId = currApp.appInfo.id;
- function onListInstalledApps(appsInfo) {
-   if (appsInfo[0].id != currAppId) {
-     // Sends message
-     var localMsgPort = tizen.messageport.requestLocalMessagePort('MessagePortA');
-     var remoteMsgPort = tizen.messageport.requestRemoteMessagePort(appsInfo[0].id, 'MessagePortB');
-     localMsgPort.addMessagePortListener(function(items, remoteport) {
-       // ...
-       if(remoteport !== null) {
-         remoteport.sendMessage([{key:'RESULT', value:'OK'}]);
-       }
-     });
-     remoteMsgPort.sendMessage(
-       [
-         { key:'CMD', value:'openWindow' },
-         { key:'OPTION', value:'bx' }
-       ]
-       , localMsgPort);
-
-   }
- }
-
- tizen.application.getAppsInfo(onListInstalledApps);
-
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Sends message. */
+var localMsgPort = tizen.messageport.requestLocalMessagePort("MessagePortA");
+/* Assuming the message port of application with id: "6xaeuflskd.App1" is registered. */
+var remoteMsgPort = tizen.messageport.requestRemoteMessagePort("6xaeuflskd.App1", "MessagePortB");
+localMsgPort.addMessagePortListener(function(items, remoteport)
+{
+  /* Do something. */
+  if (remoteport !== null)
+  {
+    remoteport.sendMessage([{key: "RESULT", value: "OK"}]);
+  }
+});
+remoteMsgPort.sendMessage(
+    [{key: "CMD", value: "openWindow"}, {key: "OPTION", value: "bx"}], localMsgPort);
+</pre>
 </div>
 </dd>
 </dl>
@@ -632,8 +627,7 @@ array must not be duplicated or empty.
     DOMString key;
     DOMString value;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 </div>
@@ -645,8 +639,7 @@ array must not be duplicated or empty.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MessagePortCallback {
     void onreceived(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, <a href="#RemoteMessagePort">RemoteMessagePort</a>? remoteMessagePort);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -659,36 +652,34 @@ array must not be duplicated or empty.
 <div class="brief">
  Called when data is received from other applications via the specified message port name.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onreceived(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, <a href="#RemoteMessagePort">RemoteMessagePort</a>? remoteMessagePort);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onreceived(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, <a href="#RemoteMessagePort">RemoteMessagePort</a>? remoteMessagePort);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">data</span>: 
-              Array of data received from another application
+<span class="name">data</span>:
+              Array of data received from another application.
                 </li>
           <li class="param">
-<span class="name">remoteMessagePort</span><span class="optional"> [nullable]</span>: 
- RemoteMessagePort port that can be used to reply for the received message
+<span class="name">remoteMessagePort</span><span class="optional"> [nullable]</span>:
+ RemoteMessagePort port that can be used to reply for the received message.
                 </li>
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // MessagePortCallback instance
- function onreceived(data, remoteMsgPort) {
-   console.log('Received data to \'' + remoteMsgPort.messagePortName + '\'');
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* MessagePortCallback instance. */
+function onreceived(data, remoteMsgPort)
+{
+  console.log("Received data to '" + remoteMsgPort.messagePortName + "'");
+}
 
- var localMsgPort = tizen.messageport.requestLocalMessagePort('MessagePortA');
- var watchId = localMsgPort.addMessagePortListener(onreceived);
- </pre>
+var localMsgPort = tizen.messageport.requestLocalMessagePort("MessagePortA");
+var watchId = localMsgPort.addMessagePortListener(onreceived);
+</pre>
 </div>
-
 </dd>
 </dl>
 </div>
@@ -696,50 +687,32 @@ array must not be duplicated or empty.
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module MessagePort {
-
   [NoInterfaceObject] interface MessagePortManagerObject {
     readonly attribute <a href="#MessagePortManager">MessagePortManager</a> messageport;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessagePortManagerObject">MessagePortManagerObject</a>;
-
   [NoInterfaceObject] interface MessagePortManager {
-
     <a href="#LocalMessagePort">LocalMessagePort</a> requestLocalMessagePort(DOMString localMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#LocalMessagePort">LocalMessagePort</a> requestTrustedLocalMessagePort(DOMString localMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#RemoteMessagePort">RemoteMessagePort</a> requestRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#RemoteMessagePort">RemoteMessagePort</a> requestTrustedRemoteMessagePort(<a href="application.html#ApplicationId">ApplicationId</a> appId, DOMString remoteMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface LocalMessagePort {
-
     readonly attribute DOMString messagePortName;
-
     readonly attribute boolean isTrusted;
-
     long addMessagePortListener(<a href="#MessagePortCallback">MessagePortCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeMessagePortListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [NoInterfaceObject] interface RemoteMessagePort {
-
     readonly attribute DOMString messagePortName;
-
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> appId;
-
     readonly attribute boolean isTrusted;
-
     void sendMessage(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, optional <a href="#LocalMessagePort">LocalMessagePort</a>? localMessagePort) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   dictionary MessagePortDataItem {
     DOMString key;
     DOMString value;
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface MessagePortCallback {
     void onreceived(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, <a href="#RemoteMessagePort">RemoteMessagePort</a>? remoteMessagePort);
   };

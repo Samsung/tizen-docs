@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>DeviceMotion API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>DeviceMotion API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::DeviceMotion">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
 <div class="title"><h1>DeviceMotion API</h1></div>
 <div class="brief">
  This plugin provides access to the device's accelerometer. The accelerometer is a motion sensor that detects the change (delta) in movement relative to the current device orientation, in three dimensions along the x, y, and z axis.
@@ -20,8 +20,7 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -36,6 +35,8 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <li>1.4. <a href="#AccelerationOptions">AccelerationOptions</a>
 </li>
 <li>1.5. <a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a>
+</li>
+<li>1.6. <a href="#ErrorCallback">ErrorCallback</a>
 </li>
 </ul>
 </li>
@@ -59,8 +60,8 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <tr>
 <td><a href="#Accelerometer">Accelerometer</a></td>
 <td>
-<div>void <a href="#Accelerometer::getCurrentAcceleration">getCurrentAcceleration</a> (<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror)</div>
-<div>DOMString <a href="#Accelerometer::watchAcceleration">watchAcceleration</a> (<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options)</div>
+<div>void <a href="#Accelerometer::getCurrentAcceleration">getCurrentAcceleration</a> (<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror)</div>
+<div>DOMString <a href="#Accelerometer::watchAcceleration">watchAcceleration</a> (<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options)</div>
 <div>void <a href="#Accelerometer::clearWatch">clearWatch</a> (DOMString watchID)</div>
 </td>
 </tr>
@@ -76,6 +77,10 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <td><a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a></td>
 <td><div>void <a href="#AccelerometerSuccessCallback::onsuccess">onsuccess</a> (<a href="#Acceleration">Acceleration</a> acceleration)</div></td>
 </tr>
+<tr>
+<td><a href="#ErrorCallback">ErrorCallback</a></td>
+<td><div>void <a href="#ErrorCallback::onerror">onerror</a> (<a href="cordova.html#DOMException">DOMException</a> error)</div></td>
+</tr>
 </tbody>
 </table>
 <div class="interfaces" id="interfaces-section">
@@ -85,20 +90,17 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="brief">
  The <em>navigator.accelerometer </em>object allows access to the functionality of the DeviceMotion API.
           </div>
-<pre class="webidl prettyprint">   [NoInterfaceObject] interface AccelerometerManagerObject {
-       readonly attribute <a href="#Accelerometer">Accelerometer</a> accelerometer;
-   };</pre>
-<pre class="webidl prettyprint">    implements <a href="#AccelerometerManagerObject">AccelerometerManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface AccelerometerManagerObject {
+    readonly attribute <a href="#Accelerometer">Accelerometer</a> accelerometer;
+  };</pre>
+<pre class="webidl prettyprint">  Navigator implements <a href="#AccelerometerManagerObject">AccelerometerManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 </div>
@@ -107,24 +109,19 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="brief">
  The Accelerometer object captures device motion in the x, y, and z direction.
           </div>
-<pre class="webidl prettyprint">   [NoInterfaceObject] interface Accelerometer {
-   void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-
-   DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options);
-
-   void clearWatch(DOMString watchID);
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Accelerometer {
+    void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
+    DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options)
+                                raises();
+    void clearWatch(DOMString watchID) raises();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="methods">
@@ -137,17 +134,14 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="brief">
  Gets the current acceleration along the x, y, and z axes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -159,7 +153,7 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
                 </li>
           <li class="param">
 <span class="name">onerror</span>:
- The callback method called when errors occur
+ The callback method called when errors occur.
                 </li>
         </ul>
 </div>
@@ -173,16 +167,16 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onSuccess(acceleration)
 {
-  console.log('Acceleration X: ' + acceleration.x + '\n' +
-              'Acceleration Y: ' + acceleration.y + '\n' +
-              'Acceleration Z: ' + acceleration.z + '\n' +
-              'Timestamp: ' + acceleration.timestamp);
-};
+  console.log("Acceleration X: " + acceleration.x + "\n" +
+              "Acceleration Y: " + acceleration.y + "\n" +
+              "Acceleration Z: " + acceleration.z + "\n" +
+              "Timestamp: " + acceleration.timestamp);
+}
 
 function onError()
 {
-  console.log('onError!');
-};
+  console.log("onError!");
+}
 
 navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 </pre>
@@ -202,17 +196,14 @@ Timestamp: 1456480118000
 <div class="brief">
  Gets the acceleration along the x, y, and z axes at a regular interval.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options);</pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -224,18 +215,22 @@ Timestamp: 1456480118000
                 </li>
           <li class="param">
 <span class="name">onerror</span>:
- The callback method called when errors occur
+ The callback method called when errors occur.
                 </li>
           <li class="param">
 <span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Specifies the interval of calling successcallback in miliseconds. If not provided, default value for frequency is 10000 (10 seconds).
+ Specifies the interval of calling successcallback in milliseconds. If not provided, default value for frequency is 10000 (10 seconds).
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:
+                  </span>
  DOMString The watch id that must be passed to <a href="device-motion.html#Accelerometer::clearWatch">clearWatch</a> to stop watching.
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>TypeError<ul><li class="list"><p>
@@ -246,19 +241,19 @@ Timestamp: 1456480118000
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function onSuccess(acceleration)
 {
-  console.log('Acceleration X: ' + acceleration.x + '\n' +
-              'Acceleration Y: ' + acceleration.y + '\n' +
-              'Acceleration Z: ' + acceleration.z + '\n' +
-              'Timestamp: ' + acceleration.timestamp);
-  console.log('Please wait 3 seconds for the next measurement...');
-};
+  console.log("Acceleration X: " + acceleration.x + "\n" +
+              "Acceleration Y: " + acceleration.y + "\n" +
+              "Acceleration Z: " + acceleration.z + "\n" +
+              "Timestamp: " + acceleration.timestamp);
+  console.log("Please wait 3 seconds for the next measurement...");
+}
 
 function onError()
 {
-  console.log('onError!');
-};
+  console.log("onError!");
+}
 
-var options = {frequency: 3000}; /* Update every 3 seconds */
+var options = {frequency: 3000};  /* Update every 3 seconds. */
 
 var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 </pre>
@@ -286,16 +281,13 @@ Please wait 3 seconds for the next measurement...
  Stop watching the Acceleration referenced by the watchID parameter.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void clearWatch(DOMString watchID);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -319,21 +311,22 @@ Please wait 3 seconds for the next measurement...
 
 function onSuccess(acceleration)
 {
-  console.log('Acceleration X: ' + acceleration.x + '\n' +
-              'Acceleration Y: ' + acceleration.y + '\n' +
-              'Acceleration Z: ' + acceleration.z + '\n' +
-              'Timestamp: ' + acceleration.timestamp);
-  if (3 == ++counter) {
+  console.log("Acceleration X: " + acceleration.x + "\n" +
+              "Acceleration Y: " + acceleration.y + "\n" +
+              "Acceleration Z: " + acceleration.z + "\n" +
+              "Timestamp: " + acceleration.timestamp);
+  if (3 == ++counter)
+  {
     navigator.accelerometer.clearWatch(watchID);
   }
-};
+}
 
 function onError()
 {
-  console.log('onError!');
-};
+  console.log("onError!");
+}
 
-var options = {frequency: 30}; /* Update every 0.03 seconds */
+var options = {frequency: 30};  /* Update every 0.03 seconds. */
 
 watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 </pre>
@@ -363,22 +356,16 @@ Timestamp: 1456483774060
  Contains Accelerometer data captured at a specific point in time.
 Acceleration values include the effect of gravity (9.81 m/s^2), so that when a device lies flat and facing up, x, y, and z values returned should be 0, 0, and 9.81.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface Acceleration {
-        readonly attribute double x;
-
-        readonly attribute double y;
-
-        readonly attribute double z;
-
-        readonly attribute long timestamp;
-
-    };</pre>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Acceleration {
+    readonly attribute double x;
+    readonly attribute double y;
+    readonly attribute double z;
+    readonly attribute long timestamp;
+  };</pre>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="attributes">
@@ -389,16 +376,13 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 </span><span class="type">double </span><span class="name">x</span></span><div class="brief">
  Amount of acceleration on the x-axis. (in m/s^2)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -407,16 +391,13 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 </span><span class="type">double </span><span class="name">y</span></span><div class="brief">
  Amount of acceleration on the y-axis. (in m/s^2)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -425,16 +406,13 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 </span><span class="type">double </span><span class="name">z</span></span><div class="brief">
  Amount of acceleration on the z-axis. (in m/s^2)
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -443,16 +421,13 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 </span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
  Creation timestamp in milliseconds.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -464,9 +439,9 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 <div class="brief">
  An optional parameter to customize the retrieval of accelerometer values.
           </div>
-<pre class="webidl prettyprint">    dictionary AccelerationOptions {
-        long frequency;
-    };</pre>
+<pre class="webidl prettyprint">  dictionary AccelerationOptions {
+    long frequency;
+  };</pre>
 <div class="attributes">
 <h4>Dictionary members</h4>
 <dl>
@@ -475,8 +450,7 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 <div class="brief">
  Interval defining how often to retrieve Acceleration in milliseconds.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 </dd>
@@ -488,9 +462,9 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 <div class="brief">
  The AccelerometerSuccessCallback interface provides a SuccessCallback for the getCurrentAcceleration and watchAcceleration methods.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject] interface AccelerometerSuccessCallback {
-        void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);
-    };</pre>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface AccelerometerSuccessCallback {
+    void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);
+  };</pre>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -499,8 +473,7 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 </dt>
 <dd>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -516,10 +489,46 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 </dl>
 </div>
 </div>
+<div class="interface" id="ErrorCallback">
+<a class="backward-compatibility-anchor" name="::DeviceMotion::ErrorCallback"></a><h3>1.6. ErrorCallback</h3>
+<div class="brief">
+ Basic error callback.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
+  interface ErrorCallback {
+    void onerror(<a href="cordova.html#DOMException">DOMException</a> error);
+  };</pre>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ErrorCallback::onerror">
+<a class="backward-compatibility-anchor" name="::DeviceMotion::ErrorCallback::onerror"></a><code><b><span class="methodName">onerror</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Success
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="cordova.html#DOMException">DOMException</a> error);</pre></div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">error</span>:
+ Error object containing some information about the error.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -529,42 +538,36 @@ To guarantee that the DeviceMotion application runs on a device with the DeviceM
 <li class="feature">http://tizen.org/feature/sensor.accelerometer</li>
 </div>
 <p></p>
-                    For more information, see <a href="../../org.tizen.gettingstarted/html/tizen_overview/application_filtering.htm">Application Filtering.</a>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module DeviceMotion {
-   [NoInterfaceObject] interface AccelerometerManagerObject {
-       readonly attribute <a href="#Accelerometer">Accelerometer</a> accelerometer;
-   };
-    implements <a href="#AccelerometerManagerObject">AccelerometerManagerObject</a>;
-   [NoInterfaceObject] interface Accelerometer {
-   void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror);
-
-   DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="cordova.html#ErrorCallback">ErrorCallback</a><a href="file.html#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options);
-
-   void clearWatch(DOMString watchID);
-
-    };
-
-    [NoInterfaceObject] interface Acceleration {
-        readonly attribute double x;
-
-        readonly attribute double y;
-
-        readonly attribute double z;
-
-        readonly attribute long timestamp;
-
-    };
-
-    dictionary AccelerationOptions {
-        long frequency;
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject] interface AccelerometerSuccessCallback {
-        void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);
-    };
-
+  [NoInterfaceObject] interface AccelerometerManagerObject {
+    readonly attribute <a href="#Accelerometer">Accelerometer</a> accelerometer;
+  };
+  Navigator implements <a href="#AccelerometerManagerObject">AccelerometerManagerObject</a>;
+  [NoInterfaceObject] interface Accelerometer {
+    void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
+    DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options)
+                                raises();
+    void clearWatch(DOMString watchID) raises();
+  };
+  [NoInterfaceObject] interface Acceleration {
+    readonly attribute double x;
+    readonly attribute double y;
+    readonly attribute double z;
+    readonly attribute long timestamp;
+  };
+  dictionary AccelerationOptions {
+    long frequency;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface AccelerometerSuccessCallback {
+    void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);
+  };
+  [Callback=FunctionOnly,NoInterfaceObject]
+  interface ErrorCallback {
+    void onerror(<a href="cordova.html#DOMException">DOMException</a> error);
+  };
 };</pre>
 </div>
 <div id="page-footer">
@@ -580,6 +583,7 @@ To guarantee that the DeviceMotion application runs on a device with the DeviceM
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

@@ -119,7 +119,8 @@ For more information on the relationship between the elements, see the [element 
 
   Installation location for the application (available value: `"auto"`)
 
-  > **Note**  
+  > **Note**
+  >
   > This attribute is read-only. Do not attempt to modify it.
 
 - `package`
@@ -130,7 +131,8 @@ For more information on the relationship between the elements, see the [element 
 
   Package type of the application (available value: `"tpk"`)
 
-  > **Note**  
+  > **Note**
+  >
   > This attribute is read-only. Do not attempt to modify it.
 
 - `version`
@@ -257,9 +259,9 @@ For more information on the relationship between the elements, see the [element 
 
 **Attributes:**
 
-- `appid`  
+- `appid`
 
-  Application unique ID (string)  
+  Application unique ID (string)
 
   This can be used for launching or terminating the application explicitly.
 
@@ -270,6 +272,7 @@ For more information on the relationship between the elements, see the [element 
 - `hw-acceleration`
 
   Indicates the application hardware acceleration status (available values: not defined (depends on the system setting), `on` (use hardware acceleration), `off` (do not use hardware acceleration))
+
   By default, this value is not defined.
 
 
@@ -282,7 +285,8 @@ For more information on the relationship between the elements, see the [element 
 - `multiple`
 
   Indicates whether the application can be launched as a multiple (available values: `true`, `false`)
-  > **Note**  
+  > **Note**
+  >
   > This attribute is read-only. Do not attempt to modify it.
 
 - `nodisplay`
@@ -297,7 +301,8 @@ For more information on the relationship between the elements, see the [element 
 
   Tizen application type (available values: `dotnet`)
 
-  > **Note**  
+  > **Note**
+  >
   > This attribute is read-only. Do not attempt to modify it.
 
 **For example:**
@@ -360,8 +365,14 @@ For more information on the relationship between the elements, see the [element 
 
     Tizen application type (available value: `dotnet`)
 
+-   `setup-appid`
+
+    Watch application setup application ID (string)
+
+    If the value is `watchface-editor`, the system default editor is shown when the device enters the editing mode.
+
 ```
-<watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample.dll" type="dotnet">
+<watch-application ambient-support="true" appid="org.tizen.watchsample" exec="watchsample.dll" type="dotnet" setup-appid="watchface-editor">
    <label>.....</label>
    <icon>.....</icon>
 </watch-application>

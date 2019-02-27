@@ -2,15 +2,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>NetworkBearerSelection API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>NetworkBearerSelection API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NetworkBearerSelection">
-<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>NetworkBearerSelection API</h1></div>
 <div class="brief">
- The NetworkBearerSelection(NBS) API defines interfaces and methods providing Web applications to access the devices.
+ The Network Bearer Selection (NBS) API defines interfaces and methods providing Web applications to access the devices.
         </div>
 <div class="description">
         <p>
@@ -21,13 +21,13 @@ If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
 
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
-<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#NetworkType">NetworkType</a>
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#NetworkType">NetworkType</a>
 </li></ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -58,13 +58,17 @@ If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
 </tr>
 <tr>
 <td><a href="#NetworkBearerSelection">NetworkBearerSelection</a></td>
-<td>void <a href="#NetworkBearerSelection::requestRouteToHost">requestRouteToHost</a> (<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#NetworkBearerSelection::releaseRouteToHost">releaseRouteToHost</a> (<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+<td>
+<div>void <a href="#NetworkBearerSelection::requestRouteToHost">requestRouteToHost</a> (<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#NetworkBearerSelection::releaseRouteToHost">releaseRouteToHost</a> (<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
 </tr>
 <tr>
 <td><a href="#NetworkSuccessCallback">NetworkSuccessCallback</a></td>
-<td>void <a href="#NetworkSuccessCallback::onsuccess">onsuccess</a> ()<br>
-    void <a href="#NetworkSuccessCallback::ondisconnected">ondisconnected</a> ()</td>
+<td>
+<div>void <a href="#NetworkSuccessCallback::onsuccess">onsuccess</a> ()</div>
+<div>void <a href="#NetworkSuccessCallback::ondisconnected">ondisconnected</a> ()</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -76,10 +80,17 @@ If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
  Specifies the type of a network.
           </div>
 <pre class="webidl prettyprint">  enum NetworkType { "CELLULAR", "UNKNOWN" };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
+<div class="description">
+          <ul>
+            <li>
+CELLULAR - corresponds to cellular network type.            </li>
+            <li>
+UNKNOWN - corresponds to unknown network type.            </li>
+          </ul>
+         </div>
 </div>
 </div>
 <div class="interfaces" id="interfaces-section">
@@ -93,15 +104,26 @@ If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
     readonly attribute <a href="#NetworkBearerSelection">NetworkBearerSelection</a> networkbearerselection;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
           <p>
-There is a <em>tizen.networkbearerselection </em>object that allows accessing the functionality of the Networkbearerselection API.
+There is a <em>tizen.networkbearerselection</em> object that allows accessing the functionality of the Network Bearer Selection API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NetworkBearerSelectionObject::networkbearerselection">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">NetworkBearerSelection </span><span class="name">networkbearerselection</span></span><div class="brief">
+ Object representing a network bearer selection.
+            </div>
+<p><span class="version">Since: </span>
+ 2.1
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="NetworkBearerSelection">
 <a class="backward-compatibility-anchor" name="::NetworkBearerSelection::NetworkBearerSelection"></a><h3>2.2. NetworkBearerSelection</h3>
@@ -109,19 +131,12 @@ There is a <em>tizen.networkbearerselection </em>object that allows accessing th
  The NetworkBearerSelection entry interface provides methods to query the network bearer selection.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface NetworkBearerSelection {
-
-    void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType,
-                            DOMString domainName,
-                            <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
+    void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType,
-                            DOMString domainName,
-                            <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+    void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -139,10 +154,9 @@ This API offers methods for network bearer selection.
 <div class="brief">
  Requests a specific network connection.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback, 
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -167,46 +181,42 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError : If the 'http://tizen.org/privilege/internet' privilege is not declared in config.xml or any other platform error occurs.               </li>
+ UnknownError : If the "http://tizen.org/privilege/internet" privilege is not declared in config.xml or any other platform error occurs.               </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  partner
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/networkbearerselection
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/internet
             </p>
-<p><span class="remark"> Remark : </span>
- The <em>'http://tizen.org/privilege/internet'</em> privilege is required since Tizen 2.3.
+<p><span class="remark">Remark: </span>
+ The <em>"http://tizen.org/privilege/internet"</em> privilege is required since Tizen 2.3.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">networkType</span>: 
-     The network type
+<span class="name">networkType</span>:
+     The network type.
                 </li>
           <li class="param">
-<span class="name">domainName</span>: 
-      The domain name
+<span class="name">domainName</span>:
+      The domain name.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback function that is called when data network connection is connected
+<span class="name">successCallback</span>:
+ Callback function that is called when data network connection is connected.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
-   Callback function that is called when the request is failed
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when the request is failed.
                 </li>
         </ul>
 </div>
@@ -226,14 +236,21 @@ The <em>ErrorCallback</em> method is launched with these error types:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var statuscb =
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var statuscb =
 {
-   onsuccess: function() {console.log("onsuccess func is called");},
-   ondisconnected: function() {console.log("ondisconnected func is called");}
+  onsuccess: function()
+  {
+    console.log("onsuccess func is called");
+  },
+  ondisconnected: function()
+  {
+    console.log("ondisconnected func is called");
+  }
 };
-function ecb(e) {console.log("error callback is called: " + e.message + ": " + e.code);}
-
+function ecb(e)
+{
+  console.log("error callback is called: " + e.message + ": " + e.code);
+}
 tizen.networkbearerselection.requestRouteToHost("CELLULAR", "www.tizen.org", statuscb, ecb);
 </pre>
 </div>
@@ -245,10 +262,9 @@ tizen.networkbearerselection.requestRouteToHost("CELLULAR", "www.tizen.org", sta
 <div class="brief">
  Releases a specific network connection.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, 
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -265,46 +281,42 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError : If the 'http://tizen.org/privilege/internet' privilege is not declared in config.xml or any other platform error occurs.               </li>
+ UnknownError : If the "http://tizen.org/privilege/internet" privilege is not declared in config.xml or any other platform error occurs.               </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  partner
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/networkbearerselection
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
       http://tizen.org/privilege/internet
             </p>
-<p><span class="remark"> Remark : </span>
- The <em>'http://tizen.org/privilege/internet'</em> privilege is required since Tizen 2.3.
+<p><span class="remark">Remark: </span>
+ The <em>"http://tizen.org/privilege/internet"</em> privilege is required since Tizen 2.3.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">networkType</span>: 
-     Network type
+<span class="name">networkType</span>:
+     Network type.
                 </li>
           <li class="param">
-<span class="name">domainName</span>: 
-      Domain name
+<span class="name">domainName</span>:
+      Domain name.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback function that is called when data network connection is released
+<span class="name">successCallback</span>:
+ Callback function that is called when data network connection is released.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
-   Callback function that is called when the releasing fails
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when the releasing fails.
                 </li>
         </ul>
 </div>
@@ -324,17 +336,25 @@ The <em>ErrorCallback</em> method is launched with these error types:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function scb() {console.log("success callback is called");}
-function ecb(e) {console.log("error callback is called: " + e.message + ": " + e.code);}
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function scb()
+{
+  console.log("success callback is called");
+}
+function ecb(e)
+{
+  console.log("error callback is called: " + e.message + ": " + e.code);
+}
 var statuscb =
 {
-   onsuccess: function()
-   {
-      console.log("onsuccess func is called");
-      tizen.networkbearerselection.releaseRouteToHost("CELLULAR", "www.google.com", scb, ecb);
-   },
-   ondisconnected: function() {console.log("ondisconnected func is called");}
+  onsuccess: function()
+  {
+    console.log("onsuccess func is called");
+    tizen.networkbearerselection.releaseRouteToHost("CELLULAR", "www.google.com", scb, ecb);
+  },
+  ondisconnected: function()
+  {
+    console.log("ondisconnected func is called");
+  }
 };
 tizen.networkbearerselection.requestRouteToHost("CELLULAR", "www.google.com", statuscb, ecb);
 </pre>
@@ -350,11 +370,9 @@ tizen.networkbearerselection.requestRouteToHost("CELLULAR", "www.google.com", st
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface NetworkSuccessCallback {
     void onsuccess();
-
     void ondisconnected();
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -372,10 +390,8 @@ It is used in asynchronous operations with requestRouteToHost().
 <div class="brief">
  Called when a network is connected successfully.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess();</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </dd>
@@ -386,10 +402,8 @@ It is used in asynchronous operations with requestRouteToHost().
 <div class="brief">
  Called when a network is disconnected.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void ondisconnected();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void ondisconnected();</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </dd>
@@ -399,7 +413,7 @@ It is used in asynchronous operations with requestRouteToHost().
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -409,34 +423,23 @@ To guarantee that the NBS application runs on a device with telephony feature, d
 <li class="feature">http://tizen.org/feature/network.telephony</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NetworkBearerSelection {
-
   enum NetworkType { "CELLULAR", "UNKNOWN" };
-
   [NoInterfaceObject] interface NetworkBearerSelectionObject {
     readonly attribute <a href="#NetworkBearerSelection">NetworkBearerSelection</a> networkbearerselection;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;
-
   [NoInterfaceObject] interface NetworkBearerSelection {
-
-    void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType,
-                            DOMString domainName,
-                            <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
+    void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType,
-                            DOMString domainName,
-                            <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+    void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-
   [Callback, NoInterfaceObject] interface NetworkSuccessCallback {
     void onsuccess();
-
     void ondisconnected();
   };
 };</pre>

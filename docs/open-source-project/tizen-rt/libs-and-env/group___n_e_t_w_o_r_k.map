@@ -1,0 +1,7 @@
+<map id="NETWORK" name="NETWORK">
+<area shape="rect" id="node1" href="$group___h_t_t_p.html" title="HTTP" alt="" coords="159,5,217,32"/>
+<area shape="rect" id="node2" href="$group___websocket.html" title="Provides APIs for Websocket. " alt="" coords="144,56,232,83"/>
+<area shape="rect" id="node3" href="$group___n_t_p_c.html" title="Provides APIs for NTP(Network Time Protocol) Client. " alt="" coords="145,107,231,133"/>
+<area shape="rect" id="node4" href="$group___d_h_c_p.html" title="Provides APIs for DHCP(Dynamic Host Configuration Protocol) Client. " alt="" coords="157,157,219,184"/>
+<area shape="rect" id="node6" href="$group___s_o_c_k_e_t.html" title="Provides APIs for BSD Socket. " alt="" coords="157,208,219,235"/>
+</map>

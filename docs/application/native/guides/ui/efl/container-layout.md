@@ -40,7 +40,7 @@ Unlike when using other UI containers, you must write C code and an EDC script t
 
 3. Load the EDJ file with the `elm_layout_file_set()` function.
 
- You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
+   You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
 
    ```
    char edj_path[128] = {0,};
@@ -53,7 +53,7 @@ Unlike when using other UI containers, you must write C code and an EDC script t
 
 5. Elementary can send Edje signals to the EDC part using the `elm_layout_signal_emit()` function. You can also use the `elm_layout_signal_callback_add()` function to receive signals.
 
- Use the following code to listen for any signals sent by the layout:
+   Use the following code to listen for any signals sent by the layout:
 
    ```
    elm_layout_signal_callback_add(layout, "*", "*", _signal_cb, NULL);
@@ -178,6 +178,7 @@ The following predefined themes are available in the mobile profile:
   ```
 
 > **Note**
+>
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related Information

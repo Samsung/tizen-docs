@@ -2,17 +2,6 @@
 
 The following tables introduce the keyboard shortcuts available for the various tools and actions.
 
-## Connection Explorer
-
-**Table: Connection Explorer shortcuts**
-
-| Command  | Ubuntu          | Windows&reg;        | macOS           |
-|--------|---------------|---------------|---------------|
-| Delete   | **Delete**      | **Delete**      | **Delete**      |
-| Rename   | **F2**          | **F2**          | **F2**          |
-| Refresh  | **F5**          | **F5**          | **F5**          |
-| Property | **Alt + Enter** | **Alt + Enter** | **Alt + Enter** |
-
 ## Build and Run
 
 **Table: Build and run shortcuts**

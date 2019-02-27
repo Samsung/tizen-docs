@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>TVAudioControl API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVAudioControl API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVAudioControl">
-<div class="supported-platforms"><img title="Optional" src="../../../images/tv_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="tv-optional" title="Optional, Not supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>TVAudioControl API</h1></div>
 <div class="brief">
         </div>
@@ -17,8 +17,7 @@ This API provides the audio control features (such as volume and mute) on the TV
 There will be a <em>tizen.tvaudiocontrol</em> object that allows access to the functionality of the TV Audio Control API.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.3
         </p>
 <h2>Table of Contents</h2>
@@ -87,14 +86,8 @@ There will be a <em>tizen.tvaudiocontrol</em> object that allows access to the f
 <div class="brief">
   An enumerator to indicate the audio output mode.
           </div>
-<pre class="webidl prettyprint">    enum AudioOutputMode {
-        "PCM",
-        "DOLBY",
-        "DTS",
-        "AAC"
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC" };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -115,25 +108,9 @@ There will be a <em>tizen.tvaudiocontrol</em> object that allows access to the f
 <div class="brief">
   An enumerator to indicate the beep type.
           </div>
-<pre class="webidl prettyprint">    enum AudioBeepType {
-        "UP",
-        "DOWN",
-        "LEFT",
-        "RIGHT",
-        "PAGE_LEFT",
-        "PAGE_RIGHT",
-        "BACK",
-        "SELECT",
-        "CANCEL",
-        "WARNING",
-        "KEYPAD",
-        "KEYPAD_ENTER",
-        "KEYPAD_DEL",
-        "MOVE",
-        "PREPARING"
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING", "KEYPAD",
+    "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -179,12 +156,11 @@ There will be a <em>tizen.tvaudiocontrol</em> object that allows access to the f
 <div class="brief">
  This interface defines what is instantiated by the <em>Tizen</em> object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface AudioControlManagerObject {
-        readonly attribute <a href="#AudioControlManager">AudioControlManager</a> tvaudiocontrol;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface AudioControlManagerObject {
+    readonly attribute <a href="#AudioControlManager">AudioControlManager</a> tvaudiocontrol;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="description">
@@ -199,31 +175,19 @@ Audio Control API.
 <div class="brief">
  This interface provides access to the API funtionalities through the <em>tizen.tvaudiocontrol</em> interface.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface AudioControlManager {
-
-        void setMute(boolean mute) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        boolean isMute() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolume(unsigned short volume) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolumeUp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolumeDown() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        unsigned short getVolume() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolumeChangeListener(<a href="#VolumeChangeCallback">VolumeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void unsetVolumeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#AudioOutputMode">AudioOutputMode</a> getOutputMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void playSound(<a href="#AudioBeepType">AudioBeepType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface AudioControlManager {
+    void setMute(boolean mute) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isMute() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolume(unsigned short volume) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolumeUp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolumeDown() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned short getVolume() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolumeChangeListener(<a href="#VolumeChangeCallback">VolumeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetVolumeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#AudioOutputMode">AudioOutputMode</a> getOutputMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void playSound(<a href="#AudioBeepType">AudioBeepType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -236,10 +200,8 @@ Audio Control API.
 <div class="brief">
  Turns on or off the silent mode
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setMute(boolean mute);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setMute(boolean mute);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -250,19 +212,17 @@ with the volume level. If setVolumeUp or setVolumeDown functions
 are used, then mute is disabled.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">mute</span>: 
+<span class="name">mute</span>:
  The mute state (true = turn on the silent mode, false = turn off the silent mode)
                 </li>
         </ul>
@@ -274,20 +234,18 @@ are used, then mute is disabled.
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Turn on the silent mode */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Turns on the silent mode. */
 tizen.tvaudiocontrol.setMute(true);
 </pre>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Turn off the silent mode */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Turns off the silent mode. */
 tizen.tvaudiocontrol.setMute(false);
 </pre>
 </div>
@@ -299,24 +257,24 @@ tizen.tvaudiocontrol.setMute(false);
 <div class="brief">
  Gets the mute state.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">boolean isMute();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">boolean isMute();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:
+                  </span>
  boolean The current mute state
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -324,45 +282,43 @@ tizen.tvaudiocontrol.setMute(false);
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Mute to turn off the sound */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Mutes to turn off the sound. */
 tizen.tvaudiocontrol.setMute(true);
 
-/* Check if it is mute */
+/* Checks if it is mute or not. */
 if (tizen.tvaudiocontrol.isMute())
 {
-   console.log("At this moment, the sound output of this device is turned off.");
+  console.log("At this moment, the sound output of this device is turned off");
 }
 else
 {
-   alert("It's not possible!");
+  alert("It's not possible!");
 }
 </pre>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Checks if increasing the volume makes the silent mode turned off */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Checks if increasing the volume makes the silent mode turned off. */
 
-/* Mute to turn off the sound */
+/* Mutes to turn off the sound. */
 tizen.tvaudiocontrol.setMute(true);
 
-/* By increasing the volume level, the mute state is changed to be off */
+/* By increasing the volume level, the mute state is changed to off. */
 tizen.tvaudiocontrol.setVolumeUp();
 
-/* Check if it is mute */
+/* Checks if it is mute or not. */
 if (tizen.tvaudiocontrol.isMute())
 {
-   alert("It's not possible! (API bug)");
+  alert("It's not possible!");
 }
 else
 {
-   console.log("setVolumeUp() turns off the silent mode.");
+  console.log("setVolumeUp() turns off the silent mode");
 }
 </pre>
 </div>
@@ -374,10 +330,8 @@ else
 <div class="brief">
  Changes the volume level.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setVolume(unsigned short volume);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setVolume(unsigned short volume);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -385,19 +339,17 @@ else
 The value of <em>volume</em> is allowed from 0 to 100. If an invalid value is passed, <em>InvalidValuesError</em> will occur.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">volume</span>: 
+<span class="name">volume</span>:
  The volume (the available volume range is 0 ~100)
                 </li>
         </ul>
@@ -412,26 +364,29 @@ The value of <em>volume</em> is allowed from 0 to 100. If an invalid value is pa
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Sets the volume */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Sets the volume. */
 tizen.tvaudiocontrol.setVolume(10);
 
 try
 {
-   tizen.tvaudiocontrol.setVolume(-1);
+  tizen.tvaudiocontrol.setVolume(-1);
 }
 catch (e)
 {
-   if (e.name === "InvalidValuesError")
-   {
-      alert("The passed value value should be in the range of 0 to 100.");
-   }
+  if (e.name === "InvalidValuesError")
+  {
+    alert("The passed value value should be in the range of 0 to 100");
+  }
+  else
+  {
+    alert("Unexpected error: " + e.name);
+  }
 }
 </pre>
 </div>
@@ -446,18 +401,14 @@ If it is called when the volume level is 100, it will be ignored
 because the maximum volume level is 100. If mute is enabled,
 then execution of this functions will disable it.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setVolumeUp();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setVolumeUp();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="exceptionlist">
@@ -467,28 +418,29 @@ then execution of this functions will disable it.
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Sets the volume */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Sets the volume. */
 tizen.tvaudiocontrol.setVolume(99);
 
 tizen.tvaudiocontrol.setVolumeUp();
-/* Check if the current volume is 100 */
+
+/* Checks if the current volume is 100 or not. */
 if (tizen.tvaudiocontrol.getVolume() === 100)
 {
-   alert("setVolumeUp() is successfully called.");
+  alert("setVolumeUp() was called successfully");
 }
 
 tizen.tvaudiocontrol.setVolumeUp();
-/* Check if the volume level has been changed at the maximum volume level */
+
+/* Checks if the volume level has been changed or not at the maximum volume level. */
 if (tizen.tvaudiocontrol.getVolume() === 100)
 {
-   alert("setVolumeUp() is successfully called.");
+  alert("setVolumeUp() was successfully called");
 }
 </pre>
 </div>
@@ -500,10 +452,8 @@ if (tizen.tvaudiocontrol.getVolume() === 100)
 <div class="brief">
  Decreases the volume by 1 level.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setVolumeDown();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setVolumeDown();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -513,12 +463,10 @@ ignored because the minimum volume level is 0. If mute is enabled,
 then execution of this functions will disable it.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="exceptionlist">
@@ -528,28 +476,29 @@ then execution of this functions will disable it.
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Sets the volume */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Sets the volume. */
 tizen.tvaudiocontrol.setVolume(1);
 
 tizen.tvaudiocontrol.setVolumeDown();
-/* Check if the current volume is 0 */
+
+/* Checks if the current volume is 0 or not. */
 if (tizen.tvaudiocontrol.getVolume() === 0)
 {
-   alert("setVolumeDown() is successfully called.");
+  alert("setVolumeDown() was successfully called");
 }
 
 tizen.tvaudiocontrol.setVolumeDown();
-/* Check if the volume level has been changed at the minimum volume level */
+
+/* Check if the volume level has been changed or not at the minimum volume level. */
 if (tizen.tvaudiocontrol.getVolume() === 0)
 {
-   alert("setVolumeDown() is successfully called.");
+  alert("setVolumeDown() was successfully called");
 }
 </pre>
 </div>
@@ -561,24 +510,24 @@ if (tizen.tvaudiocontrol.getVolume() === 0)
 <div class="brief">
  Gets the current volume level.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned short getVolume();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">unsigned short getVolume();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">unsigned short:
+                  </span>
  unsigned short The current volume (the volume range is 0 ~ 100)
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -586,7 +535,7 @@ if (tizen.tvaudiocontrol.getVolume() === 0)
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
@@ -599,10 +548,8 @@ if (tizen.tvaudiocontrol.getVolume() === 0)
 <div class="brief">
  Registers a volume change callback for getting notified when TV volume has been changed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setVolumeChangeListener(<a href="#VolumeChangeCallback">VolumeChangeCallback</a> callback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setVolumeChangeListener(<a href="#VolumeChangeCallback">VolumeChangeCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
@@ -610,19 +557,17 @@ if (tizen.tvaudiocontrol.getVolume() === 0)
 Note that this method overwrites the previously registered listener.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">callback</span>: 
+<span class="name">callback</span>:
  The method to invoke when the volume has been changed. It will not be triggered when the silent mode is changed.
                 </li>
         </ul>
@@ -637,25 +582,25 @@ Note that this method overwrites the previously registered listener.
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var expectedVolumeLevel = 50;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var expectedVolumeLevel = 50;
 
 function onVolumeChanged(volume)
 {
-   if (volume === expectedVolumeLevel)
-   {
-      console.log("Succeeded! The volume level has been changed to " + volume + ". ");
-   }
-   else
-   {
-      alert("Failed. The volume level has been changed to " + volume + ". We expect 50.");
-   }
+  if (volume === expectedVolumeLevel)
+  {
+    console.log("Success! The volume level has been changed to " + volume);
+  }
+  else
+  {
+    alert("Failure! The volume level has been changed to: " + volume + ", we expected: " +
+          expectedVolumeLevel);
+  }
 }
 
 tizen.tvaudiocontrol.setVolume(0);
@@ -673,18 +618,19 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
 <div class="brief">
  Unregisters the volume change callback for detecting the volume changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unsetVolumeChangeListener();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unsetVolumeChangeListener();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<div class="description">
+            <p>
+Calling this function has no effect if listener is not set.
+            </p>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="exceptionlist">
@@ -694,18 +640,17 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var expectedVolumeLevel = 50;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var expectedVolumeLevel = 50;
 
 function onVolumeChanged(volume)
 {
-   alert("This function must not be called.");
+  alert("This function must not be called");
 }
 
 tizen.tvaudiocontrol.setVolume(0);
@@ -724,24 +669,24 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
 <div class="brief">
  Gets the current audio output mode.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#AudioOutputMode">AudioOutputMode</a> getOutputMode();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#AudioOutputMode">AudioOutputMode</a> getOutputMode();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">AudioOutputMode:
+                  </span>
  AudioOutputMode The current audio output mode
-              </div>
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -749,7 +694,7 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
@@ -762,25 +707,21 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
 <div class="brief">
  Plays the sound of a specific beep.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void playSound(<a href="#AudioBeepType">AudioBeepType</a> type);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void playSound(<a href="#AudioBeepType">AudioBeepType</a> type);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/tv.audio
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">type</span>: 
+<span class="name">type</span>:
  The beep type to play
                 </li>
         </ul>
@@ -795,7 +736,7 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type UnknownError in any other error case.
+ with error type UnknownError in an unspecified error case.
                 </p></li>
 </ul>
 </li></ul>
@@ -809,11 +750,10 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
 <div class="brief">
  This interface defines a volume change callback for getting notified information about the volume changes.
           </div>
-<pre class="webidl prettyprint">    [Callback = FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
-        void onchanged(unsigned short volume);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
+    void onchanged(unsigned short volume);
+  };</pre>
+<p><span class="version">Since: </span>
  2.3
           </p>
 <div class="methods">
@@ -826,17 +766,15 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
 <div class="brief">
  The method invoked when the volume has been changed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onchanged(unsigned short volume);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onchanged(unsigned short volume);</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">volume</span>: 
+<span class="name">volume</span>:
  The changed volume
                 </li>
         </ul>
@@ -848,7 +786,7 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -862,64 +800,28 @@ To guarantee the running of this application on a device with a TV audio control
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVAudioControl {
-    enum AudioOutputMode {
-        "PCM",
-        "DOLBY",
-        "DTS",
-        "AAC"
-    };
-
-    enum AudioBeepType {
-        "UP",
-        "DOWN",
-        "LEFT",
-        "RIGHT",
-        "PAGE_LEFT",
-        "PAGE_RIGHT",
-        "BACK",
-        "SELECT",
-        "CANCEL",
-        "WARNING",
-        "KEYPAD",
-        "KEYPAD_ENTER",
-        "KEYPAD_DEL",
-        "MOVE",
-        "PREPARING"
-    };
-
-    [NoInterfaceObject] interface AudioControlManagerObject {
-        readonly attribute <a href="#AudioControlManager">AudioControlManager</a> tvaudiocontrol;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;
-
-    [NoInterfaceObject] interface AudioControlManager {
-
-        void setMute(boolean mute) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        boolean isMute() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolume(unsigned short volume) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolumeUp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolumeDown() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        unsigned short getVolume() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setVolumeChangeListener(<a href="#VolumeChangeCallback">VolumeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void unsetVolumeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#AudioOutputMode">AudioOutputMode</a> getOutputMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void playSound(<a href="#AudioBeepType">AudioBeepType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-    };
-
-    [Callback = FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
-        void onchanged(unsigned short volume);
-    };
-
+  enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC" };
+  enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING", "KEYPAD",
+    "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };
+  [NoInterfaceObject] interface AudioControlManagerObject {
+    readonly attribute <a href="#AudioControlManager">AudioControlManager</a> tvaudiocontrol;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;
+  [NoInterfaceObject] interface AudioControlManager {
+    void setMute(boolean mute) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isMute() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolume(unsigned short volume) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolumeUp() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolumeDown() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned short getVolume() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setVolumeChangeListener(<a href="#VolumeChangeCallback">VolumeChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetVolumeChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#AudioOutputMode">AudioOutputMode</a> getOutputMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void playSound(<a href="#AudioBeepType">AudioBeepType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Callback = FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
+    void onchanged(unsigned short volume);
+  };
 };</pre>
 </div>
 <div id="page-footer">

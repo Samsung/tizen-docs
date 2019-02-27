@@ -59,6 +59,15 @@ for TD:
 	<tbody>
 		<tr>
 			<td>
+			<p><img alt="" height="180" src="media/w56geocoding.png" width="180" /></p>
+			</td>
+			<td>
+			<p><strong>(W) Geocoding</strong> [In progress]</p>
+			<p>This sample application demonstrates how to translate an address to its geographical location using Tizen Maps API.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			<p><img alt="" height="180" src="media/w2location.png" width="180" /></p>
 			</td>
 			<td>
@@ -78,8 +87,17 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wmapsview.png" width="180"/></td>
 			<td>
-			<p><strong>(W) MapsView</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MapsView" target="_blank"><strong>(W) MapsView</strong></a></p>
 			<p>This sample application demonstrates how to display and control the map components and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="180" src="media/w57reversegeocoding.png" width="180" /></p>
+			</td>
+			<td>
+			<p><strong>(W) ReverseGeocoding</strong> [In progress]</p>
+			<p>This sample application demonstrates how to get the address of a selected geographical location using Tizen Maps API.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -106,7 +124,7 @@ for TD:
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MapView" target="_blank"><strong>(T) MapsView</strong></a></p>
 			<p>This sample application demonstrates how to display and control the map components.</p>
 			</td>
-		</tr>		
+		</tr>
 	</tbody>
 </table>
 </div>

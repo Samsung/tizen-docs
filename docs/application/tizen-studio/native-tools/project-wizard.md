@@ -19,7 +19,7 @@ When the Tizen Project Wizard opens, you must first select the project type.
 
 **Figure: Selecting the project type**
 
-![Selecting the project type](./media/project_wizard_type.png)
+![Selecting the project type](./media/create_project_wizard_type.png)
 
 The Tizen Studio provides various project templates and samples for mobile and wearable devices according to the installed platform. The Tizen Project Wizard helps you select a template or sample for your project.
 
@@ -54,7 +54,7 @@ Based on the selected profile and version, a list of templates is shown in the t
 
 **Figure: Selecting the profile and version**
 
-![File analysis](./media/project_wizard_profile.png)
+![File analysis](./media/create_project_wizard_version.png)
 
 To move to the next step, select the profile and version, and click **Next**.
 
@@ -66,7 +66,7 @@ Based on the selected application type, a list of templates is shown in the temp
 
 **Figure: Selecting the application type**
 
-![Selecting the application type](./media/project_wizard_app_type_n.png)
+![Selecting the application type](./media/create_project_wizard_app.png)
 
 To move to the next step, select the application type and click **Next**.
 
@@ -76,7 +76,7 @@ You can select the template for your project while viewing information about a v
 
 **Figure: Selecting the template**
 
-![Selecting the template](./media/project_wizard_template.png)
+![Selecting the template](./media/create_project_wizard_template.png)
 
 To move to the next step, select the template and click **Next**.
 
@@ -86,7 +86,7 @@ You can set basic project properties, such as the project name, location, and wo
 
 **Figure: Setting project properties**
 
-![Setting project properties](./media/project_wizard_properties.png)
+![Setting project properties](./media/create_project_wizard_properties.png)
 
 The options you can set are listed in the following table.
 

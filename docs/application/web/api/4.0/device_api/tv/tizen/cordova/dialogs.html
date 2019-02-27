@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>Dialogs API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Dialogs API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Dialogs">
-<div class="supported-platforms"><img title="Mandatory" src="../../../../images/tv_s_w.png"></div>
+ <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
 <div class="title"><h1>Dialogs API</h1></div>
 <div class="brief">
  This plugin provides the ability to make different types of notifications to the user.
@@ -20,8 +20,7 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-di
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -84,12 +83,11 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-di
 <div class="brief">
  The <em>DialogsManagerObject</em> interface defines what is instantiated in the <em>Navigator</em> object.
           </div>
-<pre class="webidl prettyprint">   [NoInterfaceObject] interface DialogsManagerObject {
-       readonly attribute <a href="#DialogsManager">DialogsManager</a> notification;
-   };</pre>
-<pre class="webidl prettyprint">    implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DialogsManagerObject {
+    readonly attribute <a href="#DialogsManager">DialogsManager</a> notification;
+  };</pre>
+<pre class="webidl prettyprint">  Navigator implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -97,12 +95,10 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-di
 The <em>navigator.notification</em> object allows access to the Dialogs API.
           </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 </div>
@@ -111,26 +107,20 @@ The <em>navigator.notification</em> object allows access to the Dialogs API.
 <div class="brief">
  The <em>DialogsManager</em> interface provides methods for global operations related to notifications to the user.
           </div>
-<pre class="webidl prettyprint">   [NoInterfaceObject] interface DialogsManager {
-       void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
-
-       void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);
-
-       void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback,
-                   optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);
-
-       void beep(long times);
-   };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DialogsManager {
+    void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
+    void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);
+    void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames,
+                optional DOMString? defaultText);
+    void beep(long times);
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="methods">
@@ -144,16 +134,13 @@ The <em>navigator.notification</em> object allows access to the Dialogs API.
  Shows a custom alert with one button.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -169,22 +156,21 @@ The <em>navigator.notification</em> object allows access to the Dialogs API.
                 </li>
           <li class="param">
 <span class="name">title</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The title of dialog box. Default value is 'Dialog'.
+ The title of dialog box. Default value is "Dialog".
                 </li>
           <li class="param">
 <span class="name">buttonName</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Button name to be shown on dialog box. Default value is 'OK'.
+ Button name to be shown on dialog box. Default value is "OK".
                 </li>
         </ul>
 </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var alertDismissed = function()
 {
-   console.log('Alert was dismissed');
-}
+  console.log("Alert was dismissed");
+};
 
-navigator.notification.alert('Please click OK button', alertDismissed,
-                             'OK click alert', 'OK');
+navigator.notification.alert("Please click OK button", alertDismissed, "OK click alert", "OK");
 </pre>
 </div>
 <div class="output">
@@ -200,16 +186,13 @@ navigator.notification.alert('Please click OK button', alertDismissed,
  Shows a custom confirm box with set of buttons.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -226,22 +209,22 @@ Callback provides index of button pressed (1,2,3 etc.) or 0, if dialog was dismi
                 </li>
           <li class="param">
 <span class="name">title</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The title of dialog box. Default value is 'Confirm'.
+ The title of dialog box. Default value is "Confirm".
                 </li>
           <li class="param">
 <span class="name">buttonNames</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Button names to be shown on dialog box. Default values are ['OK', 'Cancel'].
+ Button names to be shown on dialog box. Default values are ["OK", "Cancel"].
                 </li>
         </ul>
 </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var confirmCallback = function(buttonIndex)
 {
-   console.log('Selected option was ' + buttonIndex);
-}
+  console.log("Selected option was " + buttonIndex);
+};
 
-navigator.notification.confirm('Choose one option', confirmCallback,
-                               'Options', ['Option1', 'Option2']);
+navigator.notification.confirm(
+    "Choose one option", confirmCallback, "Options", ["Option1", "Option2"]);
 </pre>
 </div>
 <div class="output">
@@ -256,17 +239,15 @@ navigator.notification.confirm('Choose one option', confirmCallback,
 <div class="brief">
  Shows a custom confirm box with set of buttons.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);</pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames, 
+            optional DOMString? defaultText);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -283,26 +264,26 @@ Callback provides <em>PromptData</em> object, which holds all data provided by u
                 </li>
           <li class="param">
 <span class="name">title</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The title of dialog box. Default value is 'Prompt'.
+ The title of dialog box. Default value is "Prompt".
                 </li>
           <li class="param">
 <span class="name">buttonNames</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Button names to be shown on dialog box. Default values are ['OK', 'Cancel'].
+ Button names to be shown on dialog box. Default values are ["OK", "Cancel"].
                 </li>
           <li class="param">
 <span class="name">defaultText</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Default text to be shown in textbox of dialog box. Default value is an empty string ('').
+ Default text to be shown in textbox of dialog box. Default value is an empty string ("").
                 </li>
         </ul>
 </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var promptCallback = function(results)
 {
-   console.log('Hello ' + results.input1 + ', you selected option ' + results.buttonIndex);
-}
+  console.log("Hello " + results.input1 + ", you selected option " + results.buttonIndex);
+};
 
-navigator.notification.prompt('Please enter your name', promptCallback,
-                             'Registration Box', ['Ok', 'Exit'], 'e.g. Jane Doe');
+navigator.notification.prompt(
+    "Please enter your name", promptCallback, "Registration Box", ["Ok", "Exit"], "e.g. Jane Doe");
 </pre>
 </div>
 <div class="output">
@@ -318,16 +299,13 @@ navigator.notification.prompt('Please enter your name', promptCallback,
  Method allows to make custom number of beeps by device.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void beep(long times);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -341,7 +319,7 @@ navigator.notification.prompt('Please enter your name', promptCallback,
 </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var times = 2;
-console.log('Device would beep ' + times + ' times');
+console.log("Device would beep " + times + " times");
 navigator.notification.beep(times);
 </pre>
 </div>
@@ -359,23 +337,19 @@ navigator.notification.beep(times);
  The object returned from prompt dialog.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface PromptData {
-      readonly attribute long buttonIndex;
-
-      readonly attribute DOMString input1;
+    readonly attribute long buttonIndex;
+    readonly attribute DOMString input1;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  Example usage is described on method <a href="#DialogsManager::prompt">prompt</a>.
           </p>
 <div class="attributes">
@@ -387,16 +361,13 @@ navigator.notification.beep(times);
  The index of button, which was pressed by user.
 the index uses one-based indexing, so the values could be 1, 2, 3, etc.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -405,16 +376,13 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 </span><span class="type">DOMString </span><span class="name">input1</span></span><div class="brief">
  The text entered by user in the prompt of dialog box.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -427,9 +395,9 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
  The callback function used to return index of pressed button of confirm dialog.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ConfirmCallback {
-       void onsuccess(long buttonIndex);
+    void onsuccess(long buttonIndex);
   };</pre>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  Example usage is described on method <a href="#DialogsManager::confirm">confirm</a>.
           </p>
 <div class="methods">
@@ -443,8 +411,7 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
  Called when the user perform action on confirm dialog.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(long buttonIndex);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -467,9 +434,9 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
  The callback function used to return data from prompt dialog.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PromptCallback {
-       void onsuccess(<a href="#PromptData">PromptData</a> data);
+    void onsuccess(<a href="#PromptData">PromptData</a> data);
   };</pre>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  Example usage is described on method <a href="#DialogsManager::prompt">prompt</a>.
           </p>
 <div class="methods">
@@ -483,8 +450,7 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
  Called when the user perform action on prompt dialog.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PromptData">PromptData</a> data);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -503,37 +469,27 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Dialogs {
-   [NoInterfaceObject] interface DialogsManagerObject {
-       readonly attribute <a href="#DialogsManager">DialogsManager</a> notification;
-   };
-
-    implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;
-
-   [NoInterfaceObject] interface DialogsManager {
-       void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
-
-       void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);
-
-       void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback,
-                   optional DOMString? title, optional DOMString[]? buttonNames, optional DOMString? defaultText);
-
-       void beep(long times);
-   };
-
+  [NoInterfaceObject] interface DialogsManagerObject {
+    readonly attribute <a href="#DialogsManager">DialogsManager</a> notification;
+  };
+  Navigator implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;
+  [NoInterfaceObject] interface DialogsManager {
+    void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
+    void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);
+    void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames,
+                optional DOMString? defaultText);
+    void beep(long times);
+  };
   [NoInterfaceObject] interface PromptData {
-      readonly attribute long buttonIndex;
-
-      readonly attribute DOMString input1;
+    readonly attribute long buttonIndex;
+    readonly attribute DOMString input1;
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface ConfirmCallback {
-       void onsuccess(long buttonIndex);
+    void onsuccess(long buttonIndex);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface PromptCallback {
-       void onsuccess(<a href="#PromptData">PromptData</a> data);
+    void onsuccess(<a href="#PromptData">PromptData</a> data);
   };
-
 };</pre>
 </div>
 <div id="page-footer">
@@ -549,6 +505,7 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

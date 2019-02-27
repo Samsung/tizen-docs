@@ -68,23 +68,33 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wlescanner.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Lescanner</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Lescanner" target="_blank"><strong>(W) Lescanner</strong></a></p>
 			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.html" target="_blank">Tizen.Network.Bluetooth C# API</a> to connect with Bluetooth Low Energy devices. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wnetworkapp.png" width="180"/></td>
 			<td>
-			<p><strong>(W) NetworkApp</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NetworkApp" target="_blank"><strong>(W) NetworkApp</strong></a></p>
 			<p>This sample application demonstrates how to verify information about your connection and manage your Wi-Fi settings. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wnfc.png" width="180"/></td>
 			<td>
-			<p><strong>(W) NFCSampleApp</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NFCSampleApp" target="_blank"><strong>(W) NFCSampleApp</strong></a></p>
 			<p>This sample application demonstrates how to send and receive a NDEF message from remote Near Field Communication (NFC) device, and read NFC Data Exchange Format (NDEF) message from NFC Tag. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
 			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div id="TV" class="tabcontent">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
 		</tr>
 	</tbody>
 </table>

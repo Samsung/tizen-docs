@@ -626,7 +626,7 @@ EVENT_VAL_BT_STATE_ON </dd></dl>
 
 <p>Definition for key of SYSTEM_EVENT_BT_STATE. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If it's already transfering state before you register this event, you can't receive the event regarding current transfer but you can receive the following transfers. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If it's already transferring state before you register this event, you can't receive the event regarding current transfer but you can receive the following transfers. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EVENT__MODULE.html#gad8e052595f9068081122e0ad369955a4" title="Definition for value of EVENT_KEY_BT_TRANSFERING_STATE.">EVENT_VAL_BT_NON_TRANSFERING</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__EVENT__MODULE.html#ga179f877ce5eeee1bfc7930b5a7fb2245" title="Definition for value of EVENT_KEY_BT_TRANSFERING_STATE.">EVENT_VAL_BT_TRANSFERING</a> </dd></dl>
@@ -2083,7 +2083,7 @@ EVENT_VAL_OUT_MSG_MMS </dd></dl>
 <dd>
 You can treat the initial value as "false" before you receive this event. </dd>
 <dd>
-If it's already boot-completed state before you regiser event handler, you can receive the event as soon as you register the event handler. </dd></dl>
+If it's already boot-completed state before you register event handler, you can receive the event as soon as you register the event handler. </dd></dl>
 
 </div>
 </div>
@@ -2422,9 +2422,9 @@ If it's already boot-completed state before you regiser event handler, you can r
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>There is no corresponding key/value. </dd>
 <dd>
-You can treat the inital value as "false" before you receive this event. </dd>
+You can treat the initial value as "false" before you receive this event. </dd>
 <dd>
-If it's already shutting-down state before you regiser event handler, you can receive the event as soon as you register the event handler. </dd></dl>
+If it's already shutting-down state before you register event handler, you can receive the event as soon as you register the event handler. </dd></dl>
 
 </div>
 </div>
@@ -2590,7 +2590,7 @@ You can use a <em><a class="el" href="group__CAPI__ALARM__MODULE.html#ga51ae8c54
 <p>IO error </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga72eb9983e577b5467ffd20cd46977c19a2cfcbcbec2ecc781498dbce5b980dd5c"></a><!-- doxytag: member="EVENT_ERROR_PERMISSION_DENIED" ref="gga72eb9983e577b5467ffd20cd46977c19a2cfcbcbec2ecc781498dbce5b980dd5c" args="" -->EVENT_ERROR_PERMISSION_DENIED</em>&nbsp;</td><td>
-<p>Permisiion denied </p>
+<p>Permission denied </p>
 </td></tr>
 </table>
 </dd>
@@ -2638,7 +2638,7 @@ You can use a <em><a class="el" href="group__CAPI__ALARM__MODULE.html#ga51ae8c54
 
 <p>Adds the event handler for receiving event-data of interested events. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to add the privileged event, you MUST declare right privilge first. Unless that, this function returns <a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a2cfcbcbec2ecc781498dbce5b980dd5c">EVENT_ERROR_PERMISSION_DENIED</a>. The privileged events are commented on remarks of it's definitions. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to add the privileged event, you MUST declare right privilege first. Unless that, this function returns <a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a2cfcbcbec2ecc781498dbce5b980dd5c">EVENT_ERROR_PERMISSION_DENIED</a>. The privileged events are commented on remarks of it's definitions. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event_name</td><td>The interested event name </td></tr>

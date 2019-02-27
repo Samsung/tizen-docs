@@ -2,25 +2,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>FileTransfer API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>FileTransfer API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::FileTransfer">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
 <div class="title"><h1>FileTransfer API</h1></div>
 <div class="brief">
  This module allows you to upload and download files.
         </div>
 <div class="description">
         <p>
-Original documetation: <a href="https://www.npmjs.com/package/cordova-plugin-file-transfer">Cordova FileTransfer</a>        </p>
+Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-file-transfer">Cordova FileTransfer</a>        </p>
         <p>
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -107,8 +106,7 @@ Original documetation: <a href="https://www.npmjs.com/package/cordova-plugin-fil
  A set of additional upload HTTP request parameters.
           </div>
 <pre class="webidl prettyprint">  typedef object FileUploadParams;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -123,8 +121,7 @@ The key / value type to pass in the HTTP request.
  A set of HTTP header fields.
           </div>
 <pre class="webidl prettyprint">  typedef object HeaderFields;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -139,8 +136,7 @@ The key / value type of each HTTP header field should be DOMString.
  A set of download options.
           </div>
 <pre class="webidl prettyprint">  typedef object FileDownloadOptions;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -157,7 +153,8 @@ The key / value type of download options values.  Currently only supports header
 <div class="brief">
  A FileUploadOptions object can be passed to the FileTransfer objects upload method in order to specify additional parameters to the upload script
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, DOMString httpMethod)]
+<pre class="webidl prettyprint">  [Constructor(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers,
+               DOMString httpMethod)]
   interface FileUploadOptions {
     attribute DOMString fileKey;
     attribute DOMString fileName;
@@ -167,48 +164,45 @@ The key / value type of download options values.  Currently only supports header
     attribute boolean chunkedMode;
     attribute <a href="#HeaderFields">HeaderFields</a> headers;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Assume the variable fileURL contains a valid URL to a text file on the device */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL;  /* Assume the variable fileURL contains a valid URL to a text file on the device. */
 
 var win = function(r)
 {
-  console.log('Code = ' + r.responseCode);
-  console.log('Response = ' + r.response);
-  console.log('Sent = ' + r.bytesSent);
-}
+  console.log("Code = " + r.responseCode);
+  console.log("Response = " + r.response);
+  console.log("Sent = " + r.bytesSent);
+};
 
 var fail = function(error)
 {
-  alert('An error has occurred: Code = ' + error.code);
-  console.log('Upload error source ' + error.source);
-  console.log('Upload error target ' + error.target);
-}
+  alert("An error has occurred: Code = " + error.code);
+  console.log("Upload error source " + error.source);
+  console.log("Upload error target " + error.target);
+};
 
 var options = new FileUploadOptions();
-options.fileKey = 'file';
-options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
-options.mimeType = 'text/plain';
+options.fileKey = "file";
+options.fileName = fileURL.substr(fileURL.lastIndexOf("/") + 1);
+options.mimeType = "text/plain";
 
 var params = {};
-params.value1 = 'test';
-params.value2 = 'param';
+params.value1 = "test";
+params.value2 = "param";
 
 options.params = params;
 
 var ft = new FileTransfer();
-ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail, options);
+ft.upload(fileURL, encodeURI("http://some.server.com/upload.php"), win, fail, options);
 </pre>
 </div>
 <div class="output">
@@ -220,10 +214,11 @@ Sent = 1024
 <div class="constructors">
 <h4 id="FileUploadOptions::constructor">Constructors</h4>
 <dl>
-<pre class="webidl prettyprint">FileUploadOptions(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, DOMString httpMethod);</pre>
+<pre class="webidl prettyprint">FileUploadOptions(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, 
+                  DOMString httpMethod);</pre>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileUploadOptions object */
-var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null, 'POST');
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileUploadOptions objects */
+var options = new FileUploadOptions("file", "doc.txt", "text/plain", null, null, "POST");
 </pre>
 </div>
 </dl>
@@ -235,16 +230,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">fileKey</span></span><div class="brief">
  The name of the form element. Defaults to file
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -252,16 +244,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">fileName</span></span><div class="brief">
  The file name to use when saving the file on the server. Defaults to image.jpg.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -269,16 +258,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">httpMethod</span></span><div class="brief">
  The HTTP method to use - either PUT or POST. Defaults to POST.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -286,16 +272,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">mimeType</span></span><div class="brief">
  The mime type of the data to upload. Defaults to image/jpeg.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -303,16 +286,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">FileUploadParams </span><span class="name">params</span></span><div class="brief">
  A set of optional key/value pairs to pass in the HTTP request.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -320,16 +300,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">boolean </span><span class="name">chunkedMode</span></span><div class="brief">
  Whether to upload the data in chunked streaming mode. Defaults to true.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -337,16 +314,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">HeaderFields </span><span class="name">headers</span></span><div class="brief">
  A map of header name/header values. Use an array to specify more than one value.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -364,16 +338,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
     attribute DOMString response;
     attribute <a href="#HeaderFields">HeaderFields</a>  headers;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="attributes">
@@ -383,16 +354,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">long </span><span class="name">bytesSent</span></span><div class="brief">
  The number of bytes sent to the server as part of the upload.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -400,16 +368,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">long </span><span class="name">responseCode</span></span><div class="brief">
  The HTTP response code returned by the server.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -417,16 +382,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">response</span></span><div class="brief">
  The HTTP response returned by the server.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -434,16 +396,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">HeaderFields </span><span class="name">headers</span></span><div class="brief">
  The HTTP response headers by the server.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -461,23 +420,20 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
     attribute DOMString target;
     attribute long http_status;
     attribute DOMString body;
-    attribute DOMString exception;
+    attribute DOMString _exception;
     const short FILE_NOT_FOUND_ERR = 1;
     const short INVALID_URL_ERR = 2;
     const short CONNECTION_ERR = 3;
     const short ABORT_ERR = 4;
     const short NOT_MODIFIED_ERR = 5;
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="consts">
@@ -487,8 +443,7 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::FILE_NOT_FOUND_ERR"></a><span class="name">FILE_NOT_FOUND_ERR</span><div class="brief">
  File Not Found error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <br><br>
@@ -497,8 +452,7 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::INVALID_URL_ERR"></a><span class="name">INVALID_URL_ERR</span><div class="brief">
  Invalid URL error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <br><br>
@@ -507,8 +461,7 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::CONNECTION_ERR"></a><span class="name">CONNECTION_ERR</span><div class="brief">
  Connection error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <br><br>
@@ -517,8 +470,7 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::ABORT_ERR"></a><span class="name">ABORT_ERR</span><div class="brief">
  Abort error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <br><br>
@@ -527,8 +479,7 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <a class="backward-compatibility-anchor" name="::FileTransfer::FileTransferError::NOT_MODIFIED_ERR"></a><span class="name">NOT_MODIFIED_ERR</span><div class="brief">
  Not Modified error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <br><br>
@@ -542,16 +493,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">short </span><span class="name">code</span></span><div class="brief">
  One of the predefined error codes listed above.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -559,16 +507,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">source</span></span><div class="brief">
  URL to the source.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -576,16 +521,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">target</span></span><div class="brief">
  URL to the target.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -593,16 +535,13 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">long </span><span class="name">http_status</span></span><div class="brief">
  HTTP status code. This attribute is only available when a response code is received from the HTTP connection.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -610,33 +549,27 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <span class="attrName"><span class="type">DOMString </span><span class="name">body</span></span><div class="brief">
  Response body. This attribute is only available when a response is received from the HTTP connection.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
-<li class="attribute" id="FileTransferError::exception">
-<span class="attrName"><span class="type">DOMString </span><span class="name">exception</span></span><div class="brief">
+<li class="attribute" id="FileTransferError::_exception">
+<span class="attrName"><span class="type">DOMString </span><span class="name">_exception</span></span><div class="brief">
  Either e.getMessage or e.toString
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -651,23 +584,21 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <pre class="webidl prettyprint">  [Constructor()]
   interface FileTransfer {
     [TreatNonCallableAsNull] attribute <a href="file.html#ProgressCallback">ProgressCallback</a>? onprogress;
-
-   void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, optional boolean? trustAllHosts);
-
-   void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);
-
-   void abort();
+    void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback,
+                optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options,
+                optional boolean? trustAllHosts);
+    void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback,
+                  optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts,
+                  optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);
+    void abort();
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="constructors">
@@ -675,7 +606,7 @@ var options = new FileUploadOptions('file', 'doc.txt', 'text/plain', null, null,
 <dl>
 <pre class="webidl prettyprint">FileTransfer();</pre>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileTransfer object */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileTransfer object. */
 var file_transfer = new FileTransfer();
 </pre>
 </div>
@@ -687,42 +618,39 @@ var file_transfer = new FileTransfer();
 <span class="attrName"><span class="type">ProgressCallback </span><span class="name">onprogress</span><span class="optional"> [nullable]</span></span><div class="brief">
  Called with a ProgressEvent whenever a new chunk of data is transferred.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL;  /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt. */
 
 var win = function(r)
 {
-  console.log('Success. File uploaded');
-}
+  console.log("Success. File uploaded");
+};
 
 var fail = function(error)
 {
   /* error.code == FileTransferError.ABORT_ERR */
-  alert('An error has occurred: Code = ' + error.code);
-  console.log('Upload error source ' + error.source);
-  console.log('Upload error target ' + error.target);
+  alert("An error has occurred: Code = " + error.code);
+  console.log("Upload error source " + error.source);
+  console.log("Upload error target " + error.target);
 };
 
 var ft = new FileTransfer();
 
 ft.onprogress = function(event)
 {
-  console.log('Uploaded: ' + event.loaded);
+  console.log("Uploaded: " + event.loaded);
 };
 
-ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail);
+ft.upload(fileURL, encodeURI("http://some.server.com/upload.php"), win, fail);
 </pre>
 </div>
 <div class="output">
@@ -743,21 +671,19 @@ Success. File uploaded
 <div class="brief">
  Sends a file to a server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, optional boolean? trustAllHosts);</pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, 
+            optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, 
+            optional boolean? trustAllHosts);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/internet
             </p>
 <div class="parameters">
@@ -781,7 +707,7 @@ Success. File uploaded
                 </li>
           <li class="param">
 <span class="name">options</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Optional parameters
+ Optional parameters.
                 </li>
           <li class="param">
 <span class="name">trustAllHosts</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -790,24 +716,24 @@ Success. File uploaded
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL;  /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt. */
 
-var win = function (r)
+var win = function(r)
 {
-  console.log('Code = ' + r.responseCode);
-  console.log('Response = ' + r.response);
-  console.log('Sent = ' + r.bytesSent);
-}
+  console.log("Code = " + r.responseCode);
+  console.log("Response = " + r.response);
+  console.log("Sent = " + r.bytesSent);
+};
 
-var fail = function (error)
+var fail = function(error)
 {
-  alert('An error has occurred: Code = ' + error.code);
-  console.log('Upload error source ' + error.source);
-  console.log('Upload error target ' + error.target);
-}
+  alert("An error has occurred: Code = " + error.code);
+  console.log("Upload error source " + error.source);
+  console.log("Upload error target " + error.target);
+};
 
 var ft = new FileTransfer();
-ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail);
+ft.upload(fileURL, encodeURI("http://some.server.com/upload.php"), win, fail);
 </pre>
 </div>
 <div class="output">
@@ -824,21 +750,19 @@ Sent = 1024
 <div class="brief">
  Downloads a file from a server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);</pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, 
+              optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, 
+              optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.write
             </p>
 <div class="parameters">
@@ -871,25 +795,23 @@ Sent = 1024
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL;  /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt. */
 
 var fileTransfer = new FileTransfer();
-var uri = encodeURI('http://some.server.com/download.php');
+var uri = encodeURI("http://some.server.com/download.php");
 
-fileTransfer.download(uri, fileURL, function(entry)
-{
-  console.log('Download complete: ' + entry.toURL());
-}, function(error)
-{
-  console.log('Download error source ' + error.source);
-  console.log('Download error target ' + error.target);
-  console.log('Upload error code' + error.code);
-}, false,
-{
-  headers: {
-    'Authorization': 'Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=='
-  }
-});
+fileTransfer.download(uri, fileURL,
+    function(entry)
+    {
+      console.log("Download complete: " + entry.toURL());
+    },
+    function(error)
+    {
+      console.log("Download error source " + error.source);
+      console.log("Download error target " + error.target);
+      console.log("Upload error code" + error.code);
+    },
+    false, {headers: {"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="}});
 </pre>
 </div>
 <div class="output">
@@ -905,40 +827,36 @@ fileTransfer.download(uri, fileURL, function(entry)
  Aborts an in-progress transfer. The onerror callback is passed a FileTransferError object which has an error code of FileTransferError.ABORT_ERR.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void abort();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/internet
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL; /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var fileURL;  /* Must be a valid url, such as cdvfile://localhost/persistent/path/to/file.txt. */
 
 var win = function(r)
 {
-  console.log('Should not be called');
-}
+  console.log("Should not be called");
+};
 
 var fail = function(error)
 {
   /* error.code == FileTransferError.ABORT_ERR */
-  alert('An error has occurred: Code = ' + error.code);
-  console.log('Upload error source ' + error.source);
-  console.log('Upload error target ' + error.target);
+  alert("An error has occurred: Code = " + error.code);
+  console.log("Upload error source " + error.source);
+  console.log("Upload error target " + error.target);
 };
 
 var ft = new FileTransfer();
-ft.upload(fileURL, encodeURI('http://some.server.com/upload.php'), win, fail);
+ft.upload(fileURL, encodeURI("http://some.server.com/upload.php"), win, fail);
 ft.abort();
 </pre>
 </div>
@@ -960,8 +878,7 @@ Upload error target http://some.server.com/file.txt
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileUploadSuccessCallback {
     void onsuccess(<a href="#FileUploadResult">FileUploadResult</a> result);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="methods">
@@ -975,12 +892,12 @@ Upload error target http://some.server.com/file.txt
  Called when upload is successfully finished.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#FileUploadResult">FileUploadResult</a> result);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="remark"> Remark : </span>
- See the <a href="#FileTransfer::upload">example</a>            </p>
+<p><span class="remark">Remark: </span>
+ See the <a href="#FileTransfer::upload">example</a>.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1013,12 +930,12 @@ Upload error target http://some.server.com/file.txt
  Called when download is successfully finished.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="file.html#FileEntry">FileEntry</a> file);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="remark"> Remark : </span>
- See the <a href="#FileTransfer::download">example</a>            </p>
+<p><span class="remark">Remark: </span>
+ See the <a href="#FileTransfer::download">example</a>.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1051,18 +968,18 @@ Upload error target http://some.server.com/file.txt
  Called when file transfer is finished with an error
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#FileTransferError">FileTransferError</a> error);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="remark"> Remark : </span>
- See the <a href="#FileTransfer::download">example</a>            </p>
+<p><span class="remark">Remark: </span>
+ See the <a href="#FileTransfer::download">example</a>.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
 <span class="name">error</span>:
- An object that defines details of the error
+ An object that defines details of the error.
                 </li>
         </ul>
 </div>
@@ -1074,12 +991,10 @@ Upload error target http://some.server.com/file.txt
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module FileTransfer {
   typedef object FileUploadParams;
-
   typedef object HeaderFields;
-
   typedef object FileDownloadOptions;
-
-  [Constructor(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, DOMString httpMethod)]
+  [Constructor(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers,
+               DOMString httpMethod)]
   interface FileUploadOptions {
     attribute DOMString fileKey;
     attribute DOMString fileName;
@@ -1089,47 +1004,42 @@ Upload error target http://some.server.com/file.txt
     attribute boolean chunkedMode;
     attribute <a href="#HeaderFields">HeaderFields</a> headers;
   };
-
   [NoInterfaceObject] interface FileUploadResult {
     attribute long bytesSent;
     attribute long responseCode;
     attribute DOMString response;
     attribute <a href="#HeaderFields">HeaderFields</a>  headers;
   };
-
   interface FileTransferError {
     attribute short code;
     attribute DOMString source;
     attribute DOMString target;
     attribute long http_status;
     attribute DOMString body;
-    attribute DOMString exception;
+    attribute DOMString _exception;
     const short FILE_NOT_FOUND_ERR = 1;
     const short INVALID_URL_ERR = 2;
     const short CONNECTION_ERR = 3;
     const short ABORT_ERR = 4;
     const short NOT_MODIFIED_ERR = 5;
   };
-
   [Constructor()]
   interface FileTransfer {
     [TreatNonCallableAsNull] attribute <a href="file.html#ProgressCallback">ProgressCallback</a>? onprogress;
-
-   void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, optional boolean? trustAllHosts);
-
-   void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);
-
-   void abort();
+    void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback,
+                optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options,
+                optional boolean? trustAllHosts);
+    void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback,
+                  optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts,
+                  optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);
+    void abort();
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface FileUploadSuccessCallback {
     void onsuccess(<a href="#FileUploadResult">FileUploadResult</a> result);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface FileDownloadSuccessCallback {
     void onsuccess(<a href="file.html#FileEntry">FileEntry</a> file);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface FileTransferErrorCallback {
     void onerror(<a href="#FileTransferError">FileTransferError</a> error);
   };
@@ -1148,6 +1058,7 @@ Upload error target http://some.server.com/file.txt
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

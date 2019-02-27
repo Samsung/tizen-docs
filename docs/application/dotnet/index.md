@@ -8,7 +8,7 @@ The introduction to .Net applications documentation provides the overall informa
 
 - [Getting Started](getting-started/overview.md)
 
-   Demonstrates how you can create your first simple .NET application.
+  Demonstrates how you can create your first simple .NET application.
 
 - [Tizen .NET Features and Components](tutorials/details/features.md)
 
@@ -33,6 +33,10 @@ The introduction to .Net applications documentation provides the overall informa
 - [Third Party Libraries for Tizen .NET Application](tutorials/library/library-list.md)
 
   Introduces several third party libraries that  are used to develop .NET applications. It is classified according to the use and according to the purpose of use.
+
+- [Security and API Privileges](getting-started/sec-privileges.md)
+
+  Intorduces various privileges that you can declare for security-sensitive operations.
 
 ### Visual Studio Tools for Tizen [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen)
 

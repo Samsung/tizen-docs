@@ -39,7 +39,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wfrequentlyused.png" width="180"/></td>
 			<td>
-			<p><strong>(W) AppHistory</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppHistory" target="_blank"><strong>(W) AppHistory</strong></a></p>
 			<p>This sample application demonstrates how to retrieve your application usage patterns. This sample uses XAML files for GUI.</p>
 			</td>
 		</tr>
@@ -48,6 +48,13 @@ for TD:
 </div>
 
 <div class="tabcontent" id="TV">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <!--

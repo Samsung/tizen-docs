@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>Cordova API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Cordova API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Cordova">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
 <div class="title"><h1>Cordova API</h1></div>
 <div class="brief">
  This API provides common Cordova functionality.
@@ -17,8 +17,7 @@
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -80,8 +79,7 @@
     readonly attribute <a href="#Cordova">Cordova</a> cordova;
   };</pre>
 <pre class="webidl prettyprint">  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 </div>
@@ -92,8 +90,7 @@
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Cordova {
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 </div>
@@ -102,10 +99,10 @@
 <div class="brief">
  Basic success callback, no parameters.
           </div>
-<pre class="webidl prettyprint">[Callback=FunctionOnly,NoInterfaceObject]
-interface SuccessCallback {
-  void onsuccess();
-};</pre>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
+  interface SuccessCallback {
+    void onsuccess();
+  };</pre>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -117,8 +114,7 @@ interface SuccessCallback {
  Success
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 </dd>
@@ -130,10 +126,10 @@ interface SuccessCallback {
 <div class="brief">
  Basic error callback.
           </div>
-<pre class="webidl prettyprint">[Callback=FunctionOnly,NoInterfaceObject]
-interface ErrorCallback {
-  void onerror(<a href="#DOMException">DOMException</a> error);
-};</pre>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
+  interface ErrorCallback {
+    void onerror(<a href="#DOMException">DOMException</a> error);
+  };</pre>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -145,8 +141,7 @@ interface ErrorCallback {
  Success
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#DOMException">DOMException</a> error);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -167,13 +162,11 @@ interface ErrorCallback {
 <div class="brief">
  See <a href="https://developer.mozilla.org/en/docs/Web/API/DOMException">DOMException</a>.
           </div>
-<pre class="webidl prettyprint">interface DOMException {
-  readonly attribute short code;
-
-  readonly attribute DOMString name;
-
-  readonly attribute DOMString message;
-};</pre>
+<pre class="webidl prettyprint">  interface DOMException {
+    readonly attribute short code;
+    readonly attribute DOMString name;
+    readonly attribute DOMString message;
+  };</pre>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -182,8 +175,7 @@ interface ErrorCallback {
 </span><span class="type">short </span><span class="name">code</span></span><div class="brief">
  The number representing the type of the error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 </li>
@@ -192,8 +184,7 @@ interface ErrorCallback {
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  The short text representing the type of the error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 </li>
@@ -202,8 +193,7 @@ interface ErrorCallback {
 </span><span class="type">DOMString </span><span class="name">message</span></span><div class="brief">
  A text containing information about the error.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 </li>
@@ -213,35 +203,25 @@ interface ErrorCallback {
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Cordova {
-
   [NoInterfaceObject] interface CordovaManagerObject {
     readonly attribute <a href="#Cordova">Cordova</a> cordova;
   };
   Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
-
   [NoInterfaceObject] interface Cordova {
   };
-
-
-
-[Callback=FunctionOnly,NoInterfaceObject]
-interface SuccessCallback {
-  void onsuccess();
-};
-
-[Callback=FunctionOnly,NoInterfaceObject]
-interface ErrorCallback {
-  void onerror(<a href="#DOMException">DOMException</a> error);
-};
-
-interface DOMException {
-  readonly attribute short code;
-
-  readonly attribute DOMString name;
-
-  readonly attribute DOMString message;
-};
-
+  [Callback=FunctionOnly,NoInterfaceObject]
+  interface SuccessCallback {
+    void onsuccess();
+  };
+  [Callback=FunctionOnly,NoInterfaceObject]
+  interface ErrorCallback {
+    void onerror(<a href="#DOMException">DOMException</a> error);
+  };
+  interface DOMException {
+    readonly attribute short code;
+    readonly attribute DOMString name;
+    readonly attribute DOMString message;
+  };
 };</pre>
 </div>
 <div id="page-footer">
@@ -257,6 +237,7 @@ interface DOMException {
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

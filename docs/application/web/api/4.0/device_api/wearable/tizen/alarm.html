@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Alarm API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Alarm API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Alarm">
-<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+ <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Alarm API</h1></div>
 <div class="brief">
  The Alarm API provides functionality for scheduling the system alarm.
@@ -21,19 +21,35 @@ Each application has its own individual alarm storage, that is, applications can
         <p>
 Once an alarm goes off, it will be removed from the alarm storage automatically.
 <em>AlarmManager</em> provides methods to manage alarms such as adding and removing.
+        </p>
+        <p>
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+          <li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+          <li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+          <li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+        </ul>
+        <p>
 For more information on the Alarm features, see <a href="https://developer.tizen.org/development/guides/web-application/alarm">Alarm Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#AlarmId">AlarmId</a>
+<li>
+                    1.1. <a href="#AlarmId">AlarmId</a>
 </li>
-<li>1.2. <a href="#ByDayValue">ByDayValue</a>
+<li>
+                    1.2. <a href="#ByDayValue">ByDayValue</a>
 </li>
 </ul>
 </li>
@@ -101,9 +117,8 @@ For more information on the Alarm features, see <a href="https://developer.tizen
 <div class="brief">
  An alarm identifier.
           </div>
-<pre class="webidl prettyprint">    typedef DOMString AlarmId;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  typedef DOMString AlarmId;</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 </div>
@@ -112,15 +127,27 @@ For more information on the Alarm features, see <a href="https://developer.tizen
 <div class="brief">
  Specifies the values for the <a href="#AlarmAbsolute::daysOfTheWeek">daysOfTheWeek</a> attribute.
           </div>
-<pre class="webidl prettyprint">    enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
-          <p>
-"MO" to "SU" correspond to "Monday" to "Sunday".
-          </p>
+          <ul>
+            <li>
+"MO" corresponds to "Monday"            </li>
+            <li>
+"TU" corresponds to "Tuesday"            </li>
+            <li>
+"WE" corresponds to "Wednesday"            </li>
+            <li>
+"TH" corresponds to "Thursday"            </li>
+            <li>
+"FR" corresponds to "Friday"            </li>
+            <li>
+"SA" corresponds to "Saturday"            </li>
+            <li>
+"SU" corresponds to "Sunday"            </li>
+          </ul>
          </div>
 </div>
 </div>
@@ -132,45 +159,45 @@ For more information on the Alarm features, see <a href="https://developer.tizen
  The AlarmManagerObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
 The <em>tizen.alarm </em>object allows access to the functionality of the Alarm API.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface AlarmManagerObject {
-        readonly attribute <a href="#AlarmManager">AlarmManager</a> alarm;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface AlarmManagerObject {
+    readonly attribute <a href="#AlarmManager">AlarmManager</a> alarm;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="AlarmManagerObject::alarm">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">AlarmManager </span><span class="name">alarm</span></span><div class="brief">
+ Object representing an alarm manager.
+            </div>
+<p><span class="version">Since: </span>
+ 1.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="AlarmManager">
 <a class="backward-compatibility-anchor" name="::Alarm::AlarmManager"></a><h3>2.2. AlarmManager</h3>
 <div class="brief">
  The AlarmManager interface provides methods to manage alarms.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface AlarmManager {
-        const long PERIOD_MINUTE = 60;
-
-        const long PERIOD_HOUR = 3600;
-
-        const long PERIOD_DAY = 86400;
-
-        const long PERIOD_WEEK = 604800;
-
-        void add(<a href="#Alarm">Alarm</a> alarm, <a href="application.html#ApplicationId">ApplicationId</a> applicationId, optional <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void addAlarmNotification(<a href="#Alarm">Alarm</a> alarm, <a href="notification.html#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void remove(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#Alarm">Alarm</a> get(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="notification.html#UserNotification">UserNotification</a> getAlarmNotification(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#Alarm">Alarm</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface AlarmManager {
+    const long PERIOD_MINUTE = 60;
+    const long PERIOD_HOUR = 3600;
+    const long PERIOD_DAY = 86400;
+    const long PERIOD_WEEK = 604800;
+    void add(<a href="#Alarm">Alarm</a> alarm, <a href="application.html#ApplicationId">ApplicationId</a> applicationId, optional <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void addAlarmNotification(<a href="#Alarm">Alarm</a> alarm, <a href="notification.html#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Alarm">Alarm</a> get(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="notification.html#UserNotification">UserNotification</a> getAlarmNotification(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Alarm">Alarm</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="consts">
@@ -181,8 +208,7 @@ The <em>tizen.alarm </em>object allows access to the functionality of the Alarm 
  The period of a minute.
 It defines the number of seconds per minute.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <br><br>
@@ -192,8 +218,7 @@ It defines the number of seconds per minute.
  The period of an hour.
 It defines the number of seconds per hour.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <br><br>
@@ -203,8 +228,7 @@ It defines the number of seconds per hour.
  The period of a day.
 It defines the number of seconds per day.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <br><br>
@@ -214,8 +238,7 @@ It defines the number of seconds per day.
  The period of a week.
 It defines the number of seconds in a week.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <br><br>
@@ -232,25 +255,21 @@ It defines the number of seconds in a week.
 <div class="brief">
  Adds an alarm to the storage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Alarm">Alarm</a> alarm, <a href="application.html#ApplicationId">ApplicationId</a> applicationId, optional <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Alarm">Alarm</a> alarm, <a href="application.html#ApplicationId">ApplicationId</a> applicationId, optional <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
             <p>
 Sets an alarm with the application ID to be run. You should definitely provide the application ID to run
-and the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls#controls">application control</a>information if it is necessary.
+and the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls#controls">application control</a> information if it is necessary.
 For more information about the application control, see <a href="application.html">The Application API</a>.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/alarm
             </p>
 <div class="parameters">
@@ -289,8 +308,7 @@ For more information about the application control, see <a href="application.htm
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Triggers an alarm on a given date/time */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Triggers an alarm on a given date/time. */
 var alarm = new tizen.AlarmAbsolute(new Date(2014, 10, 4, 8, 0));
 var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/view");
 tizen.alarm.add(alarm, tizen.application.getCurrentApplication().appInfo.id, appControl);
@@ -305,10 +323,8 @@ console.log("Alarm added with id: " + alarm.id);
 <div class="brief">
  Adds an alarm notification to the storage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addAlarmNotification(<a href="#Alarm">Alarm</a> alarm, <a href="notification.html#Notification">Notification</a> notification);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void addAlarmNotification(<a href="#Alarm">Alarm</a> alarm, <a href="notification.html#Notification">Notification</a> notification);</pre></div>
+<p><span class="version">Since: </span>
  4.0
             </p>
 <div class="description">
@@ -317,16 +333,13 @@ Adds an alarm which causes notification to appear instead of launching an AppCon
 For more information about the notification, see <a href="notification.html">The Notification API</a>.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/alarm
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/notification
             </p>
 <p class="warning"><b>Warning:</b>
@@ -364,17 +377,12 @@ For more information about the notification, see <a href="notification.html">The
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Triggers an alarm notification on a given date/time */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Triggers an alarm notification on a given date/time. */
 var alarm = new tizen.AlarmAbsolute(new Date(2017, 10, 4, 8, 0));
 var notificationGroupDict =
 {
   content: "This is a simple user notification.",
-  actions:
-  {
-    soundPath: "music/Over the horizon.mp3",
-    vibration: true
-  }
+  actions: {soundPath: "music/Over the horizon.mp3", vibration: true}
 };
 
 var notification = new tizen.UserNotification("SIMPLE", "User notification", notificationGroupDict);
@@ -384,8 +392,8 @@ console.log("Alarm notification added with id: " + alarm.id);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Alarm notification added with id: 660485805
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Alarm notification added with id: 660485805
+</pre>
 </div>
 </dd>
 <dt class="method" id="AlarmManager::remove">
@@ -395,10 +403,8 @@ console.log("Alarm notification added with id: " + alarm.id);
 <div class="brief">
  Removes an alarm from the storage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#AlarmId">AlarmId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#AlarmId">AlarmId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -406,12 +412,10 @@ console.log("Alarm notification added with id: " + alarm.id);
 If an alarm goes off, it will be removed from the storage automatically.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/alarm
             </p>
 <div class="parameters">
@@ -419,7 +423,7 @@ If an alarm goes off, it will be removed from the storage automatically.
 <ul>
           <li class="param">
 <span class="name">id</span>:
- The ID of the alarm to remove
+ The ID of the alarm to remove.
                 </li>
         </ul>
 </div>
@@ -442,21 +446,20 @@ If an alarm goes off, it will be removed from the storage automatically.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var alarms = tizen.alarm.getAll();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var alarms = tizen.alarm.getAll();
 
-/* Removes the first alarm */
+/* Removes the first alarm. */
 if (alarms.length &gt; 0)
 {
-   try
-   {
-      tizen.alarm.remove(alarms[0].id);
-      console.log("Successfully removed the first alarm.");
-   }
-   catch (error)
-   {
-      console.log("Failed to remove the first alarm.");
-   }
+  try
+  {
+    tizen.alarm.remove(alarms[0].id);
+    console.log("Successfully removed the first alarm.");
+  }
+  catch (error)
+  {
+    console.log("Failed to remove the first alarm.");
+  }
 }
 </pre>
 </div>
@@ -468,10 +471,8 @@ if (alarms.length &gt; 0)
 <div class="brief">
  Removes all alarms added by an application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeAll();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeAll();</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -479,12 +480,10 @@ if (alarms.length &gt; 0)
 Because each application has its own alarm storage, this method removes alarms only added by the calling application.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/alarm
             </p>
 <div class="exceptionlist">
@@ -500,8 +499,7 @@ Because each application has its own alarm storage, this method removes alarms o
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-tizen.alarm.removeAll();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.alarm.removeAll();
 console.log("remove all registered alarms in the storage.");
 </pre>
 </div>
@@ -513,10 +511,8 @@ console.log("remove all registered alarms in the storage.");
 <div class="brief">
  Returns an alarm as per the specified identifier.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Alarm">Alarm</a> get(<a href="#AlarmId">AlarmId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Alarm">Alarm</a> get(<a href="#AlarmId">AlarmId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="parameters">
@@ -530,8 +526,12 @@ console.log("remove all registered alarms in the storage.");
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Alarm An alarm object with the specified ID.
-              </div>
+<ul>
+<span class="return">Alarm:
+                  </span>
+ An alarm object with the specified ID.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -548,16 +548,15 @@ console.log("remove all registered alarms in the storage.");
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Sets an alarm */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Sets an alarm. */
 var date = new Date();
 date.setHours(date.getHours() + 1);
 var abs_alarm = new tizen.AlarmAbsolute(date);
 
-/* Adds an alarm */
+/* Adds an alarm. */
 tizen.alarm.add(abs_alarm, tizen.application.getCurrentApplication().appInfo.id);
 
-/* Gets an alarm */
+/* Gets an alarm. */
 var alarm = tizen.alarm.get(abs_alarm.id);
 console.log("The alarm will trigger at " + alarm.getNextScheduledDate());
 </pre>
@@ -570,21 +569,17 @@ console.log("The alarm will trigger at " + alarm.getNextScheduledDate());
 <div class="brief">
  Gets the notification to be posted when an alarm is triggered. Returned <em>UserNotification</em> contains exactly the same data like passed to method <em>addAlarmNotification</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="notification.html#UserNotification">UserNotification</a> getAlarmNotification(<a href="#AlarmId">AlarmId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="notification.html#UserNotification">UserNotification</a> getAlarmNotification(<a href="#AlarmId">AlarmId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  4.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/alarm
             </p>
-<p><span class="remark"> Remark : </span>
+<p><span class="remark">Remark: </span>
  This method is designed to return only <a href="notification.html#UserNotification">UserNotification</a> objects,
 even if the added alarm was using <a href="notification.html#StatusNotification">StatusNofitication</a>.
             </p>
@@ -599,8 +594,12 @@ even if the added alarm was using <a href="notification.html#StatusNotification"
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- The notification to be posted when the alarm is triggered.
-              </div>
+<ul>
+<span class="return">UserNotification:
+                  </span>
+ Notification to be posted when the alarm is triggered.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -617,34 +616,30 @@ even if the added alarm was using <a href="notification.html#StatusNotification"
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var date = new Date();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var date = new Date();
 date.setHours(date.getHours() + 1);
 var alarm = new tizen.AlarmAbsolute(date);
 
 var notificationGroupDict =
 {
   content: "This is a simple user notification.",
-  actions:
-  {
-    soundPath: "music/Over the horizon.mp3",
-    vibration: true
-  }
+  actions: {soundPath: "music/Over the horizon.mp3", vibration: true}
 };
 
 var notification = new tizen.UserNotification("SIMPLE", "User notification", notificationGroupDict);
 
-/* Adds an alarm */
+/* Adds an alarm. */
 tizen.alarm.addAlarmNotification(alarm, notification);
 
-/* Gets a notification */
+/* Gets a notification. */
 var notification = tizen.alarm.getAlarmNotification(alarm.id);
-console.log("User Notification title: " + notification.title + ", content: " + notification.content);
+console.log(
+    "User Notification title: " + notification.title + ", content: " + notification.content);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> User Notification title: User notification, content: This is a simple user notification.
- </pre>
+<span class="title"><p>Output example:</p></span><pre>User Notification title: User notification, content: This is a simple user notification.
+</pre>
 </div>
 </dd>
 <dt class="method" id="AlarmManager::getAll">
@@ -654,10 +649,8 @@ console.log("User Notification title: " + notification.title + ", content: " + n
 <div class="brief">
  Retrieves all alarms in an application storage.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Alarm">Alarm</a>[] getAll();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Alarm">Alarm</a>[] getAll();</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -667,8 +660,12 @@ Alarms that have already been triggered are removed automatically from the stora
            </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Alarm[] All Alarm objects.
-              </div>
+<ul>
+<span class="return">Alarm[]:
+                  </span>
+ All Alarm objects.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -677,8 +674,7 @@ Alarms that have already been triggered are removed automatically from the stora
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var alarms = tizen.alarm.getAll();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var alarms = tizen.alarm.getAll();
 console.log(alarms.length + " alarms present in the storage.");
 </pre>
 </div>
@@ -691,11 +687,10 @@ console.log(alarms.length + " alarms present in the storage.");
 <div class="brief">
  The Alarm interface is an abstract interface for alarm types.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface Alarm {
-        readonly attribute <a href="#AlarmId">AlarmId</a>? id;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Alarm {
+    readonly attribute <a href="#AlarmId">AlarmId</a>? id;
+  };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="attributes">
@@ -705,8 +700,7 @@ console.log(alarms.length + " alarms present in the storage.");
 </span><span class="type">AlarmId </span><span class="name">id</span><span class="optional"> [nullable]</span></span><div class="brief">
  The alarm identifier.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li></ul>
@@ -717,16 +711,13 @@ console.log(alarms.length + " alarms present in the storage.");
 <div class="brief">
  The AlarmRelative interface provides the relative alarm, which occurs at a fixed interval in future.
           </div>
-<pre class="webidl prettyprint">    [Constructor(long delay, optional long? period)]
-    interface AlarmRelative : <a href="#Alarm">Alarm</a> {
-        readonly attribute long delay;
-
-        readonly attribute long? period;
-
-        long? getRemainingSeconds() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Constructor(long delay, optional long? period)]
+  interface AlarmRelative : <a href="#Alarm">Alarm</a> {
+    readonly attribute long delay;
+    readonly attribute long? period;
+    long? getRemainingSeconds() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -735,27 +726,26 @@ This alarm triggers after a duration mentioned in the <em>delay</em> attribute f
 If a <em>period</em> is provided, the alarm keeps triggering for the given interval.
           </p>
          </div>
-<p><span class="remark"> Remark : </span>
- Since Tizen 3.0 behaviour of this alarm has changed. In order to decrease the power consumption,
+<p><span class="remark">Remark: </span>
+ Since Tizen 2.4 behaviour of this alarm has changed. In order to decrease the power consumption,
 the operating system decides when this alarm is going to be fired and what is the period between subsequent executions.
 It is guaranteed that this alarm will be fired after at least <em>delay</em> seconds.
-If <em>period</em> is provided, it will be adjusted by the operating system, however this value will not be lower than 600 seconds.
+If <em>period</em> is provided, it will be adjusted by the operating system, however this value will not be lower than <var>600</var> seconds.
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the current application ID */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current application ID. */
 var appId = tizen.application.getCurrentApplication().appInfo.id;
 
-/* Sets an alarm in 3 hours from now */
+/* Sets an alarm in 3 hours from now. */
 var alarm1 = new tizen.AlarmRelative(3 * tizen.alarm.PERIOD_HOUR);
 tizen.alarm.add(alarm1, appId);
 
-/* Sets an alarm in one hour, recurring after every 10 minutes */
+/* Sets an alarm in one hour, recurring after every 10 minutes. */
 var alarm2 = new tizen.AlarmRelative(tizen.alarm.PERIOD_HOUR, 10 * tizen.alarm.PERIOD_MINUTE);
 tizen.alarm.add(alarm2, appId);
 </pre>
 </div>
-
+        
       <div class="constructors">
 <h4 id="AlarmRelative::constructor">Constructors</h4>
 <dl><pre class="webidl prettyprint">AlarmRelative(long delay, optional long? period);</pre></dl>
@@ -768,12 +758,11 @@ tizen.alarm.add(alarm2, appId);
 </span><span class="type">long </span><span class="name">delay</span></span><div class="brief">
  An attribute to store the difference in time (in seconds) between when an alarm is added and when it is triggered.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="remark"> Remark : </span>
- Since Tizen 3.0 the operating system adjusts this value to decrease the power consumption.
+<p><span class="remark">Remark: </span>
+ Since Tizen 2.4 the operating system adjusts this value to decrease the power consumption.
             </p>
 </li>
 <li class="attribute" id="AlarmRelative::period">
@@ -782,12 +771,11 @@ tizen.alarm.add(alarm2, appId);
  An attribute to store the duration in seconds between each trigger of an alarm.
 By default, this attribute is set to <var>null</var>, indicating that this alarm does not repeat.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
-<p><span class="remark"> Remark : </span>
- Since Tizen 3.0 the operating system adjusts this value to decrease the power consumption.
+<p><span class="remark">Remark: </span>
+ Since Tizen 2.4 the operating system adjusts this value to decrease the power consumption.
             </p>
 </li>
 </ul>
@@ -802,10 +790,8 @@ By default, this attribute is set to <var>null</var>, indicating that this alarm
 <div class="brief">
  Returns the duration in seconds before the next alarm is triggered.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long? getRemainingSeconds();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">long? getRemainingSeconds();</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -815,8 +801,12 @@ If the alarm has expired, this method returns <var>null</var>.
            </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- long The duration before the next alarm is triggered.
-              </div>
+<ul>
+<span class="return">long:
+                  </span>
+ The duration before the next alarm is triggered.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -825,11 +815,10 @@ If the alarm has expired, this method returns <var>null</var>.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the current application ID */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current application ID. */
 var appId = tizen.application.getCurrentApplication().appInfo.id;
 
-/* Sets an alarm in 3 hours from now */
+/* Sets an alarm in 3 hours from now. */
 var alarm = new tizen.AlarmRelative(3 * tizen.alarm.PERIOD_HOUR);
 tizen.alarm.add(alarm, appId);
 
@@ -846,20 +835,15 @@ console.log("remaining time is " + sec);
 <div class="brief">
  The AlarmAbsolute interface provides an absolute alarm, which triggers at a specified absolute date.
           </div>
-<pre class="webidl prettyprint">    [Constructor(Date date),
-
-     Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
-
-     Constructor(Date date, long period)]
-    interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
-        readonly attribute Date date;
-
-        readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
-
-        Date? getNextScheduledDate() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Constructor(Date date),
+   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
+   Constructor(Date date, long period)]
+  interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
+    readonly attribute Date date;
+    readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
+    Date? getNextScheduledDate() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  1.0
           </p>
 <div class="description">
@@ -871,26 +855,25 @@ If a <em>period</em> is provided, the alarm keeps triggering for the given inter
  Since Tizen 4.0 constructor AlarmAbsolute(Date date, long period) is deprecated.
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the current application ID */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current application ID. */
 var appId = tizen.application.getCurrentApplication().appInfo.id;
 
-/* Sets an alarm on January 1st 2014 08:00 */
+/* Sets an alarm on January 1st 2014 08:00. */
 var date = new Date(2014, 0, 1, 8, 0);
 var alarm1 = new tizen.AlarmAbsolute(date);
 tizen.alarm.add(alarm1, appId);
 
-/* Sets an alarm on January 1st 2014 08:00, repeating every 2 days */
-/* Since Tizen 4.0 below constructor is deprecated */
+/* Sets an alarm on January 1st 2014 08:00, repeating every 2 days. */
+/* Since Tizen 4.0 below constructor is deprecated. */
 var alarm2 = new tizen.AlarmAbsolute(date, 2 * tizen.alarm.PERIOD_DAY);
 tizen.alarm.add(alarm2, appId);
 
-/* Sets an alarm occurring on every Saturday and Sunday, at 08:00, starting from January 1st 2014 */
+/* Sets an alarm occurring on every Saturday and Sunday, at 08:00, starting from January 1st 2014. */
 var alarm3 = new tizen.AlarmAbsolute(date, ["SA", "SU"]);
 tizen.alarm.add(alarm3, appId);
 </pre>
 </div>
-
+        
       <div class="constructors">
 <h4 id="AlarmAbsolute::constructor">Constructors</h4>
 <dl>
@@ -912,8 +895,7 @@ tizen.alarm.add(alarm3, appId);
 This attribute is precise to the second. Milliseconds will be ignored.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -931,8 +913,7 @@ By default, this attribute is set to <var>null</var>, indicating that this alarm
 The <em>period</em> and <em>daysOfTheWeek</em> attributes are mutually exclusive.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -948,8 +929,7 @@ By default, this attribute is set to an empty array.
 The <em>period</em> and <em>daysOfTheWeek</em> attributes are mutually exclusive.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  1.0
             </p>
 </li>
@@ -965,10 +945,8 @@ The <em>period</em> and <em>daysOfTheWeek</em> attributes are mutually exclusive
 <div class="brief">
  Returns the date / time of the next alarm trigger.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">Date? getNextScheduledDate();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">Date? getNextScheduledDate();</pre></div>
+<p><span class="version">Since: </span>
  1.0
             </p>
 <div class="description">
@@ -978,8 +956,12 @@ If the alarm has expired, this method returns <var>null</var>. The returned date
            </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- Date The date/time of the next alarm trigger.
-              </div>
+<ul>
+<span class="return">Date:
+                  </span>
+ The date/time of the next alarm trigger.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -988,11 +970,10 @@ If the alarm has expired, this method returns <var>null</var>. The returned date
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-/* Gets the current application ID */
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current application ID. */
 var appId = tizen.application.getCurrentApplication().appInfo.id;
 
-/* Sets an alarm on January 1st 2014 08:00 */
+/* Sets an alarm on January 1st 2014 08:00. */
 var date = new Date(2014, 0, 1, 8, 0);
 var alarm1 = new tizen.AlarmAbsolute(date);
 tizen.alarm.add(alarm1, appId);
@@ -1008,64 +989,42 @@ console.log("next scheduled time is " + date);
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Alarm {
-    typedef DOMString AlarmId;
-
-    enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };
-
-    [NoInterfaceObject] interface AlarmManagerObject {
-        readonly attribute <a href="#AlarmManager">AlarmManager</a> alarm;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;
-
-    [NoInterfaceObject] interface AlarmManager {
-        const long PERIOD_MINUTE = 60;
-
-        const long PERIOD_HOUR = 3600;
-
-        const long PERIOD_DAY = 86400;
-
-        const long PERIOD_WEEK = 604800;
-
-        void add(<a href="#Alarm">Alarm</a> alarm, <a href="application.html#ApplicationId">ApplicationId</a> applicationId, optional <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void addAlarmNotification(<a href="#Alarm">Alarm</a> alarm, <a href="notification.html#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void remove(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#Alarm">Alarm</a> get(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="notification.html#Notification">Notification</a> getAlarmNotification(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#Alarm">Alarm</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [NoInterfaceObject] interface Alarm {
-        readonly attribute <a href="#AlarmId">AlarmId</a>? id;
-    };
-
-    [Constructor(long delay, optional long? period)]
-    interface AlarmRelative : <a href="#Alarm">Alarm</a> {
-        readonly attribute long delay;
-
-        readonly attribute long? period;
-
-        long? getRemainingSeconds() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [Constructor(Date date),
-
-     Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
-
-     Constructor(Date date, long period)]
-    interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
-        readonly attribute Date date;
-
-        readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
-
-        Date? getNextScheduledDate() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
+  typedef DOMString AlarmId;
+  enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };
+  [NoInterfaceObject] interface AlarmManagerObject {
+    readonly attribute <a href="#AlarmManager">AlarmManager</a> alarm;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;
+  [NoInterfaceObject] interface AlarmManager {
+    const long PERIOD_MINUTE = 60;
+    const long PERIOD_HOUR = 3600;
+    const long PERIOD_DAY = 86400;
+    const long PERIOD_WEEK = 604800;
+    void add(<a href="#Alarm">Alarm</a> alarm, <a href="application.html#ApplicationId">ApplicationId</a> applicationId, optional <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void addAlarmNotification(<a href="#Alarm">Alarm</a> alarm, <a href="notification.html#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Alarm">Alarm</a> get(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="notification.html#UserNotification">UserNotification</a> getAlarmNotification(<a href="#AlarmId">AlarmId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Alarm">Alarm</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Alarm {
+    readonly attribute <a href="#AlarmId">AlarmId</a>? id;
+  };
+  [Constructor(long delay, optional long? period)]
+  interface AlarmRelative : <a href="#Alarm">Alarm</a> {
+    readonly attribute long delay;
+    readonly attribute long? period;
+    long? getRemainingSeconds() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [Constructor(Date date),
+   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
+   Constructor(Date date, long period)]
+  interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
+    readonly attribute Date date;
+    readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
+    Date? getNextScheduledDate() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
 };</pre>
 </div>
 <div id="page-footer">

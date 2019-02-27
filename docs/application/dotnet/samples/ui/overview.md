@@ -106,7 +106,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wcalculator.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Calculator</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Calculator" target="_blank"><strong>(W) Calculator</strong></a></p>
 			<p>This sample application demonstrates the regular calculator. This is using some Xamarin.Forms features such as XAML files for GUI and Custom Renderers for the image buttons.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -137,7 +137,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wrotarytimer.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Rotary timer</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/RotaryTimer" target="_blank"><strong>(W) Rotary timer</strong></a></p>
 			<p>This sample application demonstrates how to use Rotary Bezel.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -184,6 +184,62 @@ for TD:
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_UI_Components" target="_blank">Native version</a></li>
 			</ul></p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w46_animationsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) AnimationSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to animate NUI objects using the NUI animation.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w47imagesample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) ImageSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to load and control images.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w48scriptlayoutsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) ScriptLayoutSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to set the theme of an application using script file.
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w49texteditorsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) TextEditorSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control the TextEditor properties.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w50textfieldsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) TextFieldSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control the TextField properties.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w51textlabelsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) TextLabelSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control the TextLabel properties.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w52uicontrolsample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) UIControlSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to generate and control individual NUI UI control objects.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w53visualssample_nui.png" width="180"/></td>
+			<td>
+			<p><strong>(W) VisualsSample (NUI)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use various kinds of visuals.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -304,6 +360,88 @@ for TD:
 			<td>
             <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/VisualSample" target="_blank"><strong>(T) Visual Sample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to use various kinds of visuals.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv28ball3d.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Ball3D (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to draw a spherical 3D model, add texture to the model, and realize rotation of the model.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv29cubetexture.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) CubeTexture (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to draw a 3D model (cube), realize rotation of the model, and add texture to the model.</p>
+                        <p>It also demonstrates how the application implements two cubes independently drawn using two programs.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv36cubewithskiasharp.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) CubeWithSkiaSharp (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to draw a text with SkiaSharp on the target memory, to generates 2D texture on the target memory block, and to shows 2D texture in the OpenTK app (drawing text on a rotating cube).</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv30graffiti.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Graffiti (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to respond to click events or button events and how to draw a dot or line at the corresponding position on the screen.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv31panorama.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Panorama360 (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to achieve 360-degree panorama effect.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv32particledynamic.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) ParticleDynamic (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to implement a dynamic particle scenario.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv33scratchpaper.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) ScratchPaper (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to respond to click events or button events and how to draw corresponding textures at the corresponding position on the screen.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv34star.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Star (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to implement shaders loading, program creation, linking, vertex data loading, texture data loading, and other preliminary operations of drawing. It also demonstrates how to draw a multilateral graph (five-pointed star) with the DrawElements API.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv35triangle.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) Triangle (OpenTK)</strong> [In progress]</p>
+			<p>This sample application demonstrates how to implement shaders loading, program creation, linking, vertex data loading, texture data loading, and other preliminary operations of drawing. It also demonstrates how to implement a basic graph drawing (drawing triangles) with the DrawArrays API.</p>
 			</td>
 		</tr>
 	</tbody>

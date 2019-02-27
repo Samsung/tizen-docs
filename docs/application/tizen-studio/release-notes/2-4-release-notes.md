@@ -1,5 +1,7 @@
 # Tizen Studio 2.4 Release Notes
 
+-   Release Date: May 29, 2018
+
 
 ## IDE and Tools
 

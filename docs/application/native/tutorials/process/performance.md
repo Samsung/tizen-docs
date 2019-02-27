@@ -208,7 +208,7 @@ To set the Valgrind options for your application:
      When enabled, Valgrind traces into sub-processes initiated through the exec system call. This is necessary for multi-project applications. Valgrind does trace into the child of a fork (it would be difficult not to, since fork makes an identical copy of a process), so this option is arguably badly named. However, most children of fork calls immediately call exec anyway.
 
 
-   - **run __libc_freeres() on exit**
+   - **run `__libc_freeres()` on exit**
 
      This option is only relevant when running Valgrind on Linux.
 
@@ -252,7 +252,7 @@ To set the Valgrind options for your application:
 
    The tab content depends on the selection you have made on the **Collect data** tab.
 
-   Tool Advanced setting options for memory error and memory leak profiling cantains the following options:
+   Tool Advanced setting options for memory error and memory leak profiling contains the following options:
 
    - **leak check**
 
@@ -287,7 +287,7 @@ To set the Valgrind options for your application:
 
        This option controls whether **Memcheck** reports uses of undefined value errors. If you do not want to see undefined value errors, set this to no. It also has the side effect of slightly speeding up **Memcheck**.
 
-   Tool Advanced setting options for heap memory profiling cantains the following options:
+   Tool Advanced setting options for heap memory profiling contains the following options:
 
    - **profile heap**
 
@@ -343,7 +343,7 @@ To set the Valgrind options for your application:
 
    - **allocation functions**
 
-       Methods specified with this option are treated as though they were a heap allocation method, such as malloc. This is useful for methods that are wrappers to malloc or new, which can fill up the allocation trees with uninteresting information. This option can be specified multiple times on the command line, to name multiple methods.
+       Methods specified with this option are treated as though they were a heap allocation method, such as malloc. This is useful for methods that are wrappers to malloc or new, which can fill up the allocation trees with uninteresting information. This option can be specified multiple times on the command line, to name multiple methods.</br>
        The named method is only treated this way if it is the top entry in a stack trace, or just below another method treated this way. For example, if you have a method malloc1 that wraps malloc, and malloc2 that wraps malloc1, just specifying **--alloc-fn=malloc2** has no effect. You need to specify **--alloc-fn=malloc1** as well. This is a little inconvenient, but the reason is that checking for allocation methods is slow, and it saves a lot of time if **Massif** can stop looking through the stack trace entries as soon as it finds one that does not match rather than having to continue through all the entries.
 
 7. To save the settings, click **Apply**.

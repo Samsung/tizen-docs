@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>Device API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Device API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Device">
-<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+ <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>Device API</h1></div>
 <div class="brief">
  This plugin defines a global device object, which describes the device's hardware and software.
@@ -21,8 +21,7 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -62,20 +61,17 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="brief">
  The <em>window.device </em>object allows access to the functionality of the Device API.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface DeviceManagerObject {
-        readonly attribute <a href="#Device">Device</a> device;
-    };</pre>
-<pre class="webidl prettyprint">    Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface DeviceManagerObject {
+    readonly attribute <a href="#Device">Device</a> device;
+  };</pre>
+<pre class="webidl prettyprint">  Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 </div>
@@ -84,28 +80,20 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="brief">
  The device object describes the device's hardware and software.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface Device {
-        readonly attribute DOMString cordova;
-
-        readonly attribute DOMString model;
-
-        readonly attribute DOMString platform;
-
-        readonly attribute DOMString uuid;
-
-        readonly attribute DOMString version;
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Device {
+    readonly attribute DOMString cordova;
+    readonly attribute DOMString model;
+    readonly attribute DOMString platform;
+    readonly attribute DOMString uuid;
+    readonly attribute DOMString version;
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="attributes">
@@ -116,24 +104,21 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 </span><span class="type">DOMString </span><span class="name">cordova</span></span><div class="brief">
  Returns the version of Cordova running on the device.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  console.log('Device Cordova: ' + device.cordova);
+  console.log("Device Cordova: " + device.cordova);
 }
 </pre>
 </div>
@@ -147,24 +132,21 @@ function onDeviceReady()
 </span><span class="type">DOMString </span><span class="name">model</span></span><div class="brief">
  Get the the name of the device's model or product. The value is set by the device manufacturer and may be different across versions of the same product.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  console.log('Device Model: ' + device.model);
+  console.log("Device Model: " + device.model);
 }
 </pre>
 </div>
@@ -178,24 +160,21 @@ function onDeviceReady()
 </span><span class="type">DOMString </span><span class="name">platform</span></span><div class="brief">
  Get the device's operating system name.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  console.log('Device Platform: ' + device.platform);
+  console.log("Device Platform: " + device.platform);
 }
 </pre>
 </div>
@@ -209,24 +188,21 @@ function onDeviceReady()
 </span><span class="type">DOMString </span><span class="name">uuid</span></span><div class="brief">
  Get the device's Universally Unique Identifier (UUID). The details of how a UUID is generated are determined by the device manufacturer and are specific to the device's platform or model.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  console.log('Device UUID: ' + device.uuid);
+  console.log("Device UUID: " + device.uuid);
 }
 </pre>
 </div>
@@ -240,24 +216,21 @@ function onDeviceReady()
 </span><span class="type">DOMString </span><span class="name">version</span></span><div class="brief">
  Get the operating system version.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  console.log('Device Version: ' + device.version);
+  console.log("Device Version: " + device.version);
 }
 </pre>
 </div>
@@ -272,22 +245,17 @@ function onDeviceReady()
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Device {
-    [NoInterfaceObject] interface DeviceManagerObject {
-        readonly attribute <a href="#Device">Device</a> device;
-    };
-    Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;
-    [NoInterfaceObject] interface Device {
-        readonly attribute DOMString cordova;
-
-        readonly attribute DOMString model;
-
-        readonly attribute DOMString platform;
-
-        readonly attribute DOMString uuid;
-
-        readonly attribute DOMString version;
-
-    };
+  [NoInterfaceObject] interface DeviceManagerObject {
+    readonly attribute <a href="#Device">Device</a> device;
+  };
+  Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;
+  [NoInterfaceObject] interface Device {
+    readonly attribute DOMString cordova;
+    readonly attribute DOMString model;
+    readonly attribute DOMString platform;
+    readonly attribute DOMString uuid;
+    readonly attribute DOMString version;
+  };
 };</pre>
 </div>
 <div id="page-footer">
@@ -303,6 +271,7 @@ function onDeviceReady()
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

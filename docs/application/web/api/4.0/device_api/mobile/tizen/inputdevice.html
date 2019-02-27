@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>InputDevice API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>InputDevice API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::InputDevice">
+ <div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>InputDevice API</h1></div>
 <div class="brief">
  The Input Device API provides functions to subscribe key events of the input device.
@@ -16,14 +17,17 @@
 The Tizen Device may provide depending on a particular input device.
 An application can handle device dependent key events after registration.
         </p>
+        <p>
+For more information on the Input Device features, see <a href="https://developer.tizen.org/development/guides/web-application/text-input/input-device">Input Device Guide</a>.
+        </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
-<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#InputDeviceKeyName">InputDeviceKeyName</a>
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#InputDeviceKeyName">InputDeviceKeyName</a>
 </li></ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -57,12 +61,15 @@ An application can handle device dependent key events after registration.
 <tr>
 <td><a href="#InputDeviceManager">InputDeviceManager</a></td>
 <td>
-<a href="#InputDeviceKey">InputDeviceKey</a>[] <a href="#InputDeviceManager::getSupportedKeys">getSupportedKeys</a> ()<br>
-    <a href="#InputDeviceKey">InputDeviceKey</a>? <a href="#InputDeviceManager::getKey">getKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)<br>
-    void <a href="#InputDeviceManager::registerKey">registerKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)<br>
-    void <a href="#InputDeviceManager::unregisterKey">unregisterKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)<br>
-    void <a href="#InputDeviceManager::registerKeyBatch">registerKeyBatch</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#InputDeviceManager::unregisterKeyBatch">unregisterKeyBatch</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</td>
+<div>
+<a href="#InputDeviceKey">InputDeviceKey</a>[] <a href="#InputDeviceManager::getSupportedKeys">getSupportedKeys</a> ()</div>
+<div>
+<a href="#InputDeviceKey">InputDeviceKey</a>? <a href="#InputDeviceManager::getKey">getKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)</div>
+<div>void <a href="#InputDeviceManager::registerKey">registerKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)</div>
+<div>void <a href="#InputDeviceManager::unregisterKey">unregisterKey</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName)</div>
+<div>void <a href="#InputDeviceManager::registerKeyBatch">registerKeyBatch</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#InputDeviceManager::unregisterKeyBatch">unregisterKeyBatch</a> (<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -73,7 +80,7 @@ An application can handle device dependent key events after registration.
 <div class="brief">
  Name which identifies the key
           </div>
-<pre class="webidl prettyprint">    typedef DOMString InputDeviceKeyName;</pre>
+<pre class="webidl prettyprint">  typedef DOMString InputDeviceKeyName;</pre>
 <div class="description">
           <p>
 Name of the key may be, for example:
@@ -97,12 +104,11 @@ The actual list of supported keys depends on the platform.
 <div class="brief">
  The InputDeviceManager interface defines what is instantiated in the tizen object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface InputDeviceManagerObject {
-        readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface InputDeviceManagerObject {
+    readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -110,19 +116,29 @@ The actual list of supported keys depends on the platform.
 There is a tizen.inputdevice object that allows accessing the functionality of the Input Device API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="InputDeviceManagerObject::inputdevice">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">InputDeviceManager </span><span class="name">inputdevice</span></span><div class="brief">
+ Object representing a input device manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.4
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="InputDeviceKey">
 <a class="backward-compatibility-anchor" name="::InputDevice::InputDeviceKey"></a><h3>2.2. InputDeviceKey</h3>
 <div class="brief">
  The InputDeviceKey interface stores information about the key.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface InputDeviceKey {
-        readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
-
-        readonly attribute long code;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface InputDeviceKey {
+    readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
+    readonly attribute long code;
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="attributes">
@@ -141,8 +157,7 @@ If the key is listed in the <a href="http://www.w3.org/TR/2014/WD-DOM-Level-3-Ev
 If the "DOM Level 3 KeyboardEvent key Value" does not contain appropriate entry for the key, then the Input Device provides a device specific <em>name</em>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
@@ -156,8 +171,7 @@ If the "DOM Level 3 KeyboardEvent key Value" does not contain appropriate entry 
 This is the <em>keyCode</em> attribute value of the Key Event generated by the key.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.4
             </p>
 </li>
@@ -169,21 +183,17 @@ This is the <em>keyCode</em> attribute value of the Key Event generated by the k
 <div class="brief">
  The InputDeviceManager interface provides the features to check for availability and register for input device events.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface InputDeviceManager {
-        <a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface InputDeviceManager {
+    <a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="methods">
@@ -196,10 +206,8 @@ This is the <em>keyCode</em> attribute value of the Key Event generated by the k
 <div class="brief">
  Retrieves the list of keys can be registered with the <em>registerKey()</em> method.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys();</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -207,6 +215,14 @@ This is the <em>keyCode</em> attribute value of the Key Event generated by the k
 Mandatory keys will not be retrieved by this method.
             </p>
            </div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">InputDeviceKey[]:
+                  </span>
+ List of supported keys.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -215,24 +231,23 @@ Mandatory keys will not be retrieved by this method.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var i, keyCode = {}, supportedKeys;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var i, keyCode = {}, supportedKeys;
 supportedKeys = tizen.inputdevice.getSupportedKeys();
 for (i = 0; i &lt; supportedKeys.length; i++)
 {
-   keyCode[supportedKeys[i].name] = supportedKeys[i].code;
+  keyCode[supportedKeys[i].name] = supportedKeys[i].code;
 }
 if (keyCode.hasOwnProperty("VolumeUp"))
 {
-   tizen.inputdevice.registerKey("VolumeUp");
+  tizen.inputdevice.registerKey("VolumeUp");
 }
 window.addEventListener("keydown", function(keyEvent)
 {
-   /* Identify the key by the numeric code from the keyEvent */
-   if (keyEvent.keyCode === keyCode.VolumeUp)
-   {
-      console.log("The VOLUME UP was pressed");
-   }
+  /* Identify the key by the numeric code from the keyEvent. */
+  if (keyEvent.keyCode === keyCode.VolumeUp)
+  {
+    console.log("The VOLUME UP was pressed");
+  }
 });
 </pre>
 </div>
@@ -244,10 +259,8 @@ window.addEventListener("keydown", function(keyEvent)
 <div class="brief">
  Returns information about the key which has the given name.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -255,14 +268,18 @@ window.addEventListener("keydown", function(keyEvent)
 <ul>
           <li class="param">
 <span class="name">keyName</span>:
- The name of the key to retrieve
+ The name of the key to retrieve.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- InputDeviceKey InputDeviceKey object for the given key name, or null if the key is not supported
-              </div>
+<ul>
+<span class="return">InputDeviceKey:
+                  </span>
+ InputDeviceKey object for the given key name or <var>null</var> if the key is not supported.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -283,10 +300,8 @@ window.addEventListener("keydown", function(keyEvent)
 <div class="brief">
  Registers an input device key to receive DOM keyboard event when it is pressed or released
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -302,7 +317,7 @@ An application can not register the mandatory keys (ArrowLeft, ArrowRight, Arrow
 <ul>
           <li class="param">
 <span class="name">keyName</span>:
- The name of the key which should generate DOM key events when pressed
+ The name of the key which should generate DOM key events when pressed.
                 </li>
         </ul>
 </div>
@@ -319,18 +334,17 @@ An application can not register the mandatory keys (ArrowLeft, ArrowRight, Arrow
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var keys = ["VolumeUp", "VolumeDown"], i;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var keys = ["VolumeUp", "VolumeDown"], i;
 for (i = 0; i &lt; keys.length; i++)
 {
-   try
-   {
-      tizen.inputdevice.registerKey(keys[i]);
-   }
-   catch (error)
-   {
-      console.log("failed to register " + keys[i] + ": " + error);
-   }
+  try
+  {
+    tizen.inputdevice.registerKey(keys[i]);
+  }
+  catch (error)
+  {
+    console.log("Failed to register " + keys[i] + ": " + error);
+  }
 }
 </pre>
 </div>
@@ -342,10 +356,8 @@ for (i = 0; i &lt; keys.length; i++)
 <div class="brief">
  Unregisters an input device key
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="parameters">
@@ -353,7 +365,7 @@ for (i = 0; i &lt; keys.length; i++)
 <ul>
           <li class="param">
 <span class="name">keyName</span>:
- The name of the key which should not be monitored any longer
+ The name of the key which should not be monitored any longer.
                 </li>
         </ul>
 </div>
@@ -370,8 +382,7 @@ for (i = 0; i &lt; keys.length; i++)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-tizen.inputdevice.unregisterKey("VolumeDown");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.inputdevice.unregisterKey("VolumeDown");
 </pre>
 </div>
 </dd>
@@ -382,10 +393,9 @@ tizen.inputdevice.unregisterKey("VolumeDown");
 <div class="brief">
  Registers a batch of input device keys to receive DOM keyboard event when any of them is pressed or released
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -410,7 +420,7 @@ An application can not register the mandatory keys (ArrowLeft, ArrowRight, Arrow
 <ul>
           <li class="param">
 <span class="name">keyNames</span>:
- The array with key names of keys which should generate DOM key events when pressed
+ The array with key names of keys which should generate DOM key events when pressed.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -438,15 +448,14 @@ An application can not register the mandatory keys (ArrowLeft, ArrowRight, Arrow
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function errorCB(err)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCB(err)
 {
-   console.log('The following error occurred: ' +  err.name);
+  console.log("The following error occurred: " + err.name);
 }
 
 function successCB()
 {
-   console.log('Registered successfully');
+  console.log("Registered successfully");
 }
 
 var keys = ["VolumeUp", "VolumeDown"];
@@ -461,10 +470,9 @@ tizen.inputdevice.registerKeyBatch(keys, successCB, errorCB);
 <div class="brief">
  Unregisters a batch of input device keys
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
@@ -483,7 +491,7 @@ UnknownError: In case of any other error              </li>
 <ul>
           <li class="param">
 <span class="name">keyNames</span>:
- The array containing names of keys which should not be monitored any longer
+ The array containing names of keys which should not be monitored any longer.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -511,15 +519,14 @@ UnknownError: In case of any other error              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-function errorCB(err)
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCB(err)
 {
-   console.log('The following error occurred: ' +  err.name);
+  console.log("The following error occurred: " + err.name);
 }
 
 function successCB()
 {
-   console.log('Unregistsered successfully');
+  console.log("Unregistered successfully");
 }
 
 var keys = ["VolumeUp", "VolumeDown"];
@@ -533,33 +540,25 @@ tizen.inputdevice.unregisterKeyBatch(keys, successCB, errorCB);
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module InputDevice {
-    typedef DOMString InputDeviceKeyName;
-
-    [NoInterfaceObject] interface InputDeviceManagerObject {
-        readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;
-
-    [NoInterfaceObject] interface InputDeviceKey {
-        readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
-
-        readonly attribute long code;
-    };
-
-    [NoInterfaceObject] interface InputDeviceManager {
-        <a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        <a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
+  typedef DOMString InputDeviceKeyName;
+  [NoInterfaceObject] interface InputDeviceManagerObject {
+    readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;
+  [NoInterfaceObject] interface InputDeviceKey {
+    readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
+    readonly attribute long code;
+  };
+  [NoInterfaceObject] interface InputDeviceManager {
+    <a href="#InputDeviceKey">InputDeviceKey</a>[] getSupportedKeys() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#InputDeviceKey">InputDeviceKey</a>? getKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterKey(<a href="#InputDeviceKeyName">InputDeviceKeyName</a> keyName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
 };</pre>
 </div>
 <div id="page-footer">

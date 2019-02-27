@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>Events API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Events API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Events">
-<div class="supported-platforms"><img title="Mandatory" src="../../../../images/tv_s_w.png"></div>
+ <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
 <div class="title"><h1>Events API</h1></div>
 <div class="brief">
  This plugin provides information about events defined in cordova.
@@ -106,8 +106,7 @@ offline            </td>
           </tr>
         </table>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -195,12 +194,11 @@ offline            </td>
 <div class="brief">
  Callback for the event which fires when Cordova is fully loaded
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface DeviceReadyEventCallback {
-  void ondeviceready();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface DeviceReadyEventCallback {
+    void ondeviceready();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -219,20 +217,18 @@ The deviceready event behaves somewhat differently from others. Any event handle
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready">Cordova deviceready event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  /* Now safe to use device APIs */
+  /* Now safe to use device APIs. */
 }
 </pre>
 </div>
@@ -242,12 +238,11 @@ function onDeviceReady()
 <div class="brief">
  Callback for the event which fires when an application is put into the background
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface PauseEventCallback {
-  void onpause();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface PauseEventCallback {
+    void onpause();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -260,25 +255,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#pause">Cordova pause event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('pause', onPause, false);
+  document.addEventListener("pause", onPause, false);
 }
 
 function onPause()
 {
-  /* Handle the pause event */
+  /* Handle the pause event. */
 }
 </pre>
 </div>
@@ -288,12 +281,11 @@ function onPause()
 <div class="brief">
  Callback for the event which fires when an application is retrieved from the background
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface ResumeEventCallback {
-  void onresume();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface ResumeEventCallback {
+    void onresume();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -306,25 +298,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#resume">Cordova resume event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('resume', onResume, false);
+  document.addEventListener("resume", onResume, false);
 }
 
 function onResume()
 {
-  /* Handle the resume event */
+  /* Handle the resume event. */
 }
 </pre>
 </div>
@@ -334,12 +324,11 @@ function onResume()
 <div class="brief">
  Callback for the event which fires when the user presses the back button
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface BackButtonEventCallback {
-  void onbackbutton();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface BackButtonEventCallback {
+    void onbackbutton();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -350,25 +339,23 @@ It is no longer necessary to call any other method to override the back-button b
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#backbutton">Cordova backbutton event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('backbutton', onBackKeyDown, false);
+  document.addEventListener("backbutton", onBackKeyDown, false);
 }
 
 function onBackKeyDown()
 {
-   /* Handle the back button */
+  /* Handle the back button. */
 }
 </pre>
 </div>
@@ -378,12 +365,11 @@ function onBackKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the menu button
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface MenuButtonEventCallback {
-  void onmenubutton();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface MenuButtonEventCallback {
+    void onmenubutton();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -396,25 +382,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#menubutton">Cordova menubutton event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('menubutton', onMenuKeyDown, false);
+  document.addEventListener("menubutton", onMenuKeyDown, false);
 }
 
 function onMenuKeyDown()
 {
-  /* Handle the menu button */
+  /* Handle the menu button. */
 }
 </pre>
 </div>
@@ -424,12 +408,11 @@ function onMenuKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the search button
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface SearchButtonEventCallback {
-  void onsearchbutton();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface SearchButtonEventCallback {
+    void onsearchbutton();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -442,25 +425,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#searchbutton">Cordova searchbutton event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('searchbutton', onSearchKeyDown, false);
+  document.addEventListener("searchbutton", onSearchKeyDown, false);
 }
 
 function onSearchKeyDown()
 {
-  /* Handle the search button */
+  /* Handle the search button. */
 }
 </pre>
 </div>
@@ -470,12 +451,11 @@ function onSearchKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the start call button
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface StartCallEventCallback {
-  void onstartcallbutton();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface StartCallEventCallback {
+    void onstartcallbutton();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -488,25 +468,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#startcallbutton">Cordova startcallbutton event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('startcallbutton', onStartCallKeyDown, false);
+  document.addEventListener("startcallbutton", onStartCallKeyDown, false);
 }
 
 function onStartCallKeyDown()
 {
-  /* Handle the start call button */
+  /* Handle the start call button. */
 }
 </pre>
 </div>
@@ -516,12 +494,11 @@ function onStartCallKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the end call button
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface EndCallButtonEventCallback {
-  void onendcallbutton();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface EndCallButtonEventCallback {
+    void onendcallbutton();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -534,25 +511,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#endcallbutton">Cordova endcallbutton event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('endcallbutton', onEndCallKeyDown, false);
+  document.addEventListener("endcallbutton", onEndCallKeyDown, false);
 }
 
 function onEndCallKeyDown()
 {
-  /* Handle the end call button */
+  /* Handle the end call button. */
 }
 </pre>
 </div>
@@ -562,12 +537,11 @@ function onEndCallKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the volume down button
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface VolumeDownButtonEventCallback {
-  void onvolumedownbutton();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface VolumeDownButtonEventCallback {
+    void onvolumedownbutton();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -580,25 +554,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#volumedownbutton">Cordova volumedownbutton event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('volumedownbutton', onVolumeDownKeyDown, false);
+  document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
 }
 
 function onVolumeDownKeyDown()
 {
-  /* Handle the volume down button */
+  /* Handle the volume down button. */
 }
 </pre>
 </div>
@@ -608,12 +580,11 @@ function onVolumeDownKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the volume up button
           </div>
-<pre class="webidl prettyprint">[NoInterfaceObject, Callback=FunctionOnly]
-interface VolumeUpButtonEventCallback {
-  void onvolumeupbutton();
-};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
+  interface VolumeUpButtonEventCallback {
+    void onvolumeupbutton();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -626,25 +597,23 @@ Applications typically should use document.addEventListener() to attach an event
           <p>
 Original documentation: <a href="https://cordova.apache.org/docs/en/latest/cordova/events/events.html#volumeupbutton">Cordova volumeupbutton event</a>          </p>
          </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener('deviceready', onDeviceReady, false);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady()
 {
-  document.addEventListener('volumeupbutton', onVolumeUpKeyDown, false);
+  document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
 }
 
 function onVolumeUpKeyDown()
 {
-  /* Handle the volume up button */
+  /* Handle the volume up button. */
 }
 </pre>
 </div>
@@ -652,56 +621,46 @@ function onVolumeUpKeyDown()
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Events {
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface DeviceReadyEventCallback {
-  void ondeviceready();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface PauseEventCallback {
-  void onpause();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface ResumeEventCallback {
-  void onresume();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface BackButtonEventCallback {
-  void onbackbutton();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface MenuButtonEventCallback {
-  void onmenubutton();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface SearchButtonEventCallback {
-  void onsearchbutton();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface StartCallEventCallback {
-  void onstartcallbutton();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface EndCallButtonEventCallback {
-  void onendcallbutton();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface VolumeDownButtonEventCallback {
-  void onvolumedownbutton();
-};
-
-[NoInterfaceObject, Callback=FunctionOnly]
-interface VolumeUpButtonEventCallback {
-  void onvolumeupbutton();
-};
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface DeviceReadyEventCallback {
+    void ondeviceready();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface PauseEventCallback {
+    void onpause();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface ResumeEventCallback {
+    void onresume();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface BackButtonEventCallback {
+    void onbackbutton();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface MenuButtonEventCallback {
+    void onmenubutton();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface SearchButtonEventCallback {
+    void onsearchbutton();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface StartCallEventCallback {
+    void onstartcallbutton();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface EndCallButtonEventCallback {
+    void onendcallbutton();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface VolumeDownButtonEventCallback {
+    void onvolumedownbutton();
+  };
+  [NoInterfaceObject, Callback=FunctionOnly]
+  interface VolumeUpButtonEventCallback {
+    void onvolumeupbutton();
+  };
 };</pre>
 </div>
 <div id="page-footer">
@@ -717,6 +676,7 @@ interface VolumeUpButtonEventCallback {
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

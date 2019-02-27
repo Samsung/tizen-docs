@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>Console API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Console API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Console">
-<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+ <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>Console API</h1></div>
 <div class="brief">
  the Console module provides function to access the console.
@@ -18,8 +18,7 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-co
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -71,8 +70,7 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-co
     readonly attribute <a href="#ConsoleManager">ConsoleManager</a> console;
   };</pre>
 <pre class="webidl prettyprint">  Window implements <a href="#ConsoleManagerObject">ConsoleManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -88,35 +86,23 @@ The ConsoleManagerObject interface.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ConsoleManager {
     void log(DOMString text);
-
     void error(DOMString text);
-
     void warn(DOMString text);
-
     void info(DOMString text);
-
     void debug(DOMString text);
-
     void assert(boolean expression, DOMString message);
-
     void dir(Object obj);
-
     void dirxml(Object obj);
-
     void time(DOMString label);
-
     void timeEnd(DOMString label);
   };</pre>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="methods">
@@ -131,16 +117,13 @@ The ConsoleManagerObject interface.
 The text will be logged as a standard message.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void log(DOMString text);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -153,7 +136,7 @@ The text will be logged as a standard message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log('A is for Alice');
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("A is for Alice");
 </pre>
 </div>
 <div class="output">
@@ -170,16 +153,13 @@ The text will be logged as a standard message.
 The text will be logged as an error message.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void error(DOMString text);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -192,7 +172,7 @@ The text will be logged as an error message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.error('B is for Bob');
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.error("B is for Bob");
 </pre>
 </div>
 <div class="output">
@@ -209,16 +189,13 @@ The text will be logged as an error message.
 The text will be logged as a warning message.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void warn(DOMString text);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -231,7 +208,7 @@ The text will be logged as a warning message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.warn('C is for Christopher');
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.warn("C is for Christopher");
 </pre>
 </div>
 <div class="output">
@@ -248,16 +225,13 @@ The text will be logged as a warning message.
 The text will be logged as an info message.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void info(DOMString text);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -270,7 +244,7 @@ The text will be logged as an info message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.info('D is for Dorothy');
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.info("D is for Dorothy");
 </pre>
 </div>
 <div class="output">
@@ -287,16 +261,13 @@ The text will be logged as an info message.
 The text will be logged as a debug message.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void debug(DOMString text);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -309,7 +280,7 @@ The text will be logged as a debug message.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.debug('E is for Eve');
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.debug("E is for Eve");
 </pre>
 </div>
 <div class="output">
@@ -326,16 +297,13 @@ The text will be logged as a debug message.
 the message is written to the console.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void assert(boolean expression, DOMString message);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -352,10 +320,10 @@ the message is written to the console.
         </ul>
 </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var felix = 'Felix';
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var felix = "Felix";
 
-/* This assertion checks whether the first letter in name 'Felix' is 'A' */
-console.assert(felix.charAt(0) === 'A', felix + ' does not start with A');
+/* This assertion checks whether the first letter in name "Felix" is "A". */
+console.assert(felix.charAt(0) === "A", felix + " does not start with A");
 </pre>
 </div>
 <div class="output">
@@ -373,16 +341,13 @@ If the object being logged is an HTML element, the JavaScript
 Object view is forced.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void dir(Object obj);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -413,16 +378,13 @@ console.dir(john.name);
 if possible or the JavaScript Object if it is not.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void dirxml(Object obj);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -454,16 +416,13 @@ console.dirxml(john.surname);
 is displayed in the console. Timer values are accurate to the sub-millisecond.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void time(DOMString label);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -481,7 +440,7 @@ var array = new Array(1000000);
 for (var i = array.length - 1; i &gt;= 0; i -= 1)
 {
   array[i] = new Object();
-};
+}
 console.timeEnd("Big array initialization");
 </pre>
 </div>
@@ -498,16 +457,13 @@ console.timeEnd("Big array initialization");
  Stops the timer with the specified label and prints the elapsed time.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void timeEnd(DOMString label);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -515,7 +471,7 @@ console.timeEnd("Big array initialization");
 <ul>
           <li class="param">
 <span class="name">label</span>:
- The label associated to the timing (with the use of <var>console.time()</var>method).
+ The label associated to the timing (with the use of <var>console.time()</var> method).
                 </li>
         </ul>
 </div>
@@ -525,7 +481,7 @@ var array = new Array(1000000);
 for (var i = array.length - 1; i &gt;= 0; i -= 1)
 {
   array[i] = new Object();
-};
+}
 console.timeEnd("Big array initialization");
 </pre>
 </div>
@@ -543,28 +499,17 @@ console.timeEnd("Big array initialization");
   [NoInterfaceObject] interface ConsoleManagerObject {
     readonly attribute <a href="#ConsoleManager">ConsoleManager</a> console;
   };
-
   Window implements <a href="#ConsoleManagerObject">ConsoleManagerObject</a>;
-
   [NoInterfaceObject] interface ConsoleManager {
     void log(DOMString text);
-
     void error(DOMString text);
-
     void warn(DOMString text);
-
     void info(DOMString text);
-
     void debug(DOMString text);
-
     void assert(boolean expression, DOMString message);
-
     void dir(Object obj);
-
     void dirxml(Object obj);
-
     void time(DOMString label);
-
     void timeEnd(DOMString label);
   };
 };</pre>
@@ -582,6 +527,7 @@ console.timeEnd("Big array initialization");
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

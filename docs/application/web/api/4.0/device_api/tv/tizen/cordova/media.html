@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="../tizen.css" media="screen">
-<script type="text/javascript" src="../snippet.js"></script><title>Media API</title>
+<link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Media API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Media">
-<div class="supported-platforms"><img title="Mandatory" src="../../../../images/tv_s_w.png"></div>
+ <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
 <div class="title"><h1>Media API</h1></div>
 <div class="brief">
  This plugin provides the ability to record and play back audio files on a device.
@@ -23,8 +23,7 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <b>Remark:</b> Usage of cordova API needs <em>http://tizen.org/privilege/filesystem.read</em> privilege.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -95,52 +94,36 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <div class="brief">
  The Media interface provides the audio object.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus)]
-   interface Media {
-       const short MEDIA_NONE = 0;
-       const short MEDIA_STARTING = 1;
-       const short MEDIA_RUNNING = 2;
-       const short MEDIA_PAUSED = 3;
-       const short MEDIA_STOPPED = 4;
-
-       attribute DOMString src;
-
-       attribute <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback;
-
-       attribute <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback;
-
-       attribute <a href="#StatusChangeCallback">StatusChangeCallback</a>? statusCallback;
-
-       void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);
-
-       double getDuration();
-
-       void pause();
-
-       void play();
-
-       void release();
-
-       void seekTo(double position);
-
-       void setVolume(double volume);
-
-       void startRecord();
-
-       void stopRecord();
-
-       void stop();
-   };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Constructor(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback,
+               optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus)]
+  interface Media {
+    const short MEDIA_NONE = 0;
+    const short MEDIA_STARTING = 1;
+    const short MEDIA_RUNNING = 2;
+    const short MEDIA_PAUSED = 3;
+    const short MEDIA_STOPPED = 4;
+    attribute DOMString src;
+    attribute <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback;
+    attribute <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback;
+    attribute <a href="#StatusChangeCallback">StatusChangeCallback</a>? statusCallback;
+    void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);
+    double getDuration();
+    void pause();
+    void play();
+    void release();
+    void seekTo(double position);
+    void setVolume(double volume);
+    void startRecord();
+    void stopRecord();
+    void stop();
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
           </p>
 <div class="example">
@@ -153,7 +136,8 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <div class="brief">
  The Media interface provides interface and functions to manage audio objects.
               </div>
-<pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus);</pre>
+<pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, 
+      optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus);</pre>
 <div class="description">
               <ul>
                 <li>
@@ -187,8 +171,7 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <a class="backward-compatibility-anchor" name="::Media::Media::MEDIA_STOPPED"></a><span class="name">MEDIA_STOPPED</span><div class="brief">
  Above constants are reported as the only parameter to the mediaStatus callback.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <br><br>
@@ -202,16 +185,13 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <span class="attrName"><span class="type">DOMString </span><span class="name">src</span></span><div class="brief">
  A URI containing the audio content.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -219,16 +199,13 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <span class="attrName"><span class="type">SuccessCallback </span><span class="name">successCallback</span><span class="optional"> [nullable]</span></span><div class="brief">
  The callback that executes after a Media object has completed the current play, record, or stop action.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -236,16 +213,13 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <span class="attrName"><span class="type">MediaErrorCallback </span><span class="name">errorCallback</span><span class="optional"> [nullable]</span></span><div class="brief">
  The callback that executes if an error occurs.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -253,16 +227,13 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <span class="attrName"><span class="type">StatusChangeCallback </span><span class="name">statusCallback</span><span class="optional"> [nullable]</span></span><div class="brief">
  The callback that executes to indicate status changes.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 </li>
@@ -279,16 +250,13 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
  Returns the current position within an audio file in seconds.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -307,20 +275,20 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been played back');
-}
+  console.log("Audio file has been played back");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
 positionSuccessCallback = function(position)
 {
-  console.log('Current position is ' + position);
-}
+  console.log("Current position is " + position);
+};
 
-var src = 'file:///home/app/content/Documents/play.mp3';
+var src = "file:///home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback);
 
 myMedia.play();
@@ -345,34 +313,31 @@ Current position is 2.000
  Returns the duration of an audio file in seconds. If the duration is unknown, it returns a value of -1.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">double getDuration();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been played back');
-}
+  console.log("Audio file has been played back");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
-var src = 'file:///home/app/content/Documents/play.mp3';
+var src = "file:///home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback);
 
 var duration = myMedia.getDuration();
-console.log('Audio duration is ' + duration);
+console.log("Audio duration is " + duration);
 </pre>
 </div>
 <div class="output">
@@ -388,43 +353,40 @@ console.log('Audio duration is ' + duration);
  Pauses playing an audio file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void pause();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been played back');
-}
+  console.log("Audio file has been played back");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
 statusCallback = function(status)
 {
   if (status == Media.MEDIA_PAUSED)
   {
-    console.log('Audio file has been paused');
+    console.log("Audio file has been paused");
   }
-}
+};
 
-var src = 'file:///home/app/content/Documents/play.mp3';
+var src = "file:///home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback, statusCallback);
 
 myMedia.play();
 
-/* Pause after 2 seconds */
+/* Pause after 2 seconds. */
 setTimeout(function()
 {
   myMedia.pause();
@@ -444,30 +406,27 @@ setTimeout(function()
  Starts or resumes playing an audio file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void play();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been played back');
-}
+  console.log("Audio file has been played back");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
-var src = 'file:///home/app/content/Documents/play.mp3';
+var src = "file:///home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback);
 
 myMedia.play();
@@ -487,30 +446,27 @@ myMedia.play();
 Applications should call the release function for any Media resource that is no longer needed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void release();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been stopped or released');
-}
+  console.log("Audio file has been stopped or released");
+};
 
 errorCallback = function(err)
 {
-  console.log('An error occurred: ' + err.message);
-}
+  console.log("An error occurred: " + err.message);
+};
 
-var src = 'file://home/app/content/Documents/play.mp3';
+var src = "file://home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback);
 
 myMedia.play();
@@ -532,16 +488,13 @@ Audio file has been stopped or released
  Sets the current position within an audio file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void seekTo(double position);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -556,24 +509,24 @@ Audio file has been stopped or released
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been played back');
-}
+  console.log("Audio file has been played back");
+};
 
 errorCallback = function(err)
 {
-  console.log('An error occurred: ' + err.message);
-}
+  console.log("An error occurred: " + err.message);
+};
 
-var src = 'file://home/app/content/Documents/play.mp3';
+var src = "file://home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback);
 
 myMedia.play();
 
-/* SeekTo to 10 seconds after 5 seconds */
+/* SeekTo to 10 seconds after 5 seconds. */
 setTimeout(function()
 {
   myMedia.seekTo(10000);
-  console.log('Playback position has been set to 10 seconds');
+  console.log("Playback position has been set to 10 seconds");
 }, 5000);
 </pre>
 </div>
@@ -591,20 +544,16 @@ Audio file has been played back
  Set the volume for an audio file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void setVolume(double volume);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/volume.set
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="parameters">
@@ -619,31 +568,31 @@ Audio file has been played back
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been played back');
-}
+  console.log("Audio file has been played back");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
-var src = 'file://home/app/content/Documents/play.mp3';
+var src = "file://home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback);
 
 myMedia.play();
 
-/* Mute volume after 2 seconds */
+/* Mute volume after 2 seconds. */
 setTimeout(function()
 {
   myMedia.setVolume(0.0);
-  console.log('Playback volume has been muted');
+  console.log("Playback volume has been muted");
 }, 2000);
 
-/* Set volume to 1.0 after 5 seconds */
+/* Set volume to 1.0 after 5 seconds. */
 setTimeout(function()
 {
   myMedia.setVolume(1.0);
-  console.log('Playback volume has been set to 1.0');
+  console.log("Playback volume has been set to 1.0");
 }, 5000);
 </pre>
 </div>
@@ -662,34 +611,30 @@ Audio file has been played back
  Starts recording an audio file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void startRecord();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/mediacapture
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Started recording an audio file');
-}
+  console.log("Started recording an audio file");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
-var src = 'recordAudio.mp3';
+var src = "recordAudio.mp3";
 var myRecMedia = new Media(src, successCallback, errorCallback);
 
 myRecMedia.startRecord();
@@ -708,43 +653,39 @@ myRecMedia.startRecord();
  Stops recording an audio file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void stopRecord();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/mediacapture
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Started recording an audio file');
-}
+  console.log("Started recording an audio file");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
-var src = 'recordAudio.mp3';
+var src = "recordAudio.mp3";
 var myRecMedia = new Media(src, successCallback, errorCallback);
 
 myRecMedia.startRecord();
 
-/* Stop recording after 10 seconds */
+/* Stop recording after 10 seconds. */
 setTimeout(function()
 {
   myRecMedia.stopRecord();
-  console.log('Stopped recording an audio file');
+  console.log("Stopped recording an audio file");
 }, 10000);
 </pre>
 </div>
@@ -762,35 +703,32 @@ Stopped recording an audio file
  Stops playing an audio file.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void stop();</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/filesystem.read
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">successCallback = function()
 {
-  console.log('Audio file has been stopped');
-}
+  console.log("Audio file has been stopped");
+};
 
 errorCallback = function(err)
 {
-  console.log('Error occurred ' + err.message);
-}
+  console.log("Error occurred " + err.message);
+};
 
-var src = 'file://home/app/content/Documents/play.mp3';
+var src = "file://home/app/content/Documents/play.mp3";
 var myMedia = new Media(src, successCallback, errorCallback);
 
 myMedia.play();
 
-/* Stop after 10 seconds */
+/* Stop after 10 seconds. */
 setTimeout(function()
 {
   myMedia.stop();
@@ -811,12 +749,11 @@ setTimeout(function()
  A <em>MediaError</em> object is returned to the <a href="media.html#MediaErrorCallback">MediaErrorCallback</a> function when an error occurs.
           </div>
 <pre class="webidl prettyprint">  interface MediaError {
-      const short MEDIA_ERR_ABORTED = 1;
-      const short MEDIA_ERR_NETWORK = 2;
-      const short MEDIA_ERR_DECODE = 3;
-      const short MEDIA_ERR_NONE_SUPPORTED = 4;
-
-      readonly attribute short code;
+    const short MEDIA_ERR_ABORTED = 1;
+    const short MEDIA_ERR_NETWORK = 2;
+    const short MEDIA_ERR_DECODE = 3;
+    const short MEDIA_ERR_NONE_SUPPORTED = 4;
+    readonly attribute short code;
   };</pre>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -825,8 +762,7 @@ setTimeout(function()
 </span><span class="type">short </span><span class="name">code</span></span><div class="brief">
  One of the predefined error codes listed above.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 </li></ul>
@@ -838,7 +774,7 @@ setTimeout(function()
  Basic error callback.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
-       void onerror(<a href="#MediaError">MediaError</a> error);
+    void onerror(<a href="#MediaError">MediaError</a> error);
   };</pre>
 <div class="methods">
 <h4>Methods</h4>
@@ -851,8 +787,7 @@ setTimeout(function()
  Success
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onerror(<a href="#MediaError">MediaError</a> error);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -874,7 +809,7 @@ setTimeout(function()
  The callback function used to return status of the Media object.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface StatusChangeCallback {
-       void onchanged(short status);
+    void onchanged(short status);
   };</pre>
 <div class="methods">
 <h4>Methods</h4>
@@ -887,8 +822,7 @@ setTimeout(function()
  Called when the status of the <em>Media</em> object has been changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onchanged(short status);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -910,7 +844,7 @@ setTimeout(function()
  The callback function used to return current position of the Media object.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PositionSuccessCallback {
-       void onsuccess(double position);
+    void onsuccess(double position);
   };</pre>
 <div class="methods">
 <h4>Methods</h4>
@@ -923,8 +857,7 @@ setTimeout(function()
  Called when getting current position of the media file is retrieved successfully.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(double position);</pre></div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -943,7 +876,7 @@ setTimeout(function()
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -961,66 +894,48 @@ If an application uses startRecord() or stopRecord(), declare the following feat
 <li class="feature">http://tizen.org/feature/media.audio_recording</li>
 </div>
 <p></p>
-                    For more information, see <a href="../../org.tizen.gettingstarted/html/tizen_overview/application_filtering.htm">Application Filtering.</a>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Media {
-  [Constructor(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus)]
-   interface Media {
-       const short MEDIA_NONE = 0;
-       const short MEDIA_STARTING = 1;
-       const short MEDIA_RUNNING = 2;
-       const short MEDIA_PAUSED = 3;
-       const short MEDIA_STOPPED = 4;
-
-       attribute DOMString src;
-
-       attribute <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback;
-
-       attribute <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback;
-
-       attribute <a href="#StatusChangeCallback">StatusChangeCallback</a>? statusCallback;
-
-       void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);
-
-       double getDuration();
-
-       void pause();
-
-       void play();
-
-       void release();
-
-       void seekTo(double position);
-
-       void setVolume(double volume);
-
-       void startRecord();
-
-       void stopRecord();
-
-       void stop();
-   };
-
+  [Constructor(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback,
+               optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus)]
+  interface Media {
+    const short MEDIA_NONE = 0;
+    const short MEDIA_STARTING = 1;
+    const short MEDIA_RUNNING = 2;
+    const short MEDIA_PAUSED = 3;
+    const short MEDIA_STOPPED = 4;
+    attribute DOMString src;
+    attribute <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback;
+    attribute <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback;
+    attribute <a href="#StatusChangeCallback">StatusChangeCallback</a>? statusCallback;
+    void getCurrentPosition(<a href="#PositionSuccessCallback">PositionSuccessCallback</a> positionSuccessCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a> errorCallback);
+    double getDuration();
+    void pause();
+    void play();
+    void release();
+    void seekTo(double position);
+    void setVolume(double volume);
+    void startRecord();
+    void stopRecord();
+    void stop();
+  };
   interface MediaError {
-      const short MEDIA_ERR_ABORTED = 1;
-      const short MEDIA_ERR_NETWORK = 2;
-      const short MEDIA_ERR_DECODE = 3;
-      const short MEDIA_ERR_NONE_SUPPORTED = 4;
-
-      readonly attribute short code;
+    const short MEDIA_ERR_ABORTED = 1;
+    const short MEDIA_ERR_NETWORK = 2;
+    const short MEDIA_ERR_DECODE = 3;
+    const short MEDIA_ERR_NONE_SUPPORTED = 4;
+    readonly attribute short code;
   };
-
   [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
-       void onerror(<a href="#MediaError">MediaError</a> error);
+    void onerror(<a href="#MediaError">MediaError</a> error);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface StatusChangeCallback {
-       void onchanged(short status);
+    void onchanged(short status);
   };
-
   [Callback=FunctionOnly, NoInterfaceObject] interface PositionSuccessCallback {
-       void onsuccess(double position);
+    void onsuccess(double position);
   };
 };</pre>
 </div>
@@ -1037,6 +952,7 @@ If an application uses startRecord() or stopRecord(), declare the following feat
 
               (function() {
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 

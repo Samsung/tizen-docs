@@ -1,0 +1,7 @@
+<map id="IOTBUS" name="IOTBUS">
+<area shape="rect" id="node1" href="$group___i2_c.html" title="Provides APIs for I2C (Inter Integrated Circuit) " alt="" coords="133,5,176,32"/>
+<area shape="rect" id="node2" href="$group___s_p_i.html" title="Provides APIs for SPI (Serial Peripheral Interface) " alt="" coords="133,56,177,83"/>
+<area shape="rect" id="node4" href="$group___p_w_m.html" title="Provides APIs for PWM (Pulse Width Modulation) " alt="" coords="127,107,182,133"/>
+<area shape="rect" id="node5" href="$group___g_p_i_o.html" title="Provides APIs for GPIO (General Purpose Input/Output) " alt="" coords="127,157,182,184"/>
+<area shape="rect" id="node6" href="$group___u_a_r_t.html" title="Provides APIs for UART (Universal Asynchronous Receiver/Transmitter) " alt="" coords="125,208,184,235"/>
+</map>

@@ -184,6 +184,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the file to which all current cookies will be written when either cookies are flushed or Ecore_Con is shut down.  <a href="#ga5be3eadea97987953bc8cd3038dfd8d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga5776168771246f117c38bb2f1bc2fff4">ecore_con_url_cookies_jar_write</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes all current cookies to the cookie jar immediately.  <a href="#ga5776168771246f117c38bb2f1bc2fff4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga6f90e0fe01a0bef115c78a2663c1e36a">ecore_con_url_ssl_verify_peer_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> verify)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gae7f6a971171dd1480f496ac214b4465a">ecore_con_url_ssl_ca_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, const char *ca_path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga3b86e2c66147baabe3b3c4144973de78">ecore_con_url_proxy_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, const char *proxy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets HTTP proxy to use.  <a href="#ga3b86e2c66147baabe3b3c4144973de78"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga8beee51138dce0e1abe3d243640a80b4">ecore_con_url_proxy_username_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, const char *username)</td></tr>
@@ -1508,6 +1510,83 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a30">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a25">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a31">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="gae7f6a971171dd1480f496ac214b4465a"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_ssl_ca_set" ref="gae7f6a971171dd1480f496ac214b4465a" args="(Ecore_Con_Url *url_con, const char *ca_path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Con__Url__Group.html#gae7f6a971171dd1480f496ac214b4465a">ecore_con_url_ssl_ca_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
+          <td class="paramname"><em>url_con</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ca_path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a custom CA to trust for SSL/TLS connections.</p>
+<p>Specify the path of a file (in PEM format) containing one or more CA certificate(s) to use for the validation of the server certificate.</p>
+<p>This function can also disable CA validation if <code>ca_path</code> is <code>NULL</code>. However, the server certificate still needs to be valid for the connection to succeed (i.e., the certificate must concern the server the connection is made to).</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url_con</td><td>Connection object that will use the custom CA. </td></tr>
+    <tr><td class="paramname">ca_path</td><td>Path to a CA certificate(s) file or <code>NULL</code> to disable CA validation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. When cURL is used, non-zero return values are equal to cURL error codes.</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6f90e0fe01a0bef115c78a2663c1e36a"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_ssl_verify_peer_set" ref="ga6f90e0fe01a0bef115c78a2663c1e36a" args="(Ecore_Con_Url *url_con, Eina_Bool verify)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Con__Url__Group.html#ga6f90e0fe01a0bef115c78a2663c1e36a">ecore_con_url_ssl_verify_peer_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
+          <td class="paramname"><em>url_con</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>verify</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Toggle libcurl's verify peer's certificate option.</p>
+<p>If <code>verify</code> is <code>EINA_TRUE</code>, libcurl will verify the authenticity of the peer's certificate, otherwise it will not. Default behavior of libcurl is to check peer's certificate.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url_con</td><td>Ecore_Con_Url instance which will be acted upon. </td></tr>
+    <tr><td class="paramname">verify</td><td>Whether or not libcurl will check peer's certificate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gaf795bbaa387627621635bf74fdeb4192"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_status_code_get" ref="gaf795bbaa387627621635bf74fdeb4192" args="(Ecore_Con_Url *url_con)" -->

@@ -2,37 +2,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Notification API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Notification API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Notification">
-<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+ <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Notification API</h1></div>
 <div class="brief">
  The Notification API provides a way to notify users of events that happen in an application.
         </div>
 <div class="description">
         <p>
-For more information on the Notification features, see <a href="https://developer.tizen.org/development/guides/web-application/notifications">Notification Guide</a>.
+For more information on the Notification features, see <a href="https://developer.tizen.org/development/guides/web-application/tizen-features/application/notification">Notification Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>1.1. <a href="#NotificationId">NotificationId</a>
+<li>
+                    1.1. <a href="#NotificationId">NotificationId</a>
 </li>
-<li>1.2. <a href="#NotificationType">NotificationType</a>
+<li>
+                    1.2. <a href="#NotificationType">NotificationType</a>
 </li>
-<li>1.3. <a href="#StatusNotificationType">StatusNotificationType</a>
+<li>
+                    1.3. <a href="#StatusNotificationType">StatusNotificationType</a>
 </li>
-<li>1.4. <a href="#NotificationProgressType">NotificationProgressType</a>
+<li>
+                    1.4. <a href="#NotificationProgressType">NotificationProgressType</a>
 </li>
-<li>1.5. <a href="#LEDCustomFlags">LEDCustomFlags</a>
+<li>
+                    1.5. <a href="#LEDCustomFlags">LEDCustomFlags</a>
 </li>
 </ul>
 </li>
@@ -70,14 +74,18 @@ For more information on the Notification features, see <a href="https://develope
 </tr>
 <tr>
 <td><a href="#NotificationManager">NotificationManager</a></td>
-<td>void <a href="#NotificationManager::post">post</a> (<a href="#Notification">Notification</a> notification)<br>
-    void <a href="#NotificationManager::update">update</a> (<a href="#Notification">Notification</a> notification)<br>
-    void <a href="#NotificationManager::remove">remove</a> (<a href="#NotificationId">NotificationId</a> id)<br>
-    void <a href="#NotificationManager::removeAll">removeAll</a> ()<br>
-    <a href="#Notification">Notification</a> <a href="#NotificationManager::get">get</a> (<a href="#NotificationId">NotificationId</a> id)<br>
-    <a href="#Notification">Notification</a>[] <a href="#NotificationManager::getAll">getAll</a> ()<br>
-    void <a href="#NotificationManager::playLEDCustomEffect">playLEDCustomEffect</a> (long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags)<br>
-    void <a href="#NotificationManager::stopLEDCustomEffect">stopLEDCustomEffect</a> ()</td>
+<td>
+<div>void <a href="#NotificationManager::post">post</a> (<a href="#Notification">Notification</a> notification)</div>
+<div>void <a href="#NotificationManager::update">update</a> (<a href="#Notification">Notification</a> notification)</div>
+<div>void <a href="#NotificationManager::remove">remove</a> (<a href="#NotificationId">NotificationId</a> id)</div>
+<div>void <a href="#NotificationManager::removeAll">removeAll</a> ()</div>
+<div>
+<a href="#Notification">Notification</a> <a href="#NotificationManager::get">get</a> (<a href="#NotificationId">NotificationId</a> id)</div>
+<div>
+<a href="#Notification">Notification</a>[] <a href="#NotificationManager::getAll">getAll</a> ()</div>
+<div>void <a href="#NotificationManager::playLEDCustomEffect">playLEDCustomEffect</a> (long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags)</div>
+<div>void <a href="#NotificationManager::stopLEDCustomEffect">stopLEDCustomEffect</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#Notification">Notification</a></td>
@@ -104,9 +112,8 @@ For more information on the Notification features, see <a href="https://develope
 <div class="brief">
  A notification ID.
           </div>
-<pre class="webidl prettyprint">    typedef DOMString NotificationId;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  typedef DOMString NotificationId;</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 </div>
@@ -115,9 +122,8 @@ For more information on the Notification features, see <a href="https://develope
 <div class="brief">
  A notification type.
           </div>
-<pre class="webidl prettyprint">    enum NotificationType { "STATUS" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum NotificationType { "STATUS" };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -136,9 +142,8 @@ The status notification consists of an icon, title, content, and time. The statu
 <div class="brief">
  A status notification type.
           </div>
-<pre class="webidl prettyprint">    enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -153,7 +158,7 @@ THUMBNAIL - The thumbnail status notification posts a thumbnail-format notificat
 The thumbnail status notification is also removed by user selection.
             </li>
             <li>
-ONGOING - A status notification type that informs the user whether an application is running or not.             </li>
+ONGOING - A status notification type that informs the user whether an application is running or not.            </li>
             <li>
 PROGRESS - A status notification that displays information on the progress of a job. However, this status notification should be removed by the application that posted the notification.            </li>
           </ul>
@@ -164,9 +169,8 @@ PROGRESS - A status notification that displays information on the progress of a 
 <div class="brief">
  A notification progress type.
           </div>
-<pre class="webidl prettyprint">    enum NotificationProgressType { "PERCENTAGE",  "BYTE" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum NotificationProgressType { "PERCENTAGE", "BYTE" };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -187,9 +191,8 @@ The following notification progress types are supported:
  Specifies custom LED flags.
 The following values are supported in this release :
           </div>
-<pre class="webidl prettyprint">    enum LEDCustomFlags {"LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT"};</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum LEDCustomFlags { "LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT" };</pre>
+<p><span class="version">Since: </span>
  2.4
           </p>
 <div class="description">
@@ -209,12 +212,11 @@ LED_CUSTOM_DEFAULT, default flag            </li>
 <div class="brief">
  Defines what is instantiated by the <em>Tizen</em> object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface NotificationObject {
-        readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NotificationObject {
+    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -223,32 +225,35 @@ The <em>tizen.notification</em> object allows access to the
 Notification API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="NotificationObject::notification">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">NotificationManager </span><span class="name">notification</span></span><div class="brief">
+ Object representing a notification manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="NotificationManager">
 <a class="backward-compatibility-anchor" name="::Notification::NotificationManager"></a><h3>2.2. NotificationManager</h3>
 <div class="brief">
  Notification manager interface that provides access to the API.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface NotificationManager {
-
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface NotificationManager {
     void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+    void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -266,25 +271,21 @@ The NotificationManager interface provides access to the notification object.
 <div class="brief">
  Posts a notification to display.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void post(<a href="#Notification">Notification</a> notification);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void post(<a href="#Notification">Notification</a> notification);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/notification
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">notification</span>: 
+<span class="name">notification</span>:
  A notification to post.
                 </li>
         </ul>
@@ -309,27 +310,27 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/create_content",
-                                                 null, "image/jpg", null);
-   var notificationDict =
-   {
-      content: "This is a simple notification.",
-      iconPath: "images/image1.jpg",
-      soundPath: "music/Over the horizon.mp3",
-      vibration: true,
-      appControl: appControl
-   };
+  var appControl = new tizen.ApplicationControl(
+      "http://tizen.org/appcontrol/operation/create_content", null, "image/jpg", null);
+  var notificationDict =
+  {
+    content: "This is a simple notification.",
+    iconPath: "images/image1.jpg",
+    soundPath: "music/Over the horizon.mp3",
+    vibration: true,
+    appControl: appControl
+  };
 
-   var notification = new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
+  var notification =
+      new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
 
-   tizen.notification.post(notification);
+  tizen.notification.post(notification);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -341,25 +342,21 @@ catch (err)
 <div class="brief">
  Updates a previously posted notification.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#Notification">Notification</a> notification);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void update(<a href="#Notification">Notification</a> notification);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/notification
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">notification</span>: 
+<span class="name">notification</span>:
  A notification to update.
                 </li>
         </ul>
@@ -384,16 +381,15 @@ parameters contain an invalid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   /* Uses a variable for the previously posted notification */
-   notification.content = "My notification";
-   tizen.notification.update(notification);
+  /* Uses a variable for the previously posted notification. */
+  notification.content = "My notification";
+  tizen.notification.update(notification);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -405,25 +401,21 @@ catch (err)
 <div class="brief">
  Removes a previously posted notification.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#NotificationId">NotificationId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void remove(<a href="#NotificationId">NotificationId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/notification
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span>: 
+<span class="name">id</span>:
  A previously posted notification ID to remove.
                 </li>
         </ul>
@@ -447,15 +439,14 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   /* Uses a variable for the previously posted notification */
-   tizen.notification.remove(notification.id);
+  /* Uses a variable for the previously posted notification. */
+  tizen.notification.remove(notification.id);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -467,18 +458,14 @@ catch (err)
 <div class="brief">
  Removes all notifications that have been posted by the current application.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeAll();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void removeAll();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/notification
             </p>
 <div class="exceptionlist">
@@ -494,14 +481,13 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   tizen.notification.removeAll();
+  tizen.notification.removeAll();
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -512,20 +498,26 @@ catch (err)
 <dd>
 <div class="brief">
  Gets a notification that has previously been posted by the current application. Note that the obtained notification's progressType is <em>PERCENTAGE</em>            </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span>: 
+<span class="name">id</span>:
  A previously posted notification ID.
                 </li>
         </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Notification:
+                  </span>
+ Notification posted previously by the current application.
+              </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -540,18 +532,17 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   /* Uses a variable for the previously posted notification */
-   /* Saves the notification ID for future use */
-   var myId = notification.id;
+  /* Uses a variable for the previously posted notification. */
+  /* Saves the notification ID for future use. */
+  var myId = notification.id;
 
-   var myNotification = tizen.notification.get(myId);
+  var myNotification = tizen.notification.get(myId);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -562,12 +553,18 @@ catch (err)
 <dd>
 <div class="brief">
  Gets all notifications that have previously been posted by the current application. Note that the obtained notification's progressType is <em>PERCENTAGE</em>            </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Notification">Notification</a>[] getAll();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Notification">Notification</a>[] getAll();</pre></div>
+<p><span class="version">Since: </span>
  2.0
             </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Notification[]:
+                  </span>
+ All notifications previously been posted by the current application.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -576,29 +573,27 @@ catch (err)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var notifications = tizen.notification.getAll();
-   var index = 0;
+  var notifications = tizen.notification.getAll();
 
-   for (index = 0; index &lt; notifications.length; index++)
-   {
-      console.log(notifications[index].id);
-      console.log(notifications[index].title);
-      console.log(notifications[index].statusType);
-      console.log(notifications[index].type);
-      console.log(notifications[index].content);
-      console.log(notifications[index].postedTime);
-      console.log(notifications[index].iconPath);
-      console.log(notifications[index].soundPath);
-      console.log(notifications[index].vibration);
-      console.log(notifications[index].appControl);
-   }
+  for (var index = 0; index &lt; notifications.length; index++)
+  {
+    console.log(notifications[index].id);
+    console.log(notifications[index].title);
+    console.log(notifications[index].statusType);
+    console.log(notifications[index].type);
+    console.log(notifications[index].content);
+    console.log(notifications[index].postedTime);
+    console.log(notifications[index].iconPath);
+    console.log(notifications[index].soundPath);
+    console.log(notifications[index].vibration);
+    console.log(notifications[index].appControl);
+  }
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -610,25 +605,21 @@ catch (err)
 <div class="brief">
  Plays the custom effect of the service LED that is located to the front of a device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags);</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
 <div class="description">
             <p>
-Given parameters consist of timeOn and timeOff in miliseconds, RGBA color and LEDCustomFlags combination.
+Given parameters consist of timeOn and timeOff in milliseconds, RGBA color and LEDCustomFlags combination.
 For the color first three bytes are RGB values. The last byte is opacity. For example "#FFFF0080". There is also another possibility when the last byte
 is not given (in this case alpha is assumed to have value 0xff). In this case only RGB values are given. For example: "#ff0000" that is equivalent of "#ff0000ff".
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/led
             </p>
 <div class="parameters">
@@ -636,11 +627,11 @@ is not given (in this case alpha is assumed to have value 0xff). In this case on
 <ul>
           <li class="param">
 <span class="name">timeOn</span>:
- Turn on time in milliseconds
+ Turn on time in milliseconds.
                 </li>
           <li class="param">
 <span class="name">timeOff</span>:
- Turn off time in milliseconds
+ Turn off time in milliseconds.
                 </li>
           <li class="param">
 <span class="name">color</span>:
@@ -648,7 +639,7 @@ is not given (in this case alpha is assumed to have value 0xff). In this case on
                 </li>
           <li class="param">
 <span class="name">flags</span>:
- The combination of enum LEDCustomFlags
+ The combination of enum LEDCustomFlags.
                 </li>
         </ul>
 </div>
@@ -671,14 +662,14 @@ is not given (in this case alpha is assumed to have value 0xff). In this case on
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   tizen.notification.playLEDCustomEffect(1000, 1000, "#FFFF0080", ["LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT"]);
+  tizen.notification.playLEDCustomEffect(
+      1000, 1000, "#FFFF0080", ["LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT"]);
 }
-catch (e)
+catch (err)
 {
-   console.log("Error Exception, error name: " + e.name + ", error message: " + e.message);
+  console.log("Error Exception, error name : " + err.name + ", error message : " + err.message);
 }
 </pre>
 </div>
@@ -690,18 +681,14 @@ catch (e)
 <div class="brief">
  Stops the custom effect of the service LED that is located to the front of a device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stopLEDCustomEffect();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void stopLEDCustomEffect();</pre></div>
+<p><span class="version">Since: </span>
  2.4
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/led
             </p>
 <div class="exceptionlist">
@@ -717,18 +704,18 @@ catch (e)
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   tizen.notification.playLEDCustomEffect(1000, 1000, "#FFFF0080", ["LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT"]);
-   setTimeout(function()
-   {
-      tizen.notification.stopLEDCustomEffect();
-   }, 5000);
+  tizen.notification.playLEDCustomEffect(
+      1000, 1000, "#FFFF0080", ["LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT"]);
+  setTimeout(function()
+  {
+    tizen.notification.stopLEDCustomEffect();
+  }, 5000);
 }
-catch (e)
+catch (err)
 {
-   console.log("Error Exception, error name: " + e.name + ", error message: " + e.message);
+  console.log("Error Exception, error name : " + err.name + ", error message : " + err.message);
 }
 </pre>
 </div>
@@ -741,22 +728,14 @@ catch (e)
 <div class="brief">
  The Notification interface offers common attributes to represent the <em>Notification</em> object.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface Notification {
-
-
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Notification {
     readonly attribute <a href="#NotificationId">NotificationId</a> id;
-
     readonly attribute <a href="#NotificationType">NotificationType</a> type;
-
     readonly attribute Date postedTime;
-
     attribute DOMString title;
-
     attribute DOMString? content;
-
-    };</pre>
-<p><span class="version">
-            Since: </span>
+  };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="attributes">
@@ -767,8 +746,7 @@ catch (e)
 </span><span class="type">NotificationId </span><span class="name">id</span></span><div class="brief">
  The Notification identifier. Before the notification is posted, this value is undefined.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -777,8 +755,7 @@ catch (e)
 </span><span class="type">NotificationType </span><span class="name">type</span></span><div class="brief">
  The Notification type.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -787,8 +764,7 @@ catch (e)
 </span><span class="type">Date </span><span class="name">postedTime</span></span><div class="brief">
  The time when the notification is posted. Before the notification is posted, this value is undefined.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -796,8 +772,7 @@ catch (e)
 <span class="attrName"><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
  The title to display in a notification.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -805,8 +780,7 @@ catch (e)
 <span class="attrName"><span class="type">DOMString </span><span class="name">content</span><span class="optional"> [nullable]</span></span><div class="brief">
  The content to display in a notification.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -816,28 +790,27 @@ catch (e)
 <div class="dictionary" id="StatusNotificationInit">
 <a class="backward-compatibility-anchor" name="::Notification::StatusNotificationInit"></a><h3>2.4. StatusNotificationInit</h3>
 <div class="brief">
- The properties of StatusNotification, to pass a constructor.
+ The properties of StatusNotification, to pass to the constructor.
           </div>
-<pre class="webidl prettyprint">    dictionary StatusNotificationInit {
-        DOMString? content;
-        DOMString? iconPath;
-        DOMString? soundPath;
-        boolean? vibration;
-        <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-        <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-        <a href="#NotificationProgressType">NotificationProgressType</a>? progressType;
-        unsigned long? progressValue;
-        long? number;
-        DOMString? subIconPath;
-        <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-        DOMString? ledColor;
-        unsigned long ledOnPeriod;
-        unsigned long ledOffPeriod;
-        DOMString? backgroundImagePath;
-        DOMString[]? thumbnails;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  dictionary StatusNotificationInit {
+    DOMString? content;
+    DOMString? iconPath;
+    DOMString? soundPath;
+    boolean? vibration;
+    <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
+    <a href="application.html#ApplicationId">ApplicationId</a>? appId;
+    <a href="#NotificationProgressType">NotificationProgressType</a>? progressType;
+    unsigned long? progressValue;
+    long? number;
+    DOMString? subIconPath;
+    <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
+    DOMString? ledColor;
+    unsigned long ledOnPeriod;
+    unsigned long ledOffPeriod;
+    DOMString? backgroundImagePath;
+    DOMString[]? thumbnails;
+  };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 </div>
@@ -846,45 +819,26 @@ catch (e)
 <div class="brief">
  The StatusNotification interface represents a status notification and offers additional attributes to represent a notification displayed in the notification tray.
           </div>
-<pre class="webidl prettyprint">   [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
-
-
-    interface StatusNotification : <a href="#Notification">Notification</a> {
-
+<pre class="webidl prettyprint">  [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
+  interface StatusNotification : <a href="#Notification">Notification</a> {
     readonly attribute <a href="#StatusNotificationType">StatusNotificationType</a> statusType;
-
     attribute DOMString? iconPath;
-
     attribute DOMString? subIconPath;
-
     attribute long? number;
-
     attribute <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-
     attribute DOMString? ledColor;
-
     attribute unsigned long ledOnPeriod;
-
     attribute unsigned long ledOffPeriod;
-
-     attribute DOMString? backgroundImagePath;
-
-     attribute DOMString[]? thumbnails;
-
-     attribute DOMString? soundPath;
-
-     attribute boolean vibration;
-
-     attribute <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-
-     attribute <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-
-     attribute <a href="#NotificationProgressType">NotificationProgressType</a> progressType;
-
-     attribute unsigned long? progressValue;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+    attribute DOMString? backgroundImagePath;
+    attribute DOMString[]? thumbnails;
+    attribute DOMString? soundPath;
+    attribute boolean vibration;
+    attribute <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
+    attribute <a href="application.html#ApplicationId">ApplicationId</a>? appId;
+    attribute <a href="#NotificationProgressType">NotificationProgressType</a> progressType;
+    attribute unsigned long? progressValue;
+  };</pre>
+<p><span class="version">Since: </span>
  2.0
           </p>
 <div class="description">
@@ -905,8 +859,7 @@ All notifications must have a title attribute.
 </span><span class="type">StatusNotificationType </span><span class="name">statusType</span></span><div class="brief">
  The status notification type.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -914,8 +867,7 @@ All notifications must have a title attribute.
 <span class="attrName"><span class="type">DOMString </span><span class="name">iconPath</span><span class="optional"> [nullable]</span></span><div class="brief">
  The icon path to display in the notification.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -923,8 +875,7 @@ All notifications must have a title attribute.
 <span class="attrName"><span class="type">DOMString </span><span class="name">subIconPath</span><span class="optional"> [nullable]</span></span><div class="brief">
  The sub icon path to display in the notification.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -932,8 +883,7 @@ All notifications must have a title attribute.
 <span class="attrName"><span class="type">long </span><span class="name">number</span><span class="optional"> [nullable]</span></span><div class="brief">
  The number of events to display in the notification.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -945,8 +895,7 @@ This attribute is available in a simple status notification.
 By default, this attribute is initialized with an empty array.
 The maximum number of detail information elements in the array is 2.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -958,32 +907,31 @@ The LED indicator color will show that it's a close approximation.
 LED will only light on when the screen is off. To turn the LED off, set "#000000" or null to ledColor.
 This method has effects when the device has notification LED.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var notificationDict =
-   {
-      content: "This is a simple notification.",
-      iconPath: "images/image1.jpg",
-      soundPath: "music/Over the horizon.mp3",
-      vibration: true,
-      ledColor: "#FFFF00",
-      ledOnPeriod: 1000,
-      ledOffPeriod: 500
-   };
+  var notificationDict =
+  {
+    content: "This is a simple notification.",
+    iconPath: "images/image1.jpg",
+    soundPath: "music/Over the horizon.mp3",
+    vibration: true,
+    ledColor: "#FFFF00",
+    ledOnPeriod: 1000,
+    ledOffPeriod: 500
+  };
 
-   var notification = new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
+  var notification =
+      new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
 
-   tizen.notification.post(notification);
+  tizen.notification.post(notification);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -994,8 +942,7 @@ catch (err)
 The light continuously toggles on (ledOnPeriod) and off (ledOffPeriod).
 By default, this attribute is set to 0
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 </li>
@@ -1004,8 +951,7 @@ By default, this attribute is set to 0
  The milliseconds for which the light is off.
 By default, this attribute is set to 0.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.2
             </p>
 </li>
@@ -1014,8 +960,7 @@ By default, this attribute is set to 0.
  The image path to use as the background of the notification.
 This attribute is available on simple or thumbnail status notifications.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1026,8 +971,7 @@ This attribute is available on simple or thumbnail status notifications.
 By default, this attribute is initialized with an empty array.
 The maximum number of thumbnail path elements in the array is 4.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1035,8 +979,7 @@ The maximum number of thumbnail path elements in the array is 4.
 <span class="attrName"><span class="type">DOMString </span><span class="name">soundPath</span><span class="optional"> [nullable]</span></span><div class="brief">
  The path of a sound file to play when the notification is shown.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1044,8 +987,7 @@ The maximum number of thumbnail path elements in the array is 4.
 <span class="attrName"><span class="type">boolean </span><span class="name">vibration</span></span><div class="brief">
  Checks whether to vibrate when the notification is shown. By default, this attribute is set to false.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1053,8 +995,7 @@ The maximum number of thumbnail path elements in the array is 4.
 <span class="attrName"><span class="type">ApplicationControl </span><span class="name">appControl</span><span class="optional"> [nullable]</span></span><div class="brief">
  Holds the application control to launch an application when the notification is selected from the notification tray.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 </li>
@@ -1062,33 +1003,32 @@ The maximum number of thumbnail path elements in the array is 4.
 <span class="attrName"><span class="type">ApplicationId </span><span class="name">appId</span><span class="optional"> [nullable]</span></span><div class="brief">
  Holds the application ID to launch when the notification is selected from the notification tray.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   /* Gets the current application information with tizen.application.getAppInfo */
-   var myappInfo = tizen.application.getAppInfo();
+  /* Gets the current application information with tizen.application.getAppInfo. */
+  var myappInfo = tizen.application.getAppInfo();
 
-   var notificationDict =
-   {
-      content: "This is a simple notification.",
-      iconPath: "images/image1.jpg",
-      soundPath: "music/Over the horizon.mp3",
-      vibration: true,
-      appId: myappInfo.id
-   };
+  var notificationDict =
+  {
+    content: "This is a simple notification.",
+    iconPath: "images/image1.jpg",
+    soundPath: "music/Over the horizon.mp3",
+    vibration: true,
+    appId: myappInfo.id
+  };
 
-   var notification = new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
+  var notification =
+      new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
 
-   tizen.notification.post(notification);
+  tizen.notification.post(notification);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1098,8 +1038,7 @@ catch (err)
  Defines the type for an ongoing notification's progress.
 By default, this attribute is set to PERCENTAGE.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1121,38 +1060,37 @@ the exact progress value.
 Range of <em>progressValue</em>: percent (0 to 100).
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.0
             </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-try
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-   var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/create_content",
-                                                 null, "image/jpg", null);
+  var appControl = new tizen.ApplicationControl(
+      "http://tizen.org/appcontrol/operation/create_content", null, "image/jpg", null);
 
-   var notificationDict =
-   {
-      content: "This is a progress notification.",
-      iconPath: "images/image2.jpg",
-      soundPath: "music/Over the horizon.mp3",
-      vibration: true,
-      appControl: appControl,
-      progressValue: 20
-   };
-   /* Constructs the progress notification */
-   var notification = new tizen.StatusNotification("PROGRESS", "Progress notification", notificationDict);
-   /* Posts the notification */
-   tizen.notification.post(notification);
+  var notificationDict =
+  {
+    content: "This is a progress notification.",
+    iconPath: "images/image2.jpg",
+    soundPath: "music/Over the horizon.mp3",
+    vibration: true,
+    appControl: appControl,
+    progressValue: 20
+  };
+  /* Constructs the progress notification. */
+  var notification =
+      new tizen.StatusNotification("PROGRESS", "Progress notification", notificationDict);
+  /* Posts the notification. */
+  tizen.notification.post(notification);
 
-   /* Updates the progress value of the notification */
-   notification.progressValue = 59;
-   tizen.notification.update(notification);
+  /* Updates the progress value of the notification. */
+  notification.progressValue = 59;
+  tizen.notification.update(notification);
 }
 catch (err)
 {
-   console.log(err.name + ": " + err.message);
+  console.log(err.name + ": " + err.message);
 }
 </pre>
 </div>
@@ -1165,19 +1103,16 @@ catch (err)
 <div class="brief">
  The NotificationDetailInfo object that contains the detail information of the notification.
           </div>
-<pre class="webidl prettyprint">    [Constructor(DOMString mainText, optional DOMString? subText)]
-    interface NotificationDetailInfo {
+<pre class="webidl prettyprint">  [Constructor(DOMString mainText, optional DOMString? subText)]
+  interface NotificationDetailInfo {
     attribute DOMString mainText;
-
     attribute DOMString? subText;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var detailInfo1 = new tizen.NotificationDetailInfo('Missed Call from James', 'Feb 11 2013');
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var detailInfo1 = new tizen.NotificationDetailInfo("Missed Call from James", "Feb 11 2013");
 notification.detailInfo = [detailInfo1];
 </pre>
 </div>
@@ -1193,8 +1128,7 @@ notification.detailInfo = [detailInfo1];
  The main content of the detail information.
 This attribute is available on simple status notifications.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1207,8 +1141,7 @@ This attribute is available on simple status notifications.
 By default, this attribute is set to <var>null</var>.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -1218,7 +1151,7 @@ By default, this attribute is set to <var>null</var>.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1232,122 +1165,74 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Notification {
-
-    typedef DOMString NotificationId;
-
-    enum NotificationType { "STATUS" };
-
-    enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };
-
-    enum NotificationProgressType { "PERCENTAGE",  "BYTE" };
-
-    enum LEDCustomFlags {"LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT"};
-
-    [NoInterfaceObject] interface NotificationObject {
-        readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
-
-    [NoInterfaceObject] interface NotificationManager {
-
+  typedef DOMString NotificationId;
+  enum NotificationType { "STATUS" };
+  enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };
+  enum NotificationProgressType { "PERCENTAGE", "BYTE" };
+  enum LEDCustomFlags { "LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT" };
+  [NoInterfaceObject] interface NotificationObject {
+    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
+  [NoInterfaceObject] interface NotificationManager {
     void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
     <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-
-    [NoInterfaceObject] interface Notification {
-
-
+    void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Notification {
     readonly attribute <a href="#NotificationId">NotificationId</a> id;
-
     readonly attribute <a href="#NotificationType">NotificationType</a> type;
-
     readonly attribute Date postedTime;
-
     attribute DOMString title;
-
     attribute DOMString? content;
-
-    };
-
-
-    dictionary StatusNotificationInit {
-        DOMString? content;
-        DOMString? iconPath;
-        DOMString? soundPath;
-        boolean? vibration;
-        <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-        <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-        <a href="#NotificationProgressType">NotificationProgressType</a>? progressType;
-        unsigned long? progressValue;
-        long? number;
-        DOMString? subIconPath;
-        <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-        DOMString? ledColor;
-        unsigned long ledOnPeriod;
-        unsigned long ledOffPeriod;
-        DOMString? backgroundImagePath;
-        DOMString[]? thumbnails;
-    };
-
-   [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
-
-
-    interface StatusNotification : <a href="#Notification">Notification</a> {
-
+  };
+  dictionary StatusNotificationInit {
+    DOMString? content;
+    DOMString? iconPath;
+    DOMString? soundPath;
+    boolean? vibration;
+    <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
+    <a href="application.html#ApplicationId">ApplicationId</a>? appId;
+    <a href="#NotificationProgressType">NotificationProgressType</a>? progressType;
+    unsigned long? progressValue;
+    long? number;
+    DOMString? subIconPath;
+    <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
+    DOMString? ledColor;
+    unsigned long ledOnPeriod;
+    unsigned long ledOffPeriod;
+    DOMString? backgroundImagePath;
+    DOMString[]? thumbnails;
+  };
+  [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
+  interface StatusNotification : <a href="#Notification">Notification</a> {
     readonly attribute <a href="#StatusNotificationType">StatusNotificationType</a> statusType;
-
     attribute DOMString? iconPath;
-
     attribute DOMString? subIconPath;
-
     attribute long? number;
-
     attribute <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-
     attribute DOMString? ledColor;
-
     attribute unsigned long ledOnPeriod;
-
     attribute unsigned long ledOffPeriod;
-
-     attribute DOMString? backgroundImagePath;
-
-     attribute DOMString[]? thumbnails;
-
-     attribute DOMString? soundPath;
-
-     attribute boolean vibration;
-
-     attribute <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-
-     attribute <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-
-     attribute <a href="#NotificationProgressType">NotificationProgressType</a> progressType;
-
-     attribute unsigned long? progressValue;
-    };
-
-    [Constructor(DOMString mainText, optional DOMString? subText)]
-    interface NotificationDetailInfo {
+    attribute DOMString? backgroundImagePath;
+    attribute DOMString[]? thumbnails;
+    attribute DOMString? soundPath;
+    attribute boolean vibration;
+    attribute <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
+    attribute <a href="application.html#ApplicationId">ApplicationId</a>? appId;
+    attribute <a href="#NotificationProgressType">NotificationProgressType</a> progressType;
+    attribute unsigned long? progressValue;
+  };
+  [Constructor(DOMString mainText, optional DOMString? subText)]
+  interface NotificationDetailInfo {
     attribute DOMString mainText;
-
     attribute DOMString? subText;
-    };
-
+  };
 };</pre>
 </div>
 <div id="page-footer">

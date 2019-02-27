@@ -1,31 +1,33 @@
 # Attach Panel
 
 
-The attach panel allows the device user to attach various content into an application that contains an attach panel. The user can attach images, take pictures, record voice, and select files on the attach panel.
+The attach panel allows you to attach various content into an application that contains an attach panel. You can attach images, take pictures, record voice, and select files on the attach panel.
 
-This feature is supported in mobile applications only.
+This API is supported on Tizen mobile devices that support [attach panel features](#prerequisites).
 
-The main features of the Attach panel API include:
+The main features of the Attach panel API are the following:
 
-- Creating an attach panel
+- Create an attach panel
 
-  You can [create an attach panel and set callbacks](#create). You can also [add content categories](#categories). When no longer needed, you can also delete the attach panel.
+  You can [create an attach panel, set callbacks](#create), and [add content categories](#categories). If the attach panel is not required, you can also delete it.
 
-- Managing an attach panel
+- Manage an attach panel
 
   You can [set extra data to a content category, show and hide the panel, and get the panel state](#manage).
 
-**Figure: Attach panel**
 
 ![Attach panel](./media/attach_panel_area.png)
 
-The attach panel has UI components and it manages user interactions on its interface. The layout component keeps on the tabbar and scroller components, which are connected to show the content synchronously. The scroller component has pages to display the content of, for example, images, camera, and voice recorder. Some content is shown as a page on the panel, while others can be launched from the panel's **More** tab using [application controls](../app-management/app-controls.md).
+**Figure: Attach panel**
 
-The attach panel has half and full modes. The mode can be changed by swiping up and down the page.
+The attach panel contains UI components that manages user interactions on its interface. The layout component contains the tabBar and scroller components, which are connected to show the content synchronously. The scroller component contains pages that displays content. For example, images, camera, and voice recorder. The contents are shown as a page on the panel. However, some contents can be launched from the **More** tab of the panel using [application controls](../app-management/app-controls.md).
 
-**Figure: Attach panel modes**
+The attach panel contains half and full modes. The mode can be changed by swiping up and down the page.
+
 
 ![Attach panel modes](./media/attach_mode.png)
+
+**Figure: Attach panel modes**
 
 <a name="categories"></a>
 ## Content Categories
@@ -34,31 +36,33 @@ You can manage the following types of content:
 
 - Images
 
-  In the half mode, you can select only 1 image to be attached. In the full mode, you can select multiple images at once.
+  In half mode, you can select and attach only one image at a time. In full mode, you can select and attach multiple images at a time.
 
 - Camera
 
-  You can take a picture using the device camera, and attach it.
+  You can take a picture and attach it to the content using a device camera.
 
 - Voice
 
-  You can attach a voice recording.
+  You can attach voice recording to the content.
 
 - **More** tab
 
-  The **More** tab shows the icons of the applications, for example, video, audio, calendar, contact, myfiles, and video recorder, that can be launched by clicking the applicable icon.
+  You can use the additional category icons in the **More** tab, for example, video, audio, calendar, contact, myfiles, and video recorder. Click the respective icon to launch the category.
 
-The following figure illustrates the content types. From left to right: images, camera, voice, and **More** tab.
+The following figure explains the content types. From left to right: images, camera, voice, and **More** tab.
 
-**Figure: Content categories**
 
 ![Images content](./media/attach_images.png) ![Camera content](./media/attach_camera.png) ![Voice content](./media/attach_voice.png) ![More content](./media/attach_more.png)
 
+**Figure: Content categories**
+
+<a name="prerequisites"></a>
 ## Prerequisites
 
-To enable your application to use the attach panel functionality:
+This section explains, how you can enable your application to use the attach panel functionality:
 
-1. To use the [Attach panel](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Attach panel](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html) API, the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
    ```
    <privileges>
@@ -73,15 +77,21 @@ To enable your application to use the attach panel functionality:
    </privileges>
    ```
 
-2. To use the functions and data types of the Attach panel API, include the `<attach_panel.h>` header file in your application:
+2. To use the attach panel features, include the following feature in your tizen-manifest.xml file.
+
+    ```
+    <feature name="http://tizen.org/feature/attach_panel"/>
+    ```
+
+3. To use the functions and data types of the Attach panel API, include the `<attach_panel.h>` header file in your application:
 
    ```
    #include <attach_panel.h>
    ```
 
-3. Declare global variables.
+4. Declare global variables.
 
-   To create and manage an attach panel, you must create variables for a conformant and the attach panel.
+   To create and manage an attach panel, you must create variables for a conformant and attach panel.
 
    ```
    static struct {
@@ -108,9 +118,7 @@ To enable your application to use the attach panel functionality:
    ```
 
 <a name="create"></a>
-## Creating an Attach Panel
-
-To create an attach panel:
+## Create an Attach Panel
 
 1. Create the attach panel using the `attach_panel_create()` function.
 
@@ -127,11 +135,11 @@ To create an attach panel:
     s_info.attach_panel = attach_panel;
     ```
 
-2. Based on the type of content you want the user to be able to select for the attach panel, add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b)enumerator.
+2. Select the type of content for the attach panel. Add content categories using the `attach_panel_add_content_category()` function. The available content categories are defined in the [attach_panel_content_category](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#gada3a2db6ac8e7d42b7dff7c3cc48720b) enumeration.
 
-    The content categories in the **More** tab are shown in the frequency, recently used, and alphabetical sequence.
+    The content categories in the **More** tab are shown in the frequency of recently used and alphabetical sequence.
 
-    To deliver more information to the UI gadget or called application, add the data with a bundle.
+    To deliver more information to the UI gadget or called application, add the data within a bundle.
 
     ```
     bundle *extra_data = NULL;
@@ -157,8 +165,8 @@ To create an attach panel:
     ```
 3. Register and define callbacks:
 
-   - To get the data that the user selects in the called application, register a callback using the `attach_panel_set_result_cb()` function. The callback is triggered when the user selects and conforms something to attach on the caller application. When you use this callback, you must use the `app_control_get_extra_data_array()` function to get the received data.
-   - To get the published events from the panel side, register a callback using the `attach_panel_set_event_cb()` function. The callback is triggered when reserved events (defined in the [attach_panel_event](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#ga722a6d81e76fc1c4567a1bf920b4da3e) enumerator) are published from the panel side.
+   - To get the data that you select in the called application, register a callback using the `attach_panel_set_result_cb()` function. Select and confirm the content category for the caller application to trigger the event. When you use this callback, you must use the `app_control_get_extra_data_array()` function to get the received data.
+   - To get the published events from the panel side, register a callback using the `attach_panel_set_event_cb()` function. Publish the reserved events (defined in the [attach_panel_event](../../api/mobile/latest/group__CAPI__PANEL__ATTACH__MODULE.html#ga722a6d81e76fc1c4567a1bf920b4da3e) enumeration) from the panel side to trigger the event.
 
    ```
    static void
@@ -210,9 +218,8 @@ To create an attach panel:
    }
    ```
 
-4. When no longer needed, destroy the attach panel with the `attach_panel_destroy()` function. If the attach panel is shown when you destroy it, the panel is first hidden and then destroyed.
+4. When the attach panel is not required, destroy it using the `attach_panel_destroy()` function. If the attach panel is shown when you destroy it, hide the panel and then destroy. If it is only required to remove a specific content category, use the `attach_panel_remove_content_category()` function.
 
-    If you only need to remove a specific content category, use the `attach_panel_remove_content_category()` function.
 
     ```
     bool visible = false;
@@ -237,11 +244,11 @@ To create an attach panel:
     ```
 
 <a name="manage"></a>
-## Managing an Attach Panel
+## Manage an Attach Panel
 
-To manage an attach panel:
+To manage an attach panel content, you can set extra data to a previously added content category using a bundle:
 
-- To set some information to the content category after adding the category, use the `attach_panel_set_extra_data()` function, which sets extra data to send to the content category using a bundle:
+- To set some information to the content category after adding the category, use the `attach_panel_set_extra_data()` function.
 
     ```
     static void
@@ -280,7 +287,7 @@ To manage an attach panel:
     }
     ```
 
-- To know whether the attach panel is visible, use the `attach_panel_get_visibility()` function. It fills the second parameter with a Boolean value that shows whether the panel is visible.
+- To know whether the attach panel is visible, use the `attach_panel_get_visibility()` function. The function fills the second parameter with a Boolean value that shows whether the panel is visible.
 
     ```
     bool visible = false;

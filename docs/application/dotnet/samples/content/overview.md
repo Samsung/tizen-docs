@@ -48,6 +48,13 @@ for TD:
 </div>
 
 <div class="tabcontent" id="Wearable">
+<table>
+	<tbody>
+		<tr>
+			<td>There is no sample.</td>
+		</tr>
+	</tbody>
+</table>
 </div>
 
 <div class="tabcontent" id="TV">
@@ -71,7 +78,7 @@ for TD:
 			<p>This sample application demonstrates how to create a grid of images and a scrollable slideshow on a TV.<br />
 			It also shows how to change the layout depending on the device type.</p>
 			</td>
-		</tr>		
+		</tr>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv22mediacontent.png" width="400" /></p>
@@ -88,6 +95,15 @@ for TD:
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MediaHubSample" target="_blank"><strong>(T) MediaHubSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to obtain and filter media content information from internal storages.</p>
+			</td>
+		</tr>
+		<tr>
+		<td>
+			<p><img alt="" height="225" src="media/tv26mimetypeconverter.png" width="400" /></p>
+			</td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/MimeTypeConverter" target="_blank"><strong>(T) MimeTypeConverter</strong></a></p>
+			<p>This sample application demonstrates how to convert file extensions to MIME type and MIME type to file extensions.</p>
 			</td>
 		</tr>
 	</tbody>

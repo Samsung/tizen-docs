@@ -260,7 +260,7 @@ If 1 instance of a recurring event is modified (such as its summary or date) or 
 | Event                                    | Instances          | Exceptions         |
 |----------------------------------------|------------------|------------------|
 | Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-09 Tuesday |                    |
-| Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 |                    | 2012-10-17 Tuesday |
+| Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-16 Tuesday \> modified | 2012-10-17 Tuesday |
 | Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-22 Tuesday |                    |
 
 <a name="remind"></a>

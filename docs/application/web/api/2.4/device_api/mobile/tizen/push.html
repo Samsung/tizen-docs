@@ -2,53 +2,57 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>Push API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Push API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Push">
-<div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+ <div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>Push API</h1></div>
 <div class="brief">
  The Push API provides functionality for receiving push notifications
 from the Tizen push server.
 The push service is a client daemon that maintains a permanent connection
-between your device and the Tizen push server in order to process your registration
-and deregistration requests and deliver push notifications to applications on a device.
-        </div>
-<div class="description">
-        <p>
+between your device and the Tizen push server. Connection with push service is used to deliver push notifications
+to the application, and process the registration and deregistration requests.
 If the application is connected, the push service passes the notification data over
 the connection. Otherwise, the push service posts a UI notification with the data.
 It will be delivered when a user launches the application by selecting the posting.
-        </p>
+        </div>
+<div class="description">
         <p>
 To receive push notifications, follow the steps below:
         </p>
         <ul>
           <li>
-Get administrative permission for an application on your device          </li>
+Connecting to the push service          </li>
           <li>
-Register the application          </li>
+Registering your application, if the application has not been registered yet          </li>
           <li>
-Connect to the push service          </li>
-          <li>
-Get notification data          </li>
+Getting notification data          </li>
         </ul>
         <p>
-To use Push features, you must <a href="https://developer.tizen.org/development/guides/web-application/messaging/push-notification#Registering">register to the Push service</a>.
+For more information on the Push features, see <a href="https://developer.tizen.org/development/guides/web-application/messaging/push-notification">Push Guide</a>.
         </p>
         <p>
-For more information on the Push features, see <a href="https://developer.tizen.org/development/guides/web-application/messaging/push-notification">Push Notification Guide</a>.
+To use Push features the application needs the permission to access the Tizen Push servers.
         </p>
+        <p>
+<b>Service Limitation:</b>        </p>
+        <ul>
+          <li>
+Size of a push message is limited: <em>alertMessage</em> up to 127 bytes, and <em>appData</em> (payload data) less than 1 KB.          </li>
+          <li>
+Push service does not guarantee delivery and order of push messages.          </li>
+        </ul>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
-<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>1.1. <a href="#PushRegistrationId">PushRegistrationId</a>
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#PushRegistrationId">PushRegistrationId</a>
 </li></ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -83,12 +87,15 @@ For more information on the Push features, see <a href="https://developer.tizen.
 </tr>
 <tr>
 <td><a href="#PushManager">PushManager</a></td>
-<td>void <a href="#PushManager::registerService">registerService</a> (<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#PushManager::unregisterService">unregisterService</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)<br>
-    void <a href="#PushManager::connectService">connectService</a> (<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback)<br>
-    void <a href="#PushManager::disconnectService">disconnectService</a> ()<br>
-    <a href="#PushRegistrationId">PushRegistrationId</a> <a href="#PushManager::getRegistrationId">getRegistrationId</a> ()<br>
-    void <a href="#PushManager::getUnreadNotifications">getUnreadNotifications</a> ()</td>
+<td>
+<div>void <a href="#PushManager::registerService">registerService</a> (<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PushManager::unregisterService">unregisterService</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#PushManager::connectService">connectService</a> (<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback)</div>
+<div>void <a href="#PushManager::disconnectService">disconnectService</a> ()</div>
+<div>
+<a href="#PushRegistrationId">PushRegistrationId</a> <a href="#PushManager::getRegistrationId">getRegistrationId</a> ()</div>
+<div>void <a href="#PushManager::getUnreadNotifications">getUnreadNotifications</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#PushMessage">PushMessage</a></td>
@@ -96,11 +103,11 @@ For more information on the Push features, see <a href="https://developer.tizen.
 </tr>
 <tr>
 <td><a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a></td>
-<td>void <a href="#PushRegisterSuccessCallback::onsuccess">onsuccess</a> (<a href="#PushRegistrationId">PushRegistrationId</a> id)</td>
+<td><div>void <a href="#PushRegisterSuccessCallback::onsuccess">onsuccess</a> (<a href="#PushRegistrationId">PushRegistrationId</a> id)</div></td>
 </tr>
 <tr>
 <td><a href="#PushNotificationCallback">PushNotificationCallback</a></td>
-<td>void <a href="#PushNotificationCallback::onsuccess">onsuccess</a> (<a href="#PushMessage">PushMessage</a> message)</td>
+<td><div>void <a href="#PushNotificationCallback::onsuccess">onsuccess</a> (<a href="#PushMessage">PushMessage</a> message)</div></td>
 </tr>
 </tbody>
 </table>
@@ -111,9 +118,8 @@ For more information on the Push features, see <a href="https://developer.tizen.
 <div class="brief">
  A push service registration identifier.
           </div>
-<pre class="webidl prettyprint">    typedef DOMString PushRegistrationId;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  typedef DOMString PushRegistrationId;</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 </div>
@@ -125,12 +131,11 @@ For more information on the Push features, see <a href="https://developer.tizen.
 <div class="brief">
  The PushManagerObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PushManagerObject {
-        readonly attribute <a href="#PushManager">PushManager</a> push;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PushManagerObject {
+    readonly attribute <a href="#PushManager">PushManager</a> push;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -138,29 +143,34 @@ For more information on the Push features, see <a href="https://developer.tizen.
 The <em>tizen.push </em>object allows access to the functionality of the Push API.
           </p>
          </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="PushManagerObject::push">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PushManager </span><span class="name">push</span></span><div class="brief">
+ Object representing a push manager.
+            </div>
+<p><span class="version">Since: </span>
+ 2.1
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="PushManager">
 <a class="backward-compatibility-anchor" name="::Push::PushManager"></a><h3>2.2. PushManager</h3>
 <div class="brief">
  The PushManager interface provides methods to manage push registration and notification.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PushManager {
-      void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void unregisterService(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void connectService(<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void disconnectService() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      <a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void getUnreadNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PushManager {
+    void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterService(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void connectService(<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void disconnectService() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getUnreadNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="methods">
@@ -173,10 +183,9 @@ The <em>tizen.push </em>object allows access to the functionality of the Push AP
 <div class="brief">
  Registers an application to the Tizen push server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, 
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -190,31 +199,29 @@ InvalidValuesError - If any of the input parameters contain an invalid value.   
 UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/push
             </p>
-<p><span class="remark"> Remark : </span>
- In order to use the push messaging service, see the native <a href="https://developer.tizen.org/development/guides/native-application/messaging/push">Push Messaging Guide</a>.
+<p><span class="remark">Remark: </span>
+ In order to use the push messaging service, see <a href="https://developer.tizen.org/development/guides/web-application/messaging/push-notification">Push Guide</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">appControl</span>: 
+<span class="name">appControl</span>:
  The data to deliver via notification service when the process is not running.<br> For more information, see <a href="application.html">Application API</a>.
                 </li>
           <li class="param">
-<span class="name">successCallback</span>: 
- Callback method to be called when the registration request succeeds.
+<span class="name">successCallback</span>:
+ The method to be called when the registration request succeeds.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to be called when the registration request fails.
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to be called when the registration request fails.
                 </li>
         </ul>
 </div>
@@ -239,22 +246,24 @@ do not contain a valid value.
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Defines the data to be used when this process is launched by notification service.
- var service = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/push_test");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the data to be used when this process is launched by notification service. */
+var service = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/push_test");
 
- // Defines the error callback.
- function errorCallback(response) {
-   console.log( 'The following error occurred: ' +  response.name);
- }
+/* Defines the error callback. */
+function errorCallback(response)
+{
+  console.log("The following error occurred: " + response.name);
+}
 
- // Defines the registration success callback
- function registerSuccessCallback(id) {
-   console.log("Registration succeeded with id: " + id);
- }
+/* Defines the registration success callback. */
+function registerSuccessCallback(id)
+{
+  console.log("Registration succeeded with id: " + id);
+}
 
- // Requests registration.
- tizen.push.registerService(service, registerSuccessCallback, errorCallback);
- </pre>
+/* Requests registration. */
+tizen.push.registerService(service, registerSuccessCallback, errorCallback);
+</pre>
 </div>
 </dd>
 <dt class="method" id="PushManager::unregisterService">
@@ -264,10 +273,8 @@ do not contain a valid value.
 <div class="brief">
  Unregisters an application from the Tizen push server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterService(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterService(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="description">
@@ -279,24 +286,22 @@ The <em>ErrorCallback()</em> is launched with these error types:
 UnknownError - If an unknown error occurs.              </li>
             </ul>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/push
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to be called when the request is successfully unregistered.
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to be called when the request is successfully unregistered.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>: 
- Callback method to be called when the unregistration request fails.
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to be called when the unregistration request fails.
                 </li>
         </ul>
 </div>
@@ -319,19 +324,21 @@ UnknownError - If an unknown error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Defines the error callback
- function errorCallback(response) {
-   console.log( 'The following error occurred: ' +  response.name);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the error callback. */
+function errorCallback(response)
+{
+  console.log("The following error occurred: " + response.name);
+}
 
- // Defines the unregistration success callback
- function unregisterSuccessCallback() {
-   console.log("Unregistration succeeded.");
- }
+/* Defines the unregistration success callback. */
+function unregisterSuccessCallback()
+{
+  console.log("Unregistration succeeded");
+}
 
- // Requests unregistration
- tizen.push.unregisterService(unregisterSuccessCallback, errorCallback);
- </pre>
+/* Requests unregistration. */
+tizen.push.unregisterService(unregisterSuccessCallback, errorCallback);
+</pre>
 </div>
 </dd>
 <dt class="method" id="PushManager::connectService">
@@ -341,28 +348,25 @@ UnknownError - If an unknown error occurs.              </li>
 <div class="brief">
  Connects to the push service and receives push notifications.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectService(<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void connectService(<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/push
             </p>
-<p><span class="remark"> Remark : </span>
- The <em>connectService()</em> method must be called after the <em>registerService()</em> method.
+<p><span class="remark">Remark: </span>
+ If the application calling the <em>connectService()</em> method has not been registered to the Tizen push server,
+the <em>registerService()</em> method must be called before calling the <em>connectService()</em> method.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">notificationCallback</span>: 
+<span class="name">notificationCallback</span>:
  The method to be called when the notification message arrives.
                 </li>
         </ul>
@@ -386,14 +390,33 @@ UnknownError - If an unknown error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Defines the connect success callback
- function notificationCallback(noti) {
-   console.log("Notification received with alert message: " + noti.alertMessage);
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the connect success callback. */
+function notificationCallback(noti)
+{
+  console.log("Notification received with alert message: " + noti.alertMessage);
+}
 
- // Requests for push service connection
- tizen.push.connectService(notificationCallback);
- </pre>
+/* Defines the data to be used when this process is launched by notification service. */
+var service = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/push_test");
+
+/* Defines the error callback. */
+function errorCallback(response)
+{
+  console.log("The following error occurred: " + response.name);
+}
+
+/* Defines the registration success callback. */
+function registerSuccessCallback(id)
+{
+  console.log("Registration succeeded with id: " + id);
+
+  /* Requests for push service connection. */
+  tizen.push.connectService(notificationCallback);
+}
+
+/* Requests registration. */
+tizen.push.registerService(service, registerSuccessCallback, errorCallback);
+</pre>
 </div>
 </dd>
 <dt class="method" id="PushManager::disconnectService">
@@ -403,18 +426,14 @@ UnknownError - If an unknown error occurs.              </li>
 <div class="brief">
  Disconnects the push service and stops receiving push notifications.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void disconnectService();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void disconnectService();</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/push
             </p>
 <div class="exceptionlist">
@@ -430,9 +449,9 @@ UnknownError - If an unknown error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Requests disconnection
- tizen.push.disconnectService();
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Requests disconnection. */
+tizen.push.disconnectService();
+</pre>
 </div>
 </dd>
 <dt class="method" id="PushManager::getRegistrationId">
@@ -442,20 +461,24 @@ UnknownError - If an unknown error occurs.              </li>
 <div class="brief">
  Gets the push service registration ID for this application if the registration process is successful. <var>null </var>is returned if the application has not been registered yet.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId();</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/push
             </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">PushRegistrationId:
+                  </span>
+ ID assigned by push service.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -469,11 +492,12 @@ UnknownError - If an unknown error occurs.              </li>
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> var registrationId = tizen.push.getRegistrationId();
- if ( registrationId != null ) {
-   console.log("The registration id: " + registrationId);
- }
- </pre>
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var registrationId = tizen.push.getRegistrationId();
+if (registrationId != null)
+{
+  console.log("The registration id: " + registrationId);
+}
+</pre>
 </div>
 </dd>
 <dt class="method" id="PushManager::getUnreadNotifications">
@@ -481,18 +505,16 @@ UnknownError - If an unknown error occurs.              </li>
 </dt>
 <dd>
 <div class="brief">
- Requests to get unread push notifications. As a consequence, the PushNotificationCallback which was set using the <em>connectService()</em> method will be invoked to retrieve the notifications..
+ Requests to get unread push notifications. As a consequence, the PushNotificationCallback which was set using the connectService() method will be invoked to retrieve the notifications..
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getUnreadNotifications();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void getUnreadNotifications();</pre></div>
+<p><span class="version">Since: </span>
  2.3
             </p>
 <div class="description">
             <p>
-The <em>connectService()</em> method must be called to connect to Tizen push server and receive push notifications before calling the <em>getUnreadNotifications()</em> method.
-If connectService is not called, <var>ServiceNotAvailableError</var> occurs.<br>If any unread message exists, you will get unread push notification message through <var>PushNotificationCallback</var> of <em>connectService()</em>.
+The connectService() method must be called to connect to Tizen push server and receive push notifications before calling the getUnreadNotifications() method.
+If connectService is not called, <var>ServiceNotAvailableError</var> occurs.<br>If any unread message exists, you will get unread push notification message through <var>PushNotificationCallback</var> of connectService().
 For instance, if there are 10 unread messages, the <var>PushNotificationCallback</var> will be invoked 10 times.<br><br>If an application receives unread messages, the messages are removed from the system.
             </p>
             <p>
@@ -503,19 +525,17 @@ This method allows retrieving such missed push messages.
 Once a missed push notification is retrieved the server deletes it from its database.
             </p>
            </div>
-<p><span class="privilegelevel">
-            Privilege level: </span>
+<p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
-<p><span class="privilege">
-            Privilege: </span>
+<p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/push
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type ServiceNotAvailableError, if the network is unreachable for some reason (e.g disconnected from the Tizen push server).
+ with error type ServiceNotAvailableError, if the network is unreachable for some reason(e.g disconnected to the Tizen push server)
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method.
@@ -527,16 +547,17 @@ Once a missed push notification is retrieved the server deletes it from its data
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint"> // Defines the connect success callback
- function notificationCallback(message) {
-     console.log("New push message : " + message.alertMessage + ", date : " + message.date + ", data : " + message.appData);
-   }
- }
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Defines the connect success callback. */
+function notificationCallback(message)
+{
+  console.log("New push message: " + message.alertMessage + ", date: " + message.date + ", data: " +
+              message.appData);
+}
 
- // Requests for push service connection
- tizen.push.connectService(notificationCallback);
- tizen.push.getUnreadNotifications();
- </pre>
+/* Requests for push service connection. */
+tizen.push.connectService(notificationCallback);
+tizen.push.getUnreadNotifications();
+</pre>
 </div>
 </dd>
 </dl>
@@ -547,15 +568,12 @@ Once a missed push notification is retrieved the server deletes it from its data
 <div class="brief">
  The PushMessage interface specifies the push message that is delivered from the push service.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PushMessage {
-        readonly attribute DOMString appData;
-
-        readonly attribute DOMString alertMessage;
-
-        readonly attribute Date date;
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PushMessage {
+    readonly attribute DOMString appData;
+    readonly attribute DOMString alertMessage;
+    readonly attribute Date date;
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="attributes">
@@ -564,35 +582,32 @@ Once a missed push notification is retrieved the server deletes it from its data
 <li class="attribute" id="PushMessage::appData">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">appData</span></span><div class="brief">
- The push notification data.
+ An attribute to store the push notification data.
             </div>
 <div class="description">
             <p>
 This data is the message that the sender wants to send and its length must be less than 1 KB.
             </p>
            </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="PushMessage::alertMessage">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">alertMessage</span></span><div class="brief">
- The push notification message that is displayed as an alert message to the user.
+ An attribute to store the push notification message that may include an alert message to the user.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
 <li class="attribute" id="PushMessage::date">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">Date </span><span class="name">date</span></span><div class="brief">
- The date/time when a push notification message is received.
+ An attribute to store the date/time when a push notification message is received.
             </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  2.1
             </p>
 </li>
@@ -604,12 +619,11 @@ This data is the message that the sender wants to send and its length must be le
 <div class="brief">
  The PushRegisterSuccessCallback interface specifies the success callback for a push service registration request.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject]
-    interface PushRegisterSuccessCallback {
-        void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface PushRegisterSuccessCallback {
+    void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -627,17 +641,15 @@ This success callback is invoked when a push service registration request is suc
 <div class="brief">
  Called when a push service registration request is successful.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">id</span>: 
+<span class="name">id</span>:
  The registration ID.
                 </li>
         </ul>
@@ -651,12 +663,11 @@ This success callback is invoked when a push service registration request is suc
 <div class="brief">
  The PushNotificationCallback interface specifies the notification callback for the received push notification message.
           </div>
-<pre class="webidl prettyprint">    [Callback=FunctionOnly, NoInterfaceObject]
-    interface PushNotificationCallback {
-        void onsuccess(<a href="#PushMessage">PushMessage</a> message);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface PushNotificationCallback {
+    void onsuccess(<a href="#PushMessage">PushMessage</a> message);
+  };</pre>
+<p><span class="version">Since: </span>
  2.1
           </p>
 <div class="description">
@@ -674,17 +685,15 @@ This notification callback is invoked when the push notification message arrives
 <div class="brief">
  Called when the push notification message arrives.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PushMessage">PushMessage</a> message);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#PushMessage">PushMessage</a> message);</pre></div>
+<p><span class="version">Since: </span>
  2.1
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">message</span>: 
+<span class="name">message</span>:
  The received push notification message.
                 </li>
         </ul>
@@ -696,7 +705,7 @@ This notification callback is invoked when the push notification message arrives
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        You can check if this API is supported with <em>tizen.systeminfo.getCapability()</em> and decide enable/disable codes that need this API.
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -706,51 +715,37 @@ To guarantee that the push application runs on a device with the push feature, d
 <li class="feature">http://tizen.org/feature/network.push</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering</a>.
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Push {
-    typedef DOMString PushRegistrationId;
-
-    [NoInterfaceObject] interface PushManagerObject {
-        readonly attribute <a href="#PushManager">PushManager</a> push;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
-
-    [NoInterfaceObject] interface PushManager {
-      void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback,
-                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void unregisterService(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
-                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void connectService(<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void disconnectService() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      <a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-      void getUnreadNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
-
-    [NoInterfaceObject] interface PushMessage {
-        readonly attribute DOMString appData;
-
-        readonly attribute DOMString alertMessage;
-
-        readonly attribute Date date;
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject]
-    interface PushRegisterSuccessCallback {
-        void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
-    };
-
-    [Callback=FunctionOnly, NoInterfaceObject]
-    interface PushNotificationCallback {
-        void onsuccess(<a href="#PushMessage">PushMessage</a> message);
-    };
-
+  typedef DOMString PushRegistrationId;
+  [NoInterfaceObject] interface PushManagerObject {
+    readonly attribute <a href="#PushManager">PushManager</a> push;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
+  [NoInterfaceObject] interface PushManager {
+    void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterService(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void connectService(<a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void disconnectService() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#PushRegistrationId">PushRegistrationId</a> getRegistrationId() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getUnreadNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface PushMessage {
+    readonly attribute DOMString appData;
+    readonly attribute DOMString alertMessage;
+    readonly attribute Date date;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface PushRegisterSuccessCallback {
+    void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface PushNotificationCallback {
+    void onsuccess(<a href="#PushMessage">PushMessage</a> message);
+  };
 };</pre>
 </div>
 <div id="page-footer">

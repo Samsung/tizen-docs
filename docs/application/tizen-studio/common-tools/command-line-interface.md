@@ -51,11 +51,11 @@ tizen cli-config [options]
 
   Windows&reg;:
   ```
-  > tizen cli-config -g "default.profiles.path=C:\Users\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"
+  > tizen cli-config –g "default.profiles.path=C:\Users\workspace\.metadata\.plugins\org.tizen.common.sign\profiles.xml"
   ```
   Ubuntu and macOS:
   ```
-  $ tizen cli-config -g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml
+  $ tizen cli-config –g default.profiles.path=~/workspace/.metadata/.plugins/org.tizen.common.sign/profiles.xml
   ```
 
 ## Displaying Profile Templates
@@ -74,7 +74,7 @@ tizen list <option>
 |----------------|----------------------------------------|
 | `native-project` | Displays the list of project templates for Tizen native applications. |
 | `web-project`    | Displays the list of project templates for Tizen Web applications. |
-| `rootstrap`      | Displays the list of available rootstraps. The rootstrap is a set of build configurations, which consists of the profile, platform version, and target architecture. |
+| `rootstrap [rootstrap name]`      | Displays the list of available rootstraps. The rootstrap is a set of build configurations, which consists of the profile, platform version, and target architecture.<br />If you specify the `[rootstrap name]` argument, a set of frameworks installed for this rootstrap is displayed. |
 
 **Examples:**
 
@@ -127,7 +127,7 @@ tizen create <sub-command> [options]
 
 | Sub-command                              | Description                              |
 |------------------------------------------|------------------------------------------|
-| `native-project [options]` or `web-project [options]` | Create the Tizen native or Web project.Options are:`-p`, `--profile`: Specifies the profile name.`-t`, `--template`: Specifies the template name.`-n`, `--name`: Specifies the project name.`--`: Specifies the destination directory where the project is created. |
+| `native-project [options]` or `web-project [options]` | Create the Tizen native or Web project.<br />Options are:<br />`-p`, `--profile`: Specifies the profile name.<br />`-t`, `--template`: Specifies the template name.<br />`-n`, `--name`: Specifies the project name.<br />`--`: Specifies the destination directory where the project is created. |
 
 **Examples:**
 
@@ -149,7 +149,7 @@ tizen create <sub-command> [options]
 
 ## Building the Project
 
-The command builds the Tizen native or Web project. To build the native project, 3 options are needed: architecture, compiler, and configuration. If you do not set these options, the default values are used. You can check or set the default build options with the `cli-config`command.
+The command builds the Tizen native or Web project. To build the native project, 3 options are needed: architecture, compiler, and configuration. If you do not set these options, the default values are used. You can check or set the default build options with the `cli-config` command.
 
 **Syntax:**
 
@@ -206,12 +206,30 @@ tizen <sub-command> [options]
 
   Windows&reg;:
   ```
-  > tizen build-native -a x86 -c llvm -C Debug -- C:\Users\workspace\basic> dir C:\Users\workspace\basic\Debug
+  > tizen build-native -a x86 -c llvm -C Debug -- C:\Users\workspace\basic
+  > dir C:\Users\workspace\basic\Debug
   ```
 
   Ubuntu and macOS:
   ```
-  $ tizen build-native -a x86 -c llvm -C Debug -- ~/workspace/basic$ ls ~/workspace/basic/Debug
+  $ tizen build-native -a x86 -c llvm -C Debug -- ~/workspace/basic
+  $ ls ~/workspace/basic/Debug
+  ```
+
+- Build the native project with the default configuration and the bixby add-on framework.
+
+  Windows&reg;:
+
+  ```
+  > tizen build-native -f bixby -- C:\Users\workspace\basic
+  > dir C:\Users\workspace\basic\Debug
+  ```
+
+  Ubuntu and macOS:
+
+  ```
+  $ tizen build-native -f bixby -- ~/workspace/basic
+  $ ls ~/workspace/basic/Debug
   ```
 
 - Build the native project with a rootstrap.
@@ -594,32 +612,32 @@ Examples:
 
   Windows&reg;:
   ```
-   > tizen trust-anchor info -- project1
-   Trust-Anchor is disabled for the project project1.
-   
-   > tizen trust-anchor set -c C:\workspace\user1.pem -s true -- project1
-   Succeed to set the trust-anchor.
-   
-   > tizen trust-anchor info -- project1
-   use-system-certs: true
-   user certificates: user1.pem
-   
-   > tizen trust-anchor set -c "C:\workspace\user2.pem,C:\workspace\user3.pem,C:\workspace\certdirs" -- project1
-   Succeed to add the certificates user2.pem, user3.pem.
-   
-   > tizen trust-anchor info -- project1
-   use-system-certs: true
-   user certificates: user1.pem, user2.pem, user3.pem, certdirs1.pem, certdirs2.pem
-   
-   > tizen trust-anchor delete -c "user2.pem,certdirs1.pem" -- project1
-   Succeed to delete the certificates user2.pem, certdirs1.pem.
-   
-   > tizen trust-anchor unset -- project1
-   Succeed to disable the trust-anchor.
-   
-   > tizen trust-anchor info -- project1
-   Trust-Anchor is disabled for this project.
-   ```
+  > tizen trust-anchor info -- project1
+  Trust-Anchor is disabled for the project project1.
+  
+  > tizen trust-anchor set -c C:\workspace\user1.pem -s true -- project1
+  Succeed to set the trust-anchor.
+  
+  > tizen trust-anchor info -- project1
+  use-system-certs: true
+  user certificates: user1.pem
+  
+  > tizen trust-anchor set -c "C:\workspace\user2.pem,C:\workspace\user3.pem,C:\workspace\certdirs" -- project1
+  Succeed to add the certificates user2.pem, user3.pem.
+  
+  > tizen trust-anchor info -- project1
+  use-system-certs: true
+  user certificates: user1.pem, user2.pem, user3.pem, certdirs1.pem, certdirs2.pem
+  
+  > tizen trust-anchor delete -c "user2.pem,certdirs1.pem" -- project1
+  Succeed to delete the certificates user2.pem, certdirs1.pem.
+  
+  > tizen trust-anchor unset -- project1
+  Succeed to disable the trust-anchor.
+  
+  > tizen trust-anchor info -- project1
+  Trust-Anchor is disabled for this project.
+  ```
 
 ## Packaging a Tizen Application with Signing
 
@@ -636,7 +654,7 @@ tizen package [options]
 | Option                            | Description                              |
 |-----------------------------------|------------------------------------------|
 | `-t`, `--type {tpk|wgt}`          | Specifies the package type. You can use `tpk` for a Tizen native package or `wgt` for a Tizen Web package. |
-| `-s`, `--sign <security profile>` | Specifies the security profile name to use for signing. |
+| `-s`, `--sign <security profile>` | Specifies the security profile name for signing. If you skip this option, the CLI uses the active profile or the default profile. The default profile is only valid for the Emulator or reference devices. |
 | `-S`, `--strip {on|off}`          | Determines whether to strip the native binary. The default value is off. This option only works when the native binary is based on the `arm` architecture and `Release` build configuration. This option is only for the native package. |
 | `-- <build output path>`          | Specifies the build output path. If this is a package file, the package is re-signed. |
 

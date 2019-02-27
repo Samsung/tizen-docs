@@ -97,18 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="entry_inheritance_tree.png" alt="entry_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/entry/preview-00.png" alt="preview-00.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/entry/preview-01.png" alt="preview-01.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/entry/preview-02.png" alt="preview-02.png"/>
-</div>
-  <div class="image">
-<img src="img/widget/entry/preview-03.png" alt="preview-03.png"/>
-</div>
  <p>An entry is a convenience widget which shows a box that the user can enter text into. Entries by default don't scroll, so they grow to accommodate the entire text, resizing the parent window as needed. This can be changed with the <a class="el" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4" title="Enable or disable scrolling in entry.">elm_entry_scrollable_set()</a> function.</p>
 <p>They can also be single line or multi line (the default) and when set to multi line mode they support text wrapping in any of the modes indicated by #Elm_Wrap_Type.</p>
 <p>Other features include password mode, filtering of inserted text with <a class="el" href="group__Elm__Entry.html#ga183c0a0afb4a25eaf677deb3c544a8b6" title="Append a markup filter function for text inserted in the entry.">elm_entry_markup_filter_append()</a> and related functions, inline "items" and formatted markup text.</p>
@@ -174,15 +162,7 @@ Items</h3>
 <li>ascent: Item will be placed within the line's baseline and its ascent. That is, the height between the line where all characters are positioned and the highest point in the line. For <code>size</code> and <code>absize</code> items, the descent value will be added to the total line height to make them fit. <code>relsize</code> items will be adjusted to fit within this space. </li>
 <li>full: Items will be placed between the descent and ascent, or the lowest point in the line and its highest.</li>
 </ul>
-<p>The next image shows different configurations of items and how the previously mentioned options affect their sizes. In all cases, the green line indicates the ascent, blue for the baseline and red for the descent.</p>
-<div class="image">
-<img src="entry_item.png" alt="entry_item.png"/>
-</div>
- <p>And another one to show how size differs from absize. In the first one, the scale value is set to 1.0, while the second one is using one of 2.0.</p>
-<div class="image">
-<img src="entry_item_scale.png" alt="entry_item_scale.png"/>
-</div>
- <p>After the size for an item is calculated, the entry will request an object to place in its space. For this, the functions set with <a class="el" href="group__Elm__Entry.html#ga7d0a5c857a595c1ab99df404188546dc" title="This appends a custom item provider to the list for that entry.">elm_entry_item_provider_append()</a> and related functions will be called in order until one of them returns a <code>non-NULL</code> value. If no providers are available, or all of them return <code>NULL</code>, then the entry falls back to one of the internal defaults, provided the name matches with one of them.</p>
+<p>After the size for an item is calculated, the entry will request an object to place in its space. For this, the functions set with <a class="el" href="group__Elm__Entry.html#ga7d0a5c857a595c1ab99df404188546dc" title="This appends a custom item provider to the list for that entry.">elm_entry_item_provider_append()</a> and related functions will be called in order until one of them returns a <code>non-NULL</code> value. If no providers are available, or all of them return <code>NULL</code>, then the entry falls back to one of the internal defaults, provided the name matches with one of them.</p>
 <p>All of the following are currently supported:</p>
 <ul>
 <li>emoticon/angry</li>
@@ -298,16 +278,15 @@ Emitted signals</h2>
 <li><a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add</a> </li>
 <li><a class="el" href="group__Elm__General.html#ga3c76b5447be522d647e352cb7ff7c9e6">elm_object_signal_callback_del</a> </li>
 <li><a class="el" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a> </li>
-<li><a class="el" href="group__Elm__General.html#ga3ecb0d6b4e76ff39006f218942c7950d">elm_object_disabled_get</a></li>
+<li><a class="el" href="group__Elm__General.html#ga3ecb0d6b4e76ff39006f218942c7950d">elm_object_disabled_get</a> </li>
 </ul>
-<h2><a class="anchor" id="entry-examples"></a>
-entry-examples</h2>
-<p>An overview of the Entry API can be seen in <a class="el" href="entry_example.html">Entry - Example of simple editing</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#gad8bb2665a73dd13cfb171d0ce5045076">elm_config_context_menu_disabled_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga4d4ba0775d7a5eb132aee332465f1c8d">elm_config_context_menu_disabled_set</a> (<a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga7e8c3690191cc4b45b9006929dd89ca4">elm_scrolled_entry_cnp_textonly_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> textonly)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#gaeba1ccf8aa72ba84e799d8b5368ca5e4">elm_scrolled_entry_cnp_textonly_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4">elm_entry_scrollable_set</a> (Elm_Entry *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> scroll)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable scrolling in entry.  <a href="#ga5eeb0097491a8a5e9413427ba27199d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Entry.html#gafaf173f5fdcbafa99b907423324b0d4c">elm_entry_scrollable_get</a> (const Elm_Entry *obj)</td></tr>
@@ -4376,6 +4355,70 @@ _Elm_Entry_Context_Menu_Item&#160;</td><td class="memItemRight" valign="bottom">
 <dl class="return"><dt><b>Returns:</b></dt><dd>The converted string (in markup). It should be freed.</dd></dl>
 <p>For example, passing "&lt;align=center&gt;hello&lt;/align&gt;&amp;gt;" will return "&amp;lt;align=center&amp;gt;hello&amp;lt;/align&amp;gt; &amp;amp;gt;". This is useful when you want to display "&amp;" in label, entry, and some widgets which use textblock internally.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaeba1ccf8aa72ba84e799d8b5368ca5e4"></a><!-- doxytag: member="elm_deprecated.h::elm_scrolled_entry_cnp_textonly_get" ref="gaeba1ccf8aa72ba84e799d8b5368ca5e4" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Entry.html#gaeba1ccf8aa72ba84e799d8b5368ca5e4">elm_scrolled_entry_cnp_textonly_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This function gets the current textonly mode of the entry.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The entry object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> textonly mode, <code>EINA_FALSE</code> not textonly mode</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000351">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7e8c3690191cc4b45b9006929dd89ca4"></a><!-- doxytag: member="elm_deprecated.h::elm_scrolled_entry_cnp_textonly_set" ref="ga7e8c3690191cc4b45b9006929dd89ca4" args="(Evas_Object *obj, Eina_Bool textonly)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Entry.html#ga7e8c3690191cc4b45b9006929dd89ca4">elm_scrolled_entry_cnp_textonly_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>textonly</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This function sets the entry to textonly mode.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The entry object </td></tr>
+    <tr><td class="paramname">textonly</td><td>the mode of textonly.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000350">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
 </div>

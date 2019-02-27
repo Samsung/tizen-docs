@@ -21,13 +21,15 @@ The [Tizen.Multimedia.AudioPlayback](https://developer.tizen.org/dev-guide/csapi
 Your application must define the following PCM data settings:
 
 -   Audio channels:
-    -   Mono (1 channel)
-    -   Stereo (2 channels)
+    -   `1` : Mono (1 channel)
+    -   `2` : Stereo (2 channels)
 -   Audio sample type:
-    -   Unsigned 8-bit PCM
-    -   Signed 16-bit little endian PCM
+    -   `U8` : Unsigned 8-bit PCM
+    -   `S16LE` : Signed 16-bit PCM, little endian
+    -   `S24LE` : Signed 24-bit PCM, little endian
+    -   `S24PackedIn32LE` : Signed 24 bit PCM in LSB of 32 bit words, little endian
 -   Audio sample rate:
-    -   8000 \~ 48000 Hz
+    -   8000 \~ 192000 Hz
 
 To support various low-end Tizen devices, the application must follow certain guidelines:
 
@@ -62,18 +64,7 @@ You can enable your application to record uncompressed audio from a microphone-t
 
 Audio data is captured periodically. To receive the audio PCM data from the input device, you must implement the audio capture interface to notify the application of audio data events, such as when the audio data buffer is full.
 
-Before recording audio, you must define the following PCM data settings:
-
--   Input device type:
-    -   Microphone
--   Audio channels:
-    -   Mono (1 channel)
-    -   Stereo (2 channels)
--   Audio sample type:
-    -   Unsigned 8-bit PCM
-    -   Signed 16-bit little endian PCM
--   Audio sample rate:
-    -   8000 \~ 48000 Hz
+Before recording audio, you must define the PCM data settings. For more information, see [Audio Output](#play_pcm).
 
 ## Prerequisites
 
@@ -102,7 +93,7 @@ To play audio:
 
     The hardware device prepares its internal output buffer for playback. Playback begins when the internal output buffer starts receiving audio data.
 
-2.  To start playing the recorded audio, copy the audio data from the local buffer to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioCapture` class:
+2.  To start playing the recorded audio, copy the audio data from the local buffer to the internal output buffer using the `Write()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     int bytesWritten = audioPlayback.Write(buffer);
@@ -110,7 +101,7 @@ To play audio:
 
     The returned value represents the number of bytes written to the internal output buffer.
 
-3.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioCapture` class:
+3.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     audioPlayback.Unprepare();
@@ -129,7 +120,7 @@ To start playing the recorded audio:
     audioPlayback.BufferAvailable += OnBufferAvailable;
     ```
 
-2.  Prepare the audio output device and start the playback process using the `Prepare()` method of the `Tizen.Multimedia.AudioCapture` class:
+2.  Prepare the audio output device and start the playback process using the `Prepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     audioPlayback.Prepare();
@@ -168,11 +159,11 @@ To start playing the recorded audio:
     }
     ```
 
-4.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioCapture` class:
+4.  Stop the playback process using the `Unprepare()` method of the `Tizen.Multimedia.AudioPlayback` class:
 
     ```
     /// Stop the hardware playback process
-    audioPlayback.Unprepare(output);
+    audioPlayback.Unprepare();
     ```
 
     The device no longer raises the event.

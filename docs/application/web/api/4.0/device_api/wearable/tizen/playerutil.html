@@ -2,26 +2,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="tizen.css" media="screen">
-<script type="text/javascript" src="snippet.js"></script><title>PlayerUtil API</title>
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>PlayerUtil API</title>
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::PlayerUtil">
-<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+ <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>PlayerUtil API</h1></div>
 <div class="brief">
- The PlayerUtil API provides functionality for managing features related to the W3C Player.
+ The Player Util API provides functionality for managing features related to the W3C Player.
         </div>
 <div class="description">
         <p>
 You can change the audio latency mode using this API.
         </p>
         <p>
-For more information on the PlayerUtil features, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/audio-latency">PlayerUtil Guide</a>.
+For more information on the Player Util features, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/audio-latency">Player Util Guide</a>.
         </p>
        </div>
-<p><span class="version">
-            Since: </span>
+<p><span class="version">Since: </span>
  3.0
         </p>
 <h2>Table of Contents</h2>
@@ -69,9 +68,8 @@ For more information on the PlayerUtil features, see <a href="https://developer.
 <div class="brief">
  Specifies the latency mode for the W3C Player.
           </div>
-<pre class="webidl prettyprint">    enum LatencyMode { "LOW", "MID", "HIGH" };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  enum LatencyMode { "LOW", "MID", "HIGH" };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="description">
@@ -92,29 +90,38 @@ HIGH - High audio latency mode.            </li>
 <a class="backward-compatibility-anchor" name="::PlayerUtil::PlayerUtilManagerObject"></a><h3>2.1. PlayerUtilManagerObject</h3>
 <div class="brief">
  The PlayerUtilManagerObject interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
-The <em>tizen.playerutil </em>object allows access to the functionality of the PlayerUtil API.
+The <em>tizen.playerutil </em>object allows access to the functionality of the Player Util API.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PlayerUtilManagerObject {
-        readonly attribute <a href="#PlayerUtilManager">PlayerUtilManager</a> playerutil;
-    };</pre>
-<pre class="webidl prettyprint">    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PlayerUtilManagerObject">PlayerUtilManagerObject</a>;</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PlayerUtilManagerObject {
+    readonly attribute <a href="#PlayerUtilManager">PlayerUtilManager</a> playerutil;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PlayerUtilManagerObject">PlayerUtilManagerObject</a>;</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="PlayerUtilManagerObject::playerutil">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">PlayerUtilManager </span><span class="name">playerutil</span></span><div class="brief">
+ Object representing a player utilities manager.
+            </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
+</li></ul>
+</div>
 </div>
 <div class="interface" id="PlayerUtilManager">
 <a class="backward-compatibility-anchor" name="::PlayerUtil::PlayerUtilManager"></a><h3>2.2. PlayerUtilManager</h3>
 <div class="brief">
  The PlayerUtilManager interface provides methods to manage the W3C Player features.
           </div>
-<pre class="webidl prettyprint">    [NoInterfaceObject] interface PlayerUtilManager {
-        <a href="#LatencyMode">LatencyMode</a> getLatencyMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setLatencyMode(<a href="#LatencyMode">LatencyMode</a> mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };</pre>
-<p><span class="version">
-            Since: </span>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PlayerUtilManager {
+    <a href="#LatencyMode">LatencyMode</a> getLatencyMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setLatencyMode(<a href="#LatencyMode">LatencyMode</a> mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
  3.0
           </p>
 <div class="methods">
@@ -127,16 +134,18 @@ The <em>tizen.playerutil </em>object allows access to the functionality of the P
 <div class="brief">
  Gets the latency mode of the W3C Player.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#LatencyMode">LatencyMode</a> getLatencyMode();
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#LatencyMode">LatencyMode</a> getLatencyMode();</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
- LatencyMode Latency mode, which is currently set on device.
-              </div>
+<ul>
+<span class="return">LatencyMode:
+                  </span>
+ Latency mode, which is currently set on device.
+              </ul>
+</div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
@@ -145,14 +154,13 @@ The <em>tizen.playerutil </em>object allows access to the functionality of the P
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-var mode = tizen.playerutil.getLatencyMode();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mode = tizen.playerutil.getLatencyMode();
 console.log("Current latency mode is: " + mode);
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Current latency mode is: LOW
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Current latency mode is: LOW
+</pre>
 </div>
 </dd>
 <dt class="method" id="PlayerUtilManager::setLatencyMode">
@@ -162,10 +170,8 @@ console.log("Current latency mode is: " + mode);
 <div class="brief">
  Sets the latency mode of the W3C Player.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setLatencyMode(<a href="#LatencyMode">LatencyMode</a> mode);
-             </pre></div>
-<p><span class="version">
-            Since: </span>
+<div class="synopsis"><pre class="signature prettyprint">void setLatencyMode(<a href="#LatencyMode">LatencyMode</a> mode);</pre></div>
+<p><span class="version">Since: </span>
  3.0
             </p>
 <div class="parameters">
@@ -190,16 +196,15 @@ console.log("Current latency mode is: " + mode);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">
-console.log("Current latency mode is: " + tizen.playerutil.getLatencyMode());
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">console.log("Current latency mode is: " + tizen.playerutil.getLatencyMode());
 tizen.playerutil.setLatencyMode("HIGH");
 console.log("Changed latency mode is: " + tizen.playerutil.getLatencyMode());
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre> Current latency mode is: LOW
- Changed latency mode is: HIGH
- </pre>
+<span class="title"><p>Output example:</p></span><pre>Current latency mode is: LOW
+Changed latency mode is: HIGH
+</pre>
 </div>
 </dd>
 </dl>
@@ -208,19 +213,15 @@ console.log("Changed latency mode is: " + tizen.playerutil.getLatencyMode());
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module PlayerUtil {
-
-    enum LatencyMode { "LOW", "MID", "HIGH" };
-
-    [NoInterfaceObject] interface PlayerUtilManagerObject {
-        readonly attribute <a href="#PlayerUtilManager">PlayerUtilManager</a> playerutil;
-    };
-    <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PlayerUtilManagerObject">PlayerUtilManagerObject</a>;
-
-    [NoInterfaceObject] interface PlayerUtilManager {
-        <a href="#LatencyMode">LatencyMode</a> getLatencyMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-
-        void setLatencyMode(<a href="#LatencyMode">LatencyMode</a> mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    };
+  enum LatencyMode { "LOW", "MID", "HIGH" };
+  [NoInterfaceObject] interface PlayerUtilManagerObject {
+    readonly attribute <a href="#PlayerUtilManager">PlayerUtilManager</a> playerutil;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PlayerUtilManagerObject">PlayerUtilManagerObject</a>;
+  [NoInterfaceObject] interface PlayerUtilManager {
+    <a href="#LatencyMode">LatencyMode</a> getLatencyMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setLatencyMode(<a href="#LatencyMode">LatencyMode</a> mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
 };</pre>
 </div>
 <div id="page-footer">
