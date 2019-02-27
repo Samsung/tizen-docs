@@ -44,6 +44,10 @@ When your application becomes visible again, the `app_resume_cb()` callback is i
 - All applications on top of your application in the window stack finish.
 - An alarm is triggered for your application, bringing it to the front and hiding other applications.
 
+> **Note**
+>
+> Since Tizen 5.5, you can get the display state by using the app_get_display_state() function when the app_resume_cb() callback or the app_pause_cb() callback is invoked.
+
 When your application starts exiting, the `app_terminate_cb()` callback is invoked. Your application can start the termination process, when:
 
 - Your application itself requests to exit by calling the `ui_app_exit()` or `service_app_exit()` function to terminate the event loop.
