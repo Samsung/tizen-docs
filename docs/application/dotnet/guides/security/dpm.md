@@ -84,7 +84,7 @@ To manage device policies:
    dpm.Dispose();
    ```
    > **Note**
-   > The policy instance must be destroyed first.
+   > The Policy instance must be destroyed first.
 
 ## Related Information
 - Dependencies
