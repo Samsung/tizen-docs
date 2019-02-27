@@ -46,7 +46,7 @@ When your application becomes visible again, the `app_resume_cb()` callback is i
 
 > **Note**
 >
-> Since Tizen 5.5, you can get the display state by using the app_get_display_state() function when the app_resume_cb() callback or the app_pause_cb() callback is invoked.
+> Since Tizen 5.5, you can get the display state by using the `app_get_display_state()` function when the `app_resume_cb()` callback or the `app_pause_cb()` callback is invoked.
 
 When your application starts exiting, the `app_terminate_cb()` callback is invoked. Your application can start the termination process, when:
 
