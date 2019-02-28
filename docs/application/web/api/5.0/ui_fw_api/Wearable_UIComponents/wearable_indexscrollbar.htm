@@ -54,8 +54,11 @@ var indexElement = document.getElementById('indexscrollbar'),
 <pre class="prettyprint">
 &lt;div id=&quot;foo&quot; class=&quot;ui-indexscrollbar&quot;
      data-index=&quot;A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z&quot;&gt;&lt;/div&gt;
+</pre>
 
-&lt;script&gt;
+<p>JS code:</p>
+
+<pre class="prettyprint">
    (function()
    {
       var elem = document.getElementById(&quot;foo&quot;);
@@ -66,7 +69,6 @@ var indexElement = document.getElementById('indexscrollbar'),
          console.log(index);
       });
    }());
-&lt;/script&gt;
 </pre>
 
 <p>You can retrieve the index value using the <span style="font-family: Courier New,Courier,monospace">event.detail.index</span> property.</p>
@@ -100,7 +102,11 @@ var indexElement = document.getElementById('indexscrollbar'),
          &lt;/ul&gt;
       &lt;/div&gt;
    &lt;/section&gt;
-   &lt;script&gt;
+</pre>
+
+<p>JS code:</p>
+
+<pre class="prettyprint">
       (function()
       {
          var page = document.getElementById(&quot;pageIndexScrollbar&quot;),
@@ -172,8 +178,11 @@ var indexElement = document.getElementById('indexscrollbar'),
    &lt;li&gt;Carry&lt;/li&gt;&lt;li&gt;Cibi&lt;/li&gt;
    &lt;li&gt;Daisy&lt;/li&gt;&lt;li&gt;Derek&lt;/li&gt;&lt;li&gt;Desmond&lt;/li&gt;
 &lt;/ul&gt;
+</pre>
 
-&lt;script&gt;
+<p>JS code:</p>
+
+<pre class="prettyprint">
    (function()
    {
       var page = document.getElementById(&quot;pageIndexScrollbar2&quot;);
@@ -280,7 +289,6 @@ var indexElement = document.getElementById('indexscrollbar'),
          elIndex = {};
       });
    }());
-&lt;/script&gt;
 </pre>
 
 <h2><a id="options-list"></a>Options</h2>
@@ -341,12 +349,6 @@ var indexElement = document.getElementById('indexscrollbar'),
 
 		</tbody>
 	</table>
-
-
-
-
-
-
 
  <div id="footer">
    <hr size="1" />
