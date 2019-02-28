@@ -90,7 +90,7 @@ You can modify the circle slider properties using the following functions.
 | `eext_circle_object_color_set()`<br>`eext_circle_object_color_get()` | Set and get the color of circle line and font in the circle object. |
 | `eext_circle_object_disabled_set()`<br>`eext_circle_object_disabled_get()` | Set and get the disabled state of the circle object. |
 
-The circle slider consists of 4 parts, introduced in the following table.
+The following table lists the four parts of the circle slider:
 
 **Table: Circle slider items**
 <table>
@@ -101,7 +101,7 @@ The circle slider consists of 4 parts, introduced in the following table.
 <tr><td rowspan="4"> <img alt="elm/slider/horizontal/warning" src="./media/circle_slider2.png" /></td>
 <td> <code>default</code>: Default circle item, which draws a slider bar.<br>This item represents the value of the circle slider, which is a red circular area in the left example.</td></tr>
 <tr><td> <code>cue</code>: Cue circle item, which is a touchable handle located at the end of the slider bar.</td></tr>
-<tr><td> <code>effect</code>: Cue effect circle item, which is a effect render when a cue item is touched.</td></tr>
+<tr><td> <code>effect</code>: Cue effect circle item, which renders an effect when a cue item is touched.</td></tr>
 <tr><td> <code>bg</code>: Background circle item, which is a dark circular area in the left example. </td></tr>
 </tbody>
 </table>
