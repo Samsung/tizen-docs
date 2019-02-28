@@ -46,6 +46,7 @@
 
 <pre class="prettyprint">&lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
 &lt;label for=&quot;checkbox-1&quot;&gt;Apple&lt;/label&gt;
+
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-2&quot; id=&quot;checkbox-2&quot; checked=&quot;checked&quot;/&gt;
 &lt;label for=&quot;checkbox-2&quot;&gt;Banana&lt;/label&gt;
 </pre>
@@ -132,12 +133,13 @@
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
-&lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;checkbox-1&quot;),
-       checkboxWidget = tau.widget.Checkbox(element);
-   checkboxWidget.disable();
-&lt;/script&gt;
+&lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var element = document.getElementById(&quot;checkbox-1&quot;),
+    checkboxWidget = tau.widget.Checkbox(element);
+
+checkboxWidget.disable();
 </pre>
 		</div>
 
@@ -189,11 +191,13 @@
 							prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
 &lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;checkbox-1&quot;),
-       checkboxWidget = tau.widget.Checkbox(element);
-   checkboxWidget.enable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var element = document.getElementById(&quot;checkbox-1&quot;),
+    checkboxWidget = tau.widget.Checkbox(element);
+
+checkboxWidget.enable();
 </pre>
 		</div>
 
@@ -244,15 +248,16 @@
 							prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-1&quot; id=&quot;checkbox-1&quot;/&gt;
 &lt;label for=&quot;checkbox-1&quot;&gt;Normal&lt;/label&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;checkbox-1&quot;),
-       checkboxWidget = tau.widget.Checkbox(element);
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var element = document.getElementById(&quot;checkbox-1&quot;),
+    checkboxWidget = tau.widget.Checkbox(element);
 
-   /* Set value to checkbox element */
-   checkboxWidget.value("checkbox-value");
-   /* Return checked checkbox element */
-   console.log(checkboxWidget.value());
-&lt;/script&gt;
+/* Set value to checkbox element */
+checkboxWidget.value("checkbox-value");
+/* Return checked checkbox element */
+console.log(checkboxWidget.value());
 </pre>
 		</div>
 
