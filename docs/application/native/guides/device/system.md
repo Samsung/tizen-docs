@@ -163,7 +163,7 @@ The following table lists the accessibility feature keys:
 
 | Key                                     | Type   | Description                              |
 |-----------------------------------------|--------|------------------------------------------|
-| `http://tizen.org/feature/accessibility.grayscale`` | `bool` | The platform returns `true` for this key, if the device supports the accessibility grayscale feature. |
+| `http://tizen.org/feature/accessibility.grayscale` | `bool` | The platform returns `true` for this key, if the device supports the accessibility grayscale feature. |
 | `http://tizen.org/feature/accessibility.negative` | `bool` | The platform returns `true` for this key, if the device supports the accessibility negative feature. |
 
 
