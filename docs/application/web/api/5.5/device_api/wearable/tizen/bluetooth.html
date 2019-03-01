@@ -55,10 +55,10 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <li>
                     1.3. <a href="#BluetoothSocketState">BluetoothSocketState</a>
 </li>
-<li>
+<li class="deprecated">
                     1.4. <a href="#BluetoothProfileType">BluetoothProfileType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.5. <a href="#BluetoothHealthChannelType">BluetoothHealthChannelType</a>
 </li>
 <li>
@@ -122,13 +122,13 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 </li>
 <li>2.23. <a href="#BluetoothServiceHandler">BluetoothServiceHandler</a>
 </li>
-<li>2.24. <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a>
+<li class="deprecated">2.24. <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a>
 </li>
-<li>2.25. <a href="#BluetoothHealthProfileHandler">BluetoothHealthProfileHandler</a>
+<li class="deprecated">2.25. <a href="#BluetoothHealthProfileHandler">BluetoothHealthProfileHandler</a>
 </li>
-<li>2.26. <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a>
+<li class="deprecated">2.26. <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a>
 </li>
-<li>2.27. <a href="#BluetoothHealthChannel">BluetoothHealthChannel</a>
+<li class="deprecated">2.27. <a href="#BluetoothHealthChannel">BluetoothHealthChannel</a>
 </li>
 <li>2.28. <a href="#BluetoothAdapterChangeCallback">BluetoothAdapterChangeCallback</a>
 </li>
@@ -142,11 +142,11 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 </li>
 <li>2.33. <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a>
 </li>
-<li>2.34. <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a>
+<li class="deprecated">2.34. <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a>
 </li>
-<li>2.35. <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a>
+<li class="deprecated">2.35. <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a>
 </li>
-<li>2.36. <a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a>
+<li class="deprecated">2.36. <a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a>
 </li>
 </ul>
 </li>
@@ -205,8 +205,6 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <div>void <a href="#BluetoothAdapter::createBonding">createBonding</a> (<a href="#BluetoothAddress">BluetoothAddress</a> address, <a href="#BluetoothDeviceSuccessCallback">BluetoothDeviceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#BluetoothAdapter::destroyBonding">destroyBonding</a> (<a href="#BluetoothAddress">BluetoothAddress</a> address, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#BluetoothAdapter::registerRFCOMMServiceByUUID">registerRFCOMMServiceByUUID</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>
-<a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> <a href="#BluetoothAdapter::getBluetoothProfileHandler">getBluetoothProfileHandler</a> (<a href="#BluetoothProfileType">BluetoothProfileType</a> profileType)</div>
 </td>
 </tr>
 <tr>
@@ -303,30 +301,6 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <td><div>void <a href="#BluetoothServiceHandler::unregister">unregister</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
 </tr>
 <tr>
-<td><a href="#BluetoothProfileHandler">BluetoothProfileHandler</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#BluetoothHealthProfileHandler">BluetoothHealthProfileHandler</a></td>
-<td>
-<div>void <a href="#BluetoothHealthProfileHandler::registerSinkApplication">registerSinkApplication</a> (unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#BluetoothHealthProfileHandler::connectToSource">connectToSource</a> (<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application, <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#BluetoothHealthApplication">BluetoothHealthApplication</a></td>
-<td><div>void <a href="#BluetoothHealthApplication::unregister">unregister</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
-</tr>
-<tr>
-<td><a href="#BluetoothHealthChannel">BluetoothHealthChannel</a></td>
-<td>
-<div>void <a href="#BluetoothHealthChannel::close">close</a> ()</div>
-<div>unsigned long <a href="#BluetoothHealthChannel::sendData">sendData</a> (byte[] data)</div>
-<div>void <a href="#BluetoothHealthChannel::setListener">setListener</a> (<a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a> listener)</div>
-<div>void <a href="#BluetoothHealthChannel::unsetListener">unsetListener</a> ()</div>
-</td>
-</tr>
-<tr>
 <td><a href="#BluetoothAdapterChangeCallback">BluetoothAdapterChangeCallback</a></td>
 <td>
 <div>void <a href="#BluetoothAdapterChangeCallback::onstatechanged">onstatechanged</a> (boolean powered)</div>
@@ -358,21 +332,6 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <tr>
 <td><a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a></td>
 <td><div>void <a href="#BluetoothServiceSuccessCallback::onsuccess">onsuccess</a> (<a href="#BluetoothServiceHandler">BluetoothServiceHandler</a> handler)</div></td>
-</tr>
-<tr>
-<td><a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a></td>
-<td><div>void <a href="#BluetoothHealthApplicationSuccessCallback::onsuccess">onsuccess</a> (<a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application)</div></td>
-</tr>
-<tr>
-<td><a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a></td>
-<td><div>void <a href="#BluetoothHealthChannelSuccessCallback::onsuccess">onsuccess</a> (<a href="#BluetoothHealthChannel">BluetoothHealthChannel</a> channel)</div></td>
-</tr>
-<tr>
-<td><a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a></td>
-<td>
-<div>void <a href="#BluetoothHealthChannelChangeCallback::onmessage">onmessage</a> (byte[] data)</div>
-<div>void <a href="#BluetoothHealthChannelChangeCallback::onclose">onclose</a> ()</div>
-</td>
 </tr>
 </tbody>
 </table>
@@ -416,11 +375,14 @@ OPEN - corresponds to opened bluetooth socket.            </li>
           </ul>
          </div>
 </div>
-<div class="enum" id="BluetoothProfileType">
+<div class="enum deprecated" id="BluetoothProfileType">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothProfileType"></a><h3>1.4. BluetoothProfileType</h3>
 <div class="brief">
  Specifies the Bluetooth profile.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  enum BluetoothProfileType { "HEALTH" };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -432,11 +394,14 @@ HEALTH - corresponds to health bluetooth profile type.            </li>
           </ul>
          </div>
 </div>
-<div class="enum" id="BluetoothHealthChannelType">
+<div class="enum deprecated" id="BluetoothHealthChannelType">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelType"></a><h3>1.5. BluetoothHealthChannelType</h3>
 <div class="brief">
  Specifies the channel type of health device profile.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  enum BluetoothHealthChannelType { "RELIABLE", "STREAMING" };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -1066,7 +1031,6 @@ catch (err)
                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback,
                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> getBluetoothProfileHandler(<a href="#BluetoothProfileType">BluetoothProfileType</a> profileType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2246,13 +2210,16 @@ function unregisterChatService()
 </pre>
 </div>
 </dd>
-<dt class="method" id="BluetoothAdapter::getBluetoothProfileHandler">
+<dt class="deprecated method" id="BluetoothAdapter::getBluetoothProfileHandler">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdapter::getBluetoothProfileHandler"></a><code><b><span class="methodName">getBluetoothProfileHandler</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Gets the profile handler for the given type.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> getBluetoothProfileHandler(<a href="#BluetoothProfileType">BluetoothProfileType</a> profileType);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5641,24 +5608,29 @@ function unRegisterChatService()
 </dl>
 </div>
 </div>
-<div class="interface" id="BluetoothProfileHandler">
+<div class="interface deprecated" id="BluetoothProfileHandler">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothProfileHandler"></a><h3>2.24. BluetoothProfileHandler</h3>
 <div class="brief">
  The BluetoothProfileHandler interface represents the Bluetooth profile handler.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothProfileHandler {
-    readonly attribute <a href="#BluetoothProfileType">BluetoothProfileType</a> profileType;
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
 <div class="attributes">
 <h4>Attributes</h4>
-<ul><li class="attribute" id="BluetoothProfileHandler::profileType">
+<ul><li class="attribute deprecated" id="BluetoothProfileHandler::profileType">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothProfileType </span><span class="name">profileType</span></span><div class="brief">
  The Bluetooth profile type.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
@@ -5681,18 +5653,16 @@ else
 </li></ul>
 </div>
 </div>
-<div class="interface" id="BluetoothHealthProfileHandler">
+<div class="interface deprecated" id="BluetoothHealthProfileHandler">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthProfileHandler"></a><h3>2.25. BluetoothHealthProfileHandler</h3>
 <div class="brief">
  This interface represents the handler of Bluetooth health device profile.
 The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getBluetoothProfileHandler()</em>.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothHealthProfileHandler : <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> {
-    void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback,
-                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application,
-                         <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5701,13 +5671,16 @@ The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getB
       <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="BluetoothHealthProfileHandler::registerSinkApplication">
+<dt class="deprecated method" id="BluetoothHealthProfileHandler::registerSinkApplication">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthProfileHandler::registerSinkApplication"></a><code><b><span class="methodName">registerSinkApplication</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Registers an application for the Sink role.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback, 
                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -5787,13 +5760,16 @@ healthProfileHandler.registerSinkApplication(
 </pre>
 </div>
 </dd>
-<dt class="method" id="BluetoothHealthProfileHandler::connectToSource">
+<dt class="deprecated method" id="BluetoothHealthProfileHandler::connectToSource">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthProfileHandler::connectToSource"></a><code><b><span class="methodName">connectToSource</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Connects to the health device which acts as the Source role.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application, 
                      <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -5899,16 +5875,15 @@ healthProfileHandler.registerSinkApplication(
 </dl>
 </div>
 </div>
-<div class="interface" id="BluetoothHealthApplication">
+<div class="interface deprecated" id="BluetoothHealthApplication">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplication"></a><h3>2.26. BluetoothHealthApplication</h3>
 <div class="brief">
  The BluetoothHealthApplication interface represents the Bluetooth health application.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothHealthApplication {
-    readonly attribute unsigned short dataType;
-    readonly attribute DOMString name;
-    [TreatNonCallableAsNull] attribute <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a>? onconnect raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5916,11 +5891,14 @@ healthProfileHandler.registerSinkApplication(
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="BluetoothHealthApplication::dataType">
+<li class="attribute deprecated" id="BluetoothHealthApplication::dataType">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">unsigned short </span><span class="name">dataType</span></span><div class="brief">
  The MDEP data type used for communication, which is referenced in the ISO/IEEE 11073-20601 spec.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="description">
             <p>
 For example, pulse oximeter is 4100 and blood pressure monitor is 4103.  See <a href="#BluetoothHealthApplication::onconnect">example</a>.
@@ -5930,19 +5908,25 @@ For example, pulse oximeter is 4100 and blood pressure monitor is 4103.  See <a 
  2.3.1
             </p>
 </li>
-<li class="attribute" id="BluetoothHealthApplication::name">
+<li class="attribute deprecated" id="BluetoothHealthApplication::name">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  The friendly name associated with sink application. See <a href="#BluetoothHealthApplication::onconnect">example</a>.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 </li>
-<li class="attribute" id="BluetoothHealthApplication::onconnect">
+<li class="attribute deprecated" id="BluetoothHealthApplication::onconnect">
 <span class="attrName"><span class="type">BluetoothHealthChannelSuccessCallback </span><span class="name">onconnect</span><span class="optional"> [nullable]</span></span><div class="brief">
  Called when a health device is connected successfully through this application.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="description">
             <p>
 By default, this attribute is set to null.
@@ -5988,13 +5972,16 @@ healthProfileHandler.registerSinkApplication(
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="BluetoothHealthApplication::unregister">
+<dt class="deprecated method" id="BluetoothHealthApplication::unregister">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplication::unregister"></a><code><b><span class="methodName">unregister</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Unregisters this application.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6107,20 +6094,15 @@ function stopSink()
 </dl>
 </div>
 </div>
-<div class="interface" id="BluetoothHealthChannel">
+<div class="interface deprecated" id="BluetoothHealthChannel">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannel"></a><h3>2.27. BluetoothHealthChannel</h3>
 <div class="brief">
  The BluetoothHealthChannel interface represents the Bluetooth health channel.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothHealthChannel {
-    readonly attribute <a href="#BluetoothDevice">BluetoothDevice</a> peer;
-    readonly attribute <a href="#BluetoothHealthChannelType">BluetoothHealthChannelType</a> channelType;
-    readonly attribute <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application;
-    readonly attribute boolean isConnected;
-    void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    unsigned long sendData(byte[] data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void setListener(<a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void unsetListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6128,38 +6110,50 @@ function stopSink()
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="BluetoothHealthChannel::peer">
+<li class="attribute deprecated" id="BluetoothHealthChannel::peer">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothDevice </span><span class="name">peer</span></span><div class="brief">
  The remote device to which this channel is connected. See <a href="#BluetoothHealthChannel::isConnected">example</a>.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 </li>
-<li class="attribute" id="BluetoothHealthChannel::channelType">
+<li class="attribute deprecated" id="BluetoothHealthChannel::channelType">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothHealthChannelType </span><span class="name">channelType</span></span><div class="brief">
  The type of this channel. See <a href="#BluetoothHealthChannel::isConnected">example</a>.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 </li>
-<li class="attribute" id="BluetoothHealthChannel::application">
+<li class="attribute deprecated" id="BluetoothHealthChannel::application">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothHealthApplication </span><span class="name">application</span></span><div class="brief">
  The health application which is used to communicate with the remote device. See <a href="#BluetoothHealthChannel::isConnected">example</a>.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 </li>
-<li class="attribute" id="BluetoothHealthChannel::isConnected">
+<li class="attribute deprecated" id="BluetoothHealthChannel::isConnected">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">isConnected</span></span><div class="brief">
  The flag indicating whether any remote device is connected.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
@@ -6194,14 +6188,17 @@ healthProfileHandler.registerSinkApplication(
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="BluetoothHealthChannel::close">
+<dt class="deprecated method" id="BluetoothHealthChannel::close">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannel::close"></a><code><b><span class="methodName">close</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Closes the connected channel.
 <em>BluetoothHealthChannel.isConnected</em> is changed to <var>false</var> and <em>BluetoothHealthChannelChangeCallback.onclose</em> is invoked when this channel is closed successfully.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void close();</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6255,13 +6252,16 @@ healthProfileHandler.registerSinkApplication(
 </pre>
 </div>
 </dd>
-<dt class="method" id="BluetoothHealthChannel::sendData">
+<dt class="deprecated method" id="BluetoothHealthChannel::sendData">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannel::sendData"></a><code><b><span class="methodName">sendData</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Sends data and returns the number of bytes actually written.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">unsigned long sendData(byte[] data);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6343,13 +6343,16 @@ healthProfileHandler.registerSinkApplication(
 </pre>
 </div>
 </dd>
-<dt class="method" id="BluetoothHealthChannel::setListener">
+<dt class="deprecated method" id="BluetoothHealthChannel::setListener">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannel::setListener"></a><code><b><span class="methodName">setListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Sets the listener to receive notifications.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void setListener(<a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a> listener);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6424,13 +6427,16 @@ healthProfileHandler.registerSinkApplication(
 </pre>
 </div>
 </dd>
-<dt class="method" id="BluetoothHealthChannel::unsetListener">
+<dt class="deprecated method" id="BluetoothHealthChannel::unsetListener">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannel::unsetListener"></a><code><b><span class="methodName">unsetListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Unsets the listener. This stops receiving notifications.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void unsetListener();</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6853,13 +6859,15 @@ After that, this device is no longer visible.
 </dl>
 </div>
 </div>
-<div class="interface" id="BluetoothHealthApplicationSuccessCallback">
+<div class="interface deprecated" id="BluetoothHealthApplicationSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplicationSuccessCallback"></a><h3>2.34. BluetoothHealthApplicationSuccessCallback</h3>
 <div class="brief">
  The BluetoothHealthApplicationSuccessCallback interface that defines the success method for <a href="#BluetoothHealthProfileHandler::registerSinkApplication">BluetoothHealthProfileHandler.registerSinkApplication()</a>.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthApplicationSuccessCallback {
-    void onsuccess(<a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6870,13 +6878,16 @@ After that, this device is no longer visible.
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="BluetoothHealthApplicationSuccessCallback::onsuccess">
+<dt class="deprecated method" id="BluetoothHealthApplicationSuccessCallback::onsuccess">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplicationSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when the application is registered successfully.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6894,13 +6905,15 @@ After that, this device is no longer visible.
 </dl>
 </div>
 </div>
-<div class="interface" id="BluetoothHealthChannelSuccessCallback">
+<div class="interface deprecated" id="BluetoothHealthChannelSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelSuccessCallback"></a><h3>2.35. BluetoothHealthChannelSuccessCallback</h3>
 <div class="brief">
  The BluetoothHealthChannelSuccessCallback interface that defines the success method for <a href="#BluetoothHealthProfileHandler::connectToSource">BluetoothHealthProfileHandler.connectToSource()</a> and the event callback for <a href="#BluetoothHealthApplication::onconnect">BluetoothHealthApplication.onconnect()</a>.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthChannelSuccessCallback {
-    void onsuccess(<a href="#BluetoothHealthChannel">BluetoothHealthChannel</a> channel);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6911,13 +6924,16 @@ After that, this device is no longer visible.
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="BluetoothHealthChannelSuccessCallback::onsuccess">
+<dt class="deprecated method" id="BluetoothHealthChannelSuccessCallback::onsuccess">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelSuccessCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when a connection is established.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#BluetoothHealthChannel">BluetoothHealthChannel</a> channel);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6935,14 +6951,15 @@ After that, this device is no longer visible.
 </dl>
 </div>
 </div>
-<div class="interface" id="BluetoothHealthChannelChangeCallback">
+<div class="interface deprecated" id="BluetoothHealthChannelChangeCallback">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelChangeCallback"></a><h3>2.36. BluetoothHealthChannelChangeCallback</h3>
 <div class="brief">
  The BluetoothHealthChannelChangeCallback interface specifies a set of methods to be invoked when the changes of heath channel occur.
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+          </p>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface BluetoothHealthChannelChangeCallback {
-    void onmessage(byte[] data);
-    void onclose();
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6953,13 +6970,16 @@ After that, this device is no longer visible.
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="BluetoothHealthChannelChangeCallback::onmessage">
+<dt class="deprecated method" id="BluetoothHealthChannelChangeCallback::onmessage">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelChangeCallback::onmessage"></a><code><b><span class="methodName">onmessage</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when the message is received.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onmessage(byte[] data);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6974,13 +6994,16 @@ After that, this device is no longer visible.
         </ul>
 </div>
 </dd>
-<dt class="method" id="BluetoothHealthChannelChangeCallback::onclose">
+<dt class="deprecated method" id="BluetoothHealthChannelChangeCallback::onclose">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelChangeCallback::onclose"></a><code><b><span class="methodName">onclose</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when the health channel is closed.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated Since 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onclose();</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -7025,8 +7048,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   typedef DOMString BluetoothAddress;
   typedef DOMString BluetoothUUID;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
-  enum BluetoothProfileType { "HEALTH" };
-  enum BluetoothHealthChannelType { "RELIABLE", "STREAMING" };
   typedef DOMString BluetoothLESolicitationUUID;
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
@@ -7093,7 +7114,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback,
                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> getBluetoothProfileHandler(<a href="#BluetoothProfileType">BluetoothProfileType</a> profileType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothLEAdapter {
     void startScan(<a href="#BluetoothLEScanCallback">BluetoothLEScanCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -7291,31 +7311,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     [TreatNonCallableAsNull] attribute <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a>? onconnect raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [NoInterfaceObject] interface BluetoothProfileHandler {
-    readonly attribute <a href="#BluetoothProfileType">BluetoothProfileType</a> profileType;
-  };
-  [NoInterfaceObject] interface BluetoothHealthProfileHandler : <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> {
-    void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback,
-                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application,
-                         <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface BluetoothHealthApplication {
-    readonly attribute unsigned short dataType;
-    readonly attribute DOMString name;
-    [TreatNonCallableAsNull] attribute <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a>? onconnect raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface BluetoothHealthChannel {
-    readonly attribute <a href="#BluetoothDevice">BluetoothDevice</a> peer;
-    readonly attribute <a href="#BluetoothHealthChannelType">BluetoothHealthChannelType</a> channelType;
-    readonly attribute <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application;
-    readonly attribute boolean isConnected;
-    void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    unsigned long sendData(byte[] data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void setListener(<a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void unsetListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Callback, NoInterfaceObject] interface BluetoothAdapterChangeCallback {
     void onstatechanged(boolean powered);
@@ -7339,16 +7334,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothServiceSuccessCallback {
     void onsuccess(<a href="#BluetoothServiceHandler">BluetoothServiceHandler</a> handler);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthApplicationSuccessCallback {
-    void onsuccess(<a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthChannelSuccessCallback {
-    void onsuccess(<a href="#BluetoothHealthChannel">BluetoothHealthChannel</a> channel);
-  };
-  [Callback, NoInterfaceObject] interface BluetoothHealthChannelChangeCallback {
-    void onmessage(byte[] data);
-    void onclose();
   };
 };</pre>
 </div>
