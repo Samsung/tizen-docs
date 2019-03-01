@@ -1476,13 +1476,3 @@ window['PR_SHOULD_USE_CONTINUATION'] = true;
         'PR_TYPE': PR_TYPE
     };
 })();
-
-var jqueryjsElement = document.createElement("script");
-jqueryjsElement.src = "/application/native/api/mobile/3.0/jquery.js";
-jqueryjsElement.type = "text/javascript";
-document.getElementsByTagName("head")[0].appendChild(jqueryjsElement);
-
-var navtreejsElement = document.createElement("script");
-navtreejsElement.src = "/application/web/api/3.0/scripts/navtree.js";
-navtreejsElement.type = "text/javascript";
-document.getElementsByTagName("head")[0].appendChild(navtreejsElement);
