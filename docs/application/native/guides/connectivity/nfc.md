@@ -98,6 +98,13 @@ The main features of the NFC API include:
 
   ![HCE routing](./media/nfc_hce_routing.png)
 
+  > **Note**
+  >
+  > Pay attention to the following:
+  > - HCE operation requires launching HCE application in Tizen Application Framework. Because of this, enough time is required for the data to be transferred to the application.
+  > - If you consider time efficient, we recommend that you don't create HCE applications and communicate with the Secure Elements provided in the device.
+  > - Alternatively, make sure that the HCE application is always in the launching state.
+
 ## Prerequisites
 
 To enable your application to use the NFC functionality:
