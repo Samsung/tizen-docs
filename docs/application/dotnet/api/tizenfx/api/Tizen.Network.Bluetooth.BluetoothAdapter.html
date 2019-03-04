@@ -509,62 +509,6 @@ or the socket create error occurs.</p>
       </tr>
     </tbody>
   </table>
-  <a id="Tizen_Network_Bluetooth_BluetoothAdapter_DestroyServerSocket_" data-uid="Tizen.Network.Bluetooth.BluetoothAdapter.DestroyServerSocket*"></a>
-  <h4 id="Tizen_Network_Bluetooth_BluetoothAdapter_DestroyServerSocket_Tizen_Network_Bluetooth_BluetoothServerSocket_" data-uid="Tizen.Network.Bluetooth.BluetoothAdapter.DestroyServerSocket(Tizen.Network.Bluetooth.BluetoothServerSocket)">DestroyServerSocket(BluetoothServerSocket)</h4>
-  <div class="markdown level1 summary"><p>Removes the rfcomm server socket which was created using CreateServerSocket().</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void DestroyServerSocket(BluetoothServerSocket socket)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Tizen.Network.Bluetooth.BluetoothServerSocket.html">BluetoothServerSocket</a></td>
-        <td><span class="parametername">socket</span></td>
-        <td><p>The server socket instance is created using CreateServerSocket().</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Tizen_Network_Bluetooth_BluetoothAdapter_DestroyServerSocket_Tizen_Network_Bluetooth_BluetoothServerSocket__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>The socket must be created with CreateServerSocket(). The ConnectionStateChanged event is raised after this API is called.</p>
-</div>
-  
-  <h5 id="Tizen_Network_Bluetooth_BluetoothAdapter_DestroyServerSocket_Tizen_Network_Bluetooth_BluetoothServerSocket__sinceTizen" class="sinceTizen">API Version</h5>
-  <span class="level1 sinceTizen">3 </span>
-  
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
-        <td><p>Thrown when the Bluetooth is not supported.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
-        <td><p>Thrown when the Bluetooth is not enabled
-or the socket destroy error occurs.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="Tizen_Network_Bluetooth_BluetoothAdapter_GetBluetoothLeAdvertiser_" data-uid="Tizen.Network.Bluetooth.BluetoothAdapter.GetBluetoothLeAdvertiser*"></a>
   <h4 id="Tizen_Network_Bluetooth_BluetoothAdapter_GetBluetoothLeAdvertiser" data-uid="Tizen.Network.Bluetooth.BluetoothAdapter.GetBluetoothLeAdvertiser">GetBluetoothLeAdvertiser()</h4>
   <div class="markdown level1 summary"><p>Returns the BluetoothLeAdvertiser instance.</p>
