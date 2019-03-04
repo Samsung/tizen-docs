@@ -81,6 +81,15 @@ for TD:
 		</tr>
 		<tr>
 			<td>
+			<p><img alt="" height="225" src="media/tv38imagegallery.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) ImageGallery</strong> [In progress]</p>
+			<p>This sample application demonstrates how to create an image viewer using Tizen Content API.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			<p><img alt="" height="225" src="media/tv22mediacontent.png" width="400" /></p>
 			</td>
 			<td>
