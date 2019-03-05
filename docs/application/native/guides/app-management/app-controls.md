@@ -107,6 +107,10 @@ else
 
 app_control_destroy(app_control);
 ```
+> **Note**
+>
+> From Tizen 5.0 and onwards, two APIs whose callbacks have a result were added to return the result.
+> First among the two APIs is `app_control_send_launch_request_async()` that asynchronously launches application controls, while other API is `app_control_send_launch_request_sync()` that synchronously launches application controls.
 
 <a name="implicit"></a>
 ### Implicit Launch Request
