@@ -117,7 +117,7 @@ The next step is creating distributor certificate.
 
     - If you have selected an option to apply same password to the author certificate and to the distributor certificate [while entering author certificate information](#information_of_the_author_certicate), the password is already saved. If you want to change the password, type the new password for the distributor certificate.
 
-    - After the device is connected to the Host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your Host PC via USB or WiFi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see [How to connect the device to PC via WiFi](../test/testing-your-app-on-gear.md).
+    - After the device is connected to the Host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your Host PC via USB or WiFi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see [How to connect the device to PC via WiFi](../testing-your-app-on-gear.md).
 
     - When you need to register devices that are more than 10, upload a txt file using **Import a DUID list file** menu. 1 DUID on a line and max 50 DUIDs are be available.
 

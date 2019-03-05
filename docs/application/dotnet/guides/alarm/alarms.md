@@ -73,7 +73,7 @@ You can set an alarm which, when it expires, either launches an application or s
             AppControl appControl = new AppControl();
 
             appControl.Operation = AppControlOperations.Default;
-            appControl.ApplicationId = "org.tizen.alarmslave";
+            appControl.ApplicationId = "org.tizen.alarmslave";      
             ```
 
         2.  To schedule an alarm after a delay, use the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, with the initial delay, interval for subsequent alarms, and instance of the `Tizen.Applications.AppControl` class as parameters.
