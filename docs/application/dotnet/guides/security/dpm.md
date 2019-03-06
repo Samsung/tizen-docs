@@ -47,8 +47,9 @@ To manage device policies:
    ```
        MediaPolicy mediaPolicy = dpm.getPolicy<MediaPolicy>();
    ```
-   > **Note**  
-   > the DevicePolicyManager instance must exists when using the policy instance.
+   > **Note**
+   >
+   > The DevicePolicyManager instance must exist when you use the policy instance.
 
 3. Register an event handler to manage the policies of the policy instance:
 
@@ -88,8 +89,9 @@ To manage device policies:
    mediaPolicy.Dispose();
    dpm.Dispose();
    ```
-   > **Note**  
-   > The policy instance must be destroyed first.
+   > **Note**
+   >
+   > The policy instance must be destroyed before the DPM instance.
 
 ## Related Information
 - Dependencies
