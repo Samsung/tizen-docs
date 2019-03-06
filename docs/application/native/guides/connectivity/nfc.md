@@ -100,14 +100,13 @@ The main features of the NFC API include:
 
   > **Note**
   >
-  > Pay attention to the following:
-  > - HCE operation requires launching HCE application in Tizen Application Framework. Because of this, enough time is required for the data to be transferred to the application.
-  > - If you consider time efficient, we recommend that you don't create HCE applications and communicate with the Secure Elements provided in the device.
-  > - Alternatively, make sure that the HCE application is always in the launching state.
+  > - HCE operations begin with the launch of HCE application in Tizen Application Framework. With the execution of these operations, the data transfer to the application needs more time.
+  > - In case, you consider time efficiency, it is recommend not to create HCE applications and communicate with the Secure Elements provided in the device.
+  > - Alternatively, ensure that the HCE application is always in the launch state.
 
 ## Prerequisites
 
-To enable your application to use the NFC functionality:
+To enable use of NFC functionality in your application:
 
 1. To use the NFC API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
