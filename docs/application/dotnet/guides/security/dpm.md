@@ -48,7 +48,7 @@ To manage device policies:
        MediaPolicy mediaPolicy = dpm.getPolicy<MediaPolicy>();
    ```
    > **Note**  
-   > the DevicePolicyManager instance must exists when using the Policy instance.
+   > the DevicePolicyManager instance must exists when using the policy instance.
 
 3. Register an event handler to manage the policies of the policy instance:
 
