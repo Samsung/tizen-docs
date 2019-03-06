@@ -1,22 +1,24 @@
 # Device Policy Management
 
 
-The Device Policy Management (DPM) framework supports enterprise applications by providing IT administrators means to create security-aware applications. They are useful in situations where IT administrators require rich control over employee devices.
+The Device Policy Management (DPM) framework supports enterprise applications by providing IT(Information Technology) administrator functions to create security-aware applications. These applications are useful in scenarios where IT administrators require rich control over employee devices.
 
-DPM consists of a device policy client library and a device policy manager. The device policy manager manages all device policies and provides interfaces for the device policy client library. The device policy client library contains the device administration functions the client application can call. Internally, the device policy client library communicates with the device policy manager using a built-in remote method invocation engine.
+DPM framework consists of:
 
-The main features of the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace include:
+- **Device policy client library**: This contains all the device administration functions that a client application can call. The device policy client library communicates with the device policy manager using a built-in remote method invocation (RMI) engine.
+- **Device policy manager**: This manages all the device policies. It also provides interfaces for the device policy client library.
+
+The main features of the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace are:
 
 - Managing policies
 
-  You can [track the state between the device admin client and the device policy manager](#client_application) with the `DevicePolicyManager` class provided by the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace.
-
+  You can [track the state between the device admin client and the device policy manager](#client_application) using the `DevicePolicyManager` class provided by [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html).
 
 - Checking restrictions
 
-  You can [check the restriction states of the device](#client_application), such as camera, microphone, Wi-Fi, Bluetooth, and USB, using the properties of the each policy classes provided by the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace.
+  You can [check the restriction states of the device](#client_application), such as camera, microphone, Wi-Fi, Bluetooth, and USB, using the properties of the policy classes. [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) provides these policy classes.
 
-The following figure illustrates the DPM framework process.
+The following figure illustrates the DPM framework process:
 
 **Figure: DPM framework process**
 
@@ -24,7 +26,7 @@ The following figure illustrates the DPM framework process.
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namesapce, include in your application:
+To use the methods and properties of [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html), include the following in your application:
 
 ```
 using Tizen.Security.DevicePolicyManager;
@@ -35,24 +37,27 @@ using Tizen.Security.DevicePolicyManager;
 
 To manage device policies:
 
-1. Create a DevicePolicyManager instance:
+1. Create a `DevicePolicyManager` instance:
+
+   ```
+       DevicePolicyManager dpm = new DevicePolicyManager();
+   ```
+
+2. Get the policy instance using `getPolicy<T>()` of the DevicePolicyManager instance:
+   ```
+       MediaPolicy mediaPolicy = dpm.getPolicy<MediaPolicy>();
+   ```
+   > **Note**  
+   > the DevicePolicyManager instance must exists when using the Policy instance.
+
+3. Register an event handler to manage the policies of the policy instance:
 
    ```
    try
    {
        DevicePolicyManager dpm = new DevicePolicyManager();
-   ```
-
-2. Get the Policy instance using `getPolicy<T>()` method of the DevicePolicyManager instance:
-   ```
        MediaPolicy mediaPolicy = dpm.getPolicy<MediaPolicy>();
-   ```
-   > **Note**
-   > the DevicePolicyManager instance must exists when using the Policy instance.
 
-3. Register a event handler for managing policies to the Policy instance:
-
-   ```
        /// Register the event handler
        mediaPolicy.CameraPolicyChanged += onCameraPolicyChanged;
    }
@@ -77,16 +82,16 @@ To manage device policies:
    bool cameraPolicyState = mediaPolicy.IsCameraAllowed;
    ```
 
-5. When no longer needed, destroy the Policy instance and DPM instance:
+5. When no longer needed, destroy the policy instance and DPM instance:
 
    ```
    mediaPolicy.Dispose();
    dpm.Dispose();
    ```
-   > **Note**
-   > The Policy instance must be destroyed first.
+   > **Note**  
+   > The policy instance must be destroyed first.
 
 ## Related Information
 - Dependencies
-  - Tizen 5.5 and Higher for Mobile
-  - Tizen 5.5 and Higher for Wearable
+  - Tizen 5.5 and higher for Mobile
+  - Tizen 5.5 and higher for Wearable
