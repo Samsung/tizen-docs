@@ -1,7 +1,7 @@
 # Device Policy Management
 
 
-The Device Policy Management (DPM) framework supports enterprise applications by providing IT(Information Technology) administrator functions to create security-aware applications. These applications are useful in scenarios where IT administrators require rich control over employee devices.
+The Device Policy Management (DPM) framework supports enterprise applications by providing IT (Information Technology) administrator functions to create security-aware applications. These applications are useful in scenarios where IT administrators require rich control over employee devices.
 
 DPM framework consists of:
 
