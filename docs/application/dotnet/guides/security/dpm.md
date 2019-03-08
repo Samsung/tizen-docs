@@ -95,5 +95,4 @@ To manage device policies:
 
 ## Related Information
 - Dependencies
-  - Tizen 5.5 and higher for Mobile
-  - Tizen 5.5 and higher for Wearable
+  - Tizen 5.5 and Higher
