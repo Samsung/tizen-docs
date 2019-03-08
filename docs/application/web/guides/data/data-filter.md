@@ -332,7 +332,7 @@ The following tables list the filter types you can use with specific message att
 
 The following table lists the attributes by which `Message` objects may be filtered.
 
-**Table: Filter attributes for finding Messages**
+**Table: Attributes available for filters used in [findMessages()](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage::findMessages) and [addMessagesChangeListener()](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage::addMessagesChangeListener)**
 <a name="message-filters-table"></a>
 
 | Attribute        | Attribute filter supported | Attribute range filter supported |
@@ -342,7 +342,7 @@ The following table lists the attributes by which `Message` objects may be filte
 | `conversationId` | Yes                        | No                               |
 | `folderId`       | Yes                        | No                               |
 | `type`           | Yes                        | No                               |
-| `timestamp`      | No                         | Yes                              |
+| `timestamp`      | No<sup><a href="#messages-table-footnote">*</a></sup> | Yes   |
 | `from`           | Yes                        | No                               |
 | `to`             | Yes                        | No                               |
 | `cc`             | Yes                        | No                               |
@@ -354,18 +354,20 @@ The following table lists the attributes by which `Message` objects may be filte
 | `subject`        | Yes                        | No                               |
 | `inResponseTo`   | Yes                        | No                               |
 | `messageStatus`  | Yes                        | No                               |
-| `attachments`    | No                         | No                               |
+| `attachments`    | No<sup><a href="#messages-table-footnote">*</a></sup> | No    |
+
+<sup name="messages-table-footnote">*</sup> This attribute may be used in `AttributeFilter` with `EXISTS` match flag.
 
 The following table lists the attributes by which `MessageConversation` objects may be filtered.
 
-**Table: Filter attributes for finding conversations**
+**Table: Attributes available for filters used in [findConversations()](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage::findConversations) and [addConversationsChangeListener()](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage::addConversationsChangeListener)**
 <a name="conversation-filters-table"></a>
 
 | Attribute        | Attribute filter supported | Attribute range filter supported |
 | ---------------- | -------------------------- | -------------------------------- |
 | `id`             | Yes                        | No                               |
 | `type`           | Yes                        | No                               |
-| `timestamp`      | No                         | Yes                              |
+| `timestamp`      | No<sup><a href="#conversations-table-footnote">*</a></sup> | Yes|
 | `messageCount`   | Yes                        | Yes                              |
 | `unreadMessages` | Yes                        | Yes                              |
 | `preview`        | Yes                        | No                               |
@@ -377,9 +379,11 @@ The following table lists the attributes by which `MessageConversation` objects 
 | `bcc`            | Yes                        | No                               |
 | `lastMessageId`  | Yes                        | No                               |
 
+<sup name="conversations-table-footnote">*</sup> This attribute may be used in `AttributeFilter` with `EXISTS` match flag
+
 The following table lists the attributes by which `MessageFolder` objects may be filtered.
 
-**Table: Filter attributes for finding folders**
+**Table: Attributes available for filters used in [findFolders()](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage::findFolders) and [addFoldersChangeListener()](../../api/latest/device_api/mobile/tizen/messaging.html#MessageStorage::addFoldersChangeListener)**
 <a name="folder-filters-table"></a>
 
 | Attribute        | Attribute filter supported | Attribute range filter supported |
