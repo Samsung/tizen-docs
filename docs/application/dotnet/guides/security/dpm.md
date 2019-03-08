@@ -26,7 +26,7 @@ The following figure illustrates the DPM framework process:
 
 ## Prerequisites
 
-To use the methods and properties of [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html), include the following in your application:
+To use the methods and properties of the [Tizen.Security.DevicePolicyManager](https://samsung.github.io/TizenFX/master/api/Tizen.Security.DevicePolicyManager.html) namespace, include it in your application:
 
 ```
 using Tizen.Security.DevicePolicyManager;
