@@ -1,7 +1,7 @@
 # Tizen Window System Shell
 
 
-The TZSH is an interface for manipulating windows of the sytem GUI services such as the quickpanel and the softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
+The TZSH is an interface for manipulating windows of the system GUI services such as the quickpanel and the softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
 
 Since, the system GUI service runs different process, all of operations of the TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of the TZSH:
 
@@ -20,14 +20,14 @@ Not all applications require to use the TZSH's functionalities. However, in some
 
 ## Prerequisites
 
-To use the functions and structures of the tzsh-quickpanel API (in [mobile](../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) and [wearable](../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) applications), include the `<tzsh_quickpanel.h>` header file in your application:
+To use the functions and structures of the TZSH quickpanel API (in [mobile](../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) and [wearable](../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) applications), include the `<tzsh_quickpanel.h>` header file in your application:
 
 ```
 #include <tzsh_quickpanel.h>
 ```
 
 
-## Creating TZSH Quickpanel Handler
+## Create TZSH Quickpanel Handler
 Once you have created the main window for your application, call the `tzsh_quickpanel_create_with_type` function with a native window ID to create `tzsh_quickpanel_h` structure (in [mobile](../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) and [wearable](../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) applications).
 
 ```
@@ -61,7 +61,7 @@ init(const char *name)
 ```
 
 
-## Showing and Hiding Quickpanel Window
+## Show or Hide Quickpanel Window
 
 To show or hide quickpanel window when your application's window is activated, call the following functions:
 
@@ -72,7 +72,7 @@ To show or hide quickpanel window when your application's window is activated, c
      tzsh_quickpanel_hide(tzsh_qp); /* To hide quickpanel window */
 ```
 
-## Getting Visible Status of Quickpanel Window
+## Get Visiblility Status of Quickpanel Window
 To know the state of current visibility of quickpanel service's window, call the `tzsh_quickpanel_visible_get` function. The quickpanel service's window may be visible or invisible on the screen.
 
 ```
@@ -95,7 +95,7 @@ To know the state of current visibility of quickpanel service's window, call the
 ```
 
 
-## Registering Changed Event for the Quickpanel Window
+## Register a Changed Event for Quickpanel Window
 To be notified about the state changes, implement the appropriate event callback function and call the `tzsh_quickpanel_event_handler_add` function with that. If you want to change your application's behavior to match visibility of the quicknapel service's window, you need to handle state change event as follows:
 
 ```
@@ -135,7 +135,7 @@ init(Evas_Object *main_win)
 ```
 
 
-## Destroying TZSH Quickpanel and TZSH Structures
+## Destroy TZSH Quickpanel and TZSH Structures
 When TZSH quickpanel and TZSH structures are no longer needed, free the structures as follows:
 
 ```

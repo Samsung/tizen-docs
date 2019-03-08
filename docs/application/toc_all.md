@@ -511,6 +511,9 @@
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
 ###### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
+#### Tizen Window System Shell
+##### [Introduction](/application/native/guides/ui/tizen-ws-shell.md)
+
 ### Localization
 #### [Overview](/application/native/guides/internationalization/overview.md)
 #### [i18n](/application/native/guides/internationalization/i18n.md)
