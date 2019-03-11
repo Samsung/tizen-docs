@@ -72,7 +72,7 @@ To show or hide quickpanel window when your application's window is activated, c
      tzsh_quickpanel_hide(tzsh_qp); /* To hide quickpanel window */
 ```
 
-## Get Visiblility Status of Quickpanel Window
+## Get Visibility Status of Quickpanel Window
 To know the state of current visibility of quickpanel service's window, call the `tzsh_quickpanel_visible_get` function. The quickpanel service's window may be visible or invisible on the screen.
 
 ```
