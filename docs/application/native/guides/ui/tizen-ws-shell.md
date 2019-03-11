@@ -79,18 +79,15 @@ To know the state of current visibility of quickpanel service's window, call the
    tzsh_quickpanel_state_visible_e state;
 
    tzsh_quickpanel_visible_get(tzsh_qp, &state);
-   if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN)
-     {
-        /* visible state */
-     }
-   else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN)
-     {
-        /* invisible state */
-     }
-   else
-     {
-        /* error */
-     }
+   if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN) {
+     /* visible state */
+   }
+   else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN) {
+     /* invisible state */
+   }
+   else {
+     /* error */
+   }
 
 ```
 
@@ -110,18 +107,15 @@ ev_callback(int type, tzsh_quickpanel_event_info_h ev_info, void *data)
      return;
 
    tzsh_quickpanel_event_visible_get(ev_info, &state);
-   if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN)
-     {
-        /* visible state */
-     }
-   else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN)
-     {
-        /* invisible state */
-     }
-   else
-     {
-        /* error */
-     }
+   if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN) {
+     /* visible state */
+   }
+   else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN) {
+     /* invisible state */
+   }
+   else {
+     /* error */
+   }
 }
 
 static void
