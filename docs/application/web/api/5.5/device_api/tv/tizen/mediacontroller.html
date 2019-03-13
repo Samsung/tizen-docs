@@ -35,6 +35,9 @@ For more information on the Media Controller features, see <a href="https://deve
 <li>
                     1.2. <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a>
 </li>
+<li>
+                    1.3. <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a>
+</li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -96,7 +99,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerServer::updatePlaybackState">updatePlaybackState</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackPosition">updatePlaybackPosition</a> (unsigned long long position)</div>
 <div>void <a href="#MediaControllerServer::updateShuffleMode">updateShuffleMode</a> (boolean mode)</div>
-<div>void <a href="#MediaControllerServer::updateRepeatMode">updateRepeatMode</a> (boolean mode)</div>
+<div>void <a href="#MediaControllerServer::updateRepeatState">updateRepeatState</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state)</div>
 <div>void <a href="#MediaControllerServer::updateMetadata">updateMetadata</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
 <div>long <a href="#MediaControllerServer::addChangeRequestPlaybackInfoListener">addChangeRequestPlaybackInfoListener</a> (<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener)</div>
 <div>void <a href="#MediaControllerServer::removeChangeRequestPlaybackInfoListener">removeChangeRequestPlaybackInfoListener</a> (long watchId)</div>
@@ -118,7 +121,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerServerInfo::sendPlaybackState">sendPlaybackState</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendPlaybackPosition">sendPlaybackPosition</a> (unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendShuffleMode">sendShuffleMode</a> (boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#MediaControllerServerInfo::sendRepeatMode">sendRepeatMode</a> (boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MediaControllerServerInfo::sendRepeatState">sendRepeatState</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendCommand">sendCommand</a> (DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>long <a href="#MediaControllerServerInfo::addServerStatusChangeListener">addServerStatusChangeListener</a> (<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener)</div>
 <div>void <a href="#MediaControllerServerInfo::removeServerStatusChangeListener">removeServerStatusChangeListener</a> (long watchId)</div>
@@ -155,17 +158,17 @@ For more information on the Media Controller features, see <a href="https://deve
 <td>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onplaybackchanged">onplaybackchanged</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position)</div>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onshufflemodechanged">onshufflemodechanged</a> (boolean mode)</div>
-<div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged">onrepeatmodechanged</a> (boolean mode)</div>
+<div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">onrepeatstatechanged</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state)</div>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onmetadatachanged">onmetadatachanged</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
 </td>
 </tr>
 <tr>
 <td><a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a></td>
 <td>
-<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onplaybackstaterequest">onplaybackstaterequest</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state)</div>
-<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onplaybackpositionrequest">onplaybackpositionrequest</a> (unsigned long long position)</div>
-<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onshufflemoderequest">onshufflemoderequest</a> (boolean mode)</div>
-<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest">onrepeatmoderequest</a> (boolean mode)</div>
+<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onplaybackstaterequest">onplaybackstaterequest</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName)</div>
+<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onplaybackpositionrequest">onplaybackpositionrequest</a> (unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName)</div>
+<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onshufflemoderequest">onshufflemoderequest</a> (boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName)</div>
+<div>void <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatstaterequest">onrepeatstaterequest</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName)</div>
 </td>
 </tr>
 </tbody>
@@ -215,6 +218,29 @@ PREV - Corresponds to previous media controller playback state.            </li>
 FORWARD - Corresponds to forward media controller playback state..            </li>
             <li>
 REWIND - Corresponds to rewind media controller playback state..            </li>
+          </ul>
+         </div>
+</div>
+<div class="enum" id="MediaControllerRepeatState">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerRepeatState"></a><h3>1.3. MediaControllerRepeatState</h3>
+<div class="brief">
+ Defines states for repeating media.
+          </div>
+<pre class="webidl prettyprint">  enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="description">
+          <p>
+The possible states are:
+          </p>
+          <ul>
+            <li>
+REPEAT_OFF - repeating is disabled.            </li>
+            <li>
+REPEAT_ONE - repeating one media.            </li>
+            <li>
+REPEAT_ALL - repeating all media.            </li>
           </ul>
          </div>
 </div>
@@ -384,7 +410,7 @@ catch (err)
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -535,13 +561,16 @@ console.log("Current shuffle mode is: " + mcServer.playbackInfo.shuffleMode);
 </pre>
 </div>
 </dd>
-<dt class="method" id="MediaControllerServer::updateRepeatMode">
+<dt class="deprecated method" id="MediaControllerServer::updateRepeatMode">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateRepeatMode"></a><code><b><span class="methodName">updateRepeatMode</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Updates repeat mode and send notification to the listening clients.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 5.5. Instead, use <a href="#MediaControllerServer::updateRepeatState">updateRepeatState</a>.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void updateRepeatMode(boolean mode);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -567,6 +596,50 @@ console.log("Current shuffle mode is: " + mcServer.playbackInfo.shuffleMode);
 
 mcServer.updateRepeatMode(true);
 console.log("Current repeat mode is: " + mcServer.playbackInfo.repeatMode);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerServer::updateRepeatState">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateRepeatState"></a><code><b><span class="methodName">updateRepeatState</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Updates repeat state and sends notification to the listening clients.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">state</span>:
+ Repeat state to be set.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type AbortError, if any system error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcServer = tizen.mediacontroller.createServer();
+
+mcServer.updateRepeatState("REPEAT_ONE");
+console.log("Current repeat state is: " + mcServer.playbackInfo.repeatState);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Current repeat state is: REPEAT_ONE
 </pre>
 </div>
 </dd>
@@ -661,21 +734,21 @@ var mcServer = tizen.mediacontroller.createServer();
 
 var playbackRequestListener =
 {
-  onplaybackstaterequest: function(state)
+  onplaybackstaterequest: function(state, clientName)
   {
-    console.log("Playback state requested to: " + state);
+    console.log("Playback state requested to: " + state + " by " + clientName);
   },
-  onplaybackpositionrequest: function(position)
+  onplaybackpositionrequest: function(position, clientName)
   {
-    console.log("Playback position requested to: " + position);
+    console.log("Playback position requested to: " + position + " by " + clientName);
   },
-  onshufflemoderequest: function(mode)
+  onshufflemoderequest: function(mode, clientName)
   {
-    console.log("Shuffle mode requested to: " + mode);
+    console.log("Shuffle mode requested to: " + mode + " by " + clientName);
   },
-  onrepeatmoderequest: function(mode)
+  onrepeatstaterequest: function(state, clientName)
   {
-    console.log("Repeat mode requested to: " + mode);
+    console.log("Repeat state requested to: " + state + " by " + clientName);
   }
 };
 
@@ -722,21 +795,21 @@ var mcServer = tizen.mediacontroller.createServer();
 
 var playbackRequestListener =
 {
-  onplaybackstaterequest: function(state)
+  onplaybackstaterequest: function(state, clientName)
   {
-    console.log("Playback state requested to: " + state);
+    console.log("Playback state requested to: " + state + " by " + clientName);
   },
-  onplaybackpositionrequest: function(position)
+  onplaybackpositionrequest: function(position, clientName)
   {
-    console.log("Playback position requested to: " + position);
+    console.log("Playback position requested to: " + position + " by " + clientName);
   },
-  onshufflemoderequest: function(mode)
+  onshufflemoderequest: function(mode, clientName)
   {
-    console.log("Shuffle mode requested to: " + mode);
+    console.log("Shuffle mode requested to: " + mode + " by " + clientName);
   },
-  onrepeatmoderequest: function(mode)
+  onrepeatstaterequest: function(state, clientName)
   {
-    console.log("Repeat mode requested to: " + mode);
+    console.log("Repeat state requested to: " + state + " by " + clientName);
   }
 };
 
@@ -1008,8 +1081,8 @@ Provides methods to send commands to server and listen for server status change.
                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1228,13 +1301,16 @@ mcServerInfo.sendShuffleMode(true,
 </pre>
 </div>
 </dd>
-<dt class="method" id="MediaControllerServerInfo::sendRepeatMode">
+<dt class="deprecated method" id="MediaControllerServerInfo::sendRepeatMode">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendRepeatMode"></a><code><b><span class="methodName">sendRepeatMode</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Allows to change repeat mode of media controller server.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 5.5. Instead, use <a href="#MediaControllerServerInfo::sendRepeatState">sendRepeatState</a>.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1281,6 +1357,67 @@ mcServerInfo.sendRepeatMode(false,
     {
       console.log("Unable to change repeat mode: " + e.message);
     });
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerServerInfo::sendRepeatState">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendRepeatState"></a><code><b><span class="methodName">sendRepeatState</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Allows to change repeat state of media controller server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">state</span>:
+ Repeat state to be set.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when repeat state was changed.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke on operation failure.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type AbortError, if any system error occurs.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
+var mcServerInfo = mcClient.getLatestServerInfo();
+
+mcServerInfo.sendRepeatState("REPEAT_ALL",
+    function()
+    {
+      console.log("Repeat state changed");
+    },
+    function(e)
+    {
+      console.log("Unable to change repeat state: " + e.message);
+    });
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Repeat state changed
 </pre>
 </div>
 </dd>
@@ -1507,9 +1644,9 @@ var playbackListener =
   {
     console.log("Shuffle mode changed to: " + mode);
   },
-  onrepeatmodechanged: function(mode)
+  onrepeatstatechanged: function(state)
   {
-    console.log("Repeat mode changed to: " + mode);
+    console.log("Repeat state changed to: " + state);
   },
   onmetadatachanged: function(metadata)
   {
@@ -1571,9 +1708,9 @@ var playbackListener =
   {
     console.log("Shuffle mode changed to: " + mode);
   },
-  onrepeatmodechanged: function(mode)
+  onrepeatstatechanged: function(state)
   {
-    console.log("Repeat mode changed to: " + mode);
+    console.log("Repeat state changed to: " + state);
   },
   onmetadatachanged: function(metadata)
   {
@@ -1601,7 +1738,7 @@ mcServerInfo.removePlaybackInfoChangeListener(watcherId);
     readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
     readonly attribute unsigned long long position;
     readonly attribute boolean shuffleMode;
-    readonly attribute boolean repeatMode;
+    readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
   };</pre>
 <p><span class="version">Since: </span>
@@ -1637,13 +1774,44 @@ mcServerInfo.removePlaybackInfoChangeListener(watcherId);
  5.0
             </p>
 </li>
-<li class="attribute" id="MediaControllerPlaybackInfo::repeatMode">
+<li class="attribute deprecated" id="MediaControllerPlaybackInfo::repeatMode">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">boolean </span><span class="name">repeatMode</span></span><div class="brief">
  Current repeat mode.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 5.5. Instead, use <a href="#MediaControllerPlaybackInfo::repeatState">repeatState</a>.
+            </p>
+<div class="description">
+            <p>
+Any change in value of <em>repeatMode</em> will also change the value of <em>repeatState</em>.
+            </p>
+            <p>
+The <em>repeatMode</em> equal to <var>true</var> is equivalent to <em>repeatState</em> equal to <var>REPEAT_ALL</var> and
+<em>repeatMode</em> equal to <var>false</var> is equivalent to <em>repeatState</em> equal to <var>REPEAT_OFF</var>.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  5.0
+            </p>
+</li>
+<li class="attribute" id="MediaControllerPlaybackInfo::repeatState">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MediaControllerRepeatState </span><span class="name">repeatState</span></span><div class="brief">
+ Current repeat state.
+            </div>
+<div class="description">
+            <p>
+Any change in value of <em>repeatState</em> will also change the value of <em>repeatMode</em>, except the <var>REPEAT_ONE</var> value.
+In this case the <em>repeatMode</em> value will not change.
+            </p>
+            <p>
+The <em>repeatState</em> equals to <var>REPEAT_ALL</var> is equivalent to <em>repeatMode</em> equals to <var>true</var> and
+<em>repeatState</em> equals to <var>REPEAT_OFF</var> is equivalent to <em>repeatMode</em> equals to <var>false</var>.
+            </p>
+           </div>
+<p><span class="version">Since: </span>
+ 5.5
             </p>
 </li>
 <li class="attribute" id="MediaControllerPlaybackInfo::metadata">
@@ -1958,7 +2126,7 @@ object for receiving media controller playback info changes from server.
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
     void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
     void onshufflemodechanged(boolean mode);
-    void onrepeatmodechanged(boolean mode);
+    void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1972,7 +2140,7 @@ object for receiving media controller playback info changes from server.
 </dt>
 <dd>
 <div class="brief">
- Called when playback state or position changed.
+ Called when playback state or position is changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);</pre></div>
 <p><span class="version">Since: </span>
@@ -1997,7 +2165,7 @@ object for receiving media controller playback info changes from server.
 </dt>
 <dd>
 <div class="brief">
- Called when shuffle mode changed.
+ Called when shuffle mode is changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onshufflemodechanged(boolean mode);</pre></div>
 <p><span class="version">Since: </span>
@@ -2013,16 +2181,23 @@ object for receiving media controller playback info changes from server.
         </ul>
 </div>
 </dd>
-<dt class="method" id="MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged">
+<dt class="deprecated method" id="MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged"></a><code><b><span class="methodName">onrepeatmodechanged</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
- Called when repeat mode changed.
+ Called when repeat mode is changed.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 5.5. Instead, use <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">onrepeatstatechanged</a>.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onrepeatmodechanged(boolean mode);</pre></div>
 <p><span class="version">Since: </span>
  5.0
+            </p>
+<p><span class="remark">Remark: </span>
+ The <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged">onrepeatmodechanged</a> callback
+will not be invoked, if the <a href="#MediaControllerPlaybackInfo::repeatState">repeatState</a> is changed to <var>REPEAT_ONE</var>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2034,12 +2209,39 @@ object for receiving media controller playback info changes from server.
         </ul>
 </div>
 </dd>
+<dt class="method" id="MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged"></a><code><b><span class="methodName">onrepeatstatechanged</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when repeat state is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="description">
+            <p>
+It is guaranteed that the <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">onrepeatstatechanged</a> callback
+will be invoked after the <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatmodechanged">onrepeatmodechanged</a>.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">state</span>:
+ Current repeat state.
+                </li>
+        </ul>
+</div>
+</dd>
 <dt class="method" id="MediaControllerPlaybackInfoChangeCallback::onmetadatachanged">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback::onmetadatachanged"></a><code><b><span class="methodName">onmetadatachanged</span></b></code>
 </dt>
 <dd>
 <div class="brief">
- Called when playback metadata changed.
+ Called when playback metadata is changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);</pre></div>
 <p><span class="version">Since: </span>
@@ -2065,10 +2267,10 @@ object for receiving media controller playback info changes from server.
 object for receiving playback info change requests from client.
           </div>
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
-    void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);
-    void onplaybackpositionrequest(unsigned long long position);
-    void onshufflemoderequest(boolean mode);
-    void onrepeatmoderequest(boolean mode);
+    void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    void onplaybackpositionrequest(unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    void onshufflemoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    void onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
   };</pre>
 <p><span class="version">Since: </span>
  5.0
@@ -2083,9 +2285,12 @@ object for receiving playback info change requests from client.
 <div class="brief">
  Called when client requested playback state changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
 <p><span class="version">Since: </span>
  5.0
+            </p>
+<p><span class="remark">Remark: </span>
+ Parameter <em>clientName</em> is passed since Tizen 5.5.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2093,6 +2298,10 @@ object for receiving playback info change requests from client.
           <li class="param">
 <span class="name">state</span>:
  Current playback state.
+                </li>
+          <li class="param">
+<span class="name">clientName</span>:
+ Id of client application, which sent a command.
                 </li>
         </ul>
 </div>
@@ -2104,9 +2313,12 @@ object for receiving playback info change requests from client.
 <div class="brief">
  Called when client requested playback position changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onplaybackpositionrequest(unsigned long long position);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onplaybackpositionrequest(unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
 <p><span class="version">Since: </span>
  5.0
+            </p>
+<p><span class="remark">Remark: </span>
+ Parameter <em>clientName</em> is passed since Tizen 5.5.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2114,6 +2326,10 @@ object for receiving playback info change requests from client.
           <li class="param">
 <span class="name">position</span>:
  Current playback position.
+                </li>
+          <li class="param">
+<span class="name">clientName</span>:
+ Id of client application, which sent a command.
                 </li>
         </ul>
 </div>
@@ -2125,9 +2341,12 @@ object for receiving playback info change requests from client.
 <div class="brief">
  Called when client requested shuffle mode changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onshufflemoderequest(boolean mode);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onshufflemoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
 <p><span class="version">Since: </span>
  5.0
+            </p>
+<p><span class="remark">Remark: </span>
+ Parameter <em>clientName</em> is passed since Tizen 5.5.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2136,19 +2355,33 @@ object for receiving playback info change requests from client.
 <span class="name">mode</span>:
  Current shuffle mode.
                 </li>
+          <li class="param">
+<span class="name">clientName</span>:
+ Id of client application, which sent a command.
+                </li>
         </ul>
 </div>
 </dd>
-<dt class="method" id="MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest">
+<dt class="deprecated method" id="MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest"></a><code><b><span class="methodName">onrepeatmoderequest</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when client requested repeat mode changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onrepeatmoderequest(boolean mode);</pre></div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 5.5. Instead, use <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatstaterequest">onrepeatstaterequest</a>.
+            </p>
+<div class="synopsis"><pre class="signature prettyprint">void onrepeatmoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
 <p><span class="version">Since: </span>
  5.0
+            </p>
+<p><span class="remark">Remark: </span>
+ The <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest">onrepeatmoderequest</a> callback
+will not be invoked, if the <a href="#MediaControllerPlaybackInfo::repeatState">repeatState</a> is requested to be changed to <var>REPEAT_ONE</var>.
+            </p>
+<p><span class="remark">Remark: </span>
+ Parameter <em>clientName</em> is passed since Tizen 5.5.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2156,6 +2389,41 @@ object for receiving playback info change requests from client.
           <li class="param">
 <span class="name">mode</span>:
  Current repeat mode.
+                </li>
+          <li class="param">
+<span class="name">clientName</span>:
+ Client application id which sent command.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="MediaControllerChangeRequestPlaybackInfoCallback::onrepeatstaterequest">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback::onrepeatstaterequest"></a><code><b><span class="methodName">onrepeatstaterequest</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when client requested change of repeat state.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="description">
+            <p>
+It is guaranteed that the <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatstaterequest">onrepeatstaterequest</a> callback
+will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCallback::onrepeatmoderequest">onrepeatmoderequest</a>.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">state</span>:
+ Current repeat state.
+                </li>
+          <li class="param">
+<span class="name">clientName</span>:
+ Id of client application, which sent a command.
                 </li>
         </ul>
 </div>
@@ -2168,6 +2436,7 @@ object for receiving playback info change requests from client.
 <pre class="webidl prettyprint">module MediaController {
   enum MediaControllerServerState { "ACTIVE", "INACTIVE" };
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
+  enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };
   [NoInterfaceObject] interface MediaControllerObject {
     readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
   };
@@ -2181,7 +2450,7 @@ object for receiving playback info change requests from client.
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2203,8 +2472,8 @@ object for receiving playback info change requests from client.
                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2216,7 +2485,7 @@ object for receiving playback info change requests from client.
     readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
     readonly attribute unsigned long long position;
     readonly attribute boolean shuffleMode;
-    readonly attribute boolean repeatMode;
+    readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
   };
   [NoInterfaceObject] interface MediaControllerMetadata {
@@ -2247,14 +2516,14 @@ object for receiving playback info change requests from client.
   [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
     void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
     void onshufflemodechanged(boolean mode);
-    void onrepeatmodechanged(boolean mode);
+    void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
   };
   [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
-    void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state);
-    void onplaybackpositionrequest(unsigned long long position);
-    void onshufflemoderequest(boolean mode);
-    void onrepeatmoderequest(boolean mode);
+    void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    void onplaybackpositionrequest(unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    void onshufflemoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+    void onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
   };
 };</pre>
 </div>
