@@ -66,7 +66,6 @@ The main features of the NFC API include:
 
   > **Note**
   >
-  > Pay attention to the following:
   > - Secure element access is not supported in Tizen 2.3. The Card Emulation API of Tizen 2.3 only supports enabling and disabling the NFC card emulation mode, and retrieving the card emulation status.
   >
   > - Security problems can occur in some Card Emulation APIs. The security level can be determined by the manufacturer usage. If a security issue occurs, contact the product manufacturer. For more information on the security levels, see the [GSMA specification](http://www.gsma.com/digitalcommerce/wp-content/uploads/2013/12/GSMA-NFC05-NFC-Handset-APIs-Requirement-Specification-version-4-1.pdf).
@@ -106,7 +105,7 @@ The main features of the NFC API include:
 
 ## Prerequisites
 
-To enable use of NFC functionality in your application:
+To enable your application to use the NFC functionality:
 
 1. To use the NFC API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__NFC__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__NFC__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
