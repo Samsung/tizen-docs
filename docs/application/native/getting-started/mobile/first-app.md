@@ -12,6 +12,8 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
 2. [Create a mobile native project](#create) using the Tizen Studio.
 
+![test](media/simple_test1111.png)
+
     This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
 3. [Build the application](#build).
