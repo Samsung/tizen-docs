@@ -41,7 +41,7 @@ Playlist functionality has been added in Tizen 2.3.
 <h2>Table of Contents</h2>
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
-<li>
+<li class="deprecated">
                     1.1. <a href="#ContentDirectoryStorageType">ContentDirectoryStorageType</a>
 </li>
 <li>
@@ -219,11 +219,14 @@ Playlist functionality has been added in Tizen 2.3.
 </table>
 <div class="typedefs" id="typedefs-section">
 <h2>1. Type Definitions</h2>
-<div class="enum" id="ContentDirectoryStorageType">
+<div class="enum deprecated" id="ContentDirectoryStorageType">
 <a class="backward-compatibility-anchor" name="::Content::ContentDirectoryStorageType"></a><h3>1.1. ContentDirectoryStorageType</h3>
 <div class="brief">
  Defines whether a content directory is stored on internal or external storage (such as a removable memory card).
           </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 5.5.
+          </p>
 <pre class="webidl prettyprint">  enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };</pre>
 <p><span class="version">Since: </span>
  2.0
@@ -1902,7 +1905,6 @@ tizen.content.find(findCB);
     readonly attribute <a href="#ContentDirectoryId">ContentDirectoryId</a> id;
     readonly attribute DOMString directoryURI;
     readonly attribute DOMString title;
-    readonly attribute <a href="#ContentDirectoryStorageType">ContentDirectoryStorageType</a> storageType;
     readonly attribute Date? modifiedDate;
   };</pre>
 <p><span class="version">Since: </span>
@@ -1938,11 +1940,14 @@ tizen.content.find(findCB);
  2.0
             </p>
 </li>
-<li class="attribute" id="ContentDirectory::storageType">
+<li class="attribute deprecated" id="ContentDirectory::storageType">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ContentDirectoryStorageType </span><span class="name">storageType</span></span><div class="brief">
  The type of device storage.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 5.5.
+            </p>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -1967,7 +1972,7 @@ tizen.content.find(findCB);
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Content {
     readonly attribute DOMString[] editableAttributes;
     readonly attribute <a href="#ContentId">ContentId</a> id;
-    attribute DOMString name;
+    readonly attribute DOMString name;
     readonly attribute <a href="#ContentType">ContentType</a> type;
     readonly attribute DOMString mimeType;
     readonly attribute DOMString title;
@@ -1976,8 +1981,8 @@ tizen.content.find(findCB);
     readonly attribute Date? releaseDate;
     readonly attribute Date? modifiedDate;
     readonly attribute unsigned long size;
-    attribute DOMString? description;
-    attribute unsigned long rating;
+    readonly attribute DOMString? description;
+    readonly attribute unsigned long rating;
     attribute boolean isFavorite;
   };</pre>
 <p><span class="version">Since: </span>
@@ -2006,9 +2011,15 @@ tizen.content.find(findCB);
             </p>
 </li>
 <li class="attribute" id="Content::name">
-<span class="attrName"><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">name</span></span><div class="brief">
  The content name. The initial value is the file name of the content.
             </div>
+<div class="description">
+            <p>
+The attribute is marked as read-only since Tizen 5.5.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.1
             </p>
@@ -2087,17 +2098,29 @@ tizen.content.find(findCB);
             </p>
 </li>
 <li class="attribute" id="Content::description">
-<span class="attrName"><span class="type">DOMString </span><span class="name">description</span><span class="optional"> [nullable]</span></span><div class="brief">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">description</span><span class="optional"> [nullable]</span></span><div class="brief">
  The content description.
             </div>
+<div class="description">
+            <p>
+The attribute is marked as read-only since Tizen 5.5.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.0
             </p>
 </li>
 <li class="attribute" id="Content::rating">
-<span class="attrName"><span class="type">unsigned long </span><span class="name">rating</span></span><div class="brief">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">rating</span></span><div class="brief">
  The content rating. This value can range from <var>0</var> to <var>10</var>.
             </div>
+<div class="description">
+            <p>
+The attribute is marked as read-only since Tizen 5.5.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -2119,7 +2142,7 @@ tizen.content.find(findCB);
  The VideoContent interface extends a basic <em>Content </em>object with video-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface VideoContent : <a href="#Content">Content</a> {
-    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
     readonly attribute DOMString? album;
     readonly attribute DOMString[]? artists;
     readonly attribute unsigned long duration;
@@ -2134,9 +2157,15 @@ tizen.content.find(findCB);
 <h4>Attributes</h4>
 <ul>
 <li class="attribute" id="VideoContent::geolocation">
-<span class="attrName"><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
  The geographical location where the video has been made.
             </div>
+<div class="description">
+            <p>
+The attribute is marked as read-only since Tizen 5.5.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -2371,10 +2400,10 @@ If the lyrics are not synchronized, the array has only one member with full lyri
  The ImageContent interface extends a basic <em>Content </em>object with image-specific attributes.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface ImageContent : <a href="#Content">Content</a> {
-    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
     readonly attribute unsigned long width;
     readonly attribute unsigned long height;
-    attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
+    readonly attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
   };</pre>
 <p><span class="version">Since: </span>
  2.0
@@ -2384,9 +2413,15 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <h4>Attributes</h4>
 <ul>
 <li class="attribute" id="ImageContent::geolocation">
-<span class="attrName"><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">SimpleCoordinates </span><span class="name">geolocation</span><span class="optional"> [nullable]</span></span><div class="brief">
  The geographical location where the image has been made.
             </div>
+<div class="description">
+            <p>
+The attribute is marked as read-only since Tizen 5.5.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -2410,9 +2445,15 @@ If the lyrics are not synchronized, the array has only one member with full lyri
             </p>
 </li>
 <li class="attribute" id="ImageContent::orientation">
-<span class="attrName"><span class="type">ImageContentOrientation </span><span class="name">orientation</span></span><div class="brief">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ImageContentOrientation </span><span class="name">orientation</span></span><div class="brief">
  The image orientation.
             </div>
+<div class="description">
+            <p>
+The attribute is marked as read-only since Tizen 5.5.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  2.0
             </p>
@@ -3459,7 +3500,6 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Content {
-  enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };
   enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };
   enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };
   enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE",
@@ -3516,13 +3556,12 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute <a href="#ContentDirectoryId">ContentDirectoryId</a> id;
     readonly attribute DOMString directoryURI;
     readonly attribute DOMString title;
-    readonly attribute <a href="#ContentDirectoryStorageType">ContentDirectoryStorageType</a> storageType;
     readonly attribute Date? modifiedDate;
   };
   [NoInterfaceObject] interface Content {
     readonly attribute DOMString[] editableAttributes;
     readonly attribute <a href="#ContentId">ContentId</a> id;
-    attribute DOMString name;
+    readonly attribute DOMString name;
     readonly attribute <a href="#ContentType">ContentType</a> type;
     readonly attribute DOMString mimeType;
     readonly attribute DOMString title;
@@ -3531,12 +3570,12 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute Date? releaseDate;
     readonly attribute Date? modifiedDate;
     readonly attribute unsigned long size;
-    attribute DOMString? description;
-    attribute unsigned long rating;
+    readonly attribute DOMString? description;
+    readonly attribute unsigned long rating;
     attribute boolean isFavorite;
   };
   [NoInterfaceObject] interface VideoContent : <a href="#Content">Content</a> {
-    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
     readonly attribute DOMString? album;
     readonly attribute DOMString[]? artists;
     readonly attribute unsigned long duration;
@@ -3560,10 +3599,10 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute unsigned long duration;
   };
   [NoInterfaceObject] interface ImageContent : <a href="#Content">Content</a> {
-    attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
+    readonly attribute <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a>? geolocation;
     readonly attribute unsigned long width;
     readonly attribute unsigned long height;
-    attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
+    readonly attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
   };
   [NoInterfaceObject]
   interface PlaylistItem {
