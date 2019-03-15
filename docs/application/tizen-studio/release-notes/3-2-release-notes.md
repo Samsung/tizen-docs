@@ -1,6 +1,6 @@
 # Tizen Studio 3.2 Release Notes
 
--   Release Date: March 08, 2019
+-   Release Date: March 18, 2019
 
 
 ## IDE and Tools
