@@ -32,16 +32,20 @@
 <h2><a id="manual-constructor"></a>Manual Constructor</h2>
 <p>To manually create a colored list view component, use the component constructor from the <code>tau</code> namespace:</p>
 <p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+
+<p>HTML code:</p>
+
 <pre class="prettyprint">
 &lt;ul class=&quot;ui-colored-list&quot; id=&quot;coloredlist&quot;&gt;
    &lt;li class=&quot;ui-li-static&quot;&gt;Item&lt;/li&gt;
    &lt;li class=&quot;ui-li-static&quot;&gt;Item&lt;/li&gt;
    &lt;li class=&quot;ui-li-static&quot;&gt;Item&lt;/li&gt;
 &lt;/ul&gt;
-&lt;script&gt;
-   var elColoredList = document.getElementById(&quot;coloredlist&quot;),
-       coloredList = tau.widget.ColoredListview(elColoredList);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre name="code" class="examplecode prettyprint">
+var elColoredList = document.getElementById(&quot;coloredlist&quot;),
+    coloredList = tau.widget.ColoredListview(elColoredList);
 </pre>
 
 <h2><a id="options-list"></a>Options</h2>
