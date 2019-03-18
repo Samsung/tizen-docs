@@ -145,6 +145,7 @@ Basically, you search the content of the device for media items where the media 
 
        /* Filter for the image media type */
        var typeImageFilter = new tizen.AttributeFilter('type', 'EXACTLY', 'IMAGE');
+   }
    ```
 
 2. Create a composite filter that finds all content that matches one of the media type filters:
