@@ -59,6 +59,7 @@ To obtain the information, query a feature or system key.
    - [Sip](#sip)
    - [Speech](#speech)
    - [System setting](#systemsetting)
+   - [Thermistor](#thermistor)
    - [USB](#usb)
    - [Vibration](#vibration)
    - [Vision](#vision)
@@ -643,6 +644,17 @@ The following table lists the system setting feature keys:
 | `http://tizen.org/feature/systemsetting.incoming_call` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get a ringtone for all incoming calls. |
 | `http://tizen.org/feature/systemsetting.lock_screen` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get the lock screen wallpaper. |
 | `http://tizen.org/feature/systemsetting.notification_email` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get a ringtone for all email notifications. |
+
+The following table lists the thermistor feature keys:
+
+<a name="thermistor"></a>
+**Table: Thermistor feature keys**
+
+| Key                                      | Type   | Description                              |
+|------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/thermistor.ap` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the application processor. |
+| `http://tizen.org/feature/thermistor.cp` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the communications processor. |
+| `http://tizen.org/feature/thermistor.battery` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the battery. |
 
 The following table lists the USB feature keys:
 
