@@ -152,9 +152,13 @@ To configure the camera:
         ```
         public static void PreviewEventHandler(object sender, PreviewEventArgs e)
         {
-            /// Do something
+            if (e.Preview.PlaneType == PlaneType.RgbPlane)
+            {
+                /// Do something
+            }
         }
 
+        camera.Settings.PreviewPixelFormat = CameraPixelFormat.Rgba;
         camera.Preview += PreviewEventHandler;
         ```
 
