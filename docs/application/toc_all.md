@@ -50,7 +50,7 @@
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
 ### Natural User Interface
-#### [Overview](/application/dotnet/guides/nui/NUIoverview.md)
+#### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
 #### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
@@ -129,7 +129,7 @@
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
 
 ### Messaging
-#### [Overview](/application/dotnet/guides/messaing/overview.md)
+#### [Overview](/application/dotnet/guides/messaging/overview.md)
 #### [Email](/application/dotnet/guides/messaging/email.md)
 #### [Messages](/application/dotnet/guides/messaging/messages.md)
 #### [Push](/application/dotnet/guides/messaging/push.md)
@@ -807,7 +807,7 @@
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
 ### Media and Camera
-#### [Ovierview](/application/web/guides/multimedia/media.md)
+#### [Ovierview](/application/web/guides/multimedia/overview.md)
 #### [JPEG File EXIF Information](/application/web/guides/multimedia/jpeg-exif.md)
 #### [Audio Management](/application/web/guides/multimedia/audio.md)
 #### [Audio Latency](/application/web/guides/multimedia/player-util.md)
@@ -825,7 +825,7 @@
 #### [Content Downloads](/application/web/guides/connectivity/download.md)
 
 ### Messaging
-#### [Overview](/application/web/guides/messaging/messaging.md)
+#### [Overview](/application/web/guides/messaging/overview.md)
 #### [Messages](/application/web/guides/messaging/messages.md)
 #### [Push Notification](/application/web/guides/messaging/push.md)
 
@@ -920,12 +920,12 @@
 #### Location
 ##### [Geolocation API Specification](/application/web/guides/w3c/location/geolocation.md)
 #### Supplementary Features
-##### [Overview](/application/web/guides/w3c/supplement/supplement.md)
+##### [Overview](/application/web/guides/w3c/supplement/supplement-guide.md)
 ##### [Typed Array - Khronos](/application/web/guides/w3c/supplement/typedarray.md)
 ##### [WebGL - Khronos](/application/web/guides/w3c/supplement/webgl.md)
 ##### [FullScreen API - Mozilla](/application/web/guides/w3c/supplement/fullscreen.md)
 ##### [Camera API (Tizen Extension)](/application/web/guides/w3c/supplement/camera.md)
-##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/useful/sound-policy.md)
+##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/supplement/sound-policy.md)
 #### User Interface
 ##### [Overview](/application/web/guides/w3c/ui/ui-guide.md)
 ##### [HTML Priorities](/application/web/guides/w3c/ui/html-priority.md)
@@ -1116,12 +1116,6 @@
 #### [Flash the Project](/application/tizen-studio/rt-ide/getting-started/flash.md)
 #### [Use the Serial Terminal](/application/tizen-studio/rt-ide/getting-started/terminal.md)
 #### [Debug the Project](/application/tizen-studio/rt-ide/getting-started/debug.md)
-### SmartThings Extension
-#### [Overview](/application/tizen-studio/rt-ide/smartths-ext/overview.md)
-#### [Create a SmartThings Project](/application/tizen-studio/rt-ide/smartths-ext/create-smartths.md)
-#### [Build the SmartThings Project](/application/tizen-studio/rt-ide/smartths-ext/build-smartths.md)
-#### [Manage SmartThings Certificates](/application/tizen-studio/rt-ide/smartths-ext/certificate-smartths.md)
-#### [Device/Resource Model Manager](/application/tizen-studio/rt-ide/smartths-ext/model-manager.md)
 
 ## Release Notes
 ### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
