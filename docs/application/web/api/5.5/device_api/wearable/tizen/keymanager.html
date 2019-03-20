@@ -536,6 +536,7 @@ if (aliases.length != 0)
 <pre class="webidl prettyprint">  dictionary KeyManagerAlias {
     <a href="package.html#PackageId">PackageId</a> packageId;
     DOMString name;
+    boolean isProtected;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -566,6 +567,28 @@ If this attribute contains any spaces, the spaces will be removed. Characters wh
  3.0
             </p>
 </dd>
+<dt class="member" id="KeyManagerAlias::isProtected"><span class="attrName">boolean isProtected</span></dt>
+<dd>
+<div class="brief">
+ Flag indicating whether key is password-protected. This property is set only when returning object by
+<a href="#KeyManager::getDataAliasList">getDataAliasList()</a> method.
+In other methods which use this dictionary, the value is ignored.
+            </div>
+<div class="description">
+            <p>
+Possible values:
+            </p>
+            <ul>
+              <li>
+<var>true</var> - data under the alias is password-protected,              </li>
+              <li>
+<var>false</var> - data under the alias is not password-protected.              </li>
+            </ul>
+           </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</dd>
 </dl>
 </div>
 </div>
@@ -590,6 +613,7 @@ If this attribute contains any spaces, the spaces will be removed. Characters wh
   dictionary KeyManagerAlias {
     <a href="package.html#PackageId">PackageId</a> packageId;
     DOMString name;
+    boolean isProtected;
   };
 };</pre>
 </div>
