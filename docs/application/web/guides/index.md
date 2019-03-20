@@ -95,7 +95,7 @@ You can change and monitor playback volume level, and listen to the FM radio.
 </td>
 <td>
 
-- Guides: [Media and Camera](multimedia/overview..md)
+- Guides: [Media and Camera](multimedia/overview.md)
 - API Reference: [Multimedia](../api/latest/device_api/mobile/index.html#Multimedia)
 </td>
 </tr>
@@ -141,7 +141,7 @@ You can access the state of the device power resource, device system information
 
 - Guides:<br>
   [Device Settings and Systems](device/device.md) <br>
-  [Media and Camera](multimedia/overview..md) <br>
+  [Media and Camera](multimedia/overview.md) <br>
   [Sensors](sensors/sensors.md)<br>
 - API Reference: [System](../api/latest/device_api/mobile/index.html#System)
 </td>
@@ -263,7 +263,7 @@ You can change and monitor playback volume level, and listen to the FM radio.
 </td>
 <td>
 
-- Guides: [Media and Camera](multimedia/overview..md)
+- Guides: [Media and Camera](multimedia/overview.md)
 - API Reference: [Multimedia](../api/latest/device_api/wearable/index.html#Multimedia)
 </td>
 </tr>
@@ -309,7 +309,7 @@ You can access the state of the device power resource, device system information
 
 - Guides:<br>
   [Device Settings and Systems](device/device.md) <br>
-  [Media and Camera](multimedia/overview..md)<br>
+  [Media and Camera](multimedia/overview.md)<br>
   [Sensors](sensors/sensors.md)<br>
 - API Reference: [System](../api/latest/device_api/wearable/index.html#System)
 </td>
@@ -398,7 +398,7 @@ You can search and manage multimedia content locally, manipulate EXIF data in JP
 - Guides:<br>
   [Connectivity and Wireless](connectivity/connectivity.md)<br>
   [Data Storage and Management](data/data.md)<br>
-  [Media and Camera](multimedia/overview..md)
+  [Media and Camera](multimedia/overview.md)
 - API Reference: [Content](../api/latest/device_api/tv/index.html#Contents)
 </td>
 </tr>
