@@ -76,10 +76,8 @@ If you want to delete word block, you should press the backspace key. If you foc
 <p>To manually create a TextEnveloper component, use the component constructor from the tau namespace.</p>
 
 <pre class="prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById("textenveloper"),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
-&lt;/script&gt;
+var textEnveloperElement = document.getElementById("textenveloper"),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
 </pre>
 
 
@@ -218,12 +216,10 @@ textEnveloper.methodName(methodArgument1, methodArgument2, ...);
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
 
-   textEnveloper.add("hello");
-&lt;/script&gt;
+textEnveloper.add("hello");
 </pre>
 		</div>
 
@@ -285,12 +281,10 @@ textEnveloper.methodName(methodArgument1, methodArgument2, ...);
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
 
-   textEnveloper.remove(1);
-&lt;/script&gt;
+textEnveloper.remove(1);
 </pre>
 		</div>
 
@@ -342,16 +336,14 @@ textEnveloper.methodName(methodArgument1, methodArgument2, ...);
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement),
-       textTokenLength;
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement),
+    textTokenLength;
 
-   textEnveloper.add("hello1");
-   textEnveloper.add("hello2");
-   /* textTokenLength will be 2 */
-   textTokenLength = textEnveloper.length();
-&lt;/script&gt;
+textEnveloper.add("hello1");
+textEnveloper.add("hello2");
+/* textTokenLength will be 2 */
+textTokenLength = textEnveloper.length();
 </pre>
 		</div>
 

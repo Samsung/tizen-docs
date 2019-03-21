@@ -79,12 +79,14 @@
 
 <p>To manually create a toggle switch component, use the component constructor from the <strong>tau</strong> namespace:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;toggle-1&quot; id=&quot;toggle-1&quot; class=&quot;ui-toggleswitch&quot;/&gt;
 
-&lt;script&gt;
-   var toggleComponent = tau.widget.ToggleSwitch(document.getElementById(&quot;toggle-1&quot;));
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggleComponent = tau.widget.ToggleSwitch(document.getElementById(&quot;toggle-1&quot;));
 </pre>
 
 	<h2><a id="methods-list"></a>Methods</h2>
@@ -170,17 +172,19 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
    &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
    &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var toggle = document.getElementById(&quot;flip-11&quot;),
-       toggleWidget = tau.widget.ToggleSwitch(toggle);
-   toggleWidget.disable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggle = document.getElementById(&quot;flip-11&quot;),
+    toggleWidget = tau.widget.ToggleSwitch(toggle);
+toggleWidget.disable();
 </pre>
 						</div>
 
@@ -235,17 +239,19 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
    &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
    &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var toggle = document.getElementById(&quot;flip-11&quot;),
-       toggleWidget = tau.widget.ToggleSwitch(toggle);
-   toggleWidget.enable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggle = document.getElementById(&quot;flip-11&quot;),
+    toggleWidget = tau.widget.ToggleSwitch(toggle);
+toggleWidget.enable();
 </pre>
 						</div>
 
@@ -300,18 +306,20 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
    &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
    &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var toggle = document.getElementById(&quot;flip-11&quot;),
-       toggleWidget = tau.widget.ToggleSwitch(toggle),
-       toggleState = toggleWidget.value();
-   console.log(toggleState);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggle = document.getElementById(&quot;flip-11&quot;),
+    toggleWidget = tau.widget.ToggleSwitch(toggle),
+    toggleState = toggleWidget.value();
+console.log(toggleState);
 </pre>
 						</div>
 

@@ -71,6 +71,7 @@ var elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
 <br>
 <li>
 <p>To use page indicator with section changer component</p>
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;div class=&quot;ui-content&quot;&gt;
    &lt;div class=&quot;ui-page-indicator&quot; id=&quot;pageIndicator&quot; data-number-of-pages=&quot;4&quot; style=&quot;bottom: 0;&quot;&gt;&lt;/div&gt;
@@ -100,16 +101,17 @@ var elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
       &lt;/div&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var sectionChanger = document.getElementById(&quot;hsectionchanger&quot;),
-       elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
-       pageIndicator;
-   pageIndicator = tau.widget.PageIndicator(elPageIndicator);
-   sectionChanger.addEventListener(&quot;sectionchange&quot;, function(e)
-   {
-      pageIndicator.setActive(e.detail.active);
-   }, false);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var sectionChanger = document.getElementById(&quot;hsectionchanger&quot;),
+    elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
+    pageIndicator;
+pageIndicator = tau.widget.PageIndicator(elPageIndicator);
+sectionChanger.addEventListener(&quot;sectionchange&quot;, function(e)
+{
+   pageIndicator.setActive(e.detail.active);
+}, false);
 </pre>
 </li></ul>
 
