@@ -13,6 +13,7 @@
 ### [Testing with Smartthings App](/iot/getting-started/cloud-app-test.md)
 
 # API Guides
+## API Guides
 ## [Overview](/iot/guides/iot-api.md)
 ## Things SDK API
 ### [Overview](/iot/guides/things-api-5.0.md)
