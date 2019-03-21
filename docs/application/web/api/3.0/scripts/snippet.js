@@ -1476,3 +1476,13 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|\\!|\\!=|\\!==|\\#|\\%|\\%=|&|&&|&
         'PR_TYPE': PR_TYPE
       };
 })();
+
+var jqueryjsElement = document.createElement("script");
+jqueryjsElement.src = "/application/native/api/mobile/4.0/jquery.js";
+jqueryjsElement.type = "text/javascript";
+document.getElementsByTagName("head")[0].appendChild(jqueryjsElement);
+
+var navtreejsElement = document.createElement("script");
+navtreejsElement.src = "/application/web/api/4.0/scripts/navtree.js";
+navtreejsElement.type = "text/javascript";
+document.getElementsByTagName("head")[0].appendChild(navtreejsElement);

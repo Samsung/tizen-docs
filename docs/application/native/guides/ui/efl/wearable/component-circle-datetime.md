@@ -41,23 +41,11 @@ If the second parameter is `EINA_TRUE`, the circle datetime can receive rotary e
 
 To configure the circle properties of the circle datetime:
 
-- You can modify the circle object within the circle datetime component using the following functions:
+- You can disable the circle object within the circle datetime component using the following functions:
 
-  - `eext_circle_object_line_width_set()`
-  - `eext_circle_object_line_width_get()`
-  - `eext_circle_object_radius_set()`
-  - `eext_circle_object_radius_get()`
-  - `eext_circle_object_color_set()`
-  - `eext_circle_object_color_get()`
   - `eext_circle_object_disabled_set()`
   - `eext_circle_object_disabled_get()`
 
-- You can modify the circle datetime `default` item, which draws the marker.
-
-  To change the item properties, use the `eext_circle_object_item_XXX()` functions.
-
-For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
-
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 4.0 and Higher for Wearable

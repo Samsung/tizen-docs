@@ -19,7 +19,7 @@ To create a project from a remote Git repository:
    
       ![Opening the wizard](media/rt_remote_wizard.png)
 
-2. In the New TizenRT Project Wizard, you can select the Git import method:  
+2. In the TizenRT Git Project Wizard, you can select the Git import method:  
     - If you want to import from a new repository, [clone its URI](#using-the-clone-uri-option).
     - If you already cloned the Git repository you want, use an [existing local repository](#using-the-existing-local-repository-option).
 
@@ -156,7 +156,7 @@ When you hover over an API function in the Code Editor, you can move to the orig
 
 ### Using Outline View
 
-The **Outline** view displays the structure of the code that is currently opened in the Code Editor view.
+The **Outline** view displays the structure of the code that is currently opened in the Code Editor.
 
 ![Outline view](media/rt_outline_view.png)
 
