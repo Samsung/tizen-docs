@@ -14,19 +14,24 @@
 
 ## Tutorials
 
-### [Overview](/application/dotnet/index.md)
-### [Tizen .NET Features and Components](/application/dotnet/tutorials/details/features.md)
-### [Managed Runtime Advantages](/application/dotnet/tutorials/details/runtime.md)
+### [Overview](/application/dotnet/tutorials/overview.md)
+
 ### Getting the Certificates
 #### [Overview](/application/dotnet/tutorials/certificates/getting-the-certificates.md)
 #### [Installing Certificates Extension](/application/dotnet/tutorials/certificates/installing-certificate-extension.md)
 #### [Creating Certificates](/application/dotnet/tutorials/certificates/creating-certificates.md)
 #### [Permit Device To Install Applications](/application/dotnet/tutorials/certificates/permit-device-to-install-apps.md)
 #### [Managing Certificate Profile](/application/dotnet/tutorials/certificates/managing-certificate-profile.md)
-### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/test/testing-your-app-on-gear.md)
-### [Packaging a .NET and Web Hybrid Application](/application/dotnet/tutorials/hybrid/create-dotnet-hybrid-package.md)
-### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library/library-list.md)
-### [Security and API Privileges](/application/dotnet/getting-started/sec-privileges.md)
+
+### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/testing-your-app-on-gear.md)
+
+### [Packaging a .NET and Web Hybrid Application](/application/dotnet/tutorials/create-dotnet-hybrid-package.md)
+
+### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library-list.md)
+
+### [Application Filtering](/application/native/tutorials/details/app-filtering.md)
+
+### [Security and API Privileges](/application/dotnet/tutorials/sec-privileges.md)
 
 
 ## Guides
