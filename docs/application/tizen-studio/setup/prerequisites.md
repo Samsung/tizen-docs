@@ -10,17 +10,17 @@ Follow these instructions to install the appropriate JDK version for your system
 
 - Microsoft Windows&reg;
 
-  Download the JDK from the [official Oracle Web site](http://www.oracle.com/technetwork/java/javase/downloads/index.html). Select the appropriate platform for your hardware architecture and Windows&reg; version. Then, run the downloaded execution file and follow the displayed instructions.
+  Download the JDK from the [official Oracle Web site](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Select the appropriate platform for your hardware architecture and Windows&reg; version. Then, run the downloaded execution file and follow the displayed instructions.
 
 - macOS
 
-  Download the JDK from the [official Oracle Web site](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions to install the JDK.
+  Download the JDK from the [official Oracle Web site](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and follow the instructions to install the JDK.
 
   To support legacy Java software on macOS, you must download and install the Java for OS X 2015-001. Download it from [https://support.apple.com/kb/DL1572](https://support.apple.com/kb/DL1572).
 
 - Ubuntu
 
-  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8 or 9. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html))
+  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8 or 9. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 10 and OpenJFX Installation Guide](openjdk.md).
 
