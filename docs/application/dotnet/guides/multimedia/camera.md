@@ -11,7 +11,7 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
 -   Configure camera
 
-    You can [configure the camera](#configure_the_camera) and set the camera and auto-focus event handlers.
+    You can [configure the camera](#configure_the_camera) and set the camera and autofocus event handlers.
 
 -   Set the display for the camera preview
 
@@ -146,7 +146,7 @@ To configure the camera:
     The [Tizen.Multimedia.CameraPixelFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
 
 5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, autofocus, and capturing:
-    -   To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
+    -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
 
         ```
         public static void PreviewEventHandler(object sender, PreviewEventArgs e)
@@ -161,7 +161,7 @@ To configure the camera:
         camera.Preview += PreviewEventHandler;
         ```
 
-    -   To receive notifications about auto-focus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes.
+    -   <a name="callbacks_focus"></a>To receive notifications about autofocus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes.
 
         ```
         public static void FocusStateChangedEventHandler(object sender, CameraFocusStateChangedEventArgs e)
@@ -172,7 +172,7 @@ To configure the camera:
         camera.FocusStateChanged += FocusStateChangedEventHandler;
         ```
 
-        Before autofocusing starts, the auto-focus state is `Released`. After the `StartFocusing()` method is called, the camera starts autofocusing and the state changes to `Ongoing`. If autofocusing finishes successfully, the state changes to `Focused`. If autofocusing fails, the state changes to `Failed`.
+        Before autofocusing starts, the autofocus state is `Released`. After the `StartFocusing()` method is called, the camera starts autofocusing and the state changes to `Ongoing`. If autofocusing finishes successfully, the state changes to `Focused`. If autofocusing fails, the state changes to `Failed`.
 
     -   To receive a captured still image, register an event handler for the `Capturing` event. The event handler is invoked once for each captured frame, and is used to get information about the captured image.
 
@@ -346,11 +346,11 @@ To take a photo:
 
     After starting the camera preview, the application flows as follows:
 
-    1.  During the camera preview, the application calls the [camera preview event handler](#configure_the_camera) for each frame.
-    2.  The camera preview event handler calls the `StartFocusing()` method, which starts the auto-focusing process.
-    3.  During auto-focusing, as the auto-focus state changes, the application calls the [camera auto-focus event handler](#configure_the_camera).
+    1.  During the camera preview, the application calls the [camera preview event handler](#callbacks_preview) for each frame.
+    2.  The camera preview event handler calls the `StartFocusing()` method, which starts the autofocusing process.
+    3.  During autofocusing, as the autofocus state changes, the application calls the [camera autofocus event handler](#callbacks_focus).
 
-2.  When the preview and auto-focus processes are completed, the application can start image capturing.
+2.  When the preview and autofocus processes are completed, the application can start image capturing.
 
     To capture an image, use the `StartCapture()` method:
 
@@ -400,7 +400,7 @@ To set some attributes:
 
 After you have finished working with the camera, stop the camera and clean up the application environment:
 
-1.  If auto-focus is switched on, switch if off using the `StopFocusing()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
+1.  If autofocus is switched on, switch if off using the `StopFocusing()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
 
     ```
     camera.StopFocusing();
