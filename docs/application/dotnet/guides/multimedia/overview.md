@@ -1,7 +1,7 @@
 # Multimedia
 
 
-Multimedia features introduce how you can use multimedia features in your application.
+Multimedia features introduce how you can use multimedia in your application.
 
 You can use the following multimedia features in your .NET applications:
 
@@ -31,7 +31,7 @@ You can use the following multimedia features in your .NET applications:
 
 -   [Raw Audio Playback and Recording](raw-audio.md)
 
-    You can play and record uncompressed audio data both synchronously and asynchronously. You can record audio data from a microphone-type input device to a file.
+    You can play and record uncompressed audio data both synchronously and asynchronously. You can record audio data from a microphone type input device to a file.
 
 -   [Media Controller](media-controller.md)
 

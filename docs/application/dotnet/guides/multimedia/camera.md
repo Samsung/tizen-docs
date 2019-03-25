@@ -9,27 +9,27 @@ You can use basic camera features, including preview and capture. You can captur
 
 The main features of the `Tizen.Multimedia.Camera` class include:
 
--   Configuring the camera
+-   Configure camera
 
     You can [configure the camera](#configuring_callback) and set the camera and auto-focus event handlers.
 
--   Setting the display for the camera preview
+-   Set the display for the camera preview
 
     You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class. The feature provides:
 
     -   Support for several pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, and YUV420P
-    -   Preview at the frame rate
+    -   Preview at the frame rate, which you can set by 'PreviewFps' property.
     -   Rotation and flip of the preview
 
     You can also [customize the display settings for the camera preview](#display).
 
--   Capturing and saving images
+-   Capture and save images
 
     You can start the camera preview and [capture an image](#photo).
 
 -   Setting camera attributes
 
-    You can [control the camera settings](#attributes):
+    You can [control the following camera settings](#attributes):
 
     -   Contrast
     -   Exposure
@@ -41,11 +41,11 @@ The main features of the `Tizen.Multimedia.Camera` class include:
     -   Flash
     -   Focus
     -   Metering
-    -   EXIF tag (geo, orientation, software info and description)
+    -   EXIF tag (geo, orientation, software information and description)
     -   Scene mode, HDR, theater
     -   Image quality
 
-    Depending on the camera device type, the device can support different orientations, resolutions, or preview and capture formats. You can obtain this information from the device using the `SupportedPreviewResolutions`, `SupportedCapturePixelFormats`, or other `SupportedXXX` properties of the [Tizen.Multimedia.CameraCapabilities](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraCapabilities.html) class.
+    Depending on the camera device type, the device supports different orientations, resolutions, or preview and capture formats. You can obtain this information from the device using the `SupportedPreviewResolutions`, `SupportedCapturePixelFormats`, or other `SupportedXXX` properties of the [Tizen.Multimedia.CameraCapabilities](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraCapabilities.html) class.
 
     Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
@@ -56,7 +56,7 @@ The main features of the `Tizen.Multimedia.Camera` class include:
     > The behavior of the shutter sound can vary depending on the legislation of each country.
 
 
--   Releasing resources
+-   Release resources
 
     When you have finished working with the camera, you can [release the resources](#release).
 
@@ -83,7 +83,7 @@ To enable your application to use the camera functionality:
     }
     ```
 
-    The `CameraDevice.Rear` parameter means that the currently-activated device camera is the primary camera. You can select between the rear (primary) and front (secondary) camera. The available parameter values are defined in the [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration.
+    The `CameraDevice.Rear` parameter means that the currently activated device camera is the primary camera. You can select between the rear (primary) and front (secondary) camera. The available parameter values are defined in the [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration.
 
 2.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
 
@@ -97,7 +97,7 @@ To enable your application to use the camera functionality:
     The returned state is one of the values defined in the [Tizen.Multimedia.CameraState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraState.html) enumeration. If the state is not `Created`, re-initialize the camera by recreating the instance.
 
 <a name="configuring_callback"></a>
-## Configuring the Camera
+## Configure the Camera
 
 After setting up the necessary prerequisites, configure the camera and set the camera preview event handler.
 
@@ -113,7 +113,7 @@ To configure the camera:
 
 2.  Set the display for showing preview images by using the `Display` property of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class with 1 of the camera display types (`ElmSharp.Window` overlay or `Tizen.Multimedia.MediaView` EVAS surface).
 
-    The following examples set the display according to the above display types. The camera state must be `Created`.
+    The following examples set the display according to the display types. The camera state must be in the `Created`:
 
     ```
     /// Overlay display type
@@ -146,7 +146,7 @@ To configure the camera:
 
     The [Tizen.Multimedia.CameraPixelFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
 
-5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, auto-focus, and capturing:
+5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, autofocus, and capturing:
     -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
 
         ```
@@ -162,7 +162,7 @@ To configure the camera:
         camera.Preview += PreviewEventHandler;
         ```
 
-    -   <a name="callbacks_focus"></a>To receive notifications about auto-focus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the auto-focus state changes.
+    -   <a name="callbacks_focus"></a>To receive notifications about auto-focus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes.
 
         ```
         public static void FocusStateChangedEventHandler(object sender, CameraFocusStateChangedEventArgs e)
@@ -173,7 +173,7 @@ To configure the camera:
         camera.FocusStateChanged += FocusStateChangedEventHandler;
         ```
 
-        Before auto-focusing starts, the auto-focus state is `Released`. After the `StartFocusing()` method is called, the camera starts auto-focusing and the state changes to `Ongoing`. If auto-focusing finishes successfully, the state changes to `Focused`. If auto-focusing fails, the state changes to `Failed`.
+        Before autofocusing starts, the auto-focus state is `Released`. After the `StartFocusing()` method is called, the camera starts autofocusing and the state changes to `Ongoing`. If autofocusing finishes successfully, the state changes to `Focused`. If autofocusing fails, the state changes to `Failed`.
 
     -   To receive a captured still image, register an event handler for the `Capturing` event. The event handler is invoked once for each captured frame, and is used to get information about the captured image.
 
@@ -242,7 +242,7 @@ To customize the display settings:
 
     Once you know the active camera and its current orientation angle (or tilt), you can calculate how to rotate the display to match the camera orientation, and whether and how to flip the display to create the mirror effect if the front camera is active.
 
-    To correctly rotate the display as the camera orientation changes, think about the orientation and direction of the physical camera lens relative to the display. If the camera faces away from the display, the camera orientation is calculated clockwise across the display. If the camera faces the same way as the display, the camera orientation is calculated counter-clockwise across the display. For example, if the camera and display face in opposite directions, the right side of the image is at 90 degrees, and if the camera and display face in the same direction, the right side is at 270 degrees (360 - 90).
+    To correctly rotate the display as the camera orientation changes, think about the orientation and direction of the physical camera lens, relative to the display. If the camera faces away from the display, the camera orientation is calculated clockwise across the display. If the camera faces the same way as the display, the camera orientation is calculated counter-clockwise across the display. For example, if the camera and display face in opposite directions, the right side of the image is at 90 degrees, and if the camera and display face in the same direction, the right side is at 270 degrees (360 - 90).
 
 -   Display rotation
 
