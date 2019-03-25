@@ -11,7 +11,7 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
 -   Configure camera
 
-    You can [configure the camera](#configuring_callback) and set the camera and auto-focus event handlers.
+    You can [configure the camera](#configure_the_camera) and set the camera and auto-focus event handlers.
 
 -   Set the display for the camera preview
 
@@ -21,15 +21,15 @@ The main features of the `Tizen.Multimedia.Camera` class include:
     -   Preview at the frame rate, which you can set by 'PreviewFps' property.
     -   Rotation and flip of the preview
 
-    You can also [customize the display settings for the camera preview](#display).
+    You can also [customize the display settings for the camera preview](#setting_the_display_for_the_camera_preview).
 
 -   Capture and save images
 
-    You can start the camera preview and [capture an image](#photo).
+    You can start the camera preview and [capture an image](#taking_a_photo).
 
 -   Setting camera attributes
 
-    You can [control the following camera settings](#attributes):
+    You can [control the following camera settings](#setting_camera_attributes):
 
     -   Contrast
     -   Exposure
@@ -58,7 +58,7 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
 -   Release resources
 
-    When you have finished working with the camera, you can [release the resources](#release).
+    When you have finished working with the camera, you can [release the resources](#releasing_resources).
 
 The following figure illustrates the camera state changes in normal mode.
 
@@ -96,7 +96,6 @@ To enable your application to use the camera functionality:
 
     The returned state is one of the values defined in the [Tizen.Multimedia.CameraState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraState.html) enumeration. If the state is not `Created`, re-initialize the camera by recreating the instance.
 
-<a name="configuring_callback"></a>
 ## Configure the Camera
 
 After setting up the necessary prerequisites, configure the camera and set the camera preview event handler.
@@ -147,7 +146,7 @@ To configure the camera:
     The [Tizen.Multimedia.CameraPixelFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
 
 5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, autofocus, and capturing:
-    -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
+    -   To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
 
         ```
         public static void PreviewEventHandler(object sender, PreviewEventArgs e)
@@ -162,7 +161,7 @@ To configure the camera:
         camera.Preview += PreviewEventHandler;
         ```
 
-    -   <a name="callbacks_focus"></a>To receive notifications about auto-focus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes.
+    -   To receive notifications about auto-focus state changes, register an event handler for the `FocusStateChanged` event. The event handler is invoked every time the autofocus state changes.
 
         ```
         public static void FocusStateChangedEventHandler(object sender, CameraFocusStateChangedEventArgs e)
@@ -209,7 +208,7 @@ To configure the camera:
 
         camera.CaptureCompleted += CaptureCompletedEventHandler;
         ```
-<a name="display"></a>
+
 ## Setting the Display for the Camera Preview
 
 Before displaying the camera preview on the screen, check the camera display settings. You can use the default display settings provided by the Camera framework, or you can customize the display settings to meet your needs.
@@ -333,12 +332,11 @@ To customize the display settings:
 >
 > For an Evas surface, the Evas object for the camera display is rotated by the window manager used by the application, not by the `Rotation` property.
 
-<a name="photo"></a>
 ## Taking a Photo
 
 To take a photo:
 
-1.  [After configuring the camera](#configuring_callback), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
+1.  [After configuring the camera](#configure_the_camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
 
     ```
     camera.StartPreview();
@@ -348,9 +346,9 @@ To take a photo:
 
     After starting the camera preview, the application flows as follows:
 
-    1.  During the camera preview, the application calls the [camera preview event handler](#callbacks_preview) for each frame.
+    1.  During the camera preview, the application calls the [camera preview event handler](#configure_the_camera) for each frame.
     2.  The camera preview event handler calls the `StartFocusing()` method, which starts the auto-focusing process.
-    3.  During auto-focusing, as the auto-focus state changes, the application calls the [camera auto-focus event handler](#callbacks_focus).
+    3.  During auto-focusing, as the auto-focus state changes, the application calls the [camera auto-focus event handler](#configure_the_camera).
 
 2.  When the preview and auto-focus processes are completed, the application can start image capturing.
 
@@ -360,7 +358,6 @@ To take a photo:
     camera.StartCapture();
     ```
 
-<a name="attributes"></a>
 ## Setting Camera Attributes
 
 You can set various camera attributes with the [Tizen.Multimedia.CameraSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraSettings.html) class.
@@ -399,7 +396,6 @@ To set some attributes:
     camera.Settings.Brightness = brightnessRange.Min;
     ```
 
-<a name="release"></a>
 ## Releasing Resources
 
 After you have finished working with the camera, stop the camera and clean up the application environment:
