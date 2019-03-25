@@ -917,7 +917,7 @@
 ##### [Overview](/application/web/guides/w3c/perf-opt/performance-guide.md)
 ##### [Page Visibility](/application/web/guides/w3c/perf-opt/page.md)
 ##### [Timing control for script-based animations](/application/web/guides/w3c/perf-opt/timing-control.md)
-##### [Performance Improvement](/application/web/guides/w3c/perf-opt/performance.md)
+##### [Performance Improvement](/application/web/guides/w3c/perf-opt/performance-improvement.md)
 ##### [Web Workers](/application/web/guides/w3c/perf-opt/web-workers.md)
 ##### [JavaScript Performance Improvement](/application/web/guides/w3c/perf-opt/js-performance-improvement.md)
 ##### [JavaScript and CSS Minification](/application/web/guides/w3c/perf-opt/minify-js-css.md)
