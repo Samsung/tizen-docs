@@ -1108,7 +1108,7 @@
 
 ### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 ### [In-App Purchase Program Guide](/application/tizen-studio/extension-sdk/in-app-purchase.md)
-### [InMobi Tizen Ad SDK Program Guide](/application/tizen-studio/extension-sdk/inmovi.md)
+### [InMobi Tizen Ad SDK Program Guide](/application/tizen-studio/extension-sdk/inmobi.md)
 ### [VMAX Tizen Ad SDK Integration Guide](/application/tizen-studio/extension-sdk/vmax.md)
 
 ## RT IDE

@@ -211,7 +211,7 @@ To create InMobi Tizen ads in native applications:
         }
         ```
 
-     4. The adview can be swallowed in to the layout or can be shown as an overlay above the current layout. In the later case, application has to manage the show state of the adview explicitly. On successfull load of bannerad, banner_ad_load_request_succeeded callback will be triggered in which application needs to call the show of bannerad object using native api evas_object_show(). Also while navigating between the views or during loadFailure, application can choose to handle based on its logic, for example it can hide the adview by calling evas_object_hide() or it can show the adview with the old ad
+     4. The adview can be swallowed in to the layout or can be shown as an overlay above the current layout. In the later case, application has to manage the show state of the adview explicitly. On successful load of bannerad, banner_ad_load_request_succeeded callback will be triggered in which application needs to call the show of bannerad object using native api evas_object_show(). Also while navigating between the views or during loadFailure, application can choose to handle based on its logic, for example it can hide the adview by calling evas_object_hide() or it can show the adview with the old ad.
 
         ```
         void on_request_succeeded(Evas_Object *obj, void *userdata)
@@ -404,13 +404,13 @@ To create InMobi Tizen ads for Unity games:
         result = adobject.BannerAdSetRefreshInterval(adhandle, 40);
         ```
 
-     2. The game can positon ads at predefined positions using the BannerAdSetPosition() function. Adlib takes care of device orientation changes.
+     2. The game can position ads at predefined positions using the BannerAdSetPosition() function. Adlib takes care of device orientation changes.
 
         ```
         result = adobject.BannerAdSetPosition(adhandle, BANNER_AD_POS_TOP_CENTER);
         ```
 
-        The game can positon the ad to any (x, y) position using the BannerAdSetMove() function. The game is responsible for handling the device orientation changes in this situation.
+        The game can position the ad to any (x, y) position using the BannerAdSetMove() function. The game is responsible for handling the device orientation changes in this situation.
 
         ```
         result = adobject.BannerAdSetMove(adhandle, 100, 200);

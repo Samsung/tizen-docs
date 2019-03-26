@@ -24,7 +24,7 @@
 	-  Added support for Docker build.
 ### Fixed Bugs
 -   SmartThings
-	-   IoT applications can now be installed without the Cloud service cetificate and key.
+	-   IoT applications can now be installed without the Cloud service certificate and key.
 -   Package Manager
 	-   Added a label warning user to terminate all Tizen Studio tasks before installing or uninstalling any package.
 

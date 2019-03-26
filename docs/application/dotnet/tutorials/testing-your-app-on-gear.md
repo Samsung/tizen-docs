@@ -33,7 +33,7 @@ To debug an application on the Samsung Gear device:
 
 ![Connect Wi-fi Network](media/testing_your_app_on_gear6.png)
 
-![IP Adress](media/testing_your_app_on_gear7.png)
+![IP Address](media/testing_your_app_on_gear7.png)
 
 ## Debugging over Wi-Fi
 

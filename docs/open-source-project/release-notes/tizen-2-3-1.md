@@ -65,7 +65,7 @@ The Tizen 2.3.1 release provides developers with the Tizen kernel, device driver
   - On Windows, if a memory allocation error occurs while executing the Emulator, try the following: 
     - Close some other programs and try to launch the Emulator again
     - If the RAM size is set as 768 or 1024 MB for the VM in the Emulator Manager, change the RAM size to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by typing **bcdedit /set increaseuserva 3072** on the console with administrator rights (Windows 7 only) andreboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by typing **bcdedit /set increaseuserva 3072** on the console with administrator rights (Windows 7 only) and reboot.
   - If you use a MacBook Pro which has both Intel HD and NVidia GPUs, when you execute the Emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the Emulator may be unexpectedly terminated. Please use the **OpenGL ES ver. v2.0 & v3.0 **option.
   - The Dynamic Analyzer may not recognize the Emulator the first time but it will recognize it next time.
 
@@ -221,18 +221,28 @@ The Tizen platform provides native APIs for wearable native applications in this
 
 The following features have been added to the existing mobile web device APIs in this release:
 
-- NFC APIThe NFC host-based card emulation feature has been added.
-- Sensor APIRaw HRM sensor data retrieval feature has been added.
-- Sound APICheck whether a specific sound device type is connected has been added.
-- Bluetooth  APIAdvertising for remote devices (including Bluetooth LE devices) has been added.Feature to act as a GATT client (Generic Attribute Profile client) has been added.
+- NFC API
+
+  The NFC host-based card emulation feature has been added.
+
+- Sensor API
+
+  Raw HRM sensor data retrieval feature has been added.
+
+- Sound API
+
+  Check whether a specific sound device type is connected has been added.
+
+- Bluetooth API
+
+  Advertising for remote devices (including Bluetooth LE devices) has been added.Feature to act as a GATT client (Generic Attribute Profile client) has been added.
 
 ##### Native Framework
 
 The following features have been added to the existing mobile native APIs in this release:
 
 - Application Framework API module
-  - ##### Application model
-
+  - Application model
     - Widget application model has been added.
 - Base API module
   - i18n
@@ -442,9 +452,9 @@ The following features have been added to the existing mobile native APIs in thi
   - Emulator Manager can be closed  temporarily.
     - Condition
       - Run Emulator Manager
-      - Change the werable-2.3.1 profile into x86-standard from x86-circle
+      - Change the wearable-2.3.1 profile into x86-standard from x86-circle
       - Close the Emulator Manager and re-run
       - Select all tab on Emulator Manager
     - Solution
-      - Roll back the werable-2.3.1 profile into x86-circle
+      - Roll back the wearable-2.3.1 profile into x86-circle
 - Dynamic Analyzer failed to recognize emulator for 1st time only & later running fine.

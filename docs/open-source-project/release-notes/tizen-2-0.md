@@ -95,7 +95,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 - Web Runtime
 
-  - The partially supported W3C Widget URI scheme (to be replaced by a new URI scheme in the 2.1 release) has been depracated.
+  - The partially supported W3C Widget URI scheme (to be replaced by a new URI scheme in the 2.1 release) has been deprecated.
 
 - Web UI Framework
 

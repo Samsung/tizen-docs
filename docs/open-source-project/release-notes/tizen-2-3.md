@@ -77,7 +77,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 **Changed Features**
 
 - Webkit
-  - The unit of Media Query has been changed from phisical pixel to CSS pixel.
+  - The unit of Media Query has been changed from physical pixel to CSS pixel.
   - Now window.screen object returns the values in which the devicePixelRatio is reflected.
 
 ##### Native Framework
@@ -111,7 +111,7 @@ The Tizen 2.3 release provides developers with the Tizen kernel, device drivers,
 - Web UI Builder
   - Page Designer
     - Added page combo in toolbar.
-    - Added “Set positon” in context menu.
+    - Added “Set position” in context menu.
   - Pages View
     - Changed page template wizard. (create, import, export template wizard).
     - Changed context menu(“Add Basic Page” From “Add Empty Page”).
