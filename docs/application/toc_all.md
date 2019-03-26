@@ -732,6 +732,9 @@
 #### Text Input and Voice
 ##### [Overview](/application/native/guides/text-input/overview.md)
 ##### [Input Method](/application/native/guides/text-input/input-method.md)
+##### [Autofill](/application/native/guides/text-input/autofill.md)
+##### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
+##### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
 ##### [Speech-to-text](/application/native/guides/text-input/stt.md)
 ##### [Text-to-speech](/application/native/guides/text-input/tts.md)
 ##### [Voice Control](/application/native/guides/text-input/voice-control.md)
