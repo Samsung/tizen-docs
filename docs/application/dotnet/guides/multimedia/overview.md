@@ -1,9 +1,9 @@
-# Multimedia
+# Media and Camera
 
 
-Multimedia features introduce how you can use multimedia in your application.
+The media and camera features introduce how you can use multimedia features in your application.
 
-You can use the following multimedia features in your .NET applications:
+You can use the following media and camera features in your .NET applications:
 
 -   [Media Content and Metadata](media-content-metadata.md)
 

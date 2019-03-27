@@ -49,9 +49,9 @@ You can use the following TizenFX features in your .NET applications:
 
   The alarms and scheduling features introduce how you can define and store alarms.
 
-- [Multimedia](multimedia/overview.md)
+- [Media and Camera](multimedia/overview.md)
 
-  Multimedia features cover everything related to multimedia. You can record and play various media formats, use the device camera to take pictures, and listen to the radio. You can also handle media conversions and manage media streams.
+  The media and camera features cover everything related to multimedia. You can record and play various media formats, use the device camera to take pictures, and listen to the radio. You can also handle media conversions and manage media streams.
 
 - [Connectivity and Wireless](connectivity/overview.md)
 

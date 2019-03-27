@@ -94,7 +94,7 @@
 
 ### [Alarms](/application/dotnet/guides/alarm/alarms.md)
 
-### Multimedia
+### Media and Camera
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
 #### [Media Content and Metadata](/application/dotnet/guides/multimedia/media-content-metadata.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
@@ -806,7 +806,7 @@
 
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
-### Multimedia
+### Media and Camera
 #### [Ovierview](/application/web/guides/multimedia/media.md)
 #### [JPEG File EXIF Information](/application/web/guides/multimedia/jpeg-exif.md)
 #### [Audio Management](/application/web/guides/multimedia/audio.md)
