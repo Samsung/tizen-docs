@@ -9,27 +9,27 @@ You can use basic camera features, including preview and capture. You can captur
 
 The main features of the `Tizen.Multimedia.Camera` class include:
 
--   Configure camera
+-   Configuring the camera
 
-    You can [configure the camera](#configure_the_camera) and set the camera and autofocus event handlers.
+    You can [configure the camera](#configuring-the-camera) and set the camera and autofocus event handlers.
 
--   Set the display for the camera preview
+-   Setting the display for the camera preview
 
     You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class. The feature provides:
 
     -   Support for several pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, and YUV420P
-    -   Preview at the frame rate, which you can set by 'PreviewFps' property.
+    -   Preview at the frame rate, which you can set by `PreviewFps` property.
     -   Rotation and flip of the preview
 
-    You can also [customize the display settings for the camera preview](#setting_the_display_for_the_camera_preview).
+    You can also [customize the display settings for the camera preview](#setting-the-display-for-the-camera-preview).
 
--   Capture and save images
+-   Capturing and saving images
 
-    You can start the camera preview and [capture an image](#taking_a_photo).
+    You can start the camera preview and [capture an image](#taking-a-photo).
 
 -   Setting camera attributes
 
-    You can [control the following camera settings](#setting_camera_attributes):
+    You can [control the following camera settings](#setting-camera-attributes):
 
     -   Contrast
     -   Exposure
@@ -56,9 +56,9 @@ The main features of the `Tizen.Multimedia.Camera` class include:
     > The behavior of the shutter sound can vary depending on the legislation of each country.
 
 
--   Release resources
+-   Releasing resources
 
-    When you have finished working with the camera, you can [release the resources](#releasing_resources).
+    When you have finished working with the camera, you can [release the resources](#releasing-resources).
 
 The following figure illustrates the camera state changes in normal mode.
 
@@ -96,7 +96,7 @@ To enable your application to use the camera functionality:
 
     The returned state is one of the values defined in the [Tizen.Multimedia.CameraState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraState.html) enumeration. If the state is not `Created`, re-initialize the camera by recreating the instance.
 
-## Configure the Camera
+## Configuring the Camera
 
 After setting up the necessary prerequisites, configure the camera and set the camera preview event handler.
 
@@ -336,7 +336,7 @@ To customize the display settings:
 
 To take a photo:
 
-1.  [After configuring the camera](#configure_the_camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
+1.  [After configuring the camera](#configuring-the-camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
 
     ```
     camera.StartPreview();
