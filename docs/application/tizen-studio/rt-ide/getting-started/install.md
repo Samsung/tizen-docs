@@ -1,14 +1,14 @@
-# Install Tizen Studio for RT IDE
+# Install Tizen Studio for RT
 
-This section explains about the prerequisites required to install Tizen Studio for RT IDE. It also walks you through the installation steps.
+This section explains about the prerequisites required to install Tizen Studio for RT. It also walks you through the installation steps.
 
 ## Prerequisites
 
-Before installing Tizen Studio for RT IDE, ensure that the following prerequisites are met:
+Before installing Tizen Studio for RT, ensure that the following prerequisites are met:
 
 1. Download the appropriate JDK version from the [official Oracle website](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
    
-   The following table list the supported Ubuntu version and JDK version for the Tizen Studio with RT IDE:
+   The following table list the supported Ubuntu version and JDK version for the Tizen Studio with RT:
 
    **Table: Operating System Version and JDK Version**
    
@@ -27,9 +27,9 @@ Before installing Tizen Studio for RT IDE, ensure that the following prerequisit
 
  ![Docker](media\v2_install_docker.gif)
  
-## Install Tizen Studio for RT IDE
+## Install Tizen Studio for RT
 
-To install Tizen Studio for RT IDE:
+To install Tizen Studio for RT:
 
 1. Go to the [Download](https://developer.tizen.org/development/tizen-studio/download) page.
 
@@ -54,9 +54,9 @@ To install Tizen Studio for RT IDE:
     `./RT_Tizen_Studio_3.1_ubuntu-64.bin`
 
    
-## Launch Tizen Studio for RT IDE
+## Launch Tizen Studio for RT
 
-   After launching the Tizen Studio for RT IDE from the application shortcut, select a workspace for your development:
+   After launching the Tizen Studio for RT from the application shortcut, select a workspace for your development:
 
    ![Launch the IDE](./media/rt_install_launch.png)
 
