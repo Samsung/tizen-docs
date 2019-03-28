@@ -1,45 +1,67 @@
-# Installing Tizen Studio for RT
+# Install Tizen Studio for RT IDE
 
-To install the Tizen Studio for RT:
+This section explains about the prerequisites required to install Tizen Studio for RT IDE. It also walks you through the installation steps.
 
-1. Accept the software license.
+## Prerequisites
 
-   The license contains important legal notices for using the Tizen Studio. Read the complete agreement, and click **Accept** only if you agree with the license statement:
+Before installing Tizen Studio for RT IDE, ensure that the following prerequisites are met:
 
-   ![Software license agreement](./media/rt_install_license.png)
+1. Download the appropriate JDK version from the [official Oracle website](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
+   
+   The following table list the supported Ubuntu version and JDK version for the Tizen Studio with RT IDE:
 
-2. Configure the installation directory.
+   **Table: Operating System Version and JDK Version**
+   
+	
+     | Ubuntu Version|JDK Version  | 
+     |---------------|--------------|
+     | 16.04 or 18.04 | 8, 9, or 10 |
+   
+   ![JDK Installation](media\v1_install_jdk_10.gif)
+   
+2. Install the required prerequisite packages (`webkitgtk` and `cpio`) for developing applications:
 
-   The Tizen Studio for RT and its data directory are installed in the location specified in the Installation Settings step. To change the directory, click the **...** button and specify a new directory. If the new directory is valid, click **Install**:
+    `sudo apt-get install libwebkitgtk-1.0-0 cpio rpm2cpio`
 
-   ![Installation settings](./media/rt_install_settings.png)
+3. Install the required [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/) package for Ubuntu.
 
-3. Install the Tizen Studio for RT.
+ ![Docker](media\v2_install_docker.gif)
+ 
+## Install Tizen Studio for RT IDE
 
-   After you click **Install**, the installer installs the required packages and tools in the specified directory. You can monitor the installation process or cancel the installation. The installation process is completed in a few minutes, unless you cancel it.
+To install Tizen Studio for RT IDE:
 
-4. Install additional tools.
+1. Go to the [Download](https://developer.tizen.org/development/tizen-studio/download) page.
 
-   After the installation is finished, you can close the installer by clicking **Finish**:
+2. Select **Ubuntu** from the **Select OS** drop down list.
 
-   ![Installation complete](./media/rt_install_complete.png)
+3. Download **Tizen Studio 3.1 for RT IDE installer**.
 
-   If you want to install additional platforms and tools, launch the Package Manager by selecting the **Launch the Package Manager** checkbox before clicking **Finish**.
+4. On your Ubuntu system, open the terminal. 
 
-   Through the Tizen Studio Package Manager, you can install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](../../setup/update-sdk.md) and [Configuring the Package Manager](../../setup/advanced-configuration.md).
+   ![Download RT IDE](media\v3_download_rtide.gif)
 
-   ![Package Manager](./media/rt_install_package.png)
+5. Go to the directory where the installer is downloaded, and enter the `chmod +x` command to apply the execute permission to the installer file:
+    
+	`chmod +x tizen-sdk-3.1-ubuntu-64.bin./tizen-sdk-<version>-ubuntu<bits>.bin`
 
-5. Launch the Tizen Studio for RT.
+     For example, `chmod +x RT_Tizen_Studio_3.1_ubuntu-64.bin`.    
+	 
+	 ![Install RT IDE](media\v4_install_rtide.gif)
 
-   After launching the Tizen Studio for RT from the application shortcut, select a workspace for your development:
+6.	Execute the following command to launch:
+
+    `./RT_Tizen_Studio_3.1_ubuntu-64.bin`
+
+   
+## Launch Tizen Studio for RT IDE
+
+   After launching the Tizen Studio for RT IDE from the application shortcut, select a workspace for your development:
 
    ![Launch the IDE](./media/rt_install_launch.png)
 
-The following figure illustrates on launching the Tizen Studio for RT:
+The following figure illustrates launching Tizen Studio for RT IDE:
 
-![Launching the Tizen Studio for RT](./media/rt_running_studio.png)
+![Launching the Tizen Studio for RT IDE](./media/rt_running_studio.png)
 
-## Related information
-* Dependencies
-  - Ubuntu Only
+Tizen RT IDE is now installed.
