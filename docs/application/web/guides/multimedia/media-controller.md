@@ -240,17 +240,17 @@ To manage the media controller features in your application, you must learn to s
 
 <a name="setting_age_rating"></a>
 
-## Setting content age rating for the currently playing media
+## Setting Content Age Rating for the Currently Playing Media
 
 Server can set age rating for current playback. Client can access this rating (read-only) and perform some actions such as displaying a warning for underage users.
 
-1. On the server side:
+1. Setting content age rating on the server side:
 
     ```
     server.updatePlaybackAgeRating("18");
     ```
 
-2. On the client side:
+2. Accessing content age rating on the client side:
 
     ```
     var userAge = 17; // App developer should retrieve actual user age from user profile.
