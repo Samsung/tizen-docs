@@ -38,6 +38,9 @@ For more information on the Media Controller features, see <a href="https://deve
 <li>
                     1.3. <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a>
 </li>
+<li>
+                    1.4. <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a>
+</li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -98,6 +101,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <td>
 <div>void <a href="#MediaControllerServer::updatePlaybackState">updatePlaybackState</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackPosition">updatePlaybackPosition</a> (unsigned long long position)</div>
+<div>void <a href="#MediaControllerServer::updatePlaybackAgeRating">updatePlaybackAgeRating</a> (<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating)</div>
 <div>void <a href="#MediaControllerServer::updateShuffleMode">updateShuffleMode</a> (boolean mode)</div>
 <div>void <a href="#MediaControllerServer::updateRepeatState">updateRepeatState</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state)</div>
 <div>void <a href="#MediaControllerServer::updateMetadata">updateMetadata</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
@@ -242,6 +246,22 @@ REPEAT_ONE - repeating one media.            </li>
             <li>
 REPEAT_ALL - repeating all media.            </li>
           </ul>
+         </div>
+</div>
+<div class="enum" id="MediaControllerContentAgeRating">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentAgeRating"></a><h3>1.4. MediaControllerContentAgeRating</h3>
+<div class="brief">
+ Media Controller content age rating.
+          </div>
+<pre class="webidl prettyprint">  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+    "17", "18", "19" };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="description">
+          <p>
+Each value represents the minimum age restriction for the media.
+          </p>
          </div>
 </div>
 </div>
@@ -409,6 +429,7 @@ catch (err)
     readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -523,6 +544,52 @@ console.log("Current playback state is: " + mcServer.playbackInfo.state);
 
 mcServer.updatePlaybackPosition(164);
 console.log("Current playback position is: " + mcServer.playbackInfo.position);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerServer::updatePlaybackAgeRating">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackAgeRating"></a><code><b><span class="methodName">updatePlaybackAgeRating</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets content age rating for current playback item.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">rating</span>:
+ New age rating for current playback item.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
+server.updatePlaybackAgeRating("10");
+var client = tizen.mediacontroller.getClient();
+var sinfo = mcClient.getLatestServerInfo();
+console.log("Only viewers older than " + sinfo.playbackInfo.ageRating +
+            " are allowed to access this content.");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Only viewers older than 10 are allowed to access this content.
 </pre>
 </div>
 </dd>
@@ -1737,6 +1804,7 @@ mcServerInfo.removePlaybackInfoChangeListener(watcherId);
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerPlaybackInfo {
     readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
     readonly attribute unsigned long long position;
+    readonly attribute <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> ageRating;
     readonly attribute boolean shuffleMode;
     readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
@@ -1763,6 +1831,15 @@ mcServerInfo.removePlaybackInfoChangeListener(watcherId);
             </div>
 <p><span class="version">Since: </span>
  2.4
+            </p>
+</li>
+<li class="attribute" id="MediaControllerPlaybackInfo::ageRating">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MediaControllerContentAgeRating </span><span class="name">ageRating</span></span><div class="brief">
+ Current playback age rating.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
             </p>
 </li>
 <li class="attribute" id="MediaControllerPlaybackInfo::shuffleMode">
@@ -2437,6 +2514,8 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   enum MediaControllerServerState { "ACTIVE", "INACTIVE" };
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
   enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };
+  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+    "17", "18", "19" };
   [NoInterfaceObject] interface MediaControllerObject {
     readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
   };
@@ -2449,6 +2528,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2484,6 +2564,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   [NoInterfaceObject] interface MediaControllerPlaybackInfo {
     readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
     readonly attribute unsigned long long position;
+    readonly attribute <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> ageRating;
     readonly attribute boolean shuffleMode;
     readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;

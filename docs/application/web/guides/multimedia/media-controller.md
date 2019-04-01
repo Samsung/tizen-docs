@@ -29,6 +29,11 @@ The main features of the Media Controller API include:
 
   To [receive and handle incoming commands](#receive_custom_commands) in the server, use the `addCommandListener()` method.
 
+- Setting age rating for currently playing media
+
+  You can [set age rating for currently playing media](#setting_age_rating) by using updatePlaybackAgeRating() server method.
+
+
 ## Prerequisites
 
 To use the Media Controller API (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
@@ -231,6 +236,30 @@ To manage the media controller features in your application, you must learn to s
       ```
 
       The `watcherId` variable stores the value, which can be used in the future to remove the listener from the server using the `removeCommandListener()` method.
+
+
+<a name="setting_age_rating"></a>
+
+## Setting content age rating for the currently playing media
+
+Server can set age rating for current playback. Client can access this rating (read-only) and perform some actions such as displaying a warning for underage users.
+
+1. On the server side:
+
+    ```
+    server.updatePlaybackAgeRating("18");
+    ```
+
+2. On the client side:
+
+    ```
+    var userAge = 17; // App developer should retrieve actual user age from user profile.
+    var rating = serverInfo.playbackInfo.ageRating;
+    if (rating > userAge) {
+        console.log("Warning: this content has age rating " + rating + "+.";
+    }
+    ```
+
 
 ## Related Information
 * Dependencies      
