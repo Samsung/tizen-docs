@@ -11,7 +11,7 @@ The following useful background knowledge enables you to use DALi more effective
 
   Enabled you to manage properties that can be dynamically added to or removed from an existing object at runtime.
 
-- [Multi-threaded Architecture: Secret of DALi High-Performance](multi-threaded.md)
+- [Multi-threaded Architecture: Secret of DALi High-Performance](rendering-effects.md)
 
   Enables you to achieve the best performance and scalability.
 

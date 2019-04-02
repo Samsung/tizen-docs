@@ -620,7 +620,6 @@
 ###### Background Knowledge
 ####### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ####### [Properties](/application/native/guides/ui/dali/properties.md)
-####### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
 
 #### Localization
