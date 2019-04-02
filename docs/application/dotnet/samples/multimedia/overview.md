@@ -121,6 +121,27 @@ for TD:
 			</td>
 		</tr>
                 <tr>
+                        <td><img alt="" height="180" src="media/w62mediacodecsample.png" width="180"/></td>
+                        <td>
+                        <p><strong>(W) MediaCodecSample</strong> [In progress]</p>
+                        <p>This sample application demonstrates how to encode audio and video data using MediaCodec API.</p>
+                        </td>
+                </tr>
+                <tr>
+                        <td><img alt="" height="180" src="media/w61mediatoolsample.png" width="180"/></td>
+                        <td>
+                        <p><strong>(W) MediaToolSample</strong> [In progress]</p>
+                        <p>This sample application demonstrates how to create MediaFormat and MediaPacket using MediaTool API.</p>
+                        </td>
+                </tr>
+                <tr>
+                        <td><img alt="" height="180" src="media/w60playersample.png" width="180"/></td>
+                        <td>
+                        <p><strong>(W) PlayerSample</strong> [In progress]</p>
+                        <p>This sample application demonstrates how to create a music player using MediaPlayer API.</p>
+                        </td>
+                </tr>
+                <tr>
                         <td><img alt="" height="180" src="media/w40qrcodegenerator.png" width="180"/></td>
                         <td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/QRCodeGenerator" target="_blank"><strong>(W) QRCodeGenerator</strong></a></p>
@@ -142,6 +163,26 @@ for TD:
 <div class="tabcontent" id="TV">
 <table>
 	<tbody>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv39mediacontrolclient.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) MediaControlClient</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control MediaControlServer using Tizen.Multimedia.Remoting API.</p>
+			<p>This application is dedicated to control MediaControlServer service application.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Service application - no UI</p>
+			</td>
+			<td>
+			<p><strong>(T) MediaControlServer</strong> [In progress]</p>
+			<p>This sample application demonstrates how to set up a music player. It also shows how to control the music player using Tizen.Multimedia.Remoting API to play the stored music files.</p>
+			<p>MediaControlClient UI application is required to control this application.</p>
+			</td>
+		</tr>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv27musicplayer.png" width="400" /></p>

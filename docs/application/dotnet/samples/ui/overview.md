@@ -189,56 +189,56 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/w46_animationsample_nui.png" width="180"/></td>
 			<td>
-			<p><strong>(W) AnimationSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AnimationsSample" target="_blank"><strong>(W) AnimationSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to animate NUI objects using the NUI animation.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w47imagesample_nui.png" width="180"/></td>
 			<td>
-			<p><strong>(W) ImageSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ImageSample" target="_blank"><strong>(W) ImageSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to load and control images.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w48scriptlayoutsample_nui.png" width="180"/></td>
 			<td>
-			<p><strong>(W) ScriptLayoutSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ScriptLayoutSample" target="_blank"><strong>(W) ScriptLayoutSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to set the theme of an application using script file.
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/w49texteditorsample_nui.png" width="180"/></td>
+			<td><img alt="" height="180" src="media/w49texteditorsample_nui3.png" width="180"/></td>
 			<td>
-			<p><strong>(W) TextEditorSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/TextEditorSample" target="_blank"><strong>(W) TextEditorSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to control the TextEditor properties.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w50textfieldsample_nui.png" width="180"/></td>
 			<td>
-			<p><strong>(W) TextFieldSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/TextFieldSample" target="_blank"><strong>(W) TextFieldSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to control the TextField properties.</p>
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/w51textlabelsample_nui.png" width="180"/></td>
+			<td><img alt="" height="180" src="media/w51textlabelsample_nui2.png" width="180"/></td>
 			<td>
-			<p><strong>(W) TextLabelSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/TextLabelSample" target="_blank"><strong>(W) TextLabelSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to control the TextLabel properties.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w52uicontrolsample_nui.png" width="180"/></td>
 			<td>
-			<p><strong>(W) UIControlSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/UIControlSample" target="_blank"><strong>(W) UIControlSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to generate and control individual NUI UI control objects.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w53visualssample_nui.png" width="180"/></td>
 			<td>
-			<p><strong>(W) VisualsSample (NUI)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/VisualsSample" target="_blank"><strong>(W) VisualsSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to use various kinds of visuals.</p>
 			</td>
 		</tr>
@@ -367,7 +367,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv28ball3d.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) Ball3D (OpenTK)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Ball3D" target="_blank"><strong>(T) Ball3D (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to draw a spherical 3D model, add texture to the model, and realize rotation of the model.</p>
 			</td>
 		</tr>
@@ -376,7 +376,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv29cubetexture.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) CubeTexture (OpenTK)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/CubeTexture" target="_blank"><strong>(T) CubeTexture (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to draw a 3D model (cube), realize rotation of the model, and add texture to the model.</p>
                         <p>It also demonstrates how the application implements two cubes independently drawn using two programs.</p>
 			</td>
@@ -404,7 +404,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv31panorama.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) Panorama360 (OpenTK)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Panorama360" target="_blank"><strong>(T) Panorama360 (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to achieve 360-degree panorama effect.</p>
 			</td>
 		</tr>
@@ -413,7 +413,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv32particledynamic.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) ParticleDynamic (OpenTK)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/ParticleDynamic" target="_blank"><strong>(T) ParticleDynamic (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to implement a dynamic particle scenario.</p>
 			</td>
 		</tr>
@@ -422,7 +422,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv33scratchpaper.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) ScratchPaper (OpenTK)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/ScratchPaper" target="_blank"><strong>(T) ScratchPaper (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to respond to click events or button events and how to draw corresponding textures at the corresponding position on the screen.</p>
 			</td>
 		</tr>
@@ -431,7 +431,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv34star.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) Star (OpenTK)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Star" target="_blank"><strong>(T) Star (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to implement shaders loading, program creation, linking, vertex data loading, texture data loading, and other preliminary operations of drawing. It also demonstrates how to draw a multilateral graph (five-pointed star) with the DrawElements API.</p>
 			</td>
 		</tr>
@@ -440,7 +440,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv35triangle.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) Triangle (OpenTK)</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Triangle" target="_blank"><strong>(T) Triangle (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to implement shaders loading, program creation, linking, vertex data loading, texture data loading, and other preliminary operations of drawing. It also demonstrates how to implement a basic graph drawing (drawing triangles) with the DrawArrays API.</p>
 			</td>
 		</tr>
