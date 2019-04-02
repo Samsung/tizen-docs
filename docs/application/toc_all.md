@@ -614,7 +614,7 @@
 ####### [Constraints](/application/native/guides/ui/dali/constraints.md)
 ###### [Resources](/application/native/guides/ui/dali/resources.md)
 ###### Rendering and Effects
-####### [Overview](/application/native/guides/ui/dali/rendering-effects.md)
+####### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ####### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ####### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
 ###### Background Knowledge
