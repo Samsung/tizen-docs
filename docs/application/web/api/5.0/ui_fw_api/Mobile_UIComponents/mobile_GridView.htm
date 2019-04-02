@@ -37,6 +37,7 @@
 <h2><a id="manual-constructor"></a>Manual Constructor</h2>
 <p>To manually create a grid view component, use the component constructor from the <code>tau</code> namespace:</p>
 <p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;ul id=&quot;gridview&quot; class=&quot;ui-gridview&quot;&gt;
    &lt;li class=&quot;ui-gridview-item&quot;&gt;
@@ -56,10 +57,12 @@
       &lt;div class=&quot;ui-gridview-handler&quot;&gt;&lt;/div&gt;
    &lt;/li&gt;
 &lt;/ul&gt;
-&lt;script&gt;
-   var elGridView = document.getElementById(&quot;gridview&quot;),
-       gridView = tau.widget.GridView(elGridView);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elGridView = document.getElementById(&quot;gridview&quot;),
+    gridView = tau.widget.GridView(elGridView);
+
 </pre>
 
 <h2><a id="options-list"></a>Options</h2>
@@ -208,13 +211,11 @@ gridView.methodName(methodArgument1, methodArgument2, ...);
 	                            example:</p><p></p></span>
                             <pre name="code" class="examplecode
                             prettyprint">
-&lt;script&gt;
-   var elGridView = document.getElementById("gridview"),
-       gridView = tau.widget.GridView(elGridView),
-       item;
+var elGridView = document.getElementById("gridview"),
+    gridView = tau.widget.GridView(elGridView),
+    item;
 
-   gridView.addItem(item);
-&lt;/script&gt;
+gridView.addItem(item);
 </pre>
 		</div>
 	</dd>
@@ -267,13 +268,11 @@ gridView.methodName(methodArgument1, methodArgument2, ...);
 	                            example:</p><p></p></span>
                             <pre name="code" class="examplecode
                             prettyprint">
-&lt;script&gt;
-   var elGridView = document.getElementById("gridview"),
-       gridView = tau.widget.GridView(elGridView),
-       item;
+var elGridView = document.getElementById("gridview"),
+    gridView = tau.widget.GridView(elGridView),
+    item;
 
-   gridView.removeItem(item);
-&lt;/script&gt;
+gridView.removeItem(item);
 </pre>
 		</div>
 	</dd>

@@ -270,15 +270,17 @@ var sectionChangerEl = document.getElementById(&quot;sectionchanger&quot;),
 					<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div id=&quot;sectionChanger&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;sectionChanger&quot;),
-       sectionChangerWidget = tau.widget.SectionChanger(element);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;sectionChanger&quot;),
+    sectionChangerWidget = tau.widget.SectionChanger(element);
 
-   sectionChangerWidget.setActiveSection(2);
-&lt;/script&gt;
+sectionChangerWidget.setActiveSection(2);
 </pre>
 					</div>
 
@@ -325,16 +327,18 @@ var sectionChangerEl = document.getElementById(&quot;sectionchanger&quot;),
 					<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div id=&quot;sectionChanger&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;sectionChanger&quot;),
-       sectionChangerWidget = tau.widget.SectionChanger(element),
-       activeSectionIndex;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;sectionChanger&quot;),
+    sectionChangerWidget = tau.widget.SectionChanger(element),
+    activeSectionIndex;
 
-   activeSectionIndex = sectionChangerWidget.getActiveSectionIndex();
-&lt;/script&gt;
+activeSectionIndex = sectionChangerWidget.getActiveSectionIndex();
 </pre>
 					</div>
 				</dd>
@@ -370,17 +374,19 @@ var sectionChangerEl = document.getElementById(&quot;sectionchanger&quot;),
 					<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div id=&quot;sectionChanger&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;sectionChanger&quot;),
-       sectionChangerWidget = tau.widget.SectionChanger(element);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;sectionChanger&quot;),
+    sectionChangerWidget = tau.widget.SectionChanger(element);
 
-   /* Do some DOM changes dynamically */
+/* Do some DOM changes dynamically */
 
-   sectionChangerWidget.refresh();
-&lt;/script&gt;
+sectionChangerWidget.refresh();
 </pre>
 					</div>
 

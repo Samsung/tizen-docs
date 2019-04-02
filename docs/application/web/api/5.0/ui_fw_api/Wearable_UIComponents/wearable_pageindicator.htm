@@ -63,20 +63,23 @@ var elPageIndicator = document.getElementById("pageindicator"),
 
 <p>To add an page indicator component to the application, use the following code:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;div id=&quot;pageIndicator&quot; class=&quot;ui-page-indicator&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
-       pageIndicator =  tau.widget.PageIndicator(elPageIndicator, {numberOfPages: 5}),
-       index = 1;
-   pageIndicator.setActive(index);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
+    pageIndicator =  tau.widget.PageIndicator(elPageIndicator, {numberOfPages: 5}),
+    index = 1;
+pageIndicator.setActive(index);
 </pre>
 
 <p>index value means index of active page.</p>
 
 <p>In the following example, the change of page is indicated in page indicator component by using page indicator with <a href="wearable_sectionchanger.htm">section changer</a> component.</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;div id=&quot;pageIndicatorPage&quot; class=&quot;ui-page&quot;&gt;
    &lt;header class=&quot;ui-header&quot;&gt;
@@ -102,7 +105,10 @@ var elPageIndicator = document.getElementById("pageindicator"),
          &lt;/section&gt;
       &lt;/div&gt;
    &lt;/div&gt;
-   &lt;script&gt;
+&lt;/div&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
       (function()
       {
          var self = this,
@@ -142,8 +148,6 @@ var elPageIndicator = document.getElementById("pageindicator"),
          /* Bind the callback */
          changer.addEventListener(&quot;sectionchange&quot;, pageIndicatorHandler, false);
       })();
-   &lt;/script&gt;
-&lt;/div&gt;
 </pre>
 
 <p>If you use the following statement when you create page indicator component, a central dot is assigned to multiple pages.</p>
