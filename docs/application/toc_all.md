@@ -613,7 +613,7 @@
 ####### [Animation Types](/application/native/guides/ui/dali/animation-types.md)
 ####### [Constraints](/application/native/guides/ui/dali/constraints.md)
 ###### [Resources](/application/native/guides/ui/dali/resources.md)
-###### Rendering and Effects
+###### DALi Rendering
 ####### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ####### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ####### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)

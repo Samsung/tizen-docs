@@ -1,4 +1,4 @@
-# Rendering and Effects
+# DALi Rendering
 ## Multi-threaded Architecture
 
 
