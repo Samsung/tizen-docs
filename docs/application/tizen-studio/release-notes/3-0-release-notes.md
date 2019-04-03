@@ -20,7 +20,7 @@
 	-  The support for automatic command exchange between plugin supported daemon and server has been added.
 	-  The support for querying individual capability has been added.
 	-  The support for querying the plugin to handle shell async commands has been added.
--   Tizen RT
+-   TizenRT
 	-  The support for Docker build has been added.
 	
 ### Fixed Bugs
