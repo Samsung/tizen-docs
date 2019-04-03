@@ -34,42 +34,6 @@
 ### [Tizen Common Headed API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headed/latest)
 ### [Tizen Common Headless API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headless/latest)
 
-# Tizen IoT Preview 2
-
-## Getting Started
-### [Tizen IoT](/iot/preview2/getting-started/overview.md)
-### [Installing Tizen Studio](/iot/preview2/getting-started/tizen-studio-install.md)
-### [Flashing Tizen Images](/iot/preview2/getting-started/tizen-image-download-flash.md)
-### [Hardware Configuration](/iot/preview2/getting-started/hardware-configuration.md)
-### [Developing Applications with the things sdk api](/iot/preview2/getting-started/things-app-development.md)
-### [setting up the smartthings cloud](/iot/preview2/getting-started/things-cloud-setup.md)
-### [testing with smartthings app](/iot/preview2/getting-started/cloud-app-test.md)
-
-## [Customized Platform Guide](/iot/preview2/customized-platform/overview.md)
-
-## API Guides
-### [Overview](/iot/preview2/guides/iot-api.md)
-### Things SDK API
-#### [Overview](/iot/preview2/guides/things-api.md)
-#### [Device Definition](/iot/preview2/guides/things-api-device.md)
-#### [API Usage](/iot/preview2/guides/things-api-guide.md)
-### Tizen Peripheral I/O Native API
-#### [Overview](/iot/preview2/guides/peripheral-io-api.md)
-#### [GPIO](/iot/preview2/guides/peripheral-io-api-gpio.md)
-#### [PWM](/iot/preview2/guides/peripheral-io-api-pwm.md)
-#### [SPI](/iot/preview2/guides/peripheral-io-api-spi.md)
-#### [I2C](/iot/preview2/guides/peripheral-io-api-i2c.md)
-#### [UART](/iot/preview2/guides/peripheral-io-api-uart.md)
-
-## API Reference
-### [Things SDK API Reference](https://developer.tizen.org/dev-guide/things-sdk/4.0)
-### Peripheral I/O API
-#### [Tizen Common Headed API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headed/4.0)
-#### [Tizen Common Headless API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headless/4.0)
-
-## Samples
-### [Network Audio Sample Overview](/iot/preview2/sample/iot-sample.md)
-
 # IoT Partners
 ## [Nubison Cloud](/iot/iot-partners/nubison.md)
 ## [thingspark Cloud](/iot/iot-partners/thingspark.md)

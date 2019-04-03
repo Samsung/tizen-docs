@@ -22,7 +22,7 @@ Tizen IoT Extension SDK version 1.0 is released from Tizen Studio 3.0 for Tizen 
 
         > **Note**
         >
-        > that the API set for Tizen IoT Extension SDK version 1 for Tizne 5.0 is not compatable to the API set for Tizen IoT Preview 2 for Tizen 4.0.
+        > The API set for Tizen IoT Extension SDK version 1 for Tizne 5.0 is not compatable to the API set for Tizen IoT Preview 2 for Tizen 4.0.
 
         -   Peripheral I/O: Using the Tizen Peripheral I/O Native API for IoT devices, you can control peripherals, such as sensors and actuators, using industry-standard protocols and interfaces.
 
@@ -32,7 +32,4 @@ Tizen IoT Extension SDK version 1.0 is released from Tizen Studio 3.0 for Tizen 
     2.  [Develop an application](things-app-development-5.0.md).
     3.  [Set up the SmartThings Cloud](things-cloud-setup.md).
     4.  [Test the application with SmartThings app](cloud-app-test.md).
-
-Tizen IoT Preview 2, which has been released from Tizen Studio 2.3, is also supported in Tizen Studio 3.0. For details of Tizen IoT Preview 2, see [Tizen IoT Preview 2.](../preview2/getting-started/overview.md)
-
 

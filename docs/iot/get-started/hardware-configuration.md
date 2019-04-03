@@ -1,6 +1,6 @@
 # Supported Hardware
 
-Tizen IoT Preview binaries work on the following two hardware platforms:
+Tizen IoT binaries work on the following two hardware platforms:
 
 -   ARTIK 530 or ARTIK 530s
 -   Raspberry Pi 3

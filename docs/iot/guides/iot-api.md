@@ -26,5 +26,4 @@ The following table lists the IoT-specific Tizen platform API group.
 
 > **Note**
 >
->Tizen IoT Extension SDK version 1.0 is not compatible with Tizen IoT Preview 2. For Things SDK API of Tizen IoT Preview 2, please see [Things SDK API for Tizen IoT Preview 2(legacy)](../preview2/guides/things-api.md) and [Things SDK API Reference for Tizen IoT Preview 2](https://developer.tizen.org/dev-guide/things-sdk/4.0).For the full set of API reference for Tizen 4.0 IoT Headed and Headless profiles, see the [Tizen 4.0 Common Headed API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headed/4.0) and [Tizen 4.0 Common Headless API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headless/4.0).
->
+> Tizen IoT Extension SDK version 1.0 is not compatible with Tizen IoT Preview 2.

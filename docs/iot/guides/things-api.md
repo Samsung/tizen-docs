@@ -1,8 +1,8 @@
 # Things SDK API
 
-Developing "Things" which are market-ready (with cloud support) has been a challenge for most of the companies and individual developers. The SmartThings&trade; Things SDK API helps you to create new IoT devices easily. The version number of the first release is 0.9, which is the preview version.
+Developing "Things" which are market-ready (with cloud support) has been a challenge for most of the companies and individual developers. The SmartThings&trade; Things SDK API helps you to create new IoT devices easily.
 
-The 2 core components for creating a new device are:
+The two core components for creating a new device are:
 
 -   SmartThings&trade; Things JSON Configuration file (`device_definition.json`)
 
