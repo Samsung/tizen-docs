@@ -1,4 +1,5 @@
 # [IoT and Tizen IoT](/iot/index.md)
+# [IoT and Tizen IoT](/iot/index.md)
 
 # Getting Started
 ## [Tizen IoT](/iot/getting-started/overview.md)
