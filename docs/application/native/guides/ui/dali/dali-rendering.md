@@ -1,4 +1,5 @@
-# Multi-threaded Architecture
+# DALi Rendering
+## Multi-threaded Architecture
 
 
 DALi uses a multi-threaded architecture to provide the best performance and scalability:

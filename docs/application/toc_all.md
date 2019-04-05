@@ -613,14 +613,13 @@
 ####### [Animation Types](/application/native/guides/ui/dali/animation-types.md)
 ####### [Constraints](/application/native/guides/ui/dali/constraints.md)
 ###### [Resources](/application/native/guides/ui/dali/resources.md)
-###### Rendering and Effects
-####### [Overview](/application/native/guides/ui/dali/rendering-effects.md)
+###### DALi Rendering
+####### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ####### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ####### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
 ###### Background Knowledge
 ####### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ####### [Properties](/application/native/guides/ui/dali/properties.md)
-####### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
 
 #### Localization
