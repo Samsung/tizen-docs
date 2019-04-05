@@ -312,7 +312,7 @@ The following table lists the filter types you can use with specific content att
 | `modifedDate`           | Yes                        | Yes                              |
 | `size`                  | No                         | No                               |
 | `description`           | Yes                        | No                               |
-| `rating`                | Yes                        | Yes                              |
+| `rating`                | Yes*                       | Yes*                             |
 | `geolocation.latitude`  | Yes                        | Yes                              |
 | `geolocation.longitude` | Yes                        | Yes                              |
 | `album`                 | Yes                        | No                               |
@@ -325,6 +325,8 @@ The following table lists the filter types you can use with specific content att
 | `trackNumber`           | No                         | No                               |
 | `duration`              | No                         | No                               |
 | `orientation`           | No                         | No                               |
+
+*Attribute is deprecated since Tizen 5.5.
 
 ## Messaging Filter Attributes
 
