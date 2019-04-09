@@ -89,7 +89,7 @@ The package development workflow is described in the following procedure and sho
 1. Tizen backend service and reviewers verify the patches through automated and manual testing, respectively, and then vote "-1", "0", or "+1" based on the quality of the patches.
    - Automated testing: Tizen backend service automatically submits patches to OBS to perform a remote build and then posts the test results back to Gerrit.
    - Manual testing: Testers verify the patches manually and then publish comments on Gerrit.
-1. Maintainers approve the patches ("Code-Review +2") after they pass verifications ("Verified +1") and then merge code changes to the Gerrit repository.
+1. Maintainers approve the patches ("Code-Review +2") after they pass verification ("Verified +1") and then merge code changes to the Gerrit repository.
 1. Maintainers and developers submit packages to OBS by using the `gbs submit` command.
    > **Note**
    >

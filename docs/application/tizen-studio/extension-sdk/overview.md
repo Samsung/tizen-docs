@@ -25,7 +25,7 @@ You can use InMobi Tizen Ads in Tizen Web applications, native applications, and
 
 To get started with the InMobi Tizen Ad SDK, read the following guide:
 
-- [InMobi Tizen Ad SDK Programming Guide](inmovi.md)
+- [InMobi Tizen Ad SDK Programming Guide](inmobi.md)
 
 
 **VMAX Tizen Ad SDK**

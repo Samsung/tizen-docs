@@ -88,7 +88,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Changed Features**
 
 - Web & Native IDE
-  - The IDEs have increased the language support set of the following tools: configuration editor, web localization, manifeset editor, PO editor, and resource manager view.
+  - The IDEs have increased the language support set of the following tools: configuration editor, web localization, manifest editor, PO editor, and resource manager view.
 - Emulator
   - The NFC module value in the wearable circular emulator is set to ON by default.
 - CLI/SDB
@@ -151,7 +151,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - The notification for the Update Manager, which appears at the bottom right corner of the screen, has been changed to inform you more clearly of the actions (install, update, cancel, or remove).
 - CLI/SDB
   - When you copy a file or directory by using the SDB's push command, a "WARNING: Your data is to be sent over an unencrypted connection and could be read by others." security warning message appears to inform you what risk exists in the push command.
-  - If you use the SDB’s forward command, the remote port ”0” is disabled.
+  - If you use the SDB's forward command, the remote port "0" is disabled.
 
 
 

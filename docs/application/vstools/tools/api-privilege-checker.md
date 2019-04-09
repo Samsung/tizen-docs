@@ -43,4 +43,4 @@ You can quick-fix the undefined privileges found by the API Checker:
 
     You can see the newly-added privilege in the `tizen-manifest.xml` file, and the missing privilege errors related to this privilege are automatically removed from the **Error List** view.
 
-    ![Quick-fxing](media/api_checker_quickfix.png)
+    ![Quick-fixing](media/api_checker_quickfix.png)

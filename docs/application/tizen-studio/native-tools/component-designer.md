@@ -328,7 +328,7 @@ Some types have specific blocks in their states. The image part has the **Image*
 
 ### Program Block Properties
 
-The program usually has 1 important block that contains some attributes, such as the program name, action type, signal, source, and filters. Usually, it also contain a list of after's - programs that are run together with the selected program in a certain queue.
+The program usually has 1 important block that contains some attributes, such as the program name, action type, signal, source, and filters. Usually, it also contains a list of afters - programs that are run together with the selected program in a certain queue.
 
 **Figure: Program block properties**
 

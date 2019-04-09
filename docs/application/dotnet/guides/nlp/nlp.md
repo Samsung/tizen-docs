@@ -5,7 +5,7 @@ NLP is a subset of Natural Language Toolkit that specifies an interface and a pr
 
 The main features of the Tizen.Nlp namespace include:
 
--   Word Tokenize suppport
+-   Word Tokenize support
 
     You can get tokens from a sentence, the type of return is [WordTokenizeResult](#wordtokenize). 
     This method breaks up the sentence into words and punctuation.
