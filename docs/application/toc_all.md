@@ -4,12 +4,12 @@
 ## [Overview](/application/dotnet/index.md)
 
 
-## Getting Started
+## Get Started
 
-### [Overview](/application/dotnet/getting-started/overview.md)
-### [Creating Mobile .NET Application](/application/dotnet/getting-started/mobile/first-app.md)
-### [Creating Wearable .NET Application](/application/dotnet/getting-started/wearable/first-app.md)
-### [Creating TV .NET Application](/application/dotnet/getting-started/tv/first-app.md)
+### [Overview](/application/dotnet/get-started/overview.md)
+### [Creating Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
+### [Creating Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
+### [Creating TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 
 
 ## Tutorials
@@ -218,13 +218,13 @@
 ## [Overview](/application/native/index.md)
 
 
-## Getting Started
+## Get Started
 
-### [Overview](/application/native/getting-started/overview.md)
-### [Creating Mobile Native Application](/application/native/getting-started/mobile/first-app.md)
-### [Creating Wearable Native Application](/application/native/getting-started/wearable/first-app.md)
-### [Creating Wearable Native Watch Application](/application/native/getting-started/wearable-watch/first-app-watch.md)
-### [Creating Wearable Native Widget Application](/application/native/getting-started/wearable-widget/first-app-widget.md)
+### [Overview](/application/native/get-started/overview.md)
+### [Creating Mobile Native Application](/application/native/get-started/mobile/first-app.md)
+### [Creating Wearable Native Application](/application/native/get-started/wearable/first-app.md)
+### [Creating Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
+### [Creating Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
 
 
 ## Tutorials
@@ -714,14 +714,14 @@
 
 ## [Overview](/application/web/index.md)
 
-## Getting Started
+## Get Started
 
-### [Overview](/application/web/getting-started/overview.md)
-### [Creating Mobile Web Application](/application/web/getting-started/mobile/first-app.md)
-### [Creating Wearable Web Application](/application/web/getting-started/wearable/first-app.md)
-### [Creating Wearable Web Watch Application](/application/web/getting-started/wearable-watch/first-app-watch.md)
-### [Creating Wearable Web Widget Application](/application/web/getting-started/wearable-widget/first-app-widget.md)
-### [Creating TV Web Application](/application/web/getting-started/tv/first-app.md)
+### [Overview](/application/web/get-started/overview.md)
+### [Creating Mobile Web Application](/application/web/get-started/mobile/first-app.md)
+### [Creating Wearable Web Application](/application/web/get-started/wearable/first-app.md)
+### [Creating Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
+### [Creating Wearable Web Widget Application](/application/web/get-started/wearable-widget/first-app-widget.md)
+### [Creating TV Web Application](/application/web/get-started/tv/first-app.md)
 
 
 ## Tutorials
@@ -1115,12 +1115,12 @@
 
 ### [Overview](/application/tizen-studio/rt-ide/overview.md)
 ### Get Started
-#### [Overview](/application/tizen-studio/rt-ide/getting-started/overview.md)
-#### [Install Tizen Studio for RT](/application/tizen-studio/rt-ide/getting-started/install.md)
-#### [Manage a Project](/application/tizen-studio/rt-ide/getting-started/create.md)
-#### [Flash the Project](/application/tizen-studio/rt-ide/getting-started/flash.md)
-#### [Use the Serial Terminal](/application/tizen-studio/rt-ide/getting-started/terminal.md)
-#### [Debug the Project](/application/tizen-studio/rt-ide/getting-started/debug.md)
+#### [Overview](/application/tizen-studio/rt-ide/get-started/overview.md)
+#### [Install Tizen Studio for RT](/application/tizen-studio/rt-ide/get-started/install.md)
+#### [Manage a Project](/application/tizen-studio/rt-ide/get-started/create.md)
+#### [Flash the Project](/application/tizen-studio/rt-ide/get-started/flash.md)
+#### [Use the Serial Terminal](/application/tizen-studio/rt-ide/get-started/terminal.md)
+#### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## Release Notes
 ### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)

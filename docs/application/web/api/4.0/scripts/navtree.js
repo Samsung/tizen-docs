@@ -73,11 +73,20 @@ window.onload = function () {
         '<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">' +
             '<div class="container">' +
                 '<div class="navbar-header">' +
-                    '<a class="navbar-brand" href="/">Docs</a>' +
+                    '<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">' +
+                        '<span class="sr-only">Toggle navigation</span>' +
+                        '<span class="icon-bar"></span>' +
+                        '<span class="icon-bar"></span>' +
+                        '<span class="icon-bar"></span>' +
+                    '</button>' +
+                    '<a class="navbar-brand" href="/">' +
+                        '<span class="brand-tizen"><img src="/images/logo.png" alt="logo"></span>' +
+                        '<span class="brand-docs">Docs</span>' +
+                    '</a>' +
                 '</div>' +
 
                 '<ul id="navbar" class="nav navbar-nav navbar-right">' +
-                    '<li><a href="/open-source-project/about/tizen-open-source-overview">Open Source Tizen</a></li>' +
+                    '<li><a href="/platform/about/tizen-open-source-overview">Platform</a></li>' +
                     '<li><a href="/application/">Application</a></li>' +
                     '<li><a href="/iot/">IoT</a></li>' +
                     '<li><a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank">Download</a></li>' +
@@ -89,8 +98,8 @@ window.onload = function () {
                         '<a href="#"><img src="/images/ic_search_ac.png"></a>' +
                       '</form>' +
                     '</li>' +
-
                 '</ul>' +
+
             '</div>' +
         '</nav>' +
     '</div>';

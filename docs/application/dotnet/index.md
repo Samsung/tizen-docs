@@ -4,7 +4,7 @@ Tizen .NET is an exciting new way to develop applications for the Tizen operatin
 
 The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language and the Common Language Infrastructure standards, and have benefits from a managed runtime for faster application development and code execution that is efficient and secure.
 
-To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application with Visual Studio](getting-started/mobile/first-app.md).
+To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application with Visual Studio](get-started/mobile/first-app.md).
 
 ## Managed Runtime Advantages
 
