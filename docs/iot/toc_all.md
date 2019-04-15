@@ -3,10 +3,8 @@
 # Get Started
 ## [Tizen IoT](/iot/get-started/overview.md)
 ## Setting up Board
-### [Overview](/iot/get-started/setting-up-board.md)
-### [ARTIK530/ARTIK530S with no SD card based](/iot/get-started/artik-no-sd-5.0.md)
-### [ARTIK530/ARTIK530S with SD card based](/iot/get-started/artik-sd-5.0.md)
-### [Raspberry Pi3](/iot/get-started/rpi3-5.0.md)
+### [Overview](/iot/getting-started/setting-up-board.md)
+### [Raspberry Pi3](/iot/getting-started/rpi3-5.0.md)
 ## Developing Applications
 ### [Developing Applications with Things SDK API](/iot/get-started/things-app-development-5.0.md)
 ### [Setting up Smartthings Cloud](/iot/get-started/things-cloud-setup.md)
@@ -29,10 +27,10 @@
 ## [Tizen Update Control Native API](/iot/guides/update-control-api.md)
 
 # API Reference
-## [Things SDK API Reference](https://developer.tizen.org/dev-guide/things-sdk/latest)
+## [Things SDK API Reference](https://developer.tizen.org/dev-guide/things-sdk/latest){:target="_blank"}
 ## Peripheral I/O API
-### [Tizen Common Headed API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headed/latest)
-### [Tizen Common Headless API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headless/latest)
+### [Tizen Common Headed API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headed/latest){:target="_blank"}
+### [Tizen Common Headless API Reference](https://developer.tizen.org/dev-guide/tizen-iot-headless/latest){:target="_blank"}
 
 # IoT Partners
 ## [Nubison Cloud](/iot/iot-partners/nubison.md)

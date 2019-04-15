@@ -354,17 +354,14 @@ The IoT Setup Manager edit view contains the following fields:
 
 -   **Profile name**
 
-    Specify a profile name, for example, ARTIK530-headless.
+    Specify a profile name, for example, RPI3-headless.
 
 -   **Target**
 
     Select the board and image type from the drop-down list.
 
     -   RPI3_HEADLESS: SD-card-bootable headless image for Raspberry Pi 3 board.
-    -   ARTIK530_HEADLESS: SD-card-bootable headless image for ARTIK 530 board.
-    -   ARTIK530_HEADED: SD-card-bootable headed image for ARTIK 530 board.
-    -   ARTIK530_HEADLESS_INSTALLABLE: eMMC-bootable headless binary for ARTIK 530 board. When you start the board with SD card, the image is installed into eMMC.
-    -   ARTIK530_HEADED_INSTALLABLE: eMMC-bootable headed binary for ARTIK 530 board. When you start the board with SD card, the image is installed into eMMC.
+
 -   **Boot image**
 
     Browse for the Tizen Boot image available on your hard drive. You must select proper images depending on the board.
@@ -387,7 +384,6 @@ The IoT Setup Manager edit view contains the following fields:
 -   While creating or editing a profile, ensure that the boot images, platform images, and the rpms (if selected) match the target device.
 -   Ensure that there are no white spaces in the boot image, platform image, and the rpm folder paths.
 -   Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
--   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530_HEADED_INSTALLABLE profiles are used for writing images from SD Card to eMMC.
 
 ### Flashing through Command Line
 

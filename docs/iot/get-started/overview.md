@@ -4,18 +4,18 @@ Tizen is commercialized for smart TV, smart phone, smart watch, and smart home a
 
 Tizen IoT Extension SDK version 1.0 is released from Tizen Studio 3.0 for Tizen 5.0. The following features are supported:
 
--   Hardware targets: ARTIK 530 and ARTIK 530s are supported as the official reference hardwares.Raspberry Pi 3 is also supported
+-   Hardware targets: Raspberry Pi 3 is supported as the official reference hardwares.
 
 -   Platform image
-    -   Headless: Tizen 5.0 platform image for headless-type IoT devices without a display. Raspberry Pi 3, ARTIK 530, and ARTIK 530s can be used with the headless platform image.
+    -   Headless: Tizen 5.0 platform image for headless-type IoT devices without a display. Raspberry Pi 3 can be used with the headless platform image.
 
-    -   Headed: Tizen 5.0 platform image for headed-type IoT devices with a display. ARTIK 530 and ARTIK 530s can be used with the headed platform image.
+    -   Headed: Tizen 5.0 platform image for headed-type IoT devices with a display. 
 
 -   Development environment
 
     -   IoT Setup Manager: The IoT Setup Manager is a computer application for easily setting up Tizen IoT on hardware targets. Both Linux and Windows computer environments are supported. 
 
-    -   Tizen Studio 3.0 (or higher) is used as the IDE for developing IoT applications with the Tizen IoT Platform on Raspberry Pi 3, ARTIK 530, and ARTIK 530s.
+    -   Tizen Studio 3.0 (or higher) is used as the IDE for developing IoT applications with the Tizen IoT Platform on Raspberry Pi 3.
 
     -   [IoT API](../guides/iot-api.md)
         -   Things SDK for SmartThings&trade;: Using Things SDK API for [SmartThings&trade;](https://smartthings.developer.samsung.com/), you can create your IoT devices with the SmartThings Cloud. The Things SDK API enables you to integrate, control, and monitor your IoT devices through the SmartThings Cloud with the SmartThings application. 

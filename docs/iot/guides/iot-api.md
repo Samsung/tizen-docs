@@ -12,7 +12,7 @@
 The Tizen IoT API provides a common set of interfaces allowing you to build compelling IoT device applications which achieve native performance. The characteristics include:
 
 -   **Common set API**, which means that the Tizen IoT API is based on the Tizen 5.0 common profile. The API supports the common set of mobile, wearable, and TV profiles and allows you to make IoT applications, such as network audio applications.
--   **Available platform binaries**, which allow you to efficiently create an IoT application. Tizen Common Headed binaries for ARTIK 530 and ARTIK 530s have passed the API test verification, which means that you can create IoT applications with a productive quality.
+-   **Available platform binaries**, which allow you to efficiently create an IoT application. Tizen Common Headed binaries for Raspberry Pi 3 have passed the API test verification, which means that you can create IoT applications with a productive quality.
 
 The following table lists the IoT-specific Tizen platform API group.
 
