@@ -311,8 +311,8 @@ The following table lists the filter types you can use with specific content att
 | `releaseDate`           | Yes                        | Yes                              |
 | `modifedDate`           | Yes                        | Yes                              |
 | `size`                  | No                         | No                               |
-| `description`           | Yes                        | No                               |
-| `rating`                | Yes*                       | Yes*                             |
+| `description`           | No <font size="2" color="gray"><sup><i>since 5.5</i></sup></font>                        | No                               |
+| `rating`                | No <font size="2" color="gray"><sup><i>since 5.5</i></sup></font>| No <font size="2" color="gray"><sup><i>since 5.5</i></sup></font>|
 | `geolocation.latitude`  | Yes                        | Yes                              |
 | `geolocation.longitude` | Yes                        | Yes                              |
 | `album`                 | Yes                        | No                               |
@@ -326,7 +326,6 @@ The following table lists the filter types you can use with specific content att
 | `duration`              | No                         | No                               |
 | `orientation`           | No                         | No                               |
 
-*Attribute is deprecated since Tizen 5.5.
 
 ## Messaging Filter Attributes
 
