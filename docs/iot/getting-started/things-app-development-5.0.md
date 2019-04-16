@@ -28,7 +28,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
 7.  In the **Device/Platform** list:
     1.  Select **\[network audio\]**.
     2.  Clear the resources except **x.com.st.powerswitch** and **x.com.st.audiovolume**.
-    3.  Enter **Vendor Id**, **Manufacturer Name**, and **Setup Id** as **VID**, **MNID**, and **Device Onboarding ID** values. For details, see [Developer Workspace](https://devworkspace.developer.samsung.com) site and also [Setting up the SmartThings Cloud](things-cloud-setup.md).
+    3.  Enter **Vendor Id**, **Manufacturer Name**, and **Setup Id** as **VID**, **MNID**, and **Device Onboarding ID** values. For details, see [Developer Workspace](https://smartthings.developer.samsung.com) site and also [Setting up the SmartThings Cloud](things-cloud-setup.md).
     4.  Click **Finish**.
 
         ![Select a native project](media/guitool.png)
@@ -106,7 +106,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
     > -   **VID:** A device ID assigned to a developer. You need to assign a unique, alphanumerical ID for each device you develop.
     > -   **Private key and cloud certificate:** The key and certificate to certify that you are allowed to access the SmartThings Cloud.
 
-    1.  In the `platform` section of the `shared/res/master.json` file, check if the `mnid` and `vid` are correct. Also check if `setupId` is the same as the 'Device Onboarding ID' of [SmartThings deveolopers workspace](https://devworkspace.developer.samsung.com).
+    1.  In the `platform` section of the `shared/res/master.json` file, check if the `mnid` and `vid` are correct. Also check if `setupId` is the same as the 'Device Onboarding ID' of [SmartThings developers workspace](https://smartthings.developer.samsung.com).
 
        ![Device Definition JSON File](media/device-definition-json-mnid-vid-5.0.png)
 
