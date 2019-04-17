@@ -28,7 +28,7 @@ To create a new application project using Things SDK API:
 7.  In the **Device/Platform** list:
     1.  Select **\[network audio\]**.
     2.  Uncheck the resources except **x.com.st.powerswitch** and **x.com.st.audiovolume**.
-    3.  Enter **Vendor ID** and **Manufacturer Name**. For **VID** and **MNID** values, see [Developer Workspace](https://devworkspace.developer.samsung.com) site and also [Setting up the SmartThings Cloud](things-cloud-setup.md).
+    3.  Enter **Vendor ID** and **Manufacturer Name**. For **VID** and **MNID** values, see [Developer Workspace](https://smartthings.developer.samsung.com) site and also [Setting up the SmartThings Cloud](things-cloud-setup.md).
     4.  Click **Finish**.
 
         ![Select a native project](media/codegen.png)

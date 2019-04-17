@@ -6,7 +6,7 @@ To develop applications that integrate with the SmartThings Cloud, you must regi
 
 To register the function of your device:
 
-1.  Create a cloud-connected device in the Developer Workspace site (<https://devworkspace.developer.samsung.com/>), by following the instructions on the [SmartThings Developers site](https://smartthings.developer.samsung.com/docs/workspace/tutorials/create-a-cloud-connected-device.html):
+1.  Create a cloud-connected device in the Developer Workspace site (<https://smartthings.developer.samsung.com/>), by following the instructions on the [SmartThings Developers site](https://smartthings.developer.samsung.com/docs/workspace/tutorials/create-a-cloud-connected-device.html):
 
     -   Choose the **SmartApp Connector** type of Cloud Connector
 
