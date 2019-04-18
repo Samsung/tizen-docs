@@ -352,6 +352,7 @@ catch (error)
           <li class="param">
 <span class="name">successCallback</span>:
  The method to invoke when the intput source has been changed successfully.
+The result SystemInfoVideoSourceInfo object will have the <em>signal</em> property filled only when the window was shown using <a href="./tvwindow.html#TVWindowManager::show">show()</a> function.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -383,7 +384,7 @@ catch (error)
 function successCB(source, type)
 {
   console.log("setSource() is successfully done, source name: " + source.name +
-              ", source port number: " + source.number);
+              ", source port number: " + source.number + ", signal provided: " + source.signal);
 }
 
 function errorCB(error)
@@ -425,6 +426,16 @@ catch (error)
 }
 </pre>
 </div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>--------------- Source 0 ---------------
+type: TV
+number: 1
+--------------- Source 1 ---------------
+type: HDMI
+number: 4
+setSource() is successfully done, source type: HDMI, source port number: 4, signal provided: null
+</pre>
+</div>
 </dd>
 <dt class="method" id="TVWindowManager::getSource">
 <a class="backward-compatibility-anchor" name="::TVWindow::TVWindowManager::getSource"></a><code><b><span class="methodName">getSource</span></b></code>
@@ -457,7 +468,7 @@ catch (error)
 <ul>
 <span class="return">SystemInfoVideoSourceInfo:
                   </span>
- SystemInfoVideoSourceInfo The information about the current video source
+ The information about the current video source. Returned object will have the <em>signal</em> property, stating whether there is signal provided or not on the source, this property value will be filled only when the window was shown using <a href="./tvwindow.html#TVWindowManager::show">show()</a> function.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -481,11 +492,18 @@ catch (error)
   var source = tizen.tvwindow.getSource();
   console.log("type: " + source.type);
   console.log("number: " + source.number);
+  console.log("signal: " + source.signal);
 }
 catch (error)
 {
   console.log("Error name: " + error.name + ", error message: " + error.message);
 }
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>type: HDMI
+number: 4
+signal: null
 </pre>
 </div>
 </dd>
