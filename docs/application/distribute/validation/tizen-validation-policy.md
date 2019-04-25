@@ -19,7 +19,7 @@
        - Pre-release versions (demo) should notify the users about the limitations (e.g. expiration dates or limited functionality).
    13. Application must not link to other application store.
    14. Duplicated or repeated submission of similar applications registered by the same seller will be rejected.
-   15. Application that installs additional applications or makes shorcuts or bundles of icons will be rejected.
+   15. Application that installs additional applications or makes shortcuts or bundles of icons will be rejected.
 
 2. Usability
 

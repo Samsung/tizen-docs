@@ -15,7 +15,7 @@ The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include:
 
     If a required permission is missing, you can [request the user to grant it](#requesting) to be able to use privileged features.
 
-For a list of privacy-related privileges, see [Security and API Privileges](../../../native/tutorials/details/sec_privileges.md).
+For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
 ## Prerequisites
 
@@ -31,8 +31,9 @@ To enable your application to use the privacy-related permissions functionality:
 
     It means that the methods can be employed in any UI event handler (such as button click, timer event, system event, and application state change event). If you want to resolve privileges during application startup, call these methods from the Xamarin.Forms resume and start life-cycle methods (`Xamarin.Forms.Application.OnResume()` and `Xamarin.Forms.Application.OnStart()`).
 
-    > **Note**   
-	> The `Tizen.Security.PrivacyPrivilegeManager` class is not thread-safe.
+    > **Note**
+    >
+    > The `Tizen.Security.PrivacyPrivilegeManager` class is not thread-safe.
 
 <a name="requesting"></a>
 ## Requesting Permissions
@@ -141,7 +142,8 @@ To check whether an application has permission to use a privilege, and to reques
 
     If the decision is definitive, any subsequent `RequestPermission()` calls result in an immediate response with an appropriate result: `AllowForever` or `DenyForever`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
-> **Note**   
+> **Note**
+>
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
 

@@ -21,7 +21,7 @@
 
 - You can check sales, finance, and payment information related to the apps that you currently have on sale
   1. Summary : You can see the profit generated via Tizen Store.
-  2.  Accounting : You can receive reports about your monthly revene. (Monthly revenue is uesd in accounting to calculate the actual revenue).
+  2.  Accounting : You can receive reports about your monthly revenue. (Monthly revenue is used in accounting to calculate the actual revenue).
   3. Owed : You can receive reports about the accumulated amount of unsettled payments for the current month out of the total sales amount.
   4. Payment : You can receive monthly reports about the amounts that are paid to you when sales exceeding the minimum amount for transfer have been made.
   

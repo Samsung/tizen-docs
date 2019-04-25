@@ -78,8 +78,6 @@ You can set the details when swiping such as elements that appear, background co
 
 <h3>JavaScript</h3>
 <pre class="prettyprint">
-(function()
-{
    var page = document.getElementById(&quot;pageSwipeList&quot;),
        listElement = page.getElementsByClassName(&quot;ui-swipelist-list&quot;)[0],
        swipeList;
@@ -97,7 +95,6 @@ You can set the details when swiping such as elements that appear, background co
       /* Release object */
       swipeList.destroy();
    });
-})();
 </pre>
 
 <h2 id="options-list">Options</h2>
@@ -214,14 +211,11 @@ You can set the details when swiping such as elements that appear, background co
 <p>To use the swipe list events, use the following code:</p>
 
 <pre class="prettyprint">
-(function()
-{
    var slist = document.getElementById(&quot;swipelist&quot;);
    slist.addEventListener(&quot;swipelist.left&quot;, function(evt)
    {
       /* You can connect your app with a native app (such as phone call or message) using the Device API */
    });
-})();
 </pre>
 
 

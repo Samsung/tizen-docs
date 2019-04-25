@@ -43,6 +43,13 @@ for TD:
 			<p>This sample application demonstrates how to retrieve your application usage patterns. This sample uses XAML files for GUI.</p>
 			</td>
 		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w58appstatistics.png" width="180"/></td>
+			<td>
+			<p><strong>(W) AppStatistics</strong> [In progress]</p>
+			<p>This sample application demonstrates how to get information about application usage using Tizen AppHistory API.</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>

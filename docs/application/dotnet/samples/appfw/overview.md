@@ -33,7 +33,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m1appcommon.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/AppCommon" target="_blank"><strong>(M) App-common</strong></a></p>
-			<p>This sample application demonstrates how to work with app-common APIs to obtain application-specific information.</p>
+			<p>This sample application demonstrates how to work with app-common API to obtain application-specific information.</p>
 			</td>
 		</tr>
 		<tr>
@@ -226,8 +226,40 @@ for TD:
 			<p><img alt="" height="225" src="media/tv18appinfo.png" width="400" /></p>
 			</td>
 			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>(T) AppInfo</strong></a></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>(T) AppInfo</strong></a></p>
 			<p>This sample application demonstrates how to obtain information about installed applications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Service application - no UI</p>
+			</td>
+			<td>
+			<p><strong>(T) MessagePortMiami</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use Tizen.Applications.Messages API to communicate between applications and services.</p>
+			<p>The MessagePortMiami service cannot be tested as a standalone application. It is one of the applications available in the set of three sample applications:
+			<ul>
+				<li>MessagePort application - Web application (available in Tizen Studio) that shows the graphical interface and handles the Havana port communications.</li>
+				<li>MessagePortNassau service - C# service application that handles the Nassau port communications.</li>
+				<li>MessagePortMiami service - C# service application that handles the Miami port communications.</li>
+			</ul>
+			</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Service application - no UI</p>
+			</td>
+			<td>
+			<p><strong>(T) MessagePortNassau</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use Tizen.Applications.Messages API to communicate between applications and services.</p>
+			<p>The MessagePortNassau service cannot be tested as a standalone application. It is one of the applications available in the set of three sample applications:
+			<ul>
+				<li>MessagePort application - Web application (available in Tizen Studio) that shows the graphical interface and handles the Havana port communications.</li>
+				<li>MessagePortNassau service - C# service application that handles the Nassau port communications.</li>
+				<li>MessagePortMiami service - C# service application that handles the Miami port communications.</li>
+			</ul>
+			</p>
 			</td>
 		</tr>
 		<tr>

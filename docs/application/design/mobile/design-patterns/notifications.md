@@ -4,7 +4,7 @@ You can use the notification API to notify users of the new events in your app, 
 
 Notifications draw users' attention and provide information about new events or relevant actions. To take instant actions, users can directly access your app from the notification. They can also stay on the current task flow and take actions later from the notification panel, where the logs for unchecked messages are kept.
 
-The Tizen notification UI supports multimodal feedbacks, which are combinations of visual, auditory, and tactile events.
+The Tizen notification UI supports some multimodal feedback, which are combinations of visual, auditory, and tactile events.
 
 The following lists guidelines for designing notifications.
 

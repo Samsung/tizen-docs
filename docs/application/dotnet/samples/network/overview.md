@@ -33,7 +33,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m17networkapp.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/NetworkApp" target="_blank"><strong>(M) NetworkApp</strong></a></p>
-			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Connection.html" target="_blank">Tizen.Network.Conncetion C# API</a>, Wi-Fi, and Wi-Fi Direct.<br />
+			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Connection.html" target="_blank">Tizen.Network.Connection C# API</a>, Wi-Fi, and Wi-Fi Direct.<br />
 			This application provides network information such as IP address, network state, and list of available networks. Using this information, you can connect to Wi-Fi.</p>
 			</td>
 		</tr>
