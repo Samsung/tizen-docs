@@ -1,4 +1,4 @@
-# Creating Your First Tizen TV Web Application
+# Create Your First Tizen TV Web Application
 
 **Welcome to Tizen TV Web application development!**
 

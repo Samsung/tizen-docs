@@ -1,4 +1,4 @@
-# Creating Your First Tizen Mobile Native Application
+# Create Your First Tizen Mobile Native Application
 
 **Welcome to Tizen mobile native application development!**
 

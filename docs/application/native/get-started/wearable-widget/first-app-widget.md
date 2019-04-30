@@ -1,4 +1,4 @@
-# Creating Your First Tizen Wearable Native Widget Application
+# Create Your First Tizen Wearable Native Widget Application
 
 **Welcome to Tizen wearable native widget application development!**
 
