@@ -730,6 +730,7 @@
 ### [Creating Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
 ### [Creating Wearable Web Widget Application](/application/web/get-started/wearable-widget/first-app-widget.md)
 ### [Creating TV Web Application](/application/web/get-started/tv/first-app.md)
+### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
 
 
 ## Tutorials

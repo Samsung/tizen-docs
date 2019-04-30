@@ -14,8 +14,6 @@ The following guide demonstrates how to create and run a basic Tizen .NET applic
 
 -   [TV .NET application](../dotnet/get-started/tv/first-app.md)
 
-    A TV application is targeted to run on a smart TV. The applications can be optimized for larger screens and remote control.
-
 First, ensure that you have installed the latest version of Visual Studio Tools for Tizen. <a href="https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen" target="_blank"><img src="media/ic_docs_download.png"><Strong> Download Visual Studio Tools for Tizen</strong>.</a>
 
 ## Web Application
@@ -24,6 +22,9 @@ This following guide demonstrates how to create and run a basic Tizen Web applic
 
 -   [TV Web application](../web/get-started/tv/first-app.md)
 
-    A TV application is targeted to run on smart TVs, and can be optimized for larger screens and remote control.
+
+This following guide demonstrates how to create and run a simple Tizen Web application for **Samsung Smart TV**:
+
+-   [**Samsung Samrt TV Web application**](../web/get-started/tv/first-samsung-tv-app.md)
 
 First, ensure that you have installed the latest version of Tizen Studio. <a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank"><img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong>.</a>
