@@ -25,7 +25,7 @@
 	
 ### Fixed Bugs
 -   SmartThings
-	-   IoT applications can now be installed without the Cloud service cetificate and key.
+	-   IoT applications can now be installed without the Cloud service certificate and key.
 -   Package Manager
 	-   A warning label to terminate all Tizen Studio tasks before installing or uninstalling any package has been added.
 

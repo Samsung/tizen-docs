@@ -50,7 +50,7 @@ To customize a UI component:
 
 1. Create a project for a basic EDC UI application.
 
-   See [Creating Your First Tizen Mobile Native Application](../../../getting-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../getting-started/wearable/first-app.md) for creating a EDC UI project.
+   See [Creating Your First Tizen Mobile Native Application](../../../get-started/mobile/first-app.md) or [Creating Your First Tizen Wearable Native Application](../../../get-started/wearable/first-app.md) for creating a EDC UI project.
 
 2. Create an EDJ file in the `/res/edje/` directory.
 

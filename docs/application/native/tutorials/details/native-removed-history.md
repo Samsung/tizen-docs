@@ -140,6 +140,7 @@ The following table provides detailed information regarding removed functions an
 | UI - DALi | Dali::Toolkit::TextLabel::Property::UNDERLINE_ENABLED | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::TextLabel::Property::UNDERLINE |
 | UI - DALi | Dali::Toolkit::TextLabel::Property::UNDERLINE_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::TextLabel::Property::UNDERLINE |
 | UI - DALi | Dali::Toolkit::TextLabel::Property::UNDERLINE_HEIGHT | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::TextLabel::Property::UNDERLINE |
+| System - Runtime information | RUNTIME_INFO_KEY_LOCATION_SERVICE_ENABLED, RUNTIME_INFO_KEY_LOCATION_NETWORK_POSITION_ENABLED of runtime_info_key_e | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 
 ## Related information
 

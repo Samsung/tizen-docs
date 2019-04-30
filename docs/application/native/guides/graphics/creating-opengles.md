@@ -5,7 +5,7 @@ The easiest way to use the OpenGL&reg; ES API in a Tizen application is to rely 
 
 The following example shows the steps to create an OpenGL&reg; ES application. From now on, the `Elm_GLView` component is shortened to GLView.
 
-1. Create a basic application as presented in the [mobile](../../getting-started/mobile/first-app.md#create) and [wearable](../../getting-started/wearable/first-app.md#create) Tizen first application example.
+1. Create a basic application as presented in the [mobile](../../get-started/mobile/first-app.md#create) and [wearable](../../get-started/wearable/first-app.md#create) Tizen first application example.
 
    The UI application's skeleton makes available the window object, which can contain the GLView component.
 
