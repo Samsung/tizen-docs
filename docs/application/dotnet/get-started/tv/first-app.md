@@ -1,5 +1,5 @@
 
-# Creating Your First Tizen TV .NET Application
+# Create Your First Tizen TV .NET Application
 
 The Tizen .NET framework allows you to easily and efficiently create
 applications for Tizen. Study the following instructions to help

@@ -1,4 +1,4 @@
-# Creating Your First Tizen Wearable Native Watch Application
+# Create Your First Tizen Wearable Native Watch Application
 
 **Welcome to Tizen wearable native watch application development!**
 

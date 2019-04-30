@@ -1,4 +1,4 @@
-# Creating Your First Tizen Wearable Web Watch Application
+# Create Your First Tizen Wearable Web Watch Application
 
 **Welcome to Tizen wearable Web watch application development!**
 
