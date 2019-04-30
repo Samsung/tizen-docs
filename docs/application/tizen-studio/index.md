@@ -9,7 +9,7 @@ In the Tizen Studio, you can perform all the same development activities that we
 
 > **Note**
 > 
-> From Tizen Studio 3.5 onwards, support for 32 bit host for Windows and Ubuntu will be removed.
+> Support for Windows 32-bit and Ubuntu 32-bit will be deprecated from the next version of Tizen Studio.
 
 To develop your applications, use the set of tools provided by the Tizen Studio:
 
