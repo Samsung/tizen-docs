@@ -25,6 +25,6 @@ This following guide demonstrates how to create and run a basic Tizen Web applic
 
 This following guide demonstrates how to create and run a simple Tizen Web application for **Samsung Smart TV**:
 
--   [**Samsung Samrt TV Web application**](../web/get-started/tv/first-samsung-tv-app.md)
+-   [**Samsung Smart TV Web application**](../web/get-started/tv/first-samsung-tv-app.md)
 
 First, ensure that you have installed the latest version of Tizen Studio. <a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank"><img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong>.</a>
