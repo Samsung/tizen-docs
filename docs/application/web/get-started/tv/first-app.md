@@ -4,7 +4,7 @@
 
 ![Tizen TV](media/tizen_tv_preview.png)
 
-You can create TV application using Web-native languages,such as HTML5, CSS, and JavaScript.
+You can create TV application using Web-native languages, such as HTML5, CSS, and JavaScript.
 
 Study the following steps to familiarize with Tizen Studio, Tizen web app development, and, create and run a basic TV web app on emulator or a target device.
 
