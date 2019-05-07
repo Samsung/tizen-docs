@@ -28,15 +28,17 @@ A default application project contains all the files that are necessary to make 
 The following figure illustrates the basic application template for Tizen TV:
 
 **Figure: TV Web Basic application**
+
 ![TV web basic application](media/tizen_tv_app_preview.png)
 
 
 To create the application project:
 
+
 1. Launch the Tizen Studio.
 
 
-2.In the Tizen Studio menu, select **File \> New \> Tizen Project** as shown in the following illustration, doing so opens the **Project Wizard** window.
+2. In the Tizen Studio menu, select **File \> New \> Tizen Project** as shown in the following illustration, doing so opens the **Project Wizard** window.
 
 ![Application screen with the new text color](media/emulator_running_app_tv.png)
 
@@ -48,38 +50,46 @@ To create the application project:
 3. In the Project Wizard window, you can define the project details as follows:
 
     1. Select the  **Template**  project type, click  **Next**.
-	![Selecting the project type](media/create_project_wizard_type.png)
+    
+      ![Selecting the project type](media/create_project_wizard_type.png)
 
+    
     2. Select the profile **(Custom)** and version **(TV-samsung v5.0)** from the drop-down list and click  **Next**.
-	![Selecting the profile and version](media/create_project_wizard_version_tv.png)
+    
+      ![Selecting the profile and version](media/create_project_wizard_version_tv.png)
 
+    
     3. Select the  **Web Application** as application type and click  **Next**.
-    ![Selecting the application type](media/create_project_wizard_app_web_tv.png) 
+    
+      ![Selecting the application type](media/create_project_wizard_app_web_tv.png) 
 
+    
     4. Select the  **BasicProject** and click **Next**.
-	![Select BasicProject](media/create_project_wizard_template_tv.png)
+    
+      ![Select BasicProject](media/create_project_wizard_template_tv.png)
 
     5. Define the project properties and click  **Finish**.
-    	
-	   You can enter the project name (3-50 characters) and the unique package ID. You can also select the location and working sets by clicking  **More properties**.
-	   
-       ![Select BasicProject](media/create_project_wizard_properties_tv.png)
+    
+    You can enter the project name (3-50 characters) and the unique package ID. You can also select the location and working sets by clicking  **More properties**.
+    
+    ![Select BasicProject](media/create_project_wizard_properties_tv.png)
 
 The Project Wizard sets up your project, creates the required application files using the default content from the template. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/web-tools/project-wizard.md).
 
 As you set up your project, you can view your created project in the Project Explorer view now within Tizen Studio. Your project must have the following files and folders:
 
--   'css': Folder for CSS files used by the application to style its content
+-   'css' : Folder for CSS files used by the application to style its content
 
--   'js': Folder for JavaScript files used by the application to implement its functional logic
+-   'js' : Folder for JavaScript files used by the application to implement its functional logic
 
--   'config.xml': Application configuration file used by the platform to install and launch the application
+-   'config.xml' : Application configuration file used by the platform to install and launch the application
 
--   'icon.png': Application icon file used by the platform to represent the application
+-   'icon.png' : Application icon file used by the platform to represent the application
 
--   'index.html': Main HTML file for the layout of the application screen
+-   'index.html' : Main HTML file for the layout of the application screen
 
 **Figure: Application in the Project Explorer**
+
 ![Application in the Project Explorer](media/basic_app_project_explorer_tv.png)
 
 >**Note**
@@ -96,6 +106,7 @@ To view and modify the application configuration:
 1.  In the  **Project Explorer**  view, double-click the config.xml file of the application. The Tizen Studio opens the file in the Web application configuration editor.
 
 2.  In the configuration editor, you can view and modify the configuration details in each tab:
+    
     ![Configuring the application](media/basic_app_config_w.png)
 
 
@@ -108,11 +119,11 @@ Following are the functionality of each tab:
 -  **Policy**: Request network resource permissions to access external network resources.
 -  **Preferences**: Define name-value pairs that can be set or retrieved through the application.
 -  **Tizen**: Edit the Tizen schema extension properties of the application.
--  **Source**: View and edit the source code of the config.xml file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
+-  **Source**: View and edit the source code of the 'config.xml' file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-       >Note
-       >
-       >The 'config.xml' file must conform to both the XML file format and the W3C specification requirements. Editing the file in the  **Source**  tab is intended for advanced users only.
+>Note
+>
+>The 'config.xml' file must conform to both the XML file format and the W3C specification requirements. Editing the file in the  **Source**  tab is intended for advanced users only.
 
 3. To save any changes, on the Tizen Studio menu, select  **File \> Save All**.
 
@@ -149,7 +160,8 @@ To use the automatic build:
     To manually build the application, right-click the project in the  **Project Explorer**  view and select  **Build Project**.
 
     **Figure: Manually building the application**
-	![Manually building the application](media/build_manual_w.png)
+    
+    ![Manually building the application](media/build_manual_w.png)
 
     
     Alternatively, you can also select the project in the Project Explorer view and do either of the following:
@@ -174,7 +186,7 @@ To run the application on the emulator:
 
 1.   Launch an emulator instance in the [Emulator Manager](../../../tizen-studio/common-tools/emulator-manager.md):
 
-   1.  In the Tizen Studio menu bar, select  **Tools \&gt; Emulator Manager**.
+   1.  In the Tizen Studio menu bar, select  **Tools \> Emulator Manager**.
    
    ![Emulator Manager](media/emulator_icon.png)
 
@@ -214,7 +226,7 @@ Before you run the application, you must [sign your application package with a c
 	  ![Application running in the emulator](media/emulator_running_tv.png)
 
 
-For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel]((../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
+For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 ### Run on the Samsung TV Simulator
 
@@ -250,7 +262,7 @@ To run the application on a target device:
 		
 		![Launch the Remote Device Manager](media/remote_conn_mgr.png)
 		
-        2. In the **Remote Device Manager ** window, click  **+**.
+        2. In the **Remote Device Manager** window, click  **+**.
 		
 		![Add new device](media/remote_conn_new_ww.png)
 		
@@ -278,7 +290,7 @@ To run the application on a target device:
 
 3. Run the application:
    1. In the  **Device Manager** , select the device.
-   2. In  **Project Explorer**  view, right-click the project and select  **Run As \&gt; Tizen Web Application**.
+   2. In  **Project Explorer**  view, right-click the project and select  **Run As \> Tizen Web Application**.
    
    ![Running the application on a target device](media/app_run_tv.png)
  
@@ -296,6 +308,7 @@ To run the application on a target device:
   >The application is launched using the default debug run configuration. To create and use another configuration:
   >1. In the Project Explorer view, right-click the project and select Run As \> Run Configurations.
   >2.In the Run Configurations window, click the New Launch Configuration icon, define the configuration details, and launch the application by clicking Run.
+  >
   >![Run Configurations window](media/run_configurations_w.png)
 
 ## Designing a Simple UI
@@ -317,16 +330,18 @@ The UI in the **BasicProject** template uses the HTML DOM, which is a structured
 - The '<html>' element is the top-level element of the HTML DOM tree that wraps the entire document, and it has the '<head>' and '<body>' elements as child nodes:
 
   '''
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Content-->
-    <head>
-    <body>
-      <!--Content-->
-    </body>
+  
+      <!DOCTYPE html>
+         <html>
+           <head>
+               <!--Content-->
+           </head>
+           <body>
+               <!--Content-->
+           </body>
 
-  </html>
+         </html>
+  
   '''
 
 - The '<head>' element contains the information that the browser refers to when rendering the body element to interpret information, such as the title of the HTML document, and the location of the related CSS and JavaScript files:
@@ -337,84 +352,89 @@ The UI in the **BasicProject** template uses the HTML DOM, which is a structured
   - '<script>', '<noscript>': Adds functions to the document.
 
  '''
- <head>
+ 
+    <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="Tizen basic template generated by Tizen Web IDE" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Tizen basic template generated by Tizen Web IDE" />
 
-    <title> Tizen Web IDE - Tizen - Samsung Tizen TV basic Application </title>
+        <title> Tizen Web IDE - Tizen - Samsung Tizen TV basic Application </title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/main.js"></script">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="js/main.js"></script">
 
- </head>
+    </head>
+ 
  '''
 
 - The '<body>' element defines the area displaying content on the browser screen. In this case, it defines the heading, text, list, image, and hyperlink components:
 
  '''
-  <body>
-
-   <header>
-
-     <hgroup>
-
-        <h1>Tizen app</h1>
-
-        <h2> Basic template of Samsung Tizen TV</h2>
-
-     </hgroup>
-
-   </header>
-
-    <nav>
-
-     <ul>
-
-        <li><a href="#">Home</a></li>
-
-        <li><a href="#">About Us</a></li>
-
-        <li><a href="#">Contact Us</a></li>
-
-     </ul>
-
-   </nav>
-  
- Review comments given
-
- <article>
  
-    <header>
-	
-      <h1>
-        <img src="images/tizen_32.png" width="32"/> Application Name
-      </h1>
-	  
+    <body>
+
+     <header>
+
+      <hgroup>
+
+           <h1>Tizen app</h1>
+
+           <h2> Basic template of Samsung Tizen TV</h2>
+
+      </hgroup>
+
     </header>
+
+     <nav>
+
+      <ul>
+
+         <li><a href="#">Home</a></li>
+
+         <li><a href="#">About Us</a></li>
+
+         <li><a href="#">Contact Us</a></li>
+
+      </ul>
+
+    </nav>
+  
+    Review comments given
+
+    <article>
+ 
+        <header>
+	
+          <h1>
+            <img src="images/tizen_32.png" width="32"/> Application Name
+         </h1>
+	  
+       </header>
     
 	<p style="font-size:40px;">This is an empty template of Tizen Web Application. Tizen will support multiple device categories:</p>
     
 	<ul>
-      <li style="font-size:40px;">smartphones, tablets and smart TVs
-      <li style="font-size:40px;">netbooks, in-vehicle infotainment devices
-    </ul>
+           <li style="font-size:40px;">smartphones, tablets and smart TVs
+           <li style="font-size:40px;">netbooks, in-vehicle infotainment devices
+        </ul>
      
 	 <section>
-       <p style="font-size:40px;">This is a basic section of a document.</p>
-       <p style="font-size:40px;">The following button displays a time using JavaScript.</p>
-       <div id="divbutton1" style="font-size:40px;">
-         <button onclick="startTime();" style="font-size:50px;">Clock</button>
-       </div>
-     </section>
+            <p style="font-size:40px;">This is a basic section of a document.</p>
+            <p style="font-size:40px;">The following button displays a time using JavaScript.</p>
+            <div id="divbutton1" style="font-size:40px;">
+                 <button onclick="startTime();" style="font-size:50px;">Clock</button>
+            </div>
+         </section>
 	 
-   </article>
+      </article>
 
-   <footer>
-     <p>&copy; 2015 Company Name. All rights reserved.</p>
-   </footer>    
- </body>
+       <footer>
+          <p>&copy; 2015 Company Name. All rights reserved.</p>
+       </footer>    
+    
+    </body>
+ 
  '''
 
 ### Modify Existing Components with CSS
@@ -433,43 +453,50 @@ Applying the style of an HTML element directly with the style attribute has the 
 In the BasicProject template, the CSS file is connected to the HTML file using a '<link>' element in the '<head>' element:
 
  '''
- <head>
-   <meta charset="utf-8"/>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-   <meta name="description" content="Tizen TV basic template generated by Samsung TV Web IDE"/>
+ 
+    <head>
+       <meta charset="utf-8"/>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+       <meta name="description" content="Tizen TV basic template generated by Samsung TV Web IDE"/>
 
-   <title>Tizen TV Web IDE - Tizen TV - Tizen TV basic Application</title>
+      <title>Tizen TV Web IDE - Tizen TV - Tizen TV basic Application</title>
 
-   <link rel="stylesheet" type="text/css" href="css/style.css"/>
-   <script src="js/main.js"></script>
- </head>
+      <link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <script src="js/main.js"></script>
+    </head>
+ 
  '''
 
 The following lines in the CSS code describe the styling of the text in \&lt;H1\&gt; element with header h1 class:
 
  '''
- header h1 {
-
-     font-size: 108px;
  
-     margin: 0px;
+    header h1 {
 
- }
+         font-size: 108px;
+ 
+         margin: 0px;
+
+     }
+ 
  '''
 
 The font-size of is set to show up as 108px. To change the font-size of the text, change the CSS code by modifying the font-size attribute (in this case, it is changed to _90px_ to make the text smaller):
 
  '''
- header h1 {
+ 
+    header h1 {
 
-     font-size: 90px;
+         font-size: 90px;
 
-     margin: 0px;
+         margin: 0px;
 
- }
+    }
+ 
  '''
  
 
 **Figure: Application screen with the new font-size for heading**
+
 ![Application screen with the new text color](media/emulator_running_app_tv.png)
 
