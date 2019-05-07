@@ -50,4 +50,4 @@ To create a Tizen .NET application project:
 
 The new project is created.
 
-![New project](media/new-project.png)
+![New project](media/new-project.PNG)
