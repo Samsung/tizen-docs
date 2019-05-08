@@ -57,7 +57,7 @@ The following figures show examples of the item styles.
 
 ![2text.1icon.1 item style](./media/genlist3_wn.png)
 
-For more information on creating a new genlist item style, see [Customizing UI Components](component-custom.md).
+For more information on creating a new genlist item style, see [Customizing UI Components](../component-custom.md).
 
 ## Defining the Genlist Item Class
 

@@ -37,7 +37,7 @@ To use the Application API (in [mobile](../../api/latest/device_api/mobile/tizen
 
 ## Controlling the Launch Mode
 
-You can set the application launch mode in the `config.xml` file (in [mobile](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#mw_application) and [wearable](../../../../org.tizen.studio/html/web_tools/config_editor_w.htm#ww_application) applications) with one of the following values:
+You can set the application launch mode in the `config.xml` file (in [mobile](../../../tizen-studio/web-tools/config-editor.md#mw_application) and [wearable](../../../tizen-studio/web-tools/config-editor.md#ww_application) applications) with one of the following values:
 
 - The `SINGLE` launch mode means that the application is launched as a main application (in a new group).
 - The `GROUP` launch mode means that the application can be launched as a sub application      belonging to the same group as the caller application which is causing the application to be launched.

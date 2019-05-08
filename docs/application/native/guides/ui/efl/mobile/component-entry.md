@@ -319,7 +319,7 @@ You can format the entry text in many ways:
   elm_entry_text_style_user_push(entry, "DEFAULT='font=Tizen:style=Light font_size=50 color=#00f align=center'");
   ```
 
-  The `DEFAULT` element sets the style properties to a default style that is applied to the complete text. For more information on style properties, such as font, font size, and color, see [Textblock Objects](evas-objects.md#textblock-objects).
+  The `DEFAULT` element sets the style properties to a default style that is applied to the complete text. For more information on style properties, such as font, font size, and color, see [Textblock Objects](../evas-objects.md#textblock-objects).
 
   **Figure: Overriding style**
 
