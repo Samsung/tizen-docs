@@ -35,11 +35,11 @@ The main features of the Media Controller API include:
 
 - Managing playlists on server side
 
-  You can [manage playlists](#managing-playlists-on-server-side) on server side by creating, saving, deleting and getting information about playlists. You can also update playback item from playlists item lists.
+  You can [manage playlists](#managing-playlists-on-server-side) on server side by creating, saving, deleting and getting information about playlists. You can also update the playback item from the playlists item list.
 
 - Managing playlists on client side
 
-  You can [manage playlists](#managing-playlists-on-client-side) on client side by sending request about new playback item to server and adding listeners to be invoked when playlist is updated on server.
+  You can [manage playlists](#managing-playlists-on-client-side) on client side by sending request about the new playback item to the server You can then add listeners to be invoked when the playlist is updated on the server.
 
 
 ## Prerequisites
@@ -94,7 +94,7 @@ To manage the media controller features in your application, you must learn to s
 
 To manage the media controller features in your application, you must learn to handle requests from the client to the server:
 
-1. Create a `MediaControllerChangeRequestPlaybackInfoCallback` object (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) applications) to define listeners for getting the requests from a client.
+1. Create a `MediaControllerChangeRequestPlaybackInfoCallback` object in ([mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) applications) to define listeners for getting the requests from a client.
   Each listener must invoke the appropriate function to perform the related update on the server and send an appropriate notification to the client. For example, the `onplaybackstaterequest` listener must use the `updatePlaybackState()` method to update the playback state.
 
    ```
@@ -271,9 +271,9 @@ Server can set age rating for current playback. Client can access this rating (r
     }
     ```
 
-## Managing playlists on server side
+## Managing Playlists on Server Side
 
-To manage the media controller playlists in your server application, you must learn to create, save and delete playlists.
+To manage the media controller playlists in your server application, you must learn to create, save, and delete playlists.
 
 1. To create a media controller playlist use the `createPlaylist()` method:
 
@@ -281,7 +281,7 @@ To manage the media controller playlists in your server application, you must le
    var playlist = mcServer.createPlaylist("testPlaylistName");
    ```
 
-2. To add item to playlist is available use `addItem()` method:
+2. To add item to playlist use `addItem()` method:
 
    ```
    var metadata = {
@@ -354,17 +354,17 @@ To manage the media controller playlists in your server application, you must le
    mcServer.deletePlaylist(playlist.name, deleteSuccess, deleteFailure);
    ```
 
-## Managing playlists on client side
+## Managing Playlists on Client Side
 
-To manage the media controller playlist in your application, you must learn to handle requests from the client to the server:
+To manage the media controller playlist in your application, you must handle requests from the client to the server:
 
-1. You can send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
+1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerServerInfo` interface in ([mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
 
    ```
    mcServerInfo.sendPlaybackItem("testPlaylistName", "index1", "PLAY", 0);;
    ```
 
-2. Define the event handlers for different notifications by implementing the MediaControllerPlaylistUpdatedCallback interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) applications):
+2. Define the event handlers for different notifications by implementing the `MediaControllerPlaylistUpdatedCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) applications):
 
    ```
    var listener = {
