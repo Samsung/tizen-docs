@@ -1,4 +1,4 @@
-﻿# Get Started with Memory Profiling
+# Get Started with Memory Profiling
 ### Step 1. Running Memory Profiler
    - In the menu, choose **Tools > Tizen > Profiler > Run Memory Profiler**.
 
