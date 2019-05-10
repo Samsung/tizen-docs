@@ -141,7 +141,7 @@ To manage the media controller features in your application, you must learn to h
    }
    ```
 
-4. You can send a request from the client using the `sendPlaybackState()`, `sendPlaybackPosition()`, `endShuffleMode()`, or `sendRepeatMode()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
+4. You can send a request from the client using the `sendPlaybackState()`, `sendPlaybackPosition()`, `sendShuffleMode()`, or `sendRepeatMode()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
    In the following example, send a request for the changing the playback state to paused using the `sendPlaybackState()` method:
 
    ```
@@ -281,7 +281,7 @@ To manage the media controller playlists in your server application, you must le
    var playlist = mcServer.createPlaylist("testPlaylistName");
    ```
 
-2. To add item to playlist use `addItem()` method:
+2. To add item to playlist use the `addItem()` method:
 
    ```
    var metadata = {
@@ -301,7 +301,7 @@ To manage the media controller playlists in your server application, you must le
    playlist.addItem("index1", metadata);
    ```
 
-3. To save playlist use `savePlaylist()` method:
+3. To save playlist use the `savePlaylist()` method:
 
    ```
    function successCallback() {
@@ -314,7 +314,7 @@ To manage the media controller playlists in your server application, you must le
    mcServer.savePlaylist(successCallback, errorCallback);
    ```
 
-4. To get information about playlists use `getAllPlaylists()` method:
+4. To get information about playlists use the `getAllPlaylists()` method:
 
    ```
    function successCallback(playlists) {
@@ -328,7 +328,7 @@ To manage the media controller playlists in your server application, you must le
    mcServer.getAllPlaylists(successCallback, errorCallback);
    ```
 
-5. To get information about playlist items use `getItems()` method:
+5. To get information about playlist items use the `getItems()` method:
 
    ```
    function successCallback(items) {
@@ -342,7 +342,7 @@ To manage the media controller playlists in your server application, you must le
    playlist.getItems(successCallback, errorCallback);
    ```
 
-6. To delete playlist use `deletePlaylist()` method:
+6. To delete playlist use the `deletePlaylist()` method:
 
    ```
    function deleteSuccess() {
