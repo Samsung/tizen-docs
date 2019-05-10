@@ -35,11 +35,11 @@ The main features of the Media Controller API include:
 
 - Managing playlists on server side
 
-  You can [manage playlists](#managing-playlists-on-server-side) on server side by creating, saving, deleting and getting information about playlists. You can also update the playback item from the playlists item list.
+  You can [manage playlists](#managing-playlists-on-server-side) on server side by creating, saving, deleting, and getting information about playlists. You can also update the playback item from the playlists item list.
 
 - Managing playlists on client side
 
-  You can [manage playlists](#managing-playlists-on-client-side) on client side by sending request about the new playback item to the server You can then add listeners to be invoked when the playlist is updated on the server.
+  You can [manage playlists](#managing-playlists-on-client-side) on client side by sending request about the new playback item to the server. You can then add listeners to be invoked when the playlist is updated on the server.
 
 
 ## Prerequisites
@@ -275,13 +275,13 @@ Server can set age rating for current playback. Client can access this rating (r
 
 To manage the media controller playlists in your server application, you must learn to create, save, and delete playlists.
 
-1. To create a media controller playlist use the `createPlaylist()` method:
+1. To create a media controller playlist, use the `createPlaylist()` method:
 
    ```
    var playlist = mcServer.createPlaylist("testPlaylistName");
    ```
 
-2. To add item to playlist use the `addItem()` method:
+2. To add item to playlist, use the `addItem()` method:
 
    ```
    var metadata = {
@@ -301,7 +301,7 @@ To manage the media controller playlists in your server application, you must le
    playlist.addItem("index1", metadata);
    ```
 
-3. To save playlist use the `savePlaylist()` method:
+3. To save playlist, use the `savePlaylist()` method:
 
    ```
    function successCallback() {
@@ -314,7 +314,7 @@ To manage the media controller playlists in your server application, you must le
    mcServer.savePlaylist(successCallback, errorCallback);
    ```
 
-4. To get information about playlists use the `getAllPlaylists()` method:
+4. To get information about playlists, use the `getAllPlaylists()` method:
 
    ```
    function successCallback(playlists) {
@@ -328,7 +328,7 @@ To manage the media controller playlists in your server application, you must le
    mcServer.getAllPlaylists(successCallback, errorCallback);
    ```
 
-5. To get information about playlist items use the `getItems()` method:
+5. To get information about playlist items, use the `getItems()` method:
 
    ```
    function successCallback(items) {
@@ -342,7 +342,7 @@ To manage the media controller playlists in your server application, you must le
    playlist.getItems(successCallback, errorCallback);
    ```
 
-6. To delete playlist use the `deletePlaylist()` method:
+6. To delete playlist, use the `deletePlaylist()` method:
 
    ```
    function deleteSuccess() {
