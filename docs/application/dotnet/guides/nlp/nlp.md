@@ -27,7 +27,7 @@ The main features of the Tizen.Nlp namespace include:
 
 To enable your application to use the NLP functionality:
 
-1.  To use the [Tizen.Nlp](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Nlp](https://samsung.github.io/TizenFX/latest/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
