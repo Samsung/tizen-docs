@@ -1,40 +1,49 @@
-# Get Started for Mobile
 
-The Get Started Tutorial teaches you how to create basic Tizen applications for mobile devices.
+# Get Started with Tizen Mobile Applications
+Samsung expands the Tizen ecosystem with advanced Tizen-based smart phone application development.  
 
-The Tizen supports three primary application types for mobile:
+## Mobile Native Applications
+You can create rich applications in C with device-specific features, advanced system settings, and additional functionalities.
 
--   [.NET application](#net-application) is a new way to develop applications for the Tizen operating system using C# language.
+[Quick start](../native/get-started/mobile/first-app.md) for beginners
 
--   [Native application](#native-application) is developed using C language. Developer can use the dozens of native API modules that cover a large range of capabilities such as camera, GPS, and accelerometer in addition to more advanced system settings and functionality.
+Explore more about the Tizen mobile Native application development:
+- [Tutorials](../native/tutorials/overview.md)
+- [Guides](../native/guides/index.md)
+- [API reference](../native/api/overview.md)
+- [Samples](https://developer.tizen.org/development/sample/native)
 
--   [Web application](#web-application) is a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web Framework to interact with the native subsystems.
+<a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank"><img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong></a>
 
-## .NET Application
+## Mobile Web Applications
+You can create rich Web applications that consist of HTML, JavaScript, and CSS combined in a package. 
 
-The following guide demonstrates how to create and run a basic Tizen .NET application, which displays some text on the screen with no user interaction:
+[Quick start](../web/get-started/mobile/first-app.md) for beginners
 
--   [Mobile .NET application](../dotnet/get-started/mobile/first-app.md)
+Explore more about the Tizen mobile Web application development:
+- [Tutorials](../web/tutorials/overview.md)
+- [Guides](../web/guides/index.md)
+- [API reference](../web/api/index.md) 
+- [Samples](https://developer.tizen.org/development/sample/web)
 
-    A mobile application is targeted to run on a smart phone. The applications can take advantage of a wide variety of functionalities available on smart phones.
+<a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank"><img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong></a>
 
-First, ensure that you have installed the latest version of Visual Studio Tools for Tizen. <a href="https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen" target="_blank"><img src="media/ic_docs_download.png"><Strong> Download Visual Studio Tools for Tizen</strong>.</a>
+## Mobile .NET Applications
 
-## Native Application
+You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development. 
 
-This following guide demonstrates how to create and run a basic Tizen native application:
+[Quick start ](../dotnet/get-started/mobile/first-app.md) for beginners
+	
+Explore more about the Tizen mobile .NET application development:
+- [Tutorials](../dotnet/tutorials/overview.md)	
+- [Guides](../dotnet/guides/overview.md)
+- [API reference ](../dotnet/api/overview.md)
+- [Samples](../dotnet/samples/account/overview.md)
 
--   [Mobile native application](../native/get-started/mobile/first-app.md)
+<a href="https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen" target="_blank"><img src="media/ic_docs_download.png"><Strong> Download Visual Studio Tools for Tizen</strong></a>
 
-    A mobile application is targeted to run on smart phones, and can take advantage of a wide variety of functionalities available on those devices.
+Further enrichment with Tizen mobile applications:
+- Connect with the [community](https://developer.tizen.org/community/tip-tech).
+- [Design](../design/mobile/design-principles.md) comfortable visual identity for your applications.
+- [Distribute](../distribute/how-to-distribute/overview.md) through Tizen Store.
 
-## Web Application
-
-This following guide demonstrates how to create and run a basic Tizen Web application:
-
--   [Mobile Web application](../web/get-started/mobile/first-app.md)
-
-    A mobile application is targeted to run on smart phones, and can take advantage of a wide variety of functionalities available on those devices.
-
-First, ensure that you have installed the latest version of Tizen Studio. <a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank">
-<img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong>.</a>

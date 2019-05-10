@@ -1,30 +1,38 @@
-# Get Started for TV
 
-The Get Started Tutorial teaches you how to create basic Tizen applications for TV devices.
-
-The Tizen supports two primary application types for TV:
-
--   [.NET application](#net-application) is a new way to develop applications for the Tizen operating system using C# language.
-
--   [Web application](#web-application) is a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web Framework to interact with the native subsystems.
-
-## .NET Application
-
-The following guide demonstrates how to create and run a basic Tizen .NET application:
-
--   [TV .NET application](../dotnet/get-started/tv/first-app.md)
-
-First, ensure that you have installed the latest version of Visual Studio Tools for Tizen. <a href="https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen" target="_blank"><img src="media/ic_docs_download.png"><Strong> Download Visual Studio Tools for Tizen</strong>.</a>
-
-## Web Application
-
-This following guide demonstrates how to create and run a basic Tizen Web application:
-
--   [TV Web application](../web/get-started/tv/first-app.md)
+# Get Started with Tizen TV Applications
+Samsung combines the best TV features with a robust development environment to enhance the smart TV application development. 
 
 
-This following guide demonstrates how to create and run a simple Tizen Web application for **Samsung Smart TV**:
+## TV Web Applications
+You can create rich web applications using web-native languages, such as HTML, JavaScript, and CSS combined in a package. These applications use the Tizen Web Framework to interact with the native subsystems.
 
--   [**Samsung Smart TV Web application**](../web/get-started/tv/first-samsung-tv-app.md)
+[Quick start](../web/get-started/tv/first-samsung-tv-app.md) for beginners
 
-First, ensure that you have installed the latest version of Tizen Studio. <a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank"><img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong>.</a>
+Explore more about the Tizen TV Web application development:
+- [Tutorials](../web/tutorials/overview.md)
+- [Guides](../web/guides/index.md)
+- [API reference](../web/api/index.md) 
+- [Samples](https://developer.samsung.com/tv/develop/samples)
+
+<a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank"><img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong></a>
+
+## TV .NET Applications
+
+You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development. 
+
+[Quick start ](../dotnet/get-started/tv/first-app.md) for beginners
+	
+Explore more about the Tizen TV .NET application development:
+- [Tutorials](../dotnet/tutorials/overview.md)	
+- [Guides](../dotnet/guides/overview.md)
+- [API reference ](../dotnet/api/overview.md)
+- [Samples](../dotnet/samples/account/overview.md)
+
+<a href="https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen" target="_blank"><img src="media/ic_docs_download.png"><Strong> Download Visual Studio Tools for Tizen</strong></a>
+
+Further enrichment with Tizen TV applications:
+- Connect with the [community](https://developer.tizen.org/community/tip-tech).
+- [Design](../design/tv/design-principles.md) comfortable visual identity for your applications.
+- [Distribute](../distribute/how-to-distribute/overview.md) through Tizen Store.
+
+
