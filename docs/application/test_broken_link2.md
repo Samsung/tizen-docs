@@ -1,3 +1,4 @@
+[Tizen .NET application](https://github.com/jquery/globalize/blob/master/doc/api/date/formatter.md)
 <a name="training"></a>
 # Tizen Applications
 
