@@ -28,7 +28,7 @@ The main features of the StreamRecorder API include:
 
     To set the video codec for encoding a video stream, use the `streamrecorder_set_video_encoder()` function.
 
-    The available video codecs are defined in the `streamrecorder_video_codec_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) and [wearable](../../.api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) applications).
+    The available video codecs are defined in the `streamrecorder_video_codec_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gae2912d9eceeac43640efa52f96556473) applications).
 
   - Audio codec for encoding an audio stream
 

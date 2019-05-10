@@ -164,7 +164,7 @@ To enable your application to use the NFC functionality:
 <a name="enable"></a>
 ## Enabling and Disabling NFC
 
-To allow the user to enable or disable NFC, use the [application control](../app-management/common_appcontrol.md#settings_nfc) to display the NFC settings.
+To allow the user to enable or disable NFC, use the [application control](../app-management/common-appcontrols.md#settings_nfc) to display the NFC settings.
 
 The NFC API does not contain functions for enabling or disabling NFC. You must display the NFC settings application to allow the user to toggle the NFC state.
 

@@ -105,7 +105,7 @@ for TD:
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WeatherWatch" target="_blank"><strong>(W) WeatherWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a watch face application with weather information for Tizen wearable devices. It also demonstrates how to use watch face API using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.<br>
-			You can get detailed information from <a href="https://github.com/Samsung/Tizen-CSharp-Samples/blob/master/Wearable/WeatherWatch/README.md" target="_blank"><strong>readme file</strong> of WeatherWatch</a>.</p>
+			You can get detailed information from <a href="https://github.com/Samsung/Tizen-CSharp-Samples/blob/master/Wearable/WeatherWatch" target="_blank"><strong>readme file</strong> of WeatherWatch</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Weather_Watch" target="_blank">Native version</a></li>

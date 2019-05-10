@@ -166,7 +166,7 @@ To prepare the media muxer:
 
 5. After a successful muxer start, call a write sample until all the samples of the respective track are written.
 
-   The write sample is a specific track. It is your responsibility to use the appropriate `track_index` to choose the correct track, and to add the corresponding data to the muxer through the write sample. Repeat the same for the rest of the tracks. Before calling this function, create a valid handle for the `media_packet_h` handle to get the input samples. For more information, see [Media Handle Management](media-handle-n.md).
+   The write sample is a specific track. It is your responsibility to use the appropriate `track_index` to choose the correct track, and to add the corresponding data to the muxer through the write sample. Repeat the same for the rest of the tracks. Before calling this function, create a valid handle for the `media_packet_h` handle to get the input samples. For more information, see [Media Handle Management](media-handle.md).
 
    ```
    if (mediamuxer_write_sample(muxer, track_index, in_buf) != MEDIAMUXER_ERROR_NONE)

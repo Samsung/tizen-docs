@@ -2,7 +2,7 @@
 
 The layout container enables you to define a look and feel of the UI with animation and basic event response by using an Edje design file. For more information, see the Layout API (in [mobile](../../../api/mobile/latest/group__Elm__Layout.html) and [wearable](../../../api/wearable/latest/group__Elm__Layout.html) applications).
 
-EDC (Edje data collection) is a script language provided by Edje, which is a library in charge of the high-level layouting in EFL. An EDC file describes how the elements of the UI are positioned. An EDC file has an extension `.edc`. For more information on the syntax of EDC, see [Layouting with EDC](learn-edc-intro-n.md).
+EDC (Edje data collection) is a script language provided by Edje, which is a library in charge of the high-level layouting in EFL. An EDC file describes how the elements of the UI are positioned. An EDC file has an extension `.edc`. For more information on the syntax of EDC, see [Layouting with EDC](learn-edc-intro.md).
 
 **Figure: EDC file behavior**
 

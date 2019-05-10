@@ -13,7 +13,7 @@ Therefore, you can create a hybrid application package by merging Web applicatio
 
 The Web application package (wgt) file that contains the Web Widget application and the Web UI application, is created with the same .NET and Web hybrid application package.
 
-The .NET and Web hybrid application package follows the same conventions, which are defined for [Web and Native hybrid application package](../../../web/index.md#hybrid-application-package).
+The .NET and Web hybrid application package follows the same conventions, which are defined for [Web and Native hybrid application package](../../web/index.md#hybrid-application-package).
 
 The .NET and Web hybrid application package is a type of a merge between a .NET application based on a Web application. Therefore, the Package ID of the Web application generates the Package ID for the hybrid application.
 

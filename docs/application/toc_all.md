@@ -906,9 +906,10 @@
 ##### [HTML5 video and audio element](/application/web/guides/w3c/multimedia/video-audio.md)
 ##### [HTML Media Capture](/application/web/guides/w3c/multimedia/media-capture.md)
 ##### [Web Audio](/application/web/guides/w3c/multimedia/webaudio.md)
+##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/multimedia/sound-policy.md)
 #### Communication
 ##### [Overview](/application/web/guides/w3c/communication/comm-guide.md)
-#### [HTML5 Web Messaging](/application/web/guides/w3c/communication/web-messaging.md)
+##### [HTML5 Web Messaging](/application/web/guides/w3c/communication/web-messaging.md)
 ##### [WebSocket](/application/web/guides/w3c/communication/websocket.md)
 ##### [XMLHttpRequest](/application/web/guides/w3c/communication/xmlhttprequest.md)
 ##### [Server-Sent Events](/application/web/guides/w3c/communication/server-sent.md)
@@ -940,7 +941,6 @@
 ##### [WebGL - Khronos](/application/web/guides/w3c/supplement/webgl.md)
 ##### [FullScreen API - Mozilla](/application/web/guides/w3c/supplement/fullscreen.md)
 ##### [Camera API (Tizen Extension)](/application/web/guides/w3c/supplement/camera.md)
-##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/supplement/sound-policy.md)
 #### User Interface
 ##### [Overview](/application/web/guides/w3c/ui/ui-guide.md)
 ##### [HTML Priorities](/application/web/guides/w3c/ui/html-priority.md)

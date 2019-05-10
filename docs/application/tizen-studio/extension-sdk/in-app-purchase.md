@@ -105,7 +105,7 @@ To register the item with the sales status:
 
 IAP uses an AppControl mechanism, and as such requires no updates to the application project. Working with IAP means simply getting the proper AppControl.
 
-For more information, see the Application Controls guide (in [native](../../native/guides/app-management/app-controls.md) and [Web](../../web/guides/app-management/app-controls.md) applications) and AppControl API (in [native](../../../org.tizen.native.mobile.apireference/group__CAPI__APP__CONTROL__MODULE.html) and [Web](../../../org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) applications).
+For more information, see the Application Controls guide (in [native](../../native/guides/app-management/app-controls.md) and [Web](../../web/guides/app-management/app-controls.md) applications) and AppControl API (in [native](../../native/api/mobile/latest/group__CAPI__APP__CONTROL__MODULE.html) and [Web](../../web/api/latest/device_api/mobile/tizen/application.html) applications).
 
 ## 3. Programming Your Application to Work with IAP
 

@@ -105,7 +105,7 @@ When you use the `message_port_register_trusted_local_port()` and `message_port_
 
 ### Data Control
 
-The Data Control API supports [communication between provider and consumer applications](../app-management/data_control.md). One provider can provide data to many consumers in a structured way, such as SQL or map.
+The Data Control API supports [communication between provider and consumer applications](../app-management/data-control.md). One provider can provide data to many consumers in a structured way, such as SQL or map.
 
 The consumer can request data from any provider, as long as the consumer knows the provider ID of the provider application. If the provider does not want to provide data to arbitrary consumers, it can check the application ID of the consumer in the callback handlers, such as `data_control_provider_sql_insert_request_cb()` or `data_control_provider_sql_select_request_cb()`. The provider can get the consumer application ID though the `data_control_provider_get_client_appid()` function, and then determine whether it allows that consumer to access its data.
 
