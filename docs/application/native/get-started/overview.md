@@ -5,7 +5,6 @@
     content: "";
     display: table;
 }
-
 .docs-ui-started [class^="docs-ui-"] {
     width: 25%; 
     height: auto;
@@ -19,15 +18,12 @@
     float: left;
     margin: 0 auto 20px;
 }
-
 .docs-ui-started [class^="docs-ui-"]>span {
     display: block;
     color: #333;
     line-height: 29px;
-    position: relative;
-	
+    position: relative;	
 }
-
 @media (max-width: 780px)
 .docs-ui-started .docs-ui-wearable:before, .docs-ui-started .docs-ui-widget:before, .docs-ui-started .docs-ui-watch:before, .docs-ui-started .docs-ui-mobile:before {
     height: 85px;
@@ -50,7 +46,6 @@
     padding-left: 50;
     /* border-right: 1px solid #d1d1d1; */
 }
-
 .docs-ui-started .docs-ui-widget:before {
     content: "";
     margin: auto;
@@ -65,7 +60,6 @@
     width: 25%;
     padding-left: 50;
 }
-
 .docs-ui-started .docs-ui-watch:before {
     content: "";
     margin: auto;
@@ -80,7 +74,6 @@
     width: 25%;
     padding-left: 50;
 }
-
 .docs-ui-started .docs-ui-mobile:before {
     content: "";
     margin: auto;
@@ -89,19 +82,15 @@
     width: 70px;
     height: 90px;
     background: url(./media/mobile_getstarted.png) no-repeat center top;
-    background-position: 0 0 !important;
-	
+    background-position: 0 0 !important;	
 }
 .docs-ui-started.docs-ui-mobile {
     width: 25%;
-    padding-left: 50px;
-	
+    padding-left: 50px;	
 }
-
 div {
     display: block;
 }
-
 a.docs-btn-more {
     display: inline-block;
     font-size: 14px;
