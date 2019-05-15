@@ -141,6 +141,9 @@ Open your Terminal, and execute the following commands:
 - `sudo apt-get install gksudo\`
 - `sudo apt-get install module-init-tools\`
 - `sudo apt-get install libudev-dev\`
+- `sudo apt-get install libsdl1.2debian\`
+- `sudo apt-get install bridge-utils\`
+- `sudo apt-get install openvpn\`
 
 ## Launch Installer 
 Following steps help you to launch the installer:
