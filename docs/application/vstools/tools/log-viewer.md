@@ -1,42 +1,69 @@
 # Log Viewer
 
-The Log Viewer enables you to check your log messages in Visual Studio. It shows the same messages as the [**Log View**](device-manager.md#logview) in the Device Manager. However, the Log Viewer is shown as its own view within the Visual Studio window, while the Device Manager Log View is always part of the separate Device Manager window.
+When you run an application, the events are logged and are used for debugging or tracing. To organize and display the events logged by the application in an interactive format, certain tools are available. Tizen Log Viewer is one such tool.
 
-The Log Viewer helps you debug your application by capturing all the events logged by the platform and your application. The Log Viewer shows the logs through the dlog logging service. The service consists of the dlogutil and dlog library. You can also see logs with the `dlogutil` command in the CLI environment, and create log entries with the dlog library.
+Tizen Log Viewer enables you to check your log messages in Visual Studio. This section explains about Tizen Log Viewer and how to:
 
-**Figure: Log Viewer**
+- Launch Tizen Log Viewer
+- Manage logs 
+
+>**Note**
+>
+> Tizen Log Viewer is same as the [Log View](device-manager.md#logview) in Device Manager. However, Tizen Log Viewer displays the log details within Visual Studio, whereas the Device Manager Log View is a part of the Device Manager window.
+
+Tizen Log Viewer helps you to debug your application. It captures all the events logged by the platform and your application in the same order as they are logged. Additionally, it displays the logs using the dlog logging service. The service consists of the following:
+
+- **dlogutil**: You can see the logs using the `dlogutil` command in the CLI environment.
+- **dlog**: You can create the log entries with the dlog library.
 
 ![Log Viewer](media/logviewer-default.png)
 
-The Log Viewer displays a log table consisting of the following fields:
+Tizen Log Viewer displays a log table consisting of the following fields:
 
-- **Time**: log time
-- **Level**: priority level indicates the urgency of the log message
-- **Pid**: process ID
-- **Tid**: thread ID
-- **Tag**: identification of the log message source
-- **Msg**: log message
+- **Time**: The time when an event is logged.
+- **Level**: The level indicates the priority of the log message. **Fatal** is of the highest priority and **Verbose** is of the lowest.
+- **Pid**: The process ID of the event.
+- **Tid**: The Thread ID of the event.
+- **Tag**: The log message source for identification.
+- **Msg**: The log message in detail.
 
-## Launching the Log Viewer
+## Launch Tizen Log Viewer
 
-To launch the Log Viewer, in the Visual Studio menu, go to **Tools &gt; Tizen &gt; Tizen Log Viewer**.
-
-**Figure: Log Viewer launch**
+In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Log Viewer**.
 
 ![Log Viewer launch](media/logviewer-entry-point.png)
 
+The **Log Viewer** window appears. 
 
-## Understanding and Filtering Logs
+## Manage Logs
 
-In the log table, you have the following options and functions:
+To analyze the events and functions in the application, you can manage the logs. 
 
-- Log level filtering option  
-  In the Log Viewer, you can filter the log messages using the **V** (verbose), **D** (debug), **I** (info), **W** (warning), **E** (error), and **F** (fatal) buttons to show the log messages matching the selected type.
-- Keyword filtering option  
-  You can filter the log messages by selecting one of the **PID**, **Tag**, and **Message** options, or entering keywords in the bottom of the Log Viewer. The keywords must be separated by a space.
-- Scroll lock  
-  The log table shows the latest logs by default. While the application is running, the log table scrolls as new logs are added to the table. To stop the table from scrolling while you are checking a specific log, click the **Scroll Lock** button (![Scroll lock button](media/logviewer-scroll-lock.png)).
-- Clearing the table  
-  You can remove all log messages from the log tab by clicking **Clear**.
-- Exporting logs to a file  
-  You can export the current log messages in the Log Viewer and save them as a log file by clicking **Export**.
+![Log Viewer Filtering](media/logviewer.png)
+
+The log table consists of the following options and functions:
+
+1.  **Log level filtering**   
+    To filter the log messages, use the following log levels:
+    - **V**: Verbose
+	- **D**: Debug
+	- **I**: Info
+	- **W**: Warning
+	- **E**: Error
+	- **F**: Fatal 
+2.  **Keyword filtering**   
+    To filter the log messages, use the following keywords, **PID**, **Tag**, and **Msg**.<br> You can either select a keyword or you can enter a keyword in the respective text area available in the Tizen Log Viewer. You must separate the keywords with a space.
+3.  **Scroll lock**  
+    The log table shows all the latest logs by default. When you run the application, the content in the log table scrolls as new logs are added. To check a specific log when the logs are generated, you can stop the scrolling. 
+	To stop scrolling, click ![Scroll lock button](media/logviewer-scroll-lock.png).
+4.  **Clear**  
+    To remove all the log messages from the log tab, click **Clear**. To remove a specific log message, select it and click **Clear**. 
+5.  **Export**  
+    To export the current log messages and save them as a log file, click **Export** . By default, the file is saved in the **.txt** format.
+
+
+	
+	
+
+
+
