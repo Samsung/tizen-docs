@@ -70,6 +70,7 @@ To obtain the information, query a feature or system key.
 - [System keys](#system)
 
    - [Build](#build)
+   - [Device type](#devicetype)
    - [Manufacturer](#manufacturer)
    - [Model name](#modelname)
    - [Platform](#platformsys)
@@ -729,6 +730,15 @@ The following table lists the build system keys:
 | `http://tizen.org/system/build.type`     | `String` | The platform returns the build type, such as `"user"` or `"eng"`. The build type is made when the platform image is created. |
 | `http://tizen.org/system/build.variant`  | `String` | The platform returns the variant release information. The variant release information is made when the platform image is created. |
 | `http://tizen.org/system/build.release` | `String` | The platform returns the build version information. The build version information is made when the platform image is created. |
+
+The following table lists the device type system keys:
+
+<a name="devicetype"></a>
+**Table: Device type system keys**
+
+| Key                                    | Type     | Description                              |
+|----------------------------------------|----------|------------------------------------------|
+| `http://tizen.org/system/device_type`  | `String` | The platform returns the device type name, which represents a device family the device belongs to. |
 
 The following table lists the manufacturer keys:
 
