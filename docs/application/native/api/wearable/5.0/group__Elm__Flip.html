@@ -86,9 +86,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Flip</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -110,32 +112,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a class="el" href="group__Elm__General.html#gadc5a1df25fe17e31739841133b53b5fc">elm_object_part_content_unset</a></li>
 </ul>
 <p><a class="el" href="tutorial_flip.html">Flip example</a> show how to use most of the API. </p>
-<hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="gaea5adb2178b548544e68377c5e76cc6a"></a><!-- doxytag: member="elm_flip.eo.legacy.h::Elm_Flip_Interaction" ref="gaea5adb2178b548544e68377c5e76cc6a" args="" -->
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Flip.html#ga938d30627914e0c9460b075ecf7212bc">elm_flip_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new flip to the parent.  <a href="#ga938d30627914e0c9460b075ecf7212bc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Flip.html#ga685c02173b37e1f12a602ef52aa90e85">elm_flip_perspective_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Evas_Coord foc, Evas_Coord x, Evas_Coord y)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set flip perspective.  <a href="#ga685c02173b37e1f12a602ef52aa90e85"></a><br/></td></tr>
+</table>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga938d30627914e0c9460b075ecf7212bc"></a><!-- doxytag: member="efl_ui_flip_legacy.h::elm_flip_add" ref="ga938d30627914e0c9460b075ecf7212bc" args="(Evas_Object *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__Elm__Flip.html#gaea5adb2178b548544e68377c5e76cc6a">Elm_Flip_Interaction</a></td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Flip.html#ga938d30627914e0c9460b075ecf7212bc">elm_flip_add</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>No description supplied. </p>
 
+<p>Add a new flip to the parent. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="flip_example_01_8c-example.html#a8">flip_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga76b426fd8c390ceaa90c54caa0b8fb4b"></a><!-- doxytag: member="elm_flip.eo.legacy.h::Elm_Flip_Mode" ref="ga76b426fd8c390ceaa90c54caa0b8fb4b" args="" -->
+<a class="anchor" id="ga685c02173b37e1f12a602ef52aa90e85"></a><!-- doxytag: member="efl_ui_flip_legacy.h::elm_flip_perspective_set" ref="ga685c02173b37e1f12a602ef52aa90e85" args="(Evas_Object *obj, Evas_Coord foc, Evas_Coord x, Evas_Coord y)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__Elm__Flip.html#ga76b426fd8c390ceaa90c54caa0b8fb4b">Elm_Flip_Mode</a></td>
+          <td class="memname">void <a class="el" href="group__Elm__Flip.html#ga685c02173b37e1f12a602ef52aa90e85">elm_flip_perspective_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Coord&#160;</td>
+          <td class="paramname"><em>foc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Coord&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Coord&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>No description supplied. </p>
+
+<p>Set flip perspective. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The flip object </td></tr>
+    <tr><td class="paramname">foc</td><td>The coordinate to set the focus on </td></tr>
+    <tr><td class="paramname">x</td><td>The X coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>The Y coordinate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This function currently does nothing. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>

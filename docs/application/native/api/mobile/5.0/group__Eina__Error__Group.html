@@ -88,14 +88,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">Error</div>  </div>
 <div class="ingroups"><a class="el" href="group__Eina__Tools__Group.html">Tools</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>This group discusses the functions that provide error management for projects. </p>
-<p>The Eina error module provides a way to manage errors in a simple but powerful way in libraries and modules. It is also used in Eina itself. Similar to libC's <code>errno</code> and strerror() facilities, this is extensible and recommended for other libraries and applications as well.</p>
+<p>The Eina error module provides a way to manage errors in a simple but powerful way in libraries and modules. It is also used in Eina itself. An extension to libC's <code>errno</code> and strerror() facilities, this is extensible and recommended for other libraries and applications as well.</p>
+<p>While libC's <code>errno</code> is fixed, Eina_Error can be extended by libraries and applications with domain-specific codes and associated error messages. All <code>errno.h</code> codes are usable seamlessly with Eina_Error. The constants defined in errno.h will have messages as reported by strerror() in <a class="el" href="group__Eina__Error__Group.html#ga54953b3f118ad981cb27ef3ac3d77b17" title="Returns the description of the given error number.">eina_error_msg_get()</a></p>
+<p>Success (no-error) condition is reported with Eina_Error 0 (<a class="el" href="group__Eina__Error__Group.html#ga637bff52ecef75ad46993950450347ae" title="No error reported.">EINA_ERROR_NO_ERROR</a>).</p>
 <p>A simple example of how to use this can be seen <a class="el" href="tutorial_error_page.html">here</a>. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -116,10 +119,47 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the <a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686" title="The integer type containing the error type.">Eina_Error</a> corresponding to a message string.  <a href="#gafca6b1e0296f3f7aaa0de6bb3d4d230f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga95b3cbb33e987e7d92a81ea785001686"></a><!-- doxytag: member="Eina_Error_Group::Eina_Error" ref="ga95b3cbb33e987e7d92a81ea785001686" args="" -->
-typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The integer type containing the error type. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The integer type containing the error type.  <a href="#ga95b3cbb33e987e7d92a81ea785001686"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Error__Group.html#ga637bff52ecef75ad46993950450347ae">EINA_ERROR_NO_ERROR</a>&#160;&#160;&#160;((<a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a>)0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">No error reported.  <a href="#ga637bff52ecef75ad46993950450347ae"></a><br/></td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="ga637bff52ecef75ad46993950450347ae"></a><!-- doxytag: member="eina_error.h::EINA_ERROR_NO_ERROR" ref="ga637bff52ecef75ad46993950450347ae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Error__Group.html#ga637bff52ecef75ad46993950450347ae">EINA_ERROR_NO_ERROR</a>&#160;&#160;&#160;((<a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a>)0)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>No error reported. </p>
+<p>This is a convenience macro for people that are extra verbose, same as "0". </p>
+
+</div>
+</div>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga95b3cbb33e987e7d92a81ea785001686"></a><!-- doxytag: member="eina_error.h::Eina_Error" ref="ga95b3cbb33e987e7d92a81ea785001686" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The integer type containing the error type. </p>
+<p>Errors are registered with <a class="el" href="group__Eina__Error__Group.html#ga39e79c4918d5e385404c79df751888d2" title="Registers a new error type.">eina_error_msg_register()</a>, <a class="el" href="group__Eina__Error__Group.html#ga4e67b3ce519e086fad1962c0499201b2" title="Registers a new error type, statically allocated message.">eina_error_msg_static_register()</a> or those inherited from the system's <code>errno.h</code> such as <code>ENOMEM</code>. </p>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gafca6b1e0296f3f7aaa0de6bb3d4d230f"></a><!-- doxytag: member="eina_error.h::eina_error_find" ref="gafca6b1e0296f3f7aaa0de6bb3d4d230f" args="(const char *msg)" -->
 <div class="memitem">
@@ -145,6 +185,7 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The <a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686" title="The integer type containing the error type.">Eina_Error</a> matching <code>msg</code>, otherwise <code>0</code> on failure</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>this function only works for explicitly registered errors such as the messages given to <a class="el" href="group__Eina__Error__Group.html#ga39e79c4918d5e385404c79df751888d2" title="Registers a new error type.">eina_error_msg_register()</a>, <a class="el" href="group__Eina__Error__Group.html#ga4e67b3ce519e086fad1962c0499201b2" title="Registers a new error type, statically allocated message.">eina_error_msg_static_register()</a> or modified with <a class="el" href="group__Eina__Error__Group.html#ga243647b0fd8a4d03d093c391afe37ae8" title="Changes the message of an already registered message.">eina_error_msg_modify()</a>.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -166,10 +207,10 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 
 <p>Returns the last set error. </p>
 <p>This function returns the last error set by <a class="el" href="group__Eina__Error__Group.html#gad1a7035e62df4f3f57c690bb1159dc01" title="Sets the last error.">eina_error_set()</a>. The description of the message is returned by <a class="el" href="group__Eina__Error__Group.html#ga54953b3f118ad981cb27ef3ac3d77b17" title="Returns the description of the given error number.">eina_error_msg_get()</a>.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The last error</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The last error or 0 (<a class="el" href="group__Eina__Error__Group.html#ga637bff52ecef75ad46993950450347ae" title="No error reported.">EINA_ERROR_NO_ERROR</a>).</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function is thread safe </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10, but slower to use.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10, but slower to use. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_error_01_8c-example.html#a3">eina_error_01.c</a>.</dd>
 </dl>
 </div>
@@ -197,8 +238,8 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The description of the error</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The description of the error </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_error_01_8c-example.html#a4">eina_error_01.c</a>.</dd>
 </dl>
 </div>
@@ -239,8 +280,9 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if successful, otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on error</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Error__Group.html#ga39e79c4918d5e385404c79df751888d2" title="Registers a new error type.">eina_error_msg_register()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>It is not possible to modify messages that exist in libC's <code>errno.h</code>, such as <code>ENOMEM</code> or <code>EBADF</code>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Error__Group.html#ga39e79c4918d5e385404c79df751888d2" title="Registers a new error type.">eina_error_msg_register()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -269,8 +311,9 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The unique number identifier for this error</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Error__Group.html#ga4e67b3ce519e086fad1962c0499201b2" title="Registers a new error type, statically allocated message.">eina_error_msg_static_register()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>There is no need to register messages that exist in libC's <code>errno.h</code>, such as <code>ENOMEM</code> or <code>EBADF</code>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Error__Group.html#ga4e67b3ce519e086fad1962c0499201b2" title="Registers a new error type, statically allocated message.">eina_error_msg_static_register()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -299,8 +342,9 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The unique number identifier for this error</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Error__Group.html#ga39e79c4918d5e385404c79df751888d2" title="Registers a new error type.">eina_error_msg_register()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>There is no need to register messages that exist in libC's <code>errno.h</code>, such as <code>ENOMEM</code> or <code>EBADF</code>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Error__Group.html#ga39e79c4918d5e385404c79df751888d2" title="Registers a new error type.">eina_error_msg_register()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_error_01_8c-example.html#a2">eina_error_01.c</a>.</dd>
 </dl>
 </div>
@@ -328,11 +372,11 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>This is also used to clear previous errors, in which case <code>err</code> should be <code>0</code>.</dd>
+<dl class="note"><dt><b>Note:</b></dt><dd>This is also used to clear previous errors, in which case <code>err</code> should be <code>0</code> (<a class="el" href="group__Eina__Error__Group.html#ga637bff52ecef75ad46993950450347ae" title="No error reported.">EINA_ERROR_NO_ERROR</a>).</dd>
 <dd>
 This function is thread safe </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10, but slower to use.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10, but slower to use. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_error_01_8c-example.html#a0">eina_error_01.c</a>.</dd>
 </dl>
 </div>
@@ -350,7 +394,8 @@ This function is thread safe </dd></dl>
 <div class="memdoc">
 
 <p>The error identifier corresponding to lack of memory. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000228">Deprecated:</a></b></dt><dd>since 1.19, same as <code>ENOMEM</code> from <code>errno.h</code> </dd></dl>
 
 </div>
 </div>

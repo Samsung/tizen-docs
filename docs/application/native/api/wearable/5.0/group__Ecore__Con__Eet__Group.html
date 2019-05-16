@@ -98,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Ecore_Con_Eet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga5de1ecc77b9a11f7a10b4aaba5286a4c">ecore_con_eet_server_new</a> (Ecore_Con_Server *server)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Ecore_Con_Eet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga5de1ecc77b9a11f7a10b4aaba5286a4c">ecore_con_eet_server_new</a> (<a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *server)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Ecore_Con_Eet server.  <a href="#ga5de1ecc77b9a11f7a10b4aaba5286a4c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Ecore_Con_Eet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga35561817e588acff15467359954cef11">ecore_con_eet_client_new</a> (Ecore_Con_Server *server)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Ecore_Con_Eet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga35561817e588acff15467359954cef11">ecore_con_eet_client_new</a> (<a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *server)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an Ecore_Con_Eet client.  <a href="#ga35561817e588acff15467359954cef11"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga7245a8d4c362201d8607a398985fd356">ecore_con_eet_server_free</a> (Ecore_Con_Eet *server)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees an existing Ecore_Con_Eet object.  <a href="#ga7245a8d4c362201d8607a398985fd356"></a><br/></td></tr>
@@ -149,10 +149,10 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga6f5daee507cd3983fe284ee24b3c3515">Ecore_Con_Eet_Raw_Data_Cb</a> )(void *data, Ecore_Con_Reply *reply, const char *protocol_name, const char *section, void *value, size_t length)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when an Ecore_Con_Eet object receives raw data. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac3b77ac4099f1c4c1adfdf41452e43b9"></a><!-- doxytag: member="Ecore_Con_Eet_Group::Ecore_Con_Eet_Client_Cb" ref="gac3b77ac4099f1c4c1adfdf41452e43b9" args=")(void *data, Ecore_Con_Reply *reply, Ecore_Con_Client *conn)" -->
-typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#gac3b77ac4099f1c4c1adfdf41452e43b9">Ecore_Con_Eet_Client_Cb</a> )(void *data, Ecore_Con_Reply *reply, Ecore_Con_Client *conn)</td></tr>
+typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#gac3b77ac4099f1c4c1adfdf41452e43b9">Ecore_Con_Eet_Client_Cb</a> )(void *data, Ecore_Con_Reply *reply, <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *conn)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a client connects to the server. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga34ff6e0b8bbc9f04a66dd8e2fe90f59a"></a><!-- doxytag: member="Ecore_Con_Eet_Group::Ecore_Con_Eet_Server_Cb" ref="ga34ff6e0b8bbc9f04a66dd8e2fe90f59a" args=")(void *data, Ecore_Con_Reply *reply, Ecore_Con_Server *conn)" -->
-typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga34ff6e0b8bbc9f04a66dd8e2fe90f59a">Ecore_Con_Eet_Server_Cb</a> )(void *data, Ecore_Con_Reply *reply, Ecore_Con_Server *conn)</td></tr>
+typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Eet__Group.html#ga34ff6e0b8bbc9f04a66dd8e2fe90f59a">Ecore_Con_Eet_Server_Cb</a> )(void *data, Ecore_Con_Reply *reply, <a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *conn)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the server has accepted the connection of the client. <br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -193,11 +193,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The function to call as a callback. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
+    <tr><td class="paramname">data</td><td>The data to pass to the callback. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -237,11 +237,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The callback to remove. </td></tr>
-    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration.</td></tr>
+    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -282,11 +282,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The function to call as a callback. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
+    <tr><td class="paramname">data</td><td>The data to pass to the callback. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -326,11 +326,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The callback to remove. </td></tr>
-    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration.</td></tr>
+    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -341,7 +341,7 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
         <tr>
           <td class="memname">Ecore_Con_Eet* <a class="el" href="group__Ecore__Con__Eet__Group.html#ga35561817e588acff15467359954cef11">ecore_con_eet_client_new</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Server *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *&#160;</td>
           <td class="paramname"><em>server</em></td><td>)</td>
           <td></td>
         </tr>
@@ -357,8 +357,8 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   </dd>
 </dl>
 <p>This object gets deleted automatically when the parent Ecore_Con_Server is deleted.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new Ecore_Con_Eet client.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new Ecore_Con_Eet client. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -405,11 +405,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the Eet stream to connect. </td></tr>
     <tr><td class="paramname">func</td><td>The function to call as a callback. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
+    <tr><td class="paramname">data</td><td>The data to pass to the callback. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -442,11 +442,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the Eet stream to remove callback on.</td></tr>
+    <tr><td class="paramname">name</td><td>The name of the Eet stream to remove callback on. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -472,8 +472,8 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data attached to the Ecore_Con_Eet object.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data attached to the Ecore_Con_Eet object. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -506,11 +506,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to attach to the Ecore_Con_Eet object.</td></tr>
+    <tr><td class="paramname">data</td><td>The data to attach to the Ecore_Con_Eet object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -557,11 +557,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the raw Eet stream to connect. </td></tr>
     <tr><td class="paramname">func</td><td>The function to call as a callback. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
+    <tr><td class="paramname">data</td><td>The data to pass to the callback. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -594,11 +594,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the raw Eet stream to remove callback on.</td></tr>
+    <tr><td class="paramname">name</td><td>The name of the raw Eet stream to remove callback on. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -652,11 +652,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
     <tr><td class="paramname">protocol_name</td><td>The protocol type to use. </td></tr>
     <tr><td class="paramname">section</td><td>The section to add to the protocol. </td></tr>
     <tr><td class="paramname">value</td><td>The data to send. </td></tr>
-    <tr><td class="paramname">length</td><td>The data length.</td></tr>
+    <tr><td class="paramname">length</td><td>The data length. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -696,11 +696,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the Eet stream to connect. </td></tr>
-    <tr><td class="paramname">edd</td><td>A Eet data descriptor that describes the data organization in the Eet stream.</td></tr>
+    <tr><td class="paramname">edd</td><td>A Eet data descriptor that describes the data organization in the Eet stream. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -726,8 +726,8 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The corresponding Ecore_Con_Eet object.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The corresponding Ecore_Con_Eet object. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -767,11 +767,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">reply</td><td>An Ecore_Con_Reply object. </td></tr>
     <tr><td class="paramname">protocol_name</td><td>The protocol type to use. </td></tr>
-    <tr><td class="paramname">value</td><td>The data to send.</td></tr>
+    <tr><td class="paramname">value</td><td>The data to send. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -812,11 +812,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The function to call as a callback. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
+    <tr><td class="paramname">data</td><td>The data to pass to the callback. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -856,11 +856,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The callback to remove. </td></tr>
-    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration.</td></tr>
+    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -901,11 +901,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The function to call as a callback. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
+    <tr><td class="paramname">data</td><td>The data to pass to the callback. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -945,11 +945,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   <table class="params">
     <tr><td class="paramname">ece</td><td>An Ecore_Con_Eet object. </td></tr>
     <tr><td class="paramname">func</td><td>The callback to remove. </td></tr>
-    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration.</td></tr>
+    <tr><td class="paramname">data</td><td>The data passed to this function at the callback registration. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -971,11 +971,11 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
 <p>Frees an existing Ecore_Con_Eet object. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">server</td><td>An existing Ecore_Con_Eet object that have been previously allocated by a <a class="el" href="group__Ecore__Con__Eet__Group.html#ga5de1ecc77b9a11f7a10b4aaba5286a4c">ecore_con_eet_server_new</a> or <a class="el" href="group__Ecore__Con__Eet__Group.html#ga35561817e588acff15467359954cef11">ecore_con_eet_client_new</a>.</td></tr>
+    <tr><td class="paramname">server</td><td>An existing Ecore_Con_Eet object that have been previously allocated by a <a class="el" href="group__Ecore__Con__Eet__Group.html#ga5de1ecc77b9a11f7a10b4aaba5286a4c">ecore_con_eet_server_new</a> or <a class="el" href="group__Ecore__Con__Eet__Group.html#ga35561817e588acff15467359954cef11">ecore_con_eet_client_new</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -986,7 +986,7 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
         <tr>
           <td class="memname">Ecore_Con_Eet* <a class="el" href="group__Ecore__Con__Eet__Group.html#ga5de1ecc77b9a11f7a10b4aaba5286a4c">ecore_con_eet_server_new</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Server *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *&#160;</td>
           <td class="paramname"><em>server</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1002,8 +1002,8 @@ typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1c
   </dd>
 </dl>
 <p>This object gets deleted automatically when the parent Ecore_Con_Server is deleted.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new Ecore_Con_Eet server.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new Ecore_Con_Eet server. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

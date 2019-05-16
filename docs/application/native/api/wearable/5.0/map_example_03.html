@@ -92,17 +92,97 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary map widget on a window, to exemplify part of the widget's API, related routes and names.</p>
 <p>In this example, we will suppose we need to set a route for the user from his current point (a gps could provide us this information) to somewhere else. So we would have coordinates of this start point, and would like that he enters the address of his destination in a entry, and we'll trace a route on the map.</p>
-<p>We'll start this example in the same way <a class="el" href="map_example_01.html">Map Example 1</a>. Adding a map with buttons to control zoom, so if you didn't read it yet, just do it now. Actually there is a change, that we're aligning buttons to the top, since we wan't a vertical control box this time.  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>We'll start this example in the same way <a class="el" href="map_example_01.html">Map Example 1</a>. Adding a map with buttons to control zoom, so if you didn't read it yet, just do it now. Actually there is a change, that we're aligning buttons to the top, since we wan't a vertical control box this time.  <div class="fragment"><pre class="fragment">   map = <a class="code" href="group__Elm__Map.html#ga509621f20872fe3ef3418919f7fda396">elm_map_add</a>(win);
+   evas_object_size_hint_weight_set(map, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, map);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(map);
+
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;+&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_in, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;-&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_out, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;X&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fit, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;#&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fill, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+</pre></div></p>
 <p>Next we set the box to be vertical and change it's size, weight and alignment, so it will occupy the top of the window, from left to right: <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>We'll add an entry with a preliminar address, that I know will find a coordinate, to examplify names work. But you can try lots of addresses. From city or country names to pubs, or whatever you want. To try is enough to run the example, type the address and press "Route" button. This button will call a function that will get the typed address and find the route. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The button pass an structure instance we make for this example, with all the fields we'll need.  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Let's initialize it's fields: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The button pass an structure instance we make for this example, with all the fields we'll need.  <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct </span>_Example_Data
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *map, *entry;
+   <a class="code" href="group__Elm__Map.html#ga055f1e71930a7b906ddc03b180cf3d73">Elm_Map_Route</a> *route;
+   <span class="keywordtype">double</span> start_lon, start_lat, dest_lon, dest_lat;
+   <a class="code" href="group__Elm__Map.html#ga73173d5c600925adcbaac5c55f5462d3">Elm_Map_Name</a> *name;
+   <a class="code" href="group__Elm__Map.html#ga6b75280d64c71af38288849960d572fe">Elm_Map_Overlay</a> *route_ovl;
+} Example_Data;
+
+<span class="keyword">static</span> Example_Data example_data;
+</pre></div></p>
+<p>Let's initialize it's fields: <div class="fragment"><pre class="fragment">   example_data.map = map;
+   example_data.entry = entry;
+   example_data.route = NULL;
+   example_data.start_lon = -43.175;
+   example_data.start_lat = -22.97;
+</pre></div></p>
 <p><code>map</code> and <code>entry</code> are our elementary objects, <code>route</code> is set to <code>NULL</code>, since we don't have one yet, and the coordinates of the start point is set (longitude and latitude).</p>
-<p>Also, let's show this start point at the center of the map, and set a zoom nice enough to close it: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Also, let's show this start point at the center of the map, and set a zoom nice enough to close it: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Map.html#gac18d4869797cf49e4fa2e50a3de592f3" title="Show the given coordinates at the center of the map, immediately.">elm_map_region_show</a>(map, example_data.start_lon, example_data.start_lat);
+</pre></div></p>
 <p>These lines were already explained on <a class="el" href="map_example_02.html">Map Example 2</a>.</p>
-<p>Now we'll see the "Route" button callback function:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Now we'll see the "Route" button callback function:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_name_loaded(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   Example_Data *exam_data = data;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *map = obj;
+
+   <span class="keywordflow">if</span> (exam_data-&gt;route)
+     <a class="code" href="group__Elm__Map.html#gaf3eeb8329e577c8b7c08c9ddc656df77">elm_map_route_del</a>(exam_data-&gt;route);
+
+   <a class="code" href="group__Elm__Map.html#gae5c6d7cfa664af6387d73637953b196e">elm_map_name_region_get</a>(exam_data-&gt;name, &amp;(exam_data-&gt;dest_lon),
+                           &amp;(exam_data-&gt;dest_lat));
+
+   exam_data-&gt;route = <a class="code" href="group__Elm__Map.html#ga64d63aafc59938f16f7ab731c134446f" title="Add a new route to the map object.">elm_map_route_add</a>(map, <a class="code" href="group__Elm__Map.html#gga475f32243c8d8fcb3081b80194f8fe27a6433a84142f9bb8eb914ae9f482cdb95">ELM_MAP_ROUTE_TYPE_FOOT</a>,
+                                        <a class="code" href="group__Elm__Map.html#ggaaa4a6dd08f05a645f2c963c05e1c1186ab0b4e63fbeac790d7e1769695b17910b">ELM_MAP_ROUTE_METHOD_SHORTEST</a>,
+                                        exam_data-&gt;start_lon, exam_data-&gt;start_lat,
+                                        exam_data-&gt;dest_lon, exam_data-&gt;dest_lat,
+                                        NULL, NULL);
+}
+</pre></div></p>
 <p>First we get the address string from our entry. Then we use <code>name</code> conversion util functions, so we could get coordinates for this address. These functions return an <a class="el" href="group__Elm__Map.html#ga73173d5c600925adcbaac5c55f5462d3">Elm_Map_Name</a> handle for us. Function elm_map_name_geo_request() will do this job for us, but it's an asynchronous function, since it requires this information from the server.</p>
-<p>That's the reason we need to wait for <code> "name,loaded" </code> signal. We add a callback function for this:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>That's the reason we need to wait for <code> "name,loaded" </code> signal. We add a callback function for this:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_route_loaded(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   Example_Data *exam_data = data;
+
+   exam_data-&gt;route_ovl = <a class="code" href="group__Elm__Map.html#ga8c5cba6c4ff67c11035d36e67e6d8803" title="Add a new route overlay to the map object. This overlay has a route type.">elm_map_overlay_route_add</a>(obj, exam_data-&gt;route);
+   <a class="code" href="group__Elm__Map.html#ga2ef4c31306107b391f13e965813f60cd">elm_map_overlay_color_set</a>(exam_data-&gt;route_ovl, 0, 255, 0, 255);
+}
+</pre></div></p>
 <p>This function will check if a previous route was traced, and if it was, it will remove it. Next we'll get destination coordinates from our <code>name</code>, and use them to add a new route.</p>
 <p>To trace a route we need to know how the user will go through the path. Let's suppose he'll be walking, but doesn't like to walk, so we need to choose the shortest path instead of the route that would made him spend less time. Coordinates of the point from where he will start and of the destination point need to be passed as well.</p>
 <p>Finally we'll set a color different from solid red (default), to show our route. We set it green.</p>

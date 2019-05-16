@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>This group discusses the functions that allow you to get the time spent in a part of a code. </p>
 <p>Before using the counter system, Eina must be initialized with <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a> and later shut down with <a class="el" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown()</a>. To create a counter, use <a class="el" href="group__Eina__Counter__Group.html#gafdaa7800cf84d59bfb5686050d091f02" title="Returns a counter.">eina_counter_new()</a>. To free it, use <a class="el" href="group__Eina__Counter__Group.html#gaf0e8e34c95d38e2895996fd217f49cfd" title="Deletes a counter.">eina_counter_free()</a>.</p>
-<p>To time a part of a code, call <a class="el" href="group__Eina__Counter__Group.html#gaf2bc688c4ff6d22c1cd36d12f4f2d09a" title="Starts the time count.">eina_counter_start()</a> just before it, and <a class="el" href="group__Eina__Counter__Group.html#ga6c0b3fc390e43013d60e5e867c3db94c" title="Stops the time count.">eina_counter_stop()</a> just after it. Each time you start to time a code, a clock is added to a list. You can give the number of that clock with the second argument of <a class="el" href="group__Eina__Counter__Group.html#ga6c0b3fc390e43013d60e5e867c3db94c" title="Stops the time count.">eina_counter_stop()</a>. To send all the registered clocks to a stream (like stdout, for a file), use <a class="el" href="group__Eina__Counter__Group.html#gac5a1c58016709e00b1d7199e52051439" title="Dumps the result of all the clocks of a counter to a stream.">eina_counter_dump()</a>.</p>
+<p>To time a code sequence, call <a class="el" href="group__Eina__Counter__Group.html#gaf2bc688c4ff6d22c1cd36d12f4f2d09a" title="Starts the time count.">eina_counter_start()</a> just before it, and <a class="el" href="group__Eina__Counter__Group.html#ga6c0b3fc390e43013d60e5e867c3db94c" title="Stops the time count.">eina_counter_stop()</a> just after it. Each time you start timing a code, a clock is added to a list. You can give the number of that clock with the second argument of <a class="el" href="group__Eina__Counter__Group.html#ga6c0b3fc390e43013d60e5e867c3db94c" title="Stops the time count.">eina_counter_stop()</a>. To send all the registered clocks to a stream (like stdout, for a file), use <a class="el" href="group__Eina__Counter__Group.html#gac5a1c58016709e00b1d7199e52051439" title="Dumps the result of all the clocks of a counter to a stream.">eina_counter_dump()</a>.</p>
 <p>Here is a straightforward example:</p>
 <div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;stdlib.h&gt;</span>
 <span class="preprocessor"> #include &lt;stdio.h&gt;</span>
@@ -185,7 +185,7 @@ typedef struct _Eina_Counter&#160;</td><td class="memItemRight" valign="bottom">
 <div class="memdoc">
 
 <p>Dumps the result of all the clocks of a counter to a stream. </p>
-<p>This function returns an malloc'd string containing the dump of all the valid clocks of <code>counter</code>. If <code>counter</code> is <code>NULL</code>, the functions exits immediately. Otherwise, the output is formatted like this:</p>
+<p>This function returns a malloc'd string containing the dump of all the valid clocks of <code>counter</code>. If <code>counter</code> is <code>NULL</code>, the functions exits immediately. Otherwise, the output is formatted like this:</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>The counter </td></tr>
@@ -196,7 +196,7 @@ typedef struct _Eina_Counter&#160;</td><td class="memItemRight" valign="bottom">
 <div class="fragment"><pre class="fragment">
  * \# specimen    experiment time    starting time    ending time
  * 1              208                120000           120208
- * </pre></div><dl class="note"><dt><b>Note:</b></dt><dd>The unit of time is nanoseconds.</dd></dl>
+ * </pre></div><dl class="note"><dt><b>Note:</b></dt><dd>The unit of time is nanoseconds. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -220,7 +220,7 @@ typedef struct _Eina_Counter&#160;</td><td class="memItemRight" valign="bottom">
 <p>This function removes the clock of <code>counter</code> from the used clocks (see <a class="el" href="group__Eina__Counter__Group.html#gaf2bc688c4ff6d22c1cd36d12f4f2d09a" title="Starts the time count.">eina_counter_start()</a>) and frees the memory allocated for <code>counter</code>. If <code>counter</code> is <code>NULL</code>, the function returns immediately. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>The counter to delete</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>The counter to delete </td></tr>
   </table>
   </dd>
 </dl>
@@ -252,7 +252,7 @@ typedef struct _Eina_Counter&#160;</td><td class="memItemRight" valign="bottom">
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated counter</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Whe the new counter is not needed anymore, use <a class="el" href="group__Eina__Counter__Group.html#gaf0e8e34c95d38e2895996fd217f49cfd" title="Deletes a counter.">eina_counter_free()</a> to free the allocated memory.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>When the new counter is not needed anymore, use <a class="el" href="group__Eina__Counter__Group.html#gaf0e8e34c95d38e2895996fd217f49cfd" title="Deletes a counter.">eina_counter_free()</a> to free the allocated memory. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -280,9 +280,9 @@ typedef struct _Eina_Counter&#160;</td><td class="memItemRight" valign="bottom">
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>This function adds the clock associated to <code>counter</code> in a list. If the memory needed by that clock can not be allocated, the function returns and nothing is done.</dd>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function adds the clock associated with <code>counter</code> in a list. If the memory needed by that clock cannot be allocated, the function returns and nothing is done.</dd>
 <dd>
-To stop the timing, <a class="el" href="group__Eina__Counter__Group.html#ga6c0b3fc390e43013d60e5e867c3db94c" title="Stops the time count.">eina_counter_stop()</a> must be called with the same counter.</dd></dl>
+To stop the timing, <a class="el" href="group__Eina__Counter__Group.html#ga6c0b3fc390e43013d60e5e867c3db94c" title="Stops the time count.">eina_counter_stop()</a> must be called with the same counter. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -317,7 +317,7 @@ To stop the timing, <a class="el" href="group__Eina__Counter__Group.html#ga6c0b3
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">counter</td><td>The counter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">specimen</td><td>The number of the test</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">specimen</td><td>The number of the test </td></tr>
   </table>
   </dd>
 </dl>

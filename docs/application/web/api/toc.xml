@@ -1261,7 +1261,7 @@
 								<topic label="Ecore_Evas wrapper/helper set of functions" href="group__Ecore__Evas__Group.html">
 									<topic label="Ecore_Evas Single Process Windowing System." href="group__Ecore__Evas__Ews.html">
 									</topic>
-									<topic label="External plug/socket infrastructure to remote canvases" href="group__Ecore__Evas__Extn.html">
+									<topic label="External plug/socket infrastructure for remote canvases" href="group__Ecore__Evas__Extn.html">
 									</topic>
 								</topic>
 								<topic label="Ecore_File - Files and directories convenience functions" href="group__Ecore__File__Group.html">
@@ -1290,7 +1290,7 @@
 								</topic>
 								<topic label="Edje General" href="group__Edje__General__Group.html">
 								</topic>
-								<topic label="Edje Object" href="group__Edje__Object.html">
+								<topic label="Edje Object" href="group__Edje__Object__Group.html">
 									<topic label="Edje Class: Color" href="group__Edje__Object__Color__Class.html">
 									</topic>
 									<topic label="Edje Class: Size" href="group__Edje__Object__Size__Class.html">
@@ -1375,6 +1375,8 @@
 											</topic>
 											<topic label="Generic Value List management" href="group__Eina__Value__List__Group.html">
 											</topic>
+											<topic label="Generic Value Optional management" href="group__Eina__Value__Optional__Group.html">
+											</topic>
 											<topic label="Generic Value Struct management" href="group__Eina__Value__Struct__Group.html">
 											</topic>
 											<topic label="Generic Value Type management" href="group__Eina__Value__Type__Group.html">
@@ -1391,6 +1393,8 @@
 										<topic label="List" href="group__Eina__List__Group.html">
 										</topic>
 										<topic label="Red-Black tree" href="group__Eina__Rbtree__Group.html">
+										</topic>
+										<topic label="Safe Pointer" href="group__Eina__Safepointer__Group.html">
 										</topic>
 										<topic label="Sparse Matrix" href="group__Eina__Matrixsparse__Group.html">
 										</topic>
@@ -1410,10 +1414,12 @@
 										</topic>
 										<topic label="3x3 Matrices in fixed point" href="group__Eina__Matrix3__F16p16__Group.html">
 										</topic>
-										<topic label="3x3 Matrices in floating point" href="group__Eina__Matrix3__Group.html">
+										<topic label="3x3 floating point matrices" href="group__Eina__Matrix3__Group.html">
 										</topic>
 										<topic label="4x4 Matrices in floating point" href="group__Eina__Matrix4__Group.html">
 										</topic>
+									</topic>
+									<topic label="Memory Slices" href="group__Eina__Slice__Group.html">
 									</topic>
 									<topic label="Quadrangles" href="group__Eina__Quad__Group.html">
 									</topic>
@@ -1434,7 +1440,11 @@
 								</topic>
 								<topic label="Event Log Debugging" href="group__Eina__Evlog.html">
 								</topic>
+								<topic label="Free Queue Group" href="group__Eina__FreeQ__Group.html">
+								</topic>
 								<topic label="Mmap Group" href="group__Eina__Mmap__Group.html">
+								</topic>
+								<topic label="Short lived strings" href="group__Eina__Slstr.html">
 								</topic>
 								<topic label="Thread Queue Group" href="group__Eina__Thread__Queue__Group.html">
 								</topic>
@@ -1490,25 +1500,69 @@
 								</topic>
 								<topic label="Eio file listing API" href="group__Eio__List.html">
 								</topic>
+								<topic label="Eio file management API." href="group__Eio__Management.html">
+								</topic>
 								<topic label="Eio manipulation of eXtended attribute." href="group__Eio__Xattr.html">
 								</topic>
 								<topic label="Manipulate an Eina_File asynchronously" href="group__Eio__Map.html">
 								</topic>
 							</topic>
-							<topic label="Eldbus" href="group__Eldbus.html">
-							</topic>
 							<topic label="Elementary" href="group__Elementary.html">
-								<topic label="Elementary Containers" href="group__elm__container__group.html">
-									<topic label="Box" href="group__Elm__Box.html">
-									</topic>
-									<topic label="Grid" href="group__Elm__Grid.html">
-									</topic>
-									<topic label="Table" href="group__Elm__Table.html">
-									</topic>
+								<topic label="AT-SPI2 Accessibility" href="group__ATSPI.html">
 								</topic>
-								<topic label="Elementary Infrastructure" href="group__elm__infra__group.html">
+								<topic label="Actionslider" href="group__Elm__Actionslider.html">
+								</topic>
+								<topic label="App" href="group__Elm__App.html">
+								</topic>
+								<topic label="Background" href="group__Elm__Bg.html">
+								</topic>
+								<topic label="Box" href="group__Elm__Box.html">
+								</topic>
+								<topic label="Bubble" href="group__Elm__Bubble.html">
+								</topic>
+								<topic label="Button" href="group__Elm__Button.html">
+								</topic>
+								<topic label="Caches" href="group__Elm__Caches.html">
+								</topic>
+								<topic label="Calendar" href="group__Elm__Calendar.html">
+								</topic>
+								<topic label="Check" href="group__Elm__Check.html">
+								</topic>
+								<topic label="Clock" href="group__Elm__Clock.html">
+								</topic>
+								<topic label="Colorselector" href="group__Elm__Colorselector.html">
+								</topic>
+								<topic label="Combobox" href="group__Elm__Combobox.html">
+								</topic>
+								<topic label="Conformant" href="group__Elm__Conformant.html">
+								</topic>
+								<topic label="CopyPaste" href="group__CopyPaste.html">
+								</topic>
+								<topic label="Ctxpopup" href="group__Elm__Ctxpopup.html">
+								</topic>
+								<topic label="Cursors" href="group__Elm__Cursors.html">
+								</topic>
+								<topic label="Datetime" href="group__Elm__Datetime.html">
+								</topic>
+								<topic label="Dayselector" href="group__Elm__Dayselector.html">
+								</topic>
+								<topic label="Debug" href="group__Elm__Debug.html">
+								</topic>
+								<topic label="Diskselector" href="group__Elm__Diskselector.html">
+								</topic>
+								<topic label="Efl_ui_clock" href="group__efl__ui__clock.html">
+								</topic>
+								<topic label="Elementary Config" href="group__Elm__Config.html">
+								</topic>
+								<topic label="Elementary Containers" href="group__elm__container__group.html">
+								</topic>
+								<topic label="Elementary Engine" href="group__Elm__Engine.html">
 									<topic label="AT-SPI2 Accessibility" href="group__ATSPI.html">
 									</topic>
+								</topic>
+								<topic label="Elementary Fonts" href="group__Elm__Fonts.html">
+								</topic>
+								<topic label="Elementary Infrastructure" href="group__elm__infra__group.html">
 									<topic label="Accessibility" href="group__elm__accessibility__group.html">
 										<topic label="Access" href="group__Elm__Access.html">
 										</topic>
@@ -1518,147 +1572,149 @@
 										</topic>
 										<topic label="Atspi Component" href="group__Elm__Interface__Atspi__Component.html">
 										</topic>
-										<topic label="Atspi Text" href="group__Elm__Interface__Atspi__Text.html">
-										</topic>
-									</topic>
-									<topic label="App" href="group__Elm__App.html">
-									</topic>
-									<topic label="Caches" href="group__Elm__Caches.html">
-									</topic>
-									<topic label="CopyPaste" href="group__CopyPaste.html">
-									</topic>
-									<topic label="Cursors" href="group__Elm__Cursors.html">
-									</topic>
-									<topic label="Debug" href="group__Elm__Debug.html">
-									</topic>
-									<topic label="Elementary Config" href="group__Elm__Config.html">
-									</topic>
-									<topic label="Elementary Engine" href="group__Elm__Engine.html">
-										<topic label="AT-SPI2 Accessibility" href="group__ATSPI.html">
-										</topic>
-									</topic>
-									<topic label="Elementary Fonts" href="group__Elm__Fonts.html">
-									</topic>
-									<topic label="Elementary Gen Item" href="group__elm__gen__group.html">
-									</topic>
-									<topic label="Elementary Profile" href="group__Elm__Profile.html">
-									</topic>
-									<topic label="Elementary Scrolling" href="group__Elm__Scrolling.html">
-									</topic>
-									<topic label="Fingers" href="group__Elm__Fingers.html">
-									</topic>
-									<topic label="Focus" href="group__Elm__Focus.html">
-									</topic>
-									<topic label="General" href="group__Elm__General.html">
-									</topic>
-									<topic label="Gesture Layer" href="group__Elm__Gesture__Layer.html">
-									</topic>
-									<topic label="Longpress" href="group__longpress__group.html">
-									</topic>
-									<topic label="Mirroring" href="group__Elm__Mirroring.html">
-									</topic>
-									<topic label="Password show last" href="group__Elm__Password__last__show.html">
-									</topic>
-									<topic label="Scrollhints" href="group__Elm__Scrollhints.html">
-									</topic>
-									<topic label="Sotfcursor" href="group__softcursor__group.html">
 									</topic>
 									<topic label="Styles" href="group__Elm__Styles.html">
-									</topic>
-									<topic label="Theme" href="group__Elm__Theme.html">
-									</topic>
-									<topic label="Transit" href="group__Elm__Transit.html">
-									</topic>
-									<topic label="Widget Scaling" href="group__Elm__Scaling.html">
 									</topic>
 									<topic label="Widget Tree Navigation" href="group__Elm__WidgetNavigation.html">
 									</topic>
 								</topic>
+								<topic label="Elementary Profile" href="group__Elm__Profile.html">
+								</topic>
+								<topic label="Elementary Scrolling" href="group__Elm__Scrolling.html">
+								</topic>
+								<topic label="Elementary Store" href="group__Store.html">
+								</topic>
 								<topic label="Elementary Widgets" href="group__elm__widget__group.html">
-									<topic label="Background" href="group__Elm__Bg.html">
+								</topic>
+								<topic label="Entry" href="group__Elm__Entry.html">
+								</topic>
+								<topic label="File Selector" href="group__Elm__Fileselector.html">
+								</topic>
+								<topic label="File Selector Button" href="group__Elm__File__Selector__Button.html">
+								</topic>
+								<topic label="File Selector Entry" href="group__Elm__File__Selector__Entry.html">
+								</topic>
+								<topic label="Fingers" href="group__Elm__Fingers.html">
+								</topic>
+								<topic label="Flip" href="group__Elm__Flip.html">
+								</topic>
+								<topic label="Flip Selector" href="group__Elm__Flipselector.html">
+								</topic>
+								<topic label="Focus" href="group__Elm__Focus.html">
+								</topic>
+								<topic label="Frame" href="group__Elm__Frame.html">
+								</topic>
+								<topic label="GLView" href="group__Elm__GLView.html">
+									<topic label="Elementary GL Helper functions" href="group__Elementary__GL__Helpers.html">
+										<topic label="OpenGL with Elementary" href="group__Elementary__GL__Helpers.html#elm_opengl_page"/>
 									</topic>
-									<topic label="Button" href="group__Elm__Button.html">
+								</topic>
+								<topic label="General" href="group__Elm__General.html">
+								</topic>
+								<topic label="Gengrid (Generic grid)" href="group__Elm__Gengrid.html">
+								</topic>
+								<topic label="Genlist (Generic list)" href="group__Elm__Genlist.html">
+								</topic>
+								<topic label="Gesture Layer" href="group__Elm__Gesture__Layer.html">
+								</topic>
+								<topic label="Getting Started" href="group__Elm__Start.html">
+								</topic>
+								<topic label="Grid" href="group__Elm__Grid.html">
+								</topic>
+								<topic label="Helper" href="group__Helper.html">
+								</topic>
+								<topic label="Hover" href="group__Elm__Hover.html">
+								</topic>
+								<topic label="Hoversel" href="group__Elm__Hoversel.html">
+								</topic>
+								<topic label="Icon" href="group__Elm__Icon.html">
+									<topic label="Password show last" href="group__Elm__Password__last__show.html">
 									</topic>
-									<topic label="Calendar" href="group__Elm__Calendar.html">
-									</topic>
-									<topic label="Check" href="group__Elm__Check.html">
-									</topic>
-									<topic label="Colorselector" href="group__Elm__Colorselector.html">
-									</topic>
-									<topic label="Conformant" href="group__Elm__Conformant.html">
-									</topic>
-									<topic label="Ctxpopup" href="group__Elm__Ctxpopup.html">
-									</topic>
-									<topic label="Datetime" href="group__Elm__Datetime.html">
-									</topic>
-									<topic label="Entry" href="group__Elm__Entry.html">
-									</topic>
-									<topic label="Flip" href="group__Elm__Flip.html">
-									</topic>
-									<topic label="Flip Selector" href="group__Elm__Flipselector.html">
-									</topic>
-									<topic label="GLView" href="group__Elm__GLView.html">
-										<topic label="Elementary GL Helper functions" href="group__Elementary__GL__Helpers.html">
-											<topic label="OpenGL with Elementary" href="group__Elementary__GL__Helpers.html#elm_opengl_page"/>
-										</topic>
-									</topic>
-									<topic label="Gengrid (Generic grid)" href="group__Elm__Gengrid.html">
-									</topic>
-									<topic label="Genlist (Generic list)" href="group__Elm__Genlist.html">
-									</topic>
-									<topic label="Hoversel" href="group__Elm__Hoversel.html">
-									</topic>
-									<topic label="Icon" href="group__Elm__Icon.html">
-									</topic>
-									<topic label="Image" href="group__Elm__Image.html">
-									</topic>
-									<topic label="Index" href="group__Elm__Index.html">
-									</topic>
-									<topic label="Label" href="group__Elm__Label.html">
-									</topic>
-									<topic label="Layout" href="group__Elm__Layout.html">
-									</topic>
-									<topic label="List" href="group__Elm__List.html">
-									</topic>
-									<topic label="Map" href="group__Elm__Map.html">
-									</topic>
-									<topic label="Mapbuf" href="group__Elm__Mapbuf.html">
-									</topic>
-									<topic label="Multibuttonentry" href="group__Elm__Multibuttonentry.html">
-									</topic>
-									<topic label="Naviframe" href="group__Elm__Naviframe.html">
-									</topic>
-									<topic label="Notify" href="group__Elm__Notify.html">
-									</topic>
-									<topic label="Panel" href="group__Elm__Panel.html">
-									</topic>
-									<topic label="Panes" href="group__Elm__Panes.html">
-									</topic>
-									<topic label="Photocam" href="group__Elm__Photocam.html">
-									</topic>
-									<topic label="Plug" href="group__Elm__Plug.html">
-									</topic>
-									<topic label="Popup" href="group__Elm__Popup.html">
-									</topic>
-									<topic label="Progress bar" href="group__Elm__Progressbar.html">
-									</topic>
-									<topic label="Radio" href="group__Elm__Radio.html">
-									</topic>
-									<topic label="Scroller" href="group__Elm__Scroller.html">
-									</topic>
-									<topic label="SegmentControl" href="group__Elm__Segment__Control.html">
-									</topic>
-									<topic label="Slider" href="group__Elm__Slider.html">
-									</topic>
-									<topic label="Spinner" href="group__Elm__Spinner.html">
-									</topic>
-									<topic label="Toolbar" href="group__Elm__Toolbar.html">
-									</topic>
-									<topic label="Tooltips" href="group__Elm__Tooltips.html">
-									</topic>
-									<topic label="Win" href="group__Elm__Win.html">
-										<topic label="Inwin" href="group__Elm__Inwin.html">
-										</topic>
+								</topic>
+								<topic label="Image" href="group__Elm__Image.html">
+								</topic>
+								<topic label="Index" href="group__Elm__Index.html">
+								</topic>
+								<topic label="Label" href="group__Elm__Label.html">
+								</topic>
+								<topic label="Layout" href="group__Elm__Layout.html">
+								</topic>
+								<topic label="List" href="group__Elm__List.html">
+								</topic>
+								<topic label="Longpress" href="group__longpress__group.html">
+								</topic>
+								<topic label="Map" href="group__Elm__Map.html">
+								</topic>
+								<topic label="Mapbuf" href="group__Elm__Mapbuf.html">
+								</topic>
+								<topic label="Menu" href="group__Elm__Menu.html">
+								</topic>
+								<topic label="Mirroring" href="group__Elm__Mirroring.html">
+								</topic>
+								<topic label="Multibuttonentry" href="group__Multibuttonentry.html">
+								</topic>
+								<topic label="Naviframe" href="group__Elm__Naviframe.html">
+								</topic>
+								<topic label="Notify" href="group__Elm__Notify.html">
+								</topic>
+								<topic label="Nstate" href="group__Elm__Nstate.html">
+								</topic>
+								<topic label="Panel" href="group__Elm__Panel.html">
+								</topic>
+								<topic label="Panes" href="group__Elm__Panes.html">
+								</topic>
+								<topic label="Password show last" href="group__Elm__Password__last__show.html">
+								</topic>
+								<topic label="Photo" href="group__Elm__Photo.html">
+								</topic>
+								<topic label="Photocam" href="group__Elm__Photocam.html">
+								</topic>
+								<topic label="Plug" href="group__Plug.html">
+								</topic>
+								<topic label="Popup" href="group__Elm__Popup.html">
+								</topic>
+								<topic label="Progress bar" href="group__Elm__Progressbar.html">
+								</topic>
+								<topic label="Radio" href="group__Elm__Radio.html">
+								</topic>
+								<topic label="Route" href="group__Elm__Route.html">
+								</topic>
+								<topic label="Scroller" href="group__Elm__Scroller.html">
+								</topic>
+								<topic label="Scrollhints" href="group__Elm__Scrollhints.html">
+								</topic>
+								<topic label="SegmentControl" href="group__Elm__Segment__Control.html">
+								</topic>
+								<topic label="Separator" href="group__Elm__Separator.html">
+								</topic>
+								<topic label="Slider" href="group__Elm__Slider.html">
+								</topic>
+								<topic label="Slideshow" href="group__Elm__Slideshow.html">
+								</topic>
+								<topic label="Sotfcursor" href="group__softcursor__group.html">
+								</topic>
+								<topic label="Spinner" href="group__Elm__Spinner.html">
+								</topic>
+								<topic label="Table" href="group__Elm__Table.html">
+								</topic>
+								<topic label="Theme" href="group__Elm__Theme.html">
+								</topic>
+								<topic label="Thumbnail" href="group__Elm__Thumb.html">
+								</topic>
+								<topic label="Toolbar" href="group__Elm__Toolbar.html">
+								</topic>
+								<topic label="Tooltips" href="group__Elm__Tooltips.html">
+								</topic>
+								<topic label="Transit" href="group__Elm__Transit.html">
+								</topic>
+								<topic label="Video" href="group__Efl__Ui__Video.html">
+								</topic>
+								<topic label="Web" href="group__Elm__Web.html">
+								</topic>
+								<topic label="Widget Scaling" href="group__Elm__Scaling.html">
+								</topic>
+								<topic label="Win" href="group__Elm__Win.html">
+									<topic label="Inwin" href="group__Elm__Inwin.html">
 									</topic>
 								</topic>
 							</topic>
@@ -1695,7 +1751,11 @@
 									<topic label="Touch Point List Functions" href="group__Evas__Touch__Point__List.html">
 									</topic>
 								</topic>
+								<topic label="Evas_Object_Vg" href="group__Evas__Object__Vg.html">
+								</topic>
 								<topic label="General Utilities" href="group__Evas__Utils.html">
+									<topic label="Key Input Functions" href="group__Evas__Keys.html">
+									</topic>
 								</topic>
 								<topic label="Generic Object Functions" href="group__Evas__Object__Group.html">
 									<topic label="Basic Object Manipulation" href="group__Evas__Object__Group__Basic.html">
@@ -1711,6 +1771,12 @@
 									<topic label="Size Hints" href="group__Evas__Object__Group__Size__Hints.html">
 									</topic>
 									<topic label="UV Mapping (Rotation, Perspective, 3D...)" href="group__Evas__Object__Group__Map.html">
+									</topic>
+								</topic>
+								<topic label="Shared Image Cache Server" href="group__Evas__Cserve.html">
+									<topic label="General Utilities" href="group__Evas__Utils.html">
+										<topic label="Key Input Functions" href="group__Evas__Keys.html">
+										</topic>
 									</topic>
 								</topic>
 								<topic label="Smart Functions" href="group__Evas__Smart__Group.html">
@@ -3049,7 +3115,7 @@
 									<topic label="Ecore_Evas wrapper/helper set of functions" href="group__Ecore__Evas__Group.html">
 										<topic label="Ecore_Evas Single Process Windowing System." href="group__Ecore__Evas__Ews.html">
 										</topic>
-										<topic label="External plug/socket infrastructure to remote canvases" href="group__Ecore__Evas__Extn.html">
+										<topic label="External plug/socket infrastructure for remote canvases" href="group__Ecore__Evas__Extn.html">
 										</topic>
 									</topic>
 									<topic label="Ecore_File - Files and directories convenience functions" href="group__Ecore__File__Group.html">
@@ -3078,7 +3144,7 @@
 									</topic>
 									<topic label="Edje General" href="group__Edje__General__Group.html">
 									</topic>
-									<topic label="Edje Object" href="group__Edje__Object.html">
+									<topic label="Edje Object" href="group__Edje__Object__Group.html">
 										<topic label="Edje Class: Color" href="group__Edje__Object__Color__Class.html">
 										</topic>
 										<topic label="Edje Class: Size" href="group__Edje__Object__Size__Class.html">
@@ -3163,6 +3229,8 @@
 												</topic>
 												<topic label="Generic Value List management" href="group__Eina__Value__List__Group.html">
 												</topic>
+												<topic label="Generic Value Optional management" href="group__Eina__Value__Optional__Group.html">
+												</topic>
 												<topic label="Generic Value Struct management" href="group__Eina__Value__Struct__Group.html">
 												</topic>
 												<topic label="Generic Value Type management" href="group__Eina__Value__Type__Group.html">
@@ -3179,6 +3247,8 @@
 											<topic label="List" href="group__Eina__List__Group.html">
 											</topic>
 											<topic label="Red-Black tree" href="group__Eina__Rbtree__Group.html">
+											</topic>
+											<topic label="Safe Pointer" href="group__Eina__Safepointer__Group.html">
 											</topic>
 											<topic label="Sparse Matrix" href="group__Eina__Matrixsparse__Group.html">
 											</topic>
@@ -3198,10 +3268,12 @@
 											</topic>
 											<topic label="3x3 Matrices in fixed point" href="group__Eina__Matrix3__F16p16__Group.html">
 											</topic>
-											<topic label="3x3 Matrices in floating point" href="group__Eina__Matrix3__Group.html">
+											<topic label="3x3 floating point matrices" href="group__Eina__Matrix3__Group.html">
 											</topic>
 											<topic label="4x4 Matrices in floating point" href="group__Eina__Matrix4__Group.html">
 											</topic>
+										</topic>
+										<topic label="Memory Slices" href="group__Eina__Slice__Group.html">
 										</topic>
 										<topic label="Quadrangles" href="group__Eina__Quad__Group.html">
 										</topic>
@@ -3222,7 +3294,11 @@
 									</topic>
 									<topic label="Event Log Debugging" href="group__Eina__Evlog.html">
 									</topic>
+									<topic label="Free Queue Group" href="group__Eina__FreeQ__Group.html">
+									</topic>
 									<topic label="Mmap Group" href="group__Eina__Mmap__Group.html">
+									</topic>
+									<topic label="Short lived strings" href="group__Eina__Slstr.html">
 									</topic>
 									<topic label="Thread Queue Group" href="group__Eina__Thread__Queue__Group.html">
 									</topic>
@@ -3278,25 +3354,69 @@
 									</topic>
 									<topic label="Eio file listing API" href="group__Eio__List.html">
 									</topic>
+									<topic label="Eio file management API." href="group__Eio__Management.html">
+									</topic>
 									<topic label="Eio manipulation of eXtended attribute." href="group__Eio__Xattr.html">
 									</topic>
 									<topic label="Manipulate an Eina_File asynchronously" href="group__Eio__Map.html">
 									</topic>
 								</topic>
-								<topic label="Eldbus" href="group__Eldbus.html">
-								</topic>
 								<topic label="Elementary" href="group__Elementary.html">
-									<topic label="Elementary Containers" href="group__elm__container__group.html">
-										<topic label="Box" href="group__Elm__Box.html">
-										</topic>
-										<topic label="Grid" href="group__Elm__Grid.html">
-										</topic>
-										<topic label="Table" href="group__Elm__Table.html">
-										</topic>
+									<topic label="AT-SPI2 Accessibility" href="group__ATSPI.html">
 									</topic>
-									<topic label="Elementary Infrastructure" href="group__elm__infra__group.html">
+									<topic label="Actionslider" href="group__Elm__Actionslider.html">
+									</topic>
+									<topic label="App" href="group__Elm__App.html">
+									</topic>
+									<topic label="Background" href="group__Elm__Bg.html">
+									</topic>
+									<topic label="Box" href="group__Elm__Box.html">
+									</topic>
+									<topic label="Bubble" href="group__Elm__Bubble.html">
+									</topic>
+									<topic label="Button" href="group__Elm__Button.html">
+									</topic>
+									<topic label="Caches" href="group__Elm__Caches.html">
+									</topic>
+									<topic label="Calendar" href="group__Elm__Calendar.html">
+									</topic>
+									<topic label="Check" href="group__Elm__Check.html">
+									</topic>
+									<topic label="Clock" href="group__Elm__Clock.html">
+									</topic>
+									<topic label="Colorselector" href="group__Elm__Colorselector.html">
+									</topic>
+									<topic label="Combobox" href="group__Elm__Combobox.html">
+									</topic>
+									<topic label="Conformant" href="group__Elm__Conformant.html">
+									</topic>
+									<topic label="CopyPaste" href="group__CopyPaste.html">
+									</topic>
+									<topic label="Ctxpopup" href="group__Elm__Ctxpopup.html">
+									</topic>
+									<topic label="Cursors" href="group__Elm__Cursors.html">
+									</topic>
+									<topic label="Datetime" href="group__Elm__Datetime.html">
+									</topic>
+									<topic label="Dayselector" href="group__Elm__Dayselector.html">
+									</topic>
+									<topic label="Debug" href="group__Elm__Debug.html">
+									</topic>
+									<topic label="Diskselector" href="group__Elm__Diskselector.html">
+									</topic>
+									<topic label="Efl_ui_clock" href="group__efl__ui__clock.html">
+									</topic>
+									<topic label="Elementary Config" href="group__Elm__Config.html">
+									</topic>
+									<topic label="Elementary Containers" href="group__elm__container__group.html">
+									</topic>
+									<topic label="Elementary Engine" href="group__Elm__Engine.html">
 										<topic label="AT-SPI2 Accessibility" href="group__ATSPI.html">
 										</topic>
+									</topic>
+									<topic label="Elementary Fonts" href="group__Elm__Fonts.html">
+									</topic>
+									<topic label="Elementary Infrastructure" href="group__elm__infra__group.html">
 										<topic label="Accessibility" href="group__elm__accessibility__group.html">
 											<topic label="Access" href="group__Elm__Access.html">
 											</topic>
@@ -3306,147 +3426,149 @@
 											</topic>
 											<topic label="Atspi Component" href="group__Elm__Interface__Atspi__Component.html">
 											</topic>
-											<topic label="Atspi Text" href="group__Elm__Interface__Atspi__Text.html">
-											</topic>
-										</topic>
-										<topic label="App" href="group__Elm__App.html">
-										</topic>
-										<topic label="Caches" href="group__Elm__Caches.html">
-										</topic>
-										<topic label="CopyPaste" href="group__CopyPaste.html">
-										</topic>
-										<topic label="Cursors" href="group__Elm__Cursors.html">
-										</topic>
-										<topic label="Debug" href="group__Elm__Debug.html">
-										</topic>
-										<topic label="Elementary Config" href="group__Elm__Config.html">
-										</topic>
-										<topic label="Elementary Engine" href="group__Elm__Engine.html">
-											<topic label="AT-SPI2 Accessibility" href="group__ATSPI.html">
-											</topic>
-										</topic>
-										<topic label="Elementary Fonts" href="group__Elm__Fonts.html">
-										</topic>
-										<topic label="Elementary Gen Item" href="group__elm__gen__group.html">
-										</topic>
-										<topic label="Elementary Profile" href="group__Elm__Profile.html">
-										</topic>
-										<topic label="Elementary Scrolling" href="group__Elm__Scrolling.html">
-										</topic>
-										<topic label="Fingers" href="group__Elm__Fingers.html">
-										</topic>
-										<topic label="Focus" href="group__Elm__Focus.html">
-										</topic>
-										<topic label="General" href="group__Elm__General.html">
-										</topic>
-										<topic label="Gesture Layer" href="group__Elm__Gesture__Layer.html">
-										</topic>
-										<topic label="Longpress" href="group__longpress__group.html">
-										</topic>
-										<topic label="Mirroring" href="group__Elm__Mirroring.html">
-										</topic>
-										<topic label="Password show last" href="group__Elm__Password__last__show.html">
-										</topic>
-										<topic label="Scrollhints" href="group__Elm__Scrollhints.html">
-										</topic>
-										<topic label="Sotfcursor" href="group__softcursor__group.html">
 										</topic>
 										<topic label="Styles" href="group__Elm__Styles.html">
-										</topic>
-										<topic label="Theme" href="group__Elm__Theme.html">
-										</topic>
-										<topic label="Transit" href="group__Elm__Transit.html">
-										</topic>
-										<topic label="Widget Scaling" href="group__Elm__Scaling.html">
 										</topic>
 										<topic label="Widget Tree Navigation" href="group__Elm__WidgetNavigation.html">
 										</topic>
 									</topic>
+									<topic label="Elementary Profile" href="group__Elm__Profile.html">
+									</topic>
+									<topic label="Elementary Scrolling" href="group__Elm__Scrolling.html">
+									</topic>
+									<topic label="Elementary Store" href="group__Store.html">
+									</topic>
 									<topic label="Elementary Widgets" href="group__elm__widget__group.html">
-										<topic label="Background" href="group__Elm__Bg.html">
+									</topic>
+									<topic label="Entry" href="group__Elm__Entry.html">
+									</topic>
+									<topic label="File Selector" href="group__Elm__Fileselector.html">
+									</topic>
+									<topic label="File Selector Button" href="group__Elm__File__Selector__Button.html">
+									</topic>
+									<topic label="File Selector Entry" href="group__Elm__File__Selector__Entry.html">
+									</topic>
+									<topic label="Fingers" href="group__Elm__Fingers.html">
+									</topic>
+									<topic label="Flip" href="group__Elm__Flip.html">
+									</topic>
+									<topic label="Flip Selector" href="group__Elm__Flipselector.html">
+									</topic>
+									<topic label="Focus" href="group__Elm__Focus.html">
+									</topic>
+									<topic label="Frame" href="group__Elm__Frame.html">
+									</topic>
+									<topic label="GLView" href="group__Elm__GLView.html">
+										<topic label="Elementary GL Helper functions" href="group__Elementary__GL__Helpers.html">
+											<topic label="OpenGL with Elementary" href="group__Elementary__GL__Helpers.html#elm_opengl_page"/>
 										</topic>
-										<topic label="Button" href="group__Elm__Button.html">
+									</topic>
+									<topic label="General" href="group__Elm__General.html">
+									</topic>
+									<topic label="Gengrid (Generic grid)" href="group__Elm__Gengrid.html">
+									</topic>
+									<topic label="Genlist (Generic list)" href="group__Elm__Genlist.html">
+									</topic>
+									<topic label="Gesture Layer" href="group__Elm__Gesture__Layer.html">
+									</topic>
+									<topic label="Getting Started" href="group__Elm__Start.html">
+									</topic>
+									<topic label="Grid" href="group__Elm__Grid.html">
+									</topic>
+									<topic label="Helper" href="group__Helper.html">
+									</topic>
+									<topic label="Hover" href="group__Elm__Hover.html">
+									</topic>
+									<topic label="Hoversel" href="group__Elm__Hoversel.html">
+									</topic>
+									<topic label="Icon" href="group__Elm__Icon.html">
+										<topic label="Password show last" href="group__Elm__Password__last__show.html">
 										</topic>
-										<topic label="Calendar" href="group__Elm__Calendar.html">
-										</topic>
-										<topic label="Check" href="group__Elm__Check.html">
-										</topic>
-										<topic label="Colorselector" href="group__Elm__Colorselector.html">
-										</topic>
-										<topic label="Conformant" href="group__Elm__Conformant.html">
-										</topic>
-										<topic label="Ctxpopup" href="group__Elm__Ctxpopup.html">
-										</topic>
-										<topic label="Datetime" href="group__Elm__Datetime.html">
-										</topic>
-										<topic label="Entry" href="group__Elm__Entry.html">
-										</topic>
-										<topic label="Flip" href="group__Elm__Flip.html">
-										</topic>
-										<topic label="Flip Selector" href="group__Elm__Flipselector.html">
-										</topic>
-										<topic label="GLView" href="group__Elm__GLView.html">
-											<topic label="Elementary GL Helper functions" href="group__Elementary__GL__Helpers.html">
-												<topic label="OpenGL with Elementary" href="group__Elementary__GL__Helpers.html#elm_opengl_page"/>
-											</topic>
-										</topic>
-										<topic label="Gengrid (Generic grid)" href="group__Elm__Gengrid.html">
-										</topic>
-										<topic label="Genlist (Generic list)" href="group__Elm__Genlist.html">
-										</topic>
-										<topic label="Hoversel" href="group__Elm__Hoversel.html">
-										</topic>
-										<topic label="Icon" href="group__Elm__Icon.html">
-										</topic>
-										<topic label="Image" href="group__Elm__Image.html">
-										</topic>
-										<topic label="Index" href="group__Elm__Index.html">
-										</topic>
-										<topic label="Label" href="group__Elm__Label.html">
-										</topic>
-										<topic label="Layout" href="group__Elm__Layout.html">
-										</topic>
-										<topic label="List" href="group__Elm__List.html">
-										</topic>
-										<topic label="Map" href="group__Elm__Map.html">
-										</topic>
-										<topic label="Mapbuf" href="group__Elm__Mapbuf.html">
-										</topic>
-										<topic label="Multibuttonentry" href="group__Elm__Multibuttonentry.html">
-										</topic>
-										<topic label="Naviframe" href="group__Elm__Naviframe.html">
-										</topic>
-										<topic label="Notify" href="group__Elm__Notify.html">
-										</topic>
-										<topic label="Panel" href="group__Elm__Panel.html">
-										</topic>
-										<topic label="Panes" href="group__Elm__Panes.html">
-										</topic>
-										<topic label="Photocam" href="group__Elm__Photocam.html">
-										</topic>
-										<topic label="Plug" href="group__Elm__Plug.html">
-										</topic>
-										<topic label="Popup" href="group__Elm__Popup.html">
-										</topic>
-										<topic label="Progress bar" href="group__Elm__Progressbar.html">
-										</topic>
-										<topic label="Radio" href="group__Elm__Radio.html">
-										</topic>
-										<topic label="Scroller" href="group__Elm__Scroller.html">
-										</topic>
-										<topic label="SegmentControl" href="group__Elm__Segment__Control.html">
-										</topic>
-										<topic label="Slider" href="group__Elm__Slider.html">
-										</topic>
-										<topic label="Spinner" href="group__Elm__Spinner.html">
-										</topic>
-										<topic label="Toolbar" href="group__Elm__Toolbar.html">
-										</topic>
-										<topic label="Tooltips" href="group__Elm__Tooltips.html">
-										</topic>
-										<topic label="Win" href="group__Elm__Win.html">
-											<topic label="Inwin" href="group__Elm__Inwin.html">
-											</topic>
+									</topic>
+									<topic label="Image" href="group__Elm__Image.html">
+									</topic>
+									<topic label="Index" href="group__Elm__Index.html">
+									</topic>
+									<topic label="Label" href="group__Elm__Label.html">
+									</topic>
+									<topic label="Layout" href="group__Elm__Layout.html">
+									</topic>
+									<topic label="List" href="group__Elm__List.html">
+									</topic>
+									<topic label="Longpress" href="group__longpress__group.html">
+									</topic>
+									<topic label="Map" href="group__Elm__Map.html">
+									</topic>
+									<topic label="Mapbuf" href="group__Elm__Mapbuf.html">
+									</topic>
+									<topic label="Menu" href="group__Elm__Menu.html">
+									</topic>
+									<topic label="Mirroring" href="group__Elm__Mirroring.html">
+									</topic>
+									<topic label="Multibuttonentry" href="group__Multibuttonentry.html">
+									</topic>
+									<topic label="Naviframe" href="group__Elm__Naviframe.html">
+									</topic>
+									<topic label="Notify" href="group__Elm__Notify.html">
+									</topic>
+									<topic label="Nstate" href="group__Elm__Nstate.html">
+									</topic>
+									<topic label="Panel" href="group__Elm__Panel.html">
+									</topic>
+									<topic label="Panes" href="group__Elm__Panes.html">
+									</topic>
+									<topic label="Password show last" href="group__Elm__Password__last__show.html">
+									</topic>
+									<topic label="Photo" href="group__Elm__Photo.html">
+									</topic>
+									<topic label="Photocam" href="group__Elm__Photocam.html">
+									</topic>
+									<topic label="Plug" href="group__Plug.html">
+									</topic>
+									<topic label="Popup" href="group__Elm__Popup.html">
+									</topic>
+									<topic label="Progress bar" href="group__Elm__Progressbar.html">
+									</topic>
+									<topic label="Radio" href="group__Elm__Radio.html">
+									</topic>
+									<topic label="Route" href="group__Elm__Route.html">
+									</topic>
+									<topic label="Scroller" href="group__Elm__Scroller.html">
+									</topic>
+									<topic label="Scrollhints" href="group__Elm__Scrollhints.html">
+									</topic>
+									<topic label="SegmentControl" href="group__Elm__Segment__Control.html">
+									</topic>
+									<topic label="Separator" href="group__Elm__Separator.html">
+									</topic>
+									<topic label="Slider" href="group__Elm__Slider.html">
+									</topic>
+									<topic label="Slideshow" href="group__Elm__Slideshow.html">
+									</topic>
+									<topic label="Sotfcursor" href="group__softcursor__group.html">
+									</topic>
+									<topic label="Spinner" href="group__Elm__Spinner.html">
+									</topic>
+									<topic label="Table" href="group__Elm__Table.html">
+									</topic>
+									<topic label="Theme" href="group__Elm__Theme.html">
+									</topic>
+									<topic label="Thumbnail" href="group__Elm__Thumb.html">
+									</topic>
+									<topic label="Toolbar" href="group__Elm__Toolbar.html">
+									</topic>
+									<topic label="Tooltips" href="group__Elm__Tooltips.html">
+									</topic>
+									<topic label="Transit" href="group__Elm__Transit.html">
+									</topic>
+									<topic label="Video" href="group__Efl__Ui__Video.html">
+									</topic>
+									<topic label="Web" href="group__Elm__Web.html">
+									</topic>
+									<topic label="Widget Scaling" href="group__Elm__Scaling.html">
+									</topic>
+									<topic label="Win" href="group__Elm__Win.html">
+										<topic label="Inwin" href="group__Elm__Inwin.html">
 										</topic>
 									</topic>
 								</topic>
@@ -3483,7 +3605,11 @@
 										<topic label="Touch Point List Functions" href="group__Evas__Touch__Point__List.html">
 										</topic>
 									</topic>
+									<topic label="Evas_Object_Vg" href="group__Evas__Object__Vg.html">
+									</topic>
 									<topic label="General Utilities" href="group__Evas__Utils.html">
+										<topic label="Key Input Functions" href="group__Evas__Keys.html">
+										</topic>
 									</topic>
 									<topic label="Generic Object Functions" href="group__Evas__Object__Group.html">
 										<topic label="Basic Object Manipulation" href="group__Evas__Object__Group__Basic.html">
@@ -3499,6 +3625,12 @@
 										<topic label="Size Hints" href="group__Evas__Object__Group__Size__Hints.html">
 										</topic>
 										<topic label="UV Mapping (Rotation, Perspective, 3D...)" href="group__Evas__Object__Group__Map.html">
+										</topic>
+									</topic>
+									<topic label="Shared Image Cache Server" href="group__Evas__Cserve.html">
+										<topic label="General Utilities" href="group__Evas__Utils.html">
+											<topic label="Key Input Functions" href="group__Evas__Keys.html">
+											</topic>
 										</topic>
 									</topic>
 									<topic label="Smart Functions" href="group__Evas__Smart__Group.html">

@@ -94,17 +94,97 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="screenshots/box_example_02.png" alt="box_example_02.png"/>
 </div>
- <p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Our application data consists of a list of layout functions, given by <code>transitions</code>. We'll be animating through them throughout the entire run. The box with the stuff to move around and the last layout that was set to make things easier in the code. <div class="fragment"><pre class="fragment"></pre></div></p>
+ <p><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+</pre></div></p>
+<p>Our application data consists of a list of layout functions, given by <code>transitions</code>. We'll be animating through them throughout the entire run. The box with the stuff to move around and the last layout that was set to make things easier in the code. <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct</span>
+{
+   <a class="code" href="struct__Eina__List.html">Eina_List</a> *transitions;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *box;
+   <a class="code" href="group__Evas__Object__Box.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> last_layout;
+} Transitions_Data;
+</pre></div></p>
 <p>The box starts with three buttons, clicking on any of them will take it out of the box without deleting the object. There are also two more buttons outside, one to add an object to the box and the other to clear it. This is all to show how you can interact with the items in the box, add things and even remove them, while the transitions occur.</p>
-<p>One of the callback we'll be using creates a new button, asks the box for the list of its children and if it's not empty, we add the new object after the first one, otherwise just place at the end as it will not make any difference. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The clear button is even simpler. Everything in the box will be deleted, leaving it empty and ready to fill it up with more stuff. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And a little function to remove buttons from the box without deleting them. This one is set for the <code>clicked</code> callback of the original buttons, unpacking them when clicked and placing it somewhere in the screen where they will not disturb. Once we do this, the box no longer has any control of it, so it will be left untouched until the program ends. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>If we wanted, we could just call <code><a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></code> on the object to destroy it. In this case, no unpack is really necessary, as the box would be notified of a child being deleted and adjust its calculations accordingly.</p>
-<p>The core of the program is the following function. It takes whatever function is first on our list of layouts and together with the <code>last_layout</code>, it creates an <a class="el" href="group__Elm__Box.html#ga9cd35aa22988c800aa981f25ada92ced">Elm_Box_Transition</a> to use with <a class="el" href="group__Elm__Box.html#ga15194ef319ae722b03f608373f90fe1f">elm_box_layout_transition()</a>. In here, we tell it to start from whatever layout we last set, end with the one that was at the top of the list and when everything is finished, call us back so we can create another transition. Finally, move the new layout to the end of the list so we can continue running through them until the program ends. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The main function doesn't have anything special. Creation of box, initial buttons and some callback setting. The only part worth mentioning is the initialization of our application data. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>One of the callback we'll be using creates a new button, asks the box for the list of its children and if it's not empty, we add the new object after the first one, otherwise just place at the end as it will not make any difference. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_add_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn;
+   <a class="code" href="struct__Eina__List.html">Eina_List</a> *children;
+   Transitions_Data *tdata = data;
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(tdata-&gt;box);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;I do nothing&quot;</span>);
+   children = (<a class="code" href="struct__Eina__List.html">Eina_List</a> *)<a class="code" href="group__Elm__Box.html#ga58d3e0a39f1b743418667968c0231ea8" title="Get a list of the objects packed into the box.">elm_box_children_get</a>(tdata-&gt;box);
+   <span class="keywordflow">if</span> (children)
+     {
+        <a class="code" href="group__Elm__Box.html#ga45b459590ae168019243ca5742931e16" title="Adds an object to the box after the indicated object.">elm_box_pack_after</a>(tdata-&gt;box, btn, (<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *)children-&gt;<a class="code" href="struct__Eina__List.html#a043e22d601d3a0504f30255a43a25e7a">data</a>);
+        <a class="code" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free</a>(children);
+     }
+   <span class="keywordflow">else</span>
+     <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(tdata-&gt;box, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+}
+</pre></div></p>
+<p>The clear button is even simpler. Everything in the box will be deleted, leaving it empty and ready to fill it up with more stuff. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_clear_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   Transitions_Data *tdata = data;
+   <a class="code" href="group__Elm__Box.html#ga4616b670f386ab6ddfddce9433c62c08" title="Clear the box of all children.">elm_box_clear</a>(tdata-&gt;box);
+}
+</pre></div></p>
+<p>And a little function to remove buttons from the box without deleting them. This one is set for the <code>clicked</code> callback of the original buttons, unpacking them when clicked and placing it somewhere in the screen where they will not disturb. Once we do this, the box no longer has any control of it, so it will be left untouched until the program ends. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_unpack_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   Transitions_Data *tdata = data;
+   <a class="code" href="group__Elm__Box.html#ga2c4fb2f04cb3d55e07ca04c21fd958fd" title="Unpack a box item.">elm_box_unpack</a>(tdata-&gt;box, obj);
+   evas_object_move(obj, 0, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(obj, 128, 64, 0, 128);
+}
+</pre></div></p>
+<p>If we wanted, we could just call <code><a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></code> on the object to destroy it. In this case, no unpack is really necessary, as the box would be notified of a child being deleted and adjust its calculations accordingly.</p>
+<p>The core of the program is the following function. It takes whatever function is first on our list of layouts and together with the <code>last_layout</code>, it creates an <a class="el" href="group__Elm__Box.html#ga9cd35aa22988c800aa981f25ada92ced">Elm_Box_Transition</a> to use with <a class="el" href="group__Elm__Box.html#ga15194ef319ae722b03f608373f90fe1f">elm_box_layout_transition()</a>. In here, we tell it to start from whatever layout we last set, end with the one that was at the top of the list and when everything is finished, call us back so we can create another transition. Finally, move the new layout to the end of the list so we can continue running through them until the program ends. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_test_box_transition_change(<span class="keywordtype">void</span> *data)
+{
+   Transitions_Data *tdata = data;
+   <a class="code" href="group__Elm__Box.html#ga9cd35aa22988c800aa981f25ada92ced">Elm_Box_Transition</a> *layout_data;
+   <a class="code" href="group__Evas__Object__Box.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> next_layout;
+
+   <span class="keywordflow">if</span> (!data) <span class="keywordflow">return</span>;
+   next_layout = <a class="code" href="group__Eina__List__Group.html#gaec845f0bfb16a14e8d7f0cd508ca7e9c" title="Gets the list node data member.">eina_list_data_get</a>(tdata-&gt;transitions);
+   layout_data = <a class="code" href="group__Elm__Box.html#ga4a70cd7719f20a6d60e4abdf57eeca4e">elm_box_transition_new</a>(2.0, tdata-&gt;last_layout,
+                                        NULL, NULL, next_layout, NULL, NULL,
+                                        _test_box_transition_change, tdata);
+   elm_box_layout_set(tdata-&gt;box, <a class="code" href="group__Elm__Box.html#ga15194ef319ae722b03f608373f90fe1f">elm_box_layout_transition</a>, layout_data,
+                      <a class="code" href="group__Elm__Box.html#gab7b726e4dbfb80da529431d198add95e">elm_box_transition_free</a>);
+   tdata-&gt;last_layout = next_layout;
+
+   tdata-&gt;transitions = <a class="code" href="group__Eina__List__Group.html#ga082644881a2333bd16208c00931703cd" title="Moves the specified data to the tail of the list.">eina_list_demote_list</a>(tdata-&gt;transitions,
+                                              tdata-&gt;transitions);
+}
+</pre></div></p>
+<p>The main function doesn't have anything special. Creation of box, initial buttons and some callback setting. The only part worth mentioning is the initialization of our application data. <div class="fragment"><pre class="fragment">   tdata.box = bx;
+   tdata.last_layout = evas_object_box_layout_horizontal;
+   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_vertical);
+   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_horizontal);
+   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_stack);
+</pre></div></p>
 <p>We have a simple static variable, set the box, the first layout we are using as last and create the list with the different functions to go through.</p>
-<p>And in the end, we set the first layout and call the same function we went through before to start the run of transitions. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>And in the end, we set the first layout and call the same function we went through before to start the run of transitions. <div class="fragment"><pre class="fragment">   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_homogeneous_vertical);
+   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_homogeneous_horizontal);
+   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_flow_vertical);
+   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_flow_horizontal);
+   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
+                                        evas_object_box_layout_stack);
+
+   elm_box_layout_set(bx, evas_object_box_layout_horizontal, NULL, NULL);
+   _test_box_transition_change(&amp;tdata);
+</pre></div></p>
 <p>For the full code, follow <a class="el" href="box_example_02_8c-example.html">here</a>. </p>
 </div></div><!-- contents -->
 </div>

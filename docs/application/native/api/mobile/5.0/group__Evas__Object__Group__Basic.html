@@ -86,6 +86,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Basic Object Manipulation</div>  </div>
 <div class="ingroups"><a class="el" href="group__Evas__Object__Group.html">Generic Object Functions</a></div></div><!--header-->
@@ -94,21 +96,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Almost every evas object created will have some generic function used to manipulate it. That's because there are a number of basic actions to be done to objects that are irrespective of the object's type, things like: </p>
 <ul>
 <li>Showing/Hiding </li>
-<li>Setting(and getting) geometry </li>
+<li>Setting (and getting) geometry </li>
 <li>Bring up or down a layer </li>
 <li>Color management </li>
 <li>Handling focus </li>
 <li>Clipping </li>
 <li>Reference counting</li>
 </ul>
-<p>All of this issues are handled through the functions here grouped. Examples of these function can be seen in <a class="el" href="Example_Evas_Object_Manipulation.html">Evas objects basic manipulation example</a>(which deals with the most common ones) and in <a class="el" href="Example_Evas_Stacking.html">Evas object stacking functions (and some event handling)</a>(which deals with stacking functions). </p>
+<p>All of these issues are handled through the functions grouped here. Examples of these function can be seen in <a class="el" href="Example_Evas_Object_Manipulation.html">Evas objects basic manipulation example</a>(which deals with the most common ones) and in <a class="el" href="Example_Evas_Stacking.html">Evas object stacking functions (and some event handling)</a> (which deals with stacking functions). </p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Basic.html#ga01ba29e2e1b5b57d539e5a70943e13d7">evas_vg_node_color_set</a> (Eo *obj, int r, int g, int b, int a)</td></tr>
+</table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga0854bae878bfc39f51b9c989353c973f"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_color_get" ref="ga0854bae878bfc39f51b9c989353c973f" args="(const Evas_Object *obj, int *r, int *g, int *b, int *a)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -153,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Use <code>NULL</code> pointers on the components you're not interested in: they'll be ignored by the function.</dd></dl>
 <p>Example:  <div class="fragment"><pre class="fragment">        <span class="keywordtype">int</span> alpha, r, g, b;
 
-        <a class="code" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(d.clipper, &amp;r, &amp;g, &amp;b, &amp;alpha);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(d.clipper, &amp;r, &amp;g, &amp;b, &amp;alpha);
         <a class="code" href="group__Evas__Utils.html#ga862abed1097a429dd439fbe08813cd9d">evas_color_argb_unpremul</a>(alpha, &amp;r, &amp;g, &amp;b);
 
         alpha -= 20;
@@ -161,9 +168,9 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
           alpha = 255;
 
         <a class="code" href="group__Evas__Utils.html#gac02bf3973675ae7591b9f34deef1554f">evas_color_argb_premul</a>(alpha, &amp;r, &amp;g, &amp;b);
-        <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.clipper, r, g, b, alpha);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.clipper, r, g, b, alpha);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing clipper&#39;s opacity: %d%%\n&quot;</span>,
+        printf(<span class="stringliteral">&quot;Changing clipper&#39;s opacity: %d%%\n&quot;</span>,
                 (<span class="keywordtype">int</span>)((alpha / 255.0) * 100));
         <span class="keywordflow">return</span>;
 </pre></div></p>
@@ -173,12 +180,11 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
     <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>The red component of the given color. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">g</td><td>The green component of the given color. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>The blue component of the given color. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The alpha component of the given color.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The alpha component of the given color.  2.3 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a29">edje-basic.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a5">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a38">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a37">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-basic_8c-example.html#a19">edje-basic.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a4">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a34">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a33">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -187,7 +193,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -225,19 +231,18 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 </div>
 <div class="memdoc">
 <p>Sets the general/main color of the given Evas object to the given one.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get()</a> (for an example) </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get()</a> (for an example) </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The red component of the given color. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The green component of the given color. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The blue component of the given color. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha component of the given color.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha component of the given color.  2.3 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a6">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a15">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a6">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a10">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a7">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a8">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a21">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a60">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a14">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a10">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a12">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a18">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a18">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a21">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a18">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a12">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a24">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a10">edje-text.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a2">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a15">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a12">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a2">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a35">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a25">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a16">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a37">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a36">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a8">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a37">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a36">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a21">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a10">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a17">evas-text.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a12">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a9">bubble_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a10">check_example_01.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a11">colorselector_example_01.c</a>, <a class="el" href="ecore_animator_example_8c-example.html#a6">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a20">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a6">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a11">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a8">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a10">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a19">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a61">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a13">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a8">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a10">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a18">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a18">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a19">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a17">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a12">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a18">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a10">edje-text.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a6">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a5">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a7">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a8">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a10">efl_thread_5.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a2">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a13">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a10">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a2">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a35">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a17">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a12">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a36">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a34">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a7">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a33">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a32">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a15">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a10">evas-table.c</a>, <a class="el" href="evas-text_8c-example.html#a5">evas-text.c</a>, <a class="el" href="flip_example_01_8c-example.html#a6">flip_example_01.c</a>, <a class="el" href="frame_example_01_8c-example.html#a6">frame_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a8">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a9">hoversel_example_01.c</a>, <a class="el" href="label_example_01_8c-example.html#a13">label_example_01.c</a>, <a class="el" href="menu_example_01_8c-example.html#a15">menu_example_01.c</a>, <a class="el" href="separator_example_01_8c-example.html#a10">separator_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a11">table_example_02.c</a>, and <a class="el" href="transit_example_04_8c-example.html#a34">transit_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -246,7 +251,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -262,13 +267,13 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
   </table>
   </dd>
 </dl>
-<p>This call will mark <code>obj</code> for deletion, which will take place whenever it has no more references to it (see <a class="el" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> and <a class="el" href="group__Evas__Font__Group.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a>).</p>
-<p>At actual deletion time, which may or may not be just after this call, <a class="el" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a4471afbcbb4a754b7b0bbde00fb9a277">EVAS_CALLBACK_DEL</a> and <a class="el" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968aab869b5d534f02f1b3e151e2406a8c24">EVAS_CALLBACK_FREE</a> callbacks will be called. If the object currently had the focus, its <a class="el" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab26a0af7efaa8b77e996bd438accf8d3">EVAS_CALLBACK_FOCUS_OUT</a> callback will also be called.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> </dd>
+<p>This call will mark <code>obj</code> for deletion, which will take place whenever it has no more references to it (see <a class="el" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> and <a class="el" href="group__Evas__Object__Group__Basic.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a>).</p>
+<p>At actual deletion time, which may or may not be just after this call, ::EVAS_CALLBACK_DEL and ::EVAS_CALLBACK_FREE callbacks will be called. If the object currently had the focus, its ::EVAS_CALLBACK_FOCUS_OUT callback will also be called.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a></dd></dl>
+<a class="el" href="group__Evas__Object__Group__Basic.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a12">ecore_animator_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a83">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a21">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a8">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a19">edje-box2.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a24">edje-signals-messages.c</a>, <a class="el" href="edje-table_8c-example.html#a12">edje-table.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a9">eina_tiler_01.c</a>, <a class="el" href="evas-box_8c-example.html#a20">evas-box.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a35">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a34">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a1">ctxpopup_example_01.c</a>, <a class="el" href="ecore_animator_example_8c-example.html#a12">ecore_animator_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a77">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a17">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a6">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a16">edje-box2.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a20">edje-signals-messages.c</a>, <a class="el" href="edje-table_8c-example.html#a7">edje-table.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a2">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a4">efl_thread_5.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a5">eina_tiler_01.c</a>, <a class="el" href="entry_example_8c-example.html#a24">entry_example.c</a>, <a class="el" href="evas-box_8c-example.html#a18">evas-box.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a31">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a30">evas-smart-object.c</a>, <a class="el" href="glview_example_01_8c-example.html#a33">glview_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a4">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a2">layout_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a20">popup_example_02.c</a>, <a class="el" href="web_example_02_8c-example.html#a9">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a6">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -277,7 +282,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -285,25 +290,25 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>h</em>&#160;</td>
         </tr>
         <tr>
@@ -329,19 +334,18 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <dl class="note"><dt><b>Note:</b></dt><dd>Use <code>NULL</code> pointers on the geometry components you're not interested in: they'll be ignored by the function.</dd></dl>
 <p>Example:  <div class="fragment"><pre class="fragment">   <span class="keywordtype">int</span> w, h, cw, ch;
 
-   <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(d.img, NULL, NULL, &amp;w, &amp;h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(d.img, NULL, NULL, &amp;w, &amp;h);
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(d.ee, NULL, NULL, &amp;cw, &amp;ch);
 
    <span class="keywordflow">if</span> (w &lt; cw)
-     <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw, ch);
+     evas_object_resize(d.img, cw, ch);
    <span class="keywordflow">else</span>
-     <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw / 2, ch / 2);
+     evas_object_resize(d.img, cw / 2, ch / 2);
 
    <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>; <span class="comment">/* re-issue the timer */</span>
 </pre></div></p>
-<p>See the full <a class="el" href="Example_Evas_Events.html">example</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a19">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a4">edje-box2.c</a>, <a class="el" href="evas-box_8c-example.html#a4">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a4">evas-events.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a6">evas-map-utils.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a23">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a19">evas-smart-object.c</a>.</dd>
+<p>See the full <a class="el" href="Example_Evas_Events.html">example</a>.  2.3 </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a18">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a4">edje-box2.c</a>, <a class="el" href="evas-box_8c-example.html#a4">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a4">evas-events.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a6">evas-map-utils.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a20">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a16">evas-smart-object.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a12">genlist_example_02.c</a>, and <a class="el" href="track_example_01_8c-example.html#a2">track_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -350,7 +354,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga842bddc5ddd6ccc78ecb4ef663123d78">evas_object_geometry_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga842bddc5ddd6ccc78ecb4ef663123d78">evas_object_geometry_set</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -358,25 +362,25 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>h</em>&#160;</td>
         </tr>
         <tr>
@@ -399,15 +403,14 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
   </dd>
 </dl>
 <p>The position, naturally, will be relative to the top left corner of the canvas' viewport.</p>
-<p>If the object get moved, the object's <a class="el" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9b66bd091da76fb13f551c6db04502b0">EVAS_CALLBACK_MOVE</a> callback will be called.</p>
-<p>If the object get resized, the object's <a class="el" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a554e3341a4ae95e15d42da495f8adb21">EVAS_CALLBACK_RESIZE</a> callback will be called.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move()</a> </dd>
+<p>If the object get moved, the object's ::EVAS_CALLBACK_MOVE callback will be called.</p>
+<p>If the object get resized, the object's ::EVAS_CALLBACK_RESIZE callback will be called.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_move() </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize()</a> </dd>
+evas_object_resize() </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a></dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -416,7 +419,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -433,26 +436,129 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
   </dd>
 </dl>
 <p>Hidden objects, besides not being shown at all in your canvas, won't be checked for changes on the canvas rendering process. Furthermore, they will not catch input events. Thus, they are much ligher (in processing needs) than an object that is invisible due to indirect causes, such as being clipped or out of the canvas' viewport.</p>
-<p>Besides becoming hidden, <code>obj</code> object's <a class="el" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab433c293bd272670ac3b5e8b1928a540">EVAS_CALLBACK_SHOW</a> callback will be called.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>All objects are created in the hidden state! If you want them shown, use <a class="el" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> after their creation.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> </dd>
+<p>Besides becoming hidden, <code>obj</code> object's ::EVAS_CALLBACK_SHOW callback will be called.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>All objects are created in the hidden state! If you want them shown, use <a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> after their creation.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#gac4a363e7d25b18ae7baddc04d7f20ebe">evas_object_visible_get()</a></dd></dl>
-<p>Example:  <div class="fragment"><pre class="fragment">        <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Font__Group.html#gac4a363e7d25b18ae7baddc04d7f20ebe">evas_object_visible_get</a>(d.clipper))
+evas_object_visible_get()</dd></dl>
+<p>Example:  <div class="fragment"><pre class="fragment">        <span class="keywordflow">if</span> (evas_object_visible_get(d.clipper))
           {
-             <a class="code" href="group__Evas__Font__Group.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(d.clipper);
-             fprintf(stdout, <span class="stringliteral">&quot;hidden\n&quot;</span>);
+             <a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(d.clipper);
+             printf(<span class="stringliteral">&quot;hidden\n&quot;</span>);
           }
         <span class="keywordflow">else</span>
           {
-             <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper);
-             fprintf(stdout, <span class="stringliteral">&quot;visible\n&quot;</span>);
+             <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper);
+             printf(<span class="stringliteral">&quot;visible\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
 </pre></div></p>
-<p>See the full <a class="el" href="Example_Evas_Object_Manipulation.html">example</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-map-utils_8c-example.html#a20">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a10">evas-object-manipulation.c</a>, and <a class="el" href="evas-smart-interface_8c-example.html#a22">evas-smart-interface.c</a>.</dd>
+<p>See the full <a class="el" href="Example_Evas_Object_Manipulation.html">example</a>.  2.3 </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_01_8c-example.html#a2">button_example_01.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a19">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a8">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a19">evas-smart-interface.c</a>, <a class="el" href="hover_example_01_8c-example.html#a2">hover_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a1">inwin_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a19">notify_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a13">popup_example_01.c</a>, and <a class="el" href="popup_example_03_8c-example.html#a19">popup_example_03.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gab80081938ad26a67738f8230e37bb5de"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_name_child_find" ref="gab80081938ad26a67738f8230e37bb5de" args="(const Evas_Object *obj, const char *name, int recurse)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Evas__Object__Group__Basic.html#gab80081938ad26a67738f8230e37bb5de">evas_object_name_child_find</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>recurse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the object from children of the given object with the given name. </p>
+<p>This looks for the evas object given a name by <a class="el" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2">evas_object_name_set</a>, but it ONLY looks at the children of the object *p obj, and will only recurse into those children if <code>recurse</code> is greater than 0. If the name is not unique within immediate children (or the whole child tree) then it is not defined which child object will be returned. If <code>recurse</code> is set to -1 then it will recurse without limit.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The given name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">recurse</td><td>Set to the number of child levels to recurse (0 == don't recurse, 1 == only look at the children of <code>obj</code> or their immediate children, but no further etc.).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The Evas object with the given name on success, Otherwise <code>null</code>.</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2  3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7934106d84f6a019fcb421b6b4d860a3"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_name_get" ref="ga7934106d84f6a019fcb421b6b4d860a3" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3">evas_object_name_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the name of the given Evas object. </p>
+<p>Return: The name of the object or <code>null</code>, if no name has been given to it.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The given name.  2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a2">evas-events.c</a>, and <a class="el" href="evas-stacking_8c-example.html#a0">evas-stacking.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga88bfcce07ad3bcef31687e29075ae2d2"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_name_set" ref="ga88bfcce07ad3bcef31687e29075ae2d2" args="(Evas_Object *obj, const char *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2">evas_object_name_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the name of the given Evas object to the given name. </p>
+<p>There might be occasions where one would like to name his/her objects.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The given name.  2.3 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-box2_8c-example.html#a19">edje-box2.c</a>, <a class="el" href="evas-events_8c-example.html#a34">evas-events.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a33">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a16">evas-object-manipulation.c</a>, and <a class="el" href="evas-stacking_8c-example.html#a14">evas-stacking.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -461,7 +567,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -477,19 +583,19 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
   </table>
   </dd>
 </dl>
-<p>This increments the reference count of an object, which if greater than 0 will defer deletion by <a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a> until all references are released back (counter back to 0). References cannot go below 0 and unreferencing past that will result in the reference count being limited to 0. References are limited to <code>2^32 - 1</code> for an object. Referencing it more than this will result in it being limited to this value.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a> </dd>
+<p>This increments the reference count of an object, which if greater than 0 will defer deletion by <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a> until all references are released back (counter back to 0). References cannot go below 0 and unreferencing past that will result in the reference count being limited to 0. References are limited to <code>2^32 - 1</code> for an object. Referencing it more than this will result in it being limited to this value.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Basic.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>This is a <b>very simple</b> reference counting mechanism! For instance, Evas is not ready to check for pending references on a canvas deletion, or things like that. This is useful on scenarios where, inside a code block, callbacks exist which would possibly delete an object we are operating on afterwards. Then, one would <a class="el" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> it on the beginning of the block and <a class="el" href="group__Evas__Font__Group.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a> it on the end. It would then be deleted at this point, if it should be.</dd></dl>
+<a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This is a <b>very simple</b> reference counting mechanism! For instance, Evas is not ready to check for pending references on a canvas deletion, or things like that. This is useful on scenarios where, inside a code block, callbacks exist which would possibly delete an object we are operating on afterwards. Then, one would <a class="el" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> it on the beginning of the block and <a class="el" href="group__Evas__Object__Group__Basic.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a> it on the end. It would then be deleted at this point, if it should be.</dd></dl>
 <p>Example: </p>
-<div class="fragment"><pre class="fragment">  <a class="code" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref</a>(obj);
+<div class="fragment"><pre class="fragment">  <a class="code" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref</a>(obj);
 
   <span class="comment">// action here...</span>
-  <a class="code" href="group__Evas__Smart__Object__Group.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(obj, SIG_SELECTED, NULL);
+  <a class="code" href="group__Evas__Canvas.html#gaa81bbe0af70df6c90b8fc781c59237bc">evas_object_smart_callback_call</a>(obj, SIG_SELECTED, NULL);
   <span class="comment">// more action here...</span>
-  <a class="code" href="group__Evas__Font__Group.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref</a>(obj);
-</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref</a>(obj);
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -499,7 +605,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__Evas__Font__Group.html#ga04e91b9d93851c11186cde50876d419f">evas_object_ref_get</a> </td>
+          <td class="memname">int <a class="el" href="group__Evas__Object__Group__Basic.html#ga04e91b9d93851c11186cde50876d419f">evas_object_ref_get</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -516,12 +622,12 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
   </dd>
 </dl>
 <p>This gets the reference count for an object (normally 0 until it is referenced). Values of 1 or greater mean that someone is holding a reference to this object that needs to be unreffed before it can be deleted.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a> </dd>
+<a class="el" href="group__Evas__Object__Group__Basic.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+<a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -531,7 +637,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -547,12 +653,35 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
   </table>
   </dd>
 </dl>
-<p>Besides becoming visible, the object's <a class="el" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab433c293bd272670ac3b5e8b1928a540">EVAS_CALLBACK_SHOW</a> callback will be called.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide()</a> for more on object visibility. </dd>
+<p>Besides becoming visible, the object's ::EVAS_CALLBACK_SHOW callback will be called.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide()</a> for more on object visibility. </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#gac4a363e7d25b18ae7baddc04d7f20ebe">evas_object_visible_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a5">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a17">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a9">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a13">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a9">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a10">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a22">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a63">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a17">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a11">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a13">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a20">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a20">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a22">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a21">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a14">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a15">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a13">edje-text.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a7">eina_tiler_01.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a17">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a13">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a5">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a37">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a26">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a18">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a39">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a19">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a11">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a21">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a17">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a23">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a12">evas-table.c</a>, and <a class="el" href="evas-text_8c-example.html#a25">evas-text.c</a>.</dd>
+evas_object_visible_get()  2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a11">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a5">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a14">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a16">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a9">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a7">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a8">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a13">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a7">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a9">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a7">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a7">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a12">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a9">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a8">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a7">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a11">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a7">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a8">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a7">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a8">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a12">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a9">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a15">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a7">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a14">diskselector_example_02.c</a>, <a class="el" href="ecore_animator_example_8c-example.html#a5">ecore_animator_example.c</a>, <a class="el" href="ecore_evas_basics_example_8c-example.html#a21">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_evas_buffer_example_01_8c-example.html#a7">ecore_evas_buffer_example_01.c</a>, <a class="el" href="ecore_evas_buffer_example_02_8c-example.html#a12">ecore_evas_buffer_example_02.c</a>, <a class="el" href="ecore_evas_callbacks_8c-example.html#a9">ecore_evas_callbacks.c</a>, <a class="el" href="ecore_evas_object_example_8c-example.html#a11">ecore_evas_object_example.c</a>, <a class="el" href="ecore_evas_window_sizes_example_8c-example.html#a20">ecore_evas_window_sizes_example.c</a>, <a class="el" href="ecore_imf_example_8c-example.html#a62">ecore_imf_example.c</a>, <a class="el" href="edje-basic_8c-example.html#a14">edje-basic.c</a>, <a class="el" href="edje-box_8c-example.html#a9">edje-box.c</a>, <a class="el" href="edje-box2_8c-example.html#a11">edje-box2.c</a>, <a class="el" href="edje-color-class_8c-example.html#a19">edje-color-class.c</a>, <a class="el" href="edje-drag_8c-example.html#a20">edje-drag.c</a>, <a class="el" href="edje-perspective_8c-example.html#a20">edje-perspective.c</a>, <a class="el" href="edje-signals-messages_8c-example.html#a18">edje-signals-messages.c</a>, <a class="el" href="edje-swallow_8c-example.html#a13">edje-swallow.c</a>, <a class="el" href="edje-table_8c-example.html#a9">edje-table.c</a>, <a class="el" href="edje-text_8c-example.html#a11">edje-text.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a7">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a6">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a8">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a9">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a11">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a2">efl_thread_6.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a3">eina_tiler_01.c</a>, <a class="el" href="entry_example_8c-example.html#a32">entry_example.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a14">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a11">evas-box.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a3">evas-buffer-simple.c</a>, <a class="el" href="evas-events_8c-example.html#a36">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a18">evas-hints.c</a>, <a class="el" href="evas-images_8c-example.html#a13">evas-images.c</a>, <a class="el" href="evas-images2_8c-example.html#a37">evas-images2.c</a>, <a class="el" href="evas-map-utils_8c-example.html#a18">evas-map-utils.c</a>, <a class="el" href="evas-object-manipulation_8c-example.html#a9">evas-object-manipulation.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a18">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a14">evas-smart-object.c</a>, <a class="el" href="evas-stacking_8c-example.html#a16">evas-stacking.c</a>, <a class="el" href="evas-table_8c-example.html#a11">evas-table.c</a>, <a class="el" href="evas-text_8c-example.html#a13">evas-text.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a7">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a7">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a9">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a7">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a17">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a7">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a21">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a30">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a18">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a21">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a8">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a16">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a22">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a41">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a1">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a10">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a15">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a19">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a14">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a5">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a9">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a10">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a7">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a10">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a14">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a7">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a18">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a24">list_example_03.c</a>, <a class="el" href="location_example_01_8c-example.html#a14">location_example_01.c</a>, <a class="el" href="map_example_01_8c-example.html#a15">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a2">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a24">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a11">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a8">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a10">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a9">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a9">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a7">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a12">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a10">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a17">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a16">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a4">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a6">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a14">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a16">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a8">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a6">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a7">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a8">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a8">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a2">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a8">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a7">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a7">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a14">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a13">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a10">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a7">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a8">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a7">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a11">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a6">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a6">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a13">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a11">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a28">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a11">win_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaf5ec394604d9b8f6dafe5d6ee61b6448"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_type_get" ref="gaf5ec394604d9b8f6dafe5d6ee61b6448" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Evas__Object__Group__Basic.html#gaf5ec394604d9b8f6dafe5d6ee61b6448">evas_object_type_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieves the type of the given Evas object. </p>
+<p>For Evas' builtin types, the return strings will be one of "rectangle", "line", "polygon", "text", "textblock" or "image".</p>
+<p>For Evas smart objects (see <a class="el" href="group__Evas__Smart__Group.html">Smart Functions</a>), the name of the smart class itself is returned on this call. For the built-in smart objects, these names are "EvasObjectSmartClipped" for the clipped smart object, "Evas_Object_Box" for the box object and "Evas_Object_Table for the table object.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The type of the object.</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.18  2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a19">evas-object-manipulation.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -561,7 +690,7 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Font__Group.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga6fb7ee04976299de53a4a4a9c6c4052a">evas_object_unref</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -577,12 +706,69 @@ Use <code>NULL</code> pointers on the components you're not interested in: they'
   </table>
   </dd>
 </dl>
-<p>This decrements the reference count of an object. If the object has had <a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a> called on it while references were more than 0, it will be deleted at the time this function is called and puts the counter back to 0. See <a class="el" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> for more information.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Font__Group.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> (for an example) </dd>
+<p>This decrements the reference count of an object. If the object has had <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a> called on it while references were more than 0, it will be deleted at the time this function is called and puts the counter back to 0. See <a class="el" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> for more information.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Basic.html#ga54122012bd545441802a25b77e213132">evas_object_ref()</a> (for an example) </dd>
 <dd>
-<a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga01ba29e2e1b5b57d539e5a70943e13d7"></a><!-- doxytag: member="Evas_Legacy.h::evas_vg_node_color_set" ref="ga01ba29e2e1b5b57d539e5a70943e13d7" args="(Eo *obj, int r, int g, int b, int a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Group__Basic.html#ga01ba29e2e1b5b57d539e5a70943e13d7">evas_vg_node_color_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eo *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets the general/main color of the given Efl_Vg object to the given one.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_vg_node_color_get() (for an example) </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>These color values are expected to be premultiplied by <code>a</code>.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The red component of the given color. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>The green component of the given color. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The blue component of the given color. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The alpha component of the given color.  3.0f(2.3.1) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -90,7 +90,145 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ctxpopup_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o ctxpopup_example_01 ctxpopup_example_01.c -g `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">int</span> list_mouse_down = 0;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_dismissed_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+              <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a name="a1"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_ctxpopup_item_cb(<span class="keywordtype">void</span> *data <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                  <span class="keywordtype">void</span> *event_info)
+{
+   printf(<span class="stringliteral">&quot;ctxpopup item selected: %s\n&quot;</span>, elm_object_item_text_get(event_info));
+}
+
+<a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *item_new(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ctxpopup, <span class="keyword">const</span> <span class="keywordtype">char</span> * label, <span class="keyword">const</span> <span class="keywordtype">char</span> *icon)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a name="a2"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(ctxpopup);
+   <a name="a3"></a><a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, icon);
+   <a name="a4"></a><a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(ic, <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <span class="keywordflow">return</span> <a name="a6"></a><a class="code" href="group__Elm__Ctxpopup.html#ga68372686c35c7790c769f44ca39119ec" title="Insert a new item to a ctxpopup object before item before.">elm_ctxpopup_item_append</a>(ctxpopup, label, ic, _ctxpopup_item_cb, NULL);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_list_item_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ctxpopup;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+   Evas_Coord x,y;
+
+   <span class="keywordflow">if</span> (list_mouse_down &gt; 0) <span class="keywordflow">return</span>;
+
+   ctxpopup = <a name="a7"></a><a class="code" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add</a>(obj);
+   <a name="a8"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ctxpopup, <span class="stringliteral">&quot;dismissed&quot;</span>, _dismissed_cb, NULL);
+
+   item_new(ctxpopup, <span class="stringliteral">&quot;Go to home folder&quot;</span>, <span class="stringliteral">&quot;home&quot;</span>);
+   item_new(ctxpopup, <span class="stringliteral">&quot;Save file&quot;</span>, <span class="stringliteral">&quot;file&quot;</span>);
+   item_new(ctxpopup, <span class="stringliteral">&quot;Delete file&quot;</span>, <span class="stringliteral">&quot;delete&quot;</span>);
+   it = item_new(ctxpopup, <span class="stringliteral">&quot;Navigate to folder&quot;</span>, <span class="stringliteral">&quot;folder&quot;</span>);
+   <a name="a9"></a><a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a name="a10"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   item_new(ctxpopup, <span class="stringliteral">&quot;Edit entry&quot;</span>, <span class="stringliteral">&quot;edit&quot;</span>);
+   it = item_new(ctxpopup, <span class="stringliteral">&quot;Set date and time&quot;</span>, <span class="stringliteral">&quot;clock&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   <a name="a11"></a><a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(evas_object_evas_get(obj), &amp;x, &amp;y);
+   evas_object_move(ctxpopup, x, y);
+   <a name="a12"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ctxpopup);
+
+   elm_list_item_selected_set(event_info, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_list_item_cb2(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ctxpopup;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+   Evas_Coord x,y;
+
+   <span class="keywordflow">if</span> (list_mouse_down &gt; 0) <span class="keywordflow">return</span>;
+
+   ctxpopup = <a class="code" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add</a>(obj);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ctxpopup, <span class="stringliteral">&quot;dismissed&quot;</span>, _dismissed_cb, NULL);
+   <a name="a13"></a><a class="code" href="group__Elm__Ctxpopup.html#gadd4a37e0d12fd11feccaee777e67f933" title="Get the selected item in the widget.">elm_ctxpopup_horizontal_set</a>(ctxpopup, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   item_new(ctxpopup, NULL, <span class="stringliteral">&quot;home&quot;</span>);
+   item_new(ctxpopup, NULL, <span class="stringliteral">&quot;file&quot;</span>);
+   item_new(ctxpopup, NULL, <span class="stringliteral">&quot;delete&quot;</span>);
+   item_new(ctxpopup, NULL, <span class="stringliteral">&quot;folder&quot;</span>);
+   it = item_new(ctxpopup, NULL, <span class="stringliteral">&quot;edit&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   item_new(ctxpopup, NULL, <span class="stringliteral">&quot;clock&quot;</span>);
+
+   <a class="code" href="group__Evas__Canvas.html#gaaf560a4dc5371742c6177c6f77c9e444" title="This function returns the current known default pointer coordinates.">evas_pointer_canvas_xy_get</a>(evas_object_evas_get(obj), &amp;x, &amp;y);
+   evas_object_move(ctxpopup, x, y);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ctxpopup);
+
+   elm_list_item_selected_set(event_info, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_list_mouse_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   list_mouse_down++;
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_list_mouse_up(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   list_mouse_down--;
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_win_del(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   list_mouse_down = 0;
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *list;
+
+   <a name="a14"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a15"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;Contextual Popup&quot;</span>, <span class="stringliteral">&quot;Contextual Popup&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, _win_del, NULL);
+   <a name="a16"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   list = <a name="a17"></a><a class="code" href="group__Elm__List.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a>(win);
+   <a name="a18"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(list, EVAS_CALLBACK_MOUSE_DOWN,
+                                  _list_mouse_down, NULL);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(list, EVAS_CALLBACK_MOUSE_UP,
+                                  _list_mouse_up, NULL);
+   evas_object_size_hint_weight_set(list, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a19"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, list);
+   <a name="a20"></a><a class="code" href="group__Elm__List.html#ga8de4384bc5c40089644ecab6a7e005c8" title="Control which mode to use for the list object.">elm_list_mode_set</a>(list, <a name="a21"></a><a class="code" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>);
+
+   <a name="a22"></a><a class="code" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(list, <span class="stringliteral">&quot;Ctxpopup with icons and labels&quot;</span>, NULL, NULL,
+                        _list_item_cb, NULL);
+   <a class="code" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(list, <span class="stringliteral">&quot;Ctxpopup with icons only&quot;</span>, NULL, NULL,
+                        _list_item_cb2, NULL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(list);
+   <a name="a23"></a><a class="code" href="group__Elm__List.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(list);
+
+   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a24"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a25"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

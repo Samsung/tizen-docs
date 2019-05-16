@@ -191,9 +191,9 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
 </pre></div></p>
-<p>For Eina to be able to provide more informative error messages we are going to give names to our EINA_MAGIC types: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Magic__Group.html#ga0d77e61edf5b7b6c276a382d6bf191e7" title="Sets the string associated to the given magic identifier.">eina_magic_string_set</a>(BASETYPE_MAGIC, <span class="stringliteral">&quot;person&quot;</span>);
+<p>For Eina to be able to provide more informative error messages we are going to give names to our EINA_MAGIC types: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Magic__Group.html#ga0d77e61edf5b7b6c276a382d6bf191e7" title="Sets the string associated with the given magic identifier.">eina_magic_string_set</a>(BASETYPE_MAGIC, <span class="stringliteral">&quot;person&quot;</span>);
 </pre></div></p>
-<p>Since our types won't live longer than the scope of the current function we can set the name without eina making a copy of the string: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Magic__Group.html#ga5d202c69f78f9cb078efd3e798cb5a53" title="Sets the string associated to the given magic identifier.">eina_magic_string_static_set</a>(SUBTYPE_MAGIC, <span class="stringliteral">&quot;pilot&quot;</span>);
+<p>Since our types won't live longer than the scope of the current function we can set the name without eina making a copy of the string: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Magic__Group.html#ga5d202c69f78f9cb078efd3e798cb5a53" title="Sets the string associated with the given magic identifier.">eina_magic_string_static_set</a>(SUBTYPE_MAGIC, <span class="stringliteral">&quot;pilot&quot;</span>);
 </pre></div></p>
 <p>Now we create a person, a pilot, and print both as persons: <div class="fragment"><pre class="fragment">
    base = person_new(<span class="stringliteral">&quot;Tyrol&quot;</span>);
@@ -203,7 +203,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    print_person((person *)sub);
 </pre></div></p>
 <p>Now we try to print both as pilots, which obviously does not work since base is not a pilot: <div class="fragment"><pre class="fragment">
-   print_pilot(base); <span class="comment">//BAD</span>
+   print_pilot((pilot *)base); <span class="comment">//BAD: fails (C cast prevents GCC warning)</span>
    print_pilot(sub);
 </pre></div></p>
 <p>That's all folks: <div class="fragment"><pre class="fragment">

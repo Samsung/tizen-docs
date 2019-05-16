@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>This group provides thread locking and synchronization capabilities. </p>
-<p>Similar to POISIX threads (pthreads), but it takes care of the platform specific details so you don't have to.</p>
+<p>Similar to POSIX threads (pthreads), but it takes care of the platform specific details so you don't have to.</p>
 <p>If you know how <code>pthreads</code> work, this library will look familiar to you. If you are not familiar with <code>pthreads</code>, a good overview is available <a href="https://computing.llnl.gov/tutorials/pthreads/">here</a></p>
 <p>The Eina lock functions are grouped into several categories to handle different thread locking and synchronization methods: </p>
 <ul>
@@ -123,8 +123,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to take a lock if possible.  <a href="#ga13c8270c1589bfd4770ee4cd43977bc5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Lock__Group.html#gacba5cc92b99189a86e3620c92836e729">Eina_Lock_Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5">eina_lock_release</a> (Eina_Lock *mutex)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases a lock.  <a href="#ga469476cfe8d8ca4dfdc46469fb9e31e5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#gacaa58955efb147091249bf45610fdf6a">eina_lock_debug</a> (const Eina_Lock *mutex)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints debug information about a lock.  <a href="#gacaa58955efb147091249bf45610fdf6a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#gab71d275097c8240ada1ead437507bc2e">eina_lock_debug</a> (const Eina_Lock *mutex)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints debug information about a lock.  <a href="#gab71d275097c8240ada1ead437507bc2e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#gaab2b734db1cbdaffe79559f6716ac793">eina_condition_new</a> (Eina_Condition *cond, Eina_Lock *mutex)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new condition variable.  <a href="#gaab2b734db1cbdaffe79559f6716ac793"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#ga838e1e7dfc8bbf114634a7de67de8956">eina_condition_free</a> (Eina_Condition *cond)</td></tr>
@@ -132,7 +132,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#ga149f387d5f18c469c365147ffbd4dc2c">eina_condition_wait</a> (Eina_Condition *cond)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes a thread to wait until signaled by the condition.  <a href="#ga149f387d5f18c469c365147ffbd4dc2c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#gaa9e6e29fffa21b4bef6f089655cf7982">eina_condition_timedwait</a> (Eina_Condition *cond, double t)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes a thread to wait until signalled by the condition or a timeout is reached.  <a href="#gaa9e6e29fffa21b4bef6f089655cf7982"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes a thread to wait until signaled by the condition or a timeout is reached.  <a href="#gaa9e6e29fffa21b4bef6f089655cf7982"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#ga26597941ef6777d759ad4934d3f1655e">eina_condition_broadcast</a> (Eina_Condition *cond)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals all threads waiting for a condition.  <a href="#ga26597941ef6777d759ad4934d3f1655e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Lock__Group.html#ga42cfdc4920e74fd7ba99527a6a99cd7d">eina_condition_signal</a> (Eina_Condition *cond)</td></tr>
@@ -395,7 +395,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#gaab2b734db1cbdaffe79559f6716ac793" title="Initializes a new condition variable.">eina_condition_new()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a50">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a56">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -426,7 +426,15 @@ Defines</h2></td></tr>
 
 <p>Initializes a new condition variable. </p>
 <p>This function initializes an #Eina_Condition structure and associates it with an existing lock.</p>
-<p>Condition variables are used to coordinate actions between threads. See <a href="https://computing.llnl.gov/tutorials/pthreads/#ConVarOverview">Condition Varable Overview </a> for an introduction to condition variables and their use.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cond</td><td>The condition variable to create </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mutex</td><td>The #Eina_Lock structure that controls access to this condition variable</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
+<p>Condition variables are used to coordinate actions between threads. See <a href="https://computing.llnl.gov/tutorials/pthreads/#ConVarOverview">Condition Variable Overview </a> for an introduction to condition variables and their use.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cond</td><td>The condition variable to create </td></tr>
@@ -436,7 +444,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga838e1e7dfc8bbf114634a7de67de8956" title="Deallocates a condition variable.">eina_condition_free()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a45">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a51">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -464,9 +472,9 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If there is more than one thread waiting on this condition, one of them is signalled, but which one is undefined.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If there is more than one thread waiting on this condition, one of them is signaled, but which one is undefined.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga26597941ef6777d759ad4934d3f1655e" title="Signals all threads waiting for a condition.">eina_condition_broadcast()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a26">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a32">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -495,7 +503,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Causes a thread to wait until signalled by the condition or a timeout is reached. </p>
+<p>Causes a thread to wait until signaled by the condition or a timeout is reached. </p>
 <p>This function makes a thread block until either a signal is sent to it via <code>cond</code> or <code>t</code> seconds have passed.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -504,7 +512,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. If the operation timed out, eina error will be set to #ETIMEDOUT.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga149f387d5f18c469c365147ffbd4dc2c" title="Causes a thread to wait until signaled by the condition.">eina_condition_wait()</a> </dd></dl>
 
 </div>
@@ -533,37 +541,36 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#gaa9e6e29fffa21b4bef6f089655cf7982" title="Causes a thread to wait until signalled by the condition or a timeout is reached.">eina_condition_timedwait()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a17">ecore_thread_example.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#gaa9e6e29fffa21b4bef6f089655cf7982" title="Causes a thread to wait until signaled by the condition or a timeout is reached.">eina_condition_timedwait()</a> </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a23">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gacaa58955efb147091249bf45610fdf6a"></a><!-- doxytag: member="eina_lock.h::eina_lock_debug" ref="gacaa58955efb147091249bf45610fdf6a" args="(const Eina_Lock *mutex)" -->
+<a class="anchor" id="gab71d275097c8240ada1ead437507bc2e"></a><!-- doxytag: member="eina_lock.h::eina_lock_debug" ref="gab71d275097c8240ada1ead437507bc2e" args="(const Eina_Lock *mutex)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="group__Eina__Lock__Group.html#gacaa58955efb147091249bf45610fdf6a">eina_lock_debug</a> </td>
+          <td class="memname">void <a class="el" href="group__Eina__Lock__Group.html#gab71d275097c8240ada1ead437507bc2e">eina_lock_debug</a> </td>
           <td>(</td>
           <td class="paramtype">const Eina_Lock *&#160;</td>
           <td class="paramname"><em>mutex</em></td><td>)</td>
-          <td><code> [static]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>Prints debug information about a lock. </p>
-<p>This function prints debug information for <code>mutex</code>. The information is platform dependant. On POSIX systems it prints the address of <code>mutex</code>, lock state, thread number and a backtrace.</p>
+<p>This function prints debug information for <code>mutex</code>. The information is platform dependent. On POSIX systems it prints the address of <code>mutex</code>, lock state, thread number and a backtrace.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">mutex</td><td>The #Eina_Lock to print debug info for.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If <code>EINA_HAVE_DEBUG_THREADS</code> is not defined, this function does nothing. </dd>
-<dd>
-This function is implemented on Win32 or WinCE, but it does not not produce any output, regardless of <code>EINA_HAVE_DEBUG_THREADS</code> being set. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If <code>EINA_HAVE_DEBUG_THREADS</code> is not defined, this function does nothing.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>
@@ -591,7 +598,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a15">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a21">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -620,7 +627,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#gaf8d1c4e3aff3bd26fc85d81ed8c4e71a" title="Deallocates an #Eina_Lock.">eina_lock_free()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a44">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a50">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -682,7 +689,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga2ad27b83cf8562a41fe67557d8d2d753" title="Attempts to take a lock.">eina_lock_take()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Lock__Group.html#ga13c8270c1589bfd4770ee4cd43977bc5" title="Attempts to take a lock if possible.">eina_lock_take_try()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a14">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a20">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -713,7 +720,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga13c8270c1589bfd4770ee4cd43977bc5" title="Attempts to take a lock if possible.">eina_lock_take_try()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5" title="Releases a lock.">eina_lock_release()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a25">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a31">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -744,7 +751,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga2ad27b83cf8562a41fe67557d8d2d753" title="Attempts to take a lock.">eina_lock_take()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Lock__Group.html#ga469476cfe8d8ca4dfdc46469fb9e31e5" title="Releases a lock.">eina_lock_release()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a11">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a12">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -857,7 +864,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729aebeef2702bf7645b094e48bc79705b99">EINA_LOCK_SUCCEED</a> on success, <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729a8b4d357ca18a463b01f789b24c8eb3b9">EINA_LOCK_FAIL</a> on failure.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>This function never return <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729a42ea61e3245e1b9f1db5ea63615e6e67">EINA_LOCK_DEADLOCK</a>.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function never returns <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729a42ea61e3245e1b9f1db5ea63615e6e67">EINA_LOCK_DEADLOCK</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#gab3d34ffb8950e66b820a4de5def7bcd4" title="Releases a lock.">eina_rwlock_release()</a> </dd></dl>
 
 </div>
@@ -886,7 +893,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729aebeef2702bf7645b094e48bc79705b99">EINA_LOCK_SUCCEED</a> on success, <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729a8b4d357ca18a463b01f789b24c8eb3b9">EINA_LOCK_FAIL</a> on failure.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>This function never return <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729a42ea61e3245e1b9f1db5ea63615e6e67">EINA_LOCK_DEADLOCK</a>.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function never returns <a class="el" href="group__Eina__Lock__Group.html#ggacba5cc92b99189a86e3620c92836e729a42ea61e3245e1b9f1db5ea63615e6e67">EINA_LOCK_DEADLOCK</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#gab3d34ffb8950e66b820a4de5def7bcd4" title="Releases a lock.">eina_rwlock_release()</a> </dd></dl>
 
 </div>
@@ -982,7 +989,6 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Semaphores are not avialable on the WinCE platform.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html#ga3ed968965c79524a43f6efea20459d49" title="Frees an allocated #Eina_Semaphore.">eina_semaphore_free()</a> </dd></dl>
 
 </div>
@@ -1352,7 +1358,7 @@ This function is implemented on Win32 or WinCE, but it does not not produce any 
 <div class="memdoc">
 
 <p>A type definition for warning that a function was called from somewhere other than the EFL main loop. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

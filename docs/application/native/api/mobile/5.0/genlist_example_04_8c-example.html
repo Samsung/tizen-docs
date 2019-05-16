@@ -90,7 +90,360 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">genlist_example_04.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -g genlist_example_04.c -o genlist_example_04 `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="preprocessor">#define N_ITEMS 300</span>
+<span class="preprocessor"></span>
+<span class="keyword">static</span> <a name="_a0"></a><a class="code" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *_itc = NULL;
+<span class="keyword">static</span> <a class="code" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *_itc_group = NULL;
+<span class="keyword">static</span> <span class="keywordtype">int</span> nitems = 0;
+
+<span class="keyword">static</span> <span class="keywordtype">char</span> *
+_item_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj <a name="a1"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   time_t t = (time_t)<a name="a2"></a><a class="code" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>();
+   <span class="keywordtype">char</span> buf[256];
+   <span class="keywordtype">int</span> i = (int)(<span class="keywordtype">long</span>)data;
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.text&quot;</span>))
+     snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Item # %i&quot;</span>, i);
+   <span class="keywordflow">else</span>
+     {
+        <span class="keywordtype">int</span> n;
+        snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;realized at %s&quot;</span>, ctime(&amp;t));
+        n = strlen(buf);
+        buf[n - 1] = <span class="charliteral">&#39;\0&#39;</span>;
+     }
+
+   <span class="keywordflow">return</span> strdup(buf);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_item_content_get(<span class="keywordtype">void</span> *data <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a name="a3"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(obj);
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     <a name="a4"></a><a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;clock&quot;</span>);
+
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <span class="keywordflow">return</span> ic;
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_item_sel_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
+{
+   printf(<span class="stringliteral">&quot;sel item data [%p] on genlist obj [%p], item pointer [%p]\n&quot;</span>,
+          data, obj, event_info);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">char</span> *
+_group_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *part EINA_UNUSED)
+{
+   <span class="keywordtype">char</span> buf[256];
+   <span class="keywordtype">int</span> i = (int)(<span class="keywordtype">long</span>)data;
+
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Group %d (item #%d)&quot;</span>, i / 7, i);
+
+   <span class="keywordflow">return</span> strdup(buf);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_group_content_get(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(obj);
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
+
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <span class="keywordflow">return</span> ic;
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_append_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+
+   <a name="a5"></a><a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc,
+                           (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)nitems++, NULL,
+                           ELM_GENLIST_ITEM_NONE,
+                           _item_sel_cb, NULL);
+
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_prepend_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+
+   <a name="a6"></a><a class="code" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac" title="Prepend a new item in a given genlist widget.">elm_genlist_item_prepend</a>(list, _itc,
+                            (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)nitems++, NULL,
+                            ELM_GENLIST_ITEM_NONE,
+                            _item_sel_cb, NULL);
+
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_insert_before_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a name="a7"></a><a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   <a name="a8"></a><a class="code" href="group__Elm__Genlist.html#ga5eba74e22dd1537550bf8b548fa55a41" title="Insert an item before another in a genlist widget.">elm_genlist_item_insert_before</a>(list, _itc,
+                                  (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)nitems++, NULL,
+                                  glit, ELM_GENLIST_ITEM_NONE,
+                                  _item_sel_cb, NULL);
+
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_insert_after_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   <a name="a9"></a><a class="code" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562" title="Insert an item after another in a genlist widget.">elm_genlist_item_insert_after</a>(list, _itc,
+                                 (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)nitems++, NULL,
+                                 glit, ELM_GENLIST_ITEM_NONE,
+                                 _item_sel_cb, NULL);
+
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_next_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+
+   <span class="keywordflow">if</span> (glit) glit = elm_genlist_item_next_get(glit);
+   <span class="keywordflow">if</span> (!glit) glit = <a name="a10"></a><a class="code" href="group__Elm__Genlist.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32" title="Get the first item in the genlist.">elm_genlist_first_item_get</a>(list);
+
+   elm_genlist_item_selected_set(glit, <a name="a11"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_genlist_item_show(glit, ELM_GENLIST_ITEM_SCROLLTO_IN);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_prev_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+
+   <span class="keywordflow">if</span> (glit) glit = elm_genlist_item_prev_get(glit);
+   <span class="keywordflow">if</span> (!glit) glit = <a name="a12"></a><a class="code" href="group__Elm__Genlist.html#ga8caa57c4765c7f333ffa69aeefdbb380" title="Get the last item in the genlist.">elm_genlist_last_item_get</a>(list);
+
+   elm_genlist_item_selected_set(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_genlist_item_show(glit, ELM_GENLIST_ITEM_SCROLLTO_IN);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bring_in_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = data;
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   elm_genlist_item_bring_in(glit, ELM_GENLIST_ITEM_SCROLLTO_IN);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_show_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = data;
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   elm_genlist_item_show(glit, ELM_GENLIST_ITEM_SCROLLTO_IN);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_middle_in_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = data;
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   elm_genlist_item_bring_in(glit, ELM_GENLIST_ITEM_SCROLLTO_MIDDLE);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_middle_show_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = data;
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   elm_genlist_item_show(glit, ELM_GENLIST_ITEM_SCROLLTO_MIDDLE);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_top_in_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = data;
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   elm_genlist_item_bring_in(glit, ELM_GENLIST_ITEM_SCROLLTO_TOP);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_top_show_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = data;
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   elm_genlist_item_show(glit, ELM_GENLIST_ITEM_SCROLLTO_TOP);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_realize_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   elm_genlist_item_update(glit);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_button_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *box, <span class="keyword">const</span> <span class="keywordtype">char</span> *label, Evas_Smart_Cb cb)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bt;
+
+   bt = <a name="a13"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(<a name="a14"></a><a class="code" href="group__Elm__WidgetNavigation.html#ga0b5f83c403948f1418e434f3ed94973f">elm_object_parent_widget_get</a>(list));
+   elm_object_text_set(bt, label);
+   <a name="a15"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a name="a16"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   <span class="keywordflow">if</span> (cb)
+     <a name="a17"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, cb, list);
+
+   <span class="keywordflow">return</span> bt;
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *box, *fbox;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bt_bring_in, *bt_show;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bt_middle_in, *bt_middle_show;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bt_top_in, *bt_top_show;
+   <span class="keywordtype">int</span> i;
+
+   win = <a name="a18"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;genlist&quot;</span>, <span class="stringliteral">&quot;Genlist&quot;</span>);
+   <a name="a19"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a name="a20"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   box = <a name="a21"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a22"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   <span class="keywordflow">if</span> (!_itc)
+     {
+        _itc = <a name="a23"></a><a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+        _itc-&gt;<a name="a24"></a><a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
+        _itc-&gt;<a name="a25"></a><a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a26"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _item_label_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a27"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _item_content_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a28"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = NULL;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a name="a29"></a><a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = NULL;
+     }
+
+   <span class="keywordflow">if</span> (!_itc_group)
+     {
+        _itc_group = <a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+        _itc_group-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;group_index&quot;</span>;
+        _itc_group-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _group_label_get;
+        _itc_group-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _group_content_get;
+        _itc_group-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = NULL;
+        _itc_group-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = NULL;
+     }
+   list = <a name="a30"></a><a class="code" href="group__Elm__Genlist.html#ga8845cb5425deadec54558b7badd16a6f">elm_genlist_add</a>(win);
+
+   evas_object_size_hint_weight_set(list, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(list, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, list);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(list);
+
+   fbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   elm_box_layout_set(fbox, evas_object_box_layout_flow_horizontal,
+                      NULL, NULL);
+   evas_object_size_hint_weight_set(fbox, EVAS_HINT_EXPAND, 0);
+   evas_object_size_hint_align_set(fbox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, fbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fbox);
+
+   _button_add(list, fbox, <span class="stringliteral">&quot;prepend&quot;</span>, _prepend_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;append&quot;</span>, _append_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;insert before&quot;</span>, _insert_before_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;insert after&quot;</span>, _insert_after_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;prev&quot;</span>, _prev_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;next&quot;</span>, _next_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;realize&quot;</span>, _realize_cb);
+   bt_bring_in = _button_add(list, fbox, <span class="stringliteral">&quot;bring #50&quot;</span>, NULL);
+   bt_show = _button_add(list, fbox, <span class="stringliteral">&quot;show #50&quot;</span>, NULL);
+   bt_middle_in = _button_add(list, fbox, <span class="stringliteral">&quot;bring to middle #200&quot;</span>, NULL);
+   bt_middle_show = _button_add(list, fbox, <span class="stringliteral">&quot;show in middle #200&quot;</span>, NULL);
+   bt_top_in = _button_add(list, fbox, <span class="stringliteral">&quot;bring to top #250&quot;</span>, NULL);
+   bt_top_show = _button_add(list, fbox, <span class="stringliteral">&quot;show in top #250&quot;</span>, NULL);
+
+   <span class="keywordflow">for</span> (i = 0; i &lt; N_ITEMS; i++)
+     {
+        <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *gli = NULL, *glg = NULL;
+
+        <span class="keywordflow">if</span> (i % 7 == 0)
+          {
+             glg = gli = <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc_group,
+                                                 (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)nitems++, NULL,
+                                                 ELM_GENLIST_ITEM_GROUP,
+                                                 _item_sel_cb, NULL);
+             elm_genlist_item_select_mode_set(gli, ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY);
+          }
+        <span class="keywordflow">else</span>
+          {
+             gli = <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc,
+                                           (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)nitems++, glg,
+                                           ELM_GENLIST_ITEM_NONE,
+                                           _item_sel_cb, NULL);
+          }
+
+        <span class="keywordflow">switch</span> (i)
+          {
+           <span class="keywordflow">case</span> 3:
+              <a name="a31"></a><a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(gli, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+              <span class="keywordflow">break</span>;
+           <span class="keywordflow">case</span> 50:
+              <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
+                 bt_bring_in, <span class="stringliteral">&quot;clicked&quot;</span>, _bring_in_cb, gli);
+              <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
+                 bt_show, <span class="stringliteral">&quot;clicked&quot;</span>, _show_cb, gli);
+              <span class="keywordflow">break</span>;
+           <span class="keywordflow">case</span> 200:
+              <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
+                 bt_middle_in, <span class="stringliteral">&quot;clicked&quot;</span>, _middle_in_cb, gli);
+              <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
+                 bt_middle_show, <span class="stringliteral">&quot;clicked&quot;</span>, _middle_show_cb, gli);
+              <span class="keywordflow">break</span>;
+           <span class="keywordflow">case</span> 250:
+              <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
+                 bt_top_in, <span class="stringliteral">&quot;clicked&quot;</span>, _top_in_cb, gli);
+              <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
+                 bt_top_show, <span class="stringliteral">&quot;clicked&quot;</span>, _top_show_cb, gli);
+          }
+     }
+
+   evas_object_resize(win, 420, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a32"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a33"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -94,11 +94,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Ecore Input</div>  </div>
 <div class="ingroups"><a class="el" href="group__Ecore.html">Ecore</a></div></div><!--header-->
 <div class="contents">
-<hr/><a name="details" id="details"></a><h2> </h2>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#gacdf890f26a8d9eb3c1dd6429d22c269f">ecore_event_init</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#gad9caffc4ac6e38dd922cf6a4e4a6911f">ecore_event_shutdown</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#gac306982fbfc4848cb203bbfc4e620f0c">ecore_event_modifier_mask</a> (<a class="el" href="group__Ecore__Input__Group.html#gac4ee93d2720233c1c41051173a162738">Ecore_Event_Modifier</a> modifier)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Input__Group.html#gac4ee93d2720233c1c41051173a162738">Ecore_Event_Modifier</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#gaedfe86cfd5f3423ba9751d4602d5b9d5">ecore_event_update_modifier</a> (const char *key, <a class="el" href="struct__Ecore__Event__Modifiers.html">Ecore_Event_Modifiers</a> *modifiers, int inc)</td></tr>
@@ -107,6 +106,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#gaa0bfdd167c4c9444229f0eb2a1f344a4">ecore_input_joystick_shutdown</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#ga60e760c2d8a56bff0b152e4694dd20dd">ecore_input_joystick_event_axis_deadzone_set</a> (int event_axis_deadzone)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#ga3401734a40478d034b71bf052656d4d1">ecore_input_joystick_event_axis_deadzone_get</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Input__Group.html#ga3148702724e26a23414e4232c1d43426">ecore_input_joystick_name_get</a> (int index)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
@@ -359,6 +359,22 @@ Defines</h2></td></tr>
 <p>Length of tool ellipse perpendicular to AZIMUTH. Range: Unbounded. Unit: Same as ECORE_AXIS_LABEL_{X,Y}. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab7273257974a8b683515bcfa82397dfdacb07bab032084d6d3e5bbd954f68300e"></a><!-- doxytag: member="ECORE_AXIS_LABEL_WINDOW_X" ref="ggab7273257974a8b683515bcfa82397dfdacb07bab032084d6d3e5bbd954f68300e" args="" -->ECORE_AXIS_LABEL_WINDOW_X</em>&nbsp;</td><td>
+<p>X coordinate mapped to the window. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab7273257974a8b683515bcfa82397dfda0b94decdcb41f6b786e497677f7c0788"></a><!-- doxytag: member="ECORE_AXIS_LABEL_WINDOW_Y" ref="ggab7273257974a8b683515bcfa82397dfda0b94decdcb41f6b786e497677f7c0788" args="" -->ECORE_AXIS_LABEL_WINDOW_Y</em>&nbsp;</td><td>
+<p>Y coordinate mapped to the window. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab7273257974a8b683515bcfa82397dfdae4946925d71a0cfdbb4d76572076c919"></a><!-- doxytag: member="ECORE_AXIS_LABEL_NORMAL_X" ref="ggab7273257974a8b683515bcfa82397dfdae4946925d71a0cfdbb4d76572076c919" args="" -->ECORE_AXIS_LABEL_NORMAL_X</em>&nbsp;</td><td>
+<p>X normalized to the [0, 1] range. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab7273257974a8b683515bcfa82397dfda58e5a74dca06e2bbabb39a9304d45cc9"></a><!-- doxytag: member="ECORE_AXIS_LABEL_NORMAL_Y" ref="ggab7273257974a8b683515bcfa82397dfda58e5a74dca06e2bbabb39a9304d45cc9" args="" -->ECORE_AXIS_LABEL_NORMAL_Y</em>&nbsp;</td><td>
+<p>Y normalized to the [0, 1] range. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggab7273257974a8b683515bcfa82397dfdaf7b805182c0f6aaeb82fe34cf3857bea"></a><!-- doxytag: member="ECORE_AXIS_LABEL_TOUCH_PALM" ref="ggab7273257974a8b683515bcfa82397dfdaf7b805182c0f6aaeb82fe34cf3857bea" args="" -->ECORE_AXIS_LABEL_TOUCH_PALM</em>&nbsp;</td><td>
 <p>Size of palm contact. Range: Unbounded. Unit: undefined. May be a boolean or a distance value, depending on the underlying H/W. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
@@ -423,7 +439,26 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The status of the composition.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The status of the composition. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gacdf890f26a8d9eb3c1dd6429d22c269f"></a><!-- doxytag: member="Ecore_Input.h::ecore_event_init" ref="gacdf890f26a8d9eb3c1dd6429d22c269f" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#gacdf890f26a8d9eb3c1dd6429d22c269f">ecore_event_init</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initializes the Ecore Event system. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -449,7 +484,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A event_modifier integer that matches with the provided modifier event.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A event_modifier integer that matches with the provided modifier event. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -468,8 +503,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Shutdowns the Ecore Event system.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>How many times the lib has been initialized.</dd></dl>
+<p>Shutdowns the Ecore Event system. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -513,7 +547,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>ECORE_NONE if the key does not match with an existing one, else the corresponding Ecore_Event_Modifier.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>ECORE_NONE if the key does not match with an existing one, else the corresponding Ecore_Event_Modifier. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -586,6 +620,33 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga3148702724e26a23414e4232c1d43426"></a><!-- doxytag: member="Ecore_Input.h::ecore_input_joystick_name_get" ref="ga3148702724e26a23414e4232c1d43426" args="(int index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Ecore__Input__Group.html#ga3148702724e26a23414e4232c1d43426">ecore_input_joystick_name_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get name of joystick</p>
+<p>This function returns the name string of the joysitck. If <code>index</code> does not exist, or on error, this function returns NULL.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of joystick. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>name of joystick. </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaa0bfdd167c4c9444229f0eb2a1f344a4"></a><!-- doxytag: member="Ecore_Input.h::ecore_input_joystick_shutdown" ref="gaa0bfdd167c4c9444229f0eb2a1f344a4" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -619,6 +680,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
 
 </div>
@@ -637,6 +699,35 @@ Defines</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga8897187d63d554c5780cb66892503526"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_KEY_DOWN" ref="ga8897187d63d554c5780cb66892503526" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#ga8897187d63d554c5780cb66892503526">ECORE_EVENT_KEY_DOWN</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="win_example_8c-example.html#a23">win_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaa0dbc85574eb78fb02bd0d2a628a5d97"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_KEY_UP" ref="gaa0dbc85574eb78fb02bd0d2a628a5d97" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#gaa0dbc85574eb78fb02bd0d2a628a5d97">ECORE_EVENT_KEY_UP</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga148b045d848db19303aa42ae8a68528a"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_MOUSE_BUTTON_CANCEL" ref="ga148b045d848db19303aa42ae8a68528a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -647,7 +738,92 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabb0786f7c7ac4ec8d0b83adb2c2c2012"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_MOUSE_BUTTON_DOWN" ref="gabb0786f7c7ac4ec8d0b83adb2c2c2012" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#gabb0786f7c7ac4ec8d0b83adb2c2c2012">ECORE_EVENT_MOUSE_BUTTON_DOWN</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6a9b2745674acdb489513887a74166f4"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_MOUSE_BUTTON_UP" ref="ga6a9b2745674acdb489513887a74166f4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#ga6a9b2745674acdb489513887a74166f4">ECORE_EVENT_MOUSE_BUTTON_UP</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4a9c2e46c4df190aa43578e114cc98bb"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_MOUSE_IN" ref="ga4a9c2e46c4df190aa43578e114cc98bb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#ga4a9c2e46c4df190aa43578e114cc98bb">ECORE_EVENT_MOUSE_IN</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab7fd4b5be602d21b289569893cffb375"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_MOUSE_MOVE" ref="gab7fd4b5be602d21b289569893cffb375" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#gab7fd4b5be602d21b289569893cffb375">ECORE_EVENT_MOUSE_MOVE</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1e02996dcebb543eec4041697c6e970d"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_MOUSE_OUT" ref="ga1e02996dcebb543eec4041697c6e970d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#ga1e02996dcebb543eec4041697c6e970d">ECORE_EVENT_MOUSE_OUT</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa6e7cd5301a2e6ec34b5e51786624287"></a><!-- doxytag: member="Ecore_Input.h::ECORE_EVENT_MOUSE_WHEEL" ref="gaa6e7cd5301a2e6ec34b5e51786624287" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Input__Group.html#gaa6e7cd5301a2e6ec34b5e51786624287">ECORE_EVENT_MOUSE_WHEEL</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Now that we have our handler registered we will start the ecore's main loop: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 </pre></div></p>
 <p>Now let's take a look in the callback function. Its a simple function that will read from stdin 3 times and at the third time will say to the father: "quit".  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
-_fd_handler_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Ecore__FD__Handler__Group.html#ga225121ed2123da4b52b76aa08d78c220">Ecore_Fd_Handler</a> *fd_handler EINA_UNUSED)
+_fd_handler_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, HANDLER_TYPE *fd_handler EINA_UNUSED)
 {
    <span class="keyword">static</span> <span class="keywordtype">int</span> numberOfMessages = 0;
    <span class="keywordtype">char</span> message[BUFFER_SIZE];
@@ -120,13 +120,13 @@ _fd_handler_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class
 
    <span class="keywordflow">if</span> (numberOfMessages &lt; 3)
      {
-        fprintf(stdout, <span class="stringliteral">&quot;My father sent this message to me:%s\n&quot;</span>, message);
+        printf(<span class="stringliteral">&quot;My father sent this message to me:%s\n&quot;</span>, message);
         fflush(stdout);
         <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga1ee9db07f9a46a8b20fb83e1c6dbed09">ECORE_CALLBACK_RENEW</a>;
      }
    <span class="keywordflow">else</span>
      {
-        fprintf(stdout, <span class="stringliteral">&quot;quit\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;quit\n&quot;</span>);
         fflush(stdout);
         <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
         <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga780091d7d49a4bb6cb753f12e1a3b19d">ECORE_CALLBACK_DONE</a>;
@@ -139,11 +139,23 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">if</span> (!<a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>())
      <span class="keywordflow">goto</span> error;
 
-   <a class="code" href="group__Ecore__FD__Handler__Group.html#ga832e68eb7f15912abeadef816bb5d2f5" title="Adds a callback for activity on the given file descriptor.">ecore_main_fd_handler_add</a>(STDIN_FILENO,
+<span class="preprocessor">#ifdef _WIN32</span>
+<span class="preprocessor"></span>   <span class="comment">/* note that stdin fd&#39;s on windows don&#39;t work the same</span>
+<span class="comment">    * as on unixes. this uses stdin just as a quick</span>
+<span class="comment">    * example that&#39;s simple instead of a more complex</span>
+<span class="comment">    * one, so this won&#39;t actually work on windows unless</span>
+<span class="comment">    * you use a fd that comes from somewhere that is</span>
+<span class="comment">    * select()able. */</span>
+   ecore_main_win32_handler_add(GetStdHandle(STD_INPUT_HANDLE),
+                                _fd_handler_cb,
+                                NULL);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>   <a class="code" href="group__Ecore__FD__Handler__Group.html#ga832e68eb7f15912abeadef816bb5d2f5" title="Adds a callback for activity on the given file descriptor.">ecore_main_fd_handler_add</a>(STDIN_FILENO,
                              ECORE_FD_READ,
                              _fd_handler_cb,
                              NULL, NULL, NULL);
-   <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>   <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
    <a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
 
@@ -157,9 +169,9 @@ error:
 <p>One more thing, we use fflush(stdout) because probably our message won't fill our entire buffer and the father would never receive the message. So we use this function to flush the buffer and the father can receive as fast as possible.</p>
 <p>Now that we have our child ready, let's start our work in the father's source code.</p>
 <p>We start creating the child process like this:  <div class="fragment"><pre class="fragment">   childHandle = <a class="code" href="group__Ecore__Exe__Group.html#gacd208a964c62424424d4c4c92a651db1">ecore_exe_pipe_run</a>(<span class="stringliteral">&quot;./ecore_exe_example_child&quot;</span>,
-                                    <a class="code" href="group__Ecore__Exe__Group.html#gga6fb12d2a7c21ff1340c0f69447f91599a83dcb150caa9f5f4ce548eaa4a92c6af">ECORE_EXE_PIPE_WRITE</a> |
-                                    <a class="code" href="group__Ecore__Exe__Group.html#gga6fb12d2a7c21ff1340c0f69447f91599ae97566413d58b792e92369966ffeece5">ECORE_EXE_PIPE_READ_LINE_BUFFERED</a> |
-                                    <a class="code" href="group__Ecore__Exe__Group.html#gga6fb12d2a7c21ff1340c0f69447f91599a76bc9e447a456727dc2d686b4682b512">ECORE_EXE_PIPE_READ</a>, NULL);
+                                    ECORE_EXE_PIPE_WRITE |
+                                    ECORE_EXE_PIPE_READ_LINE_BUFFERED |
+                                    ECORE_EXE_PIPE_READ, NULL);
 </pre></div></p>
 <p>With the command above we are creating our child process, the first parameter is the command to be executed, the second are the pipe flags and in our case we will write and read in the pipe so we must say what we are doing in the pipe. You may notice the flag ECORE_EXE_PIPE_READ_LINE_BUFFERED, this means that reads are buffered until I find a newline. And the third parameter is data that we would like to send to the process in its creating. This case we are sending nothing, so just use NULL.</p>
 <p>Then we check if the process was created: <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (childHandle == NULL)
@@ -172,19 +184,15 @@ error:
 <p><div class="fragment"><pre class="fragment">   childPid = <a class="code" href="group__Ecore__Exe__Group.html#ga31fa4d88303d0dc45b3dfdb55fb53883">ecore_exe_pid_get</a>(childHandle);
 
    <span class="keywordflow">if</span> (childPid == -1)
-     fprintf(stderr, <span class="stringliteral">&quot;Could not retrive the PID!\n&quot;</span>);
-   <span class="keywordflow">else</span>
-     fprintf(stdout, <span class="stringliteral">&quot;The child process has PID:%u\n&quot;</span>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)childPid);
+     fprintf(stderr, <span class="stringliteral">&quot;Could not retrieve the PID!\n&quot;</span>);
 </pre></div></p>
-<p>The way that Ecore_exe works is: when we want to read data sent from our child we must use an ecore event. So let's start register our event listener: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a class="code" href="group__Ecore__Exe__Group.html#ga3a5071bbc714abfbcede55c39c6ecf8a">ECORE_EXE_EVENT_DATA</a>, _msg_from_child_handler, NULL);
-</pre></div></p>
-<p>Now to send messages to our child we will use a timer, so every 1 second we will send a message to the child. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(1, _sendMessage, childHandle);
-</pre></div></p>
+<p>The way that Ecore_exe works is: when we want to read data sent from our child we must use an ecore event. So let's start register our event listener: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Now to send messages to our child we will use a timer, so every 1 second we will send a message to the child. <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>After all this we start the main loop. Now let's pass to the callback functions.</p>
 <p>Now we will see how we actually send the data and receive it. Let's start with _sendMessage:  <div class="fragment"><pre class="fragment">_sendMessage(<span class="keywordtype">void</span> *data)
 {
    <span class="keyword">static</span> <span class="keywordtype">int</span> numberOfMessages = 0;
-   <a class="code" href="group__Ecore__Exe__Group.html#ga4f1476f2054418e6436880883e04a141">Ecore_Exe</a> *childHandle = (<a class="code" href="group__Ecore__Exe__Group.html#ga4f1476f2054418e6436880883e04a141">Ecore_Exe</a> *)data;
+   Ecore_Exe *childHandle = (Ecore_Exe *)data;
    <span class="keywordtype">char</span> msg[BUFFER_SIZE];
 
    sprintf(msg, <span class="stringliteral">&quot; Message: %d\n&quot;</span>, numberOfMessages);
@@ -193,7 +201,7 @@ error:
    <span class="keywordflow">if</span> (<a class="code" href="group__Ecore__Exe__Group.html#gac5a7d73f64baf6b752154836ff4123b9">ecore_exe_send</a>(childHandle, msg, strlen(msg)) != <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>)
      fprintf(stderr, <span class="stringliteral">&quot;Could not send my name to the child\n&quot;</span>);
    <span class="keywordflow">else</span>
-     fprintf(stdout,
+     printf(
              <span class="stringliteral">&quot;I&#39;m the father and I sent this message to the child: %s\n&quot;</span>, msg);
 
    <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga1ee9db07f9a46a8b20fb83e1c6dbed09">ECORE_CALLBACK_RENEW</a>;
@@ -204,21 +212,21 @@ error:
 <p>Now let's take a look in our event callback and see how we retrieve the messages.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
 _msg_from_child_handler(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keywordtype">int</span> type EINA_UNUSED, <span class="keywordtype">void</span> *event)
 {
-   <a class="code" href="struct__Ecore__Exe__Event__Data.html" title="Definition for a structure that stores information of data from a child process event.">Ecore_Exe_Event_Data</a> *dataFromProcess = (<a class="code" href="struct__Ecore__Exe__Event__Data.html" title="Definition for a structure that stores information of data from a child process event.">Ecore_Exe_Event_Data</a> *)event;
+   Ecore_Exe_Event_Data *dataFromProcess = (Ecore_Exe_Event_Data *)event;
    <span class="keywordtype">char</span> msg[BUFFER_SIZE];
 
-   <span class="keywordflow">if</span> (dataFromProcess-&gt;<a class="code" href="struct__Ecore__Exe__Event__Data.html#a7d28f61d1dc37d2582ed1028c692c46f">size</a> &gt;= (BUFFER_SIZE - 1))
+   <span class="keywordflow">if</span> (dataFromProcess-&gt;size &gt;= (BUFFER_SIZE - 1))
      {
-        fprintf(stdout, <span class="stringliteral">&quot;Data too big for bugger. error\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Data too big for bugger. error\n&quot;</span>);
         <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga780091d7d49a4bb6cb753f12e1a3b19d">ECORE_CALLBACK_DONE</a>;
      }
 
-   strncpy(msg, dataFromProcess-&gt;<a class="code" href="struct__Ecore__Exe__Event__Data.html#a81848de0f19ad311c27b9e5d480d645f">data</a>, dataFromProcess-&gt;<a class="code" href="struct__Ecore__Exe__Event__Data.html#a7d28f61d1dc37d2582ed1028c692c46f">size</a>);
-   msg[dataFromProcess-&gt;<a class="code" href="struct__Ecore__Exe__Event__Data.html#a7d28f61d1dc37d2582ed1028c692c46f">size</a>] = 0;
+   strncpy(msg, dataFromProcess-&gt;data, dataFromProcess-&gt;size);
+   msg[dataFromProcess-&gt;size] = 0;
 
    <span class="keywordflow">if</span> (strcmp(msg, <span class="stringliteral">&quot;quit&quot;</span>) == 0)
      {
-        fprintf(stdout, <span class="stringliteral">&quot;My child said to me, QUIT!\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;My child said to me, QUIT!\n&quot;</span>);
         <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
      }
 </pre></div></p>

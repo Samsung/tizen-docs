@@ -117,7 +117,7 @@ process_input(<span class="keywordtype">void</span> *data EINA_UNUSED)
    <a class="code" href="group__Eina__Tiler__Group.html#ga5a7eaf8984afbd801794bb17b8a1b4c4" title="Adds a rectangle to a tiler.">eina_tiler_rect_add</a>(tiler, &amp;r);
    itr = <a class="code" href="group__Eina__Tiler__Group.html#ga4cf2a6df653219c8e9cb7fbcf0c40954" title="Creates a iterator to access the tilers calculated rectangles.">eina_tiler_iterator_new</a>(tiler);
 </pre></div></p>
-<p>We now iterate over our tiler printing every rect it gives us and sowing it in the output panel: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, r1)
+<p>We now iterate over our tiler printing every rect it gives us and sowing it in the output panel: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(itr, r1)
      {
         printf(<span class="stringliteral">&quot;\tOutput #%u: %dx%d%+d%+d\n&quot;</span>, out, r1-&gt;w, r1-&gt;h, r1-&gt;x, r1-&gt;y);
         add_output_rect(r1);

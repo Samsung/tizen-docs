@@ -185,14 +185,14 @@ main(<span class="keywordtype">void</span>)
 
    <a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>();
 
-   ee = ecore_evas_new(NULL, 0, 0, 200, 100, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, 200, 100, NULL);
    <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Ecore Evas Callbacks Example&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(<a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee));
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 128, 0, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, 9999, 9999);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 128, 0, 255);
+   evas_object_resize(bg, 9999, 9999);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    <span class="comment">//callbacks</span>
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _delete);
@@ -203,9 +203,9 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Ecore__Evas__Group.html#ga883db9ec12f2fbbf0ed2400340e759f9" title="Sets a callback for Ecore_Evas mouse in events.">ecore_evas_callback_mouse_in_set</a>(ee, _mouse_in);
    <a class="code" href="group__Ecore__Evas__Group.html#ga668e2e6b66e92d2ee06015b7eb1cb79b" title="Sets a callback for Ecore_Evas mouse out events.">ecore_evas_callback_mouse_out_set</a>(ee, _mouse_out);
    <a class="code" href="group__Ecore__Evas__Group.html#ga3e992bb83106771cb951cd1d48a611eb" title="Sets a callback for Ecore_Evas move events.">ecore_evas_callback_move_set</a>(ee, _move);
-   <a class="code" href="group__Ecore__Evas__Group.html#gac425eb28ac31162512c4e38d0d66d54c" title="Sets a callback for Ecore_Evas mouse post render events.">ecore_evas_callback_post_render_set</a>(ee, _post_render);
+   <a class="code" href="group__Ecore__Evas__Group.html#gac425eb28ac31162512c4e38d0d66d54c" title="Sets a callback for Ecore_Evas mouse post-render events.">ecore_evas_callback_post_render_set</a>(ee, _post_render);
    <a class="code" href="group__Ecore__Evas__Group.html#ga1558bdead4ffca16eb83228b178b220f" title="Sets a callback for Ecore_Evas pre-free event.">ecore_evas_callback_pre_free_set</a>(ee, _pre_free);
-   <a class="code" href="group__Ecore__Evas__Group.html#ga2eae280a99d53d3b7dd8e3339343b6ad" title="Sets a callback for Ecore_Evas pre render events.">ecore_evas_callback_pre_render_set</a>(ee, _pre_render);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga2eae280a99d53d3b7dd8e3339343b6ad" title="Sets a callback for Ecore_Evas pre-render events.">ecore_evas_callback_pre_render_set</a>(ee, _pre_render);
    <a class="code" href="group__Ecore__Evas__Group.html#ga735c0c2fb597f34b096ec0f43fc3a7ac" title="Sets a callback for Ecore_Evas resize events.">ecore_evas_callback_resize_set</a>(ee, _resize);
    <a class="code" href="group__Ecore__Evas__Group.html#ga0eab88df1baf2e4d013e96614f7fd4ff" title="Sets a callback for Ecore_Evas show events.">ecore_evas_callback_show_set</a>(ee, _show);
 

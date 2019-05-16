@@ -98,8 +98,8 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a34b0476dfa714dff39812ed72636005f">name</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a53149c9c3c1eb86af742a2d89790d2c7">add</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a8a493473cd97a4e9284f5a33f0afe823">del</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#ad3abe3f7a9be5071794d23892121027e">move</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a6b7ea5214710d6a1a8981e57469ac1aa">resize</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> w, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> h)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#ad3abe3f7a9be5071794d23892121027e">move</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, Evas_Coord x, Evas_Coord y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a6b7ea5214710d6a1a8981e57469ac1aa">resize</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, Evas_Coord w, Evas_Coord h)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a42d78034c1bd3be03374ee2e3456c269">show</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a220f7863026ac6a37613896ba0ea21e9">hide</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Smart__Class.html#a2e30859e264b57d6a0eac866ca5cfeea">color_set</a> )(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, int r, int g, int b, int a)</td></tr>
@@ -127,7 +127,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>code to be run when adding object to a canvas </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a25">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a21">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a21">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a17">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -142,7 +142,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>code to be run when object has rendering updates on a canvas </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a30">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a24">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a26">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a20">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -198,7 +198,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>code to be run when setting color of object on a canvas. <em>r</em>, <em>g</em>, <em>b</em> and <em>y</em> will be new color components one applied to the object. use <a class="el" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get()</a> if you need the old values, during this call. after that, the old values will be lost. </p>
+<p>code to be run when setting color of object on a canvas. <em>r</em>, <em>g</em>, <em>b</em> and <em>a</em> will be new color components one applied to the object. use <a class="el" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get()</a> if you need the old values, during this call. after that, the old values will be lost. </p>
 
 </div>
 </div>
@@ -213,7 +213,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>code to be run when removing object from a canvas </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a26">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a22">evas-smart-object.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a22">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a18">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -228,7 +228,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>code to be run when hiding object on a canvas </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a28">evas-smart-interface.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a24">evas-smart-interface.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -280,12 +280,12 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* <a class="el" href="struct__Evas__Smart__Class.html#ad3abe3f7a9be5071794d23892121027e">_Evas_Smart_Class::move</a>)(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y)</td>
+          <td class="memname">void(* <a class="el" href="struct__Evas__Smart__Class.html#ad3abe3f7a9be5071794d23892121027e">_Evas_Smart_Class::move</a>)(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, Evas_Coord x, Evas_Coord y)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>code to be run when moving object on a canvas. <em>x</em> and <em>y</em> will be new coordinates one applied to the object. use <a class="el" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get()</a> if you need the old values, during this call. after that, the old values will be lost. </p>
+<p>code to be run when moving object on a canvas. <em>x</em> and <em>y</em> will be new coordinates one applied to the object. use <a class="el" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get()</a> if you need the old values, during this call. after that, the old values will be lost. </p>
 
 </div>
 </div>
@@ -322,13 +322,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* <a class="el" href="struct__Evas__Smart__Class.html#a6b7ea5214710d6a1a8981e57469ac1aa">_Evas_Smart_Class::resize</a>)(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> w, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> h)</td>
+          <td class="memname">void(* <a class="el" href="struct__Evas__Smart__Class.html#a6b7ea5214710d6a1a8981e57469ac1aa">_Evas_Smart_Class::resize</a>)(<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, Evas_Coord w, Evas_Coord h)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>code to be run when resizing object on a canvas. <em>w</em> and <em>h</em> will be new dimensions one applied to the object. use <a class="el" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get()</a> if you need the old values, during this call. after that, the old values will be lost. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a29">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a23">evas-smart-object.c</a>.</dd>
+<p>code to be run when resizing object on a canvas. <em>w</em> and <em>h</em> will be new dimensions one applied to the object. use <a class="el" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get()</a> if you need the old values, during this call. after that, the old values will be lost. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a25">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a19">evas-smart-object.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -343,7 +343,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>code to be run when showing object on a canvas </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a27">evas-smart-interface.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-smart-interface_8c-example.html#a23">evas-smart-interface.c</a>.</dd>
 </dl>
 </div>
 </div>

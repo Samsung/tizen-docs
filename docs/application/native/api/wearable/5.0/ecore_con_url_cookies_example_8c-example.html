@@ -141,7 +141,7 @@ _url_complete_cb(<span class="keywordtype">void</span> *data <a class="code" hre
 <span class="keywordtype">int</span>
 main(<span class="keywordtype">int</span> argc, const <span class="keywordtype">char</span> *argv[])
 {
-   <a class="code" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *ec_url = NULL;
+   <a name="_a13"></a><a class="code" href="struct__Ecore__Con__Url.html">Ecore_Con_Url</a> *ec_url = NULL;
    <span class="keywordtype">char</span> cmd = <span class="charliteral">&#39;\0&#39;</span>;
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> r;
 
@@ -154,59 +154,59 @@ main(<span class="keywordtype">int</span> argc, const <span class="keywordtype">
    <span class="keywordflow">if</span> (argc &gt; 2)
      cmd = argv[2][0];
 
-   <a name="a13"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
-   <a name="a14"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
-   <a name="a15"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga47ad809433853db53742f3fd5ce89ac9" title="Initializes the Ecore_Con_Url library.">ecore_con_url_init</a>();
+   <a name="a14"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
+   <a name="a15"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
+   <a name="a16"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga47ad809433853db53742f3fd5ce89ac9" title="Initializes the Ecore_Con_Url library.">ecore_con_url_init</a>();
 
-   ec_url = <a name="a16"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new</a>(argv[1]);
+   ec_url = <a name="a17"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new</a>(argv[1]);
    <span class="keywordflow">if</span> (!ec_url)
      {
         printf(<span class="stringliteral">&quot;error when creating ecore con url object.\n&quot;</span>);
         <span class="keywordflow">goto</span> end;
      }
 
-   <a name="a17"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a18"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gae7b3a53ead72f458acc53b107ddcaeed">ECORE_CON_EVENT_URL_DATA</a>, _url_data_cb, NULL);
-   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a19"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a>, _url_complete_cb, NULL);
+   <a name="a18"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a19"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gae7b3a53ead72f458acc53b107ddcaeed">ECORE_CON_EVENT_URL_DATA</a>, _url_data_cb, NULL);
+   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a20"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a>, _url_complete_cb, NULL);
 
-   <a name="a20"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gadc647289df759b5f79faae4103b11220" title="Adds an additional header to the request connection object.">ecore_con_url_additional_header_add</a>(ec_url, <span class="stringliteral">&quot;User-Agent&quot;</span>, <span class="stringliteral">&quot;Ecore_Con client&quot;</span>);
+   <a name="a21"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gadc647289df759b5f79faae4103b11220" title="Adds an additional header to the request connection object.">ecore_con_url_additional_header_add</a>(ec_url, <span class="stringliteral">&quot;User-Agent&quot;</span>, <span class="stringliteral">&quot;Ecore_Con client&quot;</span>);
 
-   <a name="a21"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga75188398a164ec1ee57c2bf9195d6a8b" title="Enables the cookie engine for subsequent HTTP requests.">ecore_con_url_cookies_init</a>(ec_url);
+   <a name="a22"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga75188398a164ec1ee57c2bf9195d6a8b" title="Enables the cookie engine for subsequent HTTP requests.">ecore_con_url_cookies_init</a>(ec_url);
    <span class="keywordflow">if</span> (cmd != <span class="charliteral">&#39;c&#39;</span> &amp;&amp; cmd != <span class="charliteral">&#39;s&#39;</span>)
-     <a name="a22"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add</a>(ec_url, COOKIEJAR);
-   <a name="a23"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga5be3eadea97987953bc8cd3038dfd8d8" title="Sets the name of the file to which all current cookies will be written when either cookies are flushe...">ecore_con_url_cookies_jar_file_set</a>(ec_url, COOKIEJAR);
+     <a name="a23"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add</a>(ec_url, COOKIEJAR);
+   <a name="a24"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga5be3eadea97987953bc8cd3038dfd8d8" title="Sets the name of the file to which all current cookies will be written when either cookies are flushe...">ecore_con_url_cookies_jar_file_set</a>(ec_url, COOKIEJAR);
 
    <span class="keywordflow">switch</span> (cmd)
      {
       <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>: <span class="comment">// clear</span>
         printf(<span class="stringliteral">&quot;Cleaning previously set cookies.\n&quot;</span>);
-        <a name="a24"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga4afcd3abe8e99acb3d0c2745c6953aac" title="Clears currently loaded cookies.">ecore_con_url_cookies_clear</a>(ec_url);
+        <a name="a25"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga4afcd3abe8e99acb3d0c2745c6953aac" title="Clears currently loaded cookies.">ecore_con_url_cookies_clear</a>(ec_url);
         <span class="keywordflow">break</span>;
 
       <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>: <span class="comment">// clear session</span>
         printf(<span class="stringliteral">&quot;Cleaning previously set session cookies.\n&quot;</span>);
-        <a name="a25"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga1313aef4b39ef417e648c25e099d705c" title="Clears currently loaded session cookies.">ecore_con_url_cookies_session_clear</a>(ec_url);
+        <a name="a26"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga1313aef4b39ef417e648c25e099d705c" title="Clears currently loaded session cookies.">ecore_con_url_cookies_session_clear</a>(ec_url);
         <span class="keywordflow">break</span>;
 
       <span class="keywordflow">case</span> <span class="charliteral">&#39;i&#39;</span>: <span class="comment">// ignore session</span>
         printf(<span class="stringliteral">&quot;Ignoring old session cookies.\n&quot;</span>);
-        <a name="a26"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set</a>(ec_url, EINA_TRUE);
+        <a name="a27"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set</a>(ec_url, EINA_TRUE);
      }
 
-   r = <a name="a27"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(ec_url);
+   r = <a name="a28"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(ec_url);
    <span class="keywordflow">if</span> (!r)
      {
         printf(<span class="stringliteral">&quot;could not realize request.\n&quot;</span>);
         <span class="keywordflow">goto</span> free_ec_url;
      }
 
-   <a name="a28"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a29"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
 free_ec_url:
-   <a name="a29"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga276545b915a8adf226e9407165e09173" title="Destroys an Ecore_Con_Url connection object.">ecore_con_url_free</a>(ec_url);
+   <a name="a30"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga276545b915a8adf226e9407165e09173" title="Destroys an Ecore_Con_Url connection object.">ecore_con_url_free</a>(ec_url);
 end:
-   <a name="a30"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gad2a823bd44d0bd0c1960842cca90bcbf" title="Shuts down the Ecore_Con_Url library.">ecore_con_url_shutdown</a>();
-   <a name="a31"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown</a>();
-   <a name="a32"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
+   <a name="a31"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gad2a823bd44d0bd0c1960842cca90bcbf" title="Shuts down the Ecore_Con_Url library.">ecore_con_url_shutdown</a>();
+   <a name="a32"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown</a>();
+   <a name="a33"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
 
    <span class="keywordflow">return</span> 0;
 }

@@ -95,8 +95,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Eina__Tools__Group.html">Tools</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>These functions provide some helper for a pseudo Copy On Write mechanism. </p>
-<p>Eina_Cow will return const memory pointer to some default value that you will be able to change only by requesting a writable pointer. Later on a garbage collector can come online and try to merge back some of those pointer.</p>
+<p>These functions provide some helper for a pseudo Copy-On-Write mechanism. </p>
+<p>Eina_Cow will return a const memory pointer to some default value that you will be able to change only by requesting a writable pointer. Later on a garbage collector can come online and try to merge back some of those pointers.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -174,15 +174,15 @@ Defines</h2></td></tr>
 <p>Definition for the macro to setup a writeable pointer from a const one. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">Cow</td><td>The Eina_Cow where the const pointer come from. </td></tr>
-    <tr><td class="paramname">Read</td><td>The const pointer to get a writable handler from. </td></tr>
-    <tr><td class="paramname">Write_Type</td><td>The type of the pointer you want to write to. </td></tr>
-    <tr><td class="paramname">Write</td><td>The name of the variable where to put the writeable pointer to. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">Cow</td><td>The Eina_Cow where the const pointer came from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Read</td><td>The const pointer to get a writable handler from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Write_Type</td><td>The type of the pointer you want to write to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Write</td><td>The name of the variable where to put the writeable pointer to.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
-<p>Be careful this macro opens a C scope that is expected to be closed by <a class="el" href="group__Eina__Cow__Group.html#ga534f63d0d61c6e9256488d211fc2a473" title="Definition for the macro to close the writeable pointer.">EINA_COW_WRITE_END()</a>. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This macro opens a C scope that is expected to be closed by <a class="el" href="group__Eina__Cow__Group.html#ga534f63d0d61c6e9256488d211fc2a473" title="Definition for the macro to close the writeable pointer.">EINA_COW_WRITE_END()</a>. </dd></dl>
 
 </div>
 </div>
@@ -224,14 +224,14 @@ Defines</h2></td></tr>
 <p>Definition for the macro to close the writeable pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">Cow</td><td>The Eina_Cow where the const pointer come from. </td></tr>
-    <tr><td class="paramname">Read</td><td>The const pointer to get a writable handler from. </td></tr>
-    <tr><td class="paramname">Write</td><td>The name of the variable where to put the writeable pointer to. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">Cow</td><td>The Eina_Cow where the const pointer came from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Read</td><td>The const pointer to get a writable handler from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Write</td><td>The name of the variable where to put the writeable pointer to.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
-<p>Be careful this macro close the scope opened by <a class="el" href="group__Eina__Cow__Group.html#ga1f0c8727aa196d1974b696f999cd0f10" title="Definition for the macro to setup a writeable pointer from a const one.">EINA_COW_WRITE_BEGIN()</a>. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This macro closes the scope opened by <a class="el" href="group__Eina__Cow__Group.html#ga1f0c8727aa196d1974b696f999cd0f10" title="Definition for the macro to setup a writeable pointer from a const one.">EINA_COW_WRITE_BEGIN()</a>. </dd></dl>
 
 </div>
 </div>
@@ -311,11 +311,11 @@ Defines</h2></td></tr>
 <p>Instantiates a new Eina_Cow pool. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of this pool, used for debug. </td></tr>
-    <tr><td class="paramname">struct_size</td><td>The size of the object from this pool. </td></tr>
-    <tr><td class="paramname">step</td><td>How many objects to allocate when the pool gets empty. </td></tr>
-    <tr><td class="paramname">default_value</td><td>The default value returned by this pool. </td></tr>
-    <tr><td class="paramname">gc</td><td>Is it possible to run garbage collection on this pool. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of this pool, used for debugging. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">struct_size</td><td>The size of the object from this pool. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>How many objects to allocate when the pool gets empty. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">default_value</td><td>The default value returned by this pool. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gc</td><td>Is it possible to run garbage collection on this pool. </td></tr>
   </table>
   </dd>
 </dl>
@@ -342,12 +342,12 @@ Defines</h2></td></tr>
 <p>Returns an initialized pointer from the pool. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cow</td><td>The pool to take things from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cow</td><td>The pool to take things from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the new pool instance</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the new pool instance </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -369,11 +369,11 @@ Defines</h2></td></tr>
 <p>Destroys an Eina_Cow pool and all the allocated memory. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cow</td><td>The pool to destroy</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cow</td><td>The pool to destroy </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -417,15 +417,15 @@ Defines</h2></td></tr>
 <p>Sets back a pointer into read only. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cow</td><td>The pool the pointer come from. </td></tr>
-    <tr><td class="paramname">dst</td><td>The read only version of the pointer. </td></tr>
-    <tr><td class="paramname">data</td><td>The pointer to which data was written to. </td></tr>
-    <tr><td class="paramname">needed_gc</td><td>Does this pool need to be garbage collected?</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cow</td><td>The pool the pointer came from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>The read only version of the pointer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The pointer to which data was written to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">needed_gc</td><td>Does this pool need to be garbage collected?</td></tr>
   </table>
   </dd>
 </dl>
-<p>NOTE: this function is not thread safe, be careful.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is not thread safe. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -457,13 +457,13 @@ Defines</h2></td></tr>
 <p>Frees a pointer from the pool. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cow</td><td>The pool to gave back memory to. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to give back.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cow</td><td>The pool to gave back memory to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to give back.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>To simplify the caller code *data will point to the default read only state after the call to this function.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>To simplify the caller code *data will point to the default read only state after the call to this function. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -485,13 +485,13 @@ Defines</h2></td></tr>
 <p>Tries to find entries that have the same content and update them. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cow</td><td>The cow to try to compact. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cow</td><td>The cow to try to compact. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if something was compacted, EINA_FALSE if nothing was.</dd></dl>
-<p>There is no guaranty in the time it will require, but should remain low. It does run a hash function on all possible common structures trying to find the one that match and merge them into one pointer.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>There is no guaranty in the time it will require, but should remain low. It does run a hash function on all possible common structures trying to find the one that matches and merge them into one pointer. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -529,13 +529,13 @@ Defines</h2></td></tr>
 <p>Makes the destination contain the same thing as the source pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cow</td><td>The pool the pointers come from. </td></tr>
-    <tr><td class="paramname">dst</td><td>The destination to update. </td></tr>
-    <tr><td class="paramname">src</td><td>The source of information to copy.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cow</td><td>The pool the pointers came from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>The destination to update. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The source of information to copy. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -567,13 +567,13 @@ Defines</h2></td></tr>
 <p>Gets a writeable pointer from a const pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cow</td><td>The pool the pointer come from. </td></tr>
-    <tr><td class="paramname">src</td><td>The pointer you want to write to.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cow</td><td>The pool the pointer came from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The pointer you want to write to.</td></tr>
   </table>
   </dd>
 </dl>
-<p>NOTE: this function is not thread safe, be careful.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function is not thread safe. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
