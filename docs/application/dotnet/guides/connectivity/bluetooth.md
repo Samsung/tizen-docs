@@ -1078,7 +1078,7 @@ To discover nearby LE devices, perform an LE scan operation:
             }
         }
 
-        IEnumerable<BluetoothLeServiceData> serviceList = leDevice.GetGetServiceDataList(BluetoothLePacketType.BluetoothLeAdvertisingPacket);
+        IEnumerable<BluetoothLeServiceData> serviceList = leDevice.GetServiceDataList(BluetoothLePacketType.BluetoothLeAdvertisingPacket);
         if (serviceList != null)
         {
             foreach (BluetoothLeServiceData data in serviceList)
