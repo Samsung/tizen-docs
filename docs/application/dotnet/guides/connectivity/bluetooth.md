@@ -1048,13 +1048,13 @@ To discover nearby LE devices, perform an LE scan operation:
         address = leDevice.RemoteAddress;
         rssi = leDevice.Rssi;
 
-        txLevel = leDevice.TxPowerLevel;
+        txLevel = leDevice.GetTxPowerLevel(BluetoothLePacketType.BluetoothLeAdvertisingPacket);
         if (txLevel != -1)
         {
-            Assert.IsInstanceOf<int>(leDevice.TxPowerLevel, "BluetoothLeDevice TxPowerLevel is not valid");
+            Assert.IsInstanceOf<int>(txLevel, "BluetoothLeDevice TxPowerLevel is not valid");
         }
 
-        IEnumerable<string> ssuuid = leDevice.ServiceSolictationUuid;
+        IEnumerable<string> ssuuid = leDevice.GetServiceSolictationUuid(BluetoothLePacketType.BluetoothLeAdvertisingPacket);
         if (ssuuid != null)
         {
             foreach (string uuid in ssuuid)
@@ -1069,7 +1069,7 @@ To discover nearby LE devices, perform an LE scan operation:
             LogUtils.Write(LogUtils.DEBUG, LogUtils.TAG, "Found Scan Data of length : " + scanDataInfo.Length);
         }
 
-        IEnumerable<string> svcuuid = leDevice.ServiceUuid;
+        IEnumerable<string> svcuuid = leDevice.GetServiceUuid(BluetoothLePacketType.BluetoothLeAdvertisingPacket);
         if (svcuuid != null)
         {
             foreach (string uuid in svcuuid)
@@ -1078,7 +1078,7 @@ To discover nearby LE devices, perform an LE scan operation:
             }
         }
 
-        IEnumerable<BluetoothLeServiceData> serviceList = leDevice.GetServiceDataList();
+        IEnumerable<BluetoothLeServiceData> serviceList = leDevice.GetServiceDataList(BluetoothLePacketType.BluetoothLeAdvertisingPacket);
         if (serviceList != null)
         {
             foreach (BluetoothLeServiceData data in serviceList)
@@ -1086,14 +1086,6 @@ To discover nearby LE devices, perform an LE scan operation:
                 LogUtils.Write(LogUtils.DEBUG, LogUtils.TAG, "Retrieved service data list UUID : " + data.ServiceUuid + " length is " + data.ServiceDataLength);
             }
         }
-
-        leDevice.PacketType = BluetoothLePacketType.BluetoothLeScanResponsePacket;
-        PacketType = leDevice.PacketType;
-        Assert.AreEqual(BluetoothLePacketType.BluetoothLeScanResponsePacket, PacketType);
-
-        leDevice.PacketType = BluetoothLePacketType.BluetoothLeAdvertisingPacket;
-        PacketType = leDevice.PacketType;
-        Assert.AreEqual(BluetoothLePacketType.BluetoothLeAdvertisingPacket, PacketType);
     }
     ```
 <a name="add_adv_data"></a>
