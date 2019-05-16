@@ -140,9 +140,9 @@ To view and modify the application configuration:
     -  **Tizen**: Lets you to edit the Tizen schema extension properties.
     -  **Source**: Lets you to view and edit the source code of the `config.xml` file.
     
-    > **Note**
-    >
-    > The `config.xml` file must confirm to both the XML file format and the W3C specification requirements. Editing the file in the  **Source**  tab is intended for advanced users only.
+       > **Note**
+       >
+       > The `config.xml` file must confirm to both the XML file format and the W3C specification requirements. Editing the file in the  **Source**  tab is intended for advanced users only.
     
 3. To save changes, select **File \> Save All**.
 
@@ -221,7 +221,9 @@ To run the application on emulator, follow these steps:
 
 2. Generate a security profile:
 
-   Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+   > **Note**
+   > 
+   > Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3. To run the application, follow these steps:
 
@@ -283,7 +285,7 @@ To run the application on a target device:
 
     2. In Tizen Studio, use the **Remote Device Manager** to connect the TV:
   
-        1. In Tizen Studio select **Tools /> Device Manager**, click **Remote Device Manager**:
+        1. In Tizen Studio select **Tools > Device Manager**, click **Remote Device Manager**:
 		
 		   ![Launch the Remote Device Manager](media/remote_conn_mgr_tv.png)
 		
