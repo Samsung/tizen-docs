@@ -1,4 +1,4 @@
-# Create Your First Tizen TV Web Application
+# Create Your First Samsung Smart TV Web Application
 
 **Welcome to Tizen Web application development for Tizen TV!**
 
@@ -18,19 +18,18 @@ The following sections guide you with developing a Tizen TV application using We
 
 Ensure that the following prerequisites are met:
 
-- Download and install Tizen Studio
+- Download and install Tizen Studio.
+    For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
+    
+## Get Started
 
-   > **Note**
-   >
-   > For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
+To develop TV Web application that displays text and graphics on the screen, you need to follow the following steps sequentially:
 
-Let us begin to develop a TV Web application that displays text and graphics on the screen, you need to follow the following steps sequentially:
+1. [Create a TV Web project](#create) using Tizen Studio.
 
-1.  [Create a TV Web project](#create) using Tizen Studio.
+2. [Design UI](#ui).
 
-2.  [Design UI](#ui).
-
-3.  [Build and Run the application](#run).
+3. [Build and Run the application](#run).
 
 Tizen Studio includes various [Web tools](../../../tizen-studio/Web-tools/index.md) that help you to create new functionalities, design intuitive UI with utmost ease.
 
@@ -78,9 +77,7 @@ To create the application project:
 
 The Project Wizard sets up your project, creates the required application files using the default content from the template. 
 
-> **Note**
->
-> For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/Web-tools/project-wizard.md).
+For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/Web-tools/project-wizard.md).
 
 The following figure illustrates the basic application template for Tizen TV:
 
@@ -92,9 +89,7 @@ The following figure illustrates the basic application template for Tizen TV:
 
 As you have set up your project, you can view your created project in the **Project Explorer**. 
 
-> **Note** 
->
-> A default application project contains all the files that are necessary to make up an application.
+A default application project contains all the files that are necessary to make up an application.
 
 **Figure: Application in the Project Explorer**
 
@@ -150,7 +145,7 @@ To view and modify the application configuration:
 >
 > For more information on configurations, see [Setting the Web Application Configuration](../../tutorials/process/setting-properties.md#set_widget).
 
-Since you have setup the project, edited the configuration file as and if needed. Let us proceed with build application.
+Since you have setup the project, edited the configuration file as and if needed. Proceed with build application.
 
 <a name="build"></a>
 ## Build Application
@@ -250,9 +245,7 @@ To run the application on emulator, follow these steps:
           
           - To see the logs in Tizen Studio, select **Window \> Show View \> Log**.
 
-> **Note**
->
-> For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
+For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
 ### Run Application on Simulator
 
@@ -266,9 +259,7 @@ To run the application on the simulator:
 
     ![Application running in the simulator](media/simulator_running_tv.png)
 
-> **Note**
->
-> For more information on using the simulator features, see [TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator).
+For more information on using the simulator features, see [TV Simulator](http://developer.samsung.com/tv/develop/getting-started/using-sdk/tv-simulator).
 
 ### Run on Target Device
 
@@ -314,12 +305,15 @@ To run the application on a target device:
    > Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
  
 3. To run the application:
+  
    1. In the **Device Manager**, select the device.
+  
    2. In **Project Explorer**, right-click the project and select **Run As > Tizen Web Application**:
    
       ![Running the application on a target device](media/app_run_tv.png)
 
    Alternatively, you can also select the project in the **Project Explorer** and do one of the following:
+   
     -   Press **Ctrl + F11** key.
     -   Click run icon in the toolbar.
 
@@ -329,21 +323,21 @@ To run the application on a target device:
    >
    >  ![Selecting the emulator](media/app_run_multiple_emulators_widget.png)
 
-  3. Confirm that the application launches on the target device.
+4. Confirm that the application launches on the target device.
 
-  > **Note**
-  >
-  > The application launches with default launch configuration.
+    > **Note**
+    >
+    > The application launches with default launch configuration.
   
-  To create and use custom launch configuration, follow these steps:
+    To create and use custom launch configuration, follow these steps:
 
-  1. In the **Project Explorer**, right-click the project and select **Run As > Run Configurations**.
+    1. In the **Project Explorer**, right-click the project and select **Run As > Run Configurations**.
   
-  2. In the **Run Configurations** window, select the **New Launch Configuration** icon (![Run Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking **Run**:
+    2. In the **Run Configurations** window, select the **New Launch Configuration** ![Run Configuration](media/run_new_config_wn.png), define the configuration details, and launch the application by clicking **Run**:
   
-     ![Run Configurations window](media/run_configurations_w.png)
+         ![Run Configurations window](media/run_configurations_w.png)
 
-## Customizing User Interface
+## Customize User Interface
 
 The TV application created with the **Basic Project** template has a simple user interface with different  components showing the different style of text, colors and font properties.
 
@@ -442,7 +436,7 @@ The basic template contains the following components:
             <p>&copy; 2015 Company Name. All rights reserved.</p>
         </footer>    
     
-    </body>
+        </body>
 	```
 
 ### Modify Existing Style Components with CSS
@@ -458,7 +452,7 @@ There are various ways to connect your CSS with HTML:
 
 Applying the style of an HTML element directly with the style attribute is the easiest of methods. On the other hand, creating a separate CSS file and managing it separately is convenient and recommended, when it comes to applying changes in the future.
 
-Let us customize our CSS to change look and feel of the application:
+Customize our CSS to change look and feel of the application:
 
 - In the **Basic Project** template, the CSS file is connected to the HTML file using a `<link>` element in the `<head>` element:
 
