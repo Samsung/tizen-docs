@@ -14,11 +14,12 @@ The following sections guide you with developing a Tizen TV application using We
 - Run a basic TV Web app on an emulator or a target device. 
 - Customizing the UI of your app.
 
-## Prerequisites
+## Prerequisite
 
-Ensure that the following prerequisites are met:
+Ensure that the following prerequisite is met:
 
 - Download and install Tizen Studio.
+
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
     
 ## Get Started
