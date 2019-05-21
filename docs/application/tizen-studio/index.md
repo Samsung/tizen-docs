@@ -9,7 +9,7 @@
 }
 
 .docs-ui-started [class^="docs-ui-"] {
-    width: 60%; 
+    width: 70%; 
     height: 230px;
     padding: 50px 0;
     text-align: center;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
     position: relative;
     float: left;
-    margin: 1 auto 20px;
+    margin: 1 auto 30px;
 }
 
 .docs-ui-started [class^="docs-ui-"]>span {
@@ -31,7 +31,20 @@
 }
 
 @media (max-width: 800px)
-.docs-ui-started .docs-ui-wearable:before, .docs-ui-started .docs-ui-tv:before, .docs-ui-started .docs-ui-mobile:before, .docs-ui-started .docs-ui-widget:before, .docs-ui-started .docs-ui-watch:before {
+.docs-ui-started
+.docs-ui-wearable:before, 
+.docs-ui-started 
+.docs-ui-tv:before, 
+.docs-ui-started 
+.docs-ui-mobile:before, 
+.docs-ui-started 
+.docs-ui-widget:before, 
+.docs-ui-started 
+.docs-ui-ide:before, 
+
+
+.docs-ui-started .docs-ui-watch:before 
+{
     height: 85px;
     margin: 0 auto 25px;
     align: center;
@@ -71,10 +84,10 @@
 
 .docs-ui-started .docs-ui-widget:before {
     content: "";
-    display: block;
     margin: auto;
     position: relative;
-    width: 70px;
+	display: block;
+    width: 100px;
     height: 90px;
     background: url(media/SDK.png) no-repeat center top;
     background-position: 0 0 !important;
@@ -85,28 +98,22 @@
     /* border-right: 1px solid #d1d1d1; */
 }
 
-.docs-ui-started .docs-ui-watch:before {
+.docs-ui-started .docs-ui-ide:before {
     content: "";
-    display: block;
     margin: auto;
     position: relative;
+	display: block;
     width: 90px;
     height: 90px;
-    background: url(./media/IDE.png) no-repeat center top;
+    background: url(media/IDE.png) no-repeat center top;
     background-position: 0 0 !important;
 }
-.docs-ui-started .docs-ui-watch {
-    width: 19%;
+.docs-ui-started .docs-ui-ide {
+    width: 20%;
     padding-left: 50;
     /* border-right: 1px solid #d1d1d1; */
 }
 
-
-.docs-ui-started.docs-ui-mobile {
-    width: 19%;
-    padding-left: 50px;
-    
-}
 
 div {
     display: block;
@@ -124,17 +131,18 @@ a.docs-btn-more {
 
 Tizen Studio is an official integrated development environment (IDE) for developing Tizen apps. This environment is built over Eclipse, it presents a unified environment where you can write, edit, debug, build, and publish your app. 
 
-Tizen Studio runs on Windows®, Ubuntu, and in macOS. For more information on the latest release, see the [download] page.
+Tizen Studio runs on Windows®, Ubuntu, and MacOSX. For more information on the latest release, see the [Download](https://developer.tizen.org/development/tizen-studio/download) page.
 
-Tizen Studio primarily comprises of: 
-- set of fast and feature-rich emulators for devices based on Tizen, for example Smartphone, TV emulator, smart watch
+Tizen Studio primarily consists of: 
+
+- set of fast and feature-rich emulators for devices based on Tizen, for example: Smartphone, TV emulator, Smart watch and much more
 - extensive tool chains to capture performance, usability, version compatibility
 - code templates, samples to help you get started 
 - components to support new platforms
 - system applications and drivers 
 - utilities for compiling applications to Tizen RT (Tizen RTOS kernel variant)
 
-Follow these links to explore more about Tizen Studio: 
+Visit the following pages to explore more about Tizen Studio: 
 
 <div class="docs-ui-started">
   <div class="docs-ui-wearable">
@@ -157,7 +165,7 @@ Follow these links to explore more about Tizen Studio:
     </span>
   </div>
   
-  <div class="docs-ui-widget">
+  <div class="docs-ui-ide">
     <span>
     <a href="platform-tools/overview.md" class="docs-btn-more">Platform IDE </a><br>
     <a href="rt-ide/overview.md" class="docs-btn-more">Tizen RT IDE </a>
