@@ -78,7 +78,7 @@ To distribute your application, you must create a certificate profile and sign t
 	>
 	> The **Samsung** option appears if you have installed the Samsung Certificate Extension. For more information, see [how to install the Samsung Certificate Extension](#install-samsung-certificate-extension).
 	 
-	You can select either **Tizen** or **Samsung** the type of the certificate:
+	You can select either [**Tizen**](#create-tizen-certificate-profile) or [**Samsung**](#create-samsung-certificate-profile) the type of the certificate:
 	
 	Select **Samsung** as the certificate profile to generate certificates to develop and install an application to the Samsung devices. To upload the application to the store, you must select the certificate profile as **Samsung**.
     However, if you want to use the Tizen Emulator and do not want to upload the application to the store, select **Tizen** to create certificate locally.
@@ -87,8 +87,8 @@ To distribute your application, you must create a certificate profile and sign t
 ## Create Tizen Certificate Profile
 	
 1. [Import](#import-certificate-profile) and [create](#create-certificate-profile) a certificate profile.
-2. Click **Tizen**.  The **Create Certificate Profile** window appears.
-3. Enter a name for the profile and click **Next**.
+2. Click **Tizen**.  
+3. In the **Create Certificate Profile** window that appears, enter a name for the profile and click **Next**.
 
     ![Certificate profile creation wizard](media/cert_reg_creation_wizard.png)
 
@@ -107,15 +107,15 @@ To distribute your application, you must create a certificate profile and sign t
 
 6.  Click **Finish**.
 
-## Create Samsung Certificate Profiles
+## Create Samsung Certificate Profile
 
 1. [Import](#import-certificate-profile) and [create](#create-certificate-profile) a certificate profile.
-2. Click **Samsung**. The **Create Certificate Profile** window appears. 
+2. Click **Samsung**.  
    >**Note**
    >
    >Ensure that you sign in with your Samsung Developer account, and enter the device ID (DUID) for each of your target devices.
 
-3. Select the device type and click **Next**.
+3. In the **Create Certificate Profile** window that appears, select the device type and click **Next**.
 
     ![Select a the device type](media/cert_device_type.png)
 
@@ -144,16 +144,16 @@ To distribute your application, you must create a certificate profile and sign t
     ![Create a new author certificate](media/cert_new_author.png)
 
     **Additional Fields** contains more Certificate Signing Request (CSR) information to add, but are not mandatory.
-    Click **Next**. The Samsung Account sign-in window appears.
+    Click **Next**. 
 
-7. Click **Sign in** or **Create new account**. 
+7. In the Samsung Account sign-in window that appears, click **Sign in** or **Create new account**. 
     >**Note**
-	>
-	>To get a certificate, you must have a Samsung Account. If you do not have an account, it is recommended to create a new account.
+    >
+    >To get a certificate, you must have a Samsung Account. If you do not have an account, it is recommended to create a new account.
 
     ![samsung account](media/cert_samsung_acc.png)
 
-    The backup creats Author certificate. After you sign in to Samsung Account, you can get the author certificate.
+    The backup creates an author certificate. After you sign in to Samsung Account, you can get the author certificate.
 
     ![Author certificate is complete](media/cert_author_cert_details.png)
 
