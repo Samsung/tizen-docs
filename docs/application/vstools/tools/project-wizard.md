@@ -18,7 +18,7 @@ Template | Description | Supported Tizen Versions
 **Tizen XAML App (Xamarin.Forms)** | To create XAML applications using Xamarin.Forms for multiple profiles. | 4.0 and 5.0
 **UI Test APP** | To create automated UI test applications for Tizen. | 4.0 and 5.0
 
-You can navigate to the Project Wizard templates:
+You can navigate to the Project Wizard templates as shown in the following:
 
 ![Project Wizard templates for .NET projects](media/v5_project_templates.gif)
 
@@ -28,8 +28,8 @@ When you create a new project with a specific template, the Project Wizard autom
 
 To create a Tizen .NET application project:
 
-1. In the Visual Studio menu, select **File &gt; New &gt; Project**. The **New Project Window** appears. 
-2. Select **Installed &gt; Visual C#**. 
+1. In the Visual Studio menu, select **File &gt; New &gt; Project**.  
+2. In the **New Project Window** that appears, select **Installed &gt; Visual C#**. 
 3. Select one of the available Tizen versions, **Tizen 4.0** or **Tizen 5.0** based on your requirement.
 4. Select one of the available templates for your project. For example, **Tizen 5.0 > Blank App (Xamarin.Forms)**.
 5. Set the basic project properties:
@@ -38,8 +38,8 @@ To create a Tizen .NET application project:
     - **Solution name**: The name of the solution file for the project. This option is enabled only if you select **Create directory for solution**.
     - **Create directory for solution**: Select this option to create a directory where the solution file will be automatically saved.
     - **Create new Git repository**: Select this option to create a new Git repository for your project.
-6. Click **OK**. The **New Project Window** appears.
-7. Select the profiles for which you want to create a solution, and click **OK**.
+6. Click **OK**. 
+7. In the **New Project Window** that appears, select the profiles for which you want to create a solution, and click **OK**.
 
     ![Select profiles](media/projectwizard-profile.png) 
 
@@ -47,6 +47,6 @@ To create a Tizen .NET application project:
 
     ![Solution with mobile and TV profiles](media/projectwizard-solution.png)
 
-The new project is created:
+The new project is created as shown in the following:
 
 ![New project](media/new-project.PNG)
