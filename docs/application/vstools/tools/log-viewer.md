@@ -4,8 +4,8 @@ When you run an application, the events are logged and are used for debugging or
 
 Tizen Log Viewer enables you to check your log messages in Visual Studio. This section explains about Tizen Log Viewer and how to:
 
-- Launch Tizen Log Viewer
-- Manage logs 
+- [Launch Tizen Log Viewer](#launch-tizen-log-viewer)
+- [Manage logs](#manage-logs)
 
 >**Note**
 >
