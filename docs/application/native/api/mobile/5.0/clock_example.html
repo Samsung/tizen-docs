@@ -91,15 +91,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places five Elementary clock widgets on a window, each of them exemplifying a part of the widget's API.</p>
-<p>The first of them is the pristine clock:  <div class="fragment"><pre class="fragment"></pre></div> As you see, the defaults for a clock are:</p>
+<p>The first of them is the pristine clock:  <div class="fragment"><pre class="fragment">   <span class="comment">/* pristine (no seconds, military time) */</span>
+   ck = elm_clock_add(win);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+</pre></div> As you see, the defaults for a clock are:</p>
 <ul>
 <li>military time</li>
 <li>no seconds shown</li>
 </ul>
-<p>For am/pm time, see the second clock:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The third one will show the seconds digits, which will flip in synchrony with system time. Note, besides, that the time itself is <b>different</b> from the system's -- it was customly set with elm_clock_time_set():  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>In both fourth and fifth ones, we turn on the <b>edition mode</b>. See how you can change each of the sheets on it, and be sure to try holding the mouse pressed over one of the sheet arrows. The forth one also starts with a custom time set:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The fifth, besides editable, has only the time <b>units</b> editable, for hours, minutes and seconds. This exemplifies elm_clock_edit_mode_set():  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>For am/pm time, see the second clock:  <div class="fragment"><pre class="fragment">   <span class="comment">/* am/pm */</span>
+   ck = elm_clock_add(win);
+   elm_clock_show_am_pm_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+</pre></div></p>
+<p>The third one will show the seconds digits, which will flip in synchrony with system time. Note, besides, that the time itself is <b>different</b> from the system's -- it was customly set with elm_clock_time_set():  <div class="fragment"><pre class="fragment">   <span class="comment">/* with seconds and custom time */</span>
+   ck = elm_clock_add(win);
+   elm_clock_show_seconds_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_clock_time_set(ck, 10, 11, 12);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+</pre></div></p>
+<p>In both fourth and fifth ones, we turn on the <b>edition mode</b>. See how you can change each of the sheets on it, and be sure to try holding the mouse pressed over one of the sheet arrows. The forth one also starts with a custom time set:  <div class="fragment"><pre class="fragment">   <span class="comment">/* in edition mode, with seconds, custom time and am/pm set */</span>
+   ck = elm_clock_add(win);
+   elm_clock_edit_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_clock_show_seconds_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_clock_show_am_pm_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_clock_time_set(ck, 10, 11, 12);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+</pre></div></p>
+<p>The fifth, besides editable, has only the time <b>units</b> editable, for hours, minutes and seconds. This exemplifies elm_clock_edit_mode_set():  <div class="fragment"><pre class="fragment">   <span class="comment">/* in edition mode, with seconds, but only some digits editable */</span>
+   ck = elm_clock_add(win);
+   elm_clock_show_seconds_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_clock_edit_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   digedit = <a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a151f368f2431aeaf97c5966223a063c8">ELM_CLOCK_EDIT_HOUR_UNIT</a> | <a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a560260121d58151943a51b50ba45c19b">ELM_CLOCK_EDIT_MIN_UNIT</a> | <a class="code" href="group__Elm__Clock.html#gga8692bdbba88156f31daaa03b7b706330a2e9d791d9d307f23b174f2983e7e63fb">ELM_CLOCK_EDIT_SEC_UNIT</a>;
+   elm_clock_edit_mode_set(ck, digedit);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+</pre></div></p>
 <p>See the full <a class="el" href="clock_example_8c-example.html">example</a>, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/clock_example.png" alt="clock_example.png"/>

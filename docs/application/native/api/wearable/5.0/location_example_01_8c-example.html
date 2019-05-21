@@ -90,7 +90,156 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">location_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o location_example_01 location_example_01.c -g `pkg-config --cflags --libs elementary elocation`</span>
+
+<span class="preprocessor">#define EFL_BETA_API_SUPPORT</span>
+<span class="preprocessor"></span><span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+<span class="preprocessor">#ifdef ELM_ELOCATION</span>
+<span class="preprocessor"></span><span class="preprocessor">#include &lt;Elocation.h&gt;</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *pos_label, *addr_label, *box, *win;
+
+<span class="preprocessor">#ifdef ELM_ELOCATION</span>
+<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span>
+_print_position(Elocation_Position *position)
+{
+   <span class="keywordtype">char</span> buffer[1024];
+
+   <span class="keywordflow">if</span> (!position) <span class="keywordflow">return</span>;
+   snprintf(buffer, <span class="keyword">sizeof</span>(buffer),
+            <span class="stringliteral">&quot;&lt;b&gt;### Position Detail ###&lt;/b&gt;&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;GeoClue position reply with data from timestamp&lt;/b&gt; %i&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Latitude:&lt;/b&gt; %f&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Longitude:&lt;/b&gt; %f&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Altitude:&lt;/b&gt; %f&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Accuracy level:&lt;/b&gt; %i&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Accuracy horizontal:&lt;/b&gt; %f&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Accuracy vertical:&lt;/b&gt; %f&quot;</span>,
+            position-&gt;timestamp, position-&gt;latitude, position-&gt;longitude,
+            position-&gt;altitude, position-&gt;accur-&gt;level,
+            position-&gt;accur-&gt;horizontal, position-&gt;accur-&gt;vertical);
+   elm_object_text_set(pos_label, buffer);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_print_address(Elocation_Address *address)
+{
+   <span class="keywordtype">char</span> buffer[1024];
+
+   <span class="keywordflow">if</span> (!address) <span class="keywordflow">return</span>;
+   snprintf(buffer, <span class="keyword">sizeof</span>(buffer),
+            <span class="stringliteral">&quot;&lt;b&gt;### Address Detail ###&lt;/b&gt;&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Address update with data from timestamp:&lt;/b&gt; %i&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Country:&lt;/b&gt; %s&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Countrycode:&lt;/b&gt; %s&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Locality:&lt;/b&gt; %s&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Postalcode:&lt;/b&gt; %s&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Region:&lt;/b&gt; %s&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Timezone:&lt;/b&gt; %s&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Accuracy level:&lt;/b&gt; %i&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Accuracy horizontal:&lt;/b&gt; %f&lt;br/&gt;&quot;</span>
+            <span class="stringliteral">&quot;&lt;b&gt;Accuracy vertical:&lt;/b&gt; %f&quot;</span>,
+            address-&gt;timestamp, address-&gt;country, address-&gt;countrycode,
+            address-&gt;locality, address-&gt;postalcode, address-&gt;region,
+            address-&gt;timezone, address-&gt;accur-&gt;level, address-&gt;accur-&gt;horizontal,
+            address-&gt;accur-&gt;vertical);
+   elm_object_text_set(addr_label, buffer);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_position_changed(<span class="keywordtype">void</span> *data, <span class="keywordtype">int</span> ev_type, <span class="keywordtype">void</span> *event)
+{
+   Elocation_Position *position;
+
+   position = event;
+   _print_position(position);
+   <span class="keywordflow">return</span> <a name="a0"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga780091d7d49a4bb6cb753f12e1a3b19d">ECORE_CALLBACK_DONE</a>;
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_address_changed(<span class="keywordtype">void</span> *data <a name="a1"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">int</span> ev_type EINA_UNUSED, <span class="keywordtype">void</span> *event)
+{
+   Elocation_Address *address;
+
+   address = event;
+   _print_address(address);
+
+   <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga780091d7d49a4bb6cb753f12e1a3b19d">ECORE_CALLBACK_DONE</a>;
+}
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+<span class="preprocessor">#ifdef ELM_ELOCATION</span>
+<span class="preprocessor"></span>   Elocation_Address *address;
+   Elocation_Position *position;
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+   <span class="comment">/* The program will proceed only if Ewebkit library is available. */</span>
+   <span class="keywordflow">if</span> (elm_need_elocation() == <a name="a2"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>)
+     <span class="keywordflow">return</span> -1;
+
+   <a name="a3"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a4"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;elocation&quot;</span>, <span class="stringliteral">&quot;Elocation example&quot;</span>);
+   <a name="a5"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a6"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   box = <a name="a7"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a name="a8"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+
+   pos_label = <a name="a9"></a><a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(box);
+   <a name="a10"></a><a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(pos_label, ELM_WRAP_CHAR);
+   elm_object_text_set(pos_label, <span class="stringliteral">&quot;Getting location ...&quot;</span>);
+   evas_object_size_hint_weight_set(pos_label, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(pos_label, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a11"></a><a class="code" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421" title="Control the slide mode of the label widget.">elm_label_slide_mode_set</a>(pos_label, <a name="a12"></a><a class="code" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a>);
+   <a name="a13"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, pos_label);
+   <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(pos_label);
+   <a name="a15"></a><a class="code" href="group__Elm__Box.html#ga0cf0fb93ece11c230238f894eda7de3e" title="Set the space (padding) between the box&#39;s elements.">elm_box_padding_set</a>(box, 0, 50);
+
+   addr_label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(box);
+   <a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(addr_label, ELM_WRAP_CHAR);
+   elm_object_text_set(addr_label, <span class="stringliteral">&quot;Getting location ...&quot;</span>);
+   evas_object_size_hint_weight_set(addr_label, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(addr_label, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421" title="Control the slide mode of the label widget.">elm_label_slide_mode_set</a>(addr_label, <a class="code" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, addr_label);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(addr_label);
+
+<span class="preprocessor">#ifdef ELM_ELOCATION</span>
+<span class="preprocessor"></span>   address = elocation_address_new();
+   position = elocation_position_new();
+
+   <a name="a16"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(ELOCATION_EVENT_POSITION, _position_changed, NULL);
+   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(ELOCATION_EVENT_ADDRESS, _address_changed, NULL);
+
+   elocation_position_get(position);
+   _print_position(position);
+
+   elocation_address_get(address);
+   _print_address(address);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+   evas_object_resize(win, 600, 480);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a17"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+<span class="preprocessor">#ifdef ELM_ELOCATION</span>
+<span class="preprocessor"></span>   elocation_position_free(position);
+   elocation_address_free(address);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a18"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

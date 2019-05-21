@@ -91,23 +91,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places two Elementary panes widgets on a window, one of them displayed vertically and the other horizontally, to exemplify a part of the widget's API. Also, all the signals emitted by this widget will be covered.</p>
-<p>Let's start adding a panes to our window:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Now we will set a content (a simple button) to the left side of our panes widget: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Let's start adding a panes to our window:  <div class="fragment"><pre class="fragment">   panes = <a class="code" href="group__Elm__Panes.html#gaa4d51c6b525408873cb867485b80f35b">elm_panes_add</a>(win);
+   evas_object_size_hint_weight_set(panes, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, panes);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(panes);
+</pre></div></p>
+<p>Now we will set a content (a simple button) to the left side of our panes widget: <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+</pre></div></p>
 <p>The content of the right side will be something a bit more elaborated, we'll place another panes, displayed vertically (it's displayed horizontally by default): <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>When populating a panes displayed vertically, remember that left content will be placed at top, and right content will place at bottom. Next we will add two buttons to exemplify that: <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Panes widgets emits 4 different signals, depending on users interaction with the draggable bar. We'll add a callback function for each of them.</p>
 <p><code> "clicked" signal </code>:</p>
-<p>Callback function that just print "Clicked" to stdin:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Also, add callback function to the panes: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Callback function that just print "Clicked" to stdin:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_clicked_double(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keyword">static</span> <span class="keywordtype">double</span> size = 0.0;
+   <span class="keywordtype">double</span> tmp_size = 0.0;
+
+   tmp_size = elm_panes_content_left_size_get(obj);
+   <span class="keywordflow">if</span> (tmp_size &gt; 0)
+     {
+        elm_panes_content_left_size_set(obj, 0.0);
+        printf(<span class="stringliteral">&quot;Double clicked, hidding.\n&quot;</span>);
+     }
+</pre></div></p>
+<p>Also, add callback function to the panes: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(panes, <span class="stringliteral">&quot;clicked&quot;</span>, _clicked, panes);
+</pre></div></p>
 <p><code> "press" signal </code>:</p>
-<p>Callback function that just print "Pressed" to stdin:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Also, add callback function to the panes: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Callback function that just print "Pressed" to stdin:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_unpress(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Unpressed, size : %f\n&quot;</span>, elm_panes_content_left_size_get(obj));
+}
+</pre></div></p>
+<p>Also, add callback function to the panes: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(panes, <span class="stringliteral">&quot;press&quot;</span>, _press, panes);
+</pre></div></p>
 <p>Now, let's try to make our callback functions a bit more useful:</p>
 <p><code> "unpress" signal </code>:</p>
-<p>Suppose we want to know the size proportion of left content after user drags the bar. We need to listen to <code>unpress</code> signal, and get this size from our panes widget. It's done on the following function:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Adding the callback function to the panes: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Suppose we want to know the size proportion of left content after user drags the bar. We need to listen for <code>unpress</code> signal, and get this size from our panes widget. It's done on the following function:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_clicked(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Clicked\n&quot;</span>);
+}
+</pre></div></p>
+<p>Adding the callback function to the panes: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(panes, <span class="stringliteral">&quot;unpress&quot;</span>, _unpress, panes);
+</pre></div></p>
 <p><code> "clicked,double" signal </code>:</p>
-<p>Now, a interesting feature that could be addded to panes widget. Hide a content when user double click the draggable bar. It's done using a variable to store size and content left size getter and setter on the following function:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Now, a interesting feature that could be addded to panes widget. Hide a content when user double click the draggable bar. It's done using a variable to store size and content left size getter and setter on the following function:  <div class="fragment"><pre class="fragment">   <span class="keyword">static</span> <span class="keywordtype">double</span> size = 0.0;
+</pre></div></p>
 <p>Adding the callback function to the panes: <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>See the full <a class="el" href="panes_example_8c-example.html">example</a>, whose window should look like this picture:</p>
 <div class="image">

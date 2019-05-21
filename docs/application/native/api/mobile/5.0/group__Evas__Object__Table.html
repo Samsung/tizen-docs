@@ -108,6 +108,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>How to pack items into cells in a table. </p>
 <p>See evas_object_table_homogeneous_get for an explanation of the function of each one. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggae2a3aabdd694d590b2fcd2c05ba3132ba0ac96c45579c6e26360b015c179c6ea3"></a><!-- doxytag: member="EVAS_OBJECT_TABLE_HOMOGENEOUS_NONE" ref="ggae2a3aabdd694d590b2fcd2c05ba3132ba0ac96c45579c6e26360b015c179c6ea3" args="" -->EVAS_OBJECT_TABLE_HOMOGENEOUS_NONE</em>&nbsp;</td><td>
+<p>No mode specified </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggae2a3aabdd694d590b2fcd2c05ba3132ba950cae2944e39bbcdf6c42b23276dd46"></a><!-- doxytag: member="EVAS_OBJECT_TABLE_HOMOGENEOUS_TABLE" ref="ggae2a3aabdd694d590b2fcd2c05ba3132ba950cae2944e39bbcdf6c42b23276dd46" args="" -->EVAS_OBJECT_TABLE_HOMOGENEOUS_TABLE</em>&nbsp;</td><td>
+<p>Table mode </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggae2a3aabdd694d590b2fcd2c05ba3132bab43a89db07286f713e3fef764146dc21"></a><!-- doxytag: member="EVAS_OBJECT_TABLE_HOMOGENEOUS_ITEM" ref="ggae2a3aabdd694d590b2fcd2c05ba3132bab43a89db07286f713e3fef764146dc21" args="" -->EVAS_OBJECT_TABLE_HOMOGENEOUS_ITEM</em>&nbsp;</td><td>
+<p>Item mode </p>
+</td></tr>
+</table>
+</dd>
+</dl>
 
 </div>
 </div>
@@ -130,36 +143,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Create a new table. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">evas</td><td>Canvas in which table will be added.</td></tr>
+    <tr><td class="paramname">evas</td><td>Canvas in which table will be added. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-table_8c-example.html#a13">evas-table.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-table_8c-example.html#a12">evas-table.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gaeb4a9d107dde8a4c7bc60d6f97b5ec46"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_table_child_get" ref="gaeb4a9d107dde8a4c7bc60d6f97b5ec46" args="(const Evas_Object *o, unsigned short col, unsigned short row)" -->
+<a class="anchor" id="ga79f6173b92f2603a999ff61837f2a4af"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_table_mirrored_get" ref="ga79f6173b92f2603a999ff61837f2a4af" args="(const Eo *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Evas__Object__Table.html#gaeb4a9d107dde8a4c7bc60d6f97b5ec46">evas_object_table_child_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Table.html#ga79f6173b92f2603a999ff61837f2a4af">evas_object_table_mirrored_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>o</em>, </td>
+          <td class="paramtype">const Eo *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Control the mirrored mode of the table. In mirrored mode, the table items go from right to left instead of left to right. That is, 1,1 is top right, not top left. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if mirrored, <code>false</code> otherwise</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabf488e94e791041e159d62fcf4d8f242"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_table_mirrored_set" ref="gabf488e94e791041e159d62fcf4d8f242" args="(Eo *obj, Eina_Bool mirrored)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Table.html#gabf488e94e791041e159d62fcf4d8f242">evas_object_table_mirrored_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eo *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned short&#160;</td>
-          <td class="paramname"><em>col</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned short&#160;</td>
-          <td class="paramname"><em>row</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>mirrored</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -169,8 +204,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Get the child of the table at the given coordinates</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This does not take into account col/row spanning</dd></dl>
+
+<p>Control the mirrored mode of the table. In mirrored mode, the table items go from right to left instead of left to right. That is, 1,1 is top right, not top left. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mirrored</td><td><code>true</code> if mirrored, <code>false</code> otherwise</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>

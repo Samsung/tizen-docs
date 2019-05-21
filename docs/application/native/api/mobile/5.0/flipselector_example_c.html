@@ -90,7 +90,179 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Flipselector example </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="fragment"><pre class="fragment"></pre></div> </div></div><!-- contents -->
+<div class="textblock"><div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
+                              <span class="stringliteral">&quot;commands are:\n&quot;</span>
+                              <span class="stringliteral">&quot;\tn - flip to next item\n&quot;</span>
+                              <span class="stringliteral">&quot;\tp - flip to previous item\n&quot;</span>
+                              <span class="stringliteral">&quot;\tf - print first item&#39;s label\n&quot;</span>
+                              <span class="stringliteral">&quot;\tl - print last item&#39;s label\n&quot;</span>
+                              <span class="stringliteral">&quot;\ts - print selected item&#39;s label\n&quot;</span>
+                              <span class="stringliteral">&quot;\th - print help\n&quot;</span>;
+
+<span class="keywordtype">void</span> <span class="comment">/* unselect the item shown in the flip selector */</span>
+_unsel_cb(<span class="keywordtype">void</span>        *data,
+          <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+          <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fp = data;
+
+   it = <a class="code" href="group__Elm__Flipselector.html#ga53cd0c179a93a7f5cdce51deaf4e8b78" title="Get the currently selected item in a flip selector widget.">elm_flipselector_selected_item_get</a>(fp);
+   elm_flipselector_item_selected_set(it, EINA_FALSE);
+}
+
+<span class="keywordtype">void</span> <span class="comment">/* delete the item shown in the flip selector */</span>
+_del_cb(<span class="keywordtype">void</span>        *data,
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+        <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fp = data;
+
+   it = <a class="code" href="group__Elm__Flipselector.html#ga53cd0c179a93a7f5cdce51deaf4e8b78" title="Get the currently selected item in a flip selector widget.">elm_flipselector_selected_item_get</a>(fp);
+   <span class="keywordflow">if</span> (it) <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(it);
+}
+
+<span class="keywordtype">void</span> <span class="comment">/* underflow callback */</span>
+_underflow_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+              <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Underflow!\n&quot;</span>);
+}
+
+<span class="keywordtype">void</span> <span class="comment">/* overflow callback */</span>
+_overflow_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+             <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+             <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Overflow!\n&quot;</span>);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_on_keydown(<span class="keywordtype">void</span>              *data,
+            <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>       *<span class="keywordtype">object</span> EINA_UNUSED,
+            <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>       *src EINA_UNUSED,
+            Evas_Callback_Type type,
+            <span class="keywordtype">void</span>              *event_info)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fs = data;
+   <a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *ev = event_info;
+
+   <span class="keywordflow">if</span> (type != EVAS_CALLBACK_KEY_DOWN) <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+
+   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a01909378c9e67734aa0e6ce2b603ad2c">keyname</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>
+     {
+        printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a01909378c9e67734aa0e6ce2b603ad2c">keyname</a>, <span class="stringliteral">&quot;n&quot;</span>) == 0) <span class="comment">/* flip to next item */</span>
+     {
+        <a class="code" href="group__Elm__Flipselector.html#ga2973625aed5c7c100995752549266c50" title="Programmatically select the next item of a flip selector widget.">elm_flipselector_flip_next</a>(fs);
+
+        printf(<span class="stringliteral">&quot;Flipping to next item\n&quot;</span>);
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a01909378c9e67734aa0e6ce2b603ad2c">keyname</a>, <span class="stringliteral">&quot;p&quot;</span>) == 0) <span class="comment">/* flip to previous item */</span>
+     {
+        <a class="code" href="group__Elm__Flipselector.html#gaf15ec628ff7ef1af149f175cfb4ba817" title="Programmatically select the previous item of a flip selector widget.">elm_flipselector_flip_prev</a>(fs);
+
+        printf(<span class="stringliteral">&quot;Flipping to previous item\n&quot;</span>);
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a01909378c9e67734aa0e6ce2b603ad2c">keyname</a>, <span class="stringliteral">&quot;f&quot;</span>) == 0) <span class="comment">/* print first item&#39;s label */</span>
+     {
+        <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+
+        it = <a class="code" href="group__Elm__Flipselector.html#gab7d83fdcb543d83abb616b2a2454447f" title="Get the first item in the given flip selector widget&#39;s list of items.">elm_flipselector_first_item_get</a>(fs);
+
+        printf(<span class="stringliteral">&quot;Flip selector&#39;s first item is: %s\n&quot;</span>, it ?
+                elm_object_item_text_get(it) : <span class="stringliteral">&quot;none&quot;</span>);
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a01909378c9e67734aa0e6ce2b603ad2c">keyname</a>, <span class="stringliteral">&quot;l&quot;</span>) == 0) <span class="comment">/* print last item&#39;s label */</span>
+     {
+        <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+
+        it = <a class="code" href="group__Elm__Flipselector.html#ga85f6a5d139784e71067eec43eca847ef" title="Get the last item in the given flip selector widget&#39;s list of items.">elm_flipselector_last_item_get</a>(fs);
+
+        printf(<span class="stringliteral">&quot;Flip selector&#39;s last item is: %s\n&quot;</span>, it ?
+                elm_object_item_text_get(it) : <span class="stringliteral">&quot;none&quot;</span>);
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a01909378c9e67734aa0e6ce2b603ad2c">keyname</a>, <span class="stringliteral">&quot;s&quot;</span>) == 0) <span class="comment">/* print selected item&#39;s label */</span>
+     {
+        <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+
+        it = <a class="code" href="group__Elm__Flipselector.html#ga53cd0c179a93a7f5cdce51deaf4e8b78" title="Get the currently selected item in a flip selector widget.">elm_flipselector_selected_item_get</a>(fs);
+
+        printf(<span class="stringliteral">&quot;Flip selector&#39;s selected item is: %s\n&quot;</span>, it ?
+                elm_object_item_text_get(it) : <span class="stringliteral">&quot;none&quot;</span>);
+     }
+   <span class="keywordflow">else</span>
+     <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+
+   ev-&gt;event_flags |= EVAS_EVENT_FLAG_ON_HOLD;
+   <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bx, *fp, *bt;
+   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *lbl[] =
+     {
+        <span class="stringliteral">&quot;Elementary&quot;</span>,
+        <span class="stringliteral">&quot;Evas&quot;</span>,
+        <span class="stringliteral">&quot;Eina&quot;</span>,
+        <span class="stringliteral">&quot;Edje&quot;</span>,
+        <span class="stringliteral">&quot;Eet&quot;</span>,
+        <span class="stringliteral">&quot;Ecore&quot;</span>,
+        <span class="stringliteral">&quot;Efreet&quot;</span>,
+        <span class="stringliteral">&quot;Eldbus&quot;</span>
+     };
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;flipselector&quot;</span>, <span class="stringliteral">&quot;Flip Selector Example&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+
+   fp = <a class="code" href="group__Elm__Flipselector.html#gaffabf9e37915526cbbe8ac2621eeee8a">elm_flipselector_add</a>(win);
+   evas_object_size_hint_weight_set(fp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;underflowed&quot;</span>, _overflow_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;overflowed&quot;</span>, _underflow_cb, NULL);
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     <a class="code" href="group__Elm__Flipselector.html#gab85bb0c578cb1a81ed387ad8094387c9" title="Append a (text) item to a flip selector widget.">elm_flipselector_item_append</a>(fp, lbl[i], NULL, NULL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, fp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fp);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Unselect item&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _unsel_cb, fp);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Delete item&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _del_cb, fp);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   <a class="code" href="group__Elm__General.html#gae2d2f3ef544f5aa59a0d89fbb67584e5">elm_object_event_callback_add</a>(win, _on_keydown, fp);
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

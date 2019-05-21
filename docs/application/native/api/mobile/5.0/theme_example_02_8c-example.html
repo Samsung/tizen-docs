@@ -90,7 +90,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">theme_example_02.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">/*</span>
+<span class="comment"> * gcc -o theme_example_02 theme_example_02.c `pkg-config --cflags --libs elementary`</span>
+<span class="comment"> */</span>
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keywordtype">char</span> edj_path[PATH_MAX];
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_clicked_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <span class="keyword">static</span> <span class="keywordtype">int</span> loaded = 1;
+   <span class="keywordflow">if</span> (loaded)
+     <a name="a1"></a><a class="code" href="group__Elm__Theme.html#ga100c2a0f541686f3272cc6009aae5864">elm_theme_overlay_del</a>(NULL, edj_path);
+   <span class="keywordflow">else</span>
+     <a name="a2"></a><a class="code" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add</a>(NULL, edj_path);
+   loaded = 1 - loaded;
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *box, *btn;
+
+   <a name="a3"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+<span class="preprocessor">#ifdef PACKAGE_DATA_DIR</span>
+<span class="preprocessor"></span>   <a name="a4"></a><a class="code" href="group__Elm__App.html#ga4e875d27efb02b4c425619957c0ae7c7">elm_app_compile_data_dir_set</a>(PACKAGE_DATA_DIR);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>   <span class="keywordflow">if</span> (<a name="a5"></a><a class="code" href="group__Ecore__File__Group.html#ga34d2aa9536a10e43944794f756a1f964" title="Checks if the given file exists.">ecore_file_exists</a>(<span class="stringliteral">&quot;./theme_example.edj&quot;</span>))
+     {
+        strcpy(edj_path, <span class="stringliteral">&quot;./theme_example.edj&quot;</span>);
+     }
+   <span class="keywordflow">else</span>
+     {
+        <a name="a6"></a><a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;examples/theme_example.edj&quot;</span>);
+        snprintf(edj_path, <span class="keyword">sizeof</span>(edj_path), <span class="stringliteral">&quot;%s/examples/theme_example.edj&quot;</span>,
+                 <a name="a7"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+     }
+   <a class="code" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add</a>(NULL, edj_path);
+
+   win = <a name="a8"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;theme&quot;</span>, <span class="stringliteral">&quot;Theme example&quot;</span>);
+   <a name="a9"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a10"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   box = <a name="a11"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a12"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   btn = <a name="a14"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Button 1&quot;</span>);
+   <a name="a15"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+   <a name="a16"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clicked_cb, NULL);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Button 2&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clicked_cb, NULL);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Button 3&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clicked_cb, NULL);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Button 4&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clicked_cb, NULL);
+
+   evas_object_resize(win, 300, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a17"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a18"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

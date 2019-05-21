@@ -91,14 +91,115 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This application is a thorough exercise on the gengrid widget's API. We place an Elementary gengrid widget on a window, with various knobs below its viewport, each one acting on it somehow.</p>
-<p>The code's relevant part begins at the grid's creation. After instantiating it, we set its items sizes, so that we don't end with items one finger size wide, only. We're setting them to fat, 150 pixel wide ones, for this example. We give it some size hints, not to be discussed in this context and, than, we register a callback on one of its smart events -- the one coming each time an item gets doubly clicked. There, we just print the item handle's value.  <div class="fragment"><pre class="fragment"></pre></div>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Before we actually start to deal with the items API, let's show some things items will be using throughout all the code. The first of them is a struct to be used as item data, for all of them:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>That path will be used to index an image, to be swallowed into one of the item's icon spots. The images themselves are distributed with Elementary:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We also have an (unique) gengrid item class we'll be using for items in the example:  <div class="fragment"><pre class="fragment"></pre></div>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>As you see, our items will follow the default theme on gengrid items. For the label fetching code, we return a string composed of the item's image path:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>For item icons, we'll be populating the item default theme's two icon spots, <code>"elm.swallow.icon"</code> and <code>"elm.swallow.end"</code>. The former will receive one of the images in our list (in the form of a <a class="el" href="bg_02_example_page.html">background</a>), while the latter will be a check widget. Note that we prevent the check to propagate click events, so that the user can toggle its state without messing with the respective item's selection in the grid:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>As the default gengrid item's theme does not have parts implementing item states, we'll be just returning false for every item state:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Finally, the deletion callback on gengrid items takes care of freeing the item's label string and its data struct:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The code's relevant part begins at the grid's creation. After instantiating it, we set its items sizes, so that we don't end with items one finger size wide, only. We're setting them to fat, 150 pixel wide ones, for this example. We give it some size hints, not to be discussed in this context and, than, we register a callback on one of its smart events -- the one coming each time an item gets doubly clicked. There, we just print the item handle's value.  <div class="fragment"><pre class="fragment">   grid = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, grid);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;clicked,double&quot;</span>, _double_click, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(grid, <span class="stringliteral">&quot;longpressed&quot;</span>, _long_pressed, NULL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(grid);
+</pre></div>  <div class="fragment"><pre class="fragment"><span class="comment">/* item double click callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_double_click(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+              <span class="keywordtype">void</span>        *event_info)
+{
+   printf(<span class="stringliteral">&quot;Double click on item with handle %p\n&quot;</span>, event_info);
+}
+</pre></div></p>
+<p>Before we actually start to deal with the items API, let's show some things items will be using throughout all the code. The first of them is a struct to be used as item data, for all of them:  <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct </span>_Example_Item
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *path;
+} Example_Item;
+</pre></div></p>
+<p>That path will be used to index an image, to be swallowed into one of the item's icon spots. The images themselves are distributed with Elementary:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *imgs[9] =
+{
+   <span class="stringliteral">&quot;panel_01.jpg&quot;</span>,
+   <span class="stringliteral">&quot;plant_01.jpg&quot;</span>,
+   <span class="stringliteral">&quot;rock_01.jpg&quot;</span>,
+   <span class="stringliteral">&quot;rock_02.jpg&quot;</span>,
+   <span class="stringliteral">&quot;sky_01.jpg&quot;</span>,
+   <span class="stringliteral">&quot;sky_02.jpg&quot;</span>,
+   <span class="stringliteral">&quot;sky_03.jpg&quot;</span>,
+   <span class="stringliteral">&quot;sky_04.jpg&quot;</span>,
+   <span class="stringliteral">&quot;wood_01.jpg&quot;</span>,
+};
+</pre></div></p>
+<p>We also have an (unique) gengrid item class we'll be using for items in the example:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="struct__Elm__Gen__Item__Class.html">Elm_Gengrid_Item_Class</a> *gic = NULL;
+</pre></div>  <div class="fragment"><pre class="fragment">        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
+        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _grid_label_get;
+        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _grid_content_get;
+        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = _grid_state_get;
+        gic-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = _grid_del;
+</pre></div></p>
+<p>As you see, our items will follow the default theme on gengrid items. For the label fetching code, we return a string composed of the item's image path:  <div class="fragment"><pre class="fragment"><span class="comment">/* label fetching callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">char</span> *
+_grid_label_get(<span class="keywordtype">void</span>        *data,
+                <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                <span class="keyword">const</span> <span class="keywordtype">char</span>  *part EINA_UNUSED)
+{
+   <span class="keyword">const</span> Example_Item *it = data;
+   <span class="keywordtype">char</span> buf[256];
+
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Photo %s&quot;</span>, it-&gt;path);
+   <span class="keywordflow">return</span> strdup(buf);
+}
+</pre></div></p>
+<p>For item icons, we'll be populating the item default theme's two icon spots, <code>"elm.swallow.icon"</code> and <code>"elm.swallow.end"</code>. The former will receive one of the images in our list (in the form of a <a class="el" href="bg_02_example_page.html">background</a>), while the latter will be a check widget. Note that we prevent the check to propagate click events, so that the user can toggle its state without messing with the respective item's selection in the grid:  <div class="fragment"><pre class="fragment"><span class="comment">/* icon fetching callback */</span>
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_grid_content_get(<span class="keywordtype">void</span>        *data,
+                  <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                  <span class="keyword">const</span> <span class="keywordtype">char</span>  *part)
+{
+   <span class="keyword">const</span> Example_Item *it = data;
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     {
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon = <a class="code" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add</a>(obj);
+        <span class="keywordtype">char</span> buf[PATH_MAX];
+
+        snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/%s&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>(),
+                 it-&gt;path);
+
+        <a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(icon, buf, NULL);
+        evas_object_size_hint_aspect_set(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
+                                         1);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
+        <span class="keywordflow">return</span> icon;
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.end&quot;</span>))
+     {
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ck;
+        ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(obj);
+        evas_object_propagate_events_set(ck, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+        <span class="keywordflow">return</span> ck;
+     }
+
+   <span class="keywordflow">return</span> NULL;
+}
+</pre></div></p>
+<p>As the default gengrid item's theme does not have parts implementing item states, we'll be just returning false for every item state:  <div class="fragment"><pre class="fragment"><span class="comment">/* state fetching callback */</span>
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_grid_state_get(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+                <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                <span class="keyword">const</span> <span class="keywordtype">char</span>  *part EINA_UNUSED)
+{
+   <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+}
+</pre></div></p>
+<p>Finally, the deletion callback on gengrid items takes care of freeing the item's label string and its data struct:  <div class="fragment"><pre class="fragment"><span class="comment">/* deletion callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_grid_del(<span class="keywordtype">void</span>        *data,
+          <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED)
+{
+   Example_Item *it = data;
+
+   <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(it-&gt;path);
+   free(it);
+}
+</pre></div></p>
 <p>Let's move to item insertion/deletion knobs, them. They are four buttons, above the grid's viewport, namely</p>
 <ul>
 <li>"Append" (to append an item to the grid),</li>
@@ -109,30 +210,252 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>"Bring in 1st" (to make the 1st item visible, by scrolling),</li>
 <li>"Show last" (to directly show the last item),</li>
 </ul>
-<p>which are displaced and declared in that order. We're not dealing with the buttons' creation code (see <a class="el" href="button_example_01.html">a button example</a>, for more details on it), but with their <code>"clicked"</code> registered callbacks. For all of them, the grid's handle is passed as <code>data</code>. The ones creating new items use a common code, which just gives a new <code>Example_Item</code> struct, with <code>path</code> filled with a random image in our images list:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Moreover, that ones will set a common function to be issued on the selection of the items. There, we print the item handle's value, along with the callback function data. The latter will be <code>NULL</code>, always, because it's what we pass when adding all icons. By using <a class="el" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get()</a>, we can have the item data back and, with that, we're priting the item's path string. Finally, we exemplify elm_gengrid_item_pos_get(), printing the item's position in the grid:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The appending button will exercise elm_gengrid_item_append(), simply:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The prepending, naturally, is analogous, but exercising elm_gengrid_item_prepend(), on its turn. The "Insert before" one will expect an item to be selected in the grid, so that it will insert a new item just before it:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The "Insert after" is analogous, just using elm_gengrid_item_insert_after(), instead. The "Clear" button will, as expected, just issue elm_gengrid_clear():  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The "Bring in 1st" button is there exercise two gengrid functions -- elm_gengrid_first_item_get() and elm_gengrid_item_bring_in(). With the former, we get a handle to the first item and, with the latter, you'll see that the widget animatedly scrolls its view until we can see that item:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The "Show last", in its turn, will use elm_gengrid_last_item_get() and elm_gengrid_item_show(). The latter differs from elm_gengrid_item_bring_in() in that it immediately replaces the contents of the grid's viewport with the region containing the item in question:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To change the grid's cell (items) size, we've placed a spinner, which has the following <code>"changed"</code> smart callback:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>which are displaced and declared in that order. We're not dealing with the buttons' creation code (see <a class="el" href="button_example_01.html">a button example</a>, for more details on it), but with their <code>"clicked"</code> registered callbacks. For all of them, the grid's handle is passed as <code>data</code>. The ones creating new items use a common code, which just gives a new <code>Example_Item</code> struct, with <code>path</code> filled with a random image in our images list:  <div class="fragment"><pre class="fragment"><span class="comment">/* new item with random path */</span>
+<span class="keyword">static</span> Example_Item *
+_item_new(<span class="keywordtype">void</span>)
+{
+   Example_Item *it;
+
+   it = malloc(<span class="keyword">sizeof</span>(*it));
+   it-&gt;path = <a class="code" href="group__Eina__Stringshare__Group.html#ga5293082680141132ffcacc28866ef0ef" title="Retrieves an instance of a string for use in a program.">eina_stringshare_add</a>(imgs[rand() % (<span class="keyword">sizeof</span>(imgs) /
+                                                  <span class="keyword">sizeof</span>(imgs[0]))]);
+   <span class="keywordflow">return</span> it;
+}
+</pre></div></p>
+<p>Moreover, that ones will set a common function to be issued on the selection of the items. There, we print the item handle's value, along with the callback function data. The latter will be <code>NULL</code>, always, because it's what we pass when adding all icons. By using <a class="el" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get()</a>, we can have the item data back and, with that, we're priting the item's path string. Finally, we exemplify <a class="el" href="group__Elm__Gengrid.html#gaca9e06b8d918dc034072efac9d32638e">elm_gengrid_item_pos_get()</a>, printing the item's position in the grid:  <div class="fragment"><pre class="fragment"><span class="comment">/* item selection callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_grid_sel(<span class="keywordtype">void</span>        *data,
+          <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+          <span class="keywordtype">void</span>        *event_info)
+{
+   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> x, y;
+   Example_Item *it = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(event_info);
+
+   <a class="code" href="group__Elm__Gengrid.html#gaca9e06b8d918dc034072efac9d32638e">elm_gengrid_item_pos_get</a>(event_info, &amp;x, &amp;y);
+
+   printf(<span class="stringliteral">&quot;Item [%p], with data [%p], path %s, at position (%u, %u),&quot;</span>
+           <span class="stringliteral">&quot; has been selected\n&quot;</span>, event_info, data, it-&gt;path, x, y);
+}
+</pre></div></p>
+<p>The appending button will exercise <a class="el" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append()</a>, simply:  <div class="fragment"><pre class="fragment"><span class="comment">/* append an item */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_append_bt_clicked(<span class="keywordtype">void</span>        *data,
+                   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                   <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+   Example_Item *it = _item_new();
+
+   <a class="code" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append</a>(grid, gic, it, _grid_sel, NULL);
+}
+</pre></div></p>
+<p>The prepending, naturally, is analogous, but exercising <a class="el" href="group__Elm__Gengrid.html#ga55b7e532d77c76c34c4ed5eb16a2c70e" title="Prepend a new item in a given gengrid widget.">elm_gengrid_item_prepend()</a>, on its turn. The "Insert before" one will expect an item to be selected in the grid, so that it will insert a new item just before it:  <div class="fragment"><pre class="fragment"><span class="comment">/* &quot;insert before&quot; callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_before_bt_clicked(<span class="keywordtype">void</span>        *data,
+                   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                   <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   Example_Item *it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *sel;
+
+   sel = <a class="code" href="group__Elm__Gengrid.html#ga63c9ba21ffd124ef645250165cca12ea" title="Get the selected item in a given gengrid widget.">elm_gengrid_selected_item_get</a>(grid);
+   <span class="keywordflow">if</span> (!sel)
+     <span class="keywordflow">return</span>;
+
+   it = _item_new();
+   <a class="code" href="group__Elm__Gengrid.html#gaa6ba5f70bb5f2d90234a85a0e7c3c948" title="Insert an item before another in a gengrid widget.">elm_gengrid_item_insert_before</a>(grid, gic, it, sel, _grid_sel, NULL);
+}
+</pre></div></p>
+<p>The "Insert after" is analogous, just using <a class="el" href="group__Elm__Gengrid.html#ga2a11a6099f8f6d9b24c5845a6c571a47" title="Insert an item after another in a gengrid widget.">elm_gengrid_item_insert_after()</a>, instead. The "Clear" button will, as expected, just issue <a class="el" href="group__Elm__Gengrid.html#gaeddd05025a024895cab48060ca9d650e" title="Remove all items from a given gengrid widget.">elm_gengrid_clear()</a>:  <div class="fragment"><pre class="fragment"><span class="comment">/* delete items */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_clear_cb(<span class="keywordtype">void</span>        *data,
+          <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+          <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Gengrid.html#gaeddd05025a024895cab48060ca9d650e" title="Remove all items from a given gengrid widget.">elm_gengrid_clear</a>(data);
+
+   printf(<span class="stringliteral">&quot;Clearing the grid!\n&quot;</span>);
+}
+</pre></div></p>
+<p>The "Bring in 1st" button is there exercise two gengrid functions -- <a class="el" href="group__Elm__Gengrid.html#gaea947e06bb5e191da241d46a517aa94b" title="Get the first item in a given gengrid widget.">elm_gengrid_first_item_get()</a> and elm_gengrid_item_bring_in(). With the former, we get a handle to the first item and, with the latter, you'll see that the widget animatedly scrolls its view until we can see that item:  <div class="fragment"><pre class="fragment"><span class="comment">/* bring in 1st item */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bring_1st_clicked(<span class="keywordtype">void</span>        *data,
+                   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                   <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *gg_it = <a class="code" href="group__Elm__Gengrid.html#gaea947e06bb5e191da241d46a517aa94b" title="Get the first item in a given gengrid widget.">elm_gengrid_first_item_get</a>(data);
+
+   <span class="keywordflow">if</span> (!gg_it) <span class="keywordflow">return</span>;
+
+   elm_gengrid_item_bring_in(gg_it, ELM_GENGRID_ITEM_SCROLLTO_IN);
+}
+</pre></div></p>
+<p>The "Show last", in its turn, will use <a class="el" href="group__Elm__Gengrid.html#ga6096f8d90a13de0f52879fd3efc2a3ee" title="Get the last item in a given gengrid widget.">elm_gengrid_last_item_get()</a> and elm_gengrid_item_show(). The latter differs from elm_gengrid_item_bring_in() in that it immediately replaces the contents of the grid's viewport with the region containing the item in question:  <div class="fragment"><pre class="fragment"><span class="comment">/* show last item */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_show_last_clicked(<span class="keywordtype">void</span>        *data,
+                   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                   <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *gg_it = <a class="code" href="group__Elm__Gengrid.html#ga6096f8d90a13de0f52879fd3efc2a3ee" title="Get the last item in a given gengrid widget.">elm_gengrid_last_item_get</a>(data);
+
+   <span class="keywordflow">if</span> (!gg_it) <span class="keywordflow">return</span>;
+
+   elm_gengrid_item_show(gg_it, ELM_GENGRID_ITEM_SCROLLTO_IN);
+}
+</pre></div></p>
+<p>To change the grid's cell (items) size, we've placed a spinner, which has the following <code>"changed"</code> smart callback:  <div class="fragment"><pre class="fragment"><span class="comment">/* change items&#39; size */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_size_changed(<span class="keywordtype">void</span>        *data,
+              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+              <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+   <span class="keywordtype">int</span> size = <a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj);
+
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, size, size);
+}
+</pre></div></p>
 <p>Experiment with it and see how the items are affected. The "Disable
- item" button will, as the name says, disable the currently selected item:  <div class="fragment"><pre class="fragment"></pre></div> Note that we also make use of elm_gengrid_item_selected_set(), there, thus making the item unselected before we actually disable it.</p>
-<p>To toggle between horizontal and vertical layouting modes on the grid, use the "Horizontal mode" check, which will call the respective API function on the grid:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>If you toggle the check right after that one, "Always select", you'll notice all subsequent clicks on the <b>same</b> grid item will still issue the selection callback on it, what is different from when it's not checked. This is the elm_gengrid_select_mode_set() behavior:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>One more check follows, "Bouncing", which will turn on/off the bouncing animations on the grid, when one scrolls past its borders. Experiment with scrolling the grid to get the idea, having it turned on and off:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The next two checks will affect items selection on the grid. The first, "Multi-selection", will make it possible to select more the one item on the grid. Because it wouldn't make sense to fetch for an unique selected item on this case, we also disable two of the buttons, which insert items relatively, if multi-selection is on:  <div class="fragment"><pre class="fragment"></pre></div></p>
+ item" button will, as the name says, disable the currently selected item:  <div class="fragment"><pre class="fragment"><span class="comment">/* disable selected item */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_toggle_disabled_cb(<span class="keywordtype">void</span>        *data,
+                    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                    <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *gg_it = <a class="code" href="group__Elm__Gengrid.html#ga63c9ba21ffd124ef645250165cca12ea" title="Get the selected item in a given gengrid widget.">elm_gengrid_selected_item_get</a>(data);
+
+   <span class="keywordflow">if</span> (!gg_it) <span class="keywordflow">return</span>;
+
+   elm_gengrid_item_selected_set(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+</pre></div> Note that we also make use of elm_gengrid_item_selected_set(), there, thus making the item unselected before we actually disable it.</p>
+<p>To toggle between horizontal and vertical layouting modes on the grid, use the "Horizontal mode" check, which will call the respective API function on the grid:  <div class="fragment"><pre class="fragment"><span class="comment">/* change layouting mode */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_horizontal_grid(<span class="keywordtype">void</span>        *data,
+                 <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                 <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+
+   <a class="code" href="group__Elm__Gengrid.html#gabaf4b5619ff307173b9403b525851659" title="Set the gengrid multi select mode.">elm_gengrid_horizontal_set</a>(grid, <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj));
+}
+</pre></div></p>
+<p>If you toggle the check right after that one, "Always select", you'll notice all subsequent clicks on the <b>same</b> grid item will still issue the selection callback on it, what is different from when it's not checked. This is the <a class="el" href="group__Elm__Gengrid.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set()</a> behavior:  <div class="fragment"><pre class="fragment"><span class="comment">/* &quot;always select&quot; callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_always_select_change(<span class="keywordtype">void</span>        *data,
+                      <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                      <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> always = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
+
+   <span class="keywordflow">if</span> (always)
+     <a class="code" href="group__Elm__Gengrid.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, ELM_OBJECT_SELECT_MODE_ALWAYS);
+   <span class="keywordflow">else</span>
+     <a class="code" href="group__Elm__Gengrid.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, ELM_OBJECT_SELECT_MODE_DEFAULT);
+
+   printf(<span class="stringliteral">&quot;\&quot;Always select\&quot; mode for gengrid items is now %s\n&quot;</span>,
+           always ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);
+}
+</pre></div></p>
+<p>One more check follows, "Bouncing", which will turn on/off the bouncing animations on the grid, when one scrolls past its borders. Experiment with scrolling the grid to get the idea, having it turned on and off:  <div class="fragment"><pre class="fragment"><span class="comment">/* &quot;bouncing mode&quot; callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bouncing_change(<span class="keywordtype">void</span>        *data,
+                 <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                 <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> bounce = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
+
+   <a class="code" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(grid, bounce, bounce);
+
+   printf(<span class="stringliteral">&quot;Bouncing effect for gengrid is now %s\n&quot;</span>,
+           bounce ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);
+}
+</pre></div></p>
+<p>The next two checks will affect items selection on the grid. The first, "Multi-selection", will make it possible to select more the one item on the grid. Because it wouldn't make sense to fetch for an unique selected item on this case, we also disable two of the buttons, which insert items relatively, if multi-selection is on:  <div class="fragment"><pre class="fragment"><span class="comment">/* multi-selection callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_multi_change(<span class="keywordtype">void</span>        *data,
+              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+              <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> multi = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
+
+   <a class="code" href="group__Elm__Gengrid.html#ga3c0ea3e1cf60979a75729c5866932322" title="Enable or disable multi-selection in a given gengrid widget.">elm_gengrid_multi_select_set</a>(grid, multi);
+
+   printf(<span class="stringliteral">&quot;Multi-selection for gengrid is now %s\n&quot;</span>,
+           multi ? <span class="stringliteral">&quot;on&quot;</span> : <span class="stringliteral">&quot;off&quot;</span>);
+
+   <a class="code" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a>(before_bt, multi);
+   <a class="code" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a>(after_bt, multi);
+
+   <span class="keywordflow">if</span> (!multi)
+     {
+        <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *gg_it;
+        <span class="keyword">const</span> <a class="code" href="struct__Eina__List.html">Eina_List</a> *selected = <a class="code" href="group__Elm__Gengrid.html#gaa0a25bf5c1fe6b0699dd0c3365af6ed0" title="Get a list of selected items in a given gengrid.">elm_gengrid_selected_items_get</a>(grid), *l;
+        <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(selected, l, gg_it)
+           elm_gengrid_item_selected_set(gg_it, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+     }
+</pre></div></p>
 <p>Note that we also <b>unselect</b> all items in the grid, when returning from multi-selection mode, making use of elm_gengrid_item_selected_set().</p>
-<p>The second check acting on selection, "No selection", is just what its name depicts -- no selection will be allowed anymore, on the grid, while it's on. Check it out for yourself, interacting with the program:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We have, finally, one more line of knobs, now sliders, to change the grids behavior. The two first will change the horizontal <b>alignment</b> of the whole actual grid of items within the gengrid's viewport:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Naturally, the vertical counterpart just issues elm_gengrid_align_set() changing the second alignment component, instead.</p>
-<p>The last slider will change the grid's <b>page size</b>, relative to its own one. Try to change those values and, one manner of observing the paging behavior, is to scroll softly and release the mouse button, with different page sizes, at different grid positions, while having lots of items in it -- you'll see it snapping to page boundaries differenty, for each configuration:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The second check acting on selection, "No selection", is just what its name depicts -- no selection will be allowed anymore, on the grid, while it's on. Check it out for yourself, interacting with the program:  <div class="fragment"><pre class="fragment"><span class="comment">/* no selection callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_no_sel_change(<span class="keywordtype">void</span>        *data,
+               <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+               <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *grid = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> no_sel = <a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj);
+
+   <span class="keywordflow">if</span> (no_sel)
+     <a class="code" href="group__Elm__Gengrid.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, ELM_OBJECT_SELECT_MODE_NONE);
+   <span class="keywordflow">else</span>
+     <a class="code" href="group__Elm__Gengrid.html#ga8df7786837dd94e2c1b3fc7dcb06d5d6" title="Set the gengrid select mode.">elm_gengrid_select_mode_set</a>(grid, ELM_OBJECT_SELECT_MODE_DEFAULT);
+
+   printf(<span class="stringliteral">&quot;Selection for gengrid items is now %s\n&quot;</span>,
+           no_sel ? <span class="stringliteral">&quot;disabled&quot;</span> : <span class="stringliteral">&quot;enabled&quot;</span>);
+}
+</pre></div></p>
+<p>We have, finally, one more line of knobs, now sliders, to change the grids behavior. The two first will change the horizontal <b>alignment</b> of the whole actual grid of items within the gengrid's viewport:  <div class="fragment"><pre class="fragment"><span class="comment">/* items grid horizontal alignment change */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_h_align_change_cb(<span class="keywordtype">void</span>        *data,
+                   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                   <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <span class="keywordtype">double</span> v_align;
+   <span class="keywordtype">double</span> val = <a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj);
+
+   <a class="code" href="group__Elm__Gengrid.html#ga372a6e82e0ff63ac6126fc1a7c26c152" title="Get the items grid&#39;s alignment values within a given gengrid widget.">elm_gengrid_align_get</a>(data, NULL, &amp;v_align);
+
+   printf(<span class="stringliteral">&quot;Setting horizontal alignment to %f\n&quot;</span>, val);
+   <a class="code" href="group__Elm__Gengrid.html#ga556d81ee6aadef687bbf2edd885671df" title="Set the items grid&#39;s alignment within a given gengrid widget.">elm_gengrid_align_set</a>(data, val, v_align);
+}
+</pre></div></p>
+<p>Naturally, the vertical counterpart just issues <a class="el" href="group__Elm__Gengrid.html#ga556d81ee6aadef687bbf2edd885671df" title="Set the items grid&#39;s alignment within a given gengrid widget.">elm_gengrid_align_set()</a> changing the second alignment component, instead.</p>
+<p>The last slider will change the grid's <b>page size</b>, relative to its own one. Try to change those values and, one manner of observing the paging behavior, is to scroll softly and release the mouse button, with different page sizes, at different grid positions, while having lots of items in it -- you'll see it snapping to page boundaries differenty, for each configuration:  <div class="fragment"><pre class="fragment"><span class="comment">/* page relative size change */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_page_change_cb(<span class="keywordtype">void</span>        *data,
+                <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <span class="keywordtype">double</span> val = <a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj);
+
+   <a class="code" href="group__Elm__Scroller.html#ga3295a1b41dc53d40b6ff5778313eaaa3" title="Set scroll page size relative to viewport size.">elm_scroller_page_relative_set</a>(data, val, val);
+
+   printf(<span class="stringliteral">&quot;Setting grid page&#39;s relative size to %f\n&quot;</span>, val);
+}
+</pre></div></p>
 <p>This is how the example program's window looks like: </p>
 <div class="image">
 <img src="screenshots/gengrid_example.png" alt="gengrid_example.png"/>
 </div>
- <p>Note that it starts with three items which we included at will:  <div class="fragment"><pre class="fragment"></pre></div></p>
+ <p>Note that it starts with three items which we included at will:  <div class="fragment"><pre class="fragment">   _append_bt_clicked(grid, NULL, NULL);
+   _append_bt_clicked(grid, NULL, NULL);
+   _append_bt_clicked(grid, NULL, NULL);
+</pre></div></p>
 <p>See the full <a class="el" href="gengrid_example_c.html">source code</a> for this example. </p>
 </div></div><!-- contents -->
 </div>

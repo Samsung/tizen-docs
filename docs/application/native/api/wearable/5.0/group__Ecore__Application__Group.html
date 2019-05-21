@@ -134,8 +134,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>When called, this function returns the arguments for the program stored by <a class="el" href="group__Ecore__Application__Group.html#ga70bce8ffb6e2dc2c0fdab005d566532e">ecore_app_args_set()</a>. The integer pointed to by <code>argc</code> will be filled, if the pointer is not NULL, and the string array pointer <code>argv</code> will be filled also if the pointer is not NULL. The values they are filled with will be the same set by <a class="el" href="group__Ecore__Application__Group.html#ga70bce8ffb6e2dc2c0fdab005d566532e">ecore_app_args_set()</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>When called, this function returns the arguments for the program stored by <a class="el" href="group__Ecore__Application__Group.html#ga70bce8ffb6e2dc2c0fdab005d566532e">ecore_app_args_set()</a>. The integer pointed to by <code>argc</code> will be filled, if the pointer is not NULL, and the string array pointer <code>argv</code> will be filled also if the pointer is not NULL. The values they are filled with will be the same set by <a class="el" href="group__Ecore__Application__Group.html#ga70bce8ffb6e2dc2c0fdab005d566532e">ecore_app_args_set()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -171,8 +171,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>A call to this function will store the programs command-line arguments for later use by <a class="el" href="group__Ecore__Application__Group.html#ga7ad251bcf12a6816d3078cedc70dd112">ecore_app_restart()</a> or <a class="el" href="group__Ecore__Application__Group.html#ga2e13fe851572f741f63bbe80b8db7684">ecore_app_args_get()</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>A call to this function will store the programs command-line arguments for later use by <a class="el" href="group__Ecore__Application__Group.html#ga7ad251bcf12a6816d3078cedc70dd112">ecore_app_restart()</a> or <a class="el" href="group__Ecore__Application__Group.html#ga2e13fe851572f741f63bbe80b8db7684">ecore_app_args_get()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -195,8 +195,9 @@ Functions</h2></td></tr>
 <p>Ecore will now load platform-specific system modules such as power-management, time and locate monitors.</p>
 <p>Whenever this function is called <b>before</b> <a class="el" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init()</a>, ecore won't load such modules.</p>
 <p>This may be useful to some command-line utilities, hardly will be useful for end-user applications.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>The environment variable ECORE_NO_SYSTEM_MODULES=1 may be used to temporarily disable system modules, often useful for debug.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -215,8 +216,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Restarts the program executable with the command-line arguments stored.</p>
-<p>This function will restart &amp; re-execute this program in place of itself using the command-line arguments stored by <a class="el" href="group__Ecore__Application__Group.html#ga70bce8ffb6e2dc2c0fdab005d566532e">ecore_app_args_set()</a>. This is an easy way for a program to restart itself for cleanup purposes, configuration reasons or in the event of a crash.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function will restart &amp; re-execute this program in place of itself using the command-line arguments stored by <a class="el" href="group__Ecore__Application__Group.html#ga70bce8ffb6e2dc2c0fdab005d566532e">ecore_app_args_set()</a>. This is an easy way for a program to restart itself for cleanup purposes, configuration reasons or in the event of a crash. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

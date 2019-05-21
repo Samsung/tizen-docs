@@ -96,15 +96,138 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="screenshots/button_01.png" alt="button_01.png"/>
 </div>
  <p>The full code of the example is <a class="el" href="button_example_01_8c-example.html">here</a> and we will follow here with a rundown of it.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We have several buttons to set different times for the autorepeat timeouts of the buttons that use it and a few more that we keep track of in our data struct. The mid button doesn't do much, just moves around according to what other buttons the user presses. Then four more buttons to move the central one, and we're also keeping track of the icon set in the middle button, since when this one moves, we change the icon, and when movement is finished (by releasing one of the four arrow buttons), we set back the normal icon. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Keeping any of those four buttons pressed will trigger their autorepeat callback, where we move the button doing some size hint magic. To understand how that works better, refer to the <a class="el" href="group__Elm__Box.html">Box</a> documentation. Also, the first time the function is called, we change the icon in the middle button, using elm_object_content_unset() first to keep the reference to the previous one, so we don't need to recreate it when we are done moving it. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+<span class="keyword">typedef</span> <span class="keyword">struct</span>
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *mid;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon_still;
+   <span class="keyword">struct</span>
+     {
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *up;
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *down;
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *left;
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *right;
+     } cursors;
+} App_Data;
+</pre></div></p>
+<p>We have several buttons to set different times for the autorepeat timeouts of the buttons that use it and a few more that we keep track of in our data struct. The mid button doesn't do much, just moves around according to what other buttons the user presses. Then four more buttons to move the central one, and we're also keeping track of the icon set in the middle button, since when this one moves, we change the icon, and when movement is finished (by releasing one of the four arrow buttons), we set back the normal icon. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_cursors_release_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn EINA_UNUSED,
+                        <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   App_Data *app = data;
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(app-&gt;mid, <span class="stringliteral">&quot;icon&quot;</span>, app-&gt;icon_still);
+   app-&gt;icon_still = NULL;
+}
+</pre></div></p>
+<p>Keeping any of those four buttons pressed will trigger their autorepeat callback, where we move the button doing some size hint magic. To understand how that works better, refer to the <a class="el" href="group__Elm__Box.html">Box</a> documentation. Also, the first time the function is called, we change the icon in the middle button, using elm_object_content_unset() first to keep the reference to the previous one, so we don't need to recreate it when we are done moving it. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_cursors_move_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   App_Data *app = data;
+   <span class="keywordtype">double</span> ax, ay;
+
+   <span class="keywordflow">if</span> (!app-&gt;icon_still)
+     {
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon;
+        app-&gt;icon_still = elm_object_content_unset(app-&gt;mid);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(app-&gt;icon_still);
+        icon = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(app-&gt;mid);
+        <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, <span class="stringliteral">&quot;chat&quot;</span>);
+        <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(app-&gt;mid, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+     }
+
+   evas_object_size_hint_align_get(app-&gt;mid, &amp;ax, &amp;ay);
+   <span class="keywordflow">if</span> (btn == app-&gt;cursors.up)
+     {
+        ay -= 0.05;
+        <span class="keywordflow">if</span> (ay &lt; 0.0)
+          ay = 0.0;
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (btn == app-&gt;cursors.down)
+     {
+        ay += 0.05;
+        <span class="keywordflow">if</span> (ay &gt; 1.0)
+          ay = 1.0;
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (btn == app-&gt;cursors.left)
+     {
+        ax -= 0.05;
+        <span class="keywordflow">if</span> (ax &lt; 0.0)
+          ax = 0.0;
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (btn == app-&gt;cursors.right)
+     {
+        ax += 0.05;
+        <span class="keywordflow">if</span> (ax &gt; 1.0)
+          ax = 1.0;
+     }
+   evas_object_size_hint_align_set(app-&gt;mid, ax, ay);
+}
+</pre></div></p>
 <p>One more callback for the option buttons, that just sets the timeouts for the different autorepeat options.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_options_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <span class="keywordtype">char</span> *ptr;
+   <span class="keywordtype">double</span> t;
+   App_Data *app = data;
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *lbl = elm_object_text_get(btn);
+
+   ptr = strchr(lbl, <span class="charliteral">&#39;:&#39;</span>);
+   ptr += 2;
+   t = strtod(ptr, NULL);
+
+   <span class="keywordflow">if</span> (!strncmp(lbl, <span class="stringliteral">&quot;Initial&quot;</span>, 7))
+     {
+        <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.up, t);
+        <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.down, t);
+        <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.left, t);
+        <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(app-&gt;cursors.right, t);
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strncmp(lbl, <span class="stringliteral">&quot;Gap&quot;</span>, 3))
+     {
+        <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.up, t);
+        <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.down, t);
+        <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.left, t);
+        <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(app-&gt;cursors.right, t);
+     }
+}
+</pre></div></p>
 <p>And the main function, which does some setting up of the buttons in boxes to make things work. Here we'll go through some snippets only.</p>
-<p>For the option buttons, it's just the button with its label and callback. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>For the ones that move the central button, we have no labels. There are icons instead, and the autorepeat option is toggled. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And just to show the mid button, which doesn't have anything special. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>For the option buttons, it's just the button with its label and callback. <div class="fragment"><pre class="fragment">   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Initial: 0.0&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_options_cb, &amp;data);
+</pre></div></p>
+<p>For the ones that move the central button, we have no labels. There are icons instead, and the autorepeat option is toggled. <div class="fragment"><pre class="fragment">   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   <a class="code" href="group__Elm__Button.html#ga4c5373e4d6c955c6480ee3f21a7dc1fa" title="Turn on/off the autorepeat event generated when the button is kept pressed.">elm_button_autorepeat_set</a>(btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Button.html#gadbffea6d39be360a72f094c267b95c7a" title="The initial timeout before the autorepeat event is generated.">elm_button_autorepeat_initial_timeout_set</a>(btn, 1.0);
+   <a class="code" href="group__Elm__Button.html#gaf97340cba16cf46497f3dd2dce28ed8a" title="The interval between each generated autorepeat event.">elm_button_autorepeat_gap_timeout_set</a>(btn, 0.5);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;repeated&quot;</span>, _btn_cursors_move_cb, &amp;data);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;unpressed&quot;</span>, _btn_cursors_release_cb,
+                                  &amp;data);
+
+   icon = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, <span class="stringliteral">&quot;arrow_up&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(btn, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+
+   data.cursors.up = btn;
+</pre></div></p>
+<p>And just to show the mid button, which doesn't have anything special. <div class="fragment"><pre class="fragment">   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   icon = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, <span class="stringliteral">&quot;close&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(btn, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+
+   data.mid = btn;
+</pre></div></p>
 <p>And we are done. </p>
 </div></div><!-- contents -->
 </div>

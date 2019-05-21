@@ -298,9 +298,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the actor's color mode.  <a href="#a01482be3e6068470205535d4e7837add"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDali_1_1Vector4.html">Vector4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Actor.html#a530918bff832e1626f6687ab5cd61da8">GetCurrentWorldColor</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the world-color of the <a class="el" href="classDali_1_1Actor.html" title="Actor is the primary object with which Dali applications interact.">Actor</a>, where each component is clamped within the 0-&gt;1 range.  <a href="#a530918bff832e1626f6687ab5cd61da8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Actor.html#a44c6c9d7d6a509f25fdc72207be901f9">SetDrawMode</a> (DrawMode::Type drawMode)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Actor.html#a44c6c9d7d6a509f25fdc72207be901f9">SetDrawMode</a> (<a class="el" href="namespaceDali_1_1DrawMode.html#aa406a7e4e2b8014ae7406109ee965d06">DrawMode::Type</a> drawMode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets how the actor and its children should be drawn.  <a href="#a44c6c9d7d6a509f25fdc72207be901f9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">DrawMode::Type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Actor.html#a92fd834341a223f4ce8c806aece01fa4">GetDrawMode</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDali_1_1DrawMode.html#aa406a7e4e2b8014ae7406109ee965d06">DrawMode::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Actor.html#a92fd834341a223f4ce8c806aece01fa4">GetDrawMode</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries how the actor and its children will be drawn.  <a href="#a92fd834341a223f4ce8c806aece01fa4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Actor.html#a7851af40d754e09092f1d538d85e5873">SetSensitive</a> (bool sensitive)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether an actor should emit touch or hover signals.  <a href="#a7851af40d754e09092f1d538d85e5873"></a><br/></td></tr>
@@ -1261,7 +1261,7 @@ The actor is not the Root actor. </dd></dl>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DrawMode::Type <a class="el" href="classDali_1_1Actor.html#a92fd834341a223f4ce8c806aece01fa4">Dali::Actor::GetDrawMode</a> </td>
+          <td class="memname"><a class="el" href="namespaceDali_1_1DrawMode.html#aa406a7e4e2b8014ae7406109ee965d06">DrawMode::Type</a> <a class="el" href="classDali_1_1Actor.html#a92fd834341a223f4ce8c806aece01fa4">Dali::Actor::GetDrawMode</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2622,7 +2622,7 @@ The child actor is not the same as the parent actor. </dd></dl>
         <tr>
           <td class="memname">void <a class="el" href="classDali_1_1Actor.html#a44c6c9d7d6a509f25fdc72207be901f9">Dali::Actor::SetDrawMode</a> </td>
           <td>(</td>
-          <td class="paramtype">DrawMode::Type&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceDali_1_1DrawMode.html#aa406a7e4e2b8014ae7406109ee965d06">DrawMode::Type</a>&#160;</td>
           <td class="paramname"><em>drawMode</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2631,8 +2631,8 @@ The child actor is not the same as the parent actor. </dd></dl>
 <div class="memdoc">
 
 <p>Sets how the actor and its children should be drawn. </p>
-<p>Not all actors are renderable, but DrawMode can be inherited from any actor. If an object is in a 3D layer, it will be depth-tested against other objects in the world i.e. it may be obscured if other objects are in front.</p>
-<p>If DrawMode::OVERLAY_2D is used, the actor and its children will be drawn as a 2D overlay. Overlay actors are drawn in a separate pass, after all non-overlay actors within the <a class="el" href="classDali_1_1Layer.html" title="Layers provide a mechanism for overlaying groups of actors on top of each other.">Layer</a>. For overlay actors, the drawing order is with respect to tree levels of Actors, and depth-testing will not be used.</p>
+<p>Not all actors are renderable, but <a class="el" href="namespaceDali_1_1DrawMode.html" title="DrawMode to determine how the Actor and its children will be drawn.">DrawMode</a> can be inherited from any actor. If an object is in a 3D layer, it will be depth-tested against other objects in the world i.e. it may be obscured if other objects are in front.</p>
+<p>If <a class="el" href="namespaceDali_1_1DrawMode.html#aa406a7e4e2b8014ae7406109ee965d06a234aa2640a35cc25a90bcc95c7969778" title="binary 01. Draw the actor and its children as an overlay">DrawMode::OVERLAY_2D</a> is used, the actor and its children will be drawn as a 2D overlay. Overlay actors are drawn in a separate pass, after all non-overlay actors within the <a class="el" href="classDali_1_1Layer.html" title="Layers provide a mechanism for overlaying groups of actors on top of each other.">Layer</a>. For overlay actors, the drawing order is with respect to tree levels of Actors, and depth-testing will not be used.</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>2.4, DALi version 1.0.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2640,7 +2640,7 @@ The child actor is not the same as the parent actor. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Layers do not inherit the DrawMode from their parents. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Layers do not inherit the <a class="el" href="namespaceDali_1_1DrawMode.html" title="DrawMode to determine how the Actor and its children will be drawn.">DrawMode</a> from their parents. </dd></dl>
 
 </div>
 </div>

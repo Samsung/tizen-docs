@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Communication Interface: Signal</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object.html">Edje Object</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with signals. </p>
@@ -104,22 +104,21 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets extra data passed to callbacks.  <a href="#ga9b02f874ca39b810f262881c9fe1b6c2"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga678b49d17da2ad0385b8855fef35cdd4">Edje_Signal_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga853bebd6ad43a3af2e44a3c0adb1863a">Efl_Signal_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source)</td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ga678b49d17da2ad0385b8855fef35cdd4"></a><!-- doxytag: member="Edje_Common.h::Edje_Signal_Cb" ref="ga678b49d17da2ad0385b8855fef35cdd4" args=")(void *data, Evas_Object *obj, const char *emission, const char *source)" -->
+<a class="anchor" id="ga853bebd6ad43a3af2e44a3c0adb1863a"></a><!-- doxytag: member="Edje_Common.h::Efl_Signal_Cb" ref="ga853bebd6ad43a3af2e44a3c0adb1863a" args=")(void *data, Evas_Object *obj, const char *emission, const char *source)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga678b49d17da2ad0385b8855fef35cdd4">Edje_Signal_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source)</td>
+          <td class="memname">typedef void(* <a class="el" href="group__Edje__Object__Communication__Interface__Signal.html#ga853bebd6ad43a3af2e44a3c0adb1863a">Efl_Signal_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *emission, const char *source)</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Edje signal callback functions's prototype definition. <code>data</code> will have the auxiliary data pointer set at the time the callback registration. <code>obj</code> will be a pointer the Edje object where the signal comes from. <code>emission</code> will identify the exact signal's emission string and <code>source</code> the exact signal's source one. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a25">edje-color-class.c</a>.</dd>
-</dl>
+
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
@@ -141,7 +140,7 @@ Typedefs</h2></td></tr>
 <p>Gets extra data passed to callbacks. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The extra data for that callback.</dd></dl>
 <p>Some callbacks pass extra information. This function gives access to that extra information. It's somehow like event_info in smart callbacks.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add()</a> for more on <a class="el" href="group__Edje.html" title="Layout and theme library with super-powers.">Edje</a> signals. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>edje_object_signal_callback_add() for more on <a class="el" href="group__Edje.html" title="Layout and theme library with super-powers.">Edje</a> signals. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 

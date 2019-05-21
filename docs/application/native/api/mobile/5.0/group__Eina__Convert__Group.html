@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>These functions allow you to convert integer or real numbers to string or conversely.</p>
 <p>To use these functions, you have to call <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a> first, and <a class="el" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown()</a> when eina is not used anymore.</p>
-<h2><a class="anchor" id="Eina_Convert_From_Integer_To_Sring"></a>
+<h2><a class="anchor" id="Eina_Convert_From_Integer_To_String"></a>
 Conversion from integer to string</h2>
 <p>To convert an integer to a string in the decimal base, <a class="el" href="group__Eina__Convert__Group.html#ga5e292923035dd6229795f18dce2df671" title="Converts an integer number to a string in decimal base.">eina_convert_itoa()</a> should be used. If the hexadecimal base is wanted, <a class="el" href="group__Eina__Convert__Group.html#gabcff6a3b75bf963036b9b0386359417f" title="Converts an integer number to a string in hexadecimal base.">eina_convert_xtoa()</a> should be used. They all need a buffer sufficiently large to store all the cyphers.</p>
 <p>Here is an example of use:</p>
@@ -131,7 +131,7 @@ Conversion double / string</h2>
 <p>To convert a double to a string, <a class="el" href="group__Eina__Convert__Group.html#gaf791244e7aac48e3b0abf1e398ca68e3" title="Converts a double to a string.">eina_convert_dtoa()</a> should be used. Like with the integer functions, a buffer must be used. The resulting string has the following format (which is the result obtained with snprintf() and the %a modifier):</p>
 <div class="fragment"><pre class="fragment"> [-]0xh.hhhhhp[+-]e
 </pre></div><p>To convert a string to a double, <a class="el" href="group__Eina__Convert__Group.html#ga750cfd2578a81ef7901a14c6d0984956" title="Converts a string to a double.">eina_convert_atod()</a> should be used. The format of the string must be as above. Then, the double has the following mantissas and exponent:</p>
-<div class="fragment"><pre class="fragment"> mantiss  : [-]hhhhhh
+<div class="fragment"><pre class="fragment"> mantissa  : [-]hhhhhh
  exponent : 2^([+-]e - 4 * n)
 </pre></div><p>with n being number of cyphers after the point in the string format. To obtain the double number from the mantissas and exponent, use ldexp().</p>
 <p>Here is an example of use:</p>
@@ -225,10 +225,10 @@ Functions</h2></td></tr>
 <p>Converts a string to a double. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">src</td><td>The string to convert. </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the string. </td></tr>
-    <tr><td class="paramname">m</td><td>The mantissa. </td></tr>
-    <tr><td class="paramname">e</td><td>The exponent. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The string to convert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the string. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The mantissa. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">e</td><td>The exponent. </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,10 +237,10 @@ Functions</h2></td></tr>
 <p>The string must have the following format:</p>
 <div class="fragment"><pre class="fragment"> [-]0xh.hhhhhp[+-]e
 </pre></div><p>where the h are the hexadecimal cyphers of the mantissas and e the exponent (a decimal number). If n is the number of cyphers after the point, the returned mantissas and exponents are:</p>
-<div class="fragment"><pre class="fragment"> mantiss  : [-]hhhhhh
+<div class="fragment"><pre class="fragment"> mantissa  : [-]hhhhhh
  exponent : 2^([+-]e - 4 * n)
 </pre></div><p>The mantissas and exponent are stored in the buffers pointed respectively by <code>m</code> and <code>e</code>.</p>
-<p>If the string is invalid <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<p>If the string is invalid <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -279,9 +279,9 @@ Functions</h2></td></tr>
 <p>Converts a string to a 32.32 fixed point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">src</td><td>The string to convert. </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the string. </td></tr>
-    <tr><td class="paramname">fp</td><td>The fixed point number. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The string to convert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the string. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">fp</td><td>The fixed point number. </td></tr>
   </table>
   </dd>
 </dl>
@@ -289,12 +289,12 @@ Functions</h2></td></tr>
 <p>This function converts the string <code>src</code> of length <code>length</code> that represent a double in hexadecimal base to a 32.32 fixed point number stored in <code>fp</code>. The function always tries to convert the string with <a class="el" href="group__Eina__Convert__Group.html#ga750cfd2578a81ef7901a14c6d0984956" title="Converts a string to a double.">eina_convert_atod()</a>.</p>
 <p>The string must have the following format:</p>
 <div class="fragment"><pre class="fragment"> [-]0xh.hhhhhp[+-]e
-</pre></div><p>where the h are the hexadecimal cyphers of the mantissas and e the exponent (a decimal number). If n is the number of cyphers after the point, the returned mantissas and exponents are:</p>
-<div class="fragment"><pre class="fragment"> mantiss  : [-]hhhhhh
+</pre></div><p>where the h's are the hexadecimal cyphers of the mantissas and e the exponent (a decimal number). If n is the number of cyphers after the point, the returned mantissas and exponents are:</p>
+<div class="fragment"><pre class="fragment"> mantissa  : [-]hhhhhh
  exponent : 2^([+-]e - 4 * n)
 </pre></div><p>The mantissas and exponent are stored in the buffers pointed respectively by <code>m</code> and <code>e</code>.</p>
 <p>If the string is invalid, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <code>fp</code> is computed and <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>The code uses <a class="el" href="group__Eina__Convert__Group.html#ga750cfd2578a81ef7901a14c6d0984956" title="Converts a string to a double.">eina_convert_atod()</a> and do the correct bit shift to compute the fixed point number.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The code uses <a class="el" href="group__Eina__Convert__Group.html#ga750cfd2578a81ef7901a14c6d0984956" title="Converts a string to a double.">eina_convert_atod()</a> and do the correct bit shift to compute the fixed point number. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -327,8 +327,8 @@ Functions</h2></td></tr>
 <p>Converts a double to a string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">d</td><td>The double to convert. </td></tr>
-    <tr><td class="paramname">des</td><td>The destination buffer to store the converted double. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>The double to convert. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">des</td><td>The destination buffer to store the converted double. </td></tr>
   </table>
   </dd>
 </dl>
@@ -336,7 +336,7 @@ Functions</h2></td></tr>
 <p>This function converts the double <code>d</code> to a string. The string is stored in the buffer pointed by <code>des</code> and must be sufficiently large to contain the converted double. The returned string is null terminated and has the following format:</p>
 <div class="fragment"><pre class="fragment"> [-]0xh.hhhhhp[+-]e
 </pre></div><p>where the h are the hexadecimal cyphers of the mantissas and e the exponent (a decimal number).</p>
-<p>The returned value is the length of the string, including the null character.</p>
+<p>The returned value is the length of the string, including the null character. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -369,8 +369,8 @@ Functions</h2></td></tr>
 <p>Converts a 32.32 fixed point number to a string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fp</td><td>The fixed point number to convert. </td></tr>
-    <tr><td class="paramname">des</td><td>The destination buffer to store the converted fixed point number. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fp</td><td>The fixed point number to convert. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">des</td><td>The destination buffer to store the converted fixed point number. </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,7 +379,7 @@ Functions</h2></td></tr>
 <div class="fragment"><pre class="fragment"> [-]0xh.hhhhhp[+-]e
 </pre></div><p>where the h are the hexadecimal cyphers of the mantissas and e the exponent (a decimal number).</p>
 <p>The returned value is the length of the string, including the null character.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>The code is the same than <a class="el" href="group__Eina__Convert__Group.html#gaf791244e7aac48e3b0abf1e398ca68e3" title="Converts a double to a string.">eina_convert_dtoa()</a> except that it implements the frexp() function for fixed point numbers and does some optimisations.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The code is the same than <a class="el" href="group__Eina__Convert__Group.html#gaf791244e7aac48e3b0abf1e398ca68e3" title="Converts a double to a string.">eina_convert_dtoa()</a> except that it implements the frexp() function for fixed point numbers and does some optimization. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -412,14 +412,14 @@ Functions</h2></td></tr>
 <p>Converts an integer number to a string in decimal base. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>The integer to convert. </td></tr>
-    <tr><td class="paramname">s</td><td>The buffer to store the converted integer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The integer to convert. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s</td><td>The buffer to store the converted integer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the string, including the null terminated character.</dd></dl>
 <p>This function converts <code>n</code> to a null terminated string. The converted string is in decimal base. As no check is done, <code>s</code> must be a buffer that is sufficiently large to store the integer.</p>
-<p>The returned value is the length of the string, including the null terminated character.</p>
+<p>The returned value is the length of the string, including the null terminated character. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -452,14 +452,14 @@ Functions</h2></td></tr>
 <p>Converts an integer number to a string in hexadecimal base. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>The integer to convert. </td></tr>
-    <tr><td class="paramname">s</td><td>The buffer to store the converted integer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The integer to convert. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s</td><td>The buffer to store the converted integer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the string, including the null terminated character.</dd></dl>
 <p>This function converts <code>n</code> to a null terminated string. The converted string is in hexadecimal base and the alphabetical cyphers are in lower case. As no check is done, <code>s</code> must be a buffer that is sufficiently large to store the integer.</p>
-<p>The returned value is the length of the string, including the nul terminated character.</p>
+<p>The returned value is the length of the string, including the nul terminated character. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -475,7 +475,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Not used, perhaps a placeholder? Defined as 0 in eina_convert.c </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) Not used, perhaps a placeholder? Defined as 0 in eina_convert.c </dd></dl>
 
 </div>
 </div>
@@ -489,7 +489,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Not used, perhaps a placeholder? Defined as 0 in eina_convert.c </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) Not used, perhaps a placeholder? Defined as 0 in eina_convert.c </dd></dl>
 
 </div>
 </div>
@@ -503,7 +503,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Not used, perhaps a placeholder? Defined as 0 in eina_convert.c </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) Not used, perhaps a placeholder? Defined as 0 in eina_convert.c </dd></dl>
 
 </div>
 </div>

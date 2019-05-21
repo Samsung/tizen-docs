@@ -99,13 +99,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <span class="preprocessor"> #include &lt;Ecore.h&gt;</span>
 
 <span class="preprocessor"> #include &lt;eina_safety_checks.h&gt;</span>
- <span class="comment">// all these files below will NOT emit warning from EINA_ARG_NONNULL(),</span>
+ <span class="comment">// all the files below will NOT emit warning from EINA_ARG_NONNULL(),</span>
  <span class="comment">// but this is required to have the functions defined there to be checked</span>
  <span class="comment">// for NULL pointers</span>
 <span class="preprocessor"> #include &quot;my_functions1.h&quot;</span>
 <span class="preprocessor"> #include &quot;my_functions2.h&quot;</span>
 </pre></div><p>Safety checks are a set of macros to check for parameters or values that should never happen, it is similar in concept to assert(), but will log and return instead of abort() your program.</p>
-<p>Since these cases should never happen, one may wantto keep safety checks enabled during tests but disable then during deploy, not doing any checks at all. This is a common requirement for embedded systems. Whenever to check or not should be set during compile time by using <code>--disable-safety-checks</code> or <code>--enable-safety-checks</code> options to <code>configure</code> script.</p>
+<p>Since these cases should never happen, one may want to keep safety checks enabled during tests but disable then during deploy, not doing any checks at all. This is a common requirement for embedded systems. When to check or not should be set during compile time by using <code>--disable-safety-checks</code> or <code>--enable-safety-checks</code> options to <code>configure</code> script.</p>
 <p>Whenever these macros capture an error, <a class="el" href="group__Eina__Log__Group.html#ga2e33caeeeb6051526c01b7fea4d6c91b">EINA_LOG_ERR()</a> will be called.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Safety__Checks__Group.html#ga1ccf8538d0015b3801ff642e6156843a" title="The macro doesn&#39;t do anything unless EINA_SAFETY_CHECKS is defined.">EINA_SAFETY_ON_NULL_RETURN()</a>, <a class="el" href="group__Eina__Safety__Checks__Group.html#gab2b07061fc6500dedd9cd41c8d16f95d" title="The macro doesn&#39;t do anything unless EINA_SAFETY_CHECKS is defined.">EINA_SAFETY_ON_NULL_RETURN_VAL()</a> and other macros. </dd></dl>
 <table class="memberdecls">
@@ -159,8 +159,8 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
-    <tr><td class="paramname">label</td><td>The label to jump to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The label to jump to. </td></tr>
   </table>
   </dd>
 </dl>
@@ -185,12 +185,11 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_model_01_8c-example.html#a0">eina_model_01.c</a>, <a class="el" href="eina_model_04_animal_8c-example.html#a2">eina_model_04_animal.c</a>, <a class="el" href="eina_model_04_child_8c-example.html#a2">eina_model_04_child.c</a>, <a class="el" href="eina_model_04_human_8c-example.html#a2">eina_model_04_human.c</a>, and <a class="el" href="eina_model_04_parrot_8c-example.html#a2">eina_model_04_parrot.c</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="gae7cf7b1d66fa9022242e09fd53c06bb2"></a><!-- doxytag: member="eina_safety_checks.h::EINA_SAFETY_ON_FALSE_RETURN_VAL" ref="gae7cf7b1d66fa9022242e09fd53c06bb2" args="(exp, val)" -->
@@ -221,8 +220,8 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
-    <tr><td class="paramname">val</td><td>The value to be returned. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be returned. </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,8 +256,8 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
-    <tr><td class="paramname">label</td><td>The label to jump to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The label to jump to. </td></tr>
   </table>
   </dd>
 </dl>
@@ -283,12 +282,11 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_model_04_animal_8c-example.html#a3">eina_model_04_animal.c</a>, <a class="el" href="eina_model_04_child_8c-example.html#a3">eina_model_04_child.c</a>, <a class="el" href="eina_model_04_human_8c-example.html#a3">eina_model_04_human.c</a>, <a class="el" href="eina_model_04_parrot_8c-example.html#a3">eina_model_04_parrot.c</a>, and <a class="el" href="eina_model_04_whistler_8c-example.html#a0">eina_model_04_whistler.c</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="gab2b07061fc6500dedd9cd41c8d16f95d"></a><!-- doxytag: member="eina_safety_checks.h::EINA_SAFETY_ON_NULL_RETURN_VAL" ref="gab2b07061fc6500dedd9cd41c8d16f95d" args="(exp, val)" -->
@@ -319,13 +317,12 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
-    <tr><td class="paramname">val</td><td>The value to be returned. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be returned. </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_model_03_8c-example.html#a10">eina_model_03.c</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="gaa083dd2da7053e9b7b39cdc72326d56d"></a><!-- doxytag: member="eina_safety_checks.h::EINA_SAFETY_ON_TRUE_GOTO" ref="gaa083dd2da7053e9b7b39cdc72326d56d" args="(exp, label)" -->
@@ -356,8 +353,8 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
-    <tr><td class="paramname">label</td><td>The label to jump to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The label to jump to. </td></tr>
   </table>
   </dd>
 </dl>
@@ -382,7 +379,7 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
   </table>
   </dd>
 </dl>
@@ -417,11 +414,26 @@ Defines</h2></td></tr>
 <p>The macro doesn't do anything unless EINA_SAFETY_CHECKS is defined. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
-    <tr><td class="paramname">val</td><td>The value to be returned. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exp</td><td>The expression to be evaluated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be returned. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="gac05b7f845f432d50b2935453bbbeef6c"></a><!-- doxytag: member="eina_safety_checks.h::EINA_ERROR_SAFETY_FAILED" ref="gac05b7f845f432d50b2935453bbbeef6c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a> <a class="el" href="group__Eina__Safety__Checks__Group.html#gac05b7f845f432d50b2935453bbbeef6c">EINA_ERROR_SAFETY_FAILED</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

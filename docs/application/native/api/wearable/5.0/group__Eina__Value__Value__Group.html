@@ -122,7 +122,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d">eina_value_convert</a> (const <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value, <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *convert)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts one value to another type.  <a href="#ga86f91748c90652df59e3ef38bf54949d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3">eina_value_to_string</a> (const <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts value to string.  <a href="#ga8f34b6d6639654dd88cd197c9def78a3"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts one value to Eina_Binbuf.  <a href="#ga8f34b6d6639654dd88cd197c9def78a3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="group__Eina__Value__Group.html#gaab67ab8bcd0624280c5276044b07e0d2">Eina_Value_Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Value__Group.html#gad16e8065d5d90cdd37e8c219cfcd281e">eina_value_type_get</a> (const <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries value type.  <a href="#gad16e8065d5d90cdd37e8c219cfcd281e"></a><br/></td></tr>
 </table>
@@ -155,8 +155,8 @@ Functions</h2></td></tr>
 <p>Compares generic value storage. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>left side of comparison </td></tr>
-    <tr><td class="paramname">b</td><td>right side of comparison </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>left side of comparison </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>right side of comparison </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,18 +193,18 @@ Functions</h2></td></tr>
 <p>Converts one value to another type. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object. </td></tr>
-    <tr><td class="paramname">convert</td><td>Destination value object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">convert</td><td>Destination value object. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if converted, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>Converts one value to another trying first <em>value</em> type <code>convert_to()</code> function. If unsuccessful, tries using <code>convert_from()</code> function in <em>convert</em>.</p>
 <p>Conversion functions are type defined, and the basic types can convert between themselves, but conversion is strict! That is, if converting from negative value to unsigned type, it will fail. It also fails on value overflow.</p>
-<p>It is recommended that all types implement at least convert to string, used by <a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string()</a>.</p>
+<p>It is recommended that all types implement at least convert to string, used by <a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Both objects must have <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a> called on them beforehand!</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a9">eina_value_01.c</a>.</dd>
 </dl>
 </div>
@@ -237,16 +237,16 @@ Functions</h2></td></tr>
 <p>Copies generic value storage. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">copy</td><td>Destination value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">copy</td><td>Destination value object </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The <em>copy</em> object is considered uninitialized and its existing contents are overwritten (just as if <a class="el" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush()</a> was called on it).</p>
 <p>The copy happens by calling <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a> on <em>copy</em>, followed by getting the contents of <em>value</em> and setting it to <em>copy</em>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -268,7 +268,7 @@ Functions</h2></td></tr>
 <p>Creates generic value storage. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Value object</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value object</td></tr>
   </table>
   </dd>
 </dl>
@@ -278,7 +278,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_model_02_8c-example.html#a5">eina_model_02.c</a>, <a class="el" href="eina_model_03_8c-example.html#a5">eina_model_03.c</a>, <a class="el" href="eina_value_01_8c-example.html#a7">eina_value_01.c</a>, and <a class="el" href="eina_value_03_8c-example.html#a28">eina_value_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a7">eina_value_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -300,14 +300,14 @@ Functions</h2></td></tr>
 <p>Frees value and its data. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>value object</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>value object</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_02_8c-example.html#a15">eina_value_02.c</a>.</dd>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_02_8c-example.html#a15">eina_value_02.c</a>, and <a class="el" href="eina_value_03_8c-example.html#a28">eina_value_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -339,7 +339,8 @@ Functions</h2></td></tr>
 <p>Gets the generic value. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">...</td><td>Data value retrieved. </td></tr>
   </table>
   </dd>
 </dl>
@@ -347,6 +348,8 @@ Functions</h2></td></tr>
 <p>The value is returned in the variable argument parameter, the actual value is type-dependent, but usually it will be what is stored inside the object. There shouldn't be any memory allocation, thus the contents should <b>not</b> be freed.</p>
 <p>The variable argument is dependent on chosen type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -366,7 +369,8 @@ Functions</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Value__Group.html#gae603129fa62a3b1b560e81fa511ffb13" title="Creates generic value storage.">eina_value_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>);
      <span class="keywordtype">int</span> x;
@@ -384,7 +388,7 @@ Functions</h2></td></tr>
      <a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(value);
 </pre></div><dl class="note"><dt><b>Note:</b></dt><dd>for array member see <a class="el" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get()</a> </dd>
 <dd>
-for list member see <a class="el" href="group__Eina__Value__List__Group.html#gaf1b31fc2085b8077f3789bb9365e6818" title="Gets the generic value from an list member.">eina_value_list_get()</a> </dd>
+for list member see <a class="el" href="group__Eina__Value__List__Group.html#gaf1b31fc2085b8077f3789bb9365e6818" title="Gets the generic value from a list member.">eina_value_list_get()</a> </dd>
 <dd>
 for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga854b308b7fab1f9e2ecdd41fa9d9770c" title="Gets the generic value from an hash member.">eina_value_hash_get()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga9a1407c953694c3d6f40ab01ebe9a294" title="Sets the generic value.">eina_value_set()</a> </dd>
@@ -393,7 +397,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <dd>
 <a class="el" href="group__Eina__Value__Value__Group.html#ga60352abff8ce5f9cdfc870ba9cf2f28e" title="Sets the generic value from pointer.">eina_value_pset()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_model_03_8c-example.html#a6">eina_model_03.c</a>, and <a class="el" href="eina_value_01_8c-example.html#a5">eina_value_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a5">eina_value_01.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a1">prefs_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -415,18 +419,18 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <p>Creates generic value storage. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td>How to manage this value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>How to manage this value. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new value or <code>NULL</code> on failure.</dd></dl>
 <p>Create a new generic value storage. The members are managed using the description specified by <em>type</em>.</p>
-<p>Some types may specify more operations: eg. <a class="el" href="group__Eina__Value__Group.html#ga8ec6d5bfa2fed9250e2dabc6d82d12c4">EINA_VALUE_TYPE_ARRAY</a> uses <a class="el" href="group__Eina__Value__Array__Group.html#gac833bf34f56ba77e87bbe6b79734b653" title="Sets the generic value in an array member.">eina_value_array_set()</a>, <a class="el" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get()</a> and so on.</p>
+<p>Some types may specify more operations: e.g.. <a class="el" href="group__Eina__Value__Group.html#ga8ec6d5bfa2fed9250e2dabc6d82d12c4">EINA_VALUE_TYPE_ARRAY</a> uses <a class="el" href="group__Eina__Value__Array__Group.html#gac833bf34f56ba77e87bbe6b79734b653" title="Sets the generic value in an array member.">eina_value_array_set()</a>, <a class="el" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get()</a> and so on.</p>
 <p>On failure, <code>NULL</code> is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This calls creates from mempool and then uses <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a>. Consider using <a class="el" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush()</a> and <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a> instead to avoid memory allocations.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -458,8 +462,8 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <p>Gets the generic value to pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to receive the contents. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ptr</td><td>Pointer to receive the contents. </td></tr>
   </table>
   </dd>
 </dl>
@@ -467,6 +471,8 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <p>The value is returned in pointer contents, the actual value is type-dependent, but usually it will be what is stored inside the object. There shouldn't be any memory allocation, thus the contents should <b>not</b> be freed.</p>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -486,7 +492,8 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Value__Group.html#gae603129fa62a3b1b560e81fa511ffb13" title="Creates generic value storage.">eina_value_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>);
      <span class="keywordtype">int</span> x;
@@ -504,7 +511,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
      <a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(value);
 </pre></div><dl class="note"><dt><b>Note:</b></dt><dd>for array member see <a class="el" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get()</a> </dd>
 <dd>
-for list member see <a class="el" href="group__Eina__Value__List__Group.html#gaf1b31fc2085b8077f3789bb9365e6818" title="Gets the generic value from an list member.">eina_value_list_get()</a> </dd>
+for list member see <a class="el" href="group__Eina__Value__List__Group.html#gaf1b31fc2085b8077f3789bb9365e6818" title="Gets the generic value from a list member.">eina_value_list_get()</a> </dd>
 <dd>
 for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga854b308b7fab1f9e2ecdd41fa9d9770c" title="Gets the generic value from an hash member.">eina_value_hash_get()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga9a1407c953694c3d6f40ab01ebe9a294" title="Sets the generic value.">eina_value_set()</a> </dd>
@@ -544,14 +551,16 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <p>Sets the generic value from pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -571,7 +580,8 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <dl class="note"><dt><b>Note:</b></dt><dd>the pointer contents are written using the size defined by type. It can be larger than void* or uint64_t.</dd></dl>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Value__Group.html#gae603129fa62a3b1b560e81fa511ffb13" title="Creates generic value storage.">eina_value_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>);
@@ -588,7 +598,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga8
      <a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(value);
 </pre></div><dl class="note"><dt><b>Note:</b></dt><dd>for array member see <a class="el" href="group__Eina__Value__Array__Group.html#ga2bbd3aa89ec9ac0cc01b86f5e5b139cd" title="Sets a generic value to an array member from a pointer.">eina_value_array_pset()</a> </dd>
 <dd>
-for list member see <a class="el" href="group__Eina__Value__List__Group.html#ga3394c575297f44f51510cdafe518a135" title="Sets the generic value in an list member from pointer.">eina_value_list_pset()</a> </dd>
+for list member see <a class="el" href="group__Eina__Value__List__Group.html#ga3394c575297f44f51510cdafe518a135" title="Sets the generic value in a list member from pointer.">eina_value_list_pset()</a> </dd>
 <dd>
 for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga3c6d9f9d9234adfef7e58e5ac6821d20" title="Sets the generic value in an hash member from pointer.">eina_value_hash_pset()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga60f5603f5075da14f3cfd3ddc7766725" title="Gets the generic value to pointer.">eina_value_pget()</a> </dd>
@@ -628,13 +638,16 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga3
 <p>Sets the generic value. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Data to set. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The variable argument is dependent on chosen type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int </li>
@@ -654,7 +667,8 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga3
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Value__Group.html#gae603129fa62a3b1b560e81fa511ffb13" title="Creates generic value storage.">eina_value_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>);
      <span class="keywordtype">int</span> x = 567;
@@ -669,7 +683,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga3
      <a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(value);
 </pre></div><dl class="note"><dt><b>Note:</b></dt><dd>for array member see <a class="el" href="group__Eina__Value__Array__Group.html#gac833bf34f56ba77e87bbe6b79734b653" title="Sets the generic value in an array member.">eina_value_array_set()</a> </dd>
 <dd>
-for list member see <a class="el" href="group__Eina__Value__List__Group.html#gafc779df6ff45d16b7ee83d82c0862964" title="Sets the generic value in an list member.">eina_value_list_set()</a> </dd>
+for list member see <a class="el" href="group__Eina__Value__List__Group.html#gafc779df6ff45d16b7ee83d82c0862964" title="Sets the generic value in a list member.">eina_value_list_set()</a> </dd>
 <dd>
 for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga949a995459d191bfc9a88e4173d25b5e" title="Sets the generic value in an hash member.">eina_value_hash_set()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga6f088fe6c6127d808cdf214b355cbdeb" title="Gets the generic value.">eina_value_get()</a> </dd>
@@ -678,7 +692,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 <dd>
 <a class="el" href="group__Eina__Value__Value__Group.html#ga60352abff8ce5f9cdfc870ba9cf2f28e" title="Sets the generic value from pointer.">eina_value_pset()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_model_02_8c-example.html#a4">eina_model_02.c</a>, <a class="el" href="eina_model_03_8c-example.html#a4">eina_model_03.c</a>, <a class="el" href="eina_value_01_8c-example.html#a4">eina_value_01.c</a>, and <a class="el" href="eina_value_03_8c-example.html#a26">eina_value_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a4">eina_value_01.c</a>, <a class="el" href="eina_value_03_8c-example.html#a26">eina_value_03.c</a>, <a class="el" href="prefs_data_example_8c-example.html#a7">prefs_data_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a3">prefs_example_01.c</a>, and <a class="el" href="prefs_example_02_8c-example.html#a5">prefs_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -710,8 +724,8 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 <p>Initializes generic value storage. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Value object </td></tr>
-    <tr><td class="paramname">type</td><td>How to manage this value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">type</td><td>How to manage this value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -722,7 +736,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 <p>On failure, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_model_02_8c-example.html#a2">eina_model_02.c</a>, <a class="el" href="eina_model_03_8c-example.html#a2">eina_model_03.c</a>, <a class="el" href="eina_value_01_8c-example.html#a2">eina_value_01.c</a>, and <a class="el" href="eina_value_03_8c-example.html#a24">eina_value_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a2">eina_value_01.c</a>, <a class="el" href="eina_value_03_8c-example.html#a24">eina_value_03.c</a>, and <a class="el" href="prefs_data_example_8c-example.html#a5">prefs_data_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -741,18 +755,33 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 </div>
 <div class="memdoc">
 
-<p>Converts value to string. </p>
+<p>Converts one value to Eina_Binbuf. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>value object. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> if it failed to get a memory content, a valid Eina_Binbuf otherwise.</dd></dl>
+<p>Converts one value to EINA_TYPE_VALUE_BLOB if necessary by calling <code><a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d" title="Converts one value to another type.">eina_value_convert()</a></code> function.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>You are responsible for destroying the Eina_Binbuf returned.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string()</a> </dd>
+<dd>
+<a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d" title="Converts one value to another type.">eina_value_convert()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Converts value to string.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>value object. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>newly allocated memory or <code>NULL</code> on failure.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d" title="Converts one value to another type.">eina_value_convert()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a6">eina_value_01.c</a>, and <a class="el" href="eina_value_03_8c-example.html#a27">eina_value_03.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d" title="Converts one value to another type.">eina_value_convert()</a> </dd>
+<dd>
+eina_value_to_binbuf() </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_value_01_8c-example.html#a6">eina_value_01.c</a>, <a class="el" href="eina_value_03_8c-example.html#a27">eina_value_03.c</a>, and <a class="el" href="prefs_data_example_8c-example.html#a1">prefs_data_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -774,7 +803,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 <p>Queries value type. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Value object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -813,8 +842,8 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 <p>Gets the generic value. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
@@ -822,7 +851,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 <p>The value is returned in the variable argument parameter, the actual value is type-dependent, but usually it will be what is stored inside the object. There shouldn't be any memory allocation, thus the contents should <b>not</b> be freed.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>for array member see <a class="el" href="group__Eina__Value__Array__Group.html#ga71628a82af073c59a241cf8c93c95d5d" title="Gets the generic value from an array member.">eina_value_array_vget()</a> </dd>
 <dd>
-for list member see <a class="el" href="group__Eina__Value__List__Group.html#ga4d1be252489e727e0b396e67b9e10232" title="Gets the generic value from an list member.">eina_value_list_vget()</a> </dd>
+for list member see <a class="el" href="group__Eina__Value__List__Group.html#ga4d1be252489e727e0b396e67b9e10232" title="Gets the generic value from a list member.">eina_value_list_vget()</a> </dd>
 <dd>
 for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#gaef1be893a3b48fd34fc27dc99e5f060a" title="Gets the generic value from an hash member.">eina_value_hash_vget()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#gab268bdee7835a81769ca56503f9addd4" title="Sets the generic value.">eina_value_vset()</a> </dd>
@@ -862,15 +891,15 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#gae
 <p>Sets the generic value. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>for array member see <a class="el" href="group__Eina__Value__Array__Group.html#gaee7ba765015a4a8664d6cf0fad6f28bf" title="Sets a generic value to an array member.">eina_value_array_vset()</a> </dd>
 <dd>
-for list member see <a class="el" href="group__Eina__Value__List__Group.html#gaaf1a01660592d3c6c563732420d6bd5d" title="Sets the generic value in an list member.">eina_value_list_vset()</a> </dd>
+for list member see <a class="el" href="group__Eina__Value__List__Group.html#gaaf1a01660592d3c6c563732420d6bd5d" title="Sets the generic value in a list member.">eina_value_list_vset()</a> </dd>
 <dd>
 for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#gab3886b1dc08c33a4467974238684e0e0" title="Sets the generic value in an hash member.">eina_value_hash_vset()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga4fbda28f76e3f9f9a62136fd00ea0e10" title="Gets the generic value.">eina_value_vget()</a> </dd>
