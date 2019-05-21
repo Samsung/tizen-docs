@@ -93,9 +93,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>This example is very similar to the <a class="el" href="genlist_example_01.html">Genlist - basic usage</a>, but it fetch most of the properties of the genlist and displays them on startup (thus getting the default value for them) and then set them to some other values, to show how to use that API. The full source code is at <a class="el" href="genlist_example_02_c.html">genlist_example_02.c</a>.</p>
 <p>Considering that the base code for instantiating a genlist was already described in the previous example, we are going to focus on the new code.</p>
 <p>Just a small difference for the <code>_item_label_get</code> function, we are going to store the time that this function was called. This is the "realized" time, the time when the visual representation of this item was created. This is the code for the <code>label_get</code> function:</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">char</span> *
+_item_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *part EINA_UNUSED)
+{
+   time_t t = (time_t)<a class="code" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>();
+   <span class="keywordtype">char</span> buf[256];
+   <span class="keywordtype">int</span> i = (int)(<span class="keywordtype">long</span>)data;
+   <span class="keywordflow">if</span> (i % 2)
+     {
+        <span class="keywordtype">int</span> n;
+        snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Very Long Item # %i - realized at %s&quot;</span>, i, ctime(&amp;t));
+        n = strlen(buf);
+        buf[n - 1] = <span class="charliteral">&#39;\0&#39;</span>;
+     }
+   <span class="keywordflow">else</span>
+     snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;short item # %i&quot;</span>, i);
+   <span class="keywordflow">return</span> strdup(buf);
+</pre></div></p>
 <p>Now let's go to the list creation and setup. First, just after creating the list, we get most of the default properties from it, and print them on the console:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   list = <a class="code" href="group__Elm__Genlist.html#ga8845cb5425deadec54558b7badd16a6f">elm_genlist_add</a>(win);
+
+   <span class="keywordflow">if</span> (!_itc)
+     {
+        _itc = <a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _item_label_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _item_content_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = NULL;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = NULL;
+     }
+
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> hbounce, vbounce, always, no_sel;
+   <a class="code" href="group__Elm__Scroller.html#gae4532876fde43d8d37fc9440a1e36a84" title="Type that controls when scrollbars should appear.">Elm_Scroller_Policy</a> hp, vp;
+   Elm_Object_Select_Mode sel_mode;
+
+   always = no_sel = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+   sel_mode = <a class="code" href="group__Elm__Genlist.html#ga0be32c7556e6fd3c54e88d62880eba04" title="Get the genlist select mode.">elm_genlist_select_mode_get</a>(list);
+   <span class="keywordflow">if</span> (sel_mode == ELM_OBJECT_SELECT_MODE_ALWAYS)
+     always = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sel_mode == ELM_OBJECT_SELECT_MODE_NONE)
+     no_sel = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+
+   printf(<span class="stringliteral">&quot;default values:\n&quot;</span>);
+   printf(<span class="stringliteral">&quot;always select: %d\n&quot;</span>, always);
+   <a class="code" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get</a>(list, &amp;hbounce, &amp;vbounce);
+   printf(<span class="stringliteral">&quot;bounce - horizontal: %d, vertical: %d\n&quot;</span>, hbounce, vbounce);
+   printf(<span class="stringliteral">&quot;homogeneous: %d\n&quot;</span>, <a class="code" href="group__Elm__Genlist.html#ga8f3613f480cda6d868fed19a06d68fce" title="Get whether the homogeneous mode is enabled.">elm_genlist_homogeneous_get</a>(list));
+   printf(<span class="stringliteral">&quot;horizontal mode: %d\n&quot;</span>, <a class="code" href="group__Elm__Genlist.html#gab2f9072ed9b28ce2a1f23290e4870f42" title="Get the horizontal stretching mode.">elm_genlist_mode_get</a>(list));
+   printf(<span class="stringliteral">&quot;longpress timeout: %0.3f\n&quot;</span>,
+          <a class="code" href="group__Elm__Genlist.html#gac53b32aa31c3722776bb8a045427159f" title="Get the timeout in seconds for the longpress event.">elm_genlist_longpress_timeout_get</a>(list));
+   printf(<span class="stringliteral">&quot;multi selection: %d\n&quot;</span>, <a class="code" href="group__Elm__Genlist.html#ga9ff764e454179692d1d573adb9d885fd" title="Get if multi-selection in genlist is enabled or disabled.">elm_genlist_multi_select_get</a>(list));
+   printf(<span class="stringliteral">&quot;no selection mode: %d\n&quot;</span>, no_sel);
+   <a class="code" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get</a>(list, &amp;hp, &amp;vp);
+   printf(<span class="stringliteral">&quot;scroller policy - horizontal: %d, vertical: %d\n&quot;</span>, hp, vp);
+   printf(<span class="stringliteral">&quot;block count: %d\n&quot;</span>, <a class="code" href="group__Elm__Genlist.html#ga5fafc8d05f8b63a25bebde898f227699" title="Get the maximum number of items within an item block.">elm_genlist_block_count_get</a>(list));
+   printf(<span class="stringliteral">&quot;\n&quot;</span>);
+</pre></div></p>
 <p>We are going to change some of the properties of our list.</p>
 <p>There's no need to call the selected callback at every click, just when the selected item changes, thus we call <a class="el" href="group__Elm__Genlist.html#gaf037c92717b93ea122ae26c757a23c65" title="Set the genlist select mode.">elm_genlist_select_mode_set()</a> with ELM_OBJECT_SELECT_MODE_ALWAYS.</p>
 <p>For this list we don't want bounce animations at all, so we set both the horizontal bounce and the vertical bounce to false with elm_genlist_bounce_set().</p>
@@ -107,14 +160,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>We want the vertical scrollbar to be always displayed, and the orizontal one to never be displayed, and set this with elm_genlist_scroller_policy_set().</p>
 <p>The timeout to consider a longpress is set to half of a second with <a class="el" href="group__Elm__Genlist.html#ga794379f1622c52fb7815afe89559ffa6" title="Set the timeout in seconds for the longpress event.">elm_genlist_longpress_timeout_set()</a>.</p>
 <p>We also change the block count to a smaller value, but that should have not impact on performance since the number of visible items is too small. We just increase the granularity of the block count (setting it to have at most 4 items).</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   <a class="code" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(list, EINA_FALSE, EINA_FALSE);
+   <a class="code" href="group__Elm__Genlist.html#gae988081f5d93d0916cd659395dec07c9" title="Enable/disable homogeneous mode.">elm_genlist_homogeneous_set</a>(list, EINA_FALSE);
+   <a class="code" href="group__Elm__Genlist.html#ga7749546e6666dd50ab7d1b8a4dbb99ad" title="This sets the horizontal stretching mode.">elm_genlist_mode_set</a>(list, <a class="code" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a>);
+   <a class="code" href="group__Elm__Genlist.html#gaa59068079de22ed91758085dae25367b" title="Enable or disable multi-selection in the genlist.">elm_genlist_multi_select_set</a>(list, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Genlist.html#gaf037c92717b93ea122ae26c757a23c65" title="Set the genlist select mode.">elm_genlist_select_mode_set</a>(list, ELM_OBJECT_SELECT_MODE_DEFAULT);
+   <a class="code" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set</a>(list, <a class="code" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>, <a class="code" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a>);
+   <a class="code" href="group__Elm__Genlist.html#ga794379f1622c52fb7815afe89559ffa6" title="Set the timeout in seconds for the longpress event.">elm_genlist_longpress_timeout_set</a>(list, 0.5);
+   <a class="code" href="group__Elm__Genlist.html#gac233431ab16f68d8602940cef5c4a7dc" title="Set the maximum number of items within an item block.">elm_genlist_block_count_set</a>(list, 16);
+</pre></div></p>
 <p>Now let's add elements to the list:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   <span class="keywordflow">for</span> (i = 0; i &lt; N_ITEMS; i++)
+     {
+        <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc,
+                                (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)i, NULL,
+                                ELM_GENLIST_ITEM_NONE,
+                                _item_sel_cb, NULL);
+     }
+</pre></div></p>
 <p>It's exactly the same as the previous example. The difference is on the behavior of the list, if you try to scroll, select items and so.</p>
 <p>In this example we also need two buttons. One of them, when clicked, will display several status info about the current selection, the "realized" items, the item in the middle of the screen, and the current mode and active item of that mode for the genlist.</p>
 <p>The other button will ask the genlist to "realize" again the items already "realized", so their respective label_get and icon_get functions will be called again.</p>
 <p>These are the callbacks for both of these buttons:</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_show_status_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   Evas_Coord x, y, w, h, mx, my;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+
+   <span class="keyword">const</span> <a class="code" href="struct__Eina__List.html">Eina_List</a> *selected, *l;
+   <a class="code" href="struct__Eina__List.html">Eina_List</a> *realized;
+   printf(<span class="stringliteral">&quot;\nfirst selected item: %p\n&quot;</span>, glit);
+
+   selected = <a class="code" href="group__Elm__Genlist.html#ga9068ee98b3ec68d0ca056572a5410462" title="Get a list of selected items in the genlist.">elm_genlist_selected_items_get</a>(list);
+   printf(<span class="stringliteral">&quot;all selected items (%d): &quot;</span>, <a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(selected));
+   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(selected, l, glit)
+     printf(&quot;%p &quot;, glit);
+   printf(&quot;\n&quot;);
+
+   realized = <a class="code" href="group__Elm__Genlist.html#gaee137527ef5b6e64f811ffbfa51aae58" title="Get a list of realized items in genlist.">elm_genlist_realized_items_get</a>(list);
+   printf(&quot;realized items (%d): &quot;, <a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(realized));
+   <span class="comment">// The realized items list should be freed by either eina_list_free() or EINA_LIST_FREE when it is no longer needed</span>
+   <a class="code" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>(realized, glit)
+     printf(&quot;%p  &quot;, glit);
+   printf(&quot;\n&quot;);
+   printf(&quot;genlist mode: %d\n&quot;, elm_genlist_decorate_mode_get(list));
+   printf(&quot;mode item: %p\n&quot;, elm_genlist_decorated_item_get(list));
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(list, &amp;x, &amp;y, &amp;w, &amp;h);
+   mx = w / 2 + x;
+   my = h / 2 + y;
+   glit = <a class="code" href="group__Elm__Genlist.html#gaca055a0caf396d79a412975e2421cb1e" title="Get the item that is at the x, y canvas coords.">elm_genlist_at_xy_item_get</a>(list, mx, my, NULL);
+   printf(&quot;item in the middle of the screen: %p\n&quot;, glit);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_realize_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__Genlist.html#ga2a5a48241e3fc59c0ee75fc85a014df7" title="Update the contents of all realized items.">elm_genlist_realized_items_update</a>(list);
+}
+</pre></div></p>
 <p>Try to scroll, select some items and click on the "Show status" button. You'll notice that not all items of the list are "realized", thus consuming just a small amount of memory. The selected items are listed in the order that they were selected, and the current selected item printed using <a class="el" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get()</a> is the first selected item of the multiple selection.</p>
 <p>Now resize the window so that you can see the "realized time" of some items. This is the time of when the label_get function was called. If you click on the "Realize" button, all the already realized items will be rebuilt, so the time will be updated for all of them.</p>
 <p>The current example will look like this when running:</p>

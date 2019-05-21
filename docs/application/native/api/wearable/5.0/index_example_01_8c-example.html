@@ -90,7 +90,174 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">index_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+<span class="preprocessor">#include &lt;assert.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *dict[] = \
+{
+<span class="preprocessor">#include &quot;dict.txt&quot;</span>
+};
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_index_item_del(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">void</span> *event_info)
+{
+   printf(<span class="stringliteral">&quot;Deleting index node (%s). Comparing index &quot;</span>
+           <span class="stringliteral">&quot;item data reported via callback with the one returned by &quot;</span>
+           <span class="stringliteral">&quot;index&#39;s API on items: %s.\n&quot;</span>,
+           elm_index_item_letter_get(event_info),
+           data == <a name="a1"></a><a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(event_info) ? <span class="stringliteral">&quot;OK&quot;</span> :
+           <span class="stringliteral">&quot;FAIL, something went wrong&quot;</span>);
+}
+
+<span class="comment">/* delete an index item */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_item_del(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it = <a name="a2"></a><a class="code" href="group__Elm__Index.html#gada78a8c8a3908f9ce8e97c3aa03e0db0" title="Returns the last selected item, for a given index widget.">elm_index_selected_item_get</a>(data, 0);
+
+   <span class="keywordflow">if</span> (!it) <span class="keywordflow">return</span>;
+
+   printf(<span class="stringliteral">&quot;Deleting last selected index item, which had letter&quot;</span>
+           <span class="stringliteral">&quot; %s (pointing to %p)\n&quot;</span>, elm_index_item_letter_get(it),
+           <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(it));
+
+   <a name="a3"></a><a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(it);
+   <a name="a4"></a><a class="code" href="group__Elm__Index.html#ga3bb92a868f63463403668a4bbcda21d1" title="Flush the changes made to the index items so they work correctly.">elm_index_level_go</a>(data, 0);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_item_del_all(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a name="a5"></a><a class="code" href="group__Elm__Index.html#ga9c0c1ff500522b62a674b36beafe7a19" title="Removes all items from a given index widget.">elm_index_item_clear</a>(data);
+   <a class="code" href="group__Elm__Index.html#ga3bb92a868f63463403668a4bbcda21d1" title="Flush the changes made to the index items so they work correctly.">elm_index_level_go</a>(data, 0);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_active_set(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled = <a name="a6"></a><a class="code" href="group__Elm__Index.html#ga4b1a080a5ddba56e53d16f97cdcfb3a1" title="Enable or disable auto hiding feature for a given index widget.">elm_index_autohide_disabled_get</a>(data);
+   <a name="a7"></a><a class="code" href="group__Elm__Index.html#ga6569179b38d11fb5fb1286815cf846fb" title="Enable or disable auto hiding feature for a given index widget.">elm_index_autohide_disabled_set</a>(data, !disabled);
+
+   printf(<span class="stringliteral">&quot;Toggling index programmatically to %s.\n&quot;</span>,
+           !disabled ? <span class="stringliteral">&quot;On&quot;</span> : <span class="stringliteral">&quot;Off&quot;</span>);
+}
+
+<span class="comment">/* &quot;delay,changed&quot; hook */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_index_changed(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
+{
+   elm_list_item_bring_in(<a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(event_info));
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_index_selected(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *lit = event_info;
+
+   printf(<span class="stringliteral">&quot;New index item selected. Comparing item reported&quot;</span>
+           <span class="stringliteral">&quot; via callback with the selection returned by the API: &quot;</span>
+           <span class="stringliteral">&quot;%s.\n&quot;</span>, lit == <a class="code" href="group__Elm__Index.html#gada78a8c8a3908f9ce8e97c3aa03e0db0" title="Returns the last selected item, for a given index widget.">elm_index_selected_item_get</a>(obj, 0) ? <span class="stringliteral">&quot;OK&quot;</span> :
+           <span class="stringliteral">&quot;FAIL, something went wrong&quot;</span>);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *hbox, *vbox, *bt, *sep, *list, *id;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *lit;
+   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+   <span class="keywordtype">char</span> curr = 0;
+
+   <a name="a8"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a9"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;index&quot;</span>, <span class="stringliteral">&quot;Index Example&quot;</span>);
+   <a name="a10"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a11"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   vbox = <a name="a12"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(vbox, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a13"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, vbox);
+   <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(vbox);
+
+   list = <a name="a15"></a><a class="code" href="group__Elm__List.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a>(win);
+   evas_object_size_hint_weight_set(list, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(list, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(list);
+   <a name="a16"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, list);
+
+   <span class="keywordtype">id</span> = <a name="a17"></a><a class="code" href="group__Elm__Index.html#gaf7fda3a54ca154cdc754326137f3737e">elm_index_add</a>(win);
+   evas_object_size_hint_weight_set(<span class="keywordtype">id</span>, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, <span class="keywordtype">id</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(<span class="keywordtype">id</span>);
+
+   <span class="keywordflow">for</span> (i = 0; i &lt; (<span class="keyword">sizeof</span>(dict) / <span class="keyword">sizeof</span>(dict[0])); i++)
+     {
+        lit = <a name="a18"></a><a class="code" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(list, dict[i], NULL, NULL, NULL, NULL);
+
+        <span class="keywordflow">if</span> (curr != dict[i][0])
+          {
+             <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *index_it;
+             <span class="keywordtype">char</span> buf[32];
+
+             curr = dict[i][0];
+             <span class="comment">/* indexing by first letters */</span>
+
+             snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%c&quot;</span>, curr);
+             index_it = <a name="a19"></a><a class="code" href="group__Elm__Index.html#gae1ed71ea2b43737af0c348d3ae9b0524" title="Append a new item on a given index widget.">elm_index_item_append</a>(<span class="keywordtype">id</span>, buf, NULL, lit);
+
+             <span class="comment">/* this is here just to demostrate the API call */</span>
+             (void)<a name="a20"></a><a class="code" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579" title="Find a given index widget&#39;s item, using item data.">elm_index_item_find</a>(<span class="keywordtype">id</span>, lit);
+             assert(<a class="code" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579" title="Find a given index widget&#39;s item, using item data.">elm_index_item_find</a>(<span class="keywordtype">id</span>, lit) == index_it);
+
+             <a name="a21"></a><a class="code" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set</a>(index_it, _index_item_del);
+          }
+     }
+
+   <a name="a22"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed,
+                                  NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(<span class="keywordtype">id</span>, <span class="stringliteral">&quot;selected&quot;</span>, _index_selected, NULL);
+   <a class="code" href="group__Elm__Index.html#ga3bb92a868f63463403668a4bbcda21d1" title="Flush the changes made to the index items so they work correctly.">elm_index_level_go</a>(<span class="keywordtype">id</span>, 0);
+
+   <span class="comment">/* attribute setting knobs */</span>
+   sep = elm_separator_add(win);
+   elm_separator_horizontal_set(sep, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, sep);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sep);
+
+   hbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a name="a23"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(hbox, EVAS_HINT_EXPAND, 0);
+   evas_object_size_hint_fill_set(hbox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, hbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbox);
+
+   bt = <a name="a24"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;bring in index&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _active_set, <span class="keywordtype">id</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;delete last selected item&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _item_del, <span class="keywordtype">id</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;delete all items&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _item_del_all, <span class="keywordtype">id</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   evas_object_resize(win, 320, 600);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a25"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a26"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

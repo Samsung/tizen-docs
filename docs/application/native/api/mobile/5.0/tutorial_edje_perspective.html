@@ -118,35 +118,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>We also set the <code>app.x</code> and <code>app.y</code> to (0, 0) because the original position of our text + rectangle part will be on top left. This is a convention that we are using in this example, and setting x, y to 1, 1 would mean bottom right. We do this to later define the name of the signals that we are sending to the theme.</p>
 <p>After this, some boilerplate code to load the theme:</p>
 <p><div class="fragment"><pre class="fragment">
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga882987a24bee767814a936d15bc6a188" title="Sets a callback for Ecore_Evas destroy events.">ecore_evas_callback_destroy_set</a>(ee, _on_destroy);
    <a class="code" href="group__Ecore__Evas__Group.html#ga735c0c2fb597f34b096ec0f43fc3a7ac" title="Sets a callback for Ecore_Evas resize events.">ecore_evas_callback_resize_set</a>(ee, _on_canvas_resize);
-   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Box Example&quot;</span>);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Perspective Example&quot;</span>);
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;app&quot;</span>, &amp;app);
 
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    app.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(app.bg, 255, 255, 255, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(app.bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(app.bg, 255, 255, 255, 255);
+   evas_object_resize(app.bg, WIDTH, HEIGHT);
    evas_object_focus_set(app.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.bg);
 </pre></div></p>
 <p>Now we are going to setup a callback to tell us that the animation has ended. We do this just to avoid sending signals to the theme while it's animating.</p>
 <p><div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(app.bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_bg_key_down, &amp;app);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(app.bg, EVAS_CALLBACK_KEY_DOWN, _on_bg_key_down, &amp;app);
 
    app.edje_obj = edje_object_add(evas);
 
    edje_object_file_set(app.edje_obj, edje_file, <span class="stringliteral">&quot;example/group&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(app.edje_obj, 0, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(app.edje_obj, WIDTH, HEIGHT);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.edje_obj);
+   evas_object_move(app.edje_obj, 0, 0);
+   evas_object_resize(app.edje_obj, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.edje_obj);
 
-   <a class="code" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(app.edje_obj, <span class="stringliteral">&quot;animation,end&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, _animation_end_cb, &amp;app);
+   edje_object_signal_callback_add(app.edje_obj, <span class="stringliteral">&quot;animation,end&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, _animation_end_cb, &amp;app);
 </pre></div></p>
 <p>Finally, let's create our perspective object, define its position, focal distance and z plane position, and set it as global:</p>
 <p><div class="fragment"><pre class="fragment">
@@ -154,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Edje__Perspective.html#gaeee5dfe8b3f428583e4f8a846f0b0d15" title="Sets up the transform for this perspective object.">edje_perspective_set</a>(app.ps, 240, 160, 0, app.focal);
    <a class="code" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set</a>(app.ps, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
-<p>Notice that if we wanted to set it just to our edje object, instead of setting the perspective as global to the entire canvas, we could just use <a class="el" href="group__Edje__Object.html#ga9e108a29070bc5cc4d8d3deb038ce841" title="Sets the given perspective object on this Edje object.">edje_object_perspective_set()</a> instead of <a class="el" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set()</a>. The rest of the code would be exactly the same.</p>
+<p>Notice that if we wanted to set it just to our edje object, instead of setting the perspective as global to the entire canvas, we could just use <a class="el" href="group__Edje__Perspective.html#ga0087812fb067751f8b3ce1581575cafc" title="Sets the given perspective object on this Edje object.">edje_object_perspective_set()</a> instead of <a class="el" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set()</a>. The rest of the code would be exactly the same.</p>
 <p>Now, let's take a look at what we do in our callbacks.</p>
 <p>The callback for key_down is converting the arrow keys to a signal that represents where we want our text and rectangle moved to. It does that by using the following function:</p>
  <div class="fragment"><pre class="fragment">_part_move(<span class="keyword">struct</span> _App *app, <span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy)
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      app-&gt;y = 0;
 
    snprintf(emission, <span class="keyword">sizeof</span>(emission), <span class="stringliteral">&quot;move,%d,%d&quot;</span>, app-&gt;x, app-&gt;y);
-   <a class="code" href="group__Edje__Object.html#gae9213646037e39d19d8cb61dad427ff7" title="Sends/emits an Edje signal to a given Edje object.">edje_object_signal_emit</a>(app-&gt;edje_obj, emission, <span class="stringliteral">&quot;&quot;</span>);
+   edje_object_signal_emit(app-&gt;edje_obj, emission, <span class="stringliteral">&quot;&quot;</span>);
    app-&gt;animating = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 }
 </pre></div></p>
@@ -192,7 +192,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
 
    <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>))
      {
-        fprintf(stdout, commands);
+        printf(commands);
         <span class="keywordflow">return</span>;
      }
    <span class="comment">// just moving the part and text</span>
@@ -225,7 +225,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
      {
     app-&gt;focal += 5;
     <a class="code" href="group__Edje__Perspective.html#gaeee5dfe8b3f428583e4f8a846f0b0d15" title="Sets up the transform for this perspective object.">edje_perspective_set</a>(app-&gt;ps, 240, 160, 0, app-&gt;focal);
-    <a class="code" href="group__Edje__Object.html#ga5a3b9bfb0b6e9bd93c523828388518c4" title="Forces a Size/Geometry calculation.">edje_object_calc_force</a>(app-&gt;edje_obj);
+    edje_object_calc_force(app-&gt;edje_obj);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;KP_Subtract&quot;</span>))
      {
@@ -234,7 +234,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
       app-&gt;focal = 5;
 
     <a class="code" href="group__Edje__Perspective.html#gaeee5dfe8b3f428583e4f8a846f0b0d15" title="Sets up the transform for this perspective object.">edje_perspective_set</a>(app-&gt;ps, 240, 160, 0, app-&gt;focal);
-    <a class="code" href="group__Edje__Object.html#ga5a3b9bfb0b6e9bd93c523828388518c4" title="Forces a Size/Geometry calculation.">edje_object_calc_force</a>(app-&gt;edje_obj);
+    edje_object_calc_force(app-&gt;edje_obj);
      }
    <span class="comment">// exiting</span>
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;Escape&quot;</span>))
@@ -242,10 +242,10 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
    <span class="keywordflow">else</span>
      {
         printf(<span class="stringliteral">&quot;unhandled key: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        fprintf(stdout, commands);
+        printf(commands);
      }
 </pre></div></p>
-<p>Notice that we also do something else when the numeric keyboard "+" and "-" keys are pressed. We change the focal distance of our global perspective, and that will affect the part that has a map rotation applied to it, with perspective enabled. We also need to call <a class="el" href="group__Edje__Object.html#ga5a3b9bfb0b6e9bd93c523828388518c4" title="Forces a Size/Geometry calculation.">edje_object_calc_force()</a>, otherwise the Edje object has no way to know that we changed the global perspective.</p>
+<p>Notice that we also do something else when the numeric keyboard "+" and "-" keys are pressed. We change the focal distance of our global perspective, and that will affect the part that has a map rotation applied to it, with perspective enabled. We also need to call edje_object_calc_force(), otherwise the Edje object has no way to know that we changed the global perspective.</p>
 <p>Try playing with these keys and see what happens to the animation when the value of the focal distance changes.</p>
 <p>Finally we add a callback for the animation ended signal:</p>
 <p><div class="fragment"><pre class="fragment">_animation_end_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *emission EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *source EINA_UNUSED)
@@ -315,8 +315,8 @@ _on_canvas_resize(Ecore_Evas *ee)
    <span class="keyword">struct </span>_App *app = <a class="code" href="group__Ecore__Evas__Group.html#ga170cb06bdaaf631bd0dd0f80f5173549" title="Retrieves user data associated with an Ecore_Evas.">ecore_evas_data_get</a>(ee, <span class="stringliteral">&quot;app&quot;</span>);
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(app-&gt;bg, w, h);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(app-&gt;edje_obj, w, h);
+   evas_object_resize(app-&gt;bg, w, h);
+   evas_object_resize(app-&gt;edje_obj, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -339,7 +339,7 @@ _part_move(<span class="keyword">struct</span> _App *app, <span class="keywordty
      app-&gt;y = 0;
 
    snprintf(emission, <span class="keyword">sizeof</span>(emission), <span class="stringliteral">&quot;move,%d,%d&quot;</span>, app-&gt;x, app-&gt;y);
-   <a class="code" href="group__Edje__Object.html#gae9213646037e39d19d8cb61dad427ff7" title="Sends/emits an Edje signal to a given Edje object.">edje_object_signal_emit</a>(app-&gt;edje_obj, emission, <span class="stringliteral">&quot;&quot;</span>);
+   edje_object_signal_emit(app-&gt;edje_obj, emission, <span class="stringliteral">&quot;&quot;</span>);
    app-&gt;animating = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 }
 
@@ -352,7 +352,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
 
    <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>))
      {
-        fprintf(stdout, commands);
+        printf(commands);
         <span class="keywordflow">return</span>;
      }
    <span class="comment">// just moving the part and text</span>
@@ -385,7 +385,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
      {
     app-&gt;focal += 5;
     <a class="code" href="group__Edje__Perspective.html#gaeee5dfe8b3f428583e4f8a846f0b0d15" title="Sets up the transform for this perspective object.">edje_perspective_set</a>(app-&gt;ps, 240, 160, 0, app-&gt;focal);
-    <a class="code" href="group__Edje__Object.html#ga5a3b9bfb0b6e9bd93c523828388518c4" title="Forces a Size/Geometry calculation.">edje_object_calc_force</a>(app-&gt;edje_obj);
+    edje_object_calc_force(app-&gt;edje_obj);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;KP_Subtract&quot;</span>))
      {
@@ -394,7 +394,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
       app-&gt;focal = 5;
 
     <a class="code" href="group__Edje__Perspective.html#gaeee5dfe8b3f428583e4f8a846f0b0d15" title="Sets up the transform for this perspective object.">edje_perspective_set</a>(app-&gt;ps, 240, 160, 0, app-&gt;focal);
-    <a class="code" href="group__Edje__Object.html#ga5a3b9bfb0b6e9bd93c523828388518c4" title="Forces a Size/Geometry calculation.">edje_object_calc_force</a>(app-&gt;edje_obj);
+    edje_object_calc_force(app-&gt;edje_obj);
      }
    <span class="comment">// exiting</span>
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;Escape&quot;</span>))
@@ -402,7 +402,7 @@ _on_bg_key_down(<span class="keywordtype">void</span> *data, <a class="code" hre
    <span class="keywordflow">else</span>
      {
         printf(<span class="stringliteral">&quot;unhandled key: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        fprintf(stdout, commands);
+        printf(commands);
      }
 }
 
@@ -437,39 +437,39 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    app.y = 0;
    app.focal = 50;
 
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga882987a24bee767814a936d15bc6a188" title="Sets a callback for Ecore_Evas destroy events.">ecore_evas_callback_destroy_set</a>(ee, _on_destroy);
    <a class="code" href="group__Ecore__Evas__Group.html#ga735c0c2fb597f34b096ec0f43fc3a7ac" title="Sets a callback for Ecore_Evas resize events.">ecore_evas_callback_resize_set</a>(ee, _on_canvas_resize);
-   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Box Example&quot;</span>);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Perspective Example&quot;</span>);
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;app&quot;</span>, &amp;app);
 
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    app.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(app.bg, 255, 255, 255, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(app.bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(app.bg, 255, 255, 255, 255);
+   evas_object_resize(app.bg, WIDTH, HEIGHT);
    evas_object_focus_set(app.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.bg);
 
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(app.bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_bg_key_down, &amp;app);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(app.bg, EVAS_CALLBACK_KEY_DOWN, _on_bg_key_down, &amp;app);
 
    app.edje_obj = edje_object_add(evas);
 
    edje_object_file_set(app.edje_obj, edje_file, <span class="stringliteral">&quot;example/group&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(app.edje_obj, 0, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(app.edje_obj, WIDTH, HEIGHT);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.edje_obj);
+   evas_object_move(app.edje_obj, 0, 0);
+   evas_object_resize(app.edje_obj, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(app.edje_obj);
 
-   <a class="code" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(app.edje_obj, <span class="stringliteral">&quot;animation,end&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, _animation_end_cb, &amp;app);
+   edje_object_signal_callback_add(app.edje_obj, <span class="stringliteral">&quot;animation,end&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, _animation_end_cb, &amp;app);
 
    app.ps = <a class="code" href="group__Edje__Perspective.html#ga4ce415ab5a9f53ba55d921ab5c48a2f4" title="Creates a new perspective in the given canvas.">edje_perspective_new</a>(evas);
    <a class="code" href="group__Edje__Perspective.html#gaeee5dfe8b3f428583e4f8a846f0b0d15" title="Sets up the transform for this perspective object.">edje_perspective_set</a>(app.ps, 240, 160, 0, app.focal);
    <a class="code" href="group__Edje__Perspective.html#ga9e560272fb6b954a9e99eaad72a6755f" title="Makes this perspective object be global for its canvas.">edje_perspective_global_set</a>(app.ps, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   fprintf(stdout, commands);
+   printf(commands);
 
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 

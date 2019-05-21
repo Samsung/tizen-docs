@@ -123,9 +123,9 @@ Functions</h2></td></tr>
 <p>Retrieves the time at which the last loop stopped waiting for timeouts or events.</p>
 <p>This gets the time that the main loop ceased waiting for timouts and/or events to come in or for signals or any other interrupt source. This should be considered a reference point for all time based activity that should calculate its timepoint from the return of <a class="el" href="group__Ecore__Time__Group.html#gab53d952cc4c2f3ed032d535b307c43bd">ecore_loop_time_get()</a>. Use this UNLESS you absolutely must get the current actual timepoint - then use <a class="el" href="group__Ecore__Time__Group.html#ga98f2439b5d3e7114a75bfe2f0c22c4e9">ecore_time_get()</a>. Note that this time is meant to be used as relative to other times obtained on this run. If you need absolute time references, use <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get()</a> instead.</p>
 <p>This function can be called before any loop has ever been run, but either <a class="el" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init()</a> or <a class="el" href="group__Ecore__Time__Group.html#ga98f2439b5d3e7114a75bfe2f0c22c4e9">ecore_time_get()</a> must have been called once.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The number of seconds. Start time is not defined (it may be when the machine was booted, unix time, etc), all it is defined is that it never goes backwards (unless you got big critical messages when the application started).</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The number of seconds. Start time is not defined (it may be when the machine was booted, unix time, etc), all it is defined is that it never goes backwards (unless you got big critical messages when the application started). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_time_functions_example_8c-example.html#a2">ecore_time_functions_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_time_functions_example_8c-example.html#a2">ecore_time_functions_example.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a5">efl_thread_6.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -148,7 +148,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of seconds. Start time is not defined (it may be when the machine was booted, unix time, etc), all it is defined is that it never goes backwards (unless you got big critical messages when the application started).</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Time__Group.html#gab53d952cc4c2f3ed032d535b307c43bd">ecore_loop_time_get()</a>. </dd>
 <dd>
-<a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get()</a>.</dd></dl>
+<a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_poller_example_8c-example.html#a0">ecore_poller_example.c</a>, <a class="el" href="ecore_time_functions_example_8c-example.html#a1">ecore_time_functions_example.c</a>, and <a class="el" href="ecore_timer_example_8c-example.html#a0">ecore_timer_example.c</a>.</dd>
 </dl>
@@ -172,9 +172,9 @@ Functions</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Time__Group.html#ga98f2439b5d3e7114a75bfe2f0c22c4e9">ecore_time_get()</a>. </dd>
 <dd>
 <a class="el" href="group__Ecore__Time__Group.html#gab53d952cc4c2f3ed032d535b307c43bd">ecore_loop_time_get()</a>.</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The number of seconds since 12.00AM 1st January 1970.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The number of seconds since 12.00AM 1st January 1970. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_time_functions_example_8c-example.html#a3">ecore_time_functions_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_time_functions_example_8c-example.html#a3">ecore_time_functions_example.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a2">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a2">genlist_example_03.c</a>, and <a class="el" href="genlist_example_04_8c-example.html#a2">genlist_example_04.c</a>.</dd>
 </dl>
 </div>
 </div>

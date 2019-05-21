@@ -91,12 +91,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary flip selector widget on a window, along with two buttons trigerring actions on it (though its API).</p>
-<p>The selector is being populated with the following items:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Next, we create it, populating it with those items and registering two (smart) callbacks on it:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Those two callbacks will take place whenever one of those smart events occur, and they will just print something to <code>stdout:</code>  <div class="fragment"><pre class="fragment"></pre></div> Flip the sheets on the widget while looking at the items list, in the source code, and you'll get the idea of those events.</p>
-<p>The two buttons below the flip selector will take the actions described in their labels:  <div class="fragment"><pre class="fragment"></pre></div></p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Click on them to exercise those flip selector API calls. To interact with the other parts of this API, there's a command line interface, whose help string can be asked for with the 'h' key:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The selector is being populated with the following items:  <div class="fragment"><pre class="fragment">   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *lbl[] =
+     {
+        <span class="stringliteral">&quot;Elementary&quot;</span>,
+        <span class="stringliteral">&quot;Evas&quot;</span>,
+        <span class="stringliteral">&quot;Eina&quot;</span>,
+        <span class="stringliteral">&quot;Edje&quot;</span>,
+        <span class="stringliteral">&quot;Eet&quot;</span>,
+        <span class="stringliteral">&quot;Ecore&quot;</span>,
+        <span class="stringliteral">&quot;Efreet&quot;</span>,
+        <span class="stringliteral">&quot;Eldbus&quot;</span>
+     };
+</pre></div></p>
+<p>Next, we create it, populating it with those items and registering two (smart) callbacks on it:  <div class="fragment"><pre class="fragment">   fp = <a class="code" href="group__Elm__Flipselector.html#gaffabf9e37915526cbbe8ac2621eeee8a">elm_flipselector_add</a>(win);
+   evas_object_size_hint_weight_set(fp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;underflowed&quot;</span>, _overflow_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fp, <span class="stringliteral">&quot;overflowed&quot;</span>, _underflow_cb, NULL);
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     <a class="code" href="group__Elm__Flipselector.html#gab85bb0c578cb1a81ed387ad8094387c9" title="Append a (text) item to a flip selector widget.">elm_flipselector_item_append</a>(fp, lbl[i], NULL, NULL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, fp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fp);
+</pre></div></p>
+<p>Those two callbacks will take place whenever one of those smart events occur, and they will just print something to <code>stdout:</code>  <div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> <span class="comment">/* underflow callback */</span>
+_underflow_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+              <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Underflow!\n&quot;</span>);
+}
+
+<span class="keywordtype">void</span> <span class="comment">/* overflow callback */</span>
+_overflow_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+             <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+             <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Overflow!\n&quot;</span>);
+}
+</pre></div> Flip the sheets on the widget while looking at the items list, in the source code, and you'll get the idea of those events.</p>
+<p>The two buttons below the flip selector will take the actions described in their labels:  <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Unselect item&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _unsel_cb, fp);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Delete item&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _del_cb, fp);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   <a class="code" href="group__Elm__General.html#gae2d2f3ef544f5aa59a0d89fbb67584e5">elm_object_event_callback_add</a>(win, _on_keydown, fp);
+</pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keywordtype">void</span> <span class="comment">/* unselect the item shown in the flip selector */</span>
+_unsel_cb(<span class="keywordtype">void</span>        *data,
+          <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+          <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fp = data;
+
+   it = <a class="code" href="group__Elm__Flipselector.html#ga53cd0c179a93a7f5cdce51deaf4e8b78" title="Get the currently selected item in a flip selector widget.">elm_flipselector_selected_item_get</a>(fp);
+   elm_flipselector_item_selected_set(it, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+}
+
+<span class="keywordtype">void</span> <span class="comment">/* delete the item shown in the flip selector */</span>
+_del_cb(<span class="keywordtype">void</span>        *data,
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+        <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fp = data;
+
+   it = <a class="code" href="group__Elm__Flipselector.html#ga53cd0c179a93a7f5cdce51deaf4e8b78" title="Get the currently selected item in a flip selector widget.">elm_flipselector_selected_item_get</a>(fp);
+   <span class="keywordflow">if</span> (it) <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(it);
+}
+</pre></div></p>
+<p>Click on them to exercise those flip selector API calls. To interact with the other parts of this API, there's a command line interface, whose help string can be asked for with the 'h' key:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
+                              <span class="stringliteral">&quot;commands are:\n&quot;</span>
+                              <span class="stringliteral">&quot;\tn - flip to next item\n&quot;</span>
+                              <span class="stringliteral">&quot;\tp - flip to previous item\n&quot;</span>
+                              <span class="stringliteral">&quot;\tf - print first item&#39;s label\n&quot;</span>
+                              <span class="stringliteral">&quot;\tl - print last item&#39;s label\n&quot;</span>
+                              <span class="stringliteral">&quot;\ts - print selected item&#39;s label\n&quot;</span>
+                              <span class="stringliteral">&quot;\th - print help\n&quot;</span>;
+</pre></div></p>
 <p>The 'n' and 'p' keys will exemplify <a class="el" href="group__Elm__Flipselector.html#ga2973625aed5c7c100995752549266c50" title="Programmatically select the next item of a flip selector widget.">elm_flipselector_flip_next()</a> and <a class="el" href="group__Elm__Flipselector.html#gaf15ec628ff7ef1af149f175cfb4ba817" title="Programmatically select the previous item of a flip selector widget.">elm_flipselector_flip_prev()</a>, respectively. 'f' and 'l' account for <a class="el" href="group__Elm__Flipselector.html#gab7d83fdcb543d83abb616b2a2454447f" title="Get the first item in the given flip selector widget&#39;s list of items.">elm_flipselector_first_item_get()</a> and <a class="el" href="group__Elm__Flipselector.html#ga85f6a5d139784e71067eec43eca847ef" title="Get the last item in the given flip selector widget&#39;s list of items.">elm_flipselector_last_item_get()</a>, respectively. Finally, 's' will issue <a class="el" href="group__Elm__Flipselector.html#ga53cd0c179a93a7f5cdce51deaf4e8b78" title="Get the currently selected item in a flip selector widget.">elm_flipselector_selected_item_get()</a> on our example flip selector widget.</p>
 <p>See the full <a class="el" href="flipselector_example_8c-example.html">example</a>, whose window should look like this picture:</p>
 <div class="image">

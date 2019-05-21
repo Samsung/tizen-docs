@@ -92,21 +92,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example is as simple as possible. An image object will be added to the window over a white background, and set to be resizable together with the window. All the options set through the example will affect the behavior of this image.</p>
 <p>We start with the code for creating a window and its background, and also add the code to write the path to the image that will be loaded:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *image;
+   <span class="keywordtype">char</span> buf[PATH_MAX];
+
+   <a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images/plant_01.jpg&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;image&quot;</span>, <span class="stringliteral">&quot;Image&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/plant_01.jpg&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+</pre></div></p>
 <p>Now we create the image object, and set that file to be loaded:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   image = <a class="code" href="group__Elm__Image.html#ga5d211c8af4f6e297a24fc4e8737c81a9">elm_image_add</a>(win);
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(image, buf, NULL))
+     {
+        printf(<span class="stringliteral">&quot;error: could not load image \&quot;%s\&quot;\n&quot;</span>, buf);
+        <span class="keywordflow">return</span> -1;
+     }
+</pre></div></p>
 <p>We can now go setting our options.</p>
-<p><a class="el" href="group__Elm__Image.html#gad5e7c1a774e7ef991e8f7726e4aee23b" title="Control scaling behaviour of this object.">elm_image_no_scale_set()</a> is used just to set this value to true (we don't want to scale our image anyway, just resize it).</p>
-<p><a class="el" href="group__Elm__Image.html#ga4ee58d06eb76efaf8996c7eb86469119" title="Control if the object is (up/down) resizable.">elm_image_resizable_set()</a> is used to allow the image to be resized to a size smaller than the original one, but not to a size bigger than it.</p>
-<p><a class="el" href="group__Elm__Image.html#gad1616cb527a0110058cb45b5e8307cd7" title="Control the smooth effect for an image.">elm_image_smooth_set()</a> will disable the smooth scaling, so the scale algorithm used to scale the image to the new object size is going to be faster, but with a lower quality.</p>
-<p><a class="el" href="group__Elm__Image.html#ga08ea6d0c413dcfe64a877899e0d3e466" title="Contrtol the image orientation.">elm_image_orient_set()</a> is used to flip the image around the (1, 0) (0, 1) diagonal.</p>
-<p><a class="el" href="group__Elm__Image.html#ga33716e03738241f4ca4129fdf745ae45" title="Control whether the original aspect ratio of the image should be kept on resize.">elm_image_aspect_fixed_set()</a> is used to keep the original aspect ratio of the image, even when the window is resized to another aspect ratio.</p>
-<p><a class="el" href="group__Elm__Image.html#ga962c104caf9ad23f21627a433af4a71a" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set()</a> is used to ensure that the image will fill the entire area available to it, even if keeping the aspect ratio. The image will overflow its width or height (any of them that is necessary) to the object area, instead of resizing the image down until it can fit entirely in this area.</p>
-<p><a class="el" href="group__Elm__Image.html#ga24230da3c83aa5139aa2f6a1545f8bf3" title="Contrtol if thhe image is &#39;editable&#39;.">elm_image_editable_set()</a> is used just to cover the API, but won't affect this example since we are not using any copy &amp; paste property.</p>
+<p><a class="el" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set()</a> is used just to set this value to true (we don't want to scale our image anyway, just resize it).</p>
+<p><a class="el" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set()</a> is used to allow the image to be resized to a size smaller than the original one, but not to a size bigger than it.</p>
+<p><a class="el" href="group__Elm__Image.html#ga9b8c946f4abbcd09f0b9de0b9026505f" title="Control the smooth effect for an image.">elm_image_smooth_set()</a> will disable the smooth scaling, so the scale algorithm used to scale the image to the new object size is going to be faster, but with a lower quality.</p>
+<p><a class="el" href="group__Elm__Image.html#ga9f9afe7bc41c23f0412cba2c6d28ac65" title="Contrtol the image orientation.">elm_image_orient_set()</a> is used to flip the image around the (1, 0) (0, 1) diagonal.</p>
+<p><a class="el" href="group__Elm__Image.html#gadd748c70384fb332aba9d0f3a9da2a50" title="Control whether the internal image&#39;s aspect ratio is fixed to the original image&#39;s aspect ratio...">elm_image_aspect_fixed_set()</a> is used to keep the original aspect ratio of the image, even when the window is resized to another aspect ratio.</p>
+<p><a class="el" href="group__Elm__Image.html#ga4c6c2fe6f609406329e2be2011574f94" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set()</a> is used to ensure that the image will fill the entire area available to it, even if keeping the aspect ratio. The image will overflow its width or height (any of them that is necessary) to the object area, instead of resizing the image down until it can fit entirely in this area.</p>
+<p><a class="el" href="group__Elm__Image.html#gaa58c91d1c9d19647608aa463c7ac3c98" title="Contrtol if the image is &#39;editable&#39;.">elm_image_editable_set()</a> is used just to cover the API, but won't affect this example since we are not using any copy &amp; paste property.</p>
 <p>This is the code for setting these options:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   <a class="code" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set</a>(image, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(image, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Image.html#ga9b8c946f4abbcd09f0b9de0b9026505f" title="Control the smooth effect for an image.">elm_image_smooth_set</a>(image, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Image.html#ga9f9afe7bc41c23f0412cba2c6d28ac65" title="Contrtol the image orientation.">elm_image_orient_set</a>(image, <a class="code" href="group__Elm__Image.html#gga122509e6310e5d4aa25caa3ab0416daba86973dddb12f96b2cb7c1ed16044fcd2">ELM_IMAGE_FLIP_HORIZONTAL</a>);
+   <a class="code" href="group__Elm__Image.html#gadd748c70384fb332aba9d0f3a9da2a50" title="Control whether the internal image&#39;s aspect ratio is fixed to the original image&#39;s aspect ratio...">elm_image_aspect_fixed_set</a>(image, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Image.html#ga4c6c2fe6f609406329e2be2011574f94" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set</a>(image, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Image.html#gaa58c91d1c9d19647608aa463c7ac3c98" title="Contrtol if the image is &#39;editable&#39;.">elm_image_editable_set</a>(image, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
 <p>Now some last touches in our object size hints, window and background, to display this image properly:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   evas_object_size_hint_weight_set(image, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, image);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(image);
+
+   evas_object_resize(win, 320, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
 <p>This example will look like this:</p>
 <div class="image">
 <img src="screenshots/image_example_01.png" alt="image_example_01.png"/>

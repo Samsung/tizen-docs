@@ -118,19 +118,69 @@ Creating items on EPC file</h2>
 <h2><a class="anchor" id="prefs-c-01"></a>
 Handling items on C File</h2>
 <p>Now we're handling the .C file and first we'll create a prefs widget.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   prefs = elm_prefs_add(win);
+   evas_object_size_hint_weight_set(prefs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, prefs);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(prefs);
+</pre></div></p>
 <p>Here we add some specific callbacks, for example "item,changed" that will be called when any item that we created on EPC file changes.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,saved&quot;</span>, _page_saved_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,loaded&quot;</span>, _page_loaded_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;item,changed&quot;</span>, _item_changed_cb, win);
+</pre></div></p>
 <p>Here we set the prefs to save its values back (on the user data file) automatically on every UI element changes.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   elm_prefs_autosave_set(prefs, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
 <p>In this part we create the prefs data handle and set the .EPB file (.EPC compiled). This .EPB file contains all the default values from the items that we created, this file will be loaded when the program starts or when clicked on a RESET type item. There is another file created when the values from prefs items are saved, the .CFG file, that contains all the non-standard saved values from the prefs items, this file will be loaded when program starts as well.</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment">   <a class="code" href="struct__Elm__Prefs__Data.html">Elm_Prefs_Data</a> *prefs_data;
+</pre></div></p>
+<p><div class="fragment"><pre class="fragment">   prefs_data = elm_prefs_data_new(<span class="stringliteral">&quot;./prefs_example_01.cfg&quot;</span>, NULL,
+                                   <a class="code" href="group__Eet__File__Group.html#ggaa8e1a7af50fefaf15eb2f69543d24998a763d29c19960a4e0d4eb7bc7bb512481">EET_FILE_MODE_READ_WRITE</a>);
+
+   elm_prefs_file_set(prefs, <span class="stringliteral">&quot;prefs_example_01.epb&quot;</span>, NULL);
+   elm_prefs_data_set(prefs, prefs_data);
+</pre></div></p>
 <p>Here we just create a notify widget to appear when the values are reset.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label, <span class="stringliteral">&quot;Setting Values Programmatically&quot;</span>);
+   evas_object_size_hint_align_set(label, 0.5, 0.5);
+
+   notify = <a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
+   <a class="code" href="group__Elm__Notify.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(notify, 0.5, 1);
+   <a class="code" href="group__Elm__Notify.html#gafdefb215afc5707a10482207acbacc32" title="Set the time interval after which the notify window is going to be hidden.">elm_notify_timeout_set</a>(notify, 2);
+   elm_object_content_set(notify, label);
+   evas_object_size_hint_weight_set(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
+</pre></div></p>
 <p>Now we add a timer to reset the items values on each 5.0 seconds and show the notify.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(notify, <span class="stringliteral">&quot;prefs_data&quot;</span>, prefs_data);
+</pre></div></p>
+ <div class="fragment"><pre class="fragment">_elm_prefs_data_change(<span class="keywordtype">void</span> *data)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *notify = data;
+   <a class="code" href="struct__Elm__Prefs__Data.html">Elm_Prefs_Data</a> *prefs_data;
+   Elm_Prefs_Item_Type type;
+   <a class="code" href="struct__Eina__Value.html">Eina_Value</a> value;
+
+   prefs_data = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(notify, <span class="stringliteral">&quot;prefs_data&quot;</span>);
+
+   <span class="keywordflow">if</span> (elm_prefs_data_value_get(prefs_data, <span class="stringliteral">&quot;main:universe&quot;</span>, &amp;type, &amp;value))
+     {
+        <a class="code" href="group__Eina__Value__Value__Group.html#ga9a1407c953694c3d6f40ab01ebe9a294" title="Sets the generic value.">eina_value_set</a>(&amp;value, 42);
+        elm_prefs_data_value_set(prefs_data, <span class="stringliteral">&quot;main:universe&quot;</span>, type, &amp;value);
+     }
+
+   <span class="keywordflow">if</span> (elm_prefs_data_value_get(prefs_data, <span class="stringliteral">&quot;main:text&quot;</span>, &amp;type, &amp;value))
+     {
+        <a class="code" href="group__Eina__Value__Value__Group.html#ga9a1407c953694c3d6f40ab01ebe9a294" title="Sets the generic value.">eina_value_set</a>(&amp;value, <span class="stringliteral">&quot;This is a text field (:&quot;</span>);
+        elm_prefs_data_value_set(prefs_data, <span class="stringliteral">&quot;main:text&quot;</span>, type, &amp;value);
+     }
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
+
+   <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga1ee9db07f9a46a8b20fb83e1c6dbed09">ECORE_CALLBACK_RENEW</a>;
+}
+</pre></div></p>
 <p>Here we finish the example. The full source code can be found on <a class="el" href="prefs_example_01_c.html">prefs_example_01.c</a> and <a class="el" href="prefs_example_01_epc.html">prefs_example_01.epc</a> </p>
 </div></div><!-- contents -->
 </div>

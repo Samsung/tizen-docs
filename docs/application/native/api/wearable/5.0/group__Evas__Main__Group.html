@@ -97,14 +97,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8">evas_init</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly initialize Evas and its required dependencies.  <a href="#ga5dc5f05144dd72e8d58a043344e373b8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09">evas_shutdown</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly shutdown Evas.  <a href="#ga95a8864f81d944a92bb012b77ffd1b09"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Evas_Alloc_Error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835">evas_alloc_error</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the error status of the most recent memory allocation call.  <a href="#gacfae4f589c777003f58d51e502c52835"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga301c7d776c3d00085659fcf00c52b22d">evas_async_events_fd_get</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get evas' internal asynchronous events read file descriptor.  <a href="#ga301c7d776c3d00085659fcf00c52b22d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the canvas' asynchronous event queue.  <a href="#ga301c7d776c3d00085659fcf00c52b22d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#ga80fa27be7ba9fe5180ebbd1ec551e4a3">evas_async_events_process</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger the processing of all events waiting on the file descriptor returned by <a class="el" href="group__Evas__Main__Group.html#ga301c7d776c3d00085659fcf00c52b22d" title="Get evas&#39; internal asynchronous events read file descriptor.">evas_async_events_fd_get()</a>.  <a href="#ga80fa27be7ba9fe5180ebbd1ec551e4a3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#gab4dda3c2ef0c587a849935bafea9f66a">evas_async_events_put</a> (const void *target, <a class="el" href="group__Evas.html#gad64cde0da38a60e7cb7905b3ab216968">Evas_Callback_Type</a> type, void *event_info, Evas_Async_Events_Put_Cb func)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the asynchronous event queue.  <a href="#ga80fa27be7ba9fe5180ebbd1ec551e4a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Main__Group.html#gab4dda3c2ef0c587a849935bafea9f66a">evas_async_events_put</a> (const void *target, Evas_Callback_Type type, void *event_info, Evas_Async_Events_Put_Cb func)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert asynchronous events on the canvas.  <a href="#gab4dda3c2ef0c587a849935bafea9f66a"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gacfae4f589c777003f58d51e502c52835"></a><!-- doxytag: member="Evas_Common.h::evas_alloc_error" ref="gacfae4f589c777003f58d51e502c52835" args="(void)" -->
@@ -121,33 +125,33 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Return if any allocation errors have occurred during the prior function </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The allocation error flag</dd></dl>
-<p>This function will return if any memory allocation errors occurred during, and what kind they were. The return value will be one of EVAS_ALLOC_ERROR_NONE, EVAS_ALLOC_ERROR_FATAL or EVAS_ALLOC_ERROR_RECOVERED with each meaning something different.</p>
-<p>EVAS_ALLOC_ERROR_NONE means that no errors occurred at all and the function worked as expected.</p>
-<p>EVAS_ALLOC_ERROR_FATAL means the function was completely unable to perform its job and will have exited as cleanly as possible. The programmer should consider this as a sign of very low memory and should try and safely recover from the prior functions failure (or try free up memory elsewhere and try again after more memory is freed).</p>
-<p>EVAS_ALLOC_ERROR_RECOVERED means that an allocation error occurred, but was recovered from by evas finding memory of its own it has allocated and freeing what it sees as not really usefully allocated memory. What is freed may vary. Evas may reduce the resolution of images, free cached images or fonts, throw out pre-rendered data, reduce the complexity of change lists etc. Evas and the program will function as per normal after this, but this is a sign of low memory, and it is suggested that the program try and identify memory it doesn't need, and free it.</p>
+
+<p>Get the error status of the most recent memory allocation call. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Allocation error codes EVAS_ALLOC_ERROR_NONE, EVAS_ALLOC_ERROR_FATAL or EVAS_ALLOC_ERROR_RECOVERED.</dd></dl>
+<p>Accesses the current error status for memory allocation, or EVAS_ALLOC_ERROR_NONE if allocation succeeded with no errors.</p>
+<p>EVAS_ALLOC_ERROR_FATAL means that no memory allocation was possible, but the function call exited as cleanly as possible. This is a sign of very low memory, and indicates the caller should attempt a safe recovery and possibly re-try after freeing up additional memory.</p>
+<p>EVAS_ALLOC_ERROR_RECOVERED indicates that Evas was able to free up sufficient memory internally to perform the requested memory allocation and the program will continue to function normally, but memory is in a low state and the program should strive to free memory itself. Evas' approach to free memory internally may reduce the resolution of images, free cached fonts or images, throw out pre-rendered data, or reduce the complexity of change lists.</p>
 <p>Example: </p>
 <div class="fragment"><pre class="fragment"> <span class="keyword">extern</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *object;
  <span class="keywordtype">void</span> callback (<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
 
- <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(<span class="keywordtype">object</span>, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, callback, NULL);
- <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835">evas_alloc_error</a>() == EVAS_ALLOC_ERROR_FATAL)
+ <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(<span class="keywordtype">object</span>, EVAS_CALLBACK_MOUSE_DOWN, callback, NULL);
+ <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() == EVAS_ALLOC_ERROR_FATAL)
    {
-     fprintf(stderr, <span class="stringliteral">&quot;ERROR: Completely unable to attach callback. Must\n&quot;</span>);
-     fprintf(stderr, <span class="stringliteral">&quot;       destroy object now as it cannot be used.\n&quot;</span>);
-     <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(<span class="keywordtype">object</span>);
+     fprintf(stderr, <span class="stringliteral">&quot;ERROR: Failed to attach callback.  Out of memory.\n&quot;</span>);
+     fprintf(stderr, <span class="stringliteral">&quot;       Must destroy object now as it cannot be used.\n&quot;</span>);
+     <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(<span class="keywordtype">object</span>);
      <span class="keywordtype">object</span> = NULL;
-     fprintf(stderr, <span class="stringliteral">&quot;WARNING: Memory is really low. Cleaning out RAM.\n&quot;</span>);
+     fprintf(stderr, <span class="stringliteral">&quot;WARNING: Cleaning out RAM.\n&quot;</span>);
      my_memory_cleanup();
    }
- <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835">evas_alloc_error</a>() == EVAS_ALLOC_ERROR_RECOVERED)
+ <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() == EVAS_ALLOC_ERROR_RECOVERED)
    {
      fprintf(stderr, <span class="stringliteral">&quot;WARNING: Memory is really low. Cleaning out RAM.\n&quot;</span>);
      my_memory_cleanup();
    }
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a33">evas-events.c</a>.</dd>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a32">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -166,12 +170,11 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get evas' internal asynchronous events read file descriptor. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The canvas' asynchronous events read file descriptor.</dd></dl>
-<p>Evas' asynchronous events are meant to be dealt with internally, i. e., when building stuff to be glued together into the EFL infrastructure -- a module, for example. The context which demands its use is when calculations need to be done out of the main thread, asynchronously, and some action must be performed after that.</p>
-<p>An example of actual use of this API is for image asynchronous preload inside evas. If the canvas was instantiated through ecore-evas usage, ecore itself will take care of calling those events' processing.</p>
-<p>This function returns the read file descriptor where to get the asynchronous events of the canvas. Naturally, other mainloops, apart from ecore, may make use of it.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Access the canvas' asynchronous event queue. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A file descriptor to the asynchronous events.</dd></dl>
+<p>Normally, Evas handles asynchronous events internally, particularly in Evas-using modules that are part of the EFL infrastructure. Notably, ecore-evas takes care of processing these events for canvases instantiated through it.</p>
+<p>However, when asynchronous calculations need to be done outside the main thread (in some other mainloop) with some followup action, this function permits accessing the events. An example would be asynchronous image preloading. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -190,10 +193,10 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Trigger the processing of all events waiting on the file descriptor returned by <a class="el" href="group__Evas__Main__Group.html#ga301c7d776c3d00085659fcf00c52b22d" title="Get evas&#39; internal asynchronous events read file descriptor.">evas_async_events_fd_get()</a>. </p>
+<p>Process the asynchronous event queue. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of events processed.</dd></dl>
-<p>All asynchronous events queued up by <a class="el" href="group__Evas__Main__Group.html#gab4dda3c2ef0c587a849935bafea9f66a">evas_async_events_put()</a> are processed here. More precisely, the callback functions, informed together with other event parameters, when queued, get called (with those parameters), in that order.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Triggers the callback functions for asynchronous events that were queued up by <a class="el" href="group__Evas__Main__Group.html#gab4dda3c2ef0c587a849935bafea9f66a" title="Insert asynchronous events on the canvas.">evas_async_events_put()</a>. The callbacks are called in the same order that they were queued. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -210,7 +213,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#gad64cde0da38a60e7cb7905b3ab216968">Evas_Callback_Type</a>&#160;</td>
+          <td class="paramtype">Evas_Callback_Type&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -233,7 +236,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Insert asynchronous events on the canvas.</p>
+
+<p>Insert asynchronous events on the canvas. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">target</td><td>The target to be affected by the events. </td></tr>
@@ -244,17 +248,17 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if an error occurred, EINA_TRUE otherwise.</dd></dl>
-<p>This is the way, for a routine running outside evas' main thread, to report an asynchronous event. A callback function is informed, whose call is to happen after <a class="el" href="group__Evas__Main__Group.html#ga80fa27be7ba9fe5180ebbd1ec551e4a3" title="Trigger the processing of all events waiting on the file descriptor returned by evas_async_events_fd_...">evas_async_events_process()</a> is called.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Allows routines running outside Evas' main thread to report an asynchronous event. The target, type, and event info will be passed to the callback function when <a class="el" href="group__Evas__Main__Group.html#ga80fa27be7ba9fe5180ebbd1ec551e4a3" title="Process the asynchronous event queue.">evas_async_events_process()</a> is called. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga65b3f060b6dd9e488afd0b8cbe101869"></a><!-- doxytag: member="Evas_Common.h::evas_init" ref="ga65b3f060b6dd9e488afd0b8cbe101869" args="(void)" -->
+<a class="anchor" id="ga5dc5f05144dd72e8d58a043344e373b8"></a><!-- doxytag: member="Evas_Common.h::evas_init" ref="ga5dc5f05144dd72e8d58a043344e373b8" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8">evas_init</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -263,31 +267,42 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize Evas</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The init counter value.</dd></dl>
-<p>This function initializes Evas and increments a counter of the number of calls to it. It returns the new counter's value.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09">evas_shutdown()</a>.</dd></dl>
-<p>Most EFL users wouldn't be using this function directly, because they wouldn't access Evas directly by themselves. Instead, they would be using higher level helpers, like <code><a class="el" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init()</a></code>. See <a class="el" href="group__Ecore.html">Ecore</a>.</p>
-<p>You should be using this if your use is something like the following. The buffer engine is just one of the many ones Evas provides.</p>
+
+<p>Directly initialize Evas and its required dependencies. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000335">Deprecated:</a></b></dt><dd>This function now returns NULL as cserve2 support has been removed</dd></dl>
+<p>Get the path for the cserve binary to execute</p>
+<p>There is little need for anyone except a desktop environment to call this. This can be called before <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called. It will try and find the full path to the to the cserve binary to run to provide cserve image and font caching services for evas.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>NULL if error, or a string with the full path to the cserve binary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The number of times <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called.</dd></dl>
+<p>Permits use of Evas independently from <a class="el" href="group__Ecore.html">Ecore</a>. This can be useful in certain types of examples and test programs, as well as by Ecore-Evas' <code><a class="el" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init()</a></code> itself (which is what most EFL applications will be using instead).</p>
+<p>The <a class="el" href="Example_Evas_Buffer_Simple.html">evas-buffer-simple.c</a> example demonstrates use of <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>, and then manually setting up the canvas:</p>
  <div class="fragment"><pre class="fragment"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)
 {
    <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bg, *r1, *r2, *r3;
 
-   <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a>();
+   <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
-   <span class="comment">// create your canvas</span>
-   <span class="comment">// NOTE: consider using ecore_evas_buffer_new() instead!</span>
+   <span class="comment">/* After turning Evas on, we create an Evas canvas to work in.</span>
+<span class="comment">    * Canvases are graphical workspaces used for placing and organizing</span>
+<span class="comment">    * graphical objects.  Normally we&#39;d be using Ecore-Evas to create</span>
+<span class="comment">    * the canvas, but for this example we&#39;ll hide the details in a</span>
+<span class="comment">    * separate routine for convenience.</span>
+<span class="comment">    */</span>
    canvas = create_canvas(WIDTH, HEIGHT);
    <span class="keywordflow">if</span> (!canvas)
      <span class="keywordflow">return</span> -1;
-</pre></div> And being the canvas creation something like: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *create_canvas(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)
+</pre></div></p>
+<p>The canvas is set up using the example's create_canvas() routine, which forces selection of Evas' "buffer" rendering engine. The buffer engine simply renders to a memory buffer with no hardware acceleration.</p>
+<p><div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *create_canvas(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)
 {
    <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas;
    Evas_Engine_Info_Buffer *einfo;
    <span class="keywordtype">int</span> method;
    <span class="keywordtype">void</span> *pixels;
 
+   <span class="comment">/* Request a handle for the &#39;buffer&#39; type of rendering engine. */</span>
    method = <a class="code" href="group__Evas__Output__Method.html#ga9f9871fdcc40ce1062d6565308020eb8">evas_render_method_lookup</a>(<span class="stringliteral">&quot;buffer&quot;</span>);
    <span class="keywordflow">if</span> (method &lt;= 0)
      {
@@ -295,6 +310,8 @@ Functions</h2></td></tr>
     <span class="keywordflow">return</span> NULL;
      }
 
+   <span class="comment">/* Create a general canvas object.</span>
+<span class="comment">    * Note that we are responsible for freeing the canvas when we&#39;re done. */</span>
    canvas = <a class="code" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new</a>();
    <span class="keywordflow">if</span> (!canvas)
      {
@@ -302,13 +319,17 @@ Functions</h2></td></tr>
     <span class="keywordflow">return</span> NULL;
      }
 
-   <a class="code" href="group__Evas__Canvas.html#ga17f2ac9f3bef135cd825774c33762ef2" title="Sets the output engine for the given evas.">evas_output_method_set</a>(canvas, method);
-   <a class="code" href="group__Evas__Canvas.html#ga681f2af7d325735af201e18f56f6ef61" title="Sets the output size of the render engine of the given evas.">evas_output_size_set</a>(canvas, width, height);
-   <a class="code" href="group__Evas__Canvas.html#ga0a14db31aa30b701688caf67a4649239" title="Sets the output viewport of the given evas in evas units.">evas_output_viewport_set</a>(canvas, 0, 0, width, height);
+   <span class="comment">/* Specify that the canvas will be rendering using the buffer engine method.</span>
+<span class="comment">    * We also size the canvas and viewport to the same width and height, with</span>
+<span class="comment">    * the viewport set to the origin of the canvas.</span>
+<span class="comment">    */</span>
+   <a class="code" href="group__Evas__Canvas.html#ga15b85dc673baa6aa40f91f8bfcd3cbaa" title="Sets the output engine for the given evas.">evas_output_method_set</a>(canvas, method);
+   <a class="code" href="group__Evas__Canvas.html#gaf6478cb249ed09fa0fe961085773fe1e" title="Sets the output size of the render engine of the given evas.">evas_output_size_set</a>(canvas, width, height);
+   <a class="code" href="group__Evas__Canvas.html#ga6dcd13997f7825f03807dc0ec38dd38e" title="Sets the output viewport of the given evas in evas units.">evas_output_viewport_set</a>(canvas, 0, 0, width, height);
 </pre></div></p>
-<p>Note that this is code creating an Evas canvas with no usage of Ecore helpers at all -- no linkage with Ecore on this scenario, thus. Again, this wouldn't be on Evas common usage for most developers. See the full <a class="el" href="Example_Evas_Buffer_Simple.html">example</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a23">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a0">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a1">evas-init-shutdown.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a18">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a0">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a1">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -326,20 +347,170 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Shutdown Evas</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Evas' init counter value.</dd></dl>
-<p>This function finalizes Evas, decrementing the counter of the number of calls to the function <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init()</a>. This new value for the counter is returned.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init()</a>.</dd></dl>
-<p>If you were the sole user of Evas, by means of <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init()</a>, you can check if it's being properly shut down by expecting a return value of 0.</p>
-<p>Example code follows.  <div class="fragment"><pre class="fragment">   <span class="comment">// NOTE: use ecore_evas_buffer_new() and here ecore_evas_free()</span>
+
+<p>Directly shutdown Evas. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The (decremented) init reference counter.</dd></dl>
+<p>Low level routine to finalize Evas. Decrements a counter of the number of times <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called, and, if appropriate, shuts down associated dependency modules and libraries. A return value of 0 indicates that everything has been properly shut down.</p>
+<p>Ecore-Evas applications will typically use <a class="el" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown()</a> instead, as described in <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>.</p>
+<p>The <a class="el" href="Example_Evas_Buffer_Simple.html">evas-buffer-simple.c</a> example shows use of <a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown()</a> in its destroy_canvas() routine:</p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span> destroy_canvas(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas);
+<span class="keyword">static</span> <span class="keywordtype">void</span> draw_scene(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas);
+<span class="keyword">static</span> <span class="keywordtype">void</span> save_scene(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas, <span class="keyword">const</span> <span class="keywordtype">char</span> *dest);
+
+<span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)
+{
+   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bg, *r1, *r2, *r3;
+
+   <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
+
+   <span class="comment">/* After turning Evas on, we create an Evas canvas to work in.</span>
+<span class="comment">    * Canvases are graphical workspaces used for placing and organizing</span>
+<span class="comment">    * graphical objects.  Normally we&#39;d be using Ecore-Evas to create</span>
+<span class="comment">    * the canvas, but for this example we&#39;ll hide the details in a</span>
+<span class="comment">    * separate routine for convenience.</span>
+<span class="comment">    */</span>
+   canvas = create_canvas(WIDTH, HEIGHT);
+   <span class="keywordflow">if</span> (!canvas)
+     <span class="keywordflow">return</span> -1;
+
+   <span class="comment">/* Next set the background to solid white.  This is typically done by</span>
+<span class="comment">    * creating a rectangle sized to the canvas, placed at the canvas</span>
+<span class="comment">    * origin.</span>
+<span class="comment">    *</span>
+<span class="comment">    * Note that if the canvas were to change size, our background</span>
+<span class="comment">    * rectangle will not automatically resize itself; we&#39;d need to do</span>
+<span class="comment">    * that manually with another evas_object_resize() call.  In a real</span>
+<span class="comment">    * application using Ecore-Evas, functionality in Ecore will take</span>
+<span class="comment">    * care of resizing things.  For this example, we&#39;ll just keep the</span>
+<span class="comment">    * canvas dimensions fixed to avoid the problem.</span>
+<span class="comment">    */</span>
+   bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">// white bg, no transparency</span>
+   evas_object_move(bg, 0, 0);                    <span class="comment">// at origin</span>
+   evas_object_resize(bg, WIDTH, HEIGHT);         <span class="comment">// covers full canvas</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+
+   puts(<span class="stringliteral">&quot;initial scene, with just background:&quot;</span>);
+   draw_scene(canvas);
+
+   <span class="comment">/* To make the scene interesting let&#39;s add a few more rectangles of</span>
+<span class="comment">    * various sizes and colors, starting with a big red one.</span>
+<span class="comment">    *</span>
+<span class="comment">    * By default all Evas objects are created in a &#39;hidden&#39; state,</span>
+<span class="comment">    * meaning they are not visible, won&#39;t be checked for changes during</span>
+<span class="comment">    * canvas rendering, and won&#39;t receive input events.  Thus, like we</span>
+<span class="comment">    * did for the background object we must call evas_object_show() to</span>
+<span class="comment">    * make our graphics objects usable.</span>
+<span class="comment">    */</span>
+   r1 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r1, 255, 0, 0, 255); <span class="comment">// 100% opaque red</span>
+   evas_object_move(r1, 10, 10);
+   evas_object_resize(r1, 100, 100);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r1);
+
+   <span class="comment">/* Let&#39;s add a partly transparent rectangle on top of the red one.</span>
+<span class="comment">    *</span>
+<span class="comment">    * Graphics objects are treated as a stack in the canvas for drawing</span>
+<span class="comment">    * purposes, so subsequent objects are drawn above the ones we&#39;ve</span>
+<span class="comment">    * already added to the canvas.  This is important in objects that</span>
+<span class="comment">    * have partially transparent fill coloring since we&#39;ll see part of</span>
+<span class="comment">    * what&#39;s &quot;behind&quot; our object.</span>
+<span class="comment">    *</span>
+<span class="comment">    * In Evas, color values are pre-multiplied by their alpha.  This means</span>
+<span class="comment">    * that if we want a green rectangle that&#39;s half transparent, we&#39;d have:</span>
+<span class="comment">    *</span>
+<span class="comment">    * non-premul: r=0, g=255, b=0    a=128 (50% alpha)</span>
+<span class="comment">    * premul:</span>
+<span class="comment">    *         r_premul = r * a / 255 =      0 * 128 / 255 =      0</span>
+<span class="comment">    *         g_premul = g * a / 255 =    255 * 128 / 255 =    128</span>
+<span class="comment">    *         b_premul = b * a / 255 =      0 * 128 / 255 =      0</span>
+<span class="comment">    *</span>
+<span class="comment">    * Since we&#39;re placing our half transparent green rectangle on top of</span>
+<span class="comment">    * a red one, in the final output we will actually see a yellow square</span>
+<span class="comment">    * (since in RGBA color green + red = yellow).</span>
+<span class="comment">    */</span>
+   r2 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r2, 0, 128, 0, 128); <span class="comment">// 50% opaque green</span>
+   evas_object_move(r2, 10, 10);
+   evas_object_resize(r2, 50, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r2);
+
+   <span class="comment">/* Lastly, for comparison add a dark green rectangle with no</span>
+<span class="comment">    * transparency. */</span>
+   r3 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r3, 0, 128, 0, 255); <span class="comment">// 100% opaque dark green</span>
+   evas_object_move(r3, 60, 60);
+   evas_object_resize(r3, 50, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r3);
+
+   puts(<span class="stringliteral">&quot;final scene (note updates):&quot;</span>);
+   draw_scene(canvas);
+
+   <span class="comment">/* In addition to displaying the canvas to the screen, let&#39;s also</span>
+<span class="comment">    * output the buffer to a graphics file, for comparison.  Evas</span>
+<span class="comment">    * supports a range of graphics file formats, but PPM is particularly</span>
+<span class="comment">    * trivial to write, so our save_scene routine will output as PPM.</span>
+<span class="comment">    */</span>
+   save_scene(canvas, <span class="stringliteral">&quot;/tmp/evas-buffer-simple-render.ppm&quot;</span>);
+
    destroy_canvas(canvas);
 
-   <a class="code" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09">evas_shutdown</a>();
-</pre></div> Where that function would contain: <div class="fragment"><pre class="fragment">    <a class="code" href="group__Evas__Canvas.html#gaa0d5d3f1a1e1ffa3b14b09bb374215b4">evas_free</a>(canvas);
+   <a class="code" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+
+<span class="comment">/* Convenience routine to allocate and initialize the canvas.</span>
+<span class="comment"> * In a real application we&#39;d be using ecore_evas_buffer_new() instead.</span>
+<span class="comment"> */</span>
+<span class="keyword">static</span> <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *create_canvas(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height)
+{
+   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *canvas;
+   Evas_Engine_Info_Buffer *einfo;
+   <span class="keywordtype">int</span> method;
+   <span class="keywordtype">void</span> *pixels;
+
+   <span class="comment">/* Request a handle for the &#39;buffer&#39; type of rendering engine. */</span>
+   method = <a class="code" href="group__Evas__Output__Method.html#ga9f9871fdcc40ce1062d6565308020eb8">evas_render_method_lookup</a>(<span class="stringliteral">&quot;buffer&quot;</span>);
+   <span class="keywordflow">if</span> (method &lt;= 0)
+     {
+    fputs(<span class="stringliteral">&quot;ERROR: evas was not compiled with &#39;buffer&#39; engine!\n&quot;</span>, stderr);
+    <span class="keywordflow">return</span> NULL;
+     }
+
+   <span class="comment">/* Create a general canvas object.</span>
+<span class="comment">    * Note that we are responsible for freeing the canvas when we&#39;re done. */</span>
+   canvas = <a class="code" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new</a>();
+   <span class="keywordflow">if</span> (!canvas)
+     {
+    fputs(<span class="stringliteral">&quot;ERROR: could not instantiate new evas canvas.\n&quot;</span>, stderr);
+    <span class="keywordflow">return</span> NULL;
+     }
+
+   <span class="comment">/* Specify that the canvas will be rendering using the buffer engine method.</span>
+<span class="comment">    * We also size the canvas and viewport to the same width and height, with</span>
+<span class="comment">    * the viewport set to the origin of the canvas.</span>
+<span class="comment">    */</span>
+   <a class="code" href="group__Evas__Canvas.html#ga15b85dc673baa6aa40f91f8bfcd3cbaa" title="Sets the output engine for the given evas.">evas_output_method_set</a>(canvas, method);
+   <a class="code" href="group__Evas__Canvas.html#gaf6478cb249ed09fa0fe961085773fe1e" title="Sets the output size of the render engine of the given evas.">evas_output_size_set</a>(canvas, width, height);
+   <a class="code" href="group__Evas__Canvas.html#ga6dcd13997f7825f03807dc0ec38dd38e" title="Sets the output viewport of the given evas in evas units.">evas_output_viewport_set</a>(canvas, 0, 0, width, height);
+
+   <span class="comment">/* Before we can use the engine, we *must* set its configuration</span>
+<span class="comment">    * parameters.  The available parameters are kept in a struct</span>
+<span class="comment">    * named Evas_Engine_Info which is internal to Evas.  Thus to set</span>
+<span class="comment">    * parameters we must first request the current info object from</span>
+<span class="comment">    * our canvas:</span>
+<span class="comment">    */</span>
+   einfo = (Evas_Engine_Info_Buffer *)<a class="code" href="group__Evas__Canvas.html#gaf396b44e1b97ec0d9dce49fcf9ad54b7" title="Retrieves the current render engine info struct from the given evas.">evas_engine_info_get</a>(canvas);
+   <span class="keywordflow">if</span> (!einfo)
+     {
+    fputs(<span class="stringliteral">&quot;ERROR: could not get evas engine info!\n&quot;</span>, stderr);
+    <a class="code" href="group__Evas__Canvas.html#gaa0d5d3f1a1e1ffa3b14b09bb374215b4">evas_free</a>(canvas);
 </pre></div></p>
-<p>Most users would be using <a class="el" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown()</a> instead, like told in <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init()</a>. See the full <a class="el" href="Example_Evas_Buffer_Simple.html">example</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a34">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a6">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a30">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a4">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
 </div>

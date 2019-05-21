@@ -113,7 +113,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    printf(<span class="stringliteral">&quot;v=%d\n&quot;</span>, i);
 </pre></div></p>
 <p>In the above snippet of code we printed an <code>int</code> value, we can however print the value as a string: <div class="fragment"><pre class="fragment">
-   newstr = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(&amp;v);
+   newstr = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(&amp;v);
    printf(<span class="stringliteral">&quot;v as string: %s\n&quot;</span>, newstr);
    free(newstr); <span class="comment">// it was allocated by eina_value_to_string()</span>
 </pre></div></p>
@@ -126,14 +126,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Eina__Value__Value__Group.html#ga6f088fe6c6127d808cdf214b355cbdeb" title="Gets the generic value.">eina_value_get</a>(&amp;v, &amp;s);
    printf(<span class="stringliteral">&quot;v=%s (pointer: %p)\n&quot;</span>, s, s);
 </pre></div> </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Since <code>s</code> is the value and not returned by <code><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string()</a></code> we don't need to free it.</dd></dl>
-<p>Just because we stored a string doesn't mean we can't use the <code><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string()</a></code> function, we can and it's important to note that it will return not the stored string but rather a copy of it(one we have to free): <div class="fragment"><pre class="fragment">
-   newstr = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(&amp;v);
+<dl class="note"><dt><b>Note:</b></dt><dd>Since <code>s</code> is the value and not returned by <code><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string()</a></code> we don't need to free it.</dd></dl>
+<p>Just because we stored a string doesn't mean we can't use the <code><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string()</a></code> function, we can and it's important to note that it will return not the stored string but rather a copy of it (one we have to free): <div class="fragment"><pre class="fragment">
+   newstr = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(&amp;v);
    printf(<span class="stringliteral">&quot;v as string: %s (pointer: %p)\n&quot;</span>, newstr, newstr);
    free(newstr); <span class="comment">// it was allocated by eina_value_to_string()</span>
    <a class="code" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush</a>(&amp;v); <span class="comment">// destroy v contents, string &#39;s&#39; is not valid anymore!</span>
 </pre></div></p>
-<p>And now to explore conversions between two type we'll create another value: <div class="fragment"><pre class="fragment">
+<p>And now to explore conversions between two types we'll create another value: <div class="fragment"><pre class="fragment">
    <a class="code" href="struct__Eina__Value.html">Eina_Value</a> otherv;
    <a class="code" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup</a>(&amp;otherv, <a class="code" href="group__Eina__Value__Group.html#ga916f76c8d5ffd4c3ee3c322a54efd0b7">EINA_VALUE_TYPE_STRING</a>);
 </pre></div></p>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>And now let's check the conversion worked: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Value__Value__Group.html#ga6f088fe6c6127d808cdf214b355cbdeb" title="Gets the generic value.">eina_value_get</a>(&amp;otherv, &amp;s);
    printf(<span class="stringliteral">&quot;otherv=%s\n&quot;</span>, s);
 </pre></div></p>
-<p>But converting to strings is not particularly exciting, <code><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string()</a></code> already did that, so now let's make the conversion the other way around, from string to <code>int:</code> <div class="fragment"><pre class="fragment">
+<p>But converting to strings is not particularly exciting, <code><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string()</a></code> already did that, so now let's make the conversion the other way around, from string to <code>int:</code> <div class="fragment"><pre class="fragment">
    <span class="comment">// and the other way around!</span>
    <a class="code" href="group__Eina__Value__Value__Group.html#ga9a1407c953694c3d6f40ab01ebe9a294" title="Sets the generic value.">eina_value_set</a>(&amp;otherv, <span class="stringliteral">&quot;33&quot;</span>);
    <a class="code" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d" title="Converts one value to another type.">eina_value_convert</a>(&amp;otherv, &amp;v);
@@ -157,6 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>And once done, destroy the values: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush</a>(&amp;otherv);
    <a class="code" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush</a>(&amp;v);
+   <a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 }
 </pre></div></p>
 <p>Full source code: <a class="el" href="eina_value_01_c.html">eina_value_01.c</a> </p>

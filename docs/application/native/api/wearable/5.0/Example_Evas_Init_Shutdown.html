@@ -101,8 +101,15 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="struct__Eina__List.html">Eina_List</a> *engine_list, *l;
    <span class="keywordtype">char</span> *engine_name;
 
-   <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a>();
+   <span class="comment">/* Initialize Evas.  This will startup other dependencies such as</span>
+<span class="comment">    * eina, eet, ecore, etc. and initializes various internal things</span>
+<span class="comment">    * (threads, filters, etc.) */</span>
+   <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
+   <span class="comment">/* When building Evas you can configure a variety of engines to be</span>
+<span class="comment">    * built with it.  Get a list of what engines are available using the</span>
+<span class="comment">    * evas_render_method_list routine.</span>
+<span class="comment">    */</span>
    engine_list = <a class="code" href="group__Evas__Output__Method.html#gad7deab8facaa4be521fbdec6dd19e122">evas_render_method_list</a>();
    <span class="keywordflow">if</span> (!engine_list)
      {
@@ -110,16 +117,25 @@ main(<span class="keywordtype">void</span>)
         exit(-1);
      }
 
+   <span class="comment">/* &#39;engine_list&#39; is a linked list (@see Eina_List.)  The</span>
+<span class="comment">    * EINA_LIST_FOREACH macro permits navigating through the items using</span>
+<span class="comment">    * the iterator &#39;l&#39;, making the node data available as &#39;engine_name&#39;.</span>
+<span class="comment">    */</span>
    printf(<span class="stringliteral">&quot;Available Evas Engines:\n&quot;</span>);
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(engine_list, l, engine_name)
      printf(&quot;%s\n&quot;, engine_name);
 
+   <span class="comment">/* To free the list, we use evas_render_method_list&#39;s corresponding</span>
+<span class="comment">    * destructor routine.</span>
+<span class="comment">    */</span>
    <a class="code" href="group__Evas__Output__Method.html#ga5bcc5a2165647f855c389bd58e77f608">evas_render_method_list_free</a>(engine_list);
 
-   <a class="code" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09">evas_shutdown</a>();
+   <span class="comment">/* Shuts down all dependencies if nothing else is using them, and</span>
+<span class="comment">    * clears allocated data held internally.</span>
+<span class="comment">    */</span>
+   <a class="code" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown</a>();
    return 0;
- }
-
+}
 </pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

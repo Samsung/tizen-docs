@@ -99,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga3c7f181ddc8beae9854cadfe0610b11f">eina_unicode_strlen</a> (const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *ustr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga629f54dd0363dd9908b3a04f4b7cbca4">eina_unicode_strnlen</a> (const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *ustr, int n)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of a Eina_Unicode string, up to a limit.  <a href="#ga629f54dd0363dd9908b3a04f4b7cbca4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga5529b650977aa09a39062edeaa422a9a">eina_unicode_strdup</a> (const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *text)</td></tr>
@@ -115,7 +116,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as the standard strncpy just with Eina_Unicode instead of char.  <a href="#ga075547c31a9ae6d48b2abd5e2793cbdb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga1ec1ce8a8f6dacda56d571500a4c7383">eina_unicode_escape</a> (const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *str)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#gaa7b0fb0ddd094742291b9095ef774428">eina_unicode_utf8_next_get</a> (const char *buf, int *iindex) 2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#gae6eca0f899c81a57f1b5053af4432255">eina_unicode_utf8_get_next</a> (const char *buf, int *iindex) 2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#ga9d66c33a48810f5b27286766b14f7ddd">eina_unicode_utf8_get_prev</a> (const char *buf, int *iindex) 2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#gac1167389fc7ef6487184410a01725938">eina_unicode_utf8_get_len</a> (const char *buf)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String.html#gaac2da5d1769ee69da73a33f7232bd335">eina_unicode_utf8_to_unicode</a> (const char *utf, int *_len)</td></tr>
@@ -158,11 +158,11 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Group.html#ga3bef18659d548f869e887f1172368c96" title="Escapes slashes, spaces and apostrophes in strings.">eina_str_escape()</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The string to escape. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to escape. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The escaped string.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The escaped string. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -193,6 +193,14 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Same as the standard strcmp just with Eina_Unicode instead of char. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The text to be compared. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The text to be compared. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An integer value indicating the ordinal relation of <code>a</code> to <code>b</code>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -223,6 +231,14 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Same as the standard strcpy just with Eina_Unicode instead of char. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The text which <code>source</code> is to be copied. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The text to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>dest</code> is returned. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -243,6 +259,31 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Same as the standard strdup just with Eina_Unicode instead of char. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>The text to duplicate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The duplicated string. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3c7f181ddc8beae9854cadfe0610b11f"></a><!-- doxytag: member="eina_unicode.h::eina_unicode_strlen" ref="ga3c7f181ddc8beae9854cadfe0610b11f" args="(const Eina_Unicode *ustr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="group__Eina__Unicode__String.html#ga3c7f181ddc8beae9854cadfe0610b11f">eina_unicode_strlen</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td>
+          <td class="paramname"><em>ustr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -279,6 +320,15 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Same as the standard strncpy just with Eina_Unicode instead of char. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">dest</td><td>The text which <code>source</code> is to be copied. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The text to copy from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Maximum number of characters to be copied from <code>source</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>dest</code> is returned. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -311,14 +361,14 @@ Typedefs</h2></td></tr>
 <p>Same as strdup but cuts on the given size. Assumes n &lt; len. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td>The text to duplicate. </td></tr>
-    <tr><td class="paramname">n</td><td>The maximum size of the text to duplicate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>The text to duplicate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>The maximum size of the text to duplicate. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The duplicated string.</dd></dl>
-<p>This function duplicates <code>text</code>. The resuting string is cut on <code>n</code>. <code>n</code> is assumed to be lesser (&lt;) than the length of <code>text</code>. When not needed anymore, the returned string must be freed.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<p>This function duplicates <code>text</code>. The resulting string is cut on <code>n</code>. <code>n</code> is assumed to be lesser (&lt;) than the length of <code>text</code>. When not needed anymore, the returned string must be freed.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -352,12 +402,12 @@ Typedefs</h2></td></tr>
 <p>This function returns the number of characters in string, up to a maximum of n. If the terminating character is not found in the string, it returns n.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ustr</td><td>String to search </td></tr>
-    <tr><td class="paramname">n</td><td>Max length to search </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ustr</td><td>String to search </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Max length to search </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Number of characters or n.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number of characters or n. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -388,6 +438,14 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Same as the standard strstr just with Eina_Unicode instead of char. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">haystack</td><td>The text to be searched. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">needle</td><td>The text to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The substring of <code>haystack</code> which starts with <code>needle</code> when <code>needle</code> is founded in <code>haystack</code>, or NULL is returned. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -419,13 +477,13 @@ Typedefs</h2></td></tr>
 <p>Converts an Eina_Unicode string to a newly allocated utf-8 string.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">uni</td><td>the Eina_Unicode string </td></tr>
-    <tr><td class="paramname">_len</td><td>the length byte length of the return utf8 string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uni</td><td>the Eina_Unicode string </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">_len</td><td>the length byte length of the return utf8 string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated utf-8 string. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated utf-8 string.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -463,15 +521,15 @@ Typedefs</h2></td></tr>
 <p>Converts an Eina_Unicode string to a newly allocated utf-8 substring at given length.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">uni</td><td>the Eina_Unicode string </td></tr>
-    <tr><td class="paramname">ulen</td><td>the length in the unicode string to convert. </td></tr>
-    <tr><td class="paramname">_len</td><td>the length byte length of the return utf8 substring. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uni</td><td>the Eina_Unicode string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ulen</td><td>the length in the unicode string to convert. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">_len</td><td>the length byte length of the return utf8 substring. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated utf-8 substring. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated utf-8 substring.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -492,50 +550,12 @@ Typedefs</h2></td></tr>
 <p>Returns the number of unicode characters in the string. That is, the number of Eina_Unicodes it'll take to store this string in an Eina_Unicode string.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>the string </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>the string </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the number of unicode characters (not bytes) in the string </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gae6eca0f899c81a57f1b5053af4432255"></a><!-- doxytag: member="eina_unicode.h::eina_unicode_utf8_get_next" ref="gae6eca0f899c81a57f1b5053af4432255" args="(const char *buf, int *iindex) 2)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> <a class="el" href="group__Eina__Unicode__String.html#gae6eca0f899c81a57f1b5053af4432255">eina_unicode_utf8_get_next</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>buf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>iindex</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000203">Deprecated:</a></b></dt><dd>use eina_unicode_utf8_next_get Deprecated since Tizen 2.4 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>. On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buf</td><td>the string </td></tr>
-    <tr><td class="paramname">iindex</td><td>the index to look at and return by. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found, 0 if <code>buf</code> or <code>iindex</code> are NULL </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the number of unicode characters (not bytes) in the string</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -564,16 +584,28 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and moves àp iindex to the previous code point. <code>iindex</code> is always moved, as long as it's not past the start of the string. On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000205">Deprecated:</a></b></dt><dd>use eina_unicode_utf8_next_get Deprecated since Tizen 2.4 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>.</dd></dl>
+<p>On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>the string </td></tr>
-    <tr><td class="paramname">iindex</td><td>the index to look at and return by. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>the string </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iindex</td><td>the index to look at and return by. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found, 0 if <code>buf</code> or <code>iindex</code> are NULL</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and moves <code>iindex</code> to the previous code point. <code>iindex</code> is always moved, as long as it's not past the start of the string.</dd></dl>
+<p>On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>the string </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iindex</td><td>the index to look at and return by. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -602,15 +634,16 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>. On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
+<p>Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>.</p>
+<p>On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>the string </td></tr>
-    <tr><td class="paramname">iindex</td><td>the index to look at and return by. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>the string </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iindex</td><td>the index to look at and return by. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found, 0 if <code>buf</code> or <code>iindex</code> are NULL </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the codepoint found, 0 if <code>buf</code> or <code>iindex</code> are NULL</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 
 </div>
@@ -642,13 +675,13 @@ Typedefs</h2></td></tr>
 <p>Converts a utf-8 string to a newly allocated Eina_Unicode string.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">utf</td><td>the string in utf-8 </td></tr>
-    <tr><td class="paramname">_len</td><td>the length of the returned Eina_Unicode string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">utf</td><td>the string in utf-8 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">_len</td><td>the length of the returned Eina_Unicode string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated Eina_Unicode string. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the newly allocated Eina_Unicode string.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -666,7 +699,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Same as the standard strlen just with Eina_Unicode instead of char. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

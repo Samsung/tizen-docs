@@ -90,7 +90,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">layout_example_02.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -g layout_example_02.c -o layout_example_02 `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="preprocessor">#define TABLE &quot;example/table&quot;</span>
+<span class="preprocessor"></span><span class="preprocessor">#define BOX &quot;example/box&quot;</span>
+<span class="preprocessor"></span><span class="preprocessor">#define TITLE &quot;example/title&quot;</span>
+<span class="preprocessor"></span><span class="preprocessor">#define SWALLOW &quot;example/custom&quot;</span>
+<span class="preprocessor"></span>
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *images[] = { <span class="stringliteral">&quot;home&quot;</span>, <span class="stringliteral">&quot;close&quot;</span>, <span class="stringliteral">&quot;arrow_up&quot;</span>, <span class="stringliteral">&quot;arrow_down&quot;</span>, NULL };
+
+<span class="keyword">struct </span>_App {
+     <span class="keywordtype">int</span> current;
+};
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_signal_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <span class="keyword">const</span> <span class="keywordtype">char</span> *emission, <span class="keyword">const</span> <span class="keywordtype">char</span> *source <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>)
+{
+   <span class="keyword">struct </span>_App *app = data;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon = <a name="a1"></a><a class="code" href="group__Elm__General.html#ga32413f4d59d8232cd362a922a281abf1">elm_object_part_content_get</a>(o, <span class="stringliteral">&quot;elm.swallow.content&quot;</span>);
+
+   printf(<span class="stringliteral">&quot;signal received\n&quot;</span>);
+
+   <span class="keywordflow">if</span> (!strcmp(<span class="stringliteral">&quot;elm,action,back&quot;</span>, emission))
+     app-&gt;current--;
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(<span class="stringliteral">&quot;elm,action,next&quot;</span>, emission))
+     app-&gt;current++;
+
+   <span class="keywordflow">if</span> (app-&gt;current &lt; 0)
+     app-&gt;current = (<span class="keyword">sizeof</span>(images) / <span class="keyword">sizeof</span>(images[0])) - 2;
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (images[app-&gt;current] == NULL)
+     app-&gt;current = 0;
+
+   <a name="a2"></a><a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, images[app-&gt;current]);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *layout, *icon;
+   <span class="keyword">struct </span>_App app;
+
+   app.current = 0;
+
+   <a name="a3"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a4"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;layout&quot;</span>, <span class="stringliteral">&quot;Layout&quot;</span>);
+   <a name="a5"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a6"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   <span class="comment">// Adding layout and filling it with widgets</span>
+   layout = <a name="a7"></a><a class="code" href="group__Elm__Layout.html#gaca5aee4ad4d92c68f13d1080c70baf8b">elm_layout_add</a>(win);
+   evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a8"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, layout);
+   <span class="keywordflow">if</span> (!<a name="a9"></a><a class="code" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set</a>(
+         layout, <span class="stringliteral">&quot;layout&quot;</span>, <span class="stringliteral">&quot;application&quot;</span>, <span class="stringliteral">&quot;content-back-next&quot;</span>))
+     fprintf(stderr, <span class="stringliteral">&quot;Failed to set layout&quot;</span>);
+   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(layout);
+
+   icon = <a name="a11"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, images[app.current]);
+   evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a12"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(layout, <span class="stringliteral">&quot;elm.swallow.content&quot;</span>, icon);
+
+   <a name="a13"></a><a class="code" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add</a>(layout, <span class="stringliteral">&quot;elm,action,back&quot;</span>, <span class="stringliteral">&quot;elm&quot;</span>, _signal_cb, &amp;app);
+   <a class="code" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add</a>(layout, <span class="stringliteral">&quot;elm,action,next&quot;</span>, <span class="stringliteral">&quot;elm&quot;</span>, _signal_cb, &amp;app);
+
+   evas_object_resize(win, 320, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a14"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a15"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -132,7 +132,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">function</td><td>The function to allocate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">function</td><td>The function to allocate. </td></tr>
   </table>
   </dd>
 </dl>
@@ -155,7 +155,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">function</td><td>The function to free. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">function</td><td>The function to free. </td></tr>
   </table>
   </dd>
 </dl>
@@ -224,11 +224,11 @@ Defines</h2></td></tr>
 <p>Allocates one more of whatever the lazy allocator is allocating. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The lazy allocator to add an item to.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">a</td><td>The lazy allocator to add an item to.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, else <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, else <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -261,12 +261,12 @@ Defines</h2></td></tr>
 <p>Adds several elements to a lazy allocator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The lazy allocater to add items to. </td></tr>
-    <tr><td class="paramname">num</td><td>The number of elements to add.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">a</td><td>The lazy allocator to add items to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>The number of elements to add.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, else <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, else <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -289,7 +289,7 @@ Defines</h2></td></tr>
 <p>Frees the resources for a lazy allocator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The lazy allocator to free.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">a</td><td>The lazy allocator to free. </td></tr>
   </table>
   </dd>
 </dl>
@@ -337,14 +337,14 @@ Defines</h2></td></tr>
 <p>Creates a new lazy allocator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>The data for which memory will be allocated. </td></tr>
-    <tr><td class="paramname">alloc_cb</td><td>The callback to allocate memory for <code>data</code> items. </td></tr>
-    <tr><td class="paramname">free_cb</td><td>The callback to free memory for <code>data</code> items. </td></tr>
-    <tr><td class="paramname">num_init</td><td>The number of <code>data</code> items to initially allocate space for.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data for which memory will be allocated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alloc_cb</td><td>The callback to allocate memory for <code>data</code> items. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">free_cb</td><td>The callback to free memory for <code>data</code> items. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_init</td><td>The number of <code>data</code> items to initially allocate space for.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A new lazy allocator.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A new lazy allocator. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>

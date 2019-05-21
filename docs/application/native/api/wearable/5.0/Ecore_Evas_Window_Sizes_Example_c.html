@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> error;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_destroy);
@@ -109,18 +109,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);  <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);  <span class="comment">/* white bg */</span>
+   evas_object_move(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 </pre></div>  <div class="fragment"><pre class="fragment">   text = <a class="code" href="group__Evas__Object__Text.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(text, 0, 0, 0, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(text, 150, 50);
-   <a class="code" href="group__Evas__Object__Text.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(text);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(text, 0, 0, 0, 255);
+   evas_object_resize(text, 150, 50);
+   evas_object_text_font_set(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(text);
 
    _canvas_resize_cb(ee);
-   fprintf(stdout, commands);
+   printf(commands);
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="comment">/* to inform current window&#39;s size */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -131,10 +131,10 @@ _canvas_resize_cb(Ecore_Evas *ee_)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee_, NULL, NULL, &amp;w, &amp;h);
    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%d x %d&quot;</span>, w, h);
-   <a class="code" href="group__Evas__Object__Text.html#gabe57fc428ee4db9e9d7feb9e3a108fb3">evas_object_text_text_set</a>(text, buf);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(text, (w - 150) / 2, (h - 50) / 2);
+   evas_object_text_text_set(text, buf);
+   evas_object_move(text, (w - 150) / 2, (h - 50) / 2);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, w, h);
+   evas_object_resize(bg, w, h);
 }
 </pre></div></p>
 <p>The program has a command line interface, responding to the following keys:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> commands[] = \
@@ -153,13 +153,13 @@ _canvas_resize_cb(Ecore_Evas *ee_)
         <span class="keywordflow">if</span> (min_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga8d2b92d319c59c8330945c42a2e2f0e3" title="Sets the minimum size of a given Ecore_Evas window.">ecore_evas_size_min_set</a>(ee, WIDTH / 2, HEIGHT / 2);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a minimum size of %d x %d\n&quot;</span>,
+             printf(<span class="stringliteral">&quot;Imposing a minimum size of %d x %d\n&quot;</span>,
                      WIDTH / 2, HEIGHT / 2);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga8d2b92d319c59c8330945c42a2e2f0e3" title="Sets the minimum size of a given Ecore_Evas window.">ecore_evas_size_min_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off minimum size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off minimum size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -172,13 +172,13 @@ _canvas_resize_cb(Ecore_Evas *ee_)
         <span class="keywordflow">if</span> (max_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga662893bdffb135a342e5b299f9214c76" title="Sets the maximum size of a given Ecore_Evas window.">ecore_evas_size_max_set</a>(ee, WIDTH * 2, HEIGHT * 2);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a maximum size of %d x %d\n&quot;</span>,
+             printf(<span class="stringliteral">&quot;Imposing a maximum size of %d x %d\n&quot;</span>,
                      WIDTH * 2, HEIGHT * 2);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga662893bdffb135a342e5b299f9214c76" title="Sets the maximum size of a given Ecore_Evas window.">ecore_evas_size_max_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off maximum size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off maximum size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -191,13 +191,13 @@ _canvas_resize_cb(Ecore_Evas *ee_)
         <span class="keywordflow">if</span> (base_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga0e5f3152110844b3129d20e4e97ff0fa" title="Sets the base size for a given Ecore_Evas window.">ecore_evas_size_base_set</a>(ee, WIDTH * 2, HEIGHT * 2);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a base size of %d x %d\n&quot;</span>,
+             printf(<span class="stringliteral">&quot;Imposing a base size of %d x %d\n&quot;</span>,
                      WIDTH * 2, HEIGHT * 2);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga0e5f3152110844b3129d20e4e97ff0fa" title="Sets the base size for a given Ecore_Evas window.">ecore_evas_size_base_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off base size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off base size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -210,12 +210,12 @@ _canvas_resize_cb(Ecore_Evas *ee_)
         <span class="keywordflow">if</span> (step_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga5f786776decf1c2b80892704991fcd03" title="Sets the &quot;size step&quot; for a given Ecore_Evas window.">ecore_evas_size_step_set</a>(ee, 40, 40);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a step size of %d x %d\n&quot;</span>, 40, 40);
+             printf(<span class="stringliteral">&quot;Imposing a step size of %d x %d\n&quot;</span>, 40, 40);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga5f786776decf1c2b80892704991fcd03" title="Sets the &quot;size step&quot; for a given Ecore_Evas window.">ecore_evas_size_step_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off step size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off step size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -261,10 +261,10 @@ _canvas_resize_cb(Ecore_Evas *ee_)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee_, NULL, NULL, &amp;w, &amp;h);
    snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%d x %d&quot;</span>, w, h);
-   <a class="code" href="group__Evas__Object__Text.html#gabe57fc428ee4db9e9d7feb9e3a108fb3">evas_object_text_text_set</a>(text, buf);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(text, (w - 150) / 2, (h - 50) / 2);
+   evas_object_text_text_set(text, buf);
+   evas_object_move(text, (w - 150) / 2, (h - 50) / 2);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, w, h);
+   evas_object_resize(bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -283,7 +283,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>
      {
-        fprintf(stdout, commands);
+        printf(commands);
         <span class="keywordflow">return</span>;
      }
 
@@ -294,13 +294,13 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         <span class="keywordflow">if</span> (min_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga8d2b92d319c59c8330945c42a2e2f0e3" title="Sets the minimum size of a given Ecore_Evas window.">ecore_evas_size_min_set</a>(ee, WIDTH / 2, HEIGHT / 2);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a minimum size of %d x %d\n&quot;</span>,
+             printf(<span class="stringliteral">&quot;Imposing a minimum size of %d x %d\n&quot;</span>,
                      WIDTH / 2, HEIGHT / 2);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga8d2b92d319c59c8330945c42a2e2f0e3" title="Sets the minimum size of a given Ecore_Evas window.">ecore_evas_size_min_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off minimum size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off minimum size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -313,13 +313,13 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         <span class="keywordflow">if</span> (max_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga662893bdffb135a342e5b299f9214c76" title="Sets the maximum size of a given Ecore_Evas window.">ecore_evas_size_max_set</a>(ee, WIDTH * 2, HEIGHT * 2);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a maximum size of %d x %d\n&quot;</span>,
+             printf(<span class="stringliteral">&quot;Imposing a maximum size of %d x %d\n&quot;</span>,
                      WIDTH * 2, HEIGHT * 2);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga662893bdffb135a342e5b299f9214c76" title="Sets the maximum size of a given Ecore_Evas window.">ecore_evas_size_max_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off maximum size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off maximum size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -332,13 +332,13 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         <span class="keywordflow">if</span> (base_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga0e5f3152110844b3129d20e4e97ff0fa" title="Sets the base size for a given Ecore_Evas window.">ecore_evas_size_base_set</a>(ee, WIDTH * 2, HEIGHT * 2);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a base size of %d x %d\n&quot;</span>,
+             printf(<span class="stringliteral">&quot;Imposing a base size of %d x %d\n&quot;</span>,
                      WIDTH * 2, HEIGHT * 2);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga0e5f3152110844b3129d20e4e97ff0fa" title="Sets the base size for a given Ecore_Evas window.">ecore_evas_size_base_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off base size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off base size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -351,12 +351,12 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
         <span class="keywordflow">if</span> (step_set)
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga5f786776decf1c2b80892704991fcd03" title="Sets the &quot;size step&quot; for a given Ecore_Evas window.">ecore_evas_size_step_set</a>(ee, 40, 40);
-             fprintf(stdout, <span class="stringliteral">&quot;Imposing a step size of %d x %d\n&quot;</span>, 40, 40);
+             printf(<span class="stringliteral">&quot;Imposing a step size of %d x %d\n&quot;</span>, 40, 40);
           }
         <span class="keywordflow">else</span>
           {
              <a class="code" href="group__Ecore__Evas__Group.html#ga5f786776decf1c2b80892704991fcd03" title="Sets the &quot;size step&quot; for a given Ecore_Evas window.">ecore_evas_size_step_set</a>(ee, 0, 0);
-             fprintf(stdout, <span class="stringliteral">&quot;Taking off step size restriction from the&quot;</span>
+             printf(<span class="stringliteral">&quot;Taking off step size restriction from the&quot;</span>
                              <span class="stringliteral">&quot; window\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
@@ -366,7 +366,7 @@ _on_keydown(<span class="keywordtype">void</span> *data EINA_UNUSED,
      {
         <span class="keywordtype">int</span> x, y, w, h;
         <a class="code" href="group__Ecore__Evas__Group.html#gaeebe3857bd581d95f5d2484fe7272141" title="Gets geometry of screen associated with this Ecore_Evas.">ecore_evas_screen_geometry_get</a>(ee, &amp;x, &amp;y, &amp;w, &amp;h);
-        fprintf(stdout, <span class="stringliteral">&quot;screen geometry: %d,%d, %dx%d\n&quot;</span>, x, y, w, h);
+        printf(<span class="stringliteral">&quot;screen geometry: %d,%d, %dx%d\n&quot;</span>, x, y, w, h);
         <span class="keywordflow">return</span>;
      }
 }
@@ -381,7 +381,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> error;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_destroy);
@@ -392,23 +392,23 @@ main(<span class="keywordtype">void</span>)
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);  <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);  <span class="comment">/* white bg */</span>
+   evas_object_move(bg, 0, 0);  <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(bg, WIDTH, HEIGHT);  <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    evas_object_focus_set(bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-     bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, NULL);
+     bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
    text = <a class="code" href="group__Evas__Object__Text.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(text, 0, 0, 0, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(text, 150, 50);
-   <a class="code" href="group__Evas__Object__Text.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(text);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(text, 0, 0, 0, 255);
+   evas_object_resize(text, 150, 50);
+   evas_object_text_font_set(text, <span class="stringliteral">&quot;Sans&quot;</span>, 20);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(text);
 
    _canvas_resize_cb(ee);
-   fprintf(stdout, commands);
+   printf(commands);
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(ee);
@@ -417,8 +417,8 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">return</span> 0;
 
 error:
-   fprintf(stderr, <span class="stringliteral">&quot;You got to have at least one Evas engine built&quot;</span>
-                   <span class="stringliteral">&quot; and linked up to ecore-evas for this example to run&quot;</span>
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built&quot;</span>
+                   <span class="stringliteral">&quot; and linked to ecore-evas for this example to run&quot;</span>
                    <span class="stringliteral">&quot; properly.\n&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> -1;

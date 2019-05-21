@@ -92,21 +92,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example is as simple as possible. An icon object will be added to the window over a white background, and set to be resizable together with the window. All the options set through the example will affect the behavior of this icon.</p>
 <p>We start with the code for creating a window:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *icon;
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *path, *group, *name;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;icon&quot;</span>, <span class="stringliteral">&quot;Icon&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
 <p>Now we create the icon object, and set lookup order of the icon, and choose the "home" icon:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   icon = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, <span class="stringliteral">&quot;home&quot;</span>);
+</pre></div></p>
 <p>An interesting thing is that after setting this, it's possible to check where in the filesystem is the theme used by this icon, and the name of the group used:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   path = NULL;
+   group = NULL;
+   name = NULL;
+   <a class="code" href="group__Elm__Image.html#ga2457a336d2123a8074725e814e459cba">elm_image_file_get</a>(icon, &amp;path, &amp;group);
+   name = <a class="code" href="group__Elm__Icon.html#ga0d4131da809e47c44ef79996b231fe8f" title="Get the icon name set by icon standard names.">elm_icon_standard_get</a>(icon);
+   printf(<span class="stringliteral">&quot;path = %s, group = %s, name = %s\n&quot;</span>, path, group, name);
+</pre></div></p>
 <p>We can now go setting our options.</p>
-<p><a class="el" href="group__Elm__Image.html#gad5e7c1a774e7ef991e8f7726e4aee23b" title="Control scaling behaviour of this object.">elm_image_no_scale_set()</a> is used just to set this value to true (we don't want to scale our icon anyway, just resize it).</p>
-<p><a class="el" href="group__Elm__Image.html#ga4ee58d06eb76efaf8996c7eb86469119" title="Control if the object is (up/down) resizable.">elm_image_resizable_set()</a> is used to allow the icon to be resized to a size smaller than the original one, but not to a size bigger than it.</p>
-<p><a class="el" href="group__Elm__Image.html#gad1616cb527a0110058cb45b5e8307cd7" title="Control the smooth effect for an image.">elm_image_smooth_set()</a> will disable the smooth scaling, so the scale algorithm used to scale the icon to the new object size is going to be faster, but with a lower quality.</p>
-<p><a class="el" href="group__Elm__Image.html#ga962c104caf9ad23f21627a433af4a71a" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set()</a> is used to ensure that the icon will fill the entire area available to it, even if keeping the aspect ratio. The icon will overflow its width or height (any of them that is necessary) to the object area, instead of resizing the icon down until it can fit entirely in this area.</p>
+<p><a class="el" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set()</a> is used just to set this value to true (we don't want to scale our icon anyway, just resize it).</p>
+<p><a class="el" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set()</a> is used to allow the icon to be resized to a size smaller than the original one, but not to a size bigger than it.</p>
+<p><a class="el" href="group__Elm__Image.html#ga9b8c946f4abbcd09f0b9de0b9026505f" title="Control the smooth effect for an image.">elm_image_smooth_set()</a> will disable the smooth scaling, so the scale algorithm used to scale the icon to the new object size is going to be faster, but with a lower quality.</p>
+<p><a class="el" href="group__Elm__Image.html#ga4c6c2fe6f609406329e2be2011574f94" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set()</a> is used to ensure that the icon will fill the entire area available to it, even if keeping the aspect ratio. The icon will overflow its width or height (any of them that is necessary) to the object area, instead of resizing the icon down until it can fit entirely in this area.</p>
 <p>This is the code for setting these options:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   <a class="code" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set</a>(icon, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(icon, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Image.html#ga9b8c946f4abbcd09f0b9de0b9026505f" title="Control the smooth effect for an image.">elm_image_smooth_set</a>(icon, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Image.html#ga4c6c2fe6f609406329e2be2011574f94" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set</a>(icon, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
 <p>However, if you try this example you may notice that this image is not being affected by all of these options. This happens because the used icon will be from elementary theme, and thus it has its own set of options like smooth scaling and fill_outside options. You can change the "home" icon to use some image (from your system) and see that then those options will be respected.</p>
 <p>Now some last touches in our object size hints, window and background, to display this icon properly:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   evas_object_size_hint_weight_set(icon, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, icon);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
+
+   evas_object_resize(win, 320, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
 <p>This example will look like this:</p>
 <div class="image">
 <img src="icon_example_01.png" alt="icon_example_01.png"/>

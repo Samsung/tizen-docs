@@ -99,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <span class="preprocessor"></span>
 <span class="preprocessor">#include &lt;Ecore.h&gt;</span>
 <span class="preprocessor">#include &lt;Ecore_Evas.h&gt;</span>
+
 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <span class="preprocessor">#include &lt;errno.h&gt;</span>
 <span class="preprocessor">#include &quot;evas-common.h&quot;</span>
@@ -118,17 +119,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <span class="keyword">static</span> <span class="keyword">struct </span>test_data d = {0};
 
-<span class="comment">/* here just to keep our example&#39;s window size and background image&#39;s</span>
-<span class="comment"> * size in synchrony */</span>
+<span class="comment">/* Keep the example&#39;s window size in sync with the background image&#39;s size */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _canvas_resize_cb(Ecore_Evas *ee)
 {
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
+   evas_object_resize(d.bg, w, h);
 }
 
+<span class="comment">/* Keyboard event callback routine, to enable the user to toggle various</span>
+<span class="comment"> * object properties on the clipper object.</span>
+<span class="comment"> */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
             <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a>        *evas EINA_UNUSED,
@@ -137,21 +140,23 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 {
    <a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *ev = einfo;
 
-   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>
+   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0)
      {
-        fprintf(stdout, <span class="stringliteral">&quot;commands are:\n&quot;</span>
-                        <span class="stringliteral">&quot;\to - change clipper&#39;s opacity\n&quot;</span>
-                        <span class="stringliteral">&quot;\tr - toggle clipper&#39;s color between red and white\n&quot;</span>
-                        <span class="stringliteral">&quot;\tc - toggle clipper&#39;s clipping function\n&quot;</span>
-                        <span class="stringliteral">&quot;\tv - toggle clipper&#39;s visibility\n&quot;</span>);
+        <span class="comment">/* h - print help */</span>
+        printf(<span class="stringliteral">&quot;commands are:\n&quot;</span>
+               <span class="stringliteral">&quot;\to - change clipper&#39;s opacity\n&quot;</span>
+               <span class="stringliteral">&quot;\tr - toggle clipper&#39;s color between red and white\n&quot;</span>
+               <span class="stringliteral">&quot;\tc - toggle clipper&#39;s clipping function\n&quot;</span>
+               <span class="stringliteral">&quot;\tv - toggle clipper&#39;s visibility\n&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
-   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;o&quot;</span>) == 0) <span class="comment">/* change clipper&#39;s opacity */</span>
+   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;o&quot;</span>) == 0)
      {
+        <span class="comment">/* o - Change clipper&#39;s opacity */</span>
         <span class="keywordtype">int</span> alpha, r, g, b;
 
-        <a class="code" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(d.clipper, &amp;r, &amp;g, &amp;b, &amp;alpha);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(d.clipper, &amp;r, &amp;g, &amp;b, &amp;alpha);
         <a class="code" href="group__Evas__Utils.html#ga862abed1097a429dd439fbe08813cd9d">evas_color_argb_unpremul</a>(alpha, &amp;r, &amp;g, &amp;b);
 
         alpha -= 20;
@@ -159,69 +164,71 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
           alpha = 255;
 
         <a class="code" href="group__Evas__Utils.html#gac02bf3973675ae7591b9f34deef1554f">evas_color_argb_premul</a>(alpha, &amp;r, &amp;g, &amp;b);
-        <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.clipper, r, g, b, alpha);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.clipper, r, g, b, alpha);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing clipper&#39;s opacity: %d%%\n&quot;</span>,
+        printf(<span class="stringliteral">&quot;Changing clipper&#39;s opacity: %d%%\n&quot;</span>,
                 (<span class="keywordtype">int</span>)((alpha / 255.0) * 100));
         <span class="keywordflow">return</span>;
      }
 
-   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;r&quot;</span>) == 0) <span class="comment">/* toggle clipper&#39;s color</span>
-<span class="comment">                                       * between red and white */</span>
+   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;r&quot;</span>) == 0)
      {
+        <span class="comment">/* r - Toggle clipper&#39;s color between red and white */</span>
         <span class="keywordtype">int</span> alpha, r, g, b;
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing clipper&#39;s color to&quot;</span>);
+        printf(<span class="stringliteral">&quot;Changing clipper&#39;s color to&quot;</span>);
 
-        <a class="code" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(d.clipper, &amp;r, &amp;g, &amp;b, &amp;alpha);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(d.clipper, &amp;r, &amp;g, &amp;b, &amp;alpha);
         <a class="code" href="group__Evas__Utils.html#ga862abed1097a429dd439fbe08813cd9d">evas_color_argb_unpremul</a>(alpha, &amp;r, &amp;g, &amp;b);
 
         <span class="keywordflow">if</span> (g &gt; 0)
           {
-             fprintf(stdout, <span class="stringliteral">&quot;red\n&quot;</span>);
+             printf(<span class="stringliteral">&quot;red\n&quot;</span>);
              g = b = 0;
           }
         <span class="keywordflow">else</span>
           {
-             fprintf(stdout, <span class="stringliteral">&quot;white\n&quot;</span>);
+             printf(<span class="stringliteral">&quot;white\n&quot;</span>);
              g = b = 255;
           }
 
         <a class="code" href="group__Evas__Utils.html#gac02bf3973675ae7591b9f34deef1554f">evas_color_argb_premul</a>(alpha, &amp;r, &amp;g, &amp;b);
-        <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.clipper, r, g, b, alpha);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.clipper, r, g, b, alpha);
         <span class="keywordflow">return</span>;
      }
 
-   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;c&quot;</span>) == 0) <span class="comment">/* toggle clipper&#39;s clipping function */</span>
+   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;c&quot;</span>) == 0)
      {
-        fprintf(stdout, <span class="stringliteral">&quot;Toggling clipping &quot;</span>);
+        <span class="comment">/* o - Toggle clipper&#39;s clipping function */</span>
+        printf(<span class="stringliteral">&quot;Toggling clipping &quot;</span>);
 
         <span class="keywordflow">if</span> (evas_object_clip_get(d.img) == d.clipper)
           {
              evas_object_clip_unset(d.img);
-             fprintf(stdout, <span class="stringliteral">&quot;off\n&quot;</span>);
+             printf(<span class="stringliteral">&quot;off\n&quot;</span>);
           }
         <span class="keywordflow">else</span>
           {
              evas_object_clip_set(d.img, d.clipper);
-             fprintf(stdout, <span class="stringliteral">&quot;on\n&quot;</span>);
+             printf(<span class="stringliteral">&quot;on\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
      }
 
-   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;v&quot;</span>) == 0) <span class="comment">/* toggle clipper&#39;s visibility */</span>
+   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;v&quot;</span>) == 0)
      {
-        fprintf(stdout, <span class="stringliteral">&quot;Clipper is now &quot;</span>);
+        <span class="comment">/* v - Toggle clipper&#39;s visibility */</span>
+        printf(<span class="stringliteral">&quot;Clipper is now &quot;</span>);
 
-        <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Font__Group.html#gac4a363e7d25b18ae7baddc04d7f20ebe">evas_object_visible_get</a>(d.clipper))
+        <span class="keywordflow">if</span> (evas_object_visible_get(d.clipper))
           {
-             <a class="code" href="group__Evas__Font__Group.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(d.clipper);
-             fprintf(stdout, <span class="stringliteral">&quot;hidden\n&quot;</span>);
+             <a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(d.clipper);
+             printf(<span class="stringliteral">&quot;hidden\n&quot;</span>);
           }
         <span class="keywordflow">else</span>
           {
-             <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper);
-             fprintf(stdout, <span class="stringliteral">&quot;visible\n&quot;</span>);
+             <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper);
+             printf(<span class="stringliteral">&quot;visible\n&quot;</span>);
           }
         <span class="keywordflow">return</span>;
      }
@@ -235,31 +242,35 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">if</span> (!<a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
      <span class="keywordflow">return</span> EXIT_FAILURE;
 
-   <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
-<span class="comment">    * engine available */</span>
-   d.ee = ecore_evas_new(NULL, 10, 10, WIDTH, HEIGHT, NULL);
+   d.ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 10, 10, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga735c0c2fb597f34b096ec0f43fc3a7ac" title="Sets a callback for Ecore_Evas resize events.">ecore_evas_callback_resize_set</a>(d.ee, _canvas_resize_cb);
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(d.ee);
 
-   <span class="comment">/* the canvas pointer, de facto */</span>
    d.canvas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
+   <span class="comment">/* Create background.  As mentioned earlier, the evas_object_*</span>
+<span class="comment">    * routines are part of the legacy Evas API; with the new API</span>
+<span class="comment">    * you should use code as shown in evas-object-manipulation-eo.c.</span>
+<span class="comment">    */</span>
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
-   evas_object_name_set(d.bg, <span class="stringliteral">&quot;background rectangle&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set</a>(d.bg, <span class="stringliteral">&quot;background rectangle&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
-   evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_focus_set(d.bg, EINA_TRUE);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-     d.bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, NULL);
+     d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
-   d.img = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img, img_path, NULL);
+   <span class="comment">/* Load enlightenment.png as an image object, then make it fill the</span>
+<span class="comment">    * whole canvas area.</span>
+<span class="comment">    */</span>
+   d.img = evas_object_image_filled_add(d.canvas);
+   evas_object_image_file_set(d.img, img_path, NULL);
    err = evas_object_image_load_error_get(d.img);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
@@ -267,17 +278,19 @@ main(<span class="keywordtype">void</span>)
      }
    <span class="keywordflow">else</span>
      {
-        <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img, 0, 0);
-        <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, WIDTH, HEIGHT);
-        <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img);
+        evas_object_move(d.img, 0, 0);
+        evas_object_resize(d.img, WIDTH, HEIGHT);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Image object added, type is: %s\n&quot;</span>,
-                evas_object_type_get(d.img));
+        printf(<span class="stringliteral">&quot;Image object added, type is: %s\n&quot;</span>,
+                <a class="code" href="group__Evas__Object__Group__Basic.html#gaf5ec394604d9b8f6dafe5d6ee61b6448" title="Retrieves the type of the given Evas object.">evas_object_type_get</a>(d.img));
      }
 
-   <span class="comment">/* border on the image&#39;s clipper, here just to emphasize its position */</span>
-   d.clipper_border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.clipper_border, border_img_path, NULL);
+   <span class="comment">/* Add a second image to the canvas - a red square this time.  It</span>
+<span class="comment">    * will be given a border to emphasize its position.</span>
+<span class="comment">    */</span>
+   d.clipper_border = evas_object_image_filled_add(d.canvas);
+   evas_object_image_file_set(d.clipper_border, border_img_path, NULL);
    err = evas_object_image_load_error_get(d.clipper_border);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
@@ -288,20 +301,20 @@ main(<span class="keywordtype">void</span>)
         evas_object_image_border_set(d.clipper_border, 3, 3, 3, 3);
         evas_object_image_border_center_fill_set(
           d.clipper_border, EVAS_BORDER_FILL_NONE);
-        <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.clipper_border, (WIDTH / 4) - 3, (HEIGHT / 4) - 3);
-        <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(
+        evas_object_move(d.clipper_border, (WIDTH / 4) - 3, (HEIGHT / 4) - 3);
+        evas_object_resize(
           d.clipper_border, (WIDTH / 2) + 6, (HEIGHT / 2) + 6);
-        <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper_border);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper_border);
      }
 
-   <span class="comment">/* solid white clipper (note that it&#39;s the default color for a</span>
-<span class="comment">    * rectangle) - it won&#39;t change clippees&#39; colors, then (multiplying</span>
-<span class="comment">    * by 255) */</span>
+   <span class="comment">/* Lastly, add a rectangle.  It will be white (the default color for</span>
+<span class="comment">    * rectangles) and so won&#39;t change the color of anything it clips.</span>
+<span class="comment">    */</span>
    d.clipper = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.clipper, WIDTH / 4, HEIGHT / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.clipper, WIDTH / 2, HEIGHT / 2);
+   evas_object_move(d.clipper, WIDTH / 4, HEIGHT / 4);
+   evas_object_resize(d.clipper, WIDTH / 2, HEIGHT / 2);
    evas_object_clip_set(d.img, d.clipper);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.clipper);
 
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
@@ -310,8 +323,8 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">return</span> 0;
 
 error:
-   fprintf(stderr, <span class="stringliteral">&quot;you got to have at least one evas engine built and linked&quot;</span>
-                   <span class="stringliteral">&quot; up to ecore-evas for this example to run properly.\n&quot;</span>);
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built and linked&quot;</span>
+                   <span class="stringliteral">&quot; to ecore-evas for this example to run properly.\n&quot;</span>);
 panic:
    <a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(d.ee);
    <a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
