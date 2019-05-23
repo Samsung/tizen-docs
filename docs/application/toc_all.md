@@ -290,6 +290,7 @@
 ##### [Privilege Information](/application/dotnet/guides/security/privilege.md)
 ##### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 ##### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
+##### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
 #### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
 
@@ -612,14 +613,13 @@
 ####### [Animation Types](/application/native/guides/ui/dali/animation-types.md)
 ####### [Constraints](/application/native/guides/ui/dali/constraints.md)
 ###### [Resources](/application/native/guides/ui/dali/resources.md)
-###### Rendering and Effects
-####### [Overview](/application/native/guides/ui/dali/rendering-effects.md)
+###### DALi Rendering
+####### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ####### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ####### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
 ###### Background Knowledge
 ####### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ####### [Properties](/application/native/guides/ui/dali/properties.md)
-####### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
 
 #### Localization
@@ -731,6 +731,9 @@
 #### Text Input and Voice
 ##### [Overview](/application/native/guides/text-input/overview.md)
 ##### [Input Method](/application/native/guides/text-input/input-method.md)
+##### [Autofill](/application/native/guides/text-input/autofill.md)
+##### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
+##### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
 ##### [Speech-to-text](/application/native/guides/text-input/stt.md)
 ##### [Text-to-speech](/application/native/guides/text-input/tts.md)
 ##### [Voice Control](/application/native/guides/text-input/voice-control.md)

@@ -22,10 +22,6 @@ The main features of the Bluetooth API include:
 
   You can [connect to and exchange data with a remote Bluetooth device](#connecting-to-and-exchanging-data-with-a-bluetooth-device).
 
-- Communicating with a health source device   
-
-  The Health Device Profile defines the requirements for the Bluetooth health device implementation. In the profile, there are 2 device types: one device is a source, such as a blood pressure monitor or pulse oximeter, while the other is a sink, such as a mobile phone or laptop. You can use your device as a sink and [communicate with a health source device](#communicating-with-a-health-source-device).
-
 The main Bluetooth (4.0) Low Energy features include:
 
 - Managing the local Bluetooth adapter     
@@ -298,65 +294,6 @@ To connect to services provided by a server device to the client devices:
    ```
 
    When an incoming message is received from the peer device, the `onmessage` event handler in the `BluetoothSocket` interface is triggered.
-
-## Communicating with a Health Source Device
-
-To increase the communication capabilities of your application, you must learn to communicate with a health source device:
-
-1. Retrieve a `BluetoothHealthProfileHandler` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothHealthProfileHandler) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothHealthProfileHandler) applications):
-
-   ```
-   var adapter = tizen.bluetooth.getDefaultAdapter();
-   var healthProfileHandler = adapter.getBluetoothProfileHandler('HEALTH');
-   var healthApplication = null, healthChannel = null;
-   ```
-
-2. Register an application as a sink to wait for connection requests from health source devices (4100 means oximeter):
-
-   ```
-   function onSinkApp(app) {
-       console.log('Success');
-       healthApplication = app;
-   }
-
-   healthProfileHandler.registerSinkApplication(4100, 'testSinkApp', onSinkApp);
-   ```
-
-   When the sink application is registered successfully, the `BluetoothHealthApplicationSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothHealthApplicationSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothHealthApplicationSuccessCallback) applications) is invoked and you can get the registered sink application object.
-
-3. Before establishing a connection, your device must be bonded with a health source device. For more information, see [Creating a Bond with a Bluetooth Device](#creating-a-bond-with-a-bluetooth-device).
-
-4. To connect to the health source device, use the `connectToSource()` method of the `BluetoothHealthProfileHandler` interface:
-
-   ```
-   function onConnect(channel) {
-       console.log('Success');
-       healthChannel = channel;
-   }
-
-   adapter.getDevice('35:F4:59:D1:7A:03', function(device) {
-         healthProfileHandler.connectToSource(device, healthApplication, onConnect);
-   });
-   ```
-
-   When a connection between 2 devices is established, the success callback of the `connectToSource()` method is called. In addition, the `onconnect` event handler of the `BluetoothHealthApplication` instance (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothHealthApplication) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothHealthApplication) applications) is called, if the success callback attribute is set. You can get the connected `BluetoothHealthChannel` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothHealthChannel) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothHealthChannel) applications) from the callbacks.
-
-5. To send data to the source device, use the `sendData()` method:
-
-   ```
-   var dataToSend = [0, 0, 0];
-   var length = healthChannel.sendData(dataToSend);
-   ```
-
-   The `onmessage` event handler in the `BluetoothHealthChannelChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothHealthChannelChangeCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothHealthChannelChangeCallback) applications) is called when the data is received, if you set a listener on the connected channel by using the `setListener()` method.
-
-6. Disconnect from the health source device:
-
-   ```
-   healthChannel.close();
-   ```
-
-   When the channel is disconnected, the `onclose` event handler in the `BluetoothHealthChannelChangeCallback` interface is called.
 
 ## Discovering Bluetooth Low Energy Devices
 

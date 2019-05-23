@@ -150,6 +150,8 @@ package:
 |----------------------------------------|----------------------------------------|-----|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
+| `http://tizen.org/feature/accessibility.grayscale`  | Specify this key, if the application requires the accessibility grayscale feature. | 5.5   |
+| `http://tizen.org/feature/accessibility.negative`  | Specify this key, if the application requires the accessibility negative feature. | 5.5   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
 | `http://tizen.org/feature/attach_panel`   | Specify this key, if the application requires the application attach panel feature. | 5.0   |
 | `http://tizen.org/feature/badge`         | Specify this key, if the application requires the badge feature. | 4.0   |
@@ -313,6 +315,7 @@ package:
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/usb.accessory` | Specify this key, if the application requires the USB client (or accessory) feature. | 2.2.1 |
 | `http://tizen.org/feature/usb.host`      | Specify this key, if the application requires the USB host feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.barcode_detection` | Specify this key, if the application requires the barcode detection feature. | 2.4   |
@@ -332,6 +335,8 @@ Reference](../../api/overview.md).
 |------------------------------------------|------------------------------------------|-------|
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
+| `http://tizen.org/feature/accessibility.grayscale`  | Specify this key, if the application requires the accessibility grayscale feature. | 5.5   |
+| `http://tizen.org/feature/accessibility.negative`  | Specify this key, if the application requires the accessibility negative feature. | 5.5   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
 | `http://tizen.org/feature/badge`         | Specify this key, if the application requires the badge feature. | 4.0   |
 | `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar service. | 4.0   |
@@ -477,6 +482,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/usb.accessory` | Specify this key, if the application requires the USB client (or accessory) feature. | 2.2.1 |
 | `http://tizen.org/feature/usb.host`      | Specify this key, if the application requires the USB host feature. | 2.2.1 |
 | `http://tizen.org/feature/vision.barcode_detection` | Specify this key, if the application requires the barcode detection feature. | 2.4   |
