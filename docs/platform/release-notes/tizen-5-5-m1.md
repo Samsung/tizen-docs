@@ -60,7 +60,7 @@ Release Date: May. 31, 2019
 
 - Open source upgrade
   - icu (63.1)
-  - python (2.7.15)
+  - Python (2.7.15)
   - sqlite (3.26.0)
   - tzdata (2018f)
   - gobject-introspection (1.52.1)
@@ -96,7 +96,7 @@ Release Date: May. 31, 2019
 - CVE patches
   - libxslt : CVE-2019-11068
   - sqlite3: CVE-2019-9936
-  - python: CVE-2019-9740 and CVE-2019-9636
+  - Python: CVE-2019-9740 and CVE-2019-9636
   - file : CVE-2019-8906
 
 
@@ -216,7 +216,7 @@ Release Date: May. 31, 2019
     - An API to get an original image size has been added.
   - Text
     - Support for circular text has been added.
-    - Feature to support layout text and icons have been added.
+    - Feature to support layout text and icons has been added.
     - Support for bitmap fonts has been added.
     - Some text render utils have been added.
   - Control and Visual
@@ -331,7 +331,7 @@ Release Date: May. 31, 2019
 - PulseAudio
   - Support for triggering audio ducking effect by recording stream has been added.
   - Support for applying volume type to loopback stream has been added.
-  - Support for getting the PID of the latest stream has been added.
+  - Support for getting the pid of the latest stream has been added.
   - Support for individual volume has been added.
 - Audio HAL
   - API to set volume ratio to control H/W volume according to each stream type has been added.
@@ -373,7 +373,7 @@ Release Date: May. 31, 2019
     - SetPlayPosition() block issue with MediaStreamSource has been fixed.
 - Multimedia Daemon
   - Murphy
-    - The launching failure issue with the PID file has been fixed.
+    - The launching failure issue with the pid file has been fixed.
   - Mm-resource-manager
     - The issue of the GDBus method related with the USB detachable has been fixed.
   - Muse-server
@@ -451,7 +451,7 @@ Release Date: May. 31, 2019
   - Additional D-Bus error handling has been enabled.
   - Potential defects have been fixed.
 - Calendar-service
-  - Support for calendar DB purge when Device is reset has been added.
+  - Support for calendar DB purge when a device is reset has been added.
   - Potential defects have been fixed.
 - Email-service
   - Potential defects have been fixed.
