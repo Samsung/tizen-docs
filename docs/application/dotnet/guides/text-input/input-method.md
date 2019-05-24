@@ -26,7 +26,7 @@ The main features of the Tizen.Uix.InputMethod namespace include:
 
 -   Managing the main loop and event handlers
 
-    The IME application must implement the `Main()` method. It is the main entry point, in which you can register event handlers and call the `Run()` method of the [Tizen.Uix.InputMethod.InputMethodEditor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethod.InputMethodEditor.html) class to start the main loop.
+    The IME application must implement the `Main()` method. It is the main entry point, in which you can register event handlers and call the `Run()` method of the [Tizen.Uix.InputMethod.InputMethodEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethod.InputMethodEditor.html) class to start the main loop.
 
     During its life-cycle, the IME application can receive a number of events from the Tizen input service framework through the event handlers. You must register the mandatory `Create()`, `Terminate()`, `Show()`, and `Hide()` event handlers. Other event handlers can be registered as required by the specific IME application.
 
@@ -42,7 +42,7 @@ The main features of the Tizen.Uix.InputMethod namespace include:
 
 To enable your application to use the input method functionality:
 
-1.  To use the [Tizen.Uix.InputMethod](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethod.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Uix.InputMethod](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethod.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>

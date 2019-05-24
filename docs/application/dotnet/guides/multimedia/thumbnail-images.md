@@ -17,7 +17,7 @@ The requested thumbnail is provided as a raw data type with the BGRA color space
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class, include the [Tizen.Multimedia.Util](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Util.html) namespace in your application:
+To use the methods and properties of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class, include the [Tizen.Multimedia.Util](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.html) namespace in your application:
 
 ```
 using Tizen.Multimedia.Util;
@@ -30,7 +30,7 @@ using Tizen.Multimedia.Util;
 <a name="get_thumbnail"></a>
 ## Extracting a Thumbnail
 
-To extract a thumbnail from a file, use the `ExtractAsync()` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+To extract a thumbnail from a file, use the `ExtractAsync()` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 
 ```
 async Task Extract(string testImagePath)

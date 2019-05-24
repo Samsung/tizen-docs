@@ -27,13 +27,13 @@ The main widget application features include:
   >
   > The widget application UI has a limitation with the scroll action to provide a better user experience. Design the widget UI to display all the information within the given area of the screen points.
   >
-  > To draw the UI, use a single window as a protected property of the [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetBase.html) class. Do not create additional windows. A stack of widget application windows gets corrupted, because the platform handles the widget application window in a special way.
+  > To draw the UI, use a single window as a protected property of the [Tizen.Applications.WidgetBase](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetBase.html) class. Do not create additional windows. A stack of widget application windows gets corrupted, because the platform handles the widget application window in a special way.
 
 
 <a name="app_instance"></a>
 ## Widget Application and Widget Instance
 
-The [Tizen.Applications.WidgetApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetApplication.html) class provides the `WidgetApplication(IDictionary< Type, string > typeInfo)` constructor, which allows a widget application to have multiple widget classes. The widget applications with multiple classes can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.
+The [Tizen.Applications.WidgetApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html) class provides the `WidgetApplication(IDictionary< Type, string > typeInfo)` constructor, which allows a widget application to have multiple widget classes. The widget applications with multiple classes can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.
 
 The widget instance has its own life-cycle similar to the widget application. However, the widget instance is only an object shown by the widget viewer applications. Many widget instances can be running on the same widget application process.
 
@@ -69,7 +69,7 @@ The following table lists the [callbacks you can use as the instance state chang
 | `OnResize()`  | Called before the widget size is changed. |
 | `OnUpdate()`  | Called when an event for updating the widget is received. |
 
-You can declare a widget class by inheriting the [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetBase.html) class. For example:
+You can declare a widget class by inheriting the [Tizen.Applications.WidgetBase](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetBase.html) class. For example:
 
 ```
 class MyWidget : WidgetBase
@@ -92,7 +92,7 @@ class MyWidget : WidgetBase
 
 To enable your application to use the widget functionality:
 
-1. To use the methods and properties of the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace, include it in your application:
+1. To use the methods and properties of the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace, include it in your application:
 
    ```
    using Tizen.Applications;
@@ -103,7 +103,7 @@ To enable your application to use the widget functionality:
 <a name="create"></a>
 ## Creating the Widget Application
 
-The widget application starts with the `Main()` function, which creates and initializes the application. The `Run()` method of the [Tizen.Applications.WidgetApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetApplication.html) class is used to start the application event loop.
+The widget application starts with the `Main()` function, which creates and initializes the application. The `Run()` method of the [Tizen.Applications.WidgetApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetApplication.html) class is used to start the application event loop.
 
 The `Tizen.Applications.WidgetApplication` class provides 2 kinds of constructors:
 
@@ -134,7 +134,7 @@ class Program
 
 To manage the widget instance life-cycle:
 
-1. Define your widget class, which is inherited from the [Tizen.Applications.WidgetBase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetBase.html) class:
+1. Define your widget class, which is inherited from the [Tizen.Applications.WidgetBase](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetBase.html) class:
 
    ```
    class MyWidget : WidgetBase {}
@@ -275,9 +275,9 @@ In the Tizen platform, applications in the same package (including widget applic
 
 ![Sharing through the data directory](./media/widget_data_share.png)
 
-To manage data through the `data` directory, you can use the methods and properties of the [Tizen.Applications.Preference](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html) class to store and retrieve key-value pairs.
+To manage data through the `data` directory, you can use the methods and properties of the [Tizen.Applications.Preference](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Preference.html) class to store and retrieve key-value pairs.
 
-If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use a data control with the classes and methods of the [Tizen.Applications.DataControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DataControl.html) namespace.
+If an application requires complex control over a widget, such as Music Player, it must implement a service application in the middle and use a data control with the classes and methods of the [Tizen.Applications.DataControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DataControl.html) namespace.
 
 For example, a music-player-service service application is needed to control the audio device, process audio files, and handle play and stop signals. The music-player-ui and music-player-widget applications display the UI controls, title, album art, and other content retrieved from the music-player-service service application. The service application can export its data using the data control to [provide data to the other applications](../app-management/data-control.md) (widget and UI) simultaneously. The following figure illustrates the typical data control flows between the set of UI, service, and widget applications.
 

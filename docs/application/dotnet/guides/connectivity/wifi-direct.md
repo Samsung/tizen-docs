@@ -40,7 +40,7 @@ The main features of the Tizen.Network.WiFiDirect namespace include:
 
 To enable your application to use the Wi-Fi Direct functionality:
 
-1.  To use the [Tizen.Network.WiFiDirect](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.WiFiDirect](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFiDirect.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -80,7 +80,7 @@ To manage events related to Wi-Fi Direct operations:
     }
     ```
 
-2.  Register the event handlers for the `DeviceStateChanged`, `DiscoveryStateChanged`, and `ConnectionStatusChanged` events of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
+2.  Register the event handlers for the `DeviceStateChanged`, `DiscoveryStateChanged`, and `ConnectionStatusChanged` events of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
 
     ```
     WiFiDirectManager.DeviceStateChanged += EventHandlerDeviceStateChanged;
@@ -105,7 +105,7 @@ To manage events related to Wi-Fi Direct operations:
 
 To activate a Wi-Fi Direct local device and check the device state:
 
-1.  Activate Wi-Fi Direct on the local device using the `Activate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class.
+1.  Activate Wi-Fi Direct on the local device using the `Activate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class.
 
     ```
     try
@@ -223,7 +223,7 @@ To connect to a specific device:
         }
         ```
 
-    2.  Register the event handler for the `ConnectionStateChanged` event of the [Tizen.Network.WiFiDirect.WiFiDirectPeer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectPeer.html) class and connect the peer with the local Wi-Fi Direct device using the `Connect()` method:
+    2.  Register the event handler for the `ConnectionStateChanged` event of the [Tizen.Network.WiFiDirect.WiFiDirectPeer](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectPeer.html) class and connect the peer with the local Wi-Fi Direct device using the `Connect()` method:
 
         ```
         try
@@ -309,7 +309,7 @@ To create an autonomous Wi-Fi Direct group and to make your device the autonomou
 
 To deactivate Wi-Fi Direct when it is no longer needed (or the application is exiting):
 
-1.  Deactivate Wi-Fi Direct on the local device using the `Deactivate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
+1.  Deactivate Wi-Fi Direct on the local device using the `Deactivate()` method of the [Tizen.Network.WiFiDirect.WiFiDirectManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFiDirect.WiFiDirectManager.html) class:
 
     ```
     try

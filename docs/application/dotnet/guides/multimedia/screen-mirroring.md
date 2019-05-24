@@ -27,7 +27,7 @@ The following figure illustrates the screen mirroring states.
 ## Prerequisites
 
 
-To use the methods and properties of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class, include the [Tizen.Multimedia.Remoting](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.html) namespace in your application:
+To use the methods and properties of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class, include the [Tizen.Multimedia.Remoting](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
 
 ```
 using Tizen.Multimedia.Remoting;
@@ -38,7 +38,7 @@ using Tizen.Multimedia.Remoting;
 
 To prepare for screen mirroring:
 
-1.  Define and register an event handler for the `StateChanged` event of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class:
+1.  Define and register an event handler for the `StateChanged` event of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class:
 
     ```
     void OnStateChanged(object sender, ScreenMirroringStateChangedEventArgs args)
@@ -49,7 +49,7 @@ To prepare for screen mirroring:
     screenMirroring.StateChanged += OnStateChanged;
     ```
 
-2.  Prepare the screen mirroring sink using the `Prepare()` method with an instance of the [Tizen.Multimedia.Display](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Display.html) class as a parameter:
+2.  Prepare the screen mirroring sink using the `Prepare()` method with an instance of the [Tizen.Multimedia.Display](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Display.html) class as a parameter:
 
     ```
     screenMirroring.Prepare(new Display(mediaView));
@@ -62,7 +62,7 @@ To prepare for screen mirroring:
 
 To connect to a source and start screen mirroring:
 
-1.  Connect to the screen mirroring source using the `ConnectAsync()` method of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class with the source IP address as a parameter:
+1.  Connect to the screen mirroring source using the `ConnectAsync()` method of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class with the source IP address as a parameter:
 
     ```
     await screenMirroring.ConnectAsync(ipAddress);
@@ -81,7 +81,7 @@ To connect to a source and start screen mirroring:
 <a name="handle"></a>
 ## Handling Screen Mirroring Errors
 
-You can receive notifications of errors caused by internal screen mirroring issues or by the source device disconnecting the session. Define and register an event handler for the `ErrorOccurred` event of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class:
+You can receive notifications of errors caused by internal screen mirroring issues or by the source device disconnecting the session. Define and register an event handler for the `ErrorOccurred` event of the [Tizen.Multimedia.Remoting.ScreenMirroring](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.ScreenMirroring.html) class:
 
 ```
 void OnErrorOccurred(object sender, ScreenMirroringErrorOccurredEventArgs args)
