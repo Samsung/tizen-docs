@@ -29,6 +29,10 @@ The main features of the Media Controller API include:
 
   To [receive and handle incoming commands](#receive_custom_commands) in the server, use the `addCommandListener()` method.
 
+- Setting content type for currently playing media
+
+  You can [set content type for currently playing media](#setting_content_type) by using updatePlaybackContentType() server method.
+
 - Setting age rating for currently playing media
 
   You can [set age rating for currently playing media](#setting_age_rating) by using updatePlaybackAgeRating() server method.
@@ -248,6 +252,31 @@ To manage the media controller features in your application, you must learn to s
 
       The `watcherId` variable stores the value, which can be used in the future to remove the listener from the server using the `removeCommandListener()` method.
 
+<a name="setting_content_type"></a>
+
+## Setting Content Type for the Currently Playing Media
+
+Server can set content type for current playback. Client can access this type (read-only)
+and perform some actions that depend on the content-type, such as displaying different icons for
+different types of media items.
+
+1. Setting content type on the server side:
+
+    ```
+    server.updatePlaybackContentType("VIDEO");
+    ```
+
+2. Accessing content type on the client side:
+
+    ```
+    var type = serverInfo.playbackInfo.contentType;
+    if (type == "VIDEO") {
+        console.log("playing video");
+    }
+    else if (type == "MUSIC") {
+        console.log("playing song");
+    }
+    ```
 
 <a name="setting_age_rating"></a>
 

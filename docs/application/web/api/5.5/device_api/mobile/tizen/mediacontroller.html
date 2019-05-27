@@ -39,7 +39,10 @@ For more information on the Media Controller features, see <a href="https://deve
                     1.3. <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a>
 </li>
 <li>
-                    1.4. <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a>
+                    1.4. <a href="#MediaControllerContentType">MediaControllerContentType</a>
+</li>
+<li>
+                    1.5. <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a>
 </li>
 </ul>
 </li>
@@ -114,6 +117,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerServer::updatePlaybackState">updatePlaybackState</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackPosition">updatePlaybackPosition</a> (unsigned long long position)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackAgeRating">updatePlaybackAgeRating</a> (<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating)</div>
+<div>void <a href="#MediaControllerServer::updatePlaybackContentType">updatePlaybackContentType</a> (<a href="#MediaControllerContentType">MediaControllerContentType</a> type)</div>
 <div>void <a href="#MediaControllerServer::updateShuffleMode">updateShuffleMode</a> (boolean mode)</div>
 <div>void <a href="#MediaControllerServer::updateRepeatState">updateRepeatState</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state)</div>
 <div>void <a href="#MediaControllerServer::updateMetadata">updateMetadata</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
@@ -302,8 +306,32 @@ REPEAT_ALL - repeating all media.            </li>
           </ul>
          </div>
 </div>
+<div class="enum" id="MediaControllerContentType">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentType"></a><h3>1.4. MediaControllerContentType</h3>
+<div class="brief">
+ Content type.
+          </div>
+<pre class="webidl prettyprint">  enum MediaControllerContentType { "IMAGE", "MUSIC", "VIDEO", "OTHER", "UNDECIDED" };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="description">
+          <ul>
+            <li>
+IMAGE - content type for images.            </li>
+            <li>
+MUSIC - content type for music.            </li>
+            <li>
+VIDEO - content type for videos.            </li>
+            <li>
+OTHER - content type for other media.            </li>
+            <li>
+UNDECIDED - content type for unspecified media types.            </li>
+          </ul>
+         </div>
+</div>
 <div class="enum" id="MediaControllerContentAgeRating">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentAgeRating"></a><h3>1.4. MediaControllerContentAgeRating</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentAgeRating"></a><h3>1.5. MediaControllerContentAgeRating</h3>
 <div class="brief">
  Media Controller content age rating.
           </div>
@@ -484,6 +512,7 @@ catch (err)
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -652,6 +681,51 @@ console.log("Only viewers older than " + sinfo.playbackInfo.ageRating +
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Only viewers older than 10 are allowed to access this content.
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerServer::updatePlaybackContentType">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackContentType"></a><code><b><span class="methodName">updatePlaybackContentType</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets content type for the current playback item.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ New content type for the current playback item.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
+server.updatePlaybackContentType("MUSIC");
+var client = tizen.mediacontroller.getClient();
+var sinfo = client.getLatestServerInfo();
+console.log("Content type of current item is " + sinfo.playbackInfo.contentType);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Content type of current item is MUSIC
 </pre>
 </div>
 </dd>
@@ -2478,6 +2552,7 @@ serverInfo.removePlaylistUpdatedListener(listenerId);
     readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
     readonly attribute unsigned long long position;
     readonly attribute <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> ageRating;
+    readonly attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType;
     readonly attribute boolean shuffleMode;
     readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
@@ -2513,6 +2588,20 @@ serverInfo.removePlaylistUpdatedListener(listenerId);
 </span><span class="type">MediaControllerContentAgeRating </span><span class="name">ageRating</span></span><div class="brief">
  Current playback age rating.
             </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerPlaybackInfo::contentType">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MediaControllerContentType </span><span class="name">contentType</span></span><div class="brief">
+ Current playback content type.
+            </div>
+<div class="description">
+            <p>
+Default value is UNDECIDED.
+            </p>
+           </div>
 <p><span class="version">Since: </span>
  5.5
             </p>
@@ -3660,6 +3749,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   enum MediaControllerServerState { "ACTIVE", "INACTIVE" };
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
   enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };
+  enum MediaControllerContentType { "IMAGE", "MUSIC", "VIDEO", "OTHER", "UNDECIDED" };
   enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
     "17", "18", "19" };
   [NoInterfaceObject] interface MediaControllerObject {
@@ -3675,6 +3765,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -3725,6 +3816,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     readonly attribute <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state;
     readonly attribute unsigned long long position;
     readonly attribute <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> ageRating;
+    readonly attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType;
     readonly attribute boolean shuffleMode;
     readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
