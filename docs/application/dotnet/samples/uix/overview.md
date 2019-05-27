@@ -26,14 +26,14 @@ for TD:
 			<td><img alt="" height="267" src="media/m32speechtotext.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/SpeechToText" target="_blank"><strong>(M) SpeechToText</strong></a></p>
-			<p>This sample application demonstrates how to record and recognize sound data using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.html" target="_blank">Tizen.Uix.Stt C# API</a>.</p>
+			<p>This sample application demonstrates how to record and recognize sound data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.html" target="_blank">Tizen.Uix.Stt</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m29textreader.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/TextReader" target="_blank"><strong>(M) TextReader</strong></a></p>
-			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts C# API</a>.</p>
+			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -44,7 +44,15 @@ for TD:
 <table>
 	<tbody>
 		<tr>
-			<td>There is no sample. </td>
+			<tr>
+			<td>
+			<p><img alt="" height="180" src="media/w67textreader.png" width="180"/></p>
+			</td>
+			<td>
+			<p><strong>(W) TextReader</strong> [In progress]</p>
+			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
+			</td>
+		</tr>
 		</tr>
 	</tbody>
 </table>
@@ -59,7 +67,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextReader" target="_blank"><strong>(T) TextReader</strong></a></p>
-			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.html">Tizen.Uix.Tts C# API</a>.</p>
+			<p>This sample application demonstrates how to synthesize voice from text using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.html" target="_blank">Tizen.Uix.Tts</a>.</p>
 			</td>
 		</tr>
 	</tbody>

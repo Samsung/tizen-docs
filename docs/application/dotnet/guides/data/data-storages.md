@@ -9,7 +9,7 @@ The main features of the `Tizen.System.Storage` class include:
 
     You can manage different storage locations on the device.
 
-    You can [retrieve additional information about the storage locations](#storage), including which storage is supported on the device, using the [Tizen.System.StorageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageManager.html) class. You can also [monitor storage state changes](#state).
+    You can [retrieve additional information about the storage locations](#storage), including which storage is supported on the device, using the [Tizen.System.StorageManager](https://samsung.github.io/TizenFX/latest/api/Tizen.System.StorageManager.html) class. You can also [monitor storage state changes](#state).
 
 - Storage space management
 
@@ -17,7 +17,7 @@ The main features of the `Tizen.System.Storage` class include:
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.System.Storage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Storage.html) and [Tizen.System.StorageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageManager.html) classes, include the [Tizen.System](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html) namespace in your application:
+To use the methods and properties of the [Tizen.System.Storage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Storage.html) and [Tizen.System.StorageManager](https://samsung.github.io/TizenFX/latest/api/Tizen.System.StorageManager.html) classes, include the [Tizen.System](https://samsung.github.io/TizenFX/latest/api/Tizen.System.html) namespace in your application:
 
 ```
 using Tizen.System;
@@ -28,7 +28,7 @@ using Tizen.System;
 
 To retrieve storage information:
 
-1.  Retrieve all storages on a device by using the `Storages` property of the [Tizen.System.StorageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageManager.html) class, which returns a list of all device storages as instances of the [Tizen.System.Storage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Storage.html) class:
+1.  Retrieve all storages on a device by using the `Storages` property of the [Tizen.System.StorageManager](https://samsung.github.io/TizenFX/latest/api/Tizen.System.StorageManager.html) class, which returns a list of all device storages as instances of the [Tizen.System.Storage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Storage.html) class:
 
     ```
     var storages = StorageManager.Storages;
@@ -50,7 +50,7 @@ To retrieve storage information:
 
     - Get the directory path for a storage of a specific type.
 
-        The `GetAbsolutePath()` method of the `Tizen.System.Storage` class retrieves the absolute path to a storage of a particular type, which is defined by the values of the [Tizen.System.DirectoryType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.DirectoryType.html) enumeration.
+        The `GetAbsolutePath()` method of the `Tizen.System.Storage` class retrieves the absolute path to a storage of a particular type, which is defined by the values of the [Tizen.System.DirectoryType](https://samsung.github.io/TizenFX/latest/api/Tizen.System.DirectoryType.html) enumeration.
 
         To get the directories of all storage types:
 
@@ -61,13 +61,13 @@ To retrieve storage information:
         }
         ```
 
-    - Get the storage type of a specific storage by using the `StorageType` property, which takes values from the [Tizen.System.StorageArea](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageArea.html) enumeration:
+    - Get the storage type of a specific storage by using the `StorageType` property, which takes values from the [Tizen.System.StorageArea](https://samsung.github.io/TizenFX/latest/api/Tizen.System.StorageArea.html) enumeration:
 
         ```
         var result = internalStorage.StorageType;
         ```
 
-    - Get the mount state of a specific storage by using the `State` property, which takes values from the [Tizen.System.StorageState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.StorageState.html) enumeration:
+    - Get the mount state of a specific storage by using the `State` property, which takes values from the [Tizen.System.StorageState](https://samsung.github.io/TizenFX/latest/api/Tizen.System.StorageState.html) enumeration:
 
         ```
         var result = internalStorage.State;
@@ -97,7 +97,7 @@ To monitor storage state changes:
 
     The event handler checks whether storage can be mounted or is corrupted and unmountable.
 
-2. Register the event handler for the `StorageStateChanged` event of the [Tizen.System.Storage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Storage.html) class:
+2. Register the event handler for the `StorageStateChanged` event of the [Tizen.System.Storage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Storage.html) class:
 
     ```
     foreach (var storage in StorageManager.Storages)
@@ -118,7 +118,7 @@ To monitor storage state changes:
 <a name="space"></a>
 ## Retrieving Storage Space Information
 
-To get the available and total size of the storage, use the `TotalSpace` and `AvailableSpace` properties in the [Tizen.System.Storage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Storage.html) class. For internal storage, they return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these properties to get the memory size.
+To get the available and total size of the storage, use the `TotalSpace` and `AvailableSpace` properties in the [Tizen.System.Storage](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Storage.html) class. For internal storage, they return the storage size, excluding the minimum memory size to launch the low memory pop-up in a low memory situation. Consequently, the available size must be less than the original available size, and you must use these properties to get the memory size.
 
 To retrieve storage space information:
 

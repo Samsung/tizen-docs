@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Class: Size</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object.html">Edje Object</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with Size Classes. </p>
@@ -99,9 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#gae97a214d588aa93384f30bb538a29d92">edje_size_class_set</a> (const char *size_class, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> minw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> minh, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> maxw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> maxh)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#gae97a214d588aa93384f30bb538a29d92">edje_size_class_set</a> (const char *size_class, Evas_Coord minw, Evas_Coord minh, Evas_Coord maxw, Evas_Coord maxh)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Edje size class.  <a href="#gae97a214d588aa93384f30bb538a29d92"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#ga1b281929860614da9416ece5c4cc154a">edje_size_class_get</a> (const char *size_class, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *minw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *minh, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *maxw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *maxh)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#ga1b281929860614da9416ece5c4cc154a">edje_size_class_get</a> (const char *size_class, Evas_Coord *minw, Evas_Coord *minh, Evas_Coord *maxw, Evas_Coord *maxh)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Edje size class.  <a href="#ga1b281929860614da9416ece5c4cc154a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#ga55b8bb51c8228b2e4b5ffb7a021c1d06">edje_size_class_del</a> (const char *size_class)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the size class.  <a href="#ga55b8bb51c8228b2e4b5ffb7a021c1d06"></a><br/></td></tr>
@@ -129,7 +129,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Iterates over all size classes provided by an Edje file. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>The mapped edje file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an iterator of Edje_Size_Class provided by the Edje file.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -152,6 +159,7 @@ Functions</h2></td></tr>
 <p>Iterates over all active classes of an application. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An iterator of Edje_Size_Class of the currently active size class</dd></dl>
 <p>This function only iterates over the Edje_Size_Class in use by an application.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -179,6 +187,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This function deletes any values at the process level for the specified size class.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -196,25 +205,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>minw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>minh</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>maxw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>maxh</em>&#160;</td>
         </tr>
         <tr>
@@ -239,6 +248,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, or <code>EINA_FALSE</code> on error</dd></dl>
 <p>This function gets the min and max size from the specified Edje size class.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -261,6 +271,7 @@ Functions</h2></td></tr>
 <p>Lists size classes. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list of size class names (strings). These strings are stringshares and the list must be <a class="el" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del()</a>'ed by the caller.</dd></dl>
 <p>This function lists all size classes known about by the current process.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -278,25 +289,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>minw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>minh</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>maxw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>maxh</em>&#160;</td>
         </tr>
         <tr>
@@ -322,6 +333,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, or <code>EINA_FALSE</code> on error</dd></dl>
 <p>This function updates all Edje members at the process level which belong to this size class with the new min and max attributes.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Size__Class.html#ga1b281929860614da9416ece5c4cc154a" title="Gets the Edje size class.">edje_size_class_get()</a>.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>

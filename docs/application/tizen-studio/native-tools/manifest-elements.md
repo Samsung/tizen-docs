@@ -38,7 +38,7 @@ This element represents the operation type of the application control.
 
 - `name`  
 Name of the application control, for example, `http://tizen.org/appcontrol/operation/compose`  
-For more information on the expected values, see [Common Application Controls](../../native/guides/app-management/common-appcontrol.md).
+For more information on the expected values, see [Common Application Controls](../../native/guides/app-management/common-appcontrols.md).
 
 **For example:**
 

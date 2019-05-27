@@ -88,7 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">Generic Value Array management</div>  </div>
 <div class="ingroups"><a class="el" href="group__Eina__Value__Group.html">Generic Value Storage</a></div></div><!--header-->
@@ -133,7 +134,86 @@ Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Eina__Value__Array.html">_Eina_Value_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Array__Group.html#gaf031f54b3d2530ec31b5cd73a5b08fc2">Eina_Value_Array</a></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Array__Group.html#ga726d6ba30b78d255082e9a1f340ee040">EINA_VALUE_ARRAY_FOREACH</a>(Array, Length, It, Value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the macro to iterate over an array contained in an Eina_Value.  <a href="#ga726d6ba30b78d255082e9a1f340ee040"></a><br/></td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="ga726d6ba30b78d255082e9a1f340ee040"></a><!-- doxytag: member="eina_value.h::EINA_VALUE_ARRAY_FOREACH" ref="ga726d6ba30b78d255082e9a1f340ee040" args="(Array, Length, It, Value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Value__Array__Group.html#ga726d6ba30b78d255082e9a1f340ee040">EINA_VALUE_ARRAY_FOREACH</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Array, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Length, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">It, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Value&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment"><span class="keywordflow">for</span> (Length = <a class="code" href="group__Eina__Value__Array__Group.html#ga758e2a63aa537f872bdbd07b87ea6115" title="Queries number of elements in value of array type.">eina_value_array_count</a>(Array),             \
+         It = 0,                                           \
+         <a class="code" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get</a>(Array, It, &amp;Value);          \
+       It &lt; Length;                                        \
+       It++,                                               \
+         eina_value_array_get(Array, It, &amp;Value))
+</pre></div>
+<p>Definition for the macro to iterate over an array contained in an Eina_Value. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The list to iterate over. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Contain the length of the array </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">it</td><td>Contain the current position walked over </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Contain the value at the current position.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This macro iterates over <code>array</code> from the first element to the last. <code>value</code> is the data related to the current element.</p>
+<p>It can be used like in the following example:</p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__Value.html">Eina_Value</a> array;
+ <a class="code" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686" title="The integer type containing the error type.">Eina_Error</a> err;
+ <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, len;
+
+ <span class="comment">// array is already filled with EINA_VALUE_TYPE_ERROR,</span>
+ <span class="comment">// its elements are unknown,</span>
+ <span class="comment">// EINA_VALUE_ARRAY_FOREACH will be used to check if there is no error</span>
+
+
+ <a class="code" href="group__Eina__Value__Array__Group.html#ga726d6ba30b78d255082e9a1f340ee040" title="Definition for the macro to iterate over an array contained in an Eina_Value.">EINA_VALUE_ARRAY_FOREACH</a>(&amp;array, len, i, err)
+   {
+      <a class="code" href="group__Eina__Value__Value__Group.html#ga6f088fe6c6127d808cdf214b355cbdeb" title="Gets the generic value.">eina_value_get</a>(&amp;v, &amp;err);
+      fprintf(stderr, <span class="stringliteral">&quot;Something has gone wrong: %s at index: %i\n&quot;</span>, <a class="code" href="group__Eina__Error__Group.html#ga54953b3f118ad981cb27ef3ac3d77b17" title="Returns the description of the given error number.">eina_error_msg_get</a>(err), i);
+   }
+</pre></div><dl class="warning"><dt><b>Warning:</b></dt><dd><code>array</code> and v must be a pointer to an Eina_Value </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="gaf031f54b3d2530ec31b5cd73a5b08fc2"></a><!-- doxytag: member="eina_value.h::Eina_Value_Array" ref="gaf031f54b3d2530ec31b5cd73a5b08fc2" args="" -->
 <div class="memitem">
@@ -180,13 +260,16 @@ Typedefs</h2></td></tr>
 <p>Appends a generic value in an array. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Variable arguments </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The variable argument is dependent on chosen subtype. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int </li>
@@ -206,7 +289,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -253,7 +337,7 @@ Typedefs</h2></td></tr>
 <p>Queries number of elements in value of array type. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>value object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>value object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -296,8 +380,8 @@ Typedefs</h2></td></tr>
 <p>Gets the generic value from an array member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
   </table>
   </dd>
 </dl>
@@ -305,6 +389,8 @@ Typedefs</h2></td></tr>
 <p>The value is returned in the variable argument parameter, and the actual value is type-dependent, but usually it will be what is stored inside the object. There shouldn't be any memory allocation; thus the contents should <b>not</b> be freed.</p>
 <p>The variable argument is dependent on chosen subtype. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -324,7 +410,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -375,14 +462,17 @@ Typedefs</h2></td></tr>
 <p>Inserts a generic value in an array member position. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Variable arguments of data to insert </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The variable argument is dependent on chosen subtype. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int </li>
@@ -402,7 +492,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -459,8 +550,8 @@ Typedefs</h2></td></tr>
 <p>Creates generic value storage of type array. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">subtype</td><td>How to manage this array members. </td></tr>
-    <tr><td class="paramname">step</td><td>How to grow the members array. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">subtype</td><td>How to manage this array members. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>How to grow the members array. </td></tr>
   </table>
   </dd>
 </dl>
@@ -471,8 +562,8 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Value__Array__Group.html#gad578acc62fe26443d291ec8d72676a23" title="Initializes generic value storage of type array.">eina_value_array_setup()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -504,14 +595,16 @@ Typedefs</h2></td></tr>
 <p>Appends a generic value to an array from a pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -531,7 +624,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <dl class="note"><dt><b>Note:</b></dt><dd>the pointer contents are written using the size defined by type. It can be larger than void* or uint64_t.</dd></dl>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
@@ -595,9 +689,9 @@ Typedefs</h2></td></tr>
 <p>Retrieves a generic value into a pointer from an array member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to receive the contents. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ptr</td><td>Pointer to receive the contents. </td></tr>
   </table>
   </dd>
 </dl>
@@ -605,6 +699,8 @@ Typedefs</h2></td></tr>
 <p>The value is returned in pointer contents, the actual value is type-dependent, but usually it will be what is stored inside the object. There shouldn't be any memory allocation, thus the contents should <b>not</b> be freed.</p>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -624,7 +720,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -675,15 +772,17 @@ Typedefs</h2></td></tr>
 <p>Inserts a generic value to an array member position from a pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -703,7 +802,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <dl class="note"><dt><b>Note:</b></dt><dd>the pointer contents are written using the size defined by type. It can be larger than void* or uint64_t.</dd></dl>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
@@ -767,15 +867,17 @@ Typedefs</h2></td></tr>
 <p>Sets a generic value to an array member from a pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -795,7 +897,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <dl class="note"><dt><b>Note:</b></dt><dd>the pointer contents are written using the size defined by type. It can be larger than void* or uint64_t.</dd></dl>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
@@ -854,8 +957,8 @@ Typedefs</h2></td></tr>
 <p>Removes element at given position in value of array type. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>value object. </td></tr>
-    <tr><td class="paramname">position</td><td>index of the member </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>value object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>index of the member </td></tr>
   </table>
   </dd>
 </dl>
@@ -898,14 +1001,16 @@ Typedefs</h2></td></tr>
 <p>Sets the generic value in an array member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The variable argument is dependent on chosen subtype. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int </li>
@@ -925,7 +1030,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Array__Group.html#ga48893089e10fa1244e9fd82643b50c10" title="Creates generic value storage of type array.">eina_value_array_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -989,9 +1095,9 @@ Typedefs</h2></td></tr>
 <p>Initializes generic value storage of type array. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Value object </td></tr>
-    <tr><td class="paramname">subtype</td><td>How to manage array members. </td></tr>
-    <tr><td class="paramname">step</td><td>How to grow the members array. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">subtype</td><td>How to manage array members. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>How to grow the members array. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1039,14 +1145,14 @@ Typedefs</h2></td></tr>
 <p>Retrieves a value from the array as an Eina_Value copy. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">src</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
-    <tr><td class="paramname">dst</td><td>Where to return the array member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>Where to return the array member </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<p>The argument <em>dst</em> is considered uninitialized and it's setup to the type of the member.</p>
+<p>The argument <em>dst</em> is considered uninitialized and it's set to the type of the member.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 
 </div>
@@ -1079,12 +1185,12 @@ Typedefs</h2></td></tr>
 <p>Appends a generic value to an array. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Array__Group.html#gac833bf34f56ba77e87bbe6b79734b653" title="Sets the generic value in an array member.">eina_value_array_set()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get()</a> </dd>
@@ -1140,9 +1246,9 @@ Typedefs</h2></td></tr>
 <p>Gets the generic value from an array member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
@@ -1191,13 +1297,13 @@ Typedefs</h2></td></tr>
 <p>Inserts a generic value to an array member position. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Array__Group.html#gac833bf34f56ba77e87bbe6b79734b653" title="Sets the generic value in an array member.">eina_value_array_set()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get()</a> </dd>
@@ -1253,13 +1359,13 @@ Typedefs</h2></td></tr>
 <p>Sets a generic value to an array member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">position</td><td>Index of the member </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>Index of the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Array__Group.html#gac833bf34f56ba77e87bbe6b79734b653" title="Sets the generic value in an array member.">eina_value_array_set()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Value__Array__Group.html#ga9358dce2404ed0926db502539f8a1318" title="Gets the generic value from an array member.">eina_value_array_get()</a> </dd>

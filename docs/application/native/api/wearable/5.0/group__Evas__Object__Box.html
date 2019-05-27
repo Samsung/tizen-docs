@@ -173,7 +173,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializer to zero out a whole <a class="el" href="group__Evas__Object__Box.html#ga2a8fbeeab4f5ae23e7bc1b291e27c5e1">Evas_Object_Box_Api</a> structure and set its name and version.</p>
+<p>Initialize to zero out a whole <a class="el" href="group__Evas__Object__Box.html#ga2a8fbeeab4f5ae23e7bc1b291e27c5e1">Evas_Object_Box_Api</a> structure and set its name and version.</p>
 <p>This is similar to <a class="el" href="group__Evas__Object__Box.html#gacfe469ef2fc811ab4af8c77105bf4baa">EVAS_OBJECT_BOX_API_INIT_NULL</a>, but it will also set the version field of <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a> (base field) to the latest <a class="el" href="group__Evas__Smart__Group.html#ga1ca1514302a47188c921b232d6ce42db">EVAS_SMART_CLASS_VERSION</a> and name it to the specific value.</p>
 <p>It will keep a reference to the name field as a <code>"const char *"</code>, i.e., the name must be available while the structure is used (hint: static or global variable!) and must not be modified.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Box.html#gacfe469ef2fc811ab4af8c77105bf4baa">EVAS_OBJECT_BOX_API_INIT_NULL</a> </dd>
@@ -194,7 +194,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializer to zero out a whole <a class="el" href="group__Evas__Object__Box.html#ga2a8fbeeab4f5ae23e7bc1b291e27c5e1">Evas_Object_Box_Api</a> structure.</p>
+<p>Initialize to zero out a whole <a class="el" href="group__Evas__Object__Box.html#ga2a8fbeeab4f5ae23e7bc1b291e27c5e1">Evas_Object_Box_Api</a> structure.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Box.html#gabab7b773ecb31ecbf661646d5db1bea1">EVAS_OBJECT_BOX_API_INIT_VERSION</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Box.html#gad35b8c6b395f976397abbb6f964878e7">EVAS_OBJECT_BOX_API_INIT_NAME_VERSION</a> </dd>
@@ -213,7 +213,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializer to zero out a whole <a class="el" href="group__Evas__Object__Box.html#ga2a8fbeeab4f5ae23e7bc1b291e27c5e1">Evas_Object_Box_Api</a> structure and set a specific version on it.</p>
+<p>Initialize to zero out a whole <a class="el" href="group__Evas__Object__Box.html#ga2a8fbeeab4f5ae23e7bc1b291e27c5e1">Evas_Object_Box_Api</a> structure and set a specific version on it.</p>
 <p>This is similar to <a class="el" href="group__Evas__Object__Box.html#gacfe469ef2fc811ab4af8c77105bf4baa">EVAS_OBJECT_BOX_API_INIT_NULL</a>, but it will set the version field of <a class="el" href="group__Evas__Smart__Group.html#gaea15f67e901bf5380cdb67dc1bb43391">Evas_Smart_Class</a> (base field) to the latest <a class="el" href="group__Evas__Smart__Group.html#ga1ca1514302a47188c921b232d6ce42db">EVAS_SMART_CLASS_VERSION</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Box.html#gacfe469ef2fc811ab4af8c77105bf4baa">EVAS_OBJECT_BOX_API_INIT_NULL</a> </dd>
 <dd>
@@ -233,7 +233,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Current version for Evas box object smart class, a value which goes to <a class="el" href="struct__Evas__Object__Box__Api.html#a7d6c66ca4c27f54096276677ba54a38a">_Evas_Object_Box_Api::version</a>. </p>
+<p>Current version for Evas box object smart class, a value that goes to <a class="el" href="struct__Evas__Object__Box__Api.html#a7d6c66ca4c27f54096276677ba54a38a">_Evas_Object_Box_Api::version</a>. </p>
 
 </div>
 </div>
@@ -277,7 +277,8 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Function signature for an Evas box object layouting routine. By <em>o</em> it will be passed the box object in question, by <em>priv</em> it will be passed the box's internal data and, by <em>user_data</em>, it will be passed any custom data one could have set to a given box layouting function, with evas_object_box_layout_set(). </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a1">box_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gabbeb05bf47aaf7681e9d83a1b0055d20"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Box_Option" ref="gabbeb05bf47aaf7681e9d83a1b0055d20" args="" -->
@@ -319,9 +320,9 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on error, a pointer to a new box object on success.</dd></dl>
-<p>After instantiation, if a box object hasn't its layout function set, via evas_object_box_layout_set(), it will have it by default set to evas_object_box_layout_horizontal(). The remaining properties of the box must be set/retrieved via <code>evas_object_box_{h,v}_{align,padding}_{get,set)()</code>.</p>
+<p>After instantiation, if a box object hasn't its layout function set, via evas_object_box_layout_set(), it will have it by default set to evas_object_box_layout_horizontal(). The remaining properties of the box must be set/retrieved via <code>evas_object_box_{h,v}_{align,padding}_{get,set)()</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a32">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a30">evas-hints.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a30">evas-box.c</a>, and <a class="el" href="evas-hints_8c-example.html#a21">evas-hints.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -348,9 +349,9 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list of <code>o's</code> child objects, on success, or <code>NULL</code>, on errors (or if it has no child objects)</dd></dl>
 <p>The returned list should be freed with <code><a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a></code> when you no longer need it.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>This is a duplicate of the list kept by the box internally. It's up to the user to destroy it when it no longer needs it. It's possible to remove objects from the box when walking this list, but these removals won't be reflected on it.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This is a duplicate of the list kept by the box internally. It's up to the user to destroy it when it no longer needs it. It's possible to remove objects from the box when walking this list, but these removals won't be reflected on it. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a18">evas-box.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-box_8c-example.html#a16">evas-box.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -403,7 +404,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on failure.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This call won't do anything for a canonical Evas box. Only users which have <b>subclassed</b> it, getting custom box items options (see <a class="el" href="group__Evas__Object__Box.html#gabbeb05bf47aaf7681e9d83a1b0055d20">Evas_Object_Box_Option</a>) on it, would benefit from this function. They'd have to implement it and get it to be the <a class="el" href="struct__Evas__Object__Box__Api.html#a59d7d420bad22f798982529742920cc1">_Evas_Object_Box_Api::property_get</a> smart class function of the box, which is originally get to <code>NULL</code>.</dd>
 <dd>
-This function will internally create a variable argument list, with the values passed after <code>property</code>, and call <a class="el" href="group__Evas__Object__Box.html#ga5b05a56a639b7ecf4371c794b4b0d2ed">evas_object_box_option_property_vget()</a> with this list and the same previous arguments.</dd></dl>
+This function will internally create a variable argument list, with the values passed after <code>property</code>, and call <a class="el" href="group__Evas__Object__Box.html#ga5b05a56a639b7ecf4371c794b4b0d2ed">evas_object_box_option_property_vget()</a> with this list and the same previous arguments. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -457,7 +458,7 @@ This function will internally create a variable argument list, with the values p
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on failure.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This call won't do anything for a canonical Evas box. Only users which have <b>subclassed</b> it, setting custom box items options (see <a class="el" href="group__Evas__Object__Box.html#gabbeb05bf47aaf7681e9d83a1b0055d20">Evas_Object_Box_Option</a>) on it, would benefit from this function. They'd have to implement it and set it to be the <a class="el" href="struct__Evas__Object__Box__Api.html#ae6e9280a426370646ea5bd4b8fa819bf">_Evas_Object_Box_Api::property_set</a> smart class function of the box, which is originally set to <code>NULL</code>.</dd>
 <dd>
-This function will internally create a variable argument list, with the values passed after <code>property</code>, and call <a class="el" href="group__Evas__Object__Box.html#ga023282a3edbe01bba78360bb5b733aa1">evas_object_box_option_property_vset()</a> with this list and the same previous arguments.</dd></dl>
+This function will internally create a variable argument list, with the values passed after <code>property</code>, and call <a class="el" href="group__Evas__Object__Box.html#ga023282a3edbe01bba78360bb5b733aa1">evas_object_box_option_property_vset()</a> with this list and the same previous arguments. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -509,7 +510,7 @@ This function will internally create a variable argument list, with the values p
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on failure.</dd></dl>
-<p>This is a variable argument list variant of the <a class="el" href="group__Evas__Object__Box.html#gae5796105f256467638f4831403a38886">evas_object_box_option_property_get()</a>. See its documentation for more details.</p>
+<p>This is a variable argument list variant of the <a class="el" href="group__Evas__Object__Box.html#gae5796105f256467638f4831403a38886">evas_object_box_option_property_get()</a>. See its documentation for more details. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -561,7 +562,7 @@ This function will internally create a variable argument list, with the values p
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on failure.</dd></dl>
-<p>This is a variable argument list variant of the <a class="el" href="group__Evas__Object__Box.html#ga3ed4ba28d9869b84d99ea7b5217636be">evas_object_box_option_property_set()</a>. See its documentation for more details.</p>
+<p>This is a variable argument list variant of the <a class="el" href="group__Evas__Object__Box.html#ga3ed4ba28d9869b84d99ea7b5217636be">evas_object_box_option_property_set()</a>. See its documentation for more details. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -582,8 +583,7 @@ This function will internally create a variable argument list, with the values p
 <div class="memdoc">
 <p>Get the Evas box smart class, for inheritance purposes.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the (canonical) Evas box smart class.</dd></dl>
-<p>The returned value is <b>not</b> to be modified, just use it as your parent class.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<p>The returned value is <b>not</b> to be modified, just use it as your parent class.  2.3.1 </p>
 
 </div>
 </div>
@@ -604,11 +604,10 @@ This function will internally create a variable argument list, with the values p
 <p>Set the default box <em>api</em> struct (Evas_Object_Box_Api) with the default values. May be used to extend that API.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">api</td><td>The box API struct to set back, most probably with overridden fields (on class extensions scenarios)</td></tr>
+    <tr><td class="paramname">api</td><td>The box API struct to set back, most probably with overridden fields (on class extensions scenarios)  2.3.1 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

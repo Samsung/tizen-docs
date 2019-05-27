@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Miscellaneous functions that also apply to any object, but are less used or not implemented by all objects.</p>
-<p>Examples on this group of functions can be found <a class="el" href="Example_Evas_Stacking.html">here</a> and <a class="el" href="Example_Evas_Events.html">here</a>. </p>
+<p>Examples of this group of functions can be found <a class="el" href="Example_Evas_Stacking.html">here</a> and <a class="el" href="Example_Evas_Events.html">here</a>. </p>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gabcd8fb64a5133c6be642fd8770c8a5c9"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_data_del" ref="gabcd8fb64a5133c6be642fd8770c8a5c9" args="(Evas_Object *obj, const char *key)" -->
 <div class="memitem">
@@ -133,8 +133,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <span class="keyword">extern</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj;
 
  my_data = <a class="code" href="group__Evas__Object__Group__Extras.html#gabcd8fb64a5133c6be642fd8770c8a5c9">evas_object_data_del</a>(obj, <span class="stringliteral">&quot;name_of_my_data&quot;</span>);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+</pre></div><p>  2.3 </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#a19">glview_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gafbad43015793eda4ae50202c0ce0e652"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_data_get" ref="gafbad43015793eda4ae50202c0ce0e652" args="(const Evas_Object *obj, const char *key)" -->
@@ -178,8 +179,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  my_data = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;name_of_my_data&quot;</span>);
  <span class="keywordflow">if</span> (my_data) printf(<span class="stringliteral">&quot;Data stored was %p\n&quot;</span>, my_data);
  <span class="keywordflow">else</span> printf(<span class="stringliteral">&quot;No data was stored on the object\n&quot;</span>);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a18">ecore_imf_example.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a11">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a8">evas-smart-object.c</a>.</dd>
+</pre></div><p>  2.3 </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a17">ecore_imf_example.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a10">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a7">evas-smart-object.c</a>, <a class="el" href="glview_example_01_8c-example.html#a14">glview_example_01.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a2">prefs_example_01.c</a>, and <a class="el" href="prefs_example_02_8c-example.html#a4">prefs_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -233,8 +234,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  my_data = malloc(500);
  <a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(obj, <span class="stringliteral">&quot;name_of_data&quot;</span>, my_data);
  printf(<span class="stringliteral">&quot;The data that was attached was %p\n&quot;</span>, <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;name_of_data&quot;</span>));
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a64">ecore_imf_example.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a13">evas-smart-interface.c</a>, and <a class="el" href="evas-smart-object_8c-example.html#a10">evas-smart-object.c</a>.</dd>
+</pre></div><p>  2.3 </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a63">ecore_imf_example.c</a>, <a class="el" href="evas-smart-interface_8c-example.html#a13">evas-smart-interface.c</a>, <a class="el" href="evas-smart-object_8c-example.html#a10">evas-smart-object.c</a>, <a class="el" href="glview_example_01_8c-example.html#a51">glview_example_01.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a18">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a18">prefs_example_02.c</a>, and <a class="el" href="web_example_02_8c-example.html#a12">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

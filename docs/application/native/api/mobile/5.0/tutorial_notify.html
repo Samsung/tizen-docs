@@ -91,13 +91,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>In this example we will have 3 notifies in 3 different positions. The first will dissappear after 5 seconds or when a outside clickking occurs, the second and third will not disappear and differ from each other only in position.</p>
-<p>We start our example with the usual stuff you've seen in other examples: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We now create a label to use as the content of our first notify: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Having the label we move to creating our notify, telling it to block events, setting its timeout(to autohide it): <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To have the notify dissappear when a click outside its area occur we have to listen to its "block,clicked" signal: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Our callback will look like this: <div class="fragment"><pre class="fragment"></pre></div> <p>Next we create another label and another notify. Note, however, that this time we don't set a timeout and don't have it block events. What we do is set the orient so that this notify will appear in the bottom of its parent: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>For our third notify the only change is the orient which is now center: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Now we tell the main loop to run: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>We start our example with the usual stuff you've seen in other examples: <div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o notify_example_01 notify_example_01.c -g `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span> _hide(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bx, *notify, *content;
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;notify&quot;</span>, <span class="stringliteral">&quot;Notify&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bx, EINA_FALSE);
+   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+</pre></div></p>
+<p>We now create a label to use as the content of our first notify: <div class="fragment"><pre class="fragment">
+   content = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(content, <span class="stringliteral">&quot;default&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(content);
+</pre></div></p>
+<p>Having the label we move to creating our notify, telling it to block events, setting its timeout(to autohide it): <div class="fragment"><pre class="fragment">
+   notify = <a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
+   <a class="code" href="group__Elm__Notify.html#ga9fd7a70a7f98228ff2180f266caa2765" title="Sets whether events should be passed to by a click outside its area.">elm_notify_allow_events_set</a>(notify, EINA_FALSE);
+   <a class="code" href="group__Elm__Notify.html#gafdefb215afc5707a10482207acbacc32" title="Set the time interval after which the notify window is going to be hidden.">elm_notify_timeout_set</a>(notify, 5);
+   elm_object_content_set(notify, content);
+   evas_object_size_hint_weight_set(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, notify);
+</pre></div></p>
+<p>To have the notify dissappear when a click outside its area occur we have to listen to its "block,clicked" signal: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(notify, <span class="stringliteral">&quot;block,clicked&quot;</span>, _hide, NULL);
+</pre></div></p>
+<p>Our callback will look like this: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_hide(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(obj);
+}
+</pre></div> <p>Next we create another label and another notify. Note, however, that this time we don't set a timeout and don't have it block events. What we do is set the orient so that this notify will appear in the bottom of its parent: <div class="fragment"><pre class="fragment">   content = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(content, <span class="stringliteral">&quot;bottom&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(content);
+
+   notify = <a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
+   <a class="code" href="group__Elm__Notify.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(notify, 0.5, 1.0);
+   elm_object_content_set(notify, content);
+   evas_object_size_hint_weight_set(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, notify);
+</pre></div></p>
+<p>For our third notify the only change is the orient which is now center: <div class="fragment"><pre class="fragment">
+   content = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(content, <span class="stringliteral">&quot;center&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(content);
+
+   notify = <a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
+   <a class="code" href="group__Elm__Notify.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(notify, 0.5, 0.5);
+   elm_object_content_set(notify, content);
+   evas_object_size_hint_weight_set(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, notify);
+</pre></div></p>
+<p>Now we tell the main loop to run: <div class="fragment"><pre class="fragment">
+   evas_object_resize(win, 100, 200);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
 <p>Our example will initially look like this:</p>
 <div class="image">
 <img src="screenshots/notify_example_01.png" alt="notify_example_01.png"/>

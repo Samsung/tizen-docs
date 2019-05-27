@@ -135,18 +135,18 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
       {
-        <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strings[i]);
+        <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strings[i]);
         list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, more_strings[i]);
       }
 
-   it = <a class="code" href="group__Eina__Array__Group.html#ga444c58bd06ac5a6f62ff4f30701701aa" title="Gets a new iterator associated to an array.">eina_array_iterator_new</a>(array);
+   it = <a class="code" href="group__Eina__Array__Group.html#ga444c58bd06ac5a6f62ff4f30701701aa" title="Gets a new iterator associated with an array.">eina_array_iterator_new</a>(array);
    <span class="keywordflow">if</span> (!<a class="code" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next</a>(it, (<span class="keywordtype">void</span> **)&amp;uninteresting))
      <span class="keywordflow">return</span> -1;
    print_eina_container(it);
    <a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(<a class="code" href="group__Eina__Iterator__Group.html#ga5583ab703b156f74f0c2a74875c95cc2" title="Returns the container of an iterator.">eina_iterator_container_get</a>(it));
    <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(it);
 
-   it = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated to a list.">eina_list_iterator_new</a>(list);
+   it = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated with a list.">eina_list_iterator_new</a>(list);
    <span class="keywordflow">if</span> (!<a class="code" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next</a>(it, (<span class="keywordtype">void</span> **)&amp;uninteresting))
      <span class="keywordflow">return</span> -1;
    print_eina_container(it);

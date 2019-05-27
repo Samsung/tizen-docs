@@ -104,26 +104,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
    <span class="keywordflow">if</span> (!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;example_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
         fprintf(stderr, <span class="stringliteral">&quot;Could not load &#39;example_group&#39; from &quot;</span>
                         <span class="stringliteral">&quot;signals-messages.edj: %s\n&quot;</span>, errmsg);
 
-        <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
         <span class="keywordflow">goto</span> shutdown_edje;
      }
 
-   <a class="code" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(edje_obj, <span class="stringliteral">&quot;mouse,wheel,*&quot;</span>, <span class="stringliteral">&quot;part_left&quot;</span>,
+   edje_object_signal_callback_add(edje_obj, <span class="stringliteral">&quot;mouse,wheel,*&quot;</span>, <span class="stringliteral">&quot;part_left&quot;</span>,
                                    _on_mouse_wheel, NULL);
 
-   <a class="code" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(edje_obj, <span class="stringliteral">&quot;mouse,over&quot;</span>, <span class="stringliteral">&quot;part_right&quot;</span>,
+   edje_object_signal_callback_add(edje_obj, <span class="stringliteral">&quot;mouse,over&quot;</span>, <span class="stringliteral">&quot;part_right&quot;</span>,
                                    _on_mouse_over, NULL);
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="comment">/* print signals coming from theme */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _sig_print(<span class="keyword">const</span> <span class="keywordtype">char</span> *emission,
            <span class="keyword">const</span> <span class="keywordtype">char</span> *source)
 {
-   fprintf(stdout, <span class="stringliteral">&quot;Signal %s coming from part %s!\n&quot;</span>, emission, source);
+   printf(<span class="stringliteral">&quot;Signal %s coming from part %s!\n&quot;</span>, emission, source);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -151,14 +151,14 @@ _on_mouse_over(<span class="keywordtype">void</span>        *data EINA_UNUSED,
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
      msg-&gt;<a class="code" href="struct__Edje__Message__Int__Set.html#a835187daa81c0007a58cbcf4eaa896ed">val</a>[i] = rand() % 256;
 
-   <a class="code" href="group__Edje__Object.html#gaa114cfe1791c561b3e17f1c69afd4307" title="Sends an (Edje) message to a given Edje object.">edje_object_message_send</a>(edje_obj, EDJE_MESSAGE_INT_SET, MSG_COLOR, msg);
+   edje_object_message_send(edje_obj, EDJE_MESSAGE_INT_SET, MSG_COLOR, msg);
 
    free(msg);
 }
 </pre></div></p>
 <p>In our theme we'll be changing the <code>"cc"</code> color class' values with those integer values of the message, so that moving the mouse over the right rectangle will change the left one's colors:  <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Now we're also sending messages <b>from the Edje object</b>, besides signals. We do so when one clicks with the left button over the left rectangle. With that, we change the text part's text, cycling between 3 pre-set strings declared in the EDC. With each new text string attribution, we send a string message to our code, with the current string as argument:  <div class="fragment"><pre class="fragment"></pre></div>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To get the message in code, we have to register a message handler, as follows:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#ga3c879dac2b5e65161ff8fa7f5f478d78" title="Sets an Edje message handler function for a given Edje object.">edje_object_message_handler_set</a>(edje_obj, _message_handle, NULL);
+<p>To get the message in code, we have to register a message handler, as follows:  <div class="fragment"><pre class="fragment">   edje_object_message_handler_set(edje_obj, _message_handle, NULL);
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="comment">/* print out received message string */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _message_handle(<span class="keywordtype">void</span>             *data EINA_UNUSED,
@@ -174,7 +174,7 @@ _message_handle(<span class="keywordtype">void</span>             *data EINA_UNU
 
    m = msg;
 
-   fprintf(stdout, <span class="stringliteral">&quot;String message received: %s\n&quot;</span>, m-&gt;<a class="code" href="struct__Edje__Message__String.html#a26d7286d36a05fa3f148b426ed8267e9">str</a>);
+   printf(<span class="stringliteral">&quot;String message received: %s\n&quot;</span>, m-&gt;<a class="code" href="struct__Edje__Message__String.html#a26d7286d36a05fa3f148b426ed8267e9">str</a>);
 }
 </pre></div></p>
 <p>To interact with the last missing feature -- emitting signals <b>from code</b> -- there's a command line interface to exercise it. A help string can be asked for with the 'h' key:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> commands[] = \
@@ -193,7 +193,7 @@ _message_handle(<span class="keywordtype">void</span>             *data EINA_UNU
 
         printf(<span class="stringliteral">&quot;emitting %s\n&quot;</span>, buf);
 
-        <a class="code" href="group__Edje__Object.html#gae9213646037e39d19d8cb61dad427ff7" title="Sends/emits an Edje signal to a given Edje object.">edje_object_signal_emit</a>(edje_obj, buf, <span class="stringliteral">&quot;&quot;</span>);
+        edje_object_signal_emit(edje_obj, buf, <span class="stringliteral">&quot;&quot;</span>);
 
         <span class="keywordflow">return</span>;
      }
@@ -248,7 +248,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
 
    <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>)) <span class="comment">/* print help */</span>
      {
-        fprintf(stdout, commands);
+        printf(commands);
         <span class="keywordflow">return</span>;
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;t&quot;</span>)) <span class="comment">/* toggle right rectangle&#39;s visibility */</span>
@@ -261,7 +261,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
 
         printf(<span class="stringliteral">&quot;emitting %s\n&quot;</span>, buf);
 
-        <a class="code" href="group__Edje__Object.html#gae9213646037e39d19d8cb61dad427ff7" title="Sends/emits an Edje signal to a given Edje object.">edje_object_signal_emit</a>(edje_obj, buf, <span class="stringliteral">&quot;&quot;</span>);
+        edje_object_signal_emit(edje_obj, buf, <span class="stringliteral">&quot;&quot;</span>);
 
         <span class="keywordflow">return</span>;
      }
@@ -270,7 +270,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
    <span class="keywordflow">else</span>
      {
         printf(<span class="stringliteral">&quot;unhandled key: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        fprintf(stdout, commands);
+        printf(commands);
      }
 }
 
@@ -285,7 +285,7 @@ _on_delete(Ecore_Evas *ee EINA_UNUSED)
 _sig_print(<span class="keyword">const</span> <span class="keywordtype">char</span> *emission,
            <span class="keyword">const</span> <span class="keywordtype">char</span> *source)
 {
-   fprintf(stdout, <span class="stringliteral">&quot;Signal %s coming from part %s!\n&quot;</span>, emission, source);
+   printf(<span class="stringliteral">&quot;Signal %s coming from part %s!\n&quot;</span>, emission, source);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -313,7 +313,7 @@ _on_mouse_over(<span class="keywordtype">void</span>        *data EINA_UNUSED,
    <span class="keywordflow">for</span> (i = 0; i &lt; 4; i++)
      msg-&gt;<a class="code" href="struct__Edje__Message__Int__Set.html#a835187daa81c0007a58cbcf4eaa896ed">val</a>[i] = rand() % 256;
 
-   <a class="code" href="group__Edje__Object.html#gaa114cfe1791c561b3e17f1c69afd4307" title="Sends an (Edje) message to a given Edje object.">edje_object_message_send</a>(edje_obj, EDJE_MESSAGE_INT_SET, MSG_COLOR, msg);
+   edje_object_message_send(edje_obj, EDJE_MESSAGE_INT_SET, MSG_COLOR, msg);
 
    free(msg);
 }
@@ -333,7 +333,7 @@ _message_handle(<span class="keywordtype">void</span>             *data EINA_UNU
 
    m = msg;
 
-   fprintf(stdout, <span class="stringliteral">&quot;String message received: %s\n&quot;</span>, m-&gt;<a class="code" href="struct__Edje__Message__String.html#a26d7286d36a05fa3f148b426ed8267e9">str</a>);
+   printf(<span class="stringliteral">&quot;String message received: %s\n&quot;</span>, m-&gt;<a class="code" href="struct__Edje__Message__String.html#a26d7286d36a05fa3f148b426ed8267e9">str</a>);
 }
 
 <span class="keywordtype">int</span>
@@ -355,62 +355,62 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_delete);
-   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Basics Example&quot;</span>);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Signals and Messages Example&quot;</span>);
 
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
    evas_object_focus_set(bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   ecore_evas_object_associate(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
 
    edje_obj = edje_object_add(evas);
 
    <span class="keywordflow">if</span> (!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;example_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
         fprintf(stderr, <span class="stringliteral">&quot;Could not load &#39;example_group&#39; from &quot;</span>
                         <span class="stringliteral">&quot;signals-messages.edj: %s\n&quot;</span>, errmsg);
 
-        <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
         <span class="keywordflow">goto</span> shutdown_edje;
      }
 
-   <a class="code" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(edje_obj, <span class="stringliteral">&quot;mouse,wheel,*&quot;</span>, <span class="stringliteral">&quot;part_left&quot;</span>,
+   edje_object_signal_callback_add(edje_obj, <span class="stringliteral">&quot;mouse,wheel,*&quot;</span>, <span class="stringliteral">&quot;part_left&quot;</span>,
                                    _on_mouse_wheel, NULL);
 
-   <a class="code" href="group__Edje__Object.html#gad1275e926c53f7af0fdbe2b107c8e9e5" title="Adds a callback for an arriving Edje signal, emitted by a given Edje object.">edje_object_signal_callback_add</a>(edje_obj, <span class="stringliteral">&quot;mouse,over&quot;</span>, <span class="stringliteral">&quot;part_right&quot;</span>,
+   edje_object_signal_callback_add(edje_obj, <span class="stringliteral">&quot;mouse,over&quot;</span>, <span class="stringliteral">&quot;part_right&quot;</span>,
                                    _on_mouse_over, NULL);
 
-   <a class="code" href="group__Edje__Object.html#ga3c879dac2b5e65161ff8fa7f5f478d78" title="Sets an Edje message handler function for a given Edje object.">edje_object_message_handler_set</a>(edje_obj, _message_handle, NULL);
+   edje_object_message_handler_set(edje_obj, _message_handle, NULL);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 20, 20);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH - 40, HEIGHT - 40);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
+   evas_object_move(edje_obj, 20, 20);
+   evas_object_resize(edje_obj, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, edje_obj);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, edje_obj);
 
    <span class="comment">/* this is a border around the Edje object above, here just to</span>
 <span class="comment">    * emphasize its geometry */</span>
-   border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(evas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(border, img_file, NULL);
+   border = evas_object_image_filled_add(evas);
+   evas_object_image_file_set(border, img_file, NULL);
    evas_object_image_border_set(border, 2, 2, 2, 2);
    evas_object_image_border_center_fill_set(border, EVAS_BORDER_FILL_NONE);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(border, 20 - 2, 20 - 2);
+   evas_object_resize(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
+   evas_object_move(border, 20 - 2, 20 - 2);
    evas_object_repeat_events_set(border, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(border);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(border);
 
-   fprintf(stdout, commands);
+   printf(commands);
 
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 

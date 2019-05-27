@@ -140,6 +140,9 @@ The following table provides detailed information regarding removed functions an
 | UI - DALi | Dali::Toolkit::TextLabel::Property::UNDERLINE_ENABLED | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::TextLabel::Property::UNDERLINE |
 | UI - DALi | Dali::Toolkit::TextLabel::Property::UNDERLINE_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::TextLabel::Property::UNDERLINE |
 | UI - DALi | Dali::Toolkit::TextLabel::Property::UNDERLINE_HEIGHT | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::TextLabel::Property::UNDERLINE |
+| System - Runtime information | RUNTIME_INFO_KEY_LOCATION_SERVICE_ENABLED, RUNTIME_INFO_KEY_LOCATION_NETWORK_POSITION_ENABLED of runtime_info_key_e | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
+| Multimedia - Player | PLAYER_DISPLAY_TYPE_OBSOLETE_EVAS_WNONE, PLAYER_DISPLAY_TYPE_OBSOLETE_NONE_WEVAS of player_display_type_e | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
+| UI - EFL | elm_ctxpopup_direction_available_get(), elm_win_profiles_set() | Mobile, Wearable | Since 2.4 | 5.5 | No longer available | - |
 
 ## Related information
 

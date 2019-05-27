@@ -121,18 +121,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordflow">if</span> (!edje_object_file_set(edje, PACKAGE_DATA_DIR<span class="stringliteral">&quot;/multisense.edj&quot;</span>,
                              <span class="stringliteral">&quot;example_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
         <a class="code" href="group__Eina__Log__Group.html#ga2e33caeeeb6051526c01b7fea4d6c91b">EINA_LOG_ERR</a>(<span class="stringliteral">&quot;could not load &#39;example_group&#39; from multisense.edj: %s&quot;</span>,
                      errmsg);
 
-        <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje);
         <span class="keywordflow">return</span> NULL;
      }
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje, 0, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje, WIDTH, HEIGHT);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje);
+   evas_object_move(edje, 0, 0);
+   evas_object_resize(edje, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje);
    <span class="keywordflow">return</span> edje;
 }
 
@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>();
    <a class="code" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init</a>();
 
-   window = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   window = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!window)
      {
         <a class="code" href="group__Eina__Log__Group.html#ga5b50827f35399f9ff87f5d9d817c764a">EINA_LOG_CRIT</a>(<span class="stringliteral">&quot;could not create window.&quot;</span>);
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(window);
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje);
    <a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(window);
 
    <a class="code" href="group__Edje__General__Group.html#ga01041f6702f2d81bf10c3e41899805cb" title="Shuts down the Edje library.">edje_shutdown</a>();

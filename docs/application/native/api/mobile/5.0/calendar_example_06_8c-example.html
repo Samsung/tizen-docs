@@ -90,7 +90,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">calendar_example_06.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="preprocessor">#define SECS_DAY 86400</span>
+<span class="preprocessor"></span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_clear_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *cal = data;
+   <a name="a1"></a><a class="code" href="group__Elm__Calendar.html#ga9bde6ccf81aa3d9c4e3cd80f769f09cf" title="Remove all calendar&#39;s marks.">elm_calendar_marks_clear</a>(cal);
+   <a name="a2"></a><a class="code" href="group__Elm__Calendar.html#gaac0a5d49f8515c1995a13c321bf84e1a" title="Draw calendar marks.">elm_calendar_marks_draw</a>(cal);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bt, *bx, *cal;
+   <a class="code" href="group__Elm__Calendar.html#ga68bc9b2ac669f3f7964e1ca5faff78e4">Elm_Calendar_Mark</a> *mark;
+   <span class="keyword">struct </span>tm selected_time;
+   time_t current_time;
+   <span class="keyword">struct </span>tm sunday;
+   <span class="keyword">struct </span>tm christmas;
+
+   <span class="comment">/*</span>
+<span class="comment">    * At least on Windows, tm has 9 fields.</span>
+<span class="comment">    * As a workaround, set sunday to 0 and set</span>
+<span class="comment">    * th needed fields to correct value</span>
+<span class="comment">    */</span>
+   memset(&amp;sunday, 0, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tm));
+   sunday.tm_hour = 12;
+   sunday.tm_mday = 7;
+   sunday.tm_isdst = -1;
+
+   memset(&amp;christmas, 0, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tm));
+   christmas.tm_mday = 25;
+   christmas.tm_mon = 11;
+
+   win = <a name="a3"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;calendar&quot;</span>, <span class="stringliteral">&quot;Calendar Marks Example&quot;</span>);
+   <a name="a4"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a6"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   bx = <a name="a7"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a8"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a name="a9"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+
+   cal = <a name="a10"></a><a class="code" href="group__Elm__Calendar.html#gae893c6a3465db10d322ff937be4b0854">elm_calendar_add</a>(win);
+   evas_object_size_hint_weight_set(cal, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(cal, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a11"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, cal);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cal);
+
+   <span class="comment">/* check today - we&#39;ll remove it later */</span>
+   current_time = time(NULL);
+   localtime_r(&amp;current_time, &amp;selected_time);
+   mark = <a name="a12"></a><a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;checked&quot;</span>, &amp;selected_time,
+                                ELM_CALENDAR_UNIQUE);
+
+   <span class="comment">/* check tomorrow */</span>
+   current_time = time(NULL) + 1 * SECS_DAY;
+   localtime_r(&amp;current_time, &amp;selected_time);
+   <a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;checked&quot;</span>, &amp;selected_time, ELM_CALENDAR_UNIQUE);
+
+   <span class="comment">/* mark christmas as holiday */</span>
+   <a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;holiday&quot;</span>, &amp;christmas, ELM_CALENDAR_ANNUALLY);
+
+   <span class="comment">/* mark Sundays as holidays */</span>
+   <a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;holiday&quot;</span>, &amp;sunday, ELM_CALENDAR_WEEKLY);
+
+   <span class="comment">/* ok, let&#39;s remove today&#39;s check */</span>
+   elm_calendar_mark_del(mark);
+
+   <a class="code" href="group__Elm__Calendar.html#gaac0a5d49f8515c1995a13c321bf84e1a" title="Draw calendar marks.">elm_calendar_marks_draw</a>(cal);
+
+   bt = <a name="a13"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   evas_object_size_hint_weight_set(bt, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Clear marks&quot;</span>);
+   <a name="a14"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clear_cb, cal);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a15"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a16"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

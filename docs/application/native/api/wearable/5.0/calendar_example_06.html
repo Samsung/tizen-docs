@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Calendar - Calendar marks. </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>On this example marks management will be explained. Functions elm_calendar_mark_add(), elm_calendar_mark_del() and elm_calendar_marks_clear() will be covered.</p>
+<div class="textblock"><p>On this example marks management will be explained. Functions <a class="el" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add()</a>, elm_calendar_mark_del() and <a class="el" href="group__Elm__Calendar.html#ga9bde6ccf81aa3d9c4e3cd80f769f09cf" title="Remove all calendar&#39;s marks.">elm_calendar_marks_clear()</a> will be covered.</p>
 <p>To add a mark, will be required to choose three things: </p>
 <ul>
 <li>mark style </li>
@@ -98,14 +98,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mark periodicity</li>
 </ul>
 <p>Style defines the kind of mark will be displayed over marked day, on calendar. Default theme supports <b>holiday</b> and <b>checked</b>. If more is required, is possible to set a new theme to calendar widget using <a class="el" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set()</a>, and use the signal that will be used by such marks.</p>
-<p>Date is a <code> struct tm </code>, as defined by <code>time.h</code>. More can be read on <code>ctime</code> manpage. If a date relative from current is required, this struct can be set as: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Or if it's an absolute date, you can just declare the struct like:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Date is a <code> struct tm </code>, as defined by <code>time.h</code>. More can be read on <code>ctime</code> manpage. If a date relative from current is required, this struct can be set as: <div class="fragment"><pre class="fragment">   current_time = time(NULL);
+   localtime_r(&amp;current_time, &amp;selected_time);
+</pre></div></p>
+<p>Or if it's an absolute date, you can just declare the struct like:  <div class="fragment"><pre class="fragment">   <span class="keyword">struct </span>tm sunday;
+   <span class="keyword">struct </span>tm christmas;
+
+   <span class="comment">/*</span>
+<span class="comment">    * At least on Windows, tm has 9 fields.</span>
+<span class="comment">    * As a workaround, set sunday to 0 and set</span>
+<span class="comment">    * th needed fields to correct value</span>
+<span class="comment">    */</span>
+   memset(&amp;sunday, 0, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tm));
+   sunday.tm_hour = 12;
+   sunday.tm_mday = 7;
+   sunday.tm_isdst = -1;
+
+   memset(&amp;christmas, 0, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tm));
+   christmas.tm_mday = 25;
+   christmas.tm_mon = 11;
+</pre></div></p>
 <p>Periodicity is how frequently the mark will be displayed over the calendar. Can be a unique mark (that don't repeat), or it can repeat daily, weekly, monthly or annually. It's enumerated by <code>Elm_Calendar_Mark_Repeat_Type</code>.</p>
-<p>So let's add some marks to our calendar. We will add christmas holiday, set Sundays as holidays, and check current day and day after that.  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We kept the return of first mark add, because we don't really won't it to be checked, so let's remove it: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>After all marks are added and removed, is required to draw them: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Finally, to clear all marks, let's set a callback for our button: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>This callback will receive our calendar object, and should clear it:  <div class="fragment"><pre class="fragment"></pre></div> </p>
+<p>So let's add some marks to our calendar. We will add christmas holiday, set Sundays as holidays, and check current day and day after that.  <div class="fragment"><pre class="fragment">   <span class="keyword">struct </span>tm sunday;
+   <span class="keyword">struct </span>tm christmas;
+
+   <span class="comment">/*</span>
+<span class="comment">    * At least on Windows, tm has 9 fields.</span>
+<span class="comment">    * As a workaround, set sunday to 0 and set</span>
+<span class="comment">    * th needed fields to correct value</span>
+<span class="comment">    */</span>
+   memset(&amp;sunday, 0, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tm));
+   sunday.tm_hour = 12;
+   sunday.tm_mday = 7;
+   sunday.tm_isdst = -1;
+
+   memset(&amp;christmas, 0, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tm));
+   christmas.tm_mday = 25;
+   christmas.tm_mon = 11;
+   current_time = time(NULL);
+   localtime_r(&amp;current_time, &amp;selected_time);
+   mark = <a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;checked&quot;</span>, &amp;selected_time,
+                                ELM_CALENDAR_UNIQUE);
+
+   <span class="comment">/* check tomorrow */</span>
+   current_time = time(NULL) + 1 * SECS_DAY;
+   localtime_r(&amp;current_time, &amp;selected_time);
+   <a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;checked&quot;</span>, &amp;selected_time, ELM_CALENDAR_UNIQUE);
+
+   <span class="comment">/* mark christmas as holiday */</span>
+   <a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;holiday&quot;</span>, &amp;christmas, ELM_CALENDAR_ANNUALLY);
+
+   <span class="comment">/* mark Sundays as holidays */</span>
+   <a class="code" href="group__Elm__Calendar.html#gab5eb080f028e3ac23979b8af02fd5b21" title="Add a new mark to the calendar.">elm_calendar_mark_add</a>(cal, <span class="stringliteral">&quot;holiday&quot;</span>, &amp;sunday, ELM_CALENDAR_WEEKLY);
+</pre></div></p>
+<p>We kept the return of first mark add, because we don't really won't it to be checked, so let's remove it: <div class="fragment"><pre class="fragment">   elm_calendar_mark_del(mark);
+</pre></div></p>
+<p>After all marks are added and removed, is required to draw them: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Calendar.html#gaac0a5d49f8515c1995a13c321bf84e1a" title="Draw calendar marks.">elm_calendar_marks_draw</a>(cal);
+</pre></div></p>
+<p>Finally, to clear all marks, let's set a callback for our button: <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   evas_object_size_hint_weight_set(bt, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Clear marks&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_clear_cb, cal);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+</pre></div></p>
+<p>This callback will receive our calendar object, and should clear it:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_clear_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *cal = data;
+   <a class="code" href="group__Elm__Calendar.html#ga9bde6ccf81aa3d9c4e3cd80f769f09cf" title="Remove all calendar&#39;s marks.">elm_calendar_marks_clear</a>(cal);
+   <a class="code" href="group__Elm__Calendar.html#gaac0a5d49f8515c1995a13c321bf84e1a" title="Draw calendar marks.">elm_calendar_marks_draw</a>(cal);
+}
+</pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Remember to draw marks after clear the calendar.</dd></dl>
 <p>Our example will look like this:</p>
 <div class="image">

@@ -92,7 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example is as simple as possible. An icon object will be added to the window over a blank background, and set to be resizable together with the window. All the options set through the example will affect the behavior of this icon.</p>
 <p>The first part consists of including the headers. In this case we are only working with the Elementary C++ binding and thus we need only to include him.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.hh&gt;</span>
+</pre></div></p>
 <dl class="attention"><dt><b>Attention:</b></dt><dd>If necessary the C and/or the C++ headers should be include here as well.</dd></dl>
 <p>Now we need to actually start the code and set the elm_policy, which defines for a given policy group/identifier a new policy's value, respectively. In this example the only policy we need to set a value for is <code>ELM_POLICY_QUIT</code>, possibles values for it are:</p>
 <ul>
@@ -104,7 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><code>ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN</code> : quit when the application's last window is hidden;</li>
 </ul>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">EAPI_MAIN <span class="keywordtype">int</span>
+elm_main (<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN);
+</pre></div></p>
 <p>As you can see, the policy we chose was to quit when the last win is hidden as opose to examples with the C bindings where we perpetually set it to quit when last win was closed. This changed was necessary because in C++ binding as the elm mainloop stop running all object are destroyed, references are unreferenced and events are stopped at <a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>For more details consult <a class="el" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a></dd></dl>
 <p>Next step is creating an elementary window, in this example we use the C++ binding method with the elm_win_util_standard_add that is a elm_win_legacy function, better explained below. And then we set the autohide state for it.</p>
@@ -115,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><code>title</code> - The title for the window.</li>
 </ul>
-<p>This creates a window but also puts in a standard background with <code><a class="el" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f">elm_bg_add()</a></code>, as well as setting the window title to <code>title</code>. The window type created is of type <code>ELM_WIN_BASIC</code>, with the <code>NULL</code> as the parent widget. Returns the created object or <code>NULL</code> on failure.</p>
+<p>This creates a window but also puts in a standard background with <code><a class="el" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add()</a></code>, as well as setting the window title to <code>title</code>. The window type created is of type <code>ELM_WIN_BASIC</code>, with the <code>NULL</code> as the parent widget. Returns the created object or <code>NULL</code> on failure.</p>
 <p>The autohide works similarly to <code>autodel</code>, automatically handling "delete,request" signals when set to <code>true</code>, with the difference that it will hide the window, instead of destroying it.</p>
 <p>It is specially designed to work together with <code>ELM_POLICY_QUIT_LAST_WINDOW_HIDDEN</code> which allows exiting Elementary's main loop when all the windows are hidden.</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>

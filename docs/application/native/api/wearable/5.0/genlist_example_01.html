@@ -93,18 +93,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>This example creates a simple genlist with a small number of items and a callback that is called whenever an item is selected. All the properties of this genlist are the default ones. The full code for this example can be seen at <a class="el" href="genlist_example_01_c.html">genlist_example_01.c</a>.</p>
 <p>For the simplest list that you plan to create, it's necessary to define some of the basic functions that are used for creating each list item, and associating them with the "item class" for that list. The item class is just an struct that contains pointers to the specific list item functions that are common to all the items of the list.</p>
 <p>Let's show it by example. Our item class is declared globally and static as it will be the only item class that we need (we are just creating one list):</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *_itc = NULL;
+</pre></div></p>
 <p>This item class will be used for every item that we create. The only functions that we are going to set are <code>label_get</code> and <code>icon_get</code>. As the name suggests, they are used by the genlist to generate the label for the respective item, and to generate icon(s) to it too. Both the label and icon get functions can be called more than once for each item, with different <code>part</code> parameters, which represent where in the theme of the item that label or icon is going to be set.</p>
 <p>The default theme for the genlist contains only one area for label, and two areas for icon ("elm.swallow.icon" and "elm.swallow.end"). Since we just want to set the first icon (that will be at the left side of the label), we compare the part name given with "elm.swallow.icon". Notice that the <code>label_get</code> function must return a strduped string, that will be freed later automatically by the list. Here's the code for <code>label_get</code> and <code>icon_get:</code> </p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">char</span> *
+_item_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *part EINA_UNUSED)
+{
+   <span class="keywordtype">char</span> buf[256];
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Item # %i&quot;</span>, (<span class="keywordtype">int</span>)(<span class="keywordtype">long</span>)data);
+   <span class="keywordflow">return</span> strdup(buf);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_item_content_get(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(obj);
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;clock&quot;</span>);
+
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <span class="keywordflow">return</span> ic;
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+</pre></div></p>
 <p>We will also provide a function that will be called whenever an item is selected in the genlist. However, this function is not part of the item class, it will be passed for each item being added to the genlist explicitly. Notice the similarity of the function signature with those used by <code>evas_object_smart_callback_add:</code> </p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">_item_sel_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
+{
+   printf(<span class="stringliteral">&quot;sel item data [%p] on genlist obj [%p], item pointer [%p]\n&quot;</span>,
+          data, obj, event_info);
+}
+</pre></div></p>
 <p>Now let's show the code used for really creating the list. Skipping boilerplate code used for creating a window and background, the first piece of code specific to our genlist example is setting the pointer functions of the item class to our above defined functions:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (!_itc)
+     {
+        _itc = <a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _item_label_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _item_content_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = NULL;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = NULL;
+</pre></div></p>
 <p>Notice that we also choose to use the "default" style for our genlist items. Another interesting point is that <code>state_get</code> and <code>del</code> are set to <code>NULL</code>, since we don't need these functions now. <code>del</code> doesn't need to be used because we don't add any data that must be freed to our items, and <code>state_get</code> is also not used since all of our items are the same and don't need to have different states to be used for each item. Finally we create our list:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">     }
+
+   list = <a class="code" href="group__Elm__Genlist.html#ga8845cb5425deadec54558b7badd16a6f">elm_genlist_add</a>(win);
+</pre></div></p>
 <p>Now we append several items to the list, and for all of them we need to give the list pointer, a pointer to the item class, the data that will be used with that item, a pointer to the parent of this item if it is in a group type list (this is not the case so we pass <code>NULL</code>), possible flags for this item, the callback for when the item is selected, and the data pointer that will be given to the selected callback.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   <span class="keywordflow">for</span> (i = 0; i &lt; N_ITEMS; i++)
+     {
+        <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc,
+                                (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)i, NULL,
+                                ELM_GENLIST_ITEM_NONE,
+                                _item_sel_cb, NULL);
+     }
+</pre></div></p>
 <p>The rest of the code is also common to all the other examples, so it will be omitted here (look at the full source code link above if you need it).</p>
 <p>You can try to play with this example, and see the selected callback being called whenever an item is clicked. It also already has some features enabled by default, like vertical bounce animation when reaching the end of the list, automatically visible/invisible scrollbar, etc. Look at the <a class="el" href="genlist_example_02.html">Genlist - list setup functions</a> to see an example of setting these properties to the list.</p>
 <p>The current example will look like this when running:</p>

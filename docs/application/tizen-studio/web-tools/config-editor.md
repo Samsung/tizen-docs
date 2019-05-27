@@ -799,7 +799,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>value</code>
-				<p>Mandatory; <a href="../../native/guides/app-management/efl-ui-app.md#allow_bg_table">background category</a></p>
+				<p>Mandatory; <a href="../../native/guides/applications/efl-ui-app.md#allow_bg_table">background category</a></p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>
@@ -1538,7 +1538,7 @@ The following sections show additional configuration elements used in the `confi
 			<p><strong>Attributes:</strong></p>
 			<ul>
 				<li><code>value</code>
-				<p>Mandatory; <a href="../../native/guides/app-management/efl-ui-app.md#allow_bg_table">background category</a></p>
+				<p>Mandatory; <a href="../../native/guides/applications/efl-ui-app.md#allow_bg_table">background category</a></p>
 				</li>
 			</ul>
 			<p><strong>Example:</strong></p>

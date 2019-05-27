@@ -7,13 +7,17 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	<title>SnapListview</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>SnapListview</h1>
 
 
 <p>Shows a snap list view. It detects center-positioned list item when scroll end.</p>
 <p>When scroll event started, SnapListview triggers &quot;scrollstart&quot; event, and scroll event ended, triggers &quot;scrollend&quot; event.<br>
 When scroll ended, it triggers &quot;selected&quot; event and attach class to detected(center-positioned) item.</p>
+
+<video autoplay muted loop controls>
+	<source src="https://developer.tizen.org/sites/default/files/documentation/snaplistview.mp4">
+</video>
 
 <table class="note">
         <tbody>
@@ -65,10 +69,8 @@ When scroll ended, it triggers &quot;selected&quot; event and attach class to de
 
 <p>In javascript code, you can make your list as SnapListview component as follows:</p>
 <pre class="prettyprint">
-&lt;script&gt;
-   var snapList = document.getElementById("snapList"),
-       snapListComponent = tau.widget.SnapListview(snapList);
-&lt;/script&gt;
+var snapList = document.getElementById("snapList"),
+    snapListComponent = tau.widget.SnapListview(snapList);
 </pre>
 
 <h2><a id='default-using0.06779201747849584'></a>Usage of SnapListview</h2>
@@ -117,5 +119,10 @@ TAU supported helper script named SnapListMarqueeStyle. You can use tau.helper.S
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

@@ -1,32 +1,45 @@
+# Get Started
+
+## [Overview](/application/index.md)
+## [Wearable](/application/get-started/wearable.md)
+## [TV](/application/get-started/tv.md)
+## [Mobile](/application/get-started/mobile.md)
+
+
 # .NET Application
 
 
 ## [Overview](/application/dotnet/index.md)
 
 
-## Getting Started
+## Get Started
 
-### [Overview](/application/dotnet/getting-started/overview.md)
-### [Creating Mobile .NET Application](/application/dotnet/getting-started/mobile/first-app.md)
-### [Creating Wearable .NET Application](/application/dotnet/getting-started/wearable/first-app.md)
-### [Creating TV .NET Application](/application/dotnet/getting-started/tv/first-app.md)
+### [Overview](/application/dotnet/get-started/overview.md)
+### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
+### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
+### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 
 
 ## Tutorials
 
-### [Overview](/application/dotnet/index.md)
-### [Tizen .NET Features and Components](/application/dotnet/tutorials/details/features.md)
-### [Managed Runtime Advantages](/application/dotnet/tutorials/details/runtime.md)
+### [Overview](/application/dotnet/tutorials/overview.md)
+
 ### Getting the Certificates
 #### [Overview](/application/dotnet/tutorials/certificates/getting-the-certificates.md)
 #### [Installing Certificates Extension](/application/dotnet/tutorials/certificates/installing-certificate-extension.md)
 #### [Creating Certificates](/application/dotnet/tutorials/certificates/creating-certificates.md)
 #### [Permit Device To Install Applications](/application/dotnet/tutorials/certificates/permit-device-to-install-apps.md)
 #### [Managing Certificate Profile](/application/dotnet/tutorials/certificates/managing-certificate-profile.md)
-### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/test/testing-your-app-on-gear.md)
-### [Packaging a .NET and Web Hybrid Application](/application/dotnet/tutorials/hybrid/create-dotnet-hybrid-package.md)
-### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library/library-list.md)
-### [Security and API Privileges](/application/dotnet/getting-started/sec-privileges.md)
+
+### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/testing-your-app-on-gear.md)
+
+### [Packaging a .NET and Web Hybrid Application](/application/dotnet/tutorials/create-dotnet-hybrid-package.md)
+
+### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library-list.md)
+
+### [Application Filtering](/application/native/tutorials/details/app-filtering.md)
+
+### [Security and API Privileges](/application/dotnet/tutorials/sec-privileges.md)
 
 
 ## Guides
@@ -50,7 +63,7 @@
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
 ### Natural User Interface
-#### [Overview](/application/dotnet/guides/nui/NUIoverview.md)
+#### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
 #### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
@@ -129,7 +142,7 @@
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
 
 ### Messaging
-#### [Overview](/application/dotnet/guides/messaing/overview.md)
+#### [Overview](/application/dotnet/guides/messaging/overview.md)
 #### [Email](/application/dotnet/guides/messaging/email.md)
 #### [Messages](/application/dotnet/guides/messaging/messages.md)
 #### [Push](/application/dotnet/guides/messaging/push.md)
@@ -213,13 +226,13 @@
 ## [Overview](/application/native/index.md)
 
 
-## Getting Started
+## Get Started
 
-### [Overview](/application/native/getting-started/overview.md)
-### [Creating Mobile Native Application](/application/native/getting-started/mobile/first-app.md)
-### [Creating Wearable Native Application](/application/native/getting-started/wearable/first-app.md)
-### [Creating Wearable Native Watch Application](/application/native/getting-started/wearable-watch/first-app-watch.md)
-### [Creating Wearable Native Widget Application](/application/native/getting-started/wearable-widget/first-app-widget.md)
+### [Overview](/application/native/get-started/overview.md)
+### [Create Mobile Native Application](/application/native/get-started/mobile/first-app.md)
+### [Create Wearable Native Application](/application/native/get-started/wearable/first-app.md)
+### [Create Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
+### [Create Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
 
 
 ## Tutorials
@@ -513,6 +526,8 @@
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
 ###### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
+#### [Tizen Window System Shell](/application/native/guides/ui/tizen-ws-shell.md)
+
 ### Localization
 #### [Overview](/application/native/guides/internationalization/overview.md)
 #### [i18n](/application/native/guides/internationalization/i18n.md)
@@ -707,14 +722,16 @@
 
 ## [Overview](/application/web/index.md)
 
-## Getting Started
+## Get Started
 
-### [Overview](/application/web/getting-started/overview.md)
-### [Creating Mobile Web Application](/application/web/getting-started/mobile/first-app.md)
-### [Creating Wearable Web Application](/application/web/getting-started/wearable/first-app.md)
-### [Creating Wearable Web Watch Application](/application/web/getting-started/wearable-watch/first-app-watch.md)
-### [Creating Wearable Web Widget Application](/application/web/getting-started/wearable-widget/first-app-widget.md)
-### [Creating TV Web Application](/application/web/getting-started/tv/first-app.md)
+### [Overview](/application/web/get-started/overview.md)
+### [Create Mobile Web Application](/application/web/get-started/mobile/first-app.md)
+### [Create Wearable Web Application](/application/web/get-started/wearable/first-app.md)
+### [Create Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
+### [Create Wearable Web Widget Application](/application/web/get-started/wearable-widget/first-app-widget.md)
+### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
+### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
+
 
 
 ## Tutorials
@@ -805,7 +822,7 @@
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
 ### Media and Camera
-#### [Ovierview](/application/web/guides/multimedia/media.md)
+#### [Ovierview](/application/web/guides/multimedia/overview.md)
 #### [JPEG File EXIF Information](/application/web/guides/multimedia/jpeg-exif.md)
 #### [Audio Management](/application/web/guides/multimedia/audio.md)
 #### [Audio Latency](/application/web/guides/multimedia/player-util.md)
@@ -823,7 +840,7 @@
 #### [Content Downloads](/application/web/guides/connectivity/download.md)
 
 ### Messaging
-#### [Overview](/application/web/guides/messaging/messaging.md)
+#### [Overview](/application/web/guides/messaging/overview.md)
 #### [Messages](/application/web/guides/messaging/messages.md)
 #### [Push Notification](/application/web/guides/messaging/push.md)
 
@@ -889,9 +906,10 @@
 ##### [HTML5 video and audio element](/application/web/guides/w3c/multimedia/video-audio.md)
 ##### [HTML Media Capture](/application/web/guides/w3c/multimedia/media-capture.md)
 ##### [Web Audio](/application/web/guides/w3c/multimedia/webaudio.md)
+##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/multimedia/sound-policy.md)
 #### Communication
 ##### [Overview](/application/web/guides/w3c/communication/comm-guide.md)
-#### [HTML5 Web Messaging](/application/web/guides/w3c/communication/web-messaging.md)
+##### [HTML5 Web Messaging](/application/web/guides/w3c/communication/web-messaging.md)
 ##### [WebSocket](/application/web/guides/w3c/communication/websocket.md)
 ##### [XMLHttpRequest](/application/web/guides/w3c/communication/xmlhttprequest.md)
 ##### [Server-Sent Events](/application/web/guides/w3c/communication/server-sent.md)
@@ -910,7 +928,7 @@
 ##### [Overview](/application/web/guides/w3c/perf-opt/performance-guide.md)
 ##### [Page Visibility](/application/web/guides/w3c/perf-opt/page.md)
 ##### [Timing control for script-based animations](/application/web/guides/w3c/perf-opt/timing-control.md)
-##### [Performance Improvement](/application/web/guides/w3c/perf-opt/performance.md)
+##### [Performance Improvement](/application/web/guides/w3c/perf-opt/performance-improvement.md)
 ##### [Web Workers](/application/web/guides/w3c/perf-opt/web-workers.md)
 ##### [JavaScript Performance Improvement](/application/web/guides/w3c/perf-opt/js-performance-improvement.md)
 ##### [JavaScript and CSS Minification](/application/web/guides/w3c/perf-opt/minify-js-css.md)
@@ -918,12 +936,11 @@
 #### Location
 ##### [Geolocation API Specification](/application/web/guides/w3c/location/geolocation.md)
 #### Supplementary Features
-##### [Overview](/application/web/guides/w3c/supplement/supplement.md)
+##### [Overview](/application/web/guides/w3c/supplement/supplement-guide.md)
 ##### [Typed Array - Khronos](/application/web/guides/w3c/supplement/typedarray.md)
 ##### [WebGL - Khronos](/application/web/guides/w3c/supplement/webgl.md)
 ##### [FullScreen API - Mozilla](/application/web/guides/w3c/supplement/fullscreen.md)
 ##### [Camera API (Tizen Extension)](/application/web/guides/w3c/supplement/camera.md)
-##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/useful/sound-policy.md)
 #### User Interface
 ##### [Overview](/application/web/guides/w3c/ui/ui-guide.md)
 ##### [HTML Priorities](/application/web/guides/w3c/ui/html-priority.md)
@@ -1101,32 +1118,27 @@
 
 ### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 ### [In-App Purchase Program Guide](/application/tizen-studio/extension-sdk/in-app-purchase.md)
-### [InMobi Tizen Ad SDK Program Guide](/application/tizen-studio/extension-sdk/inmovi.md)
+### [InMobi Tizen Ad SDK Program Guide](/application/tizen-studio/extension-sdk/inmobi.md)
 ### [VMAX Tizen Ad SDK Integration Guide](/application/tizen-studio/extension-sdk/vmax.md)
 
 ## RT IDE
 
 ### [Overview](/application/tizen-studio/rt-ide/overview.md)
 ### Get Started
-#### [Overview](/application/tizen-studio/rt-ide/getting-started/overview.md)
-#### [Install Tizen Studio for RT](/application/tizen-studio/rt-ide/getting-started/install.md)
-#### [Manage a Project](/application/tizen-studio/rt-ide/getting-started/create.md)
-#### [Flash the Project](/application/tizen-studio/rt-ide/getting-started/flash.md)
-#### [Use the Serial Terminal](/application/tizen-studio/rt-ide/getting-started/terminal.md)
-#### [Debug the Project](/application/tizen-studio/rt-ide/getting-started/debug.md)
-### SmartThings Extension
-#### [Overview](/application/tizen-studio/rt-ide/smartths-ext/overview.md)
-#### [Create a SmartThings Project](/application/tizen-studio/rt-ide/smartths-ext/create-smartths.md)
-#### [Build the SmartThings Project](/application/tizen-studio/rt-ide/smartths-ext/build-smartths.md)
-#### [Manage SmartThings Certificates](/application/tizen-studio/rt-ide/smartths-ext/certificate-smartths.md)
-#### [Device/Resource Model Manager](/application/tizen-studio/rt-ide/smartths-ext/model-manager.md)
+#### [Overview](/application/tizen-studio/rt-ide/get-started/overview.md)
+#### [Install Tizen Studio for RT](/application/tizen-studio/rt-ide/get-started/install.md)
+#### [Manage a Project](/application/tizen-studio/rt-ide/get-started/create.md)
+#### [Flash the Project](/application/tizen-studio/rt-ide/get-started/flash.md)
+#### [Use the Serial Terminal](/application/tizen-studio/rt-ide/get-started/terminal.md)
+#### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## Release Notes
+### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
 ### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
 ### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
 ### [2.5 (Aug 8, 2018)](/application/tizen-studio/release-notes/2-5-release-notes.md)
 ### [2.4 (May 29, 2018)](/application/tizen-studio/release-notes/2-4-release-notes.md)
-### [2.3 (March 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
+### [2.3 (Mar 30, 2018)](/application/tizen-studio/release-notes/2-3-release-notes.md)
 ### [2.2 (Jan 30, 2018)](/application/tizen-studio/release-notes/2-2-release-notes.md)
 ### [2.1 (Jan 3, 2018)](/application/tizen-studio/release-notes/2-1-release-notes.md)
 ### [2.0 (Nov 1, 2017)](/application/tizen-studio/release-notes/2-0-release-notes.md)

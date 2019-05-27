@@ -194,9 +194,9 @@ Defines</h2></td></tr>
 <p>This macro allows a convenient way to loop over all elements in an accessor, very similar to <a class="el" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">accessor</td><td>The accessor to use </td></tr>
-    <tr><td class="paramname">counter</td><td>A counter used by <a class="el" href="group__Eina__Accessor__Group.html#gaa94db400cf7d40c96c6a39c20bad1a9d" title="Gets the data of an accessor at the given position.">eina_accessor_data_get()</a> when iterating over the container. </td></tr>
-    <tr><td class="paramname">data</td><td>A pointer to store the data <br/>
+    <tr><td class="paramdir">[in]</td><td class="paramname">accessor</td><td>The accessor to use </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">counter</td><td>A counter used by <a class="el" href="group__Eina__Accessor__Group.html#gaa94db400cf7d40c96c6a39c20bad1a9d" title="Gets the data of an accessor at the given position.">eina_accessor_data_get()</a> when iterating over the container. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>A pointer to store the data <br/>
  It must be a pointer to support getting its address since <a class="el" href="group__Eina__Accessor__Group.html#gaa94db400cf7d40c96c6a39c20bad1a9d" title="Gets the data of an accessor at the given position.">eina_accessor_data_get()</a> requires a pointer.</td></tr>
   </table>
   </dd>
@@ -210,7 +210,7 @@ Defines</h2></td></tr>
  <span class="comment">// list is already filled,</span>
  <span class="comment">// its elements are just duplicated strings</span>
 
- accessor = <a class="code" href="group__Eina__List__Group.html#ga6901b2ea29c9bc34a486dae00d3cf608" title="Returns a new accessor associated to a list.">eina_list_accessor_new</a>(list);
+ accessor = <a class="code" href="group__Eina__List__Group.html#ga6901b2ea29c9bc34a486dae00d3cf608" title="Returns a new accessor associated with a list.">eina_list_accessor_new</a>(list);
  <a class="code" href="group__Eina__Accessor__Group.html#gab959a885591d4348c1d6abb243f3c2c0" title="Definition for helper macro to iterate over all the elements easily.">EINA_ACCESSOR_FOREACH</a>(accessor, i, data)
    free(data);
  <a class="code" href="group__Eina__Accessor__Group.html#gabd6a4c6e20c776a92c5d8426d37f5ac3" title="Frees an accessor.">eina_accessor_free</a>(accessor);
@@ -283,8 +283,8 @@ This example is not an optimal algorithm to release a list as it walks through t
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Another accessor </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ This example is not an optimal algorithm to release a list as it walks through t
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The container that created the accessor</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The container that created the accessor </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_accessor_01_8c-example.html#a14">eina_accessor_01.c</a>.</dd>
 </dl>
@@ -383,7 +383,7 @@ This example is not an optimal algorithm to release a list as it walks through t
 <p>This function frees <em>accessor</em> if it is not <code>NULL</code>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">accessor</td><td>The accessor to free</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">accessor</td><td>The accessor to free </td></tr>
   </table>
   </dd>
 </dl>
@@ -504,7 +504,7 @@ This example is not an optimal algorithm to release a list as it walks through t
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a></dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the container of the <code>accessor</code> permits it and is previously locked, it is unlocked. If <code>accessor</code> is <code>NULL</code> or if a problem occurs, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. If the container is not lockable, it returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</dd></dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable.</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>None of the existing eina data structures are lockable. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

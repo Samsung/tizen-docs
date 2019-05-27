@@ -86,106 +86,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Part</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object.html">Edje Object</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with layout components. </p>
 <p>Parts are layout components, but as a layout, they are objects too.</p>
 <p>There are several types of parts, these types can be divided into two main categories, the first being containers. Containers are parts that are in effect a group of elements. The second group is that of the elements, these part types may not contain others.</p>
 <p>This section has some functions specific for some types and others that could be applied to any type. </p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__Edje__Object__Part.html#ga3ce9df9624b5df70088f9b3d1b17c7d3">_Edje_Part_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Part.html#ga27621ae9f0e9652badc61dd3368287ef">Edje_Part_Type</a></td></tr>
-</table>
-<hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ga27621ae9f0e9652badc61dd3368287ef"></a><!-- doxytag: member="Edje_Common.h::Edje_Part_Type" ref="ga27621ae9f0e9652badc61dd3368287ef" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Edje__Object__Part.html#ga27621ae9f0e9652badc61dd3368287ef">Edje_Part_Type</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>All possible "part" types in Edje. </p>
-
-</div>
-</div>
-<hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="ga3ce9df9624b5df70088f9b3d1b17c7d3"></a><!-- doxytag: member="Edje_Common.h::_Edje_Part_Type" ref="ga3ce9df9624b5df70088f9b3d1b17c7d3" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__Edje__Object__Part.html#ga3ce9df9624b5df70088f9b3d1b17c7d3">_Edje_Part_Type</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a7e182ea8d9cb49364aa9e653fa07bc17"></a><!-- doxytag: member="EDJE_PART_TYPE_NONE" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a7e182ea8d9cb49364aa9e653fa07bc17" args="" -->EDJE_PART_TYPE_NONE</em>&nbsp;</td><td>
-<p>None type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3acad0537d2466834c5dc4cb1e2b7244a3"></a><!-- doxytag: member="EDJE_PART_TYPE_RECTANGLE" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3acad0537d2466834c5dc4cb1e2b7244a3" args="" -->EDJE_PART_TYPE_RECTANGLE</em>&nbsp;</td><td>
-<p>Rectangle type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3ab5890742ee73dcf3dba272e5413f63cd"></a><!-- doxytag: member="EDJE_PART_TYPE_TEXT" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3ab5890742ee73dcf3dba272e5413f63cd" args="" -->EDJE_PART_TYPE_TEXT</em>&nbsp;</td><td>
-<p>Text type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a556aa7095f6a2a9c9adf65cc352e2b23"></a><!-- doxytag: member="EDJE_PART_TYPE_IMAGE" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a556aa7095f6a2a9c9adf65cc352e2b23" args="" -->EDJE_PART_TYPE_IMAGE</em>&nbsp;</td><td>
-<p>Image type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a5c387bafdf915d08133820a486307711"></a><!-- doxytag: member="EDJE_PART_TYPE_SWALLOW" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a5c387bafdf915d08133820a486307711" args="" -->EDJE_PART_TYPE_SWALLOW</em>&nbsp;</td><td>
-<p>Swallow type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a6ee798839267464cde86407b65374596"></a><!-- doxytag: member="EDJE_PART_TYPE_TEXTBLOCK" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a6ee798839267464cde86407b65374596" args="" -->EDJE_PART_TYPE_TEXTBLOCK</em>&nbsp;</td><td>
-<p>Text block type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3af0c8dc344a131377673bf5fa561ca29e"></a><!-- doxytag: member="EDJE_PART_TYPE_GRADIENT" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3af0c8dc344a131377673bf5fa561ca29e" args="" -->EDJE_PART_TYPE_GRADIENT</em>&nbsp;</td><td>
-<p>Gradient type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3ac42fd314c4f2338b26a20aaeaa16e549"></a><!-- doxytag: member="EDJE_PART_TYPE_GROUP" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3ac42fd314c4f2338b26a20aaeaa16e549" args="" -->EDJE_PART_TYPE_GROUP</em>&nbsp;</td><td>
-<p>Group type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3af76296f9aede6bb6729218a2217e68d7"></a><!-- doxytag: member="EDJE_PART_TYPE_BOX" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3af76296f9aede6bb6729218a2217e68d7" args="" -->EDJE_PART_TYPE_BOX</em>&nbsp;</td><td>
-<p>Box type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a9544e8c5151f6b486cea4427c73cf854"></a><!-- doxytag: member="EDJE_PART_TYPE_TABLE" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a9544e8c5151f6b486cea4427c73cf854" args="" -->EDJE_PART_TYPE_TABLE</em>&nbsp;</td><td>
-<p>Table type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a9531920479ae40ea7063b2450fbcff72"></a><!-- doxytag: member="EDJE_PART_TYPE_EXTERNAL" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a9531920479ae40ea7063b2450fbcff72" args="" -->EDJE_PART_TYPE_EXTERNAL</em>&nbsp;</td><td>
-<p>External type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a10d8f8c71e4dfa7ee849560d0ee5507d"></a><!-- doxytag: member="EDJE_PART_TYPE_PROXY" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a10d8f8c71e4dfa7ee849560d0ee5507d" args="" -->EDJE_PART_TYPE_PROXY</em>&nbsp;</td><td>
-<p>Proxy type value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3af29f177249ee44ef0640a9999408f657"></a><!-- doxytag: member="EDJE_PART_TYPE_SPACER" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3af29f177249ee44ef0640a9999408f657" args="" -->EDJE_PART_TYPE_SPACER</em>&nbsp;</td><td>
-<p>Spacer type value </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a1afba73ed99ee47c5775e77604f136aa"></a><!-- doxytag: member="EDJE_PART_TYPE_SNAPSHOT" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a1afba73ed99ee47c5775e77604f136aa" args="" -->EDJE_PART_TYPE_SNAPSHOT</em>&nbsp;</td><td>
-<p>Snapshot </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3a5906c364027e66cf9392ba35c4cb5b59"></a><!-- doxytag: member="EDJE_PART_TYPE_VECTOR" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3a5906c364027e66cf9392ba35c4cb5b59" args="" -->EDJE_PART_TYPE_VECTOR</em>&nbsp;</td><td>
-<p>Vector </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga3ce9df9624b5df70088f9b3d1b17c7d3aef11d0a639ae7a166cb213bfcd938aa4"></a><!-- doxytag: member="EDJE_PART_TYPE_LAST" ref="gga3ce9df9624b5df70088f9b3d1b17c7d3aef11d0a639ae7a166cb213bfcd938aa4" args="" -->EDJE_PART_TYPE_LAST</em>&nbsp;</td><td>
-<p>Last type value </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

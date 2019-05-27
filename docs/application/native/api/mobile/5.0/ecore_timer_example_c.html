@@ -170,7 +170,7 @@ _timer3_cb(<span class="keywordtype">void</span> *data)
    printf(<span class="stringliteral">&quot;Timer3 expired after %0.3f seconds. &quot;</span>
           <span class="stringliteral">&quot;Freezing timer1.\n&quot;</span>, _get_current_time());
 
-   ecore_timer_freeze(ctxt-&gt;timer1);
+   <a class="code" href="group__Ecore__Timer__Group.html#ga9fb759297c1c828cafe5c3ccc1a2614b">ecore_timer_freeze</a>(ctxt-&gt;timer1);
 
    ctxt-&gt;timer3 = NULL;
    <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#gae0c653baad8836232c0dc27f91f875d6">ECORE_CALLBACK_CANCEL</a>;
@@ -184,7 +184,7 @@ _timer4_cb(<span class="keywordtype">void</span> *data)
           <span class="stringliteral">&quot;Resuming timer1, which has %0.3f seconds left to expire.\n&quot;</span>,
           _get_current_time(), ecore_timer_pending_get(ctxt-&gt;timer1));
 
-   ecore_timer_thaw(ctxt-&gt;timer1);
+   <a class="code" href="group__Ecore__Timer__Group.html#gaa026b898456329411d043f36170ad644" title="Resumes a frozen (paused) timer.">ecore_timer_thaw</a>(ctxt-&gt;timer1);
 
    ctxt-&gt;timer4 = NULL;
    <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#gae0c653baad8836232c0dc27f91f875d6">ECORE_CALLBACK_CANCEL</a>;

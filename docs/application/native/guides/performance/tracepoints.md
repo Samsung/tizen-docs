@@ -1,7 +1,7 @@
 # Tracepoints
 
 
-You can perform trace operations in Tizen native applications with the [T-trace tool](../../../tizen-studio/native-tools/t_trace.md). The tool allows you to generate traces and visualize them.
+You can perform trace operations in Tizen native applications with the [T-trace tool](../../../tizen-studio/native-tools/t-trace.md). The tool allows you to generate traces and visualize them.
 
 With the T-trace API, you can [create custom tracepoints in your application](#insert). The tracepoints allow the framework to write application traces to the system trace buffer to align them with the T-trace traces from the Tizen platform.
 

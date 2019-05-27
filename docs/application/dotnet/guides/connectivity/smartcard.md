@@ -7,21 +7,21 @@ The main features of the Tizen.Network.Smartcard namespace include:
 
 -   Smart card reader
 
-    The [Tizen.Network.Smartcard.SmartcardManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardManager.html) class allows you to [get the available readers](#manager). Each reader functions as a connector to the SE framework system.
+    The [Tizen.Network.Smartcard.SmartcardManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardManager.html) class allows you to [get the available readers](#manager). Each reader functions as a connector to the SE framework system.
 
-    The [Tizen.Network.Smartcard.SmartcardReader](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardReader.html) class allows you to access the SE connected with the selected reader. You can [get the reader name and open and close sessions](#reader).
+    The [Tizen.Network.Smartcard.SmartcardReader](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardReader.html) class allows you to access the SE connected with the selected reader. You can [get the reader name and open and close sessions](#reader).
 
 -   Smart card session
 
     A session is an open connection between an application on the device and an SE.
 
-    The [Tizen.Network.Smartcard.SmartcardSession](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardSession.html) class allows you to [open and close basic and logical channels](#session), and get ATR (answer to reset).
+    The [Tizen.Network.Smartcard.SmartcardSession](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardSession.html) class allows you to [open and close basic and logical channels](#session), and get ATR (answer to reset).
 
 -   Smart card channel
 
     A channel is an open connection between an application on the device and an applet on the SE.
 
-    The [Tizen.Network.Smartcard.SmartcardChannel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardChannel.html) class allows you to [close channels and transmit application protocol data units](#channel) (APDU).
+    The [Tizen.Network.Smartcard.SmartcardChannel](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardChannel.html) class allows you to [close channels and transmit application protocol data units](#channel) (APDU).
 
 The following figure illustrates the smart card service architecture in Tizen. The Smartcard service sends and receives data through the terminal of each SE.
 
@@ -38,7 +38,7 @@ The Tizen implementation differs from the original, since only the transport lay
 
 To enable your application to use the smart card functionality:
 
-1.  To use the [Tizen.Network.Smartcard](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.Smartcard](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -55,7 +55,7 @@ To enable your application to use the smart card functionality:
 <a name="manager"></a>
 ## Retrieving Readers
 
-To retrieve the available smart card readers, use the `GetReaders()` method of the [Tizen.Network.Smartcard.SmartcardManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardManager.html) class:
+To retrieve the available smart card readers, use the `GetReaders()` method of the [Tizen.Network.Smartcard.SmartcardManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardManager.html) class:
 
 ```
 public static void GetReaders_RETURN_LIST_OF_READERS()
@@ -88,7 +88,7 @@ public static void GetReaders_RETURN_LIST_OF_READERS()
 
 To manage a reader:
 
-1.  Retrieve the name of the reader with the `Name` property of the [Tizen.Network.Smartcard.SmartcardReader](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardReader.html) class:
+1.  Retrieve the name of the reader with the `Name` property of the [Tizen.Network.Smartcard.SmartcardReader](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardReader.html) class:
 
     ```
     public static void Name_READ_ONLY()
@@ -142,7 +142,7 @@ To manage a reader:
 <a name="session"></a>
 ## Managing Sessions
 
-You can manage a session using the [Tizen.Network.Smartcard.SmartcardSession](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardSession.html) instance that you have created when opening the session with a reader.
+You can manage a session using the [Tizen.Network.Smartcard.SmartcardSession](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardSession.html) instance that you have created when opening the session with a reader.
 
 To manage sessions:
 
@@ -201,7 +201,7 @@ To manage sessions:
 <a name="channel"></a>
 ## Managing Channels
 
-You can manage a channel using the [Tizen.Network.Smartcard.SmartcardChannel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Smartcard.SmartcardChannel.html) instance that you have created when opening the channel with a session.
+You can manage a channel using the [Tizen.Network.Smartcard.SmartcardChannel](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Smartcard.SmartcardChannel.html) instance that you have created when opening the channel with a session.
 
 To manage channels:
 

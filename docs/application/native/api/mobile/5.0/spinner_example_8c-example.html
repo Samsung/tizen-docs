@@ -90,7 +90,131 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">spinner_example.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_changed_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Value changed to %0.f\n&quot;</span>, <a name="a1"></a><a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj));
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_delay_changed_cb(<span class="keywordtype">void</span> *data <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Value delay changed to %0.f\n&quot;</span>, <a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj));
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_focused_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;spinner focused\n&quot;</span>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_unfocused_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;spinner unfocused\n&quot;</span>);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bx, *sp;
+
+   <a name="a2"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a3"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;spinner&quot;</span>, <span class="stringliteral">&quot;Spinner Example&quot;</span>);
+   <a name="a4"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   bx = <a name="a6"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a7"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a name="a8"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+
+   <span class="comment">/* default */</span>
+   sp = <a name="a9"></a><a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a10"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+
+   <span class="comment">/* format */</span>
+   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a name="a11"></a><a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(sp, <span class="stringliteral">&quot;Percentage %%%1.2f something&quot;</span>);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+
+   <span class="comment">/* min max, step and wrap */</span>
+   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(sp, <span class="stringliteral">&quot;%1.1f units&quot;</span>);
+   <a name="a12"></a><a class="code" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740" title="Control the step used to increment or decrement the spinner value.">elm_spinner_step_set</a>(sp, 1.5);
+   <a name="a13"></a><a class="code" href="group__Elm__Spinner.html#gac24e7133ec989eb5ba20e087a0921d16" title="Control whether the spinner should wrap when it reaches its minimum or maximum value.">elm_spinner_wrap_set</a>(sp, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a14"></a><a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(sp, -50.0, 250.0);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+
+   <span class="comment">/* vertical */</span>
+   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a name="a15"></a><a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(sp, <span class="stringliteral">&quot;vertical&quot;</span>);
+   <a name="a16"></a><a class="code" href="group__Elm__Spinner.html#ga61529b6a5bc0204a471b8f9f96248bd2" title="Control the interval on time updates for an user mouse button hold on spinner widgets&#39; arrows...">elm_spinner_interval_set</a>(sp, 0.2);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+
+   <span class="comment">/* disabled edition */</span>
+   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a name="a17"></a><a class="code" href="group__Elm__Spinner.html#ga871836a2a99838adf161ea3397f8de5b" title="Control whether the spinner can be directly edited by the user or not.">elm_spinner_editable_set</a>(sp, <a name="a18"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+
+   <span class="comment">/* special values */</span>
+   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a class="code" href="group__Elm__Spinner.html#ga871836a2a99838adf161ea3397f8de5b" title="Control whether the spinner can be directly edited by the user or not.">elm_spinner_editable_set</a>(sp, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(sp, 1, 12);
+   <a name="a19"></a><a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 1, <span class="stringliteral">&quot;January&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 2, <span class="stringliteral">&quot;February&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 3, <span class="stringliteral">&quot;March&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 4, <span class="stringliteral">&quot;April&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 5, <span class="stringliteral">&quot;May&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 6, <span class="stringliteral">&quot;June&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 7, <span class="stringliteral">&quot;July&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 8, <span class="stringliteral">&quot;August&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 9, <span class="stringliteral">&quot;September&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 10, <span class="stringliteral">&quot;October&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 11, <span class="stringliteral">&quot;November&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 12, <span class="stringliteral">&quot;December&quot;</span>);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+
+   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+   <a class="code" href="group__Elm__Spinner.html#ga871836a2a99838adf161ea3397f8de5b" title="Control whether the spinner can be directly edited by the user or not.">elm_spinner_editable_set</a>(sp, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a20"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;focused&quot;</span>, _focused_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;unfocused&quot;</span>, _unfocused_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;changed&quot;</span>, _changed_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;delay,changed&quot;</span>, _delay_changed_cb, NULL);
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a21"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a22"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

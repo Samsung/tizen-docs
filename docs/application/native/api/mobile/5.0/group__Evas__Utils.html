@@ -90,9 +90,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">General Utilities</div>  </div>
-<div class="ingroups"><a class="el" href="group__Evas.html">Evas</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Evas__Cserve.html">Shared Image Cache Server</a> &#124; <a class="el" href="group__Evas.html">Evas</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
+<p>Retrieves if the system wants to share bitmaps using the server. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it wants, <code>EINA_FALSE</code> otherwise. Retrieves if the system is connected to the server used to share bitmaps.</dd>
+<dd>
+<code>EINA_TRUE</code> if it's connected, <code>EINA_FALSE</code> otherwise. Retrieves statistics from a running bitmap sharing server. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stats</td><td>pointer to structure to fill with statistics about the bitmap cache server.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>stats</code> were filled with data, <code>EINA_FALSE</code> otherwise (when <code>stats</code> is untouched) Completely discard/clean a given images cache, thus re-setting it.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>A handle to the given images cache. Retrieves the current configuration of the Evas image caching server.</td></tr>
+    <tr><td class="paramname">config</td><td>where to store current image caching server's configuration.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>config</code> was filled with data, <code>EINA_FALSE</code> otherwise (when <code>config</code> is untouched)</dd></dl>
+<p>The fields of <code>config</code> will be altered to reflect the current configuration's values.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_set() Changes the configurations of the <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> image caching server.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>A bitmap cache configuration handle with fields set to desired configuration values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>config</code> was successfully applied, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_get() Force the system to disconnect from the bitmap caching server.</dd></dl>
 <p>Some functions that are handy but are not specific of canvas or objects. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -107,8 +136,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Utils.html#ga044cd250a33c2d994b2c5d3d31e3f413">evas_string_char_next_get</a> (const char *str, int pos, int *decoded)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Utils.html#gab7c9b92ab4ccb14a3391f1fa884bae24">evas_string_char_prev_get</a> (const char *str, int pos, int *decoded)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Utils.html#gadfcfcae8546f2d7f6c14c5e1b17b8446">evas_string_char_len_get</a> (const char *str)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Evas_BiDi_Direction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Utils.html#ga48befbd7fd3dbb39c038b9383752bb07">evas_language_direction_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Utils.html#gac5f4a861a887740faac175e0cbebd7ff">evas_language_reinit</a> (void)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gac02bf3973675ae7591b9f34deef1554f"></a><!-- doxytag: member="Evas_Common.h::evas_color_argb_premul" ref="gac02bf3973675ae7591b9f34deef1554f" args="(int a, int *r, int *g, int *b)" -->
@@ -157,9 +184,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function pre-multiplies a given rgb triplet by an alpha factor. Alpha factor is used to define transparency.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a7">evas-object-manipulation.c</a>.</dd>
+<p>This function pre-multiplies a given rgb triplet by an alpha factor. Alpha factor is used to define transparency.  2.3 </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="colorselector_example_01_8c-example.html#a19">colorselector_example_01.c</a>, and <a class="el" href="evas-object-manipulation_8c-example.html#a6">evas-object-manipulation.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -210,9 +236,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This function undoes pre-multiplication a given rbg triplet by an alpha factor. Alpha factor is used to define transparency.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Utils.html#gac02bf3973675ae7591b9f34deef1554f">evas_color_argb_premul()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a6">evas-object-manipulation.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Utils.html#gac02bf3973675ae7591b9f34deef1554f">evas_color_argb_premul()</a>.  2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-object-manipulation_8c-example.html#a5">evas-object-manipulation.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -276,8 +301,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function converts a given color in HSV color format to RGB color format.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function converts a given color in HSV color format to RGB color format.  2.3 </p>
 
 </div>
 </div>
@@ -341,8 +365,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function converts a given color in RGB color format to HSV color format.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function converts a given color in RGB color format to HSV color format.  2.3 </p>
 
 </div>
 </div>
@@ -378,8 +401,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function pre-multiplies a given data by an alpha factor. Alpha factor is used to define transparency.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function pre-multiplies a given data by an alpha factor. Alpha factor is used to define transparency.  2.3 </p>
 
 </div>
 </div>
@@ -415,47 +437,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function undoes pre-multiplication of a given data by an alpha factor. Alpha factor is used to define transparency.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga48befbd7fd3dbb39c038b9383752bb07"></a><!-- doxytag: member="Evas_Common.h::evas_language_direction_get" ref="ga48befbd7fd3dbb39c038b9383752bb07" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Evas_BiDi_Direction <a class="el" href="group__Evas__Utils.html#ga48befbd7fd3dbb39c038b9383752bb07">evas_language_direction_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get language direction.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac5f4a861a887740faac175e0cbebd7ff"></a><!-- doxytag: member="Evas_Common.h::evas_language_reinit" ref="gac5f4a861a887740faac175e0cbebd7ff" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Utils.html#gac5f4a861a887740faac175e0cbebd7ff">evas_language_reinit</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Reinitialize language from the environment.</p>
-<p>The locale can change while a process is running. This call tells evas to reload the locale from the environment like it does on start.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
+<p>This function undoes pre-multiplication of a given data by an alpha factor. Alpha factor is used to define transparency.  2.3 </p>
 
 </div>
 </div>
@@ -473,7 +455,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Converts the given Evas image load error code into a string describing it in english.</p>
+<p>Converts the given Evas image load error code into a string describing it in human-readable text.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">error</td><td>the error code, a value in ::Evas_Load_Error. </td></tr>
@@ -481,9 +463,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Always returns a valid string. If the given <code>error</code> is not supported, <code>"Unknown error"</code> is returned.</dd></dl>
-<p>Mostly <a class="el" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set()</a> would be the function setting that error value afterwards, but also evas_object_image_load(), <a class="el" href="group__Evas__Object__Image.html#ga8bd6201d1b5c5f0e65600b491c6557e4">evas_object_image_save()</a>, evas_object_image_data_get(), <a class="el" href="group__Evas__Object__Image.html#ga2d7ac31db43f0f2f6ba80e317abb7144">evas_object_image_data_convert()</a>, <a class="el" href="group__Evas__Object__Image.html#gac11c7b56b285c96b7a77a56fc25f3f4c">evas_object_image_pixels_import()</a> and evas_object_image_is_inside(). This function is meant to be used in conjunction with evas_object_image_load_error_get(), as in:</p>
+<p>Mostly evas_object_image_file_set() would be the function setting that error value afterwards, but also evas_object_image_load(), evas_object_image_save(), evas_object_image_data_get(), evas_object_image_data_convert(), evas_object_image_pixels_import() and evas_object_image_is_inside(). This function is meant to be used in conjunction with evas_object_image_load_error_get(), as in:</p>
 <p>Example code:  <div class="fragment"><pre class="fragment">   d.img1 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img1, valid_path, NULL);
+   evas_object_image_file_set(d.img1, valid_path, NULL);
    err = evas_object_image_load_error_get(d.img1);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
@@ -492,35 +474,34 @@ Functions</h2></td></tr>
      }
    <span class="keywordflow">else</span>
      {
-        fprintf(stdout,
-                <span class="stringliteral">&quot;loaded image &#39;%s&#39; with succes! error string is \&quot;%s\&quot;\n&quot;</span>,
-                valid_path, <a class="code" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str</a>(err));
+        printf(<span class="stringliteral">&quot;loaded image &#39;%s&#39; with succes! error string is \&quot;%s\&quot;\n&quot;</span>,
+               valid_path, <a class="code" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str</a>(err));
 
-        <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img1, 3, 3);
-        <a class="code" href="group__Evas__Object__Image.html#gaf9a32e36b3446f597baf95aab37e33da">evas_object_image_fill_set</a>(d.img1, 0, 0, WIDTH / 2, HEIGHT / 2);
-        <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img1, WIDTH / 2, HEIGHT / 2);
-        <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img1);
+        evas_object_move(d.img1, 3, 3);
+        evas_object_image_fill_set(d.img1, 0, 0, WIDTH / 2, HEIGHT / 2);
+        evas_object_resize(d.img1, WIDTH / 2, HEIGHT / 2);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img1);
 
         evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
         <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-          d.bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, NULL);
+          d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
      }
 
    <span class="comment">/* this is a border around the image above, here just to emphasize</span>
 <span class="comment">    * its geometry */</span>
-   d.border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.border, border_img_path, NULL);
+   d.border = evas_object_image_filled_add(d.evas);
+   evas_object_image_file_set(d.border, border_img_path, NULL);
    evas_object_image_border_set(d.border, 3, 3, 3, 3);
    evas_object_image_border_center_fill_set(d.border, EVAS_BORDER_FILL_NONE);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, 0, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, (WIDTH / 2) + 6, (HEIGHT / 2) + 6);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
+   evas_object_move(d.border, 0, 0);
+   evas_object_resize(d.border, (WIDTH / 2) + 6, (HEIGHT / 2) + 6);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
 
    <span class="comment">/* image loading will fail for this one -- unless one cheats and</span>
 <span class="comment">    * puts a valid image on that path */</span>
    d.img2 = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.img2, bogus_path, NULL);
+   evas_object_image_file_set(d.img2, bogus_path, NULL);
    err = evas_object_image_load_error_get(d.img2);
    <span class="keywordflow">if</span> (err != EVAS_LOAD_ERROR_NONE)
      {
@@ -529,19 +510,18 @@ Functions</h2></td></tr>
      }
    <span class="keywordflow">else</span>
      {
-        <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.img2, WIDTH / 2, HEIGHT / 2);
-        <a class="code" href="group__Evas__Object__Image.html#gaf9a32e36b3446f597baf95aab37e33da">evas_object_image_fill_set</a>(d.img2, 0, 0, WIDTH / 2, HEIGHT / 2);
-        <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img2, WIDTH / 2, HEIGHT / 2);
-        <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img2);
+        evas_object_move(d.img2, WIDTH / 2, HEIGHT / 2);
+        evas_object_image_fill_set(d.img2, 0, 0, WIDTH / 2, HEIGHT / 2);
+        evas_object_resize(d.img2, WIDTH / 2, HEIGHT / 2);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.img2);
      }
 
    puts(commands);
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 </pre></div></p>
-<p>Here, being <code>valid_path</code> the path to a valid image and <code>bogus_path</code> a path to a file which does not exist, the two outputs of <a class="el" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str()</a> would be (if no other errors occur): <code>"No error on load"</code> and <code>"File (or file path) does
- not exist"</code>, respectively. See the full <a class="el" href="Example_Evas_Images.html">example</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images_8c-example.html#a21">evas-images.c</a>.</dd>
+<p>Here, being <code>valid_path</code> the path to a valid image and <code>bogus_path</code> a path to a file that does not exist, the two outputs of <a class="el" href="group__Evas__Utils.html#gaca3384642e5ebb32cfeab24c760c739a">evas_load_error_str()</a> would be (if no other errors occur): <code>"No error on load"</code> and <code>"File (or file path) does
+ not exist"</code>, respectively. See the full <a class="el" href="Example_Evas_Images.html">example</a>.  2.3 </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images_8c-example.html#a15">evas-images.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -559,15 +539,14 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the length in characters of the string. </p>
+<p>Get the length in characters of the string.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>The string to get the length of. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The length in characters (not bytes)</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The length in characters (not bytes)  2.3 </dd></dl>
 
 </div>
 </div>
@@ -612,8 +591,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The byte index of the next character</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The byte index of the next character  2.3 </dd></dl>
 
 </div>
 </div>
@@ -658,8 +636,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The byte index of the previous character</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The byte index of the previous character  2.3 </dd></dl>
 
 </div>
 </div>

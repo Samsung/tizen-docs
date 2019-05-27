@@ -120,6 +120,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Repacks the objects in the mempool.  <a href="#ga54f212b90f7a16dffd803e38cb9b401e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#ga82e20bb9b578f1430b8446af118afccd">eina_mempool_gc</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *mp)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a garbage collection cycle.  <a href="#ga82e20bb9b578f1430b8446af118afccd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#ga3b619cca8ce4a3cb35ca93907f5be0d3">eina_mempool_from</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *mp, void *element)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a pointer is a valid element from the mempool.  <a href="#ga3b619cca8ce4a3cb35ca93907f5be0d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#ga86cf0b5dcb42ebbb6e9314dd56916f45">eina_mempool_statistics</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *mp)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Has the backend update its internal statistics.  <a href="#ga86cf0b5dcb42ebbb6e9314dd56916f45"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#gae11448767cf8ca94752df0ca1f54221e">eina_mempool_register</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#gaad1bbde75fe98f5cff269c0411678ff9">Eina_Mempool_Backend</a> *be)</td></tr>
@@ -206,8 +208,8 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated mempool instance, NULL otherwise.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated mempool instance, NULL otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -233,8 +235,8 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The alignment for an allocation of size <code>size</code>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The alignment for an allocation of size <code>size</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -297,11 +299,11 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>Deletes the given mempool. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool to delete</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool to delete </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -348,6 +350,44 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 
 </div>
 </div>
+<a class="anchor" id="ga3b619cca8ce4a3cb35ca93907f5be0d3"></a><!-- doxytag: member="eina_mempool.h::eina_mempool_from" ref="ga3b619cca8ce4a3cb35ca93907f5be0d3" args="(Eina_Mempool *mp, void *element)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Eina__Memory__Pool__Group.html#ga3b619cca8ce4a3cb35ca93907f5be0d3">eina_mempool_from</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *&#160;</td>
+          <td class="paramname"><em>mp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check if a pointer is a valid element from the mempool. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">element</td><td>The data to free </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the element is a valid element of the mempool, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga82e20bb9b578f1430b8446af118afccd"></a><!-- doxytag: member="eina_mempool.h::eina_mempool_gc" ref="ga82e20bb9b578f1430b8446af118afccd" args="(Eina_Mempool *mp)" -->
 <div class="memitem">
 <div class="memproto">
@@ -366,11 +406,11 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <p>Runs a garbage collection cycle. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -483,8 +523,8 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if backend has been correctly registered, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if backend has been correctly registered, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -530,8 +570,8 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Memory__Pool__Group.html#ga36987f282791adfc0d82c493af4462dc" title="The callback type which is called when the mempool &quot;repacks&quot; its data.">Eina_Mempool_Repack_Cb</a> </dd>
 <dd>
-_Eina_Mempool_Backend</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+_Eina_Mempool_Backend </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -553,11 +593,11 @@ _Eina_Mempool_Backend</dd></dl>
 <p>Has the backend update its internal statistics. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -579,11 +619,26 @@ _Eina_Mempool_Backend</dd></dl>
 <p>Unregisters the given memory pool backend. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">be</td><td>The backend</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">be</td><td>The backend </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="gacbc6db834ac68b83684f83e55193be4a"></a><!-- doxytag: member="eina_mempool.h::EINA_ERROR_NOT_MEMPOOL_MODULE" ref="gacbc6db834ac68b83684f83e55193be4a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a> <a class="el" href="group__Eina__Memory__Pool__Group.html#gacbc6db834ac68b83684f83e55193be4a">EINA_ERROR_NOT_MEMPOOL_MODULE</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

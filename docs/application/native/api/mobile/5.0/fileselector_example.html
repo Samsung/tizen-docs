@@ -91,13 +91,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places two Elementary file selector widgets on a window. The one on the left is layouting file system items in a <b>list</b>, while the the other is layouting them in a <b>grid</b>.</p>
-<p>The one having the majority of hooks of interest is on the left, which we create as follows:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The one having the majority of hooks of interest is on the left, which we create as follows:  <div class="fragment"><pre class="fragment">   <span class="comment">/* first file selector, in list mode */</span>
+   fs = elm_fileselector_add(win);
+   <span class="comment">/* enable the fs file name entry */</span>
+   elm_fileselector_is_save_set(fs, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <span class="comment">/* custom list view */</span>
+   elm_fileselector_expandable_set(fs, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <span class="comment">/* start the fileselector in the /tmp/ dir */</span>
+   elm_fileselector_path_set(fs, <span class="stringliteral">&quot;/tmp&quot;</span>);
+
+   evas_object_size_hint_weight_set(fs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(fs, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, fs);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fs);
+</pre></div></p>
 <p>Note that we enable custom edition of file/directory selection, via the text entry it has on its bottom, via elm_fileselector_is_save_set(). It starts with the list view, which is the default, and we make it not expandable in place (elm_fileselector_expandable_set()), so that it replaces its view's contents with the current directory's entries each time one navigates to a different folder. For both of file selectors we are starting to list the contents found in the <code>"/tmp"</code> directory (elm_fileselector_path_set()).</p>
 <p>Note the code setting it to "grid mode" and observe the differences in the file selector's views, in the example. We also hide the second file selector's Ok/Cancel buttons -- since it's there just to show the grid view (and navigation) -- via elm_fileselector_buttons_ok_cancel_set().</p>
-<p>The <code>"done"</code> event, which triggers the callback below  <div class="fragment"><pre class="fragment"></pre></div> will be called at the time one clicks the "Ok"/"Cancel" buttons of the file selector (on the left). Note that it will print the path to the current selection, if any.</p>
+<p>The <code>"done"</code> event, which triggers the callback below  <div class="fragment"><pre class="fragment"><span class="comment">/* &#39;done&#39; cb */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_fs_done(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+         <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+         <span class="keywordtype">void</span>        *event_info)
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *selected = event_info;
+   <span class="comment">/* event_info contains the full path of the selected file or NULL</span>
+<span class="comment">    * if none is selected (or cancel is pressed) */</span>
+
+   printf(<span class="stringliteral">&quot;We&#39;re done! Selected file is: %s\n&quot;</span>,
+          selected ? selected : <span class="stringliteral">&quot;*none!*&quot;</span>);
+
+   <a class="code" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit</a>();
+}
+</pre></div> will be called at the time one clicks the "Ok"/"Cancel" buttons of the file selector (on the left). Note that it will print the path to the current selection, if any.</p>
 <p>The <code>"selected"</code> event, which triggers the callback below  <div class="fragment"><pre class="fragment"></pre></div> takes place when one selects a file (if the file selector is <b>not</b> under folders-only mode) or when one selects a folder (when in folders-only mode). Experiment it by selecting different file system entries.</p>
 <p>What comes next is the code creating the three check boxes and two buttons below the file selector in the right. They will exercise a bunch of functions on the file selector's API, for the instance on the left. Experiment with them, specially the buttons, to get the difference between elm_fileselector_path_get() and elm_fileselector_selected_get().</p>
-<p>Finally, there's the code adding the second file selector, on the right:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Finally, there's the code adding the second file selector, on the right:  <div class="fragment"><pre class="fragment">   <span class="comment">/* second file selector, now with grid view */</span>
+   fs = elm_fileselector_add(win);
+   elm_fileselector_is_save_set(fs, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_fileselector_mode_set(fs, ELM_FILESELECTOR_GRID);
+   elm_fileselector_buttons_ok_cancel_set(fs, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   elm_fileselector_path_set(fs, <span class="stringliteral">&quot;/tmp&quot;</span>);
+
+   evas_object_size_hint_weight_set(fs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(fs, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, fs);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fs);
+</pre></div></p>
 <p>Pay attention to the code setting it to "grid mode" and observe the differences in the file selector's views, in the example. We also hide the second file selector's Ok/Cancel buttons -- since it's there just to show the grid view (and navigation) -- via elm_fileselector_buttons_ok_cancel_set().</p>
 <p>See the full <a class="el" href="fileselector_example_8c-example.html">example</a>, whose window should look like this picture:</p>
 <div class="image">

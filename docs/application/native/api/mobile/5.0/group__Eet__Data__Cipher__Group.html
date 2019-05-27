@@ -175,8 +175,8 @@ Functions</h2></td></tr>
 <p>This function is useful for decoding data structures delivered to the application by means other than an eet file, such as an IPC or socket connection, raw files, shared memory etc.</p>
 <p>Please see <a class="el" href="group__Eet__Data__Group.html#ga5fb943bf3b2ba6c901dfce189a82d9fc" title="Reads a data structure from an eet file and decodes it.">eet_data_read()</a> for more information.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#ga6eb80949d73fabdea805f72b0149cd63" title="Decodes a data structure from an arbitrary location in memory.">eet_data_descriptor_decode()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -228,13 +228,13 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL on failure, or a valid encoded data chunk on success.</dd></dl>
-<p>This function takes a data structutre in memory and encodes it into a serialised chunk of data that can be decoded again by <a class="el" href="group__Eet__Data__Group.html#ga6eb80949d73fabdea805f72b0149cd63" title="Decodes a data structure from an arbitrary location in memory.">eet_data_descriptor_decode()</a>. This is useful for being able to transmit data structures across sockets, pipes, IPC or shared file mechanisms, without having to worry about memory space, machine type, endianness etc.</p>
+<p>This function takes a data structure in memory and encodes it into a serialised chunk of data that can be decoded again by <a class="el" href="group__Eet__Data__Group.html#ga6eb80949d73fabdea805f72b0149cd63" title="Decodes a data structure from an arbitrary location in memory.">eet_data_descriptor_decode()</a>. This is useful for being able to transmit data structures across sockets, pipes, IPC or shared file mechanisms, without having to worry about memory space, machine type, endianness etc.</p>
 <p>The parameter <code>edd</code> must point to a valid data descriptor, and <code>data_in</code> must point to the right data structure to encode. If not, the encoding may fail.</p>
 <p>On success a non NULL valid pointer is returned and what <code>size_ret</code> points to is set to the size of this decoded data, in bytes. When the encoded data is no longer needed, call free() on it. On failure NULL is returned and what <code>size_ret</code> points to is set to 0.</p>
 <p>Please see <a class="el" href="group__Eet__Data__Group.html#gaac41f6875bcb226c917102ae35eb8c93" title="Writes a data structure from memory and store in an eet file.">eet_data_write()</a> for more information.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#ga03747922bdbbc00fe2c8af722ad37bfa" title="Encodes a dsata struct to memory and return that encoded data.">eet_data_descriptor_encode()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -295,8 +295,8 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>1</code> on success, <code>0</code> on failure</dd></dl>
 <p>This function will take an open and valid eet file from <a class="el" href="group__Eet__File__Group.html#ga1714f8176dde78e274b3fc042912e382" title="Opens an eet file on disk, and returns a handle to it.">eet_open()</a> request the data encoded by <a class="el" href="group__Eet__Data__Group.html#ga03747922bdbbc00fe2c8af722ad37bfa" title="Encodes a dsata struct to memory and return that encoded data.">eet_data_descriptor_encode()</a> corresponding to the key <code>name</code> and convert it into human readable ascii text. It does this by calling the <code>dumpfunc</code> callback for all new text that is generated. This callback should append to any existing text buffer and will be passed the pointer <code>dumpdata</code> as a parameter as well as a string with new text to be appended.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#gae821cc0ad64624058579be2f789eabe4" title="Dumps an eet encoded data structure from an eet file into ascii text.">eet_data_dump()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -351,8 +351,8 @@ Functions</h2></td></tr>
 <p>This function decodes a data structure stored in an eet file, returning a pointer to it if it decoded successfully, or NULL on failure. This can save a programmer dozens of hours of work in writing configuration file parsing and writing code, as eet does all that work for the program and presents a program-friendly data structure, just as the programmer likes. Eet can handle members being added or deleted from the data in storage and safely zero-fills unfilled members if they were not found in the data. It checks sizes and headers whenever it reads data, allowing the programmer to not worry about corrupt data.</p>
 <p>Once a data structure has been described by the programmer with the fields they wish to save or load, storing or retrieving a data structure from an eet file, or from a chunk of memory is as simple as a single function call.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#ga5fb943bf3b2ba6c901dfce189a82d9fc" title="Reads a data structure from an eet file and decodes it.">eet_data_read()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -421,8 +421,8 @@ Functions</h2></td></tr>
 <p>This function decodes a data structure stored in an eet file, returning a pointer to it if it decoded successfully, or NULL on failure. This can save a programmer dozens of hours of work in writing configuration file parsing and writing code, as eet does all that work for the program and presents a program-friendly data structure, just as the programmer likes. Eet can handle members being added or deleted from the data in storage and safely zero-fills unfilled members if they were not found in the data. It checks sizes and headers whenever it reads data, allowing the programmer to not worry about corrupt data.</p>
 <p>Once a data structure has been described by the programmer with the fields they wish to save or load, storing or retrieving a data structure from an eet file, or from a chunk of memory is as simple as a single function call.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Cipher__Group.html#gac04a3681677bbe90b4f051ef25e54521" title="Reads a data structure from an eet file and decodes it using a cipher.">eet_data_read_cipher()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.10.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -504,8 +504,8 @@ Functions</h2></td></tr>
    <a class="code" href="group__Eet__Data__Cipher__Group.html#ga99f2eabbd5065bceeaa372f9163450c4" title="Dumps an eet encoded data structure into ascii text using a cipher.">eet_data_text_dump_cipher</a>(data, cipher_key, len, output, NULL);
  }
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#ga5a539bac8be056bb6ae11086693d06c5" title="Dumps an eet encoded data structure into ascii text.">eet_data_text_dump()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -559,8 +559,8 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The encoded data on success, NULL on failure.</dd></dl>
 <p>This function will parse the string pointed to by <code>text</code> and return an encoded data lump the same way <a class="el" href="group__Eet__Data__Group.html#ga03747922bdbbc00fe2c8af722ad37bfa" title="Encodes a dsata struct to memory and return that encoded data.">eet_data_descriptor_encode()</a> takes an in-memory data struct and encodes into a binary blob. <code>text</code> is a normal C string.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#gad6bc3ed646ccb131428bd795c0828ed6" title="Takes an ascii encoding from eet_data_text_dump() and re-encode in binary.">eet_data_text_undump()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -629,8 +629,8 @@ Functions</h2></td></tr>
 <p>This function will parse the string pointed to by <code>text</code>, encode it the same way <a class="el" href="group__Eet__Data__Group.html#ga03747922bdbbc00fe2c8af722ad37bfa" title="Encodes a dsata struct to memory and return that encoded data.">eet_data_descriptor_encode()</a> takes an in-memory data struct and encodes into a binary blob.</p>
 <p>The data (optionally compressed) will be in ram, pending a flush to disk (it will stay in ram till the eet file handle is closed though).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Group.html#ga064f6b6a0789cc17b1bdd04442f9b4b5" title="Takes an ascii encoding from eet_data_dump() and re-encode in binary.">eet_data_undump()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -697,8 +697,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bytes written on successful write, 0 on failure.</dd></dl>
 <p>This function is the reverse of <a class="el" href="group__Eet__Data__Cipher__Group.html#gac04a3681677bbe90b4f051ef25e54521" title="Reads a data structure from an eet file and decodes it using a cipher.">eet_data_read_cipher()</a>, saving a data structure to an eet file.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -752,8 +752,8 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the decoded data structure.</dd></dl>
 <p>This function decodes a data structure stored in an eet extended attribute, returning a pointer to it if it decoded successfully, or NULL on failure. Eet can handle members being added or deleted from the data in storage and safely zero-fills unfilled members if they were not found in the data. It checks sizes and headers whenever it reads data, allowing the programmer to not worry about corrupt data.</p>
 <p>Once a data structure has been described by the programmer with the fields they wish to save or load, storing or retrieving a data structure from an eet file, from a chunk of memory or from an extended attribute is as simple as a single function call.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.5.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.5.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -820,8 +820,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE on success, EINA_FALSE on failure.</dd></dl>
 <p>This function is the reverse of <a class="el" href="group__Eet__Data__Cipher__Group.html#ga36f0acb59b559f2a8ad6909e419f7735" title="Reads a data structure from an eet extended attribute and decodes it using a cipher.">eet_data_xattr_cipher_get()</a>, saving a data structure to an eet extended attribute.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.5.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.5.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
