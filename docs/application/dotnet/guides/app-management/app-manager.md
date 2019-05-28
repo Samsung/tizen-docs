@@ -15,7 +15,7 @@ The main features of the `Tizen.Applications.ApplicationManager` class include:
 
 -   Getting information on current applications
 
-    For current applications, you can retrieve information[manage the current application information](#manage_current) with the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Application.html) class.
+    For current applications, you can retrieve information [manage the current application information](#manage_current) with the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Application.html) class.
 
 
 Iterator methods are used to travel through a list of applications. The `GetRunningApplicationsAsync()` method of the `Tizen.Applications.ApplicationManager` class is used for running applications and the `GetInstalledApplicationsAsync()` method is used for installed applications.
