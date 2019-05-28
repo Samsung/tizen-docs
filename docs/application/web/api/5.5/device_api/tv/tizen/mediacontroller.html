@@ -205,7 +205,6 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onshufflemodechanged">onshufflemodechanged</a> (boolean mode)</div>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">onrepeatstatechanged</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state)</div>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onmetadatachanged">onmetadatachanged</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
-<div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onplaylistinfochanged">onplaylistinfochanged</a> (DOMString playlistName, DOMString index)</div>
 </td>
 </tr>
 <tr>
@@ -2221,11 +2220,6 @@ var playbackListener =
   {
     console.log("Playback metadata changed: " + JSON.stringify(metadata));
   },
-  onplaylistinfochanged: function(playlistName, index)
-  {
-    console.log("New playlist: " + playlistName);
-    console.log("New index: " + index);
-  }
 };
 
 /* Registers to be notified when playback state changes. */
@@ -2290,11 +2284,6 @@ var playbackListener =
   {
     console.log("Playback metadata changed: " + JSON.stringify(metadata));
   },
-  onplaylistinfochanged: function(playlistName, index)
-  {
-    console.log("New playlist: " + playlistName);
-    console.log("New index: " + index);
-  }
 };
 
 /* Registers to be notified when playback state changes. */
@@ -3230,7 +3219,6 @@ object for receiving media controller playback info changes from server.
     void onshufflemodechanged(boolean mode);
     void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
-    void onplaylistinfochanged(DOMString playlistName, DOMString index);
   };</pre>
 <p><span class="version">Since: </span>
  5.0
@@ -3356,31 +3344,6 @@ will be invoked after the <a href="#MediaControllerPlaybackInfoChangeCallback::o
           <li class="param">
 <span class="name">metadata</span>:
  Current playback metadata.
-                </li>
-        </ul>
-</div>
-</dd>
-<dt class="method" id="MediaControllerPlaybackInfoChangeCallback::onplaylistinfochanged">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback::onplaylistinfochanged"></a><code><b><span class="methodName">onplaylistinfochanged</span></b></code>
-</dt>
-<dd>
-<div class="brief">
- Called when playback's playlist or index changed.
-            </div>
-<div class="synopsis"><pre class="signature prettyprint">void onplaylistinfochanged(DOMString playlistName, DOMString index);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">playlistName</span>:
- Name of current playlist.
-                </li>
-          <li class="param">
-<span class="name">index</span>:
- Index of current item.
                 </li>
         </ul>
 </div>
@@ -3876,7 +3839,6 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void onshufflemodechanged(boolean mode);
     void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
-    void onplaylistinfochanged(DOMString playlistName, DOMString index);
   };
   [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
     void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
