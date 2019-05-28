@@ -43,12 +43,11 @@ The following table lists the supported operating systems and hardware requireme
 <tr>
 <th rowspan="2">OS</th>
 <th>Version</th>
-<td>10/8/7</td>
+<td>10</td>
 <td>10.13 (High Sierra)</p>
 <p>10.12 (Sierra)</p>
-<p>10.11 (El Capitan)</p>
 </td>
-<td>16.04/14.04</td>
+<td>18.04/16.04</td>
 </tr>
 <tr>
 <th>Bit</th>
