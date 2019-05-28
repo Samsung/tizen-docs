@@ -13,6 +13,11 @@ The main features of the `Tizen.Applications.ApplicationManager` class include:
 
     For installed (but not necessarily running) applications, you can retrieve information with the [Tizen.Applications.ApplicationInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html) class. You can also [retrieve information through a filter](#filter) with the [Tizen.Applications.ApplicationInfoFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfoFilter.html) class.
 
+-   Getting information on current applications
+
+    For current applications, you can retrieve information[manage the current application information](#manage_current) with the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Application.html) class.
+
+
 Iterator methods are used to travel through a list of applications. The `GetRunningApplicationsAsync()` method of the `Tizen.Applications.ApplicationManager` class is used for running applications and the `GetInstalledApplicationsAsync()` method is used for installed applications.
 
 ## Prerequisites
@@ -74,6 +79,10 @@ To get the application running context and its details, and to operate on the co
             /// Application is terminated
         else
             /// State is undefined
+
+        if (appRunningContext.IsTerminated) {
+            /// Application is not running now
+        }
         ```
 
     -   Resume the running application:
@@ -124,6 +133,36 @@ To get information on filtered applications:
         Log.Debug("Tag", "sharedResourcePath: " + appInfo.SharedResourcePath);
     }
     ```
+
+<a name="manage_current"></a>
+## Getting Information on Current Applications
+
+To get information on current applications:
+
+1.  Call the `Current` property of the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfoFilter.html) class:
+
+    ```
+    Application application = Application.Current;
+    ```
+
+2.  Operate on the application:
+    -   Get the application directory information:
+
+        ```
+        DirectoryInfo directory = application.DirectoryInfo;
+        ```
+
+    -   Get the application name:
+
+        ```
+        string name = application.Name;
+        ```
+
+    -   Get the application version:
+
+        ```
+        string version = application.Version;
+        ```
 
 
 ## Related Information
