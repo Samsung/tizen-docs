@@ -40,6 +40,12 @@ To get the application running context and its details, and to operate on the co
 
 1.  Get the context of the currently-running application by creating an instance of the [Tizen.Applications.ApplicationRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationRunningContext.html) class, with the ID of the application from which the context is being obtained as a parameter.
 
+    If you do not know your App ID, you can retrieve it as follows.
+
+    ```
+    string applicationId = ApplicationManager.GetAppId(Your PID);
+    ```
+
     When an application is not running, it is impossible to get its context.
 
     ```
@@ -74,6 +80,12 @@ To get the application running context and its details, and to operate on the co
 
         ```
         appRunningContext.Resume();
+        ```
+
+    -   Terminate the background application:
+
+        ```
+        appRunningContext.TerminateBackgroundApplication();
         ```
 
 <a name="filter"></a>
