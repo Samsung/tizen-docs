@@ -43,7 +43,7 @@ To get the application running context and its details, and to operate on the co
     If you do not know your App ID, you can retrieve it as follows.
 
     ```
-    string applicationId = ApplicationManager.GetAppId((Your PID);
+    string applicationId = ApplicationManager.GetAppId(Your PID);
     ```
 
     When an application is not running, it is impossible to get its context.
