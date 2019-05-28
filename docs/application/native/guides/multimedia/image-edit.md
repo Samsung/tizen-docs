@@ -61,13 +61,9 @@ To enable your application to use the image util functionality:
    #define SAMPLE_FILENAME "sample_image.jpg"
    #define OUTPUT_ROTATED_JPEG "rotated_image.jpg"
 
-   const image_util_colorspace_e colorspace = IMAGE_UTIL_COLORSPACE_RGB888;
-   unsigned char *img_rotate_target = NULL;
-   unsigned char *img_source = NULL;
-   int ret = 0;
-   int width = 0;
-   int height = 0;
-   unsigned int size_decode = 0;
+   const image_util_colorspace_e colorspace = IMAGE_UTIL_COLORSPACE_RGBA8888;
+   image_util_image_h src_image = NULL;
+   image_util_image_h dst_image = NULL;
    image_util_decode_h decode_h = NULL;
    ```
 
@@ -88,62 +84,93 @@ To enable your application to use the image util functionality:
    ret = image_util_decode_create(&decode_h);
    ret = image_util_decode_set_input_path(decode_h, SAMPLE_FILENAME);
    ret = image_util_decode_set_colorspace(decode_h, colorspace);
-   ret = image_util_decode_set_output_buffer(decode_h, &img_source);
 
-   ret = image_util_decode_run(decode_h, &width, &height, &size_decode);
+   ret = image_util_decode_run2(decode_h, &src_image);
    ret = image_util_decode_destroy(decode_h);
-
-   ret = media_format_create(&fmt);
-   ret = media_format_set_video_mime(fmt, colorspace);
-   ret = media_format_set_video_width(fmt, width);
-   ret = media_format_set_video_height(fmt, height);
-
-   ret = media_packet_create_alloc(fmt, NULL, NULL, &src);
-   ret = media_packet_get_buffer_size(src, &size);
-
-   src = malloc(size);
-   ret = media_packet_get_buffer_data_ptr(src, &src_ptr);
-   ret = memcpy(src_ptr, img_source, size);
    ```
 
 <a name="colorspace"></a>
-## Converting the Color Space
+## Converting the Color Space of an Image
 
-To convert an image from one color space to another:
+To convert an image from one color space of an image to another:
 
 1. Create a transformation handle using the `image_util_transform_create()` function:
 
    ```
-   transformation_h handle;
-   ret = image_util_transform_create(&handle);
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
    ```
 
 2. Set the target color space using the `image_util_transform_set_colorspace()` function:
 
    ```
-   ret = image_util_transform_set_colorspace(handle, colorspace);
+   ret = image_util_transform_set_colorspace(transform_h, colorspace);
+   ```
+
+3. Execute the transformation using the `image_util_transform_run2()` function:
+
+   ```
+   ret = image_util_transform_run2(transform_h, src_image, &dst_image);
+   ```
+
+4. Execute the transformation using the `image_util_transform_run2_async()` function:
+
+   ```
+   ret = image_util_transform_run2_async(transform_h, src_image,
+                                        (image_util_transform_completed2_cb)completed_callback,
+                                        user_data);
+   ```
+
+   > **Note**
+   >
+   > - Here, the `image_util_transform_run2()` and `image_util_transform_run2_async()` function only converts the color space. The function does not change the image width or height, or any other image property.
+   > - Because of the restrictions of the image processing library, not all color space combinations are supported for conversion.
+
+5. Handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+
+6. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+
+   ```
+   ret = image_util_transform_destroy(transform_h);
+   ```
+
+## Converting the Color Space of a Media Packet
+
+To convert an image from one color space of a media_packet to another:
+
+1. Create a transformation handle using the `image_util_transform_create()` function:
+
+   ```
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
+   ```
+
+2. Set the target color space using the `image_util_transform_set_colorspace()` function:
+
+   ```
+   ret = image_util_transform_set_colorspace(transform_h, colorspace);
    ```
 
 3. Execute the transformation using the `image_util_transform_run()` function:
 
    ```
-   ret = image_util_transform_run(handle, src,
-                                  (image_util_transform_completed_cb)completed_callback,
-                                  user_data);
+   ret = image_util_transform_run(transform_h, (media_packet_h)src_packet,
+                                (image_util_transform_completed_cb)completed_callback,
+                                user_data);
    ```
 
    > **Note**
    >
    > - Here, the `image_util_transform_run()` function only converts the color space. The function does not change the image width or height, or any other image property.
-   > - Because of the restrictions of the image processing library, not all color space combinations are supported for conversion. For example, the NV12 format is commonly used in hardware chips, but it is not supported by the library.
-   > - If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+   > - Because of the restrictions of the image processing library, not all color space combinations are supported for conversion.
+   > - To use the media packet handle of the Media Tool API, see the [Media Tool API](media-handle.md).
 
-4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
-5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+6. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
 
    ```
-   ret = image_util_transform_destroy(handle);
+   ret = image_util_transform_destroy(transform_h);
    ```
 
 <a name="resize"></a>
@@ -154,29 +181,64 @@ To resize an image:
 1. Create a transformation handle using the `image_util_transform_create()` function:
 
    ```
-   transformation_h handle;
-   ret = image_util_transform_create(&handle);
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
    ```
 
 2. Set the target resolution using the `image_util_transform_set_resolution()` function:
 
    ```
-   ret = image_util_transform_set_resolution(handle, width, height);
+   ret = image_util_transform_set_resolution(transform_h, width, height);
    ```
 
-3. Execute the transformation using the `image_util_transform_run()` function:
+3. Run the transformation using the `image_util_transform_run2()` or `image_util_transform_run2_async()` function:
 
    ```
-   ret = image_util_transform_run(handle, src,
-                                  (image_util_transform_completed_cb)completed_callback,
-                                  user_data);
+   ret = image_util_transform_run2(transform_h, src_image, &dst_image);
    ```
 
    > **Note**
    >
    > - The image format has no effect on the transformation.
    > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.
-   > - If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+
+4. If `image_util_transform_run2_async()` is used to run the transformation, handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+
+5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+
+   ```
+   ret = image_util_transform_destroy(transform_h);
+   ```
+
+## Resizing a Media Packet
+
+To resize a media_packet:
+
+1. Create a transformation handle using the `image_util_transform_create()` function:
+
+   ```
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
+   ```
+
+2. Set the target resolution using the `image_util_transform_set_resolution()` function:
+
+   ```
+   ret = image_util_transform_set_resolution(transform_h, width, height);
+   ```
+
+3. Run the transformation using the `image_util_transform_run()` function:
+
+   ```
+   ret = image_util_transform_run(transform_h, (media_packet_h)src_packet,
+                                (image_util_transform_completed_cb)completed_callback,
+                                user_data);
+   ```
+
+   > **Note**
+   >
+   > - The image format has no effect on the transformation.
+   > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.
 
 4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
@@ -194,38 +256,77 @@ To rotate an image:
 1. Create a transformation handle using the `image_util_transform_create()` function:
 
    ```
-   transformation_h handle;
-   ret = image_util_transform_create(&handle);
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
    ```
 
 2. Set the amount of rotation using the `image_util_transform_set_rotation()` function:
 
    ```
-   ret = image_util_transform_set_rotation(handle, rotation);
+   ret = image_util_transform_set_rotation(transform_h, rotation);
    ```
 
    The possible values for the `rotation` parameter are defined in the `image_util_rotation_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) applications).
 
-3. Execute the transformation using the `image_util_transform_run()` function:
+3. Execute the transformation using the `image_util_transform_run2()` or `image_util_transform_run2_async()` function:
 
    ```
-   ret = image_util_transform_run(handle, src,
-                                  (image_util_transform_completed_cb)completed_callback,
-                                  user_data);
+   ret = image_util_transform_run2(transform_h, src_image, &dst_image);
    ```
 
    > **Note**
    >
    > - The image format has no effect on the transformation.
-   > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+   > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.
+
+4. Handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+
+5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+
+   ```
+   ret = image_util_transform_destroy(transform_h);
+   ```
+
+## Rotating a Media Packet
+
+To rotate a media_packet:
+
+1. Create a transformation handle using the `image_util_transform_create()` function:
+
+   ```
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
+   ```
+
+2. Set the amount of rotation using the `image_util_transform_set_rotation()` function:
+
+   ```
+   ret = image_util_transform_set_rotation(transform_h, rotation);
+   ```
+
+  The possible values for the `rotation` parameter are defined in the `image_util_rotation_e` enumeration (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__IMAGE__UTIL__TRANSFORM__MODULE.html#gad0682da8519f229944c9c5617b7a1107) applications).
+
+3. Execute the transformation using the `image_util_transform_run()` function:
+
+   ```
+   ret = image_util_transform_run(transform_h, (media_packet_h)src_packet,
+                                (image_util_transform_completed_cb)completed_callback,
+                                user_data);
+   ```
+
+   > **Note**
+   >
+   > - The image format has no effect on the transformation.
+   > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.
 
 4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
 
    ```
-   ret = image_util_transform_destroy(handle);
+   ret = image_util_transform_destroy(transform_h);
    ```
+
 <a name="crop"></a>
 ## Cropping an Image
 
@@ -234,36 +335,74 @@ To crop an image:
 1. Create a transformation handle using the `image_util_transform_create()` function:
 
    ```
-   transformation_h handle;
-   ret = image_util_transform_create(&handle);
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
    ```
 
 2. Set the crop area using the `image_util_transform_set_crop_area()` function:
 
    ```
-   ret = image_util_transform_set_crop_area(handle, start_x, start_y, end_x, end_y);
+   ret = image_util_transform_set_crop_area(transform_h, start_x, start_y, end_x, end_y);
    ```
 
 3. Execute the transformation using the `image_util_transform_run()` function:
 
    ```
-   ret = image_util_transform_run(handle, src,
-                                  (image_util_transform_completed_cb)completed_callback,
-                                  user_data);
+   ret = image_util_transform_run2_async(transform_h, src_image,
+                                        (image_util_transform_completed2_cb)completed_callback,
+                                        user_data);
    ```
 
    > **Note**
    >
    > - Because of a YUV restriction, and because the crop start position can be set arbitrarily, the cropped image width and height must be even.
-   > - If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+
+4. Handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+
+5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
+
+   ```
+   ret = image_util_transform_destroy(transform_h);
+   ```
+
+## Cropping a Media Packet
+
+To crop a media_packet:
+
+1. Create a transformation handle using the `image_util_transform_create()` function:
+
+   ```
+   transformation_h transform_h;
+   ret = image_util_transform_create(&transform_h);
+   ```
+
+2. Set the crop area using the `image_util_transform_set_crop_area()` function:
+
+   ```
+   ret = image_util_transform_set_crop_area(transform_h, start_x, start_y, end_x, end_y);
+   ```
+
+3. Execute the transformation using the `image_util_transform_run()` function:
+
+   ```
+   ret = image_util_transform_run(transform_h, (media_packet_h)src_packet,
+                                (image_util_transform_completed_cb)completed_callback,
+                                user_data);
+   ```
+
+   > **Note**
+   >
+   > - The image format has no effect on the transformation.
+   > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.
 
 4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using the `image_util_transform_destroy()` function:
 
    ```
-   ret = image_util_transform_destroy(handle);
+   ret = image_util_transform_destroy(transform_h);
    ```
+
 <a name="decode"></a>
 ## Decoding from a File or Memory
 
@@ -282,14 +421,7 @@ To decode a JPEG, PNG, GIF, or BMP image:
    ret = image_util_decode_set_input_path(decode_h, path);
    ```
 
-3. To save the decoded image, set the output buffer using the `image_util_decode_set_output_buffer()` function:
-
-   ```
-   unsigned char *result = NULL;
-   ret = image_util_decode_set_output_buffer(decode_h, &result);
-   ```
-
-4. Optionally, set the color space and JPEG downscale using the `image_util_decode_set_colorspace()` and `image_util_decode_set_jpeg_downscale()` functions:
+3. Optionally, set the color space and JPEG downscale using the `image_util_decode_set_colorspace()` and `image_util_decode_set_jpeg_downscale()` functions:
 
    ```
    unsigned char *result = NULL;
@@ -302,16 +434,14 @@ To decode a JPEG, PNG, GIF, or BMP image:
    > - Because of decoder limitations, color space setting and JPEG downscaling are only supported for JPEG images.
    > - The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are decoded to `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
-5. Execute the decoding using the `image_util_decode_run()` function:
+4. Execute the decoding using the `image_util_decode_run2()` or `image_util_decode_run_async2()` function:
 
    ```
-   unsigned long width = 0; /* Decoded image width */
-   unsigned long height = 0; /* Decoded image height */
-   unsigned long long size = 0; /* Decoded image size */
-   ret = image_util_decode_run(decode_h, &width, &height, &size);
+   image_util_image_h decoded_image = NULL;
+   ret = image_util_decode_run2(decode_h, &decoded_image);
    ```
 
-6. After the decoding is complete, destroy the decoding handle using the `image_util_decode_destroy()` function:
+5. After the decoding is complete, destroy the decoding handle using the `image_util_decode_destroy()` function:
 
    ```
    ret = image_util_decode_destroy(decode_h);
