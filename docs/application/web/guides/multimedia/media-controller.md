@@ -4,7 +4,7 @@ You can have your client application communicate with a media server.
 
 This feature is supported in mobile and wearable applications only.
 
-To manage the media using the Media Controller API, you have to develop 2 applications:
+To manage the media using the Media Controller API, you have to develop two applications:
 
 - Client that sends requests to the server in order to change, for example, the playback state and position modes.
 - Server that directly manages the media on the device.
@@ -13,15 +13,19 @@ The main features of the Media Controller API include:
 
 - Setting up the client and server pair
 
-  You can [set up the client and server pair](#getting-the-client-and-server) by creating a new server using the `createServer()` method. On the client side, you can get a client and find active servers using the `getClient()` and `findServers()` methods.
+  You can [set up the client and server pair](#getting-client-and-server) by creating a new server using the `createServer()` method. On the client side, you can get a client and find active servers using the `getClient()` and `findServers()` methods.
 
 - Managing requests
 
   You can [send a request](#managing-requests) from the client to the server to modify various playback attributes. In the server, you can set up a listener to react to the client request and perform the requested task.
 
+- Setting and getting the server icon URI
+
+  You can [set the server icon URI](#setting-and-getting-server-icon-uri) and read it from the client.
+
 - Receiving notifications from the server
 
-  You can [receive notifications on changes made by the server](#receiving-notifications-from-the-server) by registering a listener with the `addPlaybackInfoChangeListener()` method.
+  You can [receive notifications on changes made by the server](#receiving-notifications-from-server) by registering a listener with the `addPlaybackInfoChangeListener()` method.
 
 - Sending custom commands
 
@@ -29,13 +33,13 @@ The main features of the Media Controller API include:
 
   To [receive and handle incoming commands](#receive_custom_commands) in the server, use the `addCommandListener()` method.
 
-- Setting content type for currently playing media
+- Setting content type for the currently playing media
 
-  You can [set content type for currently playing media](#setting_content_type) by using updatePlaybackContentType() server method.
+  You can [set content type for the currently playing media](#setting-content-type-for-currently-playing-media) using the updatePlaybackContentType() server method.
 
-- Setting age rating for currently playing media
+- Setting age rating for the currently playing media
 
-  You can [set age rating for currently playing media](#setting_age_rating) by using updatePlaybackAgeRating() server method.
+  You can [set age rating for the currently playing media](#setting-content-age-rating-for-currently-playing-media) using the updatePlaybackAgeRating() server method.
 
 - Managing playlists on server side
 
@@ -55,7 +59,7 @@ To use the Media Controller API (in [mobile](../../api/latest/device_api/mobile/
 <tizen:privilege name="http://tizen.org/privilege/mediacontroller.server"/>
 ```
 
-## Getting the Client and Server
+## Getting Client and Server
 
 To manage the media controller features in your application, you must learn to set up the client and server pair:
 
@@ -152,7 +156,28 @@ To manage the media controller features in your application, you must learn to h
    mcServerInfo.sendPlaybackState('PAUSE', successCallback, errorCallback);
    ```
 
-## Receiving Notifications from the Server
+## Setting and Getting Server Icon URI
+
+You can update the icon URI address of a media controller server, which can then be accessed
+from the client application. The default value of the server icon URI attribute is null.
+To use the icon URI attribute in your media controller application, follow these steps:
+
+1. Set the server icon on the server side:
+
+    ```
+    var server = tizen.mediacontroller.createServer();
+    server.updateIconURI("icon.png");
+    ```
+
+2. Get the server icon URI on the client side:
+
+    ```
+    var client = tizen.mediacontroller.getClient();
+    var server_info = client.getLatestServerInfo();
+    console.log(server_info.iconURI);
+    ```
+
+## Receiving Notifications from Server
 
 To manage the media controller features in your application, you must learn to receive notifications from the server:
 
@@ -252,9 +277,8 @@ To manage the media controller features in your application, you must learn to s
 
       The `watcherId` variable stores the value, which can be used in the future to remove the listener from the server using the `removeCommandListener()` method.
 
-<a name="setting_content_type"></a>
 
-## Setting Content Type for the Currently Playing Media
+## Setting Content Type for Currently Playing Media
 
 Server can set content type for current playback. Client can access this type (read-only)
 and perform some actions that depend on the content-type, such as displaying different icons for
@@ -278,9 +302,8 @@ different types of media items.
     }
     ```
 
-<a name="setting_age_rating"></a>
 
-## Setting Content Age Rating for the Currently Playing Media
+## Setting Content Age Rating for Currently Playing Media
 
 Server can set age rating for current playback. Client can access this rating (read-only) and perform some actions such as displaying a warning for underage users.
 
@@ -419,6 +442,6 @@ To manage the media controller playlist in your application, you must handle req
    ```
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 3.0 and Higher for Wearable
