@@ -1320,18 +1320,11 @@ The following table lists the classes that are supported with minor limitations.
         </tr>
         <tr>
             <td class="tdclass" rowspan="2"><code class="prettyprint"><span class="typ">WebView</span></code></td>
-            <td class="tdtype" rowspan="2"><span>Property</span></td>
-            <td><code class="prettyprint"><span class="typ">Opacity</span></code></td>
+            <td class="tdtype" rowspan="2"><span>Class</span></td>
+            <td><code class="prettyprint"><span class="typ">WebView</span></code></td>
             <td>&nbsp;</td>
             <td>
-                <p><span>Ignored.</span></p>
-            </td>
-        </tr>
-        <tr>
-            <td><code class="prettyprint"><span class="typ">BackgroundColor</span></code></td>
-            <td>&nbsp;</td>
-            <td>
-                <p><span>Ignored.</span></p>
+                <p><span>Application will fail to launch.</span></p>
             </td>
         </tr>
     </tbody>
