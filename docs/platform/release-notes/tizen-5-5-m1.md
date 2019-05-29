@@ -436,11 +436,6 @@ Release Date: May. 31, 2019
 
 ## Service framework
 
-### New and changed features
-
-- Account-Manager
-  - Feature to query account information even after account deletion has been added.
-
 ### Fixes
 
 - Account-Manager
