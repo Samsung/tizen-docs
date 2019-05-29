@@ -8,3 +8,7 @@ The Tizen documents in this project are licensed under the [Creative Commons Att
 
 test
 All files under ./docs/ are hosted on the [Tizen Docs site](https://docs.tizen.org). 
+All files under ./docs/ are hosted on the [Tizen Docs site](https://docs.tizen.org1). 
+All files under ./docs/ are hosted on the [Tizen Docs site](https://docs.tizen.org2). 
+[Contributing Guide](CONTRIBUTINGGGG.md) 
+[Content License](content-licenseeee.md)
