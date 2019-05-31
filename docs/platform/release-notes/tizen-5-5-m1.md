@@ -623,3 +623,11 @@ Release Date: May. 31, 2019
   - Support for mixed acceleration for InceptionV3 and MobileNet model by manual planning has been added.
   - Android NN API compatible (Supports major operations selected carefully.)
 
+- nnstreamer: Neural Network Streamer
+   - An efficient and flexible stream pipeline to neural networks has been added.
+   - Support for a neural network model as a media filter and converter has been added.
+   - Support for multiple neural network models in a single stream pipeline instance has been added.
+   - Support for multiple sources and stream paths for neural network models has been added.
+   - Support for RNN and CNN model architectures with Tensorflow, Tensorflow-lite has been added.
+   - Neural network API based on NNStreamer to manage pipelines has been added.
+   - A plugin to support Linux IIO based on sensors has been added.
