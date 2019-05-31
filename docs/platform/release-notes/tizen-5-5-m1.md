@@ -1,4 +1,4 @@
-﻿# Tizen 5.5 Public M1 Release Notes
+# Tizen 5.5 Public M1 Release Notes
 
 Release Date: May. 31, 2019
 
