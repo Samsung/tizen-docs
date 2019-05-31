@@ -25,8 +25,8 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m26securerepository.png" width="150"/></td>
 			<td>
-			<p><strong>(M) SecureRepository</strong> [In progress]</p>
-			<p>This sample application demonstrates how to store data, certificates, and cryptographic keys using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.html" target="_blank">Tizen SecureRepository C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/SecureRepository" target="_blank"><strong>(M) SecureRepository</strong></a></p>
+			<p>This sample application demonstrates how to store data, certificates, and cryptographic keys using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.html" target="_blank">Tizen SecureRepository</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -42,7 +42,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SecureRepository" target="_blank"><strong>(W) SecureRepository</strong></a></p>
-			<p>This sample application demonstrates how to store data, certificates, and cryptographic keys using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.html" target="_blank">Tizen.Security.SecureRepository C# API</a>.</p>
+			<p>This sample application demonstrates how to store data, certificates, and cryptographic keys using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.html" target="_blank">Tizen.Security.SecureRepository</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -56,8 +56,8 @@ for TD:
 			<p><img alt="" height="225" src="media/tv12securerepository.png" width="400" /></p>
 			</td>
 			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/SecureRepository" target="_blank"><strong>(T) SecureRepository</strong></a></p>
-			<p>This sample application demonstrates how to store data, certificates, and cryptographic keys using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.html" target="_blank">Tizen.Security.SecureRepository C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/SecureRepository" target="_blank"><strong>(T) SecureRepository</strong></a></p>
+			<p>This sample application demonstrates how to store data, certificates, and cryptographic keys using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.html" target="_blank">Tizen.Security.SecureRepository</a>.</p>
 			</td>
 		</tr>
 	</tbody>

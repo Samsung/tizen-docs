@@ -1,7 +1,7 @@
 # Contacts
 
 
-You can help the user manage their contact information, such as address books, groups, persons, and phone logs. Since the contact information is stored in a contacts database, you must use the [Tizen.Pims.Contacts.ContactsManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsManager.html) class to manage the information.
+You can help the user manage their contact information, such as address books, groups, persons, and phone logs. Since the contact information is stored in a contacts database, you must use the [Tizen.Pims.Contacts.ContactsManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsManager.html) class to manage the information.
 
 The following figure illustrates the structure of the contact information in the database:
 
@@ -144,11 +144,11 @@ To manage the record, you can use the URI or views:
 
 -   URI
 
-    A record type is identified by a structure called the view, which contains identifiers of its properties. Every class in the [Tizen.Pims.Contacts.ContactsViews](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.html) namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
+    A record type is identified by a structure called the view, which contains identifiers of its properties. Every class in the [Tizen.Pims.Contacts.ContactsViews](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.html) namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
 
 - <a name="view"></a>Views
 
-    Views are provided to access and handle entities. A data-view is a structure which has property elements. For example, the [Tizen.Pims.Contacts.ContactsViews.Contact](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Contact.html) class describes the properties of the contact record. Its properties include, for example, name, company, and nickname of the contact. The property elements have their data types and names.
+    Views are provided to access and handle entities. A data-view is a structure which has property elements. For example, the [Tizen.Pims.Contacts.ContactsViews.Contact](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Contact.html) class describes the properties of the contact record. Its properties include, for example, name, company, and nickname of the contact. The property elements have their data types and names.
 
     The record types that have an `Id` property hold identifiers of other records. For example, the name, number, and email views hold the ID of their corresponding contacts in the `ContactId` property as children of the corresponding contact records. A data-view is almost the same as a database "VIEW", which limits access and guarantees performance. A "record" represents a single row of the data-views.
 
@@ -199,7 +199,7 @@ manager.Dispose();
 <a name="list"></a>
 ## Contact Lists and Batch Operations
 
-Use the [Tizen.Pims.Contacts.ContactsList](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsList.html) class to handle lists of records with the same type.
+Use the [Tizen.Pims.Contacts.ContactsList](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsList.html) class to handle lists of records with the same type.
 
 To create a list:
 
@@ -277,7 +277,7 @@ To manage the list:
     <a name="filter"></a>
 ## Filters and Queries
 
-Queries are used to retrieve [person](#get_contact) data which satisfies a given criteria, such as an integer property being greater than a given value, or a string property containing a given substring. A query needs a filter which can set the conditions for the search. The [Tizen.Pims.Contacts.ContactsQuery](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsQuery.html) class provides methods for sorting set projections and removing duplicated results.
+Queries are used to retrieve [person](#get_contact) data which satisfies a given criteria, such as an integer property being greater than a given value, or a string property containing a given substring. A query needs a filter which can set the conditions for the search. The [Tizen.Pims.Contacts.ContactsQuery](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsQuery.html) class provides methods for sorting set projections and removing duplicated results.
 
 To filter, sort, and query contact data:
 
@@ -285,7 +285,7 @@ To filter, sort, and query contact data:
 
     When creating a filter, specify the filter type you want to create using the `Uri` property.
 
-    To manage filters, multiple conditions can be added to a filter. Join the conditions or multiple filters by using the [Tizen.Pims.Contacts.ContactsFilter.LogicalOperator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsFilter.LogicalOperator.html) enumerator values:
+    To manage filters, multiple conditions can be added to a filter. Join the conditions or multiple filters by using the [Tizen.Pims.Contacts.ContactsFilter.LogicalOperator](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsFilter.LogicalOperator.html) enumerator values:
 
     -   To create a composite filter with the `Or` operator:
 
@@ -415,7 +415,7 @@ To filter, sort, and query contact data:
 
 To enable your application to use the contacts functionality:
 
-1.  To use the [Tizen.Pims.Contacts](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Pims.Contacts](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -426,7 +426,7 @@ To enable your application to use the contacts functionality:
     </privileges>
     ```
 
-2. To use the methods and properties of the Tizen.Pims.Contacts and [Tizen.Pims.Contacts.ContactsViews](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.html) namespaces, include them in your application:
+2. To use the methods and properties of the Tizen.Pims.Contacts and [Tizen.Pims.Contacts.ContactsViews](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.html) namespaces, include them in your application:
 
     ```
     using Tizen.Pims.Contacts;
@@ -438,7 +438,7 @@ To enable your application to use the contacts functionality:
 
 Creating a new contact involves setting the contact properties and inserting the contact into the contact database.
 
-Some contact properties are defined as child records that are associated with the parent record. For a detailed list of the contact properties, see the [Tizen.Pims.Contacts.ContactsViews.Contact](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Contact.html) class. If the property type is `record`, the property is defined as a child record. The property description defines whether a single child record or multiple child records are allowed for a specific property.
+Some contact properties are defined as child records that are associated with the parent record. For a detailed list of the contact properties, see the [Tizen.Pims.Contacts.ContactsViews.Contact](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Contact.html) class. If the property type is `record`, the property is defined as a child record. The property description defines whether a single child record or multiple child records are allowed for a specific property.
 
 When you create a new contact, the system automatically creates a new person associated with that contact. A person is an aggregation of 1 or more contacts associated with the same individual. A contact is always associated with a person.
 
@@ -454,7 +454,7 @@ To create a new contact:
 
     -   To set the contact's name:
 
-        1.  Create a name record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Name](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Name.html) class:
+        1.  Create a name record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Name](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Name.html) class:
 
             ```
             ContactsRecord name = new ContactsRecord(Name.Uri);
@@ -480,7 +480,7 @@ To create a new contact:
 
     - To set an image for the contact:
 
-        1.  Create an image record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Image](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Image.html) class:
+        1.  Create an image record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Image](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Image.html) class:
 
             ```
             ContactsRecord image = new ContactsRecord(Image.Uri);
@@ -500,7 +500,7 @@ To create a new contact:
 
     - To set an event for the contact:
 
-        An event consists of an event type, date, and other properties. You can set various types of events for the contact, as defined in the [Tizen.Pims.Contacts.ContactsViews.Event.TypeValue](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Event.TypeValue.html) enumeration. If the event type is `Custom`, you can set a custom label for the event with the `Label` property of the [Tizen.Pims.Contacts.ContactsViews.Event](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Event.html) class.
+        An event consists of an event type, date, and other properties. You can set various types of events for the contact, as defined in the [Tizen.Pims.Contacts.ContactsViews.Event.TypeValue](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Event.TypeValue.html) enumeration. If the event type is `Custom`, you can set a custom label for the event with the `Label` property of the [Tizen.Pims.Contacts.ContactsViews.Event](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Event.html) class.
 
         To set a birthday event:
 
@@ -535,7 +535,7 @@ To create a new contact:
 
     - To set the contact's phone number:
 
-        1.  Create a phone number record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Number](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsViews.Number.html) class:
+        1.  Create a phone number record with the `Uri` property of the [Tizen.Pims.Contacts.ContactsViews.Number](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsViews.Number.html) class:
 
             ```
             ContactsRecord number = new ContactsRecord(Number.Uri);
@@ -555,7 +555,7 @@ To create a new contact:
 
     Set other contact properties similarly, as needed.
 
-3. Insert the contact into the contact database using the `Insert()` method of the [Tizen.Pims.Contacts.ContactsDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. All child records added to the contact are inserted automatically along with the parent.
+3. Insert the contact into the contact database using the `Insert()` method of the [Tizen.Pims.Contacts.ContactsDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. All child records added to the contact are inserted automatically along with the parent.
 
     The system assigns a unique ID to the contact, and the method returns it.
 
@@ -650,7 +650,7 @@ To retrieve multiple persons:
             manager.Dispose();
             ```
 
-    - To retrieve a list of persons matching a search keyword, use the `Search()` method of the [Tizen.Pims.Contacts.ContactsDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsDatabase.html) class with the search keyword.
+    - To retrieve a list of persons matching a search keyword, use the `Search()` method of the [Tizen.Pims.Contacts.ContactsDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsDatabase.html) class with the search keyword.
 
         The following example shows how to find all person records that contain the keyword "John":
 
@@ -675,7 +675,7 @@ To retrieve multiple persons:
     <a name="db"></a>
 ## Managing Database Change Notifications
 
-To detect the person and group changes in the contacts database, add event handlers using the `AddDBChangedEventHandler()` method of the [Tizen.Pims.Contacts.ContactsDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. To ignore database changes, remove the event handler using the `RemoveDBChangedEventHandler()` method.
+To detect the person and group changes in the contacts database, add event handlers using the `AddDBChangedEventHandler()` method of the [Tizen.Pims.Contacts.ContactsDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsDatabase.html) class. To ignore database changes, remove the event handler using the `RemoveDBChangedEventHandler()` method.
 
 ```
 public static void DBChangedHandler(object sender, DBChangedEventArgs args)
@@ -692,7 +692,7 @@ manager.Database.AddDBChangedEventHandler(Contact.Uri, DBChangedHandler);
 <a name="vcard"></a>
 ## Managing vCards
 
-The [Tizen.Pims.Contacts.ContactsVcard](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Contacts.ContactsVcard.html) class provides methods for parsing and making vCards. The vCard functions are based on the [vCard v3.0 specification](http://www.ietf.org/rfc/rfc2426.txt).
+The [Tizen.Pims.Contacts.ContactsVcard](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Contacts.ContactsVcard.html) class provides methods for parsing and making vCards. The vCard functions are based on the [vCard v3.0 specification](http://www.ietf.org/rfc/rfc2426.txt).
 
 -   You can import contact information by parsing vCards from stream or from a file:
 

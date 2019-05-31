@@ -1,7 +1,7 @@
 # SQLite Database Engine
 
 
-You can use open-source modules to access SQLite and OpenSSL, and use them to encrypt and store application data. The open source modules supported by Tizen are listed within the [API modules](../../tutorials/details/tizen-apis.md).
+You can use open-source modules to access SQLite and OpenSSL, and use them to encrypt and store application data. 
 
 The main features of the Sqlite API include:
 

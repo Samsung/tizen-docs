@@ -11,7 +11,7 @@ The main features of the `Tizen.Applications.ApplicationManager` class include:
 
 -   Getting information on filtered applications
 
-    For installed (but not necessarily running) applications, you can retrieve information with the [Tizen.Applications.ApplicationInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html) class. You can also [retrieve information through a filter](#filter) with the [Tizen.Applications.ApplicationInfoFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfoFilter.html) class.
+    For installed (but not necessarily running) applications, you can retrieve information with the [Tizen.Applications.ApplicationInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html) class. You can also [retrieve information through a filter](#filter) with the [Tizen.Applications.ApplicationInfoFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfoFilter.html) class.
 
 Iterator methods are used to travel through a list of applications. The `GetRunningApplicationsAsync()` method of the `Tizen.Applications.ApplicationManager` class is used for running applications and the `GetInstalledApplicationsAsync()` method is used for installed applications.
 
@@ -19,7 +19,7 @@ Iterator methods are used to travel through a list of applications. The `GetRunn
 
 To enable your application to use the application management functionality:
 
-1.  To use the methods and properties of the [Tizen.Applications.ApplicationManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationManager.html), [Tizen.Applications.ApplicationRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationRunningContext.html), and [Tizen.Applications.ApplicationInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html) classes, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
+1.  To use the methods and properties of the [Tizen.Applications.ApplicationManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationManager.html), [Tizen.Applications.ApplicationRunningContext](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationRunningContext.html), and [Tizen.Applications.ApplicationInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html) classes, include the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
 
     ```
     using Tizen.Applications;
@@ -38,7 +38,7 @@ To enable your application to use the application management functionality:
 
 To get the application running context and its details, and to operate on the context:
 
-1.  Get the context of the currently-running application by creating an instance of the [Tizen.Applications.ApplicationRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationRunningContext.html) class, with the ID of the application from which the context is being obtained as a parameter.
+1.  Get the context of the currently-running application by creating an instance of the [Tizen.Applications.ApplicationRunningContext](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationRunningContext.html) class, with the ID of the application from which the context is being obtained as a parameter.
 
     When an application is not running, it is impossible to get its context.
 
@@ -81,7 +81,7 @@ To get the application running context and its details, and to operate on the co
 
 To get information on filtered applications:
 
-1.  Create the filter as an instance of the [Tizen.Applications.ApplicationInfoFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfoFilter.html) class:
+1.  Create the filter as an instance of the [Tizen.Applications.ApplicationInfoFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfoFilter.html) class:
 
     ```
     ApplicationInfoFilter appInfoFilter = new ApplicationInfoFilter();
@@ -93,7 +93,7 @@ To get information on filtered applications:
     appInfoFilter.Filter.Add(ApplicationInfoFilter.Keys.Type, "dotnet");
     ```
 
-3.  Call the `GetInstalledApplicationsAsync()` method of the [Tizen.Applications.ApplicationManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationManager.html) class and retrieve all filtered applications and print their information:
+3.  Call the `GetInstalledApplicationsAsync()` method of the [Tizen.Applications.ApplicationManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationManager.html) class and retrieve all filtered applications and print their information:
 
     ```
     IEnumerable<ApplicationInfo> appInfoList = await ApplicationManager.GetInstalledApplicationsAsync(appinfoFilter);

@@ -1,4 +1,4 @@
-# Creating Your First Tizen Mobile Web Application
+# Create Your First Tizen Mobile Web Application
 
 **Welcome to Tizen mobile Web application development!**
 

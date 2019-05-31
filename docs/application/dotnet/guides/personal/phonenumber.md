@@ -20,7 +20,7 @@ The main features of the Tizen.PhonenumberUtils namespace include:
 
 To enable your application to use the phone number management functionality:
 
-1.  To use the `GetNormalizedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the `GetNormalizedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -28,7 +28,7 @@ To enable your application to use the phone number management functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the [Tizen.PhonenumberUtils](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.html) namespace, include it in your application:
+2.  To use the methods and properties of the [Tizen.PhonenumberUtils](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.html) namespace, include it in your application:
 
     ```
     using Tizen.PhonenumberUtils;
@@ -37,7 +37,7 @@ To enable your application to use the phone number management functionality:
 <a name="getting"></a>
 ## Retrieving Location Information
 
-To retrieve the location from a phone number, use the `GetLocationFromNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class. Provide the region of the phone number and the language of the returned location string as parameters, using the values defined in the [Tizen.PhonenumberUtils.Region](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.Region.html) and [Tizen.PhonenumberUtils.Language](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.Language.html) enumerations, respectively.
+To retrieve the location from a phone number, use the `GetLocationFromNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class. Provide the region of the phone number and the language of the returned location string as parameters, using the values defined in the [Tizen.PhonenumberUtils.Region](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.Region.html) and [Tizen.PhonenumberUtils.Language](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.Language.html) enumerations, respectively.
 
 ```
 var utils = new PhonenumberUtils();
@@ -48,7 +48,7 @@ var location = utils.GetLocationFromNumber("0222550114", Region.Korea, Language.
 <a name="formatting"></a>
 ## Formatting Phone Numbers
 
-To format a phone number to use region-specific separators, use the `GetFormattedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class, which takes the region parameter as a value of the [Tizen.PhonenumberUtils.Region](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.Region.html) enumeration:
+To format a phone number to use region-specific separators, use the `GetFormattedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class, which takes the region parameter as a value of the [Tizen.PhonenumberUtils.Region](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.Region.html) enumeration:
 
 ```
 var utils = new PhonenumberUtils();
@@ -59,7 +59,7 @@ var formattedNumber = utils.GetFormattedNumber("0222550114", Region.Korea);
 <a name="normalizing"></a>
 ## Normalizing Phone Numbers
 
-To retrieve a phone number in a normalized format, use the `GetNormalizedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://developer.tizen.org/dev-guide/csapi/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class:
+To retrieve a phone number in a normalized format, use the `GetNormalizedNumber()` method of the [Tizen.PhonenumberUtils.PhonenumberUtils](https://samsung.github.io/TizenFX/latest/api/Tizen.PhonenumberUtils.PhonenumberUtils.html) class:
 
 ```
 var utils = new PhonenumberUtils();

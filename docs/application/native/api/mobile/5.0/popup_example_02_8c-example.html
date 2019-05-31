@@ -90,7 +90,84 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">popup_example_02.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o popup_example_02 popup_example_02.c -g `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span> _response_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *popup, *btn1, *btn2, *btn3, *icon1;
+   <span class="keywordtype">char</span> buf[256];
+
+   <a name="a1"></a><a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images/logo_small.png&quot;</span>);
+   <a name="a2"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a3"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;popup&quot;</span>, <span class="stringliteral">&quot;Popup&quot;</span>);
+   <a name="a4"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   popup = <a name="a6"></a><a class="code" href="group__Elm__Popup.html#ga77e3bdfb1b5f11d92d8ce0e15adb19ba" title="Adds a new Popup to the parent.">elm_popup_add</a>(win);
+
+   <span class="comment">// Setting popup content-text</span>
+   elm_object_text_set(popup, <span class="stringliteral">&quot;This is the Content-Text for popup. The wrap&quot;</span>
+                       <span class="stringliteral">&quot;for the content-text is character wrapping&quot;</span>);
+   <span class="comment">// Setting the wrapping type to character wrapping</span>
+   <a name="a7"></a><a class="code" href="group__Elm__Popup.html#ga23794b366ce64600273b89c241c771e4" title="Control the wrapping type of content text packed in content area of popup object.">elm_popup_content_text_wrap_type_set</a>(popup, ELM_WRAP_CHAR);
+
+   <span class="comment">// Seting popup title-text</span>
+   <a name="a8"></a><a class="code" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set</a>(popup, <span class="stringliteral">&quot;title,text&quot;</span>, <span class="stringliteral">&quot;Title&quot;</span>);
+
+   icon1 = <a name="a9"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(popup);
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/logo_small.png&quot;</span>, <a name="a10"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a name="a11"></a><a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(icon1, buf, NULL);
+   <span class="comment">//Setting popup title-icon</span>
+   <a name="a12"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(popup, <span class="stringliteral">&quot;title,icon&quot;</span>, icon1);
+
+   <span class="comment">// Creating the first action button</span>
+   btn1 = <a name="a13"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(popup);
+   elm_object_text_set(btn1, <span class="stringliteral">&quot;OK&quot;</span>);
+
+   <span class="comment">// Setting the fist action button</span>
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(popup, <span class="stringliteral">&quot;button1&quot;</span>, btn1);
+   <a name="a14"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn1, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
+
+   <span class="comment">// Creating the second action button</span>
+   btn2 = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(popup);
+   elm_object_text_set(btn2, <span class="stringliteral">&quot;Cancel&quot;</span>);
+
+   <span class="comment">// Setting the second action button</span>
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(popup, <span class="stringliteral">&quot;button2&quot;</span>, btn2);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn2, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
+
+   btn3 = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(popup);
+   elm_object_text_set(btn3, <span class="stringliteral">&quot;Close&quot;</span>);
+   <span class="comment">// Setting this action button</span>
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(popup, <span class="stringliteral">&quot;button3&quot;</span>, btn3);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn3, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
+   <span class="comment">// Setting the orientation of popup to Top</span>
+   <a name="a15"></a><a class="code" href="group__Elm__Popup.html#ga2b9dd2717a603208cdd3c491362d5cdd" title="Sets the orientation of the popup in the parent region.">elm_popup_orient_set</a>(popup, <a name="a16"></a><a class="code" href="group__Elm__Popup.html#ggaf7139673c5e2101c98c4b005a0705f47a2f9c2535f88f428da3f411a3b52ca431">ELM_POPUP_ORIENT_TOP</a>);
+   <span class="comment">// Display the popup object</span>
+   <a name="a17"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(popup);
+
+   evas_object_resize(win, 480, 800);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a18"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a19"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+
+static <span class="keywordtype">void</span>
+_response_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+             <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a name="a20"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(data);
+}
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -96,7 +96,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="screenshots/button_00.png" alt="button_00.png"/>
 </div>
  <p>The full code of the example is <a class="el" href="button_example_00_8c-example.html">here</a> and we will follow here with a rundown of it.</p>
-<p>There is only one button on the interface which performs a basic action: close the application. This behavior is described by on_click() function, that interrupt the program invoking <a class="el" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit()</a>. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>There is only one button on the interface which performs a basic action: close the application. This behavior is described by on_click() function, that interrupt the program invoking <a class="el" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit()</a>. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+on_click(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+         <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit</a>();
+}
+</pre></div></p>
 <p>On the main() function, we set the basic characteristics of the user interface. First we use the Elementary library to create a window and set its policies (such as close when the user click on the window close icon).</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>In order to turn it visible on the WM (Window Manager), we also have to associate it to a canvas through Evas library, and set its dimensions.</p>

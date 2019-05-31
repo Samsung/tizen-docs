@@ -35,10 +35,6 @@ You can use the following W3C, HTML5, and supplementary features in your Web app
 
   You can determine the geographical position of the device using various positioning methods, such as the Global Positioning System (GPS) and network positioning system. You can retrieve the user position only once, or continue to receive updates to see how the position changes.
 
-- [Useful Guides for W3C/HTML5 Features](./useful/useful-guide.md) **in mobile and wearable applications only**
-
-  You can use common W3C features to play sounds to provide responsiveness on user interaction, and to improve the performance of wearable Web applications.
-
 - [Supplementary Features](./supplement/supplement-guide.md)
 
   You can take advantage of supplementary features in creating Tizen Web applications. You can access binary data in JavaScript with typed arrays, create 3D visual elements with the WebGL&trade; graphics library, display elements on full screen views, and control the device camera.

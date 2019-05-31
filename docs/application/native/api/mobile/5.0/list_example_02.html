@@ -91,12 +91,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places a single Elementary list widgets on a window, exemplifying a part of the widget's API.</p>
-<p>First, we will just create a simple list, as done on <a class="el" href="list_example_01.html">List widget example</a> :  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Now, let's customize this list a bit. First we will display items horizontally: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Then we will choose another list mode. There are four of them, and the default <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428" title="Set list&#39;s resizing behavior, transverse axis scrolling and items cropping. See each mode&#39;s descripti...">Elm_List_Mode</a> is <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>. Let's set compress mode: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To enable multiple items selection, we need to enable it, since only one selected item is allowed by default: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We are not adding items with callback functions here, since we'll explain it better on <a class="el" href="list_example_03.html">List - Items management</a>. But if the callback need to be called everytime user clicks an item, even if already selected, it's required to enable this behavior: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Finally, if a bounce effect is required, or you would like to see scrollbars, it is possible. But, for default theme, list scrollbars will be invisible anyway. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>First, we will just create a simple list, as done on <a class="el" href="list_example_01.html">List widget example</a> :  <div class="fragment"><pre class="fragment">   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *lbl[] =
+     {
+        <span class="stringliteral">&quot;Sunday&quot;</span>,
+        <span class="stringliteral">&quot;Monday&quot;</span>,
+        <span class="stringliteral">&quot;Tuesday&quot;</span>,
+        <span class="stringliteral">&quot;Wednesday&quot;</span>,
+        <span class="stringliteral">&quot;Thursday&quot;</span>,
+        <span class="stringliteral">&quot;Friday&quot;</span>,
+        <span class="stringliteral">&quot;Saturday&quot;</span>
+     };
+   li = <a class="code" href="group__Elm__List.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a>(win);
+   evas_object_size_hint_weight_set(li, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, li);
+
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     <a class="code" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, lbl[i], NULL, NULL, NULL, NULL);
+</pre></div></p>
+<p>Now, let's customize this list a bit. First we will display items horizontally: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__List.html#ga167b13474094e21963e60ea01664f7e7" title="Control horizontal mode on the list object.">elm_list_horizontal_set</a>(li, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
+<p>Then we will choose another list mode. There are four of them, and the default <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428" title="Set list&#39;s resizing behavior, transverse axis scrolling and items cropping. See each mode&#39;s descripti...">Elm_List_Mode</a> is <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>. Let's set compress mode: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__List.html#ga8de4384bc5c40089644ecab6a7e005c8" title="Control which mode to use for the list object.">elm_list_mode_set</a>(li, <a class="code" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>);
+</pre></div></p>
+<p>To enable multiple items selection, we need to enable it, since only one selected item is allowed by default: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__List.html#gabc84c1234bd9cf0b306e31f5d10829e6" title="Control multiple items selection on the list object.">elm_list_multi_select_set</a>(li, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
+<p>We are not adding items with callback functions here, since we'll explain it better on <a class="el" href="list_example_03.html">List - Items management</a>. But if the callback need to be called everytime user clicks an item, even if already selected, it's required to enable this behavior: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__List.html#gaa5dff03378e2c410f8a04953aefa6961" title="Control the list select mode.">elm_list_select_mode_set</a>(li, ELM_OBJECT_SELECT_MODE_ALWAYS);
+</pre></div></p>
+<p>Finally, if a bounce effect is required, or you would like to see scrollbars, it is possible. But, for default theme, list scrollbars will be invisible anyway. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(li, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set</a>(li, <a class="code" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a>,
+                           <a class="code" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a>);
+</pre></div></p>
 <p>See the full <a class="el" href="list_example_02_8c-example.html">list_example_02.c</a> code, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/list_example_02.png" alt="list_example_02.png"/>

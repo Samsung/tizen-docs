@@ -92,49 +92,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>In this example, we illustrate how to start using the Edje library, with the very basic one needs to instantiate an Edje object.</p>
 <p>We place, in the canvas, an Edje object along with a <b>red</b> border image to delimit its geometry. After we instantiate the Edje object, we <b>have</b> to set a file and a group, within that file, to bind to it. For this example, we're using an EDC file which declares two parts (blue and green rectangles) and an item data: </p>
-<div class="fragment"><pre class="fragment"></pre></div><p>We start by trying to access an <b>unexistant</b> group in the file, so that you can see the usefulness of <a class="el" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get()</a> and <a class="el" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str()</a>. Check that the error message will tell you just that -- a group which didn't exist in the file was called for:  <div class="fragment"><pre class="fragment"></pre></div>  <div class="fragment"><pre class="fragment">   edje_obj = edje_object_add(evas);
+<div class="fragment"><pre class="fragment"></pre></div><p>We start by trying to access an <b>unexistant</b> group in the file, so that you can see the usefulness of edje_object_load_error_get() and edje_load_error_str(). Check that the error message will tell you just that -- a group which didn't exist in the file was called for:  <div class="fragment"><pre class="fragment"></pre></div>  <div class="fragment"><pre class="fragment">   edje_obj = edje_object_add(evas);
 
    <span class="comment">/* exercising Edje loading error, on purpose */</span>
    <span class="keywordflow">if</span> (!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;unexistant_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
         fprintf(stderr, <span class="stringliteral">&quot;Could not load &#39;unexistant_group&#39; from basic.edj:&quot;</span>
                         <span class="stringliteral">&quot; %s\n&quot;</span>, errmsg);
      }
 </pre></div></p>
 <p>Than, we finally bind our Edje object to <code>"example_group"</code>, printing a message afterwards:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>What follows is a series of Edje API calls which are of general use. The first of them is <a class="el" href="group__Edje__Object.html#gad3f5b0f9d82434adeb994a6d275facbe" title="Retrives an EDC data field&#39;s value from a given Edje object&#39;s group.">edje_object_data_get()</a>, which we use to get the value we have put in the <code>"example_data"</code> data field, in our EDC object declaration:  <div class="fragment"><pre class="fragment">   fprintf(stdout, <span class="stringliteral">&quot;&#39;example_data&#39; data field in group &#39;example_group&#39; has &quot;</span>
-                   <span class="stringliteral">&quot;the value: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#gad3f5b0f9d82434adeb994a6d275facbe" title="Retrives an EDC data field&#39;s value from a given Edje object&#39;s group.">edje_object_data_get</a>(edje_obj,
+<p>What follows is a series of Edje API calls which are of general use. The first of them is edje_object_data_get(), which we use to get the value we have put in the <code>"example_data"</code> data field, in our EDC object declaration:  <div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;&#39;example_data&#39; data field in group &#39;example_group&#39; has &quot;</span>
+                   <span class="stringliteral">&quot;the value: %s\n&quot;</span>, edje_object_data_get(edje_obj,
                                                            <span class="stringliteral">&quot;example_data&quot;</span>));
 </pre></div></p>
-<p>Than, we exemplify <a class="el" href="group__Edje__Object.html#ga93c91d3b9a6065fb435c102f291c8b30" title="Checks if an Edje part exists in a given Edje object&#39;s group definition.">edje_object_part_exists()</a>:  <div class="fragment"><pre class="fragment">   fprintf(stdout, <span class="stringliteral">&quot;Testing if &#39;part_one&#39; part exists: %s\n&quot;</span>,
-           <a class="code" href="group__Edje__Object.html#ga93c91d3b9a6065fb435c102f291c8b30" title="Checks if an Edje part exists in a given Edje object&#39;s group definition.">edje_object_part_exists</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>) ? <span class="stringliteral">&quot;yes!&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
+<p>Than, we exemplify edje_object_part_exists():  <div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;Testing if &#39;part_one&#39; part exists: %s\n&quot;</span>,
+           edje_object_part_exists(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>) ? <span class="stringliteral">&quot;yes!&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
 </pre></div></p>
-<p>The next call is to query <code>"part_one"'s</code> geometry, relative to the whole Edje object's area. The part will be situated in the middle of the Edje object's, because it has a restricted forced size (we set its minimum size equal to its maximum, for that) and, by default, parts are aligned to the center of their containers:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#ga11146f2fe72c44548fece89417da4a03" title="Retrieves the geometry of a given Edje part, in a given Edje object&#39;s group definition, relative to the object&#39;s area.">edje_object_part_geometry_get</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>, &amp;x, &amp;y, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The geometry of that part inside the Edje object&#39;s area &quot;</span>
+<p>The next call is to query <code>"part_one"'s</code> geometry, relative to the whole Edje object's area. The part will be situated in the middle of the Edje object's, because it has a restricted forced size (we set its minimum size equal to its maximum, for that) and, by default, parts are aligned to the center of their containers:  <div class="fragment"><pre class="fragment">   edje_object_part_geometry_get(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>, &amp;x, &amp;y, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The geometry of that part inside the Edje object&#39;s area &quot;</span>
                    <span class="stringliteral">&quot;is: x = %d, y = %d, w = %d, h = %d\n&quot;</span>, x, y, w, h);
 </pre></div></p>
-<p>We can grab a direct pointer on the rectangle implementing <code>"part_one"</code>, by using <a class="el" href="group__Edje__Object.html#ga2dddbefbc9ad1aa4d656e0ad002364a2" title="Gets a handle to the Evas object implementing a given Edje part, in an Edje object.">edje_object_part_object_get()</a>. Since we are not allowed to set properties on it, we just check its color, to assure its really blue, as declared in the EDC:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(<a class="code" href="group__Edje__Object.html#ga2dddbefbc9ad1aa4d656e0ad002364a2" title="Gets a handle to the Evas object implementing a given Edje part, in an Edje object.">edje_object_part_object_get</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>),
+<p>We can grab a direct pointer on the rectangle implementing <code>"part_one"</code>, by using edje_object_part_object_get(). Since we are not allowed to set properties on it, we just check its color, to assure its really blue, as declared in the EDC:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(edje_object_part_object_get(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>),
                          &amp;x, &amp;y, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;That part&#39;s color components are: r = %d, g = %d, b = %d,&quot;</span>
+   printf(<span class="stringliteral">&quot;That part&#39;s color components are: r = %d, g = %d, b = %d,&quot;</span>
                    <span class="stringliteral">&quot; a = %d\n&quot;</span>, x, y, w, h);
 </pre></div></p>
-<p>The <code>"min"</code> and <code>"max"</code> EDC properties can be queried with the following calls:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#ga7cbec3870ea8812b71e8c5ee4053b4b4" title="Gets the maximum size specified -- as an EDC property -- for a given Edje object.">edje_object_size_max_get</a>(edje_obj, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s max. size is: %d, %d\n&quot;</span>, w, h);
+<p>The <code>"min"</code> and <code>"max"</code> EDC properties can be queried with the following calls:  <div class="fragment"><pre class="fragment">   edje_object_size_max_get(edje_obj, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s max. size is: %d, %d\n&quot;</span>, w, h);
 
-   <a class="code" href="group__Edje__Object.html#ga087d7e5cd54de8edae811d584546e248" title="Gets the minimum size specified -- as an EDC property -- for a given Edje object.">edje_object_size_min_get</a>(edje_obj, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s min. size is: %d, %d\n&quot;</span>, w, h);
+   edje_object_size_min_get(edje_obj, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size is: %d, %d\n&quot;</span>, w, h);
 </pre></div></p>
-<p>The next two calls are to make <b>size calculations</b> on our object. Because of the minimum size declared for <code>"part_one"</code> part's default state description, that will be our exact minimum size calculated for the group (remember the <code>"min"</code> declaration at group level is just a <b>hint</b>, not an enforcement). We then exercise the <a class="el" href="group__Edje__Object.html#ga0e32aab3cde5eb09b84ba3d2575c2d62" title="Calculates the minimum required size for a given Edje object.">edje_object_size_min_restricted_calc()</a> function, passing a minimum size of 500, in each axis. Since we have <b>no</b> object bigger than that, it will be the minimum size calculated, in the end:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#gae269ffa62c81001499a47eb814550641" title="Calculates the minimum required size for a given Edje object.">edje_object_size_min_calc</a>(edje_obj, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s min. size reported by min. size&quot;</span>
+<p>The next two calls are to make <b>size calculations</b> on our object. Because of the minimum size declared for <code>"part_one"</code> part's default state description, that will be our exact minimum size calculated for the group (remember the <code>"min"</code> declaration at group level is just a <b>hint</b>, not an enforcement). We then exercise the edje_object_size_min_restricted_calc() function, passing a minimum size of 500, in each axis. Since we have <b>no</b> object bigger than that, it will be the minimum size calculated, in the end:  <div class="fragment"><pre class="fragment">   edje_object_size_min_calc(edje_obj, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size reported by min. size&quot;</span>
                    <span class="stringliteral">&quot; calculation is: w = %d, h = %d\n&quot;</span>, w, h);
 
-   <a class="code" href="group__Edje__Object.html#ga0e32aab3cde5eb09b84ba3d2575c2d62" title="Calculates the minimum required size for a given Edje object.">edje_object_size_min_restricted_calc</a>(edje_obj, &amp;w, &amp;h, 500, 500);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s min. size reported by *restricted* &quot;</span>
+   edje_object_size_min_restricted_calc(edje_obj, &amp;w, &amp;h, 500, 500);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size reported by *restricted* &quot;</span>
                    <span class="stringliteral">&quot;min. size calculation is: w = %d, h = %d\n&quot;</span>, w, h);
 </pre></div></p>
-<p><code>"part_two"</code> part is there with a purpose: since it extrapolates the Edje object's boundaries, the <a class="el" href="group__Edje__Object.html#gad640aedb3727f74aab2eab8f8e499121" title="Calculates the geometry of the region, relative to a given Edje object&#39;s area, occupied by all parts ...">edje_object_parts_extends_calc()</a> function will report origin coordinates for the rectangle grouping both parts with <b>negative</b> values, indicating it extrapolates to the upper left of our group, just as we see it.</p>
+<p><code>"part_two"</code> part is there with a purpose: since it extrapolates the Edje object's boundaries, the edje_object_parts_extends_calc() function will report origin coordinates for the rectangle grouping both parts with <b>negative</b> values, indicating it extrapolates to the upper left of our group, just as we see it.</p>
 <p>To interact with the last features exemplified in the program, there's a command line interface. A help string can be asked for with the 'h' key:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> commands[] = \
   <span class="stringliteral">&quot;commands are:\n&quot;</span>
   <span class="stringliteral">&quot;\ts - change Edje&#39;s global scaling factor\n&quot;</span>
@@ -153,14 +153,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
         <a class="code" href="group__Edje__Object__Scale.html#gadfb6850eece96768a651702b0a7535fb" title="Sets Edje&#39;s global scaling factor.">edje_scale_set</a>(scale);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Setting global scaling factor to %f.\n&quot;</span>, scale);
+        printf(<span class="stringliteral">&quot;Setting global scaling factor to %f.\n&quot;</span>, scale);
 
         <span class="keywordflow">return</span>;
      }
 </pre></div></p>
 <p>Note, finally, that the <code>'s'</code> command will depend on the 'r' one to have its effects applied. The latter will change <code>"part_one"'s</code> <b>individual</b> scaling factor, which <b>overrides</b> Edje's global scaling factor. Only when the individual one is set to zero, will the global one take effect:  <div class="fragment"><pre class="fragment">   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Up.html#a865118cf93e4454ac101d663b8027b41">key</a>, <span class="stringliteral">&quot;r&quot;</span>) == 0) <span class="comment">/* individual scaling factor */</span>
      {
-        <span class="keywordtype">double</span> scale = <a class="code" href="group__Edje__Object.html#ga0bf76309d4476eb88bc479c1a5d83358" title="Gets a given Edje object&#39;s scaling factor.">edje_object_scale_get</a>(edje_obj);
+        <span class="keywordtype">double</span> scale = edje_object_scale_get(edje_obj);
 
         printf(<span class="stringliteral">&quot;got scale %f\n&quot;</span>, scale);
 
@@ -168,9 +168,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (scale == 1.0) scale = 2.0;
         <span class="keywordflow">else</span> scale = 0.0;
 
-        <a class="code" href="group__Edje__Object.html#ga11f34f91b1824c15f0aebc1c2b83609b" title="Sets the scaling factor for a given Edje object.">edje_object_scale_set</a>(edje_obj, scale);
+        edje_object_scale_set(edje_obj, scale);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Setting center rectangle&#39;s scaling factor to %f.\n&quot;</span>,
+        printf(<span class="stringliteral">&quot;Setting center rectangle&#39;s scaling factor to %f.\n&quot;</span>,
                 scale);
 
         <span class="keywordflow">return</span>;
@@ -223,7 +223,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>
      {
-        fprintf(stdout, commands);
+        printf(commands);
         <span class="keywordflow">return</span>;
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;s&quot;</span>) == 0) <span class="comment">/* global scaling factor */</span>
@@ -237,13 +237,13 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
 
         <a class="code" href="group__Edje__Object__Scale.html#gadfb6850eece96768a651702b0a7535fb" title="Sets Edje&#39;s global scaling factor.">edje_scale_set</a>(scale);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Setting global scaling factor to %f.\n&quot;</span>, scale);
+        printf(<span class="stringliteral">&quot;Setting global scaling factor to %f.\n&quot;</span>, scale);
 
         <span class="keywordflow">return</span>;
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;r&quot;</span>) == 0) <span class="comment">/* individual scaling factor */</span>
      {
-        <span class="keywordtype">double</span> scale = <a class="code" href="group__Edje__Object.html#ga0bf76309d4476eb88bc479c1a5d83358" title="Gets a given Edje object&#39;s scaling factor.">edje_object_scale_get</a>(edje_obj);
+        <span class="keywordtype">double</span> scale = edje_object_scale_get(edje_obj);
 
         printf(<span class="stringliteral">&quot;got scale %f\n&quot;</span>, scale);
 
@@ -251,9 +251,9 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (scale == 1.0) scale = 2.0;
         <span class="keywordflow">else</span> scale = 0.0;
 
-        <a class="code" href="group__Edje__Object.html#ga11f34f91b1824c15f0aebc1c2b83609b" title="Sets the scaling factor for a given Edje object.">edje_object_scale_set</a>(edje_obj, scale);
+        edje_object_scale_set(edje_obj, scale);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Setting center rectangle&#39;s scaling factor to %f.\n&quot;</span>,
+        printf(<span class="stringliteral">&quot;Setting center rectangle&#39;s scaling factor to %f.\n&quot;</span>,
                 scale);
 
         <span class="keywordflow">return</span>;
@@ -263,7 +263,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
    <span class="keywordflow">else</span>
      {
         printf(<span class="stringliteral">&quot;unhandled key: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        fprintf(stdout, commands);
+        printf(commands);
      }
 }
 
@@ -296,7 +296,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_delete);
@@ -305,11 +305,11 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
-   ecore_evas_object_associate(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
 
    evas_object_focus_set(bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
@@ -318,78 +318,78 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    <span class="comment">/* exercising Edje loading error, on purpose */</span>
    <span class="keywordflow">if</span> (!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;unexistant_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
         fprintf(stderr, <span class="stringliteral">&quot;Could not load &#39;unexistant_group&#39; from basic.edj:&quot;</span>
                         <span class="stringliteral">&quot; %s\n&quot;</span>, errmsg);
      }
 
    <span class="keywordflow">if</span> (!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;example_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
         fprintf(stderr, <span class="stringliteral">&quot;Could not load &#39;example_group&#39; from basic.edj: %s\n&quot;</span>,
                 errmsg);
 
-        <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
         <span class="keywordflow">goto</span> shutdown_edje;
      }
 
-   fprintf(stdout, <span class="stringliteral">&quot;Loaded Edje object bound to group &#39;example_group&#39; from&quot;</span>
+   printf(<span class="stringliteral">&quot;Loaded Edje object bound to group &#39;example_group&#39; from&quot;</span>
                    <span class="stringliteral">&quot; file basic.edj with success!\n&quot;</span>);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 20, 20);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH - 40, HEIGHT - 40);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
+   evas_object_move(edje_obj, 20, 20);
+   evas_object_resize(edje_obj, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, edje_obj);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, edje_obj);
 
    <span class="comment">/* this is a border around the Edje object above, here just to</span>
 <span class="comment">    * emphasize its geometry */</span>
-   border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(evas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(border, img_file, NULL);
+   border = evas_object_image_filled_add(evas);
+   evas_object_image_file_set(border, img_file, NULL);
    evas_object_image_border_set(border, 2, 2, 2, 2);
    evas_object_image_border_center_fill_set(border, EVAS_BORDER_FILL_NONE);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(border, 20 - 2, 20 - 2);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(border);
+   evas_object_resize(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
+   evas_object_move(border, 20 - 2, 20 - 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(border);
 
-   fprintf(stdout, <span class="stringliteral">&quot;&#39;example_data&#39; data field in group &#39;example_group&#39; has &quot;</span>
-                   <span class="stringliteral">&quot;the value: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#gad3f5b0f9d82434adeb994a6d275facbe" title="Retrives an EDC data field&#39;s value from a given Edje object&#39;s group.">edje_object_data_get</a>(edje_obj,
+   printf(<span class="stringliteral">&quot;&#39;example_data&#39; data field in group &#39;example_group&#39; has &quot;</span>
+                   <span class="stringliteral">&quot;the value: %s\n&quot;</span>, edje_object_data_get(edje_obj,
                                                            <span class="stringliteral">&quot;example_data&quot;</span>));
 
-   fprintf(stdout, <span class="stringliteral">&quot;Testing if &#39;part_one&#39; part exists: %s\n&quot;</span>,
-           <a class="code" href="group__Edje__Object.html#ga93c91d3b9a6065fb435c102f291c8b30" title="Checks if an Edje part exists in a given Edje object&#39;s group definition.">edje_object_part_exists</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>) ? <span class="stringliteral">&quot;yes!&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
+   printf(<span class="stringliteral">&quot;Testing if &#39;part_one&#39; part exists: %s\n&quot;</span>,
+           edje_object_part_exists(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>) ? <span class="stringliteral">&quot;yes!&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
 
-   <a class="code" href="group__Edje__Object.html#ga11146f2fe72c44548fece89417da4a03" title="Retrieves the geometry of a given Edje part, in a given Edje object&#39;s group definition, relative to the object&#39;s area.">edje_object_part_geometry_get</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>, &amp;x, &amp;y, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The geometry of that part inside the Edje object&#39;s area &quot;</span>
+   edje_object_part_geometry_get(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>, &amp;x, &amp;y, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The geometry of that part inside the Edje object&#39;s area &quot;</span>
                    <span class="stringliteral">&quot;is: x = %d, y = %d, w = %d, h = %d\n&quot;</span>, x, y, w, h);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(<a class="code" href="group__Edje__Object.html#ga2dddbefbc9ad1aa4d656e0ad002364a2" title="Gets a handle to the Evas object implementing a given Edje part, in an Edje object.">edje_object_part_object_get</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>),
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(edje_object_part_object_get(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>),
                          &amp;x, &amp;y, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;That part&#39;s color components are: r = %d, g = %d, b = %d,&quot;</span>
+   printf(<span class="stringliteral">&quot;That part&#39;s color components are: r = %d, g = %d, b = %d,&quot;</span>
                    <span class="stringliteral">&quot; a = %d\n&quot;</span>, x, y, w, h);
 
-   <a class="code" href="group__Edje__Object.html#ga7cbec3870ea8812b71e8c5ee4053b4b4" title="Gets the maximum size specified -- as an EDC property -- for a given Edje object.">edje_object_size_max_get</a>(edje_obj, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s max. size is: %d, %d\n&quot;</span>, w, h);
+   edje_object_size_max_get(edje_obj, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s max. size is: %d, %d\n&quot;</span>, w, h);
 
-   <a class="code" href="group__Edje__Object.html#ga087d7e5cd54de8edae811d584546e248" title="Gets the minimum size specified -- as an EDC property -- for a given Edje object.">edje_object_size_min_get</a>(edje_obj, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s min. size is: %d, %d\n&quot;</span>, w, h);
+   edje_object_size_min_get(edje_obj, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size is: %d, %d\n&quot;</span>, w, h);
 
-   <a class="code" href="group__Edje__Object.html#gae269ffa62c81001499a47eb814550641" title="Calculates the minimum required size for a given Edje object.">edje_object_size_min_calc</a>(edje_obj, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s min. size reported by min. size&quot;</span>
+   edje_object_size_min_calc(edje_obj, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size reported by min. size&quot;</span>
                    <span class="stringliteral">&quot; calculation is: w = %d, h = %d\n&quot;</span>, w, h);
 
-   <a class="code" href="group__Edje__Object.html#ga0e32aab3cde5eb09b84ba3d2575c2d62" title="Calculates the minimum required size for a given Edje object.">edje_object_size_min_restricted_calc</a>(edje_obj, &amp;w, &amp;h, 500, 500);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s min. size reported by *restricted* &quot;</span>
+   edje_object_size_min_restricted_calc(edje_obj, &amp;w, &amp;h, 500, 500);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size reported by *restricted* &quot;</span>
                    <span class="stringliteral">&quot;min. size calculation is: w = %d, h = %d\n&quot;</span>, w, h);
 
-   <a class="code" href="group__Edje__Object.html#gad640aedb3727f74aab2eab8f8e499121" title="Calculates the geometry of the region, relative to a given Edje object&#39;s area, occupied by all parts ...">edje_object_parts_extends_calc</a>(edje_obj, &amp;x, &amp;y, &amp;w, &amp;h);
-   fprintf(stdout, <span class="stringliteral">&quot;The Edje object&#39;s \&quot;extended\&quot; geometry is: x = %d, &quot;</span>
+   edje_object_parts_extends_calc(edje_obj, &amp;x, &amp;y, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;The Edje object&#39;s \&quot;extended\&quot; geometry is: x = %d, &quot;</span>
                    <span class="stringliteral">&quot;y = %d, w = %d, h = %d\n&quot;</span>, x, y, w, h);
 
-   fprintf(stdout, commands);
+   printf(commands);
 
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 

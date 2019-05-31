@@ -15,9 +15,9 @@
 ## Get Started
 
 ### [Overview](/application/dotnet/get-started/overview.md)
-### [Creating Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
-### [Creating Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
-### [Creating TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
+### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
+### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
+### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 
 
 ## Tutorials
@@ -229,10 +229,10 @@
 ## Get Started
 
 ### [Overview](/application/native/get-started/overview.md)
-### [Creating Mobile Native Application](/application/native/get-started/mobile/first-app.md)
-### [Creating Wearable Native Application](/application/native/get-started/wearable/first-app.md)
-### [Creating Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
-### [Creating Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
+### [Create Mobile Native Application](/application/native/get-started/mobile/first-app.md)
+### [Create Wearable Native Application](/application/native/get-started/wearable/first-app.md)
+### [Create Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
+### [Create Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
 
 
 ## Tutorials
@@ -725,11 +725,13 @@
 ## Get Started
 
 ### [Overview](/application/web/get-started/overview.md)
-### [Creating Mobile Web Application](/application/web/get-started/mobile/first-app.md)
-### [Creating Wearable Web Application](/application/web/get-started/wearable/first-app.md)
-### [Creating Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
-### [Creating Wearable Web Widget Application](/application/web/get-started/wearable-widget/first-app-widget.md)
-### [Creating TV Web Application](/application/web/get-started/tv/first-app.md)
+### [Create Mobile Web Application](/application/web/get-started/mobile/first-app.md)
+### [Create Wearable Web Application](/application/web/get-started/wearable/first-app.md)
+### [Create Wearable Web Watch Application](/application/web/get-started/wearable-watch/first-app-watch.md)
+### [Create Wearable Web Widget Application](/application/web/get-started/wearable-widget/first-app-widget.md)
+### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
+### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
+
 
 
 ## Tutorials
@@ -904,9 +906,10 @@
 ##### [HTML5 video and audio element](/application/web/guides/w3c/multimedia/video-audio.md)
 ##### [HTML Media Capture](/application/web/guides/w3c/multimedia/media-capture.md)
 ##### [Web Audio](/application/web/guides/w3c/multimedia/webaudio.md)
+##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/multimedia/sound-policy.md)
 #### Communication
 ##### [Overview](/application/web/guides/w3c/communication/comm-guide.md)
-#### [HTML5 Web Messaging](/application/web/guides/w3c/communication/web-messaging.md)
+##### [HTML5 Web Messaging](/application/web/guides/w3c/communication/web-messaging.md)
 ##### [WebSocket](/application/web/guides/w3c/communication/websocket.md)
 ##### [XMLHttpRequest](/application/web/guides/w3c/communication/xmlhttprequest.md)
 ##### [Server-Sent Events](/application/web/guides/w3c/communication/server-sent.md)
@@ -938,7 +941,6 @@
 ##### [WebGL - Khronos](/application/web/guides/w3c/supplement/webgl.md)
 ##### [FullScreen API - Mozilla](/application/web/guides/w3c/supplement/fullscreen.md)
 ##### [Camera API (Tizen Extension)](/application/web/guides/w3c/supplement/camera.md)
-##### [Tizen WebKit Tap Sound Policy](/application/web/guides/w3c/supplement/sound-policy.md)
 #### User Interface
 ##### [Overview](/application/web/guides/w3c/ui/ui-guide.md)
 ##### [HTML Priorities](/application/web/guides/w3c/ui/html-priority.md)

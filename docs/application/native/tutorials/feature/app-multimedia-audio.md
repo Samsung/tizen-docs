@@ -13,7 +13,7 @@ WAV, and AMR. The available formats depend on the target device.
 ## Playing Audio
 
 To play audio files stored on the device, use the Player API (in
-[mobile](../../../../org.tizen.native.mobile./group__CAPI__MEDIA__PLAYER__MODULE.html)
+[mobile](../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
 and
 [wearable](../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__MODULE.html)
 applications). The Player API also provides interfaces for getting

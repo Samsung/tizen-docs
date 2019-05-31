@@ -26,14 +26,14 @@ for TD:
 			<td><img alt="" height="267" src="media/m53feedback.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/FeedbackApp" target="_blank"><strong>(M) FeedbackApp</strong></a></p>
-			<p>This sample application demonstrates how to play feedback using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Feedback.html"  target="_blank">Tizen.System.Feedback C# API</a>.</p>
+			<p>This sample application demonstrates how to play feedback using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.Feedback.html"  target="_blank">Tizen.System.Feedback</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m27heartratemonitor.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/HeartRateMonitor" target="_blank"><strong>(M) HeartRateMonitor</strong></a></p>
-			<p>This sample application demonstrates how to obtain data provided by the Heart Rate Monitor (HRM) using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the Heart Rate Monitor (HRM) using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -54,7 +54,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m46systeminfo.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/SystemInfo" target="_blank"><strong>(M) SystemInfo</strong></a></p>
-			<p>This sample application demonstrates how to obtain the data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain the data provided by the system using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.html" target="_blank">Tizen.System</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -68,7 +68,7 @@ for TD:
 			<td><img alt="" height="180" src="media/wcompass.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Compass" target="_blank"><strong>(W) Compass</strong></a></p>
-			<p>This sample application demonstrates how to retrieve information about the physical orientation of the device using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.OrientationSensor.html"  target="_blank"> Tizen Orientation Sensor API</a>.</p>
+			<p>This sample application demonstrates how to retrieve information about the physical orientation of the device using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.OrientationSensor.html"  target="_blank">Tizen.Sensor.OrientationSensor</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -82,21 +82,21 @@ for TD:
 			<td><img alt="" height="180" src="media/wfeedbackapp.png" width="180"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/FeedbackApp" target="_blank"><strong>(W) FeedbackApp</strong></a></p>
-			<p>This sample application demonstrates how to play sound and vibration feedback and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to play sound and vibration feedback and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wheartratemonitor.png" width="180"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/HeartRateMonitor" target="_blank"><strong>(W) HeartRateMonitor</strong></a></p>
-			<p>This sample application demonstrates how to obtain data provided by the Heart Rate Monitor (HRM) sensor using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the Heart Rate Monitor (HRM) sensor using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor</a> and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/metaldetector.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MetalDetector" target="_blank"><strong>(W) MetalDetector</strong></a></p>
-			<p>This sample application demonstrates how to obtain the magnetometer sensor data using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain the magnetometer sensor data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -110,14 +110,14 @@ for TD:
 			<td><img alt="" height="180" src="media/wsystemInfo.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SystemInfo" target="_blank"><strong>(W) SystemInfo</strong></a></p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to use CirclePage of <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.html" target="_blank">Tizen.System</a> and how to use CirclePage of <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/wsystem_info.png" width="180"/></td>
+			<td><img alt="" height="180" src="media/w36systeminfo2.png" width="180"/></td>
 			<td>
-			<p><strong>(W) SystemInfo2</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a> and how to use IndexPage of <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SystemInfo2/SystemInfo2" target="_blank"><strong>(W) SystemInfo2</strong></a></p>
+			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.html" target="_blank">Tizen.System</a> and how to use the IndexPage of <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -133,7 +133,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/SystemInfo" target="_blank"><strong>(T) SystemInfo</strong></a></p>
-			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html" target="_blank">Tizen.System C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.html" target="_blank">Tizen.System</a>.</p>
 			</td>
 		</tr>
 	</tbody>

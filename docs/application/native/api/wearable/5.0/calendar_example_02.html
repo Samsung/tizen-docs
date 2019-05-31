@@ -103,11 +103,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>tm_wday day of week [0,6] (Sunday = 0) </li>
 <li>tm_yday day of year [0,365] </li>
 <li>tm_isdst daylight savings flag <dl class="note"><dt><b>Note:</b></dt><dd>glib version has 2 additional fields.</dd></dl>
-For our function, only stuff that matters are tm_mon and tm_year. But we don't need to access it directly, since there are nice functions to format date and time, as <code>strftime</code>. We will get abbreviated month (b) and year (y) (check strftime manpage for more) in our example: <div class="fragment"><pre class="fragment"></pre></div></li>
+For our function, only stuff that matters are tm_mon and tm_year. But we don't need to access it directly, since there are nice functions to format date and time, as <code>strftime</code>. We will get abbreviated month (b) and year (y) (check strftime manpage for more) in our example: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">char</span> *
+_format_month_year(<span class="keyword">struct</span> tm *format_time)
+{
+   <span class="keywordtype">char</span> buf[32];
+   <span class="comment">/* abbreviates month and year */</span>
+   <span class="keywordflow">if</span> (!strftime(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%b %y&quot;</span>, format_time)) <span class="keywordflow">return</span> NULL;
+   <span class="keywordflow">return</span> strdup(buf);
+}
+</pre></div></li>
 </ul>
-<p>We need to alloc the string to be returned, and calendar widget will free it when it's not needed, what is done by <code>strdup</code>. So let's register our callback to calendar object: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To set weekday names, we should declare them as an array of strings:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And finally set them to calendar: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>We need to alloc the string to be returned, and calendar widget will free it when it's not needed, what is done by <code>strdup</code>. So let's register our callback to calendar object: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Calendar.html#gadfb5151b8c8c41facf49ff4126985b3a" title="Set a function to format the string that will be used to display month and year;.">elm_calendar_format_function_set</a>(cal, _format_month_year);
+</pre></div></p>
+<p>To set weekday names, we should declare them as an array of strings:  <div class="fragment"><pre class="fragment">   <span class="keyword">const</span> <span class="keywordtype">char</span> *weekdays[] =
+     {
+        <span class="stringliteral">&quot;S&quot;</span>, <span class="stringliteral">&quot;M&quot;</span>, <span class="stringliteral">&quot;T&quot;</span>, <span class="stringliteral">&quot;W&quot;</span>, <span class="stringliteral">&quot;T&quot;</span>, <span class="stringliteral">&quot;F&quot;</span>, <span class="stringliteral">&quot;S&quot;</span>
+     };
+</pre></div></p>
+<p>And finally set them to calendar: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Calendar.html#ga96fb93bdf0ca00c67eda563bd9489192" title="Weekdays names to be displayed by the calendar.">elm_calendar_weekdays_names_set</a>(cal, weekdays);
+</pre></div></p>
 <p>Our example will look like this:</p>
 <div class="image">
 <img src="screenshots/calendar_example_02.png" alt="calendar_example_02.png"/>

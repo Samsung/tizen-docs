@@ -90,7 +90,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">segment_control_example.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *sc, *ic;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *seg_it;
+   <span class="keywordtype">int</span> count, idx;
+
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a2"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;segment_control&quot;</span>, <span class="stringliteral">&quot;Segment Control Example&quot;</span>);
+   <a name="a3"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a4"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   sc = <a name="a5"></a><a class="code" href="group__Elm__Segment__Control.html#ga6c0d5f4de78c9c66b4a09680d3c85f46">elm_segment_control_add</a>(win);
+   evas_object_size_hint_weight_set(sc, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a6"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, sc);
+   <a name="a7"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sc);
+
+   <a name="a8"></a><a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, NULL, <span class="stringliteral">&quot;only text&quot;</span>);
+
+   ic = <a name="a9"></a><a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a name="a10"></a><a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;close&quot;</span>);
+   <a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, ic, NULL);
+
+   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
+   <a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, ic, <span class="stringliteral">&quot;Home&quot;</span>);
+
+   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;close&quot;</span>);
+   <a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, ic, <span class="stringliteral">&quot;&quot;</span>);
+
+   count = <a name="a11"></a><a class="code" href="group__Elm__Segment__Control.html#gadf14b4eaadddf9f0c8067b65f4b8c112" title="Get the Segment items count from segment control.">elm_segment_control_item_count_get</a>(sc);
+   <a name="a12"></a><a class="code" href="group__Elm__Segment__Control.html#ga63df627766288f71485646c43ab9c31d" title="Insert a new item to the segment control object at specified position.">elm_segment_control_item_insert_at</a>(sc, NULL, <span class="stringliteral">&quot;Inserted at&quot;</span>, count - 1);
+
+   seg_it = <a class="code" href="group__Elm__Segment__Control.html#ga63df627766288f71485646c43ab9c31d" title="Insert a new item to the segment control object at specified position.">elm_segment_control_item_insert_at</a>(sc, NULL, <span class="stringliteral">&quot;To be deleted&quot;</span>, 2);
+   <a name="a13"></a><a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(seg_it);
+
+   <a class="code" href="group__Elm__Segment__Control.html#ga63df627766288f71485646c43ab9c31d" title="Insert a new item to the segment control object at specified position.">elm_segment_control_item_insert_at</a>(sc, NULL, <span class="stringliteral">&quot;To be deleted&quot;</span>, 2);
+   <a name="a14"></a><a class="code" href="group__Elm__Segment__Control.html#ga44300d1dbb7cf7d8fd1fbfde94dea38d" title="Remove a segment control item at given index from its parent, deleting it.">elm_segment_control_item_del_at</a>(sc, 2);
+
+   seg_it = <a name="a15"></a><a class="code" href="group__Elm__Segment__Control.html#ga8da9b9092ec3e015afe36d55cf657d61" title="Get the item placed at specified index.">elm_segment_control_item_get</a>(sc, 0);
+   <a name="a16"></a><a class="code" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set</a>(seg_it, <span class="stringliteral">&quot;Only Text&quot;</span>);
+
+   count = <a class="code" href="group__Elm__Segment__Control.html#gadf14b4eaadddf9f0c8067b65f4b8c112" title="Get the Segment items count from segment control.">elm_segment_control_item_count_get</a>(sc);
+   seg_it = <a class="code" href="group__Elm__Segment__Control.html#ga8da9b9092ec3e015afe36d55cf657d61" title="Get the item placed at specified index.">elm_segment_control_item_get</a>(sc, count / 2);
+   elm_segment_control_item_selected_set(seg_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   seg_it = <a name="a17"></a><a class="code" href="group__Elm__Segment__Control.html#ga8d8527d18e73f952cfdf882adee40ec4" title="Get the selected item.">elm_segment_control_item_selected_get</a>(sc);
+   idx = elm_segment_control_item_index_get(seg_it);
+   printf(<span class="stringliteral">&quot;Item selected: %i\n&quot;</span>, idx);
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a18"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a19"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

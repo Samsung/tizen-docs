@@ -90,7 +90,154 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">inwin_example.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">/*</span>
+<span class="comment"> * gcc -o inwin_example inwin_example.c `pkg-config --cflags --libs elementary`</span>
+<span class="comment"> */</span>
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *inwin = NULL;
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *styles[] = {
+     <span class="stringliteral">&quot;default&quot;</span>,
+     <span class="stringliteral">&quot;minimal&quot;</span>,
+     <span class="stringliteral">&quot;minimal_vertical&quot;</span>
+};
+<span class="keyword">static</span> <span class="keywordtype">int</span> current_style = 0;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_inwin_hide(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (inwin)
+     {
+        <a name="a1"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gacc307a0d7bfc9df151fd9ec75808c587">evas_object_hide</a>(inwin);
+        <span class="keywordflow">return</span>;
+     }
+   elm_object_text_set(obj, <span class="stringliteral">&quot;No inwin!&quot;</span>);
+   <a name="a2"></a><a class="code" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a>(obj, <a name="a3"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_inwin_destroy(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (inwin)
+     {
+        <a name="a4"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(inwin);
+        inwin = NULL;
+        <span class="keywordflow">return</span>;
+     }
+   elm_object_text_set(obj, <span class="stringliteral">&quot;No inwin!&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_click_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, *parent;
+
+   <span class="keywordflow">if</span> (inwin)
+     {
+        <a name="a5"></a><a class="code" href="group__Elm__Inwin.html#ga4a9563c589ae3ab597e0caefb5f7477e" title="Activates an inwin object, ensuring its visibility.">elm_win_inwin_activate</a>(inwin);
+        <span class="keywordflow">return</span>;
+     }
+
+   parent = <a name="a6"></a><a class="code" href="group__Elm__WidgetNavigation.html#gaecc9a5039788037aa345d5c6a3c8bff8">elm_object_top_widget_get</a>(obj);
+   inwin = <a name="a7"></a><a class="code" href="group__Elm__Inwin.html#gaf99e0cf10681793f3ae153723de0156b">elm_win_inwin_add</a>(parent);
+   <a name="a8"></a><a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(inwin, styles[current_style]);
+   <a name="a9"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(inwin);
+
+   current_style = (current_style + 1) % 3;
+
+   o = <a name="a10"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(parent);
+   evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a name="a11"></a><a class="code" href="group__Elm__Inwin.html#gaeb4bd299e4d9b4dc040ac29e1b1d6b1e">elm_win_inwin_content_set</a>(inwin, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   o = <a name="a12"></a><a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(parent);
+   elm_object_text_set(o, <span class="stringliteral">&quot;Click on the first button to hide the Inwin.&lt;ps&gt;&quot;</span>
+                       <span class="stringliteral">&quot;Second to destroy it&lt;ps&gt;&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   <a name="a13"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a name="a14"></a><a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
+
+   o = <a name="a15"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(parent);
+   elm_object_text_set(o, <span class="stringliteral">&quot;Hide&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   <a name="a16"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_hide, NULL);
+
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
+
+   o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(parent);
+   elm_object_text_set(o, <span class="stringliteral">&quot;Destroy&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _inwin_destroy, NULL);
+
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(<a class="code" href="group__Elm__Inwin.html#gadb45fb65aa0b076116e02d0e2b34346c">elm_win_inwin_content_get</a>(inwin), o);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_win_del_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (inwin)
+     {
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *hover, *o = <a name="a17"></a><a class="code" href="group__Elm__Inwin.html#ga4df7cab00fe961526b4558e26f25faeb">elm_win_inwin_content_unset</a>(inwin);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(inwin);
+        inwin = NULL;
+        hover = elm_hover_add(obj);
+        elm_hover_target_set(hover, obj);
+        <a name="a18"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(hover, <span class="stringliteral">&quot;middle&quot;</span>, o);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hover);
+        <span class="keywordflow">return</span>;
+     }
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_screenshot_hack_cb(<span class="keywordtype">void</span> *data)
+{
+   _btn_click_cb(NULL, data, NULL);
+   <span class="keywordflow">return</span> <a name="a19"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *box, *o;
+
+   <a name="a20"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a21"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;inwin-example&quot;</span>, <span class="stringliteral">&quot;Inwin Example&quot;</span>);
+   <a name="a22"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, _win_del_cb, NULL);
+
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a23"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(o, <span class="stringliteral">&quot;Inwin!&quot;</span>);
+   evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(o, 0.0, 0.0);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_click_cb, NULL);
+
+   <span class="keywordflow">if</span> (!strncmp(elm_config_engine_get(), <span class="stringliteral">&quot;shot&quot;</span>, 4))
+     <a name="a24"></a><a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(0.1, _screenshot_hack_cb, o);
+
+   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a25"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a26"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

@@ -91,34 +91,200 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary diskselector widgets on a window, along with some buttons trigerring actions on it (though its API). It covers most of diskselector item functions.</p>
-<p>On our <code>main</code> function, we are adding a default diskselector with 3 items. We are only setting their labels (second parameter of function elm_diskselector_item_append):  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Next we are adding lots of buttons, each one for a callback function that will realize a task covering part of diskselector items API. Lets check the first one: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We are labeling the button with a task description with elm_object_text_set() and setting a callback function <a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>. Each callback function will have the signature: <code> static void _task_cb(void *data, Evas_Object *obj, void *event_info)</code> with the function name varying for each task.</p>
+<p>On our <code>main</code> function, we are adding a default diskselector with 3 items. We are only setting their labels (second parameter of function elm_diskselector_item_append):  <div class="fragment"><pre class="fragment">   ds = elm_diskselector_add(win);
+   evas_object_size_hint_weight_set(ds, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(ds, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ds, <span class="stringliteral">&quot;selected&quot;</span>, _ds_selected_cb, NULL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ds);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ds);
+
+   elm_diskselector_item_append(ds, <span class="stringliteral">&quot;Item 0&quot;</span>, NULL, NULL, NULL);
+   elm_diskselector_item_append(ds, <span class="stringliteral">&quot;Item 1&quot;</span>, NULL, NULL, NULL);
+   elm_diskselector_item_append(ds, <span class="stringliteral">&quot;Item 2&quot;</span>, NULL, NULL, NULL);
+</pre></div></p>
+<p>Next we are adding lots of buttons, each one for a callback function that will realize a task covering part of diskselector items API. Lets check the first one: <div class="fragment"><pre class="fragment">   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Append item&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _add_cb, ds);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbx, bt);
+   evas_object_size_hint_weight_set(bt, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+</pre></div></p>
+<p>We are labeling the button with a task description with elm_object_text_set() and setting a callback function <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>. Each callback function will have the signature: <code> static void _task_cb(void *data, Evas_Object *obj, void *event_info)</code> with the function name varying for each task.</p>
 <p>Now let's cover all of them.</p>
-<p><b> Appending an item: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><b> Appending an item: </b>  <div class="fragment"><pre class="fragment">_add_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+   <span class="keywordtype">char</span> label[32];
+
+   snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
+   ds_it = elm_diskselector_item_append(ds, label, NULL, NULL, NULL);
+   <span class="keywordflow">if</span> (!ds_it) printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
+}
+</pre></div></p>
 <p>All items are included on diskselector after last one. You <b>can't</b> prepend items.</p>
 <p>The first parameter of elm_diskselector_item_append() is the diskselector object, that we are receiving as data on our callback function. The second one is a label, the string that will be placed in the center of our item. As we don't wan't icons or callback functions, we can send NULL as third, fourth and fifth parameters.</p>
-<p><b> Appending an item with icon: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><b> Appending an item with icon: </b>  <div class="fragment"><pre class="fragment">_add_ic_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+           <span class="keywordtype">void</span> *event_info <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic, *ds = data;
+   <span class="keywordtype">char</span> label[32];
+
+   snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
+   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(ds);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
+
+   ds_it = elm_diskselector_item_append(ds, label, ic, NULL, NULL);
+   <span class="keywordflow">if</span> (!ds_it) printf(<span class="stringliteral">&quot;Error adding item with icon\n&quot;</span>);
+}
+</pre></div></p>
 <p>If an icon is required, you can pass it as third parameter on our elm_diskselector_item_append() function. It will be place on the left side of item's label, that will be shifted to right a bit.</p>
 <p>For more details about how to create icons, look for elm_icon examples.</p>
-<p><b> Appending an item with callback function for selected: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><b> Appending an item with callback function for selected: </b>  <div class="fragment"><pre class="fragment">_sel_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *ds_it = event_info;
+   printf(<span class="stringliteral">&quot;Selected label: %s\n&quot;</span>, elm_object_item_text_get(ds_it));
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_add_func_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+             <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+   <span class="keywordtype">char</span> label[32];
+
+   snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
+   ds_it = elm_diskselector_item_append(ds, label, NULL, _sel_cb, NULL);
+   <span class="keywordflow">if</span> (!ds_it) printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
+}
+</pre></div></p>
 <p>To set a callback function that will be called every time an item is selected, i.e., everytime the diskselector stops with this item in center position, just pass the function as fourth parameter.</p>
-<p><b> Appending an item with callback function for selected with data: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><b> Appending an item with callback function for selected with data: </b>  <div class="fragment"><pre class="fragment">_sel_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
+{
+   <span class="keywordtype">char</span> *content = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *ds_it = event_info;
+   printf(<span class="stringliteral">&quot;Selected label: %s with data: %s\n&quot;</span>,
+          elm_object_item_text_get(ds_it), content);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_free_data(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+           <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   free(data);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_add_data_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+             <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+   <span class="keywordtype">char</span> label[32];
+   <span class="keywordtype">char</span> *content = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * 32);
+
+   snprintf(content, 32, <span class="stringliteral">&quot;Item content %i&quot;</span>, counter);
+   snprintf(label, <span class="keyword">sizeof</span>(label), <span class="stringliteral">&quot;Item %i&quot;</span>, counter++);
+   ds_it = elm_diskselector_item_append(ds, label, NULL, _sel_data_cb, content);
+   <span class="keywordflow">if</span> (!ds_it)
+     {
+        printf(<span class="stringliteral">&quot;Error adding item\n&quot;</span>);
+        <span class="keywordflow">return</span>;
+     }
+   <a class="code" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set</a>(ds_it, _free_data);
+}
+</pre></div></p>
 <p>If the callback function request an extra data, it can be attached to our item passing a pointer for data as fifth parameter. Our function _sel_data_cb will receive it as <code> void *data </code>.</p>
-<p>If you want to free this data, or handle that the way you need when the item is deleted, set a callback function for that, with elm_object_item_del_cb_set().</p>
+<p>If you want to free this data, or handle that the way you need when the item is deleted, set a callback function for that, with <a class="el" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set()</a>.</p>
 <p>As you can see we check if <code>it</code> is not <code>NULL</code> after appending it. If an error happens, we won't try to set a function for it.</p>
-<p><b> Deleting an item: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To delete an item we simple need to call elm_object_item_del() with a pointer for such item.</p>
+<p><b> Deleting an item: </b>  <div class="fragment"><pre class="fragment">_del_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+
+   selected_ds_it = elm_diskselector_selected_item_get(ds);
+   <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(selected_ds_it);
+}
+</pre></div></p>
+<p>To delete an item we simple need to call <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a> with a pointer for such item.</p>
 <p>If you need, you can get selected item with elm_diskselector_selected_item_get(), that will return a pointer for it.</p>
-<p><b> Unselecting an item: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><b> Unselecting an item: </b>  <div class="fragment"><pre class="fragment">_unselect_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+
+   selected_ds_it = elm_diskselector_selected_item_get(ds);
+   elm_diskselector_item_selected_set(selected_ds_it, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+}
+</pre></div></p>
 <p>To select an item, you should call elm_diskselector_item_selected_set() passing <code>EINA_TRUE</code>, and to unselect it, <code>EINA_FALSE</code>.</p>
 <p>If you unselect the selected item, diskselector will automatically select the first item.</p>
-<p><b> Printing all items: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p><b> Clearing the diskselector: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p><b> Selecting the first item: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p><b> Selecting the last item: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p><b> Selecting the next item: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p><b> Selecting the previous item: </b>  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><b> Printing all items: </b>  <div class="fragment"><pre class="fragment">_print_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keyword">const</span> <a class="code" href="struct__Eina__List.html">Eina_List</a> *l, *items;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+
+   items = elm_diskselector_items_get(ds);
+   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(items, l, ds_it)
+     printf(&quot;%s\n&quot;, elm_object_item_text_get(ds_it));
+}
+</pre></div></p>
+<p><b> Clearing the diskselector: </b>  <div class="fragment"><pre class="fragment">_clear_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+   elm_diskselector_clear(ds);
+}
+</pre></div></p>
+<p><b> Selecting the first item: </b>  <div class="fragment"><pre class="fragment">_select_first_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *first_ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+
+   first_ds_it = elm_diskselector_first_item_get(ds);
+   <span class="keywordflow">if</span> (first_ds_it)
+     elm_diskselector_item_selected_set(first_ds_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+</pre></div></p>
+<p><b> Selecting the last item: </b>  <div class="fragment"><pre class="fragment">_select_last_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *last_ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+
+   last_ds_it = elm_diskselector_last_item_get(ds);
+   <span class="keywordflow">if</span> (last_ds_it)
+     elm_diskselector_item_selected_set(last_ds_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+</pre></div></p>
+<p><b> Selecting the next item: </b>  <div class="fragment"><pre class="fragment">_select_next_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_ds_it, *next_ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+
+   selected_ds_it = elm_diskselector_selected_item_get(ds);
+   <span class="keywordflow">if</span> (!selected_ds_it) <span class="keywordflow">return</span>;
+
+   next_ds_it = elm_diskselector_item_next_get(selected_ds_it);
+   <span class="keywordflow">if</span> (next_ds_it)
+     elm_diskselector_item_selected_set(next_ds_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+</pre></div></p>
+<p><b> Selecting the previous item: </b>  <div class="fragment"><pre class="fragment">_select_prev_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *selected_ds_it, *prev_ds_it;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ds = data;
+
+   selected_ds_it = elm_diskselector_selected_item_get(ds);
+   <span class="keywordflow">if</span> (!selected_ds_it) <span class="keywordflow">return</span>;
+
+   prev_ds_it = elm_diskselector_item_prev_get(selected_ds_it);
+   <span class="keywordflow">if</span> (prev_ds_it)
+     elm_diskselector_item_selected_set(prev_ds_it, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+</pre></div></p>
 <p>See the full <a class="el" href="diskselector_example_02_8c-example.html">diskselector_example_02.c</a> code, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/diskselector_example_02.png" alt="diskselector_example_02.png"/>

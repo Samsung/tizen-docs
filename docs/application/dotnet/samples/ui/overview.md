@@ -32,8 +32,8 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m38basiccalculator.png" width="150"/></td>
 			<td>
-			<p><strong>(M) BasicCalculator</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/BasicCalculator" target="_blank"><strong>(M) BasicCalculator</strong></a></p>
+			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using the Xamarin.Forms library.</p>
 			</td>
 		</tr>
 		<tr>
@@ -122,7 +122,7 @@ for TD:
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ImageReader" target="_blank"><strong>(W) ImageReader</strong></a></p>
 			<p>This sample application demonstrates how to use an image in the Tizen .Net application.
-			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			This application is based on the <a href="https://developer.xamarin.com/samples/xamarin-forms/WorkingWithImages/" target="_blank">Xamarin sample application</a> and is modified according to the Tizen Wearable UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>For more information, see <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/images" target="_blank">Xamarin.Forms.Images</a>.</p>
 			<p><strong>Prerequisites</strong><br>
 			Network connection is required for DownloadImage.</p>
@@ -137,7 +137,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wrotarytimer.png" width="180"/></td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/RotaryTimer" target="_blank"><strong>(W) Rotary timer</strong></a></p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/RotaryTimer" target="_blank"><strong>(W) RotaryTimer</strong></a></p>
 			<p>This sample application demonstrates how to use Rotary Bezel.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -152,7 +152,7 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SkiaSharp2DSample" target="_blank"><strong>(W) SkiaSharp2DSample</strong></a></p>
-			<p>This sample application demonstrates how to use SkiaSharp API in Tizen Xamarin.Forms applications.
+			<p>This sample application demonstrates how to use <code>SkiaSharp</code> API in Tizen <code>Xamarin.Forms</code> applications.
 			<ul>
 				<li>Drawing Basics (DrawCircle)</li>
 				<li>SkiaSharp Path (DrawPath)</li>
@@ -168,7 +168,7 @@ for TD:
 			<td><img alt="" height="180" src="media/wxstopwatch.png" width="180"/></td>
 			<td>
 			<p><strong>(W) XStopWatch</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use a stopwatch and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to use a stopwatch and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Stopwatch" target="_blank">Native version</a></li>
@@ -178,8 +178,8 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/wxuicomponent.png" width="180"/></td>
 			<td>
-			<p><strong>(W) XUIComponents</strong> [In progress]</p>
-			<p>This sample application demonstrates how to use various kinds of Tizen Wearable UI controls using Xamarin.Forms and <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/XUIComponents" target="_blank"><strong>(W) XUIComponents (NUI)</strong></a></p>
+			<p>This sample application demonstrates how to use various kinds of Tizen Wearable UI controls using the Xamarin.Forms and <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_UI_Components" target="_blank">Native version</a></li>
@@ -238,7 +238,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/w53visualssample_nui.png" width="180"/></td>
 			<td>
-			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/VisualsSample" target="_blank"><strong>(W) VisualsSample (NUI)</strong></a></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/VisualsSample" target="_blank"><strong>(W) VisualSample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to use various kinds of visuals.</p>
 			</td>
 		</tr>
@@ -255,7 +255,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/BasicCalculator" target="_blank"><strong>(T) BasicCalculator</strong></a></p>
-			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using Xamarin.Forms library.</p>
+			<p>This sample application demonstrates how to create a calculator with basic mathematical operations using the Xamarin.Forms library.</p>
 			</td>
 		</tr>
 		<tr>
@@ -273,7 +273,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Stopwatch" target="_blank"><strong>(T) Stopwatch</strong></a></p>
-			<p>This sample application demonstrates how to create an application that measures the amount of time taken for a task. This application is created using Xamarin.Forms.</p>
+			<p>This sample application demonstrates how to create an application that measures the amount of time taken for a task. This application is created using the Xamarin.Forms.</p>
 			</td>
 		</tr>
 		<tr>
@@ -386,7 +386,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv36cubewithskiasharp.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) CubeWithSkiaSharp (OpenTK)</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/CubeWithSkiaSharp" target="_blank"><strong>(T) CubeWithSkiaSharp (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to draw a text with SkiaSharp on the target memory, to generates 2D texture on the target memory block, and to shows 2D texture in the OpenTK app (drawing text on a rotating cube).</p>
 			</td>
 		</tr>
@@ -395,7 +395,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv30graffiti.png" width="400" /></p>
 			</td>
 			<td>
-			<p><strong>(T) Graffiti (OpenTK)</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Graffiti" target="_blank"><strong>(T) Graffiti (OpenTK)</strong></a></p>
 			<p>This sample application demonstrates how to respond to click events or button events and how to draw a dot or line at the corresponding position on the screen.</p>
 			</td>
 		</tr>

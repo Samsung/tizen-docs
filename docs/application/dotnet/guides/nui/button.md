@@ -1,8 +1,8 @@
 # Button
 
-A button is a NUI control that you can press in order to operate it. You can create push buttons, check box buttons, radio buttons, and toggle buttons. All different buttons are implemented through the [Tizen.NUI.UIComponents.Button](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.Button.html) base class.
+A button is a NUI control that you can press in order to operate it. You can create push buttons, check box buttons, radio buttons, and toggle buttons. All different buttons are implemented through the [Tizen.NUI.UIComponents.Button](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.UIComponents.Button.html) base class.
 
-A button can be selectable, disabled, and togglable. These states can be set with the `Toggable` and `Selected` properties of the `Tizen.NUI.UIComponents.Button` class and the `Disabled` property of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class.
+A button can be selectable, disabled, and togglable. These states can be set with the `Toggable` and `Selected` properties of the `Tizen.NUI.UIComponents.Button` class and the `Disabled` property of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class.
 
 <a name="creation"></a>
 ## Creating Buttons
@@ -11,7 +11,7 @@ To create various button controls:
 
 -   Push button
 
-    The [Tizen.NUI.UIComponents.PushButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.PushButton.html) class allows you to create a button that can be operated by pressing it. A push button changes its appearance when pressed and returns to its original appearance when released.
+    The [Tizen.NUI.UIComponents.PushButton](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.UIComponents.PushButton.html) class allows you to create a button that can be operated by pressing it. A push button changes its appearance when pressed and returns to its original appearance when released.
 
     **Figure: Push button**
 
@@ -38,7 +38,7 @@ To create various button controls:
 
 -   Check box button
 
-    The [Tizen.NUI.UIComponents.CheckBoxButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.CheckBoxButton.html) class allows you to create a check box button, which can be selected or cleared.
+    The [Tizen.NUI.UIComponents.CheckBoxButton](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.UIComponents.CheckBoxButton.html) class allows you to create a check box button, which can be selected or cleared.
 
     **Figure: Check box button**
 
@@ -56,7 +56,7 @@ To create various button controls:
 
 -   Radio button
 
-    The [Tizen.NUI.UIComponents.RadioButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.RadioButton.html) class allows you to create a radio button with 2 states: selected and unselected.
+    The [Tizen.NUI.UIComponents.RadioButton](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.UIComponents.RadioButton.html) class allows you to create a radio button with 2 states: selected and unselected.
 
     **Figure: Radio button**
 
@@ -82,7 +82,7 @@ To create various button controls:
 
 -   Toggle button
 
-    The [Tizen.NUI.ToggleButton](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ToggleButton.html) class allows you to create a button with which the user can switch a feature on or off. Toggle buttons also support tooltips.
+    The [Tizen.NUI.ToggleButton](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ToggleButton.html) class allows you to create a button with which the user can switch a feature on or off. Toggle buttons also support tooltips.
 
     **Figure: Toggle button**
 
@@ -97,7 +97,7 @@ To create various button controls:
 <a name="events"></a>
 ## Handling Button Events
 
-User actions on a button trigger events, which you can react to by defining event handlers. The following table lists the events provided by the [Tizen.NUI.UIComponents.Button](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.UIComponents.Button.html) class.
+User actions on a button trigger events, which you can react to by defining event handlers. The following table lists the events provided by the [Tizen.NUI.UIComponents.Button](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.UIComponents.Button.html) class.
 
 **Table: Button events**  
 
@@ -172,7 +172,7 @@ For more information on styling buttons with visuals using a JSON stylesheet, se
 
 To add a tooltip to a button:
 
--   Use the `TooltipText` property, which is inherited from the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class:
+-   Use the `TooltipText` property, which is inherited from the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class:
 
     ```
     PushButton button = new PushButton();

@@ -90,7 +90,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">track_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keywordtype">void</span>
+item_select_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
+{
+   Evas_Coord x, y, w, h;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> visible;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it = event_info;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *track = <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7bfb0d0beb6a28c9cdb7e9abf2f942de" title="This returns track object of the item.">elm_object_item_track</a>(it);
+   <a name="a2"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(track, &amp;x, &amp;y, &amp;w, &amp;h);
+
+   visible = evas_object_visible_get(track);
+   printf(<span class="stringliteral">&quot;track geometry = (%d %d %d %d) visible(%d)\n&quot;</span>,
+          x, y, w, h, visible);
+
+   <a name="a3"></a><a class="code" href="group__Elm__General.html#ga7655b89d4a986e8d48df354eb87d947e" title="This retrieve the track object of the item.">elm_object_item_untrack</a>(it);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *li;
+   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *lbl[] =
+     {
+        <span class="stringliteral">&quot;Sunday&quot;</span>,
+        <span class="stringliteral">&quot;Monday&quot;</span>,
+        <span class="stringliteral">&quot;Tuesday&quot;</span>,
+        <span class="stringliteral">&quot;Wednesday&quot;</span>,
+        <span class="stringliteral">&quot;Thursday&quot;</span>,
+        <span class="stringliteral">&quot;Friday&quot;</span>,
+        <span class="stringliteral">&quot;Saturday&quot;</span>
+     };
+
+   <a name="a4"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a5"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;track-example&quot;</span>, <span class="stringliteral">&quot;Track Example&quot;</span>);
+   <a name="a6"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a7"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   li = <a name="a8"></a><a class="code" href="group__Elm__List.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a>(win);
+   evas_object_size_hint_weight_set(li, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a9"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, li);
+
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     <a name="a10"></a><a class="code" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, lbl[i], NULL, NULL, item_select_cb, NULL);
+
+   <a name="a11"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(li);
+   <a name="a12"></a><a class="code" href="group__Elm__List.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
+
+   evas_object_resize(win, 320, 240);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a13"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a14"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

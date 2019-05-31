@@ -4,7 +4,6 @@ Before installing your application on a device or submitting it to the Tizen Sto
 
 ## Selecting the Certificates
 
-
 To select the certificates used to package your application:
 
 1.  In the Visual Studio menu, go to **Tools &gt; Options &gt; Tizen &gt; Certification**.

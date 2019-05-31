@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>Creating an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> and adding elements to it is very easy and can be understood from an example: First thing is always to include Eina.h, for this example we also include stdio.h so we can use printf. <div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <span class="preprocessor">#include &lt;Eina.h&gt;</span>
 </pre></div></p>
-<p>Just some boilerplate code, declaring some variable and initializing eina. <div class="fragment"><pre class="fragment">
+<p>Just some boilerplate code, declaring some variables and initializing eina. <div class="fragment"><pre class="fragment">
 <span class="keywordtype">int</span>
 main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)
 {
@@ -105,11 +105,10 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 
    <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
 </pre></div> Here we add a sequence of elements to our list. By using append we add elements to the end of the list, so the list will look like this:<br/>
-</p>
-<div class="image">
-<img src="eina_list_example_01_a.png" alt="eina_list_example_01_a.png"/>
-</div>
-   <div class="fragment"><pre class="fragment">
+  
+ <img src="eina_list_example_01_a.png" style="max-width: 100%;" />
+ <a href="eina_list_example_01_a.png">Full-size</a>
+    <div class="fragment"><pre class="fragment">
    list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, <span class="stringliteral">&quot;tigh&quot;</span>);
    list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, <span class="stringliteral">&quot;adar&quot;</span>);
    list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(list, <span class="stringliteral">&quot;baltar&quot;</span>);
@@ -127,7 +126,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 <p><a class="el" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc">eina_list_append()</a> is not the only way to add elements to a a list. A common requirement is to add an element in a specific position this can be accomplished using <a class="el" href="group__Eina__List__Group.html#ga4676c189ca4bcfa22d7ecfbcd00200ae">eina_list_append_relative()</a> and <a class="el" href="group__Eina__List__Group.html#gafa705d4483487e53d1be93a30e43c66d">eina_list_append_relative_list()</a>: <div class="fragment"><pre class="fragment">   list = <a class="code" href="group__Eina__List__Group.html#gafa705d4483487e53d1be93a30e43c66d" title="Appends a list node to a linked list after the specified member.">eina_list_append_relative_list</a>(list, <span class="stringliteral">&quot;cain&quot;</span>, l);
 
    list = <a class="code" href="group__Eina__List__Group.html#ga4676c189ca4bcfa22d7ecfbcd00200ae" title="Inserts the given data into the given linked list after the specified data.">eina_list_append_relative</a>(list, <span class="stringliteral">&quot;zarek&quot;</span>, <span class="stringliteral">&quot;cain&quot;</span>);
-</pre></div> First <em>"cain"</em> is added after the second element(remember that indexes are 0 based) and then we add <em>"zarek"</em> after <em>"cain"</em>.</p>
+</pre></div> First <em>"cain"</em> is added after the second element (remember that indexes are 0 based) and then we add <em>"zarek"</em> after <em>"cain"</em>.</p>
 <p><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> also has prepend analogs to append functions we have used so far: <div class="fragment"><pre class="fragment">
    list = <a class="code" href="group__Eina__List__Group.html#ga9f35bfc7c5b798014c3e0a74bc6f39ad" title="Prepends the given data to the given linked list.">eina_list_prepend</a>(list, <span class="stringliteral">&quot;adama&quot;</span>);
 
@@ -135,11 +134,10 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 
    list = <a class="code" href="group__Eina__List__Group.html#ga03a77b1579ee83bcab4bc3d67375d4b1" title="Prepends a list node to a linked list before the specified member.">eina_list_prepend_relative_list</a>(list, <span class="stringliteral">&quot;lampkin&quot;</span>, l);
 </pre></div> With this additions our list now looks like this:<br/>
-</p>
-<div class="image">
-<img src="eina_list_example_01_b.png" alt="eina_list_example_01_b.png"/>
-</div>
-  <p>Once done using the list it needs to be freed, and since we are done with eina that also need to be shutdown: <div class="fragment"><pre class="fragment">
+  
+ <img src="eina_list_example_01_b.png" style="max-width: 100%;" />
+ <a href="eina_list_example_01_b.png">Full-size</a>
+   <p>Once done using the list it needs to be freed, and since we are done with eina that also need to be shutdown: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(list, l, list_data)
      printf(&quot;%s\n&quot;, (<span class="keywordtype">char</span>*)list_data);
 

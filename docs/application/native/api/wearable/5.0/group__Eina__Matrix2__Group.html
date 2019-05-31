@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Eina__Matrix__Group.html">Matrix</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>Matrix definition and operations. </p>
+<p>Definition and operations for 2x3 matrices. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -111,9 +111,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix2__Group.html#gaa37e25e67988d2884729aaa8169b816f">eina_matrix2_copy</a> (<a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *dst, const <a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *src)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies matrix.  <a href="#gaa37e25e67988d2884729aaa8169b816f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix2__Group.html#gaf28750f868a2311b85b8b9a362cd5de7">eina_matrix2_multiply</a> (<a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *out, const <a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *mat_a, const <a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *mat_b)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrix.  <a href="#gaf28750f868a2311b85b8b9a362cd5de7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrices.  <a href="#gaf28750f868a2311b85b8b9a362cd5de7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix2__Group.html#gab948a4534d32c431a3377ddb278def71">eina_matrix2_multiply_copy</a> (<a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *out, const <a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *mat_a, const <a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *mat_b)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrix with check.  <a href="#gab948a4534d32c431a3377ddb278def71"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrices with check.  <a href="#gab948a4534d32c431a3377ddb278def71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Matrix__Group.html#ga3aec91bee6618dff67cb662d5136abbd">Eina_Matrix_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix2__Group.html#ga1897c1500b8dded193c6d1f225b86423">eina_matrix2_type_get</a> (const <a class="el" href="structEina__Matrix2.html">Eina_Matrix2</a> *m)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the given floating point matrix.  <a href="#ga1897c1500b8dded193c6d1f225b86423"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -131,7 +131,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Floating point matrix2 handler </p>
+<p>A 2x2 floating point matrix. </p>
 
 </div>
 </div>
@@ -164,14 +164,14 @@ Typedefs</h2></td></tr>
 <p>Sets array to matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The result matrix </td></tr>
-    <tr><td class="paramname">v</td><td>The the array[4] for set</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The result matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The the array[4] for set.</td></tr>
   </table>
   </dd>
 </dl>
 <p>Set to matrix first 4 elements from array</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -203,13 +203,13 @@ Typedefs</h2></td></tr>
 <p>Copies matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">dst</td><td>The matrix copy </td></tr>
-    <tr><td class="paramname">src</td><td>The matrix for copy.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The matrix copy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The matrix to copy.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -231,13 +231,13 @@ Typedefs</h2></td></tr>
 <p>Sets the given floating point matrix to the identity matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix to set</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The floating point matrix to set.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function sets <code>m</code> to the identity matrix. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -269,14 +269,14 @@ Typedefs</h2></td></tr>
 <p>Computes the inverse with check of the given matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The matrix to inverse. </td></tr>
-    <tr><td class="paramname">mat</td><td>The inverse matrix.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The matrix to inverse. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat</td><td>The inverse matrix.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function inverse the matrix <code>out</code> and stores the result in <code>mat</code>. No check is done on <code>out</code> or <code>mat</code>. If <code>out</code> can not be invertible, then <code>mat</code> is set to the identity matrix.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -311,17 +311,17 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Multiplies two matrix. </p>
+<p>Multiplies two matrices. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The resulting matrix </td></tr>
-    <tr><td class="paramname">mat_a</td><td>The first member of the multiplication </td></tr>
-    <tr><td class="paramname">mat_b</td><td>The second member of the multiplication</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_a</td><td>The first member of the multiplication. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_b</td><td>The second member of the multiplication.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -356,17 +356,17 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Multiplies two matrix with check. </p>
+<p>Multiplies two matrices with check. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The resulting matrix </td></tr>
-    <tr><td class="paramname">mat_a</td><td>The first member of the multiplication </td></tr>
-    <tr><td class="paramname">mat_b</td><td>The second member of the multiplication</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_a</td><td>The first member of the multiplication. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_b</td><td>The second member of the multiplication.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -388,14 +388,14 @@ Typedefs</h2></td></tr>
 <p>Returns the type of the given floating point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The floating point matrix. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The type of the matrix.</dd></dl>
 <p>This function returns the type of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -445,18 +445,18 @@ Typedefs</h2></td></tr>
 <p>Gets the values of the coefficients of the given floating point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix. </td></tr>
-    <tr><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
-    <tr><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
-    <tr><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
-    <tr><td class="paramname">yy</td><td>The fifth coefficient value.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The floating point matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yy</td><td>The fifth coefficient value.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function gets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix2__Group.html#gaae05767322e540fdc1fc12d64c510ae9" title="Sets the values of the coefficients of the given floating point matrix.">eina_matrix2_values_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -506,18 +506,18 @@ Typedefs</h2></td></tr>
 <p>Sets the values of the coefficients of the given floating point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix. </td></tr>
-    <tr><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
-    <tr><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
-    <tr><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
-    <tr><td class="paramname">yy</td><td>The fifth coefficient value.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The floating point matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yy</td><td>The fifth coefficient value.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function sets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix2__Group.html#gad87f444a7809a9c631d6952ff219733a" title="Gets the values of the coefficients of the given floating point matrix.">eina_matrix2_values_get()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

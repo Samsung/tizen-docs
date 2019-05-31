@@ -9,7 +9,7 @@ The examples in this topic illustrate the styling of a push button control.
 
 Styling is inherited. This means that styling a parent automatically affects its child, unless overridden.
 
-The following table describes the style properties of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class that automatically affect a push button, as it is a child of the view.
+The following table describes the style properties of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class that automatically affect a push button, as it is a child of the view.
 
 **Table: View style properties affecting a push button**
 

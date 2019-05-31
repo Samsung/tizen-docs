@@ -31,7 +31,7 @@ To use the test project:
 
 3. Add assertions.
 
-   The unit test tool supports basic assertions, binary comparison, and string comparison in the gtest. For more information, see [Google Test Advanced Guide](https://github.com/google/googletest/blob/master/googletest/docs/AdvancedGuide.md).
+   The unit test tool supports basic assertions, binary comparison, and string comparison in the gtest. For more information, see [Google Test Advanced Guide](https://github.com/google/googletest/blob/master/googletest/docs/advanced.md).
 
 To test the project written in the C code, a unit test project for the C++ language is provided. In this case, the tested function must be qualified as an extern "C" to avoid the 'undefined reference' error as demangled symbols in the error message.
 

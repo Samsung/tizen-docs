@@ -91,8 +91,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary file selector entry widget on a window, along with some other checkboxes. Those are there just as knobs on the file selector entry's state.</p>
-<p>Here's how we instantiate it:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Note that we set on it's button both icon and label decorations. It's set to exhibit the path of (and list the contents of, when internal file selector is launched) the <code>"/tmp"</code> directory, also, with elm_fileselector_entry_path_set(). What follows are checkboxes to exercise some of its API funtions:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Here's how we instantiate it:  <div class="fragment"><pre class="fragment">   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;file&quot;</span>);
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+
+   <span class="comment">/* file selector entry */</span>
+   fs_entry = elm_fileselector_entry_add(win);
+   evas_object_size_hint_align_set(fs_entry, EVAS_HINT_FILL, 0);
+   elm_fileselector_path_set(fs_entry, <span class="stringliteral">&quot;/tmp&quot;</span>);
+   elm_object_text_set(fs_entry, <span class="stringliteral">&quot;Select a file&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(fs_entry, <span class="stringliteral">&quot;button icon&quot;</span>, ic);
+
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, fs_entry);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fs_entry);
+</pre></div></p>
+<p>Note that we set on it's button both icon and label decorations. It's set to exhibit the path of (and list the contents of, when internal file selector is launched) the <code>"/tmp"</code> directory, also, with elm_fileselector_entry_path_set(). What follows are checkboxes to exercise some of its API funtions:  <div class="fragment"><pre class="fragment">   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;editable selection&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_is_save_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _current_sel_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;\&quot;inwin\&quot; mode&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_entry_inwin_mode_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _inwin_mode_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;folders only&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_folder_only_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _folder_only_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;expandable&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_expandable_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _expandable_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fs_entry, <span class="stringliteral">&quot;file,chosen&quot;</span>, _file_chosen, NULL);
+</pre></div></p>
 <p>The checkboxes will toggle whether the file selector entry's internal file selector:</p>
 <ul>
 <li>must have an editable text entry for file names (thus, be in "save dialog mode")</li>
@@ -100,7 +142,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>is to populate its view with folders only</li>
 <li>is to expand its folders, in its view, <b>in place</b>, and not repainting it entirely just with the contents of a sole directory.</li>
 </ul>
-<p>Observe how the entry's text will match the string coming from the <code>"file,chosen"</code> smart event:  <div class="fragment"><pre class="fragment"></pre></div> Whenever you dismiss or acknowledges the file selector, after it's raised, the <code>event_info</code> string will contain the last selection on it (if any was made).</p>
+<p>Observe how the entry's text will match the string coming from the <code>"file,chosen"</code> smart event:  <div class="fragment"><pre class="fragment"><span class="comment">/* hook on the file,chosen smart callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_file_chosen(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+             <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+             <span class="keywordtype">void</span>        *event_info)
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *file = event_info;
+
+   <span class="keywordflow">if</span> (file)
+     printf(<span class="stringliteral">&quot;File chosen: %s\n&quot;</span>, file);
+   <span class="keywordflow">else</span>
+     printf(<span class="stringliteral">&quot;File selection canceled.\n&quot;</span>);
+}
+</pre></div> Whenever you dismiss or acknowledges the file selector, after it's raised, the <code>event_info</code> string will contain the last selection on it (if any was made).</p>
 <p>Try, also, to type in a valid system path and, then, open the file selector's window: it will start the file browsing there, for you.</p>
 <p>This is how the example, just after called, should look like:</p>
 <div class="image">
