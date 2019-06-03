@@ -140,6 +140,7 @@
 #### [Smart Card](/application/dotnet/guides/connectivity/smartcard.md)
 #### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
+#### [WebView](/application/dotnet/guides/connectivity/webview.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
