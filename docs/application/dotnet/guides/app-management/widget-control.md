@@ -1,39 +1,40 @@
 
 # Widget Control
 
-The widget control provides information about installing and running widget applications.
+It also provides functions for the following:
 
-Also, it provides functions for sending update requests and retrieving details of running instances for the same package widget application.
+*   Sending update requests to the widget applications
+*   Retrieving details of running instance for the same package widget application
 
 
 The main features of the `Tizen.Applications.WidgetControl` class include:
 
--   Getting information on widget applications
+-   [Getting information on widget applications](#getting_information)
 
-    For installed (but not necessarily running) widget applications, you can [retrieve widget information](#getting_information) with the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class.
-
-
--   Listening widget lifecycle events on widget applications.
-
-    For running widget applications, you can [listen widget application lifecycle events](#listening_events) with the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class.
+    For installed (but not necessarily running) widget applications, you can retrieve widget information with the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class.
 
 
--   Communicating with running widget instances
+-   [Listening widget lifecycle events on widget applications](#listening_events)
 
-    For running widget instances, you can [trigger an update event, sending updated data, and retrieving running widget instances detail](#communicating_instances) with the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class.
+    For running widget applications, you can listen widget application lifecycle events with the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class.
+
+
+-   [Communicating with running widget instances](#communicating_instances)
+
+    For running widget instances, you can trigger an update event, sending updated data, and retrieving running widget instances detail with the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class.
 
 
 ## Prerequisites
 
 To enable your application to use the widget control functionality:
 
-1.  To use the methods and properties of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
+1.  Include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application to use the methods and properties of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class
 
     ```
     using Tizen.Applications;
     ```
 
-2.  To use the methods and properties for getting information on widget applications of the `Tizen.Applications.WidgetControl` class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+2.  Request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -42,11 +43,11 @@ To enable your application to use the widget control functionality:
     ```
 
 <a name="getting_information"></a>
-## Getting information on widget applications
+## Getting Information on Widget Applications
 
-To get information on widget applications:
+To get information on the widget applications, follow the steps:
 
-1.  Get the control of the installed widget application by creating an instance of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class, with the ID of the widget application.
+1.  Create an instance of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
     ```
     WidgetControl control = new WidgetControl(Your Widget ID);
@@ -63,18 +64,18 @@ To get information on widget applications:
 
 
 <a name="listening_events"></a>
-## Listening widget lifecycle events on widget applications
+## Listening Widget Lifecycle Events on Widget Applications
 
-To listen widget lifecycle events:
+To listen the widget lifecycle events, follow the steps:
 
-1.  Get the control of the installed widget application by creating an instance of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class, with the ID of the widget application.
+1.  Create an instance of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
     ```
     WidgetControl control = new WidgetControl(Your Widget ID);
     ```
 
 2.  Operate on the control:
-    -   Add lifecycle listeners on the control
+    -   Add lifecycle listeners on the control:
 
         ```
         private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
@@ -110,25 +111,25 @@ To listen widget lifecycle events:
         ```
 
 <a name="communicating_instances"></a>
-## Communicating with running widget instances
+## Communicating with Running Widget Instances
 
-To communicate with running widget instances:
+To communicate with the running widget instances, follow the steps:
 
-1.  Get the control of the installed widget application by creating an instance of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class, with the ID of the widget application.
+1.  Create an instance of the [Tizen.Applications.WidgetControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
     ```
     WidgetControl control = new WidgetControl(Your Widget ID);
     ```
 
 2.  Operate on the control:
-    -   Get running widget instances
+    -   Get running widget instances:
 
     ```
     IEnumerable<WidgetControl.Instance> instances = control.GetInstances();
     ```
 
 3.  Operate on the instances:
-    -   Get details of running widget instances and send an update to widget application.
+    -   Get details of running widget instances and send an update to widget application:
 
     ```
     foreach (WidgetControl.Instance ins in instances) {
@@ -144,5 +145,5 @@ To communicate with running widget instances:
     ```
 
 ## Related Information
-  * Dependencies
+  - Dependencies
     -   Tizen 4.0 and Higher
