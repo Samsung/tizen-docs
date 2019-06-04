@@ -13,9 +13,9 @@ The main features of the `Tizen.Applications.ApplicationManager` class include:
 
     For installed (but not necessarily running) applications, you can retrieve information with the [Tizen.Applications.ApplicationInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html) class. You can also [retrieve information through a filter](#filter) with the [Tizen.Applications.ApplicationInfoFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfoFilter.html) class.
 
--   Getting information on current applications
+-   Getting information on the current application
 
-    For current applications, you can retrieve information [manage the current application information](#manage_current) with the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Application.html) class.
+    For current applications, you can retrieve information using the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Application.html) class. You can use the retrieved information to [manage the current application](#manage_current).
 
 
 Iterator methods are used to travel through a list of applications. The `GetRunningApplicationsAsync()` method of the `Tizen.Applications.ApplicationManager` class is used for running applications and the `GetInstalledApplicationsAsync()` method is used for installed applications.
@@ -39,13 +39,14 @@ To enable your application to use the application management functionality:
     ```
 
 <a name="manage_context"></a>
-## Managing the Application Running Context
+## Managing Application Running Context
 
-To get the application running context and its details, and to operate on the context:
+To manage the context of the currently running application, follow these steps:
 
-1.  Get the context of the currently-running application by creating an instance of the [Tizen.Applications.ApplicationRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationRunningContext.html) class, with the ID of the application from which the context is being obtained as a parameter.
+1.  Get the context of the currently running application.
+To get the context, create an instance of the [Tizen.Applications.ApplicationRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationRunningContext.html) class, with the ID of the application from which the context is being obtained as a parameter.
 
-    If you do not know your App ID, you can retrieve it as follows.
+    If you do not have an application ID, you can retrieve it as follows.
 
     ```
     string applicationId = ApplicationManager.GetAppId(Your PID);
@@ -57,7 +58,7 @@ To get the application running context and its details, and to operate on the co
     ApplicationRunningContext appRunningContext = new ApplicationRunningContext(Your App ID);
     ```
 
-2.  Operate on the context:
+2.  Operate on the application context:
     -   Get the application ID, package ID, and process ID from the context:
 
         ```
@@ -135,9 +136,9 @@ To get information on filtered applications:
     ```
 
 <a name="manage_current"></a>
-## Getting Information on Current Applications
+## Getting Information on Current Application
 
-To get information on current applications:
+To get information on the current application, follow these steps:
 
 1.  Call the `Current` property of the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfoFilter.html) class:
 
@@ -145,7 +146,7 @@ To get information on current applications:
     Application application = Application.Current;
     ```
 
-2.  Operate on the application:
+2.  Operate on the application context:
     -   Get the application directory information:
 
         ```
@@ -166,5 +167,5 @@ To get information on current applications:
 
 
 ## Related Information
-  * Dependencies
+  - Dependencies
     -   Tizen 4.0 and Higher
