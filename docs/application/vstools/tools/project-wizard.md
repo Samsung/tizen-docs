@@ -1,6 +1,6 @@
 # Project Wizard
 
-You can use Project Wizard to create Tizen .NET application projects. In Project Wizard, you can select a template and a profile to create the project. Aditionally, you can set the basic project properties, such as the project name, package name, location, and so on.
+You can use Project Wizard to create Tizen .NET application projects. In Project Wizard, you can select a template and a profile to create the project. Additionally, you can set the basic project properties, such as the project name, package name, location, and so on.
 
 The Project Wizard provides the following project templates using which you can start a Tizen .NET application project:
 
@@ -26,7 +26,7 @@ You can navigate to the Project Wizard templates as shown in the following:
 
 When you create a new project with a specific template, the Project Wizard automatically creates the basic functionalities for the application based on the selected template. It also creates the default project files and folders.
 
-To create a Tizen .NET application project:
+To create a Tizen .NET application project, follow these steps:
 
 1. In the Visual Studio menu, select **File &gt; New &gt; Project**.  
 2. In the **New Project Window** that appears, select **Installed &gt; Visual C#**. 
@@ -34,7 +34,7 @@ To create a Tizen .NET application project:
 4. Select one of the available templates for your project. For example, **Tizen 5.0 > Blank App (Xamarin.Forms)**.
 5. Set the basic project properties:
     - **Name**: Name of the project.
-    - **Location**: Location of the local repository in your computer. Aditionally, you can also **Browse** for the local repository.
+    - **Location**: Location of the local repository in your computer. Additionally, you can also **Browse** for the local repository.
     - **Solution name**: The name of the solution file for the project. This option is enabled only if you select **Create directory for solution**.
     - **Create directory for solution**: Select this option to create a directory where the solution file will be automatically saved.
     - **Create new Git repository**: Select this option to create a new Git repository for your project.
