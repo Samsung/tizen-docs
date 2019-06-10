@@ -47,7 +47,7 @@ To enable your application to use the widget control functionality:
 <a name="getting_information"></a>
 ## Getting Information on Widget Applications
 
-To get information on these widget applications, follow the steps:
+To get information on the widget applications, follow these steps:
 
 1.  Create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
@@ -68,7 +68,7 @@ To get information on these widget applications, follow the steps:
 <a name="listening_events"></a>
 ## Listening Widget Lifecycle Events on Widget Applications
 
-To listen these widget lifecycle events, follow the steps:
+To listen to the widget lifecycle events, follow these steps:
 
 1.  Create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
@@ -115,7 +115,7 @@ To listen these widget lifecycle events, follow the steps:
 <a name="communicating_instances"></a>
 ## Communicating with Running Widget Instances
 
-To communicate with these running widget instances, follow the steps:
+To communicate with the running widget instances, follow these steps:
 
 1.  Create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
