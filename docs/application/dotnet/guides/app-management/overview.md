@@ -22,7 +22,7 @@ You can use the following application management features in your .NET applicati
 
 - [Widget Control](wdiget-control.md)
 
-  You can send update requests to the widget applications. You can also listening widget lifecycle events and retrieving details of running instance for the same package widget application.
+  You can send update requests to the widget applications. You can also listen widget lifecycle events, and retrieve details of running instance for the same package widget applications.
 
 The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
 
