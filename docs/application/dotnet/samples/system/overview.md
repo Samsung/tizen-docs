@@ -86,6 +86,13 @@ for TD:
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="180" src="media/w70gesturesensor.png" width="180"/></td>
+			<td>
+			<p><strong>(W) GestureSensor</strong> [In progress]</p>
+			<p>This sample application demonstrates how to detect gestures such as face down, pick up, and wrist up using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor</a>.</p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="180" src="media/wheartratemonitor.png" width="180"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/HeartRateMonitor" target="_blank"><strong>(W) HeartRateMonitor</strong></a></p>
