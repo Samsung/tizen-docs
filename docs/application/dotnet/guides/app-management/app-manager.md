@@ -146,7 +146,7 @@ To get information on the current application, follow these steps:
     Application application = Application.Current;
     ```
 
-2.  Operate on the application context:
+2.  Operate on the application information:
     -   Get the application directory information:
 
         ```
