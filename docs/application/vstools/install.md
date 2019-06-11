@@ -38,12 +38,13 @@ The Tizen emulator for Visual Studio has the same requirements as the emulator i
 - Make sure **Hyper-V** is disabled (in Windows&reg; 10 or higher):
   1. In the **Start** menu, select **Programs and Features**.
 
-   ![Programs and Features](media/cs_prerequisite01-250x401.png)
+     ![Programs and Features](media/cs_prerequisite01-250x401.png)
 
   2. Select **Turn Windows features on or off**.
+
   3. Disable **Hyper-V** and click **OK**.
 
-   ![Disable Hyper-V](media/cs_prerequisite-disable-hiperv.png)
+     ![Disable Hyper-V](media/cs_prerequisite-disable-hiperv.png)
 
   4. Reboot the computer.
 
@@ -64,7 +65,7 @@ The Visual Studio Tools for Tizen extension is registered in the Visual Studio M
 1. In the Visual Studio IDE menu, go to **Tools &gt; Extensions and Updates**.
 2. In the Visual Studio Marketplace, search for **Tizen**.
 
-   ![Marketplace](media/howtoinstall-extensionwindows.png)
+   ![Marketplace](media/cps-extensions-and-updates.png)
 
 3. Click **Download** and close the Visual Studio IDE.
 
@@ -158,7 +159,7 @@ If you encounter problems with the installation:
 
 - To check whether VSIX is installed correctly, check the Visual Studio Tools for Tizen properties by selecting **Tools &gt; Extensions and Updates** and searching for "Tizen".
 
-  ![Check VSIX](media/cps-extension-and-updates.png)
+  ![Check VSIX](media/cps-extensions-and-updates.png)
 
 - To make sure the baseline Tizen SDK is installed correctly, check the tool path by selecting **Tools &gt; Options &gt; Tizen &gt; Tools**.
 
