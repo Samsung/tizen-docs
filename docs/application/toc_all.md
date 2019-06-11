@@ -1176,4 +1176,7 @@
 
 
 
-# [Visual Studio Code Extension for Tizen](/application/vscode-ext/index.md)
+# Visual Studio Code Extension for Tizen
+
+## [Prerequisites](/application/vscode-ext/index.md)
+## [Tizen .NET](/application/vscode-ext/dotnet.md)
