@@ -9,7 +9,7 @@ It also provides functions for the following:
 
 The main features of the `Tizen.Applications.WidgetControl` class include:
 
--   [Creating an Widget Control instance](#create_instance)
+-   [Creating an widget control instance](#create_instance)
 
     For using the widget control features, you can create widget control instance with specific widget ID.
 
@@ -44,9 +44,9 @@ To enable your application to use the widget control functionality:
     ```
 
 <a name="create_instance"></a>
-## Creating an Widget Control instance
+## Creating an Widget Control Instance
 
-To create an instance on the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
+To create an instance on the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code snippet:
 
     ```
     WidgetControl control = new WidgetControl(Your Widget ID);
