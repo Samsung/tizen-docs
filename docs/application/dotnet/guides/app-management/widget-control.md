@@ -66,40 +66,39 @@ To get information on the widget applications, as shown in the following code sn
 <a name="listening_events"></a>
 ## Listening Widget Lifecycle Events on Widget Applications
 
-To listen to the widget lifecycle events, as shown in the following code snippet:
+To listen to the widget lifecycle events, add lifecycle listeners on the control, as shown in the following code snippet:
 
-    -   Add lifecycle listeners on the control:
-        ```
-        private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            string instanceId = args.InstanceId;
-            string widgetId = args.WidgetId;
-            /// Widget application is created
-        }
+    ```
+    private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        string instanceId = args.InstanceId;
+        string widgetId = args.WidgetId;
+        /// Widget application is created
+    }
 
-        private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            /// Widget application is destroyed
-        }
+    private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        /// Widget application is destroyed
+    }
 
-        private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            /// Widget application is paused
-        }
+    private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        /// Widget application is paused
+    }
 
-        private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            /// Widget application is resumed
-        }
+    private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        /// Widget application is resumed
+    }
 
-        control.Created += OnCreated;
-        control.Created += OnDestroyed;
-        control.Created += OnPaused;
-        control.Created += OnResumed;
+    control.Created += OnCreated;
+    control.Created += OnDestroyed;
+    control.Created += OnPaused;
+    control.Created += OnResumed;
 
-        string mainId = control.MainAppId;
-        string packageId = control.PackageId;
-        IEnumerable<WidgetControl.Scale> scales = control.GetScales();
+    string mainId = control.MainAppId;
+    string packageId = control.PackageId;
+    IEnumerable<WidgetControl.Scale> scales = control.GetScales();
         ```
 
 <a name="communicating_instances"></a>
