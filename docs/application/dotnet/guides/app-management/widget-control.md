@@ -9,6 +9,10 @@ It also provides functions for the following:
 
 The main features of the `Tizen.Applications.WidgetControl` class include:
 
+-   [Creating an Widget Control instance](#create_instance)
+
+    For using the widget control features, you can create widget control instance with specific widget ID.
+
 -   [Getting information on widget applications](#getting_information)
 
     For the widget applications that is installed but not running, you can retrieve widget information.
@@ -40,9 +44,9 @@ To enable your application to use the widget control functionality:
     ```
 
 <a name="create_instance"></a>
-## Creating instance of Widget Control
+## Creating an Widget Control instance
 
-To create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
+To create an instance on the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
     ```
     WidgetControl control = new WidgetControl(Your Widget ID);
@@ -51,7 +55,7 @@ To create an instance of the [Tizen.Applications.WidgetControl](https://samsung.
 <a name="getting_information"></a>
 ## Getting Information on Widget Applications
 
-To get information on the widget applications, follow below codes:
+To get information on the widget applications, as shown in the following code snippet:
 
     ```
     string mainId = control.MainAppId;
@@ -62,40 +66,41 @@ To get information on the widget applications, follow below codes:
 <a name="listening_events"></a>
 ## Listening Widget Lifecycle Events on Widget Applications
 
-To listen to the widget lifecycle events, follow below codes:
+To listen to the widget lifecycle events, as shown in the following code snippet:
 
-    ```
-    private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        string instanceId = args.InstanceId;
-        string widgetId = args.WidgetId;
-        /// Widget application is created
-    }
+    -   Add lifecycle listeners on the control:
+        ```
+        private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+        {
+            string instanceId = args.InstanceId;
+            string widgetId = args.WidgetId;
+            /// Widget application is created
+        }
 
-    private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        /// Widget application is destroyed
-    }
+        private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+        {
+            /// Widget application is destroyed
+        }
 
-    private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        /// Widget application is paused
-    }
+        private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+        {
+            /// Widget application is paused
+        }
 
-    private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        /// Widget application is resumed
-    }
+        private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+        {
+            /// Widget application is resumed
+        }
 
-    control.Created += OnCreated;
-    control.Created += OnDestroyed;
-    control.Created += OnPaused;
-    control.Created += OnResumed;
+        control.Created += OnCreated;
+        control.Created += OnDestroyed;
+        control.Created += OnPaused;
+        control.Created += OnResumed;
 
-    string mainId = control.MainAppId;
-    string packageId = control.PackageId;
-    IEnumerable<WidgetControl.Scale> scales = control.GetScales();
-    ```
+        string mainId = control.MainAppId;
+        string packageId = control.PackageId;
+        IEnumerable<WidgetControl.Scale> scales = control.GetScales();
+        ```
 
 <a name="communicating_instances"></a>
 ## Communicating with Running Widget Instances
