@@ -156,9 +156,9 @@
 ##### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
 ##### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
 ##### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
+##### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 ##### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 ##### [Data Control](/application/dotnet/guides/app-management/data-control.md)
-##### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 
 #### Natural User Interface
 ##### [Overview](/application/dotnet/guides/nui/NUIoverview.md)

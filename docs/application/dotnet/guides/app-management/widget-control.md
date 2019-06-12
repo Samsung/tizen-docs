@@ -1,30 +1,26 @@
-
 # Widget Control
 
 The widget control provides information about installing and running widget applications.
 
 It also provides functions for the following:
 
-*   Sending update requests to the widget applications
-*   Retrieving details of running instance for the same package widget applications
-
+-   Sending update requests to the widget applications
+-   Retrieving details of running instance for the same package widget applications
 
 The main features of the `Tizen.Applications.WidgetControl` class include:
 
 -   [Getting information on widget applications](#getting_information)
 
-    For installed (but not necessarily running) widget applications, you can retrieve widget information with the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class.
+    For the widget applications that is installed but not running, you can retrieve widget information.
 
 
 -   [Listening widget lifecycle events on widget applications](#listening_events)
 
-    For running widget applications, you can listen widget application lifecycle events with the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class.
-
+    For running widget applications, you can listen widget application lifecycle events.
 
 -   [Communicating with running widget instances](#communicating_instances)
 
-    For running widget instances, you can trigger an update event, send update data, and retrieve running widget instances detail with the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class.
-
+    For running widget instances, you can trigger an update event, send update data, and retrieve running widget instances detail.
 
 ## Prerequisites
 
@@ -44,107 +40,91 @@ To enable your application to use the widget control functionality:
     </privileges>
     ```
 
-<a name="getting_information"></a>
-## Getting Information on Widget Applications
+<a name="create_instance"></a>
+## Creating instance of Widget Control
 
-To get information on the widget applications, follow these steps:
-
-1.  Create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
+To create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
 
     ```
     WidgetControl control = new WidgetControl(Your Widget ID);
     ```
 
-2.  Operate on the control:
-    -   Get the main application ID, package ID, and available scale lists from the control:
+<a name="getting_information"></a>
+## Getting Information on Widget Applications
 
-        ```
-        string mainId = control.MainAppId;
-        string packageId = control.PackageId;
-        IEnumerable<WidgetControl.Scale> scales = control.GetScales();
-        ```
+To get information on the widget applications, follow below codes:
 
+    ```
+    string mainId = control.MainAppId;
+    string packageId = control.PackageId;
+    IEnumerable<WidgetControl.Scale> scales = control.GetScales();
+    ```
 
 <a name="listening_events"></a>
 ## Listening Widget Lifecycle Events on Widget Applications
 
-To listen to the widget lifecycle events, follow these steps:
-
-1.  Create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
+To listen to the widget lifecycle events, follow below codes:
 
     ```
-    WidgetControl control = new WidgetControl(Your Widget ID);
+    private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        string instanceId = args.InstanceId;
+        string widgetId = args.WidgetId;
+        /// Widget application is created
+    }
+
+    private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        /// Widget application is destroyed
+    }
+
+    private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        /// Widget application is paused
+    }
+
+    private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+    {
+        /// Widget application is resumed
+    }
+
+    control.Created += OnCreated;
+    control.Created += OnDestroyed;
+    control.Created += OnPaused;
+    control.Created += OnResumed;
+
+    string mainId = control.MainAppId;
+    string packageId = control.PackageId;
+    IEnumerable<WidgetControl.Scale> scales = control.GetScales();
     ```
-
-2.  Operate on the control:
-    -   Add lifecycle listeners on the control:
-
-        ```
-        private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            string instanceId = args.InstanceId;
-            string widgetId = args.WidgetId;
-            /// Widget application is created
-        }
-
-        private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            /// Widget application is destroyed
-        }
-
-        private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            /// Widget application is paused
-        }
-
-        private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-        {
-            /// Widget application is resumed
-        }
-
-        control.Created += OnCreated;
-        control.Created += OnDestroyed;
-        control.Created += OnPaused;
-        control.Created += OnResumed;
-
-        string mainId = control.MainAppId;
-        string packageId = control.PackageId;
-        IEnumerable<WidgetControl.Scale> scales = control.GetScales();
-        ```
 
 <a name="communicating_instances"></a>
 ## Communicating with Running Widget Instances
 
 To communicate with the running widget instances, follow these steps:
 
-1.  Create an instance of the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class with the ID of the widget application, as shown in the following code:
-
-    ```
-    WidgetControl control = new WidgetControl(Your Widget ID);
-    ```
-
-2.  Operate on the control:
+1.  Operate on the control:
     -   Get running widget instances:
 
-    ```
-    IEnumerable<WidgetControl.Instance> instances = control.GetInstances();
-    ```
+        ```
+        IEnumerable<WidgetControl.Instance> instances = control.GetInstances();
+        ```
 
-3.  Operate on the instances:
+2.  Operate on the instances:
     -   Get details of running widget instances and send an update to widget application:
 
-    ```
-    foreach (WidgetControl.Instance ins in instances) {
-        /// Get widget instance content
-        var data = ins.GetContent();
+        ```
+        foreach (WidgetControl.Instance ins in instances) {
+            /// Get widget instance content
+            var data = ins.GetContent();
 
-        /// Change widget update period
-        ins.ChangePeriod(2.0);
+            /// Change widget update period
+            ins.ChangePeriod(2.0);
 
-        /// Trigger widget update
-        ins.ChangeContent(data, true);
-    }
-    ```
+            /// Trigger widget update
+            ins.ChangeContent(data, true);
+        }
+        ```
 
 ## Related Information
   - Dependencies
