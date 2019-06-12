@@ -13,7 +13,6 @@ The main features of the `Tizen.Applications.WidgetControl` class include:
 
     For the widget applications that is installed but not running, you can retrieve widget information.
 
-
 -   [Listening widget lifecycle events on widget applications](#listening_events)
 
     For running widget applications, you can listen widget application lifecycle events.
