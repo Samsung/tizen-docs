@@ -48,6 +48,7 @@ To enable your application to use the widget control functionality:
 
 Create an instance of widget control with an ID of the widget application using the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class:
 
+
     ```
     WidgetControl control = new WidgetControl(Your Widget ID);
     ```
@@ -56,6 +57,7 @@ Create an instance of widget control with an ID of the widget application using 
 ## Getting Information on Widget Applications
 
 Get the main application ID, package ID, and available scale lists from the control:
+
 
     ```
     string mainId = control.MainAppId;
