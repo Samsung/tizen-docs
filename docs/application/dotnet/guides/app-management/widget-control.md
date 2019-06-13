@@ -48,10 +48,9 @@ To enable your application to use the widget control functionality:
 
 Create an instance of widget control with an ID of the widget application using the [Tizen.Applications.WidgetControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WidgetControl.html) class:
 
-
-    ```
-    WidgetControl control = new WidgetControl(Your Widget ID);
-    ```
+```
+WidgetControl control = new WidgetControl(Your Widget ID);
+```
 
 <a name="getting_information"></a>
 ## Getting Information on Widget Applications
@@ -59,49 +58,49 @@ Create an instance of widget control with an ID of the widget application using 
 Get the main application ID, package ID, and available scale lists from the control:
 
 
-    ```
-    string mainId = control.MainAppId;
-    string packageId = control.PackageId;
-    IEnumerable<WidgetControl.Scale> scales = control.GetScales();
-    ```
+```
+string mainId = control.MainAppId;
+string packageId = control.PackageId;
+IEnumerable<WidgetControl.Scale> scales = control.GetScales();
+```
 
 <a name="listening_events"></a>
 ## Listening Widget Lifecycle Events on Widget Applications
 
 To listen to the widget lifecycle events, add lifecycle listeners on the control:
 
-    ```
-    private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        string instanceId = args.InstanceId;
-        string widgetId = args.WidgetId;
-        /// Widget application is created
-    }
+```
+private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+{
+    string instanceId = args.InstanceId;
+    string widgetId = args.WidgetId;
+    /// Widget application is created
+}
 
-    private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        /// Widget application is destroyed
-    }
+private static void OnDestroyed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+{
+    /// Widget application is destroyed
+}
 
-    private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        /// Widget application is paused
-    }
+private static void OnPaused(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+{
+    /// Widget application is paused
+}
 
-    private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
-    {
-        /// Widget application is resumed
-    }
+private static void OnResumed(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
+{
+    /// Widget application is resumed
+}
 
-    control.Created += OnCreated;
-    control.Created += OnDestroyed;
-    control.Created += OnPaused;
-    control.Created += OnResumed;
+control.Created += OnCreated;
+control.Created += OnDestroyed;
+control.Created += OnPaused;
+control.Created += OnResumed;
 
-    string mainId = control.MainAppId;
-    string packageId = control.PackageId;
-    IEnumerable<WidgetControl.Scale> scales = control.GetScales();
-    ```
+string mainId = control.MainAppId;
+string packageId = control.PackageId;
+IEnumerable<WidgetControl.Scale> scales = control.GetScales();
+```
 
 <a name="communicating_instances"></a>
 ## Communicating with Running Widget Instances
