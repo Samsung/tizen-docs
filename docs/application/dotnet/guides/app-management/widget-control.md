@@ -67,7 +67,7 @@ IEnumerable<WidgetControl.Scale> scales = control.GetScales();
 <a name="listening_events"></a>
 ## Listening Widget Lifecycle Events on Widget Applications
 
-To listen to the widget lifecycle events, add lifecycle listeners on the control:
+Add lifecycle listeners on the control to listen to the widget lifecycle events:
 
 ```
 private static void OnCreated(object sender, Tizen.Applications.WidgetLifecycleEventArgs args)
