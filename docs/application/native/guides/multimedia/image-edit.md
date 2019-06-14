@@ -459,31 +459,7 @@ To encode a raw image:
    ret = image_util_encode_create(encoder_type, &encode_h);
    ```
 
-2. Set the image to the input buffer using the `image_util_encode_set_input_buffer()` function:
-
-   ```
-   ret = image_util_encode_set_input_buffer(encode_h, buffer);
-   ```
-
-3. Set the width, height, and color space of the input buffer using the `image_util_encode_set_resolution()` and `image_util_encode_set_colorspace()` functions:
-
-   ```
-   ret = image_util_encode_set_resolution(encode_h, width, height);
-   ret = image_util_encode_set_colorspace(encode_h, IMAGE_UTIL_COLORSPACE_RGBA8888);
-   ```
-
-   > **Note**
-   >
-   > - Because of encoder limitations, color space setting is only supported for encoding JPEG images.
-   > - The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
-
-4. To save the encoded image, set the output path or buffer using the `image_util_encode_set_output_path()` or `image_util_encode_set_output_buffer()` function:
-
-   ```
-   ret = image_util_encode_set_output_path(encode_h, path);
-   ```
-
-5. Optionally, set the JPEG quality or PNG compression using the `image_util_encode_set_quality()` or `image_util_encode_set_png_compression()` function:
+2. Optionally, set the JPEG quality or PNG compression using the `image_util_encode_set_quality()` or `image_util_encode_set_png_compression()` function:
 
    ```
    ret = image_util_encode_set_jpeg_downscale(decode_h, IMAGE_UTIL_DOWNSCALE_1_1);
@@ -494,68 +470,50 @@ To encode a raw image:
    > - Because of encoder limitations, quality setting is only supported for JPEG images, and compression is only supported for PNG images.
    > - The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
 
-6. Execute the encoding using the `image_util_encode_run()` function:
+3. Execute the encoding using the `image_util_encode_run_to_file()` or  `image_util_encode_run_to_buffer()` function:
 
    ```
-   unsigned long long size = 0; /* Encoded image size */
-   ret = image_util_encode_run(encode_h, &size);
+   ret = image_util_encode_run(encode_h, decoded_image, file);
    ```
+   > **Note**
+   >
+   > - Because of encoder limitations, color space setting is only supported for encoding JPEG images.
+   > - The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
-7. After the encoding is complete, destroy the encoding handle using the `image_util_encode_destroy()` function:
+4. After the encoding is complete, destroy the encoding handle using the `image_util_encode_destroy()` function:
 
    ```
    ret = image_util_encode_destroy(encode_h);
    ```
+
 <a name="animation"></a>
 ## Encoding an Animated GIF
 
 To encode an animated GIF image:
 
-1. Create an encoding handle using the `image_util_encode_create()` function:
+1. Create an encoding handle using the `image_util_agif_encode_create()` function:
 
    ```
-   image_util_type_e encoder_type = IMAGE_UTIL_GIF;
-   image_util_encode_h encode_h = NULL;
-   ret = image_util_encode_create(encoder_type, encode_h);
+   image_util_agif_encode_h agif_encode_h = NULL;
+   ret = image_util_agif_encode_create(&agif_encode_h);
    ```
 
-2. For each frame:
-
-   1. Set the image to the input buffer using the `image_util_encode_set_input_buffer()` function:
-
-      ```
-      ret = image_util_encode_set_input_buffer(encode_h, buffer);
-      ```
-
-   2. Set the width and height of the input buffer using the `image_util_encode_set_resolution()` function:
-
-      ```
-      ret = image_util_encode_set_resolution(encode_h, width, height);
-      ```
-
-   3. Set the delay time between GIF frames using the `image_util_encode_set_gif_frame_delay_time()` function:
-
-      ```
-      ret = image_util_encode_set_gif_frame_delay_time(encode_h, buffer);
-      ```
-
-3. To save the encoded image, set the output path or buffer using the `image_util_encode_set_output_path()` or `image_util_encode_set_output_buffer()` function:
+2. Add the images with the delay time between GIF frames using the `image_util_agif_encode_add_frame()` function:
 
    ```
-   ret = image_util_encode_set_output_path(encode_h, path);
+   ret = image_util_agif_encode_add_frame(agif_encode_h, src_image, delay_time);
    ```
 
-4. Execute the encoding using the `image_util_encode_run()` function:
+3. Save the encoded image using the  `image_util_agif_encode_save_to_file()` or `image_util_agif_encode_save_to_buffer()` function:
 
    ```
-   unsigned long long size = 0; /* Animated GIF image size */
-   ret = image_util_encode_run(encode_h, &size);
+   ret = image_util_agif_encode_save_to_file(agif_encode_h, path);
    ```
 
-5. After the encoding is complete, destroy the encoding handle using the `image_util_encode_destroy()` function:
+4. After the encoding is complete, destroy the encoding handle using the `image_util_encode_destroy()` function:
 
    ```
-   ret = image_util_encode_destroy(encode_h);
+   ret = image_util_agif_encode_destroy(agif_encode_h);
    ```
 
 <a name="color_format"></a>
