@@ -113,6 +113,13 @@ for TD:
 <div class="tabcontent" id="Wearable">
 <table>
 	<tbody>
+                <tr>
+                        <td><img alt="" height="180" src="media/w69circularuimediaplayer.png" width="180"/></td>
+                        <td>
+                        <p><strong>(W) CircularUIMediaPlayer</strong> [In progress]</p>
+                        <p>This sample application demonstrates how to build a video player for Tizen Wearables. For more information, see <a href="https://samsung.github.io/Tizen.NET/wearables/CircularUI-MediaPlayer" target="_blank">Tizen .NET Portal</a>.</p>
+                        </td>
+                </tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w41imageviewer.png" width="180"/></td>
 			<td>
