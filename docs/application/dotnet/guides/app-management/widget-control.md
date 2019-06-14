@@ -57,7 +57,6 @@ WidgetControl control = new WidgetControl(Your Widget ID);
 
 Get the main application ID, package ID, and available scale lists from the control:
 
-
 ```
 string mainId = control.MainAppId;
 string packageId = control.PackageId;
