@@ -31,7 +31,7 @@ The main App Control API features are:
 
 - Handle application control actions
 
-  You can handle each application control action when getting a launch request.
+  You can [handle each application control action](#action) when getting a launch request.
 
 You can take advantage of the Tizen [base application functionalities](#common) through the application control feature.
 
@@ -671,7 +671,7 @@ create_base_gui(appdata_s *ad)
 <a name="action"></a>
 ## Handling application control actions
 
-You can define and handle each application control actions.
+You can define and handle each application control action.
 
 - Defining the application control action
 
@@ -702,7 +702,7 @@ You can define and handle each application control actions.
    > The `app_control_action_cb()` callback function is called. And then, the `app_control_cb()` callback function is called.
 
 
-In this use case, the application registers the application control action handle based on the content in the example.
+In this use case, the application registers the application control action handle based on the content:
 
 ```
 #include <app.h>
@@ -713,25 +713,25 @@ In this use case, the application registers the application control action handl
 static bool
 app_create_cb(void *user_data)
 {
-	return true;
+    return true;
 }
 
 static void
 dial_action_cb(const char *action, app_control_h app_control, void *user_data)
 {
-	/* Handle the action */
+    /* Handle the action */
 }
 
 static void
 dial_for_excel_action_cb(const char *action, app_control_h app_control, void *user_data)
 {
-	/* Handle the action */
+    /* Handle the action */
 }
 
 static void
 app_control_cb(app_control_h app_control, void *user_data)
 {
-	/* Handle the launch request */
+    /* Handle the launch request */
 }
 
 static void
@@ -751,37 +751,37 @@ app_terminate_cb(void *user_data)
 
 int main(int argc, char **argv)
 {
-	int ret;
-	struct appdata ad;
-	app_control_action_h dial_action;
-	app_control_action_h dial_for_excel_action;
-	ui_app_lifecycle_callback_s event_callback;
+    int ret;
+    struct appdata ad;
+    app_control_action_h dial_action;
+    app_control_action_h dial_for_excel_action;
+    ui_app_lifecycle_callback_s event_callback;
 
-	memset(&ad, 0x0, sizeof(struct appdata));
+    memset(&ad, 0x0, sizeof(struct appdata));
 
-	event_callback.create = app_create_cb;
-	event_callback.app_control = app_control_cb;
-	event_callback.pause = app_pause_cb;
-	event_callback.resume = app_resume_cb;
-	event_callback.terminate = app_terminate_cb;
+    event_callback.create = app_create_cb;
+    event_callback.app_control = app_control_cb;
+    event_callback.pause = app_pause_cb;
+    event_callback.resume = app_resume_cb;
+    event_callback.terminate = app_terminate_cb;
 
-	ret = app_control_add_action_handler("dial", dial_action_cb, &ad, &dial_action);
-	if (ret != APP_CONTROL_ERROR_NONE) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Failed to add action handler");
-		return -1;
-	}
+    ret = app_control_add_action_handler("dial", dial_action_cb, &ad, &dial_action);
+    if (ret != APP_CONTROL_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "Failed to add action handler");
+        return -1;
+    }
 
-	ret = app_control_add_action_handler("dial_for_excel, dial_for_excel_action_cb, &ad, &dial_for_excel_action);
-	if (ret != APP_CONTROL_ERROR_NONE) {
-		dlog_print(DLOG_ERROR, LOG_TAG, "Failed to add action handler");
-		app_control_remove_action_handler(dial_action);
-		return -1;
-	}
+    ret = app_control_add_action_handler("dial_for_excel, dial_for_excel_action_cb, &ad, &dial_for_excel_action);
+    if (ret != APP_CONTROL_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "Failed to add action handler");
+        app_control_remove_action_handler(dial_action);
+        return -1;
+    }
 
-	ret = ui_app_main(argc, argv, &event_callback, &ad);
-	app_control_remove_action_handler(dial_for_excel_action);
-	app_control_remove_action_handler(dial_action);
-	return ret;
+    ret = ui_app_main(argc, argv, &event_callback, &ad);
+    app_control_remove_action_handler(dial_for_excel_action);
+    app_control_remove_action_handler(dial_action);
+    return ret;
 }
 ```
 
