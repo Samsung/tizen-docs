@@ -219,7 +219,7 @@ Visit the following pages to explore more about Tizen Studio:
 
   <div class="docs-ui-tv" style="padding-left: 0px;padding-right: 20px;">
     <span>
-     <a href="native-tools/index.md" class="docs-btn-more">Native Tools</a><br>
+        <a href="native-tools/index.md" class="docs-btn-more">Native Tools</a><br>
     </span>
   </div>
  
@@ -229,7 +229,7 @@ Visit the following pages to explore more about Tizen Studio:
     </span>
   </div>
 
-<div class="docs-ui-star">
+<div class="docs-ui-star" style="margin-top: -71px;">
   <div class="docs-ui-wear">
     <span>
     <a href="configurable-sdk/configurable-sdk.md" class="docs-btn-more">Configurable - IoT SDK</a>
@@ -237,7 +237,7 @@ Visit the following pages to explore more about Tizen Studio:
   </div>
   <div class="docs-ui-get">
     <span>
-    <a href="web-tools/index.md" class="docs-btn-more">Extension SDK</a><br>
+    <a href="extension-sdk/overview.md" class="docs-btn-more">Extension SDK</a><br>
     </span>
   </div>
 <div class="docs-ui-w">
@@ -247,4 +247,5 @@ Visit the following pages to explore more about Tizen Studio:
   </div>
 </div>
 </section>
+
 
