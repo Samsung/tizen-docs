@@ -9,7 +9,6 @@
 >
 > Thank you for your interest and support as always.
 
-
 The procedure to setup the board varies, based on the board and Tizen version.
 Ensure that you select your board and the environment. 
 
