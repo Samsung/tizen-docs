@@ -8,7 +8,6 @@
 
 [Tips](#Tips)
 
-
 # Installing Tizen Studio
 
 If you have already installed Tizen Studio 3.0 and installed the **5.0 Mobile** profile for the **Main SDK** and the **IOT-Headed-5.0** and **IOT-Headless-5.0** profiles for the **Extension SDK**, you can skip this section.
