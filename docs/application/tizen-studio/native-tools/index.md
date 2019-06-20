@@ -1,30 +1,27 @@
 # Native Tools
 
-In the Tizen Studio, you can perform all the development activities from the application project creation to testing and packaging.
+This section explains about various native application development tools supported in Tizen Studio. With Tizen Studio IDE, the native app development is simplified, as it supports app development using languages such as C and C++.
+In addition, Tizen Studio provides enhanced tools for building the UI, debugging, and for compiling and building the native app code.
 
-The Tizen Studio provides various tools to help you with the different native application development process phases:
+You can create the following features in your native apps using Tizen Studio and its native tools:
+- Maximize the performance of a device to achieve higher throughput for time-sensitive apps, and run computationally intensive applications such as simulations and games.
+- Provide access to platform libraries to manage native activities and access physical device components such as sensors, touch input panels, and Wi-Fi.
+- Provides enhanced debugging, compilation, and integrated build tools specifically for native app development. 
 
-- [Managing Projects](managing-projects.md)
+Following are the various native application development phases and their respective tools:
 
-  You can create new application projects with the Project Wizard, and manage the existing applications in the **Project Explorer** view in the Tizen Studio. You can also manage connected devices, and register certificates for your applications to allow them to be published in the application stores.
+|Development Phases |Description|
+|----|:---|
+|[Create and manage application](managing-projects.md)|You can create new application projects with Project Wizard tool. You can manage the new application or the existing applications in the **Project Explorer** view. You can manage connected devices, register certificates, and publish your application in the application stores.|
+|[Write and Edit Code](coding.md) |You can use the content assist, API and privilege checker tools to speed up the code writing and verification task. You can design the application UI by arranging the UI components with the visual UI Builder tool. You can also design the UI by defining the components and layout with the EDC script, using the EDC script editor or using any other graphical component designer.|
+|[Configure](configuring.md) |You can use the manifest file to manage various application functionalities and features. You can easily configure the application functionalities with the manifest text editor. In addition, you can localize your application to use various languages and locale-specific resources by using the PO file editor and **Resource Manager** view in Tizen Studio.|
+|[Debug](debugging.md) |You can debug, profile, and optimize your application with various tools, such as the Dynamic Analyzer, Static Analyzer, Valgrind, and T-trace. Tizen Studio provides various views designed to help you identify and fix runtime errors such as **Log** and **Call Stack** views.|
+|[Run and Test Your Application](running-testing.md) |You can run and test your application using Tizen emulator. In addition, the Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.|
 
-- [Writing and Editing Code](coding.md)
+ 
+![Native application development](./media/nat1.png)
 
-  You can use the content assist and API and privilege checker tools to speed up the code writing and verification task. In addition, you can design the application UI by arranging UI components with the visual UI Builder tool, or by defining the components and layout with the EDC script, using the EDC script editor or a graphical Component Designer.
-
-- [Configuring Your Application](configuring.md)
-
-  You can manage various application functionalities and features through the application manifest file, which you can easily configure with the manifest text editor. In addition, you can localize your application to use various languages and locale-specific resources by using the PO file editor and **Resource Manager** view in the Tizen Studio.
-
-- [Debugging Your Application](debugging.md)
-
-  You can debug, profile, and optimize your application with various tools, such as the Dynamic Analyzer, Static Analyzer, Valgrind, and T-trace. The Tizen Studio provides various views designed to help you identify and fix runtime errors, such as the **Log** and **Call Stack** views.
-
-- [Running and Testing Your Application](running-testing.md)
-
-  You can run and test your application using the Tizen emulator. In addition, the Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.
-
-If you prefer a command line interface to the graphical Tizen Studio window, you can use the [Command Line Interface (CLI)](../common-tools/command-line-interface.md) tool during the entire development process.
+For advanced users, see [Command Line Interface (CLI)](../common-tools/command-line-interface.md).
 
 For a list of keyboard shortcuts related to the Tizen Studio and its various tools, see [Keyboard Shortcuts](../common-tools/keyboard-shortcuts.md).
 

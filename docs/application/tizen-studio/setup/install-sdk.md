@@ -1,105 +1,146 @@
-# Installing Tizen Studio
+# Installation
+<style>
+#main:before, #main:after {
+    content: "";
+    display: table;
+}
 
-The installer has been renewed to provide a better user experience and show the unique Tizen philosophy. Using the new installer, you can now install the basic platform and the useful tools with a few clicks.
+.docs-ui-started [class^="docs-ui-"] {
+    width: 900px; 
+    height: 230px;
+    padding: 50px 0;
+    text-align: center;
+    border: 0 none;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin: 1 auto 30px;
+}
 
-You can use either the GUI or the CLI version of the installer.
+.docs-ui-started [class^="docs-ui-"]>span {
+    display: block;
+    color: #333;
+    line-height: 35px;
+    position: relative;
+    
+}
+@media (max-width: 800px)
+.docs-ui-started
+.docs-ui-wearable:before, 
+.docs-ui-started 
+.docs-ui-tv:before, 
+.docs-ui-started 
+.docs-ui-mobile:before, 
+.docs-ui-started 
+.docs-ui-widget:before, 
+.docs-ui-started 
+.docs-ui-ide:before, 
+.docs-ui-star
+.docs-ui-wear:before, 
+.docs-ui-star 
+.docs-ui-t:before, 
+.docs-ui-start 
+.docs-ui-w:before, 
 
-## Using the GUI Installer
+.docs-ui-started .docs-ui-watch:before 
+{
+    height: 85px;
+    margin: 0 auto 25px;
+    align: center;
+    background-position: 0 6px;
+}
+.docs-ui-started .docs-ui-wearable:before {
+    content: "";
+    display: block;
+    margin: auto;
+    position: relative;
+    width: 85px;
+    height: 90px;
+    background: url(./media/win.png) no-repeat center top;
+    background-position: 0 0 !important;
+}
+.docs-ui-started .docs-ui-wearable {
+    width: 33%;
+    padding-left: 50;
+    /* border-right: 1px solid #d1d1d1; */
+}
+.docs-ui-started .docs-ui-tv:before {
+    content: "";
+    margin: auto;
+    position: relative;
+    display: block;
+    width: 85px;
+    height: 90px;
+    background: url(./media/linux1.png) no-repeat center top;
+    background-position: 0 0 !important;
+}
+.docs-ui-started .docs-ui-tv {
+    width: 33%;
+    padding-left: 50;
+}
 
-To install the Tizen Studio:
-
-1. Launch the Tizen Studio installer.
-
-2. Accept the software license.
-
-   The license contains important legal notices for using Tizen Studio. Read it fully, and click **Accept** only if you agree with the license statement:
-
-   ![Tizen Studio License Agreement](./media/install_sdk_license.png)
-
-3. Click the **...** button and specify a new directory to set the SDK and data location. If the new directory is valid and shows no errors, click **Install**:
-
-   ![Set SDK and data location](./media/install_sdk_directory.png)
-
-4. Click **Install** to install the required packages and tools in the specified directory.
-
-   You can monitor the installation process or cancel the installation. The installation process is completed in a few minutes, unless you cancel it.
-
-5. Click **Finish** and close the installer:
-
-
-   ![Installation complete](./media/migration_finish_instal.png)
-
-   If you want to install additional platforms and tools, launch the Package Manager by checking the **Launch the Package Manager** check box and click **Finish**.
-
-   Using the Tizen Studio Package Manager, you can install and update additional tools. For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
-
-
-   > **Note**
-   >
-   > If you install the Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
-
-
-## Using the CLI Installer
-
-The CLI (command line interface) provides functional tools for running the CLI installer without the GUI environment.
-
-To install the Tizen Studio using the CLI installer:
-
-1. [Download the appropriate CLI installer for your platform](https://developer.tizen.org/development/tizen-studio/download).
-
-2. Run the CLI installer:
-
-   - On Microsoft Windows&reg;, the command prompt opens and the installer is automatically executed.
-   - On Ubuntu and macOS, open the terminal, go to the directory where the installer is downloaded, and enter the `chmod +x` command to apply the execute permission to the installer file. Then, execute the installer by entering the command with the following syntax:
-
-   ```
-   web-cli_Tizen_Studio_<version> [options] [<directory path>]
-   ```
-
-   **Table: Install options**
-
-   | Option             | Description                              |
-   |--------------------|------------------------------------------|
-   | `--show-license`   | Displays the Tizen Studio software license agreement.<br/> You must use this option alone. Do not use with other options. |
-   | `--accept-license` | Accepts the license terms.               |
-   | `--no-java-check`  | Skips the Java version check.            |
-
-   **Table: Install command parameters**
-
-   | Parameter        | Description                              |
-   |------------------|------------------------------------------|
-   | `directory path` | Specifies the installation directory path.<br/> If you do not enter the path, the Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`). |
-
-3. If you agree to the software license and the license terms, enter **Y(yes)** for the conditions.
-
-4. Enter the Tizen Studio installation location.
-
-   The CLI installer begins to install the Web App Development platform and tools on your computer.
-
-> **Note**
->
-> If you want to develop a native application on the CLI, you must install the Native App Development platform and tools using the CLI Package Manager.
-
-## Installing Additional Packages with CLI
-
-Run the CLI Package Manager with the `install` command using the following syntax:
-
-```
-package-manager-cli install [--accept-license] [--no-java-check] [--proxy <value>] [-f <file path>] [-p <password>] <package name>[,...]
-```
-
-**Table: Install command parameters**
-
-| Parameter                   | Description                              |
-|-----------------------------|------------------------------------------|
-| `--accept-license`          | Accepts the license terms.               |
-| `--no-java-check`           | Skips the Java version check.            |
-| `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
-| `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
-| `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
-| `<package name>[,...]`        | Name of the package you want to install. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br/>To retrieve the names of installable packages, use the following command:<br/>`package-manager-cli show-pkgs` |
+.docs-ui-started .docs-ui-widget:before {
+    content: "";
+    margin: auto;
+    position: relative;
+	display: block;
+    width: 85px;
+    height: 90px;
+    background: url(./media/apple1.png) no-repeat center top;
+    background-position: 10 0 !important;
+}
+.docs-ui-started .docs-ui-widget {
+    width: 33%;
+    padding-left: 50;
+    /* border-right: 1px solid #d1d1d1; */
+}
+}
 
 
-## Related information
-- Dependencies
-  - Tizen Studio 1.0 and Higher
+div {
+    display: block;
+}
+
+ul.a{
+a.docs-btn-more {
+    display: inline-block;
+    font-size: 13px;
+    color: #008aee;
+}}
+</style>
+
+<section id ="main">
+
+This page explains about options available to install Tizen Studio on your development hardware. Tizen Studio runs on all major operating systems like Windows, macOS, Ubuntu. You can install any release of the Tizen Studio. However, it is recommended that you install the most recent release. 
+
+
+
+- Plan your installation: check for the necessary hardware and software requirements. 
+- Install Tizen Studio:  follow the installation guides for each operating system
+- Configure: After installation, to have optimal development experience, configure various Tizen Studio components.  
+
+Tizen Studio runs on Windows, Ubuntu, as well as macOS and for installation guide, click the following as per target operating system: 
+<br>
+<br>
+<br>
+<div class="docs-ui-started">
+  <div class="docs-ui-wearable">
+    <span>
+    <a href="/application/tizen-studio/setup/windows.md" class="docs-btn-more">Windows&reg</a>
+    </span>
+  </div>
+
+  <div class="docs-ui-tv">
+    <span>
+     <a href="/application/tizen-studio/setup/ubuntu.md" class="docs-btn-more">Ubuntu&reg</a><br>
+    </span>
+  </div>
+ 
+   <div class="docs-ui-widget">
+    <span>
+    <a href="/application/tizen-studio/setup/mac.md" class="docs-btn-more">MacOS&reg</a><br>
+    </span>
+  </div>
+</section>

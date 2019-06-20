@@ -982,10 +982,12 @@
 ## Set up
 
 ### Install
-#### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
+#### [Install Tizen Studio on Windows](/application/tizen-studio/setup/windows.md)
+#### [Install Tizen Studio on Ubuntu](/application/tizen-studio/setup/ubuntu.md)
+#### [Install Tizen Studio on MacOS](/application/tizen-studio/setup/mac.md)
 #### [Prerequisites](/application/tizen-studio/setup/prerequisites.md)
-#### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
-#### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
+### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
+### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
 ### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
 ### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
 
