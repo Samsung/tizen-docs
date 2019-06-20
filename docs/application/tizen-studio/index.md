@@ -229,7 +229,7 @@ Visit the following pages to explore more about Tizen Studio:
     </span>
   </div>
 
-<div class="docs-ui-star" style="margin-top: -71px;">
+<div class="docs-ui-star">
   <div class="docs-ui-wear">
     <span>
     <a href="configurable-sdk/configurable-sdk.md" class="docs-btn-more">Configurable - IoT SDK</a>
