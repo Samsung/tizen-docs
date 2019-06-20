@@ -981,7 +981,7 @@
 
 ## Set up
 
-### Install
+### [Install](/application/tizen-studio/setup/install-sdk.md)
 #### [Install Tizen Studio on Windows](/application/tizen-studio/setup/windows.md)
 #### [Install Tizen Studio on Ubuntu](/application/tizen-studio/setup/ubuntu.md)
 #### [Install Tizen Studio on MacOS](/application/tizen-studio/setup/mac.md)
