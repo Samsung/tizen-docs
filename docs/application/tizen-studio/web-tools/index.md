@@ -24,7 +24,7 @@ Following are the various web application development phases and their respectiv
 |[Web Simulator](web-simulator.md) |You can run your Web application in a Google Chrome&trade; browser-based simulator, which provides many settings and features for debugging your application. You can test how the application behaves, and you can also send in events and messages.|
 
 
-![Web application development](./media/web1.png)
+![Web application development](./media/web1.PNG)
 
 
 For advanced users, see [Command Line Interface (CLI)](../common-tools/command-line-interface.md).
