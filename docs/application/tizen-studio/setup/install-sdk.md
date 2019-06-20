@@ -128,7 +128,7 @@ Tizen Studio runs on Windows, Ubuntu, as well as macOS and for installation guid
 <div class="docs-ui-started">
   <div class="docs-ui-wearable">
     <span>
-    <a href="/application/tizen-studio/setup/windows.md" class="docs-btn-more">Windows&reg</a>
+    <a href="/application/tizen-studio/setup/windows" class="docs-btn-more">Windows&reg</a>
     </span>
   </div>
 
