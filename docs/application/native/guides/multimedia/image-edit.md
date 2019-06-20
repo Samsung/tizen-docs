@@ -25,9 +25,11 @@ The main features of the Image Util API include:
 
   You can [decode images](#decode) and [encode them](#encode) with the following formats:
 
-  Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888  
-  Input image formats for decoding: JPEG, PNG, GIF, and BMP  
-  Output image formats for encoding: JPEG, PNG, GIF, BMP, and [animated GIF](#animation)
+  - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888.
+
+  - Input image formats for decoding: JPEG, PNG, GIF, and BMP.
+
+  - Output image formats for encoding: JPEG, PNG, GIF, BMP, and [animated GIF](#animation).
 
     Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
 
@@ -149,8 +151,8 @@ To convert an image from one color space of a media packet to another:
 
    > **Note**
    >
-   > - `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
-   > - For more information on how to use the media packet handle of the Media Tool API, see [Media Handle Management](media-handle.md).
+   > `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
+   > For more information on how to use the media packet handle of the Media Tool API, see [Media Handle Management](media-handle.md).
 
 5. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
 
