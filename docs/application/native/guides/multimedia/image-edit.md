@@ -15,31 +15,25 @@ The main features of the Image Util API include:
 
 - Rotation
 
-  You can change the [image](#rotate_image) and [media_packet](#rotate_mediapacket) angle around the X or Y axis.
+  You can change the [image](#rotate_image) and [media packet](#rotate_mediapacket) angle around the X or Y axis.
 
 - Crop
 
-  You can remove the outer parts of the [image](#crop_image) and [media packet](#crop_mediapacket).
+  You can crop the outer parts of the [image](#crop_image) and [media packet](#crop_mediapacket).
 
 - Decoding from a file or memory and encoding to a file or memory
 
   You can [decode images](#decode) and [encode them](#encode) with the following formats:
 
-  - Bitmap formats:
+  - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, ARGB8888
 
-    - YUV420, YUV422, RGB888, RGBA8888, BGRA8888, ARGB8888
-
-  - Input image formats for decoding:
-
-    - JPEG, PNG, GIF, BMP
+  - Input image formats for decoding: JPEG, PNG, GIF, BMP
 
     > **Note**
     >
     > Animated GIF format is not supported for decoding.
 
-  - Output image formats for encoding:
-
-    - JPEG, PNG, GIF, BMP, [animated GIF](#animation)
+  - Output image formats for encoding: JPEG, PNG, GIF, BMP, [animated GIF](#animation)
 
     Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
 
@@ -67,7 +61,7 @@ To enable your application to use the image util functionality:
    image_util_decode_h decode_h = NULL;
    ```
 
-3. To find out which color spaces are supported on the device, use `image_util_foreach_supported_colorspace()`:
+3. To find out the color spaces supported on the device, use `image_util_foreach_supported_colorspace()`:
 
    ```
    int image_util_foreach_supported_colorspace(image_util_type_e image_type,
@@ -123,9 +117,9 @@ To convert an image from one color space of an image to another:
 
    > **Note**
    >
-   > - `image_util_transform_run2()` and `image_util_transform_run2_async()` only converts the color space. These functions do not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
+   > `image_util_transform_run2()` and `image_util_transform_run2_async()` only converts the color space. These functions do not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
 
-5. Handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+5. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
 
 6. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -136,7 +130,7 @@ To convert an image from one color space of an image to another:
 <a name="mediapacket_colorspace"></a>
 ## Converting Media Packet Color Space
 
-To convert an image from one color space of a media_packet to another:
+To convert an image from one color space of a media packet to another:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -164,7 +158,7 @@ To convert an image from one color space of a media_packet to another:
    > - `image_util_transform_run()` only converts the color space. The function does not change the image width, height, or any other image property. Due to these restrictions of the image processing library, not all color space combinations are supported for conversion.
    > - For more information on how to use the media packet handle of the Media Tool API, see the [Media Handle Management](media-handle.md).
 
-5. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+5. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
 
 6. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -198,10 +192,9 @@ To resize an image:
 
    > **Note**
    >
-   > - The image format has no effect on the transformation.
-   > - If the color space is YUV, the width and height of the target image must be multiples of 8. This restriction does not apply to the RGB images.
+   > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
-4. If `image_util_transform_run2_async()` is used to run the transformation, handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+4. If `image_util_transform_run2_async()` is used to run the transformation, handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -237,9 +230,9 @@ To resize a media packet:
 
    > **Note**
    >
-   > - The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of 8. This restriction does not apply to the RGB images.
+   > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
-4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -275,9 +268,9 @@ To rotate an image:
 
    > **Note**
    >
-   > - The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of 8. This restriction does not apply to the RGB images.
+   > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
-4. Handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -315,9 +308,9 @@ To rotate a media packet:
 
    > **Note**
    >
-   > - The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of 8. This restriction does not apply to the RGB images.
+   > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
-4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -353,9 +346,9 @@ To crop an image:
 
    > **Note**
    >
-   > - Because of a YUV restriction, and because the crop start position can be set arbitrarily, the cropped image width and height must be even.
+   > Because of a YUV restriction, and because the crop start position can be set arbitrarily, the cropped image width and height must be even.
 
-4. Handle the transformation results in the `image_util_transform_completed2_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in `image_util_transform_completed2_cb()`, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -391,9 +384,9 @@ To crop a media packet:
 
    > **Note**
    >
-   > - The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of 8. This restriction does not apply to the RGB images.
+   > The image format has no effect on the transformation. If the color space is YUV, then the width and height of the target image must be multiples of eight. This restriction does not apply to the RGB images.
 
-4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
+4. Handle the transformation results in `image_util_transform_completed_cb()`, which is invoked after the transformation is complete.
 
 5. After the transformation is complete, destroy the transformation handle using `image_util_transform_destroy()`:
 
@@ -429,8 +422,7 @@ To decode a JPEG, PNG, GIF, or BMP image:
 
    > **Note**
    >
-   > - Because of decoder limitations, color space setting and JPEG downscaling are only supported for JPEG images.
-   > - The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are decoded to `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. Execute the decoding using `image_util_decode_run2()` or `image_util_decode_run_async2()`:
 
@@ -465,7 +457,7 @@ To encode a raw image:
 
    > **Note**
    >
-   > - Due to the encoder limitations, the quality setting is only supported for encoding the JPEG images, and compression is only supported for the PNG images. The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
+   > Due to the encoder limitations, the quality setting is only supported for encoding the JPEG images, and compression is only supported for the PNG images. The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
 
 3. Execute the encoding using `image_util_encode_run_to_file()` or `image_util_encode_run_to_buffer()`:
 
@@ -474,7 +466,7 @@ To encode a raw image:
    ```
    > **Note**
    >
-   > - Due to the encoder limitations, the color space setting is only supported for encoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. After the encoding is complete, destroy the encoding handle using `image_util_encode_destroy()`:
 
