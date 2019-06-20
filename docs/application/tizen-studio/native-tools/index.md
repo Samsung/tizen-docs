@@ -19,7 +19,7 @@ Following are the various native application development phases and their respec
 |[Run and Test Your Application](running-testing.md) |You can run and test your application using Tizen emulator. In addition, the Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.|
 
  
-![Native application development](./media/nat1.png)
+![Native application development](./media/nat1.PNG)
 
 For advanced users, see [Command Line Interface (CLI)](../common-tools/command-line-interface.md).
 
