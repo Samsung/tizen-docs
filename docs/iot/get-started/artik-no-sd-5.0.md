@@ -8,6 +8,7 @@
 
 [Tips](#Tips)
 
+
 # Installing Tizen Studio
 
 If you have already installed Tizen Studio 3.0 and installed the **5.0 Mobile** profile for the **Main SDK** and the **IOT-Headed-5.0** and **IOT-Headless-5.0** profiles for the **Extension SDK**, you can skip this section.
@@ -29,6 +30,15 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 
 
 # Setting up ARTIK 530 or ARTIK 530s
+
+> ![Attention](media/attention_icon.png) 
+> 
+> Samsung has discontinued support for ARTIK.
+>
+> In case you are still using ARTIK, we recommend that you migrate to Raspberry Pi 3 for headless-type IoT devices. Information on [Raspberry Pi 3 for Tizen IoT](https://developer.tizen.org/development/iot-extension-sdk/getting-started/setting-up-your-board/raspberry-pi3-based-on-tizen-5.0) will help you at it.
+> The documentation for Tizen IoT with respect to ARTIK will be available only until August 2019.
+>
+> Thank you for your interest and support as always.
 
 To configure the ARTIK 530 or the ARTIK 530s hardware board:
 

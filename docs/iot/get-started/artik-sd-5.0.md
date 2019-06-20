@@ -29,6 +29,15 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 
 # Flashing Tizen Images with IoT Setup Manager
 
+> ![Attention](media/attention_icon.png) 
+> 
+> Samsung has discontinued support for ARTIK.
+>
+> In case you are still using ARTIK, we recommend that you migrate to Raspberry Pi 3 for headless-type IoT devices. Information on [Raspberry Pi 3 for Tizen IoT](https://developer.tizen.org/development/iot-extension-sdk/getting-started/setting-up-your-board/raspberry-pi3-based-on-tizen-5.0) will help you at it.
+> The documentation for Tizen IoT with respect to ARTIK will be available only until August 2019.
+>
+> Thank you for your interest and support as always.
+
 IoT Setup Manager helps you to easily install Tizen on your IoT device using your computer. It helps to get your device running and connected to the local network. After your device is connected to the local network, you can start developing and testing the Tizen IoT applications.
 
 ## Prerequisites
