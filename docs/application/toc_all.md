@@ -155,6 +155,7 @@
 ##### [Application Icons](/application/dotnet/guides/app-management/app-icons.md)
 ##### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
 ##### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
+##### [Event Manager](/application/dotnet/guides/app-management/event.md)
 ##### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
 ##### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 ##### [Message Port](/application/dotnet/guides/app-management/message-port.md)
