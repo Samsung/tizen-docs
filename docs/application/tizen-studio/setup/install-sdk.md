@@ -113,7 +113,7 @@ a.docs-btn-more {
 
 <section id ="main">
 
-This page explains about options available to install Tizen Studio on your development hardware. Tizen Studio runs on all major operating systems like Windows, macOS, Ubuntu. You can install any release of the Tizen Studio. However, it is recommended that you install the most recent release. 
+This section explains about options available to install Tizen Studio on your development hardware. Tizen Studio runs on all major operating systems like Windows, macOS, Ubuntu. You can install any release of the Tizen Studio. However, it is recommended that you install the most recent release. 
 
 
 
