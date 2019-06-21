@@ -26,9 +26,7 @@ The main features of the Image Util API include:
   You can [decode images](#decode) and [encode them](#encode) with the following formats:
 
   - Bitmap formats: YUV420, YUV422, RGB888, RGBA8888, BGRA8888, and ARGB8888.
-
   - Input image formats for decoding: JPEG, PNG, GIF, and BMP.
-
   - Output image formats for encoding: JPEG, PNG, GIF, BMP, and [animated GIF](#animation).
 
     Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
