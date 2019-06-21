@@ -1,6 +1,6 @@
 # Additional Requirements
 
-This page provides an overview of various additional requirements required to configure your development environment for optimal development experience. Assuming that you have successfully installed Tizen Studio on your development device, perform the configurations to have seamless experience of emulator, Web inspector etc. 
+This section provides an overview of various additional requirements required to configure your development environment for optimal development experience. Assuming that you have successfully installed Tizen Studio on your development device, perform the configurations to have seamless experience of emulator, Web inspector etc. 
 
 ## Emulator Requirements 
 To use the Emulator, ensure the following:
