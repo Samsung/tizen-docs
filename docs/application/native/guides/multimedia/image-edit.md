@@ -29,7 +29,9 @@ The main features of the Image Util API include:
   - Input image formats for decoding: JPEG, PNG, GIF, and BMP.
   - Output image formats for encoding: JPEG, PNG, GIF, BMP, and [animated GIF](#animation).
 
-    Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
+  > **Note**
+  >
+  > Pay attention to how the [image quality depends on the size](#quality) and compression ratio.
 
 ## Prerequisites
 
