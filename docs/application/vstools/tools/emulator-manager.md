@@ -4,30 +4,26 @@ After you have built your application, you need to test the application to ensur
 
 Emulator Manager allows you to generate emulator instances from a predefined platform and template. Additionally, it helps you to define and configure settings such as skin, resolution, and hardware devices of your virtual device. 
 
-Emulator Manager helps you to:
-
+Use Emulator Manager for any of the following purposes:
 - Define a new emulator instance or hardware profile
 - Edit an existing emulator instance or hardware profile
 - Delete an emulator instance or hardware profile
 - Start or stop an emulator instance
 
 This section explains how to use Emulator Manager to run and test your application in a virtual environment:
-
 1. [Launch Emulator Manager](#launch-emulator-manager)
 2. [Create emulator instance](#create-emulator-instance)
 3. [Manage emulator instance](#manage-emulator-instance)
 
 ## Launch Emulator Manager
 
-### Prerequisites
-
-Ensure that you have installed Emulator Manager in Visual Studio. If you have not installed Emulator Manager, see [Visual Studio Tools for Tizen](https://developer.tizen.org/development/visual-studio-tools-tizen/installing-visual-studio-tools-tizen).
+Ensure that you have installed Emulator Manager in Visual Studio. If you have not installed Emulator Manager, see [Visual Studio Tools for Tizen](../install.md).
 
 >**Note**
 >
->Emulator Manager for Visual Studio has the same requirement as Emulator Manager in Tizen Studio. For more information on hardware and software requirements, see [Emulator Requirements](../../tizen-studio/setup/prerequisites.md#emulator).
+>Tizen emulator for Visual Studio has the same requirement as emulator in Tizen Studio. For more information on hardware and software requirements, see [Emulator Requirements](../../tizen-studio/setup/prerequisites.md#emulator).
 
-After installing Emulator Manager from Visual Studio, you can launch it in one of the following ways: 
+After installing Emulator Manager from Visual Studio, you can launch Emulator Manager in one of the following ways: 
 
 - In the Visual Studio menu, select **Tools &gt; Tizen &gt; Tizen Emulator Manager**.
 
@@ -55,7 +51,7 @@ To create an emulator instance, follow these steps:
 
 The emulator instance appears in Emulator Manager.
 
-If you want to view the created emulator instance details, right-click the instance and click **Detail**.
+If you want to view the created emulator instance details, right-click the instance and select **Detail**.
 
 > **Note**  
 > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, see [Increasing the Application Execution Speed](../../tizen-studio/common-tools/emulator.md#speed). If GPU is disabled, install the latest vendor-provided graphic driver.
