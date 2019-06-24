@@ -49,7 +49,7 @@ Ensure that the following system prerequisites are met:
   </tr>
   <tr>
     <td width=150px>Version</td>
-    <td width=520px>10.13 (High Sierra)<br>10.12 (Sierra)<br>1.100 (El Captain)</td>
+    <td width=520px>10.13 (High Sierra)<br>10.12 (Sierra)<br>10.11 (El Captain)</td>
   </tr>
   <tr>
     <td>Bit</td>
