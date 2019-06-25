@@ -17,7 +17,7 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
     You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class. The feature provides:
 
-    -   Support for several pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, and YUV420P
+    -   Support for several pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, Yv12, Rgb565, Rgb888, Rgba, Argb, Jpeg, H264 and Invz
     -   Preview at the frame rate, which you can set by `PreviewFps` property.
     -   Rotation and flip of the preview
 
