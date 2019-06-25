@@ -200,7 +200,7 @@ The following table lists the metadata you can edit.
 | Title         | Title of the audio content         | `Title`                                  |
 | Album         | Album of the audio content         | `Album`                                  |
 | Genre         | Genre of the audio content         | `Genre`                                  |
-| Author        | Author of the audio content        | `Author`                                 |
+| Composer        | Composer of the audio content        | `Composer`                                 |
 | Copyright     | Copyright of the audio content     | `Copyright`                              |
 | Date          | Date of the audio content          | `Date`                                   |
 | Description   | Description of the audio content   | `Description`                            |
@@ -238,7 +238,7 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Album                | Album of the content                   | `Metadata.Album`                         |
 | Album artist         | Album artist of the content            | `Metadata.AlbumArtist`                   |
 | Genre                | Genre of the content                   | `Metadata.Genre`                         |
-| Author               | Author of the content                  | `Metadata.Author`                        |
+| Composer               | Composer of the content                  | `Metadata.Composer`                        |
 | Copyright            | Copyright of the content               | `Metadata.Copyright`                     |
 | Date                 | Date of the content                    | `Metadata.Date`                          |
 | Description          | Description of the content             | `Metadata.Description`                   |
