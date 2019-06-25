@@ -367,9 +367,13 @@ To manage the media demuxer process:
            int ret = mediademuxer_read_sample(demuxer, vid_track, &vidbuf);
            if (ret != MD_ERROR_NONE)
                pthread_exit(NULL);
+
+           /* Check that EOS has been reached. */
            media_packet_is_end_of_stream(vidbuf, &is_eos);
-           if (is_eos)
+           if (is_eos) {
+               media_packet_destroy(vidbuf);
                pthread_exit(NULL);
+           }
            count++;
            g_print("Read::[%d] video sample\n", count);
            /* Use the media packet and release the packet here */
