@@ -1,6 +1,6 @@
 # Additional Requirements
 
-This section provides an overview of various additional requirements required to configure your development environment for optimal development experience. Assuming that you have successfully installed Tizen Studio on your development device, perform the configurations to have seamless experience of emulator, Web inspector etc. 
+This page provides an overview of various post installation requirements required to configure your development environment for optimal development experience. Assuming that you have successfully installed Tizen Studio on your development hardware, perform the configurations to have seamless experience of emulator, Web inspector etc. 
 
 ## Emulator Requirements 
 To use the Emulator, ensure the following:
@@ -86,13 +86,13 @@ To use the Emulator, ensure the following:
 ### Google Chrome&trade; 
 
 You can Use the Web Inspector tool in Google Chrome browser for debugging your applications. For more information, see [Web Inspector](../web-tools/web-inspector.md) page. The Web Inspector server uses the Web core of the platform.
-You must use Google Chrome&trade; browser version 52 or lower, such that all the functions of the Web Inspector work properly. For more information see: [Google Chrome&trade;](http://www.slimjet.com/chrome/google-chrome-old-version.php).
+You must use Google Chrome&trade; browser version 52 or lower, such that all the functions of the Web Inspector work properly. For more information see [Google Chrome&trade;](http://www.slimjet.com/chrome/google-chrome-old-version.php).
 
-## Other Requirements
+### T-Trace Requirements
 
 The following table lists various other requirements that you must ensure before you start developing Tizen applications:
 
-**Table: Other Microsoft Windows&reg; requirements**
+**Table: T-Trace requirements for Microsoft Windows&reg;**
 
 <table>
 <thead>
@@ -109,7 +109,7 @@ The following table lists various other requirements that you must ensure before
 <ul>
 <li>Visit the official <a href="https://www.python.org/downloads/">Python Website</a>, download the appropriate Python version for your hardware and Windows&reg; version.
 </li>
-<li>Run the downloaded installer file and follow the on- screen instructions.</li>
+<li>Run the downloaded installer file and follow the on-screen instructions.</li>
 </ul>
 <strong>Note:</strong> <br>
 To use Python in native command prompt, set the <code>%PATH%</code> environment variable in <strong>My Computer > Properties > Advanced > Environment Variables</strong>.
