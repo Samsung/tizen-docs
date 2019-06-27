@@ -26,5 +26,5 @@ For advanced users, see [Command Line Interface (CLI)](../common-tools/command-l
 For a list of keyboard shortcuts related to the Tizen Studio and its tools, see [Keyboard Shortcuts](../common-tools/keyboard-shortcuts.md).
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher
