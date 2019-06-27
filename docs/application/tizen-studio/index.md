@@ -9,12 +9,12 @@
 }
 .docs-ui-started [class^="docs-ui-"] {
     width: 100%; 
-    height: 230px;
-    padding: 100px 0;
+    height: 170px;
+    padding: 0px 0;
     text-align: center;
     border: 0 none;
     border-top: 0 px solid #dadada;
-    border-bottom: 1px solid #dadada;
+    border-bottom: 0 px solid #dadada;
     box-sizing: border-box;
     position: relative;
     float: left;
