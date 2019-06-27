@@ -112,6 +112,44 @@ To send a command from the client and to process it on the server side:
     }
     ```
 
+## Setting and Getting playback capability
+
+To get playback capability from the client and to set it on the server side:
+
+1. To set playback capability on the server side, use the `SetPlaybackCapability` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+
+    ```
+    MediaControlServer.SetPlaybackCapability((MediaControlPlaybackCommand.FastForward, MediaControlCapabilitySupport.NotSupported);
+    ```
+
+2. To get playback capability on the client side, use the `GetPlaybackCapability` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+
+    ```
+    var playCommandCapability = controller.GetPlaybackCapability((MediaControlPlaybackCommand.Play);
+    ```
+
+## Creating a playlist
+
+To create a playlist from the server side:
+
+1. Create a new instance of the [Tizen.Multimedia.Remoting.MediaControlPlaylist](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlPlaylist.html) class:
+
+    ```
+    var playlist = new MediaControlPlaylist("MyFavorite");
+    ```
+
+You can create playlist with Metadata also like below code.
+
+    ```
+	var playlist = new MediaControlPlaylist("MyFavoriate",
+		new Dictionary<string, MediaControlMetadata>()
+		{
+			{"Song1", new MediaControlMetadata() {Author = "Someone"} },
+			{"Song2", new MediaControlMetadata()}
+		}
+    );
+	```
+
 <a name="servermetadata"></a>
 ## Media Control Metadata Properties
 
