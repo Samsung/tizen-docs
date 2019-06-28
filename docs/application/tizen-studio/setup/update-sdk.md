@@ -17,7 +17,7 @@ To launch Package Manager:
 
 The Package Manager window is made up of the following logical areas as identified in the following figure:
 
-**Figure: Package Manager Main Window**
+**Figure: Package Manager main window**
 
 ![Package Manager main window](./media/updating_sdk_main.png)
 
@@ -39,13 +39,13 @@ The Package Manager Window consists of the following logical areas:
 
   **Figure: Package list**
 
-  ![Package list](./media/updating_sdk_main_area.png)
+     ![Package list](./media/updating_sdk_main_area.png)
 
 - **Description area**: shows detailed description of each package or platform that is currently selected on the list in the main area.
 
   **Figure: Description area**
 
-  ![Description area](./media/updating_sdk_description.png)
+    ![Description area](./media/updating_sdk_description.png)
 
 ## Update Packages
 
@@ -56,9 +56,9 @@ Package Manager makes it effortless to update your packages and platforms. You c
 
 To update the currently installed packages, click **Updates available**.
     
-**Figure: Updates available button**
+  **Figure: Updates available button**
 
-![Updates available button](./media/updating_sdk_updates.png)
+  ![Updates available button](./media/updating_sdk_updates.png)
 
 >**Note:**
 >
@@ -95,9 +95,9 @@ To install individual packages for a particular platform or tool, follow these s
  1. Click on **collapsible** icon located on the left of the main area for each platform or tool to view more packages and tools.
  2. Click **install** next to the package, if you want to install.
 
-**Figure: Installing platform packages**
+  **Figure: Install platform packages**
 
-![Installing platform packages](./media/updating_sdk_install_platform.png)
+  ![Installing platform packages](./media/updating_sdk_install_platform.png)
 
 ## Cancel Installation
 
@@ -107,9 +107,9 @@ To cancel the installation process, click the **x** button on **Progress** tab n
 >
 >Due to package dependencies, cancelling the installation of a single package may also cancel the installation of other packages.
 
-**Figure: Cancelling installation**
+  **Figure: Cancel installation**
 
-![Cancelling the installation](./media/updating_sdk_install_cancel.png)
+  ![Cancelling the installation](./media/updating_sdk_install_cancel.png)
 
 ## Retry Cancelled Installation 
 
@@ -130,17 +130,17 @@ To remove a package, click **delete** located next to the respective package.
 >- Due to package dependencies, removing a single package may also cause other packages to be removed. 
 >- To ensure system integrity across all installed Tizen Studio packages, package removal cannot be cancelled while removal process is in progress.
 
-**Figure: Removing packages**
+  **Figure: Remove packages**
 
-![Removing packages](./media/updating_sdk_install_remove.png)
+  ![Removing packages](./media/updating_sdk_install_remove.png)
 
 ## Monitor Progress
 
 Tizen Studio provides a progress bar where you can monitor the installation, update, or removal progress. This intuitive progress bar appears on the header area and helps in checking the overall progress of a respective process.  Also, to monitor the progress of specific installation, uninstallation, or update, as well as view the expected time of completion, use the **Progress** tab.
 
-**Figure: Progress tab**
+  **Figure: Progress tab**
 
-![Progress tab](./media/updating_sdk_progress.png)
+  ![Progress tab](./media/updating_sdk_progress.png)
 
 ## Update using CLI Package Manager
 
