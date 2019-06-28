@@ -1,19 +1,16 @@
 # Configure Package Manager
 
-The Package Manager configuration helps you to manage the packages of Tizen Studio. 
-The Package Manager configuration, allows you to:
-- Change the options for the package repository for the main and extension SDK,
-- Change the proxy settings to access the package repository
+This page explains about configuring the package manager for setting up various related repositories and the proxy. By performing these configurations, you get the total control over all package repositories for the main and the extension SDK. It also enables you to modify the proxy settings for accessing these package repositories.
 
-This section explains about various configuring and managing techniques using Package Manager. You can set the configuration for installing or updating Tizen Studio using one of the following methods:
+Configure the SDK options by following one of the following procedures:
 
-Configure SDK
 - Configure Main SDK Package Repository
 - Configure Main SDK Image
 - Configure Extension SDK Repository
 - Configure Proxy
 
-Manage Extension Repository
+Manage extension SDK repositories by following one of the following procedures:
+
 - Add Extension Repository
 - Remove Extension Repository
 - Modify Extension Repository
@@ -26,11 +23,10 @@ Manage Extension Repository
 > - If you want to configure Package Manager in the command line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
 
 
-
-
 ### Configure Main SDK Package Repository
 
-The package repository is a server, which stores all the packages that are used or will be used in Tizen Studio. Using Package Manager, you can install or update the packages from the package repository. Instead of providing a single repository for the main SDK, several Content Delivery Networks (CDNs) are offered around the globe for convenience. You can select the nearest package repository to install or update packages more quickly.
+The package repository is a server, which stores all the packages that are used in Tizen Studio. Using Package Manager, you can install or update the packages from the package repository. 
+Instead of providing a single repository for the main SDK, various  Content Delivery Networks (CDNs) are provided as per the locales. Select the desired locale specific package repository and install or update your packages seamlessly.
 
 **Figure: Configuration window with the Package Repository selected**
 
@@ -38,10 +34,10 @@ The package repository is a server, which stores all the packages that are used 
 
 To set the package repository, follow these steps:
 
-1. In the Package Repository drop-down list, select an available repository. Select the latest repository for a quick installation and update.
+1. In the Package Repository drop-down list, select an available repository. Select your desired locale specific repository for quick installation and update.
 2. To validate the repository, click **Apply**. 
 3. In the Distribution drop-down list, select the distribution you want to access.
-4. Different snapshots are listed in the snapshot box, based on your selection in the Distribution drop-down list. You can toggle the Auto Update to on and off. If you toggle Auto Update to **OFF**, you can select the specific snapshot in the list. If you toggle Auto Update to **ON**, Package Manager updates the snapshot with the latest package snapshots.
+4. Different snapshots are listed in the snapshot box, based on your selection in the Distribution drop-down list. You can toggle the Auto Update to **on** and **off**. If you toggle Auto Update to **OFF**, you can select the specific snapshot in the list. If you toggle Auto Update to **ON**, Package Manager updates the snapshot with the latest package snapshot.
 5. To confirm your setting, click **OK**.
 
 > **Note**  
@@ -74,7 +70,7 @@ To configure the extension SDK, follow these steps:
 
 ### Configure Proxy
 
-The Package Manager provides a network option to configure a proxy. This configured proxy is used to connect the repository servers. 
+The Package Manager provides a network option to configure a proxy. This configured proxy is used to connect to the repository servers. 
 
 To set the proxy, follow these steps:
 
@@ -132,9 +128,6 @@ To activate or deactivate the extra repository, follow these steps:
 
 > **Note**  
 > If the extension repository is deactivated, the packages from that repository are no longer shown in Package Manager. However, if you activate the extension repository, the packages are once more shown in Package Manager.
-
-
-
 
 ## Related information
 - Dependencies
