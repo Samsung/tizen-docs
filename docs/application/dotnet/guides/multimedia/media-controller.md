@@ -7,7 +7,7 @@ The main media controller features include:
 
 -   Updating and retrieving information
 
-    You can [update the metadata and playback information](#get_media) on the server side, and then retrieve that information on the client side.
+    You can [update the metadata and playback information](#updating-and-retrieving-information) on the server side, and then retrieve that information on the client side.
 
     The media control server provides current information about the registered application that you can send to the client.
 
@@ -15,9 +15,9 @@ The main media controller features include:
 
 - Sending and processing commands
 
-    You can [send a command](#send_media) to the server from the client side, and then process the command on the server side.
+    You can [send a command](#sending-and-processing-commands) to the server from the client side, and then process the command on the server side.
 
-    The client can request server state or [metadata](#servermetadata) information from the server, and receive it through an event handler.
+    The client can request server state or [metadata](#media-control-metadata-properties) information from the server, and receive it through an event handler.
 
 ## Prerequisites
 
@@ -45,7 +45,6 @@ To enable your application to use the media controller functionality:
     using Tizen.Multimedia.Remoting;
     ```
 
-<a name="get_media"></a>
 ## Updating and Retrieving Information
 
 To update the metadata and playback information on the server side, and to retrieve it on the client side:
@@ -90,7 +89,6 @@ To update the metadata and playback information on the server side, and to retri
         Tizen.Log.info(LogTag, $"Playback state is {controller.GetPlaybackState()}");
         ```
 
-<a name="send_media"></a>
 ## Sending and Processing Commands
 
 To send a command from the client and to process it on the server side:
@@ -112,23 +110,7 @@ To send a command from the client and to process it on the server side:
     }
     ```
 
-## Setting and Getting playback capability
-
-To get playback capability from the client and to set it on the server side:
-
-1. To set playback capability on the server side, use the `SetPlaybackCapability` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
-
-    ```
-    MediaControlServer.SetPlaybackCapability((MediaControlPlaybackCommand.FastForward, MediaControlCapabilitySupport.NotSupported);
-    ```
-
-2. To get playback capability on the client side, use the `GetPlaybackCapability` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
-
-    ```
-    var playCommandCapability = controller.GetPlaybackCapability((MediaControlPlaybackCommand.Play);
-    ```
-
-## Creating a playlist
+## Updating and Retreiving Playlist
 
 To create a playlist from the server side:
 
@@ -150,7 +132,30 @@ You can create playlist with Metadata also like below code.
     );
 	```
 
-<a name="servermetadata"></a>
+To retrieve the playlist and metadata information on the client side:
+    ```
+	    controller.PlaylistUpdated += (s, e) =>
+		{
+		    Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name}, The title of first song : {e.Playlist.GetMetadata("IDX1").Title}");
+		};
+	````
+
+## Setting and Getting Playback Capability
+
+To get playback capability from the client and to set it on the server side:
+
+1. To set playback capability on the server side, use the `SetPlaybackCapability` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+
+    ```
+    MediaControlServer.SetPlaybackCapability((MediaControlPlaybackCommand.FastForward, MediaControlCapabilitySupport.NotSupported);
+    ```
+
+2. To get playback capability on the client side, use the `GetPlaybackCapability` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+
+    ```
+    var playCommandCapability = controller.GetPlaybackCapability((MediaControlPlaybackCommand.Play);
+    ```
+
 ## Media Control Metadata Properties
 
 The following table lists all the media control metadata properties the client can request from the server.
