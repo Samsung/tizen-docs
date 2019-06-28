@@ -1,18 +1,18 @@
 # Web Tools
 
-This section explains about various web application development tools supported in Tizen Studio. Tizen Studio IDE provides powerful tool chains to ease web-based app development and provides a platform that is consistent and faster. 
+This page explains about various web application development tools supported in Tizen Studio. Tizen Studio IDE provides powerful tool chains to ease web-based app development and provides a platform that is consistent and fast. 
 
-Using Tizen Studio IDE and the web tools, you can create the following features in your web apps:
-- Reliable app that loads instantly
-- Intuitive app that gives seamless and immersive user experience
-- Responsive app that responds quickly to user interactions on any device
-- Discoverable app that can be found easily through search engines 
+Using Tizen Studio IDE and the web tools, you can create the web app that is:
+- Reliable: Loads instantly
+- Intuitive: Gives seamless and immersive user experience
+- Responsive: Responds quickly to user interactions on any device
+- Discoverable: Found easily through search engines 
 
 > **Note**  
 > 
 > Most of the web features discussed in this section are supported in TV Web application development as well. However, TV-specific details are not included in this section. For more information on TV application development tools, see [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop).
 
-Following are the various web application development phases and their respective tools:
+The web application development phases and the tools used in each phase are as follows:
 
 |Development Phases |Description|
 |----|:---|
@@ -29,8 +29,8 @@ Following are the various web application development phases and their respectiv
 
 For advanced users, see [Command Line Interface (CLI)](../common-tools/command-line-interface.md).
 
-For a list of keyboard shortcuts related to Tizen Studio and its various tools, see [Keyboard Shortcuts](../common-tools/keyboard-shortcuts.md).
+For a list of keyboard shortcuts related to Tizen Studio and its tools, see [Keyboard Shortcuts](../common-tools/keyboard-shortcuts.md).
 
 ## Related information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher
