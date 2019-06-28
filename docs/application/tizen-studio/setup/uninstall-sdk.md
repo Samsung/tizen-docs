@@ -1,6 +1,6 @@
 # Uninstall Tizen Studio
 
-This section explains how to uninstall Tizen Studio. Tizen Studio uninstaller removes all Tizen platforms and the tools that you have installed.
+This page explains how to uninstall Tizen Studio. Tizen Studio uninstaller removes all Tizen platforms and the tools that you have installed.
 You can uninstall Tizen Studio in one of the following methods: 
 - Using GUI uninstaller
 - Using CLI uninstaller
@@ -15,7 +15,7 @@ You can uninstall Tizen Studio either using the GUI uninstaller or using the CLI
 
 To uninstall Tizen Studio using GUI uninstaller, follow these steps:
 
-1. You have to back up all the data and the files in case you want to keep them for future refrence. 
+1. You have to back up all the data and the files in case you want to keep them for future reference. 
    > **Note**
    >
    > Once you start uninstallation process, the process is irreversible. You cannot restore the removed files.
@@ -61,4 +61,4 @@ The following table explains various command parameters to uninstall:
 
 ## Related Information
 -  Dependencies
-  - Tizen Studio 1.0 and Higher
+   - Tizen Studio 1.0 and Higher
