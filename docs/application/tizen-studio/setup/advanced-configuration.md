@@ -28,7 +28,7 @@ Manage extension SDK repositories by following one of the following procedures:
 The package repository is a server, which stores all the packages that are used in Tizen Studio. Using Package Manager, you can install or update the packages from the package repository. 
 Instead of providing a single repository for the main SDK, various  Content Delivery Networks (CDNs) are provided as per the locales. Select the desired locale specific package repository and install or update your packages seamlessly.
 
-**Figure: Configuration window with the Package Repository selected**
+**Figure: Configuration window with Package Repository selected**
 
 ![Configuration window with the Package Repository selected](./media/advanced_conf_server.png)
 
@@ -96,7 +96,7 @@ To add an extra repository, follow these steps:
 5. In the **Configuration** dialog box, check the detailed repository information below the table.
 6. Click **OK**.
 
-### Remove an Extension Repository
+### Remove Extension Repository
 
 To remove an extra repository, follow these steps:
 
@@ -105,7 +105,7 @@ To remove an extra repository, follow these steps:
 3. Click ![Remove icon](./media/advanced_conf_icon_remove.png).
 4. In the **Configuration** dialog box, check whether the extension repository is removed.
 
-### Modify an Extension Repository
+### Modify Extension Repository
 
 To modify an extra repository, follow these steps:
 
@@ -117,7 +117,7 @@ To modify an extra repository, follow these steps:
 5. In the **Configuration** dialog box, check whether the repository information has changed below the table.
 6. Click **OK**.
 
-### Activate or Deactivate an Extension Repository
+### Activate or Deactivate Extension Repository
 
 To activate or deactivate the extra repository, follow these steps:
 
