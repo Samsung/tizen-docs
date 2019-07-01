@@ -26,7 +26,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m19pushreceiver.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/PushReceiver" target="_blank"><strong>(M) PushReceiver</strong></a></p>
-			<p>This sample application demonstrates how to receive push notification from the application server using the push server and <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Push.html" target="_blank">Tizen.Messaging.Push</a>.</p>
+			<p>This sample application demonstrates how to receive a push notification from the application server using the push server and <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Push.html" target="_blank">Tizen.Messaging.Push</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -37,7 +37,11 @@ for TD:
 <table>
 	<tbody>
 		<tr>
-			<td>There is no sample.</td>
+			<td><img alt="" height="180" src="media/w74pushreceiver.png" width="180"/></td>
+			<td>
+			<p><strong>(W) PushReceiver</strong> [In progress]</p>
+			<p>This sample application demonstrates how to receive a push notification from the application server using the push server and <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Push.html" target="_blank">Tizen.Messaging.Push</a>.</p>
+			</td>
 		</tr>
 	</tbody>
 </table>
