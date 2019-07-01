@@ -128,19 +128,23 @@ Tizen Studio runs on Windows, Ubuntu, as well as macOS and for installation guid
 <div class="docs-ui-started">
   <div class="docs-ui-wearable">
     <span>
-    <a href="setup/windows.md" class="docs-btn-more">Windows&reg</a>
+    <!--<a href="setup/windows.md" class="docs-btn-more">Windows&reg</a>-->
+	    <a href="windows" class="docs-btn-more">Windows&reg</a>   
     </span>
   </div>
 
   <div class="docs-ui-tv">
     <span>
-     <a href="/application/tizen-studio/setup/ubuntu.md" class="docs-btn-more">Ubuntu&reg</a><br>
+     <!--
+     <a href="/application/tizen-studio/setup/ubuntu.md" class="docs-btn-more">Ubuntu&reg</a><br>-->
+    <a href="ubuntu" class="docs-btn-more">Ubuntu&reg</a><br>
     </span>
   </div>
  
    <div class="docs-ui-widget">
     <span>
-    <a href="/application/tizen-studio/setup/mac.md" class="docs-btn-more">MacOS&reg</a><br>
+    <!--<a href="/application/tizen-studio/setup/mac.md" class="docs-btn-more">MacOS&reg</a><br>-->
+	<a href="mac" class="docs-btn-more">MacOS&reg</a><br>  
     </span>
   </div>
 </section>
