@@ -132,6 +132,7 @@
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
 #### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
+#### [WebView](/application/dotnet/guides/connectivity/webview.md)
 #### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
 #### [Wi-Fi](/application/dotnet/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct®](/application/dotnet/guides/connectivity/wifi-direct.md)
@@ -140,7 +141,6 @@
 #### [Smart Card](/application/dotnet/guides/connectivity/smartcard.md)
 #### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
-#### [WebView](/application/dotnet/guides/connectivity/webview.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
