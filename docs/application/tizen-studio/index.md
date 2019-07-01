@@ -9,7 +9,7 @@
 }
 .docs-ui-started [class^="docs-ui-"] {
     width: 100%; 
-    height: 170px;
+    height: 200px;
     padding: 0px 0;
     text-align: center;
     border: 0 none;
