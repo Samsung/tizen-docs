@@ -129,6 +129,6 @@ To activate or deactivate the extra repository, follow these steps:
 > **Note**  
 > If the extension repository is deactivated, the packages from that repository are no longer shown in Package Manager. However, if you activate the extension repository, the packages are once more shown in Package Manager.
 
-## Related information
+## Related Information
 - Dependencies
   - Tizen Studio 1.0 and Higher
