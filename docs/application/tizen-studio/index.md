@@ -28,7 +28,7 @@
 }
 .docs-ui-star [class^="docs-ui-"] {
     width: 100%; 
-    height: 199px;
+    height: 200px;
     padding: 1px 0;
     text-align: center;
     border: 0 none;
