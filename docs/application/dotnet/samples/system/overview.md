@@ -127,6 +127,13 @@ for TD:
 			<p>This sample application demonstrates how to obtain data provided by the system using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.html" target="_blank">Tizen.System</a> and how to use the IndexPage of <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w71ultraviolet.png" width="180"/></td>
+			<td>
+                        <p><strong>(W) Ultraviolet</strong> [In progress]</p>
+			<p>This sample application demonstrates how to obtain the ultraviolet sensor data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor</a>.</p>
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>
