@@ -6,13 +6,14 @@ Package Manager is a comprehensive package management tool included with Tizen S
 
 ## Start Package Manager
 
-To launch Package Manager: 
+To launch Package Manager on your preferred operating system, follow these steps: 
 
-- in Windows, Click **Start > All Programs > Tizen Studio > Tools > Package Manager**.
+- Windows: Click **Start > All Programs > Tizen Studio > Tools > Package Manager**.
 
-- in MacOS, Click **Launchpad > Package Manager**.
+- MacOS: Click **Launchpad > Package Manager**.
 
-- in Ubuntu, Click **Dashboard Home > Package Manager**.
+- Ubuntu: Click **Dashboard Home > Package Manager**.
+
 ## Package Manager Components 
 
 The Package Manager window is made up of the following logical areas as identified in the following figure:
@@ -70,7 +71,7 @@ To update the currently installed packages, click **Updates available**.
 To install the packages with an image file, follow these steps:
 
 1.  In Package Manager, click **Configuration** (![Configuration icon](./media/updating_sdk_icon_config.png))
-2. In the Configuration window that appears, enter the full path of the image file in Package Repository. Alternatively, to select the image file,  click ... next to the combo box. 
+2. In the Configuration window that appears, enter the full path of the image file in Package Repository. Alternatively, to select the image file,  click **...** next to the combo box. 
 3. To close the dialog, click **Open**.
 
     >**Note:**
@@ -93,7 +94,7 @@ Package Manager installs all packages that are required for that platform or too
 To install individual packages for a particular platform or tool, follow these steps: 
  
  1. Click on **collapsible** icon located on the left of the main area for each platform or tool to view more packages and tools.
- 2. Click **install** next to the package, if you want to install.
+ 2. Click **install** next to the package to install it.
 
   **Figure: Install platform packages**
 
